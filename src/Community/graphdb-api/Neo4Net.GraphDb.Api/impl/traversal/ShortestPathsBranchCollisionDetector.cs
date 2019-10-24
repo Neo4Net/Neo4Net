@@ -17,34 +17,33 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.GraphDb.impl.traversal
+
+namespace Neo4Net.GraphDb.Impl.Traversal
 {
+    using IEvaluator = Neo4Net.GraphDb.Traversal.IEvaluator;
+    using ITraversalBranch = Neo4Net.GraphDb.Traversal.ITraversalBranch;
 
-	using Evaluator = Neo4Net.GraphDb.Traversal.Evaluator;
-	using ITraversalBranch = Neo4Net.GraphDb.Traversal.ITraversalBranch;
+    public class ShortestPathsBranchCollisionDetector : StandardBranchCollisionDetector
+    {
+        private int _depth = -1;
 
-	public class ShortestPathsBranchCollisionDetector : StandardBranchCollisionDetector
-	{
-		 private int _depth = -1;
+        public ShortestPathsBranchCollisionDetector(IEvaluator evaluator, System.Predicate<IPath> pathPredicate) : base(evaluator, pathPredicate)
+        {
+        }
 
-		 public ShortestPathsBranchCollisionDetector( Evaluator evaluator, System.Predicate<IPath> pathPredicate ) : base( evaluator, pathPredicate )
-		 {
-		 }
+        protected internal override bool IncludePath(IPath path, ITraversalBranch startBranch, ITraversalBranch endBranch)
+        {
+            if (!base.IncludePath(path, startBranch, endBranch))
+            {
+                return false;
+            }
 
-		 protected internal override bool IncludePath( IPath path, ITraversalBranch startBranch, ITraversalBranch endBranch )
-		 {
-			  if ( !base.IncludePath( path, startBranch, endBranch ) )
-			  {
-					return false;
-			  }
-
-			  if ( _depth == -1 )
-			  {
-					_depth = path.Length;
-					return true;
-			  }
-			  return path.Length== _depth;
-		 }
-	}
-
+            if (_depth == -1)
+            {
+                _depth = path.Length;
+                return true;
+            }
+            return path.Length == _depth;
+        }
+    }
 }

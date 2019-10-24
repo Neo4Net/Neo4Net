@@ -22,7 +22,7 @@
 namespace Neo4Net.Kernel.impl.storemigration.participant
 {
 
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using DatabaseFile = Neo4Net.Io.layout.DatabaseFile;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;

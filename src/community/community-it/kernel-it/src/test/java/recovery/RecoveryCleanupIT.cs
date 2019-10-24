@@ -37,7 +37,7 @@ namespace Recovery
 	using Neo4Net.GraphDb.config;
 	using GraphDatabaseBuilder = Neo4Net.GraphDb.factory.GraphDatabaseBuilder;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using NeoStoreDataSource = Neo4Net.Kernel.NeoStoreDataSource;
 	using LabelScanStore = Neo4Net.Kernel.api.labelscan.LabelScanStore;
 	using CheckPointer = Neo4Net.Kernel.impl.transaction.log.checkpoint.CheckPointer;

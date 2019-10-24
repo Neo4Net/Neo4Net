@@ -26,7 +26,7 @@ namespace Neo4Net.Kernel.Api.Internal
 	using Node = Neo4Net.GraphDb.Node;
 	using Relationship = Neo4Net.GraphDb.Relationship;
 	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
-	using Neo4Net.GraphDb.index;
+	using Neo4Net.GraphDb.Index;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.CoreMatchers.equalTo;

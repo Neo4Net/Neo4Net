@@ -31,7 +31,7 @@ namespace Neo4Net.cluster.com.message
 
 
 	using HostnamePort = Neo4Net.Helpers.HostnamePort;
-	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
+	using MapUtil = Neo4Net.Collections.Helpers.MapUtil;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using LifeSupport = Neo4Net.Kernel.Lifecycle.LifeSupport;
 	using Lifecycle = Neo4Net.Kernel.Lifecycle.Lifecycle;

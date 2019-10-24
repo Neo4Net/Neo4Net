@@ -28,7 +28,7 @@ namespace Neo4Net.Kernel.Impl.Api.constraints
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using EphemeralFileSystemAbstraction = Neo4Net.GraphDb.mockfs.EphemeralFileSystemAbstraction;
 	using IndexDefinition = Neo4Net.GraphDb.Schema.IndexDefinition;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using IndexingService = Neo4Net.Kernel.Impl.Api.index.IndexingService;
 	using RecordStorageEngine = Neo4Net.Kernel.impl.storageengine.impl.recordstorage.RecordStorageEngine;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;

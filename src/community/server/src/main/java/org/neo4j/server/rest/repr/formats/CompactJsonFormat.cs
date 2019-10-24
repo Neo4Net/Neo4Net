@@ -23,7 +23,7 @@ namespace Neo4Net.Server.rest.repr.formats
 {
 
 	using Service = Neo4Net.Helpers.Service;
-	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
+	using MapUtil = Neo4Net.Collections.Helpers.MapUtil;
 	using JsonHelper = Neo4Net.Server.rest.domain.JsonHelper;
 	using JsonParseException = Neo4Net.Server.rest.domain.JsonParseException;
 

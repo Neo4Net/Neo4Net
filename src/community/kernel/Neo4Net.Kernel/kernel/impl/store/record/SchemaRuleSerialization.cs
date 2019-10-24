@@ -20,14 +20,14 @@
 namespace Neo4Net.Kernel.Impl.Store.Records
 {
 
-	using MalformedSchemaRuleException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.MalformedSchemaRuleException;
-	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor;
-	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.LabelSchemaDescriptor;
-	using RelationTypeSchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.RelationTypeSchemaDescriptor;
-	using Neo4Net.Kernel.Api.Internal.schema;
-	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
-	using SchemaProcessor = Neo4Net.Kernel.Api.Internal.schema.SchemaProcessor;
-	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor;
+	using MalformedSchemaRuleException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.MalformedSchemaRuleException;
+	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.Schema.IndexProviderDescriptor;
+	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.LabelSchemaDescriptor;
+	using RelationTypeSchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.RelationTypeSchemaDescriptor;
+	using Neo4Net.Kernel.Api.Internal.Schema;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
+	using SchemaProcessor = Neo4Net.Kernel.Api.Internal.Schema.SchemaProcessor;
+	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor;
 	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
 	using ConstraintDescriptorFactory = Neo4Net.Kernel.api.schema.constraints.ConstraintDescriptorFactory;
 	using NodeKeyConstraintDescriptor = Neo4Net.Kernel.api.schema.constraints.NodeKeyConstraintDescriptor;
@@ -97,7 +97,7 @@ namespace Neo4Net.Kernel.Impl.Store.Records
 		 /// <returns> a SchemaRule </returns>
 		 /// <exception cref="MalformedSchemaRuleException"> if bytes in the buffer do encode a valid SchemaRule </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static org.Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule deserialize(long id, ByteBuffer source) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.MalformedSchemaRuleException
+//ORIGINAL LINE: public static org.Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule deserialize(long id, ByteBuffer source) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.MalformedSchemaRuleException
 		 public static SchemaRule Deserialize( long id, ByteBuffer source )
 		 {
 			  int legacyLabelOrRelTypeId = source.Int;
@@ -242,7 +242,7 @@ namespace Neo4Net.Kernel.Impl.Store.Records
 		 // READ INDEX
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static org.Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor readIndexRule(long id, ByteBuffer source) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.MalformedSchemaRuleException
+//ORIGINAL LINE: private static org.Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor readIndexRule(long id, ByteBuffer source) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.MalformedSchemaRuleException
 		 private static StoreIndexDescriptor ReadIndexRule( long id, ByteBuffer source )
 		 {
 			  IndexProviderDescriptor indexProvider = ReadIndexProviderDescriptor( source );
@@ -280,7 +280,7 @@ namespace Neo4Net.Kernel.Impl.Store.Records
 		 // READ CONSTRAINT
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static ConstraintRule readConstraintRule(long id, ByteBuffer source) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.MalformedSchemaRuleException
+//ORIGINAL LINE: private static ConstraintRule readConstraintRule(long id, ByteBuffer source) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.MalformedSchemaRuleException
 		 private static ConstraintRule ReadConstraintRule( long id, ByteBuffer source )
 		 {
 			  SchemaDescriptor schema;
@@ -325,7 +325,7 @@ namespace Neo4Net.Kernel.Impl.Store.Records
 		 // READ HELP
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static org.Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor readSchema(ByteBuffer source) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.MalformedSchemaRuleException
+//ORIGINAL LINE: private static org.Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor readSchema(ByteBuffer source) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.MalformedSchemaRuleException
 		 private static SchemaDescriptor ReadSchema( ByteBuffer source )
 		 {
 			  int[] propertyIds;
@@ -348,7 +348,7 @@ namespace Neo4Net.Kernel.Impl.Store.Records
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static org.Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor readMultiTokenSchema(ByteBuffer source) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.MalformedSchemaRuleException
+//ORIGINAL LINE: private static org.Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor readMultiTokenSchema(ByteBuffer source) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.MalformedSchemaRuleException
 		 private static SchemaDescriptor ReadMultiTokenSchema( ByteBuffer source )
 		 {
 			  sbyte schemaDescriptorType = source.get();

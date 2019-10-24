@@ -23,7 +23,7 @@ using System.Diagnostics;
 namespace Neo4Net.@unsafe.Impl.Batchimport
 {
 
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using RelationshipGroupRecord = Neo4Net.Kernel.Impl.Store.Records.RelationshipGroupRecord;
 	using ByteArray = Neo4Net.@unsafe.Impl.Batchimport.cache.ByteArray;
 	using LongArray = Neo4Net.@unsafe.Impl.Batchimport.cache.LongArray;

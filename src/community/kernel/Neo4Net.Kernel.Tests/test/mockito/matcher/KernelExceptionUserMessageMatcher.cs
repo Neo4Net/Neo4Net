@@ -23,9 +23,9 @@ namespace Neo4Net.Test.mockito.matcher
 	using Description = org.hamcrest.Description;
 
 	using TokenNameLookup = Neo4Net.Kernel.Api.Internal.TokenNameLookup;
-	using SchemaKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.SchemaKernelException;
+	using SchemaKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.SchemaKernelException;
 
-	public class KernelExceptionUserMessageMatcher<T> : BaseMatcher<T> where T : Neo4Net.Kernel.Api.Internal.Exceptions.schema.SchemaKernelException
+	public class KernelExceptionUserMessageMatcher<T> : BaseMatcher<T> where T : Neo4Net.Kernel.Api.Internal.Exceptions.Schema.SchemaKernelException
 	{
 		 private TokenNameLookup _tokenNameLookup;
 		 private string _expectedMessage;

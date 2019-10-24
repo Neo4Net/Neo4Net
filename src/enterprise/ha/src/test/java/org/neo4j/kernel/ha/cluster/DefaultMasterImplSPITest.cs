@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.ha.cluster
 	using Test = org.junit.Test;
 
 	using StoreWriter = Neo4Net.com.storecopy.StoreWriter;
-	using Iterators = Neo4Net.Helpers.Collections.Iterators;
+	using Iterators = Neo4Net.Collections.Helpers.Iterators;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using TransactionCommitProcess = Neo4Net.Kernel.Impl.Api.TransactionCommitProcess;
 	using IdGeneratorFactory = Neo4Net.Kernel.impl.store.id.IdGeneratorFactory;

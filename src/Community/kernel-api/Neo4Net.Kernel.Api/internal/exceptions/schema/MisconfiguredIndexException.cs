@@ -19,9 +19,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Kernel.Api.Internal.Exceptions.schema
+namespace Neo4Net.Kernel.Api.Internal.Exceptions.Schema
 {
-	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor;
+	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.Schema.IndexProviderDescriptor;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 
 	/// <summary>

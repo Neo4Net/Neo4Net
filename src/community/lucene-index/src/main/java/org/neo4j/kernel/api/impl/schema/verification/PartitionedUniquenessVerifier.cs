@@ -36,7 +36,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.verification
 	using BytesRef = org.apache.lucene.util.BytesRef;
 
 
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using IOUtils = Neo4Net.Io.IOUtils;
 	using IndexEntryConflictException = Neo4Net.Kernel.Api.Exceptions.index.IndexEntryConflictException;
 	using PartitionSearcher = Neo4Net.Kernel.Api.Impl.Index.partition.PartitionSearcher;

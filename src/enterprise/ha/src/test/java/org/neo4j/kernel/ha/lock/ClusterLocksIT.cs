@@ -37,7 +37,7 @@ namespace Neo4Net.Kernel.ha.@lock
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using TransactionTerminatedException = Neo4Net.GraphDb.TransactionTerminatedException;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using IEntityNotFoundException = Neo4Net.Kernel.Api.Internal.Exceptions.EntityNotFoundException;
 	using ClusterManager = Neo4Net.Kernel.impl.ha.ClusterManager;
 	using EntityType = Neo4Net.Kernel.Api.StorageEngine.EntityType;

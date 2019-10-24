@@ -24,7 +24,7 @@ namespace Neo4Net.Test.mockito.matcher
 	using Description = org.hamcrest.Description;
 	using TypeSafeMatcher = org.hamcrest.TypeSafeMatcher;
 
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 
 	/// <summary>
 	/// An org.hamcrest Matcher that matches Iterables. </summary>

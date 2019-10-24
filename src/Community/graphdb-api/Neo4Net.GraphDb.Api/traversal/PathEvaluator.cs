@@ -31,7 +31,7 @@ namespace Neo4Net.GraphDb.Traversal
 	/// <seealso cref= Evaluation </seealso>
 	/// <seealso cref= Evaluators </seealso>
 	/// <seealso cref= TraversalDescription#evaluator(PathEvaluator) </seealso>
-	public interface IPathEvaluator<STATE> : Evaluator
+	public interface IPathEvaluator<STATE> : IEvaluator
 	{
 		 /// <summary>
 		 /// Evaluates a <seealso cref="IPath"/> and returns an <seealso cref="Evaluation"/> containing

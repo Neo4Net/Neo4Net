@@ -26,7 +26,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index
 
 
 	using Neo4Net.GraphDb;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using IOLimiter = Neo4Net.Io.pagecache.IOLimiter;
 	using IndexEntryConflictException = Neo4Net.Kernel.Api.Exceptions.index.IndexEntryConflictException;
 	using LuceneIndexReaderAcquisitionException = Neo4Net.Kernel.Api.Impl.Schema.LuceneIndexReaderAcquisitionException;

@@ -38,7 +38,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 	using StringContainsPredicate = Neo4Net.Kernel.Api.Internal.IndexQuery.StringContainsPredicate;
 	using StringPrefixPredicate = Neo4Net.Kernel.Api.Internal.IndexQuery.StringPrefixPredicate;
 	using StringSuffixPredicate = Neo4Net.Kernel.Api.Internal.IndexQuery.StringSuffixPredicate;
-	using IndexNotApplicableKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotApplicableKernelException;
+	using IndexNotApplicableKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotApplicableKernelException;
 	using TestIndexDescriptorFactory = Neo4Net.Kernel.api.schema.index.TestIndexDescriptorFactory;
 	using IndexReader = Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader;
 	using CoordinateReferenceSystem = Neo4Net.Values.Storable.CoordinateReferenceSystem;
@@ -433,7 +433,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldInstantiatePartLazilyForSpecificValueGroupQuery() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotApplicableKernelException
+//ORIGINAL LINE: @Test public void shouldInstantiatePartLazilyForSpecificValueGroupQuery() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotApplicableKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldInstantiatePartLazilyForSpecificValueGroupQuery()
 		 {
@@ -468,7 +468,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void verifyQueryWithCorrectReader(org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader expectedReader, org.Neo4Net.Kernel.Api.Internal.IndexQuery... indexQuery) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotApplicableKernelException
+//ORIGINAL LINE: private void verifyQueryWithCorrectReader(org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader expectedReader, org.Neo4Net.Kernel.Api.Internal.IndexQuery... indexQuery) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotApplicableKernelException
 		 private void VerifyQueryWithCorrectReader( IndexReader expectedReader, params IndexQuery[] indexQuery )
 		 {
 			  // when

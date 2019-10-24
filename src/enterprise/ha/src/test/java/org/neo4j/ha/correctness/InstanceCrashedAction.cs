@@ -24,7 +24,7 @@
  */
 namespace Neo4Net.ha.correctness
 {
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 
 	public class InstanceCrashedAction : ClusterAction
 	{

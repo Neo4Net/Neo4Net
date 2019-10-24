@@ -33,7 +33,7 @@ namespace Schema
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using GraphDatabaseBuilder = Neo4Net.GraphDb.factory.GraphDatabaseBuilder;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using SpatialIndexValueTestUtil = Neo4Net.Kernel.Impl.Index.Schema.config.SpatialIndexValueTestUtil;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;

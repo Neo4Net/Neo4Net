@@ -28,7 +28,7 @@ namespace Neo4Net.Kernel
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using TransactionData = Neo4Net.GraphDb.Events.TransactionData;
 	using Neo4Net.GraphDb.Events;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using DatabaseRule = Neo4Net.Test.rule.DatabaseRule;
 	using ImpermanentDatabaseRule = Neo4Net.Test.rule.ImpermanentDatabaseRule;
 

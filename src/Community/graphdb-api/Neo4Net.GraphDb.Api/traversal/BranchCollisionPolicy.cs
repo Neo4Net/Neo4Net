@@ -17,15 +17,14 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 namespace Neo4Net.GraphDb.Traversal
 {
-
-	/// <summary>
-	/// Copied from kernel package so that we can hide kernel from the public API.
-	/// </summary>
-	public interface BranchCollisionPolicy
-	{
-		 BranchCollisionDetector Create( Evaluator evaluator, System.Predicate<IPath> pathPredicate );
-	}
-
+    /// <summary>
+    /// Copied from kernel package so that we can hide kernel from the public API.
+    /// </summary>
+    public interface BranchCollisionPolicy
+    {
+        IBranchCollisionDetector Create(IEvaluator evaluator, System.Predicate<IPath> pathPredicate);
+    }
 }

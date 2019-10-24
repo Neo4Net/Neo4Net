@@ -62,7 +62,7 @@ namespace Neo4Net.CodeGen
 		 internal virtual StringBuilder WriteTo( StringBuilder result )
 		 {
 			  result.Append( "Parameter[ " );
-			  _type.writeTo( result );
+			  _type.WriteTo( result );
 			  return result.Append( " " ).Append( _name ).Append( " ]" );
 		 }
 

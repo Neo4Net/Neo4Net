@@ -20,7 +20,7 @@
 namespace Neo4Net.Kernel.Api.Impl.Schema
 {
 
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using IndexEntryConflictException = Neo4Net.Kernel.Api.Exceptions.index.IndexEntryConflictException;
 	using Neo4Net.Kernel.Api.Impl.Index;
 	using IndexUpdater = Neo4Net.Kernel.Api.Index.IndexUpdater;

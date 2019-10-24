@@ -33,7 +33,7 @@ namespace Neo4Net.Kernel.impl.traversal
 	using Evaluation = Neo4Net.GraphDb.Traversal.Evaluation;
 	using Evaluator = Neo4Net.GraphDb.Traversal.Evaluator;
 	using TraversalDescription = Neo4Net.GraphDb.Traversal.TraversalDescription;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.graphdb.traversal.Evaluators.includeIfAcceptedByAny;

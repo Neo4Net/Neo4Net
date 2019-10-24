@@ -23,8 +23,8 @@ namespace Neo4Net.Kernel.Impl.Newapi
 	using IndexQuery = Neo4Net.Kernel.Api.Internal.IndexQuery;
 	using IndexReference = Neo4Net.Kernel.Api.Internal.IndexReference;
 	using NodeValueIndexCursor = Neo4Net.Kernel.Api.Internal.NodeValueIndexCursor;
-	using IndexNotApplicableKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotApplicableKernelException;
-	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
+	using IndexNotApplicableKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotApplicableKernelException;
+	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException;
 	using Locks = Neo4Net.Kernel.impl.locking.Locks;
 	using LockTracer = Neo4Net.Kernel.Api.StorageEngine.@lock.LockTracer;
 	using IndexReader = Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader;
@@ -37,7 +37,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 	public class LockingNodeUniqueIndexSeek
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static <CURSOR extends org.Neo4Net.Kernel.Api.Internal.NodeValueIndexCursor> long apply(org.Neo4Net.kernel.impl.locking.Locks_Client locks, org.Neo4Net.Kernel.Api.StorageEngine.lock.LockTracer lockTracer, System.Func<CURSOR> cursors, UniqueNodeIndexSeeker<CURSOR> nodeIndexSeeker, Read read, org.Neo4Net.Kernel.Api.Internal.IndexReference index, org.Neo4Net.Kernel.Api.Internal.IndexQuery.ExactPredicate... predicates) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotApplicableKernelException, org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: public static <CURSOR extends org.Neo4Net.Kernel.Api.Internal.NodeValueIndexCursor> long apply(org.Neo4Net.kernel.impl.locking.Locks_Client locks, org.Neo4Net.Kernel.Api.StorageEngine.lock.LockTracer lockTracer, System.Func<CURSOR> cursors, UniqueNodeIndexSeeker<CURSOR> nodeIndexSeeker, Read read, org.Neo4Net.Kernel.Api.Internal.IndexReference index, org.Neo4Net.Kernel.Api.Internal.IndexQuery.ExactPredicate... predicates) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotApplicableKernelException, org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
 		 public static long Apply<CURSOR>( Neo4Net.Kernel.impl.locking.Locks_Client locks, LockTracer lockTracer, System.Func<CURSOR> cursors, UniqueNodeIndexSeeker<CURSOR> nodeIndexSeeker, Read read, IndexReference index, params IndexQuery.ExactPredicate[] predicates ) where CURSOR : Neo4Net.Kernel.Api.Internal.NodeValueIndexCursor
 		 {
 			  int[] IEntityTokenIds = index.Schema().EntityTokenIds;
@@ -73,7 +73,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 internal interface UniqueNodeIndexSeeker<CURSOR> where CURSOR : Neo4Net.Kernel.Api.Internal.NodeValueIndexCursor
 		 {
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void nodeIndexSeekWithFreshIndexReader(CURSOR cursor, org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader indexReader, org.Neo4Net.Kernel.Api.Internal.IndexQuery.ExactPredicate... predicates) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotApplicableKernelException;
+//ORIGINAL LINE: void nodeIndexSeekWithFreshIndexReader(CURSOR cursor, org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader indexReader, org.Neo4Net.Kernel.Api.Internal.IndexQuery.ExactPredicate... predicates) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotApplicableKernelException;
 			  void NodeIndexSeekWithFreshIndexReader( CURSOR cursor, IndexReader indexReader, params IndexQuery.ExactPredicate[] predicates );
 		 }
 	}

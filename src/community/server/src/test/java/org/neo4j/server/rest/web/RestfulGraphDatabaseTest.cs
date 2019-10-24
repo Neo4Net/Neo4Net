@@ -33,8 +33,8 @@ namespace Neo4Net.Server.rest.web
 	using Label = Neo4Net.GraphDb.Label;
 	using Node = Neo4Net.GraphDb.Node;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using Neo4Net.GraphDb.index;
-	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
+	using Neo4Net.GraphDb.Index;
+	using MapUtil = Neo4Net.Collections.Helpers.MapUtil;
 	using Status_Request = Neo4Net.Kernel.Api.Exceptions.Status_Request;
 	using Status_Schema = Neo4Net.Kernel.Api.Exceptions.Status_Schema;
 	using Status_Statement = Neo4Net.Kernel.Api.Exceptions.Status_Statement;

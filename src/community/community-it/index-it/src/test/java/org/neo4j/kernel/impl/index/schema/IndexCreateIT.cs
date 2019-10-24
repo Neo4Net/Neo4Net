@@ -24,8 +24,8 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using SchemaWrite = Neo4Net.Kernel.Api.Internal.SchemaWrite;
 	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
-	using SchemaKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.SchemaKernelException;
-	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.LabelSchemaDescriptor;
+	using SchemaKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.SchemaKernelException;
+	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.LabelSchemaDescriptor;
 	using RepeatedLabelInSchemaException = Neo4Net.Kernel.Api.Exceptions.schema.RepeatedLabelInSchemaException;
 	using RepeatedPropertyInSchemaException = Neo4Net.Kernel.Api.Exceptions.schema.RepeatedPropertyInSchemaException;
 	using RepeatedRelationshipTypeInSchemaException = Neo4Net.Kernel.Api.Exceptions.schema.RepeatedRelationshipTypeInSchemaException;
@@ -209,10 +209,10 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 			  }
 		 }
 
-		 internal interface IndexCreator
+		 internal interface IIndexCreator
 		 {
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void create(org.Neo4Net.Kernel.Api.Internal.SchemaWrite schemaWrite, org.Neo4Net.Kernel.Api.Internal.schema.LabelSchemaDescriptor descriptor, String providerName) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.SchemaKernelException;
+//ORIGINAL LINE: void create(org.Neo4Net.Kernel.Api.Internal.SchemaWrite schemaWrite, org.Neo4Net.Kernel.Api.Internal.Schema.LabelSchemaDescriptor descriptor, String providerName) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.SchemaKernelException;
 			  void Create( SchemaWrite schemaWrite, LabelSchemaDescriptor descriptor, string providerName );
 		 }
 	}

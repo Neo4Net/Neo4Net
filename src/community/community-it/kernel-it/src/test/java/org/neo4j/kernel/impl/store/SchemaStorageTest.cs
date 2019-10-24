@@ -35,11 +35,11 @@ namespace Neo4Net.Kernel.impl.store
 	using Label = Neo4Net.GraphDb.Label;
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using IndexCreator = Neo4Net.GraphDb.Schema.IndexCreator;
-	using Iterators = Neo4Net.Helpers.Collections.Iterators;
+	using Iterators = Neo4Net.Collections.Helpers.Iterators;
 	using TokenNameLookup = Neo4Net.Kernel.Api.Internal.TokenNameLookup;
 	using TokenWrite = Neo4Net.Kernel.Api.Internal.TokenWrite;
-	using SchemaDescriptorPredicates = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptorPredicates;
-	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor;
+	using SchemaDescriptorPredicates = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptorPredicates;
+	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using DuplicateSchemaRuleException = Neo4Net.Kernel.Api.Exceptions.schema.DuplicateSchemaRuleException;
 	using SchemaRuleNotFoundException = Neo4Net.Kernel.Api.Exceptions.schema.SchemaRuleNotFoundException;
@@ -250,7 +250,7 @@ namespace Neo4Net.Kernel.impl.store
 
 			  // Then
 			  assertNotNull( rule );
-			  AssertRule( rule, LABEL1, PROP1, Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor_Type.Unique );
+			  AssertRule( rule, LABEL1, PROP1, Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor_Type.Unique );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -341,7 +341,7 @@ namespace Neo4Net.Kernel.impl.store
 			  assertEquals( type, rule.Type() );
 		 }
 
-		 private void AssertRule( ConstraintRule rule, string label, string propertyKey, Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor_Type type )
+		 private void AssertRule( ConstraintRule rule, string label, string propertyKey, Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor_Type type )
 		 {
 			  assertTrue( SchemaDescriptorPredicates.hasLabel( rule, LabelId( label ) ) );
 			  assertTrue( SchemaDescriptorPredicates.hasProperty( rule, PropId( propertyKey ) ) );

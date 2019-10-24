@@ -22,7 +22,7 @@
 namespace Neo4Net.Index.impl.lucene.@explicit
 {
 
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using ExplicitIndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
 	using IndexConfigStore = Neo4Net.Kernel.impl.index.IndexConfigStore;
 

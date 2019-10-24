@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 	using IndexReference = Neo4Net.Kernel.Api.Internal.IndexReference;
 	using SchemaRead = Neo4Net.Kernel.Api.Internal.SchemaRead;
 	using SchemaWrite = Neo4Net.Kernel.Api.Internal.SchemaWrite;
-	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
 	using KernelTransactionImplementation = Neo4Net.Kernel.Impl.Api.KernelTransactionImplementation;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:

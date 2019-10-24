@@ -151,7 +151,7 @@ namespace Neo4Net.CodeGen
 
 		 internal virtual void WriteTo( StringBuilder result )
 		 {
-			  _owner.writeTo( result );
+			  _owner.WriteTo( result );
 			  result.Append( "#" ).Append( _name ).Append( "(...)" );
 		 }
 	}

@@ -39,7 +39,7 @@ namespace Neo4Net.cluster.protocol.heartbeat
 	using ElectionCredentialsProvider = Neo4Net.cluster.protocol.election.ElectionCredentialsProvider;
 	using ElectionRole = Neo4Net.cluster.protocol.election.ElectionRole;
 	using Timeouts = Neo4Net.cluster.timeout.Timeouts;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
 

@@ -22,7 +22,7 @@
  */
 namespace Neo4Net.causalclustering.core.consensus.log.cache
 {
-	public interface InFlightCacheMonitor
+	public interface IInFlightCacheMonitor
 	{
 	//JAVA TO C# CONVERTER TODO TASK: The following anonymous inner class could not be converted:
 	//	 InFlightCacheMonitor VOID = new InFlightCacheMonitor()

@@ -21,7 +21,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.sampler
 {
 	using TaskControl = Neo4Net.Helpers.TaskControl;
 	using TaskCoordinator = Neo4Net.Helpers.TaskCoordinator;
-	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
+	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException;
 	using IndexSampler = Neo4Net.Kernel.Api.StorageEngine.schema.IndexSampler;
 
 	/// <summary>
@@ -43,7 +43,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.sampler
 		 /// </summary>
 		 /// <exception cref="IndexNotFoundKernelException"> if cancellation was requested. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void checkCancellation() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: void checkCancellation() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
 		 internal virtual void CheckCancellation()
 		 {
 			  if ( _executionTicket.cancellationRequested() )

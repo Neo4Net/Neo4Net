@@ -36,14 +36,14 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 	using ConstraintDefinition = Neo4Net.GraphDb.Schema.ConstraintDefinition;
 	using IndexDefinition = Neo4Net.GraphDb.Schema.IndexDefinition;
 	using Schema = Neo4Net.GraphDb.Schema.Schema;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using SchemaWrite = Neo4Net.Kernel.Api.Internal.SchemaWrite;
 	using TokenWrite = Neo4Net.Kernel.Api.Internal.TokenWrite;
 	using Transaction = Neo4Net.Kernel.Api.Internal.Transaction;
 	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
-	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
-	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
+	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using AlreadyConstrainedException = Neo4Net.Kernel.Api.Exceptions.schema.AlreadyConstrainedException;
 	using DropConstraintFailureException = Neo4Net.Kernel.Api.Exceptions.schema.DropConstraintFailureException;
@@ -71,7 +71,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.Kernel.Api.Internal.security.LoginContext.AUTH_DISABLED;
 
-	public abstract class AbstractConstraintCreationIT<Constraint, DESCRIPTOR> : KernelIntegrationTest where Constraint : Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor where DESCRIPTOR : Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor
+	public abstract class AbstractConstraintCreationIT<Constraint, DESCRIPTOR> : KernelIntegrationTest where Constraint : Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor where DESCRIPTOR : Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor
 	{
 		 internal const string KEY = "Foo";
 		 internal const string PROP = "bar";

@@ -27,8 +27,8 @@ namespace Neo4Net.Kernel.Api.StorageEngine
 	using IndexReference = Neo4Net.Kernel.Api.Internal.IndexReference;
 	using InternalIndexState = Neo4Net.Kernel.Api.Internal.InternalIndexState;
 	using IEntityNotFoundException = Neo4Net.Kernel.Api.Internal.Exceptions.EntityNotFoundException;
-	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
-	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
+	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor;
 	using DelegatingTokenHolder = Neo4Net.Kernel.impl.core.DelegatingTokenHolder;
 	using TokenHolder = Neo4Net.Kernel.impl.core.TokenHolder;
 	using Register = Neo4Net.Register.Register;

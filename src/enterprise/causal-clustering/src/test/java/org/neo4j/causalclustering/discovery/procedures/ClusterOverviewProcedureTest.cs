@@ -32,7 +32,7 @@ namespace Neo4Net.causalclustering.discovery.procedures
 	using CausalClusteringSettings = Neo4Net.causalclustering.core.CausalClusteringSettings;
 	using MemberId = Neo4Net.causalclustering.identity.MemberId;
 	using Neo4Net.Collections;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
 

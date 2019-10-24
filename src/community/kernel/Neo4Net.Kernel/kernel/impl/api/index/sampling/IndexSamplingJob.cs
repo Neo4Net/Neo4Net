@@ -21,7 +21,7 @@
  */
 namespace Neo4Net.Kernel.Impl.Api.index.sampling
 {
-	public interface IndexSamplingJob : ThreadStart
+	public interface IIndexSamplingJob : ThreadStart
 	{
 		 long IndexId();
 	}

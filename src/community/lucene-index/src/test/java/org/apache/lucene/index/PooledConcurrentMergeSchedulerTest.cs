@@ -32,7 +32,7 @@ namespace Org.Apache.Lucene.Index
 	using Mockito = org.mockito.Mockito;
 
 
-	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
+	using MapUtil = Neo4Net.Collections.Helpers.MapUtil;
 	using ThreadTestUtils = Neo4Net.Test.ThreadTestUtils;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:

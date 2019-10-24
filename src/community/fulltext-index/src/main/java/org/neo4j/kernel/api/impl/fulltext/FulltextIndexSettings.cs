@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 	using Analyzer = org.apache.lucene.analysis.Analyzer;
 
 
-	using AnalyzerProvider = Neo4Net.GraphDb.index.fulltext.AnalyzerProvider;
+	using AnalyzerProvider = Neo4Net.GraphDb.Index.fulltext.AnalyzerProvider;
 	using PropertyKeyIdNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.PropertyKeyIdNotFoundKernelException;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using StoreChannel = Neo4Net.Io.fs.StoreChannel;

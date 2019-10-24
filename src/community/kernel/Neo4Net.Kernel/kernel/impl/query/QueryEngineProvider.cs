@@ -23,7 +23,7 @@ namespace Neo4Net.Kernel.impl.query
 {
 
 	using Service = Neo4Net.Helpers.Service;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using Dependencies = Neo4Net.Kernel.impl.util.Dependencies;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
 

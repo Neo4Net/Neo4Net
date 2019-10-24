@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.ha.cluster.member
 
 	using OnlineBackupKernelExtension = Neo4Net.backup.OnlineBackupKernelExtension;
 	using InstanceId = Neo4Net.cluster.InstanceId;
-	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
+	using MapUtil = Neo4Net.Collections.Helpers.MapUtil;
 	using HighAvailabilityModeSwitcher = Neo4Net.Kernel.ha.cluster.modeswitch.HighAvailabilityModeSwitcher;
 	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
 

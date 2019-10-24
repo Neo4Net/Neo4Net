@@ -391,7 +391,7 @@ namespace Neo4Net.Cypher.operations
 			  return value is FloatingPointValue && ( ( FloatingPointValue ) value ).NaN;
 		 }
 
-		 private sealed class BooleanMapper : ValueMapper<Value>
+		 private sealed class BooleanMapper : IValueMapper<Value>
 		 {
 			  public override Value MapPath( PathValue value )
 			  {

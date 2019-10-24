@@ -28,11 +28,11 @@ namespace Neo4Net.GraphDb.Traversal
 
 		 public override bool Check( ITraversalBranch source )
 		 {
-			  long idToCompare = Type.getId( source );
+			  long idToCompare = Type.GetId( source );
 			  while ( source.Length> 0 )
 			  {
-					source = source.Parent();
-					if ( Type.idEquals( source, idToCompare ) )
+					source = source.Parent;
+					if ( Type.IdEquals( source, idToCompare ) )
 					{
 						 return false;
 					}
@@ -42,7 +42,7 @@ namespace Neo4Net.GraphDb.Traversal
 
 		 public override bool CheckFull( IPath path )
 		 {
-			  return !Type.containsDuplicates( path );
+			  return !Type.ContainsDuplicates( path );
 		 }
 	}
 

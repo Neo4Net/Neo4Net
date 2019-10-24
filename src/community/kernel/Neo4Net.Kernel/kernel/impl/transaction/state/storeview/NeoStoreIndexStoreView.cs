@@ -23,7 +23,7 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 {
 	using MutableIntSet = org.eclipse.collections.api.set.primitive.MutableIntSet;
 
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using IEntityNotFoundException = Neo4Net.Kernel.Api.Internal.Exceptions.EntityNotFoundException;
 	using NodeLabelUpdate = Neo4Net.Kernel.api.labelscan.NodeLabelUpdate;
 	using CountsAccessor = Neo4Net.Kernel.Impl.Api.CountsAccessor;

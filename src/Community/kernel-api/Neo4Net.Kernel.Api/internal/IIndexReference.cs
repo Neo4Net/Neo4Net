@@ -20,7 +20,7 @@
 
 namespace Neo4Net.Kernel.Api.Internal
 {
-   using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
+   using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
 
    /// <summary>
    /// Reference to a specific index together with it's capabilities. This reference is valid until the schema of the database changes

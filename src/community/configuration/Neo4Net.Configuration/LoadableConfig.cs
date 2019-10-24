@@ -22,7 +22,7 @@ namespace Neo4Net.Configuration
 
 	using Neo4Net.GraphDb.config;
 	using Neo4Net.GraphDb.config;
-	using Iterators = Neo4Net.Helpers.Collections.Iterators;
+	using Iterators = Neo4Net.Collections.Helpers.Iterators;
 
 	/// <summary>
 	/// Every class which contains settings should implement this interface to allow the configuration to find the

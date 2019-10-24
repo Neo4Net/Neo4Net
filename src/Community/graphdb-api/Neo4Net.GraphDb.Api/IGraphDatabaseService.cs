@@ -24,11 +24,11 @@ using System.Collections.Generic;
 namespace Neo4Net.GraphDb
 {
    using Neo4Net.GraphDb.Events;
-   using BidirectionalTraversalDescription = Neo4Net.GraphDb.Traversal.BidirectionalTraversalDescription;
+   using IBidirectionalTraversalDescription = Neo4Net.GraphDb.Traversal.IBidirectionalTraversalDescription;
    using IKernelEventHandler = Neo4Net.GraphDb.Events.IKernelEventHandler;
-   using IndexManager = Neo4Net.GraphDb.index.IndexManager;
+   using IndexManager = Neo4Net.GraphDb.Index.IndexManager;
    using ISchema = Neo4Net.GraphDb.Schema.ISchema;
-   using TraversalDescription = Neo4Net.GraphDb.Traversal.TraversalDescription;
+   using ITraversalDescription = Neo4Net.GraphDb.Traversal.ITraversalDescription;
 
    /// <summary>
    /// The main access point to a running Neo4Net instance. The most common way to instantiate a <seealso cref="GraphDatabaseService"/>
@@ -541,12 +541,12 @@ namespace Neo4Net.GraphDb
       /// Factory method for unidirectional traversal descriptions.
       /// </summary>
       /// <returns> a new <seealso cref="TraversalDescription"/> </returns>
-      TraversalDescription TraversalDescription();
+      ITraversalDescription TraversalDescription();
 
       /// <summary>
       /// Factory method for bidirectional traversal descriptions.
       /// </summary>
       /// <returns> a new <seealso cref="BidirectionalTraversalDescription"/> </returns>
-      BidirectionalTraversalDescription BidirectionalTraversalDescription();
+      IBidirectionalTraversalDescription BidirectionalTraversalDescription();
    }
 }

@@ -30,8 +30,8 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input.csv
 	using Extractors = Neo4Net.Csv.Reader.Extractors;
 	using Mark = Neo4Net.Csv.Reader.Mark;
 	using Neo4Net.Functions;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
-	using Neo4Net.Helpers.Collections;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
+	using Neo4Net.Collections.Helpers;
 	using Entry = Neo4Net.@unsafe.Impl.Batchimport.input.csv.Header.Entry;
 	using CSVHeaderInformation = Neo4Net.Values.Storable.CSVHeaderInformation;
 	using PointValue = Neo4Net.Values.Storable.PointValue;

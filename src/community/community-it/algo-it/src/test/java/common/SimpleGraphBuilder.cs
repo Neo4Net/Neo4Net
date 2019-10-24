@@ -31,7 +31,7 @@ namespace Common
 	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
 	using Neo4Net.GraphDb;
 	using Neo4Net.GraphDb;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 
 	public class SimpleGraphBuilder
 	{

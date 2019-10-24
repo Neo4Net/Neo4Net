@@ -39,8 +39,8 @@ namespace Neo4Net.Kernel.configuration
 	using Numbers = Neo4Net.Helpers.Numbers;
 	using SocketAddressParser = Neo4Net.Helpers.SocketAddressParser;
 	using TimeUtil = Neo4Net.Helpers.TimeUtil;
-	using CollectorsUtil = Neo4Net.Helpers.Collections.CollectorsUtil;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using CollectorsUtil = Neo4Net.Collections.Helpers.CollectorsUtil;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using ByteUnit = Neo4Net.Io.ByteUnit;
 	using DateTimeValue = Neo4Net.Values.Storable.DateTimeValue;
 

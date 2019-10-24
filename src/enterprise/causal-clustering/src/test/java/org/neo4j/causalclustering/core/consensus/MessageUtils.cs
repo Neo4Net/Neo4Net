@@ -25,8 +25,8 @@ namespace Neo4Net.causalclustering.core.consensus
 
 	using Outcome = Neo4Net.causalclustering.core.consensus.outcome.Outcome;
 	using MemberId = Neo4Net.causalclustering.identity.MemberId;
-	using Neo4Net.Helpers.Collections;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Neo4Net.Collections.Helpers;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 
 	public class MessageUtils
 	{

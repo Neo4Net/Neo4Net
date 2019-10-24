@@ -30,7 +30,7 @@ namespace Neo4Net.Kernel.ha.cluster
 	using ClusterMemberListener = Neo4Net.cluster.member.ClusterMemberListener;
 	using Election = Neo4Net.cluster.protocol.election.Election;
 	using Neo4Net.Helpers;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using AvailabilityGuard = Neo4Net.Kernel.availability.AvailabilityGuard;
 	using AvailabilityRequirement = Neo4Net.Kernel.availability.AvailabilityRequirement;
 	using DescriptiveAvailabilityRequirement = Neo4Net.Kernel.availability.DescriptiveAvailabilityRequirement;

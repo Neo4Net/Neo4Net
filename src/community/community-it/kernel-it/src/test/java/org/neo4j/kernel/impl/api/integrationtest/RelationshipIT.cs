@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 
 
 	using Direction = Neo4Net.GraphDb.Direction;
-	using Iterators = Neo4Net.Helpers.Collections.Iterators;
+	using Iterators = Neo4Net.Collections.Helpers.Iterators;
 	using Transaction = Neo4Net.Kernel.Api.Internal.Transaction;
 	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using AnonymousContext = Neo4Net.Kernel.api.security.AnonymousContext;
@@ -62,7 +62,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 		 public virtual void ShouldListRelationshipsInCurrentAndSubsequentTx()
 		 {
 			  // given
-			  Transaction transaction = NewTransaction( AnonymousContext.writeToken() );
+			  Transaction transaction = NewTransaction( AnonymousContext.WriteToken() );
 			  int relType1 = transaction.TokenWrite().relationshipTypeGetOrCreateForName("Type1");
 			  int relType2 = transaction.TokenWrite().relationshipTypeGetOrCreateForName("Type2");
 
@@ -119,7 +119,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 			  int relType1;
 			  int relType2;
 			  {
-					Transaction transaction = NewTransaction( AnonymousContext.writeToken() );
+					Transaction transaction = NewTransaction( AnonymousContext.WriteToken() );
 
 					relType1 = transaction.TokenWrite().relationshipTypeGetOrCreateForName("Type1");
 					relType2 = transaction.TokenWrite().relationshipTypeGetOrCreateForName("Type2");
@@ -131,7 +131,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 					Commit();
 			  }
 			  {
-					Transaction transaction = NewTransaction( AnonymousContext.writeToken() );
+					Transaction transaction = NewTransaction( AnonymousContext.WriteToken() );
 
 					// When
 					transaction.DataWrite().relationshipDelete(fromRefToOther1);
@@ -150,7 +150,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldReturnRelsWhenAskingForRelsWhereOnlySomeTypesExistInCurrentRel()
 		 {
-			  Transaction transaction = NewTransaction( AnonymousContext.writeToken() );
+			  Transaction transaction = NewTransaction( AnonymousContext.WriteToken() );
 
 			  int relType1 = transaction.TokenWrite().relationshipTypeGetOrCreateForName("Type1");
 			  int relType2 = transaction.TokenWrite().relationshipTypeGetOrCreateForName("Type2");
@@ -174,7 +174,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 			  int relTypeTheNodeDoesUse;
 			  int relTypeTheNodeDoesNotUse;
 			  {
-					Transaction transaction = NewTransaction( AnonymousContext.writeToken() );
+					Transaction transaction = NewTransaction( AnonymousContext.WriteToken() );
 
 					relTypeTheNodeDoesUse = transaction.TokenWrite().relationshipTypeGetOrCreateForName("Type1");
 					relTypeTheNodeDoesNotUse = transaction.TokenWrite().relationshipTypeGetOrCreateForName("Type2");

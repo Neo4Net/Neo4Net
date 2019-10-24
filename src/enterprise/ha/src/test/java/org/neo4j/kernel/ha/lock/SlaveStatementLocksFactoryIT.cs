@@ -33,7 +33,7 @@ namespace Neo4Net.Kernel.ha.@lock
 	using Node = Neo4Net.GraphDb.Node;
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using LockRecord = Neo4Net.Kernel.ha.@lock.trace.LockRecord;
 	using RecordingLockTracer = Neo4Net.Kernel.ha.@lock.trace.RecordingLockTracer;
 	using ClusterManager = Neo4Net.Kernel.impl.ha.ClusterManager;

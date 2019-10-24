@@ -22,7 +22,7 @@ using Neo4Net.Kernel.Impl.Store.Records;
 namespace Neo4Net.Kernel.Impl.Store.Allocators
 {
 
-	using Iterators = Neo4Net.Helpers.Collections.Iterators;
+	using Iterators = Neo4Net.Collections.Helpers.Iterators;
     //.DynamicRecord;
 
 	/// <summary>

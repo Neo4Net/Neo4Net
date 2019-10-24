@@ -27,8 +27,8 @@ namespace Neo4Net.Index
 
 
 	using Label = Neo4Net.GraphDb.Label;
-	using IndexManager = Neo4Net.GraphDb.index.IndexManager;
-	using Neo4Net.Helpers.Collections;
+	using IndexManager = Neo4Net.GraphDb.Index.IndexManager;
+	using Neo4Net.Collections.Helpers;
 	using LuceneBatchInserterIndexProvider = Neo4Net.Index.lucene.@unsafe.batchinsert.LuceneBatchInserterIndexProvider;
 	using Inject = Neo4Net.Test.extension.Inject;
 	using TestDirectoryExtension = Neo4Net.Test.extension.TestDirectoryExtension;

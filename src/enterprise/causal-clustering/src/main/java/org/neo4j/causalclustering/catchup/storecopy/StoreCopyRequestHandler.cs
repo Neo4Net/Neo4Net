@@ -30,7 +30,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 
 	using StoreCopyRequest = Neo4Net.causalclustering.messaging.StoreCopyRequest;
 	using Neo4Net.GraphDb;
-	using Iterators = Neo4Net.Helpers.Collections.Iterators;
+	using Iterators = Neo4Net.Collections.Helpers.Iterators;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using NeoStoreDataSource = Neo4Net.Kernel.NeoStoreDataSource;
 	using Log = Neo4Net.Logging.Log;

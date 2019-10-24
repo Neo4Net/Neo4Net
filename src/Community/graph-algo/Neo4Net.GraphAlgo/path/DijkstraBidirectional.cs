@@ -45,7 +45,7 @@ namespace Neo4Net.GraphAlgo.Path
 	using TraversalMetadata = Neo4Net.GraphDb.Traversal.TraversalMetadata;
 	using Traverser = Neo4Net.GraphDb.Traversal.Traverser;
 	using Uniqueness = Neo4Net.GraphDb.Traversal.Uniqueness;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using NoneStrictMath = Neo4Net.Kernel.impl.util.NoneStrictMath;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:

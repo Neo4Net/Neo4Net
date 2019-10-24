@@ -28,7 +28,7 @@ namespace Neo4Net.Cypher.Internal.codegen
 
 	using Path = Neo4Net.GraphDb.Path;
 	using Point = Neo4Net.GraphDb.Spatial.Point;
-	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
+	using MapUtil = Neo4Net.Collections.Helpers.MapUtil;
 	using EmbeddedProxySPI = Neo4Net.Kernel.impl.core.EmbeddedProxySPI;
 	using NodeProxy = Neo4Net.Kernel.impl.core.NodeProxy;
 	using RelationshipProxy = Neo4Net.Kernel.impl.core.RelationshipProxy;
@@ -183,9 +183,9 @@ namespace Neo4Net.Cypher.Internal.codegen
 //ORIGINAL LINE: @Test public void shouldHandleBooleans()
 		 public virtual void ShouldHandleBooleans()
 		 {
-			  TRUE.writeTo( _converter );
+			  TRUE.WriteTo( _converter );
 			  assertThat( _converter.value(), equalTo(true) );
-			  FALSE.writeTo( _converter );
+			  FALSE.WriteTo( _converter );
 			  assertThat( _converter.value(), equalTo(false) );
 		 }
 

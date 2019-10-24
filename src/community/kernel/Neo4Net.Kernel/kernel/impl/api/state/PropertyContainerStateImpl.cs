@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 	using MutableLongSet = org.eclipse.collections.api.set.primitive.MutableLongSet;
 	using IntSets = org.eclipse.collections.impl.factory.primitive.IntSets;
 
-	using Iterators = Neo4Net.Helpers.Collections.Iterators;
+	using Iterators = Neo4Net.Collections.Helpers.Iterators;
 	using PropertyKeyValue = Neo4Net.Kernel.api.properties.PropertyKeyValue;
 	using CollectionsFactory = Neo4Net.Kernel.impl.util.collection.CollectionsFactory;
 	using StorageProperty = Neo4Net.Kernel.Api.StorageEngine.StorageProperty;

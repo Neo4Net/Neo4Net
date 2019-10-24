@@ -25,7 +25,7 @@ namespace Neo4Net.Server.database
 
 	using GraphDatabaseFacadeFactory = Neo4Net.GraphDb.facade.GraphDatabaseFacadeFactory;
 	using URLAccessRule = Neo4Net.GraphDb.security.URLAccessRule;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using AvailabilityGuardInstaller = Neo4Net.Kernel.availability.AvailabilityGuardInstaller;
 	using Neo4Net.Kernel.extension;
 	using QueryEngineProvider = Neo4Net.Kernel.impl.query.QueryEngineProvider;

@@ -29,7 +29,7 @@ namespace Neo4Net.Kernel.Internal
 	using Neo4Net.GraphDb.Events;
 	using TransactionData = Neo4Net.GraphDb.Events.TransactionData;
 	using Neo4Net.GraphDb.Events;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using Neo4Net.Kernel.api;
 	using EmbeddedProxySPI = Neo4Net.Kernel.impl.core.EmbeddedProxySPI;

@@ -36,7 +36,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 	using QueryExecutionException = Neo4Net.GraphDb.QueryExecutionException;
 	using Relationship = Neo4Net.GraphDb.Relationship;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using CreateConstraintFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.CreateConstraintFailureException;
+	using CreateConstraintFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.CreateConstraintFailureException;
 	using ConstraintViolationTransactionFailureException = Neo4Net.Kernel.Api.Exceptions.ConstraintViolationTransactionFailureException;
 	using Operations = Neo4Net.Kernel.Impl.Newapi.Operations;
 	using DatabaseRule = Neo4Net.Test.rule.DatabaseRule;

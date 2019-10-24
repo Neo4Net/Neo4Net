@@ -23,8 +23,8 @@ using System.Text;
 namespace Neo4Net.Kernel.impl.store
 {
 
-	using Neo4Net.Helpers.Collections;
-	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
+	using Neo4Net.Collections.Helpers;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
 
 	public class MultipleUnderlyingStorageExceptions : UnderlyingStorageException
 	{

@@ -25,7 +25,7 @@
 namespace Neo4Net.management
 {
 
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 
 	/// <summary>
 	/// This class captures the least amount of information available for a cluster member to any

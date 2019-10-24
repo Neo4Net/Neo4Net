@@ -23,7 +23,7 @@ namespace Neo4Net.Kernel.impl.store
 
 	using Neo4Net.GraphDb;
 	using Neo4Net.GraphDb;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using PageCursor = Neo4Net.Io.pagecache.PageCursor;
 	using AbstractBaseRecord = Neo4Net.Kernel.Impl.Store.Records.AbstractBaseRecord;
 	using RecordLoad = Neo4Net.Kernel.Impl.Store.Records.RecordLoad;

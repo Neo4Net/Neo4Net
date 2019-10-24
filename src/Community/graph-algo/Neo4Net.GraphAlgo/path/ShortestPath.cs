@@ -41,10 +41,10 @@ namespace Neo4Net.GraphAlgo.Path
 	using Neo4Net.GraphDb;
 	using Neo4Net.GraphDb.Traversal;
 	using TraversalMetadata = Neo4Net.GraphDb.Traversal.TraversalMetadata;
-	using Neo4Net.Helpers.Collections;
-	using Iterators = Neo4Net.Helpers.Collections.Iterators;
-	using Neo4Net.Helpers.Collections;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
+	using Iterators = Neo4Net.Collections.Helpers.Iterators;
+	using Neo4Net.Collections.Helpers;
+	using Neo4Net.Collections.Helpers;
 	using GraphDatabaseFacade = Neo4Net.Kernel.impl.factory.GraphDatabaseFacade;
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
 

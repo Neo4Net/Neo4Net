@@ -26,7 +26,7 @@ namespace Neo4Net.com
 {
 	using ChannelBuffer = org.jboss.netty.buffer.ChannelBuffer;
 
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using CommittedTransactionRepresentation = Neo4Net.Kernel.impl.transaction.CommittedTransactionRepresentation;
 	using FlushableChannel = Neo4Net.Kernel.impl.transaction.log.FlushableChannel;
 	using LogEntryWriter = Neo4Net.Kernel.impl.transaction.log.entry.LogEntryWriter;

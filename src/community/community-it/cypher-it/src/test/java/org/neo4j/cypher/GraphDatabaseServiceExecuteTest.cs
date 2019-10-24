@@ -32,7 +32,7 @@ namespace Neo4Net.Cypher
 	using Coordinate = Neo4Net.GraphDb.Spatial.Coordinate;
 	using Geometry = Neo4Net.GraphDb.Spatial.Geometry;
 	using Point = Neo4Net.GraphDb.Spatial.Point;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using Procedures = Neo4Net.Kernel.impl.proc.Procedures;
 	using Name = Neo4Net.Procedure.Name;
 	using Procedure = Neo4Net.Procedure.Procedure;

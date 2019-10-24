@@ -22,7 +22,7 @@
 namespace Neo4Net.Kernel.impl.transaction.state.storeview
 {
 
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using IEntityUpdates = Neo4Net.Kernel.Impl.Api.index.EntityUpdates;
 	using LockService = Neo4Net.Kernel.impl.locking.LockService;
 	using StorageReader = Neo4Net.Kernel.Api.StorageEngine.StorageReader;

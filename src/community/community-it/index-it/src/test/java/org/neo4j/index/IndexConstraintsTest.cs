@@ -30,7 +30,7 @@ namespace Neo4Net.Index
 	using Label = Neo4Net.GraphDb.Label;
 	using Node = Neo4Net.GraphDb.Node;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using Neo4Net.GraphDb.index;
+	using Neo4Net.GraphDb.Index;
 	using ConstraintDefinition = Neo4Net.GraphDb.Schema.ConstraintDefinition;
 	using IndexDefinition = Neo4Net.GraphDb.Schema.IndexDefinition;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;

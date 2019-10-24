@@ -23,7 +23,7 @@ using System.Text;
 namespace Neo4Net.@unsafe.Impl.Batchimport.stats
 {
 
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 
 	/// <summary>
 	/// Generic implementation for providing <seealso cref="Stat statistics"/>.

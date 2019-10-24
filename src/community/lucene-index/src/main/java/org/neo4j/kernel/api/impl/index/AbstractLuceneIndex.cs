@@ -30,7 +30,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index
 
 	using Neo4Net.GraphDb;
 	using ArrayUtil = Neo4Net.Helpers.ArrayUtil;
-	using Iterators = Neo4Net.Helpers.Collections.Iterators;
+	using Iterators = Neo4Net.Collections.Helpers.Iterators;
 	using IOUtils = Neo4Net.Io.IOUtils;
 	using WritableIndexSnapshotFileIterator = Neo4Net.Kernel.Api.Impl.Index.backup.WritableIndexSnapshotFileIterator;
 	using AbstractIndexPartition = Neo4Net.Kernel.Api.Impl.Index.partition.AbstractIndexPartition;

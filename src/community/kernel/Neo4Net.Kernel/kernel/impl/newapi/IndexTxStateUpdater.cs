@@ -28,7 +28,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 
 	using NodeCursor = Neo4Net.Kernel.Api.Internal.NodeCursor;
 	using PropertyCursor = Neo4Net.Kernel.Api.Internal.PropertyCursor;
-	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
 	using IndexingService = Neo4Net.Kernel.Impl.Api.index.IndexingService;
 	using Value = Neo4Net.Values.Storable.Value;
 	using ValueTuple = Neo4Net.Values.Storable.ValueTuple;

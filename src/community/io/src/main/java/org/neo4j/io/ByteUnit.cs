@@ -22,7 +22,7 @@
 namespace Neo4Net.Io
 {
 
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 
 	/// <summary>
 	/// A ByteUnit is a unit for a quantity of bytes.
@@ -289,7 +289,7 @@ namespace Neo4Net.Io
 			  return new System.ArgumentException( "Invalid number format: '" + text + "'" );
 		 }
 
-		 private static java.util.stream.Stream<Neo4Net.Helpers.Collections.Pair<string, ByteUnit>> ListUnits()
+		 private static java.util.stream.Stream<Neo4Net.Collections.Helpers.Pair<string, ByteUnit>> ListUnits()
 		 {
 			  return Arrays.stream( values() ).flatMap(b => Stream.of(b.names).map(n => Pair.of(n, b)));
 		 }

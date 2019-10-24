@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 
 	using PrimitiveLongResourceCollections = Neo4Net.Collections.PrimitiveLongResourceCollections;
 	using PrimitiveLongResourceIterator = Neo4Net.Collections.PrimitiveLongResourceIterator;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using PageCursor = Neo4Net.Io.pagecache.PageCursor;
 	using AllEntriesLabelScanReader = Neo4Net.Kernel.api.labelscan.AllEntriesLabelScanReader;
 	using LabelScanStore = Neo4Net.Kernel.api.labelscan.LabelScanStore;

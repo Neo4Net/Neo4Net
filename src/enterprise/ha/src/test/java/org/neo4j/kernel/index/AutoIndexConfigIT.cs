@@ -26,7 +26,7 @@ namespace Neo4Net.Kernel.index
 	using Test = org.junit.Test;
 
 	using Node = Neo4Net.GraphDb.Node;
-	using Neo4Net.GraphDb.index;
+	using Neo4Net.GraphDb.Index;
 	using HighlyAvailableGraphDatabase = Neo4Net.Kernel.ha.HighlyAvailableGraphDatabase;
 	using ManagedCluster = Neo4Net.Kernel.impl.ha.ClusterManager.ManagedCluster;
 	using ClusterRule = Neo4Net.Test.ha.ClusterRule;

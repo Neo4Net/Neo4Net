@@ -1348,7 +1348,7 @@
   },
   "libraries": {
     "Castle.Core/4.4.0": {
-      "sha512": "dibDR/ggOLwpsLKuOZk3BHrq0mDthf+MEH02rb6QHXKb5ZzYml+Y70XaLRiDyDdLbyhsgcBEpaK2mrS13enOmA==",
+      "sha512": "b5rRL5zeaau1y/5hIbI+6mGw3cwun16YjkHZnV9RRT5UyUIFsgLmNXJ0YnIN9p8Hw7K7AbG1q1UclQVU3DinAQ==",
       "type": "package",
       "path": "castle.core/4.4.0",
       "files": [
@@ -1373,7 +1373,7 @@
       ]
     },
     "coverlet.collector/1.1.0": {
-      "sha512": "BMtP3D3No3VNvr7HOGEfUqO6v/KRCGQXRyHegvYHIbUDYnS2WycXoAqirqm/fRd7LZzJ2fVjS5rhzLfzrtIzzA==",
+      "sha512": "OBxWQ4vNm+kVvKy8NTk6skRNMQCeQLqSqJ0xq19S0GLovHYTnVTcsjYgV54t6LnjjQ6mDADMcFvHMQHLoNQhIg==",
       "type": "package",
       "path": "coverlet.collector/1.1.0",
       "files": [
@@ -1402,7 +1402,7 @@
       ]
     },
     "FluentAssertions/5.9.0": {
-      "sha512": "OXLNffjNuUvIT/eFSX9XfqK/rTiJYKDmmibH46YLczzo891FibPZdxaV5N7PHcrRt5LvOdSrCXsEsEeuqTQszg==",
+      "sha512": "JZxb5DuspmuH4A5p9bfj060evQnwIUkxxfFMG9F/pa7gl1Ry2r2nuQbu5G4UWGQQTtpTxPpVowqNDdBkA0G2Mw==",
       "type": "package",
       "path": "fluentassertions/5.9.0",
       "files": [
@@ -1431,7 +1431,7 @@
       ]
     },
     "Microsoft.CodeCoverage/16.3.0": {
-      "sha512": "nOCczaTXwgfn/Sbht15cQFBrNj4GbDN3bZVyv5xXjKjDnzR8lawRh1cTc3juTVKcMP9ulm4RMJ23tzTPXZlfpw==",
+      "sha512": "CVEzOQp+2Y/VdUEbvtziOd41QJ3tGGvqI14to5blM0Glr4P9uasORK4SaSF4bvlRQaiMeqS2iGoCfVIggdymmw==",
       "type": "package",
       "path": "microsoft.codecoverage/16.3.0",
       "files": [
@@ -1467,11 +1467,13 @@
       ]
     },
     "Microsoft.CSharp/4.0.1": {
-      "sha512": "9bKywOr7Y0TP5U6sLUcQyRx4GoeQg63AT955JYjh7AvxXsvUgmS1y4+3gGa3M3+NbZTApCmJ39u8Nzk+yGtDmQ==",
+      "sha512": "17h8b5mXa87XYKrrVqdgZ38JefSUqLChUQpXgSnpzsM0nDOhE40FTeNWOJ/YmySGV6tG6T8+hjz6vxbknHJr6A==",
       "type": "package",
       "path": "microsoft.csharp/4.0.1",
       "files": [
         ".nupkg.metadata",
+        "Microsoft.CSharp.4.0.1.nupkg.sha512",
+        "Microsoft.CSharp.nuspec",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -1487,8 +1489,6 @@
         "lib/xamarinmac20/_._",
         "lib/xamarintvos10/_._",
         "lib/xamarinwatchos10/_._",
-        "microsoft.csharp.4.0.1.nupkg.sha512",
-        "microsoft.csharp.nuspec",
         "ref/MonoAndroid10/_._",
         "ref/MonoTouch10/_._",
         "ref/net45/_._",
@@ -1525,7 +1525,7 @@
       ]
     },
     "Microsoft.NET.Test.Sdk/16.3.0": {
-      "sha512": "nv/hF5cAXdp8EvjzAwfZo1tQQJ+3cxA68s8Zo3rrI9v6XfbaSjZRjt3QvGbG3XNVrrgB6yfs2vAk27ir8wW4/g==",
+      "sha512": "Drk/adJoZYuMx3MuhcpEqfXDrAOwv56tjq9SlqeO20+oTlNfGEebw2dmMRTl17EwlUYctdmZv5VzTZVncU1aVw==",
       "type": "package",
       "path": "microsoft.net.test.sdk/16.3.0",
       "files": [
@@ -1886,7 +1886,7 @@
       ]
     },
     "Microsoft.TestPlatform.ObjectModel/16.3.0": {
-      "sha512": "+p+9HaaI64AK6uNQ+qp7GtitlzKacoUNODnAxl5nz4MuKU2HnDjcnyJ38HMBCpvehNPBStpi1LTn+94/OWhVAQ==",
+      "sha512": "F4ZZ1c6J6VqeFhfPPBZNk+jr7VU5qYgxoClWK+VOJMRwGYc5edYY5q9CGtNgT93VcVGQ/ie6Gn8J9HDoST1fAg==",
       "type": "package",
       "path": "microsoft.testplatform.objectmodel/16.3.0",
       "files": [
@@ -1955,7 +1955,7 @@
       ]
     },
     "Microsoft.TestPlatform.TestHost/16.3.0": {
-      "sha512": "cZfOmnNWn8JFuunxt/AER7Qupk0MSM35tG8/P26FXoeNEU8Mm6PEtcw+E2y/YApjf4qH6wsf+aEihovz/zy0ew==",
+      "sha512": "N44oK5yrJw70tJh/f5XrDT9ibywsz/t9hm9f59DojtfJphYG55oXf/2ht9h0iNMyzpuh7lFAWPdRcZ9v0Oj82w==",
       "type": "package",
       "path": "microsoft.testplatform.testhost/16.3.0",
       "files": [
@@ -2261,7 +2261,7 @@
       ]
     },
     "NSubstitute/4.2.1": {
-      "sha512": "jU3piQuU8MliS8IWfAGP8FQn7uaa07Ubn1kbTEIwtbu8ZL13N1Y9mdNMdGQKQ1UCUT6v9wzEympfMXz+dkR5Fw==",
+      "sha512": "CqQuOU06ftAKrTV7Op/s0hdSII4RP6SNjP/XT1+2oEC6EqwYLXOfek/p+SEuHgaH8WNwEHWIYjsrUV9oSOIOXw==",
       "type": "package",
       "path": "nsubstitute/4.2.1",
       "files": [
@@ -2280,7 +2280,7 @@
       ]
     },
     "NuGet.Frameworks/5.0.0": {
-      "sha512": "67lESztGBjUi47QyxnrK/olD2jnIZpeBRviHV/G+VXG/QOnfIIgkRA76QRawtH0A+XCKcnZ6IoeKeKylqYh2UA==",
+      "sha512": "c5JVjuVAm4f7E9Vj+v09Z9s2ZsqFDjBpcsyS3M9xRo0bEdm/LVZSzLxxNvfvAwRiiE8nwe1h2G4OwiwlzFKXlA==",
       "type": "package",
       "path": "nuget.frameworks/5.0.0",
       "files": [
@@ -2549,11 +2549,13 @@
       ]
     },
     "System.ComponentModel.TypeConverter/4.3.0": {
-      "sha512": "HZiP0DwTHJ+C+rdFqP47nBYUh5283kcwXIGY2zOVVhsJmVI/2tYiX2zNRdjRQRHsTox58Ydkec6h0pWSh8wAsw==",
+      "sha512": "16pQ6P+EdhcXzPiEK4kbA953Fu0MNG2ovxTZU81/qsCd1zPRsKc3uif5NgvllCY598k6bI0KUyKW8fanlfaDQg==",
       "type": "package",
       "path": "system.componentmodel.typeconverter/4.3.0",
       "files": [
         ".nupkg.metadata",
+        "System.ComponentModel.TypeConverter.4.3.0.nupkg.sha512",
+        "System.ComponentModel.TypeConverter.nuspec",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -2595,9 +2597,7 @@
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._",
-        "system.componentmodel.typeconverter.4.3.0.nupkg.sha512",
-        "system.componentmodel.typeconverter.nuspec"
+        "ref/xamarinwatchos10/_._"
       ]
     },
     "System.Configuration.ConfigurationManager/4.4.0": {
@@ -4064,11 +4064,13 @@
       ]
     },
     "System.Runtime.Serialization.Primitives/4.1.1": {
-      "sha512": "eHOEkp1xnrK+kf6LcJgeUOY/2dS6ws4W2IvoxCCOa9DXUIMsIdoH9KROvufFGwD0LcaoexKDVmvibPLeg36d4w==",
+      "sha512": "HZ6Du5QrTG8MNJbf4e4qMO3JRAkIboGT5Fk804uZtg3Gq516S7hAqTm2UZKUHa7/6HUGdVy3AqMQKbns06G/cg==",
       "type": "package",
       "path": "system.runtime.serialization.primitives/4.1.1",
       "files": [
         ".nupkg.metadata",
+        "System.Runtime.Serialization.Primitives.4.1.1.nupkg.sha512",
+        "System.Runtime.Serialization.Primitives.nuspec",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -4130,9 +4132,7 @@
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._",
-        "runtimes/aot/lib/netcore50/System.Runtime.Serialization.Primitives.dll",
-        "system.runtime.serialization.primitives.4.1.1.nupkg.sha512",
-        "system.runtime.serialization.primitives.nuspec"
+        "runtimes/aot/lib/netcore50/System.Runtime.Serialization.Primitives.dll"
       ]
     },
     "System.Security.Cryptography.ProtectedData/4.4.0": {
@@ -4880,23 +4880,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\tcorvin\\.nuget\\packages\\": {},
+    "C:\\Users\\Tyson\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\tcorvin\\Source\\Repos\\Neo4Net\\Neo4Net\\src\\Community\\common\\Neo4Net.Common.Tests\\Neo4Net.Common.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\Tyson\\Source\\Repos\\Neo4Net\\Neo4Net\\src\\Community\\common\\Neo4Net.Common.Tests\\Neo4Net.Common.Tests.csproj",
       "projectName": "Neo4Net.Common.Tests",
-      "projectPath": "C:\\Users\\tcorvin\\Source\\Repos\\Neo4Net\\Neo4Net\\src\\Community\\common\\Neo4Net.Common.Tests\\Neo4Net.Common.Tests.csproj",
-      "packagesPath": "C:\\Users\\tcorvin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\tcorvin\\Source\\Repos\\Neo4Net\\Neo4Net\\src\\Community\\common\\Neo4Net.Common.Tests\\obj\\",
+      "projectPath": "C:\\Users\\Tyson\\Source\\Repos\\Neo4Net\\Neo4Net\\src\\Community\\common\\Neo4Net.Common.Tests\\Neo4Net.Common.Tests.csproj",
+      "packagesPath": "C:\\Users\\Tyson\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Tyson\\Source\\Repos\\Neo4Net\\Neo4Net\\src\\Community\\common\\Neo4Net.Common.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\tcorvin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Tyson\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4904,13 +4904,14 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {},
+        "https://nuget.synuit.io/nuget": {}
       },
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "C:\\Users\\tcorvin\\Source\\Repos\\Neo4Net\\Neo4Net\\src\\Community\\common\\Neo4Net.Common\\Neo4Net.Common.csproj": {
-              "projectPath": "C:\\Users\\tcorvin\\Source\\Repos\\Neo4Net\\Neo4Net\\src\\Community\\common\\Neo4Net.Common\\Neo4Net.Common.csproj"
+            "C:\\Users\\Tyson\\Source\\Repos\\Neo4Net\\Neo4Net\\src\\Community\\common\\Neo4Net.Common\\Neo4Net.Common.csproj": {
+              "projectPath": "C:\\Users\\Tyson\\Source\\Repos\\Neo4Net\\Neo4Net\\src\\Community\\common\\Neo4Net.Common\\Neo4Net.Common.csproj"
             }
           }
         }
@@ -4943,7 +4944,7 @@
             "version": "[4.2.1, )"
           },
           "coverlet.collector": {
-            "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",
             "target": "Package",
             "version": "[1.1.0, )"
@@ -4969,7 +4970,7 @@
             "version": "[2.4.1, )"
           },
           "xunit.runner.visualstudio": {
-            "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",
             "target": "Package",
             "version": "[2.4.1, )"

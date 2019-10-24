@@ -34,8 +34,8 @@ namespace Neo4Net.Kernel.ha.management
 
 	using InstanceId = Neo4Net.cluster.InstanceId;
 	using Format = Neo4Net.Helpers.Format;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
-	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
+	using MapUtil = Neo4Net.Collections.Helpers.MapUtil;
 	using DefaultFileSystemAbstraction = Neo4Net.Io.fs.DefaultFileSystemAbstraction;
 	using ManagementData = Neo4Net.Jmx.impl.ManagementData;
 	using ManagementSupport = Neo4Net.Jmx.impl.ManagementSupport;

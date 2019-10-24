@@ -44,8 +44,8 @@ namespace Neo4Net.Kernel
 	using DatabaseCreator = Neo4Net.GraphDb.factory.GraphDatabaseBuilder.DatabaseCreator;
 	using PlatformModule = Neo4Net.GraphDb.factory.module.PlatformModule;
 	using EphemeralFileSystemAbstraction = Neo4Net.GraphDb.mockfs.EphemeralFileSystemAbstraction;
-	using Neo4Net.Helpers.Collections;
-	using Iterators = Neo4Net.Helpers.Collections.Iterators;
+	using Neo4Net.Collections.Helpers;
+	using Iterators = Neo4Net.Collections.Helpers.Iterators;
 	using IndexCapability = Neo4Net.Kernel.Api.Internal.IndexCapability;
 	using InternalIndexState = Neo4Net.Kernel.Api.Internal.InternalIndexState;
 	using ByteUnit = Neo4Net.Io.ByteUnit;

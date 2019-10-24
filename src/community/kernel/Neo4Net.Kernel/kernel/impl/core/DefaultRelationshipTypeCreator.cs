@@ -22,7 +22,7 @@ namespace Neo4Net.Kernel.impl.core
 
 	using Kernel = Neo4Net.Kernel.Api.Internal.Kernel;
 	using Transaction = Neo4Net.Kernel.Api.Internal.Transaction;
-	using IllegalTokenNameException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IllegalTokenNameException;
+	using IllegalTokenNameException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IllegalTokenNameException;
 
 	public class DefaultRelationshipTypeCreator : IsolatedTransactionTokenCreator
 	{
@@ -31,7 +31,7 @@ namespace Neo4Net.Kernel.impl.core
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected int createKey(org.Neo4Net.Kernel.Api.Internal.Transaction transaction, String name) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IllegalTokenNameException
+//ORIGINAL LINE: protected int createKey(org.Neo4Net.Kernel.Api.Internal.Transaction transaction, String name) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IllegalTokenNameException
 		 protected internal override int CreateKey( Transaction transaction, string name )
 		 {
 			  return transaction.TokenWrite().relationshipTypeCreateForName(name);

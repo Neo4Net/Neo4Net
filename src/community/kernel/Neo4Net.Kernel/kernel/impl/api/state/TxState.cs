@@ -31,12 +31,12 @@ namespace Neo4Net.Kernel.Impl.Api.state
 	using ObjectLongHashMap = org.eclipse.collections.impl.map.mutable.primitive.ObjectLongHashMap;
 
 
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
-	using ConstraintValidationException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.ConstraintValidationException;
-	using CreateConstraintFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.CreateConstraintFailureException;
-	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
-	using SchemaDescriptorPredicates = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptorPredicates;
-	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
+	using ConstraintValidationException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.ConstraintValidationException;
+	using CreateConstraintFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.CreateConstraintFailureException;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
+	using SchemaDescriptorPredicates = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptorPredicates;
+	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor;
 	using IndexBackedConstraintDescriptor = Neo4Net.Kernel.api.schema.constraints.IndexBackedConstraintDescriptor;
 	using TransactionState = Neo4Net.Kernel.api.txstate.TransactionState;
 	using CollectionsFactory = Neo4Net.Kernel.impl.util.collection.CollectionsFactory;
@@ -115,7 +115,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void accept(final org.Neo4Net.Kernel.Api.StorageEngine.TxState.TxStateVisitor visitor) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.ConstraintValidationException, org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.CreateConstraintFailureException
+//ORIGINAL LINE: public void accept(final org.Neo4Net.Kernel.Api.StorageEngine.TxState.TxStateVisitor visitor) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.ConstraintValidationException, org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.CreateConstraintFailureException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 		 public override void Accept( TxStateVisitor visitor )
 		 {
@@ -694,7 +694,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Override @Nullable public org.eclipse.collections.impl.UnmodifiableMap<org.Neo4Net.values.storable.ValueTuple, ? extends org.Neo4Net.Kernel.Api.StorageEngine.TxState.LongDiffSets> getIndexUpdates(org.Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor schema)
+//ORIGINAL LINE: @Override @Nullable public org.eclipse.collections.impl.UnmodifiableMap<org.Neo4Net.values.storable.ValueTuple, ? extends org.Neo4Net.Kernel.Api.StorageEngine.TxState.LongDiffSets> getIndexUpdates(org.Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor schema)
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		 public override UnmodifiableMap<ValueTuple, ? extends LongDiffSets> GetIndexUpdates( SchemaDescriptor schema )
 		 {
@@ -714,7 +714,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Override @Nullable public java.util.NavigableMap<org.Neo4Net.values.storable.ValueTuple, ? extends org.Neo4Net.Kernel.Api.StorageEngine.TxState.LongDiffSets> getSortedIndexUpdates(org.Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor descriptor)
+//ORIGINAL LINE: @Override @Nullable public java.util.NavigableMap<org.Neo4Net.values.storable.ValueTuple, ? extends org.Neo4Net.Kernel.Api.StorageEngine.TxState.LongDiffSets> getSortedIndexUpdates(org.Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor descriptor)
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		 public override NavigableMap<ValueTuple, ? extends LongDiffSets> GetSortedIndexUpdates( SchemaDescriptor descriptor )
 		 {

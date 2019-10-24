@@ -33,8 +33,8 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.sampler
 
 
 	using TaskCoordinator = Neo4Net.Helpers.TaskCoordinator;
-	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
-	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
+	using MapUtil = Neo4Net.Collections.Helpers.MapUtil;
+	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException;
 	using IndexReaderStub = Neo4Net.Kernel.Api.Impl.Index.IndexReaderStub;
 	using IndexWriterConfigs = Neo4Net.Kernel.Api.Impl.Index.IndexWriterConfigs;
 	using PartitionSearcher = Neo4Net.Kernel.Api.Impl.Index.partition.PartitionSearcher;

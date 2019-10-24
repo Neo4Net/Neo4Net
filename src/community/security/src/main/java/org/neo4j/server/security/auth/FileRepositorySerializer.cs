@@ -34,7 +34,7 @@ namespace Neo4Net.Server.Security.Auth
 		 private Random _random = new SecureRandom();
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static void writeToFile(org.Neo4Net.io.fs.FileSystemAbstraction fs, java.io.File file, byte[] bytes) throws java.io.IOException
+//ORIGINAL LINE: public static void WriteToFile(org.Neo4Net.io.fs.FileSystemAbstraction fs, java.io.File file, byte[] bytes) throws java.io.IOException
 		 public static void WriteToFile( FileSystemAbstraction fs, File file, sbyte[] bytes )
 		 {
 			  using ( Stream o = fs.OpenAsOutputStream( file, false ) )

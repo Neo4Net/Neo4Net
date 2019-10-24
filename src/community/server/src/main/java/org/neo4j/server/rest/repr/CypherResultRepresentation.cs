@@ -27,7 +27,7 @@ namespace Neo4Net.Server.rest.repr
 	using Path = Neo4Net.GraphDb.Path;
 	using Relationship = Neo4Net.GraphDb.Relationship;
 	using Result = Neo4Net.GraphDb.Result;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.helpers.collection.Iterators.loop;

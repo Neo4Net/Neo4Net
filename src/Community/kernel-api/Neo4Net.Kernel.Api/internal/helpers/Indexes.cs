@@ -24,7 +24,7 @@ using System.Threading;
 
 namespace Neo4Net.Kernel.Api.Internal.Helpers
 {
-   using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
+   using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException;
    using Registers = Neo4Net.Register.Registers;
 
    public class Indexes
@@ -89,7 +89,7 @@ namespace Neo4Net.Kernel.Api.Internal.Helpers
       }
 
       //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-      //ORIGINAL LINE: private static long readUpdates(org.Neo4Net.Kernel.Api.Internal.IndexReference index, org.Neo4Net.Kernel.Api.Internal.SchemaRead schemaRead, org.Neo4Net.register.Register_DoubleLongRegister register) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException
+      //ORIGINAL LINE: private static long readUpdates(org.Neo4Net.Kernel.Api.Internal.IndexReference index, org.Neo4Net.Kernel.Api.Internal.SchemaRead schemaRead, org.Neo4Net.register.Register_DoubleLongRegister register) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
       private static long ReadUpdates(IIndexReference index, SchemaRead schemaRead, Neo4Net.Register.Register_DoubleLongRegister register)
       {
          schemaRead.IndexUpdatesAndSize(index, register);

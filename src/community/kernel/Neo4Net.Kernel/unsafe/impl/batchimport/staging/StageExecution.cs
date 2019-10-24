@@ -23,8 +23,8 @@ using System.Collections.Generic;
 namespace Neo4Net.@unsafe.Impl.Batchimport.staging
 {
 
-	using Neo4Net.Helpers.Collections;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
+	using Neo4Net.Collections.Helpers;
 	using Key = Neo4Net.@unsafe.Impl.Batchimport.stats.Key;
 	using Stat = Neo4Net.@unsafe.Impl.Batchimport.stats.Stat;
 

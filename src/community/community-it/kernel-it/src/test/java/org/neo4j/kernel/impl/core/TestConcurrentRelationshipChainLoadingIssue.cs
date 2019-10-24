@@ -23,7 +23,7 @@ namespace Neo4Net.Kernel.impl.core
 
 	using Node = Neo4Net.GraphDb.Node;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
 	using Race = Neo4Net.Test.Race;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;

@@ -22,7 +22,7 @@ namespace Neo4Net.Kernel.api.txstate
 	using LongSet = org.eclipse.collections.api.set.primitive.LongSet;
 
 	using IEntityNotFoundException = Neo4Net.Kernel.Api.Internal.Exceptions.EntityNotFoundException;
-	using ConstraintValidationException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.ConstraintValidationException;
+	using ConstraintValidationException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.ConstraintValidationException;
 	using CountsRecordState = Neo4Net.Kernel.Impl.Api.CountsRecordState;
 	using DegreeVisitor = Neo4Net.Kernel.Impl.Api.DegreeVisitor;
 	using RelationshipDataExtractor = Neo4Net.Kernel.Impl.Api.RelationshipDataExtractor;
@@ -97,7 +97,7 @@ namespace Neo4Net.Kernel.api.txstate
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void visitCreatedRelationship(long id, int type, long startNode, long endNode) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.ConstraintValidationException
+//ORIGINAL LINE: public void visitCreatedRelationship(long id, int type, long startNode, long endNode) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.ConstraintValidationException
 		 public override void VisitCreatedRelationship( long id, int type, long startNode, long endNode )
 		 {
 			  UpdateRelationshipCount( startNode, type, endNode, 1 );
@@ -119,7 +119,7 @@ namespace Neo4Net.Kernel.api.txstate
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void visitNodeLabelChanges(long id, final org.eclipse.collections.api.set.primitive.LongSet added, final org.eclipse.collections.api.set.primitive.LongSet removed) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.ConstraintValidationException
+//ORIGINAL LINE: public void visitNodeLabelChanges(long id, final org.eclipse.collections.api.set.primitive.LongSet added, final org.eclipse.collections.api.set.primitive.LongSet removed) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.ConstraintValidationException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 		 public override void VisitNodeLabelChanges( long id, LongSet added, LongSet removed )
 		 {

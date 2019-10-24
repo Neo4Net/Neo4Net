@@ -43,7 +43,7 @@ namespace Neo4Net.storeupgrade
 	using GraphDatabaseFactory = Neo4Net.GraphDb.factory.GraphDatabaseFactory;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Exceptions = Neo4Net.Helpers.Exceptions;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using IndexReference = Neo4Net.Kernel.Api.Internal.IndexReference;
 	using SchemaRead = Neo4Net.Kernel.Api.Internal.SchemaRead;
 	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;

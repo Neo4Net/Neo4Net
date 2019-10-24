@@ -30,7 +30,7 @@ namespace Neo4Net.Kernel.Impl.Api
 	using TransactionApplicationMode = Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.index.IndexManager_Fields.PROVIDER;
+//	import static org.Neo4Net.GraphDb.Index.IndexManager_Fields.PROVIDER;
 
 	/// <summary>
 	/// This class caches the appliers for different <seealso cref="IndexCommand"/>s for performance reasons. These appliers are then

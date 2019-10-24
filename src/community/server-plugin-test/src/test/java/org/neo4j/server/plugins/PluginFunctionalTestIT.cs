@@ -27,7 +27,7 @@ namespace Neo4Net.Server.plugins
 	using Test = org.junit.Test;
 
 
-	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
+	using MapUtil = Neo4Net.Collections.Helpers.MapUtil;
 	using FunctionalTestHelper = Neo4Net.Server.helpers.FunctionalTestHelper;
 	using ServerHelper = Neo4Net.Server.helpers.ServerHelper;
 	using RegExp = Neo4Net.Server.plugins.PluginFunctionalTestHelper.RegExp;

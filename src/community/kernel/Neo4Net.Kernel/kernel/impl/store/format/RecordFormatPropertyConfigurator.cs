@@ -23,7 +23,7 @@ namespace Neo4Net.Kernel.impl.store.format
 {
 
 	using Neo4Net.GraphDb.config;
-	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
+	using MapUtil = Neo4Net.Collections.Helpers.MapUtil;
 	using Config = Neo4Net.Kernel.configuration.Config;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:

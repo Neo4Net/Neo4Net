@@ -22,8 +22,8 @@
 namespace Neo4Net.Kernel.impl.transaction.command
 {
 
-	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor;
-	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.LabelSchemaDescriptor;
+	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.Schema.IndexProviderDescriptor;
+	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.LabelSchemaDescriptor;
 	using DynamicNodeLabels = Neo4Net.Kernel.impl.store.DynamicNodeLabels;
 	using PropertyStore = Neo4Net.Kernel.impl.store.PropertyStore;
 	using PropertyType = Neo4Net.Kernel.impl.store.PropertyType;

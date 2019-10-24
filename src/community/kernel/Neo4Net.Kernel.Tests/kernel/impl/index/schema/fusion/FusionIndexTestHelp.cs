@@ -26,7 +26,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 	using Mockito = org.mockito.Mockito;
 
 
-	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.LabelSchemaDescriptor;
+	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.LabelSchemaDescriptor;
 	using Neo4Net.Kernel.Api.Index;
 	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
 	using CoordinateReferenceSystem = Neo4Net.Values.Storable.CoordinateReferenceSystem;

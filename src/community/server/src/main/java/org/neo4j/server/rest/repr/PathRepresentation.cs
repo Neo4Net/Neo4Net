@@ -25,7 +25,7 @@ namespace Neo4Net.Server.rest.repr
 	using Node = Neo4Net.GraphDb.Node;
 	using Path = Neo4Net.GraphDb.Path;
 	using Relationship = Neo4Net.GraphDb.Relationship;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 
 	public class PathRepresentation<P> : ObjectRepresentation where P : Neo4Net.GraphDb.Path // implements
 	{

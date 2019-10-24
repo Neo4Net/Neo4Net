@@ -21,7 +21,7 @@ namespace Neo4Net.Kernel.impl.traversal
 {
 	using Path = Neo4Net.GraphDb.Path;
 	using Resource = Neo4Net.GraphDb.Resource;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 
 	internal abstract class AbstractTraverserIterator : PrefetchingResourceIterator<Path>, TraverserIterator
 	{

@@ -29,8 +29,8 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using MockitoJUnitRunner = org.mockito.junit.MockitoJUnitRunner;
 
 
-	using Neo4Net.Helpers.Collections;
-	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.LabelSchemaDescriptor;
+	using Neo4Net.Collections.Helpers;
+	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.LabelSchemaDescriptor;
 	using IndexEntryConflictException = Neo4Net.Kernel.Api.Exceptions.index.IndexEntryConflictException;
 	using IndexPopulationFailedKernelException = Neo4Net.Kernel.Api.Exceptions.index.IndexPopulationFailedKernelException;
 	using Neo4Net.Kernel.Api.Index;

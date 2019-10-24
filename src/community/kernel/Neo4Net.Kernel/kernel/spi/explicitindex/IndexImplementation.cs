@@ -33,7 +33,7 @@ namespace Neo4Net.Kernel.spi.explicitindex
 	/// An <seealso cref="IndexImplementation"/> is typically tied to one implementation, f.ex.
 	/// lucene, http://lucene.apache.org/java.
 	/// </summary>
-	public interface IndexImplementation : Lifecycle
+	public interface IIndexImplementation : Lifecycle
 	{
 
 		 /// <summary>

@@ -42,7 +42,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 		 public virtual void ShouldListAllLabels()
 		 {
 			  // given
-			  Transaction transaction = NewTransaction( AnonymousContext.writeToken() );
+			  Transaction transaction = NewTransaction( AnonymousContext.WriteToken() );
 			  int label1Id = transaction.TokenWrite().labelGetOrCreateForName("label1");
 			  int label2Id = transaction.TokenWrite().labelGetOrCreateForName("label2");
 

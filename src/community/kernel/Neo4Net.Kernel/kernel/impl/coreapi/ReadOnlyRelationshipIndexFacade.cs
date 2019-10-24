@@ -21,8 +21,8 @@ namespace Neo4Net.Kernel.impl.coreapi
 {
 	using Node = Neo4Net.GraphDb.Node;
 	using Relationship = Neo4Net.GraphDb.Relationship;
-	using Neo4Net.GraphDb.index;
-	using RelationshipIndex = Neo4Net.GraphDb.index.RelationshipIndex;
+	using Neo4Net.GraphDb.Index;
+	using RelationshipIndex = Neo4Net.GraphDb.Index.RelationshipIndex;
 
 	/// <summary>
 	/// Wraps an explicit index to prevent writes to it - exposing it as a read-only index.

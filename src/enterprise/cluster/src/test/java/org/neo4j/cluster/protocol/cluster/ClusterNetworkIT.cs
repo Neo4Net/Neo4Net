@@ -41,7 +41,7 @@ namespace Neo4Net.cluster.protocol.cluster
 	using ServerIdElectionCredentialsProvider = Neo4Net.cluster.protocol.election.ServerIdElectionCredentialsProvider;
 	using FixedTimeoutStrategy = Neo4Net.cluster.timeout.FixedTimeoutStrategy;
 	using NamedThreadFactory = Neo4Net.Helpers.NamedThreadFactory;
-	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
+	using MapUtil = Neo4Net.Collections.Helpers.MapUtil;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using LifeSupport = Neo4Net.Kernel.Lifecycle.LifeSupport;
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;

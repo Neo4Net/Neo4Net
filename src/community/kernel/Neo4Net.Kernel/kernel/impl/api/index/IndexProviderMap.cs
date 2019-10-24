@@ -21,7 +21,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 {
 
 	using IndexCapability = Neo4Net.Kernel.Api.Internal.IndexCapability;
-	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor;
+	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.Schema.IndexProviderDescriptor;
 	using IndexProvider = Neo4Net.Kernel.Api.Index.IndexProvider;
 	using CapableIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.CapableIndexDescriptor;
 	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
@@ -29,7 +29,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	/// <summary>
 	/// Contains mapping from <seealso cref="IndexProviderDescriptor"/> or provider name to <seealso cref="IndexProvider"/>.
 	/// </summary>
-	public interface IndexProviderMap
+	public interface IIndexProviderMap
 	{
 		 /// <summary>
 		 /// Looks up and returns the <seealso cref="IndexProvider"/> for the given <seealso cref="IndexProviderDescriptor"/>.
@@ -38,7 +38,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 /// <returns> the <seealso cref="IndexProvider"/> with the given <seealso cref="IndexProviderDescriptor"/>. </returns>
 		 /// <exception cref="IndexProviderNotFoundException"> if no such <seealso cref="IndexProvider"/> was found. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.Neo4Net.kernel.api.index.IndexProvider lookup(org.Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor providerDescriptor) throws IndexProviderNotFoundException;
+//ORIGINAL LINE: org.Neo4Net.kernel.api.index.IndexProvider lookup(org.Neo4Net.Kernel.Api.Internal.Schema.IndexProviderDescriptor providerDescriptor) throws IndexProviderNotFoundException;
 		 IndexProvider Lookup( IndexProviderDescriptor providerDescriptor );
 
 		 /// <summary>

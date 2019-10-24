@@ -29,7 +29,7 @@ namespace Neo4Net.causalclustering.messaging
 	using ProtocolStack = Neo4Net.causalclustering.protocol.handshake.ProtocolStack;
 	using TestProtocols_TestApplicationProtocols = Neo4Net.causalclustering.protocol.handshake.TestProtocols_TestApplicationProtocols;
 	using AdvertisedSocketAddress = Neo4Net.Helpers.AdvertisedSocketAddress;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static co.unruly.matchers.StreamMatchers.contains;

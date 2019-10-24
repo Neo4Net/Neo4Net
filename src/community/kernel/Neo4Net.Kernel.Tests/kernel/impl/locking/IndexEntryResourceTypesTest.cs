@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.impl.locking
 	using Test = org.junit.Test;
 
 
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using ExactPredicate = Neo4Net.Kernel.Api.Internal.IndexQuery.ExactPredicate;
 	using Value = Neo4Net.Values.Storable.Value;
 	using Values = Neo4Net.Values.Storable.Values;
@@ -83,7 +83,7 @@ namespace Neo4Net.Kernel.impl.locking
 			  VerifyCanHashAllTypes( ResourceTypes.indexEntryResourceId_4_x );
 		 }
 
-		 private interface IndexEntryHasher
+		 private interface IIndexEntryHasher
 		 {
 			  long Hash( long labelId, ExactPredicate[] predicates );
 		 }

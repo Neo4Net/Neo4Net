@@ -22,7 +22,7 @@
 namespace Neo4Net.GraphDb
 {
 
-	using RelationshipIndex = Neo4Net.GraphDb.index.RelationshipIndex;
+	using RelationshipIndex = Neo4Net.GraphDb.Index.RelationshipIndex;
 
 	public sealed class RelationshipIndexFacadeMethods : Consumer<RelationshipIndex>
 	{
@@ -46,7 +46,7 @@ namespace Neo4Net.GraphDb
 //       REMOVE_BY_KEY(new FacadeMethod<>("void remove( T IEntity, String key )", ri -> ri.remove(null, "foo"))),
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
 //       REMOVE(new FacadeMethod<>("void remove( T IEntity )", ri -> ri.remove(null))),
-		 public static readonly RelationshipIndexFacadeMethods Delete = new RelationshipIndexFacadeMethods( "Delete", InnerEnum.Delete, new FacadeMethod<>( "void delete()", Neo4Net.GraphDb.index.RelationshipIndex.delete ) );
+		 public static readonly RelationshipIndexFacadeMethods Delete = new RelationshipIndexFacadeMethods( "Delete", InnerEnum.Delete, new FacadeMethod<>( "void delete()", Neo4Net.GraphDb.Index.RelationshipIndex.delete ) );
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
 //       PUT_IF_ABSENT(new FacadeMethod<>("T putIfAbsent( T IEntity, String key, Object value )", ri -> ri.putIfAbsent(null, "foo", 42)));
 
@@ -89,9 +89,9 @@ namespace Neo4Net.GraphDb
 		 private readonly int ordinalValue;
 		 private static int nextOrdinal = 0;
 
-		 private readonly FacadeMethod<Neo4Net.GraphDb.index.RelationshipIndex> facadeMethod;
+		 private readonly FacadeMethod<Neo4Net.GraphDb.Index.RelationshipIndex> facadeMethod;
 
-		 internal RelationshipIndexFacadeMethods( string name, InnerEnum innerEnum, FacadeMethod<Neo4Net.GraphDb.index.RelationshipIndex> facadeMethod )
+		 internal RelationshipIndexFacadeMethods( string name, InnerEnum innerEnum, FacadeMethod<Neo4Net.GraphDb.Index.RelationshipIndex> facadeMethod )
 		 {
 			  this._facadeMethod = facadeMethod;
 
@@ -100,7 +100,7 @@ namespace Neo4Net.GraphDb
 			 innerEnumValue = innerEnum;
 		 }
 
-		 public void Accept( Neo4Net.GraphDb.index.RelationshipIndex relationshipIndex )
+		 public void Accept( Neo4Net.GraphDb.Index.RelationshipIndex relationshipIndex )
 		 {
 			  _facadeMethod.accept( relationshipIndex );
 		 }

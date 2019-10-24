@@ -31,7 +31,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 	using Transaction = Neo4Net.Kernel.Api.Internal.Transaction;
 	using Write = Neo4Net.Kernel.Api.Internal.Write;
 	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
-	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.LabelSchemaDescriptor;
+	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.LabelSchemaDescriptor;
 	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using StatementConstants = Neo4Net.Kernel.api.StatementConstants;
 	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;

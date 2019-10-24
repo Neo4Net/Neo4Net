@@ -53,8 +53,6 @@ namespace Neo4Net.Io
 		 /// <param name="closeables"> to call close on. </param>
 		 /// @param <T> the type of closeable. </param>
 		 /// <exception cref="UncheckedIOException"> if any exception is thrown from any of the {@code closeables}. </exception>
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static <T extends IDisposable> void closeAllUnchecked(java.util.Collection<T> closeables) throws java.io.UncheckedIOException
 		 public static void CloseAllUnchecked<T>( ICollection<T> closeables ) where T : IDisposable
 		 {
 			  CloseAllUnchecked( closeables.toArray( new IDisposable[0] ) );
@@ -66,9 +64,6 @@ namespace Neo4Net.Io
 		 /// <param name="closeables"> to call close on. </param>
 		 /// @param <T> the type of closeable. </param>
 		 /// <exception cref="UncheckedIOException"> if any exception is thrown from any of the {@code closeables}. </exception>
-//JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SafeVarargs public static <T extends IDisposable> void closeAllUnchecked(T... closeables) throws java.io.UncheckedIOException
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public static void CloseAllUnchecked<T>( params T[] closeables ) where T : IDisposable
 		 {
 			  try
@@ -101,9 +96,6 @@ namespace Neo4Net.Io
 		 /// <param name="closeables"> the closeables to close </param>
 		 /// @param <T> the type of closeable </param>
 		 /// <exception cref="IOException"> if an exception was thrown by one of the close methods. </exception>
-//JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SafeVarargs public static <T extends IDisposable> void closeAll(T... closeables) throws java.io.IOException
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public static void CloseAll<T>( params T[] closeables ) where T : IDisposable
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Method reference constructor syntax is not converted by Java to C# Converter:

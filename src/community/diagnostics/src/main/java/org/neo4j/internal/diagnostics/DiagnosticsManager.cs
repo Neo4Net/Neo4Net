@@ -24,7 +24,7 @@ namespace Neo4Net.Internal.Diagnostics
 {
 
 	using Neo4Net.Internal.Diagnostics;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using Lifecycle = Neo4Net.Kernel.Lifecycle.Lifecycle;
 	using Log = Neo4Net.Logging.Log;
 	using Logger = Neo4Net.Logging.Logger;
@@ -83,7 +83,7 @@ namespace Neo4Net.Internal.Diagnostics
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
 //ORIGINAL LINE: org.Neo4Net.helpers.collection.Visitor<? super DiagnosticsProvider, ? extends RuntimeException> target = org.Neo4Net.helpers.collection.Visitor_SafeGenerics.castOrNull(DiagnosticsProvider.class, RuntimeException.class, visitor);
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-				  Visitor<object, ? extends Exception> target = Neo4Net.Helpers.Collections.Visitor_SafeGenerics.CastOrNull( typeof( DiagnosticsProvider ), typeof( Exception ), visitor );
+				  Visitor<object, ? extends Exception> target = Neo4Net.Collections.Helpers.Visitor_SafeGenerics.CastOrNull( typeof( DiagnosticsProvider ), typeof( Exception ), visitor );
 				  if ( target != null )
 				  {
 						foreach ( DiagnosticsProvider provider in _outerInstance.providers )

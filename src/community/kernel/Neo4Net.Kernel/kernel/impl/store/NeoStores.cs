@@ -28,9 +28,9 @@ namespace Neo4Net.Kernel.impl.store
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using ArrayUtil = Neo4Net.Helpers.ArrayUtil;
 	using Exceptions = Neo4Net.Helpers.Exceptions;
-	using Neo4Net.Helpers.Collections;
-	using Neo4Net.Helpers.Collections;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
+	using Neo4Net.Collections.Helpers;
+	using Neo4Net.Collections.Helpers;
 	using DiagnosticsManager = Neo4Net.Internal.Diagnostics.DiagnosticsManager;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;

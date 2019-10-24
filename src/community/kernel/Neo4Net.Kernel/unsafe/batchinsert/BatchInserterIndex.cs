@@ -25,8 +25,8 @@ namespace Neo4Net.@unsafe.Batchinsert
 
 	using Node = Neo4Net.GraphDb.Node;
 	using Relationship = Neo4Net.GraphDb.Relationship;
-	using Neo4Net.GraphDb.index;
-	using Neo4Net.GraphDb.index;
+	using Neo4Net.GraphDb.Index;
+	using Neo4Net.GraphDb.Index;
 
 	/// <summary>
 	/// The <seealso cref="BatchInserter"/> version of <seealso cref="Index"/>. Additions/updates to a

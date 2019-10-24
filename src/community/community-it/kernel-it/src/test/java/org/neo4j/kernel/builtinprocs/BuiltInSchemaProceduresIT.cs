@@ -576,7 +576,7 @@ namespace Neo4Net.Kernel.builtinprocs
 			  Debug.Assert( labels != null );
 			  Debug.Assert( propKeys.Count == propValues.Count );
 
-			  Transaction transaction = NewTransaction( AnonymousContext.writeToken() );
+			  Transaction transaction = NewTransaction( AnonymousContext.WriteToken() );
 			  long nodeId = transaction.DataWrite().nodeCreate();
 
 			  foreach ( string labelname in labels )
@@ -603,7 +603,7 @@ namespace Neo4Net.Kernel.builtinprocs
 			  Debug.Assert( !string.ReferenceEquals( type, null ) && !type.Equals( "" ) );
 			  Debug.Assert( propKeys.Count == propValues.Count );
 
-			  Transaction transaction = NewTransaction( AnonymousContext.writeToken() );
+			  Transaction transaction = NewTransaction( AnonymousContext.WriteToken() );
 
 			  int typeId = transaction.TokenWrite().relationshipTypeGetOrCreateForName(type);
 			  long relId = transaction.DataWrite().relationshipCreate(startNode, typeId, endNode);

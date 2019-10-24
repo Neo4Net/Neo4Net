@@ -22,9 +22,9 @@
 namespace Neo4Net.Kernel.Api.Index
 {
 
-	using LabelSchemaSupplier = Neo4Net.Kernel.Api.Internal.schema.LabelSchemaSupplier;
-	using SchemaDescriptorSupplier = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptorSupplier;
-	using SchemaUtil = Neo4Net.Kernel.Api.Internal.schema.SchemaUtil;
+	using LabelSchemaSupplier = Neo4Net.Kernel.Api.Internal.Schema.LabelSchemaSupplier;
+	using SchemaDescriptorSupplier = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptorSupplier;
+	using SchemaUtil = Neo4Net.Kernel.Api.Internal.Schema.SchemaUtil;
 	using UpdateMode = Neo4Net.Kernel.Impl.Api.index.UpdateMode;
 	using Value = Neo4Net.Values.Storable.Value;
 
@@ -34,7 +34,7 @@ namespace Neo4Net.Kernel.Api.Index
 	/// This is of use in populating indexes that might be relevant to node label and property combinations.
 	/// </summary>
 	/// @param <INDEX_KEY> <seealso cref="LabelSchemaSupplier"/> specifying the schema </param>
-	public class IndexEntryUpdate<INDEX_KEY> where INDEX_KEY : Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptorSupplier
+	public class IndexEntryUpdate<INDEX_KEY> where INDEX_KEY : Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptorSupplier
 	{
 		 private readonly long _entityId;
 		 private readonly UpdateMode _updateMode;
@@ -131,22 +131,22 @@ namespace Neo4Net.Kernel.Api.Index
 			  return format( "IndexEntryUpdate[id=%d, mode=%s, %s, beforeValues=%s, values=%s]", _entityId, _updateMode, IndexKey().schema().userDescription(SchemaUtil.idTokenNameLookup), Arrays.ToString(_before), Arrays.ToString(_values) );
 		 }
 
-		 public static IndexEntryUpdate<INDEX_KEY> Add<INDEX_KEY>( long IEntityId, INDEX_KEY indexKey, params Value[] values ) where INDEX_KEY : Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptorSupplier
+		 public static IndexEntryUpdate<INDEX_KEY> Add<INDEX_KEY>( long IEntityId, INDEX_KEY indexKey, params Value[] values ) where INDEX_KEY : Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptorSupplier
 		 {
 			  return new IndexEntryUpdate<INDEX_KEY>( IEntityId, indexKey, UpdateMode.ADDED, values );
 		 }
 
-		 public static IndexEntryUpdate<INDEX_KEY> Remove<INDEX_KEY>( long IEntityId, INDEX_KEY indexKey, params Value[] values ) where INDEX_KEY : Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptorSupplier
+		 public static IndexEntryUpdate<INDEX_KEY> Remove<INDEX_KEY>( long IEntityId, INDEX_KEY indexKey, params Value[] values ) where INDEX_KEY : Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptorSupplier
 		 {
 			  return new IndexEntryUpdate<INDEX_KEY>( IEntityId, indexKey, UpdateMode.REMOVED, values );
 		 }
 
-		 public static IndexEntryUpdate<INDEX_KEY> Change<INDEX_KEY>( long IEntityId, INDEX_KEY indexKey, Value before, Value after ) where INDEX_KEY : Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptorSupplier
+		 public static IndexEntryUpdate<INDEX_KEY> Change<INDEX_KEY>( long IEntityId, INDEX_KEY indexKey, Value before, Value after ) where INDEX_KEY : Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptorSupplier
 		 {
 			  return new IndexEntryUpdate<INDEX_KEY>( IEntityId, indexKey, UpdateMode.CHANGED, new Value[]{ before }, new Value[]{ after } );
 		 }
 
-		 public static IndexEntryUpdate<INDEX_KEY> Change<INDEX_KEY>( long IEntityId, INDEX_KEY indexKey, Value[] before, Value[] after ) where INDEX_KEY : Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptorSupplier
+		 public static IndexEntryUpdate<INDEX_KEY> Change<INDEX_KEY>( long IEntityId, INDEX_KEY indexKey, Value[] before, Value[] after ) where INDEX_KEY : Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptorSupplier
 		 {
 			  return new IndexEntryUpdate<INDEX_KEY>( IEntityId, indexKey, UpdateMode.CHANGED, before, after );
 		 }

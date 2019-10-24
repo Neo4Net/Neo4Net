@@ -53,7 +53,7 @@ namespace Neo4Net.ha.correctness
 	using SnapshotContext = Neo4Net.cluster.protocol.snapshot.SnapshotContext;
 	using SnapshotMessage = Neo4Net.cluster.protocol.snapshot.SnapshotMessage;
 	using Neo4Net.cluster.statemachine;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using HighAvailabilityMemberInfoProvider = Neo4Net.Kernel.ha.HighAvailabilityMemberInfoProvider;
 	using DefaultElectionCredentialsProvider = Neo4Net.Kernel.ha.cluster.DefaultElectionCredentialsProvider;

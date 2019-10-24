@@ -23,7 +23,7 @@ namespace Neo4Net.Server.rest.repr
 {
 
 	using ExecutionPlanDescription = Neo4Net.GraphDb.ExecutionPlanDescription;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.server.rest.repr.ObjectToRepresentationConverter.getMapRepresentation;

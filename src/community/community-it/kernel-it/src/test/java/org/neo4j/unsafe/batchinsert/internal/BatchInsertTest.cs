@@ -45,11 +45,11 @@ namespace Neo4Net.@unsafe.Batchinsert.Internal
 	using ConstraintDefinition = Neo4Net.GraphDb.Schema.ConstraintDefinition;
 	using ConstraintType = Neo4Net.GraphDb.Schema.ConstraintType;
 	using IndexDefinition = Neo4Net.GraphDb.Schema.IndexDefinition;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
-	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
-	using Neo4Net.Helpers.Collections;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
+	using MapUtil = Neo4Net.Collections.Helpers.MapUtil;
+	using Neo4Net.Collections.Helpers;
 	using RecoveryCleanupWorkCollector = Neo4Net.Index.Internal.gbptree.RecoveryCleanupWorkCollector;
-	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor;
+	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.Schema.IndexProviderDescriptor;
 	using DefaultFileSystemAbstraction = Neo4Net.Io.fs.DefaultFileSystemAbstraction;
 	using IndexAccessor = Neo4Net.Kernel.Api.Index.IndexAccessor;
 	using IndexPopulator = Neo4Net.Kernel.Api.Index.IndexPopulator;
@@ -1459,7 +1459,7 @@ namespace Neo4Net.@unsafe.Batchinsert.Internal
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.unsafe.batchinsert.BatchInserter newBatchInserterWithIndexProvider(org.Neo4Net.kernel.extension.KernelExtensionFactory<?> provider, org.Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor providerDescriptor) throws Exception
+//ORIGINAL LINE: private org.Neo4Net.unsafe.batchinsert.BatchInserter newBatchInserterWithIndexProvider(org.Neo4Net.kernel.extension.KernelExtensionFactory<?> provider, org.Neo4Net.Kernel.Api.Internal.Schema.IndexProviderDescriptor providerDescriptor) throws Exception
 		 private BatchInserter NewBatchInserterWithIndexProvider<T1>( KernelExtensionFactory<T1> provider, IndexProviderDescriptor providerDescriptor )
 		 {
 			  IDictionary<string, string> configuration = configuration();

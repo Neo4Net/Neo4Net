@@ -25,7 +25,7 @@ namespace Neo4Net.management.impl
 
 	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
 	using Service = Neo4Net.Helpers.Service;
-	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
+	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException;
 	using ManagementBeanProvider = Neo4Net.Jmx.impl.ManagementBeanProvider;
 	using ManagementData = Neo4Net.Jmx.impl.ManagementData;
 	using Neo4NetMBean = Neo4Net.Jmx.impl.Neo4NetMBean;

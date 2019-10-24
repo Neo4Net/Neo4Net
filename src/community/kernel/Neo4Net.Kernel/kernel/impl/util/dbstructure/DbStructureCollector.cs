@@ -25,10 +25,10 @@ namespace Neo4Net.Kernel.impl.util.dbstructure
 	using IntLongHashMap = org.eclipse.collections.impl.map.mutable.primitive.IntLongHashMap;
 
 
-	using Iterators = Neo4Net.Helpers.Collections.Iterators;
-	using Neo4Net.Helpers.Collections;
-	using LabelSchemaSupplier = Neo4Net.Kernel.Api.Internal.schema.LabelSchemaSupplier;
-	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
+	using Iterators = Neo4Net.Collections.Helpers.Iterators;
+	using Neo4Net.Collections.Helpers;
+	using LabelSchemaSupplier = Neo4Net.Kernel.Api.Internal.Schema.LabelSchemaSupplier;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
 	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
 	using NodeExistenceConstraintDescriptor = Neo4Net.Kernel.api.schema.constraints.NodeExistenceConstraintDescriptor;
 	using NodeKeyConstraintDescriptor = Neo4Net.Kernel.api.schema.constraints.NodeKeyConstraintDescriptor;
@@ -170,7 +170,7 @@ namespace Neo4Net.Kernel.impl.util.dbstructure
 				  return indexSize / nodesWithLabelCardinality( labelId );
 			 }
 
-			 private IEnumerator<Pair<string, string[]>> idsToNames<T1>( IEnumerable<T1> nodeConstraints ) where T1 : Neo4Net.Kernel.Api.Internal.schema.LabelSchemaSupplier
+			 private IEnumerator<Pair<string, string[]>> idsToNames<T1>( IEnumerable<T1> nodeConstraints ) where T1 : Neo4Net.Kernel.Api.Internal.Schema.LabelSchemaSupplier
 			 {
 				  return Iterators.map(nodeConstraint =>
 				  {
@@ -350,7 +350,7 @@ namespace Neo4Net.Kernel.impl.util.dbstructure
 			  public override IEnumerator<Pair<string[], string[]>> Iterator()
 			  {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.Iterator<org.Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor> iterator = indexMap.keySet().iterator();
+//ORIGINAL LINE: final java.util.Iterator<org.Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor> iterator = indexMap.keySet().iterator();
 					IEnumerator<SchemaDescriptor> iterator = IndexMap.Keys.GetEnumerator();
 					return new IteratorAnonymousInnerClass( this, iterator );
 			  }

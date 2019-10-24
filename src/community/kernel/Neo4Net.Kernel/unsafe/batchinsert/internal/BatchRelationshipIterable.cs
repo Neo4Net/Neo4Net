@@ -23,7 +23,7 @@ namespace Neo4Net.@unsafe.Batchinsert.Internal
 {
 
 	using NotFoundException = Neo4Net.GraphDb.NotFoundException;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using RecordNodeCursor = Neo4Net.Kernel.impl.storageengine.impl.recordstorage.RecordNodeCursor;
 	using RecordStorageReader = Neo4Net.Kernel.impl.storageengine.impl.recordstorage.RecordStorageReader;
 	using StorageRelationshipTraversalCursor = Neo4Net.Kernel.Api.StorageEngine.StorageRelationshipTraversalCursor;

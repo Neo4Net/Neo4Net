@@ -48,7 +48,7 @@ namespace Neo4Net.Procedure
 	using TransactionFailureException = Neo4Net.GraphDb.TransactionFailureException;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using AuthorizationViolationException = Neo4Net.GraphDb.security.AuthorizationViolationException;
-	using Iterators = Neo4Net.Helpers.Collections.Iterators;
+	using Iterators = Neo4Net.Collections.Helpers.Iterators;
 	using FileUtils = Neo4Net.Io.fs.FileUtils;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using AnonymousContext = Neo4Net.Kernel.api.security.AnonymousContext;

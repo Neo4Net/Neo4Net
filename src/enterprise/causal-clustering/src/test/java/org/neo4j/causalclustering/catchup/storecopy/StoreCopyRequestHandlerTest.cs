@@ -33,7 +33,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 	using StoreId = Neo4Net.causalclustering.identity.StoreId;
 	using StoreCopyRequest = Neo4Net.causalclustering.messaging.StoreCopyRequest;
 	using Neo4Net.GraphDb;
-	using Iterators = Neo4Net.Helpers.Collections.Iterators;
+	using Iterators = Neo4Net.Collections.Helpers.Iterators;
 	using DefaultFileSystemAbstraction = Neo4Net.Io.fs.DefaultFileSystemAbstraction;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;

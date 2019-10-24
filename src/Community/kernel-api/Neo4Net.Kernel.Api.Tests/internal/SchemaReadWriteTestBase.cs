@@ -26,11 +26,11 @@ namespace Neo4Net.Kernel.Api.Internal
 	using Test = org.junit.Test;
 	using ExpectedException = org.junit.rules.ExpectedException;
 
-	using Iterators = Neo4Net.Helpers.Collections.Iterators;
-	using SchemaKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.SchemaKernelException;
-	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.LabelSchemaDescriptor;
-	using RelationTypeSchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.RelationTypeSchemaDescriptor;
-	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor;
+	using Iterators = Neo4Net.Collections.Helpers.Iterators;
+	using SchemaKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.SchemaKernelException;
+	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.LabelSchemaDescriptor;
+	using RelationTypeSchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.RelationTypeSchemaDescriptor;
+	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor;
 	using Values = Neo4Net.Values.Storable.Values;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -1117,7 +1117,7 @@ namespace Neo4Net.Kernel.Api.Internal
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(expected = org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.SchemaKernelException.class) public void shouldFailIndexCreateForRepeatedProperties() throws Exception
+//ORIGINAL LINE: @Test(expected = org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.SchemaKernelException.class) public void shouldFailIndexCreateForRepeatedProperties() throws Exception
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldFailIndexCreateForRepeatedProperties()
 		 {
@@ -1128,7 +1128,7 @@ namespace Neo4Net.Kernel.Api.Internal
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(expected = org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.SchemaKernelException.class) public void shouldFailUniquenessConstraintCreateForRepeatedProperties() throws Exception
+//ORIGINAL LINE: @Test(expected = org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.SchemaKernelException.class) public void shouldFailUniquenessConstraintCreateForRepeatedProperties() throws Exception
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldFailUniquenessConstraintCreateForRepeatedProperties()
 		 {
@@ -1139,7 +1139,7 @@ namespace Neo4Net.Kernel.Api.Internal
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(expected = org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.SchemaKernelException.class) public void shouldFailNodeKeyCreateForRepeatedProperties() throws Exception
+//ORIGINAL LINE: @Test(expected = org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.SchemaKernelException.class) public void shouldFailNodeKeyCreateForRepeatedProperties() throws Exception
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldFailNodeKeyCreateForRepeatedProperties()
 		 {

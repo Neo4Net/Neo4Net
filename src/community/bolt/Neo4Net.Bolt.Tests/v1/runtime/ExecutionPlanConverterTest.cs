@@ -25,8 +25,8 @@ namespace Neo4Net.Bolt.v1.runtime
 
 
 	using ExecutionPlanDescription = Neo4Net.GraphDb.ExecutionPlanDescription;
-	using Iterators = Neo4Net.Helpers.Collections.Iterators;
-	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
+	using Iterators = Neo4Net.Collections.Helpers.Iterators;
+	using MapUtil = Neo4Net.Collections.Helpers.MapUtil;
 	using ValueUtils = Neo4Net.Kernel.impl.util.ValueUtils;
 	using DoubleValue = Neo4Net.Values.Storable.DoubleValue;
 	using MapValue = Neo4Net.Values.@virtual.MapValue;

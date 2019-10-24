@@ -39,7 +39,7 @@ namespace Neo4Net.Kernel.impl.ha
 	using ClusterMemberEvents = Neo4Net.cluster.member.ClusterMemberEvents;
 	using ClusterMemberListener = Neo4Net.cluster.member.ClusterMemberListener;
 	using NotElectableElectionCredentialsProvider = Neo4Net.cluster.protocol.election.NotElectableElectionCredentialsProvider;
-	using StoreAssertions = Neo4Net.Consistency.store.StoreAssertions;
+	using StoreAssertions = Neo4Net.Consistency.Store.StoreAssertions;
 	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
 	using TransactionFailureException = Neo4Net.GraphDb.TransactionFailureException;
 	using Neo4Net.GraphDb.config;
@@ -48,8 +48,8 @@ namespace Neo4Net.Kernel.impl.ha
 	using HighlyAvailableGraphDatabaseFactory = Neo4Net.GraphDb.factory.HighlyAvailableGraphDatabaseFactory;
 	using AdvertisedSocketAddress = Neo4Net.Helpers.AdvertisedSocketAddress;
 	using HostnamePort = Neo4Net.Helpers.HostnamePort;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
-	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
+	using MapUtil = Neo4Net.Collections.Helpers.MapUtil;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using StoreLayout = Neo4Net.Io.layout.StoreLayout;
 	using IOLimiter = Neo4Net.Io.pagecache.IOLimiter;

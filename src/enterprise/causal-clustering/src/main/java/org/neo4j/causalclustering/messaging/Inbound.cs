@@ -22,12 +22,12 @@
  */
 namespace Neo4Net.causalclustering.messaging
 {
-	public interface Inbound<M> where M : Message
+	public interface IInbound<M> where M : Message
 	{
 		 void RegisterHandler( Inbound_MessageHandler<M> handler );
 	}
 
-	 public interface Inbound_MessageHandler<M> where M : Message
+	 public interface IInbound_MessageHandler<M> where M : Message
 	 {
 		  void Handle( M message );
 	 }

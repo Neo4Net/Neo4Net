@@ -23,7 +23,7 @@ using System.Collections.Generic;
 namespace Neo4Net.@unsafe.Impl.Batchimport.staging
 {
 
-	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
+	using MapUtil = Neo4Net.Collections.Helpers.MapUtil;
 	using DetailLevel = Neo4Net.@unsafe.Impl.Batchimport.stats.DetailLevel;
 	using Key = Neo4Net.@unsafe.Impl.Batchimport.stats.Key;
 	using Keys = Neo4Net.@unsafe.Impl.Batchimport.stats.Keys;

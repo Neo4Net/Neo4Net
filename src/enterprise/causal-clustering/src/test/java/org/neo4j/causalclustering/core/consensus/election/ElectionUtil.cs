@@ -28,7 +28,7 @@ namespace Neo4Net.causalclustering.core.consensus.election
 {
 
 	using MemberId = Neo4Net.causalclustering.identity.MemberId;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 
 	public class ElectionUtil
 	{

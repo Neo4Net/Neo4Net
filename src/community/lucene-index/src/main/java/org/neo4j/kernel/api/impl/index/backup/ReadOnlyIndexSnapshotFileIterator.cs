@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index.backup
 
 
 	using Neo4Net.GraphDb;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 
 	/// <summary>
 	/// Iterator over Lucene read only index files for a particular <seealso cref="IndexCommit snapshot"/>.

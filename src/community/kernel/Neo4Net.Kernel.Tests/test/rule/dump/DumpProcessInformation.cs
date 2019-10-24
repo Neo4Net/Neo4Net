@@ -26,7 +26,7 @@ namespace Neo4Net.Test.rule.dump
 
 
 	using Args = Neo4Net.Helpers.Args;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using FormattedLogProvider = Neo4Net.Logging.FormattedLogProvider;
 	using Log = Neo4Net.Logging.Log;
 	using LogProvider = Neo4Net.Logging.LogProvider;

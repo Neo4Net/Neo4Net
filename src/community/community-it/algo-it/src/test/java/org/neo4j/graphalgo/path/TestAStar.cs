@@ -40,8 +40,8 @@ namespace Neo4Net.GraphAlgo.path
 	using Neo4Net.GraphDb;
 	using Neo4Net.GraphDb.Traversal;
 	using Neo4Net.GraphDb.Traversal;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
-	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
+	using MapUtil = Neo4Net.Collections.Helpers.MapUtil;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;

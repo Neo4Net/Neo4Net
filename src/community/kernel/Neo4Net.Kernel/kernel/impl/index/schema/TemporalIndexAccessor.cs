@@ -23,9 +23,9 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 {
 
 	using Neo4Net.GraphDb;
-	using Neo4Net.Helpers.Collections;
-	using Neo4Net.Helpers.Collections;
-	using Iterators = Neo4Net.Helpers.Collections.Iterators;
+	using Neo4Net.Collections.Helpers;
+	using Neo4Net.Collections.Helpers;
+	using Iterators = Neo4Net.Collections.Helpers.Iterators;
 	using RecoveryCleanupWorkCollector = Neo4Net.Index.Internal.gbptree.RecoveryCleanupWorkCollector;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using IOLimiter = Neo4Net.Io.pagecache.IOLimiter;
@@ -128,9 +128,9 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 				  foreach ( BoundedIterable<long> part in _allEntriesReader )
 				  {
 						long partMaxCount = part.MaxCount();
-						if ( partMaxCount == Neo4Net.Helpers.Collections.BoundedIterable_Fields.UNKNOWN_MAX_COUNT )
+						if ( partMaxCount == Neo4Net.Collections.Helpers.BoundedIterable_Fields.UNKNOWN_MAX_COUNT )
 						{
-							 return Neo4Net.Helpers.Collections.BoundedIterable_Fields.UNKNOWN_MAX_COUNT;
+							 return Neo4Net.Collections.Helpers.BoundedIterable_Fields.UNKNOWN_MAX_COUNT;
 						}
 						sum += partMaxCount;
 				  }

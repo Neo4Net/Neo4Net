@@ -26,8 +26,8 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 
 
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
-	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
+	using MapUtil = Neo4Net.Collections.Helpers.MapUtil;
 	using DefaultFileSystemAbstraction = Neo4Net.Io.fs.DefaultFileSystemAbstraction;
 	using LuceneIndexProviderFactory = Neo4Net.Kernel.Api.Impl.Schema.LuceneIndexProviderFactory;
 	using Neo4Net.Kernel.extension;

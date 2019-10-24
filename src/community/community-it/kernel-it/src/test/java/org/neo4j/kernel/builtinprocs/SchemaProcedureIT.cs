@@ -86,7 +86,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 public virtual void TestLabelIndex()
 		 {
 			  // Given there is label with index and a constraint
-			  Transaction transaction = NewTransaction( AnonymousContext.writeToken() );
+			  Transaction transaction = NewTransaction( AnonymousContext.WriteToken() );
 			  long nodeId = transaction.DataWrite().nodeCreate();
 			  int labelId = transaction.TokenWrite().labelGetOrCreateForName("Person");
 			  transaction.DataWrite().nodeAddLabel(nodeId, labelId);
@@ -124,7 +124,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 public virtual void TestRelationShip()
 		 {
 			  // Given there ar
-			  Transaction transaction = NewTransaction( AnonymousContext.writeToken() );
+			  Transaction transaction = NewTransaction( AnonymousContext.WriteToken() );
 			  long nodeIdPerson = transaction.DataWrite().nodeCreate();
 			  int labelIdPerson = transaction.TokenWrite().labelGetOrCreateForName("Person");
 			  transaction.DataWrite().nodeAddLabel(nodeIdPerson, labelIdPerson);

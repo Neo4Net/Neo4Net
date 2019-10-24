@@ -24,7 +24,7 @@ using System.Diagnostics;
 namespace Neo4Net.Kernel.impl.transaction.command
 {
 
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using CommandVisitor = Neo4Net.Kernel.Impl.Api.CommandVisitor;
 	using PropertyRecordChange = Neo4Net.Kernel.impl.storageengine.impl.recordstorage.PropertyRecordChange;
 	using AbstractBaseRecord = Neo4Net.Kernel.Impl.Store.Records.AbstractBaseRecord;

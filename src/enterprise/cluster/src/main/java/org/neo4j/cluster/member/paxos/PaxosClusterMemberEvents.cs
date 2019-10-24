@@ -41,7 +41,7 @@ namespace Neo4Net.cluster.member.paxos
 	using SnapshotProvider = Neo4Net.cluster.protocol.snapshot.SnapshotProvider;
 	using Neo4Net.Helpers;
 	using NamedThreadFactory = Neo4Net.Helpers.NamedThreadFactory;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using Lifecycle = Neo4Net.Kernel.Lifecycle.Lifecycle;
 	using Log = Neo4Net.Logging.Log;
 	using LogProvider = Neo4Net.Logging.LogProvider;

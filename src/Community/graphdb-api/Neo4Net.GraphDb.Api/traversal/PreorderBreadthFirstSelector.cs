@@ -19,50 +19,47 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 namespace Neo4Net.GraphDb.Traversal
 {
+    /// <summary>
+    /// Selects <seealso cref="ITraversalBranch"/>s according to breadth first
+    /// pattern, the most natural ordering in a breadth first search, see
+    /// http://en.wikipedia.org/wiki/Breadth-first_search
+    /// </summary>
+    internal class PreorderBreadthFirstSelector : IBranchSelector
+    {
+        private readonly LinkedList<ITraversalBranch> _queue = new LinkedList<ITraversalBranch>();
+        private ITraversalBranch _current;
+        private readonly IPathExpander _expander;
 
-	using Neo4Net.GraphDb;
+        internal PreorderBreadthFirstSelector(ITraversalBranch startSource, IPathExpander expander)
+        {
+            _current = startSource;
+            _expander = expander;
+        }
 
-	/// <summary>
-	/// Selects <seealso cref="ITraversalBranch"/>s according to breadth first
-	/// pattern, the most natural ordering in a breadth first search, see
-	/// http://en.wikipedia.org/wiki/Breadth-first_search
-	/// </summary>
-	internal class PreorderBreadthFirstSelector : BranchSelector
-	{
-		 private readonly LinkedList<ITraversalBranch> _queue = new LinkedList<ITraversalBranch>();
-		 private ITraversalBranch _current;
-		 private readonly IPathExpander _expander;
-
-		 internal PreorderBreadthFirstSelector( ITraversalBranch startSource, IPathExpander expander )
-		 {
-			  _current = startSource;
-			  _expander = expander;
-		 }
-
-		 public override ITraversalBranch Next( TraversalContext metadata )
-		 {
-			  ITraversalBranch result = null;
-			  while ( result == null )
-			  {
-					ITraversalBranch next = _current.next( _expander, metadata );
-					if ( next != null )
-					{
-						 _queue.AddLast( next );
-						 result = next;
-					}
-					else
-					{
-						 _current = _queue.RemoveFirst();
-						 if ( _current == null )
-						 {
-							  return null;
-						 }
-					}
-			  }
-			  return result;
-		 }
-	}
-
+        public override ITraversalBranch Next(TraversalContext metadata)
+        {
+            ITraversalBranch result = null;
+            while (result == null)
+            {
+                ITraversalBranch next = _current.next(_expander, metadata);
+                if (next != null)
+                {
+                    _queue.AddLast(next);
+                    result = next;
+                }
+                else
+                {
+                    _current = _queue.RemoveFirst();
+                    if (_current == null)
+                    {
+                        return null;
+                    }
+                }
+            }
+            return result;
+        }
+    }
 }

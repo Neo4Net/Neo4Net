@@ -24,7 +24,7 @@ namespace Neo4Net.Index.lucene
 	using Node = Neo4Net.GraphDb.Node;
 	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
 	using Relationship = Neo4Net.GraphDb.Relationship;
-	using Neo4Net.GraphDb.index;
+	using Neo4Net.GraphDb.Index;
 
 	/// <summary>
 	/// A utility for ordering nodes or relationships in a timeline. Entities are added

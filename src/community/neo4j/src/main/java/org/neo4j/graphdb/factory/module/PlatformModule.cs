@@ -26,7 +26,7 @@ namespace Neo4Net.GraphDb.factory.module
 	using GraphDatabaseFacadeFactory = Neo4Net.GraphDb.facade.GraphDatabaseFacadeFactory;
 	using AbstractEditionModule = Neo4Net.GraphDb.factory.module.edition.AbstractEditionModule;
 	using URLAccessRule = Neo4Net.GraphDb.security.URLAccessRule;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using GroupingRecoveryCleanupWorkCollector = Neo4Net.Index.Internal.gbptree.GroupingRecoveryCleanupWorkCollector;
 	using RecoveryCleanupWorkCollector = Neo4Net.Index.Internal.gbptree.RecoveryCleanupWorkCollector;
 	using DiagnosticsManager = Neo4Net.Internal.Diagnostics.DiagnosticsManager;

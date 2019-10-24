@@ -23,9 +23,9 @@ namespace Neo4Net.Kernel.impl.coreapi
 {
 	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
 	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
-	using Neo4Net.GraphDb.index;
-	using Neo4Net.GraphDb.index;
-	using Neo4Net.GraphDb.index;
+	using Neo4Net.GraphDb.Index;
+	using Neo4Net.GraphDb.Index;
+	using Neo4Net.GraphDb.Index;
 
 	/// <summary>
 	/// Wraps an explicit index to prevent writes to it - exposing it as a read-only index.

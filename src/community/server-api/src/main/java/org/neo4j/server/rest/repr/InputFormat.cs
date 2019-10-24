@@ -24,7 +24,7 @@ namespace Neo4Net.Server.rest.repr
 
 	using ParameterList = Neo4Net.Server.plugins.ParameterList;
 
-	public interface InputFormat
+	public interface IInputFormat
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 //ORIGINAL LINE: Object readValue(String input) throws BadInputException;

@@ -36,7 +36,7 @@ namespace Neo4Net.causalclustering.core.consensus.shipping
 	using ConsecutiveInFlightCache = Neo4Net.causalclustering.core.consensus.log.cache.ConsecutiveInFlightCache;
 	using TimerService = Neo4Net.causalclustering.core.consensus.schedule.TimerService;
 	using MemberId = Neo4Net.causalclustering.identity.MemberId;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using LifeRule = Neo4Net.Kernel.Lifecycle.LifeRule;
 	using Log = Neo4Net.Logging.Log;
 	using LogProvider = Neo4Net.Logging.LogProvider;

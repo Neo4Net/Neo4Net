@@ -29,7 +29,7 @@ namespace Neo4Net.GraphDb.store.id
 
 	using Neo4Net.GraphDb;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using Iterators = Neo4Net.Helpers.Collections.Iterators;
+	using Iterators = Neo4Net.Collections.Helpers.Iterators;
 	using EnterpriseEditionSettings = Neo4Net.Kernel.impl.enterprise.configuration.EnterpriseEditionSettings;
 	using IdController = Neo4Net.Kernel.impl.storageengine.impl.recordstorage.id.IdController;
 	using IdType = Neo4Net.Kernel.impl.store.id.IdType;

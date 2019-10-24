@@ -26,7 +26,7 @@ namespace Neo4Net.causalclustering.core.consensus.log.cache
 	/// <summary>
 	/// A cache for in-flight entries which also tracks the size of the cache.
 	/// </summary>
-	public interface InFlightCache
+	public interface IInFlightCache
 	{
 		 /// <summary>
 		 /// Enables the cache.

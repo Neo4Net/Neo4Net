@@ -23,7 +23,7 @@ using System.Collections.Generic;
 namespace Neo4Net.Kernel.impl.storemigration
 {
 
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 
 	internal sealed class MigrationStatus
@@ -87,7 +87,7 @@ namespace Neo4Net.Kernel.impl.storemigration
 			  return MigrationStatus.ValueOf( data.First() );
 		 }
 
-		 private static Neo4Net.Helpers.Collections.Pair<string, string> ReadFromFile( Neo4Net.Io.fs.FileSystemAbstraction fs, java.io.File file, MigrationStatus expectedSate )
+		 private static Neo4Net.Collections.Helpers.Pair<string, string> ReadFromFile( Neo4Net.Io.fs.FileSystemAbstraction fs, java.io.File file, MigrationStatus expectedSate )
 		 {
 			  try
 			  {

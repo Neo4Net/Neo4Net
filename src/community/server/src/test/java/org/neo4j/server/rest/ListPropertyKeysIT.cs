@@ -24,7 +24,7 @@ namespace Neo4Net.Server.rest
 
 	using Test = org.junit.Test;
 
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using Documented = Neo4Net.Kernel.Impl.Annotations.Documented;
 	using JsonParseException = Neo4Net.Server.rest.domain.JsonParseException;
 	using GraphDescription = Neo4Net.Test.GraphDescription;

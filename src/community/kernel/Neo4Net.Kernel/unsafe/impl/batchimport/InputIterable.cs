@@ -22,7 +22,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 	/// <summary>
 	/// <seealso cref="System.Collections.IEnumerable"/> that returns <seealso cref="InputIterator"/> instances.
 	/// </summary>
-	public interface InputIterable
+	public interface IInputIterable
 	{
 		 InputIterator Iterator();
 	}

@@ -21,13 +21,13 @@
  */
 namespace Neo4Net.Kernel.Api.StorageEngine.schema
 {
-	using MalformedSchemaRuleException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.MalformedSchemaRuleException;
-	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.LabelSchemaDescriptor;
-	using RelationTypeSchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.RelationTypeSchemaDescriptor;
-	using Neo4Net.Kernel.Api.Internal.schema;
-	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
-	using SchemaDescriptorSupplier = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptorSupplier;
-	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor;
+	using MalformedSchemaRuleException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.MalformedSchemaRuleException;
+	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.LabelSchemaDescriptor;
+	using RelationTypeSchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.RelationTypeSchemaDescriptor;
+	using Neo4Net.Kernel.Api.Internal.Schema;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
+	using SchemaDescriptorSupplier = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptorSupplier;
+	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor;
 
 	/// <summary>
 	/// Represents a stored schema rule.
@@ -152,7 +152,7 @@ namespace Neo4Net.Kernel.Api.StorageEngine.schema
 		  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static SchemaRule_Kind forId(byte id) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.MalformedSchemaRuleException
+//ORIGINAL LINE: public static SchemaRule_Kind forId(byte id) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.MalformedSchemaRuleException
 		  public static SchemaRule_Kind ForId( sbyte id )
 		  {
 				if ( id >= 1 && id <= All.Length )
@@ -175,7 +175,7 @@ namespace Neo4Net.Kernel.Api.StorageEngine.schema
 				}
 		  }
 
-		  public static SchemaRule_Kind Map( Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor descriptor )
+		  public static SchemaRule_Kind Map( Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor descriptor )
 		  {
 				switch ( descriptor.Type() )
 				{

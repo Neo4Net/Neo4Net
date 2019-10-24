@@ -31,7 +31,7 @@ namespace Neo4Net.Kernel.impl.transaction
 	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
 	using Relationship = Neo4Net.GraphDb.Relationship;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using LogEntry = Neo4Net.Kernel.impl.transaction.log.entry.LogEntry;
 	using LogFiles = Neo4Net.Kernel.impl.transaction.log.files.LogFiles;

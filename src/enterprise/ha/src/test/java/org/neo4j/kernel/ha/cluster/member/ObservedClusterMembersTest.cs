@@ -35,7 +35,7 @@ namespace Neo4Net.Kernel.ha.cluster.member
 	using ClusterListener = Neo4Net.cluster.protocol.cluster.ClusterListener;
 	using Heartbeat = Neo4Net.cluster.protocol.heartbeat.Heartbeat;
 	using HeartbeatListener = Neo4Net.cluster.protocol.heartbeat.HeartbeatListener;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using FormattedLogProvider = Neo4Net.Logging.FormattedLogProvider;
 	using LogProvider = Neo4Net.Logging.LogProvider;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;

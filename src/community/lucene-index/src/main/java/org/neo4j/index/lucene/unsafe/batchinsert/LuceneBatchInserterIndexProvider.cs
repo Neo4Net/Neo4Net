@@ -23,7 +23,7 @@ using System.Collections.Generic;
 namespace Neo4Net.Index.lucene.@unsafe.batchinsert
 {
 
-	using Neo4Net.GraphDb.index;
+	using Neo4Net.GraphDb.Index;
 	using LuceneBatchInserterIndexProviderNewImpl = Neo4Net.Index.impl.lucene.@explicit.LuceneBatchInserterIndexProviderNewImpl;
 	using BatchInserter = Neo4Net.@unsafe.Batchinsert.BatchInserter;
 	using BatchInserterIndex = Neo4Net.@unsafe.Batchinsert.BatchInserterIndex;

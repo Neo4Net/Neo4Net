@@ -32,7 +32,7 @@ namespace Neo4Net.Kernel.impl.traversal
 	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
 	using Neo4Net.GraphDb;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using StandardBranchCollisionDetector = Neo4Net.GraphDb.impl.traversal.StandardBranchCollisionDetector;
+	using StandardBranchCollisionDetector = Neo4Net.GraphDb.Impl.Traversal.StandardBranchCollisionDetector;
 	using BidirectionalTraversalDescription = Neo4Net.GraphDb.Traversal.BidirectionalTraversalDescription;
 	using BranchCollisionPolicy = Neo4Net.GraphDb.Traversal.BranchCollisionPolicy;
 	using Evaluators = Neo4Net.GraphDb.Traversal.Evaluators;
@@ -42,8 +42,8 @@ namespace Neo4Net.Kernel.impl.traversal
 	using TraversalDescription = Neo4Net.GraphDb.Traversal.TraversalDescription;
 	using Traverser = Neo4Net.GraphDb.Traversal.Traverser;
 	using Uniqueness = Neo4Net.GraphDb.Traversal.Uniqueness;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
-	using Iterators = Neo4Net.Helpers.Collections.Iterators;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
+	using Iterators = Neo4Net.Collections.Helpers.Iterators;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Arrays.asList;

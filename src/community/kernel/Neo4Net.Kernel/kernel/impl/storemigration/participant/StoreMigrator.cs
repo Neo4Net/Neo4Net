@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel.impl.storemigration.participant
 	using StringUtils = org.apache.commons.lang3.StringUtils;
 
 
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using FileUtils = Neo4Net.Io.fs.FileUtils;
 	using DatabaseFile = Neo4Net.Io.layout.DatabaseFile;

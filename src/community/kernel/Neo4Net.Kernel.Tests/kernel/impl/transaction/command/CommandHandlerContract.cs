@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Kernel.impl.transaction.command
 {
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using BatchTransactionApplier = Neo4Net.Kernel.Impl.Api.BatchTransactionApplier;
 	using TransactionApplier = Neo4Net.Kernel.Impl.Api.TransactionApplier;
 	using TransactionToApply = Neo4Net.Kernel.Impl.Api.TransactionToApply;

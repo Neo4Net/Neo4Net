@@ -27,8 +27,8 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 	using RuleChain = org.junit.rules.RuleChain;
 
 	using Node = Neo4Net.GraphDb.Node;
-	using IndexManager = Neo4Net.GraphDb.index.IndexManager;
-	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
+	using IndexManager = Neo4Net.GraphDb.Index.IndexManager;
+	using MapUtil = Neo4Net.Collections.Helpers.MapUtil;
 	using IndexConfigStore = Neo4Net.Kernel.impl.index.IndexConfigStore;
 	using IndexEntityType = Neo4Net.Kernel.impl.index.IndexEntityType;
 	using CleanupRule = Neo4Net.Test.rule.CleanupRule;
@@ -147,7 +147,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 private void SetupIndexInfrastructure()
 		 {
 			  _indexStore = new IndexConfigStore( _testDirectory.databaseLayout(), _fileSystemRule.get() );
-			  _indexStore.set( typeof( Node ), INDEX_NAME, MapUtil.stringMap( Neo4Net.GraphDb.index.IndexManager_Fields.PROVIDER, "lucene", "type", "fulltext" ) );
+			  _indexStore.set( typeof( Node ), INDEX_NAME, MapUtil.stringMap( Neo4Net.GraphDb.Index.IndexManager_Fields.PROVIDER, "lucene", "type", "fulltext" ) );
 		 }
 	}
 

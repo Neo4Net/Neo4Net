@@ -30,8 +30,8 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 	using ArgumentMatchers = org.mockito.ArgumentMatchers;
 
 
-	using Neo4Net.Helpers.Collections;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Neo4Net.Collections.Helpers;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using IndexAccessor = Neo4Net.Kernel.Api.Index.IndexAccessor;
 	using IndexUpdater = Neo4Net.Kernel.Api.Index.IndexUpdater;
 	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
@@ -489,7 +489,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 
 					// then
 					BoundedIterable<long> fusionAllEntriesReader = _fusionIndexAccessor.newAllEntriesReader();
-					assertThat( fusionAllEntriesReader.MaxCount(), @is(Neo4Net.Helpers.Collections.BoundedIterable_Fields.UNKNOWN_MAX_COUNT) );
+					assertThat( fusionAllEntriesReader.MaxCount(), @is(Neo4Net.Collections.Helpers.BoundedIterable_Fields.UNKNOWN_MAX_COUNT) );
 			  }
 		 }
 
@@ -650,7 +650,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 		 private static BoundedIterable<long> MockedAllEntriesReader( bool knownMaxCount, IList<long> entries )
 		 {
 			  BoundedIterable<long> mockedAllEntriesReader = mock( typeof( BoundedIterable ) );
-			  when( mockedAllEntriesReader.MaxCount() ).thenReturn(knownMaxCount ? entries.Count : Neo4Net.Helpers.Collections.BoundedIterable_Fields.UNKNOWN_MAX_COUNT);
+			  when( mockedAllEntriesReader.MaxCount() ).thenReturn(knownMaxCount ? entries.Count : Neo4Net.Collections.Helpers.BoundedIterable_Fields.UNKNOWN_MAX_COUNT);
 			  when( mockedAllEntriesReader.GetEnumerator() ).thenReturn(entries.GetEnumerator());
 			  return mockedAllEntriesReader;
 		 }

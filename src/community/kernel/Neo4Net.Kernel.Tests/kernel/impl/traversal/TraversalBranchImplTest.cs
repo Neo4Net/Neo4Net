@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.impl.traversal
 	using Neo4Net.GraphDb.Traversal;
 	using TraversalBranch = Neo4Net.GraphDb.Traversal.TraversalBranch;
 	using TraversalContext = Neo4Net.GraphDb.Traversal.TraversalContext;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.ArgumentMatchers.any;

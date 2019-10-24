@@ -35,7 +35,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 	using Neo4Net.Functions;
 	using TaskCoordinator = Neo4Net.Helpers.TaskCoordinator;
 	using IndexQuery = Neo4Net.Kernel.Api.Internal.IndexQuery;
-	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
+	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException;
 	using IndexEntryConflictException = Neo4Net.Kernel.Api.Exceptions.index.IndexEntryConflictException;
 	using DirectoryFactory = Neo4Net.Kernel.Api.Impl.Index.storage.DirectoryFactory;
 	using Neo4Net.Kernel.Api.Index;

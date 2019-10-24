@@ -71,7 +71,7 @@ namespace Neo4Net.CodeGen
 			  }
 			  else
 			  {
-					variable.Type().writeTo(_result);
+					variable.Type().WriteTo(_result);
 			  }
 			  _result.Append( ", name=" ).Append( variable.Name() ).Append("}");
 		 }

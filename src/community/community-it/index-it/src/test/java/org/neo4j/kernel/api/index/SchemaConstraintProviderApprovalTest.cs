@@ -34,8 +34,8 @@ namespace Neo4Net.Kernel.Api.Index
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using ArrayUtil = Neo4Net.Helpers.ArrayUtil;
 	using Strings = Neo4Net.Helpers.Strings;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
-	using Iterators = Neo4Net.Helpers.Collections.Iterators;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
+	using Iterators = Neo4Net.Collections.Helpers.Iterators;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 	using CoordinateReferenceSystem = Neo4Net.Values.Storable.CoordinateReferenceSystem;
 	using PointValue = Neo4Net.Values.Storable.PointValue;

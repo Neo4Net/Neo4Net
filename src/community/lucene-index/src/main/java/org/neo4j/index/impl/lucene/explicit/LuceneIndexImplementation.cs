@@ -23,8 +23,8 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 {
 
 	using Neo4Net.GraphDb;
-	using IndexManager = Neo4Net.GraphDb.index.IndexManager;
-	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
+	using IndexManager = Neo4Net.GraphDb.Index.IndexManager;
+	using MapUtil = Neo4Net.Collections.Helpers.MapUtil;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using Config = Neo4Net.Kernel.configuration.Config;
@@ -44,9 +44,9 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 internal const string KEY_SIMILARITY = "similarity";
 		 public const string SERVICE_NAME = "lucene";
 
-		 public static readonly IDictionary<string, string> ExactConfig = Collections.unmodifiableMap( MapUtil.stringMap( Neo4Net.GraphDb.index.IndexManager_Fields.PROVIDER, SERVICE_NAME, KEY_TYPE, "exact" ) );
+		 public static readonly IDictionary<string, string> ExactConfig = Collections.unmodifiableMap( MapUtil.stringMap( Neo4Net.GraphDb.Index.IndexManager_Fields.PROVIDER, SERVICE_NAME, KEY_TYPE, "exact" ) );
 
-		 public static readonly IDictionary<string, string> FulltextConfig = Collections.unmodifiableMap( MapUtil.stringMap( Neo4Net.GraphDb.index.IndexManager_Fields.PROVIDER, SERVICE_NAME, KEY_TYPE, "fulltext", KEY_TO_LOWER_CASE, "true" ) );
+		 public static readonly IDictionary<string, string> FulltextConfig = Collections.unmodifiableMap( MapUtil.stringMap( Neo4Net.GraphDb.Index.IndexManager_Fields.PROVIDER, SERVICE_NAME, KEY_TYPE, "fulltext", KEY_TO_LOWER_CASE, "true" ) );
 
 		 private LuceneDataSource _dataSource;
 		 private readonly DatabaseLayout _databaseLayout;

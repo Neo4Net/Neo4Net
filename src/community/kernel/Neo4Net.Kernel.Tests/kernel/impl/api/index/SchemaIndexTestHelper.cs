@@ -26,7 +26,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using IndexReference = Neo4Net.Kernel.Api.Internal.IndexReference;
 	using InternalIndexState = Neo4Net.Kernel.Api.Internal.InternalIndexState;
 	using SchemaRead = Neo4Net.Kernel.Api.Internal.SchemaRead;
-	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
+	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException;
 	using IndexProvider = Neo4Net.Kernel.Api.Index.IndexProvider;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using ExtensionType = Neo4Net.Kernel.extension.ExtensionType;
@@ -89,7 +89,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static void awaitIndexOnline(org.Neo4Net.Kernel.Api.Internal.SchemaRead schemaRead, org.Neo4Net.Kernel.Api.Internal.IndexReference index) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: public static void awaitIndexOnline(org.Neo4Net.Kernel.Api.Internal.SchemaRead schemaRead, org.Neo4Net.Kernel.Api.Internal.IndexReference index) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
 		 public static void AwaitIndexOnline( SchemaRead schemaRead, IndexReference index )
 		 {
 			  long start = DateTimeHelper.CurrentUnixTimeMillis();

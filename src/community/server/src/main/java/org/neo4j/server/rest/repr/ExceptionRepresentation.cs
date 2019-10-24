@@ -24,7 +24,7 @@ namespace Neo4Net.Server.rest.repr
 {
 
 	using ConstraintViolationException = Neo4Net.GraphDb.ConstraintViolationException;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using Neo4NetError = Neo4Net.Server.rest.transactional.error.Neo4NetError;
 

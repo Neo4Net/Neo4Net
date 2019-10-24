@@ -23,10 +23,10 @@ namespace Neo4Net.Kernel.api.schema
 
 
 	using TokenNameLookup = Neo4Net.Kernel.Api.Internal.TokenNameLookup;
-	using Neo4Net.Kernel.Api.Internal.schema;
-	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
-	using SchemaProcessor = Neo4Net.Kernel.Api.Internal.schema.SchemaProcessor;
-	using SchemaUtil = Neo4Net.Kernel.Api.Internal.schema.SchemaUtil;
+	using Neo4Net.Kernel.Api.Internal.Schema;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
+	using SchemaProcessor = Neo4Net.Kernel.Api.Internal.Schema.SchemaProcessor;
+	using SchemaUtil = Neo4Net.Kernel.Api.Internal.Schema.SchemaUtil;
 	using ResourceTypes = Neo4Net.Kernel.impl.locking.ResourceTypes;
 	using EntityType = Neo4Net.Kernel.Api.StorageEngine.EntityType;
 	using ResourceType = Neo4Net.Kernel.Api.StorageEngine.@lock.ResourceType;
@@ -107,9 +107,9 @@ namespace Neo4Net.Kernel.api.schema
 			  return _entityType;
 		 }
 
-		 public override Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor_PropertySchemaType PropertySchemaType()
+		 public override Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor_PropertySchemaType PropertySchemaType()
 		 {
-			  return Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor_PropertySchemaType.PartialAnyToken;
+			  return Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor_PropertySchemaType.PartialAnyToken;
 		 }
 
 		 public override SchemaDescriptor Schema()

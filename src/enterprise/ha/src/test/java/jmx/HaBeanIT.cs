@@ -30,7 +30,7 @@ namespace Jmx
 
 
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using Kernel = Neo4Net.Jmx.Kernel;
 	using JmxKernelExtension = Neo4Net.Jmx.impl.JmxKernelExtension;
 	using Settings = Neo4Net.Kernel.configuration.Settings;

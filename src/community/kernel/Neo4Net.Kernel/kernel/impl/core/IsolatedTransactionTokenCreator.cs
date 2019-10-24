@@ -24,8 +24,8 @@ namespace Neo4Net.Kernel.impl.core
 	using Transaction = Neo4Net.Kernel.Api.Internal.Transaction;
 	using Transaction_Type = Neo4Net.Kernel.Api.Internal.Transaction_Type;
 	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
-	using IllegalTokenNameException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IllegalTokenNameException;
-	using TooManyLabelsException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.TooManyLabelsException;
+	using IllegalTokenNameException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IllegalTokenNameException;
+	using TooManyLabelsException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.TooManyLabelsException;
 	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 
 	/// <summary>
@@ -80,7 +80,7 @@ namespace Neo4Net.Kernel.impl.core
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: abstract int createKey(org.Neo4Net.Kernel.Api.Internal.Transaction transaction, String name) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IllegalTokenNameException, org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.TooManyLabelsException;
+//ORIGINAL LINE: abstract int createKey(org.Neo4Net.Kernel.Api.Internal.Transaction transaction, String name) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IllegalTokenNameException, org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.TooManyLabelsException;
 		 internal abstract int CreateKey( Transaction transaction, string name );
 	}
 

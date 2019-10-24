@@ -24,10 +24,10 @@ namespace Neo4Net.Kernel.Api.StorageEngine.schema
 	using IIndexReference = Neo4Net.Kernel.Api.Internal.IIndexReference;
 	using IndexValueCapability = Neo4Net.Kernel.Api.Internal.IndexValueCapability;
 	using ITokenNameLookup = Neo4Net.Kernel.Api.Internal.ITokenNameLookup;
-	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor;
-	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
-	using SchemaDescriptorSupplier = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptorSupplier;
-	using SchemaUtil = Neo4Net.Kernel.Api.Internal.schema.SchemaUtil;
+	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.Schema.IndexProviderDescriptor;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
+	using SchemaDescriptorSupplier = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptorSupplier;
+	using SchemaUtil = Neo4Net.Kernel.Api.Internal.Schema.SchemaUtil;
 	using ValueCategory = Neo4Net.Values.Storable.ValueCategory;
 
 	/// <summary>

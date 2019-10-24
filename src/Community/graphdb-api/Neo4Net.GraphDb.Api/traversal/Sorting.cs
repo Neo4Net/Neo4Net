@@ -20,131 +20,130 @@ using System.Collections.Generic;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 namespace Neo4Net.GraphDb.Traversal
 {
+    using Neo4Net.GraphDb;
 
-	using Neo4Net.GraphDb;
+    //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
+    //	import static org.Neo4Net.graphdb.traversal.Paths.singleNodePath;
 
-//JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.traversal.Paths.singleNodePath;
+    /// <summary>
+    /// Provides some common traversal sorting, used by
+    /// <seealso cref="ITraversalDescription.sort(System.Collections.IComparer)"/>.
+    /// </summary>
+    public abstract class Sorting
+    {
+        // No instances
+        private Sorting()
+        {
+        }
 
-	/// <summary>
-	/// Provides some common traversal sorting, used by
-	/// <seealso cref="TraversalDescription.sort(System.Collections.IComparer)"/>.
-	/// </summary>
-	public abstract class Sorting
-	{
-		 // No instances
-		 private Sorting()
-		 {
-		 }
+        /// <summary>
+        /// Sorts <seealso cref="IPath"/>s by the property value of each path's end node.
+        /// </summary>
+        /// <param name="propertyKey"> the property key of the values to sort on. </param>
+        /// <returns> a <seealso cref="System.Collections.IComparer"/> suitable for sorting traversal results. </returns>
+        //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
+        //ORIGINAL LINE: public static java.util.Comparator<? super org.Neo4Net.graphdb.Path> endNodeProperty(final String propertyKey)
+        //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
+        //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
+        public static IComparer<object> EndNodeProperty(string propertyKey)
+        {
+            return new EndNodeComparatorAnonymousInnerClass(propertyKey);
+        }
 
-		 /// <summary>
-		 /// Sorts <seealso cref="IPath"/>s by the property value of each path's end node.
-		 /// </summary>
-		 /// <param name="propertyKey"> the property key of the values to sort on. </param>
-		 /// <returns> a <seealso cref="System.Collections.IComparer"/> suitable for sorting traversal results. </returns>
-//JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-//ORIGINAL LINE: public static java.util.Comparator<? super org.Neo4Net.graphdb.Path> endNodeProperty(final String propertyKey)
-//JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-		 public static IComparer<object> EndNodeProperty( string propertyKey )
-		 {
-			  return new EndNodeComparatorAnonymousInnerClass( propertyKey );
-		 }
+        private class EndNodeComparatorAnonymousInnerClass : EndNodeComparator
+        {
+            private string _propertyKey;
 
-		 private class EndNodeComparatorAnonymousInnerClass : EndNodeComparator
-		 {
-			 private string _propertyKey;
+            public EndNodeComparatorAnonymousInnerClass(string propertyKey)
+            {
+                _propertyKey = propertyKey;
+            }
 
-			 public EndNodeComparatorAnonymousInnerClass( string propertyKey )
-			 {
-				 _propertyKey = propertyKey;
-			 }
+            //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
+            //ORIGINAL LINE: @SuppressWarnings({ "rawtypes", "unchecked" }) @Override protected int compareNodes(org.Neo4Net.graphdb.Node endNode1, org.Neo4Net.graphdb.Node endNode2)
+            protected internal override int compareNodes(INode endNode1, INode endNode2)
+            {
+                IComparable p1 = (IComparable)endNode1.GetProperty(_propertyKey);
+                IComparable p2 = (IComparable)endNode2.GetProperty(_propertyKey);
+                if (p1 == p2)
+                {
+                    return 0;
+                }
+                else if (p1 == null)
+                {
+                    return int.MinValue;
+                }
+                else if (p2 == null)
+                {
+                    return int.MaxValue;
+                }
+                else
+                {
+                    return p1.CompareTo(p2);
+                }
+            }
+        }
 
-//JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings({ "rawtypes", "unchecked" }) @Override protected int compareNodes(org.Neo4Net.graphdb.Node endNode1, org.Neo4Net.graphdb.Node endNode2)
-			 protected internal override int compareNodes( INode endNode1, INode endNode2 )
-			 {
-				  IComparable p1 = ( IComparable ) endNode1.GetProperty( _propertyKey );
-				  IComparable p2 = ( IComparable ) endNode2.GetProperty( _propertyKey );
-				  if ( p1 == p2 )
-				  {
-						return 0;
-				  }
-				  else if ( p1 == null )
-				  {
-						return int.MinValue;
-				  }
-				  else if ( p2 == null )
-				  {
-						return int.MaxValue;
-				  }
-				  else
-				  {
-						return p1.CompareTo( p2 );
-				  }
-			 }
-		 }
+        /// <summary>
+        /// Sorts <seealso cref="IPath"/>s by the relationship count returned for its end node
+        /// by the supplied {@code expander}.
+        /// </summary>
+        /// <param name="expander"> the <seealso cref="PathExpander"/> to use for getting relationships
+        /// off of each <seealso cref="IPath"/>'s end node. </param>
+        /// <returns> a <seealso cref="System.Collections.IComparer"/> suitable for sorting traversal results. </returns>
+        //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
+        //ORIGINAL LINE: public static java.util.Comparator<? super org.Neo4Net.graphdb.Path> endNodeRelationshipCount(final org.Neo4Net.graphdb.PathExpander expander)
+        //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
+        //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
+        public static IComparer<object> EndNodeRelationshipCount(IPathExpander expander)
+        {
+            return new EndNodeComparatorAnonymousInnerClass2(expander);
+        }
 
-		 /// <summary>
-		 /// Sorts <seealso cref="IPath"/>s by the relationship count returned for its end node
-		 /// by the supplied {@code expander}.
-		 /// </summary>
-		 /// <param name="expander"> the <seealso cref="PathExpander"/> to use for getting relationships
-		 /// off of each <seealso cref="IPath"/>'s end node. </param>
-		 /// <returns> a <seealso cref="System.Collections.IComparer"/> suitable for sorting traversal results. </returns>
-//JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-//ORIGINAL LINE: public static java.util.Comparator<? super org.Neo4Net.graphdb.Path> endNodeRelationshipCount(final org.Neo4Net.graphdb.PathExpander expander)
-//JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-		 public static IComparer<object> EndNodeRelationshipCount( IPathExpander expander )
-		 {
-			  return new EndNodeComparatorAnonymousInnerClass2( expander );
-		 }
+        private class EndNodeComparatorAnonymousInnerClass2 : EndNodeComparator
+        {
+            private IPathExpander _expander;
 
-		 private class EndNodeComparatorAnonymousInnerClass2 : EndNodeComparator
-		 {
-			 private IPathExpander _expander;
+            public EndNodeComparatorAnonymousInnerClass2(IPathExpander expander)
+            {
+                _expander = expander;
+            }
 
-			 public EndNodeComparatorAnonymousInnerClass2( IPathExpander expander )
-			 {
-				 _expander = expander;
-			 }
+            protected internal override int compareNodes(INode endNode1, INode endNode2)
+            {
+                int? count1 = count(endNode1, _expander);
+                int? count2 = count(endNode2, _expander);
+                return count1.compareTo(count2);
+            }
 
-			 protected internal override int compareNodes( INode endNode1, INode endNode2 )
-			 {
-				  int? count1 = count( endNode1, _expander );
-				  int? count2 = count( endNode2, _expander );
-				  return count1.compareTo( count2 );
-			 }
+            private int? count(INode node, IPathExpander expander)
+            {
+                //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
+                //ORIGINAL LINE: java.util.Iterator<?> expand = expander.expand(singleNodePath(node), BranchState.NO_STATE).iterator();
+                IEnumerator<object> expand = expander.expand(singleNodePath(node), IBranchState.NO_STATE).GetEnumerator();
+                int count = 0;
+                while (expand.MoveNext())
+                {
+                    count++;
+                }
+                return count;
+            }
+        }
 
-			 private int? count( INode node, IPathExpander expander )
-			 {
-//JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Iterator<?> expand = expander.expand(singleNodePath(node), BranchState.NO_STATE).iterator();
-				  IEnumerator<object> expand = expander.expand( singleNodePath( node ), IBranchState.NO_STATE ).GetEnumerator();
-				  int count = 0;
-				  while ( expand.MoveNext() )
-				  {
-						count++;
-				  }
-				  return count;
-			 }
-		 }
+        /// <summary>
+        /// Comparator for <seealso cref="IPath.endNode() end nodes"/> of two <seealso cref="IPath paths"/>
+        /// </summary>
+        private abstract class EndNodeComparator : IComparer<IPath>
+        {
+            public override int Compare(IPath p1, IPath p2)
+            {
+                return CompareNodes(p1.EndNode, p2.EndNode);
+            }
 
-		 /// <summary>
-		 /// Comparator for <seealso cref="IPath.endNode() end nodes"/> of two <seealso cref="IPath paths"/>
-		 /// </summary>
-		 private abstract class EndNodeComparator : IComparer<IPath>
-		 {
-			  public override int Compare( IPath p1, IPath p2 )
-			  {
-					return CompareNodes( p1.EndNode, p2.EndNode);
-			  }
-
-			  protected internal abstract int CompareNodes( INode endNode1, INode endNode2 );
-		 }
-	}
-
+            protected internal abstract int CompareNodes(INode endNode1, INode endNode2);
+        }
+    }
 }

@@ -32,7 +32,7 @@ namespace Neo4Net.causalclustering.messaging.marshalling
 	using Test = org.junit.Test;
 
 	using Buffers = Neo4Net.causalclustering.helpers.Buffers;
-	using Iterators = Neo4Net.Helpers.Collections.Iterators;
+	using Iterators = Neo4Net.Collections.Helpers.Iterators;
 
 	public class ByteBufChunkHandlerTest
 	{

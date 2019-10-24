@@ -26,7 +26,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index.partition
 	/// <summary>
 	/// Factory to create particular partition of partitioned index in specified folder and represented by <seealso cref="Directory"/>
 	/// </summary>
-	public interface IndexPartitionFactory
+	public interface IIndexPartitionFactory
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 //ORIGINAL LINE: AbstractIndexPartition createPartition(java.io.File partitionFolder, org.apache.lucene.store.Directory directory) throws java.io.IOException;

@@ -30,7 +30,7 @@ namespace Neo4Net.ha.correctness
 	using Neo4Net.cluster.com.message;
 	using ClusterConfiguration = Neo4Net.cluster.protocol.cluster.ClusterConfiguration;
 	using ClusterMessage = Neo4Net.cluster.protocol.cluster.ClusterMessage;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
 

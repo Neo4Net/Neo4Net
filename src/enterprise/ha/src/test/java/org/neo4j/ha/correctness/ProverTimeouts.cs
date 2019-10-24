@@ -30,7 +30,7 @@ namespace Neo4Net.ha.correctness
 	using MessageType = Neo4Net.cluster.com.message.MessageType;
 	using FixedTimeoutStrategy = Neo4Net.cluster.timeout.FixedTimeoutStrategy;
 	using Timeouts = Neo4Net.cluster.timeout.Timeouts;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 
 	internal class ProverTimeouts : Timeouts
 	{

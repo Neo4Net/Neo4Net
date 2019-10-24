@@ -38,8 +38,8 @@ namespace Neo4Net.Kernel.Impl.Api
 	using NodeValueIndexCursor = Neo4Net.Kernel.Api.Internal.NodeValueIndexCursor;
 	using TokenRead = Neo4Net.Kernel.Api.Internal.TokenRead;
 	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
-	using IndexNotApplicableKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotApplicableKernelException;
-	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
+	using IndexNotApplicableKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotApplicableKernelException;
+	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using TestIndexDescriptorFactory = Neo4Net.Kernel.api.schema.index.TestIndexDescriptorFactory;
 	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
@@ -116,7 +116,7 @@ namespace Neo4Net.Kernel.Impl.Api
 			RuleChain = RuleChain.outerRule( _rnd ).around( _db );
 		}
 
-		 private interface IndexCoordinatorFactory
+		 private interface IIndexCoordinatorFactory
 		 {
 			  IndexCoordinator Create( Label indexLabel, string numberProp1, string numberProp2, string stringProp1, string stringProp2 );
 		 }
@@ -462,7 +462,7 @@ namespace Neo4Net.Kernel.Impl.Api
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: NodeValueIndexCursor queryRange(org.Neo4Net.kernel.api.KernelTransaction ktx) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotApplicableKernelException, org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: NodeValueIndexCursor queryRange(org.Neo4Net.kernel.api.KernelTransaction ktx) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotApplicableKernelException, org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
 			  internal override NodeValueIndexCursor QueryRange( KernelTransaction ktx )
 			  {
 					throw new System.NotSupportedException();
@@ -517,7 +517,7 @@ namespace Neo4Net.Kernel.Impl.Api
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: NodeValueIndexCursor queryRange(org.Neo4Net.kernel.api.KernelTransaction ktx) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotApplicableKernelException, org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: NodeValueIndexCursor queryRange(org.Neo4Net.kernel.api.KernelTransaction ktx) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotApplicableKernelException, org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
 			  internal override NodeValueIndexCursor QueryRange( KernelTransaction ktx )
 			  {
 					throw new System.NotSupportedException();

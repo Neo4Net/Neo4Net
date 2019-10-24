@@ -25,7 +25,7 @@ namespace Schema
 	using Label = Neo4Net.GraphDb.Label;
 	using Node = Neo4Net.GraphDb.Node;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using IndexReference = Neo4Net.Kernel.Api.Internal.IndexReference;
 	using Kernel = Neo4Net.Kernel.Api.Internal.Kernel;
 	using TestIndexDescriptorFactory = Neo4Net.Kernel.api.schema.index.TestIndexDescriptorFactory;

@@ -41,7 +41,7 @@ namespace Neo4Net.Bolt.v1.runtime.integration
 	using ResetMessage = Neo4Net.Bolt.v1.messaging.request.ResetMessage;
 	using RunMessage = Neo4Net.Bolt.v1.messaging.request.RunMessage;
 	using QueryResult_Record = Neo4Net.Cypher.result.QueryResult_Record;
-	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
+	using MapUtil = Neo4Net.Collections.Helpers.MapUtil;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using ValueUtils = Neo4Net.Kernel.impl.util.ValueUtils;
 	using AnyValue = Neo4Net.Values.AnyValue;

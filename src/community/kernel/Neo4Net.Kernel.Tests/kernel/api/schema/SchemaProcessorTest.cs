@@ -25,8 +25,8 @@ namespace Neo4Net.Kernel.api.schema
 	using Test = org.junit.Test;
 
 
-	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
-	using SchemaProcessor = Neo4Net.Kernel.Api.Internal.schema.SchemaProcessor;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
+	using SchemaProcessor = Neo4Net.Kernel.Api.Internal.Schema.SchemaProcessor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.MatcherAssert.assertThat;
@@ -65,12 +65,12 @@ namespace Neo4Net.Kernel.api.schema
 				 this._callHistory = callHistory;
 			 }
 
-			 public void processSpecific( Neo4Net.Kernel.Api.Internal.schema.LabelSchemaDescriptor schema )
+			 public void processSpecific( Neo4Net.Kernel.Api.Internal.Schema.LabelSchemaDescriptor schema )
 			 {
 				  _callHistory.Add( "LabelSchemaDescriptor" );
 			 }
 
-			 public void processSpecific( Neo4Net.Kernel.Api.Internal.schema.RelationTypeSchemaDescriptor schema )
+			 public void processSpecific( Neo4Net.Kernel.Api.Internal.Schema.RelationTypeSchemaDescriptor schema )
 			 {
 				  _callHistory.Add( "RelationTypeSchemaDescriptor" );
 			 }

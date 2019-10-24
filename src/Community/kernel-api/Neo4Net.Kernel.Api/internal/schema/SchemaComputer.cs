@@ -18,7 +18,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-namespace Neo4Net.Kernel.Api.Internal.schema
+namespace Neo4Net.Kernel.Api.Internal.Schema
 {
    /// <summary>
    /// A SchemaComputer computes values of type R from SchemaDescriptors. To get the concrete type of the target schema

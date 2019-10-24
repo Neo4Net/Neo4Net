@@ -304,7 +304,7 @@ namespace Neo4Net.Logging
 					 _rotating.set( false );
 					 try
 					 {
-						  bufferingOutputStream.writeTo( _streamWrapper );
+						  bufferingOutputStream.WriteTo( _streamWrapper );
 					 }
 					 catch ( IOException e )
 					 {

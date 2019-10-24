@@ -50,7 +50,7 @@ namespace Neo4Net.backup
 	using PlatformModule = Neo4Net.GraphDb.factory.module.PlatformModule;
 	using AbstractEditionModule = Neo4Net.GraphDb.factory.module.edition.AbstractEditionModule;
 	using CommunityEditionModule = Neo4Net.GraphDb.factory.module.edition.CommunityEditionModule;
-	using Neo4Net.GraphDb.index;
+	using Neo4Net.GraphDb.Index;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
 	using StoreLockException = Neo4Net.Kernel.StoreLockException;

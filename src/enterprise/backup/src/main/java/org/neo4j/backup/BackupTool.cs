@@ -35,7 +35,7 @@ namespace Neo4Net.backup
 	using Args = Neo4Net.Helpers.Args;
 	using HostnamePort = Neo4Net.Helpers.HostnamePort;
 	using Service = Neo4Net.Helpers.Service;
-	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
+	using MapUtil = Neo4Net.Collections.Helpers.MapUtil;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using MismatchingStoreIdException = Neo4Net.Kernel.impl.store.MismatchingStoreIdException;

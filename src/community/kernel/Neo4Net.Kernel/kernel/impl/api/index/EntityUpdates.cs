@@ -31,15 +31,15 @@ namespace Neo4Net.Kernel.Impl.Api.index
 
 
 	using PrimitiveArrays = Neo4Net.Collections.PrimitiveArrays;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
-	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
-	using SchemaDescriptorSupplier = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptorSupplier;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
+	using SchemaDescriptorSupplier = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptorSupplier;
 	using Neo4Net.Kernel.Api.Index;
 	using EntityType = Neo4Net.Kernel.Api.StorageEngine.EntityType;
 	using Value = Neo4Net.Values.Storable.Value;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor_PropertySchemaType.COMPLETE_ALL_TOKENS;
+//	import static org.Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor_PropertySchemaType.COMPLETE_ALL_TOKENS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.kernel.impl.api.index.EntityUpdates.PropertyValueType.Changed;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -195,7 +195,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 /// </summary>
 		 /// <param name="indexKeys"> The index keys to generate entry updates for </param>
 		 /// <returns> IndexEntryUpdates for all relevant index keys </returns>
-		 public virtual IEnumerable<IndexEntryUpdate<INDEX_KEY>> ForIndexKeys<INDEX_KEY>( IEnumerable<INDEX_KEY> indexKeys ) where INDEX_KEY : Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptorSupplier
+		 public virtual IEnumerable<IndexEntryUpdate<INDEX_KEY>> ForIndexKeys<INDEX_KEY>( IEnumerable<INDEX_KEY> indexKeys ) where INDEX_KEY : Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptorSupplier
 		 {
 			  IEnumerable<INDEX_KEY> potentiallyRelevant = Iterables.filter( indexKey => AtLeastOneRelevantChange( indexKey.schema() ), indexKeys );
 
@@ -216,7 +216,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 /// <param name="propertyLoader"> The property loader used to fetch needed additional properties </param>
 		 /// <param name="type"> EntityType of the indexes </param>
 		 /// <returns> IndexEntryUpdates for all relevant index keys </returns>
-		 public virtual IEnumerable<IndexEntryUpdate<INDEX_KEY>> ForIndexKeys<INDEX_KEY>( IEnumerable<INDEX_KEY> indexKeys, PropertyLoader propertyLoader, EntityType type ) where INDEX_KEY : Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptorSupplier
+		 public virtual IEnumerable<IndexEntryUpdate<INDEX_KEY>> ForIndexKeys<INDEX_KEY>( IEnumerable<INDEX_KEY> indexKeys, PropertyLoader propertyLoader, EntityType type ) where INDEX_KEY : Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptorSupplier
 		 {
 			  IList<INDEX_KEY> potentiallyRelevant = new List<INDEX_KEY>();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -241,8 +241,8 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("ConstantConditions") private <INDEX_KEY extends org.Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptorSupplier> Iterable<org.Neo4Net.kernel.api.index.IndexEntryUpdate<INDEX_KEY>> gatherUpdatesForPotentials(Iterable<INDEX_KEY> potentiallyRelevant)
-		 private IEnumerable<IndexEntryUpdate<INDEX_KEY>> GatherUpdatesForPotentials<INDEX_KEY>( IEnumerable<INDEX_KEY> potentiallyRelevant ) where INDEX_KEY : Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptorSupplier
+//ORIGINAL LINE: @SuppressWarnings("ConstantConditions") private <INDEX_KEY extends org.Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptorSupplier> Iterable<org.Neo4Net.kernel.api.index.IndexEntryUpdate<INDEX_KEY>> gatherUpdatesForPotentials(Iterable<INDEX_KEY> potentiallyRelevant)
+		 private IEnumerable<IndexEntryUpdate<INDEX_KEY>> GatherUpdatesForPotentials<INDEX_KEY>( IEnumerable<INDEX_KEY> potentiallyRelevant ) where INDEX_KEY : Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptorSupplier
 		 {
 			  IList<IndexEntryUpdate<INDEX_KEY>> indexUpdates = new List<IndexEntryUpdate<INDEX_KEY>>();
 			  foreach ( INDEX_KEY indexKey in potentiallyRelevant )
@@ -324,7 +324,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  return affectedBefore || affectedAfter;
 		 }
 
-		 private bool HasPropsBefore( int[] propertyIds, Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor_PropertySchemaType propertySchemaType )
+		 private bool HasPropsBefore( int[] propertyIds, Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor_PropertySchemaType propertySchemaType )
 		 {
 			  bool found = false;
 			  foreach ( int propertyId in propertyIds )
@@ -345,7 +345,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  return found;
 		 }
 
-		 private bool HasPropsAfter( int[] propertyIds, Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor_PropertySchemaType propertySchemaType )
+		 private bool HasPropsAfter( int[] propertyIds, Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor_PropertySchemaType propertySchemaType )
 		 {
 			  bool found = false;
 			  foreach ( int propertyId in propertyIds )
@@ -390,7 +390,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 /// <summary>
 		 /// This method should only be called in a context where you know that your IEntity is relevant both before and after
 		 /// </summary>
-		 private bool ValuesChanged( int[] propertyIds, Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor_PropertySchemaType propertySchemaType )
+		 private bool ValuesChanged( int[] propertyIds, Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor_PropertySchemaType propertySchemaType )
 		 {
 			  if ( propertySchemaType == COMPLETE_ALL_TOKENS )
 			  {

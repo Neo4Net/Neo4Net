@@ -31,7 +31,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 	using NodeCursor = Neo4Net.Kernel.Api.Internal.NodeCursor;
 	using PropertyCursor = Neo4Net.Kernel.Api.Internal.PropertyCursor;
 	using RelationshipScanCursor = Neo4Net.Kernel.Api.Internal.RelationshipScanCursor;
-	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
 	using AllStoreHolder = Neo4Net.Kernel.Impl.Newapi.AllStoreHolder;
 	using EntityType = Neo4Net.Kernel.Api.StorageEngine.EntityType;
 	using StorageProperty = Neo4Net.Kernel.Api.StorageEngine.StorageProperty;

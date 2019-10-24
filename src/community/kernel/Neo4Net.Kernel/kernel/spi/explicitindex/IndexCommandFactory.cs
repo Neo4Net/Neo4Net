@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Kernel.spi.explicitindex
 {
-	public interface IndexCommandFactory
+	public interface IIndexCommandFactory
 	{
 		 void AddNode( string indexName, long id, string key, object value );
 

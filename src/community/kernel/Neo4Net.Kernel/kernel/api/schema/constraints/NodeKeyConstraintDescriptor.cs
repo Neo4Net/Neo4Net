@@ -21,12 +21,12 @@ namespace Neo4Net.Kernel.api.schema.constraints
 {
 
 	using TokenNameLookup = Neo4Net.Kernel.Api.Internal.TokenNameLookup;
-	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.LabelSchemaDescriptor;
-	using SchemaUtil = Neo4Net.Kernel.Api.Internal.schema.SchemaUtil;
+	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.LabelSchemaDescriptor;
+	using SchemaUtil = Neo4Net.Kernel.Api.Internal.Schema.SchemaUtil;
 
 	public class NodeKeyConstraintDescriptor : IndexBackedConstraintDescriptor
 	{
-		 internal NodeKeyConstraintDescriptor( LabelSchemaDescriptor schema ) : base( org.Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor_Type.UniqueExists, schema )
+		 internal NodeKeyConstraintDescriptor( LabelSchemaDescriptor schema ) : base( org.Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor_Type.UniqueExists, schema )
 		 {
 		 }
 

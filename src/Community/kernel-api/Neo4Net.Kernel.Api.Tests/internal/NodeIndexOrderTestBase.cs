@@ -29,7 +29,7 @@ namespace Neo4Net.Kernel.Api.Internal
 
 
 	using Label = Neo4Net.GraphDb.Label;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using Value = Neo4Net.Values.Storable.Value;
 	using Values = Neo4Net.Values.Storable.Values;
 

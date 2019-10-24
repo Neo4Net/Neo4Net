@@ -32,7 +32,7 @@ namespace Neo4Net.causalclustering.net
 	using ProtocolStack = Neo4Net.causalclustering.protocol.handshake.ProtocolStack;
 	using ServerHandshakeFinishedEvent = Neo4Net.causalclustering.protocol.handshake.ServerHandshakeFinishedEvent;
 	using SocketAddress = Neo4Net.Helpers.SocketAddress;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @ChannelHandler.Sharable public class InstalledProtocolHandler extends io.netty.channel.ChannelInboundHandlerAdapter

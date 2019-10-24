@@ -17,43 +17,41 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 namespace Neo4Net.GraphDb.Spatial
 {
+    /// <summary>
+    /// A coordinate reference system (CRS) determines how a $<seealso cref="ICoordinate"/> should be interpreted
+    /// <para>
+    /// The CRS is defined by three properties a code, a type, and a link to CRS parameters on the web.
+    /// Example:
+    /// <code>
+    /// {
+    /// code: 4326,
+    /// type: "WGS-84",
+    /// href: "http://spatialreference.org/ref/epsg/4326/"
+    /// }
+    /// </code>
+    /// </para>
+    /// </summary>
+    public interface ICRS
+    {
+        /// <summary>
+        /// The numerical code associated with the CRS
+        /// </summary>
+        /// <returns> a numerical code associated with the CRS </returns>
+        int Code { get; }
 
-	/// <summary>
-	/// A coordinate reference system (CRS) determines how a $<seealso cref="ICoordinate"/> should be interpreted
-	/// <para>
-	/// The CRS is defined by three properties a code, a type, and a link to CRS parameters on the web.
-	/// Example:
-	/// <code>
-	/// {
-	/// code: 4326,
-	/// type: "WGS-84",
-	/// href: "http://spatialreference.org/ref/epsg/4326/"
-	/// }
-	/// </code>
-	/// </para>
-	/// </summary>
-	public interface ICRS
-	{
+        /// <summary>
+        /// The type of the CRS is a descriptive name, indicating which CRS is used
+        /// </summary>
+        /// <returns> the type of the CRS </returns>
+        string Type { get; }
 
-		 /// <summary>
-		 /// The numerical code associated with the CRS
-		 /// </summary>
-		 /// <returns> a numerical code associated with the CRS </returns>
-		 int Code { get; }
-
-		 /// <summary>
-		 /// The type of the CRS is a descriptive name, indicating which CRS is used
-		 /// </summary>
-		 /// <returns> the type of the CRS </returns>
-		 string Type { get; }
-
-		 /// <summary>
-		 /// A link uniquely identifying the CRS.
-		 /// </summary>
-		 /// <returns> A link to where the CRS is described. </returns>
-		 string Href { get; }
-	}
-
+        /// <summary>
+        /// A link uniquely identifying the CRS.
+        /// </summary>
+        /// <returns> A link to where the CRS is described. </returns>
+        string Href { get; }
+    }
 }

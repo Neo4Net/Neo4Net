@@ -99,7 +99,7 @@ namespace Neo4Net.Kernel.Api.Exceptions
       //	 }
    }
 
-   public sealed class Status_Network : Status
+   public sealed class Status_Network : IStatus
    {
       // transient
       public static readonly Status_Network CommunicationError = new Status_Network("CommunicationError", InnerEnum.CommunicationError, TransientError, "An unknown network failure occurred, a retry may resolve the issue.");
@@ -164,7 +164,7 @@ namespace Neo4Net.Kernel.Api.Exceptions
       }
    }
 
-   public sealed class Status_Request : Status
+   public sealed class Status_Request : IStatus
    {
       // client
       public static readonly Status_Request Invalid = new Status_Request("Invalid", InnerEnum.Invalid, ClientError, "The client provided an invalid request.");

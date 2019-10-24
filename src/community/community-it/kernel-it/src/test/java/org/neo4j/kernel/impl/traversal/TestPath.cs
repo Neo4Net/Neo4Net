@@ -34,7 +34,7 @@ namespace Neo4Net.Kernel.impl.traversal
 	using TraversalDescription = Neo4Net.GraphDb.Traversal.TraversalDescription;
 	using Traverser = Neo4Net.GraphDb.Traversal.Traverser;
 	using Uniqueness = Neo4Net.GraphDb.Traversal.Uniqueness;
-	using Iterators = Neo4Net.Helpers.Collections.Iterators;
+	using Iterators = Neo4Net.Collections.Helpers.Iterators;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;

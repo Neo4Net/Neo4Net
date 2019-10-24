@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.ha.cluster.member
 {
 
 	using InstanceId = Neo4Net.cluster.InstanceId;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using HighAvailabilityModeSwitcher = Neo4Net.Kernel.ha.cluster.modeswitch.HighAvailabilityModeSwitcher;
 
 	/// <summary>

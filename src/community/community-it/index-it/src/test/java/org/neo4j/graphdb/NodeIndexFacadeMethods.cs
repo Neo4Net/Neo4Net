@@ -22,7 +22,7 @@
 namespace Neo4Net.GraphDb
 {
 
-	using Neo4Net.GraphDb.index;
+	using Neo4Net.GraphDb.Index;
 
 	public sealed class NodeIndexFacadeMethods : Consumer<Index<Node>>
 	{
@@ -40,7 +40,7 @@ namespace Neo4Net.GraphDb
 //       REMOVE_BY_KEY(new FacadeMethod<>("void remove( T IEntity, String key )", self -> self.remove(null, "foo"))),
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
 //       REMOVE(new FacadeMethod<>("void remove( T IEntity )", self -> self.remove(null))),
-		 public static readonly NodeIndexFacadeMethods Delete = new NodeIndexFacadeMethods( "Delete", InnerEnum.Delete, new FacadeMethod<>( "void delete()", Neo4Net.GraphDb.index.Index.delete ) );
+		 public static readonly NodeIndexFacadeMethods Delete = new NodeIndexFacadeMethods( "Delete", InnerEnum.Delete, new FacadeMethod<>( "void delete()", Neo4Net.GraphDb.Index.Index.delete ) );
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
 //       PUT_IF_ABSENT(new FacadeMethod<>("T putIfAbsent( T IEntity, String key, Object value )", self -> self.putIfAbsent(null, "foo", 42)));
 
@@ -77,9 +77,9 @@ namespace Neo4Net.GraphDb
 		 private readonly int ordinalValue;
 		 private static int nextOrdinal = 0;
 
-		 private readonly FacadeMethod<Neo4Net.GraphDb.index.Index<Node>> facadeMethod;
+		 private readonly FacadeMethod<Neo4Net.GraphDb.Index.Index<Node>> facadeMethod;
 
-		 internal NodeIndexFacadeMethods( string name, InnerEnum innerEnum, FacadeMethod<Neo4Net.GraphDb.index.Index<Node>> facadeMethod )
+		 internal NodeIndexFacadeMethods( string name, InnerEnum innerEnum, FacadeMethod<Neo4Net.GraphDb.Index.Index<Node>> facadeMethod )
 		 {
 			  this._facadeMethod = facadeMethod;
 
@@ -88,7 +88,7 @@ namespace Neo4Net.GraphDb
 			 innerEnumValue = innerEnum;
 		 }
 
-		 public void Accept( Neo4Net.GraphDb.index.Index<Node> nodeIndex )
+		 public void Accept( Neo4Net.GraphDb.Index.Index<Node> nodeIndex )
 		 {
 			  _facadeMethod.accept( nodeIndex );
 		 }

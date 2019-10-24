@@ -27,11 +27,11 @@ namespace Neo4Net.Kernel.impl.coreapi
 	using NotFoundException = Neo4Net.GraphDb.NotFoundException;
 	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
 	using Relationship = Neo4Net.GraphDb.Relationship;
-	using Neo4Net.GraphDb.index;
-	using Neo4Net.GraphDb.index;
-	using IndexManager = Neo4Net.GraphDb.index.IndexManager;
-	using RelationshipAutoIndexer = Neo4Net.GraphDb.index.RelationshipAutoIndexer;
-	using RelationshipIndex = Neo4Net.GraphDb.index.RelationshipIndex;
+	using Neo4Net.GraphDb.Index;
+	using Neo4Net.GraphDb.Index;
+	using IndexManager = Neo4Net.GraphDb.Index.IndexManager;
+	using RelationshipAutoIndexer = Neo4Net.GraphDb.Index.RelationshipAutoIndexer;
+	using RelationshipIndex = Neo4Net.GraphDb.Index.RelationshipIndex;
 	using Transaction = Neo4Net.Kernel.Api.Internal.Transaction;
 	using InvalidTransactionTypeKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.InvalidTransactionTypeKernelException;
 	using ExplicitIndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException;

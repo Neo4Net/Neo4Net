@@ -20,12 +20,12 @@
 ////////////////// * You should have received a copy of the GNU General Public License
 ////////////////// * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ////////////////// */
-//////////////////namespace Neo4Net.GraphDb.index
+//////////////////namespace Neo4Net.GraphDb.Index
 //////////////////{
 
 //////////////////	using Neo4Net.GraphDb;
 //////////////////	using Neo4Net.GraphDb;
-//////////////////	using Iterators = Neo4Net.Helpers.Collections.Iterators;
+//////////////////	using Iterators = Neo4Net.Collections.Helpers.Iterators;
 
 //////////////////	/// <summary>
 //////////////////	/// An <seealso cref="System.Collections.IEnumerator"/> with additional <seealso cref="size()"/> and <seealso cref="close()"/>
@@ -60,7 +60,7 @@
 //////////////////	/// @param <T> the type of items in the Iterator. </param>
 //////////////////	/// @deprecated This API will be removed in the next major release. Please consider using schema indexes instead. 
 //////////////////	[Obsolete("This API will be removed in the next major release. Please consider using schema indexes instead.")]
-//////////////////	public interface IndexHits<T> : ResourceIterator<T>, ResourceIterable<T>
+//////////////////	public interface IIndexHits<T> : ResourceIterator<T>, ResourceIterable<T>
 //////////////////	{
 //////////////////		 /// <summary>
 //////////////////		 /// Returns the size of this iterable, in most scenarios this value is accurate

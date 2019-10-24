@@ -29,7 +29,7 @@ namespace Neo4Net.Kernel.impl.enterprise.id
 	using Parameterized = org.junit.runners.Parameterized;
 
 
-	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
+	using MapUtil = Neo4Net.Collections.Helpers.MapUtil;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using EnterpriseEditionSettings = Neo4Net.Kernel.impl.enterprise.configuration.EnterpriseEditionSettings;
 	using IdType = Neo4Net.Kernel.impl.store.id.IdType;

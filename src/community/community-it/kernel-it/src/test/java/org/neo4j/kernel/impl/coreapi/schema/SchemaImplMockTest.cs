@@ -29,7 +29,7 @@ namespace Neo4Net.Kernel.impl.coreapi.schema
 	using InternalIndexState = Neo4Net.Kernel.Api.Internal.InternalIndexState;
 	using SchemaRead = Neo4Net.Kernel.Api.Internal.SchemaRead;
 	using TokenRead = Neo4Net.Kernel.Api.Internal.TokenRead;
-	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
+	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using Statement = Neo4Net.Kernel.api.Statement;
 
@@ -49,7 +49,7 @@ namespace Neo4Net.Kernel.impl.coreapi.schema
 		 private static readonly Exception _cause = new Exception( "Kilroy made it" );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void includeCauseOfFailure() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: @Test void includeCauseOfFailure() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void IncludeCauseOfFailure()
 		 {
@@ -75,7 +75,7 @@ namespace Neo4Net.Kernel.impl.coreapi.schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static org.Neo4Net.kernel.api.KernelTransaction mockKernelTransaction() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: private static org.Neo4Net.kernel.api.KernelTransaction mockKernelTransaction() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
 		 private static KernelTransaction MockKernelTransaction()
 		 {
 			  SchemaRead schemaRead = mock( typeof( SchemaRead ) );

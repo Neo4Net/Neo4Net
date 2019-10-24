@@ -37,8 +37,8 @@ namespace Neo4Net.causalclustering.discovery
 	using ClusterId = Neo4Net.causalclustering.identity.ClusterId;
 	using MemberId = Neo4Net.causalclustering.identity.MemberId;
 	using AdvertisedSocketAddress = Neo4Net.Helpers.AdvertisedSocketAddress;
-	using CollectorsUtil = Neo4Net.Helpers.Collections.CollectorsUtil;
-	using Neo4Net.Helpers.Collections;
+	using CollectorsUtil = Neo4Net.Collections.Helpers.CollectorsUtil;
+	using Neo4Net.Collections.Helpers;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using Log = Neo4Net.Logging.Log;
 	using Streams = Neo4Net.Stream.Streams;

@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.reader
 	using Document = org.apache.lucene.document.Document;
 
 
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 
 	public class LuceneAllEntriesIndexAccessorReader : BoundedIterable<long>
 	{

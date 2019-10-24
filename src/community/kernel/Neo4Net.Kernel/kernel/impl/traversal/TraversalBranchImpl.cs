@@ -32,8 +32,8 @@ namespace Neo4Net.Kernel.impl.traversal
 	using Paths = Neo4Net.GraphDb.Traversal.Paths;
 	using TraversalBranch = Neo4Net.GraphDb.Traversal.TraversalBranch;
 	using TraversalContext = Neo4Net.GraphDb.Traversal.TraversalContext;
-	using Iterators = Neo4Net.Helpers.Collections.Iterators;
-	using Neo4Net.Helpers.Collections;
+	using Iterators = Neo4Net.Collections.Helpers.Iterators;
+	using Neo4Net.Collections.Helpers;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.helpers.collection.Iterators.asResourceIterator;

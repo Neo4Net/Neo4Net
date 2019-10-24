@@ -24,7 +24,7 @@ namespace Neo4Net.Server
 
 
 	using GraphDatabaseDependencies = Neo4Net.GraphDb.facade.GraphDatabaseDependencies;
-	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
+	using MapUtil = Neo4Net.Collections.Helpers.MapUtil;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using CommunityGraphFactory = Neo4Net.Server.database.CommunityGraphFactory;
 	using GraphFactory = Neo4Net.Server.database.GraphFactory;

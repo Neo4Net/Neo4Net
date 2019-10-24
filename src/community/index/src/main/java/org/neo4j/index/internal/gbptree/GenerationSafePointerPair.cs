@@ -245,8 +245,8 @@ namespace Neo4Net.Index.Internal.gbptree
 
 			  if ( IsSuccess( writeResult ) )
 			  {
-					bool writeToA = ( writeResult & SLOT_MASK ) == FLAG_SLOT_A;
-					int writeOffset = writeToA ? offset : offset + GenerationSafePointer.Size;
+					bool WriteToA = ( writeResult & SLOT_MASK ) == FLAG_SLOT_A;
+					int writeOffset = WriteToA ? offset : offset + GenerationSafePointer.Size;
 					cursor.Offset = writeOffset;
 					GenerationSafePointer.Write( cursor, unstableGeneration, pointer );
 			  }

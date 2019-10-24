@@ -28,7 +28,7 @@ namespace Neo4Net.Kernel.ha.cluster
 
 	using OnlineBackupKernelExtension = Neo4Net.backup.OnlineBackupKernelExtension;
 	using MemberIsAvailable = Neo4Net.cluster.member.paxos.MemberIsAvailable;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.kernel.ha.cluster.modeswitch.HighAvailabilityModeSwitcher.MASTER;

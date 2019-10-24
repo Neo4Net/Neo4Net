@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel.builtinprocs
 {
 
 	using Neo4Net.Collections;
-	using CollectorsUtil = Neo4Net.Helpers.Collections.CollectorsUtil;
+	using CollectorsUtil = Neo4Net.Collections.Helpers.CollectorsUtil;
 	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
 	using Neo4NetTypes = Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes;
 	using QualifiedName = Neo4Net.Kernel.Api.Internal.procs.QualifiedName;

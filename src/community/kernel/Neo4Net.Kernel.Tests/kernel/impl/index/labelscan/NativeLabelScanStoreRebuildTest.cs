@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 	using RuleChain = org.junit.rules.RuleChain;
 
 
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
 	using LabelScanStore = Neo4Net.Kernel.api.labelscan.LabelScanStore;
 	using NodeLabelUpdate = Neo4Net.Kernel.api.labelscan.NodeLabelUpdate;

@@ -21,7 +21,7 @@
  */
 namespace Neo4Net.Kernel.impl.transaction.state
 {
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using Tracker = Neo4Net.Kernel.impl.transaction.state.RelationshipCreatorTest.Tracker;
 
 	public class TrackingRecordAccess<RECORD, ADDITIONAL> : RecordAccess<RECORD, ADDITIONAL>

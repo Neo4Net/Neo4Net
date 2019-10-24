@@ -213,7 +213,7 @@ namespace Neo4Net.com.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void writeToFile(java.io.File output, String input) throws java.io.IOException
+//ORIGINAL LINE: private void WriteToFile(java.io.File output, String input) throws java.io.IOException
 		 private void WriteToFile( File output, string input )
 		 {
 			  using ( StreamWriter bw = new StreamWriter( output ) )

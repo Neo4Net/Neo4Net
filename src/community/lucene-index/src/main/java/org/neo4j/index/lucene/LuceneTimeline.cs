@@ -35,9 +35,9 @@ namespace Neo4Net.Index.lucene
 
 	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
 	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
-	using Neo4Net.GraphDb.index;
-	using Neo4Net.GraphDb.index;
-	using IndexManager = Neo4Net.GraphDb.index.IndexManager;
+	using Neo4Net.GraphDb.Index;
+	using Neo4Net.GraphDb.Index;
+	using IndexManager = Neo4Net.GraphDb.Index.IndexManager;
 
 	/// @deprecated This API will be removed in next major release. Please consider using schema indexes instead. 
 	[Obsolete("This API will be removed in next major release. Please consider using schema indexes instead.")]
@@ -56,7 +56,7 @@ namespace Neo4Net.Index.lucene
 		 private void AssertIsLuceneIndex( IGraphDatabaseService db, Index<T> index )
 		 {
 			  IDictionary<string, string> config = Db.index().getConfiguration(index);
-			  if ( !config[Neo4Net.GraphDb.index.IndexManager_Fields.PROVIDER].Equals( "lucene" ) ) // Not so hard coded please
+			  if ( !config[Neo4Net.GraphDb.Index.IndexManager_Fields.PROVIDER].Equals( "lucene" ) ) // Not so hard coded please
 			  {
 					throw new System.ArgumentException( index + " isn't a Lucene index" );
 			  }

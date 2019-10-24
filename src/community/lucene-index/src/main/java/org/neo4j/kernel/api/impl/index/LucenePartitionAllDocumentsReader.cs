@@ -30,8 +30,8 @@ namespace Neo4Net.Kernel.Api.Impl.Index
 	using Bits = org.apache.lucene.util.Bits;
 
 
-	using Neo4Net.Helpers.Collections;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
+	using Neo4Net.Collections.Helpers;
 	using PartitionSearcher = Neo4Net.Kernel.Api.Impl.Index.partition.PartitionSearcher;
 
 	/// <summary>

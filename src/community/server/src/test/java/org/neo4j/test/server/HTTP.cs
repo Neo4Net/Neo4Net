@@ -32,7 +32,7 @@ namespace Neo4Net.Test.server
 	using JsonNode = org.codehaus.jackson.JsonNode;
 
 
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using JsonHelper = Neo4Net.Server.rest.domain.JsonHelper;
 	using JsonParseException = Neo4Net.Server.rest.domain.JsonParseException;
 

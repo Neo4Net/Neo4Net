@@ -37,7 +37,7 @@ namespace Neo4Net.Bolt.v3.runtime.integration
 	using WebSocketConnection = Neo4Net.Bolt.v1.transport.socket.client.WebSocketConnection;
 	using HelloMessage = Neo4Net.Bolt.v3.messaging.request.HelloMessage;
 	using HostnamePort = Neo4Net.Helpers.HostnamePort;
-	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
+	using MapUtil = Neo4Net.Collections.Helpers.MapUtil;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Arrays.asList;

@@ -31,7 +31,7 @@ namespace Neo4Net.Logging
 	using Statement = org.junit.runners.model.Statement;
 
 
-	using Iterators = Neo4Net.Helpers.Collections.Iterators;
+	using Iterators = Neo4Net.Collections.Helpers.Iterators;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.apache.commons.text.StringEscapeUtils.escapeJava;

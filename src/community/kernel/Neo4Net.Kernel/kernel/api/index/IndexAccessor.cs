@@ -23,7 +23,7 @@ namespace Neo4Net.Kernel.Api.Index
 {
 
 	using Neo4Net.GraphDb;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using IOLimiter = Neo4Net.Io.pagecache.IOLimiter;
 	using IndexEntryConflictException = Neo4Net.Kernel.Api.Exceptions.index.IndexEntryConflictException;
 	using ReporterFactory = Neo4Net.Kernel.Impl.Annotations.ReporterFactory;
@@ -40,7 +40,7 @@ namespace Neo4Net.Kernel.Api.Index
 	/// <summary>
 	/// Used for online operation of an index.
 	/// </summary>
-	public interface IndexAccessor : System.IDisposable, IndexConfigProvider, ConsistencyCheckable
+	public interface IIndexAccessor : System.IDisposable, IndexConfigProvider, ConsistencyCheckable
 	{
 
 		 /// <summary>

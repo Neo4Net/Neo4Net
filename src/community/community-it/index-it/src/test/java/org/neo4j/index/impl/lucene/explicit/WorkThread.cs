@@ -26,9 +26,9 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
 	using Node = Neo4Net.GraphDb.Node;
 	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
-	using Neo4Net.GraphDb.index;
-	using Neo4Net.GraphDb.index;
-	using Neo4Net.GraphDb.index;
+	using Neo4Net.GraphDb.Index;
+	using Neo4Net.GraphDb.Index;
+	using Neo4Net.GraphDb.Index;
 	using Neo4Net.Test;
 
 	public class WorkThread : OtherThreadExecutor<CommandState>
@@ -54,7 +54,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.graphdb.index.IndexHits<org.Neo4Net.graphdb.Node> queryIndex(String key, Object value) throws Exception
+//ORIGINAL LINE: public org.Neo4Net.GraphDb.Index.IndexHits<org.Neo4Net.graphdb.Node> queryIndex(String key, Object value) throws Exception
 		 public virtual IndexHits<Node> QueryIndex( string key, object value )
 		 {
 			  return Execute( new QueryIndexCommand( key, value ) );

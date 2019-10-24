@@ -1,15 +1,16 @@
 {
   "ExpandedNodes": [
     "",
-    "\\src",
-    "\\src\\Community",
-    "\\src\\Community\\annotation-processors\\Neo4Net.Kernel.Impl.Annotations",
-    "\\src\\Community\\annotation-processors\\Neo4Net.Kernel.Impl.Annotations\\Kernel",
-    "\\src\\Community\\common\\Neo4Net.Common",
-    "\\src\\Community\\graphdb-api\\Neo4Net.GraphDb.Api",
-    "\\src\\Community\\graphdb-api\\Neo4Net.GraphDb.Api.Tests\\impl",
-    "\\src\\Community\\graphdb-api\\Neo4Net.GraphDb.Api.Tests\\index",
-    "\\src\\Community\\graphdb-api\\Neo4Net.GraphDb.Api\\impl\\traversal"
+    "\\community\\data-collector",
+    "\\community\\data-collector\\src",
+    "\\community\\data-collector\\src\\main",
+    "\\community\\data-collector\\src\\main\\java",
+    "\\community\\data-collector\\src\\main\\java\\org",
+    "\\community\\data-collector\\src\\main\\java\\org\\neo4j",
+    "\\community\\data-collector\\src\\main\\java\\org\\neo4j\\internal",
+    "\\community\\data-collector\\src\\main\\java\\org\\neo4j\\internal\\collector",
+    "\\integrationtests"
   ],
+  "SelectedNode": "\\community",
   "PreviewInSolutionExplorer": false
 }

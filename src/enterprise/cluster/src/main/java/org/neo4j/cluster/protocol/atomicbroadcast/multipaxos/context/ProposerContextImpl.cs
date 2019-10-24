@@ -30,7 +30,7 @@ namespace Neo4Net.cluster.protocol.atomicbroadcast.multipaxos.context
 	using ClusterMessage = Neo4Net.cluster.protocol.cluster.ClusterMessage;
 	using HeartbeatContext = Neo4Net.cluster.protocol.heartbeat.HeartbeatContext;
 	using Timeouts = Neo4Net.cluster.timeout.Timeouts;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using LogProvider = Neo4Net.Logging.LogProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:

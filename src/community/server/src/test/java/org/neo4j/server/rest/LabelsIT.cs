@@ -26,7 +26,7 @@ namespace Neo4Net.Server.rest
 
 
 	using Node = Neo4Net.GraphDb.Node;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using Documented = Neo4Net.Kernel.Impl.Annotations.Documented;
 	using JsonParseException = Neo4Net.Server.rest.domain.JsonParseException;
 	using PropertyValueException = Neo4Net.Server.rest.web.PropertyValueException;

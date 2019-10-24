@@ -21,7 +21,7 @@ namespace Neo4Net.GraphDb
 {
 	using Test = org.junit.Test;
 
-	using RelationshipIndex = Neo4Net.GraphDb.index.RelationshipIndex;
+	using RelationshipIndex = Neo4Net.GraphDb.Index.RelationshipIndex;
 
 	public class MandatoryTransactionsForRelationshipIndexFacadeTest : AbstractMandatoryTransactionsTest<RelationshipIndex>
 	{

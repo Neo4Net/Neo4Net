@@ -34,7 +34,7 @@ namespace Neo4Net.Kernel.Api.Internal
 
       Value PropertyValue();
 
-      void writeTo<E>(ValueWriter<E> target);
+      void WriteTo<E>(ValueWriter<E> target);
 
       // typed accessor methods
 

@@ -25,7 +25,7 @@
 namespace Neo4Net.cluster.com.message
 {
 
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 
 	public class TrackingMessageHolder : MessageHolder
 	{

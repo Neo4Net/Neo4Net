@@ -34,7 +34,7 @@ namespace Neo4Net.backup.impl
 	using ResponsePacker = Neo4Net.com.storecopy.ResponsePacker;
 	using StoreCopyServer = Neo4Net.com.storecopy.StoreCopyServer;
 	using Monitor = Neo4Net.com.storecopy.StoreCopyServer.Monitor;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using CommittedTransactionRepresentation = Neo4Net.Kernel.impl.transaction.CommittedTransactionRepresentation;
 	using LogFileInformation = Neo4Net.Kernel.impl.transaction.log.LogFileInformation;
 	using LogicalTransactionStore = Neo4Net.Kernel.impl.transaction.log.LogicalTransactionStore;

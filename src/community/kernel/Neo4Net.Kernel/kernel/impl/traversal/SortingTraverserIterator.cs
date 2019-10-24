@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.impl.traversal
 	using Neo4Net.GraphDb.Traversal;
 	using Evaluation = Neo4Net.GraphDb.Traversal.Evaluation;
 	using TraversalBranch = Neo4Net.GraphDb.Traversal.TraversalBranch;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 
 	internal class SortingTraverserIterator : PrefetchingResourceIterator<Path>, TraverserIterator
 	{

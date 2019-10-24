@@ -25,8 +25,8 @@ namespace Neo4Net.Kernel.Impl.Newapi
 {
 
 	using Neo4Net.Functions;
-	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
-	using SchemaDescriptorSupplier = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptorSupplier;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
+	using SchemaDescriptorSupplier = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptorSupplier;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.collection.PrimitiveArrays.isSortedSet;
@@ -60,8 +60,8 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 /// <param name="callback"> The action to take on match </param>
 		 /// <exception cref="EXCEPTION"> This exception is propagated from the action </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static <SUPPLIER extends org.Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptorSupplier, EXCEPTION extends Exception> void onMatchingSchema(java.util.Iterator<SUPPLIER> schemaSuppliers, int specialPropertyId, int[] existingPropertyIds, org.Neo4Net.function.ThrowingConsumer<SUPPLIER,EXCEPTION> callback) throws EXCEPTION
-		 internal static void OnMatchingSchema<SUPPLIER, EXCEPTION>( IEnumerator<SUPPLIER> schemaSuppliers, int specialPropertyId, int[] existingPropertyIds, ThrowingConsumer<SUPPLIER, EXCEPTION> callback ) where SUPPLIER : Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptorSupplier where EXCEPTION : Exception
+//ORIGINAL LINE: static <SUPPLIER extends org.Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptorSupplier, EXCEPTION extends Exception> void onMatchingSchema(java.util.Iterator<SUPPLIER> schemaSuppliers, int specialPropertyId, int[] existingPropertyIds, org.Neo4Net.function.ThrowingConsumer<SUPPLIER,EXCEPTION> callback) throws EXCEPTION
+		 internal static void OnMatchingSchema<SUPPLIER, EXCEPTION>( IEnumerator<SUPPLIER> schemaSuppliers, int specialPropertyId, int[] existingPropertyIds, ThrowingConsumer<SUPPLIER, EXCEPTION> callback ) where SUPPLIER : Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptorSupplier where EXCEPTION : Exception
 		 {
 			  Debug.Assert( isSortedSet( existingPropertyIds ) );
 			  while ( schemaSuppliers.MoveNext() )
@@ -95,8 +95,8 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 /// <param name="callback"> The action to take on match </param>
 		 /// <exception cref="EXCEPTION"> This exception is propagated from the action </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static <SUPPLIER extends org.Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptorSupplier, EXCEPTION extends Exception> void onMatchingSchema(java.util.Iterator<SUPPLIER> schemaSuppliers, long[] labels, int specialPropertyId, int[] existingPropertyIds, org.Neo4Net.function.ThrowingConsumer<SUPPLIER,EXCEPTION> callback) throws EXCEPTION
-		 internal static void OnMatchingSchema<SUPPLIER, EXCEPTION>( IEnumerator<SUPPLIER> schemaSuppliers, long[] labels, int specialPropertyId, int[] existingPropertyIds, ThrowingConsumer<SUPPLIER, EXCEPTION> callback ) where SUPPLIER : Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptorSupplier where EXCEPTION : Exception
+//ORIGINAL LINE: static <SUPPLIER extends org.Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptorSupplier, EXCEPTION extends Exception> void onMatchingSchema(java.util.Iterator<SUPPLIER> schemaSuppliers, long[] labels, int specialPropertyId, int[] existingPropertyIds, org.Neo4Net.function.ThrowingConsumer<SUPPLIER,EXCEPTION> callback) throws EXCEPTION
+		 internal static void OnMatchingSchema<SUPPLIER, EXCEPTION>( IEnumerator<SUPPLIER> schemaSuppliers, long[] labels, int specialPropertyId, int[] existingPropertyIds, ThrowingConsumer<SUPPLIER, EXCEPTION> callback ) where SUPPLIER : Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptorSupplier where EXCEPTION : Exception
 		 {
 			  Debug.Assert( isSortedSet( existingPropertyIds ) );
 			  Debug.Assert( isSortedSet( labels ) );

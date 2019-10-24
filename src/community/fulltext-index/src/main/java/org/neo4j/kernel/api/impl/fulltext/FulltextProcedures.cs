@@ -30,15 +30,15 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 	using Node = Neo4Net.GraphDb.Node;
 	using NotFoundException = Neo4Net.GraphDb.NotFoundException;
 	using Relationship = Neo4Net.GraphDb.Relationship;
-	using AnalyzerProvider = Neo4Net.GraphDb.index.fulltext.AnalyzerProvider;
+	using AnalyzerProvider = Neo4Net.GraphDb.Index.fulltext.AnalyzerProvider;
 	using IndexDefinition = Neo4Net.GraphDb.Schema.IndexDefinition;
 	using Schema = Neo4Net.GraphDb.Schema.Schema;
 	using IndexReference = Neo4Net.Kernel.Api.Internal.IndexReference;
 	using InvalidTransactionTypeKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.InvalidTransactionTypeKernelException;
 	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
-	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
-	using SchemaKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.SchemaKernelException;
-	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
+	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException;
+	using SchemaKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.SchemaKernelException;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
 	using IndexProcedures = Neo4Net.Kernel.builtinprocs.IndexProcedures;
 	using KernelTransactionImplementation = Neo4Net.Kernel.Impl.Api.KernelTransactionImplementation;
 	using IndexingService = Neo4Net.Kernel.Impl.Api.index.IndexingService;
@@ -122,7 +122,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Create a node fulltext index for the given labels and properties. " + "The optional 'config' map parameter can be used to supply settings to the index. " + "Note: index specific settings are currently experimental, and might not replicated correctly in a cluster, or during backup. " + "Supported settings are '" + INDEX_CONFIG_ANALYZER + "', for specifying what analyzer to use " + "when indexing and querying. Use the `db.index.fulltext.listAvailableAnalyzers` procedure to see what options are available. " + "And '" + INDEX_CONFIG_EVENTUALLY_CONSISTENT + "' which can be set to 'true' to make this index eventually consistent, " + "such that updates from committing transactions are applied in a background thread.") @Procedure(name = "db.index.fulltext.createNodeIndex", mode = SCHEMA) public void createNodeFulltextIndex(@Name("indexName") String name, @Name("labels") java.util.List<String> labels, @Name("propertyNames") java.util.List<String> properties, @Name(value = "config", defaultValue = "") java.util.Map<String,String> indexConfigurationMap) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.InvalidTransactionTypeKernelException, org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.SchemaKernelException
+//ORIGINAL LINE: @Description("Create a node fulltext index for the given labels and properties. " + "The optional 'config' map parameter can be used to supply settings to the index. " + "Note: index specific settings are currently experimental, and might not replicated correctly in a cluster, or during backup. " + "Supported settings are '" + INDEX_CONFIG_ANALYZER + "', for specifying what analyzer to use " + "when indexing and querying. Use the `db.index.fulltext.listAvailableAnalyzers` procedure to see what options are available. " + "And '" + INDEX_CONFIG_EVENTUALLY_CONSISTENT + "' which can be set to 'true' to make this index eventually consistent, " + "such that updates from committing transactions are applied in a background thread.") @Procedure(name = "db.index.fulltext.createNodeIndex", mode = SCHEMA) public void createNodeFulltextIndex(@Name("indexName") String name, @Name("labels") java.util.List<String> labels, @Name("propertyNames") java.util.List<String> properties, @Name(value = "config", defaultValue = "") java.util.Map<String,String> indexConfigurationMap) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.InvalidTransactionTypeKernelException, org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.SchemaKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Description("Create a node fulltext index for the given labels and properties. " + "The optional 'config' map parameter can be used to supply settings to the index. " + "Note: index specific settings are currently experimental, and might not replicated correctly in a cluster, or during backup. " + "Supported settings are '" + INDEX_CONFIG_ANALYZER + "', for specifying what analyzer to use " + "when indexing and querying. Use the `db.index.fulltext.listAvailableAnalyzers` procedure to see what options are available. " + "And '" + INDEX_CONFIG_EVENTUALLY_CONSISTENT + "' which can be set to 'true' to make this index eventually consistent, " + "such that updates from committing transactions are applied in a background thread."), Procedure(name : "db.index.fulltext.createNodeIndex", mode : SCHEMA)]
 		 public virtual void CreateNodeFulltextIndex( string name, IList<string> labels, IList<string> properties, IDictionary<string, string> indexConfigurationMap )
@@ -139,7 +139,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Create a relationship fulltext index for the given relationship types and properties. " + "The optional 'config' map parameter can be used to supply settings to the index. " + "Note: index specific settings are currently experimental, and might not replicated correctly in a cluster, or during backup. " + "Supported settings are '" + INDEX_CONFIG_ANALYZER + "', for specifying what analyzer to use " + "when indexing and querying. Use the `db.index.fulltext.listAvailableAnalyzers` procedure to see what options are available. " + "And '" + INDEX_CONFIG_EVENTUALLY_CONSISTENT + "' which can be set to 'true' to make this index eventually consistent, " + "such that updates from committing transactions are applied in a background thread.") @Procedure(name = "db.index.fulltext.createRelationshipIndex", mode = SCHEMA) public void createRelationshipFulltextIndex(@Name("indexName") String name, @Name("relationshipTypes") java.util.List<String> relTypes, @Name("propertyNames") java.util.List<String> properties, @Name(value = "config", defaultValue = "") java.util.Map<String,String> config) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.InvalidTransactionTypeKernelException, org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.SchemaKernelException
+//ORIGINAL LINE: @Description("Create a relationship fulltext index for the given relationship types and properties. " + "The optional 'config' map parameter can be used to supply settings to the index. " + "Note: index specific settings are currently experimental, and might not replicated correctly in a cluster, or during backup. " + "Supported settings are '" + INDEX_CONFIG_ANALYZER + "', for specifying what analyzer to use " + "when indexing and querying. Use the `db.index.fulltext.listAvailableAnalyzers` procedure to see what options are available. " + "And '" + INDEX_CONFIG_EVENTUALLY_CONSISTENT + "' which can be set to 'true' to make this index eventually consistent, " + "such that updates from committing transactions are applied in a background thread.") @Procedure(name = "db.index.fulltext.createRelationshipIndex", mode = SCHEMA) public void createRelationshipFulltextIndex(@Name("indexName") String name, @Name("relationshipTypes") java.util.List<String> relTypes, @Name("propertyNames") java.util.List<String> properties, @Name(value = "config", defaultValue = "") java.util.Map<String,String> config) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.InvalidTransactionTypeKernelException, org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.SchemaKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Description("Create a relationship fulltext index for the given relationship types and properties. " + "The optional 'config' map parameter can be used to supply settings to the index. " + "Note: index specific settings are currently experimental, and might not replicated correctly in a cluster, or during backup. " + "Supported settings are '" + INDEX_CONFIG_ANALYZER + "', for specifying what analyzer to use " + "when indexing and querying. Use the `db.index.fulltext.listAvailableAnalyzers` procedure to see what options are available. " + "And '" + INDEX_CONFIG_EVENTUALLY_CONSISTENT + "' which can be set to 'true' to make this index eventually consistent, " + "such that updates from committing transactions are applied in a background thread."), Procedure(name : "db.index.fulltext.createRelationshipIndex", mode : SCHEMA)]
 		 public virtual void CreateRelationshipFulltextIndex( string name, IList<string> relTypes, IList<string> properties, IDictionary<string, string> config )
@@ -151,7 +151,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Drop the specified index.") @Procedure(name = "db.index.fulltext.drop", mode = SCHEMA) public void drop(@Name("indexName") String name) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.InvalidTransactionTypeKernelException, org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.SchemaKernelException
+//ORIGINAL LINE: @Description("Drop the specified index.") @Procedure(name = "db.index.fulltext.drop", mode = SCHEMA) public void drop(@Name("indexName") String name) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.InvalidTransactionTypeKernelException, org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.SchemaKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Description("Drop the specified index."), Procedure(name : "db.index.fulltext.drop", mode : SCHEMA)]
 		 public virtual void Drop( string name )
@@ -161,7 +161,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Query the given fulltext index. Returns the matching nodes and their lucene query score, ordered by score.") @Procedure(name = "db.index.fulltext.queryNodes", mode = READ) public java.util.stream.Stream<NodeOutput> queryFulltextForNodes(@Name("indexName") String name, @Name("queryString") String query) throws org.apache.lucene.queryparser.classic.ParseException, org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException, java.io.IOException
+//ORIGINAL LINE: @Description("Query the given fulltext index. Returns the matching nodes and their lucene query score, ordered by score.") @Procedure(name = "db.index.fulltext.queryNodes", mode = READ) public java.util.stream.Stream<NodeOutput> queryFulltextForNodes(@Name("indexName") String name, @Name("queryString") String query) throws org.apache.lucene.queryparser.classic.ParseException, org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException, java.io.IOException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Description("Query the given fulltext index. Returns the matching nodes and their lucene query score, ordered by score."), Procedure(name : "db.index.fulltext.queryNodes", mode : READ)]
 		 public virtual Stream<NodeOutput> QueryFulltextForNodes( string name, string query )
@@ -178,7 +178,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Query the given fulltext index. Returns the matching relationships and their lucene query score, ordered by score.") @Procedure(name = "db.index.fulltext.queryRelationships", mode = READ) public java.util.stream.Stream<RelationshipOutput> queryFulltextForRelationships(@Name("indexName") String name, @Name("queryString") String query) throws org.apache.lucene.queryparser.classic.ParseException, org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException, java.io.IOException
+//ORIGINAL LINE: @Description("Query the given fulltext index. Returns the matching relationships and their lucene query score, ordered by score.") @Procedure(name = "db.index.fulltext.queryRelationships", mode = READ) public java.util.stream.Stream<RelationshipOutput> queryFulltextForRelationships(@Name("indexName") String name, @Name("queryString") String query) throws org.apache.lucene.queryparser.classic.ParseException, org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException, java.io.IOException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Description("Query the given fulltext index. Returns the matching relationships and their lucene query score, ordered by score."), Procedure(name : "db.index.fulltext.queryRelationships", mode : READ)]
 		 public virtual Stream<RelationshipOutput> QueryFulltextForRelationships( string name, string query )
@@ -207,7 +207,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void awaitOnline(org.Neo4Net.Kernel.Api.Internal.IndexReference indexReference) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: private void awaitOnline(org.Neo4Net.Kernel.Api.Internal.IndexReference indexReference) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
 		 private void AwaitOnline( IndexReference indexReference )
 		 {
 			  // We do the isAdded check on the transaction state first, because indexGetState will grab a schema read-lock, which can deadlock on the write-lock

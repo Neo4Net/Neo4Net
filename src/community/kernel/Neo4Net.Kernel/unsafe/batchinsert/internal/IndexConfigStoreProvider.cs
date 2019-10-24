@@ -29,7 +29,7 @@ namespace Neo4Net.@unsafe.Batchinsert.Internal
 	/// <seealso cref= BatchInserterIndexProvider </seealso>
 	/// @deprecated This API will be removed in next major release. Please consider using schema indexes instead. 
 	[Obsolete("This API will be removed in next major release. Please consider using schema indexes instead.")]
-	public interface IndexConfigStoreProvider
+	public interface IIndexConfigStoreProvider
 	{
 		 [Obsolete]
 		 IndexConfigStore IndexStore { get; }

@@ -33,8 +33,8 @@ namespace Neo4Net.Kernel.builtinprocs
 	using Node = Neo4Net.GraphDb.Node;
 	using Path = Neo4Net.GraphDb.Path;
 	using Relationship = Neo4Net.GraphDb.Relationship;
-	using Iterators = Neo4Net.Helpers.Collections.Iterators;
-	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
+	using Iterators = Neo4Net.Collections.Helpers.Iterators;
+	using MapUtil = Neo4Net.Collections.Helpers.MapUtil;
 	using IndexReference = Neo4Net.Kernel.Api.Internal.IndexReference;
 	using InternalIndexState = Neo4Net.Kernel.Api.Internal.InternalIndexState;
 	using NamedToken = Neo4Net.Kernel.Api.Internal.NamedToken;
@@ -43,11 +43,11 @@ namespace Neo4Net.Kernel.builtinprocs
 	using SchemaReadCore = Neo4Net.Kernel.Api.Internal.SchemaReadCore;
 	using TokenRead = Neo4Net.Kernel.Api.Internal.TokenRead;
 	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
-	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
+	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException;
 	using ProcedureCallContext = Neo4Net.Kernel.Api.Internal.procs.ProcedureCallContext;
 	using ProcedureSignature = Neo4Net.Kernel.Api.Internal.procs.ProcedureSignature;
-	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor;
-	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
+	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.Schema.IndexProviderDescriptor;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
 	using SecurityContext = Neo4Net.Kernel.Api.Internal.security.SecurityContext;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using ResourceTracker = Neo4Net.Kernel.api.ResourceTracker;
@@ -484,7 +484,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.util.List<Object[]> call(String name, Object... args) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException, org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: private java.util.List<Object[]> call(String name, Object... args) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException, org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
 		 private IList<object[]> Call( string name, params object[] args )
 		 {
 			  BasicContext ctx = new BasicContext();

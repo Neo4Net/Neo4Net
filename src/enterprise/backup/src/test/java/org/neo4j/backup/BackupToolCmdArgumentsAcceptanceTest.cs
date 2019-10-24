@@ -36,7 +36,7 @@ namespace Neo4Net.backup
 	using BackupClient = Neo4Net.backup.impl.BackupClient;
 	using BackupProtocolService = Neo4Net.backup.impl.BackupProtocolService;
 	using ConsistencyCheck = Neo4Net.backup.impl.ConsistencyCheck;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using Config = Neo4Net.Kernel.configuration.Config;
 

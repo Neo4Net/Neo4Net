@@ -27,7 +27,7 @@ namespace Neo4Net.CommandLine.Admin
 
 
 	using Arguments = Neo4Net.CommandLine.Args.Arguments;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.ArgumentMatchers.any;

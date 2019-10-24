@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.builtinprocs
 	using IntHashSet = org.eclipse.collections.impl.set.mutable.primitive.IntHashSet;
 
 
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using CursorFactory = Neo4Net.Kernel.Api.Internal.CursorFactory;
 	using NamedToken = Neo4Net.Kernel.Api.Internal.NamedToken;
 	using NodeCursor = Neo4Net.Kernel.Api.Internal.NodeCursor;

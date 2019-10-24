@@ -93,7 +93,7 @@ namespace Neo4Net.backup
 		 {
 			  try
 			  {
-					outputStream.writeTo( System.out );
+					outputStream.WriteTo( System.out );
 			  }
 			  catch ( IOException e )
 			  {

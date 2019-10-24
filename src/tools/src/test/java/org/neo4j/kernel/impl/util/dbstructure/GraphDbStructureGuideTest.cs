@@ -33,7 +33,7 @@ namespace Neo4Net.Kernel.impl.util.dbstructure
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using IndexReference = Neo4Net.Kernel.Api.Internal.IndexReference;
 	using TokenRead = Neo4Net.Kernel.Api.Internal.TokenRead;
-	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor;
+	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
 	using UniquenessConstraintDescriptor = Neo4Net.Kernel.api.schema.constraints.UniquenessConstraintDescriptor;
@@ -266,7 +266,7 @@ namespace Neo4Net.Kernel.impl.util.dbstructure
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor createUniqueConstraint(int labelId, int pkId) throws Exception
+//ORIGINAL LINE: private org.Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor createUniqueConstraint(int labelId, int pkId) throws Exception
 		 private ConstraintDescriptor CreateUniqueConstraint( int labelId, int pkId )
 		 {
 			  KernelTransaction ktx = ktx();

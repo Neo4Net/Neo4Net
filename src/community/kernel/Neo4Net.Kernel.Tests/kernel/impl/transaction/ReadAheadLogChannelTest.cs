@@ -23,7 +23,7 @@ namespace Neo4Net.Kernel.impl.transaction
 	using Test = org.junit.Test;
 
 
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using OpenMode = Neo4Net.Io.fs.OpenMode;
 	using StoreChannel = Neo4Net.Io.fs.StoreChannel;
 	using LogVersionBridge = Neo4Net.Kernel.impl.transaction.log.LogVersionBridge;

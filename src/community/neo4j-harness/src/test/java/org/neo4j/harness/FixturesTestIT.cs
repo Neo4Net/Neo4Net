@@ -64,7 +64,7 @@ namespace Neo4Net.Harness
 			  // Given
 			  File targetFolder = TestDir.directory();
 			  File fixture = new File( targetFolder, "fixture.cyp" );
-			  FileUtils.writeToFile( fixture, "CREATE (u:User)" + "CREATE (a:OtherUser)", false );
+			  FileUtils.WriteToFile( fixture, "CREATE (u:User)" + "CREATE (a:OtherUser)", false );
 
 			  // When
 			  using ( ServerControls server = GetServerBuilder( targetFolder ).withFixture( fixture ).newServer() )
@@ -84,13 +84,13 @@ namespace Neo4Net.Harness
 		 {
 			  // Given two files in the root folder
 			  File targetFolder = TestDir.directory();
-			  FileUtils.writeToFile( new File( targetFolder, "fixture1.cyp" ), "CREATE (u:User)\n" + "CREATE (a:OtherUser)", false );
-			  FileUtils.writeToFile( new File( targetFolder, "fixture2.cyp" ), "CREATE (u:User)\n" + "CREATE (a:OtherUser)", false );
+			  FileUtils.WriteToFile( new File( targetFolder, "fixture1.cyp" ), "CREATE (u:User)\n" + "CREATE (a:OtherUser)", false );
+			  FileUtils.WriteToFile( new File( targetFolder, "fixture2.cyp" ), "CREATE (u:User)\n" + "CREATE (a:OtherUser)", false );
 
 			  // And given one file in a sub directory
 			  File subDir = new File( targetFolder, "subdirectory" );
 			  subDir.mkdir();
-			  FileUtils.writeToFile( new File( subDir, "subDirFixture.cyp" ), "CREATE (u:User)\n" + "CREATE (a:OtherUser)", false );
+			  FileUtils.WriteToFile( new File( subDir, "subDirFixture.cyp" ), "CREATE (u:User)\n" + "CREATE (a:OtherUser)", false );
 
 			  // When
 			  using ( ServerControls server = GetServerBuilder( targetFolder ).withFixture( targetFolder ).newServer() )
@@ -110,9 +110,9 @@ namespace Neo4Net.Harness
 			  // Given two files in the root folder
 			  File targetFolder = TestDir.directory();
 			  File fixture1 = new File( targetFolder, "fixture1.cyp" );
-			  FileUtils.writeToFile( fixture1, "CREATE (u:User)\n" + "CREATE (a:OtherUser)", false );
+			  FileUtils.WriteToFile( fixture1, "CREATE (u:User)\n" + "CREATE (a:OtherUser)", false );
 			  File fixture2 = new File( targetFolder, "fixture2.cyp" );
-			  FileUtils.writeToFile( fixture2, "CREATE (u:User)\n" + "CREATE (a:OtherUser)", false );
+			  FileUtils.WriteToFile( fixture2, "CREATE (u:User)\n" + "CREATE (a:OtherUser)", false );
 
 			  // When
 			  using ( ServerControls server = GetServerBuilder( targetFolder ).withFixture( fixture1 ).withFixture( fixture2 ).newServer() )
@@ -149,8 +149,8 @@ namespace Neo4Net.Harness
 		 {
 			  // Given two files in the root folder
 			  File targetFolder = TestDir.directory();
-			  FileUtils.writeToFile( new File( targetFolder, "fixture1.cyp" ), "CREATE (u:User)\n" + "CREATE (a:OtherUser)", false );
-			  FileUtils.writeToFile( new File( targetFolder, "fixture2.cyp" ), "", false );
+			  FileUtils.WriteToFile( new File( targetFolder, "fixture1.cyp" ), "CREATE (u:User)\n" + "CREATE (a:OtherUser)", false );
+			  FileUtils.WriteToFile( new File( targetFolder, "fixture2.cyp" ), "", false );
 
 			  // When
 			  using ( ServerControls server = GetServerBuilder( targetFolder ).withFixture( targetFolder ).newServer() )
@@ -169,7 +169,7 @@ namespace Neo4Net.Harness
 		 {
 			  // Given two files in the root folder
 			  File targetFolder = TestDir.directory();
-			  FileUtils.writeToFile( new File( targetFolder, "fixture1.cyp" ), "this is not a valid cypher statement", false );
+			  FileUtils.WriteToFile( new File( targetFolder, "fixture1.cyp" ), "this is not a valid cypher statement", false );
 
 			  // When
 			  try

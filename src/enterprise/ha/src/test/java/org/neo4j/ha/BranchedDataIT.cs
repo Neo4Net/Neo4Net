@@ -37,8 +37,8 @@ namespace Neo4Net.ha
 	using Neo4Net.GraphDb;
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using TestHighlyAvailableGraphDatabaseFactory = Neo4Net.GraphDb.factory.TestHighlyAvailableGraphDatabaseFactory;
-	using Neo4Net.GraphDb.index;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Neo4Net.GraphDb.Index;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using FileUtils = Neo4Net.Io.fs.FileUtils;
 	using NeoStoreDataSource = Neo4Net.Kernel.NeoStoreDataSource;
 	using Settings = Neo4Net.Kernel.configuration.Settings;

@@ -593,7 +593,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 /// Write key and value to tree and record duplicates if any.
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void writeToTree(org.Neo4Net.index.internal.gbptree.Writer<KEY,VALUE> writer, RecordingConflictDetector<KEY,VALUE> recordingConflictDetector, KEY key, VALUE value) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: private void WriteToTree(org.Neo4Net.index.internal.gbptree.Writer<KEY,VALUE> writer, RecordingConflictDetector<KEY,VALUE> recordingConflictDetector, KEY key, VALUE value) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 private void WriteToTree( Writer<KEY, VALUE> writer, RecordingConflictDetector<KEY, VALUE> recordingConflictDetector, KEY key, VALUE value )
 		 {
 			  recordingConflictDetector.controlConflictDetection( key );

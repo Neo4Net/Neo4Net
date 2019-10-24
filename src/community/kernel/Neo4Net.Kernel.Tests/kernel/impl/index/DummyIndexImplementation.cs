@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel.impl.index
 
 	using PrimitiveLongBaseIterator = Neo4Net.Collections.PrimitiveLongCollections.PrimitiveLongBaseIterator;
 	using Neo4Net.GraphDb;
-	using Iterators = Neo4Net.Helpers.Collections.Iterators;
+	using Iterators = Neo4Net.Collections.Helpers.Iterators;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using ExplicitIndex = Neo4Net.Kernel.api.ExplicitIndex;
 	using ExplicitIndexHits = Neo4Net.Kernel.api.ExplicitIndexHits;

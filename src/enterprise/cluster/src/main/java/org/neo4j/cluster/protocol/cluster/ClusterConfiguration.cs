@@ -28,7 +28,7 @@ using System.Diagnostics;
 namespace Neo4Net.cluster.protocol.cluster
 {
 
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using Log = Neo4Net.Logging.Log;
 	using LogProvider = Neo4Net.Logging.LogProvider;
 

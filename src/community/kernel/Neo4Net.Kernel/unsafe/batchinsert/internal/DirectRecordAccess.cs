@@ -23,7 +23,7 @@ using System.Diagnostics;
 namespace Neo4Net.@unsafe.Batchinsert.Internal
 {
 
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using Neo4Net.Kernel.impl.store;
 	using AbstractBaseRecord = Neo4Net.Kernel.Impl.Store.Records.AbstractBaseRecord;
 	using Neo4Net.Kernel.impl.transaction.state;

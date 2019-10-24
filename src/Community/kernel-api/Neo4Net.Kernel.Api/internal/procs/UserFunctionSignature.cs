@@ -22,7 +22,7 @@
 namespace Neo4Net.Kernel.Api.Internal.Procs
 {
 
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 
 	/// <summary>
 	/// This describes the signature of a function, made up of its namespace, name, and input/output description.

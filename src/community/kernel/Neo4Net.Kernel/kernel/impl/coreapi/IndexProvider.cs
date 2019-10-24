@@ -23,10 +23,10 @@ namespace Neo4Net.Kernel.impl.coreapi
 {
 
 	using Node = Neo4Net.GraphDb.Node;
-	using Neo4Net.GraphDb.index;
-	using RelationshipIndex = Neo4Net.GraphDb.index.RelationshipIndex;
+	using Neo4Net.GraphDb.Index;
+	using RelationshipIndex = Neo4Net.GraphDb.Index.RelationshipIndex;
 
-	public interface IndexProvider
+	public interface IIndexProvider
 	{
 		 Index<Node> GetOrCreateNodeIndex( string indexName, IDictionary<string, string> customConfiguration );
 

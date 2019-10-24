@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 	using ArrayUtils = org.apache.commons.lang3.ArrayUtils;
 	using MutableIntSet = org.eclipse.collections.api.set.primitive.MutableIntSet;
 
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using IEntityNotFoundException = Neo4Net.Kernel.Api.Internal.Exceptions.EntityNotFoundException;
 	using LabelScanStore = Neo4Net.Kernel.api.labelscan.LabelScanStore;
 	using NodeLabelUpdate = Neo4Net.Kernel.api.labelscan.NodeLabelUpdate;

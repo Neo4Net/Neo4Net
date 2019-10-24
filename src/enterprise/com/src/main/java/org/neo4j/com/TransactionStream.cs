@@ -24,7 +24,7 @@
  */
 namespace Neo4Net.com
 {
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using CommittedTransactionRepresentation = Neo4Net.Kernel.impl.transaction.CommittedTransactionRepresentation;
 
 	public interface TransactionStream

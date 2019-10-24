@@ -29,8 +29,8 @@ namespace Neo4Net.Kernel.Impl.Api
 	using Transaction = Neo4Net.Kernel.Api.Internal.Transaction;
 	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
-	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
-	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor;
+	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException;
+	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor;
 	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
 	using SchemaIndexTestHelper = Neo4Net.Kernel.Impl.Api.index.SchemaIndexTestHelper;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
@@ -159,7 +159,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor createConstraint() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: private org.Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor createConstraint() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 private ConstraintDescriptor CreateConstraint()
 		 {
 
@@ -172,7 +172,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void dropConstraint(org.Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor descriptor) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: private void dropConstraint(org.Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor descriptor) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 private void DropConstraint( ConstraintDescriptor descriptor )
 		 {
 			  using ( Transaction transaction = _kernel.BeginTransaction( @implicit, AUTH_DISABLED ) )
@@ -206,7 +206,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void awaitIndexOnline(org.Neo4Net.Kernel.Api.Internal.IndexReference descriptor, String keyForProbing) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException, org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
+//ORIGINAL LINE: private void awaitIndexOnline(org.Neo4Net.Kernel.Api.Internal.IndexReference descriptor, String keyForProbing) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException, org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 private void AwaitIndexOnline( IndexReference descriptor, string keyForProbing )
 		 {
 			  using ( Transaction transaction = _kernel.BeginTransaction( @implicit, AUTH_DISABLED ) )

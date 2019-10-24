@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.impl.coreapi
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 
-	public interface InternalTransaction : Transaction
+	public interface IInternalTransaction : Transaction
 	{
 		 KernelTransaction.Type TransactionType();
 

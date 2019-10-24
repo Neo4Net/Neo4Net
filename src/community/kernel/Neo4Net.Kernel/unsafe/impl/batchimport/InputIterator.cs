@@ -27,7 +27,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 	/// <summary>
 	/// A <seealso cref="ResourceIterator"/> with added methods suitable for <seealso cref="Input"/> into a <seealso cref="BatchImporter"/>.
 	/// </summary>
-	public interface InputIterator : System.IDisposable
+	public interface IInputIterator : System.IDisposable
 	{
 		 InputChunk NewChunk();
 

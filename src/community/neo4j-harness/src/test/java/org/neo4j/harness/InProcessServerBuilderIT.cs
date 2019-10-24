@@ -35,7 +35,7 @@ namespace Neo4Net.Harness
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using MyUnmanagedExtension = Neo4Net.Harness.extensionpackage.MyUnmanagedExtension;
 	using HostnamePort = Neo4Net.Helpers.HostnamePort;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using HttpConnector = Neo4Net.Kernel.configuration.HttpConnector;
 	using Encryption = Neo4Net.Kernel.configuration.HttpConnector.Encryption;

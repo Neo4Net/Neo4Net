@@ -28,7 +28,7 @@ namespace Neo4Net.Kernel.Impl.Api
 
 	using Neo4Net.Functions;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor;
+	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.Schema.IndexProviderDescriptor;
 	using IndexProvider = Neo4Net.Kernel.Api.Index.IndexProvider;
 	using IndexPopulationJob = Neo4Net.Kernel.Impl.Api.index.IndexPopulationJob;
 	using IndexProviderMap = Neo4Net.Kernel.Impl.Api.index.IndexProviderMap;

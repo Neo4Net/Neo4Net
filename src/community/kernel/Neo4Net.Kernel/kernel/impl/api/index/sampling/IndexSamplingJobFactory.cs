@@ -20,7 +20,7 @@
 namespace Neo4Net.Kernel.Impl.Api.index.sampling
 {
 
-	public interface IndexSamplingJobFactory
+	public interface IIndexSamplingJobFactory
 	{
 		 IndexSamplingJob Create( long indexId, IndexProxy indexProxy );
 	}

@@ -25,8 +25,8 @@ namespace Neo4Net.Kernel.Api.Internal.Helpers
 	using InvocationOnMock = org.mockito.invocation.InvocationOnMock;
 	using Answer = org.mockito.stubbing.Answer;
 
-	using Iterators = Neo4Net.Helpers.Collections.Iterators;
-	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
+	using Iterators = Neo4Net.Collections.Helpers.Iterators;
+	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException;
 	using Register = Neo4Net.Register.Register;
 	using Registers = Neo4Net.Register.Registers;
 
@@ -133,7 +133,7 @@ namespace Neo4Net.Kernel.Api.Internal.Helpers
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void setUpdates(org.Neo4Net.Kernel.Api.Internal.SchemaRead schemaRead, int... updates) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: private void setUpdates(org.Neo4Net.Kernel.Api.Internal.SchemaRead schemaRead, int... updates) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
 		 private void SetUpdates( SchemaRead schemaRead, params int[] updates )
 		 {
 			  when( schemaRead.IndexUpdatesAndSize( any( typeof( IndexReference ) ), any( typeof( Neo4Net.Register.Register_DoubleLongRegister ) ) ) ).thenAnswer( new AnswerAnonymousInnerClass( this, updates ) );

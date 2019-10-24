@@ -23,7 +23,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 {
 	using Test = org.junit.Test;
 
-	using Iterators = Neo4Net.Helpers.Collections.Iterators;
+	using Iterators = Neo4Net.Collections.Helpers.Iterators;
 	using PropertyKeyValue = Neo4Net.Kernel.api.properties.PropertyKeyValue;
 	using OnHeapCollectionsFactory = Neo4Net.Kernel.impl.util.collection.OnHeapCollectionsFactory;
 	using StorageProperty = Neo4Net.Kernel.Api.StorageEngine.StorageProperty;

@@ -47,7 +47,7 @@ namespace Neo4Net.com
 
 	using RequestMonitor = Neo4Net.com.monitor.RequestMonitor;
 	using HostnamePort = Neo4Net.Helpers.HostnamePort;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using CommittedTransactionRepresentation = Neo4Net.Kernel.impl.transaction.CommittedTransactionRepresentation;
 	using TransactionIdStore = Neo4Net.Kernel.impl.transaction.log.TransactionIdStore;
 	using Lifecycle = Neo4Net.Kernel.Lifecycle.Lifecycle;

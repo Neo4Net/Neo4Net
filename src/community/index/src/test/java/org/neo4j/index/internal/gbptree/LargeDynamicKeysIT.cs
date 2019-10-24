@@ -26,7 +26,7 @@ namespace Neo4Net.Index.Internal.gbptree
 
 
 	using Neo4Net.Cursors;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
 	using UTF8 = Neo4Net.Strings.UTF8;
 	using PageCacheAndDependenciesRule = Neo4Net.Test.rule.PageCacheAndDependenciesRule;

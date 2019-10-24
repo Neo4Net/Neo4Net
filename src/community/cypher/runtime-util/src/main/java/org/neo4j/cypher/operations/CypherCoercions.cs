@@ -268,7 +268,7 @@ namespace Neo4Net.Cypher.operations
 			  return new CypherTypeException( format( "Can't coerce `%s` to %s", value, type ), null );
 		 }
 
-		 private class ListMapper : ValueMapper<ListValue>
+		 private class ListMapper : IValueMapper<ListValue>
 		 {
 
 			  public override ListValue MapPath( PathValue value )

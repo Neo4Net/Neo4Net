@@ -23,7 +23,7 @@ using System.Collections.Generic;
 namespace Neo4Net.GraphDb.Schema
 {
 
-	//$!!$ tac using IndexManager = Neo4Net.GraphDb.index.IndexManager;
+	//$!!$ tac using IndexManager = Neo4Net.GraphDb.Index.IndexManager;
 
 	/// <summary>
 	/// Definition for an index.

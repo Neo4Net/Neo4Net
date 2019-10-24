@@ -23,7 +23,7 @@ using System.Collections.Generic;
 namespace Neo4Net.@unsafe.Impl.Batchimport.staging
 {
 
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using Keys = Neo4Net.@unsafe.Impl.Batchimport.stats.Keys;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:

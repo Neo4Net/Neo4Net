@@ -42,13 +42,13 @@ namespace Neo4Net.Kernel.impl.factory
 	using TransactionTerminatedException = Neo4Net.GraphDb.TransactionTerminatedException;
 	using KernelEventHandler = Neo4Net.GraphDb.Events.KernelEventHandler;
 	using Neo4Net.GraphDb.Events;
-	using IndexManager = Neo4Net.GraphDb.index.IndexManager;
+	using IndexManager = Neo4Net.GraphDb.Index.IndexManager;
 	using Schema = Neo4Net.GraphDb.Schema.Schema;
 	using URLAccessValidationError = Neo4Net.GraphDb.security.URLAccessValidationError;
 	using BidirectionalTraversalDescription = Neo4Net.GraphDb.Traversal.BidirectionalTraversalDescription;
 	using TraversalDescription = Neo4Net.GraphDb.Traversal.TraversalDescription;
-	using Iterators = Neo4Net.Helpers.Collections.Iterators;
-	using Neo4Net.Helpers.Collections;
+	using Iterators = Neo4Net.Collections.Helpers.Iterators;
+	using Neo4Net.Collections.Helpers;
 	using IndexOrder = Neo4Net.Kernel.Api.Internal.IndexOrder;
 	using IndexQuery = Neo4Net.Kernel.Api.Internal.IndexQuery;
 	using IndexReference = Neo4Net.Kernel.Api.Internal.IndexReference;
@@ -66,8 +66,8 @@ namespace Neo4Net.Kernel.impl.factory
 	using IEntityNotFoundException = Neo4Net.Kernel.Api.Internal.Exceptions.EntityNotFoundException;
 	using InvalidTransactionTypeKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.InvalidTransactionTypeKernelException;
 	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
-	using ConstraintValidationException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.ConstraintValidationException;
-	using SchemaKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.SchemaKernelException;
+	using ConstraintValidationException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.ConstraintValidationException;
+	using SchemaKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.SchemaKernelException;
 	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using IOUtils = Neo4Net.Io.IOUtils;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
@@ -212,7 +212,7 @@ namespace Neo4Net.Kernel.impl.factory
 			  this._indexManager = Suppliers.lazySingleton(() =>
 			  {
 				IndexProviderImpl idxProvider = new IndexProviderImpl( this, () => txBridge.GetKernelTransactionBoundToThisThread(true) );
-				AutoIndexerFacade<Node> nodeAutoIndexer = new AutoIndexerFacade<Node>( () => new ReadOnlyIndexFacade<Neo4Net.GraphDb.index.ReadableIndex<T>>(idxProvider.getOrCreateNodeIndex(NODE_AUTO_INDEX, null)), spi.AutoIndexing().nodes() );
+				AutoIndexerFacade<Node> nodeAutoIndexer = new AutoIndexerFacade<Node>( () => new ReadOnlyIndexFacade<Neo4Net.GraphDb.Index.ReadableIndex<T>>(idxProvider.getOrCreateNodeIndex(NODE_AUTO_INDEX, null)), spi.AutoIndexing().nodes() );
 				RelationshipAutoIndexerFacade relAutoIndexer = new RelationshipAutoIndexerFacade( () => new ReadOnlyRelationshipIndexFacade(idxProvider.getOrCreateRelationshipIndex(RELATIONSHIP_AUTO_INDEX, null)), spi.AutoIndexing().relationships() );
 
 				return new IndexManagerImpl( () => txBridge.GetKernelTransactionBoundToThisThread(true), idxProvider, nodeAutoIndexer, relAutoIndexer );

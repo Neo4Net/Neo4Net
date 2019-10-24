@@ -20,9 +20,9 @@
 namespace Neo4Net.Kernel.Impl.Api.explicitindex
 {
 	using Neo4Net.GraphDb;
-	using Neo4Net.GraphDb.index;
-	using Iterators = Neo4Net.Helpers.Collections.Iterators;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.GraphDb.Index;
+	using Iterators = Neo4Net.Collections.Helpers.Iterators;
+	using Neo4Net.Collections.Helpers;
 
 	public abstract class AbstractIndexHits<T> : PrefetchingIterator<T>, IndexHits<T>
 	{

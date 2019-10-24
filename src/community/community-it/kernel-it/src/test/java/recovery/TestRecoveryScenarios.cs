@@ -34,7 +34,7 @@ namespace Recovery
 	using Node = Neo4Net.GraphDb.Node;
 	using NotFoundException = Neo4Net.GraphDb.NotFoundException;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using Iterators = Neo4Net.Helpers.Collections.Iterators;
+	using Iterators = Neo4Net.Collections.Helpers.Iterators;
 	using Kernel = Neo4Net.Kernel.Api.Internal.Kernel;
 	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;

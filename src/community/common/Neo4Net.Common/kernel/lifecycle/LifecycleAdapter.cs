@@ -44,16 +44,16 @@ namespace Neo4Net.Kernel.Lifecycle
       {
       }
 
-      public static ILifecycle OnShutdown(ThrowingAction action)
+      public static ILifecycle OnShutdown(IThrowingAction action)
       {
          return new LifecycleAdapterAnonymousInnerClass(action);
       }
 
       private class LifecycleAdapterAnonymousInnerClass : LifecycleAdapter
       {
-         private ThrowingAction _action;
+         private IThrowingAction _action;
 
-         public LifecycleAdapterAnonymousInnerClass(ThrowingAction action)
+         public LifecycleAdapterAnonymousInnerClass(IThrowingAction action)
          {
             this._action = action;
          }

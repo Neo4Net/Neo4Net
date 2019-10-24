@@ -35,7 +35,7 @@ namespace Neo4Net.cluster
 	using ServerIdElectionCredentialsProvider = Neo4Net.cluster.protocol.election.ServerIdElectionCredentialsProvider;
 	using StateTransitionLogger = Neo4Net.cluster.statemachine.StateTransitionLogger;
 	using MessageTimeoutStrategy = Neo4Net.cluster.timeout.MessageTimeoutStrategy;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
 	using Log = Neo4Net.Logging.Log;
 	using LogService = Neo4Net.Logging.Internal.LogService;

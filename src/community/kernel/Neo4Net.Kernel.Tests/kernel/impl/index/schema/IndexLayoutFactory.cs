@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Kernel.Impl.Index.Schema
 {
-	internal interface IndexLayoutFactory<KEY, VALUE> where KEY : NativeIndexKey<KEY> where VALUE : NativeIndexValue
+	internal interface IIndexLayoutFactory<KEY, VALUE> where KEY : NativeIndexKey<KEY> where VALUE : NativeIndexValue
 	{
 		 IndexLayout<KEY, VALUE> Create();
 	}

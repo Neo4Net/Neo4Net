@@ -27,7 +27,7 @@ namespace Neo4Net.Server.rest.transactional.integration
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using CRS = Neo4Net.GraphDb.Spatial.CRS;
 	using Point = Neo4Net.GraphDb.Spatial.Point;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using GraphDatabaseFacade = Neo4Net.Kernel.impl.factory.GraphDatabaseFacade;
 	using GeometryType = Neo4Net.Kernel.impl.store.GeometryType;
 	using JsonParseException = Neo4Net.Server.rest.domain.JsonParseException;

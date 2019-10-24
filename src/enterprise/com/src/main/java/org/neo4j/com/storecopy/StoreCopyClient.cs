@@ -30,7 +30,7 @@ namespace Neo4Net.com.storecopy
 	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using CancellationRequest = Neo4Net.Helpers.CancellationRequest;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using FileUtils = Neo4Net.Io.fs.FileUtils;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;

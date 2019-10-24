@@ -29,10 +29,10 @@ namespace Neo4Net.Kernel.Impl.Api.store
 	using LongObjectHashMap = org.eclipse.collections.impl.map.mutable.primitive.LongObjectHashMap;
 
 
-	using Iterators = Neo4Net.Helpers.Collections.Iterators;
-	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
-	using SchemaDescriptorPredicates = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptorPredicates;
-	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor;
+	using Iterators = Neo4Net.Collections.Helpers.Iterators;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
+	using SchemaDescriptorPredicates = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptorPredicates;
+	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor;
 	using IndexProviderMap = Neo4Net.Kernel.Impl.Api.index.IndexProviderMap;
 	using ConstraintSemantics = Neo4Net.Kernel.impl.constraints.ConstraintSemantics;
 	using ConstraintRule = Neo4Net.Kernel.Impl.Store.Records.ConstraintRule;
@@ -98,14 +98,14 @@ namespace Neo4Net.Kernel.Impl.Api.store
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public java.util.Iterator<org.Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor> constraintsForLabel(final int label)
+//ORIGINAL LINE: public java.util.Iterator<org.Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor> constraintsForLabel(final int label)
 		 public virtual IEnumerator<ConstraintDescriptor> ConstraintsForLabel( int label )
 		 {
 			  return Iterators.filter( SchemaDescriptorPredicates.hasLabel( label ), Constraints() );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public java.util.Iterator<org.Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor> constraintsForRelationshipType(final int relTypeId)
+//ORIGINAL LINE: public java.util.Iterator<org.Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor> constraintsForRelationshipType(final int relTypeId)
 		 public virtual IEnumerator<ConstraintDescriptor> ConstraintsForRelationshipType( int relTypeId )
 		 {
 			  return Iterators.filter( SchemaDescriptorPredicates.hasRelType( relTypeId ), Constraints() );

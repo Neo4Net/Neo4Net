@@ -30,7 +30,7 @@ namespace Neo4Net.Kernel.ha.cluster.member
 	using Matcher = org.hamcrest.Matcher;
 
 
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using ClusterMemberInfo = Neo4Net.management.ClusterMemberInfo;
 
 	public class ClusterMemberMatcher : BaseMatcher<IEnumerable<ClusterMemberInfo>>

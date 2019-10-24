@@ -22,7 +22,7 @@
 namespace Neo4Net.Kernel.Api.StorageEngine
 {
 
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 
 	/// <summary>
 	/// A stream of commands from one or more transactions, that can be serialized to a transaction log or applied to a

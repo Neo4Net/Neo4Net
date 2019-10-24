@@ -22,7 +22,7 @@
 namespace Neo4Net.Kernel.Api.Internal.Helpers
 {
 
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using Value = Neo4Net.Values.Storable.Value;
 
 	public class StubNodeValueIndexCursor : NodeValueIndexCursor

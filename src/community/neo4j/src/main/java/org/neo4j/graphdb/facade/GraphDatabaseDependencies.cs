@@ -30,7 +30,7 @@ namespace Neo4Net.GraphDb.facade
 
 	using URLAccessRule = Neo4Net.GraphDb.security.URLAccessRule;
 	using Service = Neo4Net.Helpers.Service;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using Neo4Net.Kernel.extension;
 	using QueryEngineProvider = Neo4Net.Kernel.impl.query.QueryEngineProvider;
 	using URLAccessRules = Neo4Net.Kernel.impl.security.URLAccessRules;

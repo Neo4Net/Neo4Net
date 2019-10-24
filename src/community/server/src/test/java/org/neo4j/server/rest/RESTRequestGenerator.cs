@@ -29,7 +29,7 @@ namespace Neo4Net.Server.rest
 
 
 	using Predicates = Neo4Net.Functions.Predicates;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using GraphDefinition = Neo4Net.Test.GraphDefinition;
 	using Neo4Net.Test.TestData;
 

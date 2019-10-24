@@ -22,7 +22,7 @@
 namespace Neo4Net.Kernel.impl.transaction.state
 {
 
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using Neo4Net.Kernel.impl.store;
 	using DynamicRecord = Neo4Net.Kernel.Impl.Store.Records.DynamicRecord;
 	using TokenRecord = Neo4Net.Kernel.Impl.Store.Records.TokenRecord;

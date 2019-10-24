@@ -288,7 +288,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 
 			  _fs.mkdirs( _roleFile.ParentFile );
 			  // First line is correctly formatted, second line has an extra field
-			  FileRepositorySerializer.writeToFile( _fs, _roleFile, UTF8.encode( "Neo4Net:admin\n" + "admin:admin:\n" ) );
+			  FileRepositorySerializer.WriteToFile( _fs, _roleFile, UTF8.encode( "Neo4Net:admin\n" + "admin:admin:\n" ) );
 
 			  // When
 			  _roleRepository = new FileRoleRepository( _fs, _roleFile, logProvider );
@@ -316,7 +316,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 {
 			  // Given
 			  _fs.mkdirs( _roleFile.ParentFile );
-			  FileRepositorySerializer.writeToFile( _fs, _roleFile, UTF8.encode( "admin:Neo4Net\nreader:\n" ) );
+			  FileRepositorySerializer.WriteToFile( _fs, _roleFile, UTF8.encode( "admin:Neo4Net\nreader:\n" ) );
 
 			  // When
 			  _roleRepository = new FileRoleRepository( _fs, _roleFile, _logProvider );

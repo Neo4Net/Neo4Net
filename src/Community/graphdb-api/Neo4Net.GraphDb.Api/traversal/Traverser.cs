@@ -20,43 +20,43 @@
 
 namespace Neo4Net.GraphDb.Traversal
 {
-   using Neo4Net.GraphDb;
+    using Neo4Net.GraphDb;
 
-   /// <summary>
-   /// This interface represents the traverser which is used to step through the
-   /// results of a traversal. Each step can be represented in different ways. The
-   /// default is as <seealso cref="IPath"/> objects which all other representations can be
-   /// derived from, i.e <seealso cref="INode"/> or <seealso cref="IRelationship"/>. Each step
-   /// can also be represented in one of those representations directly.
-   /// </summary>
-   public interface Traverser : ResourceIterable<IPath>
-   {
-      /// <summary>
-      /// Represents the traversal in the form of <seealso cref="INode"/>s. This is a
-      /// convenient way to iterate over <seealso cref="IPath"/>s and get the
-      /// <seealso cref="IPath.endNode()"/> for each position.
-      /// </summary>
-      /// <returns> the traversal in the form of <seealso cref="INode"/> objects. </returns>
-      ResourceIterable<INode> Nodes();
+    /// <summary>
+    /// This interface represents the traverser which is used to step through the
+    /// results of a traversal. Each step can be represented in different ways. The
+    /// default is as <seealso cref="IPath"/> objects which all other representations can be
+    /// derived from, i.e <seealso cref="INode"/> or <seealso cref="IRelationship"/>. Each step
+    /// can also be represented in one of those representations directly.
+    /// </summary>
+    public interface Traverser : ResourceIterable<IPath>
+    {
+        /// <summary>
+        /// Represents the traversal in the form of <seealso cref="INode"/>s. This is a
+        /// convenient way to iterate over <seealso cref="IPath"/>s and get the
+        /// <seealso cref="IPath.EndNode()"/> for each position.
+        /// </summary>
+        /// <returns> the traversal in the form of <seealso cref="INode"/> objects. </returns>
+        ResourceIterable<INode> Nodes();
 
-      /// <summary>
-      /// Represents the traversal in the form of <seealso cref="IRelationship"/>s. This is a
-      /// convenient way to iterate over <seealso cref="IPath"/>s and get the
-      /// <seealso cref="IPath.lastRelationship()"/> for each position.
-      /// </summary>
-      /// <returns> the traversal in the form of <seealso cref="IRelationship"/> objects. </returns>
-      ResourceIterable<IRelationship> Relationships();
+        /// <summary>
+        /// Represents the traversal in the form of <seealso cref="IRelationship"/>s. This is a
+        /// convenient way to iterate over <seealso cref="IPath"/>s and get the
+        /// <seealso cref="IPath.lastRelationship()"/> for each position.
+        /// </summary>
+        /// <returns> the traversal in the form of <seealso cref="IRelationship"/> objects. </returns>
+        ResourceIterable<IRelationship> Relationships();
 
-      /// <summary>
-      /// Represents the traversal in the form of <seealso cref="IPath"/>s.
-      /// When a traversal is done and haven't been fully iterated through,
-      /// it should be <seealso cref="ResourceIterator.close() closed"/>.
-      /// </summary>
-      /// <returns> the traversal in the form of <seealso cref="IPath"/> objects. </returns>
-      ResourceIterator<IPath> Iterator();
+        /// <summary>
+        /// Represents the traversal in the form of <seealso cref="IPath"/>s.
+        /// When a traversal is done and haven't been fully iterated through,
+        /// it should be <seealso cref="ResourceIterator.close() closed"/>.
+        /// </summary>
+        /// <returns> the traversal in the form of <seealso cref="IPath"/> objects. </returns>
+        ResourceIterator<IPath> Iterator();
 
-      /// <returns> the <seealso cref="ITraversalMetadata"/> from the last traversal performed,
-      /// or being performed by this traverser. </returns>
-      ITraversalMetadata Metadata();
-   }
+        /// <returns> the <seealso cref="ITraversalMetadata"/> from the last traversal performed,
+        /// or being performed by this traverser. </returns>
+        ITraversalMetadata Metadata();
+    }
 }

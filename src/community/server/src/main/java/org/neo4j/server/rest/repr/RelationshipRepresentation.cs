@@ -23,7 +23,7 @@ using System.Collections.Generic;
 namespace Neo4Net.Server.rest.repr
 {
 	using Relationship = Neo4Net.GraphDb.Relationship;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using TransactionStateChecker = Neo4Net.Server.rest.transactional.TransactionStateChecker;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:

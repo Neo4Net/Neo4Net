@@ -26,9 +26,9 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 	using Node = Neo4Net.GraphDb.Node;
 	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
 	using Relationship = Neo4Net.GraphDb.Relationship;
-	using Neo4Net.GraphDb.index;
-	using IndexManager = Neo4Net.GraphDb.index.IndexManager;
-	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
+	using Neo4Net.GraphDb.Index;
+	using IndexManager = Neo4Net.GraphDb.Index.IndexManager;
+	using MapUtil = Neo4Net.Collections.Helpers.MapUtil;
 	using IndexConfigStore = Neo4Net.Kernel.impl.index.IndexConfigStore;
 	using IndexEntityType = Neo4Net.Kernel.impl.index.IndexEntityType;
 	using BatchInserter = Neo4Net.@unsafe.Batchinsert.BatchInserter;
@@ -76,7 +76,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 			  // TODO Doesn't look right
 			  if ( config != null )
 			  {
-					config = MapUtil.stringMap( new Dictionary<>( config ), Neo4Net.GraphDb.index.IndexManager_Fields.PROVIDER, LuceneIndexImplementation.SERVICE_NAME );
+					config = MapUtil.stringMap( new Dictionary<>( config ), Neo4Net.GraphDb.Index.IndexManager_Fields.PROVIDER, LuceneIndexImplementation.SERVICE_NAME );
 					IndexStore.setIfNecessary( cls, indexName, config );
 					return config;
 			  }

@@ -25,8 +25,8 @@
 namespace Neo4Net.Kernel.ha.com.master
 {
 
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
-	using Neo4Net.Helpers.Collections;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
+	using Neo4Net.Collections.Helpers;
 
 	/// <summary>
 	/// Factory for common <seealso cref="SlavePriority"/> implementations.

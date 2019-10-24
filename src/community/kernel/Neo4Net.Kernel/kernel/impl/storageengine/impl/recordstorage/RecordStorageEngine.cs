@@ -24,13 +24,13 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 {
 
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using Iterators = Neo4Net.Helpers.Collections.Iterators;
+	using Iterators = Neo4Net.Collections.Helpers.Iterators;
 	using RecoveryCleanupWorkCollector = Neo4Net.Index.Internal.gbptree.RecoveryCleanupWorkCollector;
 	using DiagnosticsManager = Neo4Net.Internal.Diagnostics.DiagnosticsManager;
 	using TokenNameLookup = Neo4Net.Kernel.Api.Internal.TokenNameLookup;
 	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
-	using ConstraintValidationException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.ConstraintValidationException;
-	using CreateConstraintFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.CreateConstraintFailureException;
+	using ConstraintValidationException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.ConstraintValidationException;
+	using CreateConstraintFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.CreateConstraintFailureException;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using IOLimiter = Neo4Net.Io.pagecache.IOLimiter;
@@ -212,7 +212,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("resource") @Override public void createCommands(java.util.Collection<org.Neo4Net.Kernel.Api.StorageEngine.StorageCommand> commands, org.Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState txState, org.Neo4Net.Kernel.Api.StorageEngine.StorageReader storageReader, org.Neo4Net.Kernel.Api.StorageEngine.lock.ResourceLocker locks, long lastTransactionIdWhenStarted, org.Neo4Net.Kernel.Api.StorageEngine.TxState.TxStateVisitor_Decorator additionalTxStateVisitor) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException, org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.CreateConstraintFailureException, org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.ConstraintValidationException
+//ORIGINAL LINE: @SuppressWarnings("resource") @Override public void createCommands(java.util.Collection<org.Neo4Net.Kernel.Api.StorageEngine.StorageCommand> commands, org.Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState txState, org.Neo4Net.Kernel.Api.StorageEngine.StorageReader storageReader, org.Neo4Net.Kernel.Api.StorageEngine.lock.ResourceLocker locks, long lastTransactionIdWhenStarted, org.Neo4Net.Kernel.Api.StorageEngine.TxState.TxStateVisitor_Decorator additionalTxStateVisitor) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException, org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.CreateConstraintFailureException, org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.ConstraintValidationException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public override void CreateCommands( ICollection<StorageCommand> commands, ReadableTransactionState txState, StorageReader storageReader, ResourceLocker locks, long lastTransactionIdWhenStarted, Neo4Net.Kernel.Api.StorageEngine.TxState.TxStateVisitor_Decorator additionalTxStateVisitor )
 		 {

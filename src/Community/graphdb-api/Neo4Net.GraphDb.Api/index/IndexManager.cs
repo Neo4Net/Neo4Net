@@ -21,7 +21,7 @@
 //////////////////// * You should have received a copy of the GNU General Public License
 //////////////////// * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //////////////////// */
-////////////////////namespace Neo4Net.GraphDb.index
+////////////////////namespace Neo4Net.GraphDb.Index
 ////////////////////{
 
 
@@ -32,7 +32,7 @@
 ////////////////////	/// indexes can be accessed directly from the graph database. </summary>
 ////////////////////	/// @deprecated The <seealso cref="IndexManager"/> based indexes will be removed in next major release. Please consider using schema indexes instead. 
 ////////////////////	[Obsolete("The <seealso cref=\"IndexManager\"/> based indexes will be removed in next major release. Please consider using schema indexes instead.")]
-////////////////////	public interface IndexManager
+////////////////////	public interface IIndexManager
 ////////////////////	{
 ////////////////////		 /// <summary>
 ////////////////////		 /// The configuration key to use for specifying which provider an index

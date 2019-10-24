@@ -29,8 +29,8 @@ namespace Neo4Net.causalclustering.core.state.machines.token
 	using ReplicationFailureException = Neo4Net.causalclustering.core.replication.ReplicationFailureException;
 	using Replicator = Neo4Net.causalclustering.core.replication.Replicator;
 	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
-	using ConstraintValidationException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.ConstraintValidationException;
-	using CreateConstraintFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.CreateConstraintFailureException;
+	using ConstraintValidationException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.ConstraintValidationException;
+	using CreateConstraintFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.CreateConstraintFailureException;
 	using TransactionState = Neo4Net.Kernel.api.txstate.TransactionState;
 	using TxState = Neo4Net.Kernel.Impl.Api.state.TxState;
 	using AbstractTokenHolderBase = Neo4Net.Kernel.impl.core.AbstractTokenHolderBase;

@@ -20,7 +20,7 @@
 namespace Neo4Net.Kernel.impl.store.kvstore
 {
 
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using VersionContextSupplier = Neo4Net.Io.pagecache.tracing.cursor.context.VersionContextSupplier;
 
 	internal abstract class DeadState<Key> : ProgressiveState<Key>

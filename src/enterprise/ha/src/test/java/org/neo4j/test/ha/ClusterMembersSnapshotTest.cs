@@ -32,7 +32,7 @@ namespace Neo4Net.Test.ha
 	using MemberIsAvailable = Neo4Net.cluster.member.paxos.MemberIsAvailable;
 	using PaxosClusterMemberEvents = Neo4Net.cluster.member.paxos.PaxosClusterMemberEvents;
 	using ClusterMembersSnapshot = Neo4Net.cluster.member.paxos.PaxosClusterMemberEvents.ClusterMembersSnapshot;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using HANewSnapshotFunction = Neo4Net.Kernel.ha.cluster.HANewSnapshotFunction;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:

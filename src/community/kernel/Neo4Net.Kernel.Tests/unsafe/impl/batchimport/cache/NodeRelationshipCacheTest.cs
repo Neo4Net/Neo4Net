@@ -33,7 +33,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.cache
 
 
 	using Direction = Neo4Net.GraphDb.Direction;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using RandomRule = Neo4Net.Test.rule.RandomRule;
 	using GroupVisitor = Neo4Net.@unsafe.Impl.Batchimport.cache.NodeRelationshipCache.GroupVisitor;
 	using NodeChangeVisitor = Neo4Net.@unsafe.Impl.Batchimport.cache.NodeRelationshipCache.NodeChangeVisitor;

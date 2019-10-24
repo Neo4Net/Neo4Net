@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel.impl.locking.community
 {
 
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using IllegalResourceException = Neo4Net.Kernel.impl.transaction.IllegalResourceException;
 	using LockTracer = Neo4Net.Kernel.Api.StorageEngine.@lock.LockTracer;

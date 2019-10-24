@@ -33,7 +33,7 @@ namespace Neo4Net.causalclustering.core.consensus.roles
 	using ReadableRaftState = Neo4Net.causalclustering.core.consensus.state.ReadableRaftState;
 	using ReplicatedContent = Neo4Net.causalclustering.core.replication.ReplicatedContent;
 	using MemberId = Neo4Net.causalclustering.identity.MemberId;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using Log = Neo4Net.Logging.Log;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:

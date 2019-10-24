@@ -31,7 +31,7 @@ namespace Neo4Net.causalclustering.protocol.handshake
 
 
 	using StringMarshal = Neo4Net.causalclustering.messaging.marshalling.StringMarshal;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 
 	/// <summary>
 	/// Decodes messages received by the server.

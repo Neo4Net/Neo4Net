@@ -21,7 +21,7 @@ namespace Neo4Net.Kernel.Impl.Api.scan
 {
 	using ArrayUtils = org.apache.commons.lang3.ArrayUtils;
 
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using LabelScanWriter = Neo4Net.Kernel.api.labelscan.LabelScanWriter;
 	using NodeLabelUpdate = Neo4Net.Kernel.api.labelscan.NodeLabelUpdate;
 	using IndexStoreView = Neo4Net.Kernel.Impl.Api.index.IndexStoreView;

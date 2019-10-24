@@ -23,7 +23,7 @@ namespace Neo4Net.CommandLine.Admin
 {
 
 	using Service = Neo4Net.Helpers.Service;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 
 	/// <summary>
 	/// The CommandLocator locates named commands for the AdminTool, or supplies the set of available commands for printing

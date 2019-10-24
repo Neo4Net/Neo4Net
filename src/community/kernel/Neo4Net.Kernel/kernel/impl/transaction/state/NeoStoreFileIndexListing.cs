@@ -26,8 +26,8 @@ namespace Neo4Net.Kernel.impl.transaction.state
 
 	using Resource = Neo4Net.GraphDb.Resource;
 	using Neo4Net.GraphDb;
-	using Iterators = Neo4Net.Helpers.Collections.Iterators;
-	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
+	using Iterators = Neo4Net.Collections.Helpers.Iterators;
+	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException;
 	using LabelScanStore = Neo4Net.Kernel.api.labelscan.LabelScanStore;
 	using ExplicitIndexProvider = Neo4Net.Kernel.Impl.Api.ExplicitIndexProvider;
 	using IndexingService = Neo4Net.Kernel.Impl.Api.index.IndexingService;

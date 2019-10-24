@@ -20,11 +20,11 @@
 namespace Neo4Net.Kernel.api.schema.constraints
 {
 
-	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.LabelSchemaDescriptor;
+	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.LabelSchemaDescriptor;
 
 	public class UniquenessConstraintDescriptor : IndexBackedConstraintDescriptor
 	{
-		 internal UniquenessConstraintDescriptor( LabelSchemaDescriptor schema ) : base( org.Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor_Type.Unique, schema )
+		 internal UniquenessConstraintDescriptor( LabelSchemaDescriptor schema ) : base( org.Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor_Type.Unique, schema )
 		 {
 		 }
 

@@ -27,7 +27,7 @@ namespace Neo4Net.ha.correctness
 
 	using Neo4Net.cluster.com.message;
 	using MessageType = Neo4Net.cluster.com.message.MessageType;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 
 	internal class MessageDeliveryAction : ClusterAction
 	{

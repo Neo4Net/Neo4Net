@@ -31,7 +31,7 @@ namespace Neo4Net.causalclustering.protocol.handshake
 	using Parameterized = org.junit.runners.Parameterized;
 
 
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Arrays.asList;

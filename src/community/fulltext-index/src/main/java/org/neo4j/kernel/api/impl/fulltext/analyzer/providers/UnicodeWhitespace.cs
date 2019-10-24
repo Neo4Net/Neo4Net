@@ -22,11 +22,11 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext.analyzer.providers
 	using Analyzer = org.apache.lucene.analysis.Analyzer;
 	using UnicodeWhitespaceAnalyzer = org.apache.lucene.analysis.core.UnicodeWhitespaceAnalyzer;
 
-	using AnalyzerProvider = Neo4Net.GraphDb.index.fulltext.AnalyzerProvider;
+	using AnalyzerProvider = Neo4Net.GraphDb.Index.fulltext.AnalyzerProvider;
 	using Service = Neo4Net.Helpers.Service;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Service.Implementation(AnalyzerProvider.class) public class UnicodeWhitespace extends org.Neo4Net.graphdb.index.fulltext.AnalyzerProvider
+//ORIGINAL LINE: @Service.Implementation(AnalyzerProvider.class) public class UnicodeWhitespace extends org.Neo4Net.GraphDb.Index.fulltext.AnalyzerProvider
 	public class UnicodeWhitespace : AnalyzerProvider
 	{
 		 public UnicodeWhitespace() : base("unicode_whitespace")

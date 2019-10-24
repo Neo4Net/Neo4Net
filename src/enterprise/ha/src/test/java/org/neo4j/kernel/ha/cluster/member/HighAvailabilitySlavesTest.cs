@@ -35,7 +35,7 @@ namespace Neo4Net.Kernel.ha.cluster.member
 	using ClusterListener = Neo4Net.cluster.protocol.cluster.ClusterListener;
 	using Suppliers = Neo4Net.Functions.Suppliers;
 	using HostnamePort = Neo4Net.Helpers.HostnamePort;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using HighAvailabilityModeSwitcher = Neo4Net.Kernel.ha.cluster.modeswitch.HighAvailabilityModeSwitcher;
 	using DefaultSlaveFactory = Neo4Net.Kernel.ha.com.master.DefaultSlaveFactory;
 	using Slave = Neo4Net.Kernel.ha.com.master.Slave;

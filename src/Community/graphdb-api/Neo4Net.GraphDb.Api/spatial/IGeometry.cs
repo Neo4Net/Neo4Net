@@ -22,27 +22,27 @@
 
 namespace Neo4Net.GraphDb.Spatial
 {
-   /// <summary>
-   /// A geometry is defined by a list of coordinates and a coordinate reference system.
-   /// </summary>
-   public interface IGeometry
-   {
-      /// <summary>
-      /// Get string description of most specific type of this instance
-      /// </summary>
-      /// <returns> The instance type implementing Geometry </returns>
-      string GeometryType { get; }
+    /// <summary>
+    /// A geometry is defined by a list of coordinates and a coordinate reference system.
+    /// </summary>
+    public interface IGeometry
+    {
+        /// <summary>
+        /// Get string description of most specific type of this instance
+        /// </summary>
+        /// <returns> The instance type implementing Geometry </returns>
+        string GeometryType { get; }
 
-      /// <summary>
-      /// Get all coordinates of the geometry.
-      /// </summary>
-      /// <returns> The coordinates of the geometry. </returns>
-      IList<Coordinate> Coordinates { get; }
+        /// <summary>
+        /// Get all coordinates of the geometry.
+        /// </summary>
+        /// <returns> The coordinates of the geometry. </returns>
+        IList<Coordinate> Coordinates { get; }
 
-      /// <summary>
-      /// Returns the coordinate reference system associated with the geometry
-      /// </summary>
-      /// <returns> A $<seealso cref="CRS"/> associated with the geometry </returns>
-      ICRS CRS { get; }
-   }
+        /// <summary>
+        /// Returns the coordinate reference system associated with the geometry
+        /// </summary>
+        /// <returns> A $<seealso cref="CRS"/> associated with the geometry </returns>
+        ICRS CRS { get; }
+    }
 }

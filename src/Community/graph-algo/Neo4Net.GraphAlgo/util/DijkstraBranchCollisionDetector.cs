@@ -23,7 +23,7 @@ namespace Neo4Net.GraphAlgo.Utils
 
 	using Neo4Net.GraphAlgo;
 	using Path = Neo4Net.GraphDb.Path;
-	using StandardBranchCollisionDetector = Neo4Net.GraphDb.impl.traversal.StandardBranchCollisionDetector;
+	using StandardBranchCollisionDetector = Neo4Net.GraphDb.Impl.Traversal.StandardBranchCollisionDetector;
 	using Evaluator = Neo4Net.GraphDb.Traversal.Evaluator;
 	using TraversalBranch = Neo4Net.GraphDb.Traversal.TraversalBranch;
 	using NoneStrictMath = Neo4Net.Kernel.impl.util.NoneStrictMath;

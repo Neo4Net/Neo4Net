@@ -30,7 +30,7 @@ namespace Neo4Net.Kernel.impl.coreapi.schema
 	using IndexReference = Neo4Net.Kernel.Api.Internal.IndexReference;
 	using TokenRead = Neo4Net.Kernel.Api.Internal.TokenRead;
 	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
-	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.graphdb.Label.label;

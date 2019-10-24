@@ -20,10 +20,10 @@
 /// <summary>
 /// Contains <seealso cref="org.Neo4Net.index.lucene.QueryContext"/> and
 /// <seealso cref="org.Neo4Net.index.lucene.ValueContext"/> which is part of the
-/// public API for an <seealso cref="org.Neo4Net.graphdb.index.Index"/> backed by Lucene.
+/// public API for an <seealso cref="org.Neo4Net.GraphDb.Index.Index"/> backed by Lucene.
 /// 
 /// Also contain a timeline implementation on top of an
-/// <seealso cref="org.Neo4Net.graphdb.index.Index"/> based on Lucene.
+/// <seealso cref="org.Neo4Net.GraphDb.Index.Index"/> based on Lucene.
 /// </summary>
 namespace Neo4Net.Index.lucene
 {

@@ -20,7 +20,7 @@
 
 namespace Neo4Net.Kernel.Api.Internal
 {
-   using ConstraintValidationException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.ConstraintValidationException;
+   using ConstraintValidationException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.ConstraintValidationException;
    using Value = Neo4Net.Values.Storable.Value;
 
    /// <summary>
@@ -46,7 +46,7 @@ namespace Neo4Net.Kernel.Api.Internal
       /// <param name="labels"> The labels to assign to the newly created node. </param>
       /// <returns> The internal id of the created node. </returns>
       //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-      //ORIGINAL LINE: long nodeCreateWithLabels(int[] labels) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.ConstraintValidationException;
+      //ORIGINAL LINE: long nodeCreateWithLabels(int[] labels) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.ConstraintValidationException;
       long NodeCreateWithLabels(int[] labels);
 
       /// <summary>

@@ -20,7 +20,7 @@
 
 namespace Neo4Net.Kernel.Api.Internal
 {
-   using TooManyLabelsException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.TooManyLabelsException;
+   using TooManyLabelsException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.TooManyLabelsException;
 
    public interface ITokenWrite
    {

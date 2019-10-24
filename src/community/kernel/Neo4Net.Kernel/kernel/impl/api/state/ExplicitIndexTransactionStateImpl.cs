@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 
 	using Node = Neo4Net.GraphDb.Node;
 	using Relationship = Neo4Net.GraphDb.Relationship;
-	using IndexManager = Neo4Net.GraphDb.index.IndexManager;
+	using IndexManager = Neo4Net.GraphDb.Index.IndexManager;
 	using ExplicitIndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
 	using ExplicitIndex = Neo4Net.Kernel.api.ExplicitIndex;
 	using ExplicitIndexTransactionState = Neo4Net.Kernel.api.txstate.ExplicitIndexTransactionState;
@@ -77,7 +77,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 			  {
 					throw new ExplicitIndexNotFoundKernelException( "Node index '" + indexName + " not found" );
 			  }
-			  string providerName = configuration[Neo4Net.GraphDb.index.IndexManager_Fields.PROVIDER];
+			  string providerName = configuration[Neo4Net.GraphDb.Index.IndexManager_Fields.PROVIDER];
 			  IndexImplementation provider = _providerLookup.getProviderByName( providerName );
 			  ExplicitIndexProviderTransaction transaction = _transactions.computeIfAbsent( providerName, k => provider.NewTransaction( this ) );
 			  return transaction.NodeIndex( indexName, configuration );
@@ -92,7 +92,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 			  {
 					throw new ExplicitIndexNotFoundKernelException( "Relationship index '" + indexName + " not found" );
 			  }
-			  string providerName = configuration[Neo4Net.GraphDb.index.IndexManager_Fields.PROVIDER];
+			  string providerName = configuration[Neo4Net.GraphDb.Index.IndexManager_Fields.PROVIDER];
 			  IndexImplementation provider = _providerLookup.getProviderByName( providerName );
 			  ExplicitIndexProviderTransaction transaction = _transactions[providerName];
 			  if ( transaction == null )
@@ -222,7 +222,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 					return false;
 			  }
 
-			  string providerName = configuration[Neo4Net.GraphDb.index.IndexManager_Fields.PROVIDER];
+			  string providerName = configuration[Neo4Net.GraphDb.Index.IndexManager_Fields.PROVIDER];
 			  IndexImplementation provider = _providerLookup.getProviderByName( providerName );
 			  assertConfigMatches( provider, indexName, configuration, config );
 			  return true;

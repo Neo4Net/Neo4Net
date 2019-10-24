@@ -27,8 +27,8 @@ namespace Neo4Net.@unsafe.Batchinsert
 
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using EphemeralFileSystemAbstraction = Neo4Net.GraphDb.mockfs.EphemeralFileSystemAbstraction;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
-	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
+	using MapUtil = Neo4Net.Collections.Helpers.MapUtil;
 	using Neo4Net.Kernel.extension;
 	using GenericNativeIndexProviderFactory = Neo4Net.Kernel.Impl.Index.Schema.GenericNativeIndexProviderFactory;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;

@@ -31,9 +31,9 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 	using Neo4Net.Cursors;
 	using Node = Neo4Net.GraphDb.Node;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using Neo4Net.GraphDb.index;
-	using Neo4Net.Helpers.Collections;
-	using Iterators = Neo4Net.Helpers.Collections.Iterators;
+	using Neo4Net.GraphDb.Index;
+	using Neo4Net.Collections.Helpers;
+	using Iterators = Neo4Net.Collections.Helpers.Iterators;
 	using IndexDefineCommand = Neo4Net.Kernel.impl.index.IndexDefineCommand;
 	using LogEntryCursor = Neo4Net.Kernel.impl.transaction.log.LogEntryCursor;
 	using LogPosition = Neo4Net.Kernel.impl.transaction.log.LogPosition;

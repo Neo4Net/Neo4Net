@@ -34,7 +34,7 @@ namespace Neo4Net.cluster.protocol.atomicbroadcast.multipaxos.context
 	using HeartbeatListener = Neo4Net.cluster.protocol.heartbeat.HeartbeatListener;
 	using Timeouts = Neo4Net.cluster.timeout.Timeouts;
 	using Neo4Net.Helpers;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using LogProvider = Neo4Net.Logging.LogProvider;
 

@@ -19,8 +19,8 @@
  */
 namespace Neo4Net.Server.rest.repr
 {
-	using IndexManager = Neo4Net.GraphDb.index.IndexManager;
-	using RelationshipIndex = Neo4Net.GraphDb.index.RelationshipIndex;
+	using IndexManager = Neo4Net.GraphDb.Index.IndexManager;
+	using RelationshipIndex = Neo4Net.GraphDb.Index.RelationshipIndex;
 
 	public class RelationshipIndexRootRepresentation : MappingRepresentation
 	{

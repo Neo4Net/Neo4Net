@@ -38,7 +38,7 @@ namespace Neo4Net.tools.rebuild
 	using Node = Neo4Net.GraphDb.Node;
 	using Neo4Net.GraphDb;
 	using Neo4Net.GraphDb;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using FileUtils = Neo4Net.Io.fs.FileUtils;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;

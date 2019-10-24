@@ -17,48 +17,46 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 namespace Neo4Net.GraphDb.Traversal
 {
-	using Neo4Net.GraphDb;
+    /// <summary>
+    /// Selects <seealso cref="ITraversalBranch"/>s according to postorder depth first pattern,
+    /// see http://en.wikipedia.org/wiki/Depth-first_search
+    /// </summary>
+    internal class PostorderDepthFirstSelector : IBranchSelector
+    {
+        private ITraversalBranch _current;
+        private readonly IPathExpander _expander;
 
-	/// <summary>
-	/// Selects <seealso cref="ITraversalBranch"/>s according to postorder depth first pattern,
-	/// see http://en.wikipedia.org/wiki/Depth-first_search
-	/// </summary>
-	internal class PostorderDepthFirstSelector : BranchSelector
-	{
-		 private ITraversalBranch _current;
-		 private readonly IPathExpander _expander;
+        internal PostorderDepthFirstSelector(ITraversalBranch startSource, IPathExpander expander)
+        {
+            _current = startSource;
+            _expander = expander;
+        }
 
-		 internal PostorderDepthFirstSelector( ITraversalBranch startSource, IPathExpander expander )
-		 {
-			  _current = startSource;
-			  _expander = expander;
-		 }
+        public override ITraversalBranch Next(TraversalContext metadata)
+        {
+            ITraversalBranch result = null;
+            while (result == null)
+            {
+                if (_current == null)
+                {
+                    return null;
+                }
 
-		 public override ITraversalBranch Next( TraversalContext metadata )
-		 {
-			  ITraversalBranch result = null;
-			  while ( result == null )
-			  {
-					if ( _current == null )
-					{
-						 return null;
-					}
-
-					ITraversalBranch next = _current.next( _expander, metadata );
-					if ( next != null )
-					{
-						 _current = next;
-					}
-					else
-					{
-						 result = _current;
-						 _current = _current.parent();
-					}
-			  }
-			  return result;
-		 }
-	}
-
+                ITraversalBranch next = _current.next(_expander, metadata);
+                if (next != null)
+                {
+                    _current = next;
+                }
+                else
+                {
+                    result = _current;
+                    _current = _current.parent();
+                }
+            }
+            return result;
+        }
+    }
 }

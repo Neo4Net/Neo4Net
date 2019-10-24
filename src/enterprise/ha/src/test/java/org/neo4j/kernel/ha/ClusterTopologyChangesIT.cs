@@ -42,7 +42,7 @@ namespace Neo4Net.Kernel.ha
 	using HeartbeatListener = Neo4Net.cluster.protocol.heartbeat.HeartbeatListener;
 	using Node = Neo4Net.GraphDb.Node;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
+	using MapUtil = Neo4Net.Collections.Helpers.MapUtil;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using HighAvailabilityMemberState = Neo4Net.Kernel.ha.cluster.HighAvailabilityMemberState;
 	using ClusterManager = Neo4Net.Kernel.impl.ha.ClusterManager;

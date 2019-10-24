@@ -61,7 +61,7 @@ namespace Neo4Net.cluster
 	using StateMachineRules = Neo4Net.cluster.statemachine.StateMachineRules;
 	using TimeoutStrategy = Neo4Net.cluster.timeout.TimeoutStrategy;
 	using Timeouts = Neo4Net.cluster.timeout.Timeouts;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using LogProvider = Neo4Net.Logging.LogProvider;
 

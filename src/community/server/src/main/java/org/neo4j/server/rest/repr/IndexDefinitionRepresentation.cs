@@ -22,7 +22,7 @@
 namespace Neo4Net.Server.rest.repr
 {
 
-	using IndexPopulationProgress = Neo4Net.GraphDb.index.IndexPopulationProgress;
+	using IndexPopulationProgress = Neo4Net.GraphDb.Index.IndexPopulationProgress;
 	using IndexDefinition = Neo4Net.GraphDb.Schema.IndexDefinition;
 	using Schema = Neo4Net.GraphDb.Schema.Schema;
 

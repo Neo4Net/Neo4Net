@@ -23,7 +23,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 	using IndexCommand = Neo4Net.Kernel.impl.index.IndexCommand;
 	using StorageCommand = Neo4Net.Kernel.Api.StorageEngine.StorageCommand;
 
-	internal sealed class IndexCommandDetector : Neo4Net.Helpers.Collections.Visitor<StorageCommand, IOException>
+	internal sealed class IndexCommandDetector : Neo4Net.Collections.Helpers.Visitor<StorageCommand, IOException>
 	{
 		 private bool _hasWrittenAnyExplicitIndexCommand;
 
