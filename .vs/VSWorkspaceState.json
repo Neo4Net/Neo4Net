@@ -3,13 +3,13 @@
     "",
     "\\src",
     "\\src\\Community",
-    "\\src\\Community\\annotation-processors\\Neo4Net.Kernel.Impl.Annotations",
-    "\\src\\Community\\annotation-processors\\Neo4Net.Kernel.Impl.Annotations\\Kernel",
-    "\\src\\Community\\common\\Neo4Net.Common",
+    "\\src\\Community\\graph-algo",
     "\\src\\Community\\graphdb-api\\Neo4Net.GraphDb.Api",
-    "\\src\\Community\\graphdb-api\\Neo4Net.GraphDb.Api.Tests\\impl",
-    "\\src\\Community\\graphdb-api\\Neo4Net.GraphDb.Api.Tests\\index",
-    "\\src\\Community\\graphdb-api\\Neo4Net.GraphDb.Api\\impl\\traversal"
+    "\\src\\Community\\graphdb-api\\Neo4Net.GraphDb.Api\\bin",
+    "\\src\\Community\\graphdb-api\\Neo4Net.GraphDb.Api\\bin\\Debug\\netstandard2.0",
+    "\\src\\Community\\kernel",
+    "\\src\\Community\\kernel\\Neo4Net.Kernel",
+    "\\src\\Community\\kernel\\Neo4Net.Kernel.Tests"
   ],
   "PreviewInSolutionExplorer": false
 }
