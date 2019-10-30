@@ -32,8 +32,8 @@ namespace Neo4Net.Kernel.builtinprocs
 	using SchemaRead = Neo4Net.Kernel.Api.Internal.SchemaRead;
 	using TokenRead = Neo4Net.Kernel.Api.Internal.TokenRead;
 	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
-	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
-	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.LabelSchemaDescriptor;
+	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException;
+	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.LabelSchemaDescriptor;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
@@ -135,7 +135,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldLookUpTheIndexByLabelIdAndPropertyKeyId() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException, org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: @Test public void shouldLookUpTheIndexByLabelIdAndPropertyKeyId() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException, org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldLookUpTheIndexByLabelIdAndPropertyKeyId()
 		 {
@@ -150,7 +150,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldLookUpTheIndexByIndexName() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException, org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: @Test public void shouldLookUpTheIndexByIndexName() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException, org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldLookUpTheIndexByIndexName()
 		 {
@@ -165,7 +165,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldThrowAnExceptionIfTheIndexHasFailed() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: @Test public void shouldThrowAnExceptionIfTheIndexHasFailed() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldThrowAnExceptionIfTheIndexHasFailed()
 		 {
@@ -235,7 +235,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldBlockUntilTheIndexIsOnline() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException, InterruptedException
+//ORIGINAL LINE: @Test public void shouldBlockUntilTheIndexIsOnline() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException, InterruptedException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldBlockUntilTheIndexIsOnline()
 		 {
@@ -267,7 +267,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldTimeoutIfTheIndexTakesTooLongToComeOnline() throws InterruptedException, org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: @Test public void shouldTimeoutIfTheIndexTakesTooLongToComeOnline() throws InterruptedException, org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldTimeoutIfTheIndexTakesTooLongToComeOnline()
 		 {

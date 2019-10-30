@@ -28,7 +28,7 @@ namespace Neo4Net.Server.modules
 
 
 	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
-	using Iterators = Neo4Net.Helpers.Collections.Iterators;
+	using Iterators = Neo4Net.Collections.Helpers.Iterators;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using ServerSettings = Neo4Net.Server.configuration.ServerSettings;
 	using Neo4Net.Server.plugins;

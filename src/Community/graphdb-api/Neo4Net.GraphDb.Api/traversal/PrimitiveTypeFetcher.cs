@@ -19,78 +19,73 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 namespace Neo4Net.GraphDb.Traversal
 {
+    /// <summary>
+    /// Used with uniqueness filters for simplifying node and relationship uniqueness evaluation.
+    /// </summary>
+    internal abstract class PrimitiveTypeFetcher
+    {
+        //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
+        //       NODE { long getId(org.Neo4Net.graphdb.Path source) { return source.endNode().getId(); } boolean idEquals(org.Neo4Net.graphdb.Path source, long idToCompare) { return getId(source) == idToCompare; } boolean containsDuplicates(org.Neo4Net.graphdb.Path source) { java.util.Set<org.Neo4Net.graphdb.Node> nodes = new java.util.HashSet<>(); for(org.Neo4Net.graphdb.Node node : source.reverseNodes()) { if(!nodes.add(node)) { return true; } } return false; } },
+        //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
+        //       RELATIONSHIP { long getId(org.Neo4Net.graphdb.Path source) { return source.lastRelationship().getId(); } boolean idEquals(org.Neo4Net.graphdb.Path source, long idToCompare) { org.Neo4Net.graphdb.Relationship relationship = source.lastRelationship(); return relationship != null && relationship.getId() == idToCompare; } boolean containsDuplicates(org.Neo4Net.graphdb.Path source) { java.util.Set<org.Neo4Net.graphdb.Relationship> relationships = new java.util.HashSet<>(); for(org.Neo4Net.graphdb.Relationship relationship : source.reverseRelationships()) { if(!relationships.add(relationship)) { return true; } } return false; } };
 
+        private static readonly IList<PrimitiveTypeFetcher> _valueList = new List<PrimitiveTypeFetcher>();
 
-	/// <summary>
-	/// Used with uniqueness filters for simplifying node and relationship uniqueness evaluation.
-	/// </summary>
-	internal abstract class PrimitiveTypeFetcher
-	{
-//JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//       NODE { long getId(org.Neo4Net.graphdb.Path source) { return source.endNode().getId(); } boolean idEquals(org.Neo4Net.graphdb.Path source, long idToCompare) { return getId(source) == idToCompare; } boolean containsDuplicates(org.Neo4Net.graphdb.Path source) { java.util.Set<org.Neo4Net.graphdb.Node> nodes = new java.util.HashSet<>(); for(org.Neo4Net.graphdb.Node node : source.reverseNodes()) { if(!nodes.add(node)) { return true; } } return false; } },
-//JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//       RELATIONSHIP { long getId(org.Neo4Net.graphdb.Path source) { return source.lastRelationship().getId(); } boolean idEquals(org.Neo4Net.graphdb.Path source, long idToCompare) { org.Neo4Net.graphdb.Relationship relationship = source.lastRelationship(); return relationship != null && relationship.getId() == idToCompare; } boolean containsDuplicates(org.Neo4Net.graphdb.Path source) { java.util.Set<org.Neo4Net.graphdb.Relationship> relationships = new java.util.HashSet<>(); for(org.Neo4Net.graphdb.Relationship relationship : source.reverseRelationships()) { if(!relationships.add(relationship)) { return true; } } return false; } };
+        static PrimitiveTypeFetcher()
+        {
+            _valueList.Add(NODE);
+            _valueList.Add(RELATIONSHIP);
+        }
 
-		 private static readonly IList<PrimitiveTypeFetcher> valueList = new List<PrimitiveTypeFetcher>();
+        public enum InnerEnum
+        {
+            NODE,
+            RELATIONSHIP
+        }
 
-		 static PrimitiveTypeFetcher()
-		 {
-			 valueList.Add( NODE );
-			 valueList.Add( RELATIONSHIP );
-		 }
+        public readonly InnerEnum _innerEnumValue;
+        private readonly string _nameValue;
+        private readonly int _ordinalValue;
+        private static int _nextOrdinal = 0;
 
-		 public enum InnerEnum
-		 {
-			 NODE,
-			 RELATIONSHIP
-		 }
+        private PrimitiveTypeFetcher(string name, InnerEnum innerEnum)
+        {
+            _nameValue = name;
+            _ordinalValue = _nextOrdinal++;
+            _innerEnumValue = innerEnum;
+        }
 
-		 public readonly InnerEnum innerEnumValue;
-		 private readonly string nameValue;
-		 private readonly int ordinalValue;
-		 private static int nextOrdinal = 0;
+        internal abstract long GetId(Neo4Net.GraphDb.IPath path);
 
-		 private PrimitiveTypeFetcher( string name, InnerEnum innerEnum )
-		 {
-			 nameValue = name;
-			 ordinalValue = nextOrdinal++;
-			 innerEnumValue = innerEnum;
-		 }
+        internal abstract bool IdEquals(Neo4Net.GraphDb.IPath path, long idToCompare);
 
-		 internal abstract long getId( Neo4Net.GraphDb.IPath path );
+        internal abstract bool ContainsDuplicates(Neo4Net.GraphDb.IPath path);
 
-		 internal abstract bool idEquals( Neo4Net.GraphDb.IPath path, long idToCompare );
+        public static IList<PrimitiveTypeFetcher> Values()
+        {
+            return _valueList;
+        }
 
-		 internal abstract bool containsDuplicates( Neo4Net.GraphDb.IPath path );
+        public int Ordinal => _ordinalValue;
 
-		public static IList<PrimitiveTypeFetcher> values()
-		{
-			return valueList;
-		}
+        public override string ToString()
+        {
+            return _nameValue;
+        }
 
-		public int ordinal()
-		{
-			return ordinalValue;
-		}
-
-		public override string ToString()
-		{
-			return nameValue;
-		}
-
-		public static PrimitiveTypeFetcher ValueOf( string name )
-		{
-			foreach ( PrimitiveTypeFetcher enumInstance in PrimitiveTypeFetcher.valueList )
-			{
-				if ( enumInstance.nameValue == name )
-				{
-					return enumInstance;
-				}
-			}
-			throw new System.ArgumentException( name );
-		}
-	}
-
+        public static PrimitiveTypeFetcher ValueOf(string name)
+        {
+            foreach (PrimitiveTypeFetcher enumInstance in PrimitiveTypeFetcher._valueList)
+            {
+                if (enumInstance._nameValue == name)
+                {
+                    return enumInstance;
+                }
+            }
+            throw new System.ArgumentException(name);
+        }
+    }
 }

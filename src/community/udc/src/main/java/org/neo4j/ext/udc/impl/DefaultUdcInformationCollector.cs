@@ -27,7 +27,7 @@ namespace Neo4Net.Ext.Udc.impl
 
 	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
 	using Neo4Net.GraphDb.config;
-	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
+	using MapUtil = Neo4Net.Collections.Helpers.MapUtil;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using FileUtils = Neo4Net.Io.fs.FileUtils;
 	using OsBeanUtil = Neo4Net.Io.os.OsBeanUtil;

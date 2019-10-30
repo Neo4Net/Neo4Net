@@ -22,14 +22,14 @@ namespace Neo4Net.Kernel.api.schema
 	using ArrayUtils = org.apache.commons.lang3.ArrayUtils;
 
 	using TokenNameLookup = Neo4Net.Kernel.Api.Internal.TokenNameLookup;
-	using Neo4Net.Kernel.Api.Internal.schema;
-	using SchemaProcessor = Neo4Net.Kernel.Api.Internal.schema.SchemaProcessor;
-	using SchemaUtil = Neo4Net.Kernel.Api.Internal.schema.SchemaUtil;
+	using Neo4Net.Kernel.Api.Internal.Schema;
+	using SchemaProcessor = Neo4Net.Kernel.Api.Internal.Schema.SchemaProcessor;
+	using SchemaUtil = Neo4Net.Kernel.Api.Internal.Schema.SchemaUtil;
 	using ResourceTypes = Neo4Net.Kernel.impl.locking.ResourceTypes;
 	using EntityType = Neo4Net.Kernel.Api.StorageEngine.EntityType;
 	using ResourceType = Neo4Net.Kernel.Api.StorageEngine.@lock.ResourceType;
 
-	public class LabelSchemaDescriptor : Neo4Net.Kernel.Api.Internal.schema.LabelSchemaDescriptor
+	public class LabelSchemaDescriptor : Neo4Net.Kernel.Api.Internal.Schema.LabelSchemaDescriptor
 	{
 		 private readonly int _labelId;
 		 private readonly int[] _propertyIds;

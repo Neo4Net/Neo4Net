@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Service = Neo4Net.Helpers.Service;
 	using RecoveryCleanupWorkCollector = Neo4Net.Index.Internal.gbptree.RecoveryCleanupWorkCollector;
-	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor;
+	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.Schema.IndexProviderDescriptor;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
 	using IndexDirectoryStructure = Neo4Net.Kernel.Api.Index.IndexDirectoryStructure;

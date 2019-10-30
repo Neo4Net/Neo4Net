@@ -23,7 +23,7 @@ namespace Neo4Net.Server.rest.management.repr
 {
 
 
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using ListRepresentation = Neo4Net.Server.rest.repr.ListRepresentation;
 	using ObjectRepresentation = Neo4Net.Server.rest.repr.ObjectRepresentation;
 	using Representation = Neo4Net.Server.rest.repr.Representation;

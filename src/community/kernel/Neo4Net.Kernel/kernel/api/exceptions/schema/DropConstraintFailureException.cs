@@ -23,8 +23,8 @@ namespace Neo4Net.Kernel.Api.Exceptions.schema
 {
 	using TokenNameLookup = Neo4Net.Kernel.Api.Internal.TokenNameLookup;
 	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
-	using SchemaKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.SchemaKernelException;
-	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor;
+	using SchemaKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.SchemaKernelException;
+	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor;
 
 	public class DropConstraintFailureException : SchemaKernelException
 	{

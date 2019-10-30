@@ -30,8 +30,8 @@ namespace Neo4Net.Kernel.impl.store
 
 
 	using DatabaseManager = Neo4Net.Dbms.database.DatabaseManager;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
-	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
+	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.Schema.IndexProviderDescriptor;
 	using EmptyVersionContextSupplier = Neo4Net.Io.pagecache.tracing.cursor.context.EmptyVersionContextSupplier;
 	using ConstraintDescriptorFactory = Neo4Net.Kernel.api.schema.constraints.ConstraintDescriptorFactory;
 	using Config = Neo4Net.Kernel.configuration.Config;

@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.populator
 	using ArgumentCaptor = org.mockito.ArgumentCaptor;
 
 
-	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
 	using IndexEntryConflictException = Neo4Net.Kernel.Api.Exceptions.index.IndexEntryConflictException;
 	using LuceneIndexWriter = Neo4Net.Kernel.Api.Impl.Schema.writer.LuceneIndexWriter;
 	using NodePropertyAccessor = Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor;
@@ -273,7 +273,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.populator
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void verifyVerifyUniqueness(org.Neo4Net.kernel.api.impl.schema.SchemaIndex index, org.Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor descriptor, Object... values) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: private void verifyVerifyUniqueness(org.Neo4Net.kernel.api.impl.schema.SchemaIndex index, org.Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor descriptor, Object... values) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 private void VerifyVerifyUniqueness( SchemaIndex index, SchemaDescriptor descriptor, params object[] values )
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

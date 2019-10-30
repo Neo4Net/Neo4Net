@@ -22,7 +22,7 @@
 namespace Neo4Net.GraphDb
 {
 
-	using IndexManager = Neo4Net.GraphDb.index.IndexManager;
+	using IndexManager = Neo4Net.GraphDb.Index.IndexManager;
 
 	public sealed class IndexManagerFacadeMethods : Consumer<IndexManager>
 	{
@@ -32,14 +32,14 @@ namespace Neo4Net.GraphDb
 //       FOR_NODES(new FacadeMethod<>("Index<Node> forNodes( String indexName )", self -> self.forNodes("foo"))),
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
 //       FOR_NODES_WITH_CONFIG(new FacadeMethod<>("Index<Node> forNodes( String indexName, Map<String, String> customConfiguration )", self -> self.forNodes("foo", null))),
-		 public static readonly IndexManagerFacadeMethods NodeIndexNames = new IndexManagerFacadeMethods( "NodeIndexNames", InnerEnum.NodeIndexNames, new FacadeMethod<>( "String[] nodeIndexNames()", Neo4Net.GraphDb.index.IndexManager::nodeIndexNames ) );
+		 public static readonly IndexManagerFacadeMethods NodeIndexNames = new IndexManagerFacadeMethods( "NodeIndexNames", InnerEnum.NodeIndexNames, new FacadeMethod<>( "String[] nodeIndexNames()", Neo4Net.GraphDb.Index.IndexManager::nodeIndexNames ) );
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
 //       EXISTS_FOR_RELATIONSHIPS(new FacadeMethod<>("boolean existsForRelationships( String indexName )", self -> self.existsForRelationships("foo"))),
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
 //       FOR_RELATIONSHIPS(new FacadeMethod<>("RelationshipIndex forRelationships( String indexName )", self -> self.forRelationships("foo"))),
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
 //       FOR_RELATIONSHIPS_WITH_CONFIG(new FacadeMethod<>("RelationshipIndex forRelationships( String indexName, Map<String, String> customConfiguration )", self -> self.forRelationships("foo", null))),
-		 public static readonly IndexManagerFacadeMethods RelationshipIndexNames = new IndexManagerFacadeMethods( "RelationshipIndexNames", InnerEnum.RelationshipIndexNames, new FacadeMethod<>( "String[] relationshipIndexNames()", Neo4Net.GraphDb.index.IndexManager::relationshipIndexNames ) );
+		 public static readonly IndexManagerFacadeMethods RelationshipIndexNames = new IndexManagerFacadeMethods( "RelationshipIndexNames", InnerEnum.RelationshipIndexNames, new FacadeMethod<>( "String[] relationshipIndexNames()", Neo4Net.GraphDb.Index.IndexManager::relationshipIndexNames ) );
 
 		 private static readonly IList<IndexManagerFacadeMethods> valueList = new List<IndexManagerFacadeMethods>();
 
@@ -74,7 +74,7 @@ namespace Neo4Net.GraphDb
 
 		 internal Private readonly;
 
-		 internal IndexManagerFacadeMethods( string name, InnerEnum innerEnum, FacadeMethod<Neo4Net.GraphDb.index.IndexManager> facadeMethod )
+		 internal IndexManagerFacadeMethods( string name, InnerEnum innerEnum, FacadeMethod<Neo4Net.GraphDb.Index.IndexManager> facadeMethod )
 		 {
 			  this._facadeMethod = facadeMethod;
 
@@ -83,7 +83,7 @@ namespace Neo4Net.GraphDb
 			 innerEnumValue = innerEnum;
 		 }
 
-		 public void Accept( Neo4Net.GraphDb.index.IndexManager indexManager )
+		 public void Accept( Neo4Net.GraphDb.Index.IndexManager indexManager )
 		 {
 			  _facadeMethod.accept( indexManager );
 		 }

@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 	using Document = org.apache.lucene.document.Document;
 
 
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using Neo4Net.Kernel.Api.Impl.Index;
 	using IndexUpdater = Neo4Net.Kernel.Api.Index.IndexUpdater;
 	using IndexUpdateMode = Neo4Net.Kernel.Impl.Api.index.IndexUpdateMode;

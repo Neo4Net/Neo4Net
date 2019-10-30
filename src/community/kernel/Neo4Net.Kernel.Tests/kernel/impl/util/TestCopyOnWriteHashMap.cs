@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.impl.util
 	using Test = org.junit.Test;
 
 
-	using Iterators = Neo4Net.Helpers.Collections.Iterators;
+	using Iterators = Neo4Net.Collections.Helpers.Iterators;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.Matchers.contains;

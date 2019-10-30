@@ -35,7 +35,7 @@ namespace Neo4Net.causalclustering.stresstests
 	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
 	using WriteOperationsNotAllowedException = Neo4Net.GraphDb.security.WriteOperationsNotAllowedException;
 	using Workload = Neo4Net.helper.Workload;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using IdContainer = Neo4Net.Kernel.impl.store.id.IdContainer;

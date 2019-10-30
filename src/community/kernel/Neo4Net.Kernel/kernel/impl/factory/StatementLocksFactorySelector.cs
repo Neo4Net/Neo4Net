@@ -23,7 +23,7 @@ namespace Neo4Net.Kernel.impl.factory
 {
 
 	using Service = Neo4Net.Helpers.Service;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using Locks = Neo4Net.Kernel.impl.locking.Locks;
 	using SimpleStatementLocksFactory = Neo4Net.Kernel.impl.locking.SimpleStatementLocksFactory;

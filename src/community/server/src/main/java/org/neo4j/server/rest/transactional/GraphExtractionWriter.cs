@@ -31,7 +31,7 @@ namespace Neo4Net.Server.rest.transactional
 	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
 	using Relationship = Neo4Net.GraphDb.Relationship;
 	using Result = Neo4Net.GraphDb.Result;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 
 	internal class GraphExtractionWriter : ResultDataContentWriter
 	{

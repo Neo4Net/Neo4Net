@@ -75,7 +75,7 @@ namespace Neo4Net.Bolt.v1.messaging.util
 			  Dictionary<string, object> map = new Dictionary<string, object>( mapValue.Size() );
 			  mapValue.Foreach((key, value) =>
 			  {
-			  value.writeTo( deserializer );
+			  value.WriteTo( deserializer );
 			  map[key] = deserializer.Value();
 			  });
 

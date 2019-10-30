@@ -31,11 +31,11 @@ namespace Neo4Net.Kernel.impl.coreapi.schema
 	using Label = Neo4Net.GraphDb.Label;
 	using Node = Neo4Net.GraphDb.Node;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using IndexPopulationProgress = Neo4Net.GraphDb.index.IndexPopulationProgress;
+	using IndexPopulationProgress = Neo4Net.GraphDb.Index.IndexPopulationProgress;
 	using EphemeralFileSystemAbstraction = Neo4Net.GraphDb.mockfs.EphemeralFileSystemAbstraction;
 	using IndexDefinition = Neo4Net.GraphDb.Schema.IndexDefinition;
 	using Schema = Neo4Net.GraphDb.Schema.Schema;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using IndexReference = Neo4Net.Kernel.Api.Internal.IndexReference;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 	using EphemeralFileSystemExtension = Neo4Net.Test.extension.EphemeralFileSystemExtension;

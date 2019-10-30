@@ -20,8 +20,8 @@
 namespace Neo4Net.GraphDb.Traversal
 {
 
-	using ShortestPathsBranchCollisionDetector = Neo4Net.GraphDb.impl.traversal.ShortestPathsBranchCollisionDetector;
-	using StandardBranchCollisionDetector = Neo4Net.GraphDb.impl.traversal.StandardBranchCollisionDetector;
+	using ShortestPathsBranchCollisionDetector = Neo4Net.GraphDb.Impl.Traversal.ShortestPathsBranchCollisionDetector;
+	using StandardBranchCollisionDetector = Neo4Net.GraphDb.Impl.Traversal.StandardBranchCollisionDetector;
 
 	/// <summary>
 	/// A catalogue of convenient branch collision policies
@@ -31,13 +31,13 @@ namespace Neo4Net.GraphDb.Traversal
 	public enum BranchCollisionPolicies
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: STANDARD { @Override public BranchCollisionDetector create(Evaluator evaluator, java.util.function.Predicate<org.Neo4Net.graphdb.Path> pathPredicate) { return new org.Neo4Net.graphdb.impl.traversal.StandardBranchCollisionDetector(evaluator, pathPredicate); } },
+//ORIGINAL LINE: STANDARD { @Override public BranchCollisionDetector create(Evaluator evaluator, java.util.function.Predicate<org.Neo4Net.graphdb.Path> pathPredicate) { return new org.Neo4Net.GraphDb.Impl.Traversal.StandardBranchCollisionDetector(evaluator, pathPredicate); } },
 		 STANDARD
 		 {
-			 public BranchCollisionDetector create( Evaluator evaluator, System.Predicate<IPath> pathPredicate ) { return new StandardBranchCollisionDetector( evaluator, pathPredicate ); }
+			 public IBranchCollisionDetector create( IEvaluator evaluator, System.Predicate<IPath> pathPredicate ) { return new StandardBranchCollisionDetector( evaluator, pathPredicate ); }
 		 },
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: SHORTEST_PATH { @Override public BranchCollisionDetector create(Evaluator evaluator, java.util.function.Predicate<org.Neo4Net.graphdb.Path> pathPredicate) { return new org.Neo4Net.graphdb.impl.traversal.ShortestPathsBranchCollisionDetector(evaluator, pathPredicate); } }
+//ORIGINAL LINE: SHORTEST_PATH { @Override public BranchCollisionDetector create(Evaluator evaluator, java.util.function.Predicate<org.Neo4Net.graphdb.Path> pathPredicate) { return new org.Neo4Net.GraphDb.Impl.Traversal.ShortestPathsBranchCollisionDetector(evaluator, pathPredicate); } }
 		 SHORTEST_PATH
 		 {
 			 public BranchCollisionDetector create( Evaluator evaluator, System.Predicate<Path> pathPredicate ) { return new ShortestPathsBranchCollisionDetector( evaluator, pathPredicate ); }

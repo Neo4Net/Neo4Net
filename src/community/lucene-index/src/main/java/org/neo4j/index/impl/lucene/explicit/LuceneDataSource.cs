@@ -53,10 +53,10 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 	using Neo4Net.GraphDb;
 	using Neo4Net.GraphDb.config;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using IndexManager = Neo4Net.GraphDb.index.IndexManager;
-	using Iterators = Neo4Net.Helpers.Collections.Iterators;
-	using Neo4Net.Helpers.Collections;
-	using Neo4Net.Helpers.Collections;
+	using IndexManager = Neo4Net.GraphDb.Index.IndexManager;
+	using Iterators = Neo4Net.Collections.Helpers.Iterators;
+	using Neo4Net.Collections.Helpers;
+	using Neo4Net.Collections.Helpers;
 	using ExplicitIndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using FileUtils = Neo4Net.Io.fs.FileUtils;
@@ -600,7 +600,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 			  foreach ( string name in _indexStore.getNames( typeof( Node ) ) )
 			  {
 					IDictionary<string, string> config = _indexStore.get( typeof( Node ), name );
-					if ( config[Neo4Net.GraphDb.index.IndexManager_Fields.PROVIDER].Equals( LuceneIndexImplementation.SERVICE_NAME ) )
+					if ( config[Neo4Net.GraphDb.Index.IndexManager_Fields.PROVIDER].Equals( LuceneIndexImplementation.SERVICE_NAME ) )
 					{
 						 EnsureInstantiated( new IndexIdentifier( IndexEntityType.Node, name ) );
 					}
@@ -608,7 +608,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 			  foreach ( string name in _indexStore.getNames( typeof( Relationship ) ) )
 			  {
 					IDictionary<string, string> config = _indexStore.get( typeof( Relationship ), name );
-					if ( config[Neo4Net.GraphDb.index.IndexManager_Fields.PROVIDER].Equals( LuceneIndexImplementation.SERVICE_NAME ) )
+					if ( config[Neo4Net.GraphDb.Index.IndexManager_Fields.PROVIDER].Equals( LuceneIndexImplementation.SERVICE_NAME ) )
 					{
 						 EnsureInstantiated( new IndexIdentifier( IndexEntityType.Relationship, name ) );
 					}

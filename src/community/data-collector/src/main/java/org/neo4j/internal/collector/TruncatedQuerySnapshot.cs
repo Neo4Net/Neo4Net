@@ -94,7 +94,7 @@ namespace Neo4Net.Internal.Collector
 		 private static int _maxTextParameterLength = 100;
 		 private static int _maxParameterKeyLength = 1000;
 
-		 internal class ValueTruncater : ValueMapper<AnyValue>
+		 internal class ValueTruncater : IValueMapper<AnyValue>
 		 {
 
 			  public override AnyValue MapPath( PathValue value )

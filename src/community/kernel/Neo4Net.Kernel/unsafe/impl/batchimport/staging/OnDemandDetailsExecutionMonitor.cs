@@ -27,7 +27,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.staging
 
 	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
 	using Format = Neo4Net.Helpers.Format;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using OsBeanUtil = Neo4Net.Io.os.OsBeanUtil;
 	using VmPauseMonitor = Neo4Net.Kernel.monitoring.VmPauseMonitor;
 	using VmPauseInfo = Neo4Net.Kernel.monitoring.VmPauseMonitor.VmPauseInfo;

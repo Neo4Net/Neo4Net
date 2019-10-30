@@ -20,10 +20,10 @@ using System.Collections.Generic;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Kernel.Api.Internal.Exceptions.schema
+namespace Neo4Net.Kernel.Api.Internal.Exceptions.Schema
 {
-	using SchemaUtil = Neo4Net.Kernel.Api.Internal.schema.SchemaUtil;
-	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor;
+	using SchemaUtil = Neo4Net.Kernel.Api.Internal.Schema.SchemaUtil;
+	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 
 	/// <summary>

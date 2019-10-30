@@ -30,7 +30,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using SpaceFillingCurveConfiguration = Neo4Net.Gis.Spatial.Index.curves.SpaceFillingCurveConfiguration;
 	using IndexOrder = Neo4Net.Kernel.Api.Internal.IndexOrder;
 	using IndexQuery = Neo4Net.Kernel.Api.Internal.IndexQuery;
-	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor;
+	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.Schema.IndexProviderDescriptor;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using IndexEntryConflictException = Neo4Net.Kernel.Api.Exceptions.index.IndexEntryConflictException;
 	using IndexDirectoryStructure = Neo4Net.Kernel.Api.Index.IndexDirectoryStructure;

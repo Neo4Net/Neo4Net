@@ -23,8 +23,8 @@ namespace Neo4Net.GraphDb
 	using Rule = org.junit.Rule;
 	using Test = org.junit.Test;
 
-	using Neo4Net.GraphDb.index;
-	using Neo4Net.GraphDb.index;
+	using Neo4Net.GraphDb.Index;
+	using Neo4Net.GraphDb.Index;
 	using ImpermanentDatabaseRule = Neo4Net.Test.rule.ImpermanentDatabaseRule;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:

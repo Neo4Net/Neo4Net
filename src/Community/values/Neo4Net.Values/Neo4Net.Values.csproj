@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="cursors\**" />
+    
+    <Compile Remove="hashing\**" />
+    <Compile Remove="helpers\**" />
+    
+    <Compile Remove="register\**" />
+    <Compile Remove="resources\**" />
+    <Compile Remove="scheduler\**" />
+    <Compile Remove="stream\**" />
+    <Compile Remove="strings\**" />
+    <Compile Remove="time\**" />
+    
+    <EmbeddedResource Remove="cursors\**" />
+    
+    <EmbeddedResource Remove="hashing\**" />
+    <EmbeddedResource Remove="helpers\**" />
+    
+    <EmbeddedResource Remove="register\**" />
+    <EmbeddedResource Remove="resources\**" />
+    <EmbeddedResource Remove="scheduler\**" />
+    <EmbeddedResource Remove="stream\**" />
+    <EmbeddedResource Remove="strings\**" />
+    <EmbeddedResource Remove="time\**" />
+    
+    <None Remove="cursors\**" />
+    
+    <None Remove="hashing\**" />
+    <None Remove="helpers\**" />
+    
+    <None Remove="register\**" />
+    <None Remove="resources\**" />
+    <None Remove="scheduler\**" />
+    <None Remove="stream\**" />
+    <None Remove="strings\**" />
+    <None Remove="time\**" />
+    
+  </ItemGroup>
+
+ 
+
+  
+
+</Project>

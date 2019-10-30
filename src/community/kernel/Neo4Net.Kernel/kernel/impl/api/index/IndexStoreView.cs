@@ -23,7 +23,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 {
 	using MutableIntSet = org.eclipse.collections.api.set.primitive.MutableIntSet;
 
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using Neo4Net.Kernel.Api.Index;
 	using NodePropertyAccessor = Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor;
 	using NodeLabelUpdate = Neo4Net.Kernel.api.labelscan.NodeLabelUpdate;
@@ -36,7 +36,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 
 	/// <summary>
 	/// The indexing services view of the universe. </summary>
-	public interface IndexStoreView : NodePropertyAccessor, PropertyLoader
+	public interface IIndexStoreView : NodePropertyAccessor, PropertyLoader
 	{
 		 /// <summary>
 		 /// Retrieve all nodes in the database which has got one or more of the given labels AND

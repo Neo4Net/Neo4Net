@@ -46,9 +46,9 @@ namespace Neo4Net.Kernel.Api.Impl.Index.collector
 
 
 	using PrimitiveLongResourceIterator = Neo4Net.Collections.PrimitiveLongResourceIterator;
-	using Neo4Net.GraphDb.index;
-	using Neo4Net.Helpers.Collections;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.GraphDb.Index;
+	using Neo4Net.Collections.Helpers;
+	using Neo4Net.Collections.Helpers;
 	using Neo4Net.Index.impl.lucene.@explicit;
 	using Neo4Net.Kernel.Impl.Api.explicitindex;
 	using IndexProgressor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor;
@@ -130,7 +130,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index.collector
 		 /// <returns> an indexhits iterator over all matches </returns>
 		 /// <exception cref="IOException"> </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.graphdb.index.IndexHits<org.apache.lucene.document.Document> getIndexHits(org.apache.lucene.search.Sort sort) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.GraphDb.Index.IndexHits<org.apache.lucene.document.Document> getIndexHits(org.apache.lucene.search.Sort sort) throws java.io.IOException
 		 public virtual IndexHits<Document> GetIndexHits( Sort sort )
 		 {
 			  IList<MatchingDocs> matchingDocs = GetMatchingDocs();

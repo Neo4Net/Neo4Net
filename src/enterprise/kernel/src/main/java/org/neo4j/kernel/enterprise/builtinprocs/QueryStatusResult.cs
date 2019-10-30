@@ -154,7 +154,7 @@ namespace Neo4Net.Kernel.enterprise.builtinprocs
 			  Dictionary<string, object> map = new Dictionary<string, object>();
 			  mapValue.Foreach((s, value) =>
 			  {
-				value.writeTo( writer );
+				value.WriteTo( writer );
 				map[s] = writer.Value();
 			  });
 			  return map;

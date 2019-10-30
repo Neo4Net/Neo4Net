@@ -27,7 +27,7 @@ namespace Neo4Net.cluster.protocol.atomicbroadcast.multipaxos.context
 	using Timeouts = Neo4Net.cluster.timeout.Timeouts;
 	using Quorums = Neo4Net.cluster.util.Quorums;
 	using Neo4Net.Helpers;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using LogProvider = Neo4Net.Logging.LogProvider;
 
 	/// <summary>

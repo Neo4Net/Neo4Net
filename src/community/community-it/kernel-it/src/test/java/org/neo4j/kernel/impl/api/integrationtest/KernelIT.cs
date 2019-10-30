@@ -30,8 +30,8 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 	using SchemaWrite = Neo4Net.Kernel.Api.Internal.SchemaWrite;
 	using TokenWrite = Neo4Net.Kernel.Api.Internal.TokenWrite;
 	using InvalidTransactionTypeKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.InvalidTransactionTypeKernelException;
-	using SchemaKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.SchemaKernelException;
-	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.LabelSchemaDescriptor;
+	using SchemaKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.SchemaKernelException;
+	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.LabelSchemaDescriptor;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using TransactionIdStore = Neo4Net.Kernel.impl.transaction.log.TransactionIdStore;
@@ -225,7 +225,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.Kernel.Api.Internal.IndexReference createIndex(org.Neo4Net.Kernel.Api.Internal.Transaction transaction) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.SchemaKernelException, org.Neo4Net.Kernel.Api.Internal.Exceptions.InvalidTransactionTypeKernelException
+//ORIGINAL LINE: private org.Neo4Net.Kernel.Api.Internal.IndexReference createIndex(org.Neo4Net.Kernel.Api.Internal.Transaction transaction) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.SchemaKernelException, org.Neo4Net.Kernel.Api.Internal.Exceptions.InvalidTransactionTypeKernelException
 		 private IndexReference CreateIndex( Neo4Net.Kernel.Api.Internal.Transaction transaction )
 		 {
 			  TokenWrite tokenWrite = transaction.TokenWrite();

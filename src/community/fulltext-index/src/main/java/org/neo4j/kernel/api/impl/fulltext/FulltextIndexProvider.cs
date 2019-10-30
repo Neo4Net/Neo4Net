@@ -27,14 +27,14 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 	using ParseException = org.apache.lucene.queryparser.classic.ParseException;
 
 
-	using AnalyzerProvider = Neo4Net.GraphDb.index.fulltext.AnalyzerProvider;
+	using AnalyzerProvider = Neo4Net.GraphDb.Index.fulltext.AnalyzerProvider;
 	using IndexCapability = Neo4Net.Kernel.Api.Internal.IndexCapability;
 	using IndexReference = Neo4Net.Kernel.Api.Internal.IndexReference;
 	using InternalIndexState = Neo4Net.Kernel.Api.Internal.InternalIndexState;
-	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
-	using MisconfiguredIndexException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.MisconfiguredIndexException;
-	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor;
-	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
+	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException;
+	using MisconfiguredIndexException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.MisconfiguredIndexException;
+	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.Schema.IndexProviderDescriptor;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
 	using Neo4Net.Kernel.Api.Impl.Index;
@@ -180,7 +180,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor bless(org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor index) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.MisconfiguredIndexException
+//ORIGINAL LINE: public org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor bless(org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor index) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.MisconfiguredIndexException
 		 public override IndexDescriptor Bless( IndexDescriptor index )
 		 {
 			  if ( !( index.Schema() is FulltextSchemaDescriptor ) )
@@ -300,7 +300,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public ScoreEntityIterator query(org.Neo4Net.kernel.api.KernelTransaction ktx, String indexName, String queryString) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException, org.apache.lucene.queryparser.classic.ParseException
+//ORIGINAL LINE: public ScoreEntityIterator query(org.Neo4Net.kernel.api.KernelTransaction ktx, String indexName, String queryString) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException, org.apache.lucene.queryparser.classic.ParseException
 		 public override ScoreEntityIterator Query( KernelTransaction ktx, string indexName, string queryString )
 		 {
 			  KernelTransactionImplementation kti = ( KernelTransactionImplementation ) ktx;

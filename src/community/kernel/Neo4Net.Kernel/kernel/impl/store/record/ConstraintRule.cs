@@ -19,15 +19,15 @@
  */
 namespace Neo4Net.Kernel.Impl.Store.Records
 {
-	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
-	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
+	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor;
 	using IndexBackedConstraintDescriptor = Neo4Net.Kernel.api.schema.constraints.IndexBackedConstraintDescriptor;
 	using SchemaRule = Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.schema.SchemaUtil.idTokenNameLookup;
+//	import static org.Neo4Net.Kernel.Api.Internal.Schema.SchemaUtil.idTokenNameLookup;
 
-	public class ConstraintRule : SchemaRule, Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor_Supplier
+	public class ConstraintRule : SchemaRule, Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor_Supplier
 	{
 		 private readonly long? _ownedIndex;
 		 private readonly string _name;

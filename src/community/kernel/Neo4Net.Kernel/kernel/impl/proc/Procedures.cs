@@ -336,7 +336,7 @@ namespace Neo4Net.Kernel.impl.proc
 			  return _registry.createAggregationFunction( ctx, id );
 		 }
 
-		 public virtual ValueMapper<object> ValueMapper()
+		 public virtual IValueMapper<object> ValueMapper()
 		 {
 			  return _typeMappers;
 		 }

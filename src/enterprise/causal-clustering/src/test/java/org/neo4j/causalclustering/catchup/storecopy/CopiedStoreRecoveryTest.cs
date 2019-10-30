@@ -24,7 +24,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 {
 	using Test = org.junit.Test;
 
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
 	using Config = Neo4Net.Kernel.configuration.Config;

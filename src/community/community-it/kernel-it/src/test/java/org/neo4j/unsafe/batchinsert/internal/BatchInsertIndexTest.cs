@@ -36,8 +36,8 @@ namespace Neo4Net.@unsafe.Batchinsert.Internal
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using IndexDefinition = Neo4Net.GraphDb.Schema.IndexDefinition;
 	using Schema = Neo4Net.GraphDb.Schema.Schema;
-	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
-	using Neo4Net.Helpers.Collections;
+	using MapUtil = Neo4Net.Collections.Helpers.MapUtil;
+	using Neo4Net.Collections.Helpers;
 	using IndexReference = Neo4Net.Kernel.Api.Internal.IndexReference;
 	using SchemaRead = Neo4Net.Kernel.Api.Internal.SchemaRead;
 	using TokenRead = Neo4Net.Kernel.Api.Internal.TokenRead;

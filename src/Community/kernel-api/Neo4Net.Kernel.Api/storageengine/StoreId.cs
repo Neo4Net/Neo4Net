@@ -60,8 +60,7 @@ namespace Neo4Net.Kernel.Api.StorageEngine
 			  this._upgradeId = upgradeId;
 		 }
 
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static StoreId from(java.io.ObjectInput in) throws java.io.IOException
+
 		 public static StoreId From( ObjectInput @in )
 		 {
 			  StoreId storeId = new StoreId();
@@ -109,8 +108,7 @@ namespace Neo4Net.Kernel.Api.StorageEngine
 			 }
 		 }
 
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void writeExternal(java.io.ObjectOutput out) throws java.io.IOException
+
 		 public override void WriteExternal( ObjectOutput @out )
 		 {
 			  @out.writeLong( _creationTime );
@@ -120,8 +118,7 @@ namespace Neo4Net.Kernel.Api.StorageEngine
 			  @out.writeLong( _upgradeId );
 		 }
 
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void readExternal(java.io.ObjectInput in) throws java.io.IOException
+
 		 public override void ReadExternal( ObjectInput @in )
 		 {
 			  _creationTime = @in.readLong();

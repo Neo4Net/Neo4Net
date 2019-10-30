@@ -316,7 +316,7 @@ namespace Neo4Net.GraphDb
 			  }
 		 }
 
-		 private interface IndexSeek
+		 private interface IIndexSeek
 		 {
 			  ResourceIterator<Node> FindNodes( string[] keys, object[] values, IGraphDatabaseService db );
 		 }

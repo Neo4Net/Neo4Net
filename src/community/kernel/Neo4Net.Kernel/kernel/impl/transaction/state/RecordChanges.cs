@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 	using MutableLongObjectMap = org.eclipse.collections.api.map.primitive.MutableLongObjectMap;
 	using LongObjectHashMap = org.eclipse.collections.impl.map.mutable.primitive.LongObjectHashMap;
 
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using IntCounter = Neo4Net.Kernel.impl.util.statistics.IntCounter;
 	using LocalIntCounter = Neo4Net.Kernel.impl.util.statistics.LocalIntCounter;
 

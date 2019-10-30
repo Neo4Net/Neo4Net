@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Server.rest.management.console
 {
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 
 	public interface IScriptSession
 	{

@@ -35,7 +35,7 @@ namespace Neo4Net.Kernel.ha
 	using Neo4Net.com;
 	using TransactionStream = Neo4Net.com.TransactionStream;
 	using Neo4Net.com;
-	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
+	using MapUtil = Neo4Net.Collections.Helpers.MapUtil;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using Slave = Neo4Net.Kernel.ha.com.master.Slave;
 	using SlavePriorities = Neo4Net.Kernel.ha.com.master.SlavePriorities;

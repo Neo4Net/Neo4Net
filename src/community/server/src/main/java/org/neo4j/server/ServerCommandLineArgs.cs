@@ -23,7 +23,7 @@ namespace Neo4Net.Server
 {
 
 	using Args = Neo4Net.Helpers.Args;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using Converters = Neo4Net.Kernel.impl.util.Converters;
 

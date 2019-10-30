@@ -21,7 +21,7 @@
  */
 namespace Neo4Net.Kernel.impl.transaction.state
 {
-	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
 	using Neo4Net.Kernel.Api.Index;
 	using Neo4Net.Kernel.Impl.Api.index;
 	using Command = Neo4Net.Kernel.impl.transaction.command.Command;
@@ -29,7 +29,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 	/// <summary>
 	/// Set of updates (<seealso cref="IndexEntryUpdate"/>) to apply to indexes.
 	/// </summary>
-	public interface IndexUpdates : IEnumerable<IndexEntryUpdate<SchemaDescriptor>>
+	public interface IIndexUpdates : IEnumerable<IndexEntryUpdate<SchemaDescriptor>>
 	{
 		 /// <summary>
 		 /// Feeds updates raw material in the form of node/property commands, to create updates from. </summary>

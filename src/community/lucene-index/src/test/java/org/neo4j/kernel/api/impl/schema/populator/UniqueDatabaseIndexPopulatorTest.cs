@@ -32,8 +32,8 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.populator
 
 	using PrimitiveLongCollections = Neo4Net.Collections.PrimitiveLongCollections;
 	using IndexQuery = Neo4Net.Kernel.Api.Internal.IndexQuery;
-	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.LabelSchemaDescriptor;
-	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
+	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.LabelSchemaDescriptor;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
 	using IOUtils = Neo4Net.Io.IOUtils;
 	using IndexEntryConflictException = Neo4Net.Kernel.Api.Exceptions.index.IndexEntryConflictException;
 	using DirectoryFactory = Neo4Net.Kernel.Api.Impl.Index.storage.DirectoryFactory;

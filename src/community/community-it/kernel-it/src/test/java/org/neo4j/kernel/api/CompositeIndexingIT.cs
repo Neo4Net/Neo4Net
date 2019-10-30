@@ -35,7 +35,7 @@ namespace Neo4Net.Kernel.api
 
 	using Node = Neo4Net.GraphDb.Node;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using Iterators = Neo4Net.Helpers.Collections.Iterators;
+	using Iterators = Neo4Net.Collections.Helpers.Iterators;
 	using IndexOrder = Neo4Net.Kernel.Api.Internal.IndexOrder;
 	using IndexQuery = Neo4Net.Kernel.Api.Internal.IndexQuery;
 	using InternalIndexState = Neo4Net.Kernel.Api.Internal.InternalIndexState;

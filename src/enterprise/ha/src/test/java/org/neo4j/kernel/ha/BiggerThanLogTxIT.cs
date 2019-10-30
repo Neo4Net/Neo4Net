@@ -34,7 +34,7 @@ namespace Neo4Net.Kernel.ha
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using TransactionTemplate = Neo4Net.Helpers.TransactionTemplate;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using ClusterManager = Neo4Net.Kernel.impl.ha.ClusterManager;
 	using ClusterRule = Neo4Net.Test.ha.ClusterRule;
 

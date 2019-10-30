@@ -29,9 +29,9 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using MockitoJUnitRunner = org.mockito.junit.MockitoJUnitRunner;
 
 
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using InternalIndexState = Neo4Net.Kernel.Api.Internal.InternalIndexState;
-	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.LabelSchemaDescriptor;
+	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.LabelSchemaDescriptor;
 	using FlipFailedKernelException = Neo4Net.Kernel.Api.Exceptions.index.FlipFailedKernelException;
 	using IndexEntryConflictException = Neo4Net.Kernel.Api.Exceptions.index.IndexEntryConflictException;
 	using Neo4Net.Kernel.Api.Index;
@@ -546,7 +546,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> createIndexEntryUpdate(org.Neo4Net.Kernel.Api.Internal.schema.LabelSchemaDescriptor schemaDescriptor)
+//ORIGINAL LINE: private org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> createIndexEntryUpdate(org.Neo4Net.Kernel.Api.Internal.Schema.LabelSchemaDescriptor schemaDescriptor)
 		 private IndexEntryUpdate<object> CreateIndexEntryUpdate( LabelSchemaDescriptor schemaDescriptor )
 		 {
 			  return add( 1, schemaDescriptor, "theValue" );

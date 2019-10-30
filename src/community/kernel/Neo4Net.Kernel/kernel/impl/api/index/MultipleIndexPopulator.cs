@@ -25,11 +25,11 @@ namespace Neo4Net.Kernel.Impl.Api.index
 {
 
 	using Neo4Net.Functions;
-	using Neo4Net.Helpers.Collections;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
+	using Neo4Net.Collections.Helpers;
 	using InternalIndexState = Neo4Net.Kernel.Api.Internal.InternalIndexState;
-	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
-	using SchemaDescriptorSupplier = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptorSupplier;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
+	using SchemaDescriptorSupplier = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptorSupplier;
 	using FlipFailedKernelException = Neo4Net.Kernel.Api.Exceptions.index.FlipFailedKernelException;
 	using IndexEntryConflictException = Neo4Net.Kernel.Api.Exceptions.index.IndexEntryConflictException;
 	using IndexPopulationFailedKernelException = Neo4Net.Kernel.Api.Exceptions.index.IndexPopulationFailedKernelException;

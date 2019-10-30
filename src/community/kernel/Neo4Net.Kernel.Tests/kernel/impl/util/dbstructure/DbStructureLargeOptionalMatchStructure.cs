@@ -21,7 +21,7 @@
  */
 namespace Neo4Net.Kernel.impl.util.dbstructure
 {
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using TestIndexDescriptorFactory = Neo4Net.Kernel.api.schema.index.TestIndexDescriptorFactory;
 
 	//

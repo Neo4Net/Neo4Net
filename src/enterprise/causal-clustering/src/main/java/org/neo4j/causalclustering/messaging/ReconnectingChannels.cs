@@ -28,7 +28,7 @@ namespace Neo4Net.causalclustering.messaging
 
 	using ProtocolStack = Neo4Net.causalclustering.protocol.handshake.ProtocolStack;
 	using AdvertisedSocketAddress = Neo4Net.Helpers.AdvertisedSocketAddress;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using Streams = Neo4Net.Stream.Streams;
 
 	public class ReconnectingChannels

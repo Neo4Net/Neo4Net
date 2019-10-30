@@ -41,7 +41,7 @@ namespace Neo4Net.GraphDb.Traversal
 					levelIds = new LongHashSet();
 					_idsPerLevel.put( level, levelIds );
 			  }
-			  return levelIds.add( Type.getId( branch ) );
+			  return levelIds.add( Type.GetId( branch ) );
 		 }
 
 		 public override bool CheckFull( IPath path )

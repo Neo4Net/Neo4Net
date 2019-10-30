@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 	using IndexOrder = Neo4Net.Kernel.Api.Internal.IndexOrder;
 	using IndexQuery = Neo4Net.Kernel.Api.Internal.IndexQuery;
 	using ExistsPredicate = Neo4Net.Kernel.Api.Internal.IndexQuery.ExistsPredicate;
-	using IndexNotApplicableKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotApplicableKernelException;
+	using IndexNotApplicableKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotApplicableKernelException;
 	using BridgingIndexProgressor = Neo4Net.Kernel.Impl.Api.schema.BridgingIndexProgressor;
 	using NodePropertyAccessor = Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor;
 	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
@@ -65,7 +65,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.collection.PrimitiveLongResourceIterator query(org.Neo4Net.Kernel.Api.Internal.IndexQuery... predicates) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotApplicableKernelException
+//ORIGINAL LINE: public org.Neo4Net.collection.PrimitiveLongResourceIterator query(org.Neo4Net.Kernel.Api.Internal.IndexQuery... predicates) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotApplicableKernelException
 		 public override PrimitiveLongResourceIterator Query( params IndexQuery[] predicates )
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Method reference arbitrary object instance method syntax is not converted by Java to C# Converter:
@@ -74,7 +74,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void query(org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor_NodeValueClient cursor, org.Neo4Net.Kernel.Api.Internal.IndexOrder indexOrder, boolean needsValues, org.Neo4Net.Kernel.Api.Internal.IndexQuery... predicates) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotApplicableKernelException
+//ORIGINAL LINE: public void query(org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor_NodeValueClient cursor, org.Neo4Net.Kernel.Api.Internal.IndexOrder indexOrder, boolean needsValues, org.Neo4Net.Kernel.Api.Internal.IndexQuery... predicates) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotApplicableKernelException
 		 public override void Query( Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor_NodeValueClient cursor, IndexOrder indexOrder, bool needsValues, params IndexQuery[] predicates )
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Method reference arbitrary object instance method syntax is not converted by Java to C# Converter:

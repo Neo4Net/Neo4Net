@@ -31,7 +31,7 @@ namespace Neo4Net.Tooling
 	using ArrayUtil = Neo4Net.Helpers.ArrayUtil;
 	using Exceptions = Neo4Net.Helpers.Exceptions;
 	using Strings = Neo4Net.Helpers.Strings;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using IOUtils = Neo4Net.Io.IOUtils;
 	using DefaultFileSystemAbstraction = Neo4Net.Io.fs.DefaultFileSystemAbstraction;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;

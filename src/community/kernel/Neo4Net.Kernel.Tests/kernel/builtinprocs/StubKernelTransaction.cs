@@ -38,7 +38,7 @@ namespace Neo4Net.Kernel.builtinprocs
 	using TokenRead = Neo4Net.Kernel.Api.Internal.TokenRead;
 	using TokenWrite = Neo4Net.Kernel.Api.Internal.TokenWrite;
 	using Write = Neo4Net.Kernel.Api.Internal.Write;
-	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
 	using AuthSubject = Neo4Net.Kernel.Api.Internal.security.AuthSubject;
 	using SecurityContext = Neo4Net.Kernel.Api.Internal.security.SecurityContext;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;

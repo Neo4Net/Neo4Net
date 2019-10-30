@@ -21,7 +21,7 @@ namespace Neo4Net.Cypher.Internal.javacompat
 {
 	using Test = org.junit.Test;
 
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using QueryEngineProvider = Neo4Net.Kernel.impl.query.QueryEngineProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:

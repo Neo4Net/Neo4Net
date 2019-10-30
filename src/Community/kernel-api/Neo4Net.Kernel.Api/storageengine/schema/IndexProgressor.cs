@@ -48,7 +48,7 @@ namespace Neo4Net.Kernel.Api.StorageEngine.schema
 	///                 client <--------------
 	///   <-----------
 	/// </summary>
-	public interface IndexProgressor : IDisposable
+	public interface IIndexProgressor : IDisposable
 	{
 		 /// <summary>
 		 /// Progress through the index until the next accepted entry. Entries are feed to a Client, which
@@ -88,7 +88,7 @@ namespace Neo4Net.Kernel.Api.StorageEngine.schema
 	//	 };
 	}
 
-	 public interface IndexProgressor_NodeValueClient
+	 public interface IIndexProgressor_NodeValueClient
 	 {
 		  /// <summary>
 		  /// Setup the client for progressing using the supplied progressor. The values feed in accept map to the
@@ -111,7 +111,7 @@ namespace Neo4Net.Kernel.Api.StorageEngine.schema
 		  bool NeedsValues();
 	 }
 
-	 public interface IndexProgressor_NodeLabelClient
+	 public interface IIndexProgressor_NodeLabelClient
 	 {
 		  /// <summary>
 		  /// Setup the client for progressing using the supplied progressor. Called by index implementation. </summary>
@@ -133,7 +133,7 @@ namespace Neo4Net.Kernel.Api.StorageEngine.schema
 		  bool AcceptNode( long reference, ILabelSet labels );
 	 }
 
-	 public interface IndexProgressor_ExplicitClient
+	 public interface IIndexProgressor_ExplicitClient
 	 {
 		  /// <summary>
 		  /// Setup the client for progressing using the supplied progressor. Called by index implementation. </summary>

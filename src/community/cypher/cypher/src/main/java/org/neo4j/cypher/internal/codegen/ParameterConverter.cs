@@ -28,7 +28,7 @@ namespace Neo4Net.Cypher.Internal.codegen
 	using Path = Neo4Net.GraphDb.Path;
 	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
 	using Relationship = Neo4Net.GraphDb.Relationship;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using EmbeddedProxySPI = Neo4Net.Kernel.impl.core.EmbeddedProxySPI;
 	using Neo4Net.Values;
 	using CoordinateReferenceSystem = Neo4Net.Values.Storable.CoordinateReferenceSystem;

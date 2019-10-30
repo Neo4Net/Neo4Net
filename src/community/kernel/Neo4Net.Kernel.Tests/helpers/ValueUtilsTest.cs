@@ -24,7 +24,7 @@ namespace Neo4Net.Helpers
 	using Test = org.junit.jupiter.api.Test;
 
 
-	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
+	using MapUtil = Neo4Net.Collections.Helpers.MapUtil;
 	using ValueUtils = Neo4Net.Kernel.impl.util.ValueUtils;
 	using AnyValue = Neo4Net.Values.AnyValue;
 	using ListValue = Neo4Net.Values.@virtual.ListValue;

@@ -31,7 +31,7 @@ namespace Neo4Net.causalclustering.protocol.handshake
 
 
 	using Channel = Neo4Net.causalclustering.messaging.Channel;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Arrays.asList;

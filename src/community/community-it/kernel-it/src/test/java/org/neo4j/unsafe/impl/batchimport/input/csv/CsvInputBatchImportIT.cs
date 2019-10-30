@@ -33,7 +33,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input.csv
 	using Node = Neo4Net.GraphDb.Node;
 	using Relationship = Neo4Net.GraphDb.Relationship;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using NamedToken = Neo4Net.Kernel.Api.Internal.NamedToken;
 	using StatementConstants = Neo4Net.Kernel.api.StatementConstants;
 	using Config = Neo4Net.Kernel.configuration.Config;

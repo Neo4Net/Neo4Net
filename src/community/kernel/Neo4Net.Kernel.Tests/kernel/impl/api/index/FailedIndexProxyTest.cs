@@ -22,7 +22,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using Test = org.junit.Test;
 
 	using IndexCapability = Neo4Net.Kernel.Api.Internal.IndexCapability;
-	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor;
+	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.Schema.IndexProviderDescriptor;
 	using IndexPopulator = Neo4Net.Kernel.Api.Index.IndexPopulator;
 	using AssertableLogProvider = Neo4Net.Logging.AssertableLogProvider;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;

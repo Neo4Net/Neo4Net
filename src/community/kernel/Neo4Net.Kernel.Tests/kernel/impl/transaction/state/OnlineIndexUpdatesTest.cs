@@ -28,8 +28,8 @@ namespace Neo4Net.Kernel.impl.transaction.state
 	using Test = org.junit.Test;
 
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
-	using SchemaUtil = Neo4Net.Kernel.Api.Internal.schema.SchemaUtil;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
+	using SchemaUtil = Neo4Net.Kernel.Api.Internal.Schema.SchemaUtil;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
 	using EmptyVersionContextSupplier = Neo4Net.Io.pagecache.tracing.cursor.context.EmptyVersionContextSupplier;

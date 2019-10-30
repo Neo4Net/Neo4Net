@@ -39,7 +39,7 @@ namespace Neo4Net.causalclustering.scenarios
 	using Node = Neo4Net.GraphDb.Node;
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using Service = Neo4Net.Helpers.Service;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
 	using ClusterRule = Neo4Net.Test.causalclustering.ClusterRule;
 

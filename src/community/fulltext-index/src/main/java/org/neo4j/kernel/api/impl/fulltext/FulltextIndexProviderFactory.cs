@@ -23,7 +23,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Service = Neo4Net.Helpers.Service;
 	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
-	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor;
+	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.Schema.IndexProviderDescriptor;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using DirectoryFactory = Neo4Net.Kernel.Api.Impl.Index.storage.DirectoryFactory;
 	using IndexDirectoryStructure = Neo4Net.Kernel.Api.Index.IndexDirectoryStructure;

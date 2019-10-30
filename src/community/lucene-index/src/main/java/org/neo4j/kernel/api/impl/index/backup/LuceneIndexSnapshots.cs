@@ -31,7 +31,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index.backup
 
 
 	using Neo4Net.GraphDb;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.helpers.collection.Iterators.emptyResourceIterator;

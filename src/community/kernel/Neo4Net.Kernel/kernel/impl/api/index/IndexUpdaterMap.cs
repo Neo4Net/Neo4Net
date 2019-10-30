@@ -23,9 +23,9 @@ using System.Collections.Generic;
 namespace Neo4Net.Kernel.Impl.Api.index
 {
 
-	using Neo4Net.Helpers.Collections;
-	using Neo4Net.Helpers.Collections;
-	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
+	using Neo4Net.Collections.Helpers;
+	using Neo4Net.Collections.Helpers;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
 	using IndexEntryConflictException = Neo4Net.Kernel.Api.Exceptions.index.IndexEntryConflictException;
 	using IndexUpdater = Neo4Net.Kernel.Api.Index.IndexUpdater;
 	using MultipleUnderlyingStorageExceptions = Neo4Net.Kernel.impl.store.MultipleUnderlyingStorageExceptions;

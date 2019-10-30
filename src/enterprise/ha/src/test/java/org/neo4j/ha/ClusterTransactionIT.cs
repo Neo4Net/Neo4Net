@@ -29,7 +29,7 @@ namespace Neo4Net.ha
 	using Test = org.junit.Test;
 
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
 	using AvailabilityListener = Neo4Net.Kernel.availability.AvailabilityListener;
 	using DatabaseAvailabilityGuard = Neo4Net.Kernel.availability.DatabaseAvailabilityGuard;

@@ -22,7 +22,7 @@ namespace Neo4Net.GraphAlgo.Utils
 	using Neo4Net.GraphAlgo;
 	using Path = Neo4Net.GraphDb.Path;
 	using Neo4Net.GraphDb;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using NoneStrictMath = Neo4Net.Kernel.impl.util.NoneStrictMath;
 
 	public class WeightedPathIterator : PrefetchingResourceIterator<WeightedPath>

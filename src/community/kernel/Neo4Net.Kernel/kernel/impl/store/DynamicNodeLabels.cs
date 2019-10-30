@@ -22,8 +22,8 @@
 namespace Neo4Net.Kernel.impl.store
 {
 
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
-	using Neo4Net.Helpers.Collections;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
+	using Neo4Net.Collections.Helpers;
 	using ReusableRecordsCompositeAllocator = Neo4Net.Kernel.Impl.Store.Allocators.ReusableRecordsCompositeAllocator;
 	using DynamicRecord = Neo4Net.Kernel.Impl.Store.Records.DynamicRecord;
 	using NodeRecord = Neo4Net.Kernel.Impl.Store.Records.NodeRecord;

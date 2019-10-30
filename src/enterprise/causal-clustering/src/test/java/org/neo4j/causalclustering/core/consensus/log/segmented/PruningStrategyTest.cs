@@ -28,7 +28,7 @@ namespace Neo4Net.causalclustering.core.consensus.log.segmented
 	using Before = org.junit.Before;
 
 
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.ArgumentMatchers.any;

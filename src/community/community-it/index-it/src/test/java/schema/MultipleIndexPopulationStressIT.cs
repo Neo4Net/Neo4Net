@@ -37,7 +37,7 @@ namespace Schema
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using IndexDefinition = Neo4Net.GraphDb.Schema.IndexDefinition;
 	using TimeUtil = Neo4Net.Helpers.TimeUtil;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using Settings = Neo4Net.Kernel.configuration.Settings;
 	using BatchingMultipleIndexPopulator = Neo4Net.Kernel.Impl.Api.index.BatchingMultipleIndexPopulator;

@@ -22,7 +22,7 @@
 namespace Neo4Net.@unsafe.Impl.Batchimport
 {
 
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using RelationshipGroupRecord = Neo4Net.Kernel.Impl.Store.Records.RelationshipGroupRecord;
 	using PullingProducerStep = Neo4Net.@unsafe.Impl.Batchimport.staging.PullingProducerStep;
 	using StageControl = Neo4Net.@unsafe.Impl.Batchimport.staging.StageControl;

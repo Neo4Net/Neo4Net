@@ -21,8 +21,8 @@ namespace Neo4Net.Kernel.impl.transaction.state
 {
 	using Test = org.junit.Test;
 
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
-	using SchemaDescriptorPredicates = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptorPredicates;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
+	using SchemaDescriptorPredicates = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptorPredicates;
 	using LabelScanWriter = Neo4Net.Kernel.api.labelscan.LabelScanWriter;
 	using ConstraintDescriptorFactory = Neo4Net.Kernel.api.schema.constraints.ConstraintDescriptorFactory;
 	using TestIndexDescriptorFactory = Neo4Net.Kernel.api.schema.index.TestIndexDescriptorFactory;

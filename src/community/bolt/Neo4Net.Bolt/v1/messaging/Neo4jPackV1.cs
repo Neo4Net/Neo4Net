@@ -122,7 +122,7 @@ namespace Neo4Net.Bolt.v1.messaging
 					PackListHeader( labels.Length() );
 					for ( int i = 0; i < labels.Length(); i++ )
 					{
-						 labels.Value( i ).writeTo( this );
+						 labels.Value( i ).WriteTo( this );
 					}
 					properties.WriteTo( this );
 			  }
@@ -282,13 +282,13 @@ namespace Neo4Net.Bolt.v1.messaging
 									{
 										 edge = relationships[i++];
 									}
-									//Note that we are not doing relationship.writeTo(this) here since the serialization protocol
+									//Note that we are not doing relationship.WriteTo(this) here since the serialization protocol
 									//requires these to be _unbound relationships_, thus relationships without any start node nor
 									// end node.
 									PackStructHeader( UNBOUND_RELATIONSHIP_SIZE, UNBOUND_RELATIONSHIP );
 									Pack( edge.Id() );
-									edge.Type().writeTo(this);
-									edge.Properties().writeTo(this);
+									edge.Type().WriteTo(this);
+									edge.Properties().WriteTo(this);
 							  }
 						 }
 					}

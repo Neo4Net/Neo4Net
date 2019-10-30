@@ -29,8 +29,8 @@ namespace Neo4Net.Kernel.Impl.Api
 	using Node = Neo4Net.GraphDb.Node;
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using Neo4Net.GraphDb.index;
-	using IndexManager = Neo4Net.GraphDb.index.IndexManager;
+	using Neo4Net.GraphDb.Index;
+	using IndexManager = Neo4Net.GraphDb.Index.IndexManager;
 	using DummyIndexExtensionFactory = Neo4Net.Kernel.impl.index.DummyIndexExtensionFactory;
 	using RecordStorageEngine = Neo4Net.Kernel.impl.storageengine.impl.recordstorage.RecordStorageEngine;
 	using NeoStores = Neo4Net.Kernel.impl.store.NeoStores;
@@ -65,11 +65,11 @@ namespace Neo4Net.Kernel.Impl.Api
 		 public virtual void CommitDuringContinuousCheckpointing()
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.graphdb.index.Index<org.Neo4Net.graphdb.Node> index;
+//ORIGINAL LINE: final org.Neo4Net.GraphDb.Index.Index<org.Neo4Net.graphdb.Node> index;
 			  Index<Node> index;
 			  using ( Transaction tx = Db.beginTx() )
 			  {
-					index = Db.index().forNodes(INDEX_NAME, stringMap(Neo4Net.GraphDb.index.IndexManager_Fields.PROVIDER, DummyIndexExtensionFactory.IDENTIFIER));
+					index = Db.index().forNodes(INDEX_NAME, stringMap(Neo4Net.GraphDb.Index.IndexManager_Fields.PROVIDER, DummyIndexExtensionFactory.IDENTIFIER));
 					tx.Success();
 			  }
 

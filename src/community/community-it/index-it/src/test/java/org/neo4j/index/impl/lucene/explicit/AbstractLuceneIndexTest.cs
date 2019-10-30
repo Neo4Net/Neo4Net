@@ -35,9 +35,9 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 	using Relationship = Neo4Net.GraphDb.Relationship;
 	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using Neo4Net.GraphDb.index;
-	using RelationshipIndex = Neo4Net.GraphDb.index.RelationshipIndex;
-	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
+	using Neo4Net.GraphDb.Index;
+	using RelationshipIndex = Neo4Net.GraphDb.Index.RelationshipIndex;
+	using MapUtil = Neo4Net.Collections.Helpers.MapUtil;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
 

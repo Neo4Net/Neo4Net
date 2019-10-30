@@ -36,7 +36,7 @@ namespace Neo4Net.Kernel.impl.store
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using EphemeralFileSystemAbstraction = Neo4Net.GraphDb.mockfs.EphemeralFileSystemAbstraction;
 	using UncloseableDelegatingFileSystemAbstraction = Neo4Net.GraphDb.mockfs.UncloseableDelegatingFileSystemAbstraction;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using OpenMode = Neo4Net.Io.fs.OpenMode;
 	using StoreChannel = Neo4Net.Io.fs.StoreChannel;
 	using Neo4Net.Kernel.impl.store.format;

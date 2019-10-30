@@ -31,7 +31,7 @@ namespace Neo4Net.Kernel.ha.transaction
 	using InstanceId = Neo4Net.cluster.InstanceId;
 	using ComException = Neo4Net.com.ComException;
 	using NamedThreadFactory = Neo4Net.Helpers.NamedThreadFactory;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using Slave = Neo4Net.Kernel.ha.com.master.Slave;
 	using SlavePriorities = Neo4Net.Kernel.ha.com.master.SlavePriorities;

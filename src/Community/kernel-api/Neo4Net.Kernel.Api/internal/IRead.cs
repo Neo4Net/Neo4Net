@@ -56,7 +56,7 @@ namespace Neo4Net.Kernel.Api.Internal
       /// <param name="cursor"> <seealso cref="INodeValueIndexCursor"/> receiving distinct count data. </param>
       /// <param name="needsValues"> whether or not values should be loaded and given to the cursor. </param>
       //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-      //ORIGINAL LINE: void nodeIndexDistinctValues(IndexReference index, NodeValueIndexCursor cursor, boolean needsValues) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
+      //ORIGINAL LINE: void nodeIndexDistinctValues(IndexReference index, NodeValueIndexCursor cursor, boolean needsValues) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException;
       void NodeIndexDistinctValues(IIndexReference index, INodeValueIndexCursor cursor, bool needsValues);
 
       /// <summary>

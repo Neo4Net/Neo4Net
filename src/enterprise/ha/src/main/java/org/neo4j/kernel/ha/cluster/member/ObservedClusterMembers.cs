@@ -33,7 +33,7 @@ namespace Neo4Net.Kernel.ha.cluster.member
 	using ClusterListener = Neo4Net.cluster.protocol.cluster.ClusterListener;
 	using Heartbeat = Neo4Net.cluster.protocol.heartbeat.Heartbeat;
 	using HeartbeatListener = Neo4Net.cluster.protocol.heartbeat.HeartbeatListener;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using HighAvailabilityModeSwitcher = Neo4Net.Kernel.ha.cluster.modeswitch.HighAvailabilityModeSwitcher;
 	using Neo4Net.Kernel.impl.util;
 	using Log = Neo4Net.Logging.Log;

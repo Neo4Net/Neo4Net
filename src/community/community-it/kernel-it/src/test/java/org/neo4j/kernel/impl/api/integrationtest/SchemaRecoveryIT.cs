@@ -31,7 +31,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using ConstraintDefinition = Neo4Net.GraphDb.Schema.ConstraintDefinition;
 	using IndexDefinition = Neo4Net.GraphDb.Schema.IndexDefinition;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
 	using Neo4Net.Test.subprocess;

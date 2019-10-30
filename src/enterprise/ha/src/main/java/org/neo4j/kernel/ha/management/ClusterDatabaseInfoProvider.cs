@@ -23,7 +23,7 @@
 namespace Neo4Net.Kernel.ha.management
 {
 
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using ClusterMember = Neo4Net.Kernel.ha.cluster.member.ClusterMember;
 	using ClusterMembers = Neo4Net.Kernel.ha.cluster.member.ClusterMembers;
 	using LastTxIdGetter = Neo4Net.Kernel.impl.core.LastTxIdGetter;

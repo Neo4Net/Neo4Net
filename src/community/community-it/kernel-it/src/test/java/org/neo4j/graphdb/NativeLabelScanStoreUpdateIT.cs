@@ -29,8 +29,8 @@ namespace Neo4Net.GraphDb
 	using TestName = org.junit.rules.TestName;
 
 
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
-	using Iterators = Neo4Net.Helpers.Collections.Iterators;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
+	using Iterators = Neo4Net.Collections.Helpers.Iterators;
 	using DatabaseRule = Neo4Net.Test.rule.DatabaseRule;
 	using ImpermanentDatabaseRule = Neo4Net.Test.rule.ImpermanentDatabaseRule;
 

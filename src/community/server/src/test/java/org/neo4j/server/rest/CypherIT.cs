@@ -28,7 +28,7 @@ namespace Neo4Net.Server.rest
 	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
 	using Node = Neo4Net.GraphDb.Node;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using Documented = Neo4Net.Kernel.Impl.Annotations.Documented;
 	using JsonParseException = Neo4Net.Server.rest.domain.JsonParseException;
 	using GraphDescription = Neo4Net.Test.GraphDescription;

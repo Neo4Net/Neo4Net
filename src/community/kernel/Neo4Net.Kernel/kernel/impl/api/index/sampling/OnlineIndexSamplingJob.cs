@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Kernel.Impl.Api.index.sampling
 {
-	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
+	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException;
 	using DurationLogger = Neo4Net.Kernel.impl.util.DurationLogger;
 	using Log = Neo4Net.Logging.Log;
 	using LogProvider = Neo4Net.Logging.LogProvider;

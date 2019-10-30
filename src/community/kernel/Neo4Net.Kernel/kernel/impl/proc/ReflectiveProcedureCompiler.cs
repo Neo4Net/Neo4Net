@@ -486,9 +486,9 @@ namespace Neo4Net.Kernel.impl.proc
 		 {
 
 			  internal readonly IList<FieldInjections.FieldSetter> FieldSetters;
-			  internal readonly ValueMapper<object> Mapper;
+			  internal readonly IValueMapper<object> Mapper;
 
-			  internal ReflectiveBase( ValueMapper<object> mapper, IList<FieldInjections.FieldSetter> fieldSetters )
+			  internal ReflectiveBase( IValueMapper<object> mapper, IList<FieldInjections.FieldSetter> fieldSetters )
 			  {
 					this.Mapper = mapper;
 					this.FieldSetters = fieldSetters;
@@ -722,7 +722,7 @@ namespace Neo4Net.Kernel.impl.proc
 			  internal readonly System.Reflection.MethodInfo UdfMethod;
 			  internal readonly int[] IndexesToMap;
 
-			  internal ReflectiveUserFunction( UserFunctionSignature signature, MethodHandle constructor, System.Reflection.MethodInfo udfMethod, TypeMappers.TypeChecker typeChecker, ValueMapper<object> mapper, IList<FieldInjections.FieldSetter> fieldSetters ) : base( mapper, fieldSetters )
+			  internal ReflectiveUserFunction( UserFunctionSignature signature, MethodHandle constructor, System.Reflection.MethodInfo udfMethod, TypeMappers.TypeChecker typeChecker, IValueMapper<object> mapper, IList<FieldInjections.FieldSetter> fieldSetters ) : base( mapper, fieldSetters )
 			  {
 					this.Constructor = constructor;
 					this.UdfMethod = udfMethod;

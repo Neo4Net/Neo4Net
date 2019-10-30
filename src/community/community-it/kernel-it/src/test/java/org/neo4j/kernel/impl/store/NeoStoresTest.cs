@@ -35,7 +35,7 @@ namespace Neo4Net.Kernel.impl.store
 	using Relationship = Neo4Net.GraphDb.Relationship;
 	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
 	using UncloseableDelegatingFileSystemAbstraction = Neo4Net.GraphDb.mockfs.UncloseableDelegatingFileSystemAbstraction;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using NamedToken = Neo4Net.Kernel.Api.Internal.NamedToken;
 	using EntityNotFoundException = Neo4Net.Kernel.Api.Internal.Exceptions.EntityNotFoundException;
 	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;

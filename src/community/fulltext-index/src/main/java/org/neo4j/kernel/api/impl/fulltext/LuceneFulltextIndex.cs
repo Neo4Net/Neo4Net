@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 	using Analyzer = org.apache.lucene.analysis.Analyzer;
 
 
-	using SchemaUtil = Neo4Net.Kernel.Api.Internal.schema.SchemaUtil;
+	using SchemaUtil = Neo4Net.Kernel.Api.Internal.Schema.SchemaUtil;
 	using Neo4Net.Kernel.Api.Impl.Index;
 	using AbstractIndexPartition = Neo4Net.Kernel.Api.Impl.Index.partition.AbstractIndexPartition;
 	using IndexPartitionFactory = Neo4Net.Kernel.Api.Impl.Index.partition.IndexPartitionFactory;

@@ -22,186 +22,186 @@
 
 namespace Neo4Net.GraphDb.impl
 {
-   public class ExtendedPath : IPath
-   {
-      private readonly IPath _start;
-      private readonly IRelationship _lastRelationship;
-      private readonly INode _endNode;
+    public class ExtendedPath : IPath
+    {
+        private readonly IPath _start;
+        private readonly IRelationship _lastRelationship;
+        private readonly INode _endNode;
 
-      public ExtendedPath(IPath start, IRelationship lastRelationship)
-      {
-         _start = start;
-         _lastRelationship = lastRelationship;
-         _endNode = lastRelationship.GetOtherNode(start.EndNode);
-      }
+        public ExtendedPath(IPath start, IRelationship lastRelationship)
+        {
+            _start = start;
+            _lastRelationship = lastRelationship;
+            _endNode = lastRelationship.GetOtherNode(start.EndNode);
+        }
 
-      public INode StartNode => _start.startNode();
+        public INode StartNode => _start.StartNode;
 
-      public INode EndNode => _endNode;
+        public INode EndNode => _endNode;
 
-      public IRelationship LastRelationship => _lastRelationship;
+        public IRelationship LastRelationship => _lastRelationship;
 
-      public IEnumerable<IRelationship> Relationships => () => new PrefetchingIteratorAnonymousInnerClass(this);
+        public IEnumerable<IRelationship> Relationships => () => new PrefetchingIteratorAnonymousInnerClass(this);
 
-      private class PrefetchingIteratorAnonymousInnerClass : PrefetchingIterator<IRelationship>
-      {
-         private readonly ExtendedPath _outerInstance;
+        private class PrefetchingIteratorAnonymousInnerClass : PrefetchingIterator<IRelationship>
+        {
+            private readonly ExtendedPath _outerInstance;
 
-         public PrefetchingIteratorAnonymousInnerClass(ExtendedPath outerInstance)
-         {
-            this.outerInstance = outerInstance;
-            startRelationships = outerInstance.start.Relationships().GetEnumerator();
-         }
-
-         internal readonly IEnumerator<IRelationship> startRelationships;
-         internal bool lastReturned;
-
-         protected internal override IRelationship fetchNextOrNull()
-         {
-            if (startRelationships.hasNext())
+            public PrefetchingIteratorAnonymousInnerClass(ExtendedPath outerInstance)
             {
-               return startRelationships.next();
+                this.outerInstance = outerInstance;
+                startRelationships = outerInstance.Start.Relationships().GetEnumerator();
             }
-            if (!lastReturned)
+
+            internal readonly IEnumerator<IRelationship> startRelationships;
+            internal bool lastReturned;
+
+            protected internal IRelationship fetchNextOrNull()
             {
-               lastReturned = true;
-               return _outerInstance.lastRelationship;
+                if (startRelationships.hasNext())
+                {
+                    return startRelationships.next();
+                }
+                if (!lastReturned)
+                {
+                    lastReturned = true;
+                    return _outerInstance.lastRelationship;
+                }
+                return null;
             }
-            return null;
-         }
-      }
+        }
 
-      public override IEnumerable<IRelationship> ReverseRelationships => () => new PrefetchingIteratorAnonymousInnerClass2(this);
+        public override IEnumerable<IRelationship> ReverseRelationships => () => new PrefetchingIteratorAnonymousInnerClass2(this);
 
-      private class PrefetchingIteratorAnonymousInnerClass2 : PrefetchingIterator<IRelationship>
-      {
-         private readonly ExtendedPath _outerInstance;
+        private class PrefetchingIteratorAnonymousInnerClass2 : PrefetchingIterator<IRelationship>
+        {
+            private readonly ExtendedPath _outerInstance;
 
-         public PrefetchingIteratorAnonymousInnerClass2(ExtendedPath outerInstance)
-         {
-            this.outerInstance = outerInstance;
-            startRelationships = outerInstance.start.ReverseRelationships().GetEnumerator();
-         }
-
-         internal readonly IEnumerator<IRelationship> startRelationships;
-         internal bool endReturned;
-
-         protected internal override IRelationship fetchNextOrNull()
-         {
-            if (!endReturned)
+            public PrefetchingIteratorAnonymousInnerClass2(ExtendedPath outerInstance)
             {
-               endReturned = true;
-               return _outerInstance.lastRelationship;
+                this.outerInstance = outerInstance;
+                startRelationships = outerInstance.start.ReverseRelationships().GetEnumerator();
             }
-            return startRelationships.hasNext() ? startRelationships.next() : null;
-         }
-      }
 
-      public IEnumerable<INode> Nodes => new PrefetchingIteratorAnonymousInnerClass3(this);
+            internal readonly IEnumerator<IRelationship> startRelationships;
+            internal bool endReturned;
 
-      private class PrefetchingIteratorAnonymousInnerClass3 : PrefetchingIterator<INode>
-      {
-         private readonly ExtendedPath _outerInstance;
-
-         public PrefetchingIteratorAnonymousInnerClass3(ExtendedPath outerInstance)
-         {
-            this.outerInstance = outerInstance;
-            startNodes = outerInstance.start.Nodes().GetEnumerator();
-         }
-
-         internal readonly IEnumerator<INode> startNodes;
-         internal bool lastReturned;
-
-         protected internal INode FetchNextOrNull()
-         {
-            if (startNodes.HasNext())
+            protected internal override IRelationship fetchNextOrNull()
             {
-               return startNodes.next();
+                if (!endReturned)
+                {
+                    endReturned = true;
+                    return _outerInstance.lastRelationship;
+                }
+                return startRelationships.hasNext() ? startRelationships.next() : null;
             }
-            if (!lastReturned)
+        }
+
+        public IEnumerable<INode> Nodes => new PrefetchingIteratorAnonymousInnerClass3(this);
+
+        private class PrefetchingIteratorAnonymousInnerClass3 : PrefetchingIterator<INode>
+        {
+            private readonly ExtendedPath _outerInstance;
+
+            public PrefetchingIteratorAnonymousInnerClass3(ExtendedPath outerInstance)
             {
-               lastReturned = true;
-               return _outerInstance.EndNode;
+                this.outerInstance = outerInstance;
+                startNodes = outerInstance.start.Nodes().GetEnumerator();
             }
-            return null;
-         }
-      }
 
-      public IEnumerable<INode> ReverseNodes => new PrefetchingIteratorAnonymousInnerClass4(this);
+            internal readonly IEnumerator<INode> startNodes;
+            internal bool lastReturned;
 
-      private class PrefetchingIteratorAnonymousInnerClass4 : PrefetchingIterator<INode>
-      {
-         private readonly ExtendedPath _outerInstance;
-
-         public PrefetchingIteratorAnonymousInnerClass4(ExtendedPath outerInstance)
-         {
-            this.outerInstance = outerInstance;
-            startNodes = outerInstance.start.ReverseNodes().GetEnumerator();
-         }
-
-         internal readonly IEnumerator<INode> startNodes;
-         internal bool endReturned;
-
-         protected internal override INode fetchNextOrNull()
-         {
-            if (!endReturned)
+            protected internal INode FetchNextOrNull()
             {
-               endReturned = true;
-               return _outerInstance.endNode;
+                if (startNodes.HasNext())
+                {
+                    return startNodes.next();
+                }
+                if (!lastReturned)
+                {
+                    lastReturned = true;
+                    return _outerInstance.EndNode;
+                }
+                return null;
             }
-            return startNodes.hasNext() ? startNodes.next() : null;
-         }
-      }
+        }
 
-      public override int Length => _start.length() + 1;
+        public IEnumerable<INode> ReverseNodes => new PrefetchingIteratorAnonymousInnerClass4(this);
 
-      public override IEnumerator<PropertyContainer> Iterator()
-      {
-         return new PrefetchingIteratorAnonymousInnerClass5(this);
-      }
+        private class PrefetchingIteratorAnonymousInnerClass4 : PrefetchingIterator<INode>
+        {
+            private readonly ExtendedPath _outerInstance;
 
-      private class PrefetchingIteratorAnonymousInnerClass5 : PrefetchingIterator<PropertyContainer>
-      {
-         private readonly ExtendedPath _outerInstance;
-
-         public PrefetchingIteratorAnonymousInnerClass5(ExtendedPath outerInstance)
-         {
-            this.outerInstance = outerInstance;
-            startEntities = outerInstance.start.GetEnumerator();
-            lastReturned = 2;
-         }
-
-         internal readonly IEnumerator<PropertyContainer> startEntities;
-         internal int lastReturned;
-
-         protected internal override IPropertyContainer fetchNextOrNull()
-         {
-            if (startEntities.hasNext())
+            public PrefetchingIteratorAnonymousInnerClass4(ExtendedPath outerInstance)
             {
-               return startEntities.next();
+                this.outerInstance = outerInstance;
+                startNodes = outerInstance.start.ReverseNodes().GetEnumerator();
             }
-            switch (lastReturned--)
+
+            internal readonly IEnumerator<INode> startNodes;
+            internal bool endReturned;
+
+            protected internal override INode fetchNextOrNull()
             {
-               case 2:
-                  return _outerInstance.endNode;
-
-               case 1:
-                  return _outerInstance.lastRelationship;
-
-               default:
-                  return null;
+                if (!endReturned)
+                {
+                    endReturned = true;
+                    return _outerInstance.endNode;
+                }
+                return startNodes.hasNext() ? startNodes.next() : null;
             }
-         }
-      }
+        }
 
-      /// <summary>
-      /// Appends a <seealso cref="IRelationship relationship"/>, {@code withRelationship}, to the specified <seealso cref="IPath path"/> </summary>
-      /// <param name="path"> </param>
-      /// <param name="withRelationship"> </param>
-      /// <returns> The path with the relationship and its end node appended. </returns>
-      public static IPath Extend(IPath path, IRelationship withRelationship)
-      {
-         return new ExtendedPath(path, withRelationship);
-      }
-   }
+        public override int Length => _start.length() + 1;
+
+        public override IEnumerator<PropertyContainer> Iterator()
+        {
+            return new PrefetchingIteratorAnonymousInnerClass5(this);
+        }
+
+        private class PrefetchingIteratorAnonymousInnerClass5 : PrefetchingIterator<PropertyContainer>
+        {
+            private readonly ExtendedPath _outerInstance;
+
+            public PrefetchingIteratorAnonymousInnerClass5(ExtendedPath outerInstance)
+            {
+                this.outerInstance = outerInstance;
+                startEntities = outerInstance.Start.GetEnumerator();
+                lastReturned = 2;
+            }
+
+            internal readonly IEnumerator<IPropertyContainer> startEntities;
+            internal int lastReturned;
+
+            protected internal override IPropertyContainer fetchNextOrNull()
+            {
+                if (startEntities.hasNext())
+                {
+                    return startEntities.Next();
+                }
+                switch (lastReturned--)
+                {
+                    case 2:
+                        return _outerInstance.EndNode;
+
+                    case 1:
+                        return _outerInstance.LastRelationship;
+
+                    default:
+                        return null;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Appends a <seealso cref="IRelationship relationship"/>, {@code withRelationship}, to the specified <seealso cref="IPath path"/> </summary>
+        /// <param name="path"> </param>
+        /// <param name="withRelationship"> </param>
+        /// <returns> The path with the relationship and its end node appended. </returns>
+        public static IPath Extend(IPath path, IRelationship withRelationship)
+        {
+            return new ExtendedPath(path, withRelationship);
+        }
+    }
 }

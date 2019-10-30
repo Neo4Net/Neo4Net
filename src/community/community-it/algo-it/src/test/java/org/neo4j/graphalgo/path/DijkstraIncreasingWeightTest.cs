@@ -39,7 +39,7 @@ namespace Neo4Net.GraphAlgo.path
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using Neo4Net.GraphDb.Traversal;
 	using Neo4Net.GraphDb.Traversal;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using NoneStrictMath = Neo4Net.Kernel.impl.util.NoneStrictMath;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:

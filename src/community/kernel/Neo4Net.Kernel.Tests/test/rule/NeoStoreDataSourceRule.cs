@@ -24,7 +24,7 @@ namespace Neo4Net.Test.rule
 {
 
 	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using RecoveryCleanupWorkCollector = Neo4Net.Index.Internal.gbptree.RecoveryCleanupWorkCollector;
 	using DiagnosticsManager = Neo4Net.Internal.Diagnostics.DiagnosticsManager;
 	using TokenNameLookup = Neo4Net.Kernel.Api.Internal.TokenNameLookup;

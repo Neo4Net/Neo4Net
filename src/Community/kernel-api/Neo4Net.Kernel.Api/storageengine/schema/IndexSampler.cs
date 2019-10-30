@@ -20,12 +20,12 @@
 namespace Neo4Net.Kernel.Api.StorageEngine.schema
 {
 
-	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
+	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException;
 
 	/// <summary>
 	/// Component able to sample schema index.
 	/// </summary>
-	public interface IndexSampler : System.IDisposable
+	public interface IIndexSampler : System.IDisposable
 	{
 
 		 /// <summary>
@@ -34,7 +34,7 @@ namespace Neo4Net.Kernel.Api.StorageEngine.schema
 		 /// <returns> the index sampling result </returns>
 		 /// <exception cref="IndexNotFoundKernelException"> if the index is dropped while sampling </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: IndexSample sampleIndex() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
+//ORIGINAL LINE: IndexSample sampleIndex() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException;
 		 IndexSample SampleIndex();
 
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:

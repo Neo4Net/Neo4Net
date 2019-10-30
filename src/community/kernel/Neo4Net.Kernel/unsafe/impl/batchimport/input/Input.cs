@@ -27,7 +27,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input
 	/// <summary>
 	/// Unifies all data input given to a <seealso cref="BatchImporter"/> to allow for more coherent implementations.
 	/// </summary>
-	public interface Input
+	public interface IInput
 	{
 
 		 /// <summary>
@@ -60,7 +60,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input
 		 Input_Estimates CalculateEstimates( System.Func<Value[], int> valueSizeCalculator );
 	}
 
-	 public interface Input_Estimates
+	 public interface IInput_Estimates
 	 {
 		  /// <returns> estimated number of nodes for the entire input. </returns>
 		  long NumberOfNodes();

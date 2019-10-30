@@ -23,7 +23,7 @@ using System.Text;
 namespace Neo4Net.@unsafe.Impl.Batchimport.staging
 {
 
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using DetailLevel = Neo4Net.@unsafe.Impl.Batchimport.stats.DetailLevel;
 	using Keys = Neo4Net.@unsafe.Impl.Batchimport.stats.Keys;
 	using StatsProvider = Neo4Net.@unsafe.Impl.Batchimport.stats.StatsProvider;

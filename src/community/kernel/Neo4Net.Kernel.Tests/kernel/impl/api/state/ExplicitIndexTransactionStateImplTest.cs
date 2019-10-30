@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 
 	using Node = Neo4Net.GraphDb.Node;
 	using Relationship = Neo4Net.GraphDb.Relationship;
-	using IndexManager = Neo4Net.GraphDb.index.IndexManager;
+	using IndexManager = Neo4Net.GraphDb.Index.IndexManager;
 	using IndexCommand = Neo4Net.Kernel.impl.index.IndexCommand;
 	using IndexConfigStore = Neo4Net.Kernel.impl.index.IndexConfigStore;
 	using IndexDefineCommand = Neo4Net.Kernel.impl.index.IndexDefineCommand;
@@ -59,7 +59,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 
 	public class ExplicitIndexTransactionStateImplTest
 	{
-		 private readonly IDictionary<string, string> _config = singletonMap( Neo4Net.GraphDb.index.IndexManager_Fields.PROVIDER, "test" );
+		 private readonly IDictionary<string, string> _config = singletonMap( Neo4Net.GraphDb.Index.IndexManager_Fields.PROVIDER, "test" );
 		 private readonly IndexImplementation _provider = mock( typeof( IndexImplementation ) );
 		 private IndexConfigStore _indexConfigStore;
 

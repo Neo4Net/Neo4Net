@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.Impl.Api
 	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
 	using Resource = Neo4Net.GraphDb.Resource;
 	using Neo4Net.GraphDb;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using NamedToken = Neo4Net.Kernel.Api.Internal.NamedToken;
 	using SchemaReadCore = Neo4Net.Kernel.Api.Internal.SchemaReadCore;
 	using TokenRead = Neo4Net.Kernel.Api.Internal.TokenRead;

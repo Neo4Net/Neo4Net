@@ -36,9 +36,9 @@ namespace Neo4Net.Kernel.api.impl.labelscan
 	using PrimitiveLongCollections = Neo4Net.Collections.PrimitiveLongCollections;
 	using Neo4Net.GraphDb;
 	using Exceptions = Neo4Net.Helpers.Exceptions;
-	using Neo4Net.Helpers.Collections;
-	using Iterators = Neo4Net.Helpers.Collections.Iterators;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
+	using Iterators = Neo4Net.Collections.Helpers.Iterators;
+	using Neo4Net.Collections.Helpers;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using AllEntriesLabelScanReader = Neo4Net.Kernel.api.labelscan.AllEntriesLabelScanReader;

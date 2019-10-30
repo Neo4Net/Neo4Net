@@ -26,9 +26,9 @@ namespace Neo4Net.Kernel.Api.StorageEngine
 	using PrimitiveLongResourceIterator = Neo4Net.Collections.PrimitiveLongResourceIterator;
 	using IIndexReference = Neo4Net.Kernel.Api.Internal.IIndexReference;
 	using IEntityNotFoundException = Neo4Net.Kernel.Api.Internal.Exceptions.EntityNotFoundException;
-	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
-	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
-	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor;
+	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
+	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor;
 	using Register_DoubleLongRegister = Neo4Net.Register.Register_DoubleLongRegister;
 	using CapableIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.CapableIndexDescriptor;
 	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
@@ -148,7 +148,7 @@ namespace Neo4Net.Kernel.Api.StorageEngine
 		 /// <returns> <seealso cref="IndexReference"/> for index. </returns>
 		 /// <exception cref="IndexNotFoundKernelException"> if index not found. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.Neo4Net.Kernel.Api.Internal.IndexReference indexReference(org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor descriptor) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
+//ORIGINAL LINE: org.Neo4Net.Kernel.Api.Internal.IndexReference indexReference(org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor descriptor) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException;
 		 IIndexReference IndexReference( IndexDescriptor descriptor );
 
 		 /// <summary>

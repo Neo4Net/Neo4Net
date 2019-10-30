@@ -24,14 +24,14 @@ namespace Neo4Net.Kernel.Api.StorageEngine.schema
 	using Resource = Neo4Net.GraphDb.Resource;
 	using IndexOrder = Neo4Net.Kernel.Api.Internal.IndexOrder;
 	using IndexQuery = Neo4Net.Kernel.Api.Internal.IndexQuery;
-	using IndexNotApplicableKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotApplicableKernelException;
+	using IndexNotApplicableKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotApplicableKernelException;
 	using Value = Neo4Net.Values.Storable.Value;
 
 	/// <summary>
 	/// Reader for an index. Must honor repeatable reads, which means that if a lookup is executed multiple times the
 	/// same result set must be returned.
 	/// </summary>
-	public interface IndexReader : Resource
+	public interface IIndexReader : Resource
 	{
 		 /// <param name="nodeId"> node id to match. </param>
 		 /// <param name="propertyKeyIds"> the property key ids that correspond to each of the property values. </param>
@@ -47,7 +47,7 @@ namespace Neo4Net.Kernel.Api.StorageEngine.schema
 		 /// <param name="predicates"> the predicates to query for. </param>
 		 /// <returns> the matching IEntity IDs. </returns>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.Neo4Net.collection.PrimitiveLongResourceIterator query(org.Neo4Net.Kernel.Api.Internal.IndexQuery... predicates) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotApplicableKernelException;
+//ORIGINAL LINE: org.Neo4Net.collection.PrimitiveLongResourceIterator query(org.Neo4Net.Kernel.Api.Internal.IndexQuery... predicates) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotApplicableKernelException;
 		 PrimitiveLongResourceIterator Query( params IndexQuery[] predicates );
 
 		 /// <summary>
@@ -56,7 +56,7 @@ namespace Neo4Net.Kernel.Api.StorageEngine.schema
 		 /// <param name="needsValues"> if the index should fetch property values together with node ids for index queries </param>
 		 /// <param name="query"> the query so serve. </param>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void query(IndexProgressor_NodeValueClient client, org.Neo4Net.Kernel.Api.Internal.IndexOrder indexOrder, boolean needsValues, org.Neo4Net.Kernel.Api.Internal.IndexQuery... query) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotApplicableKernelException;
+//ORIGINAL LINE: void query(IndexProgressor_NodeValueClient client, org.Neo4Net.Kernel.Api.Internal.IndexOrder indexOrder, boolean needsValues, org.Neo4Net.Kernel.Api.Internal.IndexQuery... query) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotApplicableKernelException;
 		 void Query( IndexProgressor_NodeValueClient client, IndexOrder indexOrder, bool needsValues, params IndexQuery[] query );
 
 		 /// <param name="predicates"> query to determine whether or not index has full value precision for. </param>
@@ -131,14 +131,14 @@ namespace Neo4Net.Kernel.Api.StorageEngine.schema
 		  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.collection.PrimitiveLongResourceIterator query(org.Neo4Net.Kernel.Api.Internal.IndexQuery... predicates) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotApplicableKernelException
+//ORIGINAL LINE: public org.Neo4Net.collection.PrimitiveLongResourceIterator query(org.Neo4Net.Kernel.Api.Internal.IndexQuery... predicates) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotApplicableKernelException
 		  public override PrimitiveLongResourceIterator Query( params IndexQuery[] predicates )
 		  {
 				return null;
 		  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void query(IndexProgressor_NodeValueClient client, org.Neo4Net.Kernel.Api.Internal.IndexOrder indexOrder, boolean needsValues, org.Neo4Net.Kernel.Api.Internal.IndexQuery... query) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotApplicableKernelException
+//ORIGINAL LINE: public void query(IndexProgressor_NodeValueClient client, org.Neo4Net.Kernel.Api.Internal.IndexOrder indexOrder, boolean needsValues, org.Neo4Net.Kernel.Api.Internal.IndexQuery... query) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotApplicableKernelException
 		  public override void Query( IndexProgressor_NodeValueClient client, IndexOrder indexOrder, bool needsValues, params IndexQuery[] query )
 		  {
 		  }

@@ -34,11 +34,11 @@ namespace Neo4Net.Kernel.Impl.Api.constraints
 	using Transaction = Neo4Net.Kernel.Api.Internal.Transaction;
 	using InvalidTransactionTypeKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.InvalidTransactionTypeKernelException;
 	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
-	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
-	using SchemaKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.SchemaKernelException;
-	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor;
-	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.LabelSchemaDescriptor;
-	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
+	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException;
+	using SchemaKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.SchemaKernelException;
+	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.Schema.IndexProviderDescriptor;
+	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.LabelSchemaDescriptor;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
 	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using IndexEntryConflictException = Neo4Net.Kernel.Api.Exceptions.index.IndexEntryConflictException;
@@ -344,7 +344,7 @@ namespace Neo4Net.Kernel.Impl.Api.constraints
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void logMessagesAboutConstraintCreation() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.SchemaKernelException, org.Neo4Net.kernel.api.exceptions.schema.UniquePropertyValueValidationException, org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException, org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: @Test public void logMessagesAboutConstraintCreation() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.SchemaKernelException, org.Neo4Net.kernel.api.exceptions.schema.UniquePropertyValueValidationException, org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException, org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void LogMessagesAboutConstraintCreation()
 		 {

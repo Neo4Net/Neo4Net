@@ -41,8 +41,8 @@ namespace Neo4Net.Bolt
 	using Node = Neo4Net.GraphDb.Node;
 	using Result = Neo4Net.GraphDb.Result;
 	using Neo4NetRule = Neo4Net.Harness.junit.Neo4NetRule;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
-	using Iterators = Neo4Net.Helpers.Collections.Iterators;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
+	using Iterators = Neo4Net.Collections.Helpers.Iterators;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using Settings = Neo4Net.Kernel.configuration.Settings;

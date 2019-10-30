@@ -22,7 +22,7 @@
 namespace Neo4Net.Io.compress
 {
 
-	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
+	using MapUtil = Neo4Net.Collections.Helpers.MapUtil;
 	using FileHandle = Neo4Net.Io.fs.FileHandle;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 

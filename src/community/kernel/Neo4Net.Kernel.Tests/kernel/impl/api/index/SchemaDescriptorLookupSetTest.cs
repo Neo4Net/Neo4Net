@@ -30,8 +30,8 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using MethodSource = org.junit.jupiter.@params.provider.MethodSource;
 
 
-	using Iterators = Neo4Net.Helpers.Collections.Iterators;
-	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
+	using Iterators = Neo4Net.Collections.Helpers.Iterators;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
 	using MultiTokenSchemaDescriptor = Neo4Net.Kernel.api.schema.MultiTokenSchemaDescriptor;
 	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
 	using EntityType = Neo4Net.Kernel.Api.StorageEngine.EntityType;
@@ -46,7 +46,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.helpers.collection.Iterators.asSet;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor_PropertySchemaType.COMPLETE_ALL_TOKENS;
+//	import static org.Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor_PropertySchemaType.COMPLETE_ALL_TOKENS;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @ExtendWith(RandomExtension.class) class SchemaDescriptorLookupSetTest
@@ -381,7 +381,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 				  innerEnumValue = innerEnum;
 			  }
 
-			  internal abstract Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor descriptor( int IEntityTokenId, params int[] propertyKeyIds );
+			  internal abstract Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor descriptor( int IEntityTokenId, params int[] propertyKeyIds );
 
 			 public static IList<DescriptorFactory> values()
 			 {

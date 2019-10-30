@@ -29,7 +29,7 @@ namespace Neo4Net.Kernel.Api.Index
 
 	using IndexOrder = Neo4Net.Kernel.Api.Internal.IndexOrder;
 	using IndexQuery = Neo4Net.Kernel.Api.Internal.IndexQuery;
-	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
 	using TestIndexDescriptorFactory = Neo4Net.Kernel.api.schema.index.TestIndexDescriptorFactory;
 	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
 	using Value = Neo4Net.Values.Storable.Value;

@@ -23,7 +23,7 @@ using System.Collections.Generic;
 namespace Neo4Net.Kernel.Impl.Api
 {
 
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using Neo4Net.Kernel.api;
 	using TransactionHook_Outcome = Neo4Net.Kernel.api.TransactionHook_Outcome;

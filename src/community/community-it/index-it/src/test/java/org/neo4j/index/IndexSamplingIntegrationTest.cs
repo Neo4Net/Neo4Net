@@ -31,7 +31,7 @@ namespace Neo4Net.Index
 	using IndexReference = Neo4Net.Kernel.Api.Internal.IndexReference;
 	using Kernel = Neo4Net.Kernel.Api.Internal.Kernel;
 	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
-	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
+	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException;
 	using FileUtils = Neo4Net.Io.fs.FileUtils;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
 	using Register_DoubleLongRegister = Neo4Net.Register.Register_DoubleLongRegister;
@@ -205,7 +205,7 @@ namespace Neo4Net.Index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.register.Register_DoubleLongRegister fetchIndexSamplingValues(org.Neo4Net.graphdb.GraphDatabaseService db) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException, org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
+//ORIGINAL LINE: private org.Neo4Net.register.Register_DoubleLongRegister fetchIndexSamplingValues(org.Neo4Net.graphdb.GraphDatabaseService db) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException, org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 private Register_DoubleLongRegister FetchIndexSamplingValues( IGraphDatabaseService db )
 		 {
 			  try
@@ -230,7 +230,7 @@ namespace Neo4Net.Index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.register.Register_DoubleLongRegister fetchIndexSizeValues(org.Neo4Net.graphdb.GraphDatabaseService db) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException, org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
+//ORIGINAL LINE: private org.Neo4Net.register.Register_DoubleLongRegister fetchIndexSizeValues(org.Neo4Net.graphdb.GraphDatabaseService db) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException, org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 private Register_DoubleLongRegister FetchIndexSizeValues( IGraphDatabaseService db )
 		 {
 			  try

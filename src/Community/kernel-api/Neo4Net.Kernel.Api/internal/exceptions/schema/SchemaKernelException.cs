@@ -19,9 +19,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Kernel.Api.Internal.Exceptions.schema
+namespace Neo4Net.Kernel.Api.Internal.Exceptions.Schema
 {
-	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 
 	/// <summary>

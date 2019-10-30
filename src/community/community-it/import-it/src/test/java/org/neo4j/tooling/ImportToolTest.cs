@@ -37,9 +37,9 @@ namespace Neo4Net.Tooling
 	using Neo4Net.GraphDb;
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
-	using Iterators = Neo4Net.Helpers.Collections.Iterators;
-	using Neo4Net.Helpers.Collections;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
+	using Iterators = Neo4Net.Collections.Helpers.Iterators;
+	using Neo4Net.Collections.Helpers;
 	using FileUtils = Neo4Net.Io.fs.FileUtils;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using RecordStorageEngine = Neo4Net.Kernel.impl.storageengine.impl.recordstorage.RecordStorageEngine;
@@ -100,7 +100,7 @@ namespace Neo4Net.Tooling
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.fs.FileUtils.writeToFile;
+//	import static org.Neo4Net.io.fs.FileUtils.WriteToFile;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.tooling.ImportTool.MULTI_FILE_DELIMITER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -1799,7 +1799,7 @@ namespace Neo4Net.Tooling
 			  string nodesEscapedSpaces = EscapePath( NodeData( true, config, nodeIds, @true ).AbsolutePath );
 			  string relationshipsEscapedSpaced = EscapePath( RelationshipData( true, config, nodeIds, @true, true ).AbsolutePath );
 			  string arguments = format( "--into %s%n" + "--nodes %s --relationships %s", EscapePath( DbRule.DatabaseDirAbsolutePath ), nodesEscapedSpaces, relationshipsEscapedSpaced );
-			  writeToFile( argumentFile, arguments, false );
+			  WriteToFile( argumentFile, arguments, false );
 
 			  // when
 			  ImportTool( "-f", argumentFile.AbsolutePath );
@@ -1818,7 +1818,7 @@ namespace Neo4Net.Tooling
 			  Configuration config = Configuration.COMMAS;
 			  File argumentFile = File( "args" );
 			  string arguments = format( "--into %s%n" + "--nodes %s --relationships %s", DbRule.DatabaseDirAbsolutePath, NodeData( true, config, nodeIds, @true ).AbsolutePath, RelationshipData( true, config, nodeIds, @true, true ).AbsolutePath );
-			  writeToFile( argumentFile, arguments, false );
+			  WriteToFile( argumentFile, arguments, false );
 
 			  try
 			  {

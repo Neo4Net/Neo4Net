@@ -33,7 +33,7 @@ namespace Neo4Net.Harness
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using MyUnmanagedExtension = Neo4Net.Harness.extensionpackage.MyUnmanagedExtension;
 	using Neo4NetRule = Neo4Net.Harness.junit.Neo4NetRule;
-	using Iterators = Neo4Net.Helpers.Collections.Iterators;
+	using Iterators = Neo4Net.Collections.Helpers.Iterators;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using LegacySslPolicyConfig = Neo4Net.Kernel.configuration.ssl.LegacySslPolicyConfig;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;

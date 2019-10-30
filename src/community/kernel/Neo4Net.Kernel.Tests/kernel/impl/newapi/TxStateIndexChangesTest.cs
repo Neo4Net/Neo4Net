@@ -36,7 +36,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 
 	using IndexOrder = Neo4Net.Kernel.Api.Internal.IndexOrder;
 	using IndexQuery = Neo4Net.Kernel.Api.Internal.IndexQuery;
-	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
 	using TestIndexDescriptorFactory = Neo4Net.Kernel.api.schema.index.TestIndexDescriptorFactory;
 	using AddedAndRemoved = Neo4Net.Kernel.Impl.Newapi.TxStateIndexChanges.AddedAndRemoved;
 	using AddedWithValuesAndRemoved = Neo4Net.Kernel.Impl.Newapi.TxStateIndexChanges.AddedWithValuesAndRemoved;

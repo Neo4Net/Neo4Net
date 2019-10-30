@@ -27,7 +27,7 @@ namespace Neo4Net.Server.rest.repr
 	using Coordinate = Neo4Net.GraphDb.Spatial.Coordinate;
 	using Geometry = Neo4Net.GraphDb.Spatial.Geometry;
 	using Point = Neo4Net.GraphDb.Spatial.Point;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using Neo4Net.Server.helpers;
 
 	public class ValueRepresentation : Representation

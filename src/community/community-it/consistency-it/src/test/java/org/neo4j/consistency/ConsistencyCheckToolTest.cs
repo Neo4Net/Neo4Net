@@ -34,7 +34,7 @@ namespace Neo4Net.Consistency
 	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
+	using MapUtil = Neo4Net.Collections.Helpers.MapUtil;
 	using ProgressMonitorFactory = Neo4Net.Helpers.progress.ProgressMonitorFactory;
 	using DefaultFileSystemAbstraction = Neo4Net.Io.fs.DefaultFileSystemAbstraction;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;

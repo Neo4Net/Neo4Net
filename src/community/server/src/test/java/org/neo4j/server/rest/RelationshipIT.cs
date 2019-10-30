@@ -31,7 +31,7 @@ namespace Neo4Net.Server.rest
 	using Neo4Net.GraphDb;
 	using Neo4Net.GraphDb;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
+	using MapUtil = Neo4Net.Collections.Helpers.MapUtil;
 	using Documented = Neo4Net.Kernel.Impl.Annotations.Documented;
 	using FunctionalTestHelper = Neo4Net.Server.helpers.FunctionalTestHelper;
 	using JsonHelper = Neo4Net.Server.rest.domain.JsonHelper;

@@ -32,8 +32,8 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using ObjectLongHashMap = org.eclipse.collections.impl.map.mutable.primitive.ObjectLongHashMap;
 
 
-	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
-	using SchemaDescriptorSupplier = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptorSupplier;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
+	using SchemaDescriptorSupplier = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptorSupplier;
 	using IndexBackedConstraintDescriptor = Neo4Net.Kernel.api.schema.constraints.IndexBackedConstraintDescriptor;
 	using ConstraintRule = Neo4Net.Kernel.Impl.Store.Records.ConstraintRule;
 	using EntityType = Neo4Net.Kernel.Api.StorageEngine.EntityType;
@@ -220,7 +220,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 /// <param name="sortedProperties"> set of properties </param>
 		 /// <param name="propertyListIsComplete"> whether or not the property list is complete. For CREATE/DELETE the list is complete, but may not be for UPDATEs. </param>
 		 /// <returns> set of SchemaDescriptors describing the potentially affected indexes </returns>
-		 private ISet<T> GetRelatedDescriptors<T>( SchemaDescriptorLookupSet<T> set, long[] changedLabels, long[] unchangedLabels, int[] sortedProperties, bool propertyListIsComplete ) where T : Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptorSupplier
+		 private ISet<T> GetRelatedDescriptors<T>( SchemaDescriptorLookupSet<T> set, long[] changedLabels, long[] unchangedLabels, int[] sortedProperties, bool propertyListIsComplete ) where T : Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptorSupplier
 		 {
 			  if ( set.Empty )
 			  {
@@ -308,7 +308,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 private static MutableObjectLongMap<SchemaDescriptor> IndexIdsByDescriptor( LongObjectMap<IndexProxy> indexesById )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.eclipse.collections.api.map.primitive.MutableObjectLongMap<org.Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor> map = new org.eclipse.collections.impl.map.mutable.primitive.ObjectLongHashMap<>(indexesById.size());
+//ORIGINAL LINE: final org.eclipse.collections.api.map.primitive.MutableObjectLongMap<org.Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor> map = new org.eclipse.collections.impl.map.mutable.primitive.ObjectLongHashMap<>(indexesById.size());
 			  MutableObjectLongMap<SchemaDescriptor> map = new ObjectLongHashMap<SchemaDescriptor>( indexesById.size() );
 			  indexesById.forEachKeyValue( ( id, indexProxy ) => map.put( indexProxy.Descriptor.schema(), id ) );
 			  return map;

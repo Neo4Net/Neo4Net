@@ -30,7 +30,7 @@ namespace Neo4Net.GraphAlgo.Utils
 	using Node = Neo4Net.GraphDb.Node;
 	using Path = Neo4Net.GraphDb.Path;
 	using Relationship = Neo4Net.GraphDb.Relationship;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using EmbeddedProxySPI = Neo4Net.Kernel.impl.core.EmbeddedProxySPI;
 	using NodeProxy = Neo4Net.Kernel.impl.core.NodeProxy;
 	using RelationshipProxy = Neo4Net.Kernel.impl.core.RelationshipProxy;

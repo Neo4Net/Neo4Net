@@ -44,7 +44,7 @@ namespace Migration
 	using SchemaRead = Neo4Net.Kernel.Api.Internal.SchemaRead;
 	using TokenRead = Neo4Net.Kernel.Api.Internal.TokenRead;
 	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
-	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor;
+	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.Schema.IndexProviderDescriptor;
 	using ZipUtils = Neo4Net.Io.compress.ZipUtils;
 	using DefaultFileSystemAbstraction = Neo4Net.Io.fs.DefaultFileSystemAbstraction;
 	using FileUtils = Neo4Net.Io.fs.FileUtils;
@@ -126,7 +126,7 @@ namespace Migration
 			  internal Private readonly;
 			  internal Private readonly;
 
-			  internal Provider( string name, InnerEnum innerEnum, string labelName, Neo4Net.GraphDb.factory.GraphDatabaseSettings.SchemaIndex setting, Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor descriptor )
+			  internal Provider( string name, InnerEnum innerEnum, string labelName, Neo4Net.GraphDb.factory.GraphDatabaseSettings.SchemaIndex setting, Neo4Net.Kernel.Api.Internal.Schema.IndexProviderDescriptor descriptor )
 			  {
 					this._label = Label.label( labelName );
 					this._setting = setting;
@@ -338,7 +338,7 @@ namespace Migration
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void verifyExpectedProvider(org.Neo4Net.kernel.internal.GraphDatabaseAPI db, org.Neo4Net.graphdb.Label label, org.Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor expectedDescriptor) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
+//ORIGINAL LINE: private static void verifyExpectedProvider(org.Neo4Net.kernel.internal.GraphDatabaseAPI db, org.Neo4Net.graphdb.Label label, org.Neo4Net.Kernel.Api.Internal.Schema.IndexProviderDescriptor expectedDescriptor) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 private static void VerifyExpectedProvider( GraphDatabaseAPI db, Label label, IndexProviderDescriptor expectedDescriptor )
 		 {
 			  using ( Transaction tx = Db.beginTx(), KernelTransaction kernelTransaction = Db.DependencyResolver.resolveDependency(typeof(ThreadToStatementContextBridge)).getKernelTransactionBoundToThisThread(true) )

@@ -26,7 +26,7 @@ namespace Neo4Net.causalclustering.discovery.procedures
 
 	using RaftMachine = Neo4Net.causalclustering.core.consensus.RaftMachine;
 	using Neo4Net.Collections;
-	using Iterators = Neo4Net.Helpers.Collections.Iterators;
+	using Iterators = Neo4Net.Collections.Helpers.Iterators;
 	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:

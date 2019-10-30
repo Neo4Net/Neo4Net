@@ -104,7 +104,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 //ORIGINAL LINE: protected org.Neo4Net.Kernel.Api.Internal.TokenWrite tokenWriteInNewTransaction() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 protected internal virtual TokenWrite TokenWriteInNewTransaction()
 		 {
-			  _transaction = Kernel.BeginTransaction( @implicit, AnonymousContext.writeToken() );
+			  _transaction = Kernel.BeginTransaction( @implicit, AnonymousContext.WriteToken() );
 			  return _transaction.tokenWrite();
 		 }
 

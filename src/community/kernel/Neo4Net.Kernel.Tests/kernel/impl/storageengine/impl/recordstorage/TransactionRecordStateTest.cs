@@ -35,9 +35,9 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 
 	using Direction = Neo4Net.GraphDb.Direction;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
-	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
 	using Neo4Net.Kernel.Api.Index;
 	using BatchTransactionApplier = Neo4Net.Kernel.Impl.Api.BatchTransactionApplier;
 	using CommandVisitor = Neo4Net.Kernel.Impl.Api.CommandVisitor;
@@ -1379,7 +1379,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void writeToChannel(org.Neo4Net.kernel.impl.transaction.TransactionRepresentation transaction, org.Neo4Net.kernel.impl.transaction.log.FlushableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: private void WriteToChannel(org.Neo4Net.kernel.impl.transaction.TransactionRepresentation transaction, org.Neo4Net.kernel.impl.transaction.log.FlushableChannel channel) throws java.io.IOException
 		 private void WriteToChannel( TransactionRepresentation transaction, FlushableChannel channel )
 		 {
 			  TransactionLogWriter writer = new TransactionLogWriter( new LogEntryWriter( channel ) );

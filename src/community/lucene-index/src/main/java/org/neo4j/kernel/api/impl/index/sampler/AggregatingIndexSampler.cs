@@ -23,7 +23,7 @@ using System.Collections.Generic;
 namespace Neo4Net.Kernel.Api.Impl.Index.sampler
 {
 
-	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
+	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException;
 	using IOUtils = Neo4Net.Io.IOUtils;
 	using IndexSample = Neo4Net.Kernel.Api.StorageEngine.schema.IndexSample;
 	using IndexSampler = Neo4Net.Kernel.Api.StorageEngine.schema.IndexSampler;

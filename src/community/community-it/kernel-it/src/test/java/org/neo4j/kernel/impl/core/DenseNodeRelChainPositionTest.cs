@@ -30,7 +30,7 @@ namespace Neo4Net.Kernel.impl.core
 	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using DatabaseRule = Neo4Net.Test.rule.DatabaseRule;
 	using ImpermanentDatabaseRule = Neo4Net.Test.rule.ImpermanentDatabaseRule;
 

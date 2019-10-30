@@ -60,7 +60,7 @@ namespace Neo4Net.GraphDb.impl
 
          public virtual StandardExpansion<T> Including(IRelationshipType type)
          {
-            return CreateNew(_expander.add(type));
+            return CreateNew(_expander.Add(type));
          }
 
          public virtual StandardExpansion<T> Including(IRelationshipType type, Direction direction)
@@ -84,7 +84,7 @@ namespace Neo4Net.GraphDb.impl
          //ORIGINAL LINE: public StandardExpansion<T> filterRelationships(System.Predicate<? super org.Neo4Net.graphdb.Relationship> filter)
          public virtual StandardExpansion<T> FilterRelationships<T1>(System.Predicate<T1> filter)
          {
-            return CreateNew(_expander.addRelationshipFilter(filter));
+            return CreateNew(_expander.AddRelationshipFilter(filter));
          }
 
          public virtual T Single

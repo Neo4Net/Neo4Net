@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 
 	using PrimitiveLongResourceIterator = Neo4Net.Collections.PrimitiveLongResourceIterator;
 	using IndexQuery = Neo4Net.Kernel.Api.Internal.IndexQuery;
-	using IndexNotApplicableKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotApplicableKernelException;
+	using IndexNotApplicableKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotApplicableKernelException;
 	using IndexEntryConflictException = Neo4Net.Kernel.Api.Exceptions.index.IndexEntryConflictException;
 	using Neo4Net.Kernel.Api.Index;
 	using IndexUpdater = Neo4Net.Kernel.Api.Index.IndexUpdater;

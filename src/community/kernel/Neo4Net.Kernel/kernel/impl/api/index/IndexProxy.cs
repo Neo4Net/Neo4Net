@@ -22,7 +22,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 
 	using Neo4Net.GraphDb;
 	using InternalIndexState = Neo4Net.Kernel.Api.Internal.InternalIndexState;
-	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
+	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException;
 	using IOLimiter = Neo4Net.Io.pagecache.IOLimiter;
 	using IndexActivationFailedKernelException = Neo4Net.Kernel.Api.Exceptions.index.IndexActivationFailedKernelException;
 	using IndexEntryConflictException = Neo4Net.Kernel.Api.Exceptions.index.IndexEntryConflictException;
@@ -55,7 +55,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	/// </ul>
 	/// </summary>
 	/// <seealso cref= ContractCheckingIndexProxy </seealso>
-	public interface IndexProxy : IndexConfigProvider
+	public interface IIndexProxy : IndexConfigProvider
 	{
 		 void Start();
 
@@ -95,7 +95,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 
 		 /// <exception cref="IndexNotFoundKernelException"> if the index isn't online yet. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader newReader() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
+//ORIGINAL LINE: org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader newReader() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException;
 		 IndexReader NewReader();
 
 		 /// <param name="time"> time to wait maximum. A value of 0 means indefinite wait. </param>

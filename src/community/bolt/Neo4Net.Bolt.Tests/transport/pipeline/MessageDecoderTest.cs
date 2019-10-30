@@ -49,7 +49,7 @@ namespace Neo4Net.Bolt.transport.pipeline
 	using RunMessage = Neo4Net.Bolt.v1.messaging.request.RunMessage;
 	using PackedOutputArray = Neo4Net.Bolt.v1.packstream.PackedOutputArray;
 	using Neo4NetPackV2 = Neo4Net.Bolt.v2.messaging.Neo4NetPackV2;
-	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
+	using MapUtil = Neo4Net.Collections.Helpers.MapUtil;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using ValueUtils = Neo4Net.Kernel.impl.util.ValueUtils;
 	using Log = Neo4Net.Logging.Log;

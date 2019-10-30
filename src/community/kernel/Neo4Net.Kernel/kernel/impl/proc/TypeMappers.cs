@@ -23,7 +23,7 @@ using System.Collections.Generic;
 namespace Neo4Net.Kernel.impl.proc
 {
 
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
 	using DefaultParameterValue = Neo4Net.Kernel.Api.Internal.procs.DefaultParameterValue;
 	using Neo4NetTypes = Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes;

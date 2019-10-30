@@ -396,7 +396,7 @@ namespace Neo4Net.Index.Internal.gbptree
 			  void Corrupt( PageCursor pageCursor, Layout<KEY, VALUE> layout, TreeNode<KEY, VALUE> node, TreeState treeState );
 		 }
 
-		 internal interface IndexCorruption<KEY, VALUE> : GBPTreeUnsafe<KEY, VALUE>
+		 internal interface IIndexCorruption<KEY, VALUE> : GBPTreeUnsafe<KEY, VALUE>
 		 {
 		 }
 	}

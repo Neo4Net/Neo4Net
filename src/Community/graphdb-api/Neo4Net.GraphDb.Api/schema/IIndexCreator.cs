@@ -59,6 +59,6 @@ namespace Neo4Net.GraphDb.Schema
       /// <returns> the created <seealso cref="IIndexDefinition index"/>. </returns>
       /// <exception cref="ConstraintViolationException"> if creating this index would violate one or more constraints. </exception>
 
-      IIIndexDefinition Create();
+      IIndexDefinition Create();
    }
 }

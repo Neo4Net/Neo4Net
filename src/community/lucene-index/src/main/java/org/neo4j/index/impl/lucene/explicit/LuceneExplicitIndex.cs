@@ -41,8 +41,8 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 	using Node = Neo4Net.GraphDb.Node;
 	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
 	using Relationship = Neo4Net.GraphDb.Relationship;
-	using Neo4Net.GraphDb.index;
-	using Neo4Net.GraphDb.index;
+	using Neo4Net.GraphDb.Index;
+	using Neo4Net.GraphDb.Index;
 	using QueryContext = Neo4Net.Index.lucene.QueryContext;
 	using ValueContext = Neo4Net.Index.lucene.ValueContext;
 	using ExplicitIndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
@@ -338,7 +338,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.graphdb.index.IndexHits<org.apache.lucene.document.Document> search(IndexReference searcherRef, org.apache.lucene.search.IndexSearcher fulltextTransactionStateSearcher, org.apache.lucene.search.Query query, org.Neo4Net.index.lucene.QueryContext additionalParametersOrNull, java.util.Collection<EntityId> removed) throws java.io.IOException
+//ORIGINAL LINE: private org.Neo4Net.GraphDb.Index.IndexHits<org.apache.lucene.document.Document> search(IndexReference searcherRef, org.apache.lucene.search.IndexSearcher fulltextTransactionStateSearcher, org.apache.lucene.search.Query query, org.Neo4Net.index.lucene.QueryContext additionalParametersOrNull, java.util.Collection<EntityId> removed) throws java.io.IOException
 		 private IndexHits<Document> Search( IndexReference searcherRef, IndexSearcher fulltextTransactionStateSearcher, Query query, QueryContext additionalParametersOrNull, ICollection<EntityId> removed )
 		 {
 			  if ( fulltextTransactionStateSearcher != null && removed.Count > 0 )

@@ -25,7 +25,7 @@ using System.Text;
 namespace Neo4Net.Helpers
 {
 
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using Neo4Net.Kernel.impl.util;
 
 	/// <summary>

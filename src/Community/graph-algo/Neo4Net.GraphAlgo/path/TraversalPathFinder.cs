@@ -26,8 +26,8 @@ namespace Neo4Net.GraphAlgo.Path
 	using Path = Neo4Net.GraphDb.Path;
 	using TraversalMetadata = Neo4Net.GraphDb.Traversal.TraversalMetadata;
 	using Traverser = Neo4Net.GraphDb.Traversal.Traverser;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
-	using Neo4Net.Helpers.Collections;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
+	using Neo4Net.Collections.Helpers;
 
 	public abstract class TraversalPathFinder : PathFinder<Path>
 	{

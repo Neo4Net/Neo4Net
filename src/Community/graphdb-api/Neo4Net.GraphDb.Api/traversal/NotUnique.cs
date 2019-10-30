@@ -17,25 +17,24 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 namespace Neo4Net.GraphDb.Traversal
 {
+    internal class NotUnique : AbstractUniquenessFilter
+    {
+        internal NotUnique() : base(null)
+        {
+        }
 
-	internal class NotUnique : AbstractUniquenessFilter
-	{
-		 internal NotUnique() : base(null)
-		 {
-		 }
+        public override bool Check(ITraversalBranch source)
+        {
+            return true;
+        }
 
-		 public override bool Check( ITraversalBranch source )
-		 {
-			  return true;
-		 }
-
-		 public override bool CheckFull( IPath path )
-		 {
-			  // Where we have no uniqueness, everything is unique.
-			  return true;
-		 }
-	}
-
+        public override bool CheckFull(IPath path)
+        {
+            // Where we have no uniqueness, everything is unique.
+            return true;
+        }
+    }
 }

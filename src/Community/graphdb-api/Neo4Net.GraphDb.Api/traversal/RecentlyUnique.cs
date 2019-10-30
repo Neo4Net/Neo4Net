@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.GraphDb.Traversal
 {
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 
 	/// <summary>
 	/// Filters on items with a recency within limits of <seealso cref="DEFAULT_RECENT_SIZE"/>.
@@ -39,7 +39,7 @@ namespace Neo4Net.GraphDb.Traversal
 
 		 public override bool Check( ITraversalBranch branch )
 		 {
-			  long id = Type.getId( branch );
+			  long id = Type.GetId( branch );
 			  bool add = _recentlyVisited.get( id ) == null;
 			  if ( add )
 			  {

@@ -41,12 +41,12 @@ namespace Neo4Net.Kernel.impl.enterprise
 	using PropertyCursor = Neo4Net.Kernel.Api.Internal.PropertyCursor;
 	using Read = Neo4Net.Kernel.Api.Internal.Read;
 	using RelationshipScanCursor = Neo4Net.Kernel.Api.Internal.RelationshipScanCursor;
-	using ConstraintValidationException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.ConstraintValidationException;
-	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.LabelSchemaDescriptor;
-	using RelationTypeSchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.RelationTypeSchemaDescriptor;
-	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
-	using SchemaProcessor = Neo4Net.Kernel.Api.Internal.schema.SchemaProcessor;
-	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor;
+	using ConstraintValidationException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.ConstraintValidationException;
+	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.LabelSchemaDescriptor;
+	using RelationTypeSchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.RelationTypeSchemaDescriptor;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
+	using SchemaProcessor = Neo4Net.Kernel.Api.Internal.Schema.SchemaProcessor;
+	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor;
 	using NodePropertyExistenceException = Neo4Net.Kernel.Api.Exceptions.schema.NodePropertyExistenceException;
 	using RelationshipPropertyExistenceException = Neo4Net.Kernel.Api.Exceptions.schema.RelationshipPropertyExistenceException;
 	using StorageProperty = Neo4Net.Kernel.Api.StorageEngine.StorageProperty;
@@ -58,7 +58,7 @@ namespace Neo4Net.Kernel.impl.enterprise
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.collection.PrimitiveArrays.union;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.ConstraintValidationException.Phase.VALIDATION;
+//	import static org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.ConstraintValidationException.Phase.VALIDATION;
 
 	internal class PropertyExistenceEnforcer
 	{
@@ -193,7 +193,7 @@ namespace Neo4Net.Kernel.impl.enterprise
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void visitNodePropertyChanges(long id, java.util.Iterator<org.Neo4Net.Kernel.Api.StorageEngine.StorageProperty> added, java.util.Iterator<org.Neo4Net.Kernel.Api.StorageEngine.StorageProperty> changed, org.eclipse.collections.api.IntIterable removed) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.ConstraintValidationException
+//ORIGINAL LINE: public void visitNodePropertyChanges(long id, java.util.Iterator<org.Neo4Net.Kernel.Api.StorageEngine.StorageProperty> added, java.util.Iterator<org.Neo4Net.Kernel.Api.StorageEngine.StorageProperty> changed, org.eclipse.collections.api.IntIterable removed) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.ConstraintValidationException
 			  public override void VisitNodePropertyChanges( long id, IEnumerator<StorageProperty> added, IEnumerator<StorageProperty> changed, IntIterable removed )
 			  {
 					ValidateNode( id );
@@ -201,7 +201,7 @@ namespace Neo4Net.Kernel.impl.enterprise
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void visitNodeLabelChanges(long id, org.eclipse.collections.api.set.primitive.LongSet added, org.eclipse.collections.api.set.primitive.LongSet removed) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.ConstraintValidationException
+//ORIGINAL LINE: public void visitNodeLabelChanges(long id, org.eclipse.collections.api.set.primitive.LongSet added, org.eclipse.collections.api.set.primitive.LongSet removed) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.ConstraintValidationException
 			  public override void VisitNodeLabelChanges( long id, LongSet added, LongSet removed )
 			  {
 					ValidateNode( id );
@@ -209,7 +209,7 @@ namespace Neo4Net.Kernel.impl.enterprise
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void visitCreatedRelationship(long id, int type, long startNode, long endNode) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.ConstraintValidationException
+//ORIGINAL LINE: public void visitCreatedRelationship(long id, int type, long startNode, long endNode) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.ConstraintValidationException
 			  public override void VisitCreatedRelationship( long id, int type, long startNode, long endNode )
 			  {
 					ValidateRelationship( id );
@@ -217,7 +217,7 @@ namespace Neo4Net.Kernel.impl.enterprise
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void visitRelPropertyChanges(long id, java.util.Iterator<org.Neo4Net.Kernel.Api.StorageEngine.StorageProperty> added, java.util.Iterator<org.Neo4Net.Kernel.Api.StorageEngine.StorageProperty> changed, org.eclipse.collections.api.IntIterable removed) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.ConstraintValidationException
+//ORIGINAL LINE: public void visitRelPropertyChanges(long id, java.util.Iterator<org.Neo4Net.Kernel.Api.StorageEngine.StorageProperty> added, java.util.Iterator<org.Neo4Net.Kernel.Api.StorageEngine.StorageProperty> changed, org.eclipse.collections.api.IntIterable removed) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.ConstraintValidationException
 			  public override void VisitRelPropertyChanges( long id, IEnumerator<StorageProperty> added, IEnumerator<StorageProperty> changed, IntIterable removed )
 			  {
 					ValidateRelationship( id );

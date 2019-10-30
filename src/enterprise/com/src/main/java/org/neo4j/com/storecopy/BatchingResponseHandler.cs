@@ -27,7 +27,7 @@ namespace Neo4Net.com.storecopy
 
 	using Neo4Net.com;
 	using Handler = Neo4Net.com.Response.Handler;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using VersionContextSupplier = Neo4Net.Io.pagecache.tracing.cursor.context.VersionContextSupplier;
 	using TransactionQueue = Neo4Net.Kernel.Impl.Api.TransactionQueue;
 	using TransactionToApply = Neo4Net.Kernel.Impl.Api.TransactionToApply;

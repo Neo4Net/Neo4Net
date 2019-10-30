@@ -28,7 +28,7 @@ namespace Neo4Net.causalclustering.protocol.handshake
 {
 
 	using Neo4Net.causalclustering.protocol;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using Streams = Neo4Net.Stream.Streams;
 
 	public abstract class ProtocolRepository<U, T> where U : IComparable<U> where T : Neo4Net.causalclustering.protocol.Protocol<U>

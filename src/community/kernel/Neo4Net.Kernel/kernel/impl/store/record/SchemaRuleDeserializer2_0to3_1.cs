@@ -23,8 +23,8 @@ using System.Diagnostics;
 namespace Neo4Net.Kernel.Impl.Store.Records
 {
 
-	using MalformedSchemaRuleException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.MalformedSchemaRuleException;
-	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor;
+	using MalformedSchemaRuleException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.MalformedSchemaRuleException;
+	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.Schema.IndexProviderDescriptor;
 	using LabelSchemaDescriptor = Neo4Net.Kernel.api.schema.LabelSchemaDescriptor;
 	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
 	using ConstraintDescriptorFactory = Neo4Net.Kernel.api.schema.constraints.ConstraintDescriptorFactory;
@@ -56,7 +56,7 @@ namespace Neo4Net.Kernel.Impl.Store.Records
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static org.Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule deserialize(long id, int labelId, byte kindByte, ByteBuffer buffer) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.MalformedSchemaRuleException
+//ORIGINAL LINE: static org.Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule deserialize(long id, int labelId, byte kindByte, ByteBuffer buffer) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.MalformedSchemaRuleException
 		 internal static SchemaRule Deserialize( long id, int labelId, sbyte kindByte, ByteBuffer buffer )
 		 {
 			  SchemaRule_Kind kind = SchemaRule_Kind.forId( kindByte );

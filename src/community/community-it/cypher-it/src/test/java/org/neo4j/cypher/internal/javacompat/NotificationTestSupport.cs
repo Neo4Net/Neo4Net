@@ -35,7 +35,7 @@ namespace Neo4Net.Cypher.Internal.javacompat
 	using SeverityLevel = Neo4Net.GraphDb.SeverityLevel;
 	using NotificationCode = Neo4Net.GraphDb.impl.notification.NotificationCode;
 	using NotificationDetail = Neo4Net.GraphDb.impl.notification.NotificationDetail;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
 	using Procedure = Neo4Net.Procedure.Procedure;
 	using ImpermanentDatabaseRule = Neo4Net.Test.rule.ImpermanentDatabaseRule;

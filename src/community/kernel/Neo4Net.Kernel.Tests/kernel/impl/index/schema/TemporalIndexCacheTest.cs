@@ -26,7 +26,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using Test = org.junit.Test;
 
 
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using Race = Neo4Net.Test.Race;
 	using ValueGroup = Neo4Net.Values.Storable.ValueGroup;
 

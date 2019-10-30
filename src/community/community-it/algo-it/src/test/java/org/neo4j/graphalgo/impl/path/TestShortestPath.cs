@@ -39,7 +39,7 @@ namespace Neo4Net.GraphAlgo.Path
 	using Neo4Net.GraphDb;
 	using StandardExpander = Neo4Net.GraphDb.impl.StandardExpander;
 	using Neo4Net.GraphDb.Traversal;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static common.Neo4NetAlgoTestCase.MyRelTypes.R1;

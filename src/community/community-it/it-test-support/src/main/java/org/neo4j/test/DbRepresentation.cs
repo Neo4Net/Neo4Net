@@ -31,8 +31,8 @@ namespace Neo4Net.Test
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using TransactionFailureException = Neo4Net.GraphDb.TransactionFailureException;
 	using GraphDatabaseBuilder = Neo4Net.GraphDb.factory.GraphDatabaseBuilder;
-	using Neo4Net.GraphDb.index;
-	using Neo4Net.GraphDb.index;
+	using Neo4Net.GraphDb.Index;
+	using Neo4Net.GraphDb.Index;
 	using ConstraintDefinition = Neo4Net.GraphDb.Schema.ConstraintDefinition;
 	using IndexDefinition = Neo4Net.GraphDb.Schema.IndexDefinition;
 	using Config = Neo4Net.Kernel.configuration.Config;

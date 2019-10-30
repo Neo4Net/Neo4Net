@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Kernel.api.labelscan
 {
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 
 	/// <summary>
 	/// Iterates over all label data in a label index.

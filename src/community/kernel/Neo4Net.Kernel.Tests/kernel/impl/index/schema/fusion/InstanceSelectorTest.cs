@@ -26,7 +26,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 	using Test = org.junit.Test;
 
 
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;

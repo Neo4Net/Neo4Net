@@ -31,7 +31,7 @@ namespace Neo4Net.GraphAlgo.ShortestPath
     using RelationshipType = Neo4Net.GraphDb.RelationshipType;
     using Neo4Net.GraphDb;
     using Neo4Net.GraphDb;
-    using Iterables = Neo4Net.Helpers.Collections.Iterables;
+    using Iterables = Neo4Net.Collections.Helpers.Iterables;
 
     /// <summary>
     /// Dijkstra class. This class can be used to perform shortest path computations

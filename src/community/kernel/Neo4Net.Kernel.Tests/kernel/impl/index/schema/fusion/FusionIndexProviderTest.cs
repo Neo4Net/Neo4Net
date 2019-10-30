@@ -30,7 +30,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 
 
 	using InternalIndexState = Neo4Net.Kernel.Api.Internal.InternalIndexState;
-	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor;
+	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.Schema.IndexProviderDescriptor;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using IndexProvider = Neo4Net.Kernel.Api.Index.IndexProvider;
 	using IndexDescriptorFactory = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptorFactory;

@@ -26,18 +26,18 @@ namespace Neo4Net.GraphDb.Traversal
 	{
 		 /// <summary>
 		 /// Creates a new <seealso cref="SideSelector"/> given the {@code start}/{@code end}
-		 /// <seealso cref="BranchSelector"/>s and an optional {@code maxDepth}.
+		 /// <seealso cref="IBranchSelector"/>s and an optional {@code maxDepth}.
 		 /// </summary>
-		 /// <param name="start"> the start side <seealso cref="BranchSelector"/> of this
+		 /// <param name="start"> the start side <seealso cref="IBranchSelector"/> of this
 		 /// bidirectional traversal. </param>
-		 /// <param name="end"> the end side <seealso cref="BranchSelector"/> of this
+		 /// <param name="end"> the end side <seealso cref="IBranchSelector"/> of this
 		 /// bidirectional traversal. </param>
 		 /// <param name="maxDepth"> an optional max depth the combined traversal depth must
 		 /// be kept within. Optional in the sense that only some implementations
 		 /// honors it. </param>
 		 /// <returns> a new <seealso cref="SideSelector"/> for {@code start} and {@code end}
-		 /// <seealso cref="BranchSelector"/>s. </returns>
-		 SideSelector Create( BranchSelector start, BranchSelector end, int maxDepth );
+		 /// <seealso cref="IBranchSelector"/>s. </returns>
+		 SideSelector Create( IBranchSelector start, IBranchSelector end, int maxDepth );
 	}
 
 }

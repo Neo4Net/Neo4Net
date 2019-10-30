@@ -26,7 +26,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 
 	using Node = Neo4Net.GraphDb.Node;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using Neo4Net.GraphDb.index;
+	using Neo4Net.GraphDb.Index;
 	using IndexEntityType = Neo4Net.Kernel.impl.index.IndexEntityType;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;

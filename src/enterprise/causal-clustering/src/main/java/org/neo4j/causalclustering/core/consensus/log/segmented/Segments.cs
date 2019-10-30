@@ -29,7 +29,7 @@ namespace Neo4Net.causalclustering.core.consensus.log.segmented
 	using Neo4Net.causalclustering.core.consensus.log.segmented.OpenEndRangeMap;
 	using ReplicatedContent = Neo4Net.causalclustering.core.replication.ReplicatedContent;
 	using Neo4Net.causalclustering.messaging.marshalling;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using Log = Neo4Net.Logging.Log;
 	using LogProvider = Neo4Net.Logging.LogProvider;

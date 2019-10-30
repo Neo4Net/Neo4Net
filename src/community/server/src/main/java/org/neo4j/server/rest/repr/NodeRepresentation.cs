@@ -25,8 +25,8 @@ namespace Neo4Net.Server.rest.repr
 
 	using Label = Neo4Net.GraphDb.Label;
 	using Node = Neo4Net.GraphDb.Node;
-	using Neo4Net.Helpers.Collections;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Neo4Net.Collections.Helpers;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using TransactionStateChecker = Neo4Net.Server.rest.transactional.TransactionStateChecker;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:

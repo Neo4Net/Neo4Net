@@ -24,7 +24,7 @@ namespace Neo4Net.Cypher.Internal.javacompat
 {
 	using Map = scala.collection.immutable.Map;
 
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 
 	/// <summary>
 	/// Adapter for passing CacheTraces into the Monitoring infrastructure.

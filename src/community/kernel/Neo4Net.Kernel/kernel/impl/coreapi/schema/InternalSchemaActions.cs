@@ -30,7 +30,7 @@ namespace Neo4Net.Kernel.impl.coreapi.schema
 	/// Implementations are used to configure <seealso cref="IndexCreatorImpl"/> and <seealso cref="BaseNodeConstraintCreator"/> for re-use
 	/// by both the graph database and the batch inserter.
 	/// </summary>
-	public interface InternalSchemaActions
+	public interface IInternalSchemaActions
 	{
 		 IndexDefinition CreateIndexDefinition( Label label, Optional<string> indexName, params string[] propertyKey );
 

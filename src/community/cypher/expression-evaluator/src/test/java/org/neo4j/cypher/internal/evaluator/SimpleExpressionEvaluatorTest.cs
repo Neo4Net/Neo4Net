@@ -23,7 +23,7 @@ namespace Neo4Net.Cypher.Internal.evaluator
 {
 	using Test = org.junit.jupiter.api.Test;
 
-	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
+	using MapUtil = Neo4Net.Collections.Helpers.MapUtil;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Arrays.asList;

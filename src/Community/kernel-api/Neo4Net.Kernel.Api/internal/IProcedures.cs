@@ -278,6 +278,6 @@ namespace Neo4Net.Kernel.Api.Internal
       /// <summary>
       /// Retrieve a value mapper for mapping values to regular Java objects. </summary>
       /// <returns> a value mapper that maps to Java objects. </returns>
-      ValueMapper<object> ValueMapper();
+      IValueMapper<object> ValueMapper();
    }
 }

@@ -33,7 +33,7 @@ namespace Neo4Net.GraphDb
 	using AbstractEditionModule = Neo4Net.GraphDb.factory.module.edition.AbstractEditionModule;
 	using CommunityEditionModule = Neo4Net.GraphDb.factory.module.edition.CommunityEditionModule;
 	using IdContextFactoryBuilder = Neo4Net.GraphDb.factory.module.id.IdContextFactoryBuilder;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using LabelSet = Neo4Net.Kernel.Api.Internal.LabelSet;
 	using NodeCursor = Neo4Net.Kernel.Api.Internal.NodeCursor;
 	using PropertyCursor = Neo4Net.Kernel.Api.Internal.PropertyCursor;

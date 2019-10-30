@@ -23,7 +23,7 @@ using System.Collections.Generic;
 namespace Neo4Net.Server.rest.management.console
 {
 
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using LogProvider = Neo4Net.Logging.LogProvider;
 	using CypherExecutor = Neo4Net.Server.database.CypherExecutor;
 	using Database = Neo4Net.Server.database.Database;

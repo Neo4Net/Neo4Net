@@ -36,9 +36,9 @@ namespace Neo4Net.Kernel.Impl.Newapi
 	using Neo4Net.Kernel.Api.Internal;
 	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 	using ExplicitIndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
-	using IndexNotApplicableKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotApplicableKernelException;
-	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
-	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
+	using IndexNotApplicableKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotApplicableKernelException;
+	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
 	using AccessMode = Neo4Net.Kernel.Api.Internal.security.AccessMode;
 	using AssertOpen = Neo4Net.Kernel.api.AssertOpen;
 	using ExplicitIndex = Neo4Net.Kernel.api.ExplicitIndex;
@@ -61,7 +61,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 	using Values = Neo4Net.Values.Storable.Values;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor.schemaTokenLockingIds;
+//	import static org.Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor.schemaTokenLockingIds;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.values.storable.ValueGroup.GEOMETRY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -95,9 +95,9 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		public abstract Neo4Net.Kernel.Api.Internal.procs.ProcedureHandle ProcedureGet( Neo4Net.Kernel.Api.Internal.procs.QualifiedName name );
 		public abstract Neo4Net.Kernel.Api.Internal.procs.UserFunctionHandle AggregationFunctionGet( Neo4Net.Kernel.Api.Internal.procs.QualifiedName name );
 		public abstract Neo4Net.Kernel.Api.Internal.procs.UserFunctionHandle FunctionGet( Neo4Net.Kernel.Api.Internal.procs.QualifiedName name );
-		public abstract IEnumerator<Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor> ConstraintsGetAll();
-		public abstract IEnumerator<Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor> ConstraintsGetForRelationshipType( int typeId );
-		public abstract IEnumerator<Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor> ConstraintsGetForLabel( int labelId );
+		public abstract IEnumerator<Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor> ConstraintsGetAll();
+		public abstract IEnumerator<Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor> ConstraintsGetForRelationshipType( int typeId );
+		public abstract IEnumerator<Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor> ConstraintsGetForLabel( int labelId );
 		public abstract string IndexGetFailure( IndexReference index );
 		public abstract Neo4Net.Kernel.Api.StorageEngine.schema.PopulationProgress IndexGetPopulationProgress( IndexReference index );
 		public abstract InternalIndexState IndexGetState( IndexReference index );
@@ -109,8 +109,8 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		public abstract V SchemaStateGetOrCreate( K key, System.Func<K, V> creator );
 		public abstract long? IndexGetOwningUniquenessConstraintId( IndexReference index );
 		public abstract SchemaReadCore Snapshot();
-		public abstract bool ConstraintExists( Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor descriptor );
-		public abstract IEnumerator<Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor> ConstraintsGetForSchema( SchemaDescriptor descriptor );
+		public abstract bool ConstraintExists( Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor descriptor );
+		public abstract IEnumerator<Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor> ConstraintsGetForSchema( SchemaDescriptor descriptor );
 		public abstract Neo4Net.Register.Register_DoubleLongRegister IndexSample( IndexReference index, Neo4Net.Register.Register_DoubleLongRegister target );
 		public abstract Neo4Net.Register.Register_DoubleLongRegister IndexUpdatesAndSize( IndexReference index, Neo4Net.Register.Register_DoubleLongRegister target );
 		public abstract long NodesCountIndexed( IndexReference index, long nodeId, int propertyKeyId, Value value );
@@ -149,7 +149,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public final void nodeIndexSeek(org.Neo4Net.Kernel.Api.Internal.IndexReference index, org.Neo4Net.Kernel.Api.Internal.NodeValueIndexCursor cursor, org.Neo4Net.Kernel.Api.Internal.IndexOrder indexOrder, boolean needsValues, org.Neo4Net.Kernel.Api.Internal.IndexQuery... query) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotApplicableKernelException, org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: public final void nodeIndexSeek(org.Neo4Net.Kernel.Api.Internal.IndexReference index, org.Neo4Net.Kernel.Api.Internal.NodeValueIndexCursor cursor, org.Neo4Net.Kernel.Api.Internal.IndexOrder indexOrder, boolean needsValues, org.Neo4Net.Kernel.Api.Internal.IndexQuery... query) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotApplicableKernelException, org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
 		 public override void NodeIndexSeek( IndexReference index, NodeValueIndexCursor cursor, IndexOrder indexOrder, bool needsValues, params IndexQuery[] query )
 		 {
 			  Ktx.assertOpen();
@@ -167,7 +167,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void nodeIndexDistinctValues(org.Neo4Net.Kernel.Api.Internal.IndexReference index, org.Neo4Net.Kernel.Api.Internal.NodeValueIndexCursor cursor, boolean needsValues) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: public void nodeIndexDistinctValues(org.Neo4Net.Kernel.Api.Internal.IndexReference index, org.Neo4Net.Kernel.Api.Internal.NodeValueIndexCursor cursor, boolean needsValues) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
 		 public override void NodeIndexDistinctValues( IndexReference index, NodeValueIndexCursor cursor, bool needsValues )
 		 {
 			  Ktx.assertOpen();
@@ -226,7 +226,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public long lockingNodeUniqueIndexSeek(org.Neo4Net.Kernel.Api.Internal.IndexReference index, org.Neo4Net.Kernel.Api.Internal.IndexQuery.ExactPredicate... predicates) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotApplicableKernelException, org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException, org.Neo4Net.kernel.api.exceptions.schema.IndexBrokenKernelException
+//ORIGINAL LINE: public long lockingNodeUniqueIndexSeek(org.Neo4Net.Kernel.Api.Internal.IndexReference index, org.Neo4Net.Kernel.Api.Internal.IndexQuery.ExactPredicate... predicates) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotApplicableKernelException, org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException, org.Neo4Net.kernel.api.exceptions.schema.IndexBrokenKernelException
 		 public override long LockingNodeUniqueIndexSeek( IndexReference index, params IndexQuery.ExactPredicate[] predicates )
 		 {
 			  AssertIndexOnline( index );
@@ -239,7 +239,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void nodeIndexSeekWithFreshIndexReader(DefaultNodeValueIndexCursor cursor, org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader indexReader, org.Neo4Net.Kernel.Api.Internal.IndexQuery.ExactPredicate... query) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotApplicableKernelException
+//ORIGINAL LINE: public void nodeIndexSeekWithFreshIndexReader(DefaultNodeValueIndexCursor cursor, org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader indexReader, org.Neo4Net.Kernel.Api.Internal.IndexQuery.ExactPredicate... query) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotApplicableKernelException
 		 public override void NodeIndexSeekWithFreshIndexReader( DefaultNodeValueIndexCursor cursor, IndexReader indexReader, params IndexQuery.ExactPredicate[] query )
 		 {
 			  cursor.Read = this;
@@ -469,7 +469,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public abstract org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader indexReader(org.Neo4Net.Kernel.Api.Internal.IndexReference index, boolean fresh) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
+//ORIGINAL LINE: public abstract org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader indexReader(org.Neo4Net.Kernel.Api.Internal.IndexReference index, boolean fresh) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException;
 		 public abstract IndexReader IndexReader( IndexReference index, bool fresh );
 
 		 internal abstract LabelScanReader LabelScanReader();
@@ -632,7 +632,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertIndexOnline(org.Neo4Net.Kernel.Api.Internal.IndexReference index) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException, org.Neo4Net.kernel.api.exceptions.schema.IndexBrokenKernelException
+//ORIGINAL LINE: private void assertIndexOnline(org.Neo4Net.Kernel.Api.Internal.IndexReference index) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException, org.Neo4Net.kernel.api.exceptions.schema.IndexBrokenKernelException
 		 private void AssertIndexOnline( IndexReference index )
 		 {
 			  switch ( IndexGetState( index ) )
@@ -645,7 +645,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void assertPredicatesMatchSchema(org.Neo4Net.Kernel.Api.Internal.IndexReference index, org.Neo4Net.Kernel.Api.Internal.IndexQuery.ExactPredicate[] predicates) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotApplicableKernelException
+//ORIGINAL LINE: private static void assertPredicatesMatchSchema(org.Neo4Net.Kernel.Api.Internal.IndexReference index, org.Neo4Net.Kernel.Api.Internal.IndexQuery.ExactPredicate[] predicates) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotApplicableKernelException
 		 private static void AssertPredicatesMatchSchema( IndexReference index, IndexQuery.ExactPredicate[] predicates )
 		 {
 			  int[] propertyIds = index.Properties();

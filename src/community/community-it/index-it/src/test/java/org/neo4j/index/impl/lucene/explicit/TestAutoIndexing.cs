@@ -31,11 +31,11 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using Neo4Net.GraphDb.index;
-	using Neo4Net.GraphDb.index;
-	using Neo4Net.GraphDb.index;
-	using Neo4Net.GraphDb.index;
-	using RelationshipIndex = Neo4Net.GraphDb.index.RelationshipIndex;
+	using Neo4Net.GraphDb.Index;
+	using Neo4Net.GraphDb.Index;
+	using Neo4Net.GraphDb.Index;
+	using Neo4Net.GraphDb.Index;
+	using RelationshipIndex = Neo4Net.GraphDb.Index.RelationshipIndex;
 	using NeoStoreDataSource = Neo4Net.Kernel.NeoStoreDataSource;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;

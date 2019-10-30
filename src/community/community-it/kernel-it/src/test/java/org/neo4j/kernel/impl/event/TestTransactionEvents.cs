@@ -67,7 +67,7 @@ namespace Neo4Net.Kernel.Impl.@event
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.graphdb.RelationshipType.withName;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.index.IndexManager_Fields.PROVIDER;
+//	import static org.Neo4Net.GraphDb.Index.IndexManager_Fields.PROVIDER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.helpers.collection.Iterables.count;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:

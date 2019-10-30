@@ -25,7 +25,7 @@ namespace Neo4Net.Server.rest
 
 
 	using Node = Neo4Net.GraphDb.Node;
-	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
+	using MapUtil = Neo4Net.Collections.Helpers.MapUtil;
 	using Documented = Neo4Net.Kernel.Impl.Annotations.Documented;
 	using JsonHelper = Neo4Net.Server.rest.domain.JsonHelper;
 	using JsonParseException = Neo4Net.Server.rest.domain.JsonParseException;

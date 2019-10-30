@@ -32,7 +32,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using IndexReference = Neo4Net.Kernel.Api.Internal.IndexReference;
 	using SchemaWrite = Neo4Net.Kernel.Api.Internal.SchemaWrite;
-	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
 	using KernelTransactionImplementation = Neo4Net.Kernel.Impl.Api.KernelTransactionImplementation;
 	using IndexDescriptorFactory = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptorFactory;
 	using Race = Neo4Net.Test.Race;
@@ -79,7 +79,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.Kernel.Api.Internal.IndexReference createInitialIndex(org.Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor descriptor) throws Exception
+//ORIGINAL LINE: private org.Neo4Net.Kernel.Api.Internal.IndexReference createInitialIndex(org.Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor descriptor) throws Exception
 		 private IndexReference CreateInitialIndex( SchemaDescriptor descriptor )
 		 {
 			  IndexReference index;
@@ -94,7 +94,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void raceContestantsAndVerifyResults(org.Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor newDescriptor, Runnable aliceWork, Runnable changeConfig, Runnable bobWork) throws Throwable
+//ORIGINAL LINE: private void raceContestantsAndVerifyResults(org.Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor newDescriptor, Runnable aliceWork, Runnable changeConfig, Runnable bobWork) throws Throwable
 		 private void RaceContestantsAndVerifyResults( SchemaDescriptor newDescriptor, ThreadStart aliceWork, ThreadStart changeConfig, ThreadStart bobWork )
 		 {
 			  _race.addContestants( _aliceThreads, aliceWork );

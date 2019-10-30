@@ -23,7 +23,7 @@ namespace Neo4Net.Kernel.spi.explicitindex
 	/// Registry of currently active index implementations. Indexing extensions should register the implementation
 	/// here on startup, and unregister it on stop.
 	/// </summary>
-	public interface IndexProviders
+	public interface IIndexProviders
 	{
 		 void RegisterIndexProvider( string name, IndexImplementation index );
 

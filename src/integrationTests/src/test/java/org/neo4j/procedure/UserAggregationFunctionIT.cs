@@ -44,7 +44,7 @@ namespace Neo4Net.Procedure
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Settings = Neo4Net.Kernel.configuration.Settings;
 	using OnlineBackupSettings = Neo4Net.Kernel.impl.enterprise.configuration.OnlineBackupSettings;
-	using Iterators = Neo4Net.Helpers.Collections.Iterators;
+	using Iterators = Neo4Net.Collections.Helpers.Iterators;
 	using JarBuilder = Neo4Net.Kernel.impl.proc.JarBuilder;
 	using Log = Neo4Net.Logging.Log;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;

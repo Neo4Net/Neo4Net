@@ -36,7 +36,7 @@ namespace Neo4Net.causalclustering.identity
 	using CoreTopology = Neo4Net.causalclustering.discovery.CoreTopology;
 	using CoreTopologyService = Neo4Net.causalclustering.discovery.CoreTopologyService;
 	using TestTopology = Neo4Net.causalclustering.discovery.TestTopology;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
 	using Clocks = Neo4Net.Time.Clocks;

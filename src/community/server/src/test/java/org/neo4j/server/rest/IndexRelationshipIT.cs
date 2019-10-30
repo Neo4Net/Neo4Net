@@ -31,7 +31,7 @@ namespace Neo4Net.Server.rest
 	using Relationship = Neo4Net.GraphDb.Relationship;
 	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
+	using MapUtil = Neo4Net.Collections.Helpers.MapUtil;
 	using Documented = Neo4Net.Kernel.Impl.Annotations.Documented;
 	using FunctionalTestHelper = Neo4Net.Server.helpers.FunctionalTestHelper;
 	using ResponseEntity = Neo4Net.Server.rest.RESTRequestGenerator.ResponseEntity;

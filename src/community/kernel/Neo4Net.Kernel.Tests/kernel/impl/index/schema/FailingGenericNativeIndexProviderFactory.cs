@@ -101,7 +101,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 
 			 private IndexProvider _actualProvider;
 
-			 public IndexProviderAnonymousInnerClass( FailingGenericNativeIndexProviderFactory outerInstance, Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor getProviderDescriptor, IndexDirectoryStructure.Factory given, IndexProvider actualProvider ) : base( getProviderDescriptor, given )
+			 public IndexProviderAnonymousInnerClass( FailingGenericNativeIndexProviderFactory outerInstance, Neo4Net.Kernel.Api.Internal.Schema.IndexProviderDescriptor getProviderDescriptor, IndexDirectoryStructure.Factory given, IndexProvider actualProvider ) : base( getProviderDescriptor, given )
 			 {
 				 this.outerInstance = outerInstance;
 				 this._actualProvider = actualProvider;

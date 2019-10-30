@@ -37,7 +37,7 @@ namespace Neo4Net.Kernel.api
 	/// inside the transaction are visible in read operations for <seealso cref="Statement statements"/>
 	/// executed within that transaction context.
 	/// </summary>
-	public interface InwardKernel : Kernel
+	public interface IInwardKernel : Kernel
 	{
 		 /// <summary>
 		 /// Creates and returns a new <seealso cref="KernelTransaction"/> capable of modifying the

@@ -98,7 +98,7 @@ namespace Neo4Net.Functions
          {
             foreach (Predicate<T> predicate in predicates)
             {
-               if (predicate.test(item))
+               if (predicate.Test(item))
                {
                   return true;
                }
@@ -112,11 +112,10 @@ namespace Neo4Net.Functions
       //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
       public static System.Predicate<T> InstanceOf<T>(Type clazz)
       {
-         return clazz.isInstance;
+            return typeof(T) == clazz; // clazz.isInstance;
       }
 
-      //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-      //ORIGINAL LINE: public static <T> System.Predicate<T> instanceOfAny(final Class... classes)
+      
       public static System.Predicate<T> InstanceOfAny<T>(params Type[] classes)
       {
          return item =>

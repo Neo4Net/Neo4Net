@@ -25,10 +25,10 @@ namespace Neo4Net.Kernel.Api.StorageEngine.TxState
 	using UnmodifiableMap = org.eclipse.collections.impl.UnmodifiableMap;
 
 
-	using ConstraintValidationException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.ConstraintValidationException;
-	using CreateConstraintFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.CreateConstraintFailureException;
-	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
-	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor;
+	using ConstraintValidationException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.ConstraintValidationException;
+	using CreateConstraintFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.CreateConstraintFailureException;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
+	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor;
 	using Neo4Net.Kernel.Api.StorageEngine;
 	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
 	using ValueTuple = Neo4Net.Values.Storable.ValueTuple;
@@ -40,7 +40,7 @@ namespace Neo4Net.Kernel.Api.StorageEngine.TxState
 	public interface ReadableTransactionState
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void accept(TxStateVisitor visitor) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.ConstraintValidationException, org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.CreateConstraintFailureException;
+//ORIGINAL LINE: void accept(TxStateVisitor visitor) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.ConstraintValidationException, org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.CreateConstraintFailureException;
 		 void Accept( TxStateVisitor visitor );
 
 		 bool HasChanges();
@@ -118,7 +118,7 @@ namespace Neo4Net.Kernel.Api.StorageEngine.TxState
 		 /// updates for this schema have not been initialized.
 		 /// </summary>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Nullable UnmodifiableMap<org.Neo4Net.values.storable.ValueTuple, ? extends LongDiffSets> getIndexUpdates(org.Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor schema);
+//ORIGINAL LINE: @Nullable UnmodifiableMap<org.Neo4Net.values.storable.ValueTuple, ? extends LongDiffSets> getIndexUpdates(org.Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor schema);
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		 UnmodifiableMap<ValueTuple, ? extends LongDiffSets> GetIndexUpdates( SchemaDescriptor schema );
 
@@ -130,7 +130,7 @@ namespace Neo4Net.Kernel.Api.StorageEngine.TxState
 		 /// ay involve converting the existing hash map first.
 		 /// </summary>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Nullable NavigableMap<org.Neo4Net.values.storable.ValueTuple, ? extends LongDiffSets> getSortedIndexUpdates(org.Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor descriptor);
+//ORIGINAL LINE: @Nullable NavigableMap<org.Neo4Net.values.storable.ValueTuple, ? extends LongDiffSets> getSortedIndexUpdates(org.Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor descriptor);
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		 NavigableMap<ValueTuple, ? extends LongDiffSets> GetSortedIndexUpdates( SchemaDescriptor descriptor );
 

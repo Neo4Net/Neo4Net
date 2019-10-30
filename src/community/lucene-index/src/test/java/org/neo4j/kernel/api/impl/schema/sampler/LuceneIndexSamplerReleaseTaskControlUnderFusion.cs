@@ -26,7 +26,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.sampler
 	using Test = org.junit.Test;
 
 	using TaskCoordinator = Neo4Net.Helpers.TaskCoordinator;
-	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor;
+	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.Schema.IndexProviderDescriptor;
 	using IndexEntryConflictException = Neo4Net.Kernel.Api.Exceptions.index.IndexEntryConflictException;
 	using DirectoryFactory = Neo4Net.Kernel.Api.Impl.Index.storage.DirectoryFactory;
 	using IndexAccessor = Neo4Net.Kernel.Api.Index.IndexAccessor;

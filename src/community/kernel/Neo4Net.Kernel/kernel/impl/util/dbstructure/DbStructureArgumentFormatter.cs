@@ -23,9 +23,9 @@ namespace Neo4Net.Kernel.impl.util.dbstructure
 {
 
 	using Strings = Neo4Net.Helpers.Strings;
-	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.LabelSchemaDescriptor;
-	using RelationTypeSchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.RelationTypeSchemaDescriptor;
-	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
+	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.LabelSchemaDescriptor;
+	using RelationTypeSchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.RelationTypeSchemaDescriptor;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
 	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
 	using ConstraintDescriptorFactory = Neo4Net.Kernel.api.schema.constraints.ConstraintDescriptorFactory;
 	using NodeExistenceConstraintDescriptor = Neo4Net.Kernel.api.schema.constraints.NodeExistenceConstraintDescriptor;

@@ -24,7 +24,7 @@ using System.Threading;
 namespace Neo4Net.Helpers
 {
 
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.util.FeatureToggles.flag;

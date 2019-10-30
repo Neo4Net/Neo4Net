@@ -24,7 +24,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input
 	/// A chunk of data which an <seealso cref="InputEntityVisitor"/> can visit to extract data from. There may be zero or
 	/// more entities in a chunk.
 	/// </summary>
-	public interface InputChunk : System.IDisposable
+	public interface IInputChunk : System.IDisposable
 	{
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:

@@ -23,8 +23,8 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 {
 
 	using Neo4Net.Cursors;
-	using Neo4Net.Helpers.Collections;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
+	using Neo4Net.Collections.Helpers;
 	using Neo4Net.Index.Internal.gbptree;
 	using Neo4Net.Index.Internal.gbptree;
 	using Neo4Net.Index.Internal.gbptree;
@@ -103,7 +103,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 
 		 public override long MaxCount()
 		 {
-			  return Neo4Net.Helpers.Collections.BoundedIterable_Fields.UNKNOWN_MAX_COUNT;
+			  return Neo4Net.Collections.Helpers.BoundedIterable_Fields.UNKNOWN_MAX_COUNT;
 		 }
 	}
 

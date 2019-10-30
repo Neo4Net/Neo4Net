@@ -20,28 +20,28 @@
 
 namespace Neo4Net.GraphDb.Spatial
 {
-   /// <summary>
-   /// A point is a geometry described by a single coordinate in space.
-   /// <para>
-   /// A call to <seealso cref="getCoordinates()"/> must return a single element list.
-   /// </para>
-   /// </summary>
-   public interface Point : IGeometry
-   {
-      /// <summary>
-      /// Returns the single coordinate in space defining this point.
-      /// </summary>
-      /// <returns> The coordinate of this point. </returns>
-      //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-      //		 default Coordinate getCoordinate()
-      //	 {
-      //		  return getCoordinates().get(0);
-      //	 }
+    /// <summary>
+    /// A point is a geometry described by a single coordinate in space.
+    /// <para>
+    /// A call to <seealso cref="getCoordinates()"/> must return a single element list.
+    /// </para>
+    /// </summary>
+    public interface IPoint : IGeometry
+    {
+        /// <summary>
+        /// Returns the single coordinate in space defining this point.
+        /// </summary>
+        /// <returns> The coordinate of this point. </returns>
+        //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
+        //		 default Coordinate getCoordinate()
+        //	 {
+        //		  return getCoordinates().get(0);
+        //	 }
 
-      //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-      //		 default String getGeometryType()
-      //	 {
-      //		  return "Point";
-      //	 }
-   }
+        //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
+        //		 default String getGeometryType()
+        //	 {
+        //		  return "Point";
+        //	 }
+    }
 }

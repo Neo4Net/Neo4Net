@@ -23,7 +23,7 @@ using System.Threading;
 namespace Neo4Net.Kernel.impl.store.kvstore
 {
 
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 
 	internal abstract class RotationState<Key> : ProgressiveState<Key>
 	{

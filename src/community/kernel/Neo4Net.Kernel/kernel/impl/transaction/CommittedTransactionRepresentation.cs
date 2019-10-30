@@ -20,7 +20,7 @@
 namespace Neo4Net.Kernel.impl.transaction
 {
 
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using LogicalTransactionStore = Neo4Net.Kernel.impl.transaction.log.LogicalTransactionStore;
 	using LogEntryCommit = Neo4Net.Kernel.impl.transaction.log.entry.LogEntryCommit;
 	using LogEntryStart = Neo4Net.Kernel.impl.transaction.log.entry.LogEntryStart;

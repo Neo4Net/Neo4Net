@@ -25,21 +25,21 @@ namespace Neo4Net.Kernel.api.schema.constraints
 	/// Internal representation of a graph constraint, including the schema unit it targets (eg. label-property combination)
 	/// and the how that schema unit is constrained (eg. "has to exist", or "must be unique").
 	/// </summary>
-	public abstract class ConstraintDescriptor : Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor
+	public abstract class ConstraintDescriptor : Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor
 	{
 		public abstract string PrettyPrint( TokenNameLookup tokenNameLookup );
-		public abstract Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor Schema();
+		public abstract Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor Schema();
 
 		 private readonly ConstraintDescriptor.Type _type;
 
-		 internal ConstraintDescriptor( Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor_Type type )
+		 internal ConstraintDescriptor( Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor_Type type )
 		 {
 			  this._type = type;
 		 }
 
 		 // METHODS
 
-		 public override Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor_Type Type()
+		 public override Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor_Type Type()
 		 {
 			  return _type;
 		 }
@@ -61,7 +61,7 @@ namespace Neo4Net.Kernel.api.schema.constraints
 			  return format( "Constraint( %s, %s )", _type.name(), Schema().userDescription(tokenNameLookup) );
 		 }
 
-		 public override bool IsSame( Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor_Supplier supplier )
+		 public override bool IsSame( Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor_Supplier supplier )
 		 {
 			  return this.Equals( supplier.ConstraintDescriptor );
 		 }

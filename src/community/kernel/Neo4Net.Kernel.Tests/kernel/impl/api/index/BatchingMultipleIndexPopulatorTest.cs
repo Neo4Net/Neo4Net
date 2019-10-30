@@ -27,8 +27,8 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using Test = org.junit.Test;
 
 
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
-	using Neo4Net.Helpers.Collections;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
+	using Neo4Net.Collections.Helpers;
 	using IndexPopulationFailedKernelException = Neo4Net.Kernel.Api.Exceptions.index.IndexPopulationFailedKernelException;
 	using Neo4Net.Kernel.Api.Index;
 	using IndexPopulator = Neo4Net.Kernel.Api.Index.IndexPopulator;

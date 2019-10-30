@@ -19,12 +19,12 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.GraphDb.index
+namespace Neo4Net.GraphDb.Index
 {
 	using Test = org.junit.jupiter.api.Test;
 
 
-	using Neo4Net.GraphDb.index.UniqueFactory;
+	using Neo4Net.GraphDb.Index.UniqueFactory;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -85,7 +85,7 @@ namespace Neo4Net.GraphDb.index
 		 {
 			 private readonly UniqueFactoryTest _outerInstance;
 
-			 public UniqueNodeFactoryAnonymousInnerClass( UniqueFactoryTest outerInstance, Neo4Net.GraphDb.index.Index<Node> index ) : base( index )
+			 public UniqueNodeFactoryAnonymousInnerClass( UniqueFactoryTest outerInstance, Neo4Net.GraphDb.Index.Index<Node> index ) : base( index )
 			 {
 				 this.outerInstance = outerInstance;
 			 }
@@ -138,7 +138,7 @@ namespace Neo4Net.GraphDb.index
 
 			 private AtomicBoolean _initializeCalled;
 
-			 public UniqueNodeFactoryAnonymousInnerClass2( UniqueFactoryTest outerInstance, Neo4Net.GraphDb.index.Index<Node> index, AtomicBoolean initializeCalled ) : base( index )
+			 public UniqueNodeFactoryAnonymousInnerClass2( UniqueFactoryTest outerInstance, Neo4Net.GraphDb.Index.Index<Node> index, AtomicBoolean initializeCalled ) : base( index )
 			 {
 				 this.outerInstance = outerInstance;
 				 this._initializeCalled = initializeCalled;
@@ -194,7 +194,7 @@ namespace Neo4Net.GraphDb.index
 
 			 private AtomicBoolean _initializeCalled;
 
-			 public UniqueNodeFactoryAnonymousInnerClass3( UniqueFactoryTest outerInstance, Neo4Net.GraphDb.index.Index<Node> index, AtomicBoolean initializeCalled ) : base( index )
+			 public UniqueNodeFactoryAnonymousInnerClass3( UniqueFactoryTest outerInstance, Neo4Net.GraphDb.Index.Index<Node> index, AtomicBoolean initializeCalled ) : base( index )
 			 {
 				 this.outerInstance = outerInstance;
 				 this._initializeCalled = initializeCalled;
@@ -237,7 +237,7 @@ namespace Neo4Net.GraphDb.index
 		 {
 			 private readonly UniqueFactoryTest _outerInstance;
 
-			 public UniqueNodeFactoryAnonymousInnerClass4( UniqueFactoryTest outerInstance, Neo4Net.GraphDb.index.Index<Node> index ) : base( index )
+			 public UniqueNodeFactoryAnonymousInnerClass4( UniqueFactoryTest outerInstance, Neo4Net.GraphDb.Index.Index<Node> index ) : base( index )
 			 {
 				 this.outerInstance = outerInstance;
 			 }

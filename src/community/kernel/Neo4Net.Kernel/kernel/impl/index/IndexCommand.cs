@@ -23,7 +23,7 @@ using System.Collections.Generic;
 namespace Neo4Net.Kernel.impl.index
 {
 
-	using Neo4Net.GraphDb.index;
+	using Neo4Net.GraphDb.Index;
 	using CommandVisitor = Neo4Net.Kernel.Impl.Api.CommandVisitor;
 	using Command = Neo4Net.Kernel.impl.transaction.command.Command;
 	using NeoCommandType = Neo4Net.Kernel.impl.transaction.command.NeoCommandType;
@@ -162,7 +162,7 @@ namespace Neo4Net.Kernel.impl.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected void writeToFile(org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: protected void WriteToFile(org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
 		 protected internal virtual void WriteToFile( WritableChannel channel )
 		 {
 			  /* c: commandType

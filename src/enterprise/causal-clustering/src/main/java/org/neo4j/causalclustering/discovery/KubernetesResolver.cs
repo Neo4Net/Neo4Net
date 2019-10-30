@@ -39,7 +39,7 @@ namespace Neo4Net.causalclustering.discovery
 	using ServiceList = Neo4Net.causalclustering.discovery.kubernetes.ServiceList;
 	using Status = Neo4Net.causalclustering.discovery.kubernetes.Status;
 	using AdvertisedSocketAddress = Neo4Net.Helpers.AdvertisedSocketAddress;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using Log = Neo4Net.Logging.Log;
 	using LogService = Neo4Net.Logging.Internal.LogService;

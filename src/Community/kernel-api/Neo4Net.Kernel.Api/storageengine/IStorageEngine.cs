@@ -25,8 +25,8 @@ namespace Neo4Net.Kernel.Api.StorageEngine
 
 	using DiagnosticsManager = Neo4Net.Internal.Diagnostics.DiagnosticsManager;
 	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
-	using ConstraintValidationException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.ConstraintValidationException;
-	using CreateConstraintFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.CreateConstraintFailureException;
+	using ConstraintValidationException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.ConstraintValidationException;
+	using CreateConstraintFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.CreateConstraintFailureException;
 	using IOLimiter = Neo4Net.Io.pagecache.IOLimiter;
 	using Lifecycle = Neo4Net.Kernel.Lifecycle.Lifecycle;
 	using ResourceLocker = Neo4Net.Kernel.Api.StorageEngine.@lock.ResourceLocker;
@@ -79,7 +79,7 @@ namespace Neo4Net.Kernel.Api.StorageEngine
 		 /// <exception cref="ConstraintValidationException"> if this transaction was set to create a constraint
 		 /// and some data violates that constraint. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void createCommands(java.util.Collection<StorageCommand> target, org.Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState state, StorageReader storageReader, org.Neo4Net.Kernel.Api.StorageEngine.lock.ResourceLocker locks, long lastTransactionIdWhenStarted, org.Neo4Net.Kernel.Api.StorageEngine.TxState.TxStateVisitor_Decorator additionalTxStateVisitor) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException, org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.CreateConstraintFailureException, org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.ConstraintValidationException;
+//ORIGINAL LINE: void createCommands(java.util.Collection<StorageCommand> target, org.Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState state, StorageReader storageReader, org.Neo4Net.Kernel.Api.StorageEngine.lock.ResourceLocker locks, long lastTransactionIdWhenStarted, org.Neo4Net.Kernel.Api.StorageEngine.TxState.TxStateVisitor_Decorator additionalTxStateVisitor) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException, org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.CreateConstraintFailureException, org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.ConstraintValidationException;
 		 void CreateCommands( ICollection<StorageCommand> target, ReadableTransactionState state, StorageReader storageReader, ResourceLocker locks, long lastTransactionIdWhenStarted, Neo4Net.Kernel.Api.StorageEngine.TxState.TxStateVisitor_Decorator additionalTxStateVisitor );
 
 		 /// <summary>

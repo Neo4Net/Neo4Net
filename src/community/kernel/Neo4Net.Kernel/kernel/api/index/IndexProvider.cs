@@ -25,8 +25,8 @@ namespace Neo4Net.Kernel.Api.Index
 
 	using IndexCapability = Neo4Net.Kernel.Api.Internal.IndexCapability;
 	using InternalIndexState = Neo4Net.Kernel.Api.Internal.InternalIndexState;
-	using MisconfiguredIndexException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.MisconfiguredIndexException;
-	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor;
+	using MisconfiguredIndexException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.MisconfiguredIndexException;
+	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.Schema.IndexProviderDescriptor;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
 	using IndexingService = Neo4Net.Kernel.Impl.Api.index.IndexingService;
@@ -228,7 +228,7 @@ namespace Neo4Net.Kernel.Api.Index
 		 /// <returns> The blessed index descriptor that will be used for creating the index. </returns>
 		 /// <exception cref="MisconfiguredIndexException"> if the index descriptor cannot be blessed by this provider for some reason. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor bless(org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor index) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.MisconfiguredIndexException
+//ORIGINAL LINE: public org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor bless(org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor index) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.MisconfiguredIndexException
 		 public virtual IndexDescriptor Bless( IndexDescriptor index )
 		 {
 			  // Normal schema indexes accept all configurations by default. More specialised or custom providers, such as the fulltext index provider,

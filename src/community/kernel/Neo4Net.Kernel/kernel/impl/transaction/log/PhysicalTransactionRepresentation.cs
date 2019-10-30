@@ -23,7 +23,7 @@ using System.Text;
 namespace Neo4Net.Kernel.impl.transaction.log
 {
 
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using StorageCommand = Neo4Net.Kernel.Api.StorageEngine.StorageCommand;
 
 	public class PhysicalTransactionRepresentation : TransactionRepresentation

@@ -30,7 +30,7 @@ namespace Neo4Net.Server.rest.transactional
 	using JsonMappingException = org.codehaus.jackson.map.JsonMappingException;
 
 
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using Neo4NetError = Neo4Net.Server.rest.transactional.error.Neo4NetError;
 

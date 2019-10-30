@@ -43,7 +43,7 @@ namespace Neo4Net.Kernel.builtinprocs
 	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
 	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
-	using IllegalTokenNameException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IllegalTokenNameException;
+	using IllegalTokenNameException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IllegalTokenNameException;
 	using ProcedureCallContext = Neo4Net.Kernel.Api.Internal.procs.ProcedureCallContext;
 	using ProcedureSignature = Neo4Net.Kernel.Api.Internal.procs.ProcedureSignature;
 	using IndexEntryConflictException = Neo4Net.Kernel.Api.Exceptions.index.IndexEntryConflictException;
@@ -160,7 +160,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 public virtual void ThrowIfNullProvider()
 		 {
 			  // given
-			  Transaction transaction = NewTransaction( AnonymousContext.writeToken() );
+			  Transaction transaction = NewTransaction( AnonymousContext.WriteToken() );
 			  transaction.TokenWrite().labelGetOrCreateForName("Person");
 			  CreateProperties( transaction, "name" );
 			  Commit();
@@ -181,7 +181,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 public virtual void ThrowIfNonExistingProvider()
 		 {
 			  // given
-			  Transaction transaction = NewTransaction( AnonymousContext.writeToken() );
+			  Transaction transaction = NewTransaction( AnonymousContext.WriteToken() );
 			  transaction.TokenWrite().labelGetOrCreateForName("Person");
 			  CreateProperties( transaction, "name" );
 			  Commit();
@@ -232,7 +232,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private int[] createProperties(org.Neo4Net.Kernel.Api.Internal.Transaction transaction, String... properties) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IllegalTokenNameException
+//ORIGINAL LINE: private int[] createProperties(org.Neo4Net.Kernel.Api.Internal.Transaction transaction, String... properties) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IllegalTokenNameException
 		 private int[] CreateProperties( Transaction transaction, params string[] properties )
 		 {
 			  int[] propertyKeyIds = new int[properties.Length];
@@ -287,7 +287,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 private void TestCreateIndexWithGivenProvider( string label, params string[] properties )
 		 {
 			  // given
-			  Transaction transaction = NewTransaction( AnonymousContext.writeToken() );
+			  Transaction transaction = NewTransaction( AnonymousContext.WriteToken() );
 			  int labelId = transaction.TokenWrite().labelGetOrCreateForName(label);
 			  int[] propertyKeyIds = CreateProperties( transaction, properties );
 			  TextValue value = stringValue( "some value" );
@@ -369,7 +369,7 @@ namespace Neo4Net.Kernel.builtinprocs
 			  // given
 			  string label = "SomeLabel";
 			  string[] properties = new string[]{ "key1", "key2" };
-			  Transaction transaction = NewTransaction( AnonymousContext.writeToken() );
+			  Transaction transaction = NewTransaction( AnonymousContext.WriteToken() );
 			  int labelId = transaction.TokenWrite().labelGetOrCreateForName(label);
 			  int[] propertyKeyIds = CreateProperties( transaction, properties );
 			  TextValue value = stringValue( "some value" );
@@ -428,7 +428,7 @@ namespace Neo4Net.Kernel.builtinprocs
 			  assumeThat( "Only relevant for uniqueness constraints", UniquenessConstraint, @is( true ) );
 
 			  // given
-			  Transaction transaction = NewTransaction( AnonymousContext.writeToken() );
+			  Transaction transaction = NewTransaction( AnonymousContext.WriteToken() );
 			  int labelId = transaction.TokenWrite().labelGetOrCreateForName(label);
 			  int[] propertyKeyIds = CreateProperties( transaction, properties );
 			  TextValue value = stringValue( "some value" );

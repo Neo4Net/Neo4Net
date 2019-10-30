@@ -42,7 +42,7 @@ namespace Neo4Net.cluster.protocol.cluster
 	using Neo4Net.cluster.statemachine;
 	using FixedTimeoutStrategy = Neo4Net.cluster.timeout.FixedTimeoutStrategy;
 	using MessageTimeoutStrategy = Neo4Net.cluster.timeout.MessageTimeoutStrategy;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
 	using NullLogService = Neo4Net.Logging.Internal.NullLogService;
 	using LoggerRule = Neo4Net.Test.rule.LoggerRule;

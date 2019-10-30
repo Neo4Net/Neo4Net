@@ -17,38 +17,38 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 namespace Neo4Net.GraphDb.Traversal
 {
-	using Neo4Net.GraphDb.impl.traversal;
+    using Neo4Net.GraphDb.Impl.Traversal;
 
-	public class AlternatingSelectorOrderer : AbstractSelectorOrderer<int>
-	{
-		 public AlternatingSelectorOrderer( BranchSelector startSelector, BranchSelector endSelector ) : base( startSelector, endSelector )
-		 {
-		 }
+    public class AlternatingSelectorOrderer : AbstractSelectorOrderer<int>
+    {
+        public AlternatingSelectorOrderer(IBranchSelector startSelector, IBranchSelector endSelector) : base(startSelector, endSelector)
+        {
+        }
 
-		 protected internal override int? InitialState()
-		 {
-			  return 0;
-		 }
+        protected internal override int? InitialState()
+        {
+            return 0;
+        }
 
-		 public override ITraversalBranch Next( TraversalContext metadata )
-		 {
-			  ITraversalBranch branch = NextBranchFromNextSelector( metadata, true );
-			  int? previousDepth = StateForCurrentSelector;
-			  if ( branch != null && branch.Length== previousDepth.Value )
-			  {
-					return branch;
-			  }
-			  else
-			  {
-					if ( branch != null )
-					{
-						 StateForCurrentSelector = branch.Length;
-					}
-			  }
-			  return branch;
-		 }
-	}
-
+        public override ITraversalBranch Next(TraversalContext metadata)
+        {
+            ITraversalBranch branch = NextBranchFromNextSelector(metadata, true);
+            int? previousDepth = StateForCurrentSelector;
+            if (branch != null && branch.Length == previousDepth.Value)
+            {
+                return branch;
+            }
+            else
+            {
+                if (branch != null)
+                {
+                    StateForCurrentSelector = branch.Length;
+                }
+            }
+            return branch;
+        }
+    }
 }

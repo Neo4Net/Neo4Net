@@ -30,7 +30,7 @@ namespace Neo4Net.GraphDb.Traversal
 //ORIGINAL LINE: LEVEL { @Override public SideSelector create(BranchSelector start, BranchSelector end, int maxDepth) { return new LevelSelectorOrderer(start, end, false, maxDepth); } },
 		 LEVEL
 		 {
-			 public SideSelector create( BranchSelector start, BranchSelector end, int maxDepth ) { return new LevelSelectorOrderer( start, end, false, maxDepth ); }
+			 public SideSelector create( IBranchSelector start, IBranchSelector end, int maxDepth ) { return new LevelSelectorOrderer( start, end, false, maxDepth ); }
 		 },
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: LEVEL_STOP_DESCENT_ON_RESULT { @Override public SideSelector create(BranchSelector start, BranchSelector end, int maxDepth) { return new LevelSelectorOrderer(start, end, true, maxDepth); } },

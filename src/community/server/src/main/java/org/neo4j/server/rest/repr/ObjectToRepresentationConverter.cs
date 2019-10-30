@@ -23,9 +23,9 @@ namespace Neo4Net.Server.rest.repr
 	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
 	using Node = Neo4Net.GraphDb.Node;
 	using Relationship = Neo4Net.GraphDb.Relationship;
-	using Neo4Net.Helpers.Collections;
-	using Neo4Net.Helpers.Collections;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
+	using Neo4Net.Collections.Helpers;
+	using Neo4Net.Collections.Helpers;
 
 	public class ObjectToRepresentationConverter
 	{

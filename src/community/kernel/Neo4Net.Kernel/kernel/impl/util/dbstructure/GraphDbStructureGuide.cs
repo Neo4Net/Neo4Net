@@ -27,15 +27,15 @@ namespace Neo4Net.Kernel.impl.util.dbstructure
 	using Label = Neo4Net.GraphDb.Label;
 	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using IndexReference = Neo4Net.Kernel.Api.Internal.IndexReference;
 	using Read = Neo4Net.Kernel.Api.Internal.Read;
 	using SchemaRead = Neo4Net.Kernel.Api.Internal.SchemaRead;
 	using TokenNameLookup = Neo4Net.Kernel.Api.Internal.TokenNameLookup;
 	using TokenRead = Neo4Net.Kernel.Api.Internal.TokenRead;
 	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
-	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
-	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor;
+	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException;
+	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using SilentTokenNameLookup = Neo4Net.Kernel.api.SilentTokenNameLookup;
 	using NodeExistenceConstraintDescriptor = Neo4Net.Kernel.api.schema.constraints.NodeExistenceConstraintDescriptor;
@@ -128,7 +128,7 @@ namespace Neo4Net.Kernel.impl.util.dbstructure
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void showSchema(DbStructureVisitor visitor, org.Neo4Net.kernel.api.KernelTransaction ktx) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: private void showSchema(DbStructureVisitor visitor, org.Neo4Net.kernel.api.KernelTransaction ktx) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
 		 private void ShowSchema( DbStructureVisitor visitor, KernelTransaction ktx )
 		 {
 			  TokenNameLookup nameLookup = new SilentTokenNameLookup( ktx.TokenRead() );
@@ -138,7 +138,7 @@ namespace Neo4Net.Kernel.impl.util.dbstructure
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void showIndices(DbStructureVisitor visitor, org.Neo4Net.kernel.api.KernelTransaction ktx, org.Neo4Net.Kernel.Api.Internal.TokenNameLookup nameLookup) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: private void showIndices(DbStructureVisitor visitor, org.Neo4Net.kernel.api.KernelTransaction ktx, org.Neo4Net.Kernel.Api.Internal.TokenNameLookup nameLookup) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
 		 private void ShowIndices( DbStructureVisitor visitor, KernelTransaction ktx, TokenNameLookup nameLookup )
 		 {
 			  SchemaRead schemaRead = ktx.SchemaRead();

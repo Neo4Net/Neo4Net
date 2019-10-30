@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 /*
  * Copyright © 2018-2020 "Neo4Net,"
@@ -23,63 +24,65 @@ using System.Collections.Generic;
 
 namespace Neo4Net.GraphDb.Spatial
 {
-   /// <summary>
-   /// A coordinate is used to describe a position in space.
-   /// <para>
-   /// A coordinate is described by at least two numbers and must adhere to the following ordering
-   /// <ul>
-   /// <li>x, y, z ordering in a cartesian reference system</li>
-   /// <li>east, north, altitude in a projected coordinate reference system</li>
-   /// <li>longitude, latitude, altitude in a geographic reference system</li>
-   /// </ul>
-   /// </para>
-   /// <para>
-   /// Additional numbers are allowed and the meaning of these additional numbers depends on the coordinate reference
-   /// system
-   /// (see $<seealso cref="ICRS"/>)
-   /// </para>
-   /// </summary>
-   public sealed class Coordinate
-   {
-      private readonly double[] _coordinate;
+    /// <summary>
+    /// A coordinate is used to describe a position in space.
+    /// <para>
+    /// A coordinate is described by at least two numbers and must adhere to the following ordering
+    /// <ul>
+    /// <li>x, y, z ordering in a cartesian reference system</li>
+    /// <li>east, north, altitude in a projected coordinate reference system</li>
+    /// <li>longitude, latitude, altitude in a geographic reference system</li>
+    /// </ul>
+    /// </para>
+    /// <para>
+    /// Additional numbers are allowed and the meaning of these additional numbers depends on the coordinate reference
+    /// system
+    /// (see $<seealso cref="ICRS"/>)
+    /// </para>
+    /// </summary>
+    public sealed class Coordinate
+    {
+        private readonly double[] _coordinate;
 
-      public Coordinate(params double[] coordinate)
-      {
-         if (coordinate.Length < 2)
-         {
-            throw new System.ArgumentException("A coordinate must have at least two elements");
-         }
-         _coordinate = coordinate;
-      }
+        public Coordinate(params double[] coordinate)
+        {
+            if (coordinate.Length < 2)
+            {
+                throw new System.ArgumentException("A coordinate must have at least two elements");
+            }
+            _coordinate = coordinate;
+        }
 
-      /// <summary>
-      /// Returns the current coordinate.
-      /// </summary>
-      /// <returns> A list of numbers describing the coordinate. </returns>
-      public IList<double> GetCoordinate()
-      {
-         return stream(_coordinate).boxed().collect(Collectors.toList());
-      }
+        /// <summary>
+        /// Returns the current coordinate.
+        /// </summary>
+        /// <returns> A list of numbers describing the coordinate. </returns>
+        public IList<double> GetCoordinate()
+        {
+            //$!!$ tac return stream(_coordinate).boxed().collect(Collectors.toList());
+            return _coordinate.ToList();
+        }
 
-      public override bool Equals(object o)
-      {
-         if (this == o)
-         {
-            return true;
-         }
-         if (o == null || this.GetType() != o.GetType())
-         {
-            return false;
-         }
+        public override bool Equals(object o)
+        {
+            if (this == o)
+            {
+                return true;
+            }
+            if (o == null || this.GetType() != o.GetType())
+            {
+                return false;
+            }
 
-         Coordinate that = (Coordinate)o;
+            Coordinate that = (Coordinate)o;
 
-         return Array.Equals(_coordinate, that._coordinate);
-      }
+            return Array.Equals(_coordinate, that._coordinate);
+        }
 
-      public override int GetHashCode()
-      {
-         return Array.GetHashCode(_coordinate);
-      }
-   }
+        public override int GetHashCode()
+        {
+            //$!!$ return Array.GetHashCode(_coordinate);
+            return _coordinate.GetHashCode();
+        }
+    }
 }

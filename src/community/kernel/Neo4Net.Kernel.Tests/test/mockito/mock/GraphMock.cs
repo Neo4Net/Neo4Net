@@ -31,7 +31,7 @@ namespace Neo4Net.Test.mockito.mock
 	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
 	using Relationship = Neo4Net.GraphDb.Relationship;
 	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Arrays.asList;

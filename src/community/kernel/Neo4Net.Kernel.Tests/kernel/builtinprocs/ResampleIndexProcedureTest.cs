@@ -26,7 +26,7 @@ namespace Neo4Net.Kernel.builtinprocs
 	using SchemaRead = Neo4Net.Kernel.Api.Internal.SchemaRead;
 	using TokenRead = Neo4Net.Kernel.Api.Internal.TokenRead;
 	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
-	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
+	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using SchemaRuleNotFoundException = Neo4Net.Kernel.Api.Exceptions.schema.SchemaRuleNotFoundException;
@@ -164,7 +164,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldTriggerResampling() throws org.Neo4Net.kernel.api.exceptions.schema.SchemaRuleNotFoundException, org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException, org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: @Test public void shouldTriggerResampling() throws org.Neo4Net.kernel.api.exceptions.schema.SchemaRuleNotFoundException, org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException, org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldTriggerResampling()
 		 {

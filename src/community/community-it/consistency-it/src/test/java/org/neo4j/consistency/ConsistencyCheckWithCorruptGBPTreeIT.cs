@@ -37,7 +37,7 @@ namespace Neo4Net.Consistency
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using GraphDatabaseFactory = Neo4Net.GraphDb.factory.GraphDatabaseFactory;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
+	using MapUtil = Neo4Net.Collections.Helpers.MapUtil;
 	using ProgressMonitorFactory = Neo4Net.Helpers.progress.ProgressMonitorFactory;
 	using Neo4Net.Index.Internal.gbptree;
 	using GBPTreeBootstrapper = Neo4Net.Index.Internal.gbptree.GBPTreeBootstrapper;

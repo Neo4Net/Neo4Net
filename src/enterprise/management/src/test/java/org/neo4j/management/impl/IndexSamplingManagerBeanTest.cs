@@ -26,7 +26,7 @@ namespace Neo4Net.management.impl
 	using Test = org.junit.Test;
 
 	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
-	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
+	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException;
 	using NeoStoreDataSource = Neo4Net.Kernel.NeoStoreDataSource;
 	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
 	using IndexingService = Neo4Net.Kernel.Impl.Api.index.IndexingService;
@@ -81,7 +81,7 @@ namespace Neo4Net.management.impl
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void samplingTriggeredWhenIdsArePresent() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: @Test public void samplingTriggeredWhenIdsArePresent() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void SamplingTriggeredWhenIdsArePresent()
 		 {
@@ -97,7 +97,7 @@ namespace Neo4Net.management.impl
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void forceSamplingTriggeredWhenIdsArePresent() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: @Test public void forceSamplingTriggeredWhenIdsArePresent() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ForceSamplingTriggeredWhenIdsArePresent()
 		 {

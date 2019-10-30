@@ -26,7 +26,7 @@ namespace Neo4Net.management
 	using ManagementInterface = Neo4Net.Jmx.ManagementInterface;
 
 	[ManagementInterface(name : IndexSamplingManager_Fields.NAME), Description("Handle index sampling.")]
-	public interface IndexSamplingManager
+	public interface IIndexSamplingManager
 	{
 
 		 [Description("Trigger index sampling for the index associated with the provided label and property key." + " If forceSample is set to true an index sampling will always happen otherwise a sampling is only " + "done if the number of updates exceeds the configured dbms.index_sampling.update_percentage.")]

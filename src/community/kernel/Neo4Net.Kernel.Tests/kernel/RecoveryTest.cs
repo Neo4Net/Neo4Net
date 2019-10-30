@@ -28,8 +28,8 @@ namespace Neo4Net.Kernel
 	using InOrder = org.mockito.InOrder;
 
 
-	using Neo4Net.Helpers.Collections;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
+	using Neo4Net.Collections.Helpers;
 	using OpenMode = Neo4Net.Io.fs.OpenMode;
 	using CommittedTransactionRepresentation = Neo4Net.Kernel.impl.transaction.CommittedTransactionRepresentation;
 	using SimpleLogVersionRepository = Neo4Net.Kernel.impl.transaction.SimpleLogVersionRepository;

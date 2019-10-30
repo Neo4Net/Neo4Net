@@ -29,7 +29,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using IndexOrder = Neo4Net.Kernel.Api.Internal.IndexOrder;
 	using IndexValueCapability = Neo4Net.Kernel.Api.Internal.IndexValueCapability;
 	using InternalIndexState = Neo4Net.Kernel.Api.Internal.InternalIndexState;
-	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor;
+	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.Schema.IndexProviderDescriptor;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
 	using IndexAccessor = Neo4Net.Kernel.Api.Index.IndexAccessor;

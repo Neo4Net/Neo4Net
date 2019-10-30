@@ -26,7 +26,7 @@ namespace Neo4Net.GraphDb.Traversal
 	/// the most natural ordering in a depth first search, see
 	/// http://en.wikipedia.org/wiki/Depth-first_search
 	/// </summary>
-	internal class PreorderDepthFirstSelector : BranchSelector
+	internal class PreorderDepthFirstSelector : IBranchSelector
 	{
 		 private ITraversalBranch _current;
 		 private readonly IPathExpander _expander;

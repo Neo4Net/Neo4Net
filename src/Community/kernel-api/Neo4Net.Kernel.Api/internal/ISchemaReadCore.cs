@@ -22,9 +22,9 @@
 namespace Neo4Net.Kernel.Api.Internal
 {
 
-	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
-	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
-	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor;
+	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
+	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor;
 	using PopulationProgress = Neo4Net.Kernel.Api.StorageEngine.schema.PopulationProgress;
 
 	/// <summary>
@@ -66,7 +66,7 @@ namespace Neo4Net.Kernel.Api.Internal
 		 /// <returns> The state of the provided index </returns>
 		 /// <exception cref="IndexNotFoundKernelException"> if the index was not found in the database </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: InternalIndexState indexGetState(IndexReference index) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
+//ORIGINAL LINE: InternalIndexState indexGetState(IndexReference index) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException;
 		 InternalIndexState IndexGetState( IIndexReference index );
 
 		 /// <summary>
@@ -76,7 +76,7 @@ namespace Neo4Net.Kernel.Api.Internal
 		 /// <returns> The population progress of the given index </returns>
 		 /// <exception cref="IndexNotFoundKernelException"> if the index was not found in the database </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.Neo4Net.Kernel.Api.StorageEngine.schema.PopulationProgress indexGetPopulationProgress(IndexReference index) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
+//ORIGINAL LINE: org.Neo4Net.Kernel.Api.StorageEngine.schema.PopulationProgress indexGetPopulationProgress(IndexReference index) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException;
 		 PopulationProgress IndexGetPopulationProgress( IIndexReference index );
 
 		 /// <summary>
@@ -86,7 +86,7 @@ namespace Neo4Net.Kernel.Api.Internal
 		 /// <returns> The failure message from the index </returns>
 		 /// <exception cref="IndexNotFoundKernelException"> if the index was not found in the database </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: String indexGetFailure(IndexReference index) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
+//ORIGINAL LINE: String indexGetFailure(IndexReference index) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException;
 		 string IndexGetFailure( IIndexReference index );
 
 		 /// <summary>

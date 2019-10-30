@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Kernel.impl.transaction.log
 {
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 
 	public class LogHeaderCache
 	{

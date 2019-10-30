@@ -30,17 +30,16 @@
   },
   "libraries": {
     "Microsoft.NETCore.Platforms/1.1.0": {
-      "sha512": "a/iSwnRZb+LHFk49hQOyThh/ZNC3vsbZsF65XwQIb863qF6msmhdQtxGXFL28Ob2NsCz/drEj28BJd/YPpLRBg==",
+      "sha512": "kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
       "type": "package",
       "path": "microsoft.netcore.platforms/1.1.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
+        "Microsoft.NETCore.Platforms.1.1.0.nupkg.sha512",
+        "Microsoft.NETCore.Platforms.nuspec",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/_._",
-        "microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-        "microsoft.netcore.platforms.nuspec",
         "runtime.json"
       ]
     },
@@ -180,23 +179,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\tcorvin\\.nuget\\packages\\": {},
+    "C:\\Users\\Tyson\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\tcorvin\\Source\\Repos\\Neo4Net\\Neo4Net\\src\\Community\\common\\Neo4Net.Common\\Neo4Net.Common.csproj",
+      "projectUniqueName": "C:\\Users\\Tyson\\Source\\Repos\\Neo4Net\\Neo4Net\\src\\Community\\common\\Neo4Net.Common\\Neo4Net.Common.csproj",
       "projectName": "Neo4Net.Common",
-      "projectPath": "C:\\Users\\tcorvin\\Source\\Repos\\Neo4Net\\Neo4Net\\src\\Community\\common\\Neo4Net.Common\\Neo4Net.Common.csproj",
-      "packagesPath": "C:\\Users\\tcorvin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\tcorvin\\Source\\Repos\\Neo4Net\\Neo4Net\\src\\Community\\common\\Neo4Net.Common\\obj\\",
+      "projectPath": "C:\\Users\\Tyson\\Source\\Repos\\Neo4Net\\Neo4Net\\src\\Community\\common\\Neo4Net.Common\\Neo4Net.Common.csproj",
+      "packagesPath": "C:\\Users\\Tyson\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Tyson\\Source\\Repos\\Neo4Net\\Neo4Net\\src\\Community\\common\\Neo4Net.Common\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\tcorvin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Tyson\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -204,7 +203,8 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {},
+        "https://nuget.synuit.io/nuget": {}
       },
       "frameworks": {
         "netstandard2.0": {

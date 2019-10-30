@@ -29,9 +29,9 @@ namespace Neo4Net.Index
 	using Relationship = Neo4Net.GraphDb.Relationship;
 	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using Neo4Net.GraphDb.index;
-	using Neo4Net.GraphDb.index;
-	using RelationshipIndex = Neo4Net.GraphDb.index.RelationshipIndex;
+	using Neo4Net.GraphDb.Index;
+	using Neo4Net.GraphDb.Index;
+	using RelationshipIndex = Neo4Net.GraphDb.Index.RelationshipIndex;
 	using QueryContext = Neo4Net.Index.lucene.QueryContext;
 	using ValueContext = Neo4Net.Index.lucene.ValueContext;
 	using MyRelTypes = Neo4Net.Kernel.impl.MyRelTypes;
@@ -574,7 +574,7 @@ namespace Neo4Net.Index
 		 private static int SizeOf<T1>( Index<T1> index )
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: try (org.Neo4Net.graphdb.index.IndexHits<?> indexHits = index.query("_id_:*"))
+//ORIGINAL LINE: try (org.Neo4Net.GraphDb.Index.IndexHits<?> indexHits = index.query("_id_:*"))
 			  using ( IndexHits<object> indexHits = index.query( "_id_:*" ) )
 			  {
 					return indexHits.Size();

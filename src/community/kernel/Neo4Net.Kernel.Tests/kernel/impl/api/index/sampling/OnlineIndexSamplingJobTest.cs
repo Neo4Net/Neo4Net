@@ -22,8 +22,8 @@ namespace Neo4Net.Kernel.Impl.Api.index.sampling
 	using Before = org.junit.Before;
 	using Test = org.junit.Test;
 
-	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
-	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor;
+	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException;
+	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.Schema.IndexProviderDescriptor;
 	using LogProvider = Neo4Net.Logging.LogProvider;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
 	using CapableIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.CapableIndexDescriptor;
@@ -109,7 +109,7 @@ namespace Neo4Net.Kernel.Impl.Api.index.sampling
 		 private readonly long _indexSize = 23L;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Before public void setup() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: @Before public void setup() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void Setup()
 		 {

@@ -78,7 +78,7 @@ namespace Neo4Net.Cypher.Internal.evaluator
 			  }
 		 }
 
-		 private static ValueMapper<object> MAPPER = new ValueMapper_JavaMapperAnonymousInnerClass();
+		 private static IValueMapper<object> MAPPER = new ValueMapper_JavaMapperAnonymousInnerClass();
 
 		 private class ValueMapper_JavaMapperAnonymousInnerClass : Neo4Net.Values.ValueMapper_JavaMapper
 		 {

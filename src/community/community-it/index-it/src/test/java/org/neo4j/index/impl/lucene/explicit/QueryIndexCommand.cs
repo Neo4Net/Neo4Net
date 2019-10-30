@@ -20,7 +20,7 @@
 namespace Neo4Net.Index.impl.lucene.@explicit
 {
 	using Node = Neo4Net.GraphDb.Node;
-	using Neo4Net.GraphDb.index;
+	using Neo4Net.GraphDb.Index;
 	using Neo4Net.Test.OtherThreadExecutor;
 
 	public class QueryIndexCommand : WorkerCommand<CommandState, IndexHits<Node>>

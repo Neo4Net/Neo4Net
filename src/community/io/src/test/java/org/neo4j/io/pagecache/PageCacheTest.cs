@@ -1468,7 +1468,7 @@ namespace Neo4Net.Io.pagecache
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void writeToPreviouslyBoundCursorAfterNextReturnsFalseMustThrow()
+//ORIGINAL LINE: @Test void WriteToPreviouslyBoundCursorAfterNextReturnsFalseMustThrow()
 		 internal virtual void WriteToPreviouslyBoundCursorAfterNextReturnsFalseMustThrow()
 		 {
 			  assertTimeout( ofMillis( SHORT_TIMEOUT_MILLIS ), () => verifyOnWriteCursor(this.checkPreviouslyBoundWriteCursorAfterFailedNext) );

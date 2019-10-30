@@ -27,8 +27,8 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using Neo4Net.GraphDb.index;
-	using ReadableRelationshipIndex = Neo4Net.GraphDb.index.ReadableRelationshipIndex;
+	using Neo4Net.GraphDb.Index;
+	using ReadableRelationshipIndex = Neo4Net.GraphDb.Index.ReadableRelationshipIndex;
 	using MyRelTypes = Neo4Net.Kernel.impl.MyRelTypes;
 	using DatabaseRule = Neo4Net.Test.rule.DatabaseRule;
 	using EmbeddedDatabaseRule = Neo4Net.Test.rule.EmbeddedDatabaseRule;

@@ -42,9 +42,9 @@ namespace Neo4Net.Server.rest.web
 	using ConstraintDefinition = Neo4Net.GraphDb.Schema.ConstraintDefinition;
 	using ConstraintType = Neo4Net.GraphDb.Schema.ConstraintType;
 	using IndexDefinition = Neo4Net.GraphDb.Schema.IndexDefinition;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
-	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
-	using Neo4Net.Helpers.Collections;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
+	using MapUtil = Neo4Net.Collections.Helpers.MapUtil;
+	using Neo4Net.Collections.Helpers;
 	using GraphDatabaseFacade = Neo4Net.Kernel.impl.factory.GraphDatabaseFacade;
 	using Database = Neo4Net.Server.database.Database;
 	using WrappedDatabase = Neo4Net.Server.database.WrappedDatabase;

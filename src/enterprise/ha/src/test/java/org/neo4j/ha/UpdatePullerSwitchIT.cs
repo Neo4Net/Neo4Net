@@ -35,7 +35,7 @@ namespace Neo4Net.ha
 	using Node = Neo4Net.GraphDb.Node;
 	using Neo4Net.GraphDb;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using Iterators = Neo4Net.Helpers.Collections.Iterators;
+	using Iterators = Neo4Net.Collections.Helpers.Iterators;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using HaSettings = Neo4Net.Kernel.ha.HaSettings;
 	using HighlyAvailableGraphDatabase = Neo4Net.Kernel.ha.HighlyAvailableGraphDatabase;

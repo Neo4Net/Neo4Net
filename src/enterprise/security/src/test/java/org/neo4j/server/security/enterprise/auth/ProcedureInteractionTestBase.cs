@@ -616,7 +616,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 			  if ( value is AnyValue )
 			  {
 					BaseToObjectValueWriter<Exception> writer = writer();
-					( ( AnyValue ) value ).writeTo( writer );
+					( ( AnyValue ) value ).WriteTo( writer );
 					return writer.Value();
 			  }
 			  else

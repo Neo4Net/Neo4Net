@@ -40,8 +40,8 @@ namespace Neo4Net.storeupgrade
 	using GraphDatabaseBuilder = Neo4Net.GraphDb.factory.GraphDatabaseBuilder;
 	using GraphDatabaseFactory = Neo4Net.GraphDb.factory.GraphDatabaseFactory;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using Neo4Net.GraphDb.index;
-	using RelationshipIndex = Neo4Net.GraphDb.index.RelationshipIndex;
+	using Neo4Net.GraphDb.Index;
+	using RelationshipIndex = Neo4Net.GraphDb.Index.RelationshipIndex;
 	using ValueContext = Neo4Net.Index.lucene.ValueContext;
 	using Settings = Neo4Net.Kernel.configuration.Settings;
 	using UpgradeNotAllowedByConfigurationException = Neo4Net.Kernel.impl.storemigration.UpgradeNotAllowedByConfigurationException;

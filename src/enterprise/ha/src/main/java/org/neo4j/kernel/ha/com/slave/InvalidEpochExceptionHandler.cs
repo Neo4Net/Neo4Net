@@ -22,7 +22,7 @@
  */
 namespace Neo4Net.Kernel.ha.com.slave
 {
-	public interface InvalidEpochExceptionHandler
+	public interface IInvalidEpochExceptionHandler
 	{
 		 void Handle();
 	}

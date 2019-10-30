@@ -41,8 +41,8 @@ namespace Neo4Net.causalclustering.discovery
 	using CausalClusteringTestHelpers = Neo4Net.causalclustering.helpers.CausalClusteringTestHelpers;
 	using MemberId = Neo4Net.causalclustering.identity.MemberId;
 	using AdvertisedSocketAddress = Neo4Net.Helpers.AdvertisedSocketAddress;
-	using CollectorsUtil = Neo4Net.Helpers.Collections.CollectorsUtil;
-	using Neo4Net.Helpers.Collections;
+	using CollectorsUtil = Neo4Net.Collections.Helpers.CollectorsUtil;
+	using Neo4Net.Collections.Helpers;
 	using BoltConnector = Neo4Net.Kernel.configuration.BoltConnector;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using AssertableLogProvider = Neo4Net.Logging.AssertableLogProvider;

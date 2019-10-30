@@ -23,9 +23,9 @@ namespace Neo4Net.Kernel.Api.StorageEngine
 {
 
 	using InternalIndexState = Neo4Net.Kernel.Api.Internal.InternalIndexState;
-	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
-	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
-	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor;
+	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.ISchemaDescriptor;
+	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.Schema.constraints.IConstraintDescriptor;
 	using CapableIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.CapableIndexDescriptor;
 	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
 	using PopulationProgress = Neo4Net.Kernel.Api.StorageEngine.schema.PopulationProgress;
@@ -56,15 +56,11 @@ namespace Neo4Net.Kernel.Api.StorageEngine
 		 /// <param name="descriptor"> <seealso cref="IndexDescriptor"/> to get state for. </param>
 		 /// <returns> <seealso cref="InternalIndexState"/> for index. </returns>
 		 /// <exception cref="IndexNotFoundKernelException"> if index not found. </exception>
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.Neo4Net.Kernel.Api.Internal.InternalIndexState indexGetState(org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor descriptor) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
 		 InternalIndexState IndexGetState( IndexDescriptor descriptor );
 
 		 /// <param name="descriptor"> <seealso cref="SchemaDescriptor"/> to get population progress for. </param>
 		 /// <returns> progress of index population, which is the initial state of an index when it's created. </returns>
 		 /// <exception cref="IndexNotFoundKernelException"> if index not found. </exception>
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.Neo4Net.Kernel.Api.StorageEngine.schema.PopulationProgress indexGetPopulationProgress(org.Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor descriptor) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
 		 PopulationProgress IndexGetPopulationProgress( SchemaDescriptor descriptor );
 
 		 /// <summary>
@@ -74,8 +70,6 @@ namespace Neo4Net.Kernel.Api.StorageEngine
 		 /// <param name="descriptor"> <seealso cref="SchemaDescriptor"/> to get failure for. </param>
 		 /// <returns> failure of an index, or {@code null} if index is working as it should. </returns>
 		 /// <exception cref="IndexNotFoundKernelException"> if index not found. </exception>
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: String indexGetFailure(org.Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor descriptor) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
 		 string IndexGetFailure( SchemaDescriptor descriptor );
 
 		 /// <param name="labelId"> label token id. </param>

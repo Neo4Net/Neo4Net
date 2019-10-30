@@ -29,7 +29,7 @@ namespace Neo4Net.Kernel.spi.legacyindex
 	/// here on startup, and unregister it on stop. </summary>
 	/// @deprecated removed in 4.0 
 	[Obsolete("removed in 4.0")]
-	public interface IndexProviders
+	public interface IIndexProviders
 	{
 		 void RegisterIndexProvider( string name, IndexImplementation index );
 

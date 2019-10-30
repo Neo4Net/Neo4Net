@@ -29,7 +29,7 @@ namespace Neo4Net.Server.rest.repr
 	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
 	using Result = Neo4Net.GraphDb.Result;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
+	using MapUtil = Neo4Net.Collections.Helpers.MapUtil;
 	using JsonFormat = Neo4Net.Server.rest.repr.formats.JsonFormat;
 	using DatabaseRule = Neo4Net.Test.rule.DatabaseRule;
 	using ImpermanentDatabaseRule = Neo4Net.Test.rule.ImpermanentDatabaseRule;

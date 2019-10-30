@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Kernel.Api.Exceptions.schema
 {
-	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
 
 	public class RepeatedRelationshipTypeInSchemaException : RepeatedSchemaComponentException
 	{

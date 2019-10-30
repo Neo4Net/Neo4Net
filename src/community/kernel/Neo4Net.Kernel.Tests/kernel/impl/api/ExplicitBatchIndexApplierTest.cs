@@ -32,7 +32,7 @@ namespace Neo4Net.Kernel.Impl.Api
 
 	using Node = Neo4Net.GraphDb.Node;
 	using Relationship = Neo4Net.GraphDb.Relationship;
-	using IndexManager = Neo4Net.GraphDb.index.IndexManager;
+	using IndexManager = Neo4Net.GraphDb.Index.IndexManager;
 	using EphemeralFileSystemAbstraction = Neo4Net.GraphDb.mockfs.EphemeralFileSystemAbstraction;
 	using AddNodeCommand = Neo4Net.Kernel.impl.index.IndexCommand.AddNodeCommand;
 	using AddRelationshipCommand = Neo4Net.Kernel.impl.index.IndexCommand.AddRelationshipCommand;

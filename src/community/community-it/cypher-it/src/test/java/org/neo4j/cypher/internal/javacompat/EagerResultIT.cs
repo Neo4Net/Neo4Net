@@ -45,7 +45,7 @@ namespace Neo4Net.Cypher.Internal.javacompat
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using PlatformModule = Neo4Net.GraphDb.factory.module.PlatformModule;
 	using CommunityEditionModule = Neo4Net.GraphDb.factory.module.edition.CommunityEditionModule;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using VersionContext = Neo4Net.Io.pagecache.tracing.cursor.context.VersionContext;
 	using VersionContextSupplier = Neo4Net.Io.pagecache.tracing.cursor.context.VersionContextSupplier;
 	using Config = Neo4Net.Kernel.configuration.Config;

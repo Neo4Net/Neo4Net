@@ -23,7 +23,7 @@ namespace Neo4Net.Bolt.v3.runtime.integration
 
 	using BoltTestUtil = Neo4Net.Bolt.testing.BoltTestUtil;
 	using HelloMessage = Neo4Net.Bolt.v3.messaging.request.HelloMessage;
-	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
+	using MapUtil = Neo4Net.Collections.Helpers.MapUtil;
 	using MapValue = Neo4Net.Values.@virtual.MapValue;
 	using VirtualValues = Neo4Net.Values.@virtual.VirtualValues;
 

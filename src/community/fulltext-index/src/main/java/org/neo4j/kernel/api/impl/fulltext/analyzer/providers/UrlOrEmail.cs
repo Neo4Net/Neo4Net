@@ -22,11 +22,11 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext.analyzer.providers
 	using Analyzer = org.apache.lucene.analysis.Analyzer;
 	using UAX29URLEmailAnalyzer = org.apache.lucene.analysis.standard.UAX29URLEmailAnalyzer;
 
-	using AnalyzerProvider = Neo4Net.GraphDb.index.fulltext.AnalyzerProvider;
+	using AnalyzerProvider = Neo4Net.GraphDb.Index.fulltext.AnalyzerProvider;
 	using Service = Neo4Net.Helpers.Service;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Service.Implementation(AnalyzerProvider.class) public class UrlOrEmail extends org.Neo4Net.graphdb.index.fulltext.AnalyzerProvider
+//ORIGINAL LINE: @Service.Implementation(AnalyzerProvider.class) public class UrlOrEmail extends org.Neo4Net.GraphDb.Index.fulltext.AnalyzerProvider
 	public class UrlOrEmail : AnalyzerProvider
 	{
 		 public UrlOrEmail() : base("url_or_email", "url", "email")

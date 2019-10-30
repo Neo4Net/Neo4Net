@@ -28,7 +28,7 @@ namespace Neo4Net.cluster.protocol.cluster
 	using Test = org.junit.Test;
 
 
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:

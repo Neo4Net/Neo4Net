@@ -20,9 +20,9 @@
 namespace Neo4Net.Kernel.Api.Exceptions.schema
 {
 	using TokenNameLookup = Neo4Net.Kernel.Api.Internal.TokenNameLookup;
-	using SchemaKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.SchemaKernelException;
-	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
-	using SchemaUtil = Neo4Net.Kernel.Api.Internal.schema.SchemaUtil;
+	using SchemaKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.SchemaKernelException;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
+	using SchemaUtil = Neo4Net.Kernel.Api.Internal.Schema.SchemaUtil;
 	using SchemaRule = Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule;
 
 	/// <summary>

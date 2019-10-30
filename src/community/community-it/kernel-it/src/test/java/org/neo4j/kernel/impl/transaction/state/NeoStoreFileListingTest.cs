@@ -29,7 +29,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 	using Resource = Neo4Net.GraphDb.Resource;
 	using Neo4Net.GraphDb;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using Iterators = Neo4Net.Helpers.Collections.Iterators;
+	using Iterators = Neo4Net.Collections.Helpers.Iterators;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using LabelScanStore = Neo4Net.Kernel.api.labelscan.LabelScanStore;
 	using ExplicitIndexProvider = Neo4Net.Kernel.Impl.Api.ExplicitIndexProvider;

@@ -32,7 +32,7 @@ namespace Neo4Net.com.storecopy
 	using Neo4Net.com;
 	using DatabaseManager = Neo4Net.Dbms.database.DatabaseManager;
 	using Suppliers = Neo4Net.Functions.Suppliers;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
 	using EmptyVersionContextSupplier = Neo4Net.Io.pagecache.tracing.cursor.context.EmptyVersionContextSupplier;

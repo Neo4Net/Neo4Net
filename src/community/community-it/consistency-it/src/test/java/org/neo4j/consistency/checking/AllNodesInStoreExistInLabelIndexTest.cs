@@ -30,7 +30,7 @@ namespace Neo4Net.Consistency.checking
 	using Label = Neo4Net.GraphDb.Label;
 	using Node = Neo4Net.GraphDb.Node;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using DefaultFileSystemAbstraction = Neo4Net.Io.fs.DefaultFileSystemAbstraction;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;

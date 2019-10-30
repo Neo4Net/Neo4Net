@@ -32,7 +32,7 @@ namespace Neo4Net.com
 	using Answer = org.mockito.stubbing.Answer;
 
 	using ResponseUnpacker = Neo4Net.com.storecopy.ResponseUnpacker;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using MismatchingStoreIdException = Neo4Net.Kernel.impl.store.MismatchingStoreIdException;
 	using CommittedTransactionRepresentation = Neo4Net.Kernel.impl.transaction.CommittedTransactionRepresentation;
 	using TransactionIdStore = Neo4Net.Kernel.impl.transaction.log.TransactionIdStore;

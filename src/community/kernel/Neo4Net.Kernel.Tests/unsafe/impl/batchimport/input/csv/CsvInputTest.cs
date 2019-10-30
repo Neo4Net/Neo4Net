@@ -36,8 +36,8 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input.csv
 	using Neo4Net.Csv.Reader;
 	using Extractors = Neo4Net.Csv.Reader.Extractors;
 	using Readables = Neo4Net.Csv.Reader.Readables;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
-	using Iterators = Neo4Net.Helpers.Collections.Iterators;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
+	using Iterators = Neo4Net.Collections.Helpers.Iterators;
 	using RandomRule = Neo4Net.Test.rule.RandomRule;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
 	using CoordinateReferenceSystem = Neo4Net.Values.Storable.CoordinateReferenceSystem;

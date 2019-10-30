@@ -36,15 +36,15 @@ namespace Schema
 	using Node = Neo4Net.GraphDb.Node;
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using Iterators = Neo4Net.Helpers.Collections.Iterators;
-	using Neo4Net.Helpers.Collections;
+	using Iterators = Neo4Net.Collections.Helpers.Iterators;
+	using Neo4Net.Collections.Helpers;
 	using InternalIndexState = Neo4Net.Kernel.Api.Internal.InternalIndexState;
 	using TokenNameLookup = Neo4Net.Kernel.Api.Internal.TokenNameLookup;
 	using TokenRead = Neo4Net.Kernel.Api.Internal.TokenRead;
-	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
-	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor;
-	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.LabelSchemaDescriptor;
-	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
+	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException;
+	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.Schema.IndexProviderDescriptor;
+	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.LabelSchemaDescriptor;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using SilentTokenNameLookup = Neo4Net.Kernel.api.SilentTokenNameLookup;
 	using Statement = Neo4Net.Kernel.api.Statement;
@@ -281,7 +281,7 @@ namespace Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void checkIndexIsOnline(int labelId) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: private void checkIndexIsOnline(int labelId) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
 		 private void CheckIndexIsOnline( int labelId )
 		 {
 			  IndexProxy indexProxy = _indexService.getIndexProxy( SchemaDescriptorFactory.forLabel( labelId, _propertyId ) );
@@ -294,7 +294,7 @@ namespace Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader getIndexReader(int propertyId, System.Nullable<int> countryLabelId) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: private org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader getIndexReader(int propertyId, System.Nullable<int> countryLabelId) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
 		 private IndexReader GetIndexReader( int propertyId, int? countryLabelId )
 		 {
 			  return _indexService.getIndexProxy( SchemaDescriptorFactory.forLabel( countryLabelId.Value, propertyId ) ).newReader();
@@ -335,7 +335,7 @@ namespace Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void waitAndActivateIndexes(java.util.Map<String,int> labelsIds, int propertyId) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException, org.Neo4Net.kernel.api.exceptions.index.IndexPopulationFailedKernelException, InterruptedException, org.Neo4Net.kernel.api.exceptions.index.IndexActivationFailedKernelException
+//ORIGINAL LINE: private void waitAndActivateIndexes(java.util.Map<String,int> labelsIds, int propertyId) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException, org.Neo4Net.kernel.api.exceptions.index.IndexPopulationFailedKernelException, InterruptedException, org.Neo4Net.kernel.api.exceptions.index.IndexActivationFailedKernelException
 		 private void WaitAndActivateIndexes( IDictionary<string, int> labelsIds, int propertyId )
 		 {
 			  using ( Transaction ignored = EmbeddedDatabase.beginTx() )
@@ -370,7 +370,7 @@ namespace Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void waitIndexOnline(org.Neo4Net.kernel.impl.api.index.IndexingService indexService, int propertyId, int labelId) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException, org.Neo4Net.kernel.api.exceptions.index.IndexPopulationFailedKernelException, InterruptedException, org.Neo4Net.kernel.api.exceptions.index.IndexActivationFailedKernelException
+//ORIGINAL LINE: private void waitIndexOnline(org.Neo4Net.kernel.impl.api.index.IndexingService indexService, int propertyId, int labelId) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException, org.Neo4Net.kernel.api.exceptions.index.IndexPopulationFailedKernelException, InterruptedException, org.Neo4Net.kernel.api.exceptions.index.IndexActivationFailedKernelException
 		 private void WaitIndexOnline( IndexingService indexService, int propertyId, int labelId )
 		 {
 			  IndexProxy indexProxy = indexService.getIndexProxy( SchemaDescriptorFactory.forLabel( labelId, propertyId ) );

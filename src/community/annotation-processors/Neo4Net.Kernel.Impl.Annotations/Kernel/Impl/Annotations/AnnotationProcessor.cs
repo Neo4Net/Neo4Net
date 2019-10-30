@@ -74,14 +74,10 @@ namespace Neo4Net.Kernel.Impl.Annotations
 			  processingEnv.Messager.printMessage( Kind.ERROR, message, element, annotation );
 		 }
 
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected abstract void process(javax.lang.model.element.TypeElement annotationType, javax.lang.model.element.Element annotated, javax.lang.model.element.AnnotationMirror annotation, java.util.Map<? extends javax.lang.model.element.ExecutableElement, ? extends javax.lang.model.element.AnnotationValue> values) throws java.io.IOException;
 		 protected internal abstract void process<T1>( TypeElement annotationType, Element annotated, AnnotationMirror annotation, IDictionary<T1> values ) where T1 : javax.lang.model.element.ExecutableElement;
 
 		 private static Pattern _nl = Pattern.compile( "\n" );
 
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void addTo(String line, String... path) throws java.io.IOException
 		 internal virtual void AddTo( string line, params string[] path )
 		 {
 			  FileObject fo = processingEnv.Filer.getResource( StandardLocation.CLASS_OUTPUT, "", path( path ) );

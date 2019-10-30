@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel.impl.store
 	using Test = org.junit.Test;
 
 
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using PropertyBlock = Neo4Net.Kernel.Impl.Store.Records.PropertyBlock;
 	using PropertyRecord = Neo4Net.Kernel.Impl.Store.Records.PropertyRecord;
 	using Values = Neo4Net.Values.Storable.Values;

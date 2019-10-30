@@ -51,7 +51,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 			  // given
 			  DbWithNoCache();
 
-			  Transaction transaction = NewTransaction( AnonymousContext.writeToken() );
+			  Transaction transaction = NewTransaction( AnonymousContext.WriteToken() );
 			  int prop1 = transaction.TokenWrite().propertyKeyGetOrCreateForName("prop1");
 			  int prop2 = transaction.TokenWrite().propertyKeyGetOrCreateForName("prop2");
 
@@ -77,7 +77,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 		 public virtual void ShouldNotAllowModifyingPropertiesOnDeletedRelationship()
 		 {
 			  // given
-			  Transaction transaction = NewTransaction( AnonymousContext.writeToken() );
+			  Transaction transaction = NewTransaction( AnonymousContext.WriteToken() );
 			  int prop1 = transaction.TokenWrite().propertyKeyGetOrCreateForName("prop1");
 			  int type = transaction.TokenWrite().relationshipTypeGetOrCreateForName("RELATED");
 			  long startNodeId = transaction.DataWrite().nodeCreate();
@@ -106,7 +106,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 		 public virtual void ShouldBeAbleToRemoveResetAndTwiceRemovePropertyOnRelationship()
 		 {
 			  // given
-			  Transaction transaction = NewTransaction( AnonymousContext.writeToken() );
+			  Transaction transaction = NewTransaction( AnonymousContext.WriteToken() );
 			  int prop = transaction.TokenWrite().propertyKeyGetOrCreateForName("foo");
 			  int type = transaction.TokenWrite().relationshipTypeGetOrCreateForName("RELATED");
 

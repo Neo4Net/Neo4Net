@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.Api.Index
 	/// <summary>
 	/// Inherited by <seealso cref="IndexAccessor"/> and <seealso cref="IndexPopulator"/>.
 	/// </summary>
-	public interface IndexConfigProvider
+	public interface IIndexConfigProvider
 	{
 		 /// <summary>
 		 /// Get index configurations used by this index at runtime.

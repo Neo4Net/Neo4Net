@@ -36,7 +36,7 @@ namespace Neo4Net.Kernel.impl.store
 	using DelegatingFileSystemAbstraction = Neo4Net.GraphDb.mockfs.DelegatingFileSystemAbstraction;
 	using DelegatingStoreChannel = Neo4Net.GraphDb.mockfs.DelegatingStoreChannel;
 	using EphemeralFileSystemAbstraction = Neo4Net.GraphDb.mockfs.EphemeralFileSystemAbstraction;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using OpenMode = Neo4Net.Io.fs.OpenMode;
 	using StoreChannel = Neo4Net.Io.fs.StoreChannel;

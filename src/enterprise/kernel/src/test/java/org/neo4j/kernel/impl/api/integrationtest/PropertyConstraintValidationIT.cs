@@ -126,7 +126,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 					// given
 					long IEntityId = CreateConstraintAndEntity( "Label1", "key1", "value1" );
 
-					Transaction transaction = NewTransaction( AnonymousContext.writeToken() );
+					Transaction transaction = NewTransaction( AnonymousContext.WriteToken() );
 
 					// when
 					int label = transaction.TokenWrite().labelGetOrCreateForName("Label1");
@@ -183,7 +183,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 //ORIGINAL LINE: long createConstraintAndEntity(String type, String property, String value) throws Exception
 			  internal override long CreateConstraintAndEntity( string type, string property, string value )
 			  {
-					Transaction transaction = NewTransaction( AnonymousContext.writeToken() );
+					Transaction transaction = NewTransaction( AnonymousContext.WriteToken() );
 					int label = transaction.TokenWrite().labelGetOrCreateForName(type);
 					long node = transaction.DataWrite().nodeCreate();
 					transaction.DataWrite().nodeAddLabel(node, label);
@@ -276,7 +276,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 //ORIGINAL LINE: long createConstraintAndEntity(String type, String property, String value) throws Exception
 			  internal override long CreateConstraintAndEntity( string type, string property, string value )
 			  {
-					Transaction transaction = NewTransaction( AnonymousContext.writeToken() );
+					Transaction transaction = NewTransaction( AnonymousContext.WriteToken() );
 					int relType = transaction.TokenWrite().relationshipTypeGetOrCreateForName(type);
 					long start = transaction.DataWrite().nodeCreate();
 					long end = transaction.DataWrite().nodeCreate();
@@ -362,7 +362,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 					// given
 					CreateConstraint( "Type1", "key1" );
 
-					Transaction transaction = NewTransaction( AnonymousContext.writeToken() );
+					Transaction transaction = NewTransaction( AnonymousContext.WriteToken() );
 
 					// when
 					CreateEntity( transaction, "Type1" );
@@ -386,7 +386,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 			  {
 					// given
 					long IEntity = CreateConstraintAndEntity( "Type1", "key1", "value1" );
-					Transaction transaction = NewTransaction( AnonymousContext.writeToken() );
+					Transaction transaction = NewTransaction( AnonymousContext.WriteToken() );
 
 					// when
 					int key = transaction.TokenWrite().propertyKeyGetOrCreateForName("key1");
@@ -411,7 +411,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 			  {
 					// given
 					long IEntity = CreateConstraintAndEntity( "Type1", "key1", "value1" );
-					Transaction transaction = NewTransaction( AnonymousContext.writeToken() );
+					Transaction transaction = NewTransaction( AnonymousContext.WriteToken() );
 
 					// when
 					int key = transaction.TokenWrite().propertyKeyGetOrCreateForName("key1");
@@ -430,7 +430,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 					// given
 					long IEntity = CreateConstraintAndEntity( "Type1", "key1", "value1" );
 
-					Transaction transaction = NewTransaction( AnonymousContext.writeToken() );
+					Transaction transaction = NewTransaction( AnonymousContext.WriteToken() );
 
 					// when
 					int key = transaction.TokenWrite().propertyKeyGetOrCreateForName("key1");
@@ -447,7 +447,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 					// given
 					CreateConstraintAndEntity( "Type1", "key1", "value1" );
 
-					Transaction transaction = NewTransaction( AnonymousContext.writeToken() );
+					Transaction transaction = NewTransaction( AnonymousContext.WriteToken() );
 
 					// when
 					CreateEntity( transaction, "key1", "value1" );

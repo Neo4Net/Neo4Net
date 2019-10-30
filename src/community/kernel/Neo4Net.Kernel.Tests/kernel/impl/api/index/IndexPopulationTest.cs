@@ -23,7 +23,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 {
 	using Test = org.junit.Test;
 
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using InternalIndexState = Neo4Net.Kernel.Api.Internal.InternalIndexState;
 	using IndexEntryConflictException = Neo4Net.Kernel.Api.Exceptions.index.IndexEntryConflictException;
 	using IndexAccessor = Neo4Net.Kernel.Api.Index.IndexAccessor;

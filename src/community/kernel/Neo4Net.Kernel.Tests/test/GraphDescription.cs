@@ -29,7 +29,7 @@ namespace Neo4Net.Test
 	using Relationship = Neo4Net.GraphDb.Relationship;
 	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using Neo4Net.GraphDb.index;
+	using Neo4Net.GraphDb.Index;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Arrays.asList;

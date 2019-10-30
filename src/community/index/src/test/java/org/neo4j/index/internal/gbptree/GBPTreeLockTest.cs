@@ -25,7 +25,7 @@ namespace Neo4Net.Index.Internal.gbptree
 	using Test = org.junit.Test;
 
 
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using Race = Neo4Net.Test.Race;
 	using Neo4Net.Test.rule.concurrent;
 

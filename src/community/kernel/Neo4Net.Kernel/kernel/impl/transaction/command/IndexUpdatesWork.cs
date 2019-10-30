@@ -23,8 +23,8 @@ using System.Collections.Generic;
 namespace Neo4Net.Kernel.impl.transaction.command
 {
 
-	using Neo4Net.Helpers.Collections;
-	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
+	using Neo4Net.Collections.Helpers;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
 	using IndexEntryConflictException = Neo4Net.Kernel.Api.Exceptions.index.IndexEntryConflictException;
 	using Neo4Net.Kernel.Api.Index;
 	using Neo4Net.Kernel.Impl.Api.index;

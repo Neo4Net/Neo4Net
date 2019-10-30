@@ -22,7 +22,7 @@
 namespace Neo4Net.Internal.Collector
 {
 
-	using Iterators = Neo4Net.Helpers.Collections.Iterators;
+	using Iterators = Neo4Net.Collections.Helpers.Iterators;
 	using IndexReference = Neo4Net.Kernel.Api.Internal.IndexReference;
 	using Kernel = Neo4Net.Kernel.Api.Internal.Kernel;
 	using NamedToken = Neo4Net.Kernel.Api.Internal.NamedToken;
@@ -31,8 +31,8 @@ namespace Neo4Net.Internal.Collector
 	using TokenRead = Neo4Net.Kernel.Api.Internal.TokenRead;
 	using Transaction = Neo4Net.Kernel.Api.Internal.Transaction;
 	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
-	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
-	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor;
+	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException;
+	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor;
 	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using SilentTokenNameLookup = Neo4Net.Kernel.api.SilentTokenNameLookup;
 	using Register = Neo4Net.Register.Register;
@@ -52,7 +52,7 @@ namespace Neo4Net.Internal.Collector
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static java.util.stream.Stream<RetrieveResult> retrieve(org.Neo4Net.Kernel.Api.Internal.Kernel kernel, Anonymizer anonymizer) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException, org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: static java.util.stream.Stream<RetrieveResult> retrieve(org.Neo4Net.Kernel.Api.Internal.Kernel kernel, Anonymizer anonymizer) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException, org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
 		 internal static Stream<RetrieveResult> Retrieve( Kernel kernel, Anonymizer anonymizer )
 		 {
 			  using ( Transaction tx = kernel.BeginTransaction( Neo4Net.Kernel.Api.Internal.Transaction_Type.Explicit, LoginContext.AUTH_DISABLED ) )
@@ -133,7 +133,7 @@ namespace Neo4Net.Internal.Collector
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static java.util.List<java.util.Map<String,Object>> indexes(org.Neo4Net.Kernel.Api.Internal.TokenRead tokens, org.Neo4Net.Kernel.Api.Internal.SchemaRead schemaRead, Anonymizer anonymizer) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: private static java.util.List<java.util.Map<String,Object>> indexes(org.Neo4Net.Kernel.Api.Internal.TokenRead tokens, org.Neo4Net.Kernel.Api.Internal.SchemaRead schemaRead, Anonymizer anonymizer) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
 		 private static IList<IDictionary<string, object>> Indexes( TokenRead tokens, SchemaRead schemaRead, Anonymizer anonymizer )
 		 {
 			  IList<IDictionary<string, object>> indexes = new List<IDictionary<string, object>>();

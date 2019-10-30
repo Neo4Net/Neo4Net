@@ -28,7 +28,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 
 
 	using PrimitiveLongCollections = Neo4Net.Collections.PrimitiveLongCollections;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using Loaders = Neo4Net.Kernel.impl.storageengine.impl.recordstorage.Loaders;
 	using PropertyCreator = Neo4Net.Kernel.impl.storageengine.impl.recordstorage.PropertyCreator;
 	using PropertyTraverser = Neo4Net.Kernel.impl.storageengine.impl.recordstorage.PropertyTraverser;

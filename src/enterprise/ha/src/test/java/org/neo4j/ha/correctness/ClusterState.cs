@@ -26,9 +26,9 @@ using System.Collections.Generic;
 namespace Neo4Net.ha.correctness
 {
 
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
-	using Neo4Net.Helpers.Collections;
-	using Neo4Net.Helpers.Collections;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
+	using Neo4Net.Collections.Helpers;
+	using Neo4Net.Collections.Helpers;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.helpers.collection.Iterables.filter;

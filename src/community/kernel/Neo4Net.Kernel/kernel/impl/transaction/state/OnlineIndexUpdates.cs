@@ -22,7 +22,7 @@
 namespace Neo4Net.Kernel.impl.transaction.state
 {
 
-	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
 	using Neo4Net.Kernel.Api.Index;
 	using Neo4Net.Kernel.Impl.Api.index;
 	using IEntityUpdates = Neo4Net.Kernel.Impl.Api.index.EntityUpdates;

@@ -34,8 +34,8 @@ namespace Schema
 	using Neo4Net.GraphDb;
 	using Result = Neo4Net.GraphDb.Result;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
-	using Iterators = Neo4Net.Helpers.Collections.Iterators;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
+	using Iterators = Neo4Net.Collections.Helpers.Iterators;
 	using IndexPopulationJob = Neo4Net.Kernel.Impl.Api.index.IndexPopulationJob;
 	using AssertableLogProvider = Neo4Net.Logging.AssertableLogProvider;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;

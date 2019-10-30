@@ -32,8 +32,8 @@ namespace Neo4Net.Kernel.impl.transaction.state
 	using DatabaseManager = Neo4Net.Dbms.database.DatabaseManager;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using CloneableInPublic = Neo4Net.Helpers.CloneableInPublic;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
-	using Neo4Net.Helpers.Collections;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
+	using Neo4Net.Collections.Helpers;
 	using EmptyVersionContextSupplier = Neo4Net.Io.pagecache.tracing.cursor.context.EmptyVersionContextSupplier;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using DynamicNodeLabels = Neo4Net.Kernel.impl.store.DynamicNodeLabels;

@@ -29,11 +29,11 @@ namespace Neo4Net.Kernel.impl.transaction.command
 	using RuleChain = org.junit.rules.RuleChain;
 
 
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using RecoveryCleanupWorkCollector = Neo4Net.Index.Internal.gbptree.RecoveryCleanupWorkCollector;
 	using IndexQuery = Neo4Net.Kernel.Api.Internal.IndexQuery;
 	using InternalIndexState = Neo4Net.Kernel.Api.Internal.InternalIndexState;
-	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.LabelSchemaDescriptor;
+	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.LabelSchemaDescriptor;
 	using DefaultFileSystemAbstraction = Neo4Net.Io.fs.DefaultFileSystemAbstraction;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
 	using NativeLuceneFusionIndexProviderFactory20 = Neo4Net.Kernel.Api.Impl.Schema.NativeLuceneFusionIndexProviderFactory20;

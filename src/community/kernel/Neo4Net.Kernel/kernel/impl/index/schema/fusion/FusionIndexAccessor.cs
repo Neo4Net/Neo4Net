@@ -23,8 +23,8 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 {
 
 	using Neo4Net.GraphDb;
-	using Neo4Net.Helpers.Collections;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Neo4Net.Collections.Helpers;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using IOLimiter = Neo4Net.Io.pagecache.IOLimiter;
 	using IndexEntryConflictException = Neo4Net.Kernel.Api.Exceptions.index.IndexEntryConflictException;
 	using IndexAccessor = Neo4Net.Kernel.Api.Index.IndexAccessor;
@@ -109,9 +109,9 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 				  foreach ( BoundedIterable entry in _entries )
 				  {
 						long maxCount = entry.maxCount();
-						if ( maxCount == Neo4Net.Helpers.Collections.BoundedIterable_Fields.UNKNOWN_MAX_COUNT )
+						if ( maxCount == Neo4Net.Collections.Helpers.BoundedIterable_Fields.UNKNOWN_MAX_COUNT )
 						{
-							 return Neo4Net.Helpers.Collections.BoundedIterable_Fields.UNKNOWN_MAX_COUNT;
+							 return Neo4Net.Collections.Helpers.BoundedIterable_Fields.UNKNOWN_MAX_COUNT;
 						}
 						sum += maxCount;
 				  }

@@ -39,7 +39,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 
 	using Neo4Net.GraphDb;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using Iterators = Neo4Net.Helpers.Collections.Iterators;
+	using Iterators = Neo4Net.Collections.Helpers.Iterators;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using QueryId = Neo4Net.Kernel.enterprise.builtinprocs.QueryId;
 	using InternalTransaction = Neo4Net.Kernel.impl.coreapi.InternalTransaction;

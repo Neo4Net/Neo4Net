@@ -20,7 +20,7 @@
 namespace Neo4Net.Kernel.impl.transaction.log.entry
 {
 
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using StorageCommand = Neo4Net.Kernel.Api.StorageEngine.StorageCommand;
 	using WritableChannel = Neo4Net.Kernel.Api.StorageEngine.WritableChannel;
 

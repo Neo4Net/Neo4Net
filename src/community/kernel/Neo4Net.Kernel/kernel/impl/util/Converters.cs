@@ -23,7 +23,7 @@ namespace Neo4Net.Kernel.impl.util
 {
 
 	using HostnamePort = Neo4Net.Helpers.HostnamePort;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.function.Predicates.not;

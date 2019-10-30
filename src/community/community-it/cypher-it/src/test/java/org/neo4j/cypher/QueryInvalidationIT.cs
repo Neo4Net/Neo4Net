@@ -32,7 +32,7 @@ namespace Neo4Net.Cypher
 	using Result = Neo4Net.GraphDb.Result;
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
 	using DatabaseRule = Neo4Net.Test.rule.DatabaseRule;

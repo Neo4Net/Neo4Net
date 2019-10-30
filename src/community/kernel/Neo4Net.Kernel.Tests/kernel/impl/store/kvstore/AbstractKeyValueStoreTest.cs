@@ -33,7 +33,7 @@ namespace Neo4Net.Kernel.impl.store.kvstore
 	using Neo4Net.Functions;
 	using Neo4Net.Functions;
 	using Neo4Net.Functions;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using OpenMode = Neo4Net.Io.fs.OpenMode;
 	using StoreChannel = Neo4Net.Io.fs.StoreChannel;
 	using FileIsNotMappedException = Neo4Net.Io.pagecache.impl.FileIsNotMappedException;

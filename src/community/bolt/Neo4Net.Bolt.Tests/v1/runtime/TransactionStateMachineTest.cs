@@ -29,7 +29,7 @@ namespace Neo4Net.Bolt.v1.runtime
 	using BoltResultHandle = Neo4Net.Bolt.runtime.BoltResultHandle;
 	using Bookmark = Neo4Net.Bolt.v1.runtime.bookmarking.Bookmark;
 	using TransactionTerminatedException = Neo4Net.GraphDb.TransactionTerminatedException;
-	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
+	using MapUtil = Neo4Net.Collections.Helpers.MapUtil;
 	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;

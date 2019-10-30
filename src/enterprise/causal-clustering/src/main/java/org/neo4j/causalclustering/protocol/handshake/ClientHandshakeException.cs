@@ -27,7 +27,7 @@ namespace Neo4Net.causalclustering.protocol.handshake
 {
 
 	using Neo4Net.causalclustering.protocol;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 
 	public class ClientHandshakeException : Exception
 	{

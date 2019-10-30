@@ -24,7 +24,7 @@ namespace Neo4Net.CommandLine.Admin
 
 	using Arguments = Neo4Net.CommandLine.Args.Arguments;
 	using Service = Neo4Net.Helpers.Service;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 
 	/// <summary>
 	/// To create a command for {@code Neo4Net-admin}:

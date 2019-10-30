@@ -31,7 +31,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 
 	using Node = Neo4Net.GraphDb.Node;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using IndexManager = Neo4Net.GraphDb.index.IndexManager;
+	using IndexManager = Neo4Net.GraphDb.Index.IndexManager;
 	using DefaultFileSystemAbstraction = Neo4Net.Io.fs.DefaultFileSystemAbstraction;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using OperationalMode = Neo4Net.Kernel.impl.factory.OperationalMode;
@@ -315,7 +315,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 
 		 private void AddIndex( string name )
 		 {
-			  _indexStore.set( typeof( Node ), name, stringMap( Neo4Net.GraphDb.index.IndexManager_Fields.PROVIDER, "lucene", "type", "fulltext" ) );
+			  _indexStore.set( typeof( Node ), name, stringMap( Neo4Net.GraphDb.Index.IndexManager_Fields.PROVIDER, "lucene", "type", "fulltext" ) );
 		 }
 
 		 private static IndexIdentifier Identifier( string name )

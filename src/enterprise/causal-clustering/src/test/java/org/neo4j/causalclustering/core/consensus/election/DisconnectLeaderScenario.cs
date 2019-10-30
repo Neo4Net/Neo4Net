@@ -28,7 +28,7 @@ namespace Neo4Net.causalclustering.core.consensus.election
 {
 
 	using MemberId = Neo4Net.causalclustering.identity.MemberId;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 
 	/// <summary>
 	/// In this scenario we disconnect the current leader and measure how long time it

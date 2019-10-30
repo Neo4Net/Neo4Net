@@ -29,7 +29,7 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 
 
 	using Neo4Net.Cursors;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using Neo4Net.Index.Internal.gbptree;
 	using AllEntriesLabelScanReader = Neo4Net.Kernel.api.labelscan.AllEntriesLabelScanReader;
 	using NodeLabelRange = Neo4Net.Kernel.api.labelscan.NodeLabelRange;

@@ -29,11 +29,11 @@ namespace Neo4Net.Kernel.impl.index
 	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
 	using Node = Neo4Net.GraphDb.Node;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using Neo4Net.GraphDb.index;
-	using Neo4Net.GraphDb.index;
+	using Neo4Net.GraphDb.Index;
+	using Neo4Net.GraphDb.Index;
 	using EphemeralFileSystemAbstraction = Neo4Net.GraphDb.mockfs.EphemeralFileSystemAbstraction;
 	using UncloseableDelegatingFileSystemAbstraction = Neo4Net.GraphDb.mockfs.UncloseableDelegatingFileSystemAbstraction;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 	using EphemeralFileSystemExtension = Neo4Net.Test.extension.EphemeralFileSystemExtension;
 	using Inject = Neo4Net.Test.extension.Inject;
@@ -47,7 +47,7 @@ namespace Neo4Net.Kernel.impl.index
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.index.IndexManager_Fields.PROVIDER;
+//	import static org.Neo4Net.GraphDb.Index.IndexManager_Fields.PROVIDER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
 

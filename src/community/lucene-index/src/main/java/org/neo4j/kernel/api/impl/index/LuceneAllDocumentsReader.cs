@@ -24,8 +24,8 @@ namespace Neo4Net.Kernel.Api.Impl.Index
 	using Document = org.apache.lucene.document.Document;
 
 
-	using Neo4Net.Helpers.Collections;
-	using Iterators = Neo4Net.Helpers.Collections.Iterators;
+	using Neo4Net.Collections.Helpers;
+	using Iterators = Neo4Net.Collections.Helpers.Iterators;
 	using IOUtils = Neo4Net.Io.IOUtils;
 
 	public class LuceneAllDocumentsReader : BoundedIterable<Document>

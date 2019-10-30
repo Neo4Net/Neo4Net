@@ -31,8 +31,8 @@ namespace Neo4Net.Kernel.impl.traversal
 	using Neo4Net.GraphDb;
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using Traverser = Neo4Net.GraphDb.Traversal.Traverser;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
-	using Iterators = Neo4Net.Helpers.Collections.Iterators;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
+	using Iterators = Neo4Net.Collections.Helpers.Iterators;
 	using GraphDefinition = Neo4Net.Test.GraphDefinition;
 	using GraphDescription = Neo4Net.Test.GraphDescription;
 

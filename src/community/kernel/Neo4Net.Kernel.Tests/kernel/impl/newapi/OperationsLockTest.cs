@@ -29,7 +29,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 	using Mockito = org.mockito.Mockito;
 
 
-	using Iterators = Neo4Net.Helpers.Collections.Iterators;
+	using Iterators = Neo4Net.Collections.Helpers.Iterators;
 	using LabelSet = Neo4Net.Kernel.Api.Internal.LabelSet;
 	using NamedToken = Neo4Net.Kernel.Api.Internal.NamedToken;
 	using Write = Neo4Net.Kernel.Api.Internal.Write;
@@ -39,8 +39,8 @@ namespace Neo4Net.Kernel.Impl.Newapi
 	using AutoIndexingKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.AutoIndexingKernelException;
 	using StubNodeCursor = Neo4Net.Kernel.Api.Internal.Helpers.StubNodeCursor;
 	using TestRelationshipChain = Neo4Net.Kernel.Api.Internal.Helpers.TestRelationshipChain;
-	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.LabelSchemaDescriptor;
-	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor;
+	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.LabelSchemaDescriptor;
+	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor;
 	using SecurityContext = Neo4Net.Kernel.Api.Internal.security.SecurityContext;
 	using AlreadyConstrainedException = Neo4Net.Kernel.Api.Exceptions.schema.AlreadyConstrainedException;
 	using AutoIndexOperations = Neo4Net.Kernel.api.explicitindex.AutoIndexOperations;

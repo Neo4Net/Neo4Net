@@ -21,7 +21,7 @@ namespace Neo4Net.Server.rest
 {
 	using Test = org.junit.Test;
 
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using GraphDatabaseFacade = Neo4Net.Kernel.impl.factory.GraphDatabaseFacade;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
 	using CypherExecutor = Neo4Net.Server.database.CypherExecutor;

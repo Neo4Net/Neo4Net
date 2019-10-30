@@ -26,7 +26,7 @@ namespace Neo4Net.Server.plugins
 	using Node = Neo4Net.GraphDb.Node;
 	using Path = Neo4Net.GraphDb.Path;
 	using Relationship = Neo4Net.GraphDb.Relationship;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using ListRepresentation = Neo4Net.Server.rest.repr.ListRepresentation;
 	using NodeRepresentation = Neo4Net.Server.rest.repr.NodeRepresentation;
 	using Neo4Net.Server.rest.repr;

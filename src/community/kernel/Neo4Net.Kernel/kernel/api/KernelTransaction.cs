@@ -28,8 +28,8 @@ namespace Neo4Net.Kernel.api
 	using PropertyCursor = Neo4Net.Kernel.Api.Internal.PropertyCursor;
 	using RelationshipScanCursor = Neo4Net.Kernel.Api.Internal.RelationshipScanCursor;
 	using Transaction = Neo4Net.Kernel.Api.Internal.Transaction;
-	using SchemaKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.SchemaKernelException;
-	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
+	using SchemaKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.SchemaKernelException;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
 	using AuthSubject = Neo4Net.Kernel.Api.Internal.security.AuthSubject;
 	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using SecurityContext = Neo4Net.Kernel.Api.Internal.security.SecurityContext;
@@ -59,7 +59,7 @@ namespace Neo4Net.Kernel.api
 		 /// <param name="provider"> index provider identifier </param>
 		 /// <returns> IndexDescriptor for the index to be created. </returns>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor indexUniqueCreate(org.Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor schema, String provider) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.SchemaKernelException;
+//ORIGINAL LINE: org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor indexUniqueCreate(org.Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor schema, String provider) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.SchemaKernelException;
 		 IndexDescriptor IndexUniqueCreate( SchemaDescriptor schema, string provider );
 
 		 /// <returns> the security context this transaction is currently executing in. </returns>

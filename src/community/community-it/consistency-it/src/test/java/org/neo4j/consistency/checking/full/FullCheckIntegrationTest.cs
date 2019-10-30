@@ -45,14 +45,14 @@ namespace Neo4Net.Consistency.checking.full
 	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
 	using Node = Neo4Net.GraphDb.Node;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using Iterators = Neo4Net.Helpers.Collections.Iterators;
-	using Neo4Net.Helpers.Collections;
+	using Iterators = Neo4Net.Collections.Helpers.Iterators;
+	using Neo4Net.Collections.Helpers;
 	using ProgressMonitorFactory = Neo4Net.Helpers.progress.ProgressMonitorFactory;
 	using TokenRead = Neo4Net.Kernel.Api.Internal.TokenRead;
 	using TokenWrite = Neo4Net.Kernel.Api.Internal.TokenWrite;
 	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
-	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor;
+	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.Schema.IndexProviderDescriptor;
 	using IOLimiter = Neo4Net.Io.pagecache.IOLimiter;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using Statement = Neo4Net.Kernel.api.Statement;

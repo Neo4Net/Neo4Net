@@ -21,7 +21,7 @@ namespace Neo4Net.GraphDb
 {
 	using Test = org.junit.Test;
 
-	using IndexManager = Neo4Net.GraphDb.index.IndexManager;
+	using IndexManager = Neo4Net.GraphDb.Index.IndexManager;
 
 	public class MandatoryTransactionsForIndexManagerFacadeTest : AbstractMandatoryTransactionsTest<IndexManager>
 	{

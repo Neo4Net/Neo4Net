@@ -24,7 +24,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input
 	/// Receives calls for extracted data from <seealso cref="InputChunk"/>. This callback design allows for specific methods
 	/// using primitives and other optimizations, to avoid garbage.
 	/// </summary>
-	public interface InputEntityVisitor : System.IDisposable
+	public interface IInputEntityVisitor : System.IDisposable
 	{
 		 bool PropertyId( long nextProp );
 

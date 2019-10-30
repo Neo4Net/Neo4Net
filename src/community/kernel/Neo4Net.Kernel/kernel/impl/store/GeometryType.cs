@@ -22,7 +22,7 @@
 namespace Neo4Net.Kernel.impl.store
 {
 
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using StandardFormatSettings = Neo4Net.Kernel.impl.store.format.standard.StandardFormatSettings;
 	using PropertyBlock = Neo4Net.Kernel.Impl.Store.Records.PropertyBlock;
 	using ArrayValue = Neo4Net.Values.Storable.ArrayValue;

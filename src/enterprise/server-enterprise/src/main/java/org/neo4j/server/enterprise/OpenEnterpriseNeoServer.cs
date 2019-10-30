@@ -35,7 +35,7 @@ namespace Neo4Net.Server.enterprise
 
 	using CausalClusteringSettings = Neo4Net.causalclustering.core.CausalClusteringSettings;
 	using Dependencies = Neo4Net.GraphDb.facade.GraphDatabaseFacadeFactory.Dependencies;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using ConnectorPortRegister = Neo4Net.Kernel.configuration.ConnectorPortRegister;
 	using HaSettings = Neo4Net.Kernel.ha.HaSettings;

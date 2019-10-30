@@ -26,7 +26,7 @@ namespace Neo4Net.Kernel.Impl.Api.constraints
 	using Label = Neo4Net.GraphDb.Label;
 	using Node = Neo4Net.GraphDb.Node;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using IndexFolderLayout = Neo4Net.Kernel.Api.Impl.Index.storage.layout.IndexFolderLayout;
 	using IndexProvider = Neo4Net.Kernel.Api.Index.IndexProvider;
 	using IndexProviderMap = Neo4Net.Kernel.Impl.Api.index.IndexProviderMap;

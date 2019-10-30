@@ -27,7 +27,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 	using IntHashSet = org.eclipse.collections.impl.set.mutable.primitive.IntHashSet;
 
 
-	using Iterators = Neo4Net.Helpers.Collections.Iterators;
+	using Iterators = Neo4Net.Collections.Helpers.Iterators;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Integer.max;

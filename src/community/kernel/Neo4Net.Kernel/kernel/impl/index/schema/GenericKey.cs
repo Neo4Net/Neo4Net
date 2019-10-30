@@ -638,7 +638,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 // We don't care about that though so just delegate.
 		 public override void WriteByteArray( sbyte[] value )
 		 {
-			  PrimitiveArrayWriting.writeTo( this, value );
+			  PrimitiveArrayWriting.WriteTo( this, value );
 		 }
 
 		 public override void BeginArray( int size, ArrayType arrayType )

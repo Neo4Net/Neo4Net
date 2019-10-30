@@ -26,7 +26,7 @@ namespace Neo4Net.Kernel.availability
 
 	using Format = Neo4Net.Helpers.Format;
 	using Neo4Net.Helpers;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using Log = Neo4Net.Logging.Log;
 
 	/// <summary>

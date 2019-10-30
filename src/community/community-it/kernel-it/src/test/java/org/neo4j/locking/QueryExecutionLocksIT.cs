@@ -49,8 +49,8 @@ namespace Neo4Net.Locking
 	using Write = Neo4Net.Kernel.Api.Internal.Write;
 	using InvalidTransactionTypeKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.InvalidTransactionTypeKernelException;
 	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
-	using SchemaKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.SchemaKernelException;
-	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
+	using SchemaKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.SchemaKernelException;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
 	using AuthSubject = Neo4Net.Kernel.Api.Internal.security.AuthSubject;
 	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using SecurityContext = Neo4Net.Kernel.Api.Internal.security.SecurityContext;
@@ -633,7 +633,7 @@ namespace Neo4Net.Locking
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor indexUniqueCreate(org.Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor schema, String provider) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.SchemaKernelException
+//ORIGINAL LINE: public org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor indexUniqueCreate(org.Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor schema, String provider) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.SchemaKernelException
 			  public override IndexDescriptor IndexUniqueCreate( SchemaDescriptor schema, string provider )
 			  {
 					string defaultProvider = Config.defaults().get(GraphDatabaseSettings.default_schema_provider);

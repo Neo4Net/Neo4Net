@@ -29,7 +29,7 @@ namespace Neo4Net.com.storecopy
 
 	using Neo4Net.com;
 	using Suppliers = Neo4Net.Functions.Suppliers;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using CommittedTransactionRepresentation = Neo4Net.Kernel.impl.transaction.CommittedTransactionRepresentation;
 	using SimpleTransactionIdStore = Neo4Net.Kernel.impl.transaction.SimpleTransactionIdStore;
 	using LogPosition = Neo4Net.Kernel.impl.transaction.log.LogPosition;

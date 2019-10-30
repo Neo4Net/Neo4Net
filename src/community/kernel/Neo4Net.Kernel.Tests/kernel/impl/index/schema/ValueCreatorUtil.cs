@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using ArrayUtils = org.apache.commons.lang3.ArrayUtils;
 
 
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using IndexQuery = Neo4Net.Kernel.Api.Internal.IndexQuery;
 	using Neo4Net.Kernel.Api.Index;
 	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;

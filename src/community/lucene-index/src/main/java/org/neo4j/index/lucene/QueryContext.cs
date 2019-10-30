@@ -29,8 +29,8 @@ namespace Neo4Net.Index.lucene
 	using SortedNumericSortField = org.apache.lucene.search.SortedNumericSortField;
 	using SortedSetSortField = org.apache.lucene.search.SortedSetSortField;
 
-	using Neo4Net.GraphDb.index;
-	using Neo4Net.GraphDb.index;
+	using Neo4Net.GraphDb.Index;
+	using Neo4Net.GraphDb.Index;
 	using LuceneUtil = Neo4Net.Index.impl.lucene.@explicit.LuceneUtil;
 
 	/// <summary>

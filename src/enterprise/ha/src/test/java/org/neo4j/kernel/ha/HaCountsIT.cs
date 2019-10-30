@@ -35,7 +35,7 @@ namespace Neo4Net.Kernel.ha
 	using Kernel = Neo4Net.Kernel.Api.Internal.Kernel;
 	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
-	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
+	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
 	using ThreadToStatementContextBridge = Neo4Net.Kernel.impl.core.ThreadToStatementContextBridge;
@@ -222,7 +222,7 @@ namespace Neo4Net.Kernel.ha
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void assertOnIndexCounts(int expectedIndexUpdates, int expectedIndexSize, int expectedUniqueValues, int expectedSampleSize, org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor indexDescriptor, HighlyAvailableGraphDatabase db) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException, org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: private static void assertOnIndexCounts(int expectedIndexUpdates, int expectedIndexSize, int expectedUniqueValues, int expectedSampleSize, org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor indexDescriptor, HighlyAvailableGraphDatabase db) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException, org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
 		 private static void AssertOnIndexCounts( int expectedIndexUpdates, int expectedIndexSize, int expectedUniqueValues, int expectedSampleSize, IndexDescriptor indexDescriptor, HighlyAvailableGraphDatabase db )
 		 {
 			  using ( Neo4Net.Kernel.Api.Internal.Transaction tx = Db.DependencyResolver.resolveDependency( typeof( Kernel ) ).BeginTransaction( @explicit, AUTH_DISABLED ) )

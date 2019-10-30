@@ -39,7 +39,7 @@ namespace Neo4Net.@unsafe.Batchinsert
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using EnterpriseGraphDatabaseFactory = Neo4Net.GraphDb.factory.EnterpriseGraphDatabaseFactory;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using Settings = Neo4Net.Kernel.configuration.Settings;
 	using MyRelTypes = Neo4Net.Kernel.impl.MyRelTypes;
 	using OnlineBackupSettings = Neo4Net.Kernel.impl.enterprise.configuration.OnlineBackupSettings;

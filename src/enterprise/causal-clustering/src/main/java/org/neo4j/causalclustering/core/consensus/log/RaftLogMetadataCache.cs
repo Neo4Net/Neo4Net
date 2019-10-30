@@ -24,7 +24,7 @@ namespace Neo4Net.causalclustering.core.consensus.log
 {
 
 
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using LogPosition = Neo4Net.Kernel.impl.transaction.log.LogPosition;
 
 	public class RaftLogMetadataCache

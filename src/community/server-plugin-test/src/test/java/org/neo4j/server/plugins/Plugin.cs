@@ -31,7 +31,7 @@ namespace Neo4Net.Server.plugins
 	using Relationship = Neo4Net.GraphDb.Relationship;
 	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 
 	[Description("Here you can describe your plugin. It will show up in the description of the methods.")]
 	public class Plugin : ServerPlugin

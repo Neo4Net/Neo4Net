@@ -152,7 +152,7 @@ namespace Neo4Net.Cypher.Internal.codegen
 			  }
 		 }
 
-		 internal abstract class AbstractMaterializeValueMapper : ValueMapper<AnyValue>
+		 internal abstract class AbstractMaterializeValueMapper : IValueMapper<AnyValue>
 		 {
 			 public abstract Base MapDurationArray( Neo4Net.Values.Storable.DurationArray value );
 			 public abstract Base MapDateArray( Neo4Net.Values.Storable.DateArray value );

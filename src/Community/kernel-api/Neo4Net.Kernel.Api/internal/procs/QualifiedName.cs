@@ -22,7 +22,7 @@
 namespace Neo4Net.Kernel.Api.Internal.Procs
 {
 
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 
 	public class QualifiedName
 	{

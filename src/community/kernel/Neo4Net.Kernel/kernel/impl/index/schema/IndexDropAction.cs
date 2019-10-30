@@ -21,7 +21,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 {
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 
-	public interface IndexDropAction
+	public interface IIndexDropAction
 	{
 		 /// <summary>
 		 /// Deletes the index directory and everything in it, as last part of dropping an index.

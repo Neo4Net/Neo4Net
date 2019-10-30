@@ -35,7 +35,7 @@ namespace Neo4Net.cluster.protocol.atomicbroadcast.multipaxos
 	using TrackingMessageHolder = Neo4Net.cluster.com.message.TrackingMessageHolder;
 	using Neo4Net.cluster.protocol;
 	using State = Neo4Net.cluster.protocol.atomicbroadcast.multipaxos.PaxosInstance.State;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using NullLog = Neo4Net.Logging.NullLog;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:

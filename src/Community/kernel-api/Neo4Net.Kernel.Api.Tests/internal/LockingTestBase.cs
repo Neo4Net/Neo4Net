@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.Api.Internal
 
 
 	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
-	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.LabelSchemaDescriptor;
+	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.LabelSchemaDescriptor;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using Values = Neo4Net.Values.Storable.Values;
 

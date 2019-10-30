@@ -32,7 +32,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.reader
 	using PrimitiveLongResourceCollections = Neo4Net.Collections.PrimitiveLongResourceCollections;
 	using TaskCoordinator = Neo4Net.Helpers.TaskCoordinator;
 	using IndexQuery = Neo4Net.Kernel.Api.Internal.IndexQuery;
-	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
+	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException;
 	using PartitionSearcher = Neo4Net.Kernel.Api.Impl.Index.partition.PartitionSearcher;
 	using TestIndexDescriptorFactory = Neo4Net.Kernel.api.schema.index.TestIndexDescriptorFactory;
 	using IndexSamplingConfig = Neo4Net.Kernel.Impl.Api.index.sampling.IndexSamplingConfig;
@@ -194,7 +194,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.reader
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void samplingOverPartitions() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: @Test public void samplingOverPartitions() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void SamplingOverPartitions()
 		 {

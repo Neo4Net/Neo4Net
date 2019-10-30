@@ -23,7 +23,7 @@ namespace Neo4Net.Kernel.Api.StorageEngine.schema
 	using ITokenNameLookup = Neo4Net.Kernel.Api.Internal.ITokenNameLookup;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.schema.SchemaUtil.idTokenNameLookup;
+//	import static org.Neo4Net.Kernel.Api.Internal.Schema.SchemaUtil.idTokenNameLookup;
 
 	/// <summary>
 	/// Describes an index which is committed to the database.
@@ -34,7 +34,7 @@ namespace Neo4Net.Kernel.Api.StorageEngine.schema
 	{
 		 private readonly long _id;
 
-		 private class SchemaComputerAnonymousInnerClass : Neo4Net.Kernel.Api.Internal.schema.SchemaComputer<SchemaRule_Kind>
+		 private class SchemaComputerAnonymousInnerClass : Neo4Net.Kernel.Api.Internal.Schema.SchemaComputer<SchemaRule_Kind>
 		 {
 			 public SchemaRule_Kind computeSpecific( LabelSchemaDescriptor schema )
 			 {

@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.@unsafe.Impl.Batchimport.staging
 {
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using Keys = Neo4Net.@unsafe.Impl.Batchimport.stats.Keys;
 
 	/// <summary>

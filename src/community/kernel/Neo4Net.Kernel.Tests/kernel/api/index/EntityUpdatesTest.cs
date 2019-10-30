@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.Api.Index
 	using Test = org.junit.Test;
 
 
-	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.LabelSchemaDescriptor;
+	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.LabelSchemaDescriptor;
 	using PropertyKeyValue = Neo4Net.Kernel.api.properties.PropertyKeyValue;
 	using MultiTokenSchemaDescriptor = Neo4Net.Kernel.api.schema.MultiTokenSchemaDescriptor;
 	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;

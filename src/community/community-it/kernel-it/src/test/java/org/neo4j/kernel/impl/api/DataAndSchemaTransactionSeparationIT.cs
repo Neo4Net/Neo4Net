@@ -28,7 +28,7 @@ namespace Neo4Net.Kernel.Impl.Api
 	using Node = Neo4Net.GraphDb.Node;
 	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
 	using Relationship = Neo4Net.GraphDb.Relationship;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using DatabaseRule = Neo4Net.Test.rule.DatabaseRule;
 	using ImpermanentDatabaseRule = Neo4Net.Test.rule.ImpermanentDatabaseRule;
 

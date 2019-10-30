@@ -29,7 +29,7 @@ namespace Neo4Net.Kernel.impl.coreapi.schema
 	using NotFoundException = Neo4Net.GraphDb.NotFoundException;
 	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
 	using TransactionTerminatedException = Neo4Net.GraphDb.TransactionTerminatedException;
-	using IndexPopulationProgress = Neo4Net.GraphDb.index.IndexPopulationProgress;
+	using IndexPopulationProgress = Neo4Net.GraphDb.Index.IndexPopulationProgress;
 	using ConstraintCreator = Neo4Net.GraphDb.Schema.ConstraintCreator;
 	using ConstraintDefinition = Neo4Net.GraphDb.Schema.ConstraintDefinition;
 	using IndexCreator = Neo4Net.GraphDb.Schema.IndexCreator;
@@ -42,15 +42,15 @@ namespace Neo4Net.Kernel.impl.coreapi.schema
 	using TokenWrite = Neo4Net.Kernel.Api.Internal.TokenWrite;
 	using InvalidTransactionTypeKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.InvalidTransactionTypeKernelException;
 	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
-	using CreateConstraintFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.CreateConstraintFailureException;
-	using IllegalTokenNameException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IllegalTokenNameException;
-	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
-	using SchemaKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.SchemaKernelException;
-	using TooManyLabelsException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.TooManyLabelsException;
-	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.LabelSchemaDescriptor;
-	using RelationTypeSchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.RelationTypeSchemaDescriptor;
-	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
-	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor;
+	using CreateConstraintFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.CreateConstraintFailureException;
+	using IllegalTokenNameException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IllegalTokenNameException;
+	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException;
+	using SchemaKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.SchemaKernelException;
+	using TooManyLabelsException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.TooManyLabelsException;
+	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.LabelSchemaDescriptor;
+	using RelationTypeSchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.RelationTypeSchemaDescriptor;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
+	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using SilentTokenNameLookup = Neo4Net.Kernel.api.SilentTokenNameLookup;
 	using Statement = Neo4Net.Kernel.api.Statement;
@@ -476,7 +476,7 @@ namespace Neo4Net.Kernel.impl.coreapi.schema
 			  return tokenIds;
 		 }
 
-		 private IEnumerable<ConstraintDefinition> AsConstraintDefinitions<T1>( IEnumerator<T1> constraints, TokenRead tokenRead ) where T1 : Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor
+		 private IEnumerable<ConstraintDefinition> AsConstraintDefinitions<T1>( IEnumerator<T1> constraints, TokenRead tokenRead ) where T1 : Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor
 		 {
 			  // Intentionally create an eager list so that used statement can be closed
 			  IList<ConstraintDefinition> definitions = new List<ConstraintDefinition>();

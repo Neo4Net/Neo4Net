@@ -41,7 +41,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using EphemeralFileSystemAbstraction = Neo4Net.GraphDb.mockfs.EphemeralFileSystemAbstraction;
 	using InternalIndexState = Neo4Net.Kernel.Api.Internal.InternalIndexState;
 	using Kernel = Neo4Net.Kernel.Api.Internal.Kernel;
-	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
+	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException;
 	using IOLimiter = Neo4Net.Io.pagecache.IOLimiter;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using RelationTypeSchemaDescriptor = Neo4Net.Kernel.api.schema.RelationTypeSchemaDescriptor;
@@ -116,7 +116,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void testManualIndexPopulation() throws InterruptedException, org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: @Test public void testManualIndexPopulation() throws InterruptedException, org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void TestManualIndexPopulation()
 		 {
@@ -163,7 +163,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void testSchemaIndexMatchIndexingService() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: @Test public void testSchemaIndexMatchIndexingService() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void TestSchemaIndexMatchIndexingService()
 		 {

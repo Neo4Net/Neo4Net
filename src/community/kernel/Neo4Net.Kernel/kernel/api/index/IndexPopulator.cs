@@ -35,7 +35,7 @@ namespace Neo4Net.Kernel.Api.Index
 	/// <summary>
 	/// Used for initial population of an index.
 	/// </summary>
-	public interface IndexPopulator : IndexConfigProvider
+	public interface IIndexPopulator : IndexConfigProvider
 	{
 		 /// <summary>
 		 /// Remove all data in the index and paves the way for populating an index.

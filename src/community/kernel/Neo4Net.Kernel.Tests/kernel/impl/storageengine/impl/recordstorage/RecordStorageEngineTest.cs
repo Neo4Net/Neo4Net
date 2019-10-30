@@ -30,7 +30,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 
 
 	using Exceptions = Neo4Net.Helpers.Exceptions;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;

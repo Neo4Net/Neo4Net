@@ -31,7 +31,7 @@ namespace Neo4Net.Cypher.Internal.javacompat
 	using Result = Neo4Net.GraphDb.Result;
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
 

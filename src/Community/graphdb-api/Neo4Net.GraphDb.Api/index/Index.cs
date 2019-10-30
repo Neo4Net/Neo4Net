@@ -21,7 +21,7 @@
 ////////////////////// * You should have received a copy of the GNU General Public License
 ////////////////////// * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ////////////////////// */
-//////////////////////namespace Neo4Net.GraphDb.index
+//////////////////////namespace Neo4Net.GraphDb.Index
 //////////////////////{
 
 //////////////////////	/// <summary>
@@ -44,7 +44,7 @@
 //////////////////////	/// </param>
 //////////////////////	/// @deprecated This API will be removed in the next major release. Please consider using schema indexes instead. 
 //////////////////////	[Obsolete("This API will be removed in the next major release. Please consider using schema indexes instead.")]
-//////////////////////	public interface Index<T> : ReadableIndex<T> where T : Neo4Net.GraphDb.PropertyContainer
+//////////////////////	public interface IIndex<T> : ReadableIndex<T> where T : Neo4Net.GraphDb.PropertyContainer
 //////////////////////	{
 //////////////////////		 /// <summary>
 //////////////////////		 /// Adds a key/value pair for {@code IEntity} to the index. If that key/value

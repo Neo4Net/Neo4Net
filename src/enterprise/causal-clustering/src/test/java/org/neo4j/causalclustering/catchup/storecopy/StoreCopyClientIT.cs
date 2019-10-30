@@ -44,7 +44,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 	using Server = Neo4Net.causalclustering.net.Server;
 	using AdvertisedSocketAddress = Neo4Net.Helpers.AdvertisedSocketAddress;
 	using ListenSocketAddress = Neo4Net.Helpers.ListenSocketAddress;
-	using Iterators = Neo4Net.Helpers.Collections.Iterators;
+	using Iterators = Neo4Net.Collections.Helpers.Iterators;
 	using DefaultFileSystemAbstraction = Neo4Net.Io.fs.DefaultFileSystemAbstraction;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using StoreChannel = Neo4Net.Io.fs.StoreChannel;

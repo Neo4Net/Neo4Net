@@ -32,7 +32,7 @@ namespace Neo4Net.GraphDb.facade
 	using URLAccessRule = Neo4Net.GraphDb.security.URLAccessRule;
 	using Geometry = Neo4Net.GraphDb.Spatial.Geometry;
 	using Point = Neo4Net.GraphDb.Spatial.Point;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using DataCollectorManager = Neo4Net.Internal.DataCollectorManager;
 	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 	using ProcedureCallContext = Neo4Net.Kernel.Api.Internal.procs.ProcedureCallContext;

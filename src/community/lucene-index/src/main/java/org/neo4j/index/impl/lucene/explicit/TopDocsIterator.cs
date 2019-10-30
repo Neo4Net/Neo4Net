@@ -31,7 +31,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 	using TopFieldCollector = org.apache.lucene.search.TopFieldCollector;
 
 
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using QueryContext = Neo4Net.Index.lucene.QueryContext;
 	using Neo4Net.Kernel.Impl.Api.explicitindex;
 

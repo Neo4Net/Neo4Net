@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 	using LongHashSet = org.eclipse.collections.impl.set.mutable.primitive.LongHashSet;
 
 	using Neo4Net.Cursors;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 
 	/// <summary>
 	/// Stub cursors to be used for testing.

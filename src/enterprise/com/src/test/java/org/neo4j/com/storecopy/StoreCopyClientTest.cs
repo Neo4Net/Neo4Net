@@ -38,7 +38,7 @@ namespace Neo4Net.com.storecopy
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using CancellationRequest = Neo4Net.Helpers.CancellationRequest;
 	using Service = Neo4Net.Helpers.Service;
-	using Iterators = Neo4Net.Helpers.Collections.Iterators;
+	using Iterators = Neo4Net.Collections.Helpers.Iterators;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;

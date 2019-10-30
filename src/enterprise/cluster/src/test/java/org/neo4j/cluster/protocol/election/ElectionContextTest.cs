@@ -36,7 +36,7 @@ namespace Neo4Net.cluster.protocol.election
 	using ClusterContext = Neo4Net.cluster.protocol.cluster.ClusterContext;
 	using HeartbeatContext = Neo4Net.cluster.protocol.heartbeat.HeartbeatContext;
 	using Timeouts = Neo4Net.cluster.timeout.Timeouts;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
 

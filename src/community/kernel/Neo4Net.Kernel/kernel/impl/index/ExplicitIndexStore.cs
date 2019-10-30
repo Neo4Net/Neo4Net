@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.impl.index
 	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
 	using Relationship = Neo4Net.GraphDb.Relationship;
 	using TransactionFailureException = Neo4Net.GraphDb.TransactionFailureException;
-	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
+	using MapUtil = Neo4Net.Collections.Helpers.MapUtil;
 	using Kernel = Neo4Net.Kernel.Api.Internal.Kernel;
 	using Transaction = Neo4Net.Kernel.Api.Internal.Transaction;
 	using ExplicitIndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
@@ -38,7 +38,7 @@ namespace Neo4Net.Kernel.impl.index
 	using IndexImplementation = Neo4Net.Kernel.spi.explicitindex.IndexImplementation;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.index.IndexManager_Fields.PROVIDER;
+//	import static org.Neo4Net.GraphDb.Index.IndexManager_Fields.PROVIDER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.Kernel.Api.Internal.security.LoginContext.AUTH_DISABLED;
 

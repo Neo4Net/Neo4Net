@@ -19,12 +19,12 @@
  */
 namespace Neo4Net.GraphDb
 {
-	using TraversalDescription = Neo4Net.GraphDb.Traversal.TraversalDescription;
+	using ITraversalDescription = Neo4Net.GraphDb.Traversal.ITraversalDescription;
 
 	/// <summary>
 	/// A relationship type is mandatory on all relationships and is used to navigate
 	/// the graph. RelationshipType is in particular a key part of the
-	/// <seealso cref="TraversalDescription traverser framework"/> but it's also used in various
+	/// <seealso cref="ITraversalDescription traverser framework"/> but it's also used in various
 	/// <seealso cref="INode.getRelationships() relationship operations"/> on Node.
 	/// <para>
 	/// Relationship types are declared by the client and can be handled either

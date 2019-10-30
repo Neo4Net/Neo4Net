@@ -24,11 +24,11 @@ namespace Neo4Net.Kernel.impl.store
 {
 
 	using Predicates = Neo4Net.Functions.Predicates;
-	using Neo4Net.Helpers.Collections;
-	using MalformedSchemaRuleException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.MalformedSchemaRuleException;
-	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
-	using SchemaDescriptorPredicates = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptorPredicates;
-	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor;
+	using Neo4Net.Collections.Helpers;
+	using MalformedSchemaRuleException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.MalformedSchemaRuleException;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
+	using SchemaDescriptorPredicates = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptorPredicates;
+	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor;
 	using DuplicateSchemaRuleException = Neo4Net.Kernel.Api.Exceptions.schema.DuplicateSchemaRuleException;
 	using SchemaRuleNotFoundException = Neo4Net.Kernel.Api.Exceptions.schema.SchemaRuleNotFoundException;
 	using ConstraintRule = Neo4Net.Kernel.Impl.Store.Records.ConstraintRule;
@@ -144,7 +144,7 @@ namespace Neo4Net.Kernel.impl.store
 		 /// <exception cref="SchemaRuleNotFoundException"> if no ConstraintRule matches the given descriptor </exception>
 		 /// <exception cref="DuplicateSchemaRuleException"> if two or more ConstraintRules match the given descriptor </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.kernel.impl.store.record.ConstraintRule constraintsGetSingle(final org.Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor descriptor) throws org.Neo4Net.kernel.api.exceptions.schema.SchemaRuleNotFoundException, org.Neo4Net.kernel.api.exceptions.schema.DuplicateSchemaRuleException
+//ORIGINAL LINE: public org.Neo4Net.kernel.impl.store.record.ConstraintRule constraintsGetSingle(final org.Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor descriptor) throws org.Neo4Net.kernel.api.exceptions.schema.SchemaRuleNotFoundException, org.Neo4Net.kernel.api.exceptions.schema.DuplicateSchemaRuleException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 		 public virtual ConstraintRule ConstraintsGetSingle( ConstraintDescriptor descriptor )
 		 {
@@ -173,7 +173,7 @@ namespace Neo4Net.Kernel.impl.store
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule loadSingleSchemaRule(long ruleId) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.MalformedSchemaRuleException
+//ORIGINAL LINE: public org.Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule loadSingleSchemaRule(long ruleId) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.MalformedSchemaRuleException
 		 public override SchemaRule LoadSingleSchemaRule( long ruleId )
 		 {
 			  ICollection<DynamicRecord> records;

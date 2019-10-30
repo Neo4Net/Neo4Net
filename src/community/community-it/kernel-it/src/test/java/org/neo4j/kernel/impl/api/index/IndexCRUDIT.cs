@@ -31,8 +31,8 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using Node = Neo4Net.GraphDb.Node;
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using TokenRead = Neo4Net.Kernel.Api.Internal.TokenRead;
-	using MisconfiguredIndexException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.MisconfiguredIndexException;
-	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.LabelSchemaDescriptor;
+	using MisconfiguredIndexException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.MisconfiguredIndexException;
+	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.LabelSchemaDescriptor;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
@@ -194,7 +194,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Before public void before() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.MisconfiguredIndexException
+//ORIGINAL LINE: @Before public void before() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.MisconfiguredIndexException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void Before()
 		 {

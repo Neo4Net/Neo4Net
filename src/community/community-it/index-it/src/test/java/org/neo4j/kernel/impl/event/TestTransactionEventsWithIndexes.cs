@@ -29,7 +29,7 @@ namespace Neo4Net.Kernel.Impl.@event
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using TransactionData = Neo4Net.GraphDb.Events.TransactionData;
 	using Neo4Net.GraphDb.Events;
-	using Neo4Net.GraphDb.index;
+	using Neo4Net.GraphDb.Index;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.Matchers.@is;
@@ -47,7 +47,7 @@ namespace Neo4Net.Kernel.Impl.@event
 			  // Given we have an explicit index...
 			  IGraphDatabaseService db = DbRule.GraphDatabaseAPI;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.graphdb.index.Index<org.Neo4Net.graphdb.Node> index;
+//ORIGINAL LINE: final org.Neo4Net.GraphDb.Index.Index<org.Neo4Net.graphdb.Node> index;
 			  Index<Node> index;
 			  using ( Transaction tx = Db.beginTx() )
 			  {

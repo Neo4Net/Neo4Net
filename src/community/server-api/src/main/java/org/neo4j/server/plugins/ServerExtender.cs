@@ -28,7 +28,7 @@ namespace Neo4Net.Server.plugins
 	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
 	using Node = Neo4Net.GraphDb.Node;
 	using Relationship = Neo4Net.GraphDb.Relationship;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 
 	/// @deprecated Server plugins are deprecated for removal in the next major release. Please use unmanaged extensions instead. 
 	[Obsolete("Server plugins are deprecated for removal in the next major release. Please use unmanaged extensions instead.")]

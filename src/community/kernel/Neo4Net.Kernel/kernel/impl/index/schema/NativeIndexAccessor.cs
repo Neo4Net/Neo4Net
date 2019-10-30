@@ -23,7 +23,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 {
 
 	using Neo4Net.GraphDb;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using IOLimiter = Neo4Net.Io.pagecache.IOLimiter;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;

@@ -26,7 +26,7 @@ namespace Neo4Net.Server.rest.management.console
 	using SyntaxException = Neo4Net.Cypher.SyntaxException;
 	using ExecutionEngine = Neo4Net.Cypher.Internal.javacompat.ExecutionEngine;
 	using Result = Neo4Net.GraphDb.Result;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using TransactionalContext = Neo4Net.Kernel.impl.query.TransactionalContext;
 	using Log = Neo4Net.Logging.Log;
 	using LogProvider = Neo4Net.Logging.LogProvider;

@@ -40,7 +40,7 @@ namespace Neo4Net.Kernel.api
 	using ConstraintType = Neo4Net.GraphDb.Schema.ConstraintType;
 	using IndexDefinition = Neo4Net.GraphDb.Schema.IndexDefinition;
 	using Exceptions = Neo4Net.Helpers.Exceptions;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using InvalidTransactionTypeKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.InvalidTransactionTypeKernelException;
 	using NodePropertyExistenceConstraintHaIT = Neo4Net.Kernel.api.ConstraintHaIT.NodePropertyExistenceConstraintHaIT;
 	using RelationshipPropertyExistenceConstraintHaIT = Neo4Net.Kernel.api.ConstraintHaIT.RelationshipPropertyExistenceConstraintHaIT;

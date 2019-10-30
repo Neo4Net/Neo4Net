@@ -29,16 +29,16 @@ namespace Neo4Net.Server.rest.domain
 	using Relationship = Neo4Net.GraphDb.Relationship;
 	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using Neo4Net.GraphDb.index;
-	using IndexManager = Neo4Net.GraphDb.index.IndexManager;
-	using RelationshipIndex = Neo4Net.GraphDb.index.RelationshipIndex;
+	using Neo4Net.GraphDb.Index;
+	using IndexManager = Neo4Net.GraphDb.Index.IndexManager;
+	using RelationshipIndex = Neo4Net.GraphDb.Index.RelationshipIndex;
 	using ConstraintCreator = Neo4Net.GraphDb.Schema.ConstraintCreator;
 	using ConstraintDefinition = Neo4Net.GraphDb.Schema.ConstraintDefinition;
 	using ConstraintType = Neo4Net.GraphDb.Schema.ConstraintType;
 	using IndexDefinition = Neo4Net.GraphDb.Schema.IndexDefinition;
-	using Neo4Net.Helpers.Collections;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
-	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
+	using Neo4Net.Collections.Helpers;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
+	using MapUtil = Neo4Net.Collections.Helpers.MapUtil;
 	using Kernel = Neo4Net.Kernel.Api.Internal.Kernel;
 	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
 	using AnonymousContext = Neo4Net.Kernel.api.security.AnonymousContext;
@@ -115,7 +115,7 @@ namespace Neo4Net.Server.rest.domain
 
 		 public virtual void SetNodeProperties( long nodeId, IDictionary<string, object> properties )
 		 {
-			  using ( Transaction tx = _database.Graph.BeginTransaction( @implicit, AnonymousContext.writeToken() ) )
+			  using ( Transaction tx = _database.Graph.BeginTransaction( @implicit, AnonymousContext.WriteToken() ) )
 			  {
 					Node node = _database.Graph.getNodeById( nodeId );
 					foreach ( KeyValuePair<string, object> propertyEntry in properties.SetOfKeyValuePairs() )
@@ -128,7 +128,7 @@ namespace Neo4Net.Server.rest.domain
 
 		 public virtual long CreateNode( params Label[] labels )
 		 {
-			  using ( Transaction tx = _database.Graph.BeginTransaction( @implicit, AnonymousContext.writeToken() ) )
+			  using ( Transaction tx = _database.Graph.BeginTransaction( @implicit, AnonymousContext.WriteToken() ) )
 			  {
 					Node node = _database.Graph.createNode( labels );
 					tx.Success();
@@ -138,7 +138,7 @@ namespace Neo4Net.Server.rest.domain
 
 		 public virtual long CreateNode( IDictionary<string, object> properties, params Label[] labels )
 		 {
-			  using ( Transaction tx = _database.Graph.BeginTransaction( @implicit, AnonymousContext.writeToken() ) )
+			  using ( Transaction tx = _database.Graph.BeginTransaction( @implicit, AnonymousContext.WriteToken() ) )
 			  {
 					Node node = _database.Graph.createNode( labels );
 					foreach ( KeyValuePair<string, object> entry in properties.SetOfKeyValuePairs() )
@@ -162,7 +162,7 @@ namespace Neo4Net.Server.rest.domain
 
 		 public virtual long CreateRelationship( string type, long startNodeId, long endNodeId )
 		 {
-			  using ( Transaction tx = _database.Graph.BeginTransaction( @implicit, AnonymousContext.writeToken() ) )
+			  using ( Transaction tx = _database.Graph.BeginTransaction( @implicit, AnonymousContext.WriteToken() ) )
 			  {
 					Node startNode = _database.Graph.getNodeById( startNodeId );
 					Node endNode = _database.Graph.getNodeById( endNodeId );
@@ -174,7 +174,7 @@ namespace Neo4Net.Server.rest.domain
 
 		 public virtual long CreateRelationship( string type )
 		 {
-			  using ( Transaction tx = _database.Graph.BeginTransaction( @implicit, AnonymousContext.writeToken() ) )
+			  using ( Transaction tx = _database.Graph.BeginTransaction( @implicit, AnonymousContext.WriteToken() ) )
 			  {
 					Node startNode = _database.Graph.createNode();
 					Node endNode = _database.Graph.createNode();
@@ -187,7 +187,7 @@ namespace Neo4Net.Server.rest.domain
 		 public virtual void SetRelationshipProperties( long relationshipId, IDictionary<string, object> properties )
 
 		 {
-			  using ( Transaction tx = _database.Graph.BeginTransaction( @implicit, AnonymousContext.writeToken() ) )
+			  using ( Transaction tx = _database.Graph.BeginTransaction( @implicit, AnonymousContext.WriteToken() ) )
 			  {
 					Relationship relationship = _database.Graph.getRelationshipById( relationshipId );
 					foreach ( KeyValuePair<string, object> propertyEntry in properties.SetOfKeyValuePairs() )
@@ -296,7 +296,7 @@ namespace Neo4Net.Server.rest.domain
 		 {
 			  using ( Transaction transaction = _database.Graph.BeginTransaction( @implicit, AUTH_DISABLED ) )
 			  {
-					Index<Node> index = _database.Graph.index().forNodes(named, MapUtil.stringMap(Neo4Net.GraphDb.index.IndexManager_Fields.PROVIDER, "lucene", "type", "fulltext"));
+					Index<Node> index = _database.Graph.index().forNodes(named, MapUtil.stringMap(Neo4Net.GraphDb.Index.IndexManager_Fields.PROVIDER, "lucene", "type", "fulltext"));
 					transaction.Success();
 					return index;
 			  }
@@ -378,7 +378,7 @@ namespace Neo4Net.Server.rest.domain
 
 		 public virtual void AddLabelToNode( long node, string labelName )
 		 {
-			  using ( Transaction tx = _database.Graph.BeginTransaction( @implicit, AnonymousContext.writeToken() ) )
+			  using ( Transaction tx = _database.Graph.BeginTransaction( @implicit, AnonymousContext.WriteToken() ) )
 			  {
 					_database.Graph.getNodeById( node ).addLabel( label( labelName ) );
 					tx.Success();

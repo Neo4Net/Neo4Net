@@ -27,7 +27,7 @@ namespace Neo4Net.tools.txlog
 	/// <summary>
 	/// Handler of inconsistencies discovered by <seealso cref="CheckTxLogs"/> tool.
 	/// </summary>
-	internal interface InconsistenciesHandler
+	internal interface IInconsistenciesHandler
 	{
 		 /// <summary>
 		 /// For reporting of invalid check points. </summary>

@@ -46,7 +46,7 @@ namespace Neo4Net.Kernel.api
 	using RecoveryCleanupWorkCollector = Neo4Net.Index.Internal.gbptree.RecoveryCleanupWorkCollector;
 	using IndexCapability = Neo4Net.Kernel.Api.Internal.IndexCapability;
 	using InternalIndexState = Neo4Net.Kernel.Api.Internal.InternalIndexState;
-	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor;
+	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.Schema.IndexProviderDescriptor;
 	using DefaultFileSystemAbstraction = Neo4Net.Io.fs.DefaultFileSystemAbstraction;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
@@ -563,7 +563,7 @@ namespace Neo4Net.Kernel.api
 			  }
 		 }
 
-		 internal interface IndexProviderDependencies
+		 internal interface IIndexProviderDependencies
 		 {
 			  IGraphDatabaseService Db();
 			  Config Config();

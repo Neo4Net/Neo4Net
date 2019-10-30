@@ -29,7 +29,7 @@ namespace Neo4Net.Kernel.impl.core
 	using Neo4Net.GraphDb;
 	using Neo4Net.GraphDb;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using IdType = Neo4Net.Kernel.impl.store.id.IdType;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:

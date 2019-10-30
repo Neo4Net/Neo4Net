@@ -60,7 +60,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 			  // given
 			  ConstrainedNode( "Label1", "key1", "value1" );
 
-			  Transaction transaction = NewTransaction( AnonymousContext.writeToken() );
+			  Transaction transaction = NewTransaction( AnonymousContext.WriteToken() );
 
 			  // when
 			  long node = CreateLabeledNode( transaction, "Label1" );
@@ -89,7 +89,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 			  long propertyValue = 285414114323346805L;
 			  long firstNode = ConstrainedNode( "label1", "key1", propertyValue );
 
-			  Transaction transaction = NewTransaction( AnonymousContext.writeToken() );
+			  Transaction transaction = NewTransaction( AnonymousContext.WriteToken() );
 
 			  long node = CreateLabeledNode( transaction, "label1" );
 
@@ -116,11 +116,11 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 			  ConstrainedNode( "Label1", "key1", 1 );
 
 			  // when
-			  Transaction transaction = NewTransaction( AnonymousContext.writeToken() );
+			  Transaction transaction = NewTransaction( AnonymousContext.WriteToken() );
 			  long node = CreateNode( transaction, "key1", 1 );
 			  Commit();
 
-			  transaction = NewTransaction( AnonymousContext.writeToken() );
+			  transaction = NewTransaction( AnonymousContext.WriteToken() );
 			  try
 			  {
 					int label = transaction.TokenWrite().labelGetOrCreateForName("Label1");
@@ -144,7 +144,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 			  // given
 			  ConstrainedNode( "Label1", "key1", "value1" );
 
-			  Transaction transaction = NewTransaction( AnonymousContext.writeToken() );
+			  Transaction transaction = NewTransaction( AnonymousContext.WriteToken() );
 
 			  // when
 			  long node = CreateNode( transaction, "key1", "value1" );
@@ -171,7 +171,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 			  // given
 			  long node = ConstrainedNode( "Label1", "key1", "value1" );
 
-			  Transaction transaction = NewTransaction( AnonymousContext.writeToken() );
+			  Transaction transaction = NewTransaction( AnonymousContext.WriteToken() );
 
 			  // when
 			  transaction.DataWrite().nodeDelete(node);
@@ -187,7 +187,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 			  // given
 			  long node = ConstrainedNode( "Label1", "key1", "value1" );
 
-			  Transaction transaction = NewTransaction( AnonymousContext.writeToken() );
+			  Transaction transaction = NewTransaction( AnonymousContext.WriteToken() );
 
 			  // when
 			  int label = transaction.TokenWrite().labelGetOrCreateForName("Label1");
@@ -204,7 +204,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 			  // given
 			  long node = ConstrainedNode( "Label1", "key1", "value1" );
 
-			  Transaction transaction = NewTransaction( AnonymousContext.writeToken() );
+			  Transaction transaction = NewTransaction( AnonymousContext.WriteToken() );
 
 			  // when
 			  int key = transaction.TokenRead().propertyKey("key1");
@@ -221,7 +221,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 			  // given
 			  long node = ConstrainedNode( "Label1", "key1", "value1" );
 
-			  Transaction transaction = NewTransaction( AnonymousContext.writeToken() );
+			  Transaction transaction = NewTransaction( AnonymousContext.WriteToken() );
 
 			  // when
 			  int propertyKeyId = transaction.TokenWrite().propertyKeyGetOrCreateForName("key1");
@@ -238,7 +238,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 			  // given
 			  ConstrainedNode( "Label1", "key1", "value1" );
 
-			  Transaction transaction = NewTransaction( AnonymousContext.writeToken() );
+			  Transaction transaction = NewTransaction( AnonymousContext.WriteToken() );
 
 			  // when
 			  CreateLabeledNode( transaction, "Label1", "key1", "value2" );
@@ -264,7 +264,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 			  // given
 			  long node = ConstrainedNode( "Label1", "key1", "value1" );
 
-			  Transaction transaction = NewTransaction( AnonymousContext.writeToken() );
+			  Transaction transaction = NewTransaction( AnonymousContext.WriteToken() );
 
 			  // when
 			  int key = transaction.TokenWrite().propertyKeyGetOrCreateForName("key1");
@@ -282,7 +282,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 			  // given
 			  long node = ConstrainedNode( "Label1", "key1", "value1" );
 
-			  Transaction transaction = NewTransaction( AnonymousContext.writeToken() );
+			  Transaction transaction = NewTransaction( AnonymousContext.WriteToken() );
 
 			  // when
 			  int label = transaction.TokenWrite().labelGetOrCreateForName("Label1");
@@ -300,7 +300,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 			  // given
 			  ConstrainedNode( "Label1", "key1", "value1" );
 
-			  Transaction transaction = NewTransaction( AnonymousContext.writeToken() );
+			  Transaction transaction = NewTransaction( AnonymousContext.WriteToken() );
 
 			  // when
 			  CreateNode( transaction, "key1", "value1" );
@@ -311,7 +311,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 			  Commit();
 
 			  // then
-			  transaction = NewTransaction( AnonymousContext.writeToken() );
+			  transaction = NewTransaction( AnonymousContext.WriteToken() );
 			  assertEquals( "number of nodes", 5, CountNodes( transaction ) );
 			  Rollback();
 		 }
@@ -326,13 +326,13 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 
 			  long ourNode;
 			  {
-					Transaction transaction = NewTransaction( AnonymousContext.writeToken() );
+					Transaction transaction = NewTransaction( AnonymousContext.WriteToken() );
 					ourNode = CreateLabeledNode( transaction, "Person", "id", 1 );
 					CreateLabeledNode( transaction, "Item", "id", 2 );
 					Commit();
 			  }
 
-			  Transaction transaction = NewTransaction( AnonymousContext.writeToken() );
+			  Transaction transaction = NewTransaction( AnonymousContext.WriteToken() );
 			  TokenRead tokenRead = transaction.TokenRead();
 			  int person = tokenRead.NodeLabel( "Person" );
 			  int propId = tokenRead.PropertyKey( "id" );
@@ -356,12 +356,12 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 
 			  long ourNode;
 			  {
-					Transaction transaction = NewTransaction( AnonymousContext.writeToken() );
+					Transaction transaction = NewTransaction( AnonymousContext.WriteToken() );
 					ourNode = CreateLabeledNode( transaction, "Person", "id", 1 );
 					Commit();
 			  }
 
-			  Transaction transaction = NewTransaction( AnonymousContext.writeToken() );
+			  Transaction transaction = NewTransaction( AnonymousContext.WriteToken() );
 			  TokenRead tokenRead = transaction.TokenRead();
 			  int person = tokenRead.NodeLabel( "Person" );
 			  int propId = tokenRead.PropertyKey( "id" );
@@ -416,7 +416,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 		 {
 			  long node;
 			  {
-					Transaction transaction = NewTransaction( AnonymousContext.writeToken() );
+					Transaction transaction = NewTransaction( AnonymousContext.WriteToken() );
 					int label = transaction.TokenWrite().labelGetOrCreateForName(labelName);
 					node = transaction.DataWrite().nodeCreate();
 					transaction.DataWrite().nodeAddLabel(node, label);

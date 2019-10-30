@@ -33,7 +33,7 @@ namespace Neo4Net.Metatest
 	using Relationship = Neo4Net.GraphDb.Relationship;
 	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using Neo4Net.GraphDb.index;
+	using Neo4Net.GraphDb.Index;
 	using GraphDescription = Neo4Net.Test.GraphDescription;
 	using Graph = Neo4Net.Test.GraphDescription.Graph;
 	using NODE = Neo4Net.Test.GraphDescription.NODE;

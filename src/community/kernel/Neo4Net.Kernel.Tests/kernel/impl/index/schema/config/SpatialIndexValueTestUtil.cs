@@ -20,7 +20,7 @@
 namespace Neo4Net.Kernel.Impl.Index.Schema.config
 {
 	using SpaceFillingCurve = Neo4Net.Gis.Spatial.Index.curves.SpaceFillingCurve;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using CoordinateReferenceSystem = Neo4Net.Values.Storable.CoordinateReferenceSystem;
 	using PointValue = Neo4Net.Values.Storable.PointValue;

@@ -28,7 +28,7 @@ namespace Neo4Net.tools.dbstructure
 
 	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
 	using EnterpriseGraphDatabaseFactory = Neo4Net.GraphDb.factory.EnterpriseGraphDatabaseFactory;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using DbStructureArgumentFormatter = Neo4Net.Kernel.impl.util.dbstructure.DbStructureArgumentFormatter;
 	using DbStructureVisitor = Neo4Net.Kernel.impl.util.dbstructure.DbStructureVisitor;
 	using GraphDbStructureGuide = Neo4Net.Kernel.impl.util.dbstructure.GraphDbStructureGuide;
@@ -57,9 +57,9 @@ namespace Neo4Net.tools.dbstructure
 					Environment.Exit( 1 );
 			  }
 
-			  bool writeToFile = args.Length == 3;
+			  bool WriteToFile = args.Length == 3;
 			  string generatedClassWithPackage = args[0];
-			  string dbDir = writeToFile ? args[2] : args[1];
+			  string dbDir = WriteToFile ? args[2] : args[1];
 
 			  Pair<string, string> parsedGenerated = ParseClassNameWithPackage( generatedClassWithPackage );
 			  string generatedClassPackage = parsedGenerated.First();
@@ -71,7 +71,7 @@ namespace Neo4Net.tools.dbstructure
 			  IGraphDatabaseService graph = InstantiateGraphDatabase( dbDir );
 			  try
 			  {
-					if ( writeToFile )
+					if ( WriteToFile )
 					{
 						 File sourceRoot = new File( args[1] );
 						 string outputPackageDir = generatedClassPackage.Replace( '.', Path.DirectorySeparatorChar );

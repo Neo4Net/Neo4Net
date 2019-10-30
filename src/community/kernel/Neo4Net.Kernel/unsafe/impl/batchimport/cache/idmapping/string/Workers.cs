@@ -24,7 +24,7 @@ using System.Threading;
 namespace Neo4Net.@unsafe.Impl.Batchimport.cache.idmapping.@string
 {
 
-	using Iterators = Neo4Net.Helpers.Collections.Iterators;
+	using Iterators = Neo4Net.Collections.Helpers.Iterators;
 
 	/// <summary>
 	/// Utility for running a handful of <seealso cref="System.Threading.ThreadStart"/> in parallel, each in its own thread.

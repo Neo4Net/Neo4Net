@@ -40,7 +40,7 @@ namespace Neo4Net.Kernel.ha.cluster
 	using StoreCopyClientMonitor = Neo4Net.com.storecopy.StoreCopyClientMonitor;
 	using Suppliers = Neo4Net.Functions.Suppliers;
 	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;

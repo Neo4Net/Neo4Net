@@ -32,7 +32,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 	using Neo4Net.Collections;
 	using Resource = Neo4Net.GraphDb.Resource;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
+	using MapUtil = Neo4Net.Collections.Helpers.MapUtil;
 	using SchemaWrite = Neo4Net.Kernel.Api.Internal.SchemaWrite;
 	using TokenWrite = Neo4Net.Kernel.Api.Internal.TokenWrite;
 	using Transaction = Neo4Net.Kernel.Api.Internal.Transaction;
@@ -86,7 +86,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 		 public virtual void ListAllLabels()
 		 {
 			  // Given
-			  Transaction transaction = NewTransaction( AnonymousContext.writeToken() );
+			  Transaction transaction = NewTransaction( AnonymousContext.WriteToken() );
 			  long nodeId = transaction.DataWrite().nodeCreate();
 			  int labelId = transaction.TokenWrite().labelGetOrCreateForName("MyLabel");
 			  transaction.DataWrite().nodeAddLabel(nodeId, labelId);
@@ -105,7 +105,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 		 public virtual void ListAllLabelsMustNotBlockOnConstraintCreatingTransaction()
 		 {
 			  // Given
-			  Transaction transaction = NewTransaction( AnonymousContext.writeToken() );
+			  Transaction transaction = NewTransaction( AnonymousContext.WriteToken() );
 			  long nodeId = transaction.DataWrite().nodeCreate();
 			  int labelId = transaction.TokenWrite().labelGetOrCreateForName("MyLabel");
 			  int propKey = transaction.TokenWrite().propertyKeyCreateForName("prop");
@@ -170,7 +170,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 		 public virtual void ListRelationshipTypes()
 		 {
 			  // Given
-			  Transaction transaction = NewTransaction( AnonymousContext.writeToken() );
+			  Transaction transaction = NewTransaction( AnonymousContext.WriteToken() );
 			  int relType = transaction.TokenWrite().relationshipTypeGetOrCreateForName("MyRelType");
 			  long startNodeId = transaction.DataWrite().nodeCreate();
 			  long endNodeId = transaction.DataWrite().nodeCreate();

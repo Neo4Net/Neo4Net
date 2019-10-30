@@ -38,8 +38,8 @@ namespace Neo4Net.Kernel.impl.core
 	using Neo4Net.GraphDb;
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using Neo4Net.Helpers.Collections;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Neo4Net.Collections.Helpers;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;

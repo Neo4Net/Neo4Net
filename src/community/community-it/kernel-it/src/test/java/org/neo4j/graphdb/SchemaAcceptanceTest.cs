@@ -27,7 +27,7 @@ namespace Neo4Net.GraphDb
 	using ConstraintType = Neo4Net.GraphDb.Schema.ConstraintType;
 	using IndexDefinition = Neo4Net.GraphDb.Schema.IndexDefinition;
 	using Schema = Neo4Net.GraphDb.Schema.Schema;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using ImpermanentDatabaseRule = Neo4Net.Test.rule.ImpermanentDatabaseRule;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:

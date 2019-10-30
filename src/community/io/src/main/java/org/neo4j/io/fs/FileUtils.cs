@@ -281,7 +281,7 @@ namespace Neo4Net.Io.fs
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static void writeToFile(java.io.File target, String text, boolean append) throws java.io.IOException
+//ORIGINAL LINE: public static void WriteToFile(java.io.File target, String text, boolean append) throws java.io.IOException
 		 public static void WriteToFile( File target, string text, bool append )
 		 {
 			  if ( !target.exists() )

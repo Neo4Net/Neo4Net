@@ -29,7 +29,7 @@ namespace Neo4Net.Kernel.ha.transaction
 
 	using InstanceId = Neo4Net.cluster.InstanceId;
 	using Neo4Net.com;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using Slave = Neo4Net.Kernel.ha.com.master.Slave;
 	using SlavePriorities = Neo4Net.Kernel.ha.com.master.SlavePriorities;

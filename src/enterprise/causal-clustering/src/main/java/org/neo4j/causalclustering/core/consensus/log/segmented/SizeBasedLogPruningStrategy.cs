@@ -24,7 +24,7 @@
  */
 namespace Neo4Net.causalclustering.core.consensus.log.segmented
 {
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 
 	internal class SizeBasedLogPruningStrategy : CoreLogPruningStrategy, Visitor<SegmentFile, Exception>
 	{

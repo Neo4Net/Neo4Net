@@ -21,9 +21,9 @@ namespace Neo4Net.Kernel.impl.coreapi
 {
 	using Node = Neo4Net.GraphDb.Node;
 	using Relationship = Neo4Net.GraphDb.Relationship;
-	using Neo4Net.GraphDb.index;
-	using ReadableRelationshipIndex = Neo4Net.GraphDb.index.ReadableRelationshipIndex;
-	using RelationshipIndex = Neo4Net.GraphDb.index.RelationshipIndex;
+	using Neo4Net.GraphDb.Index;
+	using ReadableRelationshipIndex = Neo4Net.GraphDb.Index.ReadableRelationshipIndex;
+	using RelationshipIndex = Neo4Net.GraphDb.Index.RelationshipIndex;
 
 	public class RelationshipReadOnlyIndexFacade : ReadOnlyIndexFacade<Relationship>, RelationshipIndex
 	{

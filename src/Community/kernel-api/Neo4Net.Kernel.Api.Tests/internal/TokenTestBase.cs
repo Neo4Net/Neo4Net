@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel.Api.Internal
 	using Neo4Net.Functions;
 	using Neo4Net.Functions;
 	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
-	using IllegalTokenNameException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IllegalTokenNameException;
+	using IllegalTokenNameException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IllegalTokenNameException;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;

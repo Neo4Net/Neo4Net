@@ -30,7 +30,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 	using NodeCursor = Neo4Net.Kernel.Api.Internal.NodeCursor;
 	using PropertyCursor = Neo4Net.Kernel.Api.Internal.PropertyCursor;
 	using RelationshipScanCursor = Neo4Net.Kernel.Api.Internal.RelationshipScanCursor;
-	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
 	using IOUtils = Neo4Net.Io.IOUtils;
 	using TransactionState = Neo4Net.Kernel.api.txstate.TransactionState;
 	using KernelTransactionImplementation = Neo4Net.Kernel.Impl.Api.KernelTransactionImplementation;

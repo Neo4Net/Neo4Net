@@ -35,8 +35,8 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using IndexDefinition = Neo4Net.GraphDb.Schema.IndexDefinition;
 	using Schema = Neo4Net.GraphDb.Schema.Schema;
 	using InternalIndexState = Neo4Net.Kernel.Api.Internal.InternalIndexState;
-	using MisconfiguredIndexException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.MisconfiguredIndexException;
-	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.LabelSchemaDescriptor;
+	using MisconfiguredIndexException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.MisconfiguredIndexException;
+	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.LabelSchemaDescriptor;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
@@ -385,7 +385,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 private readonly Label _myLabel = label( "MyLabel" );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Before public void setUp() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.MisconfiguredIndexException
+//ORIGINAL LINE: @Before public void setUp() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.MisconfiguredIndexException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void SetUp()
 		 {

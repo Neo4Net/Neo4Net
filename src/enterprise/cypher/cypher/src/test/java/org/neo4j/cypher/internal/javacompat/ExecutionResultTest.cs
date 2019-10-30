@@ -32,7 +32,7 @@ namespace Neo4Net.Cypher.Internal.javacompat
 	using ExecutionPlanDescription = Neo4Net.GraphDb.ExecutionPlanDescription;
 	using Result = Neo4Net.GraphDb.Result;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using Iterators = Neo4Net.Helpers.Collections.Iterators;
+	using Iterators = Neo4Net.Collections.Helpers.Iterators;
 	using TestEnterpriseGraphDatabaseFactory = Neo4Net.Test.TestEnterpriseGraphDatabaseFactory;
 	using EnterpriseDatabaseRule = Neo4Net.Test.rule.EnterpriseDatabaseRule;
 

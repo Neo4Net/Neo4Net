@@ -53,7 +53,7 @@ namespace Neo4Net.causalclustering.scenarios
 	using SessionExpiredException = Neo4Net.driver.v1.exceptions.SessionExpiredException;
 	using ServerInfo = Neo4Net.driver.v1.summary.ServerInfo;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using Iterators = Neo4Net.Helpers.Collections.Iterators;
+	using Iterators = Neo4Net.Collections.Helpers.Iterators;
 	using ClusterRule = Neo4Net.Test.causalclustering.ClusterRule;
 	using SuppressOutput = Neo4Net.Test.rule.SuppressOutput;
 

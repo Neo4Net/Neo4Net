@@ -27,7 +27,7 @@ namespace Neo4Net.Server.plugins
 	/// @param <T> the type of the value, or an interface the value implements. </param>
 	/// @deprecated Server plugins are deprecated for removal in the next major release. Please use unmanaged extensions instead. 
 	[Obsolete("Server plugins are deprecated for removal in the next major release. Please use unmanaged extensions instead.")]
-	public interface Injectable<T>
+	public interface IInjectable<T>
 	{
 		 /// <summary>
 		 /// Get the injectable value.

@@ -24,7 +24,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.cache
 	/// off-heap, dynamically growing, or other implementations.
 	/// </summary>
 	/// <seealso cref= NumberArrayFactory </seealso>
-	public interface IntArray : NumberArray<IntArray>
+	public interface IIntArray : NumberArray<IntArray>
 	{
 		 int Get( long index );
 

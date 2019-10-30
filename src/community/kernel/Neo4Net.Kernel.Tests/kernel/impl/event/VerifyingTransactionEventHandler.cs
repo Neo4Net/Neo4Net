@@ -23,7 +23,7 @@ namespace Neo4Net.Kernel.Impl.@event
 {
 	using TransactionData = Neo4Net.GraphDb.Events.TransactionData;
 	using Neo4Net.GraphDb.Events;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 
 	public class VerifyingTransactionEventHandler : TransactionEventHandler<object>
 	{

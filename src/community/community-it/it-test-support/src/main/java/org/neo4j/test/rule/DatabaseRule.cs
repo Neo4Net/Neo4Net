@@ -40,7 +40,7 @@ namespace Neo4Net.Test.rule
 	using Neo4Net.GraphDb.Events;
 	using GraphDatabaseBuilder = Neo4Net.GraphDb.factory.GraphDatabaseBuilder;
 	using GraphDatabaseFactory = Neo4Net.GraphDb.factory.GraphDatabaseFactory;
-	using IndexManager = Neo4Net.GraphDb.index.IndexManager;
+	using IndexManager = Neo4Net.GraphDb.Index.IndexManager;
 	using Schema = Neo4Net.GraphDb.Schema.Schema;
 	using URLAccessValidationError = Neo4Net.GraphDb.security.URLAccessValidationError;
 	using BidirectionalTraversalDescription = Neo4Net.GraphDb.Traversal.BidirectionalTraversalDescription;

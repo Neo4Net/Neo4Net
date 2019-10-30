@@ -51,8 +51,8 @@ namespace Neo4Net.Consistency.checking.full
 	using Neo4Net.Consistency.report;
 	using DefaultCounts = Neo4Net.Consistency.statistics.DefaultCounts;
 	using Statistics = Neo4Net.Consistency.statistics.Statistics;
-	using RecordAccess = Neo4Net.Consistency.store.RecordAccess;
-	using Neo4Net.Consistency.store;
+	using RecordAccess = Neo4Net.Consistency.Store.RecordAccess;
+	using Neo4Net.Consistency.Store;
 	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
 	using Node = Neo4Net.GraphDb.Node;
 	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
@@ -324,7 +324,7 @@ namespace Neo4Net.Consistency.checking.full
 			  {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 //ORIGINAL LINE: if (!(reference instanceof org.Neo4Net.consistency.store.RecordReference_SkippingReference<?>))
-					if ( !( Reference is Neo4Net.Consistency.store.RecordReference_SkippingReference<object> ) )
+					if ( !( Reference is Neo4Net.Consistency.Store.RecordReference_SkippingReference<object> ) )
 					{
 						 Log.log( Reporter, invocation );
 					}

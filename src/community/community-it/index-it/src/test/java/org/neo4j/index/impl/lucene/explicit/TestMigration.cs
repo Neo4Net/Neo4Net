@@ -31,8 +31,8 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
 	using Relationship = Neo4Net.GraphDb.Relationship;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using IndexManager = Neo4Net.GraphDb.index.IndexManager;
-	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
+	using IndexManager = Neo4Net.GraphDb.Index.IndexManager;
+	using MapUtil = Neo4Net.Collections.Helpers.MapUtil;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using IndexConfigStore = Neo4Net.Kernel.impl.index.IndexConfigStore;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
@@ -55,7 +55,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 //ORIGINAL LINE: @Test public void providerGetsFilledInAutomatically()
 		 public virtual void ProviderGetsFilledInAutomatically()
 		 {
-			  IDictionary<string, string> correctConfig = MapUtil.stringMap( "type", "exact", Neo4Net.GraphDb.index.IndexManager_Fields.PROVIDER, "lucene" );
+			  IDictionary<string, string> correctConfig = MapUtil.stringMap( "type", "exact", Neo4Net.GraphDb.Index.IndexManager_Fields.PROVIDER, "lucene" );
 			  File storeDir = TestDirectory.storeDir();
 			  Neo4NetTestCase.deleteFileOrDirectory( storeDir );
 			  IGraphDatabaseService graphDb = StartDatabase( storeDir );
@@ -63,10 +63,10 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 			  {
 					assertEquals( correctConfig, graphDb.Index().getConfiguration(graphDb.Index().forNodes("default")) );
 					assertEquals( correctConfig, graphDb.Index().getConfiguration(graphDb.Index().forNodes("wo-provider", MapUtil.stringMap("type", "exact"))) );
-					assertEquals( correctConfig, graphDb.Index().getConfiguration(graphDb.Index().forNodes("w-provider", MapUtil.stringMap("type", "exact", Neo4Net.GraphDb.index.IndexManager_Fields.PROVIDER, "lucene"))) );
+					assertEquals( correctConfig, graphDb.Index().getConfiguration(graphDb.Index().forNodes("w-provider", MapUtil.stringMap("type", "exact", Neo4Net.GraphDb.Index.IndexManager_Fields.PROVIDER, "lucene"))) );
 					assertEquals( correctConfig, graphDb.Index().getConfiguration(graphDb.Index().forRelationships("default")) );
 					assertEquals( correctConfig, graphDb.Index().getConfiguration(graphDb.Index().forRelationships("wo-provider", MapUtil.stringMap("type", "exact"))) );
-					assertEquals( correctConfig, graphDb.Index().getConfiguration(graphDb.Index().forRelationships("w-provider", MapUtil.stringMap("type", "exact", Neo4Net.GraphDb.index.IndexManager_Fields.PROVIDER, "lucene"))) );
+					assertEquals( correctConfig, graphDb.Index().getConfiguration(graphDb.Index().forRelationships("w-provider", MapUtil.stringMap("type", "exact", Neo4Net.GraphDb.Index.IndexManager_Fields.PROVIDER, "lucene"))) );
 					transaction.Success();
 			  }
 
@@ -80,10 +80,10 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 					// Getting the index w/o exception means that the provider has been reinstated
 					assertEquals( correctConfig, graphDb.Index().getConfiguration(graphDb.Index().forNodes("default")) );
 					assertEquals( correctConfig, graphDb.Index().getConfiguration(graphDb.Index().forNodes("wo-provider", MapUtil.stringMap("type", "exact"))) );
-					assertEquals( correctConfig, graphDb.Index().getConfiguration(graphDb.Index().forNodes("w-provider", MapUtil.stringMap("type", "exact", Neo4Net.GraphDb.index.IndexManager_Fields.PROVIDER, "lucene"))) );
+					assertEquals( correctConfig, graphDb.Index().getConfiguration(graphDb.Index().forNodes("w-provider", MapUtil.stringMap("type", "exact", Neo4Net.GraphDb.Index.IndexManager_Fields.PROVIDER, "lucene"))) );
 					assertEquals( correctConfig, graphDb.Index().getConfiguration(graphDb.Index().forRelationships("default")) );
 					assertEquals( correctConfig, graphDb.Index().getConfiguration(graphDb.Index().forRelationships("wo-provider", MapUtil.stringMap("type", "exact"))) );
-					assertEquals( correctConfig, graphDb.Index().getConfiguration(graphDb.Index().forRelationships("w-provider", MapUtil.stringMap("type", "exact", Neo4Net.GraphDb.index.IndexManager_Fields.PROVIDER, "lucene"))) );
+					assertEquals( correctConfig, graphDb.Index().getConfiguration(graphDb.Index().forRelationships("w-provider", MapUtil.stringMap("type", "exact", Neo4Net.GraphDb.Index.IndexManager_Fields.PROVIDER, "lucene"))) );
 			  }
 
 			  graphDb.Shutdown();
@@ -119,7 +119,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 					{
 						 IDictionary<string, string> config = indexStore.Get( cls, name );
 						 config = new Dictionary<string, string>( config );
-						 config.Remove( Neo4Net.GraphDb.index.IndexManager_Fields.PROVIDER );
+						 config.Remove( Neo4Net.GraphDb.Index.IndexManager_Fields.PROVIDER );
 						 indexStore.Set( typeof( Node ), name, config );
 					}
 			  }

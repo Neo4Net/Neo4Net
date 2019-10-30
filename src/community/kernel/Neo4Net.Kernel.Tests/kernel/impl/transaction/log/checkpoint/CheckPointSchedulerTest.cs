@@ -28,7 +28,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.checkpoint
 	using Test = org.junit.Test;
 
 
-	using Iterators = Neo4Net.Helpers.Collections.Iterators;
+	using Iterators = Neo4Net.Collections.Helpers.Iterators;
 	using IOLimiter = Neo4Net.Io.pagecache.IOLimiter;
 	using UnderlyingStorageException = Neo4Net.Kernel.impl.store.UnderlyingStorageException;
 	using DatabaseHealth = Neo4Net.Kernel.Internal.DatabaseHealth;

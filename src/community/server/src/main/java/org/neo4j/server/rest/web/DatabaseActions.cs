@@ -45,13 +45,13 @@ namespace Neo4Net.Server.rest.web
 	using Relationship = Neo4Net.GraphDb.Relationship;
 	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
 	using Neo4Net.GraphDb;
-	using Neo4Net.GraphDb.index;
-	using Neo4Net.GraphDb.index;
-	using Neo4Net.GraphDb.index;
-	using IndexManager = Neo4Net.GraphDb.index.IndexManager;
-	using Neo4Net.GraphDb.index;
-	using Neo4Net.GraphDb.index;
-	using Neo4Net.GraphDb.index.UniqueFactory;
+	using Neo4Net.GraphDb.Index;
+	using Neo4Net.GraphDb.Index;
+	using Neo4Net.GraphDb.Index;
+	using IndexManager = Neo4Net.GraphDb.Index.IndexManager;
+	using Neo4Net.GraphDb.Index;
+	using Neo4Net.GraphDb.Index;
+	using Neo4Net.GraphDb.Index.UniqueFactory;
 	using ConstraintCreator = Neo4Net.GraphDb.Schema.ConstraintCreator;
 	using ConstraintDefinition = Neo4Net.GraphDb.Schema.ConstraintDefinition;
 	using ConstraintType = Neo4Net.GraphDb.Schema.ConstraintType;
@@ -59,9 +59,9 @@ namespace Neo4Net.Server.rest.web
 	using IndexDefinition = Neo4Net.GraphDb.Schema.IndexDefinition;
 	using Neo4Net.GraphDb.Traversal;
 	using Paths = Neo4Net.GraphDb.Traversal.Paths;
-	using Neo4Net.Helpers.Collections;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
+	using Neo4Net.Collections.Helpers;
 	using QueryContext = Neo4Net.Index.lucene.QueryContext;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
 	using Neo4Net.Server.database;
@@ -473,7 +473,7 @@ namespace Neo4Net.Server.rest.web
 		 public virtual Representation IsAutoIndexerEnabled( string type )
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.graphdb.index.AutoIndexer<? extends org.Neo4Net.graphdb.PropertyContainer> index = getAutoIndexerForType(type);
+//ORIGINAL LINE: org.Neo4Net.GraphDb.Index.AutoIndexer<? extends org.Neo4Net.graphdb.PropertyContainer> index = getAutoIndexerForType(type);
 			  AutoIndexer<PropertyContainer> index = GetAutoIndexerForType( type );
 			  return ValueRepresentation.@bool( index.Enabled );
 		 }
@@ -481,17 +481,17 @@ namespace Neo4Net.Server.rest.web
 		 public virtual void SetAutoIndexerEnabled( string type, bool enable )
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.graphdb.index.AutoIndexer<? extends org.Neo4Net.graphdb.PropertyContainer> index = getAutoIndexerForType(type);
+//ORIGINAL LINE: org.Neo4Net.GraphDb.Index.AutoIndexer<? extends org.Neo4Net.graphdb.PropertyContainer> index = getAutoIndexerForType(type);
 			  AutoIndexer<PropertyContainer> index = GetAutoIndexerForType( type );
 			  index.Enabled = enable;
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private org.Neo4Net.graphdb.index.AutoIndexer<? extends org.Neo4Net.graphdb.PropertyContainer> getAutoIndexerForType(String type)
+//ORIGINAL LINE: private org.Neo4Net.GraphDb.Index.AutoIndexer<? extends org.Neo4Net.graphdb.PropertyContainer> getAutoIndexerForType(String type)
 		 private AutoIndexer<PropertyContainer> GetAutoIndexerForType( string type )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.graphdb.index.IndexManager indexManager = graphDb.index();
+//ORIGINAL LINE: final org.Neo4Net.GraphDb.Index.IndexManager indexManager = graphDb.index();
 			  IndexManager indexManager = _graphDb.index();
 			  switch ( type )
 			  {
@@ -507,7 +507,7 @@ namespace Neo4Net.Server.rest.web
 		 public virtual Representation GetAutoIndexedProperties( string type )
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.graphdb.index.AutoIndexer<? extends org.Neo4Net.graphdb.PropertyContainer> indexer = getAutoIndexerForType(type);
+//ORIGINAL LINE: org.Neo4Net.GraphDb.Index.AutoIndexer<? extends org.Neo4Net.graphdb.PropertyContainer> indexer = getAutoIndexerForType(type);
 			  AutoIndexer<PropertyContainer> indexer = GetAutoIndexerForType( type );
 			  return ListRepresentation.@string( indexer.AutoIndexedProperties );
 		 }
@@ -515,7 +515,7 @@ namespace Neo4Net.Server.rest.web
 		 public virtual void StartAutoIndexingProperty( string type, string property )
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.graphdb.index.AutoIndexer<? extends org.Neo4Net.graphdb.PropertyContainer> indexer = getAutoIndexerForType(type);
+//ORIGINAL LINE: org.Neo4Net.GraphDb.Index.AutoIndexer<? extends org.Neo4Net.graphdb.PropertyContainer> indexer = getAutoIndexerForType(type);
 			  AutoIndexer<PropertyContainer> indexer = GetAutoIndexerForType( type );
 			  indexer.StartAutoIndexingProperty( property );
 		 }
@@ -523,7 +523,7 @@ namespace Neo4Net.Server.rest.web
 		 public virtual void StopAutoIndexingProperty( string type, string property )
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.graphdb.index.AutoIndexer<? extends org.Neo4Net.graphdb.PropertyContainer> indexer = getAutoIndexerForType(type);
+//ORIGINAL LINE: org.Neo4Net.GraphDb.Index.AutoIndexer<? extends org.Neo4Net.graphdb.PropertyContainer> indexer = getAutoIndexerForType(type);
 			  AutoIndexer<PropertyContainer> indexer = GetAutoIndexerForType( type );
 			  indexer.StopAutoIndexingProperty( property );
 		 }
@@ -835,7 +835,7 @@ namespace Neo4Net.Server.rest.web
 //ORIGINAL LINE: final org.Neo4Net.server.rest.repr.IndexRepresentation indexRepresentation = new org.Neo4Net.server.rest.repr.NodeIndexRepresentation(indexName);
 			  IndexRepresentation indexRepresentation = new NodeIndexRepresentation( indexName );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.graphdb.index.IndexHits<org.Neo4Net.graphdb.Node> indexHits = index.get(key, value);
+//ORIGINAL LINE: final org.Neo4Net.GraphDb.Index.IndexHits<org.Neo4Net.graphdb.Node> indexHits = index.get(key, value);
 			  IndexHits<Node> indexHits = index.get( key, value );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -896,7 +896,7 @@ namespace Neo4Net.Server.rest.web
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private org.Neo4Net.server.rest.repr.ListRepresentation toListNodeRepresentation(final org.Neo4Net.graphdb.index.IndexHits<org.Neo4Net.graphdb.Node> result, final IndexResultOrder order)
+//ORIGINAL LINE: private org.Neo4Net.server.rest.repr.ListRepresentation toListNodeRepresentation(final org.Neo4Net.GraphDb.Index.IndexHits<org.Neo4Net.graphdb.Node> result, final IndexResultOrder order)
 		 private ListRepresentation ToListNodeRepresentation( IndexHits<Node> result, IndexResultOrder order )
 		 {
 			  if ( result == null )
@@ -942,7 +942,7 @@ namespace Neo4Net.Server.rest.web
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private org.Neo4Net.server.rest.repr.ListRepresentation toListRelationshipRepresentation(final org.Neo4Net.graphdb.index.IndexHits<org.Neo4Net.graphdb.Relationship> result, final IndexResultOrder order)
+//ORIGINAL LINE: private org.Neo4Net.server.rest.repr.ListRepresentation toListRelationshipRepresentation(final org.Neo4Net.GraphDb.Index.IndexHits<org.Neo4Net.graphdb.Relationship> result, final IndexResultOrder order)
 		 private ListRepresentation ToListRelationshipRepresentation( IndexHits<Relationship> result, IndexResultOrder order )
 		 {
 			  if ( result == null )
@@ -1200,7 +1200,7 @@ namespace Neo4Net.Server.rest.web
 		 public virtual Representation GetAutoIndexedRelationships( string key, string value )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.graphdb.index.ReadableIndex<org.Neo4Net.graphdb.Relationship> index = graphDb.index().getRelationshipAutoIndexer().getAutoIndex();
+//ORIGINAL LINE: final org.Neo4Net.GraphDb.Index.ReadableIndex<org.Neo4Net.graphdb.Relationship> index = graphDb.index().getRelationshipAutoIndexer().getAutoIndex();
 			  ReadableIndex<Relationship> index = _graphDb.index().RelationshipAutoIndexer.AutoIndex;
 			  return ToListRelationshipRepresentation( index.Get( key, value ), null );
 		 }
@@ -1208,10 +1208,10 @@ namespace Neo4Net.Server.rest.web
 		 public virtual ListRepresentation GetAutoIndexedRelationshipsByQuery( string query )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.graphdb.index.ReadableIndex<org.Neo4Net.graphdb.Relationship> index = graphDb.index().getRelationshipAutoIndexer().getAutoIndex();
+//ORIGINAL LINE: final org.Neo4Net.GraphDb.Index.ReadableIndex<org.Neo4Net.graphdb.Relationship> index = graphDb.index().getRelationshipAutoIndexer().getAutoIndex();
 			  ReadableIndex<Relationship> index = _graphDb.index().RelationshipAutoIndexer.AutoIndex;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.graphdb.index.IndexHits<org.Neo4Net.graphdb.Relationship> results = query != null ? index.query(query) : null;
+//ORIGINAL LINE: final org.Neo4Net.GraphDb.Index.IndexHits<org.Neo4Net.graphdb.Relationship> results = query != null ? index.query(query) : null;
 			  IndexHits<Relationship> results = !string.ReferenceEquals( query, null ) ? index.Query( query ) : null;
 			  return ToListRelationshipRepresentation( results, null );
 		 }

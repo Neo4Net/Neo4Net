@@ -21,96 +21,94 @@ using System.Collections.Generic;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-namespace Neo4Net.GraphDb.impl.traversal
+namespace Neo4Net.GraphDb.Impl.Traversal
 {
-   using BranchCollisionDetector = Neo4Net.GraphDb.Traversal.BranchCollisionDetector;
-   using Evaluation = Neo4Net.GraphDb.Traversal.Evaluation;
-   using Evaluator = Neo4Net.GraphDb.Traversal.Evaluator;
-   using Predicates = Neo4Net.Functions.Predicates;
-   using ITraversalBranch = Neo4Net.GraphDb.Traversal.ITraversalBranch;
+    using Evaluation = Neo4Net.GraphDb.Traversal.Evaluation;
+    using IBranchCollisionDetector = Neo4Net.GraphDb.Traversal.IBranchCollisionDetector;
+    using IEvaluator = Neo4Net.GraphDb.Traversal.IEvaluator;
+    using ITraversalBranch = Neo4Net.GraphDb.Traversal.ITraversalBranch;
+    using Predicates = Neo4Net.Functions.Predicates;
 
-   public class StandardBranchCollisionDetector : BranchCollisionDetector
-   {
-      private readonly IDictionary<INode, ICollection<ITraversalBranch>[]> _paths = new Dictionary<INode, ICollection<ITraversalBranch>[]>(1000);
-      private readonly Evaluator _evaluator;
-      private readonly ISet<IPath> _returnedPaths = new HashSet<IPath>();
-      private System.Predicate<IPath> _pathPredicate = Predicates.alwaysTrue();
+    public class StandardBranchCollisionDetector : IBranchCollisionDetector
+    {
+        private readonly IDictionary<INode, ICollection<ITraversalBranch>[]> _paths = new Dictionary<INode, ICollection<ITraversalBranch>[]>(1000);
+        private readonly IEvaluator _evaluator;
+        private readonly ISet<IPath> _returnedPaths = new HashSet<IPath>();
+        private System.Predicate<IPath> _pathPredicate = Predicates.alwaysTrue();
 
-      [Obsolete]
-      public StandardBranchCollisionDetector(Evaluator evaluator)
-      {
-         _evaluator = evaluator;
-      }
+        [Obsolete]
+        public StandardBranchCollisionDetector(IEvaluator evaluator)
+        {
+            _evaluator = evaluator;
+        }
 
-      public StandardBranchCollisionDetector(Evaluator evaluator, System.Predicate<IPath> pathPredicate)
-      {
-         _evaluator = evaluator;
-         if (pathPredicate != null)
-         {
-            _pathPredicate = pathPredicate;
-         }
-      }
-
-      //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-      //ORIGINAL LINE: @Override @SuppressWarnings("unchecked") public java.util.Collection<org.Neo4Net.graphdb.Path> evaluate(org.Neo4Net.graphdb.traversal.TraversalBranch branch, org.Neo4Net.graphdb.Direction direction)
-      public override ICollection<IPath> Evaluate(ITraversalBranch branch, Direction direction)
-      {
-         // [0] for paths from start, [1] for paths from end
-         ICollection<ITraversalBranch>[] pathsHere = _paths[branch.EndNode];
-         int index = direction.Ordinal;
-         if (pathsHere == null)
-         {
-            pathsHere = new System.Collections.ICollection[]
+        public StandardBranchCollisionDetector(IEvaluator evaluator, System.Predicate<IPath> pathPredicate)
+        {
+            _evaluator = evaluator;
+            if (pathPredicate != null)
             {
+                _pathPredicate = pathPredicate;
+            }
+        }
+
+        public ICollection<IPath> Evaluate(ITraversalBranch branch, Direction direction)
+        {
+            // [0] for paths from start, [1] for paths from end
+            ICollection<ITraversalBranch>[] pathsHere = _paths[branch.EndNode];
+            int index = direction.Ordinal;
+            if (pathsHere == null)
+            {
+                pathsHere = new System.Collections.ICollection[]
+                {
                   new List<ITraversalBranch>(),
                   new List<ITraversalBranch>()
-            };
-            _paths[branch.EndNode] = pathsHere;
-         }
-         pathsHere[index].Add(branch);
-
-         // If there are paths from the other side then include all the
-         // combined paths
-         ICollection<ITraversalBranch> otherCollections = pathsHere[index == 0 ? 1 : 0];
-         if (otherCollections.Count > 0)
-         {
-            ICollection<IPath> foundPaths = new List<IPath>();
-            foreach (ITraversalBranch otherBranch in otherCollections)
-            {
-               ITraversalBranch startPath = index == 0 ? branch : otherBranch;
-               ITraversalBranch endPath = index == 0 ? otherBranch : branch;
-               BidirectionalTraversalBranchPath path = new BidirectionalTraversalBranchPath(startPath, endPath);
-               if (IsAcceptablePath(path))
-               {
-                  if (_returnedPaths.Add(path) && IncludePath(path, startPath, endPath))
-                  {
-                     foundPaths.Add(path);
-                  }
-               }
+                };
+                _paths[branch.EndNode] = pathsHere;
             }
+            pathsHere[index].Add(branch);
 
-            if (foundPaths.Count > 0)
+            // If there are paths from the other side then include all the
+            // combined paths
+            ICollection<ITraversalBranch> otherCollections = pathsHere[index == 0 ? 1 : 0];
+            if (otherCollections.Count > 0)
             {
-               return foundPaths;
+                ICollection<IPath> foundPaths = new List<IPath>();
+                foreach (ITraversalBranch otherBranch in otherCollections)
+                {
+                    ITraversalBranch startPath = index == 0 ? branch : otherBranch;
+                    ITraversalBranch endPath = index == 0 ? otherBranch : branch;
+                    BidirectionalTraversalBranchPath path = new BidirectionalTraversalBranchPath(startPath, endPath);
+                    if (IsAcceptablePath(path))
+                    {
+                        if (_returnedPaths.Add(path) && IncludePath(path, startPath, endPath))
+                        {
+                            foundPaths.Add(path);
+                        }
+                    }
+                }
+
+                if (foundPaths.Count > 0)
+                {
+                    return foundPaths;
+                }
             }
-         }
-         return null;
-      }
+            return null;
+        }
 
-      private bool IsAcceptablePath(BidirectionalTraversalBranchPath path)
-      {
-         return _pathPredicate.test(path);
-      }
+        private bool IsAcceptablePath(BidirectionalTraversalBranchPath path)
+        {
+            return _pathPredicate.test(path);
+        }
 
-      protected internal virtual bool IncludePath(IPath path, ITraversalBranch startPath, ITraversalBranch endPath)
-      {
-         Evaluation eval = _evaluator.evaluate(path);
-         if (!eval.continues())
-         {
-            startPath.Evaluation(eval);
-            endPath.Evaluation(eval);
-         }
-         return eval.includes();
-      }
-   }
+        protected internal virtual bool IncludePath(IPath path, ITraversalBranch startPath, ITraversalBranch endPath)
+        {
+            Evaluation eval = _evaluator.evaluate(path);
+            if (!eval.continues())
+            {
+                startPath.Evaluation(eval);
+                endPath.Evaluation(eval);
+            }
+            return eval.includes();
+        }
+    }
 }

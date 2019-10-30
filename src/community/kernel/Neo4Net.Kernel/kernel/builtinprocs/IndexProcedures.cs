@@ -29,10 +29,10 @@ namespace Neo4Net.Kernel.builtinprocs
 	using TokenRead = Neo4Net.Kernel.Api.Internal.TokenRead;
 	using InvalidTransactionTypeKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.InvalidTransactionTypeKernelException;
 	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
-	using IllegalTokenNameException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IllegalTokenNameException;
-	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
-	using SchemaKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.SchemaKernelException;
-	using TooManyLabelsException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.TooManyLabelsException;
+	using IllegalTokenNameException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IllegalTokenNameException;
+	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException;
+	using SchemaKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.SchemaKernelException;
+	using TooManyLabelsException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.TooManyLabelsException;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using Statement = Neo4Net.Kernel.api.Statement;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
@@ -305,7 +305,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void triggerSampling(org.Neo4Net.Kernel.Api.Internal.IndexReference index) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: private void triggerSampling(org.Neo4Net.Kernel.Api.Internal.IndexReference index) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
 		 private void TriggerSampling( IndexReference index )
 		 {
 			  _indexingService.triggerIndexSampling( index.Schema(), IndexSamplingMode.TRIGGER_REBUILD_ALL );

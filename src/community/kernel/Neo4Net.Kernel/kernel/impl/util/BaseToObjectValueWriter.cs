@@ -30,7 +30,7 @@ namespace Neo4Net.Kernel.impl.util
 	using Relationship = Neo4Net.GraphDb.Relationship;
 	using Point = Neo4Net.GraphDb.Spatial.Point;
 	using Paths = Neo4Net.GraphDb.Traversal.Paths;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using Neo4Net.Values;
 	using CoordinateReferenceSystem = Neo4Net.Values.Storable.CoordinateReferenceSystem;
 	using DurationValue = Neo4Net.Values.Storable.DurationValue;

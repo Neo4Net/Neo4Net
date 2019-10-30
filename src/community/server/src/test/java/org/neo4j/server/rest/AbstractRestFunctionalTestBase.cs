@@ -28,7 +28,7 @@ namespace Neo4Net.Server.rest
 	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
 	using Node = Neo4Net.GraphDb.Node;
 	using Relationship = Neo4Net.GraphDb.Relationship;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using ConnectorPortRegister = Neo4Net.Kernel.configuration.ConnectorPortRegister;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
 	using JsonHelper = Neo4Net.Server.rest.domain.JsonHelper;

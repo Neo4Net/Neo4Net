@@ -33,7 +33,7 @@ namespace Neo4Net.causalclustering.scenarios
 	using Neo4Net.causalclustering.discovery;
 	using CoreClusterMember = Neo4Net.causalclustering.discovery.CoreClusterMember;
 	using ReadReplica = Neo4Net.causalclustering.discovery.ReadReplica;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using ClusterRule = Neo4Net.Test.causalclustering.ClusterRule;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:

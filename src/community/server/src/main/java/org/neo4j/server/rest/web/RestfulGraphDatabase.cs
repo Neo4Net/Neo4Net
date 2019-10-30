@@ -27,8 +27,8 @@ namespace Neo4Net.Server.rest.web
 
 	using ConstraintViolationException = Neo4Net.GraphDb.ConstraintViolationException;
 	using NotFoundException = Neo4Net.GraphDb.NotFoundException;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
-	using Neo4Net.Helpers.Collections;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
+	using Neo4Net.Collections.Helpers;
 	using ServerSettings = Neo4Net.Server.configuration.ServerSettings;
 	using EndNodeNotFoundException = Neo4Net.Server.rest.domain.EndNodeNotFoundException;
 	using PropertySettingStrategy = Neo4Net.Server.rest.domain.PropertySettingStrategy;

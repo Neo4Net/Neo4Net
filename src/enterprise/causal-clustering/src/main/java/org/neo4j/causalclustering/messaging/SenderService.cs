@@ -33,7 +33,7 @@ namespace Neo4Net.causalclustering.messaging
 	using ProtocolStack = Neo4Net.causalclustering.protocol.handshake.ProtocolStack;
 	using AdvertisedSocketAddress = Neo4Net.Helpers.AdvertisedSocketAddress;
 	using NamedThreadFactory = Neo4Net.Helpers.NamedThreadFactory;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using JobHandle = Neo4Net.Scheduler.JobHandle;
 	using LifecycleAdapter = Neo4Net.Kernel.Lifecycle.LifecycleAdapter;
 	using Log = Neo4Net.Logging.Log;

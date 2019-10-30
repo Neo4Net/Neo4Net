@@ -21,7 +21,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 {
 	using Test = org.junit.Test;
 
-	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor;
+	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.Schema.IndexProviderDescriptor;
 	using IndexAccessor = Neo4Net.Kernel.Api.Index.IndexAccessor;
 	using TestIndexDescriptorFactory = Neo4Net.Kernel.api.schema.index.TestIndexDescriptorFactory;
 	using CapableIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.CapableIndexDescriptor;

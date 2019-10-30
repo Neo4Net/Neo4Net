@@ -48,7 +48,7 @@ namespace Neo4Net.causalclustering.scenarios
 	using Neo4Net.Functions;
 	using Result = Neo4Net.GraphDb.Result;
 	using AdvertisedSocketAddress = Neo4Net.Helpers.AdvertisedSocketAddress;
-	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
+	using MapUtil = Neo4Net.Collections.Helpers.MapUtil;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using EnterpriseLoginContext = Neo4Net.Kernel.enterprise.api.security.EnterpriseLoginContext;
 	using InternalTransaction = Neo4Net.Kernel.impl.coreapi.InternalTransaction;

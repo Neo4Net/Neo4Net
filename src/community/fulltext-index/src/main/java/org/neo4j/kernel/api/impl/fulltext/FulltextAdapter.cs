@@ -22,9 +22,9 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 	using ParseException = org.apache.lucene.queryparser.classic.ParseException;
 
 
-	using AnalyzerProvider = Neo4Net.GraphDb.index.fulltext.AnalyzerProvider;
-	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
-	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
+	using AnalyzerProvider = Neo4Net.GraphDb.Index.fulltext.AnalyzerProvider;
+	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
 	using EntityType = Neo4Net.Kernel.Api.StorageEngine.EntityType;
 
 	public interface FulltextAdapter
@@ -32,7 +32,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 		 SchemaDescriptor SchemaFor( EntityType type, string[] IEntityTokens, Properties indexConfiguration, params string[] properties );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: ScoreEntityIterator query(org.Neo4Net.kernel.api.KernelTransaction tx, String indexName, String queryString) throws java.io.IOException, org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException, org.apache.lucene.queryparser.classic.ParseException;
+//ORIGINAL LINE: ScoreEntityIterator query(org.Neo4Net.kernel.api.KernelTransaction tx, String indexName, String queryString) throws java.io.IOException, org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException, org.apache.lucene.queryparser.classic.ParseException;
 		 ScoreEntityIterator Query( KernelTransaction tx, string indexName, string queryString );
 
 		 void AwaitRefresh();

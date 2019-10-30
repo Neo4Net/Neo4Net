@@ -20,7 +20,7 @@
 namespace Neo4Net.Kernel.Impl.Api
 {
 
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using Command = Neo4Net.Kernel.impl.transaction.command.Command;
 	using StorageCommand = Neo4Net.Kernel.Api.StorageEngine.StorageCommand;
 

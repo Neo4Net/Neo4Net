@@ -22,8 +22,8 @@
 namespace Neo4Net.Kernel.impl.util.diffsets
 {
 
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
-	using Iterators = Neo4Net.Helpers.Collections.Iterators;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
+	using Iterators = Neo4Net.Collections.Helpers.Iterators;
 
 	public class MutableDiffSetsImpl<T> : MutableDiffSets<T>
 	{

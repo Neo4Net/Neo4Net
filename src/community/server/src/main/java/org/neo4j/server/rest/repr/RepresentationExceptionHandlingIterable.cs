@@ -23,7 +23,7 @@ using System.Collections.Generic;
 namespace Neo4Net.Server.rest.repr
 {
 
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 
 	public class RepresentationExceptionHandlingIterable<T> : ExceptionHandlingIterable<T>
 	{

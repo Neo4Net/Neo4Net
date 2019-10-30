@@ -30,7 +30,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.populator
 
 	using PrimitiveLongCollections = Neo4Net.Collections.PrimitiveLongCollections;
 	using IndexQuery = Neo4Net.Kernel.Api.Internal.IndexQuery;
-	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
 	using IOUtils = Neo4Net.Io.IOUtils;
 	using DefaultFileSystemAbstraction = Neo4Net.Io.fs.DefaultFileSystemAbstraction;
 	using DirectoryFactory = Neo4Net.Kernel.Api.Impl.Index.storage.DirectoryFactory;

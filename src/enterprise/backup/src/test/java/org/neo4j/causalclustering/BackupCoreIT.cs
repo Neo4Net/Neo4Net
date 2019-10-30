@@ -35,7 +35,7 @@ namespace Neo4Net.causalclustering
 	using CoreClusterMember = Neo4Net.causalclustering.discovery.CoreClusterMember;
 	using Node = Neo4Net.GraphDb.Node;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
+	using MapUtil = Neo4Net.Collections.Helpers.MapUtil;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using OnlineBackupSettings = Neo4Net.Kernel.impl.enterprise.configuration.OnlineBackupSettings;

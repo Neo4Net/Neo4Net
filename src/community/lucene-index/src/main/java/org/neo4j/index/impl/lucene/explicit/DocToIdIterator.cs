@@ -25,7 +25,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 	using Document = org.apache.lucene.document.Document;
 	using LongSet = org.eclipse.collections.api.set.primitive.LongSet;
 
-	using Neo4Net.GraphDb.index;
+	using Neo4Net.GraphDb.Index;
 
 	public class DocToIdIterator : AbstractExplicitIndexHits
 	{

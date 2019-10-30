@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 {
 
 	using Neo4Net.Functions;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using ReporterFactory = Neo4Net.Kernel.Impl.Annotations.ReporterFactory;
 	using Value = Neo4Net.Values.Storable.Value;
 	using ValueGroup = Neo4Net.Values.Storable.ValueGroup;

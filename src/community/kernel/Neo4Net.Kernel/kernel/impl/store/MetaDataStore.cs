@@ -24,7 +24,7 @@ using System.Diagnostics;
 namespace Neo4Net.Kernel.impl.store
 {
 
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
 	using PageCursor = Neo4Net.Io.pagecache.PageCursor;
 	using PagedFile = Neo4Net.Io.pagecache.PagedFile;

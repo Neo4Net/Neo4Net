@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Kernel.Impl.Api.index
 {
-	public interface IndexMapSnapshotProvider
+	public interface IIndexMapSnapshotProvider
 	{
 		 IndexMap IndexMapSnapshot();
 	}

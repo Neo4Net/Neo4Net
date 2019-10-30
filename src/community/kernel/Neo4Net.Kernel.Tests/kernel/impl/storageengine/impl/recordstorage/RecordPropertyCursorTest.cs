@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 	using Test = org.junit.Test;
 
 
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using EmptyVersionContextSupplier = Neo4Net.Io.pagecache.tracing.cursor.context.EmptyVersionContextSupplier;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using NeoStores = Neo4Net.Kernel.impl.store.NeoStores;

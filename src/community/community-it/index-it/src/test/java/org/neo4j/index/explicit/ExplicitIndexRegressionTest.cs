@@ -24,8 +24,8 @@ namespace Neo4Net.Index.@explicit
 
 	using Node = Neo4Net.GraphDb.Node;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using Neo4Net.GraphDb.index;
-	using Neo4Net.GraphDb.index;
+	using Neo4Net.GraphDb.Index;
+	using Neo4Net.GraphDb.Index;
 	using QueryContext = Neo4Net.Index.lucene.QueryContext;
 	using DatabaseRule = Neo4Net.Test.rule.DatabaseRule;
 	using ImpermanentDatabaseRule = Neo4Net.Test.rule.ImpermanentDatabaseRule;

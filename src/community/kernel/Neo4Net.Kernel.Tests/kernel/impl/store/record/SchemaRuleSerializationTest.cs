@@ -22,9 +22,9 @@ namespace Neo4Net.Kernel.Impl.Store.Records
 	using Test = org.junit.Test;
 
 
-	using MalformedSchemaRuleException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.MalformedSchemaRuleException;
-	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor;
-	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor;
+	using MalformedSchemaRuleException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.MalformedSchemaRuleException;
+	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.Schema.IndexProviderDescriptor;
+	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor;
 	using ConstraintDescriptorFactory = Neo4Net.Kernel.api.schema.constraints.ConstraintDescriptorFactory;
 	using NodeKeyConstraintDescriptor = Neo4Net.Kernel.api.schema.constraints.NodeKeyConstraintDescriptor;
 	using UniquenessConstraintDescriptor = Neo4Net.Kernel.api.schema.constraints.UniquenessConstraintDescriptor;
@@ -240,7 +240,7 @@ namespace Neo4Net.Kernel.Impl.Store.Records
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldSerializeAndDeserializeIndexRules() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.MalformedSchemaRuleException
+//ORIGINAL LINE: @Test public void shouldSerializeAndDeserializeIndexRules() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.MalformedSchemaRuleException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldSerializeAndDeserializeIndexRules()
 		 {
@@ -249,7 +249,7 @@ namespace Neo4Net.Kernel.Impl.Store.Records
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldSerializeAndDeserializeCompositeIndexRules() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.MalformedSchemaRuleException
+//ORIGINAL LINE: @Test public void shouldSerializeAndDeserializeCompositeIndexRules() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.MalformedSchemaRuleException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldSerializeAndDeserializeCompositeIndexRules()
 		 {
@@ -258,7 +258,7 @@ namespace Neo4Net.Kernel.Impl.Store.Records
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldSerializeAndDeserialize_Big_CompositeIndexRules() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.MalformedSchemaRuleException
+//ORIGINAL LINE: @Test public void shouldSerializeAndDeserialize_Big_CompositeIndexRules() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.MalformedSchemaRuleException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldSerializeAndDeserializeBigCompositeIndexRules()
 		 {
@@ -268,7 +268,7 @@ namespace Neo4Net.Kernel.Impl.Store.Records
 		 // CONSTRAINT RULES
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldSerializeAndDeserializeConstraintRules() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.MalformedSchemaRuleException
+//ORIGINAL LINE: @Test public void shouldSerializeAndDeserializeConstraintRules() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.MalformedSchemaRuleException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldSerializeAndDeserializeConstraintRules()
 		 {
@@ -279,7 +279,7 @@ namespace Neo4Net.Kernel.Impl.Store.Records
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldSerializeAndDeserializeCompositeConstraintRules() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.MalformedSchemaRuleException
+//ORIGINAL LINE: @Test public void shouldSerializeAndDeserializeCompositeConstraintRules() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.MalformedSchemaRuleException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldSerializeAndDeserializeCompositeConstraintRules()
 		 {
@@ -288,7 +288,7 @@ namespace Neo4Net.Kernel.Impl.Store.Records
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldSerializeAndDeserializeMultiTokenRules() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.MalformedSchemaRuleException
+//ORIGINAL LINE: @Test public void shouldSerializeAndDeserializeMultiTokenRules() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.MalformedSchemaRuleException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldSerializeAndDeserializeMultiTokenRules()
 		 {
@@ -428,7 +428,7 @@ namespace Neo4Net.Kernel.Impl.Store.Records
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertParseUniqueIndexRule(String serialized, String name) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.MalformedSchemaRuleException
+//ORIGINAL LINE: private void assertParseUniqueIndexRule(String serialized, String name) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.MalformedSchemaRuleException
 		 private void AssertParseUniqueIndexRule( string serialized, string name )
 		 {
 			  // GIVEN
@@ -451,7 +451,7 @@ namespace Neo4Net.Kernel.Impl.Store.Records
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertParseUniqueConstraintRule(String serialized, String name) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.MalformedSchemaRuleException
+//ORIGINAL LINE: private void assertParseUniqueConstraintRule(String serialized, String name) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.MalformedSchemaRuleException
 		 private void AssertParseUniqueConstraintRule( string serialized, string name )
 		 {
 			  // GIVEN
@@ -474,7 +474,7 @@ namespace Neo4Net.Kernel.Impl.Store.Records
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertParseNodeKeyConstraintRule(String serialized, String name) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.MalformedSchemaRuleException
+//ORIGINAL LINE: private void assertParseNodeKeyConstraintRule(String serialized, String name) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.MalformedSchemaRuleException
 		 private void AssertParseNodeKeyConstraintRule( string serialized, string name )
 		 {
 			  // GIVEN
@@ -543,7 +543,7 @@ namespace Neo4Net.Kernel.Impl.Store.Records
 		 // HELPERS
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertSerializeAndDeserializeIndexRule(org.Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor indexRule) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.MalformedSchemaRuleException
+//ORIGINAL LINE: private void assertSerializeAndDeserializeIndexRule(org.Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor indexRule) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.MalformedSchemaRuleException
 		 private void AssertSerializeAndDeserializeIndexRule( StoreIndexDescriptor indexRule )
 		 {
 			  StoreIndexDescriptor deserialized = AssertIndexRule( SerialiseAndDeserialise( indexRule ) );
@@ -564,7 +564,7 @@ namespace Neo4Net.Kernel.Impl.Store.Records
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertSerializeAndDeserializeConstraintRule(ConstraintRule constraintRule) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.MalformedSchemaRuleException
+//ORIGINAL LINE: private void assertSerializeAndDeserializeConstraintRule(ConstraintRule constraintRule) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.MalformedSchemaRuleException
 		 private void AssertSerializeAndDeserializeConstraintRule( ConstraintRule constraintRule )
 		 {
 			  ConstraintRule deserialized = AssertConstraintRule( SerialiseAndDeserialise( constraintRule ) );
@@ -575,7 +575,7 @@ namespace Neo4Net.Kernel.Impl.Store.Records
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule serialiseAndDeserialise(ConstraintRule constraintRule) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.MalformedSchemaRuleException
+//ORIGINAL LINE: private org.Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule serialiseAndDeserialise(ConstraintRule constraintRule) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.MalformedSchemaRuleException
 		 private SchemaRule SerialiseAndDeserialise( ConstraintRule constraintRule )
 		 {
 			  ByteBuffer buffer = ByteBuffer.wrap( SchemaRuleSerialization.Serialize( constraintRule ) );
@@ -583,7 +583,7 @@ namespace Neo4Net.Kernel.Impl.Store.Records
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule serialiseAndDeserialise(org.Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor indexRule) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.MalformedSchemaRuleException
+//ORIGINAL LINE: private org.Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule serialiseAndDeserialise(org.Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor indexRule) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.MalformedSchemaRuleException
 		 private SchemaRule SerialiseAndDeserialise( StoreIndexDescriptor indexRule )
 		 {
 			  ByteBuffer buffer = ByteBuffer.wrap( SchemaRuleSerialization.Serialize( indexRule ) );

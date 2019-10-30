@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.Api.Internal
 
 	using Node = Neo4Net.GraphDb.Node;
 	using NotFoundException = Neo4Net.GraphDb.NotFoundException;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using IEntityNotFoundException = Neo4Net.Kernel.Api.Internal.Exceptions.EntityNotFoundException;
 	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 	using Value = Neo4Net.Values.Storable.Value;

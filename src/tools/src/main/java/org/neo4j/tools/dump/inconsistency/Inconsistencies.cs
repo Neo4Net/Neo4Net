@@ -27,7 +27,7 @@ namespace Neo4Net.tools.dump.inconsistency
 	/// <summary>
 	/// Container for ids of entities that are considered to be inconsistent.
 	/// </summary>
-	public interface Inconsistencies
+	public interface IInconsistencies
 	{
 		 void Node( long id );
 

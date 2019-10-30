@@ -31,7 +31,7 @@ namespace Neo4Net.cluster.protocol.election
 	using ProposerMessage = Neo4Net.cluster.protocol.atomicbroadcast.multipaxos.ProposerMessage;
 	using ClusterMessage = Neo4Net.cluster.protocol.cluster.ClusterMessage;
 	using Neo4Net.cluster.statemachine;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using Log = Neo4Net.Logging.Log;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:

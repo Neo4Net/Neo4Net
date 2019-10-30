@@ -25,7 +25,7 @@ namespace Neo4Net.Server.helpers
 
 	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
 	using Point = Neo4Net.GraphDb.Spatial.Point;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 
 	/*
 	 * THIS CLASS SHOULD BE MOVED TO KERNEL ASAP!!!

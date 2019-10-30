@@ -29,8 +29,8 @@ namespace Neo4Net.@unsafe.Batchinsert
 	using ExtendWith = org.junit.jupiter.api.extension.ExtendWith;
 
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
-	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
+	using MapUtil = Neo4Net.Collections.Helpers.MapUtil;
 	using Neo4Net.Kernel.extension;
 	using GenericNativeIndexProviderFactory = Neo4Net.Kernel.Impl.Index.Schema.GenericNativeIndexProviderFactory;
 	using Inject = Neo4Net.Test.extension.Inject;

@@ -29,7 +29,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 	using Parameterized = org.junit.runners.Parameterized;
 
 
-	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
+	using MapUtil = Neo4Net.Collections.Helpers.MapUtil;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;

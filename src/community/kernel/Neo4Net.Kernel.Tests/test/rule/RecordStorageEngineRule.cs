@@ -21,7 +21,7 @@ namespace Neo4Net.Test.rule
 {
 
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using RecoveryCleanupWorkCollector = Neo4Net.Index.Internal.gbptree.RecoveryCleanupWorkCollector;
 	using TokenNameLookup = Neo4Net.Kernel.Api.Internal.TokenNameLookup;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;

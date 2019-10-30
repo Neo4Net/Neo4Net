@@ -39,7 +39,7 @@ namespace Neo4Net.Kernel.Api.Internal.Procs
 			  return new FieldSignature( name, type, requireNonNull( defaultValue, "defaultValue" ), false );
 		 }
 
-		 public interface InputMapper
+		 public interface IInputMapper
 		 {
 			  object Map( object input );
 			  AnyValue Map( AnyValue input );
@@ -64,7 +64,7 @@ namespace Neo4Net.Kernel.Api.Internal.Procs
 				  return _mapper.map( input );
 			 }
 
-			 public override object map( AnyValue input, ValueMapper<object> valueMapper )
+			 public override object map( AnyValue input, IValueMapper<object> valueMapper )
 			 {
 				  return _mapper.map( input ).map( valueMapper );
 			 }
@@ -94,7 +94,7 @@ namespace Neo4Net.Kernel.Api.Internal.Procs
 				  return _mapper.map( input );
 			 }
 
-			 public override object map( AnyValue input, ValueMapper<object> valueMapper )
+			 public override object map( AnyValue input, IValueMapper<object> valueMapper )
 			 {
 				  return _mapper.map( input ).map( valueMapper );
 			 }
@@ -147,7 +147,7 @@ namespace Neo4Net.Kernel.Api.Internal.Procs
 			  return input;
 		 }
 
-		 public virtual object Map( AnyValue input, ValueMapper<object> mapper )
+		 public virtual object Map( AnyValue input, IValueMapper<object> mapper )
 		 {
 			  return input.Map( mapper );
 		 }

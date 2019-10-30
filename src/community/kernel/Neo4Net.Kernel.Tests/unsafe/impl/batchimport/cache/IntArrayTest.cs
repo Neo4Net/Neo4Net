@@ -29,7 +29,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.cache
 	using ThrowingConsumer = org.junit.jupiter.api.function.ThrowingConsumer;
 
 
-	using Iterators = Neo4Net.Helpers.Collections.Iterators;
+	using Iterators = Neo4Net.Collections.Helpers.Iterators;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:

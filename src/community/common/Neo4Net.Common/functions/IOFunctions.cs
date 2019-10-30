@@ -25,15 +25,13 @@ namespace Neo4Net.Functions
    /// </summary>
    public sealed class IOFunctions
    {
-      private static readonly IOFunction _identity = value => value;
+      private static readonly IIOFunction _identity = value => value;
 
       private IOFunctions()
       {
       }
 
-      //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-      //ORIGINAL LINE: @SuppressWarnings("unchecked") public static <T> IOFunction<T,T> identity()
-      public static IOFunction<T, T> Identity<T>()
+      public static IIOFunction<T, T> Identity<T>()
       {
          return _identity;
       }

@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.impl.store
 
 	using Neo4Net.GraphDb;
 	using Neo4Net.GraphDb;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.Collections.Helpers;
 	using ProgressListener = Neo4Net.Helpers.progress.ProgressListener;
 	using PageCursor = Neo4Net.Io.pagecache.PageCursor;
 	using IdRange = Neo4Net.Kernel.impl.store.id.IdRange;

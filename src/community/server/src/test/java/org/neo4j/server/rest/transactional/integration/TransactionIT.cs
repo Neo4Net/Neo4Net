@@ -34,7 +34,7 @@ namespace Neo4Net.Server.rest.transactional.integration
 	using Label = Neo4Net.GraphDb.Label;
 	using Node = Neo4Net.GraphDb.Node;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using KernelTransactionHandle = Neo4Net.Kernel.api.KernelTransactionHandle;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using KernelTransactions = Neo4Net.Kernel.Impl.Api.KernelTransactions;

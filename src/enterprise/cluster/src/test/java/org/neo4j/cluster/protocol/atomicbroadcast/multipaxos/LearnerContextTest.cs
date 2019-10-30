@@ -26,7 +26,7 @@ namespace Neo4Net.cluster.protocol.atomicbroadcast.multipaxos
 
 	using MultiPaxosContext = Neo4Net.cluster.protocol.atomicbroadcast.multipaxos.context.MultiPaxosContext;
 	using ClusterConfiguration = Neo4Net.cluster.protocol.cluster.ClusterConfiguration;
-	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using AssertableLogProvider = Neo4Net.Logging.AssertableLogProvider;
 	using LogProvider = Neo4Net.Logging.LogProvider;

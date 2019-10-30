@@ -32,9 +32,9 @@ namespace Neo4Net.Index.timeline
 	using Relationship = Neo4Net.GraphDb.Relationship;
 	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using Neo4Net.GraphDb.index;
-	using RelationshipIndex = Neo4Net.GraphDb.index.RelationshipIndex;
-	using Neo4Net.Helpers.Collections;
+	using Neo4Net.GraphDb.Index;
+	using RelationshipIndex = Neo4Net.GraphDb.Index.RelationshipIndex;
+	using Neo4Net.Collections.Helpers;
 	using Neo4Net.Index.lucene;
 	using Neo4Net.Index.lucene;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;

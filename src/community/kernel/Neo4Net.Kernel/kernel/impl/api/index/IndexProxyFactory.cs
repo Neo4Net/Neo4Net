@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Kernel.Impl.Api.index
 {
-	public interface IndexProxyFactory
+	public interface IIndexProxyFactory
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 //ORIGINAL LINE: IndexProxy create() throws Exception;
