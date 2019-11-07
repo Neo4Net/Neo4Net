@@ -51,11 +51,11 @@ namespace Neo4Net.Kernel.Impl.Newapi
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.set;
+//	import static Neo4Net.helpers.collection.Iterators.set;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.locking.ResourceTypes.NODE;
+//	import static Neo4Net.kernel.impl.locking.ResourceTypes.NODE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.StorageEngine.@lock.LockTracer.NONE;
+//	import static Neo4Net.Kernel.Api.StorageEngine.@lock.LockTracer.NONE;
 
 	public class TwoPhaseNodeForRelationshipLockingTest
 	{
@@ -126,7 +126,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static void returnRelationships(org.Neo4Net.Kernel.Api.Internal.Transaction transaction, final boolean skipFirst, final org.Neo4Net.Kernel.Api.Internal.Helpers.TestRelationshipChain relIds) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.EntityNotFoundException
+//ORIGINAL LINE: static void returnRelationships(Neo4Net.Kernel.Api.Internal.Transaction transaction, final boolean skipFirst, final Neo4Net.Kernel.Api.Internal.Helpers.TestRelationshipChain relIds) throws Neo4Net.Kernel.Api.Internal.Exceptions.EntityNotFoundException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 		 internal static void ReturnRelationships( Transaction transaction, bool skipFirst, TestRelationshipChain relIds )
 		 {
@@ -151,7 +151,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 			  public readonly ISet<long> Set = new HashSet<long>();
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void accept(System.Nullable<long> input) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: public void accept(System.Nullable<long> input) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 			  public override void Accept( long? input )
 			  {
 					assertNotNull( input );

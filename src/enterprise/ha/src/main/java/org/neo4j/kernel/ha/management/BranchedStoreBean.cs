@@ -41,10 +41,10 @@ namespace Neo4Net.Kernel.ha.management
 	using BranchedStoreInfo = Neo4Net.management.BranchedStoreInfo;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.com.storecopy.StoreUtil.getBranchedDataRootDirectory;
+//	import static Neo4Net.com.storecopy.StoreUtil.getBranchedDataRootDirectory;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Service.Implementation(ManagementBeanProvider.class) public final class BranchedStoreBean extends org.Neo4Net.jmx.impl.ManagementBeanProvider
+//ORIGINAL LINE: @Service.Implementation(ManagementBeanProvider.class) public final class BranchedStoreBean extends Neo4Net.jmx.impl.ManagementBeanProvider
 	public sealed class BranchedStoreBean : ManagementBeanProvider
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -63,7 +63,7 @@ namespace Neo4Net.Kernel.ha.management
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected org.Neo4Net.jmx.impl.Neo4NetMBean createMBean(org.Neo4Net.jmx.impl.ManagementData management) throws javax.management.NotCompliantMBeanException
+//ORIGINAL LINE: protected Neo4Net.jmx.impl.Neo4NetMBean createMBean(Neo4Net.jmx.impl.ManagementData management) throws javax.management.NotCompliantMBeanException
 		 protected internal override Neo4NetMBean CreateMBean( ManagementData management )
 		 {
 			  if ( !IsHA( management ) )
@@ -85,7 +85,7 @@ namespace Neo4Net.Kernel.ha.management
 			  internal readonly PageCache PageCache;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: BranchedStoreImpl(final org.Neo4Net.jmx.impl.ManagementData management) throws javax.management.NotCompliantMBeanException
+//ORIGINAL LINE: BranchedStoreImpl(final Neo4Net.jmx.impl.ManagementData management) throws javax.management.NotCompliantMBeanException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 			  internal BranchedStoreImpl( ManagementData management ) : base( management )
 			  {
@@ -95,7 +95,7 @@ namespace Neo4Net.Kernel.ha.management
 			  }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: BranchedStoreImpl(final org.Neo4Net.jmx.impl.ManagementData management, boolean isMXBean)
+//ORIGINAL LINE: BranchedStoreImpl(final Neo4Net.jmx.impl.ManagementData management, boolean isMXBean)
 			  internal BranchedStoreImpl( ManagementData management, bool isMXBean ) : base( management, isMXBean )
 			  {
 					FileSystem = GetFilesystem( management );
@@ -130,16 +130,16 @@ namespace Neo4Net.Kernel.ha.management
 					try
 					{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.io.File neoStoreFile = org.Neo4Net.io.layout.DatabaseLayout.of(branchedDatabase).metadataStore();
+//ORIGINAL LINE: final java.io.File neoStoreFile = Neo4Net.io.layout.DatabaseLayout.of(branchedDatabase).metadataStore();
 						 File neoStoreFile = DatabaseLayout.of( branchedDatabase ).metadataStore();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final long txId = org.Neo4Net.kernel.impl.store.MetaDataStore.getRecord(pageCache, neoStoreFile, org.Neo4Net.kernel.impl.store.MetaDataStore.Position.LAST_TRANSACTION_ID);
+//ORIGINAL LINE: final long txId = Neo4Net.kernel.impl.store.MetaDataStore.getRecord(pageCache, neoStoreFile, Neo4Net.kernel.impl.store.MetaDataStore.Position.LAST_TRANSACTION_ID);
 						 long txId = MetaDataStore.getRecord( PageCache, neoStoreFile, MetaDataStore.Position.LAST_TRANSACTION_ID );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final long timestamp = long.Parse(branchedDatabase.getName());
 						 long timestamp = long.Parse( branchedDatabase.Name );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final long branchedStoreSize = org.Neo4Net.io.fs.FileUtils.size(fileSystem, branchedDatabase);
+//ORIGINAL LINE: final long branchedStoreSize = Neo4Net.io.fs.FileUtils.size(fileSystem, branchedDatabase);
 						 long branchedStoreSize = FileUtils.size( FileSystem, branchedDatabase );
 
 						 return new BranchedStoreInfo( branchedDatabase.Name, txId, timestamp, branchedStoreSize );

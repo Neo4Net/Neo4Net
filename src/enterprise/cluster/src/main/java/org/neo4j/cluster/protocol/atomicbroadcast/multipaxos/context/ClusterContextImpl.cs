@@ -39,11 +39,11 @@ namespace Neo4Net.cluster.protocol.atomicbroadcast.multipaxos.context
 	using LogProvider = Neo4Net.Logging.LogProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.function.Predicates.@in;
+//	import static Neo4Net.function.Predicates.@in;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.Uris.parameter;
+//	import static Neo4Net.helpers.Uris.parameter;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.asList;
+//	import static Neo4Net.helpers.collection.Iterables.asList;
 
 	/// <summary>
 	/// Context for <seealso cref="ClusterState"/> state machine.
@@ -197,7 +197,7 @@ namespace Neo4Net.cluster.protocol.atomicbroadcast.multipaxos.context
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public void acquiredConfiguration(final java.util.Map<org.Neo4Net.cluster.InstanceId, java.net.URI> memberList, final java.util.Map<String, org.Neo4Net.cluster.InstanceId> roles, final java.util.Set<org.Neo4Net.cluster.InstanceId> failedInstances)
+//ORIGINAL LINE: public void acquiredConfiguration(final java.util.Map<Neo4Net.cluster.InstanceId, java.net.URI> memberList, final java.util.Map<String, Neo4Net.cluster.InstanceId> roles, final java.util.Set<Neo4Net.cluster.InstanceId> failedInstances)
 		 public override void AcquiredConfiguration( IDictionary<InstanceId, URI> memberList, IDictionary<string, InstanceId> roles, ISet<InstanceId> failedInstances )
 		 {
 			  CommonState.configuration().Members = memberList;
@@ -253,7 +253,7 @@ namespace Neo4Net.cluster.protocol.atomicbroadcast.multipaxos.context
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public void elected(final String roleName, final org.Neo4Net.cluster.InstanceId instanceId)
+//ORIGINAL LINE: public void elected(final String roleName, final Neo4Net.cluster.InstanceId instanceId)
 		 public override void Elected( string roleName, InstanceId instanceId )
 		 {
 			  Elected( roleName, instanceId, InstanceId.NONE, Neo4Net.cluster.protocol.cluster.ClusterContext_Fields.NO_ELECTOR_VERSION );
@@ -289,7 +289,7 @@ namespace Neo4Net.cluster.protocol.atomicbroadcast.multipaxos.context
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public void unelected(final String roleName, final org.Neo4Net.cluster.InstanceId instanceId)
+//ORIGINAL LINE: public void unelected(final String roleName, final Neo4Net.cluster.InstanceId instanceId)
 		 public override void Unelected( string roleName, InstanceId instanceId )
 		 {
 			  Unelected( roleName, instanceId, InstanceId.NONE, Neo4Net.cluster.protocol.cluster.ClusterContext_Fields.NO_ELECTOR_VERSION );

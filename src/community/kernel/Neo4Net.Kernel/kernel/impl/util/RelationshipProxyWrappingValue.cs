@@ -53,7 +53,7 @@ namespace Neo4Net.Kernel.impl.util
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public <E extends Exception> void WriteTo(org.Neo4Net.values.AnyValueWriter<E> writer) throws E
+//ORIGINAL LINE: public <E extends Exception> void WriteTo(Neo4Net.values.AnyValueWriter<E> writer) throws E
 		 public override void WriteTo<E>( AnyValueWriter<E> writer ) where E : Exception
 		 {
 			  if ( _relationship is RelationshipProxy )

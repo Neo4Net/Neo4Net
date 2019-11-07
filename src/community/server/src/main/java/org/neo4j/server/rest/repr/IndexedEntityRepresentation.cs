@@ -28,13 +28,13 @@ namespace Neo4Net.Server.rest.repr
 		 private readonly ValueRepresentation _selfUri;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("boxing") public IndexedEntityRepresentation(org.Neo4Net.graphdb.Node node, String key, String value, IndexRepresentation indexRepresentation)
+//ORIGINAL LINE: @SuppressWarnings("boxing") public IndexedEntityRepresentation(Neo4Net.graphdb.Node node, String key, String value, IndexRepresentation indexRepresentation)
 		 public IndexedEntityRepresentation( Node node, string key, string value, IndexRepresentation indexRepresentation ) : this( new NodeRepresentation( node ), node.Id, key, value, indexRepresentation )
 		 {
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("boxing") public IndexedEntityRepresentation(org.Neo4Net.graphdb.Relationship rel, String key, String value, IndexRepresentation indexRepresentation)
+//ORIGINAL LINE: @SuppressWarnings("boxing") public IndexedEntityRepresentation(Neo4Net.graphdb.Relationship rel, String key, String value, IndexRepresentation indexRepresentation)
 		 public IndexedEntityRepresentation( Relationship rel, string key, string value, IndexRepresentation indexRepresentation ) : this( new RelationshipRepresentation( rel ), rel.Id, key, value, indexRepresentation )
 		 {
 		 }

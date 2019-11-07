@@ -34,11 +34,11 @@ namespace Neo4Net.Kernel.ha.com.slave
 	using Clocks = Neo4Net.Time.Clocks;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.com.Protocol.DEFAULT_FRAME_LENGTH;
+//	import static Neo4Net.com.Protocol.DEFAULT_FRAME_LENGTH;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.com.ProtocolVersion.INTERNAL_PROTOCOL_VERSION;
+//	import static Neo4Net.com.ProtocolVersion.INTERNAL_PROTOCOL_VERSION;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.com.TxChecksumVerifier_Fields.ALWAYS_MATCH;
+//	import static Neo4Net.com.TxChecksumVerifier_Fields.ALWAYS_MATCH;
 
 	public class SlaveServer : Server<Slave, Void>
 	{

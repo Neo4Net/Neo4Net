@@ -206,7 +206,7 @@ namespace Neo4Net.Kernel.impl.store.format.highlimit
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void writeRecordWithOldFormat(org.Neo4Net.kernel.impl.store.record.NodeRecord oldFormatRecord) throws java.io.IOException
+//ORIGINAL LINE: private void writeRecordWithOldFormat(Neo4Net.kernel.impl.store.record.NodeRecord oldFormatRecord) throws java.io.IOException
 		 private void WriteRecordWithOldFormat( NodeRecord oldFormatRecord )
 		 {
 			  int oldRecordSize = NodeRecordFormatV3_0_0.RECORD_SIZE;
@@ -224,14 +224,14 @@ namespace Neo4Net.Kernel.impl.store.format.highlimit
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void writeReadRecord(org.Neo4Net.kernel.impl.store.record.NodeRecord source, org.Neo4Net.kernel.impl.store.record.NodeRecord target) throws java.io.IOException
+//ORIGINAL LINE: private void writeReadRecord(Neo4Net.kernel.impl.store.record.NodeRecord source, Neo4Net.kernel.impl.store.record.NodeRecord target) throws java.io.IOException
 		 private void WriteReadRecord( NodeRecord source, NodeRecord target )
 		 {
 			  WriteReadRecord( source, target, NodeRecordFormat.RECORD_SIZE );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void writeReadRecord(org.Neo4Net.kernel.impl.store.record.NodeRecord source, org.Neo4Net.kernel.impl.store.record.NodeRecord target, int recordSize) throws java.io.IOException
+//ORIGINAL LINE: private void writeReadRecord(Neo4Net.kernel.impl.store.record.NodeRecord source, Neo4Net.kernel.impl.store.record.NodeRecord target, int recordSize) throws java.io.IOException
 		 private void WriteReadRecord( NodeRecord source, NodeRecord target, int recordSize )
 		 {
 			  _recordFormat.prepare( source, recordSize, _idSequence );

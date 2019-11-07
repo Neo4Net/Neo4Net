@@ -79,7 +79,7 @@ namespace Neo4Net.Kernel.impl.traversal
 			  {
 					TraversalDescription firstTraverser = GraphDb.traversalDescription().relationships(RelationshipType.withName("FIRST")).evaluator(Evaluators.toDepth(1));
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final Iterable<org.Neo4Net.graphdb.Path> firstResult = firstTraverser.traverse(getNodeWithName("a"));
+//ORIGINAL LINE: final Iterable<Neo4Net.graphdb.Path> firstResult = firstTraverser.traverse(getNodeWithName("a"));
 					IEnumerable<Path> firstResult = firstTraverser.Traverse( GetNodeWithName( "a" ) );
 
 					IEnumerable<Node> startNodesForNestedTraversal = new IterableWrapperAnonymousInnerClass( this, firstResult );

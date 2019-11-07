@@ -34,7 +34,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 	using Neo4Net.Kernel.Api.Index;
 	using IndexQueryHelper = Neo4Net.Kernel.Api.Index.IndexQueryHelper;
 	using IndexUpdater = Neo4Net.Kernel.Api.Index.IndexUpdater;
-	using TestIndexDescriptorFactory = Neo4Net.Kernel.api.schema.index.TestIndexDescriptorFactory;
+	using TestIndexDescriptorFactory = Neo4Net.Kernel.Api.schema.index.TestIndexDescriptorFactory;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using IndexUpdateMode = Neo4Net.Kernel.Impl.Api.index.IndexUpdateMode;
 	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
@@ -47,16 +47,16 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.impl.schema.LuceneIndexProviderFactory.PROVIDER_DESCRIPTOR;
+//	import static Neo4Net.kernel.api.impl.schema.LuceneIndexProviderFactory.PROVIDER_DESCRIPTOR;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.index.IndexDirectoryStructure.directoriesByProviderKey;
+//	import static Neo4Net.kernel.api.index.IndexDirectoryStructure.directoriesByProviderKey;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @ExtendWith(EphemeralFileSystemExtension.class) class AccessUniqueDatabaseIndexTest
 	internal class AccessUniqueDatabaseIndexTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.Neo4Net.graphdb.mockfs.EphemeralFileSystemAbstraction fileSystem;
+//ORIGINAL LINE: @Inject private Neo4Net.graphdb.mockfs.EphemeralFileSystemAbstraction fileSystem;
 		 private EphemeralFileSystemAbstraction _fileSystem;
 		 private readonly DirectoryFactory _directoryFactory = new Neo4Net.Kernel.Api.Impl.Index.storage.DirectoryFactory_InMemoryDirectoryFactory();
 		 private readonly File _storeDirectory = new File( "db" );
@@ -152,7 +152,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private LuceneIndexAccessor createAccessor(org.Neo4Net.kernel.api.impl.index.storage.PartitionedIndexStorage indexStorage) throws java.io.IOException
+//ORIGINAL LINE: private LuceneIndexAccessor createAccessor(Neo4Net.kernel.api.impl.index.storage.PartitionedIndexStorage indexStorage) throws java.io.IOException
 		 private LuceneIndexAccessor CreateAccessor( PartitionedIndexStorage indexStorage )
 		 {
 			  SchemaIndex luceneIndex = LuceneSchemaIndexBuilder.Create( _index, Config.defaults() ).withIndexStorage(indexStorage).build();
@@ -170,41 +170,41 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> add(long nodeId, Object propertyValue)
+//ORIGINAL LINE: private Neo4Net.kernel.api.index.IndexEntryUpdate<?> add(long nodeId, Object propertyValue)
 		 private IndexEntryUpdate<object> Add( long nodeId, object propertyValue )
 		 {
 			  return IndexQueryHelper.add( nodeId, _index.schema(), propertyValue );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> change(long nodeId, Object oldValue, Object newValue)
+//ORIGINAL LINE: private Neo4Net.kernel.api.index.IndexEntryUpdate<?> change(long nodeId, Object oldValue, Object newValue)
 		 private IndexEntryUpdate<object> Change( long nodeId, object oldValue, object newValue )
 		 {
 			  return IndexQueryHelper.change( nodeId, _index.schema(), oldValue, newValue );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> remove(long nodeId, Object oldValue)
+//ORIGINAL LINE: private Neo4Net.kernel.api.index.IndexEntryUpdate<?> remove(long nodeId, Object oldValue)
 		 private IndexEntryUpdate<object> Remove( long nodeId, object oldValue )
 		 {
 			  return IndexQueryHelper.remove( nodeId, _index.schema(), oldValue );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.util.List<long> getAllNodes(org.Neo4Net.kernel.api.impl.index.storage.PartitionedIndexStorage indexStorage, String propertyValue) throws java.io.IOException
+//ORIGINAL LINE: private java.util.List<long> getAllNodes(Neo4Net.kernel.api.impl.index.storage.PartitionedIndexStorage indexStorage, String propertyValue) throws java.io.IOException
 		 private IList<long> GetAllNodes( PartitionedIndexStorage indexStorage, string propertyValue )
 		 {
 			  return AllNodesCollector.GetAllNodes( indexStorage.OpenDirectory( indexStorage.GetPartitionFolder( 1 ) ), Values.stringValue( propertyValue ) );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void updateAndCommit(org.Neo4Net.kernel.api.index.IndexAccessor accessor, Iterable<org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>> updates) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: private void updateAndCommit(Neo4Net.kernel.api.index.IndexAccessor accessor, Iterable<Neo4Net.kernel.api.index.IndexEntryUpdate<?>> updates) throws java.io.IOException, Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 private void UpdateAndCommit<T1>( IndexAccessor accessor, IEnumerable<T1> updates )
 		 {
 			  using ( IndexUpdater updater = accessor.NewUpdater( IndexUpdateMode.ONLINE ) )
 			  {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: for (org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> update : updates)
+//ORIGINAL LINE: for (Neo4Net.kernel.api.index.IndexEntryUpdate<?> update : updates)
 					foreach ( IndexEntryUpdate<object> update in updates )
 					{
 						 updater.Process( update );

@@ -29,9 +29,9 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.cache
 	using NativeMemoryAllocationRefusedError = Neo4Net.@unsafe.Impl.Internal.Dragons.NativeMemoryAllocationRefusedError;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.Format.bytes;
+//	import static Neo4Net.helpers.Format.bytes;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.Numbers.safeCastLongToInt;
+//	import static Neo4Net.helpers.Numbers.safeCastLongToInt;
 
 	/// <summary>
 	/// Factory of <seealso cref="LongArray"/>, <seealso cref="IntArray"/> and <seealso cref="ByteArray"/> instances. Users can select in which type of
@@ -116,7 +116,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.cache
 		 /// <returns> a <seealso cref="NumberArrayFactory"/> which tries to allocation off-heap, then potentially on heap
 		 /// and lastly falls back to allocating inside the given {@code pageCache}. </returns>
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java static interface methods:
-//		 static NumberArrayFactory auto(org.Neo4Net.io.pagecache.PageCache pageCache, java.io.File dir, boolean allowHeapAllocation, NumberArrayFactory_Monitor monitor)
+//		 static NumberArrayFactory auto(Neo4Net.io.pagecache.PageCache pageCache, java.io.File dir, boolean allowHeapAllocation, NumberArrayFactory_Monitor monitor)
 	//	 {
 	//		  PageCachedNumberArrayFactory pagedArrayFactory = new PageCachedNumberArrayFactory(pageCache, dir);
 	//		  ChunkedNumberArrayFactory chunkedArrayFactory = new ChunkedNumberArrayFactory(monitor, allocationAlternatives(allowHeapAllocation, pagedArrayFactory));

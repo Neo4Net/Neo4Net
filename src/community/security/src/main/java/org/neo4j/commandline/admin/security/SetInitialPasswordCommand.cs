@@ -35,9 +35,9 @@ namespace Neo4Net.CommandLine.Admin.security
 	using UTF8 = Neo4Net.Strings.UTF8;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.security.UserManager_Fields.INITIAL_PASSWORD;
+//	import static Neo4Net.kernel.api.security.UserManager_Fields.INITIAL_PASSWORD;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.security.UserManager_Fields.INITIAL_USER_NAME;
+//	import static Neo4Net.kernel.api.security.UserManager_Fields.INITIAL_USER_NAME;
 
 	public class SetInitialPasswordCommand : AdminCommand
 	{
@@ -61,7 +61,7 @@ namespace Neo4Net.CommandLine.Admin.security
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void execute(String[] args) throws org.Neo4Net.commandline.admin.IncorrectUsage, org.Neo4Net.commandline.admin.CommandFailed
+//ORIGINAL LINE: public void execute(String[] args) throws Neo4Net.commandline.admin.IncorrectUsage, Neo4Net.commandline.admin.CommandFailed
 		 public override void Execute( string[] args )
 		 {
 			  try

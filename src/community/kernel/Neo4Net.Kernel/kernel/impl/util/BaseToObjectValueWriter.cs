@@ -41,7 +41,7 @@ namespace Neo4Net.Kernel.impl.util
 	using RelationshipValue = Neo4Net.Values.@virtual.RelationshipValue;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.iteratorsEqual;
+//	import static Neo4Net.helpers.collection.Iterators.iteratorsEqual;
 
 	/// <summary>
 	/// Base class for converting AnyValue to normal java objects.
@@ -89,7 +89,7 @@ namespace Neo4Net.Kernel.impl.util
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void writeNode(long nodeId, org.Neo4Net.values.storable.TextArray ignore, org.Neo4Net.values.virtual.MapValue properties) throws RuntimeException
+//ORIGINAL LINE: public void writeNode(long nodeId, Neo4Net.values.storable.TextArray ignore, Neo4Net.values.virtual.MapValue properties) throws RuntimeException
 		 public override void WriteNode( long nodeId, TextArray ignore, MapValue properties )
 		 {
 			  if ( nodeId >= 0 )
@@ -111,7 +111,7 @@ namespace Neo4Net.Kernel.impl.util
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void writeRelationship(long relId, long startNodeId, long endNodeId, org.Neo4Net.values.storable.TextValue type, org.Neo4Net.values.virtual.MapValue properties) throws RuntimeException
+//ORIGINAL LINE: public void writeRelationship(long relId, long startNodeId, long endNodeId, Neo4Net.values.storable.TextValue type, Neo4Net.values.virtual.MapValue properties) throws RuntimeException
 		 public override void WriteRelationship( long relId, long startNodeId, long endNodeId, TextValue type, MapValue properties )
 		 {
 			  if ( relId >= 0 )
@@ -156,7 +156,7 @@ namespace Neo4Net.Kernel.impl.util
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void writePath(org.Neo4Net.values.virtual.NodeValue[] nodes, org.Neo4Net.values.virtual.RelationshipValue[] relationships) throws RuntimeException
+//ORIGINAL LINE: public void writePath(Neo4Net.values.virtual.NodeValue[] nodes, Neo4Net.values.virtual.RelationshipValue[] relationships) throws RuntimeException
 		 public override void WritePath( NodeValue[] nodes, RelationshipValue[] relationships )
 		 {
 			  Debug.Assert( nodes != null );
@@ -278,10 +278,10 @@ namespace Neo4Net.Kernel.impl.util
 				 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Iterator<? extends org.Neo4Net.graphdb.PropertyContainer> current;
+//ORIGINAL LINE: java.util.Iterator<? extends Neo4Net.graphdb.PropertyContainer> current;
 				 internal IEnumerator<PropertyContainer> current;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Iterator<? extends org.Neo4Net.graphdb.PropertyContainer> next;
+//ORIGINAL LINE: java.util.Iterator<? extends Neo4Net.graphdb.PropertyContainer> next;
 				 internal IEnumerator<PropertyContainer> next;
 
 				 public bool hasNext()
@@ -298,7 +298,7 @@ namespace Neo4Net.Kernel.impl.util
 					  finally
 					  {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Iterator<? extends org.Neo4Net.graphdb.PropertyContainer> temp = current;
+//ORIGINAL LINE: java.util.Iterator<? extends Neo4Net.graphdb.PropertyContainer> temp = current;
 							IEnumerator<PropertyContainer> temp = current;
 							current = next;
 							next = temp;

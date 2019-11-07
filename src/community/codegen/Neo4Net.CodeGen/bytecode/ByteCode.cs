@@ -63,7 +63,7 @@ namespace Neo4Net.CodeGen.ByteCode
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Java to C# Converter does not convert types within enums:
-//		 private static class CodeGenerationStrategyAnonymousInnerClass extends org.Neo4Net.codegen.CodeGenerationStrategy<Configuration>
+//		 private static class CodeGenerationStrategyAnonymousInnerClass extends Neo4Net.codegen.CodeGenerationStrategy<Configuration>
 	//	 {
 	//		 @@Override protected Configuration createConfigurator(ClassLoader loader)
 	//		 {

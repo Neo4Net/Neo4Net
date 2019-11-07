@@ -39,13 +39,13 @@ namespace Neo4Net.Kernel.impl.pagecache
 	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.mapped_memory_page_size;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.mapped_memory_page_size;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.pagecache_memory;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.pagecache_memory;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.pagecache_swapper;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.pagecache_swapper;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.BYTES;
+//	import static Neo4Net.kernel.configuration.Settings.BYTES;
 
 	public class ConfiguringPageCacheFactory
 	{

@@ -33,13 +33,13 @@ namespace Neo4Net.backup
 	using HostnamePort = Neo4Net.Helpers.HostnamePort;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.BOOLEAN;
+//	import static Neo4Net.kernel.configuration.Settings.BOOLEAN;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.HOSTNAME_PORT;
+//	import static Neo4Net.kernel.configuration.Settings.HOSTNAME_PORT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.TRUE;
+//	import static Neo4Net.kernel.configuration.Settings.TRUE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.setting;
+//	import static Neo4Net.kernel.configuration.Settings.setting;
 
 	/// <summary>
 	/// Settings for online backup

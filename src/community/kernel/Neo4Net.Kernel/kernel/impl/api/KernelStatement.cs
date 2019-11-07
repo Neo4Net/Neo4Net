@@ -32,23 +32,23 @@ namespace Neo4Net.Kernel.Impl.Api
 	using PageCursorTracer = Neo4Net.Io.pagecache.tracing.cursor.PageCursorTracer;
 	using VersionContext = Neo4Net.Io.pagecache.tracing.cursor.context.VersionContext;
 	using VersionContextSupplier = Neo4Net.Io.pagecache.tracing.cursor.context.VersionContextSupplier;
-	using AssertOpen = Neo4Net.Kernel.api.AssertOpen;
-	using QueryRegistryOperations = Neo4Net.Kernel.api.QueryRegistryOperations;
-	using Statement = Neo4Net.Kernel.api.Statement;
+	using AssertOpen = Neo4Net.Kernel.Api.AssertOpen;
+	using QueryRegistryOperations = Neo4Net.Kernel.Api.QueryRegistryOperations;
+	using Statement = Neo4Net.Kernel.Api.Statement;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
-	using ExecutingQuery = Neo4Net.Kernel.api.query.ExecutingQuery;
-	using ExplicitIndexTransactionState = Neo4Net.Kernel.api.txstate.ExplicitIndexTransactionState;
-	using TransactionState = Neo4Net.Kernel.api.txstate.TransactionState;
-	using TxStateHolder = Neo4Net.Kernel.api.txstate.TxStateHolder;
-	using AuxiliaryTransactionState = Neo4Net.Kernel.api.txstate.auxiliary.AuxiliaryTransactionState;
+	using ExecutingQuery = Neo4Net.Kernel.Api.query.ExecutingQuery;
+	using ExplicitIndexTransactionState = Neo4Net.Kernel.Api.txstate.ExplicitIndexTransactionState;
+	using TransactionState = Neo4Net.Kernel.Api.txstate.TransactionState;
+	using TxStateHolder = Neo4Net.Kernel.Api.txstate.TxStateHolder;
+	using AuxiliaryTransactionState = Neo4Net.Kernel.Api.txstate.auxiliary.AuxiliaryTransactionState;
 	using StatementLocks = Neo4Net.Kernel.impl.locking.StatementLocks;
 	using StorageReader = Neo4Net.Kernel.Api.StorageEngine.StorageReader;
 	using LockTracer = Neo4Net.Kernel.Api.StorageEngine.@lock.LockTracer;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.util.FeatureToggles.flag;
+//	import static Neo4Net.util.FeatureToggles.flag;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.util.FeatureToggles.toggle;
+//	import static Neo4Net.util.FeatureToggles.toggle;
 
 	/// <summary>
 	/// A resource efficient implementation of <seealso cref="Statement"/>. Designed to be reused within a

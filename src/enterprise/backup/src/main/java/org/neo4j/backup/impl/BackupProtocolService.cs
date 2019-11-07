@@ -70,15 +70,15 @@ namespace Neo4Net.backup.impl
 	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.com.RequestContext.anonymous;
+//	import static Neo4Net.com.RequestContext.anonymous;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.com.storecopy.TransactionCommittingResponseUnpacker.DEFAULT_BATCH_SIZE;
+//	import static Neo4Net.com.storecopy.TransactionCommittingResponseUnpacker.DEFAULT_BATCH_SIZE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.logs_directory;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.logs_directory;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.store_internal_log_path;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.store_internal_log_path;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.Exceptions.rootCause;
+//	import static Neo4Net.helpers.Exceptions.rootCause;
 
 	/// <summary>
 	/// Client-side convenience service for doing backups from a running database instance.
@@ -383,14 +383,14 @@ namespace Neo4Net.backup.impl
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private static java.util.List<org.Neo4Net.kernel.extension.KernelExtensionFactory<?>> loadKernelExtensions()
+//ORIGINAL LINE: private static java.util.List<Neo4Net.kernel.extension.KernelExtensionFactory<?>> loadKernelExtensions()
 		 private static IList<KernelExtensionFactory<object>> LoadKernelExtensions()
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.List<org.Neo4Net.kernel.extension.KernelExtensionFactory<?>> kernelExtensions = new java.util.ArrayList<>();
+//ORIGINAL LINE: java.util.List<Neo4Net.kernel.extension.KernelExtensionFactory<?>> kernelExtensions = new java.util.ArrayList<>();
 			  IList<KernelExtensionFactory<object>> kernelExtensions = new List<KernelExtensionFactory<object>>();
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: for (org.Neo4Net.kernel.extension.KernelExtensionFactory<?> factory : org.Neo4Net.helpers.Service.load(org.Neo4Net.kernel.extension.KernelExtensionFactory.class))
+//ORIGINAL LINE: for (Neo4Net.kernel.extension.KernelExtensionFactory<?> factory : Neo4Net.helpers.Service.load(Neo4Net.kernel.extension.KernelExtensionFactory.class))
 			  foreach ( KernelExtensionFactory<object> factory in Service.load( typeof( KernelExtensionFactory ) ) )
 			  {
 					kernelExtensions.Add( factory );
@@ -451,7 +451,7 @@ namespace Neo4Net.backup.impl
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: public org.Neo4Net.com.Response<?> copyStore(org.Neo4Net.com.storecopy.StoreWriter writer)
+//ORIGINAL LINE: public Neo4Net.com.Response<?> copyStore(Neo4Net.com.storecopy.StoreWriter writer)
 			  public Response<object> copyStore( StoreWriter writer )
 			  {
 					client = new BackupClient( sourceHostNameOrIp, sourcePort, null, NullLogProvider.Instance, StoreId.DEFAULT, timeout, Neo4Net.com.storecopy.ResponseUnpacker_Fields.NoOpResponseUnpacker, _monitors.newMonitor( typeof( ByteCounterMonitor ) ), _monitors.newMonitor( typeof( RequestMonitor ) ), new VersionAwareLogEntryReader<Neo4Net.Kernel.impl.transaction.log.ReadableClosablePositionAwareChannel>() );

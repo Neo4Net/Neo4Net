@@ -198,11 +198,11 @@ namespace Neo4Net.causalclustering.core.state.machines
 		 private readonly ReplicatedTokenRequest _relationshipTypeTokenRequest = mock( typeof( ReplicatedTokenRequest ) );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private final org.Neo4Net.causalclustering.core.state.machines.locks.ReplicatedLockTokenRequest lockTokenRequest = mock(org.Neo4Net.causalclustering.core.state.machines.locks.ReplicatedLockTokenRequest.class);
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private final Neo4Net.causalclustering.core.state.machines.locks.ReplicatedLockTokenRequest lockTokenRequest = mock(Neo4Net.causalclustering.core.state.machines.locks.ReplicatedLockTokenRequest.class);
 		 private readonly ReplicatedLockTokenRequest _lockTokenRequest = mock( typeof( ReplicatedLockTokenRequest ) );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private final System.Action<org.Neo4Net.causalclustering.core.state.Result> callback = mock(System.Action.class);
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private final System.Action<Neo4Net.causalclustering.core.state.Result> callback = mock(System.Action.class);
 		 private readonly System.Action<Result> _callback = mock( typeof( System.Action ) );
 
 		 private InOrder _verifier;

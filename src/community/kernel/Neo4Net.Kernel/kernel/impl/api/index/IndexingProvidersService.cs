@@ -49,7 +49,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 /// <returns> The blessed index descriptor. </returns>
 		 /// <exception cref="MisconfiguredIndexException"> if the provider cannot be bless the given index descriptor. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor getBlessedDescriptorFromProvider(org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor index) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.MisconfiguredIndexException;
+//ORIGINAL LINE: Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor getBlessedDescriptorFromProvider(Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor index) throws Neo4Net.Kernel.Api.Internal.Exceptions.Schema.MisconfiguredIndexException;
 		 IndexDescriptor GetBlessedDescriptorFromProvider( IndexDescriptor index );
 	}
 

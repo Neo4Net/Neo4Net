@@ -44,10 +44,10 @@ namespace Neo4Net
 	public class CompositeConstraintIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.TestDirectory testDirectory = Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory TestDirectory = TestDirectory.testDirectory();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.SuppressOutput suppressOutput = org.Neo4Net.test.rule.SuppressOutput.suppressAll();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.SuppressOutput suppressOutput = Neo4Net.test.rule.SuppressOutput.suppressAll();
 		 public readonly SuppressOutput SuppressOutput = SuppressOutput.suppressAll();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -90,7 +90,7 @@ namespace Neo4Net
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static org.Neo4Net.consistency.ConsistencyCheckService.Result checkDbConsistency(java.io.File databaseDirectory) throws org.Neo4Net.consistency.ConsistencyCheckTool.ToolFailureException
+//ORIGINAL LINE: private static Neo4Net.consistency.ConsistencyCheckService.Result checkDbConsistency(java.io.File databaseDirectory) throws Neo4Net.consistency.ConsistencyCheckTool.ToolFailureException
 		 private static ConsistencyCheckService.Result CheckDbConsistency( File databaseDirectory )
 		 {
 			  return ConsistencyCheckTool.runConsistencyCheckTool( new string[]{ databaseDirectory.AbsolutePath }, System.out, System.err );

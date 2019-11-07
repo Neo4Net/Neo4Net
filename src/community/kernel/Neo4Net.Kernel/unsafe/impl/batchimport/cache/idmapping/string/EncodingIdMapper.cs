@@ -44,11 +44,11 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.cache.idmapping.@string
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Math.toIntExact;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.Utils.unsignedCompare;
+//	import static Neo4Net.@unsafe.impl.batchimport.Utils.unsignedCompare;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.Utils.unsignedDifference;
+//	import static Neo4Net.@unsafe.impl.batchimport.Utils.unsignedDifference;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.cache.idmapping.@string.ParallelSort.DEFAULT;
+//	import static Neo4Net.@unsafe.impl.batchimport.cache.idmapping.@string.ParallelSort.DEFAULT;
 
 	/// <summary>
 	/// Maps arbitrary values to long ids. The values can be <seealso cref="put(object, long, Group) added"/> in any order,
@@ -466,7 +466,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.cache.idmapping.@string
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void buildCollisionInfo(System.Func<long, Object> inputIdLookup, long pessimisticNumberOfCollisions, org.Neo4Net.unsafe.impl.batchimport.input.Collector collector, org.Neo4Net.helpers.progress.ProgressListener progress) throws InterruptedException
+//ORIGINAL LINE: private void buildCollisionInfo(System.Func<long, Object> inputIdLookup, long pessimisticNumberOfCollisions, Neo4Net.unsafe.impl.batchimport.input.Collector collector, Neo4Net.helpers.progress.ProgressListener progress) throws InterruptedException
 		 private void BuildCollisionInfo( System.Func<long, object> inputIdLookup, long pessimisticNumberOfCollisions, Collector collector, ProgressListener progress )
 		 {
 			  progress.Started( "RESOLVE (~" + pessimisticNumberOfCollisions + " collisions)" );
@@ -505,7 +505,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.cache.idmapping.@string
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void detectDuplicateInputIds(Radix radix, org.Neo4Net.unsafe.impl.batchimport.input.Collector collector, org.Neo4Net.helpers.progress.ProgressListener progress) throws InterruptedException
+//ORIGINAL LINE: private void detectDuplicateInputIds(Radix radix, Neo4Net.unsafe.impl.batchimport.input.Collector collector, Neo4Net.helpers.progress.ProgressListener progress) throws InterruptedException
 		 private void DetectDuplicateInputIds( Radix radix, Collector collector, ProgressListener progress )
 		 {
 			  // We do this collision sort using ParallelSort which has the data cache and the tracker cache,

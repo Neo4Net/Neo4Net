@@ -40,15 +40,15 @@ namespace Neo4Net.causalclustering.core.consensus.shipping
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Long.min;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.schedule.TimeoutFactory.fixedTimeout;
+//	import static Neo4Net.causalclustering.core.consensus.schedule.TimeoutFactory.fixedTimeout;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.schedule.Timer.CancelMode.ASYNC;
+//	import static Neo4Net.causalclustering.core.consensus.schedule.Timer.CancelMode.ASYNC;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.shipping.RaftLogShipper.Mode.CATCHUP;
+//	import static Neo4Net.causalclustering.core.consensus.shipping.RaftLogShipper.Mode.CATCHUP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.shipping.RaftLogShipper.Mode.PIPELINE;
+//	import static Neo4Net.causalclustering.core.consensus.shipping.RaftLogShipper.Mode.PIPELINE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.shipping.RaftLogShipper.Timeouts.RESEND;
+//	import static Neo4Net.causalclustering.core.consensus.shipping.RaftLogShipper.Timeouts.RESEND;
 
 	/// Optimizations
 	// TODO: Have several outstanding batches in catchup mode, to bridge the latency gap.

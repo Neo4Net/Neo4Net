@@ -30,7 +30,7 @@ namespace Neo4Net.com.storecopy
 
 	using Neo4Net.com;
 	using Neo4Net.com;
-	using DatabaseManager = Neo4Net.Dbms.database.DatabaseManager;
+	using IDatabaseManager = Neo4Net.Dbms.database.DatabaseManager;
 	using Suppliers = Neo4Net.Functions.Suppliers;
 	using Neo4Net.Collections.Helpers;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
@@ -55,9 +55,9 @@ namespace Neo4Net.com.storecopy
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.mock;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.com.StoreIdTestFactory.newStoreIdForCurrentVersion;
+//	import static Neo4Net.com.StoreIdTestFactory.newStoreIdForCurrentVersion;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_COMMIT_TIMESTAMP;
+//	import static Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_COMMIT_TIMESTAMP;
 
 	public class ResponsePackerIT
 	{
@@ -143,7 +143,7 @@ namespace Neo4Net.com.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.kernel.impl.store.NeoStores createNeoStore(org.Neo4Net.io.fs.FileSystemAbstraction fs, org.Neo4Net.io.pagecache.PageCache pageCache) throws java.io.IOException
+//ORIGINAL LINE: private Neo4Net.kernel.impl.store.NeoStores createNeoStore(Neo4Net.io.fs.FileSystemAbstraction fs, Neo4Net.io.pagecache.PageCache pageCache) throws java.io.IOException
 		 private NeoStores CreateNeoStore( FileSystemAbstraction fs, PageCache pageCache )
 		 {
 			  Config config = Config.defaults();

@@ -49,7 +49,7 @@ namespace Neo4Net.Bolt.v1.transport.integration
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") public static org.Neo4Net.graphdb.Notification fromMap(java.util.Map<String,Object> notification)
+//ORIGINAL LINE: @SuppressWarnings("unchecked") public static Neo4Net.graphdb.Notification fromMap(java.util.Map<String,Object> notification)
 		 public static Notification FromMap( IDictionary<string, object> notification )
 		 {
 			  assertThat( notification, hasKey( "code" ) );

@@ -31,10 +31,10 @@ namespace Neo4Net.Kernel.impl.proc
 	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
 	using Neo4NetTypes = Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes;
-	using ResourceTracker = Neo4Net.Kernel.api.ResourceTracker;
-	using StubResourceManager = Neo4Net.Kernel.api.StubResourceManager;
-	using BasicContext = Neo4Net.Kernel.api.proc.BasicContext;
-	using CallableProcedure = Neo4Net.Kernel.api.proc.CallableProcedure;
+	using ResourceTracker = Neo4Net.Kernel.Api.ResourceTracker;
+	using StubResourceManager = Neo4Net.Kernel.Api.StubResourceManager;
+	using BasicContext = Neo4Net.Kernel.Api.Procs.BasicContext;
+	using CallableProcedure = Neo4Net.Kernel.Api.Procs.CallableProcedure;
 	using NullLog = Neo4Net.Logging.NullLog;
 	using Name = Neo4Net.Procedure.Name;
 	using Procedure = Neo4Net.Procedure.Procedure;
@@ -46,9 +46,9 @@ namespace Neo4Net.Kernel.impl.proc
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.asList;
+//	import static Neo4Net.helpers.collection.Iterators.asList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.procs.ProcedureSignature.procedureSignature;
+//	import static Neo4Net.Kernel.Api.Internal.procs.ProcedureSignature.procedureSignature;
 
 	public class ReflectiveProcedureWithArgumentsTest
 	{
@@ -225,7 +225,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.util.List<org.Neo4Net.kernel.api.proc.CallableProcedure> compile(Class clazz) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: private java.util.List<Neo4Net.kernel.api.proc.CallableProcedure> compile(Class clazz) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 private IList<CallableProcedure> Compile( Type clazz )
 		 {
 			  return ( new ReflectiveProcedureCompiler( new TypeMappers(), new ComponentRegistry(), new ComponentRegistry(), NullLog.Instance, ProcedureConfig.Default ) ).compileProcedure(clazz, null, true);

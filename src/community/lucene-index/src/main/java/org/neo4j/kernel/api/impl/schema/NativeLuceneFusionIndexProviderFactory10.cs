@@ -39,11 +39,11 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 	using FusionSlotSelector10 = Neo4Net.Kernel.Impl.Index.Schema.fusion.FusionSlotSelector10;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.SchemaIndex.NATIVE10;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.SchemaIndex.NATIVE10;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.index.IndexDirectoryStructure.directoriesByProvider;
+//	import static Neo4Net.kernel.api.index.IndexDirectoryStructure.directoriesByProvider;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.index.IndexProvider.EMPTY;
+//	import static Neo4Net.kernel.api.index.IndexProvider.EMPTY;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Service.Implementation(KernelExtensionFactory.class) public class NativeLuceneFusionIndexProviderFactory10 extends NativeLuceneFusionIndexProviderFactory<NativeLuceneFusionIndexProviderFactory10.Dependencies>

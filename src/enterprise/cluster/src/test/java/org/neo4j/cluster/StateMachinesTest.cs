@@ -58,7 +58,7 @@ namespace Neo4Net.cluster
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.cluster.com.message.Message.Internal;
+//	import static Neo4Net.cluster.com.message.Message.Internal;
 
 	public class StateMachinesTest
 	{
@@ -87,7 +87,7 @@ namespace Neo4Net.cluster
 		 {
 			  InstanceId me = new InstanceId( 42 );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.List<org.Neo4Net.cluster.com.message.Message> sentOut = new java.util.LinkedList<>();
+//ORIGINAL LINE: final java.util.List<Neo4Net.cluster.com.message.Message> sentOut = new java.util.LinkedList<>();
 			  IList<Message> sentOut = new LinkedList<Message>();
 
 			  /*
@@ -143,7 +143,7 @@ namespace Neo4Net.cluster
 		 public enum TestState
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: test { @Override public TestState handle(java.util.List context, org.Neo4Net.cluster.com.message.Message<TestMessage> message, org.Neo4Net.cluster.com.message.MessageHolder outgoing) { context.add(message.getMessageType()); switch(message.getMessageType()) { case message1: { outgoing.offer(internal(TestMessage.message2)); outgoing.offer(internal(TestMessage.message3)); break; } case message2: { outgoing.offer(internal(TestMessage.message4)); outgoing.offer(internal(TestMessage.message5)); break; } default: break; } return this; } }
+//ORIGINAL LINE: test { @Override public TestState handle(java.util.List context, Neo4Net.cluster.com.message.Message<TestMessage> message, Neo4Net.cluster.com.message.MessageHolder outgoing) { context.add(message.getMessageType()); switch(message.getMessageType()) { case message1: { outgoing.offer(internal(TestMessage.message2)); outgoing.offer(internal(TestMessage.message3)); break; } case message2: { outgoing.offer(internal(TestMessage.message4)); outgoing.offer(internal(TestMessage.message5)); break; } default: break; } return this; } }
 			  test
 			  {
 				  public TestState handle( System.Collections.IList context, Message<TestMessage> message, MessageHolder outgoing )

@@ -39,21 +39,21 @@ namespace Neo4Net.Bolt.v1.messaging.decoder
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertThrows;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.byteArray;
+//	import static Neo4Net.values.storable.Values.byteArray;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.longValue;
+//	import static Neo4Net.values.storable.Values.longValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.pointValue;
+//	import static Neo4Net.values.storable.Values.pointValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.stringArray;
+//	import static Neo4Net.values.storable.Values.stringArray;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.stringValue;
+//	import static Neo4Net.values.storable.Values.stringValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.@virtual.VirtualValues.EMPTY_MAP;
+//	import static Neo4Net.values.@virtual.VirtualValues.EMPTY_MAP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.@virtual.VirtualValues.nodeValue;
+//	import static Neo4Net.values.@virtual.VirtualValues.nodeValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.@virtual.VirtualValues.relationshipValue;
+//	import static Neo4Net.values.@virtual.VirtualValues.relationshipValue;
 
 	internal class PrimitiveOnlyValueWriterTest
 	{
@@ -95,7 +95,7 @@ namespace Neo4Net.Bolt.v1.messaging.decoder
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ParameterizedTest @MethodSource("unsupportedValues") void shouldFailToWriteComplexValue(org.Neo4Net.values.AnyValue value)
+//ORIGINAL LINE: @ParameterizedTest @MethodSource("unsupportedValues") void shouldFailToWriteComplexValue(Neo4Net.values.AnyValue value)
 		 internal virtual void ShouldFailToWriteComplexValue( AnyValue value )
 		 {
 			  PrimitiveOnlyValueWriter writer = new PrimitiveOnlyValueWriter();

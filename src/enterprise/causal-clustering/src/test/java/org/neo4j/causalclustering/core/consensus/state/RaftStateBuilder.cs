@@ -40,7 +40,7 @@ namespace Neo4Net.causalclustering.core.consensus.state
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.asSet;
+//	import static Neo4Net.helpers.collection.Iterators.asSet;
 
 	public class RaftStateBuilder
 	{

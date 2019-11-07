@@ -54,9 +54,9 @@ namespace Neo4Net.Bolt.runtime
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.ArgumentMatchers.anyBoolean;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.runtime.CachedThreadPoolExecutorFactory.SYNCHRONOUS_QUEUE;
+//	import static Neo4Net.bolt.runtime.CachedThreadPoolExecutorFactory.SYNCHRONOUS_QUEUE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.runtime.CachedThreadPoolExecutorFactory.UNBOUNDED_QUEUE;
+//	import static Neo4Net.bolt.runtime.CachedThreadPoolExecutorFactory.UNBOUNDED_QUEUE;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class CachedThreadPoolExecutorFactoryTest

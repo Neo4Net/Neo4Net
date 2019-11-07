@@ -26,9 +26,9 @@ namespace Neo4Net.Dbms.CommandLine.Config
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.ByteUnit.kibiBytes;
+//	import static Neo4Net.io.ByteUnit.kibiBytes;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.Configuration.DEFAULT;
+//	import static Neo4Net.@unsafe.impl.batchimport.Configuration.DEFAULT;
 
 	internal class WrappedBatchImporterConfigurationForNeo4NetAdminTest
 	{
@@ -273,7 +273,7 @@ namespace Neo4Net.Dbms.CommandLine.Config
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SafeVarargs private final <T> void shouldDelegate(System.Func<T,org.Neo4Net.unsafe.impl.batchimport.Configuration> configFactory, System.Func<org.Neo4Net.unsafe.impl.batchimport.Configuration,T> getter, T... expectedValues)
+//ORIGINAL LINE: @SafeVarargs private final <T> void shouldDelegate(System.Func<T,Neo4Net.unsafe.impl.batchimport.Configuration> configFactory, System.Func<Neo4Net.unsafe.impl.batchimport.Configuration,T> getter, T... expectedValues)
 		 private void ShouldDelegate<T>( System.Func<T, Configuration> configFactory, System.Func<Configuration, T> getter, params T[] expectedValues )
 		 {
 			  foreach ( T expectedValue in expectedValues )
@@ -293,7 +293,7 @@ namespace Neo4Net.Dbms.CommandLine.Config
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SafeVarargs private final <T> void shouldOverride(System.Func<T,org.Neo4Net.unsafe.impl.batchimport.Configuration> configFactory, System.Func<org.Neo4Net.unsafe.impl.batchimport.Configuration,T> getter, T... values)
+//ORIGINAL LINE: @SafeVarargs private final <T> void shouldOverride(System.Func<T,Neo4Net.unsafe.impl.batchimport.Configuration> configFactory, System.Func<Neo4Net.unsafe.impl.batchimport.Configuration,T> getter, T... values)
 		 private void ShouldOverride<T>( System.Func<T, Configuration> configFactory, System.Func<Configuration, T> getter, params T[] values )
 		 {
 			  foreach ( T value in values )

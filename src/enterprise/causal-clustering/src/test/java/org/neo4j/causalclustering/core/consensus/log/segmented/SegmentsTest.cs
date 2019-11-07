@@ -68,7 +68,7 @@ namespace Neo4Net.causalclustering.core.consensus.log.segmented
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.logging.NullLogProvider.getInstance;
+//	import static Neo4Net.logging.NullLogProvider.getInstance;
 
 	public class SegmentsTest
 	{
@@ -96,7 +96,7 @@ namespace Neo4Net.causalclustering.core.consensus.log.segmented
 		 private readonly File _baseDirectory = new File( "." );
 		 private FileNames _fileNames;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private final org.Neo4Net.causalclustering.messaging.marshalling.ChannelMarshal<org.Neo4Net.causalclustering.core.replication.ReplicatedContent> contentMarshal = mock(org.Neo4Net.causalclustering.messaging.marshalling.ChannelMarshal.class);
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private final Neo4Net.causalclustering.messaging.marshalling.ChannelMarshal<Neo4Net.causalclustering.core.replication.ReplicatedContent> contentMarshal = mock(Neo4Net.causalclustering.messaging.marshalling.ChannelMarshal.class);
 		 private readonly ChannelMarshal<ReplicatedContent> _contentMarshal = mock( typeof( ChannelMarshal ) );
 		 private readonly LogProvider _logProvider = NullLogProvider.Instance;
 		 private readonly SegmentHeader _header = mock( typeof( SegmentHeader ) );

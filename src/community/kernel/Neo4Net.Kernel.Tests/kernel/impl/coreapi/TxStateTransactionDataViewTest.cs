@@ -36,10 +36,10 @@ namespace Neo4Net.Kernel.impl.coreapi
 	using AccessMode = Neo4Net.Kernel.Api.Internal.security.AccessMode;
 	using AuthSubject = Neo4Net.Kernel.Api.Internal.security.AuthSubject;
 	using SecurityContext = Neo4Net.Kernel.Api.Internal.security.SecurityContext;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
-	using Statement = Neo4Net.Kernel.api.Statement;
-	using AnonymousContext = Neo4Net.Kernel.api.security.AnonymousContext;
-	using TransactionState = Neo4Net.Kernel.api.txstate.TransactionState;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
+	using Statement = Neo4Net.Kernel.Api.Statement;
+	using AnonymousContext = Neo4Net.Kernel.Api.security.AnonymousContext;
+	using TransactionState = Neo4Net.Kernel.Api.txstate.TransactionState;
 	using KernelTransactionImplementation = Neo4Net.Kernel.Impl.Api.KernelTransactionImplementation;
 	using TxState = Neo4Net.Kernel.Impl.Api.state.TxState;
 	using EmbeddedProxySPI = Neo4Net.Kernel.impl.core.EmbeddedProxySPI;
@@ -67,9 +67,9 @@ namespace Neo4Net.Kernel.impl.coreapi
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.single;
+//	import static Neo4Net.helpers.collection.Iterables.single;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.genericMap;
+//	import static Neo4Net.helpers.collection.MapUtil.genericMap;
 
 	public class TxStateTransactionDataViewTest
 	{
@@ -83,7 +83,7 @@ namespace Neo4Net.Kernel.impl.coreapi
 		 private readonly TransactionState _state = new TxState();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Before public void setup() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.PropertyKeyIdNotFoundKernelException
+//ORIGINAL LINE: @Before public void setup() throws Neo4Net.Kernel.Api.Internal.Exceptions.PropertyKeyIdNotFoundKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void Setup()
 		 {
@@ -363,7 +363,7 @@ namespace Neo4Net.Kernel.impl.coreapi
 		 {
 			  EmbeddedProxySPI spi = mock( typeof( EmbeddedProxySPI ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.api.KernelTransactionImplementation transaction = mock(org.Neo4Net.kernel.impl.api.KernelTransactionImplementation.class);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.api.KernelTransactionImplementation transaction = mock(Neo4Net.kernel.impl.api.KernelTransactionImplementation.class);
 			  KernelTransactionImplementation transaction = mock( typeof( KernelTransactionImplementation ) );
 			  when( transaction.MetaData ).thenReturn( genericMap( "username", "Igor" ) );
 			  TxStateTransactionDataSnapshot transactionDataSnapshot = new TxStateTransactionDataSnapshot( _state, spi, _ops, transaction );

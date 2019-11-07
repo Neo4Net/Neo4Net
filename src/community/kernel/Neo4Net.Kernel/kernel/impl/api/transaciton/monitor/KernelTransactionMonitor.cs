@@ -23,7 +23,7 @@ using System.Threading;
 namespace Neo4Net.Kernel.Impl.Api.transaciton.monitor
 {
 
-	using KernelTransactionHandle = Neo4Net.Kernel.api.KernelTransactionHandle;
+	using KernelTransactionHandle = Neo4Net.Kernel.Api.KernelTransactionHandle;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using Log = Neo4Net.Logging.Log;
 	using LogService = Neo4Net.Logging.Internal.LogService;

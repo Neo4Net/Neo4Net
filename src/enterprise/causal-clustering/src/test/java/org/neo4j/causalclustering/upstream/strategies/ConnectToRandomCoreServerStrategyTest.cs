@@ -79,7 +79,7 @@ namespace Neo4Net.causalclustering.upstream.strategies
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void filtersSelf() throws org.Neo4Net.causalclustering.upstream.UpstreamDatabaseSelectionException
+//ORIGINAL LINE: @Test public void filtersSelf() throws Neo4Net.causalclustering.upstream.UpstreamDatabaseSelectionException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void FiltersSelf()
 		 {

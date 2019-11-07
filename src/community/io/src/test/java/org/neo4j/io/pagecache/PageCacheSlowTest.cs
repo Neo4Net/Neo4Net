@@ -58,11 +58,11 @@ namespace Neo4Net.Io.pagecache
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assumptions.assumeTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.pagecache.PagedFile_Fields.PF_SHARED_READ_LOCK;
+//	import static Neo4Net.io.pagecache.PagedFile_Fields.PF_SHARED_READ_LOCK;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.pagecache.PagedFile_Fields.PF_SHARED_WRITE_LOCK;
+//	import static Neo4Net.io.pagecache.PagedFile_Fields.PF_SHARED_WRITE_LOCK;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.matchers.ByteArrayMatcher.byteArray;
+//	import static Neo4Net.test.matchers.ByteArrayMatcher.byteArray;
 
 	public abstract class PageCacheSlowTest<T> : PageCacheTestSupport<T> where T : PageCache
 	{

@@ -54,7 +54,7 @@ namespace Neo4Net.Test
 		 public override Statement Apply( Statement @base, Description description )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.test.rule.TestDirectory dir = org.Neo4Net.test.rule.TestDirectory.testDirectory(description.getTestClass());
+//ORIGINAL LINE: final Neo4Net.test.rule.TestDirectory dir = Neo4Net.test.rule.TestDirectory.testDirectory(description.getTestClass());
 			  TestDirectory dir = TestDirectory.testDirectory( description.TestClass );
 			  return dir.apply(new StatementAnonymousInnerClass(this, @base, dir)
 			 , description);
@@ -75,13 +75,13 @@ namespace Neo4Net.Test
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void evaluate() throws Throwable
-			 public override void evaluate()
+//ORIGINAL LINE: public void Evaluate() throws Throwable
+			 public override void Evaluate()
 			 {
 				  _outerInstance.resource = _outerInstance.createResource( _dir );
 				  try
 				  {
-						@base.evaluate();
+						@base.Evaluate();
 				  }
 				  finally
 				  {

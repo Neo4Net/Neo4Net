@@ -50,9 +50,9 @@ namespace Neo4Net.Procedure
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.Matchers.containsString;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.procedure.Mode.READ;
+//	import static Neo4Net.procedure.Mode.READ;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.procedure.Mode.WRITE;
+//	import static Neo4Net.procedure.Mode.WRITE;
 
 	public class EagerProcedureIT
 	{
@@ -74,7 +74,7 @@ namespace Neo4Net.Procedure
 			  SetUpTestData();
 
 			  // Then we can run an eagerized destructive procedure
-			  Result res = _db.execute( "MATCH (n) WHERE n.key = 'value' " + "WITH n CALL org.Neo4Net.procedure.deleteNeighboursEagerized(n, 'FOLLOWS') " + "YIELD value RETURN value" );
+			  Result res = _db.execute( "MATCH (n) WHERE n.key = 'value' " + "WITH n CALL Neo4Net.procedure.deleteNeighboursEagerized(n, 'FOLLOWS') " + "YIELD value RETURN value" );
 			  assertThat( "Should get as many rows as original nodes", res.ResultAsString(), containsString("2 rows") );
 		 }
 
@@ -90,7 +90,7 @@ namespace Neo4Net.Procedure
 			  Exception.expectMessage( "Node with id 1 has been deleted in this transaction" );
 
 			  // When we try to run an eagerized destructive procedure
-			  Result res = _db.execute( "MATCH (n) WHERE n.key = 'value' " + "WITH n CALL org.Neo4Net.procedure.deleteNeighboursNotEagerized(n, 'FOLLOWS') " + "YIELD value RETURN value" );
+			  Result res = _db.execute( "MATCH (n) WHERE n.key = 'value' " + "WITH n CALL Neo4Net.procedure.deleteNeighboursNotEagerized(n, 'FOLLOWS') " + "YIELD value RETURN value" );
 			  res.ResultAsString(); // pull all results. The second row will cause the exception
 		 }
 
@@ -103,7 +103,7 @@ namespace Neo4Net.Procedure
 			  UpTestData = count;
 
 			  // Then we can run an normal read procedure and it will be eagerized by normal Cypher eagerization
-			  Result res = _db.execute( "MATCH (n) WHERE n.key = 'value' " + "CALL org.Neo4Net.procedure.findNeighboursNotEagerized(n) " + "YIELD relationship AS r, node as m " + "DELETE r, m RETURN true" );
+			  Result res = _db.execute( "MATCH (n) WHERE n.key = 'value' " + "CALL Neo4Net.procedure.findNeighboursNotEagerized(n) " + "YIELD relationship AS r, node as m " + "DELETE r, m RETURN true" );
 			  assertThat( "Should get one fewer rows than original nodes", res.ResultAsString(), containsString((count - 1) + " rows") );
 			  assertThat( "The plan description should contain the 'Eager' operation", res.ExecutionPlanDescription.ToString(), containsString("+Eager") );
 		 }
@@ -113,7 +113,7 @@ namespace Neo4Net.Procedure
 		 public virtual void ShouldGetEagerPlanForAnEagerProcedure()
 		 {
 			  // When explaining a call to an eagerized procedure
-			  Result res = _db.execute( "EXPLAIN MATCH (n) WHERE n.key = 'value' " + "WITH n CALL org.Neo4Net.procedure.deleteNeighboursEagerized(n, 'FOLLOWS') " + "YIELD value RETURN value" );
+			  Result res = _db.execute( "EXPLAIN MATCH (n) WHERE n.key = 'value' " + "WITH n CALL Neo4Net.procedure.deleteNeighboursEagerized(n, 'FOLLOWS') " + "YIELD value RETURN value" );
 			  assertThat( "The plan description should contain the 'Eager' operation", res.ExecutionPlanDescription.ToString(), containsString("+Eager") );
 		 }
 
@@ -122,7 +122,7 @@ namespace Neo4Net.Procedure
 		 public virtual void ShouldNotGetEagerPlanForANonEagerProcedure()
 		 {
 			  // When explaining a call to an non-eagerized procedure
-			  Result res = _db.execute( "EXPLAIN MATCH (n) WHERE n.key = 'value' " + "WITH n CALL org.Neo4Net.procedure.deleteNeighboursNotEagerized(n, 'FOLLOWS') " + "YIELD value RETURN value" );
+			  Result res = _db.execute( "EXPLAIN MATCH (n) WHERE n.key = 'value' " + "WITH n CALL Neo4Net.procedure.deleteNeighboursNotEagerized(n, 'FOLLOWS') " + "YIELD value RETURN value" );
 			  assertThat( "The plan description shouldn't contain the 'Eager' operation", res.ExecutionPlanDescription.ToString(), Matchers.not(containsString("+Eager")) );
 		 }
 
@@ -207,11 +207,11 @@ namespace Neo4Net.Procedure
 		 public class ClassWithProcedures
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Context public org.Neo4Net.graphdb.GraphDatabaseService db;
+//ORIGINAL LINE: @Context public Neo4Net.graphdb.GraphDatabaseService db;
 			  public IGraphDatabaseService Db;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Procedure(mode = READ) public java.util.stream.Stream<NeighbourOutput> findNeighboursNotEagerized(@Name("node") org.Neo4Net.graphdb.Node node)
+//ORIGINAL LINE: @Procedure(mode = READ) public java.util.stream.Stream<NeighbourOutput> findNeighboursNotEagerized(@Name("node") Neo4Net.graphdb.Node node)
 			  [Procedure(mode : READ)]
 			  public virtual Stream<NeighbourOutput> FindNeighboursNotEagerized( Node node )
 			  {
@@ -224,7 +224,7 @@ namespace Neo4Net.Procedure
 			  }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Procedure(mode = WRITE, eager = true) public java.util.stream.Stream<Output> deleteNeighboursEagerized(@Name("node") org.Neo4Net.graphdb.Node node, @Name("relation") String relation)
+//ORIGINAL LINE: @Procedure(mode = WRITE, eager = true) public java.util.stream.Stream<Output> deleteNeighboursEagerized(@Name("node") Neo4Net.graphdb.Node node, @Name("relation") String relation)
 			  [Procedure(mode : WRITE, eager : true)]
 			  public virtual Stream<Output> DeleteNeighboursEagerized( Node node, string relation )
 			  {
@@ -232,7 +232,7 @@ namespace Neo4Net.Procedure
 			  }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Procedure(mode = WRITE) public java.util.stream.Stream<Output> deleteNeighboursNotEagerized(@Name("node") org.Neo4Net.graphdb.Node node, @Name("relation") String relation)
+//ORIGINAL LINE: @Procedure(mode = WRITE) public java.util.stream.Stream<Output> deleteNeighboursNotEagerized(@Name("node") Neo4Net.graphdb.Node node, @Name("relation") String relation)
 			  [Procedure(mode : WRITE)]
 			  public virtual Stream<Output> DeleteNeighboursNotEagerized( Node node, string relation )
 			  {

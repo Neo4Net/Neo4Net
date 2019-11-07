@@ -29,7 +29,7 @@ namespace Neo4Net.causalclustering.core.state.machines.tx
 	using LogProvider = Neo4Net.Logging.LogProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.DependencyResolver_SelectionStrategy.ONLY;
+//	import static Neo4Net.graphdb.DependencyResolver_SelectionStrategy.ONLY;
 
 	/// <summary>
 	/// Retrieves last raft log index that was appended to the transaction log, so that raft log replay can recover while

@@ -37,8 +37,8 @@ namespace Neo4Net.Kernel.Impl.Api.state
 	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
 	using SchemaDescriptorPredicates = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptorPredicates;
 	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor;
-	using IndexBackedConstraintDescriptor = Neo4Net.Kernel.api.schema.constraints.IndexBackedConstraintDescriptor;
-	using TransactionState = Neo4Net.Kernel.api.txstate.TransactionState;
+	using IndexBackedConstraintDescriptor = Neo4Net.Kernel.Api.schema.constraints.IndexBackedConstraintDescriptor;
+	using TransactionState = Neo4Net.Kernel.Api.txstate.TransactionState;
 	using CollectionsFactory = Neo4Net.Kernel.impl.util.collection.CollectionsFactory;
 	using OnHeapCollectionsFactory = Neo4Net.Kernel.impl.util.collection.OnHeapCollectionsFactory;
 	using Neo4Net.Kernel.impl.util.diffsets;
@@ -59,16 +59,16 @@ namespace Neo4Net.Kernel.Impl.Api.state
 	using ValueTuple = Neo4Net.Values.Storable.ValueTuple;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.map;
+//	import static Neo4Net.helpers.collection.Iterables.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.NO_VALUE;
+//	import static Neo4Net.values.storable.Values.NO_VALUE;
 
 	/// <summary>
 	/// This class contains transaction-local changes to the graph. These changes can then be used to augment reads from the
 	/// committed state of the database (to make the local changes appear in local transaction read operations). At commit
 	/// time a visitor is sent into this class to convert the end result of the tx changes into a physical changeset.
 	/// <para>
-	/// See <seealso cref="org.Neo4Net.kernel.impl.api.KernelTransactionImplementation"/> for how this happens.
+	/// See <seealso cref="Neo4Net.kernel.impl.api.KernelTransactionImplementation"/> for how this happens.
 	/// </para>
 	/// <para>
 	/// This class is very large, as it has been used as a gathering point to consolidate all transaction state knowledge
@@ -115,7 +115,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void accept(final org.Neo4Net.Kernel.Api.StorageEngine.TxState.TxStateVisitor visitor) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.ConstraintValidationException, org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.CreateConstraintFailureException
+//ORIGINAL LINE: public void accept(final Neo4Net.Kernel.Api.StorageEngine.TxState.TxStateVisitor visitor) throws Neo4Net.Kernel.Api.Internal.Exceptions.Schema.ConstraintValidationException, Neo4Net.Kernel.Api.Internal.Exceptions.Schema.CreateConstraintFailureException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 		 public override void Accept( TxStateVisitor visitor )
 		 {
@@ -155,7 +155,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 					}
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.Kernel.Api.StorageEngine.TxState.LongDiffSets labelDiffSets = node.labelDiffSets();
+//ORIGINAL LINE: final Neo4Net.Kernel.Api.StorageEngine.TxState.LongDiffSets labelDiffSets = node.labelDiffSets();
 					LongDiffSets labelDiffSets = node.LabelDiffSets();
 					if ( !labelDiffSets.Empty )
 					{
@@ -232,7 +232,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 					return LongDiffSets.EMPTY;
 			  }
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.Kernel.Api.StorageEngine.TxState.LongDiffSets nodeDiffSets = labelStatesMap.get(labelId);
+//ORIGINAL LINE: final Neo4Net.Kernel.Api.StorageEngine.TxState.LongDiffSets nodeDiffSets = labelStatesMap.get(labelId);
 			  LongDiffSets nodeDiffSets = _labelStatesMap.get( labelId );
 			  return nodeDiffSets == null ? LongDiffSets.EMPTY : nodeDiffSets;
 		 }
@@ -284,7 +284,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 					if ( nodeState != null )
 					{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.Kernel.Api.StorageEngine.TxState.LongDiffSets diff = nodeState.labelDiffSets();
+//ORIGINAL LINE: final Neo4Net.Kernel.Api.StorageEngine.TxState.LongDiffSets diff = nodeState.labelDiffSets();
 						 LongDiffSets diff = nodeState.LabelDiffSets();
 						 diff.Added.each( label => GetOrCreateLabelStateNodeDiffSets( label ).remove( nodeId ) );
 						 nodeState.ClearIndexDiffs( nodeId );
@@ -462,7 +462,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 					return NodeStateImpl.EMPTY;
 			  }
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.Kernel.Api.StorageEngine.TxState.NodeState nodeState = nodeStatesMap.get(id);
+//ORIGINAL LINE: final Neo4Net.Kernel.Api.StorageEngine.TxState.NodeState nodeState = nodeStatesMap.get(id);
 			  NodeState nodeState = _nodeStatesMap.get( id );
 			  return nodeState == null ? NodeStateImpl.EMPTY : nodeState;
 		 }
@@ -490,7 +490,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 		 public override MutableLongSet AugmentLabels( MutableLongSet labels, NodeState nodeState )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.Kernel.Api.StorageEngine.TxState.LongDiffSets labelDiffSets = nodeState.labelDiffSets();
+//ORIGINAL LINE: final Neo4Net.Kernel.Api.StorageEngine.TxState.LongDiffSets labelDiffSets = nodeState.labelDiffSets();
 			  LongDiffSets labelDiffSets = nodeState.LabelDiffSets();
 			  if ( !labelDiffSets.Empty )
 			  {
@@ -694,7 +694,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Override @Nullable public org.eclipse.collections.impl.UnmodifiableMap<org.Neo4Net.values.storable.ValueTuple, ? extends org.Neo4Net.Kernel.Api.StorageEngine.TxState.LongDiffSets> getIndexUpdates(org.Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor schema)
+//ORIGINAL LINE: @Override @Nullable public org.eclipse.collections.impl.UnmodifiableMap<Neo4Net.values.storable.ValueTuple, ? extends Neo4Net.Kernel.Api.StorageEngine.TxState.LongDiffSets> getIndexUpdates(Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor schema)
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		 public override UnmodifiableMap<ValueTuple, ? extends LongDiffSets> GetIndexUpdates( SchemaDescriptor schema )
 		 {
@@ -714,7 +714,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Override @Nullable public java.util.NavigableMap<org.Neo4Net.values.storable.ValueTuple, ? extends org.Neo4Net.Kernel.Api.StorageEngine.TxState.LongDiffSets> getSortedIndexUpdates(org.Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor descriptor)
+//ORIGINAL LINE: @Override @Nullable public java.util.NavigableMap<Neo4Net.values.storable.ValueTuple, ? extends Neo4Net.Kernel.Api.StorageEngine.TxState.LongDiffSets> getSortedIndexUpdates(Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor descriptor)
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		 public override NavigableMap<ValueTuple, ? extends LongDiffSets> GetSortedIndexUpdates( SchemaDescriptor descriptor )
 		 {
@@ -777,7 +777,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @VisibleForTesting MutableLongDiffSets getOrCreateIndexUpdatesForSeek(java.util.Map<org.Neo4Net.values.storable.ValueTuple, org.Neo4Net.kernel.impl.util.diffsets.MutableLongDiffSets> updates, org.Neo4Net.values.storable.ValueTuple values)
+//ORIGINAL LINE: @VisibleForTesting MutableLongDiffSets getOrCreateIndexUpdatesForSeek(java.util.Map<Neo4Net.values.storable.ValueTuple, Neo4Net.kernel.impl.util.diffsets.MutableLongDiffSets> updates, Neo4Net.values.storable.ValueTuple values)
 		 internal virtual MutableLongDiffSets GetOrCreateIndexUpdatesForSeek( IDictionary<ValueTuple, MutableLongDiffSets> updates, ValueTuple values )
 		 {
 			  return updates.computeIfAbsent( values, value => new MutableLongDiffSetsImpl( _collectionsFactory ) );
@@ -807,7 +807,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public <EX extends Exception> boolean relationshipVisit(long relId, org.Neo4Net.Kernel.Api.StorageEngine.RelationshipVisitor<EX> visitor) throws EX
+//ORIGINAL LINE: public <EX extends Exception> boolean relationshipVisit(long relId, Neo4Net.Kernel.Api.StorageEngine.RelationshipVisitor<EX> visitor) throws EX
 		 public override bool RelationshipVisit<EX>( long relId, RelationshipVisitor<EX> visitor ) where EX : Exception
 		 {
 			  return GetRelationshipState( relId ).accept( visitor );

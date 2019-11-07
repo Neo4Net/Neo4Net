@@ -17,7 +17,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Kernel.api.schema.index
+namespace Neo4Net.Kernel.Api.schema.index
 {
 	using Test = org.junit.Test;
 
@@ -29,9 +29,9 @@ namespace Neo4Net.Kernel.api.schema.index
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.Matchers.equalTo;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.schema.SchemaTestUtil.assertEquality;
+//	import static Neo4Net.kernel.api.schema.SchemaTestUtil.assertEquality;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.schema.SchemaTestUtil.simpleNameLookup;
+//	import static Neo4Net.kernel.api.schema.SchemaTestUtil.simpleNameLookup;
 
 	public class SchemaIndexDescriptorFactoryTest
 	{

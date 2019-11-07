@@ -33,7 +33,7 @@ namespace Neo4Net.Tooling.procedure.visitors.examples
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Procedure(mode = org.Neo4Net.procedure.Mode.READ) @PerformsWrites public void conflictingMode()
+//ORIGINAL LINE: @Procedure(mode = Neo4Net.procedure.Mode.READ) @PerformsWrites public void conflictingMode()
 		 [Procedure(mode : Neo4Net.Procedure.Mode.READ)]
 		 public virtual void ConflictingMode()
 		 {

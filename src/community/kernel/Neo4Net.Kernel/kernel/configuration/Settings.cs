@@ -49,14 +49,14 @@ namespace Neo4Net.Kernel.configuration
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Long.parseLong;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.default_advertised_address;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.default_advertised_address;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.default_listen_address;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.default_listen_address;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.fs.FileUtils.fixSeparatorsInPath;
+//	import static Neo4Net.io.fs.FileUtils.fixSeparatorsInPath;
 
 	/// <summary>
-	/// Create settings for configurations in Neo4Net. See <seealso cref="org.Neo4Net.graphdb.factory.GraphDatabaseSettings"/> for
+	/// Create settings for configurations in Neo4Net. See <seealso cref="Neo4Net.graphdb.factory.GraphDatabaseSettings"/> for
 	/// example.
 	/// 
 	/// <para>Each setting has a name, a parser that converts a string to the type of the setting, a default value,
@@ -128,7 +128,7 @@ namespace Neo4Net.Kernel.configuration
 			  /// <param name="inheritedSetting"> the setting to inherit value and default value from. </param>
 			  /// <exception cref="AssertionError"> if more than one inheritance is provided. </exception>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Nonnull public SettingBuilder<T> inherits(@Nonnull final org.Neo4Net.graphdb.config.Setting<T> inheritedSetting)
+//ORIGINAL LINE: @Nonnull public SettingBuilder<T> inherits(@Nonnull final Neo4Net.graphdb.config.Setting<T> inheritedSetting)
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 			  public SettingBuilder<T> Inherits( Setting<T> inheritedSetting )
 			  {
@@ -161,7 +161,7 @@ namespace Neo4Net.Kernel.configuration
 			  }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Nonnull public org.Neo4Net.graphdb.config.Setting<T> build()
+//ORIGINAL LINE: @Nonnull public Neo4Net.graphdb.config.Setting<T> build()
 			  public Setting<T> Build()
 			  {
 					System.Func<string, System.Func<string, string>, string> valueLookup = Named();
@@ -184,7 +184,7 @@ namespace Neo4Net.Kernel.configuration
 		 /// <param name="defaultValue"> the string representation of the default value. </param>
 		 /// @param <T> the concrete type of the setting. </param>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Nonnull public static <T> org.Neo4Net.graphdb.config.Setting<T> setting(@Nonnull final String name, @Nonnull final System.Func<String,T> parser, @Nullable final String defaultValue)
+//ORIGINAL LINE: @Nonnull public static <T> Neo4Net.graphdb.config.Setting<T> setting(@Nonnull final String name, @Nonnull final System.Func<String,T> parser, @Nullable final String defaultValue)
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 		 public static Setting<T> Setting<T>( string name, System.Func<string, T> parser, string defaultValue )
 		 {
@@ -362,7 +362,7 @@ namespace Neo4Net.Kernel.configuration
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private static <T> System.Func<String,System.Func<String, String>, String> inheritedValue(final System.Func<String,System.Func<String,String>, String> lookup, final org.Neo4Net.graphdb.config.Setting<T> inheritedSetting)
+//ORIGINAL LINE: private static <T> System.Func<String,System.Func<String, String>, String> inheritedValue(final System.Func<String,System.Func<String,String>, String> lookup, final Neo4Net.graphdb.config.Setting<T> inheritedSetting)
 		 private static System.Func<string, System.Func<string, string>, string> InheritedValue<T>( System.Func<string, System.Func<string, string>, string> lookup, Setting<T> inheritedSetting )
 		 {
 			  return ( name, settings ) =>
@@ -377,7 +377,7 @@ namespace Neo4Net.Kernel.configuration
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private static <T> System.Func<String,System.Func<String, String>, String> inheritedDefault(final System.Func<String,System.Func<String,String>, String> lookup, final org.Neo4Net.graphdb.config.Setting<T> inheritedSetting)
+//ORIGINAL LINE: private static <T> System.Func<String,System.Func<String, String>, String> inheritedDefault(final System.Func<String,System.Func<String,String>, String> lookup, final Neo4Net.graphdb.config.Setting<T> inheritedSetting)
 		 private static System.Func<string, System.Func<string, string>, string> InheritedDefault<T>( System.Func<string, System.Func<string, string>, string> lookup, Setting<T> inheritedSetting )
 		 {
 			  return ( name, settings ) =>
@@ -1581,7 +1581,7 @@ namespace Neo4Net.Kernel.configuration
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static org.Neo4Net.graphdb.config.BaseSetting<String> prefixSetting(final String name, final System.Func<String,String> parser, final String defaultValue)
+//ORIGINAL LINE: public static Neo4Net.graphdb.config.BaseSetting<String> prefixSetting(final String name, final System.Func<String,String> parser, final String defaultValue)
 		 public static BaseSetting<string> PrefixSetting( string name, System.Func<string, string> parser, string defaultValue )
 		 {
 			  System.Func<string, System.Func<string, string>, string> valueLookup = ( n, settings ) => settings.apply( n );
@@ -1597,7 +1597,7 @@ namespace Neo4Net.Kernel.configuration
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.util.Map<String,String> validate(java.util.Map<String,String> rawConfig, System.Action<String> warningConsumer) throws org.Neo4Net.graphdb.config.InvalidSettingException
+//ORIGINAL LINE: public java.util.Map<String,String> validate(java.util.Map<String,String> rawConfig, System.Action<String> warningConsumer) throws Neo4Net.graphdb.config.InvalidSettingException
 			 public override IDictionary<string, string> validate( IDictionary<string, string> rawConfig, System.Action<string> warningConsumer )
 			 {
 				  // Validate setting, if present or default value otherwise

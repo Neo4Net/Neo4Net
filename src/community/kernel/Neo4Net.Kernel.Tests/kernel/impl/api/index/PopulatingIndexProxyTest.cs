@@ -35,7 +35,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	public class PopulatingIndexProxyTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Mock private org.Neo4Net.Kernel.Api.StorageEngine.schema.CapableIndexDescriptor capableIndexDescriptor;
+//ORIGINAL LINE: @Mock private Neo4Net.Kernel.Api.StorageEngine.schema.CapableIndexDescriptor capableIndexDescriptor;
 		 private CapableIndexDescriptor _capableIndexDescriptor;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Mock private IndexPopulationJob indexPopulationJob;

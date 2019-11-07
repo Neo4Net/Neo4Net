@@ -34,7 +34,7 @@ namespace Neo4Net.tools.console.input
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Arrays.copyOfRange;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.tools.console.input.ConsoleUtil.tokenizeStringWithQuotes;
+//	import static Neo4Net.tools.console.input.ConsoleUtil.tokenizeStringWithQuotes;
 
 	/// <summary>
 	/// Useful utility which listens to input from console and reacts to each line, i.e. after each ENTER.

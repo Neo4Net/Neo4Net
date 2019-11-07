@@ -38,11 +38,11 @@ namespace Neo4Net.Kernel.ha
 	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.com.Protocol.readString;
+//	import static Neo4Net.com.Protocol.readString;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.com.Protocol.writeString;
+//	import static Neo4Net.com.Protocol.writeString;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.com.ProtocolVersion.INTERNAL_PROTOCOL_VERSION;
+//	import static Neo4Net.com.ProtocolVersion.INTERNAL_PROTOCOL_VERSION;
 
 	public class MasterClient320 : MasterClient310
 	{

@@ -26,7 +26,7 @@ namespace Neo4Net.Procedure
 	/// <para>
 	/// Procedures accept input, use that input to perform work, and then return a
 	/// <seealso cref="java.util.stream.Stream"/> of {@code Records}. The work performed usually
-	/// involves one or more resources, such as a <seealso cref="org.Neo4Net.graphdb.GraphDatabaseService"/>.
+	/// involves one or more resources, such as a <seealso cref="Neo4Net.graphdb.GraphDatabaseService"/>.
 	/// </para>
 	/// <para>
 	/// A procedure is associated with one of the following modes
@@ -49,9 +49,9 @@ namespace Neo4Net.Procedure
 	///     <li><seealso cref="Double"/> or {@code double}</li>
 	///     <li><seealso cref="Number"/></li>
 	///     <li><seealso cref="Boolean"/> or {@code boolean}</li>
-	///     <li><seealso cref="org.Neo4Net.graphdb.Node"/></li>
-	///     <li><seealso cref="org.Neo4Net.graphdb.Relationship"/></li>
-	///     <li><seealso cref="org.Neo4Net.graphdb.Path"/></li>
+	///     <li><seealso cref="Neo4Net.graphdb.Node"/></li>
+	///     <li><seealso cref="Neo4Net.graphdb.Relationship"/></li>
+	///     <li><seealso cref="Neo4Net.graphdb.Path"/></li>
 	///     <li><seealso cref="System.Collections.IDictionary"/> with key <seealso cref="string"/> and value of any type in this list, including <seealso cref="System.Collections.IDictionary"/></li>
 	///     <li><seealso cref="System.Collections.IList"/> with element type of any type in this list, including <seealso cref="System.Collections.IList"/></li>
 	///     <li><seealso cref="object"/>, meaning any of the valid input types above</li>
@@ -71,9 +71,9 @@ namespace Neo4Net.Procedure
 	///     <li><seealso cref="Double"/> or {@code double}</li>
 	///     <li><seealso cref="Number"/></li>
 	///     <li><seealso cref="Boolean"/> or {@code boolean}</li>
-	///     <li><seealso cref="org.Neo4Net.graphdb.Node"/></li>
-	///     <li><seealso cref="org.Neo4Net.graphdb.Relationship"/></li>
-	///     <li><seealso cref="org.Neo4Net.graphdb.Path"/></li>
+	///     <li><seealso cref="Neo4Net.graphdb.Node"/></li>
+	///     <li><seealso cref="Neo4Net.graphdb.Relationship"/></li>
+	///     <li><seealso cref="Neo4Net.graphdb.Path"/></li>
 	///     <li><seealso cref="System.Collections.IDictionary"/> with key <seealso cref="string"/> and value of any type in this list, including <seealso cref="System.Collections.IDictionary"/></li>
 	///     <li><seealso cref="System.Collections.IList"/> of elements of any valid field type, including <seealso cref="System.Collections.IList"/></li>
 	///     <li><seealso cref="object"/>, meaning any of the valid field types above</li>
@@ -92,9 +92,9 @@ namespace Neo4Net.Procedure
 	/// <para>
 	/// Resources supported by default are as follows:
 	/// <ul>
-	///     <li><seealso cref="org.Neo4Net.graphdb.GraphDatabaseService"/></li>
-	///     <li><seealso cref="org.Neo4Net.logging.Log"/></li>
-	///     <li><seealso cref="org.Neo4Net.procedure.TerminationGuard"/></li>
+	///     <li><seealso cref="Neo4Net.graphdb.GraphDatabaseService"/></li>
+	///     <li><seealso cref="Neo4Net.logging.Log"/></li>
+	///     <li><seealso cref="Neo4Net.procedure.TerminationGuard"/></li>
 	/// </ul>
 	/// 
 	/// <h2>Lifecycle and state</h2>

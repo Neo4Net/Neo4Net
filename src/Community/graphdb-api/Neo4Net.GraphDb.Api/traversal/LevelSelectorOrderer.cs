@@ -39,7 +39,7 @@ namespace Neo4Net.GraphDb.Traversal
             return new Entry();
         }
 
-        public override ITraversalBranch Next(TraversalContext metadata)
+        public override ITraversalBranch Next(ITraversalContext metadata)
         {
             ITraversalBranch branch = NextBranchFromCurrentSelector(metadata, false);
             Entry state = StateForCurrentSelector;
@@ -84,7 +84,7 @@ namespace Neo4Net.GraphDb.Traversal
             }
         }
 
-        internal class Entry
+        public class Entry
         {
             internal readonly AtomicInteger Depth = new AtomicInteger();
             internal ITraversalBranch Branch;

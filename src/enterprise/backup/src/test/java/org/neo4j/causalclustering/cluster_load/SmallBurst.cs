@@ -28,7 +28,7 @@ namespace Neo4Net.causalclustering.cluster_load
 	public class SmallBurst : ClusterLoad
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void start(org.Neo4Net.causalclustering.discovery.Cluster<?> cluster) throws Exception
+//ORIGINAL LINE: public void start(Neo4Net.causalclustering.discovery.Cluster<?> cluster) throws Exception
 		 public override void Start<T1>( Cluster<T1> cluster )
 		 {
 			  DataCreator.createEmptyNodes( cluster, 10 );

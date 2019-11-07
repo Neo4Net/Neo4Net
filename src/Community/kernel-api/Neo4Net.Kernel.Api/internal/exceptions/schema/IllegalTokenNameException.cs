@@ -23,7 +23,7 @@ namespace Neo4Net.Kernel.Api.Internal.Exceptions.Schema
 
 	public class IllegalTokenNameException : SchemaKernelException
 	{
-		 public IllegalTokenNameException( string tokenName ) : base( org.Neo4Net.kernel.api.exceptions.Status_Schema.TokenNameError, string.Format( "{0} is not a valid token name. Only non-null, non-empty strings are allowed.", !string.ReferenceEquals( tokenName, null ) ? "'" + tokenName + "'" : "Null" ) )
+		 public IllegalTokenNameException( string tokenName ) : base( Neo4Net.kernel.api.exceptions.Status_Schema.TokenNameError, string.Format( "{0} is not a valid token name. Only non-null, non-empty strings are allowed.", !string.ReferenceEquals( tokenName, null ) ? "'" + tokenName + "'" : "Null" ) )
 		 {
 		 }
 	}

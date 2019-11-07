@@ -22,7 +22,7 @@
 namespace Neo4Net.Index.impl.lucene.@explicit
 {
 
-	using ExplicitIndex = Neo4Net.Kernel.api.ExplicitIndex;
+	using ExplicitIndex = Neo4Net.Kernel.Api.ExplicitIndex;
 	using IndexEntityType = Neo4Net.Kernel.impl.index.IndexEntityType;
 	using ExplicitIndexProviderTransaction = Neo4Net.Kernel.spi.explicitindex.ExplicitIndexProviderTransaction;
 	using IndexCommandFactory = Neo4Net.Kernel.spi.explicitindex.IndexCommandFactory;

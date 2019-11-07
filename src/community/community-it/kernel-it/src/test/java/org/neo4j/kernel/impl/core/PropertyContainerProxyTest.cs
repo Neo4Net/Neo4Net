@@ -34,15 +34,15 @@ namespace Neo4Net.Kernel.impl.core
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.assertion.Assert.assertObjectOrArrayEquals;
+//	import static Neo4Net.test.assertion.Assert.assertObjectOrArrayEquals;
 
 	public abstract class IPropertyContainerProxyTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.DatabaseRule db = new org.Neo4Net.test.rule.ImpermanentDatabaseRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.DatabaseRule db = new Neo4Net.test.rule.ImpermanentDatabaseRule();
 		 public readonly DatabaseRule Db = new ImpermanentDatabaseRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.CleanupRule cleanup = new org.Neo4Net.test.rule.CleanupRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.CleanupRule cleanup = new Neo4Net.test.rule.CleanupRule();
 		 public readonly CleanupRule Cleanup = new CleanupRule();
 
 		 protected internal abstract long CreatePropertyContainer();

@@ -46,13 +46,13 @@ namespace Neo4Net.Bolt.v3.runtime
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.map;
+//	import static Neo4Net.helpers.collection.MapUtil.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.security.AuthToken_Fields.CREDENTIALS;
+//	import static Neo4Net.kernel.api.security.AuthToken_Fields.CREDENTIALS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.security.AuthToken_Fields.PRINCIPAL;
+//	import static Neo4Net.kernel.api.security.AuthToken_Fields.PRINCIPAL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.stringValue;
+//	import static Neo4Net.values.storable.Values.stringValue;
 
 	internal class ConnectedStateTest
 	{

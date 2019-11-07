@@ -48,71 +48,71 @@ namespace Neo4Net.GraphDb.factory
 	using LogTimeZone = Neo4Net.Logging.LogTimeZone;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.SchemaIndex.NATIVE_BTREE10;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.SchemaIndex.NATIVE_BTREE10;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.ByteUnit.kibiBytes;
+//	import static Neo4Net.io.ByteUnit.kibiBytes;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.BOOLEAN;
+//	import static Neo4Net.kernel.configuration.Settings.BOOLEAN;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.BYTES;
+//	import static Neo4Net.kernel.configuration.Settings.BYTES;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.DEFAULT;
+//	import static Neo4Net.kernel.configuration.Settings.DEFAULT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.DOUBLE;
+//	import static Neo4Net.kernel.configuration.Settings.DOUBLE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.DURATION;
+//	import static Neo4Net.kernel.configuration.Settings.DURATION;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.FALSE;
+//	import static Neo4Net.kernel.configuration.Settings.FALSE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.INTEGER;
+//	import static Neo4Net.kernel.configuration.Settings.INTEGER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.LONG;
+//	import static Neo4Net.kernel.configuration.Settings.LONG;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.NO_DEFAULT;
+//	import static Neo4Net.kernel.configuration.Settings.NO_DEFAULT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.PATH;
+//	import static Neo4Net.kernel.configuration.Settings.PATH;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.STRING;
+//	import static Neo4Net.kernel.configuration.Settings.STRING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.STRING_LIST;
+//	import static Neo4Net.kernel.configuration.Settings.STRING_LIST;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.TIMEZONE;
+//	import static Neo4Net.kernel.configuration.Settings.TIMEZONE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.TRUE;
+//	import static Neo4Net.kernel.configuration.Settings.TRUE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.advertisedAddress;
+//	import static Neo4Net.kernel.configuration.Settings.advertisedAddress;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.buildSetting;
+//	import static Neo4Net.kernel.configuration.Settings.buildSetting;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.derivedSetting;
+//	import static Neo4Net.kernel.configuration.Settings.derivedSetting;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.except;
+//	import static Neo4Net.kernel.configuration.Settings.except;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.illegalValueMessage;
+//	import static Neo4Net.kernel.configuration.Settings.illegalValueMessage;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.legacyFallback;
+//	import static Neo4Net.kernel.configuration.Settings.legacyFallback;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.list;
+//	import static Neo4Net.kernel.configuration.Settings.list;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.listenAddress;
+//	import static Neo4Net.kernel.configuration.Settings.listenAddress;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.matches;
+//	import static Neo4Net.kernel.configuration.Settings.matches;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.min;
+//	import static Neo4Net.kernel.configuration.Settings.min;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.optionsIgnoreCase;
+//	import static Neo4Net.kernel.configuration.Settings.optionsIgnoreCase;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.optionsObeyCase;
+//	import static Neo4Net.kernel.configuration.Settings.optionsObeyCase;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.pathSetting;
+//	import static Neo4Net.kernel.configuration.Settings.pathSetting;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.powerOf2;
+//	import static Neo4Net.kernel.configuration.Settings.powerOf2;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.range;
+//	import static Neo4Net.kernel.configuration.Settings.range;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.setting;
+//	import static Neo4Net.kernel.configuration.Settings.setting;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.ssl.LegacySslPolicyConfig.LEGACY_POLICY_NAME;
+//	import static Neo4Net.kernel.configuration.ssl.LegacySslPolicyConfig.LEGACY_POLICY_NAME;
 
 	/// <summary>
 	/// Settings for Neo4Net.
@@ -133,11 +133,11 @@ namespace Neo4Net.GraphDb.factory
 		 public const string DEFAULT_DATABASE_NAME = "graph.db";
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unused") @Migrator private static final org.Neo4Net.kernel.configuration.ConfigurationMigrator migrator = new org.Neo4Net.kernel.configuration.GraphDatabaseConfigurationMigrator();
+//ORIGINAL LINE: @SuppressWarnings("unused") @Migrator private static final Neo4Net.kernel.configuration.ConfigurationMigrator migrator = new Neo4Net.kernel.configuration.GraphDatabaseConfigurationMigrator();
 		 private static readonly ConfigurationMigrator _migrator = new GraphDatabaseConfigurationMigrator();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Internal @Description("Root relative to which directory settings are resolved. This is set in code and should never be " + "configured explicitly.") public static final org.Neo4Net.graphdb.config.Setting<java.io.File> Neo4Net_home = setting("unsupported.dbms.directories.Neo4Net_home", PATH, NO_DEFAULT);
+//ORIGINAL LINE: @Internal @Description("Root relative to which directory settings are resolved. This is set in code and should never be " + "configured explicitly.") public static final Neo4Net.graphdb.config.Setting<java.io.File> Neo4Net_home = setting("unsupported.dbms.directories.Neo4Net_home", PATH, NO_DEFAULT);
 		 [Description("Root relative to which directory settings are resolved. This is set in code and should never be " + "configured explicitly.")]
 		 public static readonly Setting<File> Neo4NetHome = setting( "unsupported.dbms.directories.Neo4Net_home", PATH, NO_DEFAULT );
 
@@ -149,12 +149,12 @@ namespace Neo4Net.GraphDb.factory
 		 public static readonly Setting<File> DataDirectory = pathSetting( "dbms.directories.data", "data" );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Internal public static final org.Neo4Net.graphdb.config.Setting<java.io.File> databases_root_path = derivedSetting("unsupported.dbms.directories.databases.root", data_directory, data -> new java.io.File(data, "databases"), PATH);
+//ORIGINAL LINE: @Internal public static final Neo4Net.graphdb.config.Setting<java.io.File> databases_root_path = derivedSetting("unsupported.dbms.directories.databases.root", data_directory, data -> new java.io.File(data, "databases"), PATH);
 		 public static readonly Setting<File> DatabasesRootPath = derivedSetting( "unsupported.dbms.directories.databases.root", DataDirectory, data => new File( data, "databases" ), PATH );
 
 		 /// @deprecated This setting is deprecated and will be removed in 4.0. 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Internal @Deprecated public static final org.Neo4Net.graphdb.config.Setting<java.io.File> database_path = derivedSetting("unsupported.dbms.directories.database", databases_root_path, active_database, (parent, child) -> new java.io.File(parent, child), PATH);
+//ORIGINAL LINE: @Internal @Deprecated public static final Neo4Net.graphdb.config.Setting<java.io.File> database_path = derivedSetting("unsupported.dbms.directories.database", databases_root_path, active_database, (parent, child) -> new java.io.File(parent, child), PATH);
 		 [Obsolete]
 		 public static readonly Setting<File> DatabasePath = derivedSetting( "unsupported.dbms.directories.database", DatabasesRootPath, ActiveDatabase, ( parent, child ) => new File( parent, child ), PATH );
 
@@ -162,30 +162,30 @@ namespace Neo4Net.GraphDb.factory
 		 public static readonly Setting<bool> ReadOnly = setting( "dbms.read_only", BOOLEAN, FALSE );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Internal public static final org.Neo4Net.graphdb.config.Setting<bool> ephemeral = setting("unsupported.dbms.ephemeral", BOOLEAN, FALSE);
+//ORIGINAL LINE: @Internal public static final Neo4Net.graphdb.config.Setting<bool> ephemeral = setting("unsupported.dbms.ephemeral", BOOLEAN, FALSE);
 		 public static readonly Setting<bool> Ephemeral = setting( "unsupported.dbms.ephemeral", BOOLEAN, FALSE );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Internal public static final org.Neo4Net.graphdb.config.Setting<String> lock_manager = setting("unsupported.dbms.lock_manager", STRING, "");
+//ORIGINAL LINE: @Internal public static final Neo4Net.graphdb.config.Setting<String> lock_manager = setting("unsupported.dbms.lock_manager", STRING, "");
 		 public static readonly Setting<string> LockManager = setting( "unsupported.dbms.lock_manager", STRING, "" );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Internal public static final org.Neo4Net.graphdb.config.Setting<String> tracer = setting("unsupported.dbms.tracer", STRING, NO_DEFAULT);
+//ORIGINAL LINE: @Internal public static final Neo4Net.graphdb.config.Setting<String> tracer = setting("unsupported.dbms.tracer", STRING, NO_DEFAULT);
 		 public static readonly Setting<string> Tracer = setting( "unsupported.dbms.tracer", STRING, NO_DEFAULT );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Internal public static final org.Neo4Net.graphdb.config.Setting<String> editionName = setting("unsupported.dbms.edition", STRING, org.Neo4Net.kernel.impl.factory.Edition.unknown.toString());
+//ORIGINAL LINE: @Internal public static final Neo4Net.graphdb.config.Setting<String> editionName = setting("unsupported.dbms.edition", STRING, Neo4Net.kernel.impl.factory.Edition.unknown.toString());
 		 public static readonly Setting<string> EditionName = setting( "unsupported.dbms.edition", STRING, Edition.unknown.ToString() );
 
 		 /// @deprecated This setting is deprecated and will be removed in 4.0.
-		 /// Please use connector configuration <seealso cref="org.Neo4Net.kernel.configuration.Connector.enabled"/> instead. 
+		 /// Please use connector configuration <seealso cref="Neo4Net.kernel.configuration.Connector.enabled"/> instead. 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Title("Disconnected") @Internal @Description("Disable all Bolt protocol connectors. This setting is deprecated and will be removed in 4.0. Please use connector configuration instead.") @Deprecated @ReplacedBy("dbms.connector.X.enabled") public static final org.Neo4Net.graphdb.config.Setting<bool> disconnected = setting("unsupported.dbms.disconnected", BOOLEAN, FALSE);
+//ORIGINAL LINE: @Title("Disconnected") @Internal @Description("Disable all Bolt protocol connectors. This setting is deprecated and will be removed in 4.0. Please use connector configuration instead.") @Deprecated @ReplacedBy("dbms.connector.X.enabled") public static final Neo4Net.graphdb.config.Setting<bool> disconnected = setting("unsupported.dbms.disconnected", BOOLEAN, FALSE);
 		 [Title("Disconnected"), Description("Disable all Bolt protocol connectors. This setting is deprecated and will be removed in 4.0. Please use connector configuration instead."), Obsolete, ReplacedBy("dbms.connector.X.enabled")]
 		 public static readonly Setting<bool> Disconnected = setting( "unsupported.dbms.disconnected", BOOLEAN, FALSE );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Print out the effective Neo4Net configuration after startup.") @Internal public static final org.Neo4Net.graphdb.config.Setting<bool> dump_configuration = setting("unsupported.dbms.report_configuration", BOOLEAN, FALSE);
+//ORIGINAL LINE: @Description("Print out the effective Neo4Net configuration after startup.") @Internal public static final Neo4Net.graphdb.config.Setting<bool> dump_configuration = setting("unsupported.dbms.report_configuration", BOOLEAN, FALSE);
 		 [Description("Print out the effective Neo4Net configuration after startup.")]
 		 public static readonly Setting<bool> DumpConfiguration = setting( "unsupported.dbms.report_configuration", BOOLEAN, FALSE );
 
@@ -222,22 +222,22 @@ namespace Neo4Net.GraphDb.factory
 		 public static readonly Setting<bool> CypherLenientCreateRelationship = setting( "cypher.lenient_create_relationship", BOOLEAN, FALSE );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Set this to specify the default runtime for the default language version.") @Internal public static final org.Neo4Net.graphdb.config.Setting<String> cypher_runtime = setting("unsupported.cypher.runtime", optionsIgnoreCase("INTERPRETED", "COMPILED", "SLOTTED", "MORSEL", DEFAULT), DEFAULT);
+//ORIGINAL LINE: @Description("Set this to specify the default runtime for the default language version.") @Internal public static final Neo4Net.graphdb.config.Setting<String> cypher_runtime = setting("unsupported.cypher.runtime", optionsIgnoreCase("INTERPRETED", "COMPILED", "SLOTTED", "MORSEL", DEFAULT), DEFAULT);
 		 [Description("Set this to specify the default runtime for the default language version.")]
 		 public static readonly Setting<string> CypherRuntime = setting( "unsupported.cypher.runtime", optionsIgnoreCase( "INTERPRETED", "COMPILED", "SLOTTED", "MORSEL", DEFAULT ), DEFAULT );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Choose the expression engine. The default is to only compile expressions that are hot, if 'COMPILED' " + "is chosen all expressions will be compiled directly and if 'INTERPRETED' is chosen expressions will " + "never be compiled.") @Internal public static final org.Neo4Net.graphdb.config.Setting<String> cypher_expression_engine = setting("unsupported.cypher.expression_engine", optionsIgnoreCase("INTERPRETED", "COMPILED", "ONLY_WHEN_HOT", DEFAULT), DEFAULT);
+//ORIGINAL LINE: @Description("Choose the expression engine. The default is to only compile expressions that are hot, if 'COMPILED' " + "is chosen all expressions will be compiled directly and if 'INTERPRETED' is chosen expressions will " + "never be compiled.") @Internal public static final Neo4Net.graphdb.config.Setting<String> cypher_expression_engine = setting("unsupported.cypher.expression_engine", optionsIgnoreCase("INTERPRETED", "COMPILED", "ONLY_WHEN_HOT", DEFAULT), DEFAULT);
 		 [Description("Choose the expression engine. The default is to only compile expressions that are hot, if 'COMPILED' " + "is chosen all expressions will be compiled directly and if 'INTERPRETED' is chosen expressions will " + "never be compiled.")]
 		 public static readonly Setting<string> CypherExpressionEngine = setting( "unsupported.cypher.expression_engine", optionsIgnoreCase( "INTERPRETED", "COMPILED", "ONLY_WHEN_HOT", DEFAULT ), DEFAULT );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Number of uses before an expression is considered for compilation") @Internal public static final org.Neo4Net.graphdb.config.Setting<int> cypher_expression_recompilation_limit = buildSetting("unsupported.cypher.expression_recompilation_limit", INTEGER, "1").constraint(min(0)).build();
+//ORIGINAL LINE: @Description("Number of uses before an expression is considered for compilation") @Internal public static final Neo4Net.graphdb.config.Setting<int> cypher_expression_recompilation_limit = buildSetting("unsupported.cypher.expression_recompilation_limit", INTEGER, "1").constraint(min(0)).build();
 		 [Description("Number of uses before an expression is considered for compilation")]
 		 public static readonly Setting<int> CypherExpressionRecompilationLimit = buildSetting( "unsupported.cypher.expression_recompilation_limit", INTEGER, "1" ).constraint( min( 0 ) ).build();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Enable tracing of compilation in cypher.") @Internal public static final org.Neo4Net.graphdb.config.Setting<bool> cypher_compiler_tracing = setting("unsupported.cypher.compiler_tracing", BOOLEAN, FALSE);
+//ORIGINAL LINE: @Description("Enable tracing of compilation in cypher.") @Internal public static final Neo4Net.graphdb.config.Setting<bool> cypher_compiler_tracing = setting("unsupported.cypher.compiler_tracing", BOOLEAN, FALSE);
 		 [Description("Enable tracing of compilation in cypher.")]
 		 public static readonly Setting<bool> CypherCompilerTracing = setting( "unsupported.cypher.compiler_tracing", BOOLEAN, FALSE );
 
@@ -248,22 +248,22 @@ namespace Neo4Net.GraphDb.factory
 		 public static readonly Setting<double> QueryStatisticsDivergenceThreshold = buildSetting( "cypher.statistics_divergence_threshold", DOUBLE, "0.75" ).constraint( range( 0.0, 1.0 ) ).build();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Large databases might change slowly, and so to prevent queries from never being replanned " + "the divergence threshold set by cypher.statistics_divergence_threshold is configured to " + "shrink over time. " + "The algorithm used to manage this change is set by unsupported.cypher.replan_algorithm " + "and will cause the threshold to reach the value set here once the time since the previous " + "replanning has reached unsupported.cypher.target_replan_interval. " + "Setting this value to higher than the cypher.statistics_divergence_threshold will cause the " + "threshold to not decay over time.") @Internal public static final org.Neo4Net.graphdb.config.Setting<double> query_statistics_divergence_target = buildSetting("unsupported.cypher.statistics_divergence_target", DOUBLE, "0.10").constraint(range(0.0, 1.0)).build();
+//ORIGINAL LINE: @Description("Large databases might change slowly, and so to prevent queries from never being replanned " + "the divergence threshold set by cypher.statistics_divergence_threshold is configured to " + "shrink over time. " + "The algorithm used to manage this change is set by unsupported.cypher.replan_algorithm " + "and will cause the threshold to reach the value set here once the time since the previous " + "replanning has reached unsupported.cypher.target_replan_interval. " + "Setting this value to higher than the cypher.statistics_divergence_threshold will cause the " + "threshold to not decay over time.") @Internal public static final Neo4Net.graphdb.config.Setting<double> query_statistics_divergence_target = buildSetting("unsupported.cypher.statistics_divergence_target", DOUBLE, "0.10").constraint(range(0.0, 1.0)).build();
 		 [Description("Large databases might change slowly, and so to prevent queries from never being replanned " + "the divergence threshold set by cypher.statistics_divergence_threshold is configured to " + "shrink over time. " + "The algorithm used to manage this change is set by unsupported.cypher.replan_algorithm " + "and will cause the threshold to reach the value set here once the time since the previous " + "replanning has reached unsupported.cypher.target_replan_interval. " + "Setting this value to higher than the cypher.statistics_divergence_threshold will cause the " + "threshold to not decay over time.")]
 		 public static readonly Setting<double> QueryStatisticsDivergenceTarget = buildSetting( "unsupported.cypher.statistics_divergence_target", DOUBLE, "0.10" ).constraint( range( 0.0, 1.0 ) ).build();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("The threshold when a warning is generated if a label scan is done after a load csv " + "where the label has no index") @Internal public static final org.Neo4Net.graphdb.config.Setting<long> query_non_indexed_label_warning_threshold = setting("unsupported.cypher.non_indexed_label_warning_threshold", LONG, "10000");
+//ORIGINAL LINE: @Description("The threshold when a warning is generated if a label scan is done after a load csv " + "where the label has no index") @Internal public static final Neo4Net.graphdb.config.Setting<long> query_non_indexed_label_warning_threshold = setting("unsupported.cypher.non_indexed_label_warning_threshold", LONG, "10000");
 		 [Description("The threshold when a warning is generated if a label scan is done after a load csv " + "where the label has no index")]
 		 public static readonly Setting<long> QueryNonIndexedLabelWarningThreshold = setting( "unsupported.cypher.non_indexed_label_warning_threshold", LONG, "10000" );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("To improve IDP query planning time, we can restrict the internal planning table size, " + "triggering compaction of candidate plans. The smaller the threshold the faster the planning, " + "but the higher the risk of sub-optimal plans.") @Internal public static final org.Neo4Net.graphdb.config.Setting<int> cypher_idp_solver_table_threshold = buildSetting("unsupported.cypher.idp_solver_table_threshold", INTEGER, "128").constraint(min(16)).build();
+//ORIGINAL LINE: @Description("To improve IDP query planning time, we can restrict the internal planning table size, " + "triggering compaction of candidate plans. The smaller the threshold the faster the planning, " + "but the higher the risk of sub-optimal plans.") @Internal public static final Neo4Net.graphdb.config.Setting<int> cypher_idp_solver_table_threshold = buildSetting("unsupported.cypher.idp_solver_table_threshold", INTEGER, "128").constraint(min(16)).build();
 		 [Description("To improve IDP query planning time, we can restrict the internal planning table size, " + "triggering compaction of candidate plans. The smaller the threshold the faster the planning, " + "but the higher the risk of sub-optimal plans.")]
 		 public static readonly Setting<int> CypherIdpSolverTableThreshold = buildSetting( "unsupported.cypher.idp_solver_table_threshold", INTEGER, "128" ).constraint( min( 16 ) ).build();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("To improve IDP query planning time, we can restrict the internal planning loop duration, " + "triggering more frequent compaction of candidate plans. The smaller the threshold the " + "faster the planning, but the higher the risk of sub-optimal plans.") @Internal public static final org.Neo4Net.graphdb.config.Setting<long> cypher_idp_solver_duration_threshold = buildSetting("unsupported.cypher.idp_solver_duration_threshold", LONG, "1000").constraint(min(10L)).build();
+//ORIGINAL LINE: @Description("To improve IDP query planning time, we can restrict the internal planning loop duration, " + "triggering more frequent compaction of candidate plans. The smaller the threshold the " + "faster the planning, but the higher the risk of sub-optimal plans.") @Internal public static final Neo4Net.graphdb.config.Setting<long> cypher_idp_solver_duration_threshold = buildSetting("unsupported.cypher.idp_solver_duration_threshold", LONG, "1000").constraint(min(10L)).build();
 		 [Description("To improve IDP query planning time, we can restrict the internal planning loop duration, " + "triggering more frequent compaction of candidate plans. The smaller the threshold the " + "faster the planning, but the higher the risk of sub-optimal plans.")]
 		 public static readonly Setting<long> CypherIdpSolverDurationThreshold = buildSetting( "unsupported.cypher.idp_solver_duration_threshold", LONG, "1000" ).constraint( min( 10L ) ).build();
 
@@ -271,17 +271,17 @@ namespace Neo4Net.GraphDb.factory
 		 public static readonly Setting<Duration> CypherMinReplanInterval = setting( "cypher.min_replan_interval", DURATION, "10s" );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Large databases might change slowly, and to prevent queries from never being replanned " + "the divergence threshold set by cypher.statistics_divergence_threshold is configured to " + "shrink over time. The algorithm used to manage this change is set by " + "unsupported.cypher.replan_algorithm and will cause the threshold to reach " + "the value set by unsupported.cypher.statistics_divergence_target once the time since the " + "previous replanning has reached the value set here. Setting this value to less than the " + "value of cypher.min_replan_interval will cause the threshold to not decay over time.") @Internal public static final org.Neo4Net.graphdb.config.Setting<java.time.Duration> cypher_replan_interval_target = setting("unsupported.cypher.target_replan_interval", DURATION, "7h");
+//ORIGINAL LINE: @Description("Large databases might change slowly, and to prevent queries from never being replanned " + "the divergence threshold set by cypher.statistics_divergence_threshold is configured to " + "shrink over time. The algorithm used to manage this change is set by " + "unsupported.cypher.replan_algorithm and will cause the threshold to reach " + "the value set by unsupported.cypher.statistics_divergence_target once the time since the " + "previous replanning has reached the value set here. Setting this value to less than the " + "value of cypher.min_replan_interval will cause the threshold to not decay over time.") @Internal public static final Neo4Net.graphdb.config.Setting<java.time.Duration> cypher_replan_interval_target = setting("unsupported.cypher.target_replan_interval", DURATION, "7h");
 		 [Description("Large databases might change slowly, and to prevent queries from never being replanned " + "the divergence threshold set by cypher.statistics_divergence_threshold is configured to " + "shrink over time. The algorithm used to manage this change is set by " + "unsupported.cypher.replan_algorithm and will cause the threshold to reach " + "the value set by unsupported.cypher.statistics_divergence_target once the time since the " + "previous replanning has reached the value set here. Setting this value to less than the " + "value of cypher.min_replan_interval will cause the threshold to not decay over time.")]
 		 public static readonly Setting<Duration> CypherReplanIntervalTarget = setting( "unsupported.cypher.target_replan_interval", DURATION, "7h" );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Large databases might change slowly, and to prevent queries from never being replanned " + "the divergence threshold set by cypher.statistics_divergence_threshold is configured to " + "shrink over time using the algorithm set here. This will cause the threshold to reach " + "the value set by unsupported.cypher.statistics_divergence_target once the time since the " + "previous replanning has reached the value set in unsupported.cypher.target_replan_interval. " + "Setting the algorithm to 'none' will cause the threshold to not decay over time.") @Internal public static final org.Neo4Net.graphdb.config.Setting<String> cypher_replan_algorithm = setting("unsupported.cypher.replan_algorithm", optionsObeyCase("inverse", "exponential", "none", DEFAULT), DEFAULT);
+//ORIGINAL LINE: @Description("Large databases might change slowly, and to prevent queries from never being replanned " + "the divergence threshold set by cypher.statistics_divergence_threshold is configured to " + "shrink over time using the algorithm set here. This will cause the threshold to reach " + "the value set by unsupported.cypher.statistics_divergence_target once the time since the " + "previous replanning has reached the value set in unsupported.cypher.target_replan_interval. " + "Setting the algorithm to 'none' will cause the threshold to not decay over time.") @Internal public static final Neo4Net.graphdb.config.Setting<String> cypher_replan_algorithm = setting("unsupported.cypher.replan_algorithm", optionsObeyCase("inverse", "exponential", "none", DEFAULT), DEFAULT);
 		 [Description("Large databases might change slowly, and to prevent queries from never being replanned " + "the divergence threshold set by cypher.statistics_divergence_threshold is configured to " + "shrink over time using the algorithm set here. This will cause the threshold to reach " + "the value set by unsupported.cypher.statistics_divergence_target once the time since the " + "previous replanning has reached the value set in unsupported.cypher.target_replan_interval. " + "Setting the algorithm to 'none' will cause the threshold to not decay over time.")]
 		 public static readonly Setting<string> CypherReplanAlgorithm = setting( "unsupported.cypher.replan_algorithm", optionsObeyCase( "inverse", "exponential", "none", DEFAULT ), DEFAULT );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Enable using minimum cardinality estimates in the Cypher cost planner, so that cardinality " + "estimates for logical plan operators are not allowed to go below certain thresholds even when " + "the statistics give smaller numbers. " + "This is especially useful for large import queries that write nodes and relationships " + "into an empty or small database, where the generated query plan needs to be able to scale " + "beyond the initial statistics. Otherwise, when this is disabled, the statistics on an empty " + "or tiny database may lead the cost planner to for example pick a scan over an index seek, even " + "when an index exists, because of a lower estimated cost.") @Internal public static final org.Neo4Net.graphdb.config.Setting<bool> cypher_plan_with_minimum_cardinality_estimates = setting("unsupported.cypher.plan_with_minimum_cardinality_estimates", BOOLEAN, TRUE);
+//ORIGINAL LINE: @Description("Enable using minimum cardinality estimates in the Cypher cost planner, so that cardinality " + "estimates for logical plan operators are not allowed to go below certain thresholds even when " + "the statistics give smaller numbers. " + "This is especially useful for large import queries that write nodes and relationships " + "into an empty or small database, where the generated query plan needs to be able to scale " + "beyond the initial statistics. Otherwise, when this is disabled, the statistics on an empty " + "or tiny database may lead the cost planner to for example pick a scan over an index seek, even " + "when an index exists, because of a lower estimated cost.") @Internal public static final Neo4Net.graphdb.config.Setting<bool> cypher_plan_with_minimum_cardinality_estimates = setting("unsupported.cypher.plan_with_minimum_cardinality_estimates", BOOLEAN, TRUE);
 		 [Description("Enable using minimum cardinality estimates in the Cypher cost planner, so that cardinality " + "estimates for logical plan operators are not allowed to go below certain thresholds even when " + "the statistics give smaller numbers. " + "This is especially useful for large import queries that write nodes and relationships " + "into an empty or small database, where the generated query plan needs to be able to scale " + "beyond the initial statistics. Otherwise, when this is disabled, the statistics on an empty " + "or tiny database may lead the cost planner to for example pick a scan over an index seek, even " + "when an index exists, because of a lower estimated cost.")]
 		 public static readonly Setting<bool> CypherPlanWithMinimumCardinalityEstimates = setting( "unsupported.cypher.plan_with_minimum_cardinality_estimates", BOOLEAN, TRUE );
 
@@ -298,58 +298,58 @@ namespace Neo4Net.GraphDb.factory
 		 public static Setting<int> CsvBufferSize = buildSetting( "dbms.import.csv.buffer_size", INTEGER, Convert.ToString( 2 * Neo4Net.Csv.Reader.Configuration_Fields.Mb ) ).constraint( min( 1 ) ).build();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Enables or disables tracking of how much time a query spends actively executing on the CPU. " + "Calling `dbms.listQueries` will display the time. " + "This can also be logged in the query log by using `log_queries_detailed_time_logging_enabled`.") @Dynamic public static final org.Neo4Net.graphdb.config.Setting<bool> track_query_cpu_time = setting("dbms.track_query_cpu_time", BOOLEAN, FALSE);
+//ORIGINAL LINE: @Description("Enables or disables tracking of how much time a query spends actively executing on the CPU. " + "Calling `dbms.listQueries` will display the time. " + "This can also be logged in the query log by using `log_queries_detailed_time_logging_enabled`.") @Dynamic public static final Neo4Net.graphdb.config.Setting<bool> track_query_cpu_time = setting("dbms.track_query_cpu_time", BOOLEAN, FALSE);
 		 [Description("Enables or disables tracking of how much time a query spends actively executing on the CPU. " + "Calling `dbms.listQueries` will display the time. " + "This can also be logged in the query log by using `log_queries_detailed_time_logging_enabled`.")]
 		 public static readonly Setting<bool> TrackQueryCpuTime = setting( "dbms.track_query_cpu_time", BOOLEAN, FALSE );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Enables or disables tracking of how many bytes are allocated by the execution of a query. " + "Calling `dbms.listQueries` will display the time. " + "This can also be logged in the query log by using `log_queries_allocation_logging_enabled`.") @Dynamic public static final org.Neo4Net.graphdb.config.Setting<bool> track_query_allocation = setting("dbms.track_query_allocation", BOOLEAN, FALSE);
+//ORIGINAL LINE: @Description("Enables or disables tracking of how many bytes are allocated by the execution of a query. " + "Calling `dbms.listQueries` will display the time. " + "This can also be logged in the query log by using `log_queries_allocation_logging_enabled`.") @Dynamic public static final Neo4Net.graphdb.config.Setting<bool> track_query_allocation = setting("dbms.track_query_allocation", BOOLEAN, FALSE);
 		 [Description("Enables or disables tracking of how many bytes are allocated by the execution of a query. " + "Calling `dbms.listQueries` will display the time. " + "This can also be logged in the query log by using `log_queries_allocation_logging_enabled`.")]
 		 public static readonly Setting<bool> TrackQueryAllocation = setting( "dbms.track_query_allocation", BOOLEAN, FALSE );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Enable tracing of morsel runtime scheduler.") @Internal public static final org.Neo4Net.graphdb.config.Setting<bool> enable_morsel_runtime_trace = setting("unsupported.cypher.enable_morsel_runtime_trace", BOOLEAN, FALSE);
+//ORIGINAL LINE: @Description("Enable tracing of morsel runtime scheduler.") @Internal public static final Neo4Net.graphdb.config.Setting<bool> enable_morsel_runtime_trace = setting("unsupported.cypher.enable_morsel_runtime_trace", BOOLEAN, FALSE);
 		 [Description("Enable tracing of morsel runtime scheduler.")]
 		 public static readonly Setting<bool> EnableMorselRuntimeTrace = setting( "unsupported.cypher.enable_morsel_runtime_trace", BOOLEAN, FALSE );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("The size of the morsels") @Internal public static final org.Neo4Net.graphdb.config.Setting<int> cypher_morsel_size = setting("unsupported.cypher.morsel_size", INTEGER, "10000");
+//ORIGINAL LINE: @Description("The size of the morsels") @Internal public static final Neo4Net.graphdb.config.Setting<int> cypher_morsel_size = setting("unsupported.cypher.morsel_size", INTEGER, "10000");
 		 [Description("The size of the morsels")]
 		 public static readonly Setting<int> CypherMorselSize = setting( "unsupported.cypher.morsel_size", INTEGER, "10000" );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Duration in milliseconds that parallel runtime waits on a task before trying another task") @Internal public static final org.Neo4Net.graphdb.config.Setting<int> cypher_task_wait = setting("unsupported.cypher.task_wait", INTEGER, "30000");
+//ORIGINAL LINE: @Description("Duration in milliseconds that parallel runtime waits on a task before trying another task") @Internal public static final Neo4Net.graphdb.config.Setting<int> cypher_task_wait = setting("unsupported.cypher.task_wait", INTEGER, "30000");
 		 [Description("Duration in milliseconds that parallel runtime waits on a task before trying another task")]
 		 public static readonly Setting<int> CypherTaskWait = setting( "unsupported.cypher.task_wait", INTEGER, "30000" );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Number of threads to allocate to Cypher worker threads. If set to 0, two workers will be started" + " for every physical core in the system.") @Internal public static final org.Neo4Net.graphdb.config.Setting<int> cypher_worker_count = setting("unsupported.cypher.number_of_workers", INTEGER, "0");
+//ORIGINAL LINE: @Description("Number of threads to allocate to Cypher worker threads. If set to 0, two workers will be started" + " for every physical core in the system.") @Internal public static final Neo4Net.graphdb.config.Setting<int> cypher_worker_count = setting("unsupported.cypher.number_of_workers", INTEGER, "0");
 		 [Description("Number of threads to allocate to Cypher worker threads. If set to 0, two workers will be started" + " for every physical core in the system.")]
 		 public static readonly Setting<int> CypherWorkerCount = setting( "unsupported.cypher.number_of_workers", INTEGER, "0" );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Max number of recent queries to collect in the data collector module. Will round down to the" + " nearest power of two. The default number (8192 query invocations) " + " was chosen as a trade-off between getting a useful amount of queries, and not" + " wasting too much heap. Even with a buffer full of unique queries, the estimated" + " footprint lies in tens of MBs. If the buffer is full of cached queries, the" + " retained size was measured to 265 kB. Setting this to 0 will disable data collection" + " of queries completely.") @Internal public static final org.Neo4Net.graphdb.config.Setting<int> data_collector_max_recent_query_count = buildSetting("unsupported.datacollector.max_recent_query_count", INTEGER, "8192").constraint(min(0)).build();
+//ORIGINAL LINE: @Description("Max number of recent queries to collect in the data collector module. Will round down to the" + " nearest power of two. The default number (8192 query invocations) " + " was chosen as a trade-off between getting a useful amount of queries, and not" + " wasting too much heap. Even with a buffer full of unique queries, the estimated" + " footprint lies in tens of MBs. If the buffer is full of cached queries, the" + " retained size was measured to 265 kB. Setting this to 0 will disable data collection" + " of queries completely.") @Internal public static final Neo4Net.graphdb.config.Setting<int> data_collector_max_recent_query_count = buildSetting("unsupported.datacollector.max_recent_query_count", INTEGER, "8192").constraint(min(0)).build();
 		 [Description("Max number of recent queries to collect in the data collector module. Will round down to the" + " nearest power of two. The default number (8192 query invocations) " + " was chosen as a trade-off between getting a useful amount of queries, and not" + " wasting too much heap. Even with a buffer full of unique queries, the estimated" + " footprint lies in tens of MBs. If the buffer is full of cached queries, the" + " retained size was measured to 265 kB. Setting this to 0 will disable data collection" + " of queries completely.")]
 		 public static readonly Setting<int> DataCollectorMaxRecentQueryCount = buildSetting( "unsupported.datacollector.max_recent_query_count", INTEGER, "8192" ).constraint( min( 0 ) ).build();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Sets the upper limit for how much of the query text that will be retained by the query collector." + " For queries longer than the limit, only a prefix of size limit will be retained by the collector." + " Lowering this value will reduce the memory footprint of collected query invocations under loads with" + " many queries with long query texts, which could occur for generated queries. The downside is that" + " on retrieving queries by `db.stats.retrieve`, queries longer than this max size would be returned" + " incomplete. Setting this to 0 will completely drop query texts from the collected queries.") @Internal public static final org.Neo4Net.graphdb.config.Setting<int> data_collector_max_query_text_size = buildSetting("unsupported.datacollector.max_query_text_size", INTEGER, "10000").constraint(min(0)).build();
+//ORIGINAL LINE: @Description("Sets the upper limit for how much of the query text that will be retained by the query collector." + " For queries longer than the limit, only a prefix of size limit will be retained by the collector." + " Lowering this value will reduce the memory footprint of collected query invocations under loads with" + " many queries with long query texts, which could occur for generated queries. The downside is that" + " on retrieving queries by `db.stats.retrieve`, queries longer than this max size would be returned" + " incomplete. Setting this to 0 will completely drop query texts from the collected queries.") @Internal public static final Neo4Net.graphdb.config.Setting<int> data_collector_max_query_text_size = buildSetting("unsupported.datacollector.max_query_text_size", INTEGER, "10000").constraint(min(0)).build();
 		 [Description("Sets the upper limit for how much of the query text that will be retained by the query collector." + " For queries longer than the limit, only a prefix of size limit will be retained by the collector." + " Lowering this value will reduce the memory footprint of collected query invocations under loads with" + " many queries with long query texts, which could occur for generated queries. The downside is that" + " on retrieving queries by `db.stats.retrieve`, queries longer than this max size would be returned" + " incomplete. Setting this to 0 will completely drop query texts from the collected queries.")]
 		 public static readonly Setting<int> DataCollectorMaxQueryTextSize = buildSetting( "unsupported.datacollector.max_query_text_size", INTEGER, "10000" ).constraint( min( 0 ) ).build();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("The maximum amount of time to wait for the database to become available, when " + "starting a new transaction.") @Internal public static final org.Neo4Net.graphdb.config.Setting<java.time.Duration> transaction_start_timeout = setting("unsupported.dbms.transaction_start_timeout", DURATION, "1s");
+//ORIGINAL LINE: @Description("The maximum amount of time to wait for the database to become available, when " + "starting a new transaction.") @Internal public static final Neo4Net.graphdb.config.Setting<java.time.Duration> transaction_start_timeout = setting("unsupported.dbms.transaction_start_timeout", DURATION, "1s");
 		 [Description("The maximum amount of time to wait for the database to become available, when " + "starting a new transaction.")]
 		 public static readonly Setting<Duration> TransactionStartTimeout = setting( "unsupported.dbms.transaction_start_timeout", DURATION, "1s" );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Internal @Description("Please use dbms.transaction.timeout instead.") @Deprecated @ReplacedBy("dbms.transaction.timeout") public static final org.Neo4Net.graphdb.config.Setting<bool> execution_guard_enabled = setting("unsupported.dbms.executiontime_limit.enabled", BOOLEAN, FALSE);
+//ORIGINAL LINE: @Internal @Description("Please use dbms.transaction.timeout instead.") @Deprecated @ReplacedBy("dbms.transaction.timeout") public static final Neo4Net.graphdb.config.Setting<bool> execution_guard_enabled = setting("unsupported.dbms.executiontime_limit.enabled", BOOLEAN, FALSE);
 		 [Description("Please use dbms.transaction.timeout instead."), Obsolete, ReplacedBy("dbms.transaction.timeout")]
 		 public static readonly Setting<bool> ExecutionGuardEnabled = setting( "unsupported.dbms.executiontime_limit.enabled", BOOLEAN, FALSE );
 
 		  // @see Status.Transaction#TransactionTimedOut
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("The maximum time interval of a transaction within which it should be completed.") @Dynamic public static final org.Neo4Net.graphdb.config.Setting<java.time.Duration> transaction_timeout = setting("dbms.transaction.timeout", DURATION, String.ValueOf(UNSPECIFIED_TIMEOUT));
+//ORIGINAL LINE: @Description("The maximum time interval of a transaction within which it should be completed.") @Dynamic public static final Neo4Net.graphdb.config.Setting<java.time.Duration> transaction_timeout = setting("dbms.transaction.timeout", DURATION, String.ValueOf(UNSPECIFIED_TIMEOUT));
 		 [Description("The maximum time interval of a transaction within which it should be completed.")]
 		 public static readonly Setting<Duration> TransactionTimeout = setting( "dbms.transaction.timeout", DURATION, UNSPECIFIED_TIMEOUT.ToString() );
 
@@ -373,9 +373,9 @@ namespace Neo4Net.GraphDb.factory
 		 public static readonly Setting<long> StoreInternalLogRotationThreshold = buildSetting( "dbms.logs.debug.rotation.size", BYTES, "20m" ).constraint( range( 0L, long.MaxValue ) ).build();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Debug log contexts that should output debug level logging") @Internal public static final org.Neo4Net.graphdb.config.Setting<java.util.List<String>> store_internal_debug_contexts = setting("unsupported.dbms.logs.debug.debug_loggers", list(",", STRING), "org.Neo4Net.diagnostics,org.Neo4Net.cluster.protocol,org.Neo4Net.kernel.ha");
+//ORIGINAL LINE: @Description("Debug log contexts that should output debug level logging") @Internal public static final Neo4Net.graphdb.config.Setting<java.util.List<String>> store_internal_debug_contexts = setting("unsupported.dbms.logs.debug.debug_loggers", list(",", STRING), "Neo4Net.diagnostics,Neo4Net.cluster.protocol,Neo4Net.kernel.ha");
 		 [Description("Debug log contexts that should output debug level logging")]
-		 public static readonly Setting<IList<string>> StoreInternalDebugContexts = setting( "unsupported.dbms.logs.debug.debug_loggers", list( ",", STRING ), "org.Neo4Net.diagnostics,org.Neo4Net.cluster.protocol,org.Neo4Net.kernel.ha" );
+		 public static readonly Setting<IList<string>> StoreInternalDebugContexts = setting( "unsupported.dbms.logs.debug.debug_loggers", list( ",", STRING ), "Neo4Net.diagnostics,Neo4Net.cluster.protocol,Neo4Net.kernel.ha" );
 
 		 [Description("Debug log level threshold.")]
 		 public static readonly Setting<Level> StoreInternalLogLevel = setting( "dbms.logs.debug.level", optionsObeyCase( typeof( Level ) ), "INFO" );
@@ -390,7 +390,7 @@ namespace Neo4Net.GraphDb.factory
 		 public static readonly Setting<ZoneId> DbTemporalTimezone = setting( "db.temporal.timezone", TIMEZONE, ZoneOffset.UTC.ToString() );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Maximum time to wait for active transaction completion when rotating counts store") @Internal public static final org.Neo4Net.graphdb.config.Setting<java.time.Duration> counts_store_rotation_timeout = setting("unsupported.dbms.counts_store_rotation_timeout", DURATION, "10m");
+//ORIGINAL LINE: @Description("Maximum time to wait for active transaction completion when rotating counts store") @Internal public static final Neo4Net.graphdb.config.Setting<java.time.Duration> counts_store_rotation_timeout = setting("unsupported.dbms.counts_store_rotation_timeout", DURATION, "10m");
 		 [Description("Maximum time to wait for active transaction completion when rotating counts store")]
 		 public static readonly Setting<Duration> CountsStoreRotationTimeout = setting( "unsupported.dbms.counts_store_rotation_timeout", DURATION, "10m" );
 
@@ -416,28 +416,28 @@ namespace Neo4Net.GraphDb.factory
 		 public static readonly Setting<Duration> CheckPointIntervalTime = setting( "dbms.checkpoint.interval.time", DURATION, "15m" );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Dynamic @Description("Limit the number of IOs the background checkpoint process will consume per second. " + "This setting is advisory, is ignored in Neo4Net Community Edition, and is followed to " + "best effort in Enterprise Edition. " + "An IO is in this case a 8 KiB (mostly sequential) write. Limiting the write IO in " + "this way will leave more bandwidth in the IO subsystem to service random-read IOs, " + "which is important for the response time of queries when the database cannot fit " + "entirely in memory. The only drawback of this setting is that longer checkpoint times " + "may lead to slightly longer recovery times in case of a database or system crash. " + "A lower number means lower IO pressure, and consequently longer checkpoint times. " + "Set this to -1 to disable the IOPS limit and remove the limitation entirely; " + "this will let the checkpointer flush data as fast as the hardware will go. " + "Removing the setting, or commenting it out, will set the default value of 300.") public static final org.Neo4Net.graphdb.config.Setting<int> check_point_iops_limit = setting("dbms.checkpoint.iops.limit", INTEGER, "300");
+//ORIGINAL LINE: @Dynamic @Description("Limit the number of IOs the background checkpoint process will consume per second. " + "This setting is advisory, is ignored in Neo4Net Community Edition, and is followed to " + "best effort in Enterprise Edition. " + "An IO is in this case a 8 KiB (mostly sequential) write. Limiting the write IO in " + "this way will leave more bandwidth in the IO subsystem to service random-read IOs, " + "which is important for the response time of queries when the database cannot fit " + "entirely in memory. The only drawback of this setting is that longer checkpoint times " + "may lead to slightly longer recovery times in case of a database or system crash. " + "A lower number means lower IO pressure, and consequently longer checkpoint times. " + "Set this to -1 to disable the IOPS limit and remove the limitation entirely; " + "this will let the checkpointer flush data as fast as the hardware will go. " + "Removing the setting, or commenting it out, will set the default value of 300.") public static final Neo4Net.graphdb.config.Setting<int> check_point_iops_limit = setting("dbms.checkpoint.iops.limit", INTEGER, "300");
 		 [Description("Limit the number of IOs the background checkpoint process will consume per second. " + "This setting is advisory, is ignored in Neo4Net Community Edition, and is followed to " + "best effort in Enterprise Edition. " + "An IO is in this case a 8 KiB (mostly sequential) write. Limiting the write IO in " + "this way will leave more bandwidth in the IO subsystem to service random-read IOs, " + "which is important for the response time of queries when the database cannot fit " + "entirely in memory. The only drawback of this setting is that longer checkpoint times " + "may lead to slightly longer recovery times in case of a database or system crash. " + "A lower number means lower IO pressure, and consequently longer checkpoint times. " + "Set this to -1 to disable the IOPS limit and remove the limitation entirely; " + "this will let the checkpointer flush data as fast as the hardware will go. " + "Removing the setting, or commenting it out, will set the default value of 300.")]
 		 public static readonly Setting<int> CheckPointIopsLimit = setting( "dbms.checkpoint.iops.limit", INTEGER, "300" );
 
 		 // Auto Indexing
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Controls the auto indexing feature for nodes. Setting it to `false` shuts it down, " + "while `true` enables it by default for properties listed in the dbms.auto_index.nodes.keys setting.") @Internal @Deprecated public static final org.Neo4Net.graphdb.config.Setting<bool> node_auto_indexing = setting("dbms.auto_index.nodes.enabled", BOOLEAN, FALSE);
+//ORIGINAL LINE: @Description("Controls the auto indexing feature for nodes. Setting it to `false` shuts it down, " + "while `true` enables it by default for properties listed in the dbms.auto_index.nodes.keys setting.") @Internal @Deprecated public static final Neo4Net.graphdb.config.Setting<bool> node_auto_indexing = setting("dbms.auto_index.nodes.enabled", BOOLEAN, FALSE);
 		 [Description("Controls the auto indexing feature for nodes. Setting it to `false` shuts it down, " + "while `true` enables it by default for properties listed in the dbms.auto_index.nodes.keys setting."), Obsolete]
 		 public static readonly Setting<bool> NodeAutoIndexing = setting( "dbms.auto_index.nodes.enabled", BOOLEAN, FALSE );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("A list of property names (comma separated) that will be indexed by default. This applies to " + "_nodes_ only.") @Internal @Deprecated public static final org.Neo4Net.graphdb.config.Setting<java.util.List<String>> node_keys_indexable = setting("dbms.auto_index.nodes.keys", STRING_LIST, "");
+//ORIGINAL LINE: @Description("A list of property names (comma separated) that will be indexed by default. This applies to " + "_nodes_ only.") @Internal @Deprecated public static final Neo4Net.graphdb.config.Setting<java.util.List<String>> node_keys_indexable = setting("dbms.auto_index.nodes.keys", STRING_LIST, "");
 		 [Description("A list of property names (comma separated) that will be indexed by default. This applies to " + "_nodes_ only."), Obsolete]
 		 public static readonly Setting<IList<string>> NodeKeysIndexable = setting( "dbms.auto_index.nodes.keys", STRING_LIST, "" );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Controls the auto indexing feature for relationships. Setting it to `false` shuts it down, " + "while `true` enables it by default for properties listed in the dbms.auto_index.relationships.keys " + "setting.") @Internal @Deprecated public static final org.Neo4Net.graphdb.config.Setting<bool> relationship_auto_indexing = setting("dbms.auto_index.relationships.enabled", BOOLEAN, FALSE);
+//ORIGINAL LINE: @Description("Controls the auto indexing feature for relationships. Setting it to `false` shuts it down, " + "while `true` enables it by default for properties listed in the dbms.auto_index.relationships.keys " + "setting.") @Internal @Deprecated public static final Neo4Net.graphdb.config.Setting<bool> relationship_auto_indexing = setting("dbms.auto_index.relationships.enabled", BOOLEAN, FALSE);
 		 [Description("Controls the auto indexing feature for relationships. Setting it to `false` shuts it down, " + "while `true` enables it by default for properties listed in the dbms.auto_index.relationships.keys " + "setting."), Obsolete]
 		 public static readonly Setting<bool> RelationshipAutoIndexing = setting( "dbms.auto_index.relationships.enabled", BOOLEAN, FALSE );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("A list of property names (comma separated) that will be indexed by default. This applies to " + "_relationships_ only.") @Internal @Deprecated public static final org.Neo4Net.graphdb.config.Setting<java.util.List<String>> relationship_keys_indexable = setting("dbms.auto_index.relationships.keys", STRING_LIST, "");
+//ORIGINAL LINE: @Description("A list of property names (comma separated) that will be indexed by default. This applies to " + "_relationships_ only.") @Internal @Deprecated public static final Neo4Net.graphdb.config.Setting<java.util.List<String>> relationship_keys_indexable = setting("dbms.auto_index.relationships.keys", STRING_LIST, "");
 		 [Description("A list of property names (comma separated) that will be indexed by default. This applies to " + "_relationships_ only."), Obsolete]
 		 public static readonly Setting<IList<string>> RelationshipKeysIndexable = setting( "dbms.auto_index.relationships.keys", STRING_LIST, "" );
 
@@ -460,11 +460,11 @@ namespace Neo4Net.GraphDb.factory
 
 		 // Lucene schema indexes
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Internal public static final org.Neo4Net.graphdb.config.Setting<bool> multi_threaded_schema_index_population_enabled = setting("unsupported.dbms.multi_threaded_schema_index_population_enabled", BOOLEAN, TRUE);
+//ORIGINAL LINE: @Internal public static final Neo4Net.graphdb.config.Setting<bool> multi_threaded_schema_index_population_enabled = setting("unsupported.dbms.multi_threaded_schema_index_population_enabled", BOOLEAN, TRUE);
 		 public static readonly Setting<bool> MultiThreadedSchemaIndexPopulationEnabled = setting( "unsupported.dbms.multi_threaded_schema_index_population_enabled", BOOLEAN, TRUE );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Deprecated @ReplacedBy("dbms.index.default_schema_provider") @Internal public static final org.Neo4Net.graphdb.config.Setting<bool> enable_native_schema_index = setting("unsupported.dbms.enable_native_schema_index", BOOLEAN, TRUE);
+//ORIGINAL LINE: @Deprecated @ReplacedBy("dbms.index.default_schema_provider") @Internal public static final Neo4Net.graphdb.config.Setting<bool> enable_native_schema_index = setting("unsupported.dbms.enable_native_schema_index", BOOLEAN, TRUE);
 		 [Obsolete, ReplacedBy("dbms.index.default_schema_provider")]
 		 public static readonly Setting<bool> EnableNativeSchemaIndex = setting( "unsupported.dbms.enable_native_schema_index", BOOLEAN, TRUE );
 
@@ -576,43 +576,43 @@ namespace Neo4Net.GraphDb.factory
 
 		 // Store settings
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Make Neo4Net keep the logical transaction logs for being able to backup the database. " + "Can be used for specifying the threshold to prune logical logs after. For example \"10 days\" will " + "prune logical logs that only contains transactions older than 10 days from the current time, " + "or \"100k txs\" will keep the 100k latest transactions and prune any older transactions.") @Dynamic public static final org.Neo4Net.graphdb.config.Setting<String> keep_logical_logs = buildSetting("dbms.tx_log.rotation.retention_policy", STRING, "7 days").constraint(illegalValueMessage("must be `true`, `false` or of format `<number><optional unit> <type>`. " + "Valid units are `k`, `M` and `G`. " + "Valid types are `files`, `size`, `txs`, `entries`, `hours` and `days`. " + "For example, `100M size` will limiting logical log space on disk to 100Mb," + " or `200k txs` will limiting the number of transactions to keep to 200 000", matches("^(true|keep_all|false|keep_none|(\\d+[KkMmGg]?( (files|size|txs|entries|hours|days))))$"))).build();
+//ORIGINAL LINE: @Description("Make Neo4Net keep the logical transaction logs for being able to backup the database. " + "Can be used for specifying the threshold to prune logical logs after. For example \"10 days\" will " + "prune logical logs that only contains transactions older than 10 days from the current time, " + "or \"100k txs\" will keep the 100k latest transactions and prune any older transactions.") @Dynamic public static final Neo4Net.graphdb.config.Setting<String> keep_logical_logs = buildSetting("dbms.tx_log.rotation.retention_policy", STRING, "7 days").constraint(illegalValueMessage("must be `true`, `false` or of format `<number><optional unit> <type>`. " + "Valid units are `k`, `M` and `G`. " + "Valid types are `files`, `size`, `txs`, `entries`, `hours` and `days`. " + "For example, `100M size` will limiting logical log space on disk to 100Mb," + " or `200k txs` will limiting the number of transactions to keep to 200 000", matches("^(true|keep_all|false|keep_none|(\\d+[KkMmGg]?( (files|size|txs|entries|hours|days))))$"))).build();
 		 [Description("Make Neo4Net keep the logical transaction logs for being able to backup the database. " + "Can be used for specifying the threshold to prune logical logs after. For example \"10 days\" will " + "prune logical logs that only contains transactions older than 10 days from the current time, " + "or \"100k txs\" will keep the 100k latest transactions and prune any older transactions.")]
 		 public static readonly Setting<string> KeepLogicalLogs = buildSetting( "dbms.tx_log.rotation.retention_policy", STRING, "7 days" ).constraint( illegalValueMessage( "must be `true`, `false` or of format `<number><optional unit> <type>`. " + "Valid units are `k`, `M` and `G`. " + "Valid types are `files`, `size`, `txs`, `entries`, `hours` and `days`. " + "For example, `100M size` will limiting logical log space on disk to 100Mb," + " or `200k txs` will limiting the number of transactions to keep to 200 000", matches( "^(true|keep_all|false|keep_none|(\\d+[KkMmGg]?( (files|size|txs|entries|hours|days))))$" ) ) ).build();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Specifies at which file size the logical log will auto-rotate. Minimum accepted value is 1M. ") @Dynamic public static final org.Neo4Net.graphdb.config.Setting<long> logical_log_rotation_threshold = buildSetting("dbms.tx_log.rotation.size", BYTES, "250M").constraint(min(org.Neo4Net.io.ByteUnit.mebiBytes(1))).build();
+//ORIGINAL LINE: @Description("Specifies at which file size the logical log will auto-rotate. Minimum accepted value is 1M. ") @Dynamic public static final Neo4Net.graphdb.config.Setting<long> logical_log_rotation_threshold = buildSetting("dbms.tx_log.rotation.size", BYTES, "250M").constraint(min(Neo4Net.io.ByteUnit.mebiBytes(1))).build();
 		 [Description("Specifies at which file size the logical log will auto-rotate. Minimum accepted value is 1M. ")]
 		 public static readonly Setting<long> LogicalLogRotationThreshold = buildSetting( "dbms.tx_log.rotation.size", BYTES, "250M" ).constraint( min( ByteUnit.mebiBytes( 1 ) ) ).build();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("If `true`, Neo4Net will abort recovery if any errors are encountered in the logical log. Setting " + "this to `false` will allow Neo4Net to restore as much as possible from the corrupted log files and ignore " + "the rest, but, the integrity of the database might be compromised.") @Internal public static final org.Neo4Net.graphdb.config.Setting<bool> fail_on_corrupted_log_files = setting("unsupported.dbms.tx_log.fail_on_corrupted_log_files", BOOLEAN, TRUE);
+//ORIGINAL LINE: @Description("If `true`, Neo4Net will abort recovery if any errors are encountered in the logical log. Setting " + "this to `false` will allow Neo4Net to restore as much as possible from the corrupted log files and ignore " + "the rest, but, the integrity of the database might be compromised.") @Internal public static final Neo4Net.graphdb.config.Setting<bool> fail_on_corrupted_log_files = setting("unsupported.dbms.tx_log.fail_on_corrupted_log_files", BOOLEAN, TRUE);
 		 [Description("If `true`, Neo4Net will abort recovery if any errors are encountered in the logical log. Setting " + "this to `false` will allow Neo4Net to restore as much as possible from the corrupted log files and ignore " + "the rest, but, the integrity of the database might be compromised.")]
 		 public static readonly Setting<bool> FailOnCorruptedLogFiles = setting( "unsupported.dbms.tx_log.fail_on_corrupted_log_files", BOOLEAN, TRUE );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Use a quick approach for rebuilding the ID generators. This give quicker recovery time, " + "but will limit the ability to reuse the space of deleted entities.") @Internal public static final org.Neo4Net.graphdb.config.Setting<bool> rebuild_idgenerators_fast = setting("unsupported.dbms.id_generator_fast_rebuild_enabled", BOOLEAN, TRUE);
+//ORIGINAL LINE: @Description("Use a quick approach for rebuilding the ID generators. This give quicker recovery time, " + "but will limit the ability to reuse the space of deleted entities.") @Internal public static final Neo4Net.graphdb.config.Setting<bool> rebuild_idgenerators_fast = setting("unsupported.dbms.id_generator_fast_rebuild_enabled", BOOLEAN, TRUE);
 		 [Description("Use a quick approach for rebuilding the ID generators. This give quicker recovery time, " + "but will limit the ability to reuse the space of deleted entities.")]
 		 public static readonly Setting<bool> RebuildIdgeneratorsFast = setting( "unsupported.dbms.id_generator_fast_rebuild_enabled", BOOLEAN, TRUE );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Specifies if engine should run cypher query based on a snapshot of accessed data. " + "Query will be restarted in case if concurrent modification of data will be detected.") @Internal public static final org.Neo4Net.graphdb.config.Setting<bool> snapshot_query = setting("unsupported.dbms.query.snapshot", BOOLEAN, FALSE);
+//ORIGINAL LINE: @Description("Specifies if engine should run cypher query based on a snapshot of accessed data. " + "Query will be restarted in case if concurrent modification of data will be detected.") @Internal public static final Neo4Net.graphdb.config.Setting<bool> snapshot_query = setting("unsupported.dbms.query.snapshot", BOOLEAN, FALSE);
 		 [Description("Specifies if engine should run cypher query based on a snapshot of accessed data. " + "Query will be restarted in case if concurrent modification of data will be detected.")]
 		 public static readonly Setting<bool> SnapshotQuery = setting( "unsupported.dbms.query.snapshot", BOOLEAN, FALSE );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Specifies number or retries that query engine will do to execute query based on " + "stable accessed data snapshot before giving up.") @Internal public static final org.Neo4Net.graphdb.config.Setting<int> snapshot_query_retries = buildSetting("unsupported.dbms.query.snapshot.retries", INTEGER, "5").constraint(range(1, Integer.MAX_VALUE)).build();
+//ORIGINAL LINE: @Description("Specifies number or retries that query engine will do to execute query based on " + "stable accessed data snapshot before giving up.") @Internal public static final Neo4Net.graphdb.config.Setting<int> snapshot_query_retries = buildSetting("unsupported.dbms.query.snapshot.retries", INTEGER, "5").constraint(range(1, Integer.MAX_VALUE)).build();
 		 [Description("Specifies number or retries that query engine will do to execute query based on " + "stable accessed data snapshot before giving up.")]
 		 public static readonly Setting<int> SnapshotQueryRetries = buildSetting( "unsupported.dbms.query.snapshot.retries", INTEGER, "5" ).constraint( range( 1, int.MaxValue ) ).build();
 
 		 // Store memory settings
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Target size for pages of mapped memory. If set to 0, then a reasonable default is chosen, " + "depending on the storage device used.") @Internal @Deprecated public static final org.Neo4Net.graphdb.config.Setting<long> mapped_memory_page_size = setting("unsupported.dbms.memory.pagecache.pagesize", BYTES, "0");
+//ORIGINAL LINE: @Description("Target size for pages of mapped memory. If set to 0, then a reasonable default is chosen, " + "depending on the storage device used.") @Internal @Deprecated public static final Neo4Net.graphdb.config.Setting<long> mapped_memory_page_size = setting("unsupported.dbms.memory.pagecache.pagesize", BYTES, "0");
 		 [Description("Target size for pages of mapped memory. If set to 0, then a reasonable default is chosen, " + "depending on the storage device used."), Obsolete]
 		 public static readonly Setting<long> MappedMemoryPageSize = setting( "unsupported.dbms.memory.pagecache.pagesize", BYTES, "0" );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") @Description("The amount of memory to use for mapping the store files, in bytes (or kilobytes with the 'k' " + "suffix, megabytes with 'm' and gigabytes with 'g'). If Neo4Net is running on a dedicated server, " + "then it is generally recommended to leave about 2-4 gigabytes for the operating system, give the " + "JVM enough heap to hold all your transaction state and query context, and then leave the rest for " + "the page cache. If no page cache memory is configured, then a heuristic setting is computed based " + "on available system resources.") public static final org.Neo4Net.graphdb.config.Setting<String> pagecache_memory = buildSetting("dbms.memory.pagecache.size", STRING, null).build();
+//ORIGINAL LINE: @SuppressWarnings("unchecked") @Description("The amount of memory to use for mapping the store files, in bytes (or kilobytes with the 'k' " + "suffix, megabytes with 'm' and gigabytes with 'g'). If Neo4Net is running on a dedicated server, " + "then it is generally recommended to leave about 2-4 gigabytes for the operating system, give the " + "JVM enough heap to hold all your transaction state and query context, and then leave the rest for " + "the page cache. If no page cache memory is configured, then a heuristic setting is computed based " + "on available system resources.") public static final Neo4Net.graphdb.config.Setting<String> pagecache_memory = buildSetting("dbms.memory.pagecache.size", STRING, null).build();
 		 [Description("The amount of memory to use for mapping the store files, in bytes (or kilobytes with the 'k' " + "suffix, megabytes with 'm' and gigabytes with 'g'). If Neo4Net is running on a dedicated server, " + "then it is generally recommended to leave about 2-4 gigabytes for the operating system, give the " + "JVM enough heap to hold all your transaction state and query context, and then leave the rest for " + "the page cache. If no page cache memory is configured, then a heuristic setting is computed based " + "on available system resources.")]
 		 public static readonly Setting<string> PagecacheMemory = buildSetting( "dbms.memory.pagecache.size", STRING, null ).build();
 
@@ -620,12 +620,12 @@ namespace Neo4Net.GraphDb.factory
 		 public static readonly Setting<string> PagecacheSwapper = setting( "dbms.memory.pagecache.swapper", STRING, null );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Internal @Description("The profiling frequency for the page cache. Accurate profiles allow the page cache to do active " + "warmup after a restart, reducing the mean time to performance. " + "This feature available in Neo4Net Enterprise Edition.") public static final org.Neo4Net.graphdb.config.Setting<java.time.Duration> pagecache_warmup_profiling_interval = setting("unsupported.dbms.memory.pagecache.warmup.profile.interval", DURATION, "1m");
+//ORIGINAL LINE: @Internal @Description("The profiling frequency for the page cache. Accurate profiles allow the page cache to do active " + "warmup after a restart, reducing the mean time to performance. " + "This feature available in Neo4Net Enterprise Edition.") public static final Neo4Net.graphdb.config.Setting<java.time.Duration> pagecache_warmup_profiling_interval = setting("unsupported.dbms.memory.pagecache.warmup.profile.interval", DURATION, "1m");
 		 [Description("The profiling frequency for the page cache. Accurate profiles allow the page cache to do active " + "warmup after a restart, reducing the mean time to performance. " + "This feature available in Neo4Net Enterprise Edition.")]
 		 public static readonly Setting<Duration> PagecacheWarmupProfilingInterval = setting( "unsupported.dbms.memory.pagecache.warmup.profile.interval", DURATION, "1m" );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Internal @Description("Page cache can be configured to perform usage sampling of loaded pages that can be used to construct active load profile. " + "According to that profile pages can be reloaded on the restart, replication, etc. " + "This setting allows disabling that behavior. " + "This feature available in Neo4Net Enterprise Edition.") public static final org.Neo4Net.graphdb.config.Setting<bool> pagecache_warmup_enabled = setting("unsupported.dbms.memory.pagecache.warmup.enable", BOOLEAN, TRUE);
+//ORIGINAL LINE: @Internal @Description("Page cache can be configured to perform usage sampling of loaded pages that can be used to construct active load profile. " + "According to that profile pages can be reloaded on the restart, replication, etc. " + "This setting allows disabling that behavior. " + "This feature available in Neo4Net Enterprise Edition.") public static final Neo4Net.graphdb.config.Setting<bool> pagecache_warmup_enabled = setting("unsupported.dbms.memory.pagecache.warmup.enable", BOOLEAN, TRUE);
 		 [Description("Page cache can be configured to perform usage sampling of loaded pages that can be used to construct active load profile. " + "According to that profile pages can be reloaded on the restart, replication, etc. " + "This setting allows disabling that behavior. " + "This feature available in Neo4Net Enterprise Edition.")]
 		 public static readonly Setting<bool> PagecacheWarmupEnabled = setting( "unsupported.dbms.memory.pagecache.warmup.enable", BOOLEAN, TRUE );
 
@@ -639,43 +639,43 @@ namespace Neo4Net.GraphDb.factory
 		 /// defined value.
 		 /// </summary>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Specifies the block size for storing strings. This parameter is only honored when the store is " + "created, otherwise it is ignored. " + "Note that each character in a string occupies two bytes, meaning that e.g a block size of 120 will hold " + "a 60 character long string before overflowing into a second block. " + "Also note that each block carries a ~10B of overhead so record size on disk will be slightly larger " + "than the configured block size") @Internal public static final org.Neo4Net.graphdb.config.Setting<int> string_block_size = buildSetting("unsupported.dbms.block_size.strings", INTEGER, "0").constraint(min(0)).build();
+//ORIGINAL LINE: @Description("Specifies the block size for storing strings. This parameter is only honored when the store is " + "created, otherwise it is ignored. " + "Note that each character in a string occupies two bytes, meaning that e.g a block size of 120 will hold " + "a 60 character long string before overflowing into a second block. " + "Also note that each block carries a ~10B of overhead so record size on disk will be slightly larger " + "than the configured block size") @Internal public static final Neo4Net.graphdb.config.Setting<int> string_block_size = buildSetting("unsupported.dbms.block_size.strings", INTEGER, "0").constraint(min(0)).build();
 		 [Description("Specifies the block size for storing strings. This parameter is only honored when the store is " + "created, otherwise it is ignored. " + "Note that each character in a string occupies two bytes, meaning that e.g a block size of 120 will hold " + "a 60 character long string before overflowing into a second block. " + "Also note that each block carries a ~10B of overhead so record size on disk will be slightly larger " + "than the configured block size")]
 		 public static readonly Setting<int> StringBlockSize = buildSetting( "unsupported.dbms.block_size.strings", INTEGER, "0" ).constraint( min( 0 ) ).build();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Specifies the block size for storing arrays. This parameter is only honored when the store is " + "created, otherwise it is ignored. " + "Also note that each block carries a ~10B of overhead so record size on disk will be slightly larger " + "than the configured block size") @Internal public static final org.Neo4Net.graphdb.config.Setting<int> array_block_size = buildSetting("unsupported.dbms.block_size.array_properties", INTEGER, "0").constraint(min(0)).build();
+//ORIGINAL LINE: @Description("Specifies the block size for storing arrays. This parameter is only honored when the store is " + "created, otherwise it is ignored. " + "Also note that each block carries a ~10B of overhead so record size on disk will be slightly larger " + "than the configured block size") @Internal public static final Neo4Net.graphdb.config.Setting<int> array_block_size = buildSetting("unsupported.dbms.block_size.array_properties", INTEGER, "0").constraint(min(0)).build();
 		 [Description("Specifies the block size for storing arrays. This parameter is only honored when the store is " + "created, otherwise it is ignored. " + "Also note that each block carries a ~10B of overhead so record size on disk will be slightly larger " + "than the configured block size")]
 		 public static readonly Setting<int> ArrayBlockSize = buildSetting( "unsupported.dbms.block_size.array_properties", INTEGER, "0" ).constraint( min( 0 ) ).build();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Specifies the block size for storing labels exceeding in-lined space in node record. " + "This parameter is only honored when the store is created, otherwise it is ignored. " + "Also note that each block carries a ~10B of overhead so record size on disk will be slightly larger " + "than the configured block size") @Internal public static final org.Neo4Net.graphdb.config.Setting<int> label_block_size = buildSetting("unsupported.dbms.block_size.labels", INTEGER, "0").constraint(min(0)).build();
+//ORIGINAL LINE: @Description("Specifies the block size for storing labels exceeding in-lined space in node record. " + "This parameter is only honored when the store is created, otherwise it is ignored. " + "Also note that each block carries a ~10B of overhead so record size on disk will be slightly larger " + "than the configured block size") @Internal public static final Neo4Net.graphdb.config.Setting<int> label_block_size = buildSetting("unsupported.dbms.block_size.labels", INTEGER, "0").constraint(min(0)).build();
 		 [Description("Specifies the block size for storing labels exceeding in-lined space in node record. " + "This parameter is only honored when the store is created, otherwise it is ignored. " + "Also note that each block carries a ~10B of overhead so record size on disk will be slightly larger " + "than the configured block size")]
 		 public static readonly Setting<int> LabelBlockSize = buildSetting( "unsupported.dbms.block_size.labels", INTEGER, "0" ).constraint( min( 0 ) ).build();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Specifies the size of id batches local to each transaction when committing. " + "Committing a transaction which contains changes most often results in new data records being created. " + "For each record a new id needs to be generated from an id generator. " + "It's more efficient to allocate a batch of ids from the contended id generator, which the transaction " + "holds and generates ids from while creating these new records. " + "This setting specifies how big those batches are. " + "Remaining ids are freed back to id generator on clean shutdown.") @Internal public static final org.Neo4Net.graphdb.config.Setting<int> record_id_batch_size = buildSetting("unsupported.dbms.record_id_batch_size", INTEGER, "20").constraint(range(1, 1_000)).build();
+//ORIGINAL LINE: @Description("Specifies the size of id batches local to each transaction when committing. " + "Committing a transaction which contains changes most often results in new data records being created. " + "For each record a new id needs to be generated from an id generator. " + "It's more efficient to allocate a batch of ids from the contended id generator, which the transaction " + "holds and generates ids from while creating these new records. " + "This setting specifies how big those batches are. " + "Remaining ids are freed back to id generator on clean shutdown.") @Internal public static final Neo4Net.graphdb.config.Setting<int> record_id_batch_size = buildSetting("unsupported.dbms.record_id_batch_size", INTEGER, "20").constraint(range(1, 1_000)).build();
 		 [Description("Specifies the size of id batches local to each transaction when committing. " + "Committing a transaction which contains changes most often results in new data records being created. " + "For each record a new id needs to be generated from an id generator. " + "It's more efficient to allocate a batch of ids from the contended id generator, which the transaction " + "holds and generates ids from while creating these new records. " + "This setting specifies how big those batches are. " + "Remaining ids are freed back to id generator on clean shutdown.")]
 		 public static readonly Setting<int> RecordIdBatchSize = buildSetting( "unsupported.dbms.record_id_batch_size", INTEGER, "20" ).constraint( range( 1, 1_000 ) ).build();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("An identifier that uniquely identifies this graph database instance within this JVM. " + "Defaults to an auto-generated number depending on how many instance are started in this JVM.") @Internal public static final org.Neo4Net.graphdb.config.Setting<String> forced_kernel_id = buildSetting("unsupported.dbms.kernel_id", STRING, NO_DEFAULT).constraint(illegalValueMessage("has to be a valid kernel identifier", matches("[a-zA-Z0-9]*"))).build();
+//ORIGINAL LINE: @Description("An identifier that uniquely identifies this graph database instance within this JVM. " + "Defaults to an auto-generated number depending on how many instance are started in this JVM.") @Internal public static final Neo4Net.graphdb.config.Setting<String> forced_kernel_id = buildSetting("unsupported.dbms.kernel_id", STRING, NO_DEFAULT).constraint(illegalValueMessage("has to be a valid kernel identifier", matches("[a-zA-Z0-9]*"))).build();
 		 [Description("An identifier that uniquely identifies this graph database instance within this JVM. " + "Defaults to an auto-generated number depending on how many instance are started in this JVM.")]
 		 public static readonly Setting<string> ForcedKernelId = buildSetting( "unsupported.dbms.kernel_id", STRING, NO_DEFAULT ).constraint( illegalValueMessage( "has to be a valid kernel identifier", matches( "[a-zA-Z0-9]*" ) ) ).build();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Internal public static final org.Neo4Net.graphdb.config.Setting<java.time.Duration> vm_pause_monitor_measurement_duration = setting("unsupported.vm_pause_monitor.measurement_duration", DURATION, "100ms");
+//ORIGINAL LINE: @Internal public static final Neo4Net.graphdb.config.Setting<java.time.Duration> vm_pause_monitor_measurement_duration = setting("unsupported.vm_pause_monitor.measurement_duration", DURATION, "100ms");
 		 public static readonly Setting<Duration> VmPauseMonitorMeasurementDuration = setting( "unsupported.vm_pause_monitor.measurement_duration", DURATION, "100ms" );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Internal public static final org.Neo4Net.graphdb.config.Setting<java.time.Duration> vm_pause_monitor_stall_alert_threshold = setting("unsupported.vm_pause_monitor.stall_alert_threshold", DURATION, "100ms");
+//ORIGINAL LINE: @Internal public static final Neo4Net.graphdb.config.Setting<java.time.Duration> vm_pause_monitor_stall_alert_threshold = setting("unsupported.vm_pause_monitor.stall_alert_threshold", DURATION, "100ms");
 		 public static readonly Setting<Duration> VmPauseMonitorStallAlertThreshold = setting( "unsupported.vm_pause_monitor.stall_alert_threshold", DURATION, "100ms" );
 
 		 [Description("Relationship count threshold for considering a node to be dense")]
 		 public static readonly Setting<int> DenseNodeThreshold = buildSetting( "dbms.relationship_grouping_threshold", INTEGER, "50" ).constraint( min( 1 ) ).build();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Log executed queries that take longer than the configured threshold, dbms.logs.query.threshold. " + "Log entries are by default written to the file _query.log_ located in the Logs directory. " + "For location of the Logs directory, see <<file-locations>>. " + "This feature is available in the Neo4Net Enterprise Edition.") @Dynamic public static final org.Neo4Net.graphdb.config.Setting<bool> log_queries = setting("dbms.logs.query.enabled", BOOLEAN, FALSE);
+//ORIGINAL LINE: @Description("Log executed queries that take longer than the configured threshold, dbms.logs.query.threshold. " + "Log entries are by default written to the file _query.log_ located in the Logs directory. " + "For location of the Logs directory, see <<file-locations>>. " + "This feature is available in the Neo4Net Enterprise Edition.") @Dynamic public static final Neo4Net.graphdb.config.Setting<bool> log_queries = setting("dbms.logs.query.enabled", BOOLEAN, FALSE);
 		 [Description("Log executed queries that take longer than the configured threshold, dbms.logs.query.threshold. " + "Log entries are by default written to the file _query.log_ located in the Logs directory. " + "For location of the Logs directory, see <<file-locations>>. " + "This feature is available in the Neo4Net Enterprise Edition.")]
 		 public static readonly Setting<bool> LogQueries = setting( "dbms.logs.query.enabled", BOOLEAN, FALSE );
 
@@ -695,47 +695,47 @@ namespace Neo4Net.GraphDb.factory
 		 public static readonly Setting<File> StoreInternalLogPath = derivedSetting( "dbms.logs.debug.path", LogsDirectory, logs => new File( logs, "debug.log" ), PATH );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Log parameters for the executed queries being logged.") @Dynamic public static final org.Neo4Net.graphdb.config.Setting<bool> log_queries_parameter_logging_enabled = setting("dbms.logs.query.parameter_logging_enabled", BOOLEAN, TRUE);
+//ORIGINAL LINE: @Description("Log parameters for the executed queries being logged.") @Dynamic public static final Neo4Net.graphdb.config.Setting<bool> log_queries_parameter_logging_enabled = setting("dbms.logs.query.parameter_logging_enabled", BOOLEAN, TRUE);
 		 [Description("Log parameters for the executed queries being logged.")]
 		 public static readonly Setting<bool> LogQueriesParameterLoggingEnabled = setting( "dbms.logs.query.parameter_logging_enabled", BOOLEAN, TRUE );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Log detailed time information for the executed queries being logged. Requires `dbms.track_query_cpu_time=true`") @Dynamic public static final org.Neo4Net.graphdb.config.Setting<bool> log_queries_detailed_time_logging_enabled = setting("dbms.logs.query.time_logging_enabled", BOOLEAN, FALSE);
+//ORIGINAL LINE: @Description("Log detailed time information for the executed queries being logged. Requires `dbms.track_query_cpu_time=true`") @Dynamic public static final Neo4Net.graphdb.config.Setting<bool> log_queries_detailed_time_logging_enabled = setting("dbms.logs.query.time_logging_enabled", BOOLEAN, FALSE);
 		 [Description("Log detailed time information for the executed queries being logged. Requires `dbms.track_query_cpu_time=true`")]
 		 public static readonly Setting<bool> LogQueriesDetailedTimeLoggingEnabled = setting( "dbms.logs.query.time_logging_enabled", BOOLEAN, FALSE );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Log allocated bytes for the executed queries being logged. " + "The logged number is cumulative over the duration of the query, " + "i.e. for memory intense or long-running queries the value may be larger " + "than the current memory allocation. Requires `dbms.track_query_allocation=true`") @Dynamic public static final org.Neo4Net.graphdb.config.Setting<bool> log_queries_allocation_logging_enabled = setting("dbms.logs.query.allocation_logging_enabled", BOOLEAN, FALSE);
+//ORIGINAL LINE: @Description("Log allocated bytes for the executed queries being logged. " + "The logged number is cumulative over the duration of the query, " + "i.e. for memory intense or long-running queries the value may be larger " + "than the current memory allocation. Requires `dbms.track_query_allocation=true`") @Dynamic public static final Neo4Net.graphdb.config.Setting<bool> log_queries_allocation_logging_enabled = setting("dbms.logs.query.allocation_logging_enabled", BOOLEAN, FALSE);
 		 [Description("Log allocated bytes for the executed queries being logged. " + "The logged number is cumulative over the duration of the query, " + "i.e. for memory intense or long-running queries the value may be larger " + "than the current memory allocation. Requires `dbms.track_query_allocation=true`")]
 		 public static readonly Setting<bool> LogQueriesAllocationLoggingEnabled = setting( "dbms.logs.query.allocation_logging_enabled", BOOLEAN, FALSE );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Logs which runtime that was used to run the query") @Dynamic public static final org.Neo4Net.graphdb.config.Setting<bool> log_queries_runtime_logging_enabled = setting("dbms.logs.query.runtime_logging_enabled", BOOLEAN, FALSE);
+//ORIGINAL LINE: @Description("Logs which runtime that was used to run the query") @Dynamic public static final Neo4Net.graphdb.config.Setting<bool> log_queries_runtime_logging_enabled = setting("dbms.logs.query.runtime_logging_enabled", BOOLEAN, FALSE);
 		 [Description("Logs which runtime that was used to run the query")]
 		 public static readonly Setting<bool> LogQueriesRuntimeLoggingEnabled = setting( "dbms.logs.query.runtime_logging_enabled", BOOLEAN, FALSE );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Log page hits and page faults for the executed queries being logged.") @Dynamic public static final org.Neo4Net.graphdb.config.Setting<bool> log_queries_page_detail_logging_enabled = setting("dbms.logs.query.page_logging_enabled", BOOLEAN, FALSE);
+//ORIGINAL LINE: @Description("Log page hits and page faults for the executed queries being logged.") @Dynamic public static final Neo4Net.graphdb.config.Setting<bool> log_queries_page_detail_logging_enabled = setting("dbms.logs.query.page_logging_enabled", BOOLEAN, FALSE);
 		 [Description("Log page hits and page faults for the executed queries being logged.")]
 		 public static readonly Setting<bool> LogQueriesPageDetailLoggingEnabled = setting( "dbms.logs.query.page_logging_enabled", BOOLEAN, FALSE );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("If the execution of query takes more time than this threshold, the query is logged - " + "provided query logging is enabled. Defaults to 0 seconds, that is all queries are logged.") @Dynamic public static final org.Neo4Net.graphdb.config.Setting<java.time.Duration> log_queries_threshold = setting("dbms.logs.query.threshold", DURATION, "0s");
+//ORIGINAL LINE: @Description("If the execution of query takes more time than this threshold, the query is logged - " + "provided query logging is enabled. Defaults to 0 seconds, that is all queries are logged.") @Dynamic public static final Neo4Net.graphdb.config.Setting<java.time.Duration> log_queries_threshold = setting("dbms.logs.query.threshold", DURATION, "0s");
 		 [Description("If the execution of query takes more time than this threshold, the query is logged - " + "provided query logging is enabled. Defaults to 0 seconds, that is all queries are logged.")]
 		 public static readonly Setting<Duration> LogQueriesThreshold = setting( "dbms.logs.query.threshold", DURATION, "0s" );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("The file size in bytes at which the query log will auto-rotate. If set to zero then no rotation " + "will occur. Accepts a binary suffix `k`, `m` or `g`.") @Dynamic public static final org.Neo4Net.graphdb.config.Setting<long> log_queries_rotation_threshold = buildSetting("dbms.logs.query.rotation.size", BYTES, "20m").constraint(range(0L, Long.MAX_VALUE)).build();
+//ORIGINAL LINE: @Description("The file size in bytes at which the query log will auto-rotate. If set to zero then no rotation " + "will occur. Accepts a binary suffix `k`, `m` or `g`.") @Dynamic public static final Neo4Net.graphdb.config.Setting<long> log_queries_rotation_threshold = buildSetting("dbms.logs.query.rotation.size", BYTES, "20m").constraint(range(0L, Long.MAX_VALUE)).build();
 		 [Description("The file size in bytes at which the query log will auto-rotate. If set to zero then no rotation " + "will occur. Accepts a binary suffix `k`, `m` or `g`.")]
 		 public static readonly Setting<long> LogQueriesRotationThreshold = buildSetting( "dbms.logs.query.rotation.size", BYTES, "20m" ).constraint( range( 0L, long.MaxValue ) ).build();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Maximum number of history files for the query log.") @Dynamic public static final org.Neo4Net.graphdb.config.Setting<int> log_queries_max_archives = buildSetting("dbms.logs.query.rotation.keep_number", INTEGER, "7").constraint(min(1)).build();
+//ORIGINAL LINE: @Description("Maximum number of history files for the query log.") @Dynamic public static final Neo4Net.graphdb.config.Setting<int> log_queries_max_archives = buildSetting("dbms.logs.query.rotation.keep_number", INTEGER, "7").constraint(min(1)).build();
 		 [Description("Maximum number of history files for the query log.")]
 		 public static readonly Setting<int> LogQueriesMaxArchives = buildSetting( "dbms.logs.query.rotation.keep_number", INTEGER, "7" ).constraint( min( 1 ) ).build();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Specifies number of operations that batch inserter will try to group into one batch before " + "flushing data into underlying storage.") @Internal public static final org.Neo4Net.graphdb.config.Setting<int> batch_inserter_batch_size = setting("unsupported.tools.batch_inserter.batch_size", INTEGER, "10000");
+//ORIGINAL LINE: @Description("Specifies number of operations that batch inserter will try to group into one batch before " + "flushing data into underlying storage.") @Internal public static final Neo4Net.graphdb.config.Setting<int> batch_inserter_batch_size = setting("unsupported.tools.batch_inserter.batch_size", INTEGER, "10000");
 		 [Description("Specifies number of operations that batch inserter will try to group into one batch before " + "flushing data into underlying storage.")]
 		 public static readonly Setting<int> BatchInserterBatchSize = setting( "unsupported.tools.batch_inserter.batch_size", INTEGER, "10000" );
 
@@ -761,7 +761,7 @@ namespace Neo4Net.GraphDb.factory
 
 		 /// @deprecated - lucene label index has been removed, thus 'native' is only viable option and this setting is not needed. 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Deprecated("- lucene label index has been removed, thus 'native' is only viable option and this setting is not needed.") @Description("Backend to use for label --> nodes index") @Internal public static final org.Neo4Net.graphdb.config.Setting<String> label_index = setting("dbms.label_index", optionsIgnoreCase(LabelIndex.NATIVE.name(), LabelIndex.AUTO.name()), LabelIndex.NATIVE.name());
+//ORIGINAL LINE: @Deprecated("- lucene label index has been removed, thus 'native' is only viable option and this setting is not needed.") @Description("Backend to use for label --> nodes index") @Internal public static final Neo4Net.graphdb.config.Setting<String> label_index = setting("dbms.label_index", optionsIgnoreCase(LabelIndex.NATIVE.name(), LabelIndex.AUTO.name()), LabelIndex.NATIVE.name());
 		 [Obsolete("- lucene label index has been removed, thus 'native' is only viable option and this setting is not needed."), Description("Backend to use for label --> nodes index")]
 		 public static readonly Setting<string> LabelIndex = setting( "dbms.label_index", optionsIgnoreCase( LabelIndex.Native.name(), LabelIndex.Auto.name() ), LabelIndex.Native.name() );
 
@@ -771,7 +771,7 @@ namespace Neo4Net.GraphDb.factory
 		 public static readonly Setting<bool> AuthEnabled = setting( "dbms.security.auth_enabled", BOOLEAN, FALSE );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Internal public static final org.Neo4Net.graphdb.config.Setting<java.io.File> auth_store = pathSetting("unsupported.dbms.security.auth_store.location", NO_DEFAULT);
+//ORIGINAL LINE: @Internal public static final Neo4Net.graphdb.config.Setting<java.io.File> auth_store = pathSetting("unsupported.dbms.security.auth_store.location", NO_DEFAULT);
 		 public static readonly Setting<File> AuthStore = pathSetting( "unsupported.dbms.security.auth_store.location", NO_DEFAULT );
 
 		 [Description("The maximum number of unsuccessful authentication attempts before imposing a user lock for the configured amount of time." + "The locked out user will not be able to log in until the lock period expires, even if correct credentials are provided. " + "Setting this configuration option to values less than 3 is not recommended because it might make it easier for an attacker " + "to brute force the password.")]
@@ -787,7 +787,7 @@ namespace Neo4Net.GraphDb.factory
 		 public static readonly Setting<bool> KillQueryVerbose = setting( "dbms.procedures.kill_query_verbose", BOOLEAN, TRUE );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Deprecated @Description("Whether or not to release the exclusive schema lock is while building uniqueness constraints index") @Internal public static final org.Neo4Net.graphdb.config.Setting<bool> release_schema_lock_while_building_constraint = setting("unsupported.dbms.schema.release_lock_while_building_constraint", BOOLEAN, FALSE);
+//ORIGINAL LINE: @Deprecated @Description("Whether or not to release the exclusive schema lock is while building uniqueness constraints index") @Internal public static final Neo4Net.graphdb.config.Setting<bool> release_schema_lock_while_building_constraint = setting("unsupported.dbms.schema.release_lock_while_building_constraint", BOOLEAN, FALSE);
 		 [Obsolete, Description("Whether or not to release the exclusive schema lock is while building uniqueness constraints index")]
 		 public static readonly Setting<bool> ReleaseSchemaLockWhileBuildingConstraint = setting( "unsupported.dbms.schema.release_lock_while_building_constraint", BOOLEAN, FALSE );
 
@@ -802,32 +802,32 @@ namespace Neo4Net.GraphDb.factory
 		 public static readonly Setting<string> DefaultAdvertisedAddress = setting( "dbms.connectors.default_advertised_address", STRING, "localhost" );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Whether to apply network level outbound network buffer based throttling") @Internal public static final org.Neo4Net.graphdb.config.Setting<bool> bolt_outbound_buffer_throttle = setting("unsupported.dbms.bolt.outbound_buffer_throttle", BOOLEAN, TRUE);
+//ORIGINAL LINE: @Description("Whether to apply network level outbound network buffer based throttling") @Internal public static final Neo4Net.graphdb.config.Setting<bool> bolt_outbound_buffer_throttle = setting("unsupported.dbms.bolt.outbound_buffer_throttle", BOOLEAN, TRUE);
 		 [Description("Whether to apply network level outbound network buffer based throttling")]
 		 public static readonly Setting<bool> BoltOutboundBufferThrottle = setting( "unsupported.dbms.bolt.outbound_buffer_throttle", BOOLEAN, TRUE );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("When the size (in bytes) of outbound network buffers, used by bolt's network layer, " + "grows beyond this value bolt channel will advertise itself as unwritable and will block " + "related processing thread until it becomes writable again.") @Internal public static final org.Neo4Net.graphdb.config.Setting<int> bolt_outbound_buffer_throttle_high_water_mark = buildSetting("unsupported.dbms.bolt.outbound_buffer_throttle.high_watermark", INTEGER, String.ValueOf(org.Neo4Net.io.ByteUnit.kibiBytes(512))).constraint(range((int) org.Neo4Net.io.ByteUnit.kibiBytes(64), Integer.MAX_VALUE)).build();
+//ORIGINAL LINE: @Description("When the size (in bytes) of outbound network buffers, used by bolt's network layer, " + "grows beyond this value bolt channel will advertise itself as unwritable and will block " + "related processing thread until it becomes writable again.") @Internal public static final Neo4Net.graphdb.config.Setting<int> bolt_outbound_buffer_throttle_high_water_mark = buildSetting("unsupported.dbms.bolt.outbound_buffer_throttle.high_watermark", INTEGER, String.ValueOf(Neo4Net.io.ByteUnit.kibiBytes(512))).constraint(range((int) Neo4Net.io.ByteUnit.kibiBytes(64), Integer.MAX_VALUE)).build();
 		 [Description("When the size (in bytes) of outbound network buffers, used by bolt's network layer, " + "grows beyond this value bolt channel will advertise itself as unwritable and will block " + "related processing thread until it becomes writable again.")]
 		 public static readonly Setting<int> BoltOutboundBufferThrottleHighWaterMark = buildSetting( "unsupported.dbms.bolt.outbound_buffer_throttle.high_watermark", INTEGER, ByteUnit.kibiBytes( 512 ).ToString() ).constraint(range((int) ByteUnit.kibiBytes(64), int.MaxValue)).build();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("When the size (in bytes) of outbound network buffers, previously advertised as unwritable, " + "gets below this value bolt channel will re-advertise itself as writable and blocked processing " + "thread will resume execution.") @Internal public static final org.Neo4Net.graphdb.config.Setting<int> bolt_outbound_buffer_throttle_low_water_mark = buildSetting("unsupported.dbms.bolt.outbound_buffer_throttle.low_watermark", INTEGER, String.ValueOf(org.Neo4Net.io.ByteUnit.kibiBytes(128))).constraint(range((int) org.Neo4Net.io.ByteUnit.kibiBytes(16), Integer.MAX_VALUE)).build();
+//ORIGINAL LINE: @Description("When the size (in bytes) of outbound network buffers, previously advertised as unwritable, " + "gets below this value bolt channel will re-advertise itself as writable and blocked processing " + "thread will resume execution.") @Internal public static final Neo4Net.graphdb.config.Setting<int> bolt_outbound_buffer_throttle_low_water_mark = buildSetting("unsupported.dbms.bolt.outbound_buffer_throttle.low_watermark", INTEGER, String.ValueOf(Neo4Net.io.ByteUnit.kibiBytes(128))).constraint(range((int) Neo4Net.io.ByteUnit.kibiBytes(16), Integer.MAX_VALUE)).build();
 		 [Description("When the size (in bytes) of outbound network buffers, previously advertised as unwritable, " + "gets below this value bolt channel will re-advertise itself as writable and blocked processing " + "thread will resume execution.")]
 		 public static readonly Setting<int> BoltOutboundBufferThrottleLowWaterMark = buildSetting( "unsupported.dbms.bolt.outbound_buffer_throttle.low_watermark", INTEGER, ByteUnit.kibiBytes( 128 ).ToString() ).constraint(range((int) ByteUnit.kibiBytes(16), int.MaxValue)).build();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("When the total time outbound network buffer based throttle lock is held exceeds this value, " + "the corresponding bolt channel will be aborted. Setting " + "this to 0 will disable this behaviour.") @Internal public static final org.Neo4Net.graphdb.config.Setting<java.time.Duration> bolt_outbound_buffer_throttle_max_duration = buildSetting("unsupported.dbms.bolt.outbound_buffer_throttle.max_duration", DURATION, "15m").constraint(min(java.time.Duration.ofSeconds(30))).build();
+//ORIGINAL LINE: @Description("When the total time outbound network buffer based throttle lock is held exceeds this value, " + "the corresponding bolt channel will be aborted. Setting " + "this to 0 will disable this behaviour.") @Internal public static final Neo4Net.graphdb.config.Setting<java.time.Duration> bolt_outbound_buffer_throttle_max_duration = buildSetting("unsupported.dbms.bolt.outbound_buffer_throttle.max_duration", DURATION, "15m").constraint(min(java.time.Duration.ofSeconds(30))).build();
 		 [Description("When the total time outbound network buffer based throttle lock is held exceeds this value, " + "the corresponding bolt channel will be aborted. Setting " + "this to 0 will disable this behaviour.")]
 		 public static readonly Setting<Duration> BoltOutboundBufferThrottleMaxDuration = buildSetting( "unsupported.dbms.bolt.outbound_buffer_throttle.max_duration", DURATION, "15m" ).constraint( min( Duration.ofSeconds( 30 ) ) ).build();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("When the number of queued inbound messages grows beyond this value, reading from underlying " + "channel will be paused (no more inbound messages will be available) until queued number of " + "messages drops below the configured low watermark value.") @Internal public static final org.Neo4Net.graphdb.config.Setting<int> bolt_inbound_message_throttle_high_water_mark = buildSetting("unsupported.dbms.bolt.inbound_message_throttle.high_watermark", INTEGER, String.ValueOf(300)).constraint(range(1, Integer.MAX_VALUE)).build();
+//ORIGINAL LINE: @Description("When the number of queued inbound messages grows beyond this value, reading from underlying " + "channel will be paused (no more inbound messages will be available) until queued number of " + "messages drops below the configured low watermark value.") @Internal public static final Neo4Net.graphdb.config.Setting<int> bolt_inbound_message_throttle_high_water_mark = buildSetting("unsupported.dbms.bolt.inbound_message_throttle.high_watermark", INTEGER, String.ValueOf(300)).constraint(range(1, Integer.MAX_VALUE)).build();
 		 [Description("When the number of queued inbound messages grows beyond this value, reading from underlying " + "channel will be paused (no more inbound messages will be available) until queued number of " + "messages drops below the configured low watermark value.")]
 		 public static readonly Setting<int> BoltInboundMessageThrottleHighWaterMark = buildSetting( "unsupported.dbms.bolt.inbound_message_throttle.high_watermark", INTEGER, 300.ToString() ).constraint(range(1, int.MaxValue)).build();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("When the number of queued inbound messages, previously reached configured high watermark value, " + "drops below this value, reading from underlying channel will be enabled and any pending messages " + "will start queuing again.") @Internal public static final org.Neo4Net.graphdb.config.Setting<int> bolt_inbound_message_throttle_low_water_mark = buildSetting("unsupported.dbms.bolt.inbound_message_throttle.low_watermark", INTEGER, String.ValueOf(100)).constraint(range(1, Integer.MAX_VALUE)).build();
+//ORIGINAL LINE: @Description("When the number of queued inbound messages, previously reached configured high watermark value, " + "drops below this value, reading from underlying channel will be enabled and any pending messages " + "will start queuing again.") @Internal public static final Neo4Net.graphdb.config.Setting<int> bolt_inbound_message_throttle_low_water_mark = buildSetting("unsupported.dbms.bolt.inbound_message_throttle.low_watermark", INTEGER, String.ValueOf(100)).constraint(range(1, Integer.MAX_VALUE)).build();
 		 [Description("When the number of queued inbound messages, previously reached configured high watermark value, " + "drops below this value, reading from underlying channel will be enabled and any pending messages " + "will start queuing again.")]
 		 public static readonly Setting<int> BoltInboundMessageThrottleLowWaterMark = buildSetting( "unsupported.dbms.bolt.inbound_message_throttle.low_watermark", INTEGER, 100.ToString() ).constraint(range(1, int.MaxValue)).build();
 
@@ -835,18 +835,18 @@ namespace Neo4Net.GraphDb.factory
 		 public static readonly Setting<string> BoltSslPolicy = setting( "bolt.ssl_policy", STRING, LEGACY_POLICY_NAME );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Create an archive of an index before re-creating it if failing to load on startup.") @Internal public static final org.Neo4Net.graphdb.config.Setting<bool> archive_failed_index = setting("unsupported.dbms.index.archive_failed", BOOLEAN, FALSE);
+//ORIGINAL LINE: @Description("Create an archive of an index before re-creating it if failing to load on startup.") @Internal public static final Neo4Net.graphdb.config.Setting<bool> archive_failed_index = setting("unsupported.dbms.index.archive_failed", BOOLEAN, FALSE);
 		 [Description("Create an archive of an index before re-creating it if failing to load on startup.")]
 		 public static readonly Setting<bool> ArchiveFailedIndex = setting( "unsupported.dbms.index.archive_failed", BOOLEAN, FALSE );
 
 		 // Needed to validate config, accessed via reflection
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unused") public static final org.Neo4Net.kernel.configuration.BoltConnectorValidator boltValidator = new org.Neo4Net.kernel.configuration.BoltConnectorValidator();
+//ORIGINAL LINE: @SuppressWarnings("unused") public static final Neo4Net.kernel.configuration.BoltConnectorValidator boltValidator = new Neo4Net.kernel.configuration.BoltConnectorValidator();
 		 public static readonly BoltConnectorValidator BoltValidator = new BoltConnectorValidator();
 
 		 // Needed to validate config, accessed via reflection
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unused") public static final org.Neo4Net.kernel.configuration.ssl.SslPolicyConfigValidator sslPolicyConfigValidator = new org.Neo4Net.kernel.configuration.ssl.SslPolicyConfigValidator();
+//ORIGINAL LINE: @SuppressWarnings("unused") public static final Neo4Net.kernel.configuration.ssl.SslPolicyConfigValidator sslPolicyConfigValidator = new Neo4Net.kernel.configuration.ssl.SslPolicyConfigValidator();
 		 public static readonly SslPolicyConfigValidator SslPolicyConfigValidator = new SslPolicyConfigValidator();
 
 		 [Description("The maximum amount of time to wait for the database state represented by the bookmark.")]
@@ -872,19 +872,19 @@ namespace Neo4Net.GraphDb.factory
 
 		 // Needed to validate config, accessed via reflection
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unused") public static final org.Neo4Net.kernel.configuration.HttpConnectorValidator httpValidator = new org.Neo4Net.kernel.configuration.HttpConnectorValidator();
+//ORIGINAL LINE: @SuppressWarnings("unused") public static final Neo4Net.kernel.configuration.HttpConnectorValidator httpValidator = new Neo4Net.kernel.configuration.HttpConnectorValidator();
 		 public static readonly HttpConnectorValidator HttpValidator = new HttpConnectorValidator();
 
 		 /// <param name="key"> connection identifier. </param>
 		 /// <returns> a new connector setting instance. </returns>
-		 /// @deprecated use <seealso cref="org.Neo4Net.kernel.configuration.BoltConnector"/> instead. This will be removed in 4.0. 
-		 [Obsolete("use <seealso cref=\"org.Neo4Net.kernel.configuration.BoltConnector\"/> instead. This will be removed in 4.0.")]
+		 /// @deprecated use <seealso cref="Neo4Net.kernel.configuration.BoltConnector"/> instead. This will be removed in 4.0. 
+		 [Obsolete("use <seealso cref=\"Neo4Net.kernel.configuration.BoltConnector\"/> instead. This will be removed in 4.0.")]
 		 public static BoltConnector BoltConnector( string key )
 		 {
 			  return new BoltConnector( key );
 		 }
 
-		 /// @deprecated see <seealso cref="org.Neo4Net.kernel.configuration.Connector"/> instead. This will be removed in 4.0. 
+		 /// @deprecated see <seealso cref="Neo4Net.kernel.configuration.Connector"/> instead. This will be removed in 4.0. 
 		 [Group("dbms.connector")]
 		 public class Connector
 		 {
@@ -925,7 +925,7 @@ namespace Neo4Net.GraphDb.factory
 		 }
 
 		 /// <summary>
-		 /// DEPRECATED: Use <seealso cref="org.Neo4Net.kernel.configuration.BoltConnector"/> instead. This will be removed in 4.0.
+		 /// DEPRECATED: Use <seealso cref="Neo4Net.kernel.configuration.BoltConnector"/> instead. This will be removed in 4.0.
 		 /// </summary>
 		 [Obsolete, Description("Configuration options for Bolt connectors. " + "\"(bolt-connector-key)\" is a placeholder for a unique name for the connector, for instance " + "\"bolt-public\" or some other name that describes what the connector is for.")]
 		 public class BoltConnector : Connector

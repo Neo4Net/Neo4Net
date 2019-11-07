@@ -115,7 +115,7 @@ namespace Neo4Net.GraphDb.Traversal
         /// <summary>
         /// Traverse between a given {@code start} and {@code end} node with all
         /// applied rules and behavior in this traversal description.
-        /// A <seealso cref="Traverser"/> is returned which is used to step through the
+        /// A <seealso cref="ITraverser"/> is returned which is used to step through the
         /// graph and getting results back. The traversal is not guaranteed to
         /// start before the Traverser is used.
         /// </summary>
@@ -123,14 +123,14 @@ namespace Neo4Net.GraphDb.Traversal
         /// side in this traversal. </param>
         /// <param name="end"> <seealso cref="INode"/> to use as starting point for the end
         /// side in this traversal. </param>
-        /// <returns> a <seealso cref="Traverser"/> used to step through the graph and to get
+        /// <returns> a <seealso cref="ITraverser"/> used to step through the graph and to get
         /// results from. </returns>
-        Traverser Traverse(INode start, INode end);
+        ITraverser Traverse(INode start, INode end);
 
         /// <summary>
         /// Traverse between a set of {@code start} and {@code end} nodes with all
         /// applied rules and behavior in this traversal description.
-        /// A <seealso cref="Traverser"/> is returned which is used to step through the
+        /// A <seealso cref="ITraverser"/> is returned which is used to step through the
         /// graph and getting results back. The traversal is not guaranteed to
         /// start before the Traverser is used.
         /// </summary>
@@ -138,8 +138,8 @@ namespace Neo4Net.GraphDb.Traversal
         /// side in this traversal. </param>
         /// <param name="end"> set of nodes to use as starting points for the end
         /// side in this traversal. </param>
-        /// <returns> a <seealso cref="Traverser"/> used to step through the graph and to get
+        /// <returns> a <seealso cref="ITraverser"/> used to step through the graph and to get
         /// results from. </returns>
-        Traverser Traverse(IEnumerable<INode> start, IEnumerable<INode> end);
+        ITraverser Traverse(IEnumerable<INode> start, IEnumerable<INode> end);
     }
 }

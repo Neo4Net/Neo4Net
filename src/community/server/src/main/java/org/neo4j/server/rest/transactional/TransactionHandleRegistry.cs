@@ -53,7 +53,7 @@ namespace Neo4Net.Server.rest.transactional
 			  internal abstract ActiveTransaction ActiveTransaction { get; }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: abstract SuspendedTransaction getSuspendedTransaction() throws org.Neo4Net.server.rest.transactional.error.InvalidConcurrentTransactionAccess;
+//ORIGINAL LINE: abstract SuspendedTransaction getSuspendedTransaction() throws Neo4Net.server.rest.transactional.error.InvalidConcurrentTransactionAccess;
 			  internal abstract SuspendedTransaction SuspendedTransaction { get; }
 
 			  internal abstract bool Suspended { get; }
@@ -83,7 +83,7 @@ namespace Neo4Net.Server.rest.transactional
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: SuspendedTransaction getSuspendedTransaction() throws org.Neo4Net.server.rest.transactional.error.InvalidConcurrentTransactionAccess
+//ORIGINAL LINE: SuspendedTransaction getSuspendedTransaction() throws Neo4Net.server.rest.transactional.error.InvalidConcurrentTransactionAccess
 			  internal override SuspendedTransaction SuspendedTransaction
 			  {
 				  get
@@ -189,7 +189,7 @@ namespace Neo4Net.Server.rest.transactional
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public TransactionHandle acquire(long id) throws org.Neo4Net.server.rest.transactional.error.TransactionLifecycleException
+//ORIGINAL LINE: public TransactionHandle acquire(long id) throws Neo4Net.server.rest.transactional.error.TransactionLifecycleException
 		 public override TransactionHandle Acquire( long id )
 		 {
 			  TransactionMarker marker = _registry[id];
@@ -231,7 +231,7 @@ namespace Neo4Net.Server.rest.transactional
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public TransactionHandle terminate(long id) throws org.Neo4Net.server.rest.transactional.error.TransactionLifecycleException
+//ORIGINAL LINE: public TransactionHandle terminate(long id) throws Neo4Net.server.rest.transactional.error.TransactionLifecycleException
 		 public override TransactionHandle Terminate( long id )
 		 {
 			  TransactionMarker marker = _registry[id];

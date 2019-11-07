@@ -36,19 +36,19 @@ namespace Neo4Net.Index.Internal.gbptree
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Internal.gbptree.GBPTreeTestUtil.contains;
+//	import static Neo4Net.index.Internal.gbptree.GBPTreeTestUtil.contains;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Internal.gbptree.KeySearch.search;
+//	import static Neo4Net.index.Internal.gbptree.KeySearch.search;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Internal.gbptree.SimpleLongLayout.longLayout;
+//	import static Neo4Net.index.Internal.gbptree.SimpleLongLayout.longLayout;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Internal.gbptree.TreeNode.Overflow.NO;
+//	import static Neo4Net.index.Internal.gbptree.TreeNode.Overflow.NO;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Internal.gbptree.TreeNode.Type.INTERNAL;
+//	import static Neo4Net.index.Internal.gbptree.TreeNode.Type.INTERNAL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Internal.gbptree.TreeNode.Type.LEAF;
+//	import static Neo4Net.index.Internal.gbptree.TreeNode.Type.LEAF;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.pagecache.ByteArrayPageCursor.wrap;
+//	import static Neo4Net.io.pagecache.ByteArrayPageCursor.wrap;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @ExtendWith(RandomExtension.class) class KeySearchTest
@@ -88,7 +88,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 private MutableLong _dummyValue;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.Neo4Net.test.rule.RandomRule random;
+//ORIGINAL LINE: @Inject private Neo4Net.test.rule.RandomRule random;
 		 private RandomRule _random;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

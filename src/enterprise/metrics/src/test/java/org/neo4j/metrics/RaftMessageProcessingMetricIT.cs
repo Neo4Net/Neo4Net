@@ -39,28 +39,28 @@ namespace Neo4Net.metrics
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.Matchers.greaterThanOrEqualTo;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.metrics.MetricsSettings.csvPath;
+//	import static Neo4Net.metrics.MetricsSettings.csvPath;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.metrics.MetricsTestHelper.metricsCsv;
+//	import static Neo4Net.metrics.MetricsTestHelper.metricsCsv;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.metrics.MetricsTestHelper.readLongValue;
+//	import static Neo4Net.metrics.MetricsTestHelper.readLongValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.metrics.MetricsTestHelper.readTimerDoubleValue;
+//	import static Neo4Net.metrics.MetricsTestHelper.readTimerDoubleValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.metrics.MetricsTestHelper.readTimerLongValueAndAssert;
+//	import static Neo4Net.metrics.MetricsTestHelper.readTimerLongValueAndAssert;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.assertion.Assert.assertEventually;
+//	import static Neo4Net.test.assertion.Assert.assertEventually;
 
 	public class RaftMessageProcessingMetricIT
 	{
 		 private const int TIMEOUT = 15;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.causalclustering.ClusterRule clusterRule = new org.Neo4Net.test.causalclustering.ClusterRule().withNumberOfCoreMembers(3).withNumberOfReadReplicas(0).withSharedCoreParam(org.Neo4Net.causalclustering.core.CausalClusteringSettings.leader_election_timeout, "1s").withSharedCoreParam(MetricsSettings.metricsEnabled, org.Neo4Net.kernel.configuration.Settings.TRUE).withSharedCoreParam(MetricsSettings.csvEnabled, org.Neo4Net.kernel.configuration.Settings.TRUE).withSharedCoreParam(MetricsSettings.csvInterval, "100ms");
+//ORIGINAL LINE: @Rule public final Neo4Net.test.causalclustering.ClusterRule clusterRule = new Neo4Net.test.causalclustering.ClusterRule().withNumberOfCoreMembers(3).withNumberOfReadReplicas(0).withSharedCoreParam(Neo4Net.causalclustering.core.CausalClusteringSettings.leader_election_timeout, "1s").withSharedCoreParam(MetricsSettings.metricsEnabled, Neo4Net.kernel.configuration.Settings.TRUE).withSharedCoreParam(MetricsSettings.csvEnabled, Neo4Net.kernel.configuration.Settings.TRUE).withSharedCoreParam(MetricsSettings.csvInterval, "100ms");
 		 public readonly ClusterRule ClusterRule = new ClusterRule().withNumberOfCoreMembers(3).withNumberOfReadReplicas(0).withSharedCoreParam(CausalClusteringSettings.leader_election_timeout, "1s").withSharedCoreParam(MetricsSettings.MetricsEnabled, Settings.TRUE).withSharedCoreParam(MetricsSettings.CsvEnabled, Settings.TRUE).withSharedCoreParam(MetricsSettings.CsvInterval, "100ms");
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private org.Neo4Net.causalclustering.discovery.Cluster<?> cluster;
+//ORIGINAL LINE: private Neo4Net.causalclustering.discovery.Cluster<?> cluster;
 		 private Cluster<object> _cluster;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

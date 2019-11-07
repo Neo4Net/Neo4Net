@@ -28,7 +28,7 @@ namespace Neo4Net.com
 
 	public class ComException : Exception
 	{
-		 public static readonly bool TraceHaConnectivity = Boolean.getBoolean( "org.Neo4Net.com.TRACE_HA_CONNECTIVITY" );
+		 public static readonly bool TraceHaConnectivity = Boolean.getBoolean( "Neo4Net.com.TRACE_HA_CONNECTIVITY" );
 
 		 public ComException() : base()
 		 {

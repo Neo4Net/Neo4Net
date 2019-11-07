@@ -31,10 +31,10 @@ namespace Neo4Net.Kernel.Impl.Api
 	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
 	using PageCursorTracerSupplier = Neo4Net.Io.pagecache.tracing.cursor.PageCursorTracerSupplier;
 	using EmptyVersionContextSupplier = Neo4Net.Io.pagecache.tracing.cursor.context.EmptyVersionContextSupplier;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
-	using AutoIndexing = Neo4Net.Kernel.api.explicitindex.AutoIndexing;
-	using AuxiliaryTransactionStateManager = Neo4Net.Kernel.api.txstate.auxiliary.AuxiliaryTransactionStateManager;
+	using AutoIndexing = Neo4Net.Kernel.Api.explicitindex.AutoIndexing;
+	using AuxiliaryTransactionStateManager = Neo4Net.Kernel.Api.txstate.auxiliary.AuxiliaryTransactionStateManager;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using IndexingService = Neo4Net.Kernel.Impl.Api.index.IndexingService;
 	using ConstraintIndexCreator = Neo4Net.Kernel.Impl.Api.state.ConstraintIndexCreator;
@@ -74,11 +74,11 @@ namespace Neo4Net.Kernel.Impl.Api
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.mock;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.security.SecurityContext.AUTH_DISABLED;
+//	import static Neo4Net.Kernel.Api.Internal.security.SecurityContext.AUTH_DISABLED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.util.collection.CollectionsFactorySupplier_Fields.ON_HEAP;
+//	import static Neo4Net.kernel.impl.util.collection.CollectionsFactorySupplier_Fields.ON_HEAP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.MockedNeoStores.mockedTokenHolders;
+//	import static Neo4Net.test.MockedNeoStores.mockedTokenHolders;
 
 	public class KernelTransactionTerminationTest
 	{
@@ -198,9 +198,9 @@ namespace Neo4Net.Kernel.Impl.Api
 		 private abstract class TerminatorAction
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           NONE { void executeOn(org.Neo4Net.kernel.api.KernelTransaction tx) { } },
+//           NONE { void executeOn(Neo4Net.kernel.api.KernelTransaction tx) { } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           TERMINATE { void executeOn(org.Neo4Net.kernel.api.KernelTransaction tx) { tx.markForTermination(org.Neo4Net.kernel.api.exceptions.Status_Transaction.TransactionMarkedAsFailed); } };
+//           TERMINATE { void executeOn(Neo4Net.kernel.api.KernelTransaction tx) { tx.markForTermination(Neo4Net.kernel.api.exceptions.Status_Transaction.TransactionMarkedAsFailed); } };
 
 			  private static readonly IList<TerminatorAction> valueList = new List<TerminatorAction>();
 
@@ -228,7 +228,7 @@ namespace Neo4Net.Kernel.Impl.Api
 				  innerEnumValue = innerEnum;
 			  }
 
-			  internal abstract void executeOn( Neo4Net.Kernel.api.KernelTransaction tx );
+			  internal abstract void executeOn( Neo4Net.Kernel.Api.KernelTransaction tx );
 
 			  internal static TerminatorAction Random()
 			  {
@@ -266,13 +266,13 @@ namespace Neo4Net.Kernel.Impl.Api
 		 private abstract class CommitterAction
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           NONE { void executeOn(org.Neo4Net.kernel.api.KernelTransaction tx) { } void closeTerminated(TestKernelTransaction tx) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException { tx.assertTerminated(); tx.close(); tx.assertRolledBack(); } void closeNotTerminated(TestKernelTransaction tx) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException { tx.assertNotTerminated(); tx.close(); tx.assertRolledBack(); } },
+//           NONE { void executeOn(Neo4Net.kernel.api.KernelTransaction tx) { } void closeTerminated(TestKernelTransaction tx) throws Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException { tx.assertTerminated(); tx.close(); tx.assertRolledBack(); } void closeNotTerminated(TestKernelTransaction tx) throws Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException { tx.assertNotTerminated(); tx.close(); tx.assertRolledBack(); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           MARK_SUCCESS { void executeOn(org.Neo4Net.kernel.api.KernelTransaction tx) { tx.success(); } void closeTerminated(TestKernelTransaction tx) { tx.assertTerminated(); try { tx.close(); fail("Exception expected"); } catch(Exception e) { assertThat(e, instanceOf(org.Neo4Net.graphdb.TransactionTerminatedException.class)); } tx.assertRolledBack(); } void closeNotTerminated(TestKernelTransaction tx) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException { tx.assertNotTerminated(); tx.close(); tx.assertCommitted(); } },
+//           MARK_SUCCESS { void executeOn(Neo4Net.kernel.api.KernelTransaction tx) { tx.success(); } void closeTerminated(TestKernelTransaction tx) { tx.assertTerminated(); try { tx.close(); fail("Exception expected"); } catch(Exception e) { assertThat(e, instanceOf(Neo4Net.graphdb.TransactionTerminatedException.class)); } tx.assertRolledBack(); } void closeNotTerminated(TestKernelTransaction tx) throws Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException { tx.assertNotTerminated(); tx.close(); tx.assertCommitted(); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           MARK_FAILURE { void executeOn(org.Neo4Net.kernel.api.KernelTransaction tx) { tx.failure(); } void closeTerminated(TestKernelTransaction tx) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException { NONE.closeTerminated(tx); } void closeNotTerminated(TestKernelTransaction tx) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException { NONE.closeNotTerminated(tx); } },
+//           MARK_FAILURE { void executeOn(Neo4Net.kernel.api.KernelTransaction tx) { tx.failure(); } void closeTerminated(TestKernelTransaction tx) throws Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException { NONE.closeTerminated(tx); } void closeNotTerminated(TestKernelTransaction tx) throws Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException { NONE.closeNotTerminated(tx); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           MARK_SUCCESS_AND_FAILURE { void executeOn(org.Neo4Net.kernel.api.KernelTransaction tx) { tx.success(); tx.failure(); } void closeTerminated(TestKernelTransaction tx) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException { MARK_SUCCESS.closeTerminated(tx); } void closeNotTerminated(TestKernelTransaction tx) { tx.assertNotTerminated(); try { tx.close(); fail("Exception expected"); } catch(Exception e) { assertThat(e, instanceOf(org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException.class)); } tx.assertRolledBack(); } };
+//           MARK_SUCCESS_AND_FAILURE { void executeOn(Neo4Net.kernel.api.KernelTransaction tx) { tx.success(); tx.failure(); } void closeTerminated(TestKernelTransaction tx) throws Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException { MARK_SUCCESS.closeTerminated(tx); } void closeNotTerminated(TestKernelTransaction tx) { tx.assertNotTerminated(); try { tx.close(); fail("Exception expected"); } catch(Exception e) { assertThat(e, instanceOf(Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException.class)); } tx.assertRolledBack(); } };
 
 			  private static readonly IList<CommitterAction> valueList = new List<CommitterAction>();
 
@@ -306,14 +306,14 @@ namespace Neo4Net.Kernel.Impl.Api
 
 			  internal static readonly CommitterAction[] VALUES = values();
 
-			  internal abstract void executeOn( Neo4Net.Kernel.api.KernelTransaction tx );
+			  internal abstract void executeOn( Neo4Net.Kernel.Api.KernelTransaction tx );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: abstract void closeTerminated(TestKernelTransaction tx) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
+//ORIGINAL LINE: abstract void closeTerminated(TestKernelTransaction tx) throws Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
 			  internal abstract void closeTerminated( TestKernelTransaction tx );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: abstract void closeNotTerminated(TestKernelTransaction tx) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
+//ORIGINAL LINE: abstract void closeNotTerminated(TestKernelTransaction tx) throws Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
 			  internal abstract void closeNotTerminated( TestKernelTransaction tx );
 
 			  internal static CommitterAction Random()
@@ -353,7 +353,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 {
 			  internal readonly CommitTrackingMonitor Monitor;
 
-			  internal TestKernelTransaction( CommitTrackingMonitor monitor ) : base( Config.defaults(), mock(typeof(StatementOperationParts)), mock(typeof(SchemaWriteGuard)), new TransactionHooks(), mock(typeof(ConstraintIndexCreator)), new Procedures(), TransactionHeaderInformationFactory.DEFAULT, mock(typeof(TransactionCommitProcess)), monitor, mock(typeof(AuxiliaryTransactionStateManager)), mock(typeof(Pool)), Clocks.fakeClock(), new AtomicReference<CpuClock>(CpuClock.NOT_AVAILABLE), new AtomicReference<HeapAllocation>(HeapAllocation.NOT_AVAILABLE), org.Neo4Net.kernel.impl.transaction.tracing.TransactionTracer_Fields.Null, LockTracer.NONE, org.Neo4Net.io.pagecache.tracing.cursor.PageCursorTracerSupplier_Fields.Null, mock(typeof(StorageEngine), RETURNS_MOCKS), new CanWrite(), AutoIndexing.UNSUPPORTED, mock(typeof(ExplicitIndexStore)), EmptyVersionContextSupplier.EMPTY, ON_HEAP, new StandardConstraintSemantics(), mock(typeof(SchemaState)), mock(typeof(IndexingService)), mockedTokenHolders(), new Dependencies() )
+			  internal TestKernelTransaction( CommitTrackingMonitor monitor ) : base( Config.defaults(), mock(typeof(StatementOperationParts)), mock(typeof(SchemaWriteGuard)), new TransactionHooks(), mock(typeof(ConstraintIndexCreator)), new Procedures(), TransactionHeaderInformationFactory.DEFAULT, mock(typeof(TransactionCommitProcess)), monitor, mock(typeof(AuxiliaryTransactionStateManager)), mock(typeof(Pool)), Clocks.fakeClock(), new AtomicReference<CpuClock>(CpuClock.NOT_AVAILABLE), new AtomicReference<HeapAllocation>(HeapAllocation.NOT_AVAILABLE), Neo4Net.kernel.impl.transaction.tracing.TransactionTracer_Fields.Null, LockTracer.NONE, Neo4Net.io.pagecache.tracing.cursor.PageCursorTracerSupplier_Fields.Null, mock(typeof(StorageEngine), RETURNS_MOCKS), new CanWrite(), AutoIndexing.UNSUPPORTED, mock(typeof(ExplicitIndexStore)), EmptyVersionContextSupplier.EMPTY, ON_HEAP, new StandardConstraintSemantics(), mock(typeof(SchemaState)), mock(typeof(IndexingService)), mockedTokenHolders(), new Dependencies() )
 			  {
 
 					this.Monitor = monitor;

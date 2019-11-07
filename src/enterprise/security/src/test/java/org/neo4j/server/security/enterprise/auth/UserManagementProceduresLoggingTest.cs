@@ -46,17 +46,17 @@ namespace Neo4Net.Server.security.enterprise.auth
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.mock;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.security.AuthorizationViolationException.PERMISSION_DENIED;
+//	import static Neo4Net.graphdb.security.AuthorizationViolationException.PERMISSION_DENIED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.logging.AssertableLogProvider.inLog;
+//	import static Neo4Net.logging.AssertableLogProvider.inLog;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.security.enterprise.auth.plugin.api.PredefinedRoles.ADMIN;
+//	import static Neo4Net.server.security.enterprise.auth.plugin.api.PredefinedRoles.ADMIN;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.security.enterprise.auth.plugin.api.PredefinedRoles.ARCHITECT;
+//	import static Neo4Net.server.security.enterprise.auth.plugin.api.PredefinedRoles.ARCHITECT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.security.enterprise.auth.plugin.api.PredefinedRoles.READER;
+//	import static Neo4Net.server.security.enterprise.auth.plugin.api.PredefinedRoles.READER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.assertion.Assert.assertException;
+//	import static Neo4Net.test.assertion.Assert.assertException;
 
 	public class UserManagementProceduresLoggingTest
 	{
@@ -249,7 +249,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldLogUserPasswordChanges() throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: @Test public void shouldLogUserPasswordChanges() throws java.io.IOException, Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldLogUserPasswordChanges()
 		 {

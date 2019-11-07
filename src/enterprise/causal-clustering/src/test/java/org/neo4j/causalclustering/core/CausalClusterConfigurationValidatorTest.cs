@@ -43,13 +43,13 @@ namespace Neo4Net.causalclustering.core
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.CausalClusteringSettings.discovery_type;
+//	import static Neo4Net.causalclustering.core.CausalClusteringSettings.discovery_type;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.CausalClusteringSettings.initial_discovery_members;
+//	import static Neo4Net.causalclustering.core.CausalClusteringSettings.initial_discovery_members;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.CausalClusteringSettings.kubernetes_label_selector;
+//	import static Neo4Net.causalclustering.core.CausalClusteringSettings.kubernetes_label_selector;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.CausalClusteringSettings.kubernetes_service_port_name;
+//	import static Neo4Net.causalclustering.core.CausalClusteringSettings.kubernetes_service_port_name;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class CausalClusterConfigurationValidatorTest
@@ -60,11 +60,11 @@ namespace Neo4Net.causalclustering.core
 		 public ExpectedException Expected = ExpectedException.none();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Parameterized.Parameter public org.Neo4Net.kernel.impl.enterprise.configuration.EnterpriseEditionSettings.Mode mode;
+//ORIGINAL LINE: @Parameterized.Parameter public Neo4Net.kernel.impl.enterprise.configuration.EnterpriseEditionSettings.Mode mode;
 		 public EnterpriseEditionSettings.Mode Mode;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Parameterized.Parameters(name = "{0}") public static java.util.List<org.Neo4Net.kernel.impl.enterprise.configuration.EnterpriseEditionSettings.Mode> recordFormats()
+//ORIGINAL LINE: @Parameterized.Parameters(name = "{0}") public static java.util.List<Neo4Net.kernel.impl.enterprise.configuration.EnterpriseEditionSettings.Mode> recordFormats()
 		 public static IList<EnterpriseEditionSettings.Mode> RecordFormats()
 		 {
 			  return Arrays.asList( EnterpriseEditionSettings.Mode.CORE, EnterpriseEditionSettings.Mode.READ_REPLICA );

@@ -29,9 +29,9 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 	using PrimitiveLongResourceIterator = Neo4Net.Collections.PrimitiveLongResourceIterator;
 	using Neo4Net.Collections.Helpers;
 	using PageCursor = Neo4Net.Io.pagecache.PageCursor;
-	using AllEntriesLabelScanReader = Neo4Net.Kernel.api.labelscan.AllEntriesLabelScanReader;
-	using LabelScanStore = Neo4Net.Kernel.api.labelscan.LabelScanStore;
-	using NodeLabelUpdate = Neo4Net.Kernel.api.labelscan.NodeLabelUpdate;
+	using AllEntriesLabelScanReader = Neo4Net.Kernel.Api.LabelScan.AllEntriesLabelScanReader;
+	using LabelScanStore = Neo4Net.Kernel.Api.LabelScan.LabelScanStore;
+	using NodeLabelUpdate = Neo4Net.Kernel.Api.LabelScan.NodeLabelUpdate;
 	using IEntityUpdates = Neo4Net.Kernel.Impl.Api.index.EntityUpdates;
 	using Neo4Net.Kernel.Impl.Api.index;
 	using LockService = Neo4Net.Kernel.impl.locking.LockService;

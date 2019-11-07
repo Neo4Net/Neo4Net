@@ -135,7 +135,7 @@ namespace Neo4Net.causalclustering.core.consensus.log.segmented
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public synchronized long append(org.Neo4Net.causalclustering.core.consensus.log.RaftLogEntry... entries) throws java.io.IOException
+//ORIGINAL LINE: public synchronized long append(Neo4Net.causalclustering.core.consensus.log.RaftLogEntry... entries) throws java.io.IOException
 		 public override long Append( params RaftLogEntry[] entries )
 		 {
 			 lock ( this )
@@ -232,7 +232,7 @@ namespace Neo4Net.causalclustering.core.consensus.log.segmented
 		 public override RaftLogCursor GetEntryCursor( long fromIndex )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.cursor.IOCursor<org.Neo4Net.causalclustering.core.consensus.log.EntryRecord> inner = new EntryCursor(state.segments, fromIndex);
+//ORIGINAL LINE: final Neo4Net.cursor.IOCursor<Neo4Net.causalclustering.core.consensus.log.EntryRecord> inner = new EntryCursor(state.segments, fromIndex);
 			  IOCursor<EntryRecord> inner = new EntryCursor( _state.segments, fromIndex );
 			  return new SegmentedRaftLogCursor( fromIndex, inner );
 		 }
@@ -260,7 +260,7 @@ namespace Neo4Net.causalclustering.core.consensus.log.segmented
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.causalclustering.core.consensus.log.RaftLogEntry readLogEntry(long logIndex) throws java.io.IOException
+//ORIGINAL LINE: private Neo4Net.causalclustering.core.consensus.log.RaftLogEntry readLogEntry(long logIndex) throws java.io.IOException
 		 private RaftLogEntry ReadLogEntry( long logIndex )
 		 {
 			  using ( IOCursor<EntryRecord> cursor = new EntryCursor( _state.segments, logIndex ) )

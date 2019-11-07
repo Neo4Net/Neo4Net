@@ -17,10 +17,10 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Kernel.api.direct
+namespace Neo4Net.Kernel.Api.direct
 {
 
-	using LabelScanStore = Neo4Net.Kernel.api.labelscan.LabelScanStore;
+	using LabelScanStore = Neo4Net.Kernel.Api.LabelScan.LabelScanStore;
 	using IndexProviderMap = Neo4Net.Kernel.Impl.Api.index.IndexProviderMap;
 	using TokenHolders = Neo4Net.Kernel.impl.core.TokenHolders;
 	using StoreAccess = Neo4Net.Kernel.impl.store.StoreAccess;

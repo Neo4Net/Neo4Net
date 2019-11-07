@@ -32,7 +32,7 @@ namespace Neo4Net.Harness.junit
 	using Neo4Net.GraphDb.config;
 
 	/// <summary>
-	/// A convenience wrapper around <seealso cref="org.Neo4Net.harness.TestServerBuilder"/>, exposing it as a JUnit
+	/// A convenience wrapper around <seealso cref="Neo4Net.harness.TestServerBuilder"/>, exposing it as a JUnit
 	/// <seealso cref="org.junit.Rule rule"/>.
 	/// 
 	/// Note that it will try to start the web server on the standard 7474 port, but if that is not available
@@ -78,14 +78,14 @@ namespace Neo4Net.Harness.junit
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void evaluate() throws Throwable
-			 public override void evaluate()
+//ORIGINAL LINE: public void Evaluate() throws Throwable
+			 public override void Evaluate()
 			 {
 				  using ( ServerControls sc = _outerInstance.controls = _outerInstance.builder.newServer() )
 				  {
 						try
 						{
-							 @base.evaluate();
+							 @base.Evaluate();
 						}
 						catch ( Exception t )
 						{

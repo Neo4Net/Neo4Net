@@ -78,7 +78,7 @@ namespace Neo4Net.Consistency
 		 private readonly DatabaseRule _db = new EmbeddedDatabaseRule().withSetting(OnlineBackupSettings.online_backup_enabled, Settings.FALSE).startLazily();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.junit.rules.RuleChain ruleChain = org.junit.rules.RuleChain.outerRule(org.Neo4Net.test.rule.SuppressOutput.suppressAll()).around(db);
+//ORIGINAL LINE: @Rule public final org.junit.rules.RuleChain ruleChain = org.junit.rules.RuleChain.outerRule(Neo4Net.test.rule.SuppressOutput.suppressAll()).around(db);
 		 public RuleChain RuleChain;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -134,7 +134,7 @@ namespace Neo4Net.Consistency
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void assertConsistentStore(org.Neo4Net.kernel.internal.GraphDatabaseAPI db) throws Exception
+//ORIGINAL LINE: private static void assertConsistentStore(Neo4Net.kernel.internal.GraphDatabaseAPI db) throws Exception
 		 private static void AssertConsistentStore( GraphDatabaseAPI db )
 		 {
 			  ConsistencyCheckService service = new ConsistencyCheckService();

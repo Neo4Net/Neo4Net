@@ -31,7 +31,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using Neo4Net.Kernel.Api.Index;
 	using IndexUpdater = Neo4Net.Kernel.Api.Index.IndexUpdater;
 	using NodePropertyAccessor = Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor;
-	using ConstraintDescriptorFactory = Neo4Net.Kernel.api.schema.constraints.ConstraintDescriptorFactory;
+	using ConstraintDescriptorFactory = Neo4Net.Kernel.Api.schema.constraints.ConstraintDescriptorFactory;
 	using DelegatingIndexUpdater = Neo4Net.Kernel.Impl.Api.index.updater.DelegatingIndexUpdater;
 	using DeferredConflictCheckingIndexUpdater = Neo4Net.Kernel.Impl.Index.Schema.DeferredConflictCheckingIndexUpdater;
 	using IndexReader = Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader;
@@ -131,7 +131,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader newReader() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
+//ORIGINAL LINE: public Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader newReader() throws Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
 		 public override IndexReader NewReader()
 		 {
 			  throw new IndexNotFoundKernelException( Descriptor + " is still populating" );
@@ -146,7 +146,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void verifyDeferredConstraints(org.Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor accessor) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException, java.io.IOException
+//ORIGINAL LINE: public void verifyDeferredConstraints(Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor accessor) throws Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException, java.io.IOException
 		 public override void VerifyDeferredConstraints( NodePropertyAccessor accessor )
 		 {
 			  // If we've seen constraint violation failures in here when updates came in then fail immediately with those
@@ -164,7 +164,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void validate() throws org.Neo4Net.kernel.api.exceptions.schema.UniquePropertyValueValidationException
+//ORIGINAL LINE: public void validate() throws Neo4Net.kernel.api.exceptions.schema.UniquePropertyValueValidationException
 		 public override void Validate()
 		 {
 			  if ( _failures.Count > 0 )

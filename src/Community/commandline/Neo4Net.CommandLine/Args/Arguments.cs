@@ -211,7 +211,7 @@ namespace Neo4Net.CommandLine.Args
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public Arguments parse(String[] args) throws org.Neo4Net.commandline.admin.IncorrectUsage
+//ORIGINAL LINE: public Arguments parse(String[] args) throws Neo4Net.commandline.admin.IncorrectUsage
 		 public virtual Arguments Parse( string[] args )
 		 {
 			  // Get boolean flags
@@ -241,7 +241,7 @@ namespace Neo4Net.CommandLine.Args
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void validate() throws org.Neo4Net.commandline.admin.IncorrectUsage
+//ORIGINAL LINE: private void validate() throws Neo4Net.commandline.admin.IncorrectUsage
 		 private void Validate()
 		 {
 			  foreach ( string o in _parsedArgs.asMap().Keys )

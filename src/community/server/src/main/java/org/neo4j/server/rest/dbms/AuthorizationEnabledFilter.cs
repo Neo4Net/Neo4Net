@@ -29,8 +29,8 @@ namespace Neo4Net.Server.rest.dbms
 	using AuthorizationViolationException = Neo4Net.GraphDb.security.AuthorizationViolationException;
 	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
-	using AuthManager = Neo4Net.Kernel.api.security.AuthManager;
-	using InvalidAuthTokenException = Neo4Net.Kernel.api.security.exception.InvalidAuthTokenException;
+	using AuthManager = Neo4Net.Kernel.Api.security.AuthManager;
+	using InvalidAuthTokenException = Neo4Net.Kernel.Api.security.exception.InvalidAuthTokenException;
 	using Log = Neo4Net.Logging.Log;
 	using LogProvider = Neo4Net.Logging.LogProvider;
 	using JettyHttpConnection = Neo4Net.Server.web.JettyHttpConnection;
@@ -38,13 +38,13 @@ namespace Neo4Net.Server.rest.dbms
 	using UTF8 = Neo4Net.Strings.UTF8;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.map;
+//	import static Neo4Net.helpers.collection.MapUtil.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.security.AuthToken.newBasicAuthToken;
+//	import static Neo4Net.kernel.api.security.AuthToken.newBasicAuthToken;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.web.XForwardUtil.X_FORWARD_HOST_HEADER_KEY;
+//	import static Neo4Net.server.web.XForwardUtil.X_FORWARD_HOST_HEADER_KEY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.web.XForwardUtil.X_FORWARD_PROTO_HEADER_KEY;
+//	import static Neo4Net.server.web.XForwardUtil.X_FORWARD_PROTO_HEADER_KEY;
 
 	public class AuthorizationEnabledFilter : AuthorizationFilter
 	{
@@ -165,7 +165,7 @@ namespace Neo4Net.Server.rest.dbms
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.Kernel.Api.Internal.security.LoginContext authenticate(String username, String password) throws org.Neo4Net.kernel.api.security.exception.InvalidAuthTokenException
+//ORIGINAL LINE: private Neo4Net.Kernel.Api.Internal.security.LoginContext authenticate(String username, String password) throws Neo4Net.kernel.api.security.exception.InvalidAuthTokenException
 		 private LoginContext Authenticate( string username, string password )
 		 {
 			  AuthManager authManager = _authManagerSupplier.get();
@@ -186,14 +186,14 @@ namespace Neo4Net.Server.rest.dbms
 		 private static readonly ThrowingConsumer<HttpServletResponse, IOException> _authProviderTimeout = Error( 504, map( "errors", singletonList( map( "code", Neo4Net.Kernel.Api.Exceptions.Status_Security.AuthProviderTimeout.code().serialize(), "message", "An auth provider request timed out." ) ) ) );
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private static org.Neo4Net.function.ThrowingConsumer<javax.servlet.http.HttpServletResponse, java.io.IOException> invalidAuthToken(final String message)
+//ORIGINAL LINE: private static Neo4Net.function.ThrowingConsumer<javax.servlet.http.HttpServletResponse, java.io.IOException> invalidAuthToken(final String message)
 		 private static ThrowingConsumer<HttpServletResponse, IOException> InvalidAuthToken( string message )
 		 {
 			  return Error( 401, map( "errors", singletonList( map( "code", Neo4Net.Kernel.Api.Exceptions.Status_Security.Unauthorized.code().serialize(), "message", message ) ) ) );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private static org.Neo4Net.function.ThrowingConsumer<javax.servlet.http.HttpServletResponse, java.io.IOException> passwordChangeRequired(final String username, final String baseURL)
+//ORIGINAL LINE: private static Neo4Net.function.ThrowingConsumer<javax.servlet.http.HttpServletResponse, java.io.IOException> passwordChangeRequired(final String username, final String baseURL)
 		 private static ThrowingConsumer<HttpServletResponse, IOException> PasswordChangeRequired( string username, string baseURL )
 		 {
 			  URI path = UriBuilder.fromUri( baseURL ).path( format( "/user/%s/password", username ) ).build();

@@ -134,14 +134,14 @@ namespace Neo4Net.Kernel.impl.transaction.log
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public byte get() throws org.Neo4Net.Kernel.Api.StorageEngine.ReadPastEndException
+//ORIGINAL LINE: public byte get() throws Neo4Net.Kernel.Api.StorageEngine.ReadPastEndException
 		 public override sbyte Get()
 		 {
 			  return _reader.get();
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public short getShort() throws org.Neo4Net.Kernel.Api.StorageEngine.ReadPastEndException
+//ORIGINAL LINE: public short getShort() throws Neo4Net.Kernel.Api.StorageEngine.ReadPastEndException
 		 public virtual short Short
 		 {
 			 get
@@ -151,7 +151,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public int getInt() throws org.Neo4Net.Kernel.Api.StorageEngine.ReadPastEndException
+//ORIGINAL LINE: public int getInt() throws Neo4Net.Kernel.Api.StorageEngine.ReadPastEndException
 		 public virtual int Int
 		 {
 			 get
@@ -161,7 +161,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public long getLong() throws org.Neo4Net.Kernel.Api.StorageEngine.ReadPastEndException
+//ORIGINAL LINE: public long getLong() throws Neo4Net.Kernel.Api.StorageEngine.ReadPastEndException
 		 public virtual long Long
 		 {
 			 get
@@ -171,7 +171,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public float getFloat() throws org.Neo4Net.Kernel.Api.StorageEngine.ReadPastEndException
+//ORIGINAL LINE: public float getFloat() throws Neo4Net.Kernel.Api.StorageEngine.ReadPastEndException
 		 public virtual float Float
 		 {
 			 get
@@ -181,7 +181,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public double getDouble() throws org.Neo4Net.Kernel.Api.StorageEngine.ReadPastEndException
+//ORIGINAL LINE: public double getDouble() throws Neo4Net.Kernel.Api.StorageEngine.ReadPastEndException
 		 public virtual double Double
 		 {
 			 get
@@ -191,7 +191,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void get(byte[] bytes, int length) throws org.Neo4Net.Kernel.Api.StorageEngine.ReadPastEndException
+//ORIGINAL LINE: public void get(byte[] bytes, int length) throws Neo4Net.Kernel.Api.StorageEngine.ReadPastEndException
 		 public override void Get( sbyte[] bytes, int length )
 		 {
 			  _reader.get( bytes, length );
@@ -309,7 +309,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public byte get() throws org.Neo4Net.Kernel.Api.StorageEngine.ReadPastEndException
+//ORIGINAL LINE: public byte get() throws Neo4Net.Kernel.Api.StorageEngine.ReadPastEndException
 			  public override sbyte Get()
 			  {
 					EnsureAvailableToRead( 1 );
@@ -317,7 +317,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public short getShort() throws org.Neo4Net.Kernel.Api.StorageEngine.ReadPastEndException
+//ORIGINAL LINE: public short getShort() throws Neo4Net.Kernel.Api.StorageEngine.ReadPastEndException
 			  public virtual short Short
 			  {
 				  get
@@ -328,7 +328,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public int getInt() throws org.Neo4Net.Kernel.Api.StorageEngine.ReadPastEndException
+//ORIGINAL LINE: public int getInt() throws Neo4Net.Kernel.Api.StorageEngine.ReadPastEndException
 			  public virtual int Int
 			  {
 				  get
@@ -339,7 +339,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public long getLong() throws org.Neo4Net.Kernel.Api.StorageEngine.ReadPastEndException
+//ORIGINAL LINE: public long getLong() throws Neo4Net.Kernel.Api.StorageEngine.ReadPastEndException
 			  public virtual long Long
 			  {
 				  get
@@ -350,7 +350,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public float getFloat() throws org.Neo4Net.Kernel.Api.StorageEngine.ReadPastEndException
+//ORIGINAL LINE: public float getFloat() throws Neo4Net.Kernel.Api.StorageEngine.ReadPastEndException
 			  public virtual float Float
 			  {
 				  get
@@ -361,7 +361,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public double getDouble() throws org.Neo4Net.Kernel.Api.StorageEngine.ReadPastEndException
+//ORIGINAL LINE: public double getDouble() throws Neo4Net.Kernel.Api.StorageEngine.ReadPastEndException
 			  public virtual double Double
 			  {
 				  get
@@ -372,7 +372,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void get(byte[] bytes, int length) throws org.Neo4Net.Kernel.Api.StorageEngine.ReadPastEndException
+//ORIGINAL LINE: public void get(byte[] bytes, int length) throws Neo4Net.Kernel.Api.StorageEngine.ReadPastEndException
 			  public override void Get( sbyte[] bytes, int length )
 			  {
 					EnsureAvailableToRead( length );
@@ -380,7 +380,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void ensureAvailableToRead(int i) throws org.Neo4Net.Kernel.Api.StorageEngine.ReadPastEndException
+//ORIGINAL LINE: private void ensureAvailableToRead(int i) throws Neo4Net.Kernel.Api.StorageEngine.ReadPastEndException
 			  internal virtual void EnsureAvailableToRead( int i )
 			  {
 					if ( Remaining() < i || Position() + i > outerInstance.writer.Position() )

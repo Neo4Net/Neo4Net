@@ -50,7 +50,7 @@ namespace Neo4Net.Kernel.ha
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.com.ResourceReleaser_Fields.NO_OP;
+//	import static Neo4Net.com.ResourceReleaser_Fields.NO_OP;
 
 	public class AbstractTokenCreatorTest
 	{

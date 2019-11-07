@@ -36,9 +36,9 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using Neo4Net.Kernel.Api.Index;
 	using IndexPopulator = Neo4Net.Kernel.Api.Index.IndexPopulator;
 	using IndexUpdater = Neo4Net.Kernel.Api.Index.IndexUpdater;
-	using NodeLabelUpdate = Neo4Net.Kernel.api.labelscan.NodeLabelUpdate;
-	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
-	using TestIndexDescriptorFactory = Neo4Net.Kernel.api.schema.index.TestIndexDescriptorFactory;
+	using NodeLabelUpdate = Neo4Net.Kernel.Api.LabelScan.NodeLabelUpdate;
+	using SchemaDescriptorFactory = Neo4Net.Kernel.Api.schema.SchemaDescriptorFactory;
+	using TestIndexDescriptorFactory = Neo4Net.Kernel.Api.schema.index.TestIndexDescriptorFactory;
 	using LockService = Neo4Net.Kernel.impl.locking.LockService;
 	using RecordStorageReader = Neo4Net.Kernel.impl.storageengine.impl.recordstorage.RecordStorageReader;
 	using InlineNodeLabels = Neo4Net.Kernel.impl.store.InlineNodeLabels;
@@ -70,11 +70,11 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	public class MultipleIndexPopulatorUpdatesTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Mock(answer = org.mockito.Answers.RETURNS_MOCKS) private org.Neo4Net.logging.LogProvider logProvider;
+//ORIGINAL LINE: @Mock(answer = org.mockito.Answers.RETURNS_MOCKS) private Neo4Net.logging.LogProvider logProvider;
 		 private LogProvider _logProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void updateForHigherNodeIgnoredWhenUsingFullNodeStoreScan() throws org.Neo4Net.kernel.api.exceptions.index.IndexPopulationFailedKernelException, java.io.IOException, org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: @Test public void updateForHigherNodeIgnoredWhenUsingFullNodeStoreScan() throws Neo4Net.kernel.api.exceptions.index.IndexPopulationFailedKernelException, java.io.IOException, Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void UpdateForHigherNodeIgnoredWhenUsingFullNodeStoreScan()
 		 {
@@ -188,7 +188,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean process(org.Neo4Net.Kernel.Api.StorageEngine.StorageNodeCursor cursor) throws FAILURE
+//ORIGINAL LINE: public boolean process(Neo4Net.Kernel.Api.StorageEngine.StorageNodeCursor cursor) throws FAILURE
 			  public override bool Process( StorageNodeCursor cursor )
 			  {
 					ProcessListener.receive( cursor );

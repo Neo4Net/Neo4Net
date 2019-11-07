@@ -48,7 +48,7 @@ namespace Neo4Net.GraphDb.store.id
 	public class IdReuseTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.DatabaseRule dbRule = new org.Neo4Net.test.rule.EnterpriseDatabaseRule().withSetting(org.Neo4Net.kernel.impl.enterprise.configuration.EnterpriseEditionSettings.idTypesToReuse, org.Neo4Net.kernel.impl.store.id.IdType.NODE + "," + org.Neo4Net.kernel.impl.store.id.IdType.RELATIONSHIP).withSetting(org.Neo4Net.graphdb.factory.GraphDatabaseSettings.record_id_batch_size, "1");
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.DatabaseRule dbRule = new Neo4Net.test.rule.EnterpriseDatabaseRule().withSetting(Neo4Net.kernel.impl.enterprise.configuration.EnterpriseEditionSettings.idTypesToReuse, Neo4Net.kernel.impl.store.id.IdType.NODE + "," + Neo4Net.kernel.impl.store.id.IdType.RELATIONSHIP).withSetting(Neo4Net.graphdb.factory.GraphDatabaseSettings.record_id_batch_size, "1");
 		 public DatabaseRule DbRule = new EnterpriseDatabaseRule().withSetting(EnterpriseEditionSettings.idTypesToReuse, IdType.NODE + "," + IdType.RELATIONSHIP).withSetting(GraphDatabaseSettings.record_id_batch_size, "1");
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -135,7 +135,7 @@ namespace Neo4Net.GraphDb.store.id
 			  assertEquals( "Ids should be sequential", relationship2 + 1, relationship3 );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.storageengine.impl.recordstorage.id.IdController idMaintenanceController = getIdMaintenanceController();
+//ORIGINAL LINE: final Neo4Net.kernel.impl.storageengine.impl.recordstorage.id.IdController idMaintenanceController = getIdMaintenanceController();
 			  IdController idMaintenanceController = IdMaintenanceController;
 
 			  DeleteRelationshipByLabelAndRelationshipType( marker );
@@ -155,10 +155,10 @@ namespace Neo4Net.GraphDb.store.id
 			  long relationshipId = CreateRelationship( testLabel );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.storageengine.impl.recordstorage.id.IdController idMaintenanceController = getIdMaintenanceController();
+//ORIGINAL LINE: final Neo4Net.kernel.impl.storageengine.impl.recordstorage.id.IdController idMaintenanceController = getIdMaintenanceController();
 			  IdController idMaintenanceController = IdMaintenanceController;
 
-			  using ( Transaction transaction = DbRule.beginTx(), ResourceIterator<Node> nodes = DbRule.findNodes(testLabel) )
+			  using ( Transaction transaction = DbRule.beginTx(), IResourceIterator<Node> nodes = DbRule.findNodes(testLabel) )
 			  {
 					IList<Node> nodeList = Iterators.asList( nodes );
 					foreach ( Node node in nodeList )
@@ -184,7 +184,7 @@ namespace Neo4Net.GraphDb.store.id
 
 		 private void DeleteRelationshipByLabelAndRelationshipType( Label marker )
 		 {
-			  using ( Transaction transaction = DbRule.beginTx(), ResourceIterator<Node> nodes = DbRule.findNodes(marker) )
+			  using ( Transaction transaction = DbRule.beginTx(), IResourceIterator<Node> nodes = DbRule.findNodes(marker) )
 			  {
 					IList<Node> nodeList = Iterators.asList( nodes );
 					foreach ( Node node in nodeList )

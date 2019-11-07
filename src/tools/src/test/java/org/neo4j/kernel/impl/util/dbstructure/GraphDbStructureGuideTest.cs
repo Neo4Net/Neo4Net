@@ -34,10 +34,10 @@ namespace Neo4Net.Kernel.impl.util.dbstructure
 	using IndexReference = Neo4Net.Kernel.Api.Internal.IndexReference;
 	using TokenRead = Neo4Net.Kernel.Api.Internal.TokenRead;
 	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
-	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
-	using UniquenessConstraintDescriptor = Neo4Net.Kernel.api.schema.constraints.UniquenessConstraintDescriptor;
-	using TestIndexDescriptorFactory = Neo4Net.Kernel.api.schema.index.TestIndexDescriptorFactory;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
+	using SchemaDescriptorFactory = Neo4Net.Kernel.Api.schema.SchemaDescriptorFactory;
+	using UniquenessConstraintDescriptor = Neo4Net.Kernel.Api.schema.constraints.UniquenessConstraintDescriptor;
+	using TestIndexDescriptorFactory = Neo4Net.Kernel.Api.schema.index.TestIndexDescriptorFactory;
 	using ThreadToStatementContextBridge = Neo4Net.Kernel.impl.core.ThreadToStatementContextBridge;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
 	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
@@ -48,13 +48,13 @@ namespace Neo4Net.Kernel.impl.util.dbstructure
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verify;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.Label.label;
+//	import static Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.RelationshipType.withName;
+//	import static Neo4Net.graphdb.RelationshipType.withName;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.StatementConstants.ANY_LABEL;
+//	import static Neo4Net.kernel.api.StatementConstants.ANY_LABEL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.StatementConstants.ANY_RELATIONSHIP_TYPE;
+//	import static Neo4Net.kernel.api.StatementConstants.ANY_RELATIONSHIP_TYPE;
 
 	public class GraphDbStructureGuideTest
 	{
@@ -256,7 +256,7 @@ namespace Neo4Net.Kernel.impl.util.dbstructure
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.Kernel.Api.Internal.IndexReference createSchemaIndex(int labelId, int pkId) throws Exception
+//ORIGINAL LINE: private Neo4Net.Kernel.Api.Internal.IndexReference createSchemaIndex(int labelId, int pkId) throws Exception
 		 private IndexReference CreateSchemaIndex( int labelId, int pkId )
 		 {
 			  KernelTransaction ktx = ktx();
@@ -266,7 +266,7 @@ namespace Neo4Net.Kernel.impl.util.dbstructure
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor createUniqueConstraint(int labelId, int pkId) throws Exception
+//ORIGINAL LINE: private Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor createUniqueConstraint(int labelId, int pkId) throws Exception
 		 private ConstraintDescriptor CreateUniqueConstraint( int labelId, int pkId )
 		 {
 			  KernelTransaction ktx = ktx();
@@ -323,7 +323,7 @@ namespace Neo4Net.Kernel.impl.util.dbstructure
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.ImpermanentDatabaseRule dbRule = new org.Neo4Net.test.rule.ImpermanentDatabaseRule();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.ImpermanentDatabaseRule dbRule = new Neo4Net.test.rule.ImpermanentDatabaseRule();
 		 public ImpermanentDatabaseRule DbRule = new ImpermanentDatabaseRule();
 		 private IGraphDatabaseService _graph;
 		 private ThreadToStatementContextBridge _bridge;

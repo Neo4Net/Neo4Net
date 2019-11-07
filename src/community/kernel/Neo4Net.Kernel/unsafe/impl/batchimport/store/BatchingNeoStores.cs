@@ -32,7 +32,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.store
 	using PageCursorTracerSupplier = Neo4Net.Io.pagecache.tracing.cursor.PageCursorTracerSupplier;
 	using EmptyVersionContextSupplier = Neo4Net.Io.pagecache.tracing.cursor.context.EmptyVersionContextSupplier;
 	using VersionContextSupplier = Neo4Net.Io.pagecache.tracing.cursor.context.VersionContextSupplier;
-	using LabelScanStore = Neo4Net.Kernel.api.labelscan.LabelScanStore;
+	using LabelScanStore = Neo4Net.Kernel.Api.LabelScan.LabelScanStore;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using FullStoreChangeStream = Neo4Net.Kernel.Impl.Api.scan.FullStoreChangeStream;
 	using NativeLabelScanStore = Neo4Net.Kernel.impl.index.labelscan.NativeLabelScanStore;
@@ -65,27 +65,27 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.store
 	using IoTracer = Neo4Net.@unsafe.Impl.Batchimport.store.io.IoTracer;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.dense_node_threshold;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.dense_node_threshold;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.pagecache_memory;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.pagecache_memory;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
+//	import static Neo4Net.helpers.collection.MapUtil.stringMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.IOUtils.closeAll;
+//	import static Neo4Net.io.IOUtils.closeAll;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.pagecache.IOLimiter_Fields.UNLIMITED;
+//	import static Neo4Net.io.pagecache.IOLimiter_Fields.UNLIMITED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.labelscan.NativeLabelScanStore.getLabelScanStoreFile;
+//	import static Neo4Net.kernel.impl.index.labelscan.NativeLabelScanStore.getLabelScanStoreFile;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.StoreType.PROPERTY;
+//	import static Neo4Net.kernel.impl.store.StoreType.PROPERTY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.StoreType.PROPERTY_ARRAY;
+//	import static Neo4Net.kernel.impl.store.StoreType.PROPERTY_ARRAY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.StoreType.PROPERTY_STRING;
+//	import static Neo4Net.kernel.impl.store.StoreType.PROPERTY_STRING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.StoreType.RELATIONSHIP_GROUP;
+//	import static Neo4Net.kernel.impl.store.StoreType.RELATIONSHIP_GROUP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_COMMIT_TIMESTAMP;
+//	import static Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_COMMIT_TIMESTAMP;
 
 	/// <summary>
 	/// Creator and accessor of <seealso cref="NeoStores"/> with some logic to provide very batch friendly services to the
@@ -203,7 +203,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.store
 		 /// <param name="tempStoresToKeep"> <seealso cref="Predicate"/> controlling which files to keep, i.e. {@code true} means keep, {@code false} means delete. </param>
 		 /// <exception cref="IOException"> on I/O error. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void pruneAndOpenExistingStore(System.Predicate<org.Neo4Net.kernel.impl.store.StoreType> mainStoresToKeep, System.Predicate<org.Neo4Net.kernel.impl.store.StoreType> tempStoresToKeep) throws java.io.IOException
+//ORIGINAL LINE: public void pruneAndOpenExistingStore(System.Predicate<Neo4Net.kernel.impl.store.StoreType> mainStoresToKeep, System.Predicate<Neo4Net.kernel.impl.store.StoreType> tempStoresToKeep) throws java.io.IOException
 		 public virtual void PruneAndOpenExistingStore( System.Predicate<StoreType> mainStoresToKeep, System.Predicate<StoreType> tempStoresToKeep )
 		 {
 			  DeleteStoreFiles( _temporaryDatabaseLayout, tempStoresToKeep );
@@ -264,7 +264,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.store
 		 {
 			  Config Neo4NetConfig = GetNeo4NetConfig( config, dbConfig );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.io.pagecache.tracing.PageCacheTracer tracer = new org.Neo4Net.io.pagecache.tracing.DefaultPageCacheTracer();
+//ORIGINAL LINE: final Neo4Net.io.pagecache.tracing.PageCacheTracer tracer = new Neo4Net.io.pagecache.tracing.DefaultPageCacheTracer();
 			  PageCacheTracer tracer = new DefaultPageCacheTracer();
 			  PageCache pageCache = CreatePageCache( fileSystem, Neo4NetConfig, logService.InternalLogProvider, tracer, DefaultPageCursorTracerSupplier.INSTANCE, EmptyVersionContextSupplier.EMPTY, jobScheduler );
 

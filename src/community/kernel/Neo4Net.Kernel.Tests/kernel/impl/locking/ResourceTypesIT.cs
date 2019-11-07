@@ -32,9 +32,9 @@ namespace Neo4Net.Kernel.impl.locking
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.IndexQuery.exact;
+//	import static Neo4Net.Kernel.Api.Internal.IndexQuery.exact;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.locking.ResourceTypes.indexEntryResourceId;
+//	import static Neo4Net.kernel.impl.locking.ResourceTypes.indexEntryResourceId;
 
 	/// <summary>
 	/// This is an *IT integration test because it uses a large amount of memory.

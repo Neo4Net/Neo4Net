@@ -51,7 +51,7 @@ namespace Neo4Net.Kernel.ha.cluster.modeswitch
 		 public virtual void SetUp()
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") org.Neo4Net.kernel.ha.DelegateInvocationHandler<org.Neo4Net.kernel.ha.UpdatePuller> invocationHandler = mock(org.Neo4Net.kernel.ha.DelegateInvocationHandler.class);
+//ORIGINAL LINE: @SuppressWarnings("unchecked") Neo4Net.kernel.ha.DelegateInvocationHandler<Neo4Net.kernel.ha.UpdatePuller> invocationHandler = mock(Neo4Net.kernel.ha.DelegateInvocationHandler.class);
 			  DelegateInvocationHandler<UpdatePuller> invocationHandler = mock( typeof( DelegateInvocationHandler ) );
 			  PullerFactory pullerFactory = mock( typeof( PullerFactory ) );
 			  _slaveUpdatePuller = mock( typeof( SlaveUpdatePuller ) );

@@ -42,7 +42,7 @@ namespace Neo4Net.causalclustering.catchup
 	using LogProvider = Neo4Net.Logging.LogProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.catchup.TimeoutLoop.waitForCompletion;
+//	import static Neo4Net.causalclustering.catchup.TimeoutLoop.waitForCompletion;
 
 	public class CatchUpClient : LifecycleAdapter
 	{
@@ -65,7 +65,7 @@ namespace Neo4Net.causalclustering.catchup
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public <T> T makeBlockingRequest(org.Neo4Net.helpers.AdvertisedSocketAddress upstream, org.Neo4Net.causalclustering.messaging.CatchUpRequest request, CatchUpResponseCallback<T> responseHandler) throws CatchUpClientException
+//ORIGINAL LINE: public <T> T makeBlockingRequest(Neo4Net.helpers.AdvertisedSocketAddress upstream, Neo4Net.causalclustering.messaging.CatchUpRequest request, CatchUpResponseCallback<T> responseHandler) throws CatchUpClientException
 		 public virtual T MakeBlockingRequest<T>( AdvertisedSocketAddress upstream, CatchUpRequest request, CatchUpResponseCallback<T> responseHandler )
 		 {
 			  CompletableFuture<T> future = new CompletableFuture<T>();
@@ -139,7 +139,7 @@ namespace Neo4Net.causalclustering.catchup
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void send(org.Neo4Net.causalclustering.messaging.CatchUpRequest request) throws java.net.ConnectException
+//ORIGINAL LINE: void send(Neo4Net.causalclustering.messaging.CatchUpRequest request) throws java.net.ConnectException
 			  internal virtual void Send( CatchUpRequest request )
 			  {
 					if ( !Active )

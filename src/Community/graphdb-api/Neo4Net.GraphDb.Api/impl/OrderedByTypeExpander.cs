@@ -51,7 +51,7 @@ namespace Neo4Net.GraphDb.impl
             ICollection<Pair<IRelationshipType, Direction>> newTypes = new List<Pair<IRelationshipType, Direction>>();
             foreach (Pair<IRelationshipType, Direction> pair in _orderedTypes)
             {
-                if (!type.Name().Equals(pair.First().name()))
+                if (!type.Name.Equals(pair.First().name()))
                 {
                     newTypes.Add(pair);
                 }
@@ -80,11 +80,11 @@ namespace Neo4Net.GraphDb.impl
         }
 
         //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-        //ORIGINAL LINE: ResourceIterator<org.Neo4Net.graphdb.Relationship> doExpand(final org.Neo4Net.graphdb.Path path, org.Neo4Net.graphdb.traversal.BranchState state)
-        internal override ResourceIterator<IRelationship> DoExpand(IPath path, IBranchState state)
+        //ORIGINAL LINE: IResourceIterator<Neo4Net.GraphDb.Relationship> doExpand(final Neo4Net.GraphDb.Path path, Neo4Net.GraphDb.traversal.BranchState state)
+        internal override IResourceIterator<IRelationship> DoExpand(IPath path, IBranchState state)
         {
             //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-            //ORIGINAL LINE: final org.Neo4Net.graphdb.Node node = path.endNode();
+            //ORIGINAL LINE: final Neo4Net.GraphDb.Node node = path.endNode();
             INode node = path.EndNode;
             return new NestingResourceIteratorAnonymousInnerClass(this, _orderedTypes.GetEnumerator(), node);
         }
@@ -101,7 +101,7 @@ namespace Neo4Net.GraphDb.impl
                 _node = node;
             }
 
-            protected internal override ResourceIterator<IRelationship> createNestedIterator(Pair<IRelationshipType, Direction> entry)
+            protected internal override IResourceIterator<IRelationship> createNestedIterator(Pair<IRelationshipType, Direction> entry)
             {
                 IRelationshipType type = entry.First();
                 Direction dir = entry.Other();

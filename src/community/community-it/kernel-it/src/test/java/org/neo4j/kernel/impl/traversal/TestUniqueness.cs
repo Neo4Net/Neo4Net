@@ -39,19 +39,19 @@ namespace Neo4Net.Kernel.impl.traversal
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.Direction.OUTGOING;
+//	import static Neo4Net.graphdb.Direction.OUTGOING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.RelationshipType.withName;
+//	import static Neo4Net.graphdb.RelationshipType.withName;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.traversal.Evaluators.includeWhereEndNodeIs;
+//	import static Neo4Net.graphdb.traversal.Evaluators.includeWhereEndNodeIs;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.traversal.Uniqueness.NODE_GLOBAL;
+//	import static Neo4Net.graphdb.traversal.Uniqueness.NODE_GLOBAL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.traversal.Uniqueness.NODE_LEVEL;
+//	import static Neo4Net.graphdb.traversal.Uniqueness.NODE_LEVEL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.traversal.Uniqueness.RELATIONSHIP_GLOBAL;
+//	import static Neo4Net.graphdb.traversal.Uniqueness.RELATIONSHIP_GLOBAL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.traversal.Uniqueness.RELATIONSHIP_LEVEL;
+//	import static Neo4Net.graphdb.traversal.Uniqueness.RELATIONSHIP_LEVEL;
 
 	public class TestUniqueness : TraversalTestBase
 	{

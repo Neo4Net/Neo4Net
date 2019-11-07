@@ -44,17 +44,17 @@ namespace Neo4Net.@unsafe.Batchinsert
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.default_schema_provider;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.default_schema_provider;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.batchinsert.BatchInserters.inserter;
+//	import static Neo4Net.@unsafe.batchinsert.BatchInserters.inserter;
 
 	public class BatchInsertersTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.TestDirectory testDirectory = Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory TestDirectory = TestDirectory.testDirectory();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.fs.EphemeralFileSystemRule fileSystemRule = new org.Neo4Net.test.rule.fs.EphemeralFileSystemRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.fs.EphemeralFileSystemRule fileSystemRule = new Neo4Net.test.rule.fs.EphemeralFileSystemRule();
 		 public readonly EphemeralFileSystemRule FileSystemRule = new EphemeralFileSystemRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -79,7 +79,7 @@ namespace Neo4Net.@unsafe.Batchinsert
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private static Iterable<org.Neo4Net.kernel.extension.KernelExtensionFactory<?>> getKernelExtensions()
+//ORIGINAL LINE: private static Iterable<Neo4Net.kernel.extension.KernelExtensionFactory<?>> getKernelExtensions()
 		 private static IEnumerable<KernelExtensionFactory<object>> KernelExtensions
 		 {
 			 get

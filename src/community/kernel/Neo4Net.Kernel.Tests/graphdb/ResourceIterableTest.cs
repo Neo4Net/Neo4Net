@@ -31,9 +31,9 @@ namespace Neo4Net.GraphDb
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.iterator;
+//	import static Neo4Net.helpers.collection.Iterators.iterator;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.ResourceClosingIterator.newResourceIterator;
+//	import static Neo4Net.helpers.collection.ResourceClosingIterator.newResourceIterator;
 
 	internal class ResourceIterableTest
 	{
@@ -43,9 +43,9 @@ namespace Neo4Net.GraphDb
 		 {
 			  // Given
 			  AtomicBoolean closed = new AtomicBoolean( false );
-			  ResourceIterator<int> resourceIterator = newResourceIterator( iterator( new int?[]{ 1, 2, 3 } ), () => closed.set(true) );
+			  IResourceIterator<int> resourceIterator = newResourceIterator( iterator( new int?[]{ 1, 2, 3 } ), () => closed.set(true) );
 
-			  ResourceIterable<int> iterable = () => resourceIterator;
+			 IResourceIterable<int> iterable = () => resourceIterator;
 
 			  // When
 			  IList<int> result = iterable.ToList();
@@ -62,9 +62,9 @@ namespace Neo4Net.GraphDb
 			  // Given
 			  AtomicInteger closed = new AtomicInteger();
 			  Resource resource = closed.incrementAndGet;
-			  ResourceIterator<int> resourceIterator = newResourceIterator( iterator( new int?[]{ 1, 2, 3 } ), resource, resource );
+			  IResourceIterator<int> resourceIterator = newResourceIterator( iterator( new int?[]{ 1, 2, 3 } ), resource, resource );
 
-			  ResourceIterable<int> iterable = () => resourceIterator;
+			 IResourceIterable<int> iterable = () => resourceIterator;
 
 			  // When
 			  IList<int> result = iterable.ToList();

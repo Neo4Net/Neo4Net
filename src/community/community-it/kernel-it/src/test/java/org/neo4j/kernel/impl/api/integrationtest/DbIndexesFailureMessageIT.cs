@@ -30,7 +30,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 	using Transaction = Neo4Net.Kernel.Api.Internal.Transaction;
 	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
 	using ProcedureCallContext = Neo4Net.Kernel.Api.Internal.procs.ProcedureCallContext;
-	using LabelSchemaDescriptor = Neo4Net.Kernel.api.schema.LabelSchemaDescriptor;
+	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.schema.LabelSchemaDescriptor;
 	using FailingGenericNativeIndexProviderFactory = Neo4Net.Kernel.Impl.Index.Schema.FailingGenericNativeIndexProviderFactory;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 
@@ -47,15 +47,15 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.procs.ProcedureSignature.procedureName;
+//	import static Neo4Net.Kernel.Api.Internal.procs.ProcedureSignature.procedureName;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.security.LoginContext.AUTH_DISABLED;
+//	import static Neo4Net.Kernel.Api.Internal.security.LoginContext.AUTH_DISABLED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel;
+//	import static Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.FailingGenericNativeIndexProviderFactory.FailureType.POPULATION;
+//	import static Neo4Net.kernel.impl.index.schema.FailingGenericNativeIndexProviderFactory.FailureType.POPULATION;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.TestGraphDatabaseFactory.INDEX_PROVIDERS_FILTER;
+//	import static Neo4Net.test.TestGraphDatabaseFactory.INDEX_PROVIDERS_FILTER;
 
 	public class DbIndexesFailureMessageIT : KernelIntegrationTest
 	{

@@ -31,19 +31,19 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input.csv
 	using Value = Neo4Net.Values.Storable.Value;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.csv.reader.CharSeekers.charSeeker;
+//	import static Neo4Net.csv.reader.CharSeekers.charSeeker;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.ByteUnit.mebiBytes;
+//	import static Neo4Net.io.ByteUnit.mebiBytes;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.input.Collector.EMPTY;
+//	import static Neo4Net.@unsafe.impl.batchimport.input.Collector.EMPTY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.input.Inputs.calculatePropertySize;
+//	import static Neo4Net.@unsafe.impl.batchimport.input.Inputs.calculatePropertySize;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.input.Inputs.knownEstimates;
+//	import static Neo4Net.@unsafe.impl.batchimport.input.Inputs.knownEstimates;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.input.csv.CsvGroupInputIterator.extractors;
+//	import static Neo4Net.@unsafe.impl.batchimport.input.csv.CsvGroupInputIterator.extractors;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.input.csv.CsvInputIterator.extractHeader;
+//	import static Neo4Net.@unsafe.impl.batchimport.input.csv.CsvInputIterator.extractHeader;
 
 	/// <summary>
 	/// Provides <seealso cref="Input"/> from data contained in tabular/csv form. Expects factories for instantiating
@@ -220,7 +220,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input.csv
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.unsafe.impl.batchimport.input.Input_Estimates calculateEstimates(System.Func<org.Neo4Net.values.storable.Value[], int> valueSizeCalculator) throws java.io.IOException
+//ORIGINAL LINE: public Neo4Net.unsafe.impl.batchimport.input.Input_Estimates calculateEstimates(System.Func<Neo4Net.values.storable.Value[], int> valueSizeCalculator) throws java.io.IOException
 		 public override Neo4Net.@unsafe.Impl.Batchimport.input.Input_Estimates CalculateEstimates( System.Func<Value[], int> valueSizeCalculator )
 		 {
 			  long[] nodeSample = Sample( _nodeDataFactory, _nodeHeaderFactory, valueSizeCalculator, node => node.labels().length );
@@ -229,7 +229,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input.csv
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private long[] sample(Iterable<DataFactory> dataFactories, Header.Factory headerFactory, System.Func<org.Neo4Net.values.storable.Value[], int> valueSizeCalculator, System.Func<org.Neo4Net.unsafe.impl.batchimport.input.InputEntity, int> additionalCalculator) throws java.io.IOException
+//ORIGINAL LINE: private long[] sample(Iterable<DataFactory> dataFactories, Header.Factory headerFactory, System.Func<Neo4Net.values.storable.Value[], int> valueSizeCalculator, System.Func<Neo4Net.unsafe.impl.batchimport.input.InputEntity, int> additionalCalculator) throws java.io.IOException
 		 private long[] Sample( IEnumerable<DataFactory> dataFactories, Header.Factory headerFactory, System.Func<Value[], int> valueSizeCalculator, System.Func<InputEntity, int> additionalCalculator )
 		 {
 			  long[] estimates = new long[4]; // [entity count, property count, property size, labels (for nodes only)]

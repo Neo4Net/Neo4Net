@@ -36,12 +36,12 @@ namespace Neo4Net.causalclustering.scenarios
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.Label.label;
+//	import static Neo4Net.graphdb.Label.label;
 
 	public class WillNotBecomeLeaderIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.causalclustering.ClusterRule clusterRule = new org.Neo4Net.test.causalclustering.ClusterRule().withNumberOfCoreMembers(3).withNumberOfReadReplicas(0).withDiscoveryServiceType(EnterpriseDiscoveryServiceType.HAZELCAST).withSharedCoreParam(org.Neo4Net.causalclustering.core.CausalClusteringSettings.multi_dc_license, "true");
+//ORIGINAL LINE: @Rule public final Neo4Net.test.causalclustering.ClusterRule clusterRule = new Neo4Net.test.causalclustering.ClusterRule().withNumberOfCoreMembers(3).withNumberOfReadReplicas(0).withDiscoveryServiceType(EnterpriseDiscoveryServiceType.HAZELCAST).withSharedCoreParam(Neo4Net.causalclustering.core.CausalClusteringSettings.multi_dc_license, "true");
 		 public readonly ClusterRule ClusterRule = new ClusterRule().withNumberOfCoreMembers(3).withNumberOfReadReplicas(0).withDiscoveryServiceType(EnterpriseDiscoveryServiceType.Hazelcast).withSharedCoreParam(CausalClusteringSettings.multi_dc_license, "true");
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -69,7 +69,7 @@ namespace Neo4Net.causalclustering.scenarios
 			  });
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.causalclustering.discovery.Cluster<?> cluster = clusterRule.createCluster();
+//ORIGINAL LINE: Neo4Net.causalclustering.discovery.Cluster<?> cluster = clusterRule.createCluster();
 			  Cluster<object> cluster = ClusterRule.createCluster();
 			  cluster.Start();
 			  assertEquals( leaderId, cluster.AwaitLeader().serverId() );

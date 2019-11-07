@@ -28,7 +28,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using IndexEntryConflictException = Neo4Net.Kernel.Api.Exceptions.index.IndexEntryConflictException;
 	using Neo4Net.Kernel.Api.Index;
 	using IndexUpdater = Neo4Net.Kernel.Api.Index.IndexUpdater;
-	using TestIndexDescriptorFactory = Neo4Net.Kernel.api.schema.index.TestIndexDescriptorFactory;
+	using TestIndexDescriptorFactory = Neo4Net.Kernel.Api.schema.index.TestIndexDescriptorFactory;
 	using UpdateMode = Neo4Net.Kernel.Impl.Api.index.UpdateMode;
 	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
 	using IndexReader = Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader;
@@ -52,13 +52,13 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.collection.PrimitiveLongCollections.iterator;
+//	import static Neo4Net.collection.PrimitiveLongCollections.iterator;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.index.IndexEntryUpdate.add;
+//	import static Neo4Net.kernel.api.index.IndexEntryUpdate.add;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.index.IndexEntryUpdate.change;
+//	import static Neo4Net.kernel.api.index.IndexEntryUpdate.change;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.index.IndexEntryUpdate.remove;
+//	import static Neo4Net.kernel.api.index.IndexEntryUpdate.remove;
 
 	public class DeferredConflictCheckingIndexUpdaterTest
 	{

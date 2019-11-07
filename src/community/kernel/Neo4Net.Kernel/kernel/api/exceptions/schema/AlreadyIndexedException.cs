@@ -35,7 +35,7 @@ namespace Neo4Net.Kernel.Api.Exceptions.schema
 		 private readonly SchemaDescriptor _descriptor;
 		 private readonly OperationContext _context;
 
-		 public AlreadyIndexedException( SchemaDescriptor descriptor, OperationContext context ) : base( org.Neo4Net.kernel.api.exceptions.Status_Schema.IndexAlreadyExists, ConstructUserMessage( context, SchemaUtil.idTokenNameLookup, descriptor ) )
+		 public AlreadyIndexedException( SchemaDescriptor descriptor, OperationContext context ) : base( Neo4Net.kernel.api.exceptions.Status_Schema.IndexAlreadyExists, ConstructUserMessage( context, SchemaUtil.idTokenNameLookup, descriptor ) )
 		 {
 
 			  this._descriptor = descriptor;

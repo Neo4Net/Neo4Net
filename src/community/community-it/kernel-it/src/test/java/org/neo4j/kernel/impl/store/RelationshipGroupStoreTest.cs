@@ -61,19 +61,19 @@ namespace Neo4Net.Kernel.impl.store
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.RecordStore.getRecord;
+//	import static Neo4Net.kernel.impl.store.RecordStore.getRecord;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.record.RecordLoad.NORMAL;
+//	import static Neo4Net.kernel.impl.store.record.RecordLoad.NORMAL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.rule.PageCacheRule.config;
+//	import static Neo4Net.test.rule.PageCacheRule.config;
 
 	public class RelationshipGroupStoreTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.PageCacheRule pageCacheRule = new org.Neo4Net.test.rule.PageCacheRule(config().withInconsistentReads(false));
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.PageCacheRule pageCacheRule = new Neo4Net.test.rule.PageCacheRule(config().withInconsistentReads(false));
 		 public PageCacheRule PageCacheRule = new PageCacheRule( config().withInconsistentReads(false) );
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.TestDirectory testDir = org.Neo4Net.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.TestDirectory testDir = Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public TestDirectory TestDir = TestDirectory.testDirectory();
 		 private int _defaultThreshold;
 		 private FileSystemAbstraction _fs;

@@ -47,7 +47,7 @@ namespace Neo4Net.Server.web
 		 private readonly RotatingFileOutputStreamSupplier _outputSupplier;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public AsyncRequestLog(org.Neo4Net.io.fs.FileSystemAbstraction fs, java.time.ZoneId logTimeZone, String logFile, long rotationSize, int rotationKeepNumber) throws java.io.IOException
+//ORIGINAL LINE: public AsyncRequestLog(Neo4Net.io.fs.FileSystemAbstraction fs, java.time.ZoneId logTimeZone, String logFile, long rotationSize, int rotationKeepNumber) throws java.io.IOException
 		 public AsyncRequestLog( FileSystemAbstraction fs, ZoneId logTimeZone, string logFile, long rotationSize, int rotationKeepNumber )
 		 {
 			  NamedThreadFactory threadFactory = new NamedThreadFactory( "HTTP-Log-Rotator", true );

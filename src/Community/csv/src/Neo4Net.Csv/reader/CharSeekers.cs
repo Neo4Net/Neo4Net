@@ -21,9 +21,9 @@ namespace Neo4Net.Csv.Reader
 {
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.csv.reader.Configuration_Fields.DEFAULT;
+//	import static Neo4Net.csv.reader.Configuration_Fields.DEFAULT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.csv.reader.ThreadAheadReadable.threadAhead;
+//	import static Neo4Net.csv.reader.ThreadAheadReadable.threadAhead;
 
 	/// <summary>
 	/// Factory for common <seealso cref="CharSeeker"/> implementations.

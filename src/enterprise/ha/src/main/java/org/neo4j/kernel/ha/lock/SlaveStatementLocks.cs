@@ -77,7 +77,7 @@ namespace Neo4Net.Kernel.ha.@lock
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: public java.util.stream.Stream<? extends org.Neo4Net.kernel.impl.locking.ActiveLock> activeLocks()
+//ORIGINAL LINE: public java.util.stream.Stream<? extends Neo4Net.kernel.impl.locking.ActiveLock> activeLocks()
 		 public override Stream<ActiveLock> ActiveLocks()
 		 {
 			  return @delegate.ActiveLocks();

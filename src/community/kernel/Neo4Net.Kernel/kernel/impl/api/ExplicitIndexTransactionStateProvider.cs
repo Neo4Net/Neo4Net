@@ -19,8 +19,8 @@
  */
 namespace Neo4Net.Kernel.Impl.Api
 {
-	using AuxiliaryTransactionState = Neo4Net.Kernel.api.txstate.auxiliary.AuxiliaryTransactionState;
-	using AuxiliaryTransactionStateProvider = Neo4Net.Kernel.api.txstate.auxiliary.AuxiliaryTransactionStateProvider;
+	using AuxiliaryTransactionState = Neo4Net.Kernel.Api.txstate.auxiliary.AuxiliaryTransactionState;
+	using AuxiliaryTransactionStateProvider = Neo4Net.Kernel.Api.txstate.auxiliary.AuxiliaryTransactionStateProvider;
 	using ExplicitIndexTransactionStateImpl = Neo4Net.Kernel.Impl.Api.state.ExplicitIndexTransactionStateImpl;
 	using IndexConfigStore = Neo4Net.Kernel.impl.index.IndexConfigStore;
 

@@ -38,11 +38,11 @@ namespace Neo4Net.cluster.protocol.atomicbroadcast.multipaxos
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.cluster.com.message.Message.to;
+//	import static Neo4Net.cluster.com.message.Message.to;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.cluster.protocol.atomicbroadcast.multipaxos.AtomicBroadcastMessage.failed;
+//	import static Neo4Net.cluster.protocol.atomicbroadcast.multipaxos.AtomicBroadcastMessage.failed;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.cluster.protocol.atomicbroadcast.multipaxos.AtomicBroadcastState.broadcasting;
+//	import static Neo4Net.cluster.protocol.atomicbroadcast.multipaxos.AtomicBroadcastState.broadcasting;
 
 	public class AtomicBroadcastStateTest
 	{
@@ -61,7 +61,7 @@ namespace Neo4Net.cluster.protocol.atomicbroadcast.multipaxos
 			  when( context.GetLog( typeof( AtomicBroadcastState ) ) ).thenReturn( NullLog.Instance );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.List<org.Neo4Net.cluster.com.message.Message<?>> messages = new java.util.ArrayList<>(1);
+//ORIGINAL LINE: final java.util.List<Neo4Net.cluster.com.message.Message<?>> messages = new java.util.ArrayList<>(1);
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 			  IList<Message<object>> messages = new List<Message<object>>( 1 );
 			  MessageHolder outgoing = messages.add;
@@ -84,7 +84,7 @@ namespace Neo4Net.cluster.protocol.atomicbroadcast.multipaxos
 			  when( context.GetLog( typeof( AtomicBroadcastState ) ) ).thenReturn( NullLog.Instance );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.List<org.Neo4Net.cluster.com.message.Message<?>> messages = new java.util.ArrayList<>(1);
+//ORIGINAL LINE: final java.util.List<Neo4Net.cluster.com.message.Message<?>> messages = new java.util.ArrayList<>(1);
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 			  IList<Message<object>> messages = new List<Message<object>>( 1 );
 			  MessageHolder outgoing = messages.add;
@@ -109,7 +109,7 @@ namespace Neo4Net.cluster.protocol.atomicbroadcast.multipaxos
 			  when( context.GetUriForId( coordinator ) ).thenReturn( Uri( 1 ) );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.List<org.Neo4Net.cluster.com.message.Message<?>> messages = new java.util.ArrayList<>(1);
+//ORIGINAL LINE: final java.util.List<Neo4Net.cluster.com.message.Message<?>> messages = new java.util.ArrayList<>(1);
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 			  IList<Message<object>> messages = new List<Message<object>>( 1 );
 			  MessageHolder outgoing = messages.add;
@@ -131,7 +131,7 @@ namespace Neo4Net.cluster.protocol.atomicbroadcast.multipaxos
 			  when( context.HasQuorum() ).thenReturn(true);
 			  when( context.Coordinator ).thenReturn( null );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.List<org.Neo4Net.cluster.com.message.Message<?>> messages = new java.util.ArrayList<>(1);
+//ORIGINAL LINE: final java.util.List<Neo4Net.cluster.com.message.Message<?>> messages = new java.util.ArrayList<>(1);
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 			  IList<Message<object>> messages = new List<Message<object>>( 1 );
 			  MessageHolder outgoing = messages.add;

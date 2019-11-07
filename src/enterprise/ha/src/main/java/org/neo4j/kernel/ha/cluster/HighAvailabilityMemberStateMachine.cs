@@ -42,7 +42,7 @@ namespace Neo4Net.Kernel.ha.cluster
 	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.cluster.util.Quorums.isQuorum;
+//	import static Neo4Net.cluster.util.Quorums.isQuorum;
 
 	/// <summary>
 	/// State machine that listens for global cluster events, and coordinates

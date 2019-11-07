@@ -74,7 +74,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.staging
 		 private long DoneBatches( StageExecution execution )
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: Step<?> step = org.Neo4Net.helpers.collection.Iterables.last(execution.steps());
+//ORIGINAL LINE: Step<?> step = Neo4Net.helpers.collection.Iterables.last(execution.steps());
 			  Step<object> step = Iterables.last( execution.Steps() );
 			  return step.Stats().stat(Keys.done_batches).asLong();
 		 }

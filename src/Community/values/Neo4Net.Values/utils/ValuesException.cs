@@ -23,7 +23,7 @@ namespace Neo4Net.Values.utils
 {
 	/// <summary>
 	/// {@code ValuesException} is the super class of the custom exceptions
-	/// that can be thrown during usage of the Values module (org.Neo4Net.values).
+	/// that can be thrown during usage of the Values module (Neo4Net.values).
 	/// </summary>
 	public class ValuesException : Exception
 	{

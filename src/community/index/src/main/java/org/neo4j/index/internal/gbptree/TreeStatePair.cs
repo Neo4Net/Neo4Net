@@ -25,7 +25,7 @@ namespace Neo4Net.Index.Internal.gbptree
 	using PageCursor = Neo4Net.Io.pagecache.PageCursor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Internal.gbptree.PageCursorUtil.checkOutOfBounds;
+//	import static Neo4Net.index.Internal.gbptree.PageCursorUtil.checkOutOfBounds;
 
 	/// <summary>
 	/// Pair of <seealso cref="TreeState"/>, ability to make decision about which of the two to read and write respectively,
@@ -46,7 +46,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 /// <param name="cursor"> <seealso cref="PageCursor"/> assumed to be opened with write capabilities. </param>
 		 /// <exception cref="IOException"> on <seealso cref="PageCursor"/> error. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static void initializeStatePages(org.Neo4Net.io.pagecache.PageCursor cursor) throws java.io.IOException
+//ORIGINAL LINE: static void initializeStatePages(Neo4Net.io.pagecache.PageCursor cursor) throws java.io.IOException
 		 internal static void InitializeStatePages( PageCursor cursor )
 		 {
 			  PageCursorUtil.GoTo( cursor, "State page A", IdSpace.STATE_PAGE_A );
@@ -65,7 +65,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 /// <returns> <seealso cref="Pair"/> of both tree states. </returns>
 		 /// <exception cref="IOException"> on <seealso cref="PageCursor"/> reading error. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static org.apache.commons.lang3.tuple.Pair<TreeState,TreeState> readStatePages(org.Neo4Net.io.pagecache.PageCursor cursor, long pageIdA, long pageIdB) throws java.io.IOException
+//ORIGINAL LINE: static org.apache.commons.lang3.tuple.Pair<TreeState,TreeState> readStatePages(Neo4Net.io.pagecache.PageCursor cursor, long pageIdA, long pageIdB) throws java.io.IOException
 		 internal static Pair<TreeState, TreeState> ReadStatePages( PageCursor cursor, long pageIdA, long pageIdB )
 		 {
 			  TreeState stateA = ReadStatePage( cursor, pageIdA );
@@ -74,7 +74,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static TreeState readStatePage(org.Neo4Net.io.pagecache.PageCursor cursor, long pageIdA) throws java.io.IOException
+//ORIGINAL LINE: private static TreeState readStatePage(Neo4Net.io.pagecache.PageCursor cursor, long pageIdA) throws java.io.IOException
 		 private static TreeState ReadStatePage( PageCursor cursor, long pageIdA )
 		 {
 			  PageCursorUtil.GoTo( cursor, "state page", pageIdA );

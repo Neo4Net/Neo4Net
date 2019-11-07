@@ -35,7 +35,7 @@ namespace Neo4Net.backup
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.backup.impl.BackupProtocolServiceFactory.backupProtocolService;
+//	import static Neo4Net.backup.impl.BackupProtocolServiceFactory.backupProtocolService;
 
 	/// <summary>
 	/// This class encapsulates the information needed to perform an online backup against a running Neo4Net instance

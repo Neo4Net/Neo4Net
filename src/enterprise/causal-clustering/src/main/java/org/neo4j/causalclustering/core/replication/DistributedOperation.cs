@@ -69,7 +69,7 @@ namespace Neo4Net.causalclustering.core.replication
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void handle(org.Neo4Net.causalclustering.messaging.marshalling.ReplicatedContentHandler contentHandler) throws java.io.IOException
+//ORIGINAL LINE: public void handle(Neo4Net.causalclustering.messaging.marshalling.ReplicatedContentHandler contentHandler) throws java.io.IOException
 		 public override void Handle( ReplicatedContentHandler contentHandler )
 		 {
 			  contentHandler.Handle( this );
@@ -80,7 +80,7 @@ namespace Neo4Net.causalclustering.core.replication
 		 /// This this consumer ignores the content which is handles by its own serializer.
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void marshalMetaData(org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public void marshalMetaData(Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
 		 public virtual void MarshalMetaData( WritableChannel channel )
 		 {
 			  channel.PutLong( GlobalSession().sessionId().MostSignificantBits );
@@ -92,7 +92,7 @@ namespace Neo4Net.causalclustering.core.replication
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static org.Neo4Net.causalclustering.messaging.marshalling.ContentBuilder<ReplicatedContent> deserialize(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException, org.Neo4Net.causalclustering.messaging.EndOfStreamException
+//ORIGINAL LINE: public static Neo4Net.causalclustering.messaging.marshalling.ContentBuilder<ReplicatedContent> deserialize(Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException, Neo4Net.causalclustering.messaging.EndOfStreamException
 		 public static ContentBuilder<ReplicatedContent> Deserialize( ReadableChannel channel )
 		 {
 			  long mostSigBits = channel.Long;

@@ -51,7 +51,7 @@ namespace Neo4Net.causalclustering.core.state.machines.token
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static void marshal(ReplicatedTokenRequest content, org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public static void marshal(ReplicatedTokenRequest content, Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
 		 public static void Marshal( ReplicatedTokenRequest content, WritableChannel channel )
 		 {
 			  channel.PutInt( content.Type().ordinal() );
@@ -62,7 +62,7 @@ namespace Neo4Net.causalclustering.core.state.machines.token
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static ReplicatedTokenRequest unmarshal(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public static ReplicatedTokenRequest unmarshal(Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
 		 public static ReplicatedTokenRequest Unmarshal( ReadableChannel channel )
 		 {
 			  TokenType type = Enum.GetValues( typeof( TokenType ) )[channel.Int];

@@ -31,7 +31,7 @@ namespace Neo4Net.metrics.diagnostics
 	using Config = Neo4Net.Kernel.configuration.Config;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.diagnostics.DiagnosticsReportSources.newDiagnosticsFile;
+//	import static Neo4Net.diagnostics.DiagnosticsReportSources.newDiagnosticsFile;
 
 	public class MetricsDiagnosticsOfflineReportProvider : DiagnosticsOfflineReportProvider
 	{

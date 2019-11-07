@@ -37,9 +37,9 @@ namespace Neo4Net.causalclustering.core.state.machines.id
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Math.max;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.id.IdRangeIterator.EMPTY_ID_RANGE_ITERATOR;
+//	import static Neo4Net.kernel.impl.store.id.IdRangeIterator.EMPTY_ID_RANGE_ITERATOR;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.id.IdRangeIterator.VALUE_REPRESENTING_NULL;
+//	import static Neo4Net.kernel.impl.store.id.IdRangeIterator.VALUE_REPRESENTING_NULL;
 
 	internal class ReplicatedIdGenerator : IdGenerator
 	{

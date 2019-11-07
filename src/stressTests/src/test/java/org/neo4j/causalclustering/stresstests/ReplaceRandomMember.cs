@@ -37,7 +37,7 @@ namespace Neo4Net.causalclustering.stresstests
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.BackupUtil.restoreFromBackup;
+//	import static Neo4Net.causalclustering.BackupUtil.restoreFromBackup;
 
 	internal class ReplaceRandomMember : RepeatOnRandomMember
 	{
@@ -49,7 +49,7 @@ namespace Neo4Net.causalclustering.stresstests
 		 private const long RETRY_TIMEOUT_MILLIS = 5000;
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private final org.Neo4Net.causalclustering.discovery.Cluster<?> cluster;
+//ORIGINAL LINE: private final Neo4Net.causalclustering.discovery.Cluster<?> cluster;
 		 private readonly Cluster<object> _cluster;
 		 private readonly FileSystemAbstraction _fs;
 		 private readonly Log _log;
@@ -66,7 +66,7 @@ namespace Neo4Net.causalclustering.stresstests
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void doWorkOnMember(org.Neo4Net.causalclustering.discovery.ClusterMember oldMember) throws Exception
+//ORIGINAL LINE: public void doWorkOnMember(Neo4Net.causalclustering.discovery.ClusterMember oldMember) throws Exception
 		 public override void DoWorkOnMember( ClusterMember oldMember )
 		 {
 			  bool replaceFromBackup = ThreadLocalRandom.current().nextBoolean();
@@ -96,7 +96,7 @@ namespace Neo4Net.causalclustering.stresstests
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.io.File createBackupWithRetries(org.Neo4Net.causalclustering.discovery.ClusterMember member) throws Exception
+//ORIGINAL LINE: private java.io.File createBackupWithRetries(Neo4Net.causalclustering.discovery.ClusterMember member) throws Exception
 		 private File CreateBackupWithRetries( ClusterMember member )
 		 {
 			  int failureCount = 0;

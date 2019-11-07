@@ -179,7 +179,7 @@ namespace Neo4Net.Csv.Reader
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private org.Neo4Net.collection.RawIterator<CharReadable,java.io.IOException> readerIteratorFromStrings(final String[][] data, final System.Nullable<char> lineEnding)
+//ORIGINAL LINE: private Neo4Net.collection.RawIterator<CharReadable,java.io.IOException> readerIteratorFromStrings(final String[][] data, final System.Nullable<char> lineEnding)
 		 private RawIterator<CharReadable, IOException> ReaderIteratorFromStrings( string[][] data, char? lineEnding )
 		 {
 			  return new RawIteratorAnonymousInnerClass( this, data, lineEnding );

@@ -61,7 +61,7 @@ namespace Neo4Net.Server.database
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: public Iterable<org.Neo4Net.kernel.extension.KernelExtensionFactory<?>> kernelExtensions()
+//ORIGINAL LINE: public Iterable<Neo4Net.kernel.extension.KernelExtensionFactory<?>> kernelExtensions()
 		 public override IEnumerable<KernelExtensionFactory<object>> KernelExtensions()
 		 {
 			  return _wrapped.kernelExtensions();

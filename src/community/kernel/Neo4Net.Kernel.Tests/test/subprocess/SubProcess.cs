@@ -26,11 +26,11 @@ namespace Neo4Net.Test.subprocess
 {
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.proc.ProcessUtil.getClassPath;
+//	import static Neo4Net.test.proc.ProcessUtil.getClassPath;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.proc.ProcessUtil.getClassPathList;
+//	import static Neo4Net.test.proc.ProcessUtil.getClassPathList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.proc.ProcessUtil.getJavaExecutable;
+//	import static Neo4Net.test.proc.ProcessUtil.getJavaExecutable;
 
 	[Serializable]
 	public abstract class SubProcess<T, P>

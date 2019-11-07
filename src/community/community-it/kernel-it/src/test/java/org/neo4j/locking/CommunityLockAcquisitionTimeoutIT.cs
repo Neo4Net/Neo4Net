@@ -65,7 +65,7 @@ namespace Neo4Net.Locking
 	{
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ClassRule public static final org.Neo4Net.test.rule.TestDirectory directory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @ClassRule public static final Neo4Net.test.rule.TestDirectory directory = Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public static readonly TestDirectory Directory = TestDirectory.testDirectory();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Rule public final org.junit.rules.ExpectedException expectedException = org.junit.rules.ExpectedException.none();
@@ -158,7 +158,7 @@ namespace Neo4Net.Locking
 					{
 					 using ( Transaction nestedTransaction = _database.beginTx() )
 					 {
-						  ResourceIterator<Node> nodes = _database.findNodes( _marker );
+						  IResourceIterator<Node> nodes = _database.findNodes( _marker );
 						  Node node = nodes.next();
 						  node.addLabel( Label.label( "anotherLabel" ) );
 						  nestedTransaction.success();

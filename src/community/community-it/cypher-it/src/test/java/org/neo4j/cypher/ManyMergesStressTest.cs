@@ -35,7 +35,7 @@ namespace Neo4Net.Cypher
 	using Neo4Net.Collections.Helpers;
 	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using GraphDatabaseQueryService = Neo4Net.Kernel.GraphDatabaseQueryService;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
 	using InternalTransaction = Neo4Net.Kernel.impl.coreapi.InternalTransaction;
 	using EmbeddedDatabaseRule = Neo4Net.Test.rule.EmbeddedDatabaseRule;
 
@@ -50,7 +50,7 @@ namespace Neo4Net.Cypher
 		 private const int TRIES = 8000;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.EmbeddedDatabaseRule dbRule = new org.Neo4Net.test.rule.EmbeddedDatabaseRule();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.EmbeddedDatabaseRule dbRule = new Neo4Net.test.rule.EmbeddedDatabaseRule();
 		 public EmbeddedDatabaseRule DbRule = new EmbeddedDatabaseRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

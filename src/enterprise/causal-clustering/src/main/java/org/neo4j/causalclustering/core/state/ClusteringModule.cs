@@ -47,11 +47,11 @@ namespace Neo4Net.causalclustering.core.state
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Thread.sleep;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.server.CoreServerModule.CLUSTER_ID_NAME;
+//	import static Neo4Net.causalclustering.core.server.CoreServerModule.CLUSTER_ID_NAME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.server.CoreServerModule.DB_NAME;
+//	import static Neo4Net.causalclustering.core.server.CoreServerModule.DB_NAME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.discovery.ResolutionResolverFactory.chooseResolver;
+//	import static Neo4Net.causalclustering.discovery.ResolutionResolverFactory.chooseResolver;
 
 	public class ClusteringModule
 	{

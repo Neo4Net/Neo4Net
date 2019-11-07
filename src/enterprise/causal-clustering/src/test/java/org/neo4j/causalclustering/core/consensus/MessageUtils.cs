@@ -35,7 +35,7 @@ namespace Neo4Net.causalclustering.core.consensus
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static RaftMessages_RaftMessage messageFor(org.Neo4Net.causalclustering.core.consensus.outcome.Outcome outcome, final org.Neo4Net.causalclustering.identity.MemberId member)
+//ORIGINAL LINE: public static RaftMessages_RaftMessage messageFor(Neo4Net.causalclustering.core.consensus.outcome.Outcome outcome, final Neo4Net.causalclustering.identity.MemberId member)
 		 public static RaftMessages_RaftMessage MessageFor( Outcome outcome, MemberId member )
 		 {
 			  System.Predicate<RaftMessages_Directed> selectMember = message => message.to() == member;

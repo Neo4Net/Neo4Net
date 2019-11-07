@@ -34,7 +34,7 @@ namespace Neo4Net.causalclustering.scenarios
 	using ReadReplica = Neo4Net.causalclustering.discovery.ReadReplica;
 	using Result = Neo4Net.GraphDb.Result;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
 	using EnterpriseLoginContext = Neo4Net.Kernel.enterprise.api.security.EnterpriseLoginContext;
 	using InternalTransaction = Neo4Net.Kernel.impl.coreapi.InternalTransaction;
 	using ClusterRule = Neo4Net.Test.causalclustering.ClusterRule;
@@ -44,16 +44,16 @@ namespace Neo4Net.causalclustering.scenarios
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.@virtual.VirtualValues.EMPTY_MAP;
+//	import static Neo4Net.values.@virtual.VirtualValues.EMPTY_MAP;
 
 	public class ClusterFormationIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.causalclustering.ClusterRule clusterRule = new org.Neo4Net.test.causalclustering.ClusterRule().withNumberOfCoreMembers(3).withNumberOfReadReplicas(0);
+//ORIGINAL LINE: @Rule public final Neo4Net.test.causalclustering.ClusterRule clusterRule = new Neo4Net.test.causalclustering.ClusterRule().withNumberOfCoreMembers(3).withNumberOfReadReplicas(0);
 		 public readonly ClusterRule ClusterRule = new ClusterRule().withNumberOfCoreMembers(3).withNumberOfReadReplicas(0);
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private org.Neo4Net.causalclustering.discovery.Cluster<?> cluster;
+//ORIGINAL LINE: private Neo4Net.causalclustering.discovery.Cluster<?> cluster;
 		 private Cluster<object> _cluster;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

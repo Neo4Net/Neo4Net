@@ -39,7 +39,7 @@ namespace Neo4Net.causalclustering.core.consensus.membership
 	using LogProvider = Neo4Net.Logging.LogProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.first;
+//	import static Neo4Net.helpers.collection.Iterables.first;
 
 	/// <summary>
 	/// This class drives raft membership changes by glueing together various components:
@@ -275,7 +275,7 @@ namespace Neo4Net.causalclustering.core.consensus.membership
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void processLog(long commitIndex, java.util.Collection<org.Neo4Net.causalclustering.core.consensus.outcome.RaftLogCommand> logCommands) throws java.io.IOException
+//ORIGINAL LINE: public void processLog(long commitIndex, java.util.Collection<Neo4Net.causalclustering.core.consensus.outcome.RaftLogCommand> logCommands) throws java.io.IOException
 		 public virtual void ProcessLog( long commitIndex, ICollection<RaftLogCommand> logCommands )
 		 {
 			  foreach ( RaftLogCommand logCommand in logCommands )
@@ -292,7 +292,7 @@ namespace Neo4Net.causalclustering.core.consensus.membership
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void append(long baseIndex, org.Neo4Net.causalclustering.core.consensus.log.RaftLogEntry... entries) throws java.io.IOException
+//ORIGINAL LINE: public void append(long baseIndex, Neo4Net.causalclustering.core.consensus.log.RaftLogEntry... entries) throws java.io.IOException
 		 public override void Append( long baseIndex, params RaftLogEntry[] entries )
 		 {
 			  /* The warnings in this method are rarely expected occurrences which warrant to be logged with significance. */

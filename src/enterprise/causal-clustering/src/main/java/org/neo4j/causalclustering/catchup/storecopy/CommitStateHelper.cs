@@ -37,7 +37,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_ID;
+//	import static Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_ID;
 
 	public class CommitStateHelper
 	{
@@ -53,7 +53,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: CommitState getStoreState(org.Neo4Net.io.layout.DatabaseLayout databaseLayout) throws java.io.IOException
+//ORIGINAL LINE: CommitState getStoreState(Neo4Net.io.layout.DatabaseLayout databaseLayout) throws java.io.IOException
 		 internal virtual CommitState GetStoreState( DatabaseLayout databaseLayout )
 		 {
 			  ReadOnlyTransactionIdStore metaDataStore = new ReadOnlyTransactionIdStore( _pageCache, databaseLayout );
@@ -73,7 +73,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.util.Optional<long> getLatestTransactionLogIndex(long startTxId, org.Neo4Net.io.layout.DatabaseLayout databaseLayout) throws java.io.IOException
+//ORIGINAL LINE: private java.util.Optional<long> getLatestTransactionLogIndex(long startTxId, Neo4Net.io.layout.DatabaseLayout databaseLayout) throws java.io.IOException
 		 private long? GetLatestTransactionLogIndex( long startTxId, DatabaseLayout databaseLayout )
 		 {
 			  if ( !HasTxLogs( databaseLayout ) )
@@ -105,7 +105,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean hasTxLogs(org.Neo4Net.io.layout.DatabaseLayout databaseLayout) throws java.io.IOException
+//ORIGINAL LINE: public boolean hasTxLogs(Neo4Net.io.layout.DatabaseLayout databaseLayout) throws java.io.IOException
 		 public virtual bool HasTxLogs( DatabaseLayout databaseLayout )
 		 {
 			  return LogFilesBuilder.activeFilesBuilder( databaseLayout, _fs, _pageCache ).withConfig( _config ).build().logFiles().Length > 0;

@@ -33,12 +33,12 @@ namespace Neo4Net.Server.rest.web
 	using UsageData = Neo4Net.Udc.UsageData;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.udc.UsageDataKeys.Features_Fields.http_tx_endpoint;
+//	import static Neo4Net.udc.UsageDataKeys.Features_Fields.http_tx_endpoint;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.udc.UsageDataKeys.features;
+//	import static Neo4Net.udc.UsageDataKeys.features;
 
 	/// <summary>
-	/// This does basic mapping from HTTP to <seealso cref="org.Neo4Net.server.rest.transactional.TransactionFacade"/>, and should not
+	/// This does basic mapping from HTTP to <seealso cref="Neo4Net.server.rest.transactional.TransactionFacade"/>, and should not
 	/// do anything more complicated than that.
 	/// </summary>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -78,7 +78,7 @@ namespace Neo4Net.Server.rest.web
 		 public virtual Response ExecuteStatements( long id, Stream input, UriInfo uriInfo, HttpServletRequest request )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.server.rest.transactional.TransactionHandle transactionHandle;
+//ORIGINAL LINE: final Neo4Net.server.rest.transactional.TransactionHandle transactionHandle;
 			  TransactionHandle transactionHandle;
 			  try
 			  {
@@ -97,7 +97,7 @@ namespace Neo4Net.Server.rest.web
 		 public virtual Response CommitTransaction( long id, Stream input, UriInfo uriInfo, HttpServletRequest request )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.server.rest.transactional.TransactionHandle transactionHandle;
+//ORIGINAL LINE: final Neo4Net.server.rest.transactional.TransactionHandle transactionHandle;
 			  TransactionHandle transactionHandle;
 			  try
 			  {
@@ -116,7 +116,7 @@ namespace Neo4Net.Server.rest.web
 		 public virtual Response CommitNewTransaction( Stream input, UriInfo uriInfo, HttpServletRequest request )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.server.rest.transactional.TransactionHandle transactionHandle;
+//ORIGINAL LINE: final Neo4Net.server.rest.transactional.TransactionHandle transactionHandle;
 			  TransactionHandle transactionHandle;
 			  LoginContext loginContext = AuthorizedRequestWrapper.getLoginContextFromHttpServletRequest( request );
 			  long customTransactionTimeout = HttpHeaderUtils.getTransactionTimeout( request, _log );
@@ -133,7 +133,7 @@ namespace Neo4Net.Server.rest.web
 		 public virtual Response RollbackTransaction( long id, UriInfo uriInfo )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.server.rest.transactional.TransactionHandle transactionHandle;
+//ORIGINAL LINE: final Neo4Net.server.rest.transactional.TransactionHandle transactionHandle;
 			  TransactionHandle transactionHandle;
 			  try
 			  {
@@ -147,7 +147,7 @@ namespace Neo4Net.Server.rest.web
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private javax.ws.rs.core.Response invalidTransaction(final org.Neo4Net.server.rest.transactional.error.TransactionLifecycleException e, final java.net.URI baseUri)
+//ORIGINAL LINE: private javax.ws.rs.core.Response invalidTransaction(final Neo4Net.server.rest.transactional.error.TransactionLifecycleException e, final java.net.URI baseUri)
 		 private Response InvalidTransaction( TransactionLifecycleException e, URI baseUri )
 		 {
 			  return Response.status( Response.Status.NOT_FOUND ).entity( SerializeError( e.ToNeo4NetError(), baseUri ) ).build();
@@ -164,14 +164,14 @@ namespace Neo4Net.Server.rest.web
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private javax.ws.rs.core.StreamingOutput executeStatements(final java.io.InputStream input, final org.Neo4Net.server.rest.transactional.TransactionHandle transactionHandle, final java.net.URI baseUri, final javax.servlet.http.HttpServletRequest request)
+//ORIGINAL LINE: private javax.ws.rs.core.StreamingOutput executeStatements(final java.io.InputStream input, final Neo4Net.server.rest.transactional.TransactionHandle transactionHandle, final java.net.URI baseUri, final javax.servlet.http.HttpServletRequest request)
 		 private StreamingOutput ExecuteStatements( Stream input, TransactionHandle transactionHandle, URI baseUri, HttpServletRequest request )
 		 {
 			  return output => transactionHandle.execute( _facade.deserializer( input ), _facade.serializer( output, baseUri ), request );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private javax.ws.rs.core.StreamingOutput executeStatementsAndCommit(final java.io.InputStream input, final org.Neo4Net.server.rest.transactional.TransactionHandle transactionHandle, final java.net.URI baseUri, final javax.servlet.http.HttpServletRequest request)
+//ORIGINAL LINE: private javax.ws.rs.core.StreamingOutput executeStatementsAndCommit(final java.io.InputStream input, final Neo4Net.server.rest.transactional.TransactionHandle transactionHandle, final java.net.URI baseUri, final javax.servlet.http.HttpServletRequest request)
 		 private StreamingOutput ExecuteStatementsAndCommit( Stream input, TransactionHandle transactionHandle, URI baseUri, HttpServletRequest request )
 		 {
 			  return output =>
@@ -182,7 +182,7 @@ namespace Neo4Net.Server.rest.web
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private javax.ws.rs.core.StreamingOutput rollback(final org.Neo4Net.server.rest.transactional.TransactionHandle transactionHandle, final java.net.URI baseUri)
+//ORIGINAL LINE: private javax.ws.rs.core.StreamingOutput rollback(final Neo4Net.server.rest.transactional.TransactionHandle transactionHandle, final java.net.URI baseUri)
 		 private StreamingOutput Rollback( TransactionHandle transactionHandle, URI baseUri )
 		 {
 			  return output =>
@@ -195,7 +195,7 @@ namespace Neo4Net.Server.rest.web
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private javax.ws.rs.core.StreamingOutput serializeError(final org.Neo4Net.server.rest.transactional.error.Neo4NetError Neo4NetError, final java.net.URI baseUri)
+//ORIGINAL LINE: private javax.ws.rs.core.StreamingOutput serializeError(final Neo4Net.server.rest.transactional.error.Neo4NetError Neo4NetError, final java.net.URI baseUri)
 		 private StreamingOutput SerializeError( Neo4NetError Neo4NetError, URI baseUri )
 		 {
 			  return output =>

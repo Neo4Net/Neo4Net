@@ -31,7 +31,7 @@ namespace Neo4Net.ha.correctness
 	using Neo4Net.Collections.Helpers;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.filter;
+//	import static Neo4Net.helpers.collection.Iterables.filter;
 
 	/// <summary>
 	/// A picture of the state of the cluster, including all messages waiting to get delivered.
@@ -119,7 +119,7 @@ namespace Neo4Net.ha.correctness
 		 ///  managing timeouts triggering. 
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.helpers.collection.Pair<ClusterAction, ClusterState> performNextTimeoutFrom(ClusterInstance instance) throws Exception
+//ORIGINAL LINE: private Neo4Net.helpers.collection.Pair<ClusterAction, ClusterState> performNextTimeoutFrom(ClusterInstance instance) throws Exception
 		 private Pair<ClusterAction, ClusterState> PerformNextTimeoutFrom( ClusterInstance instance )
 		 {
 			  ClusterState newState = Snapshot();

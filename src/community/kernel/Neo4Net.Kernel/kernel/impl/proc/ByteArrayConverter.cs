@@ -33,11 +33,11 @@ namespace Neo4Net.Kernel.impl.proc
 	using Values = Neo4Net.Values.Storable.Values;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.procs.DefaultParameterValue.ntByteArray;
+//	import static Neo4Net.Kernel.Api.Internal.procs.DefaultParameterValue.ntByteArray;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.proc.ParseUtil.parseList;
+//	import static Neo4Net.kernel.impl.proc.ParseUtil.parseList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.SequenceValue_IterationPreference.RANDOM_ACCESS;
+//	import static Neo4Net.values.SequenceValue_IterationPreference.RANDOM_ACCESS;
 
 	public class ByteArrayConverter : System.Func<string, DefaultParameterValue>, FieldSignature.InputMapper
 	{

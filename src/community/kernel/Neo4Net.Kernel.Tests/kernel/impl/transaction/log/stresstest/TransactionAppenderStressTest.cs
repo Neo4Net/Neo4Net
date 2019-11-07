@@ -39,12 +39,12 @@ namespace Neo4Net.Kernel.impl.transaction.log.stresstest
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.function.Suppliers.untilTimeExpired;
+//	import static Neo4Net.function.Suppliers.untilTimeExpired;
 
 	public class TransactionAppenderStressTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory directory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.TestDirectory directory = Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory Directory = TestDirectory.testDirectory();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -126,7 +126,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.stresstest
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.kernel.impl.transaction.log.ReadableLogChannel openLogFile(org.Neo4Net.io.fs.FileSystemAbstraction fs, int version) throws java.io.IOException
+//ORIGINAL LINE: private Neo4Net.kernel.impl.transaction.log.ReadableLogChannel openLogFile(Neo4Net.io.fs.FileSystemAbstraction fs, int version) throws java.io.IOException
 			  internal virtual ReadableLogChannel OpenLogFile( FileSystemAbstraction fs, int version )
 			  {
 					LogFiles logFiles = LogFilesBuilder.logFilesBasedOnlyBuilder( WorkingDirectory, fs ).build();

@@ -39,7 +39,7 @@ namespace Neo4Net.Bolt.v3.messaging.request
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertThrows;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.map;
+//	import static Neo4Net.helpers.collection.MapUtil.map;
 
 	internal class BeginMessageTest
 	{

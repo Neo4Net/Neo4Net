@@ -77,35 +77,35 @@ namespace Neo4Net.Kernel.impl.storemigration.participant
 	using ExecutionMonitor = Neo4Net.@unsafe.Impl.Batchimport.staging.ExecutionMonitor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.format.RecordFormatSelector.selectForVersion;
+//	import static Neo4Net.kernel.impl.store.format.RecordFormatSelector.selectForVersion;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.format.standard.MetaDataRecordFormat.FIELD_NOT_PRESENT;
+//	import static Neo4Net.kernel.impl.store.format.standard.MetaDataRecordFormat.FIELD_NOT_PRESENT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.storemigration.FileOperation.COPY;
+//	import static Neo4Net.kernel.impl.storemigration.FileOperation.COPY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.storemigration.FileOperation.DELETE;
+//	import static Neo4Net.kernel.impl.storemigration.FileOperation.DELETE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.storemigration.FileOperation.MOVE;
+//	import static Neo4Net.kernel.impl.storemigration.FileOperation.MOVE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.storemigration.participant.StoreMigratorFileOperation.fileOperation;
+//	import static Neo4Net.kernel.impl.storemigration.participant.StoreMigratorFileOperation.fileOperation;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_CHECKSUM;
+//	import static Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_CHECKSUM;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_COMMIT_TIMESTAMP;
+//	import static Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_COMMIT_TIMESTAMP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_LOG_BYTE_OFFSET;
+//	import static Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_LOG_BYTE_OFFSET;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_LOG_VERSION;
+//	import static Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_LOG_VERSION;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.UNKNOWN_TX_CHECKSUM;
+//	import static Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.UNKNOWN_TX_CHECKSUM;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.UNKNOWN_TX_COMMIT_TIMESTAMP;
+//	import static Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.UNKNOWN_TX_COMMIT_TIMESTAMP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.ImportLogic.NO_MONITOR;
+//	import static Neo4Net.@unsafe.impl.batchimport.ImportLogic.NO_MONITOR;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.input.Inputs.knownEstimates;
+//	import static Neo4Net.@unsafe.impl.batchimport.input.Inputs.knownEstimates;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.staging.ExecutionSupervisors.withDynamicProcessorAssignment;
+//	import static Neo4Net.@unsafe.impl.batchimport.staging.ExecutionSupervisors.withDynamicProcessorAssignment;
 
 	/// <summary>
 	/// Migrates a Neo4Net kernel database from one version to the next.
@@ -139,7 +139,7 @@ namespace Neo4Net.Kernel.impl.storemigration.participant
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void migrate(org.Neo4Net.io.layout.DatabaseLayout directoryLayout, org.Neo4Net.io.layout.DatabaseLayout migrationLayout, org.Neo4Net.kernel.impl.util.monitoring.ProgressReporter progressReporter, String versionToMigrateFrom, String versionToMigrateTo) throws java.io.IOException
+//ORIGINAL LINE: public void migrate(Neo4Net.io.layout.DatabaseLayout directoryLayout, Neo4Net.io.layout.DatabaseLayout migrationLayout, Neo4Net.kernel.impl.util.monitoring.ProgressReporter progressReporter, String versionToMigrateFrom, String versionToMigrateTo) throws java.io.IOException
 		 public override void Migrate( DatabaseLayout directoryLayout, DatabaseLayout migrationLayout, ProgressReporter progressReporter, string versionToMigrateFrom, string versionToMigrateTo )
 		 {
 			  // Extract information about the last transaction from legacy neostore
@@ -193,21 +193,21 @@ namespace Neo4Net.Kernel.impl.storemigration.participant
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void writeLastTxInformation(org.Neo4Net.io.layout.DatabaseLayout migrationStructure, org.Neo4Net.kernel.impl.store.TransactionId txInfo) throws java.io.IOException
+//ORIGINAL LINE: void writeLastTxInformation(Neo4Net.io.layout.DatabaseLayout migrationStructure, Neo4Net.kernel.impl.store.TransactionId txInfo) throws java.io.IOException
 		 internal virtual void WriteLastTxInformation( DatabaseLayout migrationStructure, TransactionId txInfo )
 		 {
 			  WriteTxLogCounters( _fileSystem, LastTxInformationFile( migrationStructure ), txInfo.TransactionIdConflict(), txInfo.Checksum(), txInfo.CommitTimestamp() );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void writeLastTxLogPosition(org.Neo4Net.io.layout.DatabaseLayout migrationStructure, org.Neo4Net.kernel.impl.transaction.log.LogPosition lastTxLogPosition) throws java.io.IOException
+//ORIGINAL LINE: void writeLastTxLogPosition(Neo4Net.io.layout.DatabaseLayout migrationStructure, Neo4Net.kernel.impl.transaction.log.LogPosition lastTxLogPosition) throws java.io.IOException
 		 internal virtual void WriteLastTxLogPosition( DatabaseLayout migrationStructure, LogPosition lastTxLogPosition )
 		 {
 			  WriteTxLogCounters( _fileSystem, LastTxLogPositionFile( migrationStructure ), lastTxLogPosition.LogVersion, lastTxLogPosition.ByteOffset );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.Neo4Net.kernel.impl.store.TransactionId readLastTxInformation(org.Neo4Net.io.layout.DatabaseLayout migrationStructure) throws java.io.IOException
+//ORIGINAL LINE: Neo4Net.kernel.impl.store.TransactionId readLastTxInformation(Neo4Net.io.layout.DatabaseLayout migrationStructure) throws java.io.IOException
 		 internal virtual TransactionId ReadLastTxInformation( DatabaseLayout migrationStructure )
 		 {
 			  long[] counters = ReadTxLogCounters( _fileSystem, LastTxInformationFile( migrationStructure ), 3 );
@@ -215,7 +215,7 @@ namespace Neo4Net.Kernel.impl.storemigration.participant
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.Neo4Net.kernel.impl.transaction.log.LogPosition readLastTxLogPosition(org.Neo4Net.io.layout.DatabaseLayout migrationStructure) throws java.io.IOException
+//ORIGINAL LINE: Neo4Net.kernel.impl.transaction.log.LogPosition readLastTxLogPosition(Neo4Net.io.layout.DatabaseLayout migrationStructure) throws java.io.IOException
 		 internal virtual LogPosition ReadLastTxLogPosition( DatabaseLayout migrationStructure )
 		 {
 			  long[] counters = ReadTxLogCounters( _fileSystem, LastTxLogPositionFile( migrationStructure ), 2 );
@@ -223,7 +223,7 @@ namespace Neo4Net.Kernel.impl.storemigration.participant
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void writeTxLogCounters(org.Neo4Net.io.fs.FileSystemAbstraction fs, java.io.File file, long... counters) throws java.io.IOException
+//ORIGINAL LINE: private static void writeTxLogCounters(Neo4Net.io.fs.FileSystemAbstraction fs, java.io.File file, long... counters) throws java.io.IOException
 		 private static void WriteTxLogCounters( FileSystemAbstraction fs, File file, params long[] counters )
 		 {
 			  using ( Writer writer = fs.OpenAsWriter( file, StandardCharsets.UTF_8, false ) )
@@ -233,7 +233,7 @@ namespace Neo4Net.Kernel.impl.storemigration.participant
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static long[] readTxLogCounters(org.Neo4Net.io.fs.FileSystemAbstraction fs, java.io.File file, int numberOfCounters) throws java.io.IOException
+//ORIGINAL LINE: private static long[] readTxLogCounters(Neo4Net.io.fs.FileSystemAbstraction fs, java.io.File file, int numberOfCounters) throws java.io.IOException
 		 private static long[] ReadTxLogCounters( FileSystemAbstraction fs, File file, int numberOfCounters )
 		 {
 			  using ( StreamReader reader = new StreamReader( fs.OpenAsReader( file, StandardCharsets.UTF_8 ) ) )
@@ -264,7 +264,7 @@ namespace Neo4Net.Kernel.impl.storemigration.participant
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.Neo4Net.kernel.impl.store.TransactionId extractTransactionIdInformation(java.io.File neoStore, long lastTransactionId) throws java.io.IOException
+//ORIGINAL LINE: Neo4Net.kernel.impl.store.TransactionId extractTransactionIdInformation(java.io.File neoStore, long lastTransactionId) throws java.io.IOException
 		 internal virtual TransactionId ExtractTransactionIdInformation( File neoStore, long lastTransactionId )
 		 {
 			  long checksum = MetaDataStore.getRecord( _pageCache, neoStore, MetaDataStore.Position.LAST_TRANSACTION_CHECKSUM );
@@ -298,7 +298,7 @@ namespace Neo4Net.Kernel.impl.storemigration.participant
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.Neo4Net.kernel.impl.transaction.log.LogPosition extractTransactionLogPosition(java.io.File neoStore, org.Neo4Net.io.layout.DatabaseLayout sourceDirectoryStructure, long lastTxId) throws java.io.IOException
+//ORIGINAL LINE: Neo4Net.kernel.impl.transaction.log.LogPosition extractTransactionLogPosition(java.io.File neoStore, Neo4Net.io.layout.DatabaseLayout sourceDirectoryStructure, long lastTxId) throws java.io.IOException
 		 internal virtual LogPosition ExtractTransactionLogPosition( File neoStore, DatabaseLayout sourceDirectoryStructure, long lastTxId )
 		 {
 			  long lastClosedTxLogVersion = MetaDataStore.getRecord( _pageCache, neoStore, MetaDataStore.Position.LAST_CLOSED_TRANSACTION_LOG_VERSION );
@@ -326,7 +326,7 @@ namespace Neo4Net.Kernel.impl.storemigration.participant
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void migrateWithBatchImporter(org.Neo4Net.io.layout.DatabaseLayout sourceDirectoryStructure, org.Neo4Net.io.layout.DatabaseLayout migrationDirectoryStructure, long lastTxId, long lastTxChecksum, long lastTxLogVersion, long lastTxLogByteOffset, org.Neo4Net.kernel.impl.util.monitoring.ProgressReporter progressReporter, org.Neo4Net.kernel.impl.store.format.RecordFormats oldFormat, org.Neo4Net.kernel.impl.store.format.RecordFormats newFormat) throws java.io.IOException
+//ORIGINAL LINE: private void migrateWithBatchImporter(Neo4Net.io.layout.DatabaseLayout sourceDirectoryStructure, Neo4Net.io.layout.DatabaseLayout migrationDirectoryStructure, long lastTxId, long lastTxChecksum, long lastTxLogVersion, long lastTxLogByteOffset, Neo4Net.kernel.impl.util.monitoring.ProgressReporter progressReporter, Neo4Net.kernel.impl.store.format.RecordFormats oldFormat, Neo4Net.kernel.impl.store.format.RecordFormats newFormat) throws java.io.IOException
 		 private void MigrateWithBatchImporter( DatabaseLayout sourceDirectoryStructure, DatabaseLayout migrationDirectoryStructure, long lastTxId, long lastTxChecksum, long lastTxLogVersion, long lastTxLogByteOffset, ProgressReporter progressReporter, RecordFormats oldFormat, RecordFormats newFormat )
 		 {
 			  PrepareBatchImportMigration( sourceDirectoryStructure, migrationDirectoryStructure, oldFormat, newFormat );
@@ -396,7 +396,7 @@ namespace Neo4Net.Kernel.impl.storemigration.participant
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void prepareBatchImportMigration(org.Neo4Net.io.layout.DatabaseLayout sourceDirectoryStructure, org.Neo4Net.io.layout.DatabaseLayout migrationStrcuture, org.Neo4Net.kernel.impl.store.format.RecordFormats oldFormat, org.Neo4Net.kernel.impl.store.format.RecordFormats newFormat) throws java.io.IOException
+//ORIGINAL LINE: private void prepareBatchImportMigration(Neo4Net.io.layout.DatabaseLayout sourceDirectoryStructure, Neo4Net.io.layout.DatabaseLayout migrationStrcuture, Neo4Net.kernel.impl.store.format.RecordFormats oldFormat, Neo4Net.kernel.impl.store.format.RecordFormats newFormat) throws java.io.IOException
 		 private void PrepareBatchImportMigration( DatabaseLayout sourceDirectoryStructure, DatabaseLayout migrationStrcuture, RecordFormats oldFormat, RecordFormats newFormat )
 		 {
 			  CreateStore( migrationStrcuture, newFormat );
@@ -448,7 +448,7 @@ namespace Neo4Net.Kernel.impl.storemigration.participant
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private static org.Neo4Net.unsafe.impl.batchimport.AdditionalInitialIds readAdditionalIds(final long lastTxId, final long lastTxChecksum, final long lastTxLogVersion, final long lastTxLogByteOffset)
+//ORIGINAL LINE: private static Neo4Net.unsafe.impl.batchimport.AdditionalInitialIds readAdditionalIds(final long lastTxId, final long lastTxChecksum, final long lastTxLogVersion, final long lastTxLogByteOffset)
 		 private static AdditionalInitialIds ReadAdditionalIds( long lastTxId, long lastTxChecksum, long lastTxLogVersion, long lastTxLogByteOffset )
 		 {
 			  return new AdditionalInitialIdsAnonymousInnerClass( lastTxId, lastTxChecksum, lastTxLogVersion, lastTxLogByteOffset );
@@ -491,7 +491,7 @@ namespace Neo4Net.Kernel.impl.storemigration.participant
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private static org.Neo4Net.unsafe.impl.batchimport.staging.ExecutionMonitor migrationBatchImporterMonitor(org.Neo4Net.kernel.impl.store.NeoStores legacyStore, final org.Neo4Net.kernel.impl.util.monitoring.ProgressReporter progressReporter, org.Neo4Net.unsafe.impl.batchimport.Configuration config)
+//ORIGINAL LINE: private static Neo4Net.unsafe.impl.batchimport.staging.ExecutionMonitor migrationBatchImporterMonitor(Neo4Net.kernel.impl.store.NeoStores legacyStore, final Neo4Net.kernel.impl.util.monitoring.ProgressReporter progressReporter, Neo4Net.unsafe.impl.batchimport.Configuration config)
 		 private static ExecutionMonitor MigrationBatchImporterMonitor( NeoStores legacyStore, ProgressReporter progressReporter, Configuration config )
 		 {
 			  return new BatchImporterProgressMonitor( legacyStore.NodeStore.HighId, legacyStore.RelationshipStore.HighId, config, progressReporter );
@@ -542,7 +542,7 @@ namespace Neo4Net.Kernel.impl.storemigration.participant
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void moveMigratedFiles(org.Neo4Net.io.layout.DatabaseLayout migrationLayout, org.Neo4Net.io.layout.DatabaseLayout directoryLayout, String versionToUpgradeFrom, String versionToUpgradeTo) throws java.io.IOException
+//ORIGINAL LINE: public void moveMigratedFiles(Neo4Net.io.layout.DatabaseLayout migrationLayout, Neo4Net.io.layout.DatabaseLayout directoryLayout, String versionToUpgradeFrom, String versionToUpgradeTo) throws java.io.IOException
 		 public override void MoveMigratedFiles( DatabaseLayout migrationLayout, DatabaseLayout directoryLayout, string versionToUpgradeFrom, string versionToUpgradeTo )
 		 {
 			  // Move the migrated ones into the store directory
@@ -550,7 +550,7 @@ namespace Neo4Net.Kernel.impl.storemigration.participant
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void updateOrAddNeoStoreFieldsAsPartOfMigration(org.Neo4Net.io.layout.DatabaseLayout migrationStructure, org.Neo4Net.io.layout.DatabaseLayout sourceDirectoryStructure, String versionToMigrateTo, org.Neo4Net.kernel.impl.transaction.log.LogPosition lastClosedTxLogPosition) throws java.io.IOException
+//ORIGINAL LINE: private void updateOrAddNeoStoreFieldsAsPartOfMigration(Neo4Net.io.layout.DatabaseLayout migrationStructure, Neo4Net.io.layout.DatabaseLayout sourceDirectoryStructure, String versionToMigrateTo, Neo4Net.kernel.impl.transaction.log.LogPosition lastClosedTxLogPosition) throws java.io.IOException
 		 private void UpdateOrAddNeoStoreFieldsAsPartOfMigration( DatabaseLayout migrationStructure, DatabaseLayout sourceDirectoryStructure, string versionToMigrateTo, LogPosition lastClosedTxLogPosition )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -593,7 +593,7 @@ namespace Neo4Net.Kernel.impl.storemigration.participant
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void cleanup(org.Neo4Net.io.layout.DatabaseLayout migrationLayout) throws java.io.IOException
+//ORIGINAL LINE: public void cleanup(Neo4Net.io.layout.DatabaseLayout migrationLayout) throws java.io.IOException
 		 public override void Cleanup( DatabaseLayout migrationLayout )
 		 {
 			  _fileSystem.deleteRecursively( migrationLayout.DatabaseDirectory() );

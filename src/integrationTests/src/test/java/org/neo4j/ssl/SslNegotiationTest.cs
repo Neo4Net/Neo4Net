@@ -39,9 +39,9 @@ namespace Neo4Net.Ssl
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.ssl.SslContextFactory.SslParameters.protocols;
+//	import static Neo4Net.ssl.SslContextFactory.SslParameters.protocols;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.ssl.SslResourceBuilder.selfSignedKeyId;
+//	import static Neo4Net.ssl.SslResourceBuilder.selfSignedKeyId;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class SslNegotiationTest
@@ -60,11 +60,11 @@ namespace Neo4Net.Ssl
 		 private const string TLSV12 = "TLSv1.2";
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.TestDirectory testDir = org.Neo4Net.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.TestDirectory testDir = Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public TestDirectory TestDir = TestDirectory.testDirectory();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.fs.DefaultFileSystemRule fsRule = new org.Neo4Net.test.rule.fs.DefaultFileSystemRule();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.fs.DefaultFileSystemRule fsRule = new Neo4Net.test.rule.fs.DefaultFileSystemRule();
 		 public DefaultFileSystemRule FsRule = new DefaultFileSystemRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

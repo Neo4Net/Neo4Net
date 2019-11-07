@@ -50,7 +50,7 @@ namespace Neo4Net.tools.dump.inconsistency
 		 bool ContainsSchemaIndexId( long id );
 
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//		 default void reportInconsistency(org.Neo4Net.consistency.RecordType recordType, long recordId)
+//		 default void reportInconsistency(Neo4Net.consistency.RecordType recordType, long recordId)
 	//	 {
 	//		  if (recordType == null)
 	//		  {
@@ -82,7 +82,7 @@ namespace Neo4Net.tools.dump.inconsistency
 	//	 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//		 default void reportInconsistency(org.Neo4Net.consistency.RecordType recordType, long recordId, org.Neo4Net.consistency.RecordType inconsistentWithRecordType, long inconsistentWithRecordId)
+//		 default void reportInconsistency(Neo4Net.consistency.RecordType recordType, long recordId, Neo4Net.consistency.RecordType inconsistentWithRecordType, long inconsistentWithRecordId)
 	//	 {
 	//		  reportInconsistency(recordType, recordId);
 	//		  reportInconsistency(inconsistentWithRecordType, inconsistentWithRecordId);

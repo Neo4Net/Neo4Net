@@ -31,7 +31,7 @@ namespace Neo4Net.Server.rest
 
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Path(MasterInfoService.BASE_PATH) public class MasterInfoService implements org.Neo4Net.server.rest.management.AdvertisableService
+//ORIGINAL LINE: @Path(MasterInfoService.BASE_PATH) public class MasterInfoService implements Neo4Net.server.rest.management.AdvertisableService
 	public class MasterInfoService : AdvertisableService
 	{
 		 public const string BASE_PATH = "server/ha";

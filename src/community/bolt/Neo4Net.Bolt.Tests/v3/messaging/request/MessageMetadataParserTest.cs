@@ -30,15 +30,15 @@ namespace Neo4Net.Bolt.v3.messaging.request
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v3.messaging.request.MessageMetadataParser.parseTransactionMetadata;
+//	import static Neo4Net.bolt.v3.messaging.request.MessageMetadataParser.parseTransactionMetadata;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v3.messaging.request.MessageMetadataParser.parseTransactionTimeout;
+//	import static Neo4Net.bolt.v3.messaging.request.MessageMetadataParser.parseTransactionTimeout;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.map;
+//	import static Neo4Net.helpers.collection.MapUtil.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.util.ValueUtils.asMapValue;
+//	import static Neo4Net.kernel.impl.util.ValueUtils.asMapValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.@virtual.VirtualValues.emptyMap;
+//	import static Neo4Net.values.@virtual.VirtualValues.emptyMap;
 
 	internal class MessageMetadataParserTest
 	{

@@ -74,15 +74,15 @@ namespace Neo4Net.Consistency
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.SchemaIndex.LUCENE10;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.SchemaIndex.LUCENE10;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.SchemaIndex.NATIVE20;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.SchemaIndex.NATIVE20;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
+//	import static Neo4Net.helpers.collection.MapUtil.stringMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.Property.property;
+//	import static Neo4Net.test.Property.property;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.Property.set;
+//	import static Neo4Net.test.Property.set;
 
 	public class ConsistencyCheckServiceIntegrationTest
 	{
@@ -170,7 +170,7 @@ namespace Neo4Net.Consistency
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void ableToDeleteDatabaseDirectoryAfterConsistencyCheckRun() throws org.Neo4Net.consistency.checking.full.ConsistencyCheckIncompleteException, java.io.IOException
+//ORIGINAL LINE: @Test public void ableToDeleteDatabaseDirectoryAfterConsistencyCheckRun() throws Neo4Net.consistency.checking.full.ConsistencyCheckIncompleteException, java.io.IOException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void AbleToDeleteDatabaseDirectoryAfterConsistencyCheckRun()
 		 {
@@ -256,7 +256,7 @@ namespace Neo4Net.Consistency
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldAllowGraphCheckDisabled() throws org.Neo4Net.consistency.checking.full.ConsistencyCheckIncompleteException
+//ORIGINAL LINE: @Test public void shouldAllowGraphCheckDisabled() throws Neo4Net.consistency.checking.full.ConsistencyCheckIncompleteException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldAllowGraphCheckDisabled()
 		 {
@@ -464,7 +464,7 @@ namespace Neo4Net.Consistency
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void breakNodeStore() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
+//ORIGINAL LINE: private void breakNodeStore() throws Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 private void BreakNodeStore()
 		 {
 			  fixture.apply( new TransactionAnonymousInnerClass( this ) );
@@ -486,14 +486,14 @@ namespace Neo4Net.Consistency
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.consistency.ConsistencyCheckService.Result runFullConsistencyCheck(ConsistencyCheckService service, org.Neo4Net.kernel.configuration.Config configuration) throws org.Neo4Net.consistency.checking.full.ConsistencyCheckIncompleteException
+//ORIGINAL LINE: private Neo4Net.consistency.ConsistencyCheckService.Result runFullConsistencyCheck(ConsistencyCheckService service, Neo4Net.kernel.configuration.Config configuration) throws Neo4Net.consistency.checking.full.ConsistencyCheckIncompleteException
 		 private Result RunFullConsistencyCheck( ConsistencyCheckService service, Config configuration )
 		 {
 			  return RunFullConsistencyCheck( service, configuration, fixture.databaseLayout() );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static org.Neo4Net.consistency.ConsistencyCheckService.Result runFullConsistencyCheck(ConsistencyCheckService service, org.Neo4Net.kernel.configuration.Config configuration, org.Neo4Net.io.layout.DatabaseLayout databaseLayout) throws org.Neo4Net.consistency.checking.full.ConsistencyCheckIncompleteException
+//ORIGINAL LINE: private static Neo4Net.consistency.ConsistencyCheckService.Result runFullConsistencyCheck(ConsistencyCheckService service, Neo4Net.kernel.configuration.Config configuration, Neo4Net.io.layout.DatabaseLayout databaseLayout) throws Neo4Net.consistency.checking.full.ConsistencyCheckIncompleteException
 		 private static Result RunFullConsistencyCheck( ConsistencyCheckService service, Config configuration, DatabaseLayout databaseLayout )
 		 {
 			  return service.RunFullConsistencyCheck( databaseLayout, configuration, ProgressMonitorFactory.NONE, NullLogProvider.Instance, false );

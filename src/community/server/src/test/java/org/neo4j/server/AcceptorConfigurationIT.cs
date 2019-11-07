@@ -29,9 +29,9 @@ namespace Neo4Net.Server
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.helpers.CommunityServerBuilder.serverOnRandomPorts;
+//	import static Neo4Net.server.helpers.CommunityServerBuilder.serverOnRandomPorts;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.server.HTTP.GET;
+//	import static Neo4Net.test.server.HTTP.GET;
 
 	public class AcceptorConfigurationIT : ExclusiveServerTestBase
 	{

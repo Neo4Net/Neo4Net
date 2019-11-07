@@ -34,7 +34,7 @@ namespace Neo4Net.cluster.protocol.atomicbroadcast.multipaxos.context
 	using LogProvider = Neo4Net.Logging.LogProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.asList;
+//	import static Neo4Net.helpers.collection.Iterables.asList;
 
 	/// <summary>
 	/// This serves as a base class for contexts of distributed state machines, and holds
@@ -73,7 +73,7 @@ namespace Neo4Net.cluster.protocol.atomicbroadcast.multipaxos.context
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: public org.Neo4Net.cluster.com.message.Message<? extends org.Neo4Net.cluster.com.message.MessageType> cancelTimeout(Object key)
+//ORIGINAL LINE: public Neo4Net.cluster.com.message.Message<? extends Neo4Net.cluster.com.message.MessageType> cancelTimeout(Object key)
 		 public override Message<MessageType> CancelTimeout( object key )
 		 {
 			  return Timeouts.cancelTimeout( key );

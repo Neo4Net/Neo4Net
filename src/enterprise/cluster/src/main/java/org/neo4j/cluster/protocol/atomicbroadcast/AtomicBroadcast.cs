@@ -23,7 +23,7 @@
 namespace Neo4Net.cluster.protocol.atomicbroadcast
 {
 	/// <summary>
-	/// Atomic broadcast API. This is implemented by <seealso cref="org.Neo4Net.cluster.protocol.atomicbroadcast.multipaxos.AtomicBroadcastState"/>.
+	/// Atomic broadcast API. This is implemented by <seealso cref="Neo4Net.cluster.protocol.atomicbroadcast.multipaxos.AtomicBroadcastState"/>.
 	/// </summary>
 	public interface AtomicBroadcast
 	{

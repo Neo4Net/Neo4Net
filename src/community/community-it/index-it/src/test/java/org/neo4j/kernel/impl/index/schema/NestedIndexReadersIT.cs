@@ -48,10 +48,10 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 private const string KEY = "key";
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.ImpermanentDatabaseRule db = new org.Neo4Net.test.rule.ImpermanentDatabaseRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.ImpermanentDatabaseRule db = new Neo4Net.test.rule.ImpermanentDatabaseRule();
 		 public readonly ImpermanentDatabaseRule Db = new ImpermanentDatabaseRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.concurrent.OtherThreadRule<Void> t2 = new org.Neo4Net.test.rule.concurrent.OtherThreadRule<>();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.concurrent.OtherThreadRule<Void> t2 = new Neo4Net.test.rule.concurrent.OtherThreadRule<>();
 		 public readonly OtherThreadRule<Void> T2 = new OtherThreadRule<Void>();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -85,7 +85,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 						 AssertRoundOfNodes( iterators );
 					}
 
-					foreach ( ResourceIterator<Node> reader in iterators )
+					foreach ( IResourceIterator<Node> reader in iterators )
 					{
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
 						 assertFalse( reader.hasNext() );
@@ -139,7 +139,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 
 					AssertRoundOfNodes( iterators );
 
-					foreach ( ResourceIterator<Node> reader in iterators )
+					foreach ( IResourceIterator<Node> reader in iterators )
 					{
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
 						 assertFalse( reader.hasNext() );
@@ -179,7 +179,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 			  };
 		 }
 
-		 private void AssertNode( ResourceIterator<Node> reader, int id )
+		 private void AssertNode( IResourceIterator<Node> reader, int id )
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
 			  assertTrue( reader.hasNext() );

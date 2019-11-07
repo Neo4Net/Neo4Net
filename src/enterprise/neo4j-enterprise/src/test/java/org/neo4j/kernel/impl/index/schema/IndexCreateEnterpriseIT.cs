@@ -40,7 +40,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldCreateNodeKeyConstraintWithSpecificExistingProviderName() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: @Test public void shouldCreateNodeKeyConstraintWithSpecificExistingProviderName() throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldCreateNodeKeyConstraintWithSpecificExistingProviderName()
 		 {
@@ -48,7 +48,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldFailCreateNodeKeyWithNonExistentProviderName() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: @Test public void shouldFailCreateNodeKeyWithNonExistentProviderName() throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldFailCreateNodeKeyWithNonExistentProviderName()
 		 {

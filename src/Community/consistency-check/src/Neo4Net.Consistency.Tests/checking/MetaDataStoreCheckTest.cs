@@ -32,7 +32,7 @@ namespace Neo4Net.Consistency.checking
 
 	internal class MetaDataStoreCheckTest : RecordCheckTestBase<NeoStoreRecord, Neo4Net.Consistency.report.ConsistencyReport_NeoStoreConsistencyReport, NeoStoreCheck>
 	{
-		 internal MetaDataStoreCheckTest() : base(new NeoStoreCheck(new PropertyChain<>(from -> null)), typeof(org.Neo4Net.consistency.report.ConsistencyReport_NeoStoreConsistencyReport), new int[0])
+		 internal MetaDataStoreCheckTest() : base(new NeoStoreCheck(new PropertyChain<>(from -> null)), typeof(Neo4Net.consistency.report.ConsistencyReport_NeoStoreConsistencyReport), new int[0])
 		 {
 		 }
 

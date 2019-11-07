@@ -103,7 +103,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertCanReadRelGroup(org.Neo4Net.Kernel.Api.StorageEngine.CommandReader reader) throws java.io.IOException
+//ORIGINAL LINE: private void assertCanReadRelGroup(Neo4Net.Kernel.Api.StorageEngine.CommandReader reader) throws java.io.IOException
 		 private void AssertCanReadRelGroup( CommandReader reader )
 		 {
 			  StorageCommand command = reader.Read( ChannelWithRelGroupRecord() );
@@ -138,14 +138,14 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channelWithRelGroupRecord() throws java.io.IOException
+//ORIGINAL LINE: private static Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channelWithRelGroupRecord() throws java.io.IOException
 		 private static ReadableChannel ChannelWithRelGroupRecord()
 		 {
 			  return ChannelWithRelGroupRecord( ID, _inUseFlag, _type, NEXT, FIRST_OUT, FIRST_IN, FIRST_LOOP, OWNING_NODE );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channelWithRelGroupRecord(long id, byte inUse, short type, long next, long firstOut, long firstIn, long firstLoop, long owningNode) throws java.io.IOException
+//ORIGINAL LINE: private static Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channelWithRelGroupRecord(long id, byte inUse, short type, long next, long firstOut, long firstIn, long firstLoop, long owningNode) throws java.io.IOException
 		 private static ReadableChannel ChannelWithRelGroupRecord( long id, sbyte inUse, short type, long next, long firstOut, long firstIn, long firstLoop, long owningNode )
 		 {
 			  ReadableChannel channel = mock( typeof( ReadableChannel ) );

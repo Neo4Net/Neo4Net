@@ -60,7 +60,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input.csv
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public synchronized boolean next(org.Neo4Net.unsafe.impl.batchimport.input.InputChunk chunk) throws java.io.IOException
+//ORIGINAL LINE: public synchronized boolean next(Neo4Net.unsafe.impl.batchimport.input.InputChunk chunk) throws java.io.IOException
 		 public override bool Next( InputChunk chunk )
 		 {
 			 lock ( this )

@@ -71,9 +71,9 @@ namespace Neo4Net.Test.rule
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.scheduler.JobSchedulerFactory.createScheduler;
+//	import static Neo4Net.kernel.impl.scheduler.JobSchedulerFactory.createScheduler;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.MockedNeoStores.mockedTokenHolders;
+//	import static Neo4Net.test.MockedNeoStores.mockedTokenHolders;
 
 	/// <summary>
 	/// Conveniently manages a <seealso cref="RecordStorageEngine"/> in a test. Needs <seealso cref="FileSystemAbstraction"/> and

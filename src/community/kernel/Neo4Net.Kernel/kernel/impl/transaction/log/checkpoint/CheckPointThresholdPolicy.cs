@@ -30,7 +30,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.checkpoint
 	/// The <seealso cref="CheckPointThresholdPolicy"/> specifies the overall <em>type</em> of threshold that should be used for
 	/// deciding when to check point.
 	/// 
-	/// The is determined by the <seealso cref="org.Neo4Net.graphdb.factory.GraphDatabaseSettings.check_point_policy"/> setting, and
+	/// The is determined by the <seealso cref="Neo4Net.graphdb.factory.GraphDatabaseSettings.check_point_policy"/> setting, and
 	/// based on this, the concrete policies are loaded and used to
 	/// <seealso cref="CheckPointThreshold.createThreshold(Config, Clock, LogPruning, LogProvider) create"/> the final and fully
 	/// configured check point thresholds.

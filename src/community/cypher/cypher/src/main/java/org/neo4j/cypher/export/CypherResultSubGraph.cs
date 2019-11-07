@@ -32,7 +32,7 @@ namespace Neo4Net.Cypher.export
 	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.loop;
+//	import static Neo4Net.helpers.collection.Iterators.loop;
 
 	public class CypherResultSubGraph : SubGraph
 	{
@@ -139,7 +139,7 @@ namespace Neo4Net.Cypher.export
 						 }
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.graphdb.Node other = relationship.getOtherNode(node);
+//ORIGINAL LINE: final Neo4Net.graphdb.Node other = relationship.getOtherNode(node);
 						 Node other = relationship.GetOtherNode( node );
 						 if ( _nodes.ContainsKey( other.Id ) || newNodes.Contains( other ) )
 						 {

@@ -83,21 +83,21 @@ namespace Neo4Net
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.NamedThreadFactory.named;
+//	import static Neo4Net.helpers.NamedThreadFactory.named;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.single;
+//	import static Neo4Net.helpers.collection.Iterators.single;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.clusterOfSize;
+//	import static Neo4Net.kernel.impl.ha.ClusterManager.clusterOfSize;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.transactional.integration.TransactionMatchers.containsNoErrors;
+//	import static Neo4Net.server.rest.transactional.integration.TransactionMatchers.containsNoErrors;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.transactional.integration.TransactionMatchers.hasErrors;
+//	import static Neo4Net.server.rest.transactional.integration.TransactionMatchers.hasErrors;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.assertion.Assert.assertEventually;
+//	import static Neo4Net.test.assertion.Assert.assertEventually;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.server.HTTP.RawPayload.quotedJson;
+//	import static Neo4Net.test.server.HTTP.RawPayload.quotedJson;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.server.HTTP.withBaseUri;
+//	import static Neo4Net.test.server.HTTP.withBaseUri;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class TransactionTerminationIT
@@ -130,7 +130,7 @@ namespace Neo4Net
 		 private readonly ClusterRule _clusterRule = new ClusterRule().withCluster(clusterOfSize(3));
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.junit.rules.RuleChain ruleChain = org.junit.rules.RuleChain.outerRule(org.Neo4Net.test.rule.SuppressOutput.suppressAll()).around(cleanupRule).around(clusterRule);
+//ORIGINAL LINE: @Rule public final org.junit.rules.RuleChain ruleChain = org.junit.rules.RuleChain.outerRule(Neo4Net.test.rule.SuppressOutput.suppressAll()).around(cleanupRule).around(clusterRule);
 		 public RuleChain RuleChain;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -310,7 +310,7 @@ namespace Neo4Net
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void commit(org.Neo4Net.test.server.HTTP.Response tx, org.Neo4Net.test.server.HTTP.Builder http) throws org.Neo4Net.server.rest.domain.JsonParseException
+//ORIGINAL LINE: private static void commit(Neo4Net.test.server.HTTP.Response tx, Neo4Net.test.server.HTTP.Builder http) throws Neo4Net.server.rest.domain.JsonParseException
 		 private static void Commit( HTTP.Response tx, HTTP.Builder http )
 		 {
 			  http.Post( tx.StringFromContent( "commit" ) );
@@ -336,7 +336,7 @@ namespace Neo4Net
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void assertNumberOfActiveTransactions(int expectedCount, org.Neo4Net.graphdb.GraphDatabaseService db) throws InterruptedException
+//ORIGINAL LINE: private static void assertNumberOfActiveTransactions(int expectedCount, Neo4Net.graphdb.GraphDatabaseService db) throws InterruptedException
 		 private static void AssertNumberOfActiveTransactions( int expectedCount, IGraphDatabaseService db )
 		 {
 			  ThrowingSupplier<int, Exception> txCount = () => ActiveTxCount(db);
@@ -392,7 +392,7 @@ namespace Neo4Net
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private static java.util.concurrent.Future<?> setPropertyInSeparateThreadAndWaitBeforeCommit(String threadName, org.Neo4Net.graphdb.GraphDatabaseService db, Object value, java.util.concurrent.CountDownLatch txStarted, java.util.concurrent.CountDownLatch txCommit)
+//ORIGINAL LINE: private static java.util.concurrent.Future<?> setPropertyInSeparateThreadAndWaitBeforeCommit(String threadName, Neo4Net.graphdb.GraphDatabaseService db, Object value, java.util.concurrent.CountDownLatch txStarted, java.util.concurrent.CountDownLatch txCommit)
 		 private static Future<object> SetPropertyInSeparateThreadAndWaitBeforeCommit( string threadName, IGraphDatabaseService db, object value, System.Threading.CountdownEvent txStarted, System.Threading.CountdownEvent txCommit )
 		 {
 			  return ExecuteInSeparateThread(threadName, () =>
@@ -409,7 +409,7 @@ namespace Neo4Net
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private static java.util.concurrent.Future<?> setPropertyInSeparateThreadAndAttemptToCommit(String threadName, org.Neo4Net.graphdb.GraphDatabaseService db, Object value, java.util.concurrent.CountDownLatch txStarted, java.util.concurrent.atomic.AtomicReference<org.Neo4Net.graphdb.Transaction> txReference)
+//ORIGINAL LINE: private static java.util.concurrent.Future<?> setPropertyInSeparateThreadAndAttemptToCommit(String threadName, Neo4Net.graphdb.GraphDatabaseService db, Object value, java.util.concurrent.CountDownLatch txStarted, java.util.concurrent.atomic.AtomicReference<Neo4Net.graphdb.Transaction> txReference)
 		 private static Future<object> SetPropertyInSeparateThreadAndAttemptToCommit( string threadName, IGraphDatabaseService db, object value, System.Threading.CountdownEvent txStarted, AtomicReference<Transaction> txReference )
 		 {
 			  return ExecuteInSeparateThread(threadName, () =>

@@ -26,7 +26,7 @@ namespace Neo4Net.Tooling.procedure.procedures.invalid.conflicting_mode
 	public class ConflictingMode
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Procedure(mode = org.Neo4Net.procedure.Mode.DBMS) @PerformsWrites public void wrongMode()
+//ORIGINAL LINE: @Procedure(mode = Neo4Net.procedure.Mode.DBMS) @PerformsWrites public void wrongMode()
 		 [Procedure(mode : Neo4Net.Procedure.Mode.DBMS)]
 		 public virtual void WrongMode()
 		 {

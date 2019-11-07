@@ -46,7 +46,7 @@ namespace Neo4Net.Kernel.Api.Internal.Exceptions
 		 }
 
 		 // To satisfy DatabaseHealth
-		 public TransactionFailureException( string message, Exception cause ) : base( org.Neo4Net.kernel.api.exceptions.Status_Transaction.TransactionStartFailed, cause, message )
+		 public TransactionFailureException( string message, Exception cause ) : base( Neo4Net.kernel.api.exceptions.Status_Transaction.TransactionStartFailed, cause, message )
 		 {
 		 }
 	}

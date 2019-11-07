@@ -49,20 +49,20 @@ namespace Migration
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertThrows;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.allow_upgrade;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.allow_upgrade;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.record_format;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.record_format;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.FALSE;
+//	import static Neo4Net.kernel.configuration.Settings.FALSE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.TRUE;
+//	import static Neo4Net.kernel.configuration.Settings.TRUE;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @ExtendWith(TestDirectoryExtension.class) class RecordFormatMigrationIT
 	internal class RecordFormatMigrationIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.Neo4Net.test.rule.TestDirectory testDirectory;
+//ORIGINAL LINE: @Inject private Neo4Net.test.rule.TestDirectory testDirectory;
 		 private TestDirectory _testDirectory;
 		 private File _storeDir;
 

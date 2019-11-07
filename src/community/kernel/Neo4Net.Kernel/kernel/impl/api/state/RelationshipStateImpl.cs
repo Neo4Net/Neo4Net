@@ -102,7 +102,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public <EX extends Exception> boolean accept(org.Neo4Net.Kernel.Api.StorageEngine.RelationshipVisitor<EX> visitor) throws EX
+//ORIGINAL LINE: public <EX extends Exception> boolean accept(Neo4Net.Kernel.Api.StorageEngine.RelationshipVisitor<EX> visitor) throws EX
 		 public override bool Accept<EX>( RelationshipVisitor<EX> visitor ) where EX : Exception
 		 {
 			  if ( _type != -1 )

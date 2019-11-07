@@ -45,9 +45,9 @@ namespace Neo4Net.Server.rest
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.hasProperty;
+//	import static Neo4Net.test.mockito.matcher.Neo4NetMatchers.hasProperty;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.inTx;
+//	import static Neo4Net.test.mockito.matcher.Neo4NetMatchers.inTx;
 
 	public class BatchOperationIT : AbstractRestFunctionalDocTestBase
 	{
@@ -210,7 +210,7 @@ namespace Neo4Net.Server.rest
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test @Graph("Peter likes Jazz") public void shouldHandleEscapedStrings() throws com.sun.jersey.api.client.ClientHandlerException, com.sun.jersey.api.client.UniformInterfaceException, org.json.JSONException, org.Neo4Net.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @Test @Graph("Peter likes Jazz") public void shouldHandleEscapedStrings() throws com.sun.jersey.api.client.ClientHandlerException, com.sun.jersey.api.client.UniformInterfaceException, org.json.JSONException, Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Graph("Peter likes Jazz")]
 		 public virtual void ShouldHandleEscapedStrings()

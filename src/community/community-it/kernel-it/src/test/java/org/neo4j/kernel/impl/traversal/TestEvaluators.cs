@@ -29,15 +29,15 @@ namespace Neo4Net.Kernel.impl.traversal
 	using Evaluators = Neo4Net.GraphDb.Traversal.Evaluators;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.traversal.Evaluation.EXCLUDE_AND_CONTINUE;
+//	import static Neo4Net.graphdb.traversal.Evaluation.EXCLUDE_AND_CONTINUE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.traversal.Evaluation.INCLUDE_AND_CONTINUE;
+//	import static Neo4Net.graphdb.traversal.Evaluation.IncludeAndContinue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.traversal.Evaluation.INCLUDE_AND_PRUNE;
+//	import static Neo4Net.graphdb.traversal.Evaluation.INCLUDE_AND_PRUNE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.traversal.Evaluators.includeWhereEndNodeIs;
+//	import static Neo4Net.graphdb.traversal.Evaluators.includeWhereEndNodeIs;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.traversal.Evaluators.lastRelationshipTypeIs;
+//	import static Neo4Net.graphdb.traversal.Evaluators.lastRelationshipTypeIs;
 
 	public class TestEvaluators : TraversalTestBase
 	{
@@ -82,7 +82,7 @@ namespace Neo4Net.Kernel.impl.traversal
 			  Node a = GetNodeWithName( "a" );
 			  ExpectPaths( GraphDb.traversalDescription().evaluator(lastRelationshipTypeIs(INCLUDE_AND_PRUNE, EXCLUDE_AND_CONTINUE, Types.C)).traverse(a), "a,b,c,d,e", "a,f,g", "a,b,h" );
 
-			  ExpectPaths( GraphDb.traversalDescription().evaluator(lastRelationshipTypeIs(INCLUDE_AND_CONTINUE, EXCLUDE_AND_CONTINUE, Types.C)).traverse(a), "a,b,c,d,e", "a,f,g", "a,b,h", "a,b,h,i,k" );
+			  ExpectPaths( GraphDb.traversalDescription().evaluator(lastRelationshipTypeIs(IncludeAndContinue, EXCLUDE_AND_CONTINUE, Types.C)).traverse(a), "a,b,c,d,e", "a,f,g", "a,b,h", "a,b,h,i,k" );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

@@ -82,23 +82,23 @@ namespace Neo4Net.Kernel.impl.transaction.state
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.empty;
+//	import static Neo4Net.helpers.collection.Iterables.empty;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.index.IndexProvider.EMPTY;
+//	import static Neo4Net.kernel.api.index.IndexProvider.EMPTY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.schema.SchemaDescriptorFactory.multiToken;
+//	import static Neo4Net.kernel.api.schema.SchemaDescriptorFactory.multiToken;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.record.Record.NO_LABELS_FIELD;
+//	import static Neo4Net.kernel.impl.store.record.Record.NO_LABELS_FIELD;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.record.Record.NO_NEXT_PROPERTY;
+//	import static Neo4Net.kernel.impl.store.record.Record.NO_NEXT_PROPERTY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.record.Record.NO_NEXT_RELATIONSHIP;
+//	import static Neo4Net.kernel.impl.store.record.Record.NO_NEXT_RELATIONSHIP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.StorageEngine.EntityType.NODE;
+//	import static Neo4Net.Kernel.Api.StorageEngine.EntityType.NODE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.StorageEngine.EntityType.RELATIONSHIP;
+//	import static Neo4Net.Kernel.Api.StorageEngine.EntityType.RELATIONSHIP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptorFactory.forSchema;
+//	import static Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptorFactory.forSchema;
 
 	public class OnlineIndexUpdatesTest
 	{
@@ -107,7 +107,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 		 private static readonly int[] _entityTokens = new int[] { IEntity_TOKEN };
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.PageCacheAndDependenciesRule storage = new org.Neo4Net.test.rule.PageCacheAndDependenciesRule();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.PageCacheAndDependenciesRule storage = new Neo4Net.test.rule.PageCacheAndDependenciesRule();
 		 public PageCacheAndDependenciesRule Storage = new PageCacheAndDependenciesRule();
 		 private NodeStore _nodeStore;
 		 private RelationshipStore _relationshipStore;

@@ -85,7 +85,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 //ORIGINAL LINE: final PercentageSupplier percentageSupplier = new PercentageSupplier();
 			  PercentageSupplier percentageSupplier = new PercentageSupplier();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.transaction.state.storeview.PropertyAwareEntityStoreScan<org.Neo4Net.Kernel.Api.StorageEngine.StorageNodeCursor,RuntimeException> scan = new org.Neo4Net.kernel.impl.transaction.state.storeview.PropertyAwareEntityStoreScan<org.Neo4Net.Kernel.Api.StorageEngine.StorageNodeCursor,RuntimeException>(new org.Neo4Net.kernel.impl.storageengine.impl.recordstorage.RecordStorageReader(neoStores), total, org.eclipse.collections.impl.block.factory.primitive.IntPredicates.alwaysTrue(), id -> locks.acquireNodeLock(id, org.Neo4Net.kernel.impl.locking.LockService_LockType.READ_LOCK))
+//ORIGINAL LINE: final Neo4Net.kernel.impl.transaction.state.storeview.PropertyAwareEntityStoreScan<Neo4Net.Kernel.Api.StorageEngine.StorageNodeCursor,RuntimeException> scan = new Neo4Net.kernel.impl.transaction.state.storeview.PropertyAwareEntityStoreScan<Neo4Net.Kernel.Api.StorageEngine.StorageNodeCursor,RuntimeException>(new Neo4Net.kernel.impl.storageengine.impl.recordstorage.RecordStorageReader(neoStores), total, org.eclipse.collections.impl.block.factory.primitive.IntPredicates.alwaysTrue(), id -> locks.acquireNodeLock(id, Neo4Net.kernel.impl.locking.LockService_LockType.READ_LOCK))
 			  PropertyAwareEntityStoreScan<StorageNodeCursor, Exception> scan = new PropertyAwareEntityStoreScanAnonymousInnerClass( this, total, IntPredicates.alwaysTrue(), percentageSupplier );
 			  percentageSupplier.StoreScan = scan;
 
@@ -100,7 +100,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 			 private long _total;
 			 private Neo4Net.Kernel.impl.transaction.state.PropertyAwareEntityStoreScanTest.PercentageSupplier _percentageSupplier;
 
-			 public PropertyAwareEntityStoreScanAnonymousInnerClass( PropertyAwareEntityStoreScanTest outerInstance, long total, UnknownType alwaysTrue, Neo4Net.Kernel.impl.transaction.state.PropertyAwareEntityStoreScanTest.PercentageSupplier percentageSupplier ) : base( new RecordStorageReader( outerInstance.neoStores ), total, alwaysTrue, id -> outerInstance.locks.AcquireNodeLock( id, org.Neo4Net.kernel.impl.locking.LockService_LockType.ReadLock ) )
+			 public PropertyAwareEntityStoreScanAnonymousInnerClass( PropertyAwareEntityStoreScanTest outerInstance, long total, UnknownType alwaysTrue, Neo4Net.Kernel.impl.transaction.state.PropertyAwareEntityStoreScanTest.PercentageSupplier percentageSupplier ) : base( new RecordStorageReader( outerInstance.neoStores ), total, alwaysTrue, id -> outerInstance.locks.AcquireNodeLock( id, Neo4Net.kernel.impl.locking.LockService_LockType.ReadLock ) )
 			 {
 				 this.outerInstance = outerInstance;
 				 this._total = total;
@@ -129,7 +129,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 		 {
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private org.Neo4Net.kernel.impl.api.index.StoreScan<?> storeScan;
+//ORIGINAL LINE: private Neo4Net.kernel.impl.api.index.StoreScan<?> storeScan;
 			  internal StoreScan<object> StoreScanConflict;
 
 			  public override float? Get()

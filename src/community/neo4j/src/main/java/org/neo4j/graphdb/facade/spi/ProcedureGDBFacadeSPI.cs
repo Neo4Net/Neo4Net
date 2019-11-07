@@ -31,8 +31,8 @@ namespace Neo4Net.GraphDb.facade.spi
 	using SecurityContext = Neo4Net.Kernel.Api.Internal.security.SecurityContext;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using GraphDatabaseQueryService = Neo4Net.Kernel.GraphDatabaseQueryService;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
-	using AutoIndexing = Neo4Net.Kernel.api.explicitindex.AutoIndexing;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
+	using AutoIndexing = Neo4Net.Kernel.Api.explicitindex.AutoIndexing;
 	using ThreadToStatementContextBridge = Neo4Net.Kernel.impl.core.ThreadToStatementContextBridge;
 	using CoreAPIAvailabilityGuard = Neo4Net.Kernel.impl.coreapi.CoreAPIAvailabilityGuard;
 	using GraphDatabaseFacade = Neo4Net.Kernel.impl.factory.GraphDatabaseFacade;
@@ -126,7 +126,7 @@ namespace Neo4Net.GraphDb.facade.spi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.net.URL validateURLAccess(java.net.URL url) throws org.Neo4Net.graphdb.security.URLAccessValidationError
+//ORIGINAL LINE: public java.net.URL validateURLAccess(java.net.URL url) throws Neo4Net.graphdb.security.URLAccessValidationError
 		 public override URL ValidateURLAccess( URL url )
 		 {
 			  return _urlValidator.apply( url );

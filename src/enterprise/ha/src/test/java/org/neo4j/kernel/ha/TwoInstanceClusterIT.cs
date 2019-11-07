@@ -35,16 +35,16 @@ namespace Neo4Net.Kernel.ha
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.allSeesAllAsAvailable;
+//	import static Neo4Net.kernel.impl.ha.ClusterManager.allSeesAllAsAvailable;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.clusterOfSize;
+//	import static Neo4Net.kernel.impl.ha.ClusterManager.clusterOfSize;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.memberSeesOtherMemberAsFailed;
+//	import static Neo4Net.kernel.impl.ha.ClusterManager.memberSeesOtherMemberAsFailed;
 
 	public class TwoInstanceClusterIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.ha.ClusterRule clusterRule = new org.Neo4Net.test.ha.ClusterRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.ha.ClusterRule clusterRule = new Neo4Net.test.ha.ClusterRule();
 		 public readonly ClusterRule ClusterRule = new ClusterRule();
 
 		 private ClusterManager.ManagedCluster _cluster;

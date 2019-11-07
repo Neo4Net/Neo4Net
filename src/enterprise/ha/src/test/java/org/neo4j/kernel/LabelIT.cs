@@ -28,7 +28,7 @@ namespace Neo4Net.Kernel
 
 	using Label = Neo4Net.GraphDb.Label;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
 	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
 	using HighlyAvailableGraphDatabase = Neo4Net.Kernel.ha.HighlyAvailableGraphDatabase;
 	using ThreadToStatementContextBridge = Neo4Net.Kernel.impl.core.ThreadToStatementContextBridge;
@@ -38,12 +38,12 @@ namespace Neo4Net.Kernel
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.Label.label;
+//	import static Neo4Net.graphdb.Label.label;
 
 	public class LabelIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.ha.ClusterRule clusterRule = new org.Neo4Net.test.ha.ClusterRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.ha.ClusterRule clusterRule = new Neo4Net.test.ha.ClusterRule();
 		 public readonly ClusterRule ClusterRule = new ClusterRule();
 
 		 protected internal ClusterManager.ManagedCluster Cluster;

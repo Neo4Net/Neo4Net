@@ -29,7 +29,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 	using KernelTransactionImplementation = Neo4Net.Kernel.Impl.Api.KernelTransactionImplementation;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.StorageEngine.EntityType.NODE;
+//	import static Neo4Net.Kernel.Api.StorageEngine.EntityType.NODE;
 
 	public class FulltextAnalyzerTest : LuceneFulltextTestSupport
 	{

@@ -40,9 +40,9 @@ namespace Neo4Net.backup.impl
 	using Clocks = Neo4Net.Time.Clocks;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.com.ProtocolVersion.INTERNAL_PROTOCOL_VERSION;
+//	import static Neo4Net.com.ProtocolVersion.INTERNAL_PROTOCOL_VERSION;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.com.TxChecksumVerifier_Fields.ALWAYS_MATCH;
+//	import static Neo4Net.com.TxChecksumVerifier_Fields.ALWAYS_MATCH;
 
 	public class BackupServer : Server<TheBackupInterface, object>
 	{
@@ -62,7 +62,7 @@ namespace Neo4Net.backup.impl
 		 internal static readonly int FrameLength = Protocol.MEGA * 4;
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public BackupServer(org.Neo4Net.backup.TheBackupInterface requestTarget, final org.Neo4Net.helpers.HostnamePort server, org.Neo4Net.logging.LogProvider logProvider, org.Neo4Net.kernel.monitoring.ByteCounterMonitor byteCounterMonitor, org.Neo4Net.com.monitor.RequestMonitor requestMonitor)
+//ORIGINAL LINE: public BackupServer(Neo4Net.backup.TheBackupInterface requestTarget, final Neo4Net.helpers.HostnamePort server, Neo4Net.logging.LogProvider logProvider, Neo4Net.kernel.monitoring.ByteCounterMonitor byteCounterMonitor, Neo4Net.com.monitor.RequestMonitor requestMonitor)
 		 public BackupServer( TheBackupInterface requestTarget, HostnamePort server, LogProvider logProvider, ByteCounterMonitor byteCounterMonitor, RequestMonitor requestMonitor ) : base( requestTarget, NewBackupConfig( FrameLength, server ), logProvider, FrameLength, BackupProtocolVersion, ALWAYS_MATCH, Clocks.systemClock(), byteCounterMonitor, requestMonitor )
 		 {
 		 }
@@ -73,7 +73,7 @@ namespace Neo4Net.backup.impl
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private static Configuration newBackupConfig(final int chunkSize, final org.Neo4Net.helpers.HostnamePort server)
+//ORIGINAL LINE: private static Configuration newBackupConfig(final int chunkSize, final Neo4Net.helpers.HostnamePort server)
 		 private static Configuration NewBackupConfig( int chunkSize, HostnamePort server )
 		 {
 			  return new ConfigurationAnonymousInnerClass( chunkSize, server );

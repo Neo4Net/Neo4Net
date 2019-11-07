@@ -60,10 +60,10 @@ namespace Neo4Net.cluster.protocol.cluster
 		 {
 			  const string coordinatorRole = "coordinator";
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.cluster.InstanceId me = new org.Neo4Net.cluster.InstanceId(1);
+//ORIGINAL LINE: final Neo4Net.cluster.InstanceId me = new Neo4Net.cluster.InstanceId(1);
 			  InstanceId me = new InstanceId( 1 );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.cluster.InstanceId winner = new org.Neo4Net.cluster.InstanceId(2);
+//ORIGINAL LINE: final Neo4Net.cluster.InstanceId winner = new Neo4Net.cluster.InstanceId(2);
 			  InstanceId winner = new InstanceId( 2 );
 			  HeartbeatContext heartbeatContext = mock( typeof( HeartbeatContext ) );
 			  when( heartbeatContext.Failed ).thenReturn( Collections.emptySet() );
@@ -100,13 +100,13 @@ namespace Neo4Net.cluster.protocol.cluster
 		 {
 			  const string coordinatorRole = "coordinator";
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.cluster.InstanceId me = new org.Neo4Net.cluster.InstanceId(1);
+//ORIGINAL LINE: final Neo4Net.cluster.InstanceId me = new Neo4Net.cluster.InstanceId(1);
 			  InstanceId me = new InstanceId( 1 );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.cluster.InstanceId winner = new org.Neo4Net.cluster.InstanceId(2);
+//ORIGINAL LINE: final Neo4Net.cluster.InstanceId winner = new Neo4Net.cluster.InstanceId(2);
 			  InstanceId winner = new InstanceId( 2 );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.cluster.InstanceId elector = new org.Neo4Net.cluster.InstanceId(2);
+//ORIGINAL LINE: final Neo4Net.cluster.InstanceId elector = new Neo4Net.cluster.InstanceId(2);
 			  InstanceId elector = new InstanceId( 2 );
 			  HeartbeatContext heartbeatContext = mock( typeof( HeartbeatContext ) );
 			  when( heartbeatContext.Failed ).thenReturn( Collections.emptySet() );
@@ -136,13 +136,13 @@ namespace Neo4Net.cluster.protocol.cluster
 		 {
 			  const string coordinatorRole = "coordinator";
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.cluster.InstanceId me = new org.Neo4Net.cluster.InstanceId(1);
+//ORIGINAL LINE: final Neo4Net.cluster.InstanceId me = new Neo4Net.cluster.InstanceId(1);
 			  InstanceId me = new InstanceId( 1 );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.cluster.InstanceId winner = new org.Neo4Net.cluster.InstanceId(2);
+//ORIGINAL LINE: final Neo4Net.cluster.InstanceId winner = new Neo4Net.cluster.InstanceId(2);
 			  InstanceId winner = new InstanceId( 2 );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.cluster.InstanceId elector = new org.Neo4Net.cluster.InstanceId(2);
+//ORIGINAL LINE: final Neo4Net.cluster.InstanceId elector = new Neo4Net.cluster.InstanceId(2);
 			  InstanceId elector = new InstanceId( 2 );
 			  HeartbeatContext heartbeatContext = mock( typeof( HeartbeatContext ) );
 			  when( heartbeatContext.Failed ).thenReturn( Collections.emptySet() );
@@ -179,13 +179,13 @@ namespace Neo4Net.cluster.protocol.cluster
 		 {
 			  const string coordinatorRole = "coordinator";
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.cluster.InstanceId me = new org.Neo4Net.cluster.InstanceId(1);
+//ORIGINAL LINE: final Neo4Net.cluster.InstanceId me = new Neo4Net.cluster.InstanceId(1);
 			  InstanceId me = new InstanceId( 1 );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.cluster.InstanceId winner = new org.Neo4Net.cluster.InstanceId(2);
+//ORIGINAL LINE: final Neo4Net.cluster.InstanceId winner = new Neo4Net.cluster.InstanceId(2);
 			  InstanceId winner = new InstanceId( 2 );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.cluster.InstanceId elector = new org.Neo4Net.cluster.InstanceId(2);
+//ORIGINAL LINE: final Neo4Net.cluster.InstanceId elector = new Neo4Net.cluster.InstanceId(2);
 			  InstanceId elector = new InstanceId( 2 );
 			  HeartbeatContext heartbeatContext = mock( typeof( HeartbeatContext ) );
 			  when( heartbeatContext.Failed ).thenReturn( Collections.emptySet() );

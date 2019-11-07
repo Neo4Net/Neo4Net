@@ -36,7 +36,7 @@ namespace Neo4Net.Consistency.statistics
 	public class AccessStatistics
 	{
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private final java.util.Map<org.Neo4Net.kernel.impl.store.RecordStore<? extends org.Neo4Net.kernel.impl.store.record.AbstractBaseRecord>,AccessStats> stats = new java.util.HashMap<>();
+//ORIGINAL LINE: private final java.util.Map<Neo4Net.kernel.impl.store.RecordStore<? extends Neo4Net.kernel.impl.store.record.AbstractBaseRecord>,AccessStats> stats = new java.util.HashMap<>();
 		 private readonly IDictionary<RecordStore<AbstractBaseRecord>, AccessStats> _stats = new Dictionary<RecordStore<AbstractBaseRecord>, AccessStats>();
 
 		 public virtual void Register<T1>( RecordStore<T1> store, AccessStats accessStats ) where T1 : Neo4Net.Kernel.Impl.Store.Records.AbstractBaseRecord

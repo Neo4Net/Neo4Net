@@ -21,7 +21,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.cache.idmapping.@string
 {
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.cache.idmapping.IdMapper_Fields.ID_NOT_FOUND;
+//	import static Neo4Net.@unsafe.impl.batchimport.cache.idmapping.IdMapper_Fields.ID_NOT_FOUND;
 
 	/// <summary>
 	/// Used by <seealso cref="EncodingIdMapper"/> to help detect collisions of encoded values within the same group.

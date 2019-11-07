@@ -79,7 +79,7 @@ namespace Neo4Net.Cypher.Internal.codegen
 					if ( rhs is IList<object> )
 					{
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: return org.Neo4Net.values.virtual.VirtualValues.concat((org.Neo4Net.values.virtual.ListValue) lhs, org.Neo4Net.kernel.impl.util.ValueUtils.asListValue((java.util.List<?>) rhs));
+//ORIGINAL LINE: return Neo4Net.values.virtual.VirtualValues.concat((Neo4Net.values.virtual.ListValue) lhs, Neo4Net.kernel.impl.util.ValueUtils.asListValue((java.util.List<?>) rhs));
 						 return VirtualValues.concat( ( ListValue ) lhs, ValueUtils.asListValue( ( IList<object> ) rhs ) );
 					}
 					else if ( rhs is AnyValue )
@@ -98,7 +98,7 @@ namespace Neo4Net.Cypher.Internal.codegen
 					if ( lhs is IList<object> )
 					{
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: return org.Neo4Net.values.virtual.VirtualValues.concat(org.Neo4Net.kernel.impl.util.ValueUtils.asListValue((java.util.List<?>) lhs), (org.Neo4Net.values.virtual.ListValue) rhs);
+//ORIGINAL LINE: return Neo4Net.values.virtual.VirtualValues.concat(Neo4Net.kernel.impl.util.ValueUtils.asListValue((java.util.List<?>) lhs), (Neo4Net.values.virtual.ListValue) rhs);
 						 return VirtualValues.concat( ValueUtils.asListValue( ( IList<object> ) lhs ), ( ListValue ) rhs );
 					}
 					else if ( lhs is AnyValue )

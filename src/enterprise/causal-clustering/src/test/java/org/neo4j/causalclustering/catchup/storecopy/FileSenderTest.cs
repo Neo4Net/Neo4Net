@@ -56,7 +56,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.catchup.storecopy.FileChunk.MAX_SIZE;
+//	import static Neo4Net.causalclustering.catchup.storecopy.FileChunk.MAX_SIZE;
 
 	public class FileSenderTest
 	{
@@ -79,11 +79,11 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 
 		 private readonly Random _random = new Random();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.fs.EphemeralFileSystemRule fsRule = new org.Neo4Net.test.rule.fs.EphemeralFileSystemRule();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.fs.EphemeralFileSystemRule fsRule = new Neo4Net.test.rule.fs.EphemeralFileSystemRule();
 		 public EphemeralFileSystemRule FsRule = new EphemeralFileSystemRule();
 		 private FileSystemAbstraction _fs;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory(fsRule.get());
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.TestDirectory testDirectory = Neo4Net.test.rule.TestDirectory.testDirectory(fsRule.get());
 		 public TestDirectory TestDirectory;
 		 private ByteBufAllocator _allocator = mock( typeof( ByteBufAllocator ) );
 		 private PageCache _pageCache = mock( typeof( PageCache ) );
@@ -327,7 +327,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private byte[] writeRandomBytes(org.Neo4Net.io.fs.StoreChannel writer, int size) throws java.io.IOException
+//ORIGINAL LINE: private byte[] writeRandomBytes(Neo4Net.io.fs.StoreChannel writer, int size) throws java.io.IOException
 		 private sbyte[] WriteRandomBytes( StoreChannel writer, int size )
 		 {
 			  sbyte[] bytes = new sbyte[size];

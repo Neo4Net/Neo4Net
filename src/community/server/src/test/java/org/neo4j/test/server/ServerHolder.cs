@@ -33,7 +33,7 @@ namespace Neo4Net.Test.server
 		 private static CommunityServerBuilder _builder;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static synchronized org.Neo4Net.server.NeoServer allocate() throws java.io.IOException
+//ORIGINAL LINE: static synchronized Neo4Net.server.NeoServer allocate() throws java.io.IOException
 		 internal static NeoServer Allocate()
 		 {
 			 lock ( typeof( ServerHolder ) )
@@ -93,7 +93,7 @@ namespace Neo4Net.Test.server
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static org.Neo4Net.server.NeoServer startServer() throws java.io.IOException
+//ORIGINAL LINE: private static Neo4Net.server.NeoServer startServer() throws java.io.IOException
 		 private static NeoServer StartServer()
 		 {
 			  InitBuilder();

@@ -540,7 +540,7 @@ namespace Neo4Net.Helpers
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Deprecated @SafeVarargs public final <T> T interpretOption(String key, System.Func<String,T> defaultValue, System.Func<String,T> converter, org.Neo4Net.kernel.impl.util.Validator<T>... validators)
+//ORIGINAL LINE: @Deprecated @SafeVarargs public final <T> T interpretOption(String key, System.Func<String,T> defaultValue, System.Func<String,T> converter, Neo4Net.kernel.impl.util.Validator<T>... validators)
 		 [Obsolete]
 		 public T InterpretOption<T>( string key, System.Func<string, T> defaultValue, System.Func<string, T> converter, params Validator<T>[] validators )
 		 {
@@ -569,7 +569,7 @@ namespace Neo4Net.Helpers
 		 /// @param <T> The type of the option values </param>
 		 /// <returns> The option values </returns>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Deprecated @SafeVarargs public final <T> java.util.Collection<T> interpretOptions(String key, System.Func<String,T> defaultValue, System.Func<String,T> converter, org.Neo4Net.kernel.impl.util.Validator<T>... validators)
+//ORIGINAL LINE: @Deprecated @SafeVarargs public final <T> java.util.Collection<T> interpretOptions(String key, System.Func<String,T> defaultValue, System.Func<String,T> converter, Neo4Net.kernel.impl.util.Validator<T>... validators)
 		 [Obsolete]
 		 public ICollection<T> InterpretOptions<T>( string key, System.Func<string, T> defaultValue, System.Func<string, T> converter, params Validator<T>[] validators )
 		 {
@@ -596,7 +596,7 @@ namespace Neo4Net.Helpers
 		 /// @param <T> The type of the option values </param>
 		 /// <returns> The option values </returns>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Deprecated @SafeVarargs public final <T> java.util.Collection<Option<T>> interpretOptionsWithMetadata(String key, System.Func<String,T> defaultValue, System.Func<String,T> converter, org.Neo4Net.kernel.impl.util.Validator<T>... validators)
+//ORIGINAL LINE: @Deprecated @SafeVarargs public final <T> java.util.Collection<Option<T>> interpretOptionsWithMetadata(String key, System.Func<String,T> defaultValue, System.Func<String,T> converter, Neo4Net.kernel.impl.util.Validator<T>... validators)
 		 [Obsolete]
 		 public ICollection<Option<T>> InterpretOptionsWithMetadata<T>( string key, System.Func<string, T> defaultValue, System.Func<string, T> converter, params Validator<T>[] validators )
 		 {
@@ -621,7 +621,7 @@ namespace Neo4Net.Helpers
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Deprecated @SafeVarargs public final <T> T interpretOrphan(int index, System.Func<String,T> defaultValue, System.Func<String,T> converter, org.Neo4Net.kernel.impl.util.Validator<T>... validators)
+//ORIGINAL LINE: @Deprecated @SafeVarargs public final <T> T interpretOrphan(int index, System.Func<String,T> defaultValue, System.Func<String,T> converter, Neo4Net.kernel.impl.util.Validator<T>... validators)
 		 [Obsolete]
 		 public T InterpretOrphan<T>( int index, System.Func<string, T> defaultValue, System.Func<string, T> converter, params Validator<T>[] validators )
 		 {
@@ -641,7 +641,7 @@ namespace Neo4Net.Helpers
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SafeVarargs private final <T> T validated(T value, org.Neo4Net.kernel.impl.util.Validator<T>... validators)
+//ORIGINAL LINE: @SafeVarargs private final <T> T validated(T value, Neo4Net.kernel.impl.util.Validator<T>... validators)
 		 private T Validated<T>( T value, params Validator<T>[] validators )
 		 {
 			  if ( value != null )

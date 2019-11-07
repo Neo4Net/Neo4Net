@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.Api.Internal.Exceptions
 
 	public class LabelNotFoundKernelException : KernelException
 	{
-		 public LabelNotFoundKernelException( long labelId, Exception cause ) : base( org.Neo4Net.kernel.api.exceptions.Status_Schema.LabelAccessFailed, cause, format( "Label with id=%d not found", labelId ) )
+		 public LabelNotFoundKernelException( long labelId, Exception cause ) : base( Neo4Net.kernel.api.exceptions.Status_Schema.LabelAccessFailed, cause, format( "Label with id=%d not found", labelId ) )
 		 {
 		 }
 	}

@@ -19,14 +19,14 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Kernel.api.query
+namespace Neo4Net.Kernel.Api.query
 {
 
 	using TextValue = Neo4Net.Values.Storable.TextValue;
 	using MapValue = Neo4Net.Values.@virtual.MapValue;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.stringValue;
+//	import static Neo4Net.values.storable.Values.stringValue;
 
 	public class QueryObfuscation
 	{

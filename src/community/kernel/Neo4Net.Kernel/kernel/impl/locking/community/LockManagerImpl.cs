@@ -49,42 +49,42 @@ namespace Neo4Net.Kernel.impl.locking.community
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean getReadLock(org.Neo4Net.Kernel.Api.StorageEngine.lock.LockTracer tracer, LockResource resource, Object tx) throws org.Neo4Net.kernel.DeadlockDetectedException, org.Neo4Net.kernel.impl.transaction.IllegalResourceException
+//ORIGINAL LINE: public boolean getReadLock(Neo4Net.Kernel.Api.StorageEngine.lock.LockTracer tracer, LockResource resource, Object tx) throws Neo4Net.kernel.DeadlockDetectedException, Neo4Net.kernel.impl.transaction.IllegalResourceException
 		 public virtual bool GetReadLock( LockTracer tracer, LockResource resource, object tx )
 		 {
 			  return UnusedResourceGuard( resource, tx, GetRWLockForAcquiring( resource, tx ).acquireReadLock( tracer, tx ) );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean tryReadLock(LockResource resource, Object tx) throws org.Neo4Net.kernel.impl.transaction.IllegalResourceException
+//ORIGINAL LINE: public boolean tryReadLock(LockResource resource, Object tx) throws Neo4Net.kernel.impl.transaction.IllegalResourceException
 		 public virtual bool TryReadLock( LockResource resource, object tx )
 		 {
 			  return UnusedResourceGuard( resource, tx, GetRWLockForAcquiring( resource, tx ).tryAcquireReadLock( tx ) );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean getWriteLock(org.Neo4Net.Kernel.Api.StorageEngine.lock.LockTracer tracer, LockResource resource, Object tx) throws org.Neo4Net.kernel.DeadlockDetectedException, org.Neo4Net.kernel.impl.transaction.IllegalResourceException
+//ORIGINAL LINE: public boolean getWriteLock(Neo4Net.Kernel.Api.StorageEngine.lock.LockTracer tracer, LockResource resource, Object tx) throws Neo4Net.kernel.DeadlockDetectedException, Neo4Net.kernel.impl.transaction.IllegalResourceException
 		 public virtual bool GetWriteLock( LockTracer tracer, LockResource resource, object tx )
 		 {
 			  return UnusedResourceGuard( resource, tx, GetRWLockForAcquiring( resource, tx ).acquireWriteLock( tracer, tx ) );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean tryWriteLock(LockResource resource, Object tx) throws org.Neo4Net.kernel.impl.transaction.IllegalResourceException
+//ORIGINAL LINE: public boolean tryWriteLock(LockResource resource, Object tx) throws Neo4Net.kernel.impl.transaction.IllegalResourceException
 		 public virtual bool TryWriteLock( LockResource resource, object tx )
 		 {
 			  return UnusedResourceGuard( resource, tx, GetRWLockForAcquiring( resource, tx ).tryAcquireWriteLock( tx ) );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void releaseReadLock(Object resource, Object tx) throws LockNotFoundException, org.Neo4Net.kernel.impl.transaction.IllegalResourceException
+//ORIGINAL LINE: public void releaseReadLock(Object resource, Object tx) throws LockNotFoundException, Neo4Net.kernel.impl.transaction.IllegalResourceException
 		 public virtual void ReleaseReadLock( object resource, object tx )
 		 {
 			  GetRWLockForReleasing( resource, tx, 1, 0, true ).releaseReadLock( tx );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void releaseWriteLock(Object resource, Object tx) throws LockNotFoundException, org.Neo4Net.kernel.impl.transaction.IllegalResourceException
+//ORIGINAL LINE: public void releaseWriteLock(Object resource, Object tx) throws LockNotFoundException, Neo4Net.kernel.impl.transaction.IllegalResourceException
 		 public virtual void ReleaseWriteLock( object resource, object tx )
 		 {
 			  GetRWLockForReleasing( resource, tx, 0, 1, true ).releaseWriteLock( tx );

@@ -37,7 +37,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using Value = Neo4Net.Values.Storable.Value;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.NativeIndexKey.Inclusion.NEUTRAL;
+//	import static Neo4Net.kernel.impl.index.schema.NativeIndexKey.Inclusion.NEUTRAL;
 
 	internal abstract class NativeIndexReader<KEY, VALUE> : IndexReader where KEY : NativeIndexKey<KEY> where VALUE : NativeIndexValue
 	{
@@ -176,7 +176,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.Neo4Net.cursor.RawCursor<org.Neo4Net.index.internal.gbptree.Hit<KEY,VALUE>,java.io.IOException> makeIndexSeeker(KEY treeKeyFrom, KEY treeKeyTo, org.Neo4Net.Kernel.Api.Internal.IndexOrder indexOrder) throws java.io.IOException
+//ORIGINAL LINE: Neo4Net.cursor.RawCursor<Neo4Net.index.internal.gbptree.Hit<KEY,VALUE>,java.io.IOException> makeIndexSeeker(KEY treeKeyFrom, KEY treeKeyTo, Neo4Net.Kernel.Api.Internal.IndexOrder indexOrder) throws java.io.IOException
 		 internal virtual IRawCursor<Hit<KEY, VALUE>, IOException> MakeIndexSeeker( KEY treeKeyFrom, KEY treeKeyTo, IndexOrder indexOrder )
 		 {
 			  if ( indexOrder == IndexOrder.DESCENDING )

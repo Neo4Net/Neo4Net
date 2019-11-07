@@ -49,12 +49,12 @@ namespace Neo4Net.Server.rest.repr
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.domain.JsonHelper.jsonToMap;
+//	import static Neo4Net.server.rest.domain.JsonHelper.jsonToMap;
 
 	public class CypherResultRepresentationTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.DatabaseRule database = new org.Neo4Net.test.rule.ImpermanentDatabaseRule();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.DatabaseRule database = new Neo4Net.test.rule.ImpermanentDatabaseRule();
 		 public DatabaseRule Database = new ImpermanentDatabaseRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

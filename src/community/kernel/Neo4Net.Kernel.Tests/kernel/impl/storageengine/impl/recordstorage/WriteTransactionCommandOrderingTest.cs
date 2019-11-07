@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 	using Test = org.junit.Test;
 
 
-	using DatabaseManager = Neo4Net.Dbms.database.DatabaseManager;
+	using IDatabaseManager = Neo4Net.Dbms.database.DatabaseManager;
 	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
 	using CommandVisitor = Neo4Net.Kernel.Impl.Api.CommandVisitor;
 	using NeoStores = Neo4Net.Kernel.impl.store.NeoStores;
@@ -113,7 +113,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.kernel.impl.transaction.log.PhysicalTransactionRepresentation transactionRepresentationOf(TransactionRecordState tx) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
+//ORIGINAL LINE: private Neo4Net.kernel.impl.transaction.log.PhysicalTransactionRepresentation transactionRepresentationOf(TransactionRecordState tx) throws Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 private PhysicalTransactionRepresentation TransactionRepresentationOf( TransactionRecordState tx )
 		 {
 			  IList<StorageCommand> commands = new List<StorageCommand>();

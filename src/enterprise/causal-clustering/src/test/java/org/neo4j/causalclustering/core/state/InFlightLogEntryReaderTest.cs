@@ -59,7 +59,7 @@ namespace Neo4Net.causalclustering.core.state
 	{
 		 private readonly ReadableRaftLog _raftLog = mock( typeof( ReadableRaftLog ) );
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private final org.Neo4Net.causalclustering.core.consensus.log.cache.InFlightCache inFlightCache = mock(org.Neo4Net.causalclustering.core.consensus.log.cache.ConsecutiveInFlightCache.class);
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private final Neo4Net.causalclustering.core.consensus.log.cache.InFlightCache inFlightCache = mock(Neo4Net.causalclustering.core.consensus.log.cache.ConsecutiveInFlightCache.class);
 		 private readonly InFlightCache _inFlightCache = mock( typeof( ConsecutiveInFlightCache ) );
 		 private readonly long _logIndex = 42L;
 		 private readonly RaftLogEntry _entry = mock( typeof( RaftLogEntry ) );
@@ -165,7 +165,7 @@ namespace Neo4Net.causalclustering.core.state
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void startingFromIndexReturnEntries(org.Neo4Net.causalclustering.core.consensus.log.ReadableRaftLog raftLog, long startIndex, org.Neo4Net.causalclustering.core.consensus.log.RaftLogEntry entry, org.Neo4Net.causalclustering.core.consensus.log.RaftLogEntry... otherEntries) throws java.io.IOException
+//ORIGINAL LINE: private void startingFromIndexReturnEntries(Neo4Net.causalclustering.core.consensus.log.ReadableRaftLog raftLog, long startIndex, Neo4Net.causalclustering.core.consensus.log.RaftLogEntry entry, Neo4Net.causalclustering.core.consensus.log.RaftLogEntry... otherEntries) throws java.io.IOException
 		 private void StartingFromIndexReturnEntries( ReadableRaftLog raftLog, long startIndex, RaftLogEntry entry, params RaftLogEntry[] otherEntries )
 		 {
 			  RaftLogCursor cursor = mock( typeof( RaftLogCursor ) );

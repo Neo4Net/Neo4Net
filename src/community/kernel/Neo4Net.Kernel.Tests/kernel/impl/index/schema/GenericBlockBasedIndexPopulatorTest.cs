@@ -56,23 +56,23 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.index.IndexDirectoryStructure.directoriesByProvider;
+//	import static Neo4Net.kernel.api.index.IndexDirectoryStructure.directoriesByProvider;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.index.IndexEntryUpdate.add;
+//	import static Neo4Net.kernel.api.index.IndexEntryUpdate.add;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.index.IndexProvider.Monitor_Fields.EMPTY;
+//	import static Neo4Net.kernel.api.index.IndexProvider.Monitor_Fields.EMPTY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel;
+//	import static Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.api.index.PhaseTracker_Fields.nullInstance;
+//	import static Neo4Net.kernel.impl.api.index.PhaseTracker_Fields.nullInstance;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.ByteBufferFactory.heapBufferFactory;
+//	import static Neo4Net.kernel.impl.index.schema.ByteBufferFactory.heapBufferFactory;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptorFactory.forSchema;
+//	import static Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptorFactory.forSchema;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptorFactory.uniqueForSchema;
+//	import static Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptorFactory.uniqueForSchema;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.stringValue;
+//	import static Neo4Net.values.storable.Values.stringValue;
 
 	public class GenericBlockBasedIndexPopulatorTest
 	{
@@ -97,11 +97,11 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.PageCacheAndDependenciesRule storage = new org.Neo4Net.test.rule.PageCacheAndDependenciesRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.PageCacheAndDependenciesRule storage = new Neo4Net.test.rule.PageCacheAndDependenciesRule();
 		 public readonly PageCacheAndDependenciesRule Storage = new PageCacheAndDependenciesRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldSeeExternalUpdateBothBeforeAndAfterScanCompleted() throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: @Test public void shouldSeeExternalUpdateBothBeforeAndAfterScanCompleted() throws Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldSeeExternalUpdateBothBeforeAndAfterScanCompleted()
 		 {
@@ -140,10 +140,10 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 					// when
 					Value duplicate = Values.of( "duplicate" );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> firstScanUpdate = org.Neo4Net.kernel.api.index.IndexEntryUpdate.add(1, INDEX_DESCRIPTOR, duplicate);
+//ORIGINAL LINE: Neo4Net.kernel.api.index.IndexEntryUpdate<?> firstScanUpdate = Neo4Net.kernel.api.index.IndexEntryUpdate.add(1, INDEX_DESCRIPTOR, duplicate);
 					IndexEntryUpdate<object> firstScanUpdate = IndexEntryUpdate.add( 1, _indexDescriptor, duplicate );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> secondScanUpdate = org.Neo4Net.kernel.api.index.IndexEntryUpdate.add(2, INDEX_DESCRIPTOR, duplicate);
+//ORIGINAL LINE: Neo4Net.kernel.api.index.IndexEntryUpdate<?> secondScanUpdate = Neo4Net.kernel.api.index.IndexEntryUpdate.add(2, INDEX_DESCRIPTOR, duplicate);
 					IndexEntryUpdate<object> secondScanUpdate = IndexEntryUpdate.add( 2, _indexDescriptor, duplicate );
 					try
 					{
@@ -179,10 +179,10 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 					// when
 					Value duplicate = Values.of( "duplicate" );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> firstExternalUpdate = org.Neo4Net.kernel.api.index.IndexEntryUpdate.add(1, INDEX_DESCRIPTOR, duplicate);
+//ORIGINAL LINE: Neo4Net.kernel.api.index.IndexEntryUpdate<?> firstExternalUpdate = Neo4Net.kernel.api.index.IndexEntryUpdate.add(1, INDEX_DESCRIPTOR, duplicate);
 					IndexEntryUpdate<object> firstExternalUpdate = IndexEntryUpdate.add( 1, _indexDescriptor, duplicate );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> secondExternalUpdate = org.Neo4Net.kernel.api.index.IndexEntryUpdate.add(2, INDEX_DESCRIPTOR, duplicate);
+//ORIGINAL LINE: Neo4Net.kernel.api.index.IndexEntryUpdate<?> secondExternalUpdate = Neo4Net.kernel.api.index.IndexEntryUpdate.add(2, INDEX_DESCRIPTOR, duplicate);
 					IndexEntryUpdate<object> secondExternalUpdate = IndexEntryUpdate.add( 2, _indexDescriptor, duplicate );
 					try
 					{
@@ -221,10 +221,10 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 					// when
 					Value duplicate = Values.of( "duplicate" );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> externalUpdate = org.Neo4Net.kernel.api.index.IndexEntryUpdate.add(1, INDEX_DESCRIPTOR, duplicate);
+//ORIGINAL LINE: Neo4Net.kernel.api.index.IndexEntryUpdate<?> externalUpdate = Neo4Net.kernel.api.index.IndexEntryUpdate.add(1, INDEX_DESCRIPTOR, duplicate);
 					IndexEntryUpdate<object> externalUpdate = IndexEntryUpdate.add( 1, _indexDescriptor, duplicate );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> scanUpdate = org.Neo4Net.kernel.api.index.IndexEntryUpdate.add(2, INDEX_DESCRIPTOR, duplicate);
+//ORIGINAL LINE: Neo4Net.kernel.api.index.IndexEntryUpdate<?> scanUpdate = Neo4Net.kernel.api.index.IndexEntryUpdate.add(2, INDEX_DESCRIPTOR, duplicate);
 					IndexEntryUpdate<object> scanUpdate = IndexEntryUpdate.add( 2, _indexDescriptor, duplicate );
 					try
 					{
@@ -252,7 +252,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldNotThrowOnDuplicationsLaterFixedByExternalUpdates() throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: @Test public void shouldNotThrowOnDuplicationsLaterFixedByExternalUpdates() throws Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldNotThrowOnDuplicationsLaterFixedByExternalUpdates()
 		 {
@@ -265,13 +265,13 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 					Value duplicate = Values.of( "duplicate" );
 					Value unique = Values.of( "unique" );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> firstScanUpdate = org.Neo4Net.kernel.api.index.IndexEntryUpdate.add(1, INDEX_DESCRIPTOR, duplicate);
+//ORIGINAL LINE: Neo4Net.kernel.api.index.IndexEntryUpdate<?> firstScanUpdate = Neo4Net.kernel.api.index.IndexEntryUpdate.add(1, INDEX_DESCRIPTOR, duplicate);
 					IndexEntryUpdate<object> firstScanUpdate = IndexEntryUpdate.add( 1, _indexDescriptor, duplicate );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> secondScanUpdate = org.Neo4Net.kernel.api.index.IndexEntryUpdate.add(2, INDEX_DESCRIPTOR, duplicate);
+//ORIGINAL LINE: Neo4Net.kernel.api.index.IndexEntryUpdate<?> secondScanUpdate = Neo4Net.kernel.api.index.IndexEntryUpdate.add(2, INDEX_DESCRIPTOR, duplicate);
 					IndexEntryUpdate<object> secondScanUpdate = IndexEntryUpdate.add( 2, _indexDescriptor, duplicate );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> externalUpdate = org.Neo4Net.kernel.api.index.IndexEntryUpdate.change(1, INDEX_DESCRIPTOR, duplicate, unique);
+//ORIGINAL LINE: Neo4Net.kernel.api.index.IndexEntryUpdate<?> externalUpdate = Neo4Net.kernel.api.index.IndexEntryUpdate.change(1, INDEX_DESCRIPTOR, duplicate, unique);
 					IndexEntryUpdate<object> externalUpdate = IndexEntryUpdate.change( 1, _indexDescriptor, duplicate, unique );
 					populator.Add( singleton( firstScanUpdate ) );
 					using ( IndexUpdater updater = populator.NewPopulatingUpdater() )
@@ -306,7 +306,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void externalUpdate(BlockBasedIndexPopulator<GenericKey,NativeIndexValue> populator, org.Neo4Net.values.storable.TextValue matata, int matataId) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: private void externalUpdate(BlockBasedIndexPopulator<GenericKey,NativeIndexValue> populator, Neo4Net.values.storable.TextValue matata, int matataId) throws Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 private void ExternalUpdate( BlockBasedIndexPopulator<GenericKey, NativeIndexValue> populator, TextValue matata, int matataId )
 		 {
 			  using ( IndexUpdater indexUpdater = populator.NewPopulatingUpdater() )

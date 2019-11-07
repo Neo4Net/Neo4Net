@@ -46,7 +46,7 @@ namespace Neo4Net.Kernel.impl.security
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static org.Neo4Net.graphdb.security.URLAccessRule combined(final java.util.Map<String,org.Neo4Net.graphdb.security.URLAccessRule> urlAccessRules)
+//ORIGINAL LINE: public static Neo4Net.graphdb.security.URLAccessRule combined(final java.util.Map<String,Neo4Net.graphdb.security.URLAccessRule> urlAccessRules)
 		 public static URLAccessRule Combined( IDictionary<string, URLAccessRule> urlAccessRules )
 		 {
 			  return ( config, url ) =>

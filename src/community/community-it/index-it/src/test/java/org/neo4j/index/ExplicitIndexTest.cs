@@ -49,18 +49,18 @@ namespace Neo4Net.Index
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.Transaction_Type.@explicit;
+//	import static Neo4Net.Kernel.Api.Internal.Transaction_Type.@explicit;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.security.AccessMode_Static.READ;
+//	import static Neo4Net.Kernel.Api.Internal.security.AccessMode_Static.READ;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.security.AuthSubject.ANONYMOUS;
+//	import static Neo4Net.Kernel.Api.Internal.security.AuthSubject.ANONYMOUS;
 
 	public class ExplicitIndexTest
 	{
 		 private static readonly RelationshipType _type = RelationshipType.withName( "TYPE" );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.DatabaseRule db = new org.Neo4Net.test.rule.ImpermanentDatabaseRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.DatabaseRule db = new Neo4Net.test.rule.ImpermanentDatabaseRule();
 		 public readonly DatabaseRule Db = new ImpermanentDatabaseRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Rule public final org.junit.rules.ExpectedException expectedException = org.junit.rules.ExpectedException.none();
@@ -574,7 +574,7 @@ namespace Neo4Net.Index
 		 private static int SizeOf<T1>( Index<T1> index )
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: try (org.Neo4Net.GraphDb.Index.IndexHits<?> indexHits = index.query("_id_:*"))
+//ORIGINAL LINE: try (Neo4Net.GraphDb.Index.IndexHits<?> indexHits = index.query("_id_:*"))
 			  using ( IndexHits<object> indexHits = index.query( "_id_:*" ) )
 			  {
 					return indexHits.Size();

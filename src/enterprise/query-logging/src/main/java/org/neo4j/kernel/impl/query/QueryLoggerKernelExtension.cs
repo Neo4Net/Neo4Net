@@ -36,7 +36,7 @@ namespace Neo4Net.Kernel.impl.query
 	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Service.Implementation(KernelExtensionFactory.class) public class QueryLoggerKernelExtension extends org.Neo4Net.kernel.extension.KernelExtensionFactory<QueryLoggerKernelExtension.Dependencies>
+//ORIGINAL LINE: @Service.Implementation(KernelExtensionFactory.class) public class QueryLoggerKernelExtension extends Neo4Net.kernel.extension.KernelExtensionFactory<QueryLoggerKernelExtension.Dependencies>
 	public class QueryLoggerKernelExtension : KernelExtensionFactory<QueryLoggerKernelExtension.Dependencies>
 	{
 		 public interface Dependencies
@@ -57,7 +57,7 @@ namespace Neo4Net.Kernel.impl.query
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Override public org.Neo4Net.kernel.lifecycle.Lifecycle newInstance(@SuppressWarnings("unused") org.Neo4Net.kernel.impl.spi.KernelContext context, final Dependencies dependencies)
+//ORIGINAL LINE: @Override public Neo4Net.kernel.lifecycle.Lifecycle newInstance(@SuppressWarnings("unused") Neo4Net.kernel.impl.spi.KernelContext context, final Dependencies dependencies)
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 		 public override Lifecycle NewInstance( KernelContext context, Dependencies dependencies )
 		 {

@@ -34,16 +34,16 @@ namespace Neo4Net.causalclustering.scenarios
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.Matchers.equalTo;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.CausalClusteringSettings.raft_log_pruning_strategy;
+//	import static Neo4Net.causalclustering.core.CausalClusteringSettings.raft_log_pruning_strategy;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.scenarios.SampleData.createData;
+//	import static Neo4Net.causalclustering.scenarios.SampleData.createData;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.assertion.Assert.assertEventually;
+//	import static Neo4Net.test.assertion.Assert.assertEventually;
 
 	public class CorePruningIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.causalclustering.ClusterRule clusterRule = new org.Neo4Net.test.causalclustering.ClusterRule().withNumberOfCoreMembers(3).withNumberOfReadReplicas(0).withSharedCoreParam(org.Neo4Net.causalclustering.core.CausalClusteringSettings.state_machine_flush_window_size, "1").withSharedCoreParam(raft_log_pruning_strategy, "keep_none").withSharedCoreParam(org.Neo4Net.causalclustering.core.CausalClusteringSettings.raft_log_rotation_size, "1K").withSharedCoreParam(org.Neo4Net.causalclustering.core.CausalClusteringSettings.raft_log_pruning_frequency, "100ms");
+//ORIGINAL LINE: @Rule public final Neo4Net.test.causalclustering.ClusterRule clusterRule = new Neo4Net.test.causalclustering.ClusterRule().withNumberOfCoreMembers(3).withNumberOfReadReplicas(0).withSharedCoreParam(Neo4Net.causalclustering.core.CausalClusteringSettings.state_machine_flush_window_size, "1").withSharedCoreParam(raft_log_pruning_strategy, "keep_none").withSharedCoreParam(Neo4Net.causalclustering.core.CausalClusteringSettings.raft_log_rotation_size, "1K").withSharedCoreParam(Neo4Net.causalclustering.core.CausalClusteringSettings.raft_log_pruning_frequency, "100ms");
 		 public readonly ClusterRule ClusterRule = new ClusterRule().withNumberOfCoreMembers(3).withNumberOfReadReplicas(0).withSharedCoreParam(CausalClusteringSettings.state_machine_flush_window_size, "1").withSharedCoreParam(raft_log_pruning_strategy, "keep_none").withSharedCoreParam(CausalClusteringSettings.raft_log_rotation_size, "1K").withSharedCoreParam(CausalClusteringSettings.raft_log_pruning_frequency, "100ms");
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -53,7 +53,7 @@ namespace Neo4Net.causalclustering.scenarios
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.causalclustering.discovery.Cluster<?> cluster = clusterRule.startCluster();
+//ORIGINAL LINE: Neo4Net.causalclustering.discovery.Cluster<?> cluster = clusterRule.startCluster();
 			  Cluster<object> cluster = ClusterRule.startCluster();
 
 			  CoreClusterMember coreGraphDatabase = null;
@@ -80,7 +80,7 @@ namespace Neo4Net.causalclustering.scenarios
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.causalclustering.discovery.Cluster<?> cluster = clusterRule.startCluster();
+//ORIGINAL LINE: Neo4Net.causalclustering.discovery.Cluster<?> cluster = clusterRule.startCluster();
 			  Cluster<object> cluster = ClusterRule.startCluster();
 
 			  CoreClusterMember coreGraphDatabase = null;

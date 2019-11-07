@@ -17,14 +17,14 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Kernel.api.schema.constraints
+namespace Neo4Net.Kernel.Api.schema.constraints
 {
 
 	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.LabelSchemaDescriptor;
 
 	public class UniquenessConstraintDescriptor : IndexBackedConstraintDescriptor
 	{
-		 internal UniquenessConstraintDescriptor( LabelSchemaDescriptor schema ) : base( org.Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor_Type.Unique, schema )
+		 internal UniquenessConstraintDescriptor( LabelSchemaDescriptor schema ) : base( Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor_Type.Unique, schema )
 		 {
 		 }
 

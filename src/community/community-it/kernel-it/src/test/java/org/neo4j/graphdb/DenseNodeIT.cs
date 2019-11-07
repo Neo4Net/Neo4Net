@@ -31,14 +31,14 @@ namespace Neo4Net.GraphDb
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.single;
+//	import static Neo4Net.helpers.collection.Iterables.single;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.asResourceIterator;
+//	import static Neo4Net.helpers.collection.Iterators.asResourceIterator;
 
 	public class DenseNodeIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.ImpermanentDatabaseRule databaseRule = new org.Neo4Net.test.rule.ImpermanentDatabaseRule();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.ImpermanentDatabaseRule databaseRule = new Neo4Net.test.rule.ImpermanentDatabaseRule();
 		 public ImpermanentDatabaseRule DatabaseRule = new ImpermanentDatabaseRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -255,7 +255,7 @@ namespace Neo4Net.GraphDb
 		 private void DeleteRelationshipsFromNode( Node root, int numberOfRelationships )
 		 {
 			  int deleted = 0;
-			  using ( ResourceIterator<Relationship> iterator = asResourceIterator( root.Relationships.GetEnumerator() ) )
+			  using ( IResourceIterator<Relationship> iterator = asResourceIterator( root.Relationships.GetEnumerator() ) )
 			  {
 					while ( iterator.MoveNext() )
 					{

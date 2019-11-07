@@ -34,17 +34,17 @@ namespace Neo4Net.Values.Storable
 	using MapValue = Neo4Net.Values.@virtual.MapValue;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.DateTimeValue.datetime;
+//	import static Neo4Net.values.storable.DateTimeValue.datetime;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.DateTimeValue.parseZoneName;
+//	import static Neo4Net.values.storable.DateTimeValue.parseZoneName;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.IntegralValue.safeCastIntegral;
+//	import static Neo4Net.values.storable.IntegralValue.safeCastIntegral;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.LocalDateTimeValue.localDateTime;
+//	import static Neo4Net.values.storable.LocalDateTimeValue.localDateTime;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.NumberType.NO_NUMBER;
+//	import static Neo4Net.values.storable.NumberType.NO_NUMBER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.TimeValue.time;
+//	import static Neo4Net.values.storable.TimeValue.time;
 
 	public abstract class TemporalValue<T, V> : ScalarValue, Temporal where T : java.time.temporal.Temporal where V : TemporalValue<T,V>
 	{
@@ -421,7 +421,7 @@ namespace Neo4Net.Values.Storable
 		 {
 			 public abstract T Build( StructureBuilder<AnyValue, T> builder, IEnumerable<KeyValuePair<string, AnyValue>> entries );
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public abstract T build(final org.Neo4Net.values.StructureBuilder<org.Neo4Net.values.AnyValue, T> builder, org.Neo4Net.values.virtual.MapValue map);
+//ORIGINAL LINE: public abstract T build(final Neo4Net.values.StructureBuilder<Neo4Net.values.AnyValue, T> builder, Neo4Net.values.virtual.MapValue map);
 			 public abstract T Build( StructureBuilder<AnyValue, T> builder, MapValue map );
 			 public abstract StructureBuilder<Input, Result> Add( string field, Input value );
 			  internal readonly System.Func<ZoneId> DefaultZone;
@@ -561,27 +561,27 @@ namespace Neo4Net.Values.Storable
 			  public static readonly TemporalFields Nanosecond = new TemporalFields( "Nanosecond", InnerEnum.Nanosecond, java.time.temporal.ChronoField.NANO_OF_SECOND, 0 );
 			  // Read only accessors (not assignable)
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           weekYear(java.time.temporal.IsoFields.WEEK_BASED_YEAR, 0) { void assign(Builder<JavaToDotNetGenericWildcard> builder, org.Neo4Net.values.AnyValue value) { throw new org.Neo4Net.values.utils.UnsupportedTemporalUnitException("Not supported: " + name()); } },
+//           weekYear(java.time.temporal.IsoFields.WEEK_BASED_YEAR, 0) { void assign(Builder<JavaToDotNetGenericWildcard> builder, Neo4Net.values.AnyValue value) { throw new Neo4Net.values.utils.UnsupportedTemporalUnitException("Not supported: " + name()); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           offset { void assign(Builder<JavaToDotNetGenericWildcard> builder, org.Neo4Net.values.AnyValue value) { throw new org.Neo4Net.values.utils.UnsupportedTemporalUnitException("Not supported: " + name()); } },
+//           offset { void assign(Builder<JavaToDotNetGenericWildcard> builder, Neo4Net.values.AnyValue value) { throw new Neo4Net.values.utils.UnsupportedTemporalUnitException("Not supported: " + name()); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           offsetMinutes { void assign(Builder<JavaToDotNetGenericWildcard> builder, org.Neo4Net.values.AnyValue value) { throw new org.Neo4Net.values.utils.UnsupportedTemporalUnitException("Not supported: " + name()); } },
+//           offsetMinutes { void assign(Builder<JavaToDotNetGenericWildcard> builder, Neo4Net.values.AnyValue value) { throw new Neo4Net.values.utils.UnsupportedTemporalUnitException("Not supported: " + name()); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           offsetSeconds { void assign(Builder<JavaToDotNetGenericWildcard> builder, org.Neo4Net.values.AnyValue value) { throw new org.Neo4Net.values.utils.UnsupportedTemporalUnitException("Not supported: " + name()); } },
+//           offsetSeconds { void assign(Builder<JavaToDotNetGenericWildcard> builder, Neo4Net.values.AnyValue value) { throw new Neo4Net.values.utils.UnsupportedTemporalUnitException("Not supported: " + name()); } },
 			  // time zone
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           timezone { void assign(Builder<JavaToDotNetGenericWildcard> builder, org.Neo4Net.values.AnyValue value) { if(!builder.supportsTimeZone()) { throw new org.Neo4Net.values.utils.UnsupportedTemporalUnitException("Cannot assign time zone if also assigning other fields."); } if(builder.timezone != null) { throw new org.Neo4Net.values.utils.InvalidValuesArgumentException("Cannot assign timezone twice."); } builder.timezone = value; } },
+//           timezone { void assign(Builder<JavaToDotNetGenericWildcard> builder, Neo4Net.values.AnyValue value) { if(!builder.supportsTimeZone()) { throw new Neo4Net.values.utils.UnsupportedTemporalUnitException("Cannot assign time zone if also assigning other fields."); } if(builder.timezone != null) { throw new Neo4Net.values.utils.InvalidValuesArgumentException("Cannot assign timezone twice."); } builder.timezone = value; } },
 			  // group selectors
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           date { void assign(Builder<JavaToDotNetGenericWildcard> builder, org.Neo4Net.values.AnyValue value) { if(!builder.supportsDate()) { throw new org.Neo4Net.values.utils.UnsupportedTemporalUnitException("Not supported: " + name()); } if(builder.state == null) { builder.state = new DateTimeBuilder(); } builder.state = builder.state.assign(this, value); } boolean isGroupSelector() { return true; } },
+//           date { void assign(Builder<JavaToDotNetGenericWildcard> builder, Neo4Net.values.AnyValue value) { if(!builder.supportsDate()) { throw new Neo4Net.values.utils.UnsupportedTemporalUnitException("Not supported: " + name()); } if(builder.state == null) { builder.state = new DateTimeBuilder(); } builder.state = builder.state.assign(this, value); } boolean isGroupSelector() { return true; } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           time { void assign(Builder<JavaToDotNetGenericWildcard> builder, org.Neo4Net.values.AnyValue value) { if(!builder.supportsTime()) { throw new org.Neo4Net.values.utils.UnsupportedTemporalUnitException("Not supported: " + name()); } if(builder.state == null) { builder.state = new DateTimeBuilder(); } builder.state = builder.state.assign(this, value); } boolean isGroupSelector() { return true; } },
+//           time { void assign(Builder<JavaToDotNetGenericWildcard> builder, Neo4Net.values.AnyValue value) { if(!builder.supportsTime()) { throw new Neo4Net.values.utils.UnsupportedTemporalUnitException("Not supported: " + name()); } if(builder.state == null) { builder.state = new DateTimeBuilder(); } builder.state = builder.state.assign(this, value); } boolean isGroupSelector() { return true; } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           datetime { void assign(Builder<JavaToDotNetGenericWildcard> builder, org.Neo4Net.values.AnyValue value) { if(!builder.supportsDate() || !builder.supportsTime()) { throw new org.Neo4Net.values.utils.UnsupportedTemporalUnitException("Not supported: " + name()); } if(builder.state == null) { builder.state = new DateTimeBuilder(); } builder.state = builder.state.assign(this, value); } boolean isGroupSelector() { return true; } },
+//           datetime { void assign(Builder<JavaToDotNetGenericWildcard> builder, Neo4Net.values.AnyValue value) { if(!builder.supportsDate() || !builder.supportsTime()) { throw new Neo4Net.values.utils.UnsupportedTemporalUnitException("Not supported: " + name()); } if(builder.state == null) { builder.state = new DateTimeBuilder(); } builder.state = builder.state.assign(this, value); } boolean isGroupSelector() { return true; } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           epochSeconds { void assign(Builder<JavaToDotNetGenericWildcard> builder, org.Neo4Net.values.AnyValue value) { if(!builder.supportsEpoch()) { throw new org.Neo4Net.values.utils.UnsupportedTemporalUnitException("Not supported: " + name()); } if(builder.state == null) { builder.state = new DateTimeBuilder(); } builder.state = builder.state.assign(this, value); } boolean isGroupSelector() { return true; } },
+//           epochSeconds { void assign(Builder<JavaToDotNetGenericWildcard> builder, Neo4Net.values.AnyValue value) { if(!builder.supportsEpoch()) { throw new Neo4Net.values.utils.UnsupportedTemporalUnitException("Not supported: " + name()); } if(builder.state == null) { builder.state = new DateTimeBuilder(); } builder.state = builder.state.assign(this, value); } boolean isGroupSelector() { return true; } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           epochMillis { void assign(Builder<JavaToDotNetGenericWildcard> builder, org.Neo4Net.values.AnyValue value) { if(!builder.supportsEpoch()) { throw new org.Neo4Net.values.utils.UnsupportedTemporalUnitException("Not supported: " + name()); } if(builder.state == null) { builder.state = new DateTimeBuilder(); } builder.state = builder.state.assign(this, value); } boolean isGroupSelector() { return true; } };
+//           epochMillis { void assign(Builder<JavaToDotNetGenericWildcard> builder, Neo4Net.values.AnyValue value) { if(!builder.supportsEpoch()) { throw new Neo4Net.values.utils.UnsupportedTemporalUnitException("Not supported: " + name()); } if(builder.state == null) { builder.state = new DateTimeBuilder(); } builder.state = builder.state.assign(this, value); } boolean isGroupSelector() { return true; } };
 
 			  private static readonly IList<TemporalFields> valueList = new List<TemporalFields>();
 
@@ -1213,7 +1213,7 @@ namespace Neo4Net.Values.Storable
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SafeVarargs static void assertDefinedInOrder(org.Neo4Net.helpers.collection.Pair<org.Neo4Net.values.AnyValue, String>... values)
+//ORIGINAL LINE: @SafeVarargs static void assertDefinedInOrder(Neo4Net.helpers.collection.Pair<Neo4Net.values.AnyValue, String>... values)
 		 internal static void AssertDefinedInOrder( params Pair<AnyValue, string>[] values )
 		 {
 			  if ( values[0].First() == null )
@@ -1240,7 +1240,7 @@ namespace Neo4Net.Values.Storable
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SafeVarargs static void assertAllDefined(org.Neo4Net.helpers.collection.Pair<org.Neo4Net.values.AnyValue, String>... values)
+//ORIGINAL LINE: @SafeVarargs static void assertAllDefined(Neo4Net.helpers.collection.Pair<Neo4Net.values.AnyValue, String>... values)
 		 internal static void AssertAllDefined( params Pair<AnyValue, string>[] values )
 		 {
 			  foreach ( Pair<AnyValue, string> value in values )

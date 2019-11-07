@@ -30,7 +30,7 @@ namespace Neo4Net.Server.plugins
 	///  Interface to be implemented and exposed via the Java ServiceLocator mechanism that allows
 	///  plugins to provide their own initialization.<br>
 	///  The implementations of this interface have to be listed in a file
-	///  META-INF/services/org.Neo4Net.server.plugins.PluginLifecycle
+	///  META-INF/services/Neo4Net.server.plugins.PluginLifecycle
 	///  that contains the fully qualified class names of the individual plugin. This file
 	///  has to be supplied with the plugin jar to the Neo4Net server.<br>
 	///  The plugin might return a collection of <seealso cref="Injectable"/>s that can later be used with
@@ -45,7 +45,7 @@ namespace Neo4Net.Server.plugins
 		 /// <param name="config"> server configuration </param>
 		 /// <returns> A list of <seealso cref="Injectable"/>s that will be available to resource dependency injection later </returns>
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: Collection<Injectable<?>> start(org.Neo4Net.graphdb.GraphDatabaseService IGraphDatabaseService, org.apache.commons.configuration.Configuration config);
+//ORIGINAL LINE: Collection<Injectable<?>> start(Neo4Net.graphdb.GraphDatabaseService IGraphDatabaseService, org.apache.commons.configuration.Configuration config);
 		 [Obsolete]
 		 ICollection<Injectable<object>> Start( IGraphDatabaseService IGraphDatabaseService, Configuration config );
 

@@ -30,7 +30,7 @@ namespace Neo4Net.causalclustering.core.consensus.explorer
 	public class ComparableRaftLog : InMemoryRaftLog
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public ComparableRaftLog(org.Neo4Net.causalclustering.core.consensus.log.ReadableRaftLog raftLog) throws java.io.IOException
+//ORIGINAL LINE: public ComparableRaftLog(Neo4Net.causalclustering.core.consensus.log.ReadableRaftLog raftLog) throws java.io.IOException
 		 public ComparableRaftLog( ReadableRaftLog raftLog )
 		 {
 			  using ( RaftLogCursor cursor = raftLog.GetEntryCursor( 0 ) )

@@ -52,11 +52,11 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.rules.RuleChain.outerRule;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.index.IndexDirectoryStructure.directoriesByProvider;
+//	import static Neo4Net.kernel.api.index.IndexDirectoryStructure.directoriesByProvider;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.NativeIndexKey.Inclusion.NEUTRAL;
+//	import static Neo4Net.kernel.impl.index.schema.NativeIndexKey.Inclusion.NEUTRAL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.rule.PageCacheRule.config;
+//	import static Neo4Net.test.rule.PageCacheRule.config;
 
 	public abstract class NativeIndexTestUtil<KEY, VALUE> where KEY : NativeIndexKey<KEY> where VALUE : NativeIndexValue
 	{
@@ -127,7 +127,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void verifyUpdates(org.Neo4Net.kernel.api.index.IndexEntryUpdate<org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor>[] updates) throws java.io.IOException
+//ORIGINAL LINE: void verifyUpdates(Neo4Net.kernel.api.index.IndexEntryUpdate<Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor>[] updates) throws java.io.IOException
 		 internal virtual void VerifyUpdates( IndexEntryUpdate<IndexDescriptor>[] updates )
 		 {
 			  Hit<KEY, VALUE>[] expectedHits = ConvertToHits( updates, Layout );
@@ -164,7 +164,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.cursor.RawCursor<org.Neo4Net.index.internal.gbptree.Hit<KEY,VALUE>, java.io.IOException> scan(org.Neo4Net.index.internal.gbptree.GBPTree<KEY,VALUE> tree) throws java.io.IOException
+//ORIGINAL LINE: private Neo4Net.cursor.RawCursor<Neo4Net.index.internal.gbptree.Hit<KEY,VALUE>, java.io.IOException> scan(Neo4Net.index.internal.gbptree.GBPTree<KEY,VALUE> tree) throws java.io.IOException
 		 private IRawCursor<Hit<KEY, VALUE>, IOException> Scan( GBPTree<KEY, VALUE> tree )
 		 {
 			  KEY lowest = Layout.newKey();
@@ -218,7 +218,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private org.Neo4Net.index.internal.gbptree.Hit<KEY,VALUE> hit(final KEY key, final VALUE value)
+//ORIGINAL LINE: private Neo4Net.index.internal.gbptree.Hit<KEY,VALUE> hit(final KEY key, final VALUE value)
 		 private Hit<KEY, VALUE> Hit( KEY key, VALUE value )
 		 {
 			  return new SimpleHit<KEY, VALUE>( key, value );

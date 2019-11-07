@@ -40,11 +40,11 @@ namespace Neo4Net.Kernel.impl.transaction.state
 	using EntityType = Neo4Net.Kernel.Api.StorageEngine.EntityType;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.NodeLabelsField.parseLabelsField;
+//	import static Neo4Net.kernel.impl.store.NodeLabelsField.parseLabelsField;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.command.Command.Mode.CREATE;
+//	import static Neo4Net.kernel.impl.transaction.command.Command.Mode.CREATE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.command.Command.Mode.DELETE;
+//	import static Neo4Net.kernel.impl.transaction.command.Command.Mode.DELETE;
 
 	/// <summary>
 	/// Derives logical index updates from physical records, provided by <seealso cref="NodeCommand node commands"/>,

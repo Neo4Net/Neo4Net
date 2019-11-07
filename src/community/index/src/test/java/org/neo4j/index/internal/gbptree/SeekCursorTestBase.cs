@@ -52,17 +52,17 @@ namespace Neo4Net.Index.Internal.gbptree
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Internal.gbptree.GBPTree.NO_MONITOR;
+//	import static Neo4Net.index.Internal.gbptree.GBPTree.NO_MONITOR;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Internal.gbptree.GenerationSafePointerPair.pointer;
+//	import static Neo4Net.index.Internal.gbptree.GenerationSafePointerPair.pointer;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Internal.gbptree.SeekCursor.DEFAULT_MAX_READ_AHEAD;
+//	import static Neo4Net.index.Internal.gbptree.SeekCursor.DEFAULT_MAX_READ_AHEAD;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Internal.gbptree.TreeNode.Type.INTERNAL;
+//	import static Neo4Net.index.Internal.gbptree.TreeNode.Type.INTERNAL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Internal.gbptree.TreeNode.Type.LEAF;
+//	import static Neo4Net.index.Internal.gbptree.TreeNode.Type.LEAF;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Internal.gbptree.ValueMergers.overwrite;
+//	import static Neo4Net.index.Internal.gbptree.ValueMergers.overwrite;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @ExtendWith(RandomExtension.class) abstract class SeekCursorTestBase<KEY, VALUE>
@@ -81,7 +81,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 };
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.Neo4Net.test.rule.RandomRule random;
+//ORIGINAL LINE: @Inject private Neo4Net.test.rule.RandomRule random;
 		 private RandomRule _random;
 
 		 private TestLayout<KEY, VALUE> _layout;
@@ -124,7 +124,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 internal abstract TreeNode<KEY, VALUE> GetTreeNode( int pageSize, TestLayout<KEY, VALUE> layout );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void goTo(org.Neo4Net.io.pagecache.PageCursor cursor, long pageId) throws java.io.IOException
+//ORIGINAL LINE: private static void goTo(Neo4Net.io.pagecache.PageCursor cursor, long pageId) throws java.io.IOException
 		 private static void GoTo( PageCursor cursor, long pageId )
 		 {
 			  PageCursorUtil.GoTo( cursor, "test", pointer( pageId ) );
@@ -2378,7 +2378,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void insert(long key, long value, org.Neo4Net.io.pagecache.PageCursor cursor) throws java.io.IOException
+//ORIGINAL LINE: private void insert(long key, long value, Neo4Net.io.pagecache.PageCursor cursor) throws java.io.IOException
 		 private void Insert( long key, long value, PageCursor cursor )
 		 {
 			  _treeLogic.insert( cursor, _structurePropagation, key( key ), value( value ), overwrite(), _stableGeneration, _unstableGeneration );
@@ -2414,21 +2414,21 @@ namespace Neo4Net.Index.Internal.gbptree
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private SeekCursor<KEY,VALUE> seekCursor(long fromInclusive, long toExclusive, org.Neo4Net.io.pagecache.PageCursor pageCursor) throws java.io.IOException
+//ORIGINAL LINE: private SeekCursor<KEY,VALUE> seekCursor(long fromInclusive, long toExclusive, Neo4Net.io.pagecache.PageCursor pageCursor) throws java.io.IOException
 		 private SeekCursor<KEY, VALUE> SeekCursor( long fromInclusive, long toExclusive, PageCursor pageCursor )
 		 {
 			  return SeekCursor( fromInclusive, toExclusive, pageCursor, _stableGeneration, _unstableGeneration );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private SeekCursor<KEY,VALUE> seekCursor(long fromInclusive, long toExclusive, org.Neo4Net.io.pagecache.PageCursor pageCursor, long stableGeneration, long unstableGeneration) throws java.io.IOException
+//ORIGINAL LINE: private SeekCursor<KEY,VALUE> seekCursor(long fromInclusive, long toExclusive, Neo4Net.io.pagecache.PageCursor pageCursor, long stableGeneration, long unstableGeneration) throws java.io.IOException
 		 private SeekCursor<KEY, VALUE> SeekCursor( long fromInclusive, long toExclusive, PageCursor pageCursor, long stableGeneration, long unstableGeneration )
 		 {
 			  return SeekCursor( fromInclusive, toExclusive, pageCursor, stableGeneration, unstableGeneration, _failingRootCatchup );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private SeekCursor<KEY,VALUE> seekCursor(long fromInclusive, long toExclusive, org.Neo4Net.io.pagecache.PageCursor pageCursor, long stableGeneration, long unstableGeneration, RootCatchup rootCatchup) throws java.io.IOException
+//ORIGINAL LINE: private SeekCursor<KEY,VALUE> seekCursor(long fromInclusive, long toExclusive, Neo4Net.io.pagecache.PageCursor pageCursor, long stableGeneration, long unstableGeneration, RootCatchup rootCatchup) throws java.io.IOException
 		 private SeekCursor<KEY, VALUE> SeekCursor( long fromInclusive, long toExclusive, PageCursor pageCursor, long stableGeneration, long unstableGeneration, RootCatchup rootCatchup )
 		 {
 			  return new SeekCursor<KEY, VALUE>( pageCursor, _node, Key( fromInclusive ), Key( toExclusive ), _layout, stableGeneration, unstableGeneration, _generationSupplier, rootCatchup, unstableGeneration, _exceptionDecorator, _random.Next( 1, DEFAULT_MAX_READ_AHEAD ) );
@@ -2439,7 +2439,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 /// and return id of left sibling.
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private long createRightSibling(org.Neo4Net.io.pagecache.PageCursor pageCursor) throws java.io.IOException
+//ORIGINAL LINE: private long createRightSibling(Neo4Net.io.pagecache.PageCursor pageCursor) throws java.io.IOException
 		 private long CreateRightSibling( PageCursor pageCursor )
 		 {
 			  long left = pageCursor.CurrentPageId;

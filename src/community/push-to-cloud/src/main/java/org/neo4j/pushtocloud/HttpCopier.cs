@@ -61,7 +61,7 @@ namespace Neo4Net.Pushtocloud
 		 /// Do the actual transfer of the source (a Neo4Net database dump) to the target.
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void copy(boolean verbose, String consoleURL, java.nio.file.Path source, String bearerToken) throws org.Neo4Net.commandline.admin.CommandFailed
+//ORIGINAL LINE: public void copy(boolean verbose, String consoleURL, java.nio.file.Path source, String bearerToken) throws Neo4Net.commandline.admin.CommandFailed
 		 public override void Copy( bool verbose, string consoleURL, Path source, string bearerToken )
 		 {
 			  try
@@ -108,7 +108,7 @@ namespace Neo4Net.Pushtocloud
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void doStatusPolling(boolean verbose, String consoleURL, String bearerToken) throws java.io.IOException, InterruptedException, org.Neo4Net.commandline.admin.CommandFailed
+//ORIGINAL LINE: private void doStatusPolling(boolean verbose, String consoleURL, String bearerToken) throws java.io.IOException, InterruptedException, Neo4Net.commandline.admin.CommandFailed
 		 private void DoStatusPolling( bool verbose, string consoleURL, string bearerToken )
 		 {
 			  _outsideWorld.stdOutLine( "We have received your export and it is currently being loaded into your cloud instance." );
@@ -162,7 +162,7 @@ namespace Neo4Net.Pushtocloud
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public String authenticate(boolean verbose, String consoleUrl, String username, char[] password, boolean consentConfirmed) throws org.Neo4Net.commandline.admin.CommandFailed
+//ORIGINAL LINE: public String authenticate(boolean verbose, String consoleUrl, String username, char[] password, boolean consentConfirmed) throws Neo4Net.commandline.admin.CommandFailed
 		 public override string Authenticate( bool verbose, string consoleUrl, string username, char[] password, bool consentConfirmed )
 		 {
 			  try
@@ -222,7 +222,7 @@ namespace Neo4Net.Pushtocloud
 		 /// Communication with Neo4Net's cloud console, resulting in some signed URI to do the actual upload to.
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.net.URL initiateCopy(boolean verbose, java.net.URL importURL, long crc32Sum, String bearerToken) throws java.io.IOException, org.Neo4Net.commandline.admin.CommandFailed
+//ORIGINAL LINE: private java.net.URL initiateCopy(boolean verbose, java.net.URL importURL, long crc32Sum, String bearerToken) throws java.io.IOException, Neo4Net.commandline.admin.CommandFailed
 		 private URL InitiateCopy( bool verbose, URL importURL, long crc32Sum, string bearerToken )
 		 {
 			  HttpURLConnection connection = ( HttpURLConnection ) importURL.openConnection();
@@ -267,7 +267,7 @@ namespace Neo4Net.Pushtocloud
 		 /// which will be used to upload the source to, potentially resumed if it gets interrupted in the middle.
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.net.URL initiateResumableUpload(boolean verbose, java.net.URL signedURL) throws java.io.IOException, org.Neo4Net.commandline.admin.CommandFailed
+//ORIGINAL LINE: private java.net.URL initiateResumableUpload(boolean verbose, java.net.URL signedURL) throws java.io.IOException, Neo4Net.commandline.admin.CommandFailed
 		 private URL InitiateResumableUpload( bool verbose, URL signedURL )
 		 {
 			  HttpURLConnection connection = ( HttpURLConnection ) signedURL.openConnection();
@@ -298,7 +298,7 @@ namespace Neo4Net.Pushtocloud
 		 /// Uploads source from the given position to the upload location.
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private boolean resumeUpload(boolean verbose, java.nio.file.Path source, long sourceLength, long position, java.net.URL uploadLocation, ProgressTrackingOutputStream.Progress uploadProgress) throws java.io.IOException, org.Neo4Net.commandline.admin.CommandFailed
+//ORIGINAL LINE: private boolean resumeUpload(boolean verbose, java.nio.file.Path source, long sourceLength, long position, java.net.URL uploadLocation, ProgressTrackingOutputStream.Progress uploadProgress) throws java.io.IOException, Neo4Net.commandline.admin.CommandFailed
 		 private bool ResumeUpload( bool verbose, Path source, long sourceLength, long position, URL uploadLocation, ProgressTrackingOutputStream.Progress uploadProgress )
 		 {
 			  HttpURLConnection connection = ( HttpURLConnection ) uploadLocation.openConnection();
@@ -340,7 +340,7 @@ namespace Neo4Net.Pushtocloud
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void triggerImportProtocol(boolean verbose, java.net.URL importURL, long crc32Sum, String bearerToken) throws java.io.IOException, org.Neo4Net.commandline.admin.CommandFailed
+//ORIGINAL LINE: private void triggerImportProtocol(boolean verbose, java.net.URL importURL, long crc32Sum, String bearerToken) throws java.io.IOException, Neo4Net.commandline.admin.CommandFailed
 		 private void TriggerImportProtocol( bool verbose, URL importURL, long crc32Sum, string bearerToken )
 		 {
 			  HttpURLConnection connection = ( HttpURLConnection ) importURL.openConnection();
@@ -378,7 +378,7 @@ namespace Neo4Net.Pushtocloud
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private String getDatabaseStatus(boolean verbose, java.net.URL statusURL, String bearerToken) throws java.io.IOException, org.Neo4Net.commandline.admin.CommandFailed
+//ORIGINAL LINE: private String getDatabaseStatus(boolean verbose, java.net.URL statusURL, String bearerToken) throws java.io.IOException, Neo4Net.commandline.admin.CommandFailed
 		 private string GetDatabaseStatus( bool verbose, URL statusURL, string bearerToken )
 		 {
 			  HttpURLConnection connection = ( HttpURLConnection ) statusURL.openConnection();
@@ -416,7 +416,7 @@ namespace Neo4Net.Pushtocloud
 		 /// can be fed into <seealso cref="resumeUpload(bool, Path, long, long, URL, ProgressTrackingOutputStream.Progress)"/> to resume an upload.
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private long getResumablePosition(boolean verbose, long sourceLength, java.net.URL uploadLocation) throws java.io.IOException, org.Neo4Net.commandline.admin.CommandFailed
+//ORIGINAL LINE: private long getResumablePosition(boolean verbose, long sourceLength, java.net.URL uploadLocation) throws java.io.IOException, Neo4Net.commandline.admin.CommandFailed
 		 private long GetResumablePosition( bool verbose, long sourceLength, URL uploadLocation )
 		 {
 			  Debug( verbose, "Asking about resumable position for the upload" );
@@ -473,7 +473,7 @@ namespace Neo4Net.Pushtocloud
 		 /// since x-y means that bytes in the range x-y have been received so we want to start sending from y+1.
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static long parseResumablePosition(String range) throws org.Neo4Net.commandline.admin.CommandFailed
+//ORIGINAL LINE: private static long parseResumablePosition(String range) throws Neo4Net.commandline.admin.CommandFailed
 		 private static long ParseResumablePosition( string range )
 		 {
 			  int dashIndex = range.IndexOf( '-' );
@@ -512,7 +512,7 @@ namespace Neo4Net.Pushtocloud
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private String extractSignedURIFromResponse(boolean verbose, java.net.HttpURLConnection connection) throws java.io.IOException, org.Neo4Net.commandline.admin.CommandFailed
+//ORIGINAL LINE: private String extractSignedURIFromResponse(boolean verbose, java.net.HttpURLConnection connection) throws java.io.IOException, Neo4Net.commandline.admin.CommandFailed
 		 private string ExtractSignedURIFromResponse( bool verbose, HttpURLConnection connection )
 		 {
 			  using ( Stream responseData = connection.InputStream )
@@ -604,7 +604,7 @@ namespace Neo4Net.Pushtocloud
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.commandline.admin.CommandFailed errorResponse(boolean verbose, java.net.HttpURLConnection connection, String errorDescription) throws java.io.IOException
+//ORIGINAL LINE: private Neo4Net.commandline.admin.CommandFailed errorResponse(boolean verbose, java.net.HttpURLConnection connection, String errorDescription) throws java.io.IOException
 		 private CommandFailed ErrorResponse( bool verbose, HttpURLConnection connection, string errorDescription )
 		 {
 			  DebugErrorResponse( verbose, connection );
@@ -612,7 +612,7 @@ namespace Neo4Net.Pushtocloud
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.commandline.admin.CommandFailed updatePluginErrorResponse(java.net.HttpURLConnection connection) throws java.io.IOException
+//ORIGINAL LINE: private Neo4Net.commandline.admin.CommandFailed updatePluginErrorResponse(java.net.HttpURLConnection connection) throws java.io.IOException
 		 private CommandFailed UpdatePluginErrorResponse( HttpURLConnection connection )
 		 {
 			  DebugErrorResponse( true, connection );
@@ -620,7 +620,7 @@ namespace Neo4Net.Pushtocloud
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.commandline.admin.CommandFailed unexpectedResponse(boolean verbose, java.net.HttpURLConnection connection, String requestDescription) throws java.io.IOException
+//ORIGINAL LINE: private Neo4Net.commandline.admin.CommandFailed unexpectedResponse(boolean verbose, java.net.HttpURLConnection connection, String requestDescription) throws java.io.IOException
 		 private CommandFailed UnexpectedResponse( bool verbose, HttpURLConnection connection, string requestDescription )
 		 {
 			  return ErrorResponse( verbose, connection, format( "Unexpected response code %d from request: %s", connection.ResponseCode, requestDescription ) );

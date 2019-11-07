@@ -35,11 +35,11 @@ namespace Neo4Net.Io.pagecache.stresstests
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static System.getProperty;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helper.StressTestingHelper.ensureExistsAndEmpty;
+//	import static Neo4Net.helper.StressTestingHelper.ensureExistsAndEmpty;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helper.StressTestingHelper.fromEnv;
+//	import static Neo4Net.helper.StressTestingHelper.fromEnv;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.pagecache.stress.Conditions.timePeriod;
+//	import static Neo4Net.io.pagecache.stress.Conditions.timePeriod;
 
 	/// <summary>
 	/// Notice the class name: this is _not_ going to be run as part of the main build.

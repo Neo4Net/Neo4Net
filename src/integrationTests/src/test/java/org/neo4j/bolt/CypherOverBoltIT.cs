@@ -47,11 +47,11 @@ namespace Neo4Net.Bolt
 	public class CypherOverBoltIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.SuppressOutput suppressOutput = org.Neo4Net.test.rule.SuppressOutput.suppressAll();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.SuppressOutput suppressOutput = Neo4Net.test.rule.SuppressOutput.suppressAll();
 		 public readonly SuppressOutput SuppressOutput = SuppressOutput.suppressAll();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.harness.junit.Neo4NetRule graphDb = new org.Neo4Net.harness.junit.Neo4NetRule();
+//ORIGINAL LINE: @Rule public Neo4Net.harness.junit.Neo4NetRule graphDb = new Neo4Net.harness.junit.Neo4NetRule();
 		 public Neo4NetRule GraphDb = new Neo4NetRule();
 
 		 private URL _url;

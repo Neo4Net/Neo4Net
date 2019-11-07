@@ -26,16 +26,16 @@ namespace Neo4Net.Bolt.security.auth
 	using AuthorizationViolationException = Neo4Net.GraphDb.security.AuthorizationViolationException;
 	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
-	using AuthManager = Neo4Net.Kernel.api.security.AuthManager;
-	using AuthToken = Neo4Net.Kernel.api.security.AuthToken;
+	using AuthManager = Neo4Net.Kernel.Api.security.AuthManager;
+	using AuthToken = Neo4Net.Kernel.Api.security.AuthToken;
 	using InvalidArgumentsException = Neo4Net.Kernel.Api.Exceptions.InvalidArgumentsException;
-	using UserManagerSupplier = Neo4Net.Kernel.api.security.UserManagerSupplier;
-	using InvalidAuthTokenException = Neo4Net.Kernel.api.security.exception.InvalidAuthTokenException;
+	using UserManagerSupplier = Neo4Net.Kernel.Api.security.UserManagerSupplier;
+	using InvalidAuthTokenException = Neo4Net.Kernel.Api.security.exception.InvalidAuthTokenException;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.security.AuthToken_Fields.NEW_CREDENTIALS;
+//	import static Neo4Net.kernel.api.security.AuthToken_Fields.NEW_CREDENTIALS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.security.AuthToken_Fields.PRINCIPAL;
+//	import static Neo4Net.kernel.api.security.AuthToken_Fields.PRINCIPAL;
 
 	/// <summary>
 	/// Performs basic authentication with user name and password.

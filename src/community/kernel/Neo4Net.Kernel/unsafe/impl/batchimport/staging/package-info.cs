@@ -20,8 +20,8 @@
 /// <summary>
 /// Generic staging framework and generic implementations of such used to execute batches in parallel.
 /// </summary>
-/// <seealso cref= org.Neo4Net.unsafe.impl.batchimport.staging.Stage </seealso>
-/// <seealso cref= org.Neo4Net.unsafe.impl.batchimport.staging.Step </seealso>
+/// <seealso cref= Neo4Net.unsafe.impl.batchimport.staging.Stage </seealso>
+/// <seealso cref= Neo4Net.unsafe.impl.batchimport.staging.Step </seealso>
 namespace Neo4Net.@unsafe.Impl.Batchimport.staging
 {
 }

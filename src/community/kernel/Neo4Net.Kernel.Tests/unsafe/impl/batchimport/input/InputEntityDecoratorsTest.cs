@@ -40,17 +40,17 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.times;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.asSet;
+//	import static Neo4Net.helpers.collection.Iterators.asSet;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.input.InputEntity.NO_LABELS;
+//	import static Neo4Net.@unsafe.impl.batchimport.input.InputEntity.NO_LABELS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.input.InputEntity.NO_PROPERTIES;
+//	import static Neo4Net.@unsafe.impl.batchimport.input.InputEntity.NO_PROPERTIES;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.input.InputEntityDecorators.additiveLabels;
+//	import static Neo4Net.@unsafe.impl.batchimport.input.InputEntityDecorators.additiveLabels;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.input.InputEntityDecorators.decorators;
+//	import static Neo4Net.@unsafe.impl.batchimport.input.InputEntityDecorators.decorators;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.input.InputEntityDecorators.defaultRelationshipType;
+//	import static Neo4Net.@unsafe.impl.batchimport.input.InputEntityDecorators.defaultRelationshipType;
 
 	public class InputEntityDecoratorsTest
 	{

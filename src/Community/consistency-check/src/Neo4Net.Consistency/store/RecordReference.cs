@@ -30,7 +30,7 @@ namespace Neo4Net.Consistency.Store
 	 public class RecordReference_SkippingReference<RECORD> : RecordReference<RECORD> where RECORD : Neo4Net.Kernel.Impl.Store.Records.AbstractBaseRecord
 	 {
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") public static <RECORD extends org.Neo4Net.kernel.impl.store.record.AbstractBaseRecord> RecordReference_SkippingReference<RECORD> skipReference()
+//ORIGINAL LINE: @SuppressWarnings("unchecked") public static <RECORD extends Neo4Net.kernel.impl.store.record.AbstractBaseRecord> RecordReference_SkippingReference<RECORD> skipReference()
 		  public static RecordReference_SkippingReference<RECORD> SkipReference<RECORD>() where RECORD : Neo4Net.Kernel.Impl.Store.Records.AbstractBaseRecord
 		  {
 				return Instance;

@@ -65,7 +65,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.verification
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void verify(org.Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor accessor, int[] propKeyIds) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException, java.io.IOException
+//ORIGINAL LINE: public void verify(Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor accessor, int[] propKeyIds) throws Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException, java.io.IOException
 		 public override void Verify( NodePropertyAccessor accessor, int[] propKeyIds )
 		 {
 			  foreach ( string field in AllFields() )
@@ -87,7 +87,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.verification
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void verify(org.Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor accessor, int[] propKeyIds, java.util.List<org.Neo4Net.values.storable.Value[]> updatedValueTuples) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException, java.io.IOException
+//ORIGINAL LINE: public void verify(Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor accessor, int[] propKeyIds, java.util.List<Neo4Net.values.storable.Value[]> updatedValueTuples) throws Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException, java.io.IOException
 		 public override void Verify( NodePropertyAccessor accessor, int[] propKeyIds, IList<Value[]> updatedValueTuples )
 		 {
 			  foreach ( Value[] valueTuple in updatedValueTuples )
@@ -139,7 +139,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.verification
 		 /// <exception cref="IOException"> </exception>
 		 /// <exception cref="IndexEntryConflictException"> </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void searchForDuplicates(org.apache.lucene.search.Query query, org.Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor accessor, int[] propertyKeyIds) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: private void searchForDuplicates(org.apache.lucene.search.Query query, Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor accessor, int[] propertyKeyIds) throws java.io.IOException, Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 private void SearchForDuplicates( Query query, NodePropertyAccessor accessor, int[] propertyKeyIds )
 		 {
 			  DuplicateCheckingCollector collector = GetDuplicateCollector( accessor, propertyKeyIds );
@@ -157,7 +157,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.verification
 		 /// <exception cref="IOException"> </exception>
 		 /// <exception cref="IndexEntryConflictException"> </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void searchForDuplicates(org.apache.lucene.search.Query query, org.Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor accessor, int[] propertyKeyIds, int expectedNumberOfEntries) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: private void searchForDuplicates(org.apache.lucene.search.Query query, Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor accessor, int[] propertyKeyIds, int expectedNumberOfEntries) throws java.io.IOException, Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 private void SearchForDuplicates( Query query, NodePropertyAccessor accessor, int[] propertyKeyIds, int expectedNumberOfEntries )
 		 {
 			  DuplicateCheckingCollector collector = GetDuplicateCollector( accessor, propertyKeyIds );
@@ -171,7 +171,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.verification
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void searchForDuplicates(org.apache.lucene.search.Query query, DuplicateCheckingCollector collector) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException, java.io.IOException
+//ORIGINAL LINE: private void searchForDuplicates(org.apache.lucene.search.Query query, DuplicateCheckingCollector collector) throws Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException, java.io.IOException
 		 private void SearchForDuplicates( Query query, DuplicateCheckingCollector collector )
 		 {
 			  try

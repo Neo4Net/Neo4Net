@@ -41,8 +41,8 @@ namespace Neo4Net.Kernel.builtinprocs
 	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
 	using AuthSubject = Neo4Net.Kernel.Api.Internal.security.AuthSubject;
 	using SecurityContext = Neo4Net.Kernel.Api.Internal.security.SecurityContext;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
-	using Statement = Neo4Net.Kernel.api.Statement;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
+	using Statement = Neo4Net.Kernel.Api.Statement;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using ClockContext = Neo4Net.Kernel.Impl.Api.ClockContext;
 	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
@@ -208,7 +208,7 @@ namespace Neo4Net.Kernel.builtinprocs
 			  throw new System.NotSupportedException( "not implemented" );
 		 }
 
-		 public override void RegisterCloseListener( Neo4Net.Kernel.api.KernelTransaction_CloseListener listener )
+		 public override void RegisterCloseListener( Neo4Net.Kernel.Api.KernelTransaction_CloseListener listener )
 		 {
 			  throw new System.NotSupportedException( "not implemented" );
 		 }
@@ -234,7 +234,7 @@ namespace Neo4Net.Kernel.builtinprocs
 			 }
 		 }
 
-		 public override Neo4Net.Kernel.api.KernelTransaction_Revertable OverrideWith( SecurityContext context )
+		 public override Neo4Net.Kernel.Api.KernelTransaction_Revertable OverrideWith( SecurityContext context )
 		 {
 			  throw new System.NotSupportedException( "not implemented" );
 		 }

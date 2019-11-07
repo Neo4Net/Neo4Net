@@ -31,14 +31,14 @@ namespace Neo4Net.Values.Storable
 	using RandomRule = Neo4Net.Test.rule.RandomRule;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.StringHelpers.assertConsistent;
+//	import static Neo4Net.values.storable.StringHelpers.assertConsistent;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @ExtendWith(RandomExtension.class) class TextValueFuzzTest
 	internal class TextValueFuzzTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.Neo4Net.test.rule.RandomRule random;
+//ORIGINAL LINE: @Inject private Neo4Net.test.rule.RandomRule random;
 		 private RandomRule _random;
 
 		 private const int ITERATIONS = 1000;

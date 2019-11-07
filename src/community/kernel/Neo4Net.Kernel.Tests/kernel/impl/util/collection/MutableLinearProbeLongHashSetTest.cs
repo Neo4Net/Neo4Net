@@ -80,9 +80,9 @@ namespace Neo4Net.Kernel.impl.util.collection
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verifyNoMoreInteractions;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.util.collection.MutableLinearProbeLongHashSet.DEFAULT_CAPACITY;
+//	import static Neo4Net.kernel.impl.util.collection.MutableLinearProbeLongHashSet.DEFAULT_CAPACITY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.util.collection.MutableLinearProbeLongHashSet.REMOVALS_RATIO;
+//	import static Neo4Net.kernel.impl.util.collection.MutableLinearProbeLongHashSet.REMOVALS_RATIO;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @ExtendWith(RandomExtension.class) class MutableLinearProbeLongHashSetTest
@@ -106,7 +106,7 @@ namespace Neo4Net.Kernel.impl.util.collection
 		}
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.Neo4Net.test.rule.RandomRule rnd;
+//ORIGINAL LINE: @Inject private Neo4Net.test.rule.RandomRule rnd;
 		 private RandomRule _rnd;
 
 		 private readonly CachingOffHeapBlockAllocator _blockAllocator = new CachingOffHeapBlockAllocator();
@@ -271,7 +271,7 @@ namespace Neo4Net.Kernel.impl.util.collection
 		 internal virtual void AllocateFreeMemory()
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.memory.IMemoryAllocationTracker memoryTrackerSpy = spy(new org.Neo4Net.memory.LocalMemoryTracker());
+//ORIGINAL LINE: final Neo4Net.memory.IMemoryAllocationTracker memoryTrackerSpy = spy(new Neo4Net.memory.LocalMemoryTracker());
 			  IMemoryAllocationTracker memoryTrackerSpy = spy( new LocalMemoryTracker() );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final MutableLinearProbeLongHashSet set2 = new MutableLinearProbeLongHashSet(new OffHeapMemoryAllocator(memoryTrackerSpy, blockAllocator));
@@ -295,7 +295,7 @@ namespace Neo4Net.Kernel.impl.util.collection
 		 internal virtual void FreeFrozenMemory()
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.memory.IMemoryAllocationTracker memoryTrackerSpy = spy(new org.Neo4Net.memory.LocalMemoryTracker());
+//ORIGINAL LINE: final Neo4Net.memory.IMemoryAllocationTracker memoryTrackerSpy = spy(new Neo4Net.memory.LocalMemoryTracker());
 			  IMemoryAllocationTracker memoryTrackerSpy = spy( new LocalMemoryTracker() );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final MutableLinearProbeLongHashSet set2 = new MutableLinearProbeLongHashSet(new OffHeapMemoryAllocator(memoryTrackerSpy, blockAllocator));

@@ -30,25 +30,25 @@ namespace Neo4Net.causalclustering.discovery.procedures
 	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
 	using Neo4NetTypes = Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes;
 	using QualifiedName = Neo4Net.Kernel.Api.Internal.procs.QualifiedName;
-	using ResourceTracker = Neo4Net.Kernel.api.ResourceTracker;
-	using CallableProcedure = Neo4Net.Kernel.api.proc.CallableProcedure;
-	using Context = Neo4Net.Kernel.api.proc.Context;
+	using ResourceTracker = Neo4Net.Kernel.Api.ResourceTracker;
+	using CallableProcedure = Neo4Net.Kernel.Api.Procs.CallableProcedure;
+	using Context = Neo4Net.Kernel.Api.Procs.Context;
 	using Log = Neo4Net.Logging.Log;
 	using LogProvider = Neo4Net.Logging.LogProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.asList;
+//	import static Neo4Net.helpers.collection.Iterables.asList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.asRawIterator;
+//	import static Neo4Net.helpers.collection.Iterators.asRawIterator;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.map;
+//	import static Neo4Net.helpers.collection.Iterators.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.procs.ProcedureSignature.procedureSignature;
+//	import static Neo4Net.Kernel.Api.Internal.procs.ProcedureSignature.procedureSignature;
 
 	/// <summary>
 	/// Overview procedure with added support for server groups.
 	/// </summary>
-	public class ClusterOverviewProcedure : Neo4Net.Kernel.api.proc.CallableProcedure_BasicProcedure
+	public class ClusterOverviewProcedure : Neo4Net.Kernel.Api.Procs.CallableProcedure_BasicProcedure
 	{
 		 private static readonly string[] _procedureNamespace = new string[] { "dbms", "cluster" };
 		 public const string PROCEDURE_NAME = "overview";

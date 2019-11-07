@@ -25,9 +25,9 @@ namespace Neo4Net.Index.Internal.gbptree
 	using PageCursor = Neo4Net.Io.pagecache.PageCursor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Internal.gbptree.GBPTreeGenerationTarget_Fields.NO_GENERATION_TARGET;
+//	import static Neo4Net.index.Internal.gbptree.GBPTreeGenerationTarget_Fields.NO_GENERATION_TARGET;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Internal.gbptree.GenerationSafePointerPair.read;
+//	import static Neo4Net.index.Internal.gbptree.GenerationSafePointerPair.read;
 
 	/// <summary>
 	/// Methods to manipulate single tree node such as set and get header fields,
@@ -310,7 +310,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static void goTo(org.Neo4Net.io.pagecache.PageCursor cursor, String messageOnError, long nodeId) throws java.io.IOException
+//ORIGINAL LINE: static void goTo(Neo4Net.io.pagecache.PageCursor cursor, String messageOnError, long nodeId) throws java.io.IOException
 		 internal static void GoTo( PageCursor cursor, string messageOnError, long nodeId )
 		 {
 			  PageCursorUtil.GoTo( cursor, messageOnError, GenerationSafePointerPair.Pointer( nodeId ) );
@@ -386,7 +386,7 @@ namespace Neo4Net.Index.Internal.gbptree
 
 		 // Useful for debugging
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unused") abstract void printNode(org.Neo4Net.io.pagecache.PageCursor cursor, boolean includeValue, boolean includeAllocSpace, long stableGeneration, long unstableGeneration);
+//ORIGINAL LINE: @SuppressWarnings("unused") abstract void printNode(Neo4Net.io.pagecache.PageCursor cursor, boolean includeValue, boolean includeAllocSpace, long stableGeneration, long unstableGeneration);
 		 internal abstract void PrintNode( PageCursor cursor, bool includeValue, bool includeAllocSpace, long stableGeneration, long unstableGeneration );
 
 		 /// <returns> <seealso cref="string"/> describing inconsistency of empty string "" if no inconsistencies. </returns>

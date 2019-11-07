@@ -51,9 +51,9 @@ namespace Neo4Net.Kernel.ha.@lock
 	using ResourceType = Neo4Net.Kernel.Api.StorageEngine.@lock.ResourceType;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.locking.LockType.READ;
+//	import static Neo4Net.kernel.impl.locking.LockType.READ;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.locking.LockType.WRITE;
+//	import static Neo4Net.kernel.impl.locking.LockType.WRITE;
 
 	/// <summary>
 	/// The slave locks client is responsible for managing locks on behalf of some actor on a slave machine. An actor
@@ -87,7 +87,7 @@ namespace Neo4Net.Kernel.ha.@lock
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void acquireShared(org.Neo4Net.Kernel.Api.StorageEngine.lock.LockTracer tracer, org.Neo4Net.Kernel.Api.StorageEngine.lock.ResourceType resourceType, long... resourceIds) throws org.Neo4Net.Kernel.Api.StorageEngine.lock.AcquireLockTimeoutException
+//ORIGINAL LINE: public void acquireShared(Neo4Net.Kernel.Api.StorageEngine.lock.LockTracer tracer, Neo4Net.Kernel.Api.StorageEngine.lock.ResourceType resourceType, long... resourceIds) throws Neo4Net.Kernel.Api.StorageEngine.lock.AcquireLockTimeoutException
 		 public override void AcquireShared( LockTracer tracer, ResourceType resourceType, params long[] resourceIds )
 		 {
 			  AssertNotStopped();
@@ -118,7 +118,7 @@ namespace Neo4Net.Kernel.ha.@lock
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void acquireExclusive(org.Neo4Net.Kernel.Api.StorageEngine.lock.LockTracer tracer, org.Neo4Net.Kernel.Api.StorageEngine.lock.ResourceType resourceType, long... resourceIds) throws org.Neo4Net.Kernel.Api.StorageEngine.lock.AcquireLockTimeoutException
+//ORIGINAL LINE: public void acquireExclusive(Neo4Net.Kernel.Api.StorageEngine.lock.LockTracer tracer, Neo4Net.Kernel.Api.StorageEngine.lock.ResourceType resourceType, long... resourceIds) throws Neo4Net.Kernel.Api.StorageEngine.lock.AcquireLockTimeoutException
 		 public override void AcquireExclusive( LockTracer tracer, ResourceType resourceType, params long[] resourceIds )
 		 {
 			  AssertNotStopped();
@@ -221,7 +221,7 @@ namespace Neo4Net.Kernel.ha.@lock
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: public java.util.stream.Stream<? extends org.Neo4Net.kernel.impl.locking.ActiveLock> activeLocks()
+//ORIGINAL LINE: public java.util.stream.Stream<? extends Neo4Net.kernel.impl.locking.ActiveLock> activeLocks()
 		 public override Stream<ActiveLock> ActiveLocks()
 		 {
 			  return _client.activeLocks();
@@ -247,7 +247,7 @@ namespace Neo4Net.Kernel.ha.@lock
 			  AssertNotStopped();
 			  IDictionary<ResourceType, MutableLongList> deferredLocksMap = new Dictionary<ResourceType, MutableLongList>();
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.List<? extends org.Neo4Net.kernel.impl.locking.ActiveLock> activeLocks = client.activeLocks().filter(activeLock -> org.Neo4Net.kernel.impl.locking.ActiveLock_Fields.SHARED_MODE.equals(activeLock.mode())).filter(this::isLabelOrRelationshipType).collect(java.util.stream.Collectors.toList());
+//ORIGINAL LINE: java.util.List<? extends Neo4Net.kernel.impl.locking.ActiveLock> activeLocks = client.activeLocks().filter(activeLock -> Neo4Net.kernel.impl.locking.ActiveLock_Fields.SHARED_MODE.equals(activeLock.mode())).filter(this::isLabelOrRelationshipType).collect(java.util.stream.Collectors.toList());
 			  IList<ActiveLock> activeLocks = _client.activeLocks().filter(activeLock => Neo4Net.Kernel.impl.locking.ActiveLock_Fields.SHARED_MODE.Equals(activeLock.mode())).filter(this.isLabelOrRelationshipType).collect(Collectors.toList());
 			  foreach ( ActiveLock activeLock in activeLocks )
 			  {

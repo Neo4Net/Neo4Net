@@ -39,19 +39,19 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.count;
+//	import static Neo4Net.helpers.collection.Iterables.count;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.ValueGroup.DATE;
+//	import static Neo4Net.values.storable.ValueGroup.DATE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.ValueGroup.DURATION;
+//	import static Neo4Net.values.storable.ValueGroup.DURATION;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.ValueGroup.LOCAL_DATE_TIME;
+//	import static Neo4Net.values.storable.ValueGroup.LOCAL_DATE_TIME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.ValueGroup.LOCAL_TIME;
+//	import static Neo4Net.values.storable.ValueGroup.LOCAL_TIME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.ValueGroup.ZONED_DATE_TIME;
+//	import static Neo4Net.values.storable.ValueGroup.ZONED_DATE_TIME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.ValueGroup.ZONED_TIME;
+//	import static Neo4Net.values.storable.ValueGroup.ZONED_TIME;
 
 	public class TemporalIndexCacheTest
 	{

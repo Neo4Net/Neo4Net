@@ -34,9 +34,9 @@ namespace Neo4Net.Kernel.monitoring.tracing
 	using SystemNanoClock = Neo4Net.Time.SystemNanoClock;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.util.FeatureToggles.flag;
+//	import static Neo4Net.util.FeatureToggles.flag;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.util.FeatureToggles.getInteger;
+//	import static Neo4Net.util.FeatureToggles.getInteger;
 
 	public class VerbosePageCacheTracer : DefaultPageCacheTracer
 	{

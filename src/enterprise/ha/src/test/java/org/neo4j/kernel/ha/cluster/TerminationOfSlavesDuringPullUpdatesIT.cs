@@ -58,9 +58,9 @@ namespace Neo4Net.Kernel.ha.cluster
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.runners.Parameterized.Parameters;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.RelationshipType.withName;
+//	import static Neo4Net.graphdb.RelationshipType.withName;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.asSet;
+//	import static Neo4Net.helpers.collection.Iterables.asSet;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class TerminationOfSlavesDuringPullUpdatesIT
@@ -71,7 +71,7 @@ namespace Neo4Net.Kernel.ha.cluster
 		 private const int PROPERTY_KEY_CHAIN_LENGTH = 100;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.ha.ClusterRule clusterRule = new org.Neo4Net.test.ha.ClusterRule().withSharedSetting(org.Neo4Net.kernel.ha.HaSettings.pull_interval, "0").withSharedSetting(org.Neo4Net.kernel.ha.HaSettings.tx_push_factor, "0");
+//ORIGINAL LINE: @Rule public Neo4Net.test.ha.ClusterRule clusterRule = new Neo4Net.test.ha.ClusterRule().withSharedSetting(Neo4Net.kernel.ha.HaSettings.pull_interval, "0").withSharedSetting(Neo4Net.kernel.ha.HaSettings.tx_push_factor, "0");
 		 public ClusterRule ClusterRule = new ClusterRule().withSharedSetting(HaSettings.pull_interval, "0").withSharedSetting(HaSettings.tx_push_factor, "0");
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -168,7 +168,7 @@ namespace Neo4Net.Kernel.ha.cluster
 			  ClusterRule.withSharedSetting( HaSettings.id_reuse_safe_zone_time, safeZone.ToString() );
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.ha.ClusterManager.ManagedCluster cluster = clusterRule.startCluster();
+//ORIGINAL LINE: final Neo4Net.kernel.impl.ha.ClusterManager.ManagedCluster cluster = clusterRule.startCluster();
 			  ClusterManager.ManagedCluster cluster = ClusterRule.startCluster();
 			  HighlyAvailableGraphDatabase master = cluster.Master;
 
@@ -185,7 +185,7 @@ namespace Neo4Net.Kernel.ha.cluster
 			  Action.setNewProperties( master, IEntityId );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.ha.HighlyAvailableGraphDatabase slave = cluster.getAnySlave();
+//ORIGINAL LINE: final Neo4Net.kernel.ha.HighlyAvailableGraphDatabase slave = cluster.getAnySlave();
 			  HighlyAvailableGraphDatabase slave = cluster.AnySlave;
 			  Race race = new Race();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -210,7 +210,7 @@ namespace Neo4Net.Kernel.ha.cluster
 			  ClusterRule.withSharedSetting( HaSettings.id_reuse_safe_zone_time, safeZone.ToString() );
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.ha.ClusterManager.ManagedCluster cluster = clusterRule.startCluster();
+//ORIGINAL LINE: final Neo4Net.kernel.impl.ha.ClusterManager.ManagedCluster cluster = clusterRule.startCluster();
 			  ClusterManager.ManagedCluster cluster = ClusterRule.startCluster();
 			  HighlyAvailableGraphDatabase master = cluster.Master;
 
@@ -226,7 +226,7 @@ namespace Neo4Net.Kernel.ha.cluster
 			  Action.setNewProperties( master, IEntityId );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.ha.HighlyAvailableGraphDatabase slave = cluster.getAnySlave();
+//ORIGINAL LINE: final Neo4Net.kernel.ha.HighlyAvailableGraphDatabase slave = cluster.getAnySlave();
 			  HighlyAvailableGraphDatabase slave = cluster.AnySlave;
 			  Race race = new Race();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -243,7 +243,7 @@ namespace Neo4Net.Kernel.ha.cluster
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private Runnable readContestant(final ReadContestantActions action, final long IEntityId, final org.Neo4Net.kernel.ha.HighlyAvailableGraphDatabase slave, final java.util.concurrent.atomic.AtomicBoolean end)
+//ORIGINAL LINE: private Runnable readContestant(final ReadContestantActions action, final long IEntityId, final Neo4Net.kernel.ha.HighlyAvailableGraphDatabase slave, final java.util.concurrent.atomic.AtomicBoolean end)
 		 private ThreadStart ReadContestant( ReadContestantActions action, long IEntityId, HighlyAvailableGraphDatabase slave, AtomicBoolean end )
 		 {
 			  return () =>
@@ -270,7 +270,7 @@ namespace Neo4Net.Kernel.ha.cluster
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private Runnable pullUpdatesContestant(final org.Neo4Net.kernel.ha.HighlyAvailableGraphDatabase slave, final java.util.concurrent.atomic.AtomicBoolean end)
+//ORIGINAL LINE: private Runnable pullUpdatesContestant(final Neo4Net.kernel.ha.HighlyAvailableGraphDatabase slave, final java.util.concurrent.atomic.AtomicBoolean end)
 		 private ThreadStart PullUpdatesContestant( HighlyAvailableGraphDatabase slave, AtomicBoolean end )
 		 {
 			  return () =>

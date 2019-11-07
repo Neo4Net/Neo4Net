@@ -36,7 +36,7 @@ namespace Neo4Net.GraphDb.security
       /// <returns> an updated URL that should be used for accessing the resource </returns>
       /// <exception cref="URLAccessValidationError"> thrown if the url does not pass the validation rule </exception>
       //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-      //ORIGINAL LINE: java.net.URL validate(org.Neo4Net.graphdb.config.Configuration configuration, java.net.URL url) throws URLAccessValidationError;
+      //ORIGINAL LINE: java.net.URL validate(Neo4Net.GraphDb.config.Configuration configuration, java.net.URL url) throws URLAccessValidationError;
       URL Validate(Configuration configuration, URL url);
    }
 }

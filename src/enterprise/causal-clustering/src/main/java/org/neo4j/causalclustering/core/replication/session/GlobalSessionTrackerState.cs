@@ -140,12 +140,12 @@ namespace Neo4Net.causalclustering.core.replication.session
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void marshal(GlobalSessionTrackerState target, org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public void marshal(GlobalSessionTrackerState target, Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
 //JAVA TO C# CONVERTER NOTE: Members cannot have the same name as their enclosing type:
 			  public override void MarshalConflict( GlobalSessionTrackerState target, WritableChannel channel )
 			  {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.Map<org.Neo4Net.causalclustering.identity.MemberId, LocalSessionTracker> sessionTrackers = target.sessionTrackers;
+//ORIGINAL LINE: final java.util.Map<Neo4Net.causalclustering.identity.MemberId, LocalSessionTracker> sessionTrackers = target.sessionTrackers;
 					IDictionary<MemberId, LocalSessionTracker> sessionTrackers = target.sessionTrackers;
 
 					channel.PutLong( target._logIndex );
@@ -179,7 +179,7 @@ namespace Neo4Net.causalclustering.core.replication.session
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public GlobalSessionTrackerState unmarshal0(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException, org.Neo4Net.causalclustering.messaging.EndOfStreamException
+//ORIGINAL LINE: public GlobalSessionTrackerState unmarshal0(Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException, Neo4Net.causalclustering.messaging.EndOfStreamException
 			  public override GlobalSessionTrackerState Unmarshal0( ReadableChannel channel )
 			  {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -189,13 +189,13 @@ namespace Neo4Net.causalclustering.core.replication.session
 //ORIGINAL LINE: final int sessionTrackerSize = channel.getInt();
 					int sessionTrackerSize = channel.Int;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.Map<org.Neo4Net.causalclustering.identity.MemberId, LocalSessionTracker> sessionTrackers = new java.util.HashMap<>();
+//ORIGINAL LINE: final java.util.Map<Neo4Net.causalclustering.identity.MemberId, LocalSessionTracker> sessionTrackers = new java.util.HashMap<>();
 					IDictionary<MemberId, LocalSessionTracker> sessionTrackers = new Dictionary<MemberId, LocalSessionTracker>();
 
 					for ( int i = 0; i < sessionTrackerSize; i++ )
 					{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.causalclustering.identity.MemberId member = memberMarshal.unmarshal(channel);
+//ORIGINAL LINE: final Neo4Net.causalclustering.identity.MemberId member = memberMarshal.unmarshal(channel);
 						 MemberId member = MemberMarshal.unmarshal( channel );
 						 if ( member == null )
 						 {

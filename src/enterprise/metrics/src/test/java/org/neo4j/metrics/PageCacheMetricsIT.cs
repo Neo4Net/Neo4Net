@@ -49,36 +49,36 @@ namespace Neo4Net.metrics
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.metrics.MetricsTestHelper.metricsCsv;
+//	import static Neo4Net.metrics.MetricsTestHelper.metricsCsv;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.metrics.MetricsTestHelper.readDoubleValue;
+//	import static Neo4Net.metrics.MetricsTestHelper.readDoubleValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.metrics.MetricsTestHelper.readLongValue;
+//	import static Neo4Net.metrics.MetricsTestHelper.readLongValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.metrics.source.db.PageCacheMetrics.PC_EVICTIONS;
+//	import static Neo4Net.metrics.source.db.PageCacheMetrics.PC_EVICTIONS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.metrics.source.db.PageCacheMetrics.PC_EVICTION_EXCEPTIONS;
+//	import static Neo4Net.metrics.source.db.PageCacheMetrics.PC_EVICTION_EXCEPTIONS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.metrics.source.db.PageCacheMetrics.PC_FLUSHES;
+//	import static Neo4Net.metrics.source.db.PageCacheMetrics.PC_FLUSHES;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.metrics.source.db.PageCacheMetrics.PC_HITS;
+//	import static Neo4Net.metrics.source.db.PageCacheMetrics.PC_HITS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.metrics.source.db.PageCacheMetrics.PC_HIT_RATIO;
+//	import static Neo4Net.metrics.source.db.PageCacheMetrics.PC_HIT_RATIO;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.metrics.source.db.PageCacheMetrics.PC_PAGE_FAULTS;
+//	import static Neo4Net.metrics.source.db.PageCacheMetrics.PC_PAGE_FAULTS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.metrics.source.db.PageCacheMetrics.PC_PINS;
+//	import static Neo4Net.metrics.source.db.PageCacheMetrics.PC_PINS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.metrics.source.db.PageCacheMetrics.PC_UNPINS;
+//	import static Neo4Net.metrics.source.db.PageCacheMetrics.PC_UNPINS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.metrics.source.db.PageCacheMetrics.PC_USAGE_RATIO;
+//	import static Neo4Net.metrics.source.db.PageCacheMetrics.PC_USAGE_RATIO;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.assertion.Assert.assertEventually;
+//	import static Neo4Net.test.assertion.Assert.assertEventually;
 
 	public class PageCacheMetricsIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.TestDirectory testDirectory = Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public TestDirectory TestDirectory = TestDirectory.testDirectory();
 		 private File _metricsDirectory;
 		 private IGraphDatabaseService _database;

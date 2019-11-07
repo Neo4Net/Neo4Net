@@ -29,7 +29,7 @@ namespace Neo4Net.GraphDb.Traversal
     /// derived from, i.e <seealso cref="INode"/> or <seealso cref="IRelationship"/>. Each step
     /// can also be represented in one of those representations directly.
     /// </summary>
-    public interface Traverser : ResourceIterable<IPath>
+    public interface ITraverser :IResourceIterable<IPath>
     {
         /// <summary>
         /// Represents the traversal in the form of <seealso cref="INode"/>s. This is a
@@ -37,7 +37,7 @@ namespace Neo4Net.GraphDb.Traversal
         /// <seealso cref="IPath.EndNode()"/> for each position.
         /// </summary>
         /// <returns> the traversal in the form of <seealso cref="INode"/> objects. </returns>
-        ResourceIterable<INode> Nodes();
+       IResourceIterable<INode> Nodes();
 
         /// <summary>
         /// Represents the traversal in the form of <seealso cref="IRelationship"/>s. This is a
@@ -45,7 +45,7 @@ namespace Neo4Net.GraphDb.Traversal
         /// <seealso cref="IPath.lastRelationship()"/> for each position.
         /// </summary>
         /// <returns> the traversal in the form of <seealso cref="IRelationship"/> objects. </returns>
-        ResourceIterable<IRelationship> Relationships();
+       IResourceIterable<IRelationship> Relationships();
 
         /// <summary>
         /// Represents the traversal in the form of <seealso cref="IPath"/>s.
@@ -53,7 +53,7 @@ namespace Neo4Net.GraphDb.Traversal
         /// it should be <seealso cref="ResourceIterator.close() closed"/>.
         /// </summary>
         /// <returns> the traversal in the form of <seealso cref="IPath"/> objects. </returns>
-        ResourceIterator<IPath> Iterator();
+        IResourceIterator<IPath> Iterator();
 
         /// <returns> the <seealso cref="ITraversalMetadata"/> from the last traversal performed,
         /// or being performed by this traverser. </returns>

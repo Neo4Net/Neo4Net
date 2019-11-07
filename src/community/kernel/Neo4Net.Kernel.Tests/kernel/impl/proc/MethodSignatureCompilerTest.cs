@@ -118,7 +118,7 @@ namespace Neo4Net.Kernel.impl.proc
 
 			  // Expect
 			  Exception.expect( typeof( ProcedureException ) );
-			  Exception.expectMessage( string.Format( "Argument `name` at position 0 in `echoWithInvalidType` with%n" + "type `UnmappableRecord` cannot be converted to a Neo4Net type: Don't know how to map " + "`org.Neo4Net.kernel.impl.proc.MethodSignatureCompilerTest$UnmappableRecord` to " + "the Neo4Net Type System.%n" + "Please refer to to the documentation for full details.%n" + "For your reference, known types are:" ) );
+			  Exception.expectMessage( string.Format( "Argument `name` at position 0 in `echoWithInvalidType` with%n" + "type `UnmappableRecord` cannot be converted to a Neo4Net type: Don't know how to map " + "`Neo4Net.kernel.impl.proc.MethodSignatureCompilerTest$UnmappableRecord` to " + "the Neo4Net Type System.%n" + "Please refer to to the documentation for full details.%n" + "For your reference, known types are:" ) );
 
 			  // When
 			  ( new MethodSignatureCompiler( new TypeMappers() ) ).SignatureFor(echo);

@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\resources\Neo4Net.GraphDb.Resources\Neo4Net.GraphDb.Resources.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="Neo4Net.Mocks">
       <HintPath>..\..\mocks\Neo4Net.Mocks\bin\Debug\netstandard2.0\Neo4Net.Mocks.dll</HintPath>
     </Reference>

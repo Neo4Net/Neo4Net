@@ -31,7 +31,7 @@ namespace Neo4Net.Collections.primitive.@base
 	public class Empty
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") public static final org.Neo4Net.collection.primitive.PrimitiveLongObjectMap EMPTY_PRIMITIVE_LONG_OBJECT_MAP = new EmptyPrimitiveLongObjectMap<>();
+//ORIGINAL LINE: @SuppressWarnings("unchecked") public static final Neo4Net.collection.primitive.PrimitiveLongObjectMap EMPTY_PRIMITIVE_LONG_OBJECT_MAP = new EmptyPrimitiveLongObjectMap<>();
 		 public static readonly PrimitiveLongObjectMap EmptyPrimitiveLongObjectMap = new EmptyPrimitiveLongObjectMap<>();
 		 public static readonly PrimitiveIntSet EmptyPrimitiveIntSet = new EmptyPrimitiveIntSet();
 		 public static readonly PrimitiveLongCollection EmptyPrimitiveLongCollection = new EmptyPrimitiveLongCollection();
@@ -168,7 +168,7 @@ namespace Neo4Net.Collections.primitive.@base
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public <E extends Exception> void visitEntries(org.Neo4Net.collection.primitive.PrimitiveLongObjectVisitor<T, E> visitor) throws E
+//ORIGINAL LINE: public <E extends Exception> void visitEntries(Neo4Net.collection.primitive.PrimitiveLongObjectVisitor<T, E> visitor) throws E
 			  public override void VisitEntries<E>( PrimitiveLongObjectVisitor<T, E> visitor ) where E : Exception
 			  { // No entries to visit
 			  }
@@ -179,7 +179,7 @@ namespace Neo4Net.Collections.primitive.@base
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public <E extends Exception> void visitKeys(org.Neo4Net.collection.primitive.PrimitiveLongVisitor<E> visitor) throws E
+//ORIGINAL LINE: public <E extends Exception> void visitKeys(Neo4Net.collection.primitive.PrimitiveLongVisitor<E> visitor) throws E
 			  public override void VisitKeys<E>( PrimitiveLongVisitor<E> visitor ) where E : Exception
 			  { // No keys to visit
 			  }

@@ -48,7 +48,7 @@ namespace Neo4Net.causalclustering.core.state
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public synchronized org.Neo4Net.causalclustering.core.state.snapshot.CoreSnapshot snapshot() throws Exception
+//ORIGINAL LINE: public synchronized Neo4Net.causalclustering.core.state.snapshot.CoreSnapshot snapshot() throws Exception
 		 public virtual CoreSnapshot Snapshot()
 		 {
 			 lock ( this )
@@ -74,7 +74,7 @@ namespace Neo4Net.causalclustering.core.state
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public synchronized void installSnapshot(org.Neo4Net.causalclustering.core.state.snapshot.CoreSnapshot coreSnapshot) throws java.io.IOException
+//ORIGINAL LINE: public synchronized void installSnapshot(Neo4Net.causalclustering.core.state.snapshot.CoreSnapshot coreSnapshot) throws java.io.IOException
 		 public virtual void InstallSnapshot( CoreSnapshot coreSnapshot )
 		 {
 			 lock ( this )

@@ -56,7 +56,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input
 		 /// <returns> <seealso cref="Estimates"/> for this input w/o reading through it entirely. </returns>
 		 /// <exception cref="IOException"> on I/O error. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: Input_Estimates calculateEstimates(System.Func<org.Neo4Net.values.storable.Value[], int> valueSizeCalculator) throws java.io.IOException;
+//ORIGINAL LINE: Input_Estimates calculateEstimates(System.Func<Neo4Net.values.storable.Value[], int> valueSizeCalculator) throws java.io.IOException;
 		 Input_Estimates CalculateEstimates( System.Func<Value[], int> valueSizeCalculator );
 	}
 

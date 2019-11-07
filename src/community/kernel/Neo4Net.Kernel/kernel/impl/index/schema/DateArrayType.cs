@@ -30,7 +30,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 // Affected key state:
 		 // long0Array (epochDay)
 
-		 internal DateArrayType( sbyte typeId ) : base( ValueGroup.DATE_ARRAY, typeId, ( o1, o2, i ) -> DateType.Compare( o1.long0Array[i], o2.long0Array[i] ), ( k, i ) -> DateType.AsValueRaw( k.long0Array[i] ), ( c, k, i ) -> DateType.put( c, k.long0Array[i] ), DateType.read, LocalDate[]::new, org.Neo4Net.values.storable.ValueWriter_ArrayType.Date )
+		 internal DateArrayType( sbyte typeId ) : base( ValueGroup.DATE_ARRAY, typeId, ( o1, o2, i ) -> DateType.Compare( o1.long0Array[i], o2.long0Array[i] ), ( k, i ) -> DateType.AsValueRaw( k.long0Array[i] ), ( c, k, i ) -> DateType.put( c, k.long0Array[i] ), DateType.read, LocalDate[]::new, Neo4Net.values.storable.ValueWriter_ArrayType.Date )
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Method reference constructor syntax is not converted by Java to C# Converter:
 		 }

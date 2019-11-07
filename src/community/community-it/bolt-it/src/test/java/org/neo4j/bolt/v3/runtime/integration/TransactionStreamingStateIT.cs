@@ -58,19 +58,19 @@ namespace Neo4Net.Bolt.v3.runtime.integration
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.mock;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.testing.BoltMatchers.failedWithStatus;
+//	import static Neo4Net.bolt.testing.BoltMatchers.failedWithStatus;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.testing.BoltMatchers.succeeded;
+//	import static Neo4Net.bolt.testing.BoltMatchers.succeeded;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.testing.BoltMatchers.verifyKillsConnection;
+//	import static Neo4Net.bolt.testing.BoltMatchers.verifyKillsConnection;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.testing.NullResponseHandler.nullResponseHandler;
+//	import static Neo4Net.bolt.testing.NullResponseHandler.nullResponseHandler;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v3.messaging.request.CommitMessage.COMMIT_MESSAGE;
+//	import static Neo4Net.bolt.v3.messaging.request.CommitMessage.COMMIT_MESSAGE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v3.messaging.request.GoodbyeMessage.GOODBYE_MESSAGE;
+//	import static Neo4Net.bolt.v3.messaging.request.GoodbyeMessage.GOODBYE_MESSAGE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v3.messaging.request.RollbackMessage.ROLLBACK_MESSAGE;
+//	import static Neo4Net.bolt.v3.messaging.request.RollbackMessage.ROLLBACK_MESSAGE;
 
 	internal class TransactionStreamingStateIT : BoltStateMachineStateTestBase
 	{
@@ -131,7 +131,7 @@ namespace Neo4Net.Bolt.v3.runtime.integration
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ParameterizedTest @MethodSource("pullAllDiscardAllMessages") void shouldMoveFromTxStreamingStateToFailedStateOnPullAllOrDiscardAll_fail(org.Neo4Net.bolt.messaging.RequestMessage message) throws Throwable
+//ORIGINAL LINE: @ParameterizedTest @MethodSource("pullAllDiscardAllMessages") void shouldMoveFromTxStreamingStateToFailedStateOnPullAllOrDiscardAll_fail(Neo4Net.bolt.messaging.RequestMessage message) throws Throwable
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void ShouldMoveFromTxStreamingStateToFailedStateOnPullAllOrDiscardAllFail( RequestMessage message )
 		 {
@@ -149,7 +149,7 @@ namespace Neo4Net.Bolt.v3.runtime.integration
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ParameterizedTest @MethodSource("illegalV3Messages") void shouldCloseConnectionOnIllegalV3MessagesInTxStreamingState(org.Neo4Net.bolt.messaging.RequestMessage message) throws Throwable
+//ORIGINAL LINE: @ParameterizedTest @MethodSource("illegalV3Messages") void shouldCloseConnectionOnIllegalV3MessagesInTxStreamingState(Neo4Net.bolt.messaging.RequestMessage message) throws Throwable
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void ShouldCloseConnectionOnIllegalV3MessagesInTxStreamingState( RequestMessage message )
 		 {
@@ -157,7 +157,7 @@ namespace Neo4Net.Bolt.v3.runtime.integration
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void shouldThrowExceptionOnIllegalMessagesInTxStreamingState(org.Neo4Net.bolt.messaging.RequestMessage message) throws Throwable
+//ORIGINAL LINE: private void shouldThrowExceptionOnIllegalMessagesInTxStreamingState(Neo4Net.bolt.messaging.RequestMessage message) throws Throwable
 		 private void ShouldThrowExceptionOnIllegalMessagesInTxStreamingState( RequestMessage message )
 		 {
 			  // Given
@@ -178,7 +178,7 @@ namespace Neo4Net.Bolt.v3.runtime.integration
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static java.util.stream.Stream<org.Neo4Net.bolt.messaging.RequestMessage> illegalV3Messages() throws org.Neo4Net.bolt.messaging.BoltIOException
+//ORIGINAL LINE: private static java.util.stream.Stream<Neo4Net.bolt.messaging.RequestMessage> illegalV3Messages() throws Neo4Net.bolt.messaging.BoltIOException
 		 private static Stream<RequestMessage> IllegalV3Messages()
 		 {
 			  return Stream.of( NewHelloMessage(), new RunMessage("any string"), new BeginMessage(), ROLLBACK_MESSAGE, COMMIT_MESSAGE, ResetMessage.INSTANCE, GOODBYE_MESSAGE );
@@ -190,7 +190,7 @@ namespace Neo4Net.Bolt.v3.runtime.integration
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.bolt.v3.BoltStateMachineV3 getBoltStateMachineInTxStreamingState() throws org.Neo4Net.bolt.runtime.BoltConnectionFatality, org.Neo4Net.bolt.messaging.BoltIOException
+//ORIGINAL LINE: private Neo4Net.bolt.v3.BoltStateMachineV3 getBoltStateMachineInTxStreamingState() throws Neo4Net.bolt.runtime.BoltConnectionFatality, Neo4Net.bolt.messaging.BoltIOException
 		 private BoltStateMachineV3 BoltStateMachineInTxStreamingState
 		 {
 			 get

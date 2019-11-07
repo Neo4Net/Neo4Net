@@ -32,14 +32,14 @@ namespace Neo4Net.Server.security.enterprise.auth
 	using Procedure = Neo4Net.Procedure.Procedure;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.procedure.Mode.DBMS;
+//	import static Neo4Net.procedure.Mode.DBMS;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @SuppressWarnings({"unused", "WeakerAccess"}) public class SecurityProcedures extends AuthProceduresBase
 	public class SecurityProcedures : AuthProceduresBase
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Context public org.Neo4Net.kernel.enterprise.api.security.EnterpriseAuthManager authManager;
+//ORIGINAL LINE: @Context public Neo4Net.kernel.enterprise.api.security.EnterpriseAuthManager authManager;
 		 public EnterpriseAuthManager AuthManager;
 
 		 [Obsolete, Description("Show the current user. Deprecated by dbms.showCurrentUser."), Procedure(name : "dbms.security.showCurrentUser", mode : DBMS, deprecatedBy : "dbms.showCurrentUser")]

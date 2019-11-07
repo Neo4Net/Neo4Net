@@ -55,17 +55,17 @@ namespace Neo4Net.Harness.Internal
 
 	using static Neo4Net.GraphDb.facade.GraphDatabaseFacadeFactory.Dependencies;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.auth_enabled;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.auth_enabled;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.data_directory;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.data_directory;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.db_timezone;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.db_timezone;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.pagecache_memory;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.pagecache_memory;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.append;
+//	import static Neo4Net.helpers.collection.Iterables.append;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.file.Files.createOrOpenAsOutputStream;
+//	import static Neo4Net.io.file.Files.createOrOpenAsOutputStream;
 
 	public abstract class AbstractInProcessServerBuilder : TestServerBuilder
 	{
@@ -156,7 +156,7 @@ namespace Neo4Net.Harness.Internal
 						LogProvider userLogProvider = FormattedLogProvider.withZoneId( LogZoneIdFrom( _config ) ).toOutputStream( logOutputStream );
 						GraphDatabaseDependencies dependencies = GraphDatabaseDependencies.newDependencies().userLogProvider(userLogProvider);
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: Iterable<org.Neo4Net.kernel.extension.KernelExtensionFactory<?>> kernelExtensions = append(new Neo4NetHarnessExtensions(procedures), dependencies.kernelExtensions());
+//ORIGINAL LINE: Iterable<Neo4Net.kernel.extension.KernelExtensionFactory<?>> kernelExtensions = append(new Neo4NetHarnessExtensions(procedures), dependencies.kernelExtensions());
 						IEnumerable<KernelExtensionFactory<object>> kernelExtensions = append( new Neo4NetHarnessExtensions( _procedures ), dependencies.KernelExtensions() );
 						dependencies = dependencies.KernelExtensions( kernelExtensions );
       

@@ -24,13 +24,13 @@ using System.Collections.Generic;
 namespace Neo4Net.Kernel.Api.Exceptions
 {
    //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-   //	import static org.Neo4Net.kernel.api.exceptions.Status_Classification.ClientError;
+   //	import static Neo4Net.kernel.api.exceptions.Status_Classification.ClientError;
    //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-   //	import static org.Neo4Net.kernel.api.exceptions.Status_Classification.ClientNotification;
+   //	import static Neo4Net.kernel.api.exceptions.Status_Classification.ClientNotification;
    //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-   //	import static org.Neo4Net.kernel.api.exceptions.Status_Classification.DatabaseError;
+   //	import static Neo4Net.kernel.api.exceptions.Status_Classification.DatabaseError;
    //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-   //	import static org.Neo4Net.kernel.api.exceptions.Status_Classification.TransientError;
+   //	import static Neo4Net.kernel.api.exceptions.Status_Classification.TransientError;
 
    /// <summary>
    /// This is the codification of all available surface-api status codes. If you are throwing an error to a user through

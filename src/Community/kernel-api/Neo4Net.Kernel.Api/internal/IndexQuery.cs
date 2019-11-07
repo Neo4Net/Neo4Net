@@ -35,9 +35,9 @@ namespace Neo4Net.Kernel.Api.Internal
    using ValueTuple = Neo4Net.Values.Storable.ValueTuple;
 
    //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-   //	import static org.Neo4Net.values.storable.Values.NO_VALUE;
+   //	import static Neo4Net.values.storable.Values.NO_VALUE;
    //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-   //	import static org.Neo4Net.values.storable.Values.utf8Value;
+   //	import static Neo4Net.values.storable.Values.utf8Value;
 
    public abstract class IndexQuery
    {
@@ -86,7 +86,7 @@ namespace Neo4Net.Kernel.Api.Internal
       }
 
       //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-      //ORIGINAL LINE: public static <VALUE extends org.Neo4Net.values.storable.Value> RangePredicate<?> range(int propertyKeyId, VALUE from, boolean fromInclusive, VALUE to, boolean toInclusive)
+      //ORIGINAL LINE: public static <VALUE extends Neo4Net.values.storable.Value> RangePredicate<?> range(int propertyKeyId, VALUE from, boolean fromInclusive, VALUE to, boolean toInclusive)
       public static RangePredicate<object> Range<VALUE>(int propertyKeyId, VALUE from, bool fromInclusive, VALUE to, bool toInclusive) where VALUE : Neo4Net.Values.Storable.Value
       {
          if (from == null && to == null)
@@ -120,7 +120,7 @@ namespace Neo4Net.Kernel.Api.Internal
       /// Create IndexQuery for retrieving all indexed entries of the given value group.
       /// </summary>
       //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-      //ORIGINAL LINE: public static RangePredicate<?> range(int propertyKeyId, org.Neo4Net.values.storable.ValueGroup valueGroup)
+      //ORIGINAL LINE: public static RangePredicate<?> range(int propertyKeyId, Neo4Net.values.storable.ValueGroup valueGroup)
       public static RangePredicate<object> Range(int propertyKeyId, ValueGroup valueGroup)
       {
          if (valueGroup == ValueGroup.GEOMETRY)
@@ -137,7 +137,7 @@ namespace Neo4Net.Kernel.Api.Internal
       /// coordinate reference system.
       /// </summary>
       //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-      //ORIGINAL LINE: public static RangePredicate<?> range(int propertyKeyId, org.Neo4Net.values.storable.CoordinateReferenceSystem crs)
+      //ORIGINAL LINE: public static RangePredicate<?> range(int propertyKeyId, Neo4Net.values.storable.CoordinateReferenceSystem crs)
       public static RangePredicate<object> Range(int propertyKeyId, CoordinateReferenceSystem crs)
       {
          return new GeometryRangePredicate(propertyKeyId, crs, null, true, null, true);

@@ -49,7 +49,7 @@ namespace Neo4Net.Index.lucene
 
 		 /// <summary>
 		 /// Returns a ValueContext to be used with
-		 /// <seealso cref="org.Neo4Net.GraphDb.Index.Index.add(org.Neo4Net.graphdb.PropertyContainer, string, object)"/>
+		 /// <seealso cref="Neo4Net.GraphDb.Index.Index.add(Neo4Net.graphdb.PropertyContainer, string, object)"/>
 		 /// </summary>
 		 /// <returns> a numeric ValueContext </returns>
 		 [Obsolete]
@@ -87,7 +87,7 @@ namespace Neo4Net.Index.lucene
 		 /// Convenience method to add a numeric value to an index. </summary>
 		 /// <param name="value"> The value to add </param>
 		 /// <returns> A ValueContext that can be used with
-		 /// <seealso cref="org.Neo4Net.GraphDb.Index.Index.add(org.Neo4Net.graphdb.PropertyContainer, string, object)"/> </returns>
+		 /// <seealso cref="Neo4Net.GraphDb.Index.Index.add(Neo4Net.graphdb.PropertyContainer, string, object)"/> </returns>
 		 [Obsolete]
 		 public static ValueContext Numeric( Number value )
 		 {

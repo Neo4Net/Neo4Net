@@ -54,19 +54,19 @@ namespace Neo4Net.Kernel.impl.transaction.log.checkpoint
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verify;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.function.ThrowingAction.noop;
+//	import static Neo4Net.function.ThrowingAction.noop;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.Race.throwing;
+//	import static Neo4Net.test.Race.throwing;
 
 	public class StoreCopyCheckPointMutexTest
 	{
 		 private static readonly ThrowingAction<IOException> _assertNotCalled = () => fail("Should not be called");
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.concurrent.OtherThreadRule<Void> t2 = new org.Neo4Net.test.rule.concurrent.OtherThreadRule<>("T2");
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.concurrent.OtherThreadRule<Void> t2 = new Neo4Net.test.rule.concurrent.OtherThreadRule<>("T2");
 		 public readonly OtherThreadRule<Void> T2 = new OtherThreadRule<Void>( "T2" );
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.concurrent.OtherThreadRule<Void> t3 = new org.Neo4Net.test.rule.concurrent.OtherThreadRule<>("T3");
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.concurrent.OtherThreadRule<Void> t3 = new Neo4Net.test.rule.concurrent.OtherThreadRule<>("T3");
 		 public readonly OtherThreadRule<Void> T3 = new OtherThreadRule<Void>( "T3" );
 
 		 private readonly StoreCopyCheckPointMutex _mutex = new StoreCopyCheckPointMutex();
@@ -155,7 +155,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.checkpoint
 		 {
 			  // GIVEN
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") org.Neo4Net.function.ThrowingAction<java.io.IOException> action = mock(org.Neo4Net.function.ThrowingAction.class);
+//ORIGINAL LINE: @SuppressWarnings("unchecked") Neo4Net.function.ThrowingAction<java.io.IOException> action = mock(Neo4Net.function.ThrowingAction.class);
 			  ThrowingAction<IOException> action = mock( typeof( ThrowingAction ) );
 			  using ( Resource @lock = _mutex.storeCopy( action ) )
 			  {

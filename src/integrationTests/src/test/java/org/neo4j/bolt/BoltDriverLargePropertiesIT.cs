@@ -49,14 +49,14 @@ namespace Neo4Net.Bolt
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.runners.Parameterized.Parameters;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.driver.v1.Values.parameters;
+//	import static Neo4Net.driver.v1.Values.parameters;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class BoltDriverLargePropertiesIT
 	public class BoltDriverLargePropertiesIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ClassRule public static final org.Neo4Net.harness.junit.Neo4NetRule db = new org.Neo4Net.harness.junit.Neo4NetRule().withConfig(org.Neo4Net.kernel.impl.enterprise.configuration.OnlineBackupSettings.online_backup_enabled, org.Neo4Net.kernel.configuration.Settings.FALSE);
+//ORIGINAL LINE: @ClassRule public static final Neo4Net.harness.junit.Neo4NetRule db = new Neo4Net.harness.junit.Neo4NetRule().withConfig(Neo4Net.kernel.impl.enterprise.configuration.OnlineBackupSettings.online_backup_enabled, Neo4Net.kernel.configuration.Settings.FALSE);
 		 public static readonly Neo4NetRule Db = new Neo4NetRule().withConfig(OnlineBackupSettings.online_backup_enabled, Settings.FALSE);
 
 		 private static Driver _driver;

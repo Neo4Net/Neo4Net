@@ -30,7 +30,7 @@ namespace Neo4Net.Test.impl
 		 private readonly ByteBuffer _buffer = ByteBuffer.allocate( 8096 );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public ChannelOutputStream(org.Neo4Net.io.fs.StoreChannel channel, boolean append) throws java.io.IOException
+//ORIGINAL LINE: public ChannelOutputStream(Neo4Net.io.fs.StoreChannel channel, boolean append) throws java.io.IOException
 		 public ChannelOutputStream( StoreChannel channel, bool append )
 		 {
 			  this._channel = channel;

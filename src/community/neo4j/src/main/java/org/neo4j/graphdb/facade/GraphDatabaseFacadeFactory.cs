@@ -24,7 +24,7 @@ namespace Neo4Net.GraphDb.facade
 {
 
 	using BoltServer = Neo4Net.Bolt.BoltServer;
-	using DatabaseManager = Neo4Net.Dbms.database.DatabaseManager;
+	using IDatabaseManager = Neo4Net.Dbms.database.DatabaseManager;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using DataSourceModule = Neo4Net.GraphDb.factory.module.DataSourceModule;
 	using PlatformModule = Neo4Net.GraphDb.factory.module.PlatformModule;
@@ -37,8 +37,8 @@ namespace Neo4Net.GraphDb.facade
 	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 	using ProcedureCallContext = Neo4Net.Kernel.Api.Internal.procs.ProcedureCallContext;
 	using SecurityContext = Neo4Net.Kernel.Api.Internal.security.SecurityContext;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
-	using SecurityProvider = Neo4Net.Kernel.api.security.provider.SecurityProvider;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
+	using SecurityProvider = Neo4Net.Kernel.Api.security.provider.SecurityProvider;
 	using AvailabilityGuardInstaller = Neo4Net.Kernel.availability.AvailabilityGuardInstaller;
 	using StartupWaiter = Neo4Net.Kernel.availability.StartupWaiter;
 	using SpecialBuiltInProcedures = Neo4Net.Kernel.builtinprocs.SpecialBuiltInProcedures;
@@ -65,32 +65,32 @@ namespace Neo4Net.GraphDb.facade
 	using Group = Neo4Net.Scheduler.Group;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes.NTGeometry;
+//	import static Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes.NTGeometry;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes.NTNode;
+//	import static Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes.NTNode;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes.NTPath;
+//	import static Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes.NTPath;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes.NTPoint;
+//	import static Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes.NTPoint;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes.NTRelationship;
+//	import static Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes.NTRelationship;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.proc.Context_Fields.DATABASE_API;
+//	import static Neo4Net.kernel.api.proc.Context_Fields.DATABASE_API;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.proc.Context_Fields.DEPENDENCY_RESOLVER;
+//	import static Neo4Net.kernel.api.proc.Context_Fields.DEPENDENCY_RESOLVER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.proc.Context_Fields.KERNEL_TRANSACTION;
+//	import static Neo4Net.kernel.api.proc.Context_Fields.KERNEL_TRANSACTION;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.proc.Context_Fields.PROCEDURE_CALL_CONTEXT;
+//	import static Neo4Net.kernel.api.proc.Context_Fields.PROCEDURE_CALL_CONTEXT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.proc.Context_Fields.SECURITY_CONTEXT;
+//	import static Neo4Net.kernel.api.proc.Context_Fields.SECURITY_CONTEXT;
 
 	/// <summary>
 	/// This is the main factory for creating database instances. It delegates creation to three different modules
 	/// (<seealso cref="PlatformModule"/>, <seealso cref="AbstractEditionModule"/>, and <seealso cref="DataSourceModule"/>),
 	/// which create all the specific services needed to run a graph database.
 	/// <para>
-	/// To create test versions of databases, override an edition factory (e.g. {@link org.Neo4Net.kernel.impl.factory
+	/// To create test versions of databases, override an edition factory (e.g. {@link Neo4Net.kernel.impl.factory
 	/// .CommunityFacadeFactory}), and replace modules
 	/// with custom versions that instantiate alternative services.
 	/// </para>
@@ -100,7 +100,7 @@ namespace Neo4Net.GraphDb.facade
 		 public interface Dependencies
 		 {
 			  /// <summary>
-			  /// Allowed to be null. Null means that no external <seealso cref="org.Neo4Net.kernel.monitoring.Monitors"/> was created,
+			  /// Allowed to be null. Null means that no external <seealso cref="Neo4Net.kernel.monitoring.Monitors"/> was created,
 			  /// let the
 			  /// database create its own monitors instance.
 			  /// </summary>
@@ -111,7 +111,7 @@ namespace Neo4Net.GraphDb.facade
 			  IEnumerable<Type> SettingsClasses();
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: Iterable<org.Neo4Net.kernel.extension.KernelExtensionFactory<?>> kernelExtensions();
+//ORIGINAL LINE: Iterable<Neo4Net.kernel.extension.KernelExtensionFactory<?>> kernelExtensions();
 			  IEnumerable<KernelExtensionFactory<object>> KernelExtensions();
 
 			  IDictionary<string, URLAccessRule> UrlAccessRules();
@@ -129,7 +129,7 @@ namespace Neo4Net.GraphDb.facade
 			  /// By default this callback is a no-op
 			  /// </summary>
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//			  default org.Neo4Net.kernel.availability.AvailabilityGuardInstaller availabilityGuardInstaller()
+//			  default Neo4Net.kernel.availability.AvailabilityGuardInstaller availabilityGuardInstaller()
 	//		  {
 	//				return availabilityGuard ->
 	//				{
@@ -154,7 +154,7 @@ namespace Neo4Net.GraphDb.facade
 		 /// <param name="dependencies"> the dependencies required to construct the <seealso cref="GraphDatabaseFacade"/> </param>
 		 /// <returns> the newly constructed <seealso cref="GraphDatabaseFacade"/> </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public org.Neo4Net.kernel.impl.factory.GraphDatabaseFacade newFacade(java.io.File storeDir, org.Neo4Net.kernel.configuration.Config config, final Dependencies dependencies)
+//ORIGINAL LINE: public Neo4Net.kernel.impl.factory.GraphDatabaseFacade newFacade(java.io.File storeDir, Neo4Net.kernel.configuration.Config config, final Dependencies dependencies)
 		 public virtual GraphDatabaseFacade NewFacade( File storeDir, Config config, Dependencies dependencies )
 		 {
 			  return InitFacade( storeDir, config, dependencies, new GraphDatabaseFacade() );
@@ -170,7 +170,7 @@ namespace Neo4Net.GraphDb.facade
 		 /// <param name="graphDatabaseFacade"> the already created facade which needs initialization </param>
 		 /// <returns> the initialised <seealso cref="GraphDatabaseFacade"/> </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public org.Neo4Net.kernel.impl.factory.GraphDatabaseFacade initFacade(java.io.File storeDir, java.util.Map<String,String> params, final Dependencies dependencies, final org.Neo4Net.kernel.impl.factory.GraphDatabaseFacade graphDatabaseFacade)
+//ORIGINAL LINE: public Neo4Net.kernel.impl.factory.GraphDatabaseFacade initFacade(java.io.File storeDir, java.util.Map<String,String> params, final Dependencies dependencies, final Neo4Net.kernel.impl.factory.GraphDatabaseFacade graphDatabaseFacade)
 		 public virtual GraphDatabaseFacade InitFacade( File storeDir, IDictionary<string, string> @params, Dependencies dependencies, GraphDatabaseFacade graphDatabaseFacade )
 		 {
 			  return InitFacade( storeDir, Config.defaults( @params ), dependencies, graphDatabaseFacade );
@@ -186,7 +186,7 @@ namespace Neo4Net.GraphDb.facade
 		 /// <param name="graphDatabaseFacade"> the already created facade which needs initialization </param>
 		 /// <returns> the initialised <seealso cref="GraphDatabaseFacade"/> </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public org.Neo4Net.kernel.impl.factory.GraphDatabaseFacade initFacade(java.io.File storeDir, org.Neo4Net.kernel.configuration.Config config, final Dependencies dependencies, final org.Neo4Net.kernel.impl.factory.GraphDatabaseFacade graphDatabaseFacade)
+//ORIGINAL LINE: public Neo4Net.kernel.impl.factory.GraphDatabaseFacade initFacade(java.io.File storeDir, Neo4Net.kernel.configuration.Config config, final Dependencies dependencies, final Neo4Net.kernel.impl.factory.GraphDatabaseFacade graphDatabaseFacade)
 		 public virtual GraphDatabaseFacade InitFacade( File storeDir, Config config, Dependencies dependencies, GraphDatabaseFacade graphDatabaseFacade )
 		 {
 			  PlatformModule platform = CreatePlatform( storeDir, config, dependencies );
@@ -199,7 +199,7 @@ namespace Neo4Net.GraphDb.facade
 			  platform.Dependencies.satisfyDependency( new NonTransactionalDbmsOperations( procedures ) );
 
 			  Logger msgLog = platform.Logging.getInternalLog( this.GetType() ).infoLogger();
-			  DatabaseManager databaseManager = edition.CreateDatabaseManager( graphDatabaseFacade, platform, edition, procedures, msgLog );
+			  IDatabaseManager databaseManager = edition.CreateDatabaseManager( graphDatabaseFacade, platform, edition, procedures, msgLog );
 			  platform.Life.add( databaseManager );
 			  platform.Dependencies.satisfyDependency( databaseManager );
 
@@ -264,7 +264,7 @@ namespace Neo4Net.GraphDb.facade
 		 /// Create the platform module. Override to replace with custom module.
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: protected org.Neo4Net.graphdb.factory.module.PlatformModule createPlatform(java.io.File storeDir, org.Neo4Net.kernel.configuration.Config config, final Dependencies dependencies)
+//ORIGINAL LINE: protected Neo4Net.graphdb.factory.module.PlatformModule createPlatform(java.io.File storeDir, Neo4Net.kernel.configuration.Config config, final Dependencies dependencies)
 		 protected internal virtual PlatformModule CreatePlatform( File storeDir, Config config, Dependencies dependencies )
 		 {
 			  return new PlatformModule( storeDir, config, DatabaseInfo, dependencies );
@@ -322,7 +322,7 @@ namespace Neo4Net.GraphDb.facade
 			  return procedures;
 		 }
 
-		 private static BoltServer CreateBoltServer( PlatformModule platform, AbstractEditionModule edition, DatabaseManager databaseManager )
+		 private static BoltServer CreateBoltServer( PlatformModule platform, AbstractEditionModule edition, IDatabaseManager databaseManager )
 		 {
 			  return new BoltServer( databaseManager, platform.JobScheduler, platform.ConnectorPortRegister, edition.ConnectionTracker, platform.UsageData, platform.Config, platform.Clock, platform.Monitors, platform.Logging, platform.Dependencies );
 		 }

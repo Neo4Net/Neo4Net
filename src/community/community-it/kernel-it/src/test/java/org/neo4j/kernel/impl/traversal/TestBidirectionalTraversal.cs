@@ -50,15 +50,15 @@ namespace Neo4Net.Kernel.impl.traversal
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.Direction.OUTGOING;
+//	import static Neo4Net.graphdb.Direction.OUTGOING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.RelationshipType.withName;
+//	import static Neo4Net.graphdb.RelationshipType.withName;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.traversal.Evaluators.includeIfContainsAll;
+//	import static Neo4Net.graphdb.traversal.Evaluators.includeIfContainsAll;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.traversal.Uniqueness.NODE_PATH;
+//	import static Neo4Net.graphdb.traversal.Uniqueness.NODE_PATH;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.traversal.Uniqueness.RELATIONSHIP_PATH;
+//	import static Neo4Net.graphdb.traversal.Uniqueness.RELATIONSHIP_PATH;
 
 	public class TestBidirectionalTraversal : TraversalTestBase
 	{
@@ -86,7 +86,7 @@ namespace Neo4Net.Kernel.impl.traversal
 			  CreateGraph( "A TO B" );
 
 			  Traverser traverse = GraphDb.bidirectionalTraversalDescription().startSide(GraphDb.traversalDescription().uniqueness(Uniqueness.NODE_GLOBAL)).endSide(GraphDb.traversalDescription().uniqueness(Uniqueness.RELATIONSHIP_GLOBAL)).traverse(GetNodeWithName("A"), GetNodeWithName("B"));
-			  using ( ResourceIterator<Path> iterator = traverse.GetEnumerator() )
+			  using ( IResourceIterator<Path> iterator = traverse.GetEnumerator() )
 			  {
 					Iterators.count( iterator );
 			  }

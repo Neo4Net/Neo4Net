@@ -54,7 +54,7 @@ namespace Neo4Net.Server.enterprise
 		 /// @return
 		 /// </summary>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Nonnull protected java.util.Collection<org.Neo4Net.kernel.configuration.ConfigurationValidator> configurationValidators()
+//ORIGINAL LINE: @Nonnull protected java.util.Collection<Neo4Net.kernel.configuration.ConfigurationValidator> configurationValidators()
 		 protected internal virtual ICollection<ConfigurationValidator> ConfigurationValidators()
 		 {
 			  IList<ConfigurationValidator> validators = new List<object>( base.ConfigurationValidators() );

@@ -34,11 +34,11 @@ namespace Neo4Net.causalclustering.discovery
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.discovery.ClientConnectorAddresses.Scheme.bolt;
+//	import static Neo4Net.causalclustering.discovery.ClientConnectorAddresses.Scheme.bolt;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.discovery.ClientConnectorAddresses.Scheme.http;
+//	import static Neo4Net.causalclustering.discovery.ClientConnectorAddresses.Scheme.http;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.discovery.ClientConnectorAddresses.Scheme.https;
+//	import static Neo4Net.causalclustering.discovery.ClientConnectorAddresses.Scheme.https;
 
 	public class ClientConnectorAddressesTest
 	{

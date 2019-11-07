@@ -30,9 +30,9 @@ namespace Neo4Net.Kernel.info
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.info.JvmChecker.INCOMPATIBLE_JVM_VERSION_WARNING;
+//	import static Neo4Net.kernel.info.JvmChecker.INCOMPATIBLE_JVM_VERSION_WARNING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.info.JvmChecker.INCOMPATIBLE_JVM_WARNING;
+//	import static Neo4Net.kernel.info.JvmChecker.INCOMPATIBLE_JVM_WARNING;
 
 	public class JVMCheckerTest
 	{

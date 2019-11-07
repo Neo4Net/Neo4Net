@@ -38,13 +38,13 @@ namespace Neo4Net.causalclustering.core.state.machines.locks
 	using ResourceType = Neo4Net.Kernel.Api.StorageEngine.@lock.ResourceType;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.exceptions.Status_Cluster.NoLeaderAvailable;
+//	import static Neo4Net.kernel.api.exceptions.Status_Cluster.NoLeaderAvailable;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.exceptions.Status_Cluster.NotALeader;
+//	import static Neo4Net.kernel.api.exceptions.Status_Cluster.NotALeader;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.exceptions.Status_Cluster.ReplicationFailure;
+//	import static Neo4Net.kernel.api.exceptions.Status_Cluster.ReplicationFailure;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.exceptions.Status_Transaction.Interrupted;
+//	import static Neo4Net.kernel.api.exceptions.Status_Transaction.Interrupted;
 
 	/// <summary>
 	/// Each member of the cluster uses its own <seealso cref="LeaderOnlyLockManager"/> which wraps a local <seealso cref="Locks"/> manager.
@@ -213,14 +213,14 @@ namespace Neo4Net.causalclustering.core.state.machines.locks
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void acquireShared(org.Neo4Net.Kernel.Api.StorageEngine.lock.LockTracer tracer, org.Neo4Net.Kernel.Api.StorageEngine.lock.ResourceType resourceType, long... resourceId) throws org.Neo4Net.Kernel.Api.StorageEngine.lock.AcquireLockTimeoutException
+//ORIGINAL LINE: public void acquireShared(Neo4Net.Kernel.Api.StorageEngine.lock.LockTracer tracer, Neo4Net.Kernel.Api.StorageEngine.lock.ResourceType resourceType, long... resourceId) throws Neo4Net.Kernel.Api.StorageEngine.lock.AcquireLockTimeoutException
 			  public override void AcquireShared( LockTracer tracer, ResourceType resourceType, params long[] resourceId )
 			  {
 					LocalClient.acquireShared( tracer, resourceType, resourceId );
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void acquireExclusive(org.Neo4Net.Kernel.Api.StorageEngine.lock.LockTracer tracer, org.Neo4Net.Kernel.Api.StorageEngine.lock.ResourceType resourceType, long... resourceId) throws org.Neo4Net.Kernel.Api.StorageEngine.lock.AcquireLockTimeoutException
+//ORIGINAL LINE: public void acquireExclusive(Neo4Net.Kernel.Api.StorageEngine.lock.LockTracer tracer, Neo4Net.Kernel.Api.StorageEngine.lock.ResourceType resourceType, long... resourceId) throws Neo4Net.Kernel.Api.StorageEngine.lock.AcquireLockTimeoutException
 			  public override void AcquireExclusive( LockTracer tracer, ResourceType resourceType, params long[] resourceId )
 			  {
 					EnsureHoldingToken();
@@ -283,7 +283,7 @@ namespace Neo4Net.causalclustering.core.state.machines.locks
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: public java.util.stream.Stream<? extends org.Neo4Net.kernel.impl.locking.ActiveLock> activeLocks()
+//ORIGINAL LINE: public java.util.stream.Stream<? extends Neo4Net.kernel.impl.locking.ActiveLock> activeLocks()
 			  public override Stream<ActiveLock> ActiveLocks()
 			  {
 					return LocalClient.activeLocks();

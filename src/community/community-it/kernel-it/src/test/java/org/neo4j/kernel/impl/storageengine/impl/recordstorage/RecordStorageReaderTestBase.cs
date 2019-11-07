@@ -32,7 +32,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 	using EmptyVersionContextSupplier = Neo4Net.Io.pagecache.tracing.cursor.context.EmptyVersionContextSupplier;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
 	using ClockContext = Neo4Net.Kernel.Impl.Api.ClockContext;
 	using KernelStatement = Neo4Net.Kernel.Impl.Api.KernelStatement;
 	using ThreadToStatementContextBridge = Neo4Net.Kernel.impl.core.ThreadToStatementContextBridge;
@@ -43,7 +43,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.Label.label;
+//	import static Neo4Net.graphdb.Label.label;
 
 	/// <summary>
 	/// Base class for disk layer tests, which test read-access to committed data.
@@ -117,7 +117,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected String relationshipType(int id) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: protected String relationshipType(int id) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 protected internal virtual string RelationshipType( int id )
 		 {
 			  using ( Transaction tx = Db.beginTx() )

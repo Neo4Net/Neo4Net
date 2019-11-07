@@ -28,7 +28,7 @@ namespace Neo4Net.Server.rest.dbms
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertNull;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.dbms.AuthorizationHeaders.decode;
+//	import static Neo4Net.server.rest.dbms.AuthorizationHeaders.decode;
 
 	public class AuthorizationHeadersTest
 	{

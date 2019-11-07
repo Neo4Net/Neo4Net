@@ -47,7 +47,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.pruning
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.keep_logical_logs;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.keep_logical_logs;
 
 	public class TestLogPruning
 	{

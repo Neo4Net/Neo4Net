@@ -54,7 +54,7 @@ namespace Neo4Net.Io.pagecache
 	public abstract class PageSwapperTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject public org.Neo4Net.test.rule.TestDirectory testDir;
+//ORIGINAL LINE: @Inject public Neo4Net.test.rule.TestDirectory testDir;
 		 public TestDirectory TestDir;
 		 public const long X = unchecked( ( long )0xcafebabedeadbeefL );
 		 public static readonly long Y = X ^ ( X << 1 );

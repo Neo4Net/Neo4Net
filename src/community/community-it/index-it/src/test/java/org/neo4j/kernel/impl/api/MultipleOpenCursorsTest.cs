@@ -40,8 +40,8 @@ namespace Neo4Net.Kernel.Impl.Api
 	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 	using IndexNotApplicableKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotApplicableKernelException;
 	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
-	using TestIndexDescriptorFactory = Neo4Net.Kernel.api.schema.index.TestIndexDescriptorFactory;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
+	using TestIndexDescriptorFactory = Neo4Net.Kernel.Api.schema.index.TestIndexDescriptorFactory;
 	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
 	using DatabaseRule = Neo4Net.Test.rule.DatabaseRule;
 	using EmbeddedDatabaseRule = Neo4Net.Test.rule.EmbeddedDatabaseRule;
@@ -219,7 +219,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void multipleIteratorsNotNestedRange() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: @Test public void multipleIteratorsNotNestedRange() throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void MultipleIteratorsNotNestedRange()
 		 {
@@ -462,21 +462,21 @@ namespace Neo4Net.Kernel.Impl.Api
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: NodeValueIndexCursor queryRange(org.Neo4Net.kernel.api.KernelTransaction ktx) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotApplicableKernelException, org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
+//ORIGINAL LINE: NodeValueIndexCursor queryRange(Neo4Net.kernel.api.KernelTransaction ktx) throws Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotApplicableKernelException, Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
 			  internal override NodeValueIndexCursor QueryRange( KernelTransaction ktx )
 			  {
 					throw new System.NotSupportedException();
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: NodeValueIndexCursor queryExists(org.Neo4Net.kernel.api.KernelTransaction ktx) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: NodeValueIndexCursor queryExists(Neo4Net.kernel.api.KernelTransaction ktx) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 			  internal override NodeValueIndexCursor QueryExists( KernelTransaction ktx )
 			  {
 					return IndexQuery( ktx, IndexDescriptor, IndexQuery.exists( StringPropId1 ), IndexQuery.exists( StringPropId2 ) );
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: NodeValueIndexCursor queryExact(org.Neo4Net.kernel.api.KernelTransaction ktx) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: NodeValueIndexCursor queryExact(Neo4Net.kernel.api.KernelTransaction ktx) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 			  internal override NodeValueIndexCursor QueryExact( KernelTransaction ktx )
 			  {
 					return IndexQuery( ktx, IndexDescriptor, IndexQuery.exact( StringPropId1, StringProp1Values[0] ), IndexQuery.exact( StringPropId2, StringProp2Values[0] ) );
@@ -517,21 +517,21 @@ namespace Neo4Net.Kernel.Impl.Api
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: NodeValueIndexCursor queryRange(org.Neo4Net.kernel.api.KernelTransaction ktx) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotApplicableKernelException, org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
+//ORIGINAL LINE: NodeValueIndexCursor queryRange(Neo4Net.kernel.api.KernelTransaction ktx) throws Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotApplicableKernelException, Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
 			  internal override NodeValueIndexCursor QueryRange( KernelTransaction ktx )
 			  {
 					throw new System.NotSupportedException();
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: NodeValueIndexCursor queryExists(org.Neo4Net.kernel.api.KernelTransaction ktx) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: NodeValueIndexCursor queryExists(Neo4Net.kernel.api.KernelTransaction ktx) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 			  internal override NodeValueIndexCursor QueryExists( KernelTransaction ktx )
 			  {
 					return IndexQuery( ktx, IndexDescriptor, IndexQuery.exists( NumberPropId1 ), IndexQuery.exists( NumberPropId2 ) );
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: NodeValueIndexCursor queryExact(org.Neo4Net.kernel.api.KernelTransaction ktx) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: NodeValueIndexCursor queryExact(Neo4Net.kernel.api.KernelTransaction ktx) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 			  internal override NodeValueIndexCursor QueryExact( KernelTransaction ktx )
 			  {
 					return IndexQuery( ktx, IndexDescriptor, IndexQuery.exact( NumberPropId1, NumberProp1Values[0] ), IndexQuery.exact( NumberPropId2, NumberProp2Values[0] ) );
@@ -572,7 +572,7 @@ namespace Neo4Net.Kernel.Impl.Api
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: NodeValueIndexCursor queryRange(org.Neo4Net.kernel.api.KernelTransaction ktx) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: NodeValueIndexCursor queryRange(Neo4Net.kernel.api.KernelTransaction ktx) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 			  internal override NodeValueIndexCursor QueryRange( KernelTransaction ktx )
 			  {
 					// query for half the range
@@ -580,14 +580,14 @@ namespace Neo4Net.Kernel.Impl.Api
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: NodeValueIndexCursor queryExists(org.Neo4Net.kernel.api.KernelTransaction ktx) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: NodeValueIndexCursor queryExists(Neo4Net.kernel.api.KernelTransaction ktx) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 			  internal override NodeValueIndexCursor QueryExists( KernelTransaction ktx )
 			  {
 					return IndexQuery( ktx, IndexDescriptor, IndexQuery.exists( StringPropId1 ) );
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: NodeValueIndexCursor queryExact(org.Neo4Net.kernel.api.KernelTransaction ktx) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: NodeValueIndexCursor queryExact(Neo4Net.kernel.api.KernelTransaction ktx) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 			  internal override NodeValueIndexCursor QueryExact( KernelTransaction ktx )
 			  {
 					return IndexQuery( ktx, IndexDescriptor, IndexQuery.exact( StringPropId1, StringProp1Values[0] ) );
@@ -633,7 +633,7 @@ namespace Neo4Net.Kernel.Impl.Api
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: NodeValueIndexCursor queryRange(org.Neo4Net.kernel.api.KernelTransaction ktx) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: NodeValueIndexCursor queryRange(Neo4Net.kernel.api.KernelTransaction ktx) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 			  internal override NodeValueIndexCursor QueryRange( KernelTransaction ktx )
 			  {
 					// query for half the range
@@ -641,14 +641,14 @@ namespace Neo4Net.Kernel.Impl.Api
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: NodeValueIndexCursor queryExists(org.Neo4Net.kernel.api.KernelTransaction ktx) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: NodeValueIndexCursor queryExists(Neo4Net.kernel.api.KernelTransaction ktx) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 			  internal override NodeValueIndexCursor QueryExists( KernelTransaction ktx )
 			  {
 					return IndexQuery( ktx, IndexDescriptor, IndexQuery.exists( NumberPropId1 ) );
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: NodeValueIndexCursor queryExact(org.Neo4Net.kernel.api.KernelTransaction ktx) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: NodeValueIndexCursor queryExact(Neo4Net.kernel.api.KernelTransaction ktx) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 			  internal override NodeValueIndexCursor QueryExact( KernelTransaction ktx )
 			  {
 					return IndexQuery( ktx, IndexDescriptor, IndexQuery.exact( NumberPropId1, NumberProp1Values[0] ) );
@@ -774,15 +774,15 @@ namespace Neo4Net.Kernel.Impl.Api
 			  internal abstract bool SupportRangeQuery();
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: abstract org.Neo4Net.Kernel.Api.Internal.NodeValueIndexCursor queryRange(org.Neo4Net.kernel.api.KernelTransaction ktx) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
+//ORIGINAL LINE: abstract Neo4Net.Kernel.Api.Internal.NodeValueIndexCursor queryRange(Neo4Net.kernel.api.KernelTransaction ktx) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 			  internal abstract NodeValueIndexCursor QueryRange( KernelTransaction ktx );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: abstract org.Neo4Net.Kernel.Api.Internal.NodeValueIndexCursor queryExists(org.Neo4Net.kernel.api.KernelTransaction ktx) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
+//ORIGINAL LINE: abstract Neo4Net.Kernel.Api.Internal.NodeValueIndexCursor queryExists(Neo4Net.kernel.api.KernelTransaction ktx) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 			  internal abstract NodeValueIndexCursor QueryExists( KernelTransaction ktx );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: abstract org.Neo4Net.Kernel.Api.Internal.NodeValueIndexCursor queryExact(org.Neo4Net.kernel.api.KernelTransaction ktx) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
+//ORIGINAL LINE: abstract Neo4Net.Kernel.Api.Internal.NodeValueIndexCursor queryExact(Neo4Net.kernel.api.KernelTransaction ktx) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 			  internal abstract NodeValueIndexCursor QueryExact( KernelTransaction ktx );
 
 			  internal abstract void AssertRangeResult( IList<long> result );
@@ -807,7 +807,7 @@ namespace Neo4Net.Kernel.Impl.Api
 			  internal abstract void DoCreateIndex( DatabaseRule db );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.Neo4Net.Kernel.Api.Internal.NodeValueIndexCursor indexQuery(org.Neo4Net.kernel.api.KernelTransaction ktx, org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor indexDescriptor, org.Neo4Net.Kernel.Api.Internal.IndexQuery... indexQueries) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: Neo4Net.Kernel.Api.Internal.NodeValueIndexCursor indexQuery(Neo4Net.kernel.api.KernelTransaction ktx, Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor indexDescriptor, Neo4Net.Kernel.Api.Internal.IndexQuery... indexQueries) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 			  internal virtual NodeValueIndexCursor IndexQuery( KernelTransaction ktx, IndexDescriptor indexDescriptor, params IndexQuery[] indexQueries )
 			  {
 					NodeValueIndexCursor cursor = ktx.Cursors().allocateNodeValueIndexCursor();

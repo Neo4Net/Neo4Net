@@ -36,7 +36,7 @@ namespace Neo4Net.Metatest
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.asSet;
+//	import static Neo4Net.helpers.collection.Iterators.asSet;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @ExtendWith(EphemeralFileSystemExtension.class) class TestEphemeralFileChannel
@@ -44,7 +44,7 @@ namespace Neo4Net.Metatest
 	{
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.Neo4Net.graphdb.mockfs.EphemeralFileSystemAbstraction fileSystem;
+//ORIGINAL LINE: @Inject private Neo4Net.graphdb.mockfs.EphemeralFileSystemAbstraction fileSystem;
 		 private EphemeralFileSystemAbstraction _fileSystem;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

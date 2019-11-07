@@ -36,7 +36,7 @@ namespace Neo4Net.causalclustering.discovery.procedures
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.asList;
+//	import static Neo4Net.helpers.collection.Iterators.asList;
 
 	public class RoleProcedureTest
 	{
@@ -90,7 +90,7 @@ namespace Neo4Net.causalclustering.discovery.procedures
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private Object[] single(org.Neo4Net.collection.RawIterator<Object[], org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException> result) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
+//ORIGINAL LINE: private Object[] single(Neo4Net.collection.RawIterator<Object[], Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException> result) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 		 private object[] Single( RawIterator<object[], ProcedureException> result )
 		 {
 			  return Iterators.single( asList( result ).GetEnumerator() );

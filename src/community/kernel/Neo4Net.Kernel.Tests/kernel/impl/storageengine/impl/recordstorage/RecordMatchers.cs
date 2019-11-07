@@ -38,9 +38,9 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.storageengine.impl.recordstorage.RecordBuilders.filterType;
+//	import static Neo4Net.kernel.impl.storageengine.impl.recordstorage.RecordBuilders.filterType;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.storageengine.impl.recordstorage.RecordBuilders.records;
+//	import static Neo4Net.kernel.impl.storageengine.impl.recordstorage.RecordBuilders.records;
 
 	// Hamcrest matchers for store records
 	public class RecordMatchers
@@ -50,13 +50,13 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 		 public static DiffMatcher<RecordChangeSet> ContainsChanges( params AbstractBaseRecord[] expectedChanges )
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: DiffMatcher<Iterable<? extends org.Neo4Net.kernel.impl.store.record.AbstractBaseRecord>> nodes = containsRecords("nodes", filterType(expectedChanges, org.Neo4Net.kernel.impl.store.record.NodeRecord.class));
+//ORIGINAL LINE: DiffMatcher<Iterable<? extends Neo4Net.kernel.impl.store.record.AbstractBaseRecord>> nodes = containsRecords("nodes", filterType(expectedChanges, Neo4Net.kernel.impl.store.record.NodeRecord.class));
 			  DiffMatcher<IEnumerable<AbstractBaseRecord>> nodes = ContainsRecords( "nodes", filterType( expectedChanges, typeof( NodeRecord ) ) );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: DiffMatcher<Iterable<? extends org.Neo4Net.kernel.impl.store.record.AbstractBaseRecord>> rels = containsRecords("relationships", filterType(expectedChanges, org.Neo4Net.kernel.impl.store.record.RelationshipRecord.class));
+//ORIGINAL LINE: DiffMatcher<Iterable<? extends Neo4Net.kernel.impl.store.record.AbstractBaseRecord>> rels = containsRecords("relationships", filterType(expectedChanges, Neo4Net.kernel.impl.store.record.RelationshipRecord.class));
 			  DiffMatcher<IEnumerable<AbstractBaseRecord>> rels = ContainsRecords( "relationships", filterType( expectedChanges, typeof( RelationshipRecord ) ) );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: DiffMatcher<Iterable<? extends org.Neo4Net.kernel.impl.store.record.AbstractBaseRecord>> groups = containsRecords("relationship groups", filterType(expectedChanges, org.Neo4Net.kernel.impl.store.record.RelationshipGroupRecord.class));
+//ORIGINAL LINE: DiffMatcher<Iterable<? extends Neo4Net.kernel.impl.store.record.AbstractBaseRecord>> groups = containsRecords("relationship groups", filterType(expectedChanges, Neo4Net.kernel.impl.store.record.RelationshipGroupRecord.class));
 			  DiffMatcher<IEnumerable<AbstractBaseRecord>> groups = ContainsRecords( "relationship groups", filterType( expectedChanges, typeof( RelationshipGroupRecord ) ) );
 
 			  return new DiffMatcherAnonymousInnerClass( expectedChanges, nodes, rels, groups );
@@ -66,13 +66,13 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 		 {
 			 private AbstractBaseRecord[] _expectedChanges;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private org.Neo4Net.kernel.impl.storageengine.impl.recordstorage.RecordMatchers.DiffMatcher<System.Collections.Generic.IEnumerable<JavaToDotNetGenericWildcard extends org.Neo4Net.kernel.impl.store.record.AbstractBaseRecord>> nodes;
+//ORIGINAL LINE: private Neo4Net.kernel.impl.storageengine.impl.recordstorage.RecordMatchers.DiffMatcher<System.Collections.Generic.IEnumerable<JavaToDotNetGenericWildcard extends Neo4Net.kernel.impl.store.record.AbstractBaseRecord>> nodes;
 			 private Neo4Net.Kernel.impl.storageengine.impl.recordstorage.RecordMatchers.DiffMatcher<IEnumerable<AbstractBaseRecord>> _nodes;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private org.Neo4Net.kernel.impl.storageengine.impl.recordstorage.RecordMatchers.DiffMatcher<System.Collections.Generic.IEnumerable<JavaToDotNetGenericWildcard extends org.Neo4Net.kernel.impl.store.record.AbstractBaseRecord>> rels;
+//ORIGINAL LINE: private Neo4Net.kernel.impl.storageengine.impl.recordstorage.RecordMatchers.DiffMatcher<System.Collections.Generic.IEnumerable<JavaToDotNetGenericWildcard extends Neo4Net.kernel.impl.store.record.AbstractBaseRecord>> rels;
 			 private Neo4Net.Kernel.impl.storageengine.impl.recordstorage.RecordMatchers.DiffMatcher<IEnumerable<AbstractBaseRecord>> _rels;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private org.Neo4Net.kernel.impl.storageengine.impl.recordstorage.RecordMatchers.DiffMatcher<System.Collections.Generic.IEnumerable<JavaToDotNetGenericWildcard extends org.Neo4Net.kernel.impl.store.record.AbstractBaseRecord>> groups;
+//ORIGINAL LINE: private Neo4Net.kernel.impl.storageengine.impl.recordstorage.RecordMatchers.DiffMatcher<System.Collections.Generic.IEnumerable<JavaToDotNetGenericWildcard extends Neo4Net.kernel.impl.store.record.AbstractBaseRecord>> groups;
 			 private Neo4Net.Kernel.impl.storageengine.impl.recordstorage.RecordMatchers.DiffMatcher<IEnumerable<AbstractBaseRecord>> _groups;
 
 			 public DiffMatcherAnonymousInnerClass<T1, T2, T3>( AbstractBaseRecord[] expectedChanges, Neo4Net.Kernel.impl.storageengine.impl.recordstorage.RecordMatchers.DiffMatcher<T1> nodes, Neo4Net.Kernel.impl.storageengine.impl.recordstorage.RecordMatchers.DiffMatcher<T2> rels, Neo4Net.Kernel.impl.storageengine.impl.recordstorage.RecordMatchers.DiffMatcher<T3> groups ) where T1 : Neo4Net.Kernel.Impl.Store.Records.AbstractBaseRecord where T2 : Neo4Net.Kernel.Impl.Store.Records.AbstractBaseRecord where T3 : Neo4Net.Kernel.Impl.Store.Records.AbstractBaseRecord
@@ -122,13 +122,13 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 		 // a single record, just refactor those out and have this delegate to them, see how
 		 // the containsChanges delegates here for an example.
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: public static DiffMatcher<Iterable<? extends org.Neo4Net.kernel.impl.store.record.AbstractBaseRecord>> containsRecords(String recordPlural, java.util.stream.Stream<? extends org.Neo4Net.kernel.impl.store.record.AbstractBaseRecord> expected)
+//ORIGINAL LINE: public static DiffMatcher<Iterable<? extends Neo4Net.kernel.impl.store.record.AbstractBaseRecord>> containsRecords(String recordPlural, java.util.stream.Stream<? extends Neo4Net.kernel.impl.store.record.AbstractBaseRecord> expected)
 		 public static DiffMatcher<IEnumerable<AbstractBaseRecord>> ContainsRecords<T1>( string recordPlural, Stream<T1> expected ) where T1 : Neo4Net.Kernel.Impl.Store.Records.AbstractBaseRecord
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Method reference arbitrary object instance method syntax is not converted by Java to C# Converter:
 			  IDictionary<long, AbstractBaseRecord> expectedById = expected.collect( Collectors.toMap( AbstractBaseRecord::getId, Functions.identity() ) );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: return new DiffMatcher<Iterable<? extends org.Neo4Net.kernel.impl.store.record.AbstractBaseRecord>>()
+//ORIGINAL LINE: return new DiffMatcher<Iterable<? extends Neo4Net.kernel.impl.store.record.AbstractBaseRecord>>()
 			  return new DiffMatcherAnonymousInnerClass2( recordPlural, expected, expectedById );
 		 }
 

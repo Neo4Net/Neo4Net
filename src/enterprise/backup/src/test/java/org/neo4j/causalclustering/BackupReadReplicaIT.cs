@@ -44,32 +44,32 @@ namespace Neo4Net.causalclustering
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertNotEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.BackupCoreIT.backupArguments;
+//	import static Neo4Net.causalclustering.BackupCoreIT.backupArguments;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.BackupCoreIT.createSomeData;
+//	import static Neo4Net.causalclustering.BackupCoreIT.createSomeData;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.BackupCoreIT.getConfig;
+//	import static Neo4Net.causalclustering.BackupCoreIT.getConfig;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.helpers.CausalClusteringTestHelpers.transactionAddress;
+//	import static Neo4Net.causalclustering.helpers.CausalClusteringTestHelpers.transactionAddress;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.commandline.admin.AdminTool.STATUS_SUCCESS;
+//	import static Neo4Net.commandline.admin.AdminTool.STATUS_SUCCESS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.function.Predicates.awaitEx;
+//	import static Neo4Net.function.Predicates.awaitEx;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.util.TestHelpers.runBackupToolFromOtherJvmToGetExitCode;
+//	import static Neo4Net.util.TestHelpers.runBackupToolFromOtherJvmToGetExitCode;
 
 	public class BackupReadReplicaIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.SuppressOutput suppress = org.Neo4Net.test.rule.SuppressOutput.suppressAll();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.SuppressOutput suppress = Neo4Net.test.rule.SuppressOutput.suppressAll();
 		 public SuppressOutput Suppress = SuppressOutput.suppressAll();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.causalclustering.ClusterRule clusterRule = new org.Neo4Net.test.causalclustering.ClusterRule().withNumberOfCoreMembers(3).withSharedCoreParam(org.Neo4Net.kernel.impl.enterprise.configuration.OnlineBackupSettings.online_backup_enabled, org.Neo4Net.kernel.configuration.Settings.FALSE).withNumberOfReadReplicas(1).withSharedReadReplicaParam(org.Neo4Net.kernel.impl.enterprise.configuration.OnlineBackupSettings.online_backup_enabled, org.Neo4Net.kernel.configuration.Settings.TRUE);
+//ORIGINAL LINE: @Rule public Neo4Net.test.causalclustering.ClusterRule clusterRule = new Neo4Net.test.causalclustering.ClusterRule().withNumberOfCoreMembers(3).withSharedCoreParam(Neo4Net.kernel.impl.enterprise.configuration.OnlineBackupSettings.online_backup_enabled, Neo4Net.kernel.configuration.Settings.FALSE).withNumberOfReadReplicas(1).withSharedReadReplicaParam(Neo4Net.kernel.impl.enterprise.configuration.OnlineBackupSettings.online_backup_enabled, Neo4Net.kernel.configuration.Settings.TRUE);
 		 public ClusterRule ClusterRule = new ClusterRule().withNumberOfCoreMembers(3).withSharedCoreParam(OnlineBackupSettings.online_backup_enabled, Settings.FALSE).withNumberOfReadReplicas(1).withSharedReadReplicaParam(OnlineBackupSettings.online_backup_enabled, Settings.TRUE);
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private org.Neo4Net.causalclustering.discovery.Cluster<?> cluster;
+//ORIGINAL LINE: private Neo4Net.causalclustering.discovery.Cluster<?> cluster;
 		 private Cluster<object> _cluster;
 		 private File _backupPath;
 

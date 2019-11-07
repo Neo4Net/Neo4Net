@@ -41,19 +41,19 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 	using ValueCategory = Neo4Net.Values.Storable.ValueCategory;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.InternalIndexState.FAILED;
+//	import static Neo4Net.Kernel.Api.Internal.InternalIndexState.FAILED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.InternalIndexState.POPULATING;
+//	import static Neo4Net.Kernel.Api.Internal.InternalIndexState.POPULATING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.fusion.IndexSlot.LUCENE;
+//	import static Neo4Net.kernel.impl.index.schema.fusion.IndexSlot.LUCENE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.fusion.IndexSlot.NUMBER;
+//	import static Neo4Net.kernel.impl.index.schema.fusion.IndexSlot.NUMBER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.fusion.IndexSlot.SPATIAL;
+//	import static Neo4Net.kernel.impl.index.schema.fusion.IndexSlot.SPATIAL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.fusion.IndexSlot.STRING;
+//	import static Neo4Net.kernel.impl.index.schema.fusion.IndexSlot.STRING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.fusion.IndexSlot.TEMPORAL;
+//	import static Neo4Net.kernel.impl.index.schema.fusion.IndexSlot.TEMPORAL;
 
 	/// <summary>
 	/// This <seealso cref="IndexProvider index provider"/> act as one logical index but is backed by four physical
@@ -92,7 +92,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.kernel.api.index.IndexAccessor getOnlineAccessor(org.Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor descriptor, org.Neo4Net.kernel.impl.api.index.sampling.IndexSamplingConfig samplingConfig) throws java.io.IOException
+//ORIGINAL LINE: public Neo4Net.kernel.api.index.IndexAccessor getOnlineAccessor(Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor descriptor, Neo4Net.kernel.impl.api.index.sampling.IndexSamplingConfig samplingConfig) throws java.io.IOException
 		 public override IndexAccessor GetOnlineAccessor( StoreIndexDescriptor descriptor, IndexSamplingConfig samplingConfig )
 		 {
 			  Dictionary<IndexSlot, IndexAccessor> accessors = _providers.map( provider => provider.getOnlineAccessor( descriptor, samplingConfig ) );
@@ -100,7 +100,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public String getPopulationFailure(org.Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor descriptor) throws IllegalStateException
+//ORIGINAL LINE: public String getPopulationFailure(Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor descriptor) throws IllegalStateException
 		 public override string GetPopulationFailure( StoreIndexDescriptor descriptor )
 		 {
 			  StringBuilder builder = new StringBuilder();

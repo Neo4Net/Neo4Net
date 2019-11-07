@@ -35,7 +35,7 @@ namespace Neo4Net.cluster.statemachine
 //ORIGINAL LINE: private State<?,?> oldState;
 		 private State<object, ?> _oldState;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private org.Neo4Net.cluster.com.message.Message<? extends org.Neo4Net.cluster.com.message.MessageType> message;
+//ORIGINAL LINE: private Neo4Net.cluster.com.message.Message<? extends Neo4Net.cluster.com.message.MessageType> message;
 		 private Message<MessageType> _message;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 //ORIGINAL LINE: private State<?,?> newState;
@@ -59,7 +59,7 @@ namespace Neo4Net.cluster.statemachine
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: public org.Neo4Net.cluster.com.message.Message<? extends org.Neo4Net.cluster.com.message.MessageType> getMessage()
+//ORIGINAL LINE: public Neo4Net.cluster.com.message.Message<? extends Neo4Net.cluster.com.message.MessageType> getMessage()
 		 public virtual Message<MessageType> Message
 		 {
 			 get

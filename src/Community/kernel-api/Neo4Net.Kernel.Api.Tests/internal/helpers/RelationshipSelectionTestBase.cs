@@ -35,7 +35,7 @@ namespace Neo4Net.Kernel.Api.Internal.Helpers
 		 internal readonly int TypeB = 101;
 		 internal readonly int TypeC = 102;
 
-		 internal virtual void AssertOutgoing( ResourceIterator<R> iterator, int targetNode, int type )
+		 internal virtual void AssertOutgoing( IResourceIterator<R> iterator, int targetNode, int type )
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
 			  assertTrue( "has next", iterator.hasNext() );
@@ -45,7 +45,7 @@ namespace Neo4Net.Kernel.Api.Internal.Helpers
 			  assertEquals( "expected target", targetNode, r.TargetNode );
 		 }
 
-		 internal virtual void AssertIncoming( ResourceIterator<R> iterator, int sourceNode, int type )
+		 internal virtual void AssertIncoming( IResourceIterator<R> iterator, int sourceNode, int type )
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
 			  assertTrue( "has next", iterator.hasNext() );
@@ -55,7 +55,7 @@ namespace Neo4Net.Kernel.Api.Internal.Helpers
 			  assertEquals( "expected source", sourceNode, r.SourceNode );
 		 }
 
-		 internal virtual void AssertLoop( ResourceIterator<R> iterator, int type )
+		 internal virtual void AssertLoop( IResourceIterator<R> iterator, int type )
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
 			  assertTrue( "has next", iterator.hasNext() );
@@ -65,7 +65,7 @@ namespace Neo4Net.Kernel.Api.Internal.Helpers
 			  assertEquals( "expected loop", r.SourceNode, r.TargetNode );
 		 }
 
-		 internal virtual void AssertEmpty( ResourceIterator<R> iterator )
+		 internal virtual void AssertEmpty( IResourceIterator<R> iterator )
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
 			  assertFalse( "no more", iterator.hasNext() );

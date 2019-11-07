@@ -23,7 +23,7 @@
 ////////////{
 
 //////////////JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//////////////	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
+//////////////	import static Neo4Net.helpers.collection.MapUtil.stringMap;
 
 ////////////	/// <summary>
 ////////////	/// Settings that can be provided in configurations are represented by instances of this interface, and are available

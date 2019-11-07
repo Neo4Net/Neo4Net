@@ -84,9 +84,9 @@ namespace Neo4Net.backup.impl
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.backup.impl.OnlineBackupContextFactory.ARG_NAME_FALLBACK_FULL;
+//	import static Neo4Net.backup.impl.OnlineBackupContextFactory.ARG_NAME_FALLBACK_FULL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.enterprise.configuration.OnlineBackupSettings.online_backup_server;
+//	import static Neo4Net.kernel.impl.enterprise.configuration.OnlineBackupSettings.online_backup_server;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class OnlineBackupCommandCcIT
@@ -149,7 +149,7 @@ namespace Neo4Net.backup.impl
 		 public virtual void BackupCanBePerformedOverCcWithCustomPort()
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.causalclustering.discovery.Cluster<?> cluster = startCluster(recordFormat);
+//ORIGINAL LINE: Neo4Net.causalclustering.discovery.Cluster<?> cluster = startCluster(recordFormat);
 			  Cluster<object> cluster = StartCluster( RecordFormat );
 			  string customAddress = CausalClusteringTestHelpers.transactionAddress( ClusterLeader( cluster ).database() );
 
@@ -168,7 +168,7 @@ namespace Neo4Net.backup.impl
 		 {
 			  // given database exists
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.causalclustering.discovery.Cluster<?> cluster = startCluster(recordFormat);
+//ORIGINAL LINE: Neo4Net.causalclustering.discovery.Cluster<?> cluster = startCluster(recordFormat);
 			  Cluster<object> cluster = StartCluster( RecordFormat );
 
 			  // and the database has indexes
@@ -201,7 +201,7 @@ namespace Neo4Net.backup.impl
 			  string value = "localhost:%d";
 			  _clusterRule = _clusterRule.withSharedCoreParam( OnlineBackupSettings.online_backup_enabled, "true" ).withInstanceCoreParam( online_backup_server, i => format( value, backupPorts[i] ) );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.causalclustering.discovery.Cluster<?> cluster = startCluster(recordFormat);
+//ORIGINAL LINE: Neo4Net.causalclustering.discovery.Cluster<?> cluster = startCluster(recordFormat);
 			  Cluster<object> cluster = StartCluster( RecordFormat );
 			  string customAddress = "localhost:" + backupPorts[0];
 
@@ -241,7 +241,7 @@ namespace Neo4Net.backup.impl
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.causalclustering.discovery.Cluster<?> cluster = startCluster(recordFormat);
+//ORIGINAL LINE: Neo4Net.causalclustering.discovery.Cluster<?> cluster = startCluster(recordFormat);
 			  Cluster<object> cluster = StartCluster( RecordFormat );
 			  string customAddress = CausalClusteringTestHelpers.transactionAddress( ClusterLeader( cluster ).database() );
 
@@ -260,7 +260,7 @@ namespace Neo4Net.backup.impl
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.causalclustering.discovery.Cluster<?> cluster = startCluster(recordFormat);
+//ORIGINAL LINE: Neo4Net.causalclustering.discovery.Cluster<?> cluster = startCluster(recordFormat);
 			  Cluster<object> cluster = StartCluster( RecordFormat );
 			  ClusterHelper.createIndexes( cluster.GetMemberWithAnyRole( Role.LEADER ).database() );
 			  string customAddress = CausalClusteringTestHelpers.backupAddress( ClusterLeader( cluster ).database() );
@@ -345,7 +345,7 @@ namespace Neo4Net.backup.impl
 		 {
 			  // given database exists with data
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.causalclustering.discovery.Cluster<?> cluster = startCluster(recordFormat);
+//ORIGINAL LINE: Neo4Net.causalclustering.discovery.Cluster<?> cluster = startCluster(recordFormat);
 			  Cluster<object> cluster = StartCluster( RecordFormat );
 			  CreateSomeData( cluster );
 
@@ -386,7 +386,7 @@ namespace Neo4Net.backup.impl
 			  // given a prexisting backup from a different store
 			  string backupName = "preexistingBackup_" + RecordFormat;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.causalclustering.discovery.Cluster<?> cluster = startCluster(recordFormat);
+//ORIGINAL LINE: Neo4Net.causalclustering.discovery.Cluster<?> cluster = startCluster(recordFormat);
 			  Cluster<object> cluster = StartCluster( RecordFormat );
 			  string firstBackupAddress = CausalClusteringTestHelpers.transactionAddress( ClusterLeader( cluster ).database() );
 
@@ -395,7 +395,7 @@ namespace Neo4Net.backup.impl
 
 			  // and a different database
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.causalclustering.discovery.Cluster<?> cluster2 = startCluster2(recordFormat);
+//ORIGINAL LINE: Neo4Net.causalclustering.discovery.Cluster<?> cluster2 = startCluster2(recordFormat);
 			  Cluster<object> cluster2 = StartCluster2( RecordFormat );
 			  DbRepresentation secondDatabaseRepresentation = DbRepresentation.of( ClusterLeader( cluster2 ).database() );
 			  assertNotEquals( firstDatabaseRepresentation, secondDatabaseRepresentation );
@@ -429,7 +429,7 @@ namespace Neo4Net.backup.impl
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.causalclustering.discovery.Cluster<?> cluster = startIpv6Cluster();
+//ORIGINAL LINE: Neo4Net.causalclustering.discovery.Cluster<?> cluster = startIpv6Cluster();
 			  Cluster<object> cluster = StartIpv6Cluster();
 			  try
 			  {
@@ -532,20 +532,20 @@ namespace Neo4Net.backup.impl
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.causalclustering.discovery.Cluster<?> startCluster(String recordFormat) throws Exception
+//ORIGINAL LINE: private Neo4Net.causalclustering.discovery.Cluster<?> startCluster(String recordFormat) throws Exception
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		 private Cluster<object> StartCluster( string recordFormat )
 		 {
 			  ClusterRule clusterRule = this._clusterRule.withSharedCoreParam( GraphDatabaseSettings.record_format, recordFormat ).withSharedReadReplicaParam( GraphDatabaseSettings.record_format, recordFormat );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.causalclustering.discovery.Cluster<?> cluster = clusterRule.startCluster();
+//ORIGINAL LINE: Neo4Net.causalclustering.discovery.Cluster<?> cluster = clusterRule.startCluster();
 			  Cluster<object> cluster = clusterRule.StartCluster();
 			  CreateSomeData( cluster );
 			  return cluster;
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.causalclustering.discovery.Cluster<?> startIpv6Cluster() throws java.util.concurrent.ExecutionException, InterruptedException
+//ORIGINAL LINE: private Neo4Net.causalclustering.discovery.Cluster<?> startIpv6Cluster() throws java.util.concurrent.ExecutionException, InterruptedException
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		 private Cluster<object> StartIpv6Cluster()
 		 {
@@ -560,7 +560,7 @@ namespace Neo4Net.backup.impl
 			  IDictionary<string, System.Func<int, string>> instanceReadReplicaParams = new Dictionary<string, System.Func<int, string>>();
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.causalclustering.discovery.Cluster<?> cluster = new org.Neo4Net.causalclustering.discovery.EnterpriseCluster(parentDir, 3, 3, discoveryServiceFactory, coreParams, instanceCoreParams, readReplicaParams, instanceReadReplicaParams, recordFormat, org.Neo4Net.causalclustering.discovery.IpFamily.IPV6, false);
+//ORIGINAL LINE: Neo4Net.causalclustering.discovery.Cluster<?> cluster = new Neo4Net.causalclustering.discovery.EnterpriseCluster(parentDir, 3, 3, discoveryServiceFactory, coreParams, instanceCoreParams, readReplicaParams, instanceReadReplicaParams, recordFormat, Neo4Net.causalclustering.discovery.IpFamily.IPV6, false);
 			  Cluster<object> cluster = new EnterpriseCluster( parentDir, 3, 3, discoveryServiceFactory, coreParams, instanceCoreParams, readReplicaParams, instanceReadReplicaParams, RecordFormat, IpFamily.IPV6, false );
 			  cluster.Start();
 			  CreateSomeData( cluster );
@@ -568,14 +568,14 @@ namespace Neo4Net.backup.impl
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.causalclustering.discovery.Cluster<?> startCluster2(String recordFormat) throws java.util.concurrent.ExecutionException, InterruptedException
+//ORIGINAL LINE: private Neo4Net.causalclustering.discovery.Cluster<?> startCluster2(String recordFormat) throws java.util.concurrent.ExecutionException, InterruptedException
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		 private Cluster<object> StartCluster2( string recordFormat )
 		 {
 			  IDictionary<string, string> sharedParams = new Dictionary<string, string>();
 			  sharedParams[GraphDatabaseSettings.record_format.name()] = recordFormat;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.causalclustering.discovery.Cluster<?> cluster = new org.Neo4Net.causalclustering.discovery.EnterpriseCluster(testDirectory.directory("cluster-b_" + recordFormat), 3, 0, new org.Neo4Net.causalclustering.discovery.SharedDiscoveryServiceFactory(), sharedParams, emptyMap(), sharedParams, emptyMap(), recordFormat, org.Neo4Net.causalclustering.discovery.IpFamily.IPV4, false);
+//ORIGINAL LINE: Neo4Net.causalclustering.discovery.Cluster<?> cluster = new Neo4Net.causalclustering.discovery.EnterpriseCluster(testDirectory.directory("cluster-b_" + recordFormat), 3, 0, new Neo4Net.causalclustering.discovery.SharedDiscoveryServiceFactory(), sharedParams, emptyMap(), sharedParams, emptyMap(), recordFormat, Neo4Net.causalclustering.discovery.IpFamily.IPV4, false);
 			  Cluster<object> cluster = new EnterpriseCluster( _testDirectory.directory( "cluster-b_" + recordFormat ), 3, 0, new SharedDiscoveryServiceFactory(), sharedParams, emptyMap(), sharedParams, emptyMap(), recordFormat, IpFamily.IPV4, false );
 			  cluster.Start();
 			  CreateSomeData( cluster );
@@ -583,7 +583,7 @@ namespace Neo4Net.backup.impl
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void transactions1M(org.Neo4Net.causalclustering.discovery.Cluster<?> cluster) throws Exception
+//ORIGINAL LINE: private static void transactions1M(Neo4Net.causalclustering.discovery.Cluster<?> cluster) throws Exception
 		 private static void Transactions1M<T1>( Cluster<T1> cluster )
 		 {
 			  int numberOfTransactions = 500;

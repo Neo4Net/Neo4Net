@@ -29,7 +29,7 @@ namespace Neo4Net.helper
 	using OnlineBackupSettings = Neo4Net.Kernel.impl.enterprise.configuration.OnlineBackupSettings;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.TRUE;
+//	import static Neo4Net.kernel.configuration.Settings.TRUE;
 
 	public class DatabaseConfiguration
 	{

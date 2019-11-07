@@ -32,7 +32,7 @@ namespace Neo4Net.causalclustering.core.state.machines.tx
 	public interface ReplicatedTransaction : CoreReplicatedContent
 	{
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java static interface methods:
-//		 static TransactionRepresentationReplicatedTransaction from(org.Neo4Net.kernel.impl.transaction.TransactionRepresentation tx)
+//		 static TransactionRepresentationReplicatedTransaction from(Neo4Net.kernel.impl.transaction.TransactionRepresentation tx)
 	//	 {
 	//		  return new TransactionRepresentationReplicatedTransaction(tx);
 	//	 }
@@ -44,7 +44,7 @@ namespace Neo4Net.causalclustering.core.state.machines.tx
 	//	 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//		 default void dispatch(org.Neo4Net.causalclustering.core.state.CommandDispatcher commandDispatcher, long commandIndex, System.Action<org.Neo4Net.causalclustering.core.state.Result> callback)
+//		 default void dispatch(Neo4Net.causalclustering.core.state.CommandDispatcher commandDispatcher, long commandIndex, System.Action<Neo4Net.causalclustering.core.state.Result> callback)
 	//	 {
 	//		  commandDispatcher.dispatch(this, commandIndex, callback);
 	//	 }
@@ -52,7 +52,7 @@ namespace Neo4Net.causalclustering.core.state.machines.tx
 		 ChunkedInput<ByteBuf> Encode();
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void marshal(org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel writableChannel) throws java.io.IOException;
+//ORIGINAL LINE: void marshal(Neo4Net.Kernel.Api.StorageEngine.WritableChannel writableChannel) throws java.io.IOException;
 		 void Marshal( WritableChannel writableChannel );
 
 		 TransactionRepresentation Extract( TransactionRepresentationExtractor extractor );

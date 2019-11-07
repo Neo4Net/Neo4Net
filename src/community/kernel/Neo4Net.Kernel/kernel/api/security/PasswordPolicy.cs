@@ -17,7 +17,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Kernel.api.security
+namespace Neo4Net.Kernel.Api.security
 {
 	using InvalidArgumentsException = Neo4Net.Kernel.Api.Exceptions.InvalidArgumentsException;
 
@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.api.security
 	{
 		 // TODO: We may want to reintroduce AuthSubject here to be able to check against repeating last used passwords etc.
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void validatePassword(byte[] password) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException;
+//ORIGINAL LINE: void validatePassword(byte[] password) throws Neo4Net.kernel.api.exceptions.InvalidArgumentsException;
 		 void ValidatePassword( sbyte[] password );
 	}
 

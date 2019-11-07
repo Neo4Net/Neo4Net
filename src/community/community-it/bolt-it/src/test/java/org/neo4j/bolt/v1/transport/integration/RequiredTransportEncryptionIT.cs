@@ -42,11 +42,11 @@ namespace Neo4Net.Bolt.v1.transport.integration
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.MatcherAssert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.transport.integration.Neo4NetWithSocket.DEFAULT_CONNECTOR_KEY;
+//	import static Neo4Net.bolt.v1.transport.integration.Neo4NetWithSocket.DEFAULT_CONNECTOR_KEY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.transport.integration.TransportTestUtil.eventuallyDisconnects;
+//	import static Neo4Net.bolt.v1.transport.integration.TransportTestUtil.eventuallyDisconnects;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.BoltConnector.EncryptionLevel.REQUIRED;
+//	import static Neo4Net.kernel.configuration.BoltConnector.EncryptionLevel.REQUIRED;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class RequiredTransportEncryptionIT
@@ -61,7 +61,7 @@ namespace Neo4Net.Bolt.v1.transport.integration
 		 });
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Parameterized.Parameter(0) public org.Neo4Net.function.Factory<org.Neo4Net.bolt.v1.transport.socket.client.TransportConnection> cf;
+//ORIGINAL LINE: @Parameterized.Parameter(0) public Neo4Net.function.Factory<Neo4Net.bolt.v1.transport.socket.client.TransportConnection> cf;
 		 public IFactory<TransportConnection> Cf;
 
 		 private HostnamePort _address;
@@ -69,7 +69,7 @@ namespace Neo4Net.Bolt.v1.transport.integration
 		 private TransportTestUtil _util;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Parameterized.Parameters public static java.util.Collection<org.Neo4Net.function.Factory<org.Neo4Net.bolt.v1.transport.socket.client.TransportConnection>> transports()
+//ORIGINAL LINE: @Parameterized.Parameters public static java.util.Collection<Neo4Net.function.Factory<Neo4Net.bolt.v1.transport.socket.client.TransportConnection>> transports()
 		 public static ICollection<Factory<TransportConnection>> Transports()
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Method reference constructor syntax is not converted by Java to C# Converter:

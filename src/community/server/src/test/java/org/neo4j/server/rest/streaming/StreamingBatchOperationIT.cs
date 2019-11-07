@@ -49,7 +49,7 @@ namespace Neo4Net.Server.rest.streaming
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.inTx;
+//	import static Neo4Net.test.mockito.matcher.Neo4NetMatchers.inTx;
 
 	public class StreamingBatchOperationIT : AbstractRestFunctionalTestBase
 	{
@@ -134,7 +134,7 @@ namespace Neo4Net.Server.rest.streaming
 			  long originalNodeCount = CountNodes();
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final String jsonString = new org.Neo4Net.server.rest.PrettyJSON().array().object().key("method").value("POST").key("to").value("/node").key("body").object().key("age").value(1).endObject().endObject().endArray().toString();
+//ORIGINAL LINE: final String jsonString = new Neo4Net.server.rest.PrettyJSON().array().object().key("method").value("POST").key("to").value("/node").key("body").object().key("age").value(1).endObject().endObject().endArray().toString();
 			  string jsonString = ( new PrettyJSON() ).array().@object().key("method").value("POST").key("to").value("/node").key("body").@object().key("age").value(1).endObject().endObject().endArray().ToString();
 
 			  JaxRsResponse response = RestRequest.req().accept(APPLICATION_JSON_TYPE).header(Neo4Net.Server.rest.repr.StreamingFormat_Fields.STREAM_HEADER, "true").post(BatchUri(), jsonString);
@@ -173,14 +173,14 @@ namespace Neo4Net.Server.rest.streaming
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.util.Map<String, Object> singleResult(org.Neo4Net.server.rest.JaxRsResponse response, int i) throws org.Neo4Net.server.rest.domain.JsonParseException
+//ORIGINAL LINE: private java.util.Map<String, Object> singleResult(Neo4Net.server.rest.JaxRsResponse response, int i) throws Neo4Net.server.rest.domain.JsonParseException
 		 private IDictionary<string, object> SingleResult( JaxRsResponse response, int i )
 		 {
 			  return JsonHelper.jsonToList( response.Entity )[i];
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldRollbackAllWhenGivenIncorrectRequest() throws org.Neo4Net.server.rest.domain.JsonParseException, com.sun.jersey.api.client.ClientHandlerException, com.sun.jersey.api.client.UniformInterfaceException, org.json.JSONException
+//ORIGINAL LINE: @Test public void shouldRollbackAllWhenGivenIncorrectRequest() throws Neo4Net.server.rest.domain.JsonParseException, com.sun.jersey.api.client.ClientHandlerException, com.sun.jersey.api.client.UniformInterfaceException, org.json.JSONException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldRollbackAllWhenGivenIncorrectRequest()
 		 {
@@ -226,7 +226,7 @@ namespace Neo4Net.Server.rest.streaming
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test @Graph("Peter likes Jazz") public void shouldHandleEscapedStrings() throws com.sun.jersey.api.client.ClientHandlerException, com.sun.jersey.api.client.UniformInterfaceException, org.json.JSONException, org.Neo4Net.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @Test @Graph("Peter likes Jazz") public void shouldHandleEscapedStrings() throws com.sun.jersey.api.client.ClientHandlerException, com.sun.jersey.api.client.UniformInterfaceException, org.json.JSONException, Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Graph("Peter likes Jazz")]
 		 public virtual void ShouldHandleEscapedStrings()
@@ -248,7 +248,7 @@ namespace Neo4Net.Server.rest.streaming
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldRollbackAllWhenInsertingIllegalData() throws org.Neo4Net.server.rest.domain.JsonParseException, com.sun.jersey.api.client.ClientHandlerException, com.sun.jersey.api.client.UniformInterfaceException, org.json.JSONException
+//ORIGINAL LINE: @Test public void shouldRollbackAllWhenInsertingIllegalData() throws Neo4Net.server.rest.domain.JsonParseException, com.sun.jersey.api.client.ClientHandlerException, com.sun.jersey.api.client.UniformInterfaceException, org.json.JSONException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldRollbackAllWhenInsertingIllegalData()
 		 {
@@ -265,7 +265,7 @@ namespace Neo4Net.Server.rest.streaming
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldRollbackAllOnSingle404() throws org.Neo4Net.server.rest.domain.JsonParseException, com.sun.jersey.api.client.ClientHandlerException, com.sun.jersey.api.client.UniformInterfaceException, org.json.JSONException
+//ORIGINAL LINE: @Test public void shouldRollbackAllOnSingle404() throws Neo4Net.server.rest.domain.JsonParseException, com.sun.jersey.api.client.ClientHandlerException, com.sun.jersey.api.client.UniformInterfaceException, org.json.JSONException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldRollbackAllOnSingle404()
 		 {

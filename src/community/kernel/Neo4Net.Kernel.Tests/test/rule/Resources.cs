@@ -75,9 +75,9 @@ namespace Neo4Net.Test.rule
 		 public abstract class InitialLifecycle
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           INITIALIZED { void initialize(org.Neo4Net.kernel.lifecycle.LifeRule life) { life.init(); } },
+//           INITIALIZED { void initialize(Neo4Net.kernel.lifecycle.LifeRule life) { life.init(); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           STARTED { void initialize(org.Neo4Net.kernel.lifecycle.LifeRule life) { life.start(); } };
+//           STARTED { void initialize(Neo4Net.kernel.lifecycle.LifeRule life) { life.start(); } };
 
 			  private static readonly IList<InitialLifecycle> valueList = new List<InitialLifecycle>();
 
@@ -177,11 +177,11 @@ namespace Neo4Net.Test.rule
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void evaluate() throws Throwable
-			 public override void evaluate()
+//ORIGINAL LINE: public void Evaluate() throws Throwable
+			 public override void Evaluate()
 			 {
 				  _initialLifecycle.initialize( _outerInstance.life );
-				  @base.evaluate();
+				  @base.Evaluate();
 			 }
 		 }
 
@@ -201,14 +201,14 @@ namespace Neo4Net.Test.rule
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void lifeStarts() throws org.Neo4Net.kernel.lifecycle.LifecycleException
+//ORIGINAL LINE: public void lifeStarts() throws Neo4Net.kernel.lifecycle.LifecycleException
 		 public void LifeStarts()
 		 {
 			  _life.start();
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void lifeShutsDown() throws org.Neo4Net.kernel.lifecycle.LifecycleException
+//ORIGINAL LINE: public void lifeShutsDown() throws Neo4Net.kernel.lifecycle.LifecycleException
 		 public void LifeShutsDown()
 		 {
 			  _life.shutdown();

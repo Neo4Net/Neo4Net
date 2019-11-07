@@ -27,7 +27,7 @@ namespace Neo4Net.Test
 	using ArgumentMatcher = org.mockito.ArgumentMatcher;
 
 
-	using AuthToken = Neo4Net.Kernel.api.security.AuthToken;
+	using AuthToken = Neo4Net.Kernel.Api.security.AuthToken;
 	using UTF8 = Neo4Net.Strings.UTF8;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:

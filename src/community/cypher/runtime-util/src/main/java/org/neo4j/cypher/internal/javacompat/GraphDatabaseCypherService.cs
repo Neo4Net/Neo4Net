@@ -25,8 +25,8 @@ namespace Neo4Net.Cypher.Internal.javacompat
 	using URLAccessValidationError = Neo4Net.GraphDb.security.URLAccessValidationError;
 	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using GraphDatabaseQueryService = Neo4Net.Kernel.GraphDatabaseQueryService;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
-	using DbmsOperations = Neo4Net.Kernel.api.dbms.DbmsOperations;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
+	using DbmsOperations = Neo4Net.Kernel.Api.dbms.DbmsOperations;
 	using InternalTransaction = Neo4Net.Kernel.impl.coreapi.InternalTransaction;
 	using GraphDatabaseFacade = Neo4Net.Kernel.impl.factory.GraphDatabaseFacade;
 
@@ -60,7 +60,7 @@ namespace Neo4Net.Cypher.Internal.javacompat
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.net.URL validateURLAccess(java.net.URL url) throws org.Neo4Net.graphdb.security.URLAccessValidationError
+//ORIGINAL LINE: public java.net.URL validateURLAccess(java.net.URL url) throws Neo4Net.graphdb.security.URLAccessValidationError
 		 public override URL ValidateURLAccess( URL url )
 		 {
 			  return _graph.validateURLAccess( url );

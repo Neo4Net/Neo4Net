@@ -183,7 +183,7 @@ namespace Neo4Net.Kernel.impl.enterprise.@lock.forseti
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void acquireShared(org.Neo4Net.Kernel.Api.StorageEngine.lock.LockTracer tracer, org.Neo4Net.Kernel.Api.StorageEngine.lock.ResourceType resourceType, long... resourceIds) throws org.Neo4Net.Kernel.Api.StorageEngine.lock.AcquireLockTimeoutException
+//ORIGINAL LINE: public void acquireShared(Neo4Net.Kernel.Api.StorageEngine.lock.LockTracer tracer, Neo4Net.Kernel.Api.StorageEngine.lock.ResourceType resourceType, long... resourceIds) throws Neo4Net.Kernel.Api.StorageEngine.lock.AcquireLockTimeoutException
 		 public override void AcquireShared( LockTracer tracer, ResourceType resourceType, params long[] resourceIds )
 		 {
 			  _hasLocks = true;
@@ -298,7 +298,7 @@ namespace Neo4Net.Kernel.impl.enterprise.@lock.forseti
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void acquireExclusive(org.Neo4Net.Kernel.Api.StorageEngine.lock.LockTracer tracer, org.Neo4Net.Kernel.Api.StorageEngine.lock.ResourceType resourceType, long... resourceIds) throws org.Neo4Net.Kernel.Api.StorageEngine.lock.AcquireLockTimeoutException
+//ORIGINAL LINE: public void acquireExclusive(Neo4Net.Kernel.Api.StorageEngine.lock.LockTracer tracer, Neo4Net.Kernel.Api.StorageEngine.lock.ResourceType resourceType, long... resourceIds) throws Neo4Net.Kernel.Api.StorageEngine.lock.AcquireLockTimeoutException
 		 public override void AcquireExclusive( LockTracer tracer, ResourceType resourceType, params long[] resourceIds )
 		 {
 			  _hasLocks = true;
@@ -858,7 +858,7 @@ namespace Neo4Net.Kernel.impl.enterprise.@lock.forseti
 		 /// 
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private boolean tryUpgradeSharedToExclusive(org.Neo4Net.Kernel.Api.StorageEngine.lock.LockTracer tracer, org.Neo4Net.Kernel.Api.StorageEngine.lock.LockWaitEvent waitEvent, org.Neo4Net.Kernel.Api.StorageEngine.lock.ResourceType resourceType, java.util.concurrent.ConcurrentMap<long,ForsetiLockManager.Lock> lockMap, long resourceId, SharedLock sharedLock, long waitStartMillis) throws org.Neo4Net.Kernel.Api.StorageEngine.lock.AcquireLockTimeoutException
+//ORIGINAL LINE: private boolean tryUpgradeSharedToExclusive(Neo4Net.Kernel.Api.StorageEngine.lock.LockTracer tracer, Neo4Net.Kernel.Api.StorageEngine.lock.LockWaitEvent waitEvent, Neo4Net.Kernel.Api.StorageEngine.lock.ResourceType resourceType, java.util.concurrent.ConcurrentMap<long,ForsetiLockManager.Lock> lockMap, long resourceId, SharedLock sharedLock, long waitStartMillis) throws Neo4Net.Kernel.Api.StorageEngine.lock.AcquireLockTimeoutException
 		 private bool TryUpgradeSharedToExclusive( LockTracer tracer, LockWaitEvent waitEvent, ResourceType resourceType, ConcurrentMap<long, ForsetiLockManager.Lock> lockMap, long resourceId, SharedLock sharedLock, long waitStartMillis )
 		 {
 			  int tries = 0;
@@ -899,7 +899,7 @@ namespace Neo4Net.Kernel.impl.enterprise.@lock.forseti
 		 /// <summary>
 		 /// Attempt to upgrade a share lock that we hold to an exclusive lock. </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private boolean tryUpgradeToExclusiveWithShareLockHeld(org.Neo4Net.Kernel.Api.StorageEngine.lock.LockTracer tracer, org.Neo4Net.Kernel.Api.StorageEngine.lock.LockWaitEvent priorEvent, org.Neo4Net.Kernel.Api.StorageEngine.lock.ResourceType resourceType, long resourceId, SharedLock sharedLock, int tries, long waitStartMillis) throws org.Neo4Net.Kernel.Api.StorageEngine.lock.AcquireLockTimeoutException
+//ORIGINAL LINE: private boolean tryUpgradeToExclusiveWithShareLockHeld(Neo4Net.Kernel.Api.StorageEngine.lock.LockTracer tracer, Neo4Net.Kernel.Api.StorageEngine.lock.LockWaitEvent priorEvent, Neo4Net.Kernel.Api.StorageEngine.lock.ResourceType resourceType, long resourceId, SharedLock sharedLock, int tries, long waitStartMillis) throws Neo4Net.Kernel.Api.StorageEngine.lock.AcquireLockTimeoutException
 		 private bool TryUpgradeToExclusiveWithShareLockHeld( LockTracer tracer, LockWaitEvent priorEvent, ResourceType resourceType, long resourceId, SharedLock sharedLock, int tries, long waitStartMillis )
 		 {
 			  if ( sharedLock.TryAcquireUpdateLock( this ) )

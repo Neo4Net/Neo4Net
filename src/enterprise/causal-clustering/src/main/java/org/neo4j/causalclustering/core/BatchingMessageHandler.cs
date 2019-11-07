@@ -46,9 +46,9 @@ namespace Neo4Net.causalclustering.core
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Long.max;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.BoundedPriorityQueue.Result.OK;
+//	import static Neo4Net.causalclustering.core.BoundedPriorityQueue.Result.OK;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.ArrayUtil.lastOf;
+//	import static Neo4Net.helpers.ArrayUtil.lastOf;
 
 	/// <summary>
 	/// This class gets Raft messages as input and queues them up for processing. Some messages are
@@ -69,11 +69,11 @@ namespace Neo4Net.causalclustering.core
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private final org.Neo4Net.causalclustering.messaging.LifecycleMessageHandler<org.Neo4Net.causalclustering.core.consensus.RaftMessages_ReceivedInstantClusterIdAwareMessage<?>> handler;
+//ORIGINAL LINE: private final Neo4Net.causalclustering.messaging.LifecycleMessageHandler<Neo4Net.causalclustering.core.consensus.RaftMessages_ReceivedInstantClusterIdAwareMessage<?>> handler;
 		 private readonly LifecycleMessageHandler<RaftMessages_ReceivedInstantClusterIdAwareMessage<object>> _handler;
 		 private readonly Log _log;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private final BoundedPriorityQueue<org.Neo4Net.causalclustering.core.consensus.RaftMessages_ReceivedInstantClusterIdAwareMessage<?>> inQueue;
+//ORIGINAL LINE: private final BoundedPriorityQueue<Neo4Net.causalclustering.core.consensus.RaftMessages_ReceivedInstantClusterIdAwareMessage<?>> inQueue;
 		 private readonly BoundedPriorityQueue<RaftMessages_ReceivedInstantClusterIdAwareMessage<object>> _inQueue;
 		 private readonly ContinuousJob _job;
 		 private readonly IList<ReplicatedContent> _contentBatch; // reused for efficiency
@@ -103,7 +103,7 @@ namespace Neo4Net.causalclustering.core
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void start(org.Neo4Net.causalclustering.identity.ClusterId clusterId) throws Throwable
+//ORIGINAL LINE: public void start(Neo4Net.causalclustering.identity.ClusterId clusterId) throws Throwable
 		 public override void Start( ClusterId clusterId )
 		 {
 			  _handler.start( clusterId );
@@ -155,7 +155,7 @@ namespace Neo4Net.causalclustering.core
 		 public override void Run()
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Optional<org.Neo4Net.causalclustering.core.consensus.RaftMessages_ReceivedInstantClusterIdAwareMessage<?>> baseMessage;
+//ORIGINAL LINE: java.util.Optional<Neo4Net.causalclustering.core.consensus.RaftMessages_ReceivedInstantClusterIdAwareMessage<?>> baseMessage;
 			  Optional<RaftMessages_ReceivedInstantClusterIdAwareMessage<object>> baseMessage;
 			  try
 			  {
@@ -313,14 +313,14 @@ namespace Neo4Net.causalclustering.core
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public System.Nullable<long> handle(org.Neo4Net.causalclustering.core.consensus.RaftMessages_NewEntry_Request request) throws RuntimeException
+//ORIGINAL LINE: public System.Nullable<long> handle(Neo4Net.causalclustering.core.consensus.RaftMessages_NewEntry_Request request) throws RuntimeException
 			  public override long? Handle( Neo4Net.causalclustering.core.consensus.RaftMessages_NewEntry_Request request )
 			  {
 					return request.Content().size().GetValueOrDefault(0L);
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public System.Nullable<long> handle(org.Neo4Net.causalclustering.core.consensus.RaftMessages_AppendEntries_Request request) throws RuntimeException
+//ORIGINAL LINE: public System.Nullable<long> handle(Neo4Net.causalclustering.core.consensus.RaftMessages_AppendEntries_Request request) throws RuntimeException
 			  public override long? Handle( Neo4Net.causalclustering.core.consensus.RaftMessages_AppendEntries_Request request )
 			  {
 					long totalSize = 0L;
@@ -378,7 +378,7 @@ namespace Neo4Net.causalclustering.core
 			 private readonly BatchingMessageHandler _outerInstance;
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private final org.Neo4Net.causalclustering.core.consensus.RaftMessages_ReceivedInstantClusterIdAwareMessage<?> baseMessage;
+//ORIGINAL LINE: private final Neo4Net.causalclustering.core.consensus.RaftMessages_ReceivedInstantClusterIdAwareMessage<?> baseMessage;
 			  internal readonly RaftMessages_ReceivedInstantClusterIdAwareMessage<object> BaseMessage;
 
 			  internal BatchingHandler<T1>( BatchingMessageHandler outerInstance, RaftMessages_ReceivedInstantClusterIdAwareMessage<T1> baseMessage )
@@ -388,7 +388,7 @@ namespace Neo4Net.causalclustering.core
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.causalclustering.core.consensus.RaftMessages_ReceivedInstantClusterIdAwareMessage handle(org.Neo4Net.causalclustering.core.consensus.RaftMessages_NewEntry_Request request) throws RuntimeException
+//ORIGINAL LINE: public Neo4Net.causalclustering.core.consensus.RaftMessages_ReceivedInstantClusterIdAwareMessage handle(Neo4Net.causalclustering.core.consensus.RaftMessages_NewEntry_Request request) throws RuntimeException
 			  public override RaftMessages_ReceivedInstantClusterIdAwareMessage Handle( Neo4Net.causalclustering.core.consensus.RaftMessages_NewEntry_Request request )
 			  {
 					Neo4Net.causalclustering.core.consensus.RaftMessages_NewEntry_BatchRequest newEntryBatch = outerInstance.batchNewEntries( request );
@@ -396,7 +396,7 @@ namespace Neo4Net.causalclustering.core
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.causalclustering.core.consensus.RaftMessages_ReceivedInstantClusterIdAwareMessage handle(org.Neo4Net.causalclustering.core.consensus.RaftMessages_AppendEntries_Request request) throws RuntimeException
+//ORIGINAL LINE: public Neo4Net.causalclustering.core.consensus.RaftMessages_ReceivedInstantClusterIdAwareMessage handle(Neo4Net.causalclustering.core.consensus.RaftMessages_AppendEntries_Request request) throws RuntimeException
 			  public override RaftMessages_ReceivedInstantClusterIdAwareMessage Handle( Neo4Net.causalclustering.core.consensus.RaftMessages_AppendEntries_Request request )
 			  {
 					if ( request.Entries().Length == 0 )

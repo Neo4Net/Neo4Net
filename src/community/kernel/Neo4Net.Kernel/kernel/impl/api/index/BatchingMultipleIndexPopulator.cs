@@ -35,7 +35,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Integer.min;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.NamedThreadFactory.daemon;
+//	import static Neo4Net.helpers.NamedThreadFactory.daemon;
 
 	/// <summary>
 	/// A <seealso cref="MultipleIndexPopulator"/> that gathers all incoming updates from the <seealso cref="IndexStoreView"/> in batches of
@@ -163,7 +163,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 {
 			  _activeTasks.incrementAndGet();
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.List<org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>> batch = population.takeCurrentBatch();
+//ORIGINAL LINE: java.util.List<Neo4Net.kernel.api.index.IndexEntryUpdate<?>> batch = population.takeCurrentBatch();
 			  IList<IndexEntryUpdate<object>> batch = population.TakeCurrentBatch();
 
 			  _executor.execute(() =>

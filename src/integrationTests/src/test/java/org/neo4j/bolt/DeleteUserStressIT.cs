@@ -47,12 +47,12 @@ namespace Neo4Net.Bolt
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.Matchers.empty;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.driver.v1.AuthTokens.basic;
+//	import static Neo4Net.driver.v1.AuthTokens.basic;
 
 	public class DeleteUserStressIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.harness.junit.Neo4NetRule db = new org.Neo4Net.harness.junit.Neo4NetRule().withConfig(org.Neo4Net.graphdb.factory.GraphDatabaseSettings.auth_enabled, "true").withConfig(org.Neo4Net.kernel.impl.enterprise.configuration.OnlineBackupSettings.online_backup_enabled, org.Neo4Net.kernel.configuration.Settings.FALSE);
+//ORIGINAL LINE: @Rule public Neo4Net.harness.junit.Neo4NetRule db = new Neo4Net.harness.junit.Neo4NetRule().withConfig(Neo4Net.graphdb.factory.GraphDatabaseSettings.auth_enabled, "true").withConfig(Neo4Net.kernel.impl.enterprise.configuration.OnlineBackupSettings.online_backup_enabled, Neo4Net.kernel.configuration.Settings.FALSE);
 		 public Neo4NetRule Db = new Neo4NetRule().withConfig(GraphDatabaseSettings.auth_enabled, "true").withConfig(OnlineBackupSettings.online_backup_enabled, Settings.FALSE);
 
 		 private Driver _adminDriver;

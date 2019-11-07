@@ -29,9 +29,9 @@ namespace Neo4Net.Bolt.v3.messaging.request
 	using VirtualValues = Neo4Net.Values.@virtual.VirtualValues;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v3.messaging.request.MessageMetadataParser.parseTransactionMetadata;
+//	import static Neo4Net.bolt.v3.messaging.request.MessageMetadataParser.parseTransactionMetadata;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v3.messaging.request.MessageMetadataParser.parseTransactionTimeout;
+//	import static Neo4Net.bolt.v3.messaging.request.MessageMetadataParser.parseTransactionTimeout;
 
 	public class BeginMessage : RequestMessage
 	{
@@ -43,13 +43,13 @@ namespace Neo4Net.Bolt.v3.messaging.request
 		 private readonly IDictionary<string, object> _txMetadata;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public BeginMessage() throws org.Neo4Net.bolt.messaging.BoltIOException
+//ORIGINAL LINE: public BeginMessage() throws Neo4Net.bolt.messaging.BoltIOException
 		 public BeginMessage() : this(VirtualValues.EMPTY_MAP)
 		 {
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public BeginMessage(org.Neo4Net.values.virtual.MapValue meta) throws org.Neo4Net.bolt.messaging.BoltIOException
+//ORIGINAL LINE: public BeginMessage(Neo4Net.values.virtual.MapValue meta) throws Neo4Net.bolt.messaging.BoltIOException
 		 public BeginMessage( MapValue meta )
 		 {
 			  this._meta = requireNonNull( meta );

@@ -41,11 +41,11 @@ namespace Neo4Net.Kernel.impl.store.format
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Arrays.asList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.concat;
+//	import static Neo4Net.helpers.collection.Iterables.concat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.map;
+//	import static Neo4Net.helpers.collection.Iterables.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.MetaDataStore.Position.STORE_VERSION;
+//	import static Neo4Net.kernel.impl.store.MetaDataStore.Position.STORE_VERSION;
 
 	/// <summary>
 	/// Selects record format that will be used in a database.
@@ -110,7 +110,7 @@ namespace Neo4Net.Kernel.impl.store.format
 		 /// <returns> selected record format </returns>
 		 /// <exception cref="IllegalArgumentException"> if requested format not found </exception>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Nonnull public static RecordFormats selectForConfig(org.Neo4Net.kernel.configuration.Config config, org.Neo4Net.logging.LogProvider logProvider)
+//ORIGINAL LINE: @Nonnull public static RecordFormats selectForConfig(Neo4Net.kernel.configuration.Config config, Neo4Net.logging.LogProvider logProvider)
 		 public static RecordFormats SelectForConfig( Config config, LogProvider logProvider )
 		 {
 			  string recordFormat = ConfiguredRecordFormat( config );
@@ -137,7 +137,7 @@ namespace Neo4Net.Kernel.impl.store.format
 		 /// <returns> record format of the given store or <code>null</code> if <seealso cref="DatabaseLayout.metadataStore()"/> file not
 		 /// found or can't be read </returns>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Nullable static RecordFormats selectForStore(org.Neo4Net.io.layout.DatabaseLayout databaseLayout, org.Neo4Net.io.fs.FileSystemAbstraction fs, org.Neo4Net.io.pagecache.PageCache pageCache, org.Neo4Net.logging.LogProvider logProvider)
+//ORIGINAL LINE: @Nullable static RecordFormats selectForStore(Neo4Net.io.layout.DatabaseLayout databaseLayout, Neo4Net.io.fs.FileSystemAbstraction fs, Neo4Net.io.pagecache.PageCache pageCache, Neo4Net.logging.LogProvider logProvider)
 		 internal static RecordFormats SelectForStore( DatabaseLayout databaseLayout, FileSystemAbstraction fs, PageCache pageCache, LogProvider logProvider )
 		 {
 			  File neoStoreFile = databaseLayout.MetadataStore();
@@ -179,7 +179,7 @@ namespace Neo4Net.Kernel.impl.store.format
 		 /// <returns> record format from the store (if it can be read) or configured record format or <seealso cref="DEFAULT_FORMAT"/> </returns>
 		 /// <exception cref="IllegalArgumentException"> when configured format is different from the format present in the store </exception>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Nonnull public static RecordFormats selectForStoreOrConfig(org.Neo4Net.kernel.configuration.Config config, org.Neo4Net.io.layout.DatabaseLayout databaseLayout, org.Neo4Net.io.fs.FileSystemAbstraction fs, org.Neo4Net.io.pagecache.PageCache pageCache, org.Neo4Net.logging.LogProvider logProvider)
+//ORIGINAL LINE: @Nonnull public static RecordFormats selectForStoreOrConfig(Neo4Net.kernel.configuration.Config config, Neo4Net.io.layout.DatabaseLayout databaseLayout, Neo4Net.io.fs.FileSystemAbstraction fs, Neo4Net.io.pagecache.PageCache pageCache, Neo4Net.logging.LogProvider logProvider)
 		 public static RecordFormats SelectForStoreOrConfig( Config config, DatabaseLayout databaseLayout, FileSystemAbstraction fs, PageCache pageCache, LogProvider logProvider )
 		 {
 			  RecordFormats configuredFormat = LoadRecordFormat( ConfiguredRecordFormat( config ) );
@@ -243,7 +243,7 @@ namespace Neo4Net.Kernel.impl.store.format
 		 /// <returns> record format from the store (if it can be read) or configured record format or <seealso cref="DEFAULT_FORMAT"/> </returns>
 		 /// <seealso cref= RecordFormats#generation() </seealso>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Nonnull public static RecordFormats selectNewestFormat(org.Neo4Net.kernel.configuration.Config config, org.Neo4Net.io.layout.DatabaseLayout databaseLayout, org.Neo4Net.io.fs.FileSystemAbstraction fs, org.Neo4Net.io.pagecache.PageCache pageCache, org.Neo4Net.logging.LogProvider logProvider)
+//ORIGINAL LINE: @Nonnull public static RecordFormats selectNewestFormat(Neo4Net.kernel.configuration.Config config, Neo4Net.io.layout.DatabaseLayout databaseLayout, Neo4Net.io.fs.FileSystemAbstraction fs, Neo4Net.io.pagecache.PageCache pageCache, Neo4Net.logging.LogProvider logProvider)
 		 public static RecordFormats SelectNewestFormat( Config config, DatabaseLayout databaseLayout, FileSystemAbstraction fs, PageCache pageCache, LogProvider logProvider )
 		 {
 			  bool formatConfigured = StringUtils.isNotEmpty( ConfiguredRecordFormat( config ) );
@@ -340,7 +340,7 @@ namespace Neo4Net.Kernel.impl.store.format
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Nonnull private static String configuredRecordFormat(org.Neo4Net.kernel.configuration.Config config)
+//ORIGINAL LINE: @Nonnull private static String configuredRecordFormat(Neo4Net.kernel.configuration.Config config)
 		 private static string ConfiguredRecordFormat( Config config )
 		 {
 			  return config.Get( GraphDatabaseSettings.record_format );

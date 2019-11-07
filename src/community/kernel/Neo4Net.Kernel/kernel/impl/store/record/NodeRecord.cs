@@ -24,9 +24,9 @@ namespace Neo4Net.Kernel.Impl.Store.Records
 {
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.filter;
+//	import static Neo4Net.helpers.collection.Iterables.filter;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.NodeLabelsField.parseLabelsField;
+//	import static Neo4Net.kernel.impl.store.NodeLabelsField.parseLabelsField;
 
 	public class NodeRecord : PrimitiveRecord
 	{

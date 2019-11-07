@@ -32,18 +32,18 @@ namespace Neo4Net.ha
 	using ClusterRule = Neo4Net.Test.ha.ClusterRule;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.allSeesAllAsJoined;
+//	import static Neo4Net.kernel.impl.ha.ClusterManager.allSeesAllAsJoined;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.clusterWithAdditionalClients;
+//	import static Neo4Net.kernel.impl.ha.ClusterManager.clusterWithAdditionalClients;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.masterAvailable;
+//	import static Neo4Net.kernel.impl.ha.ClusterManager.masterAvailable;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.masterSeesMembers;
+//	import static Neo4Net.kernel.impl.ha.ClusterManager.masterSeesMembers;
 
 	public class ClusterClientPaddingIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.ha.ClusterRule clusterRule = new org.Neo4Net.test.ha.ClusterRule().withSharedSetting(org.Neo4Net.cluster.ClusterSettings.heartbeat_interval, "1s").withSharedSetting(org.Neo4Net.cluster.ClusterSettings.heartbeat_timeout, "10s");
+//ORIGINAL LINE: @Rule public Neo4Net.test.ha.ClusterRule clusterRule = new Neo4Net.test.ha.ClusterRule().withSharedSetting(Neo4Net.cluster.ClusterSettings.heartbeat_interval, "1s").withSharedSetting(Neo4Net.cluster.ClusterSettings.heartbeat_timeout, "10s");
 		 public ClusterRule ClusterRule = new ClusterRule().withSharedSetting(ClusterSettings.heartbeat_interval, "1s").withSharedSetting(ClusterSettings.heartbeat_timeout, "10s");
 
 		 private ManagedCluster _cluster;

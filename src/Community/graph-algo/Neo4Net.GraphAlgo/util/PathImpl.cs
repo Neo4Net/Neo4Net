@@ -32,7 +32,7 @@ namespace Neo4Net.GraphAlgo.Utils
 	using Neo4Net.Collections.Helpers;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.iteratorsEqual;
+//	import static Neo4Net.helpers.collection.Iterators.iteratorsEqual;
 
 	public sealed class PathImpl : Path
 	{
@@ -180,7 +180,7 @@ namespace Neo4Net.GraphAlgo.Utils
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private Iterable<org.Neo4Net.graphdb.Node> nodeIterator(final org.Neo4Net.graphdb.Node start, final Iterable<org.Neo4Net.graphdb.Relationship> relationships)
+//ORIGINAL LINE: private Iterable<Neo4Net.graphdb.Node> nodeIterator(final Neo4Net.graphdb.Node start, final Iterable<Neo4Net.graphdb.Relationship> relationships)
 		 private IEnumerable<Node> NodeIterator( Node start, IEnumerable<Relationship> relationships )
 		 {
 			  return () => new IteratorAnonymousInnerClass(this, start, relationships);
@@ -270,10 +270,10 @@ namespace Neo4Net.GraphAlgo.Utils
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Iterator<? extends org.Neo4Net.graphdb.PropertyContainer> current;
+//ORIGINAL LINE: java.util.Iterator<? extends Neo4Net.graphdb.PropertyContainer> current;
 			 internal IEnumerator<PropertyContainer> current;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Iterator<? extends org.Neo4Net.graphdb.PropertyContainer> next;
+//ORIGINAL LINE: java.util.Iterator<? extends Neo4Net.graphdb.PropertyContainer> next;
 			 internal IEnumerator<PropertyContainer> next;
 
 			 public bool hasNext()
@@ -290,7 +290,7 @@ namespace Neo4Net.GraphAlgo.Utils
 				  finally
 				  {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Iterator<? extends org.Neo4Net.graphdb.PropertyContainer> temp = current;
+//ORIGINAL LINE: java.util.Iterator<? extends Neo4Net.graphdb.PropertyContainer> temp = current;
 						IEnumerator<PropertyContainer> temp = current;
 						current = next;
 						next = temp;

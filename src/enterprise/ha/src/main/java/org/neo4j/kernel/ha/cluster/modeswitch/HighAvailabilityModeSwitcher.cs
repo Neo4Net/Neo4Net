@@ -44,11 +44,11 @@ namespace Neo4Net.Kernel.ha.cluster.modeswitch
 	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.cluster.ClusterSettings.INSTANCE_ID;
+//	import static Neo4Net.cluster.ClusterSettings.INSTANCE_ID;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.NamedThreadFactory.named;
+//	import static Neo4Net.helpers.NamedThreadFactory.named;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.Uris.parameter;
+//	import static Neo4Net.helpers.Uris.parameter;
 
 	/// <summary>
 	/// Performs the internal switches in various services from pending to slave/master, by listening for
@@ -445,7 +445,7 @@ namespace Neo4Net.Kernel.ha.cluster.modeswitch
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private void switchToPending(final org.Neo4Net.kernel.ha.cluster.HighAvailabilityMemberState oldState)
+//ORIGINAL LINE: private void switchToPending(final Neo4Net.kernel.ha.cluster.HighAvailabilityMemberState oldState)
 		 private void SwitchToPending( HighAvailabilityMemberState oldState )
 		 {
 			  _msgLog.info( "I am %s, moving to pending", _instanceId );

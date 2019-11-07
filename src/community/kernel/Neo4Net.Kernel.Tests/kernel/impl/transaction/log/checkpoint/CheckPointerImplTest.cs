@@ -72,7 +72,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.checkpoint
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.ThreadTestUtils.forkFuture;
+//	import static Neo4Net.test.ThreadTestUtils.forkFuture;
 
 	public class CheckPointerImplTest
 	{
@@ -481,7 +481,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.checkpoint
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void verifyAsyncActionCausesConcurrentFlushingRush(org.Neo4Net.function.ThrowingConsumer<CheckPointerImpl,java.io.IOException> asyncAction) throws Exception
+//ORIGINAL LINE: private void verifyAsyncActionCausesConcurrentFlushingRush(Neo4Net.function.ThrowingConsumer<CheckPointerImpl,java.io.IOException> asyncAction) throws Exception
 		 private void VerifyAsyncActionCausesConcurrentFlushingRush( ThrowingConsumer<CheckPointerImpl, IOException> asyncAction )
 		 {
 			  AtomicLong limitDisableCounter = new AtomicLong();

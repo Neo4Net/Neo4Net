@@ -52,7 +52,7 @@ namespace Neo4Net.Dbms.CommandLine
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.apache.commons.text.StringEscapeUtils.escapeCsv;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.database_path;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.database_path;
 
 	public class DiagnosticsReportCommand : AdminCommand
 	{
@@ -88,7 +88,7 @@ namespace Neo4Net.Dbms.CommandLine
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void execute(String[] stringArgs) throws org.Neo4Net.commandline.admin.IncorrectUsage, org.Neo4Net.commandline.admin.CommandFailed
+//ORIGINAL LINE: public void execute(String[] stringArgs) throws Neo4Net.commandline.admin.IncorrectUsage, Neo4Net.commandline.admin.CommandFailed
 		 public override void Execute( string[] stringArgs )
 		 {
 			  Args args = Args.withFlags( "list", "to", "verbose", "force", PID_KEY ).parse( stringArgs );
@@ -122,7 +122,7 @@ namespace Neo4Net.Dbms.CommandLine
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static long parsePid(org.Neo4Net.helpers.Args args) throws org.Neo4Net.commandline.admin.CommandFailed
+//ORIGINAL LINE: private static long parsePid(Neo4Net.helpers.Args args) throws Neo4Net.commandline.admin.CommandFailed
 		 private static long ParsePid( Args args )
 		 {
 			  if ( args.Has( PID_KEY ) )
@@ -166,7 +166,7 @@ namespace Neo4Net.Dbms.CommandLine
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.util.Optional<java.util.Set<String>> parseAndValidateArguments(org.Neo4Net.helpers.Args args, org.Neo4Net.diagnostics.DiagnosticsReporter reporter) throws org.Neo4Net.commandline.admin.IncorrectUsage
+//ORIGINAL LINE: private java.util.Optional<java.util.Set<String>> parseAndValidateArguments(Neo4Net.helpers.Args args, Neo4Net.diagnostics.DiagnosticsReporter reporter) throws Neo4Net.commandline.admin.IncorrectUsage
 		 private Optional<ISet<string>> ParseAndValidateArguments( Args args, DiagnosticsReporter reporter )
 		 {
 			  ISet<string> availableClassifiers = reporter.AvailableClassifiers;
@@ -202,7 +202,7 @@ namespace Neo4Net.Dbms.CommandLine
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void validateClassifiers(java.util.Set<String> availableClassifiers, java.util.Set<String> orphans) throws org.Neo4Net.commandline.admin.IncorrectUsage
+//ORIGINAL LINE: private void validateClassifiers(java.util.Set<String> availableClassifiers, java.util.Set<String> orphans) throws Neo4Net.commandline.admin.IncorrectUsage
 		 private void ValidateClassifiers( ISet<string> availableClassifiers, ISet<string> orphans )
 		 {
 			  foreach ( string classifier in orphans )
@@ -235,7 +235,7 @@ namespace Neo4Net.Dbms.CommandLine
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.diagnostics.DiagnosticsReporter createAndRegisterSources() throws org.Neo4Net.commandline.admin.CommandFailed
+//ORIGINAL LINE: private Neo4Net.diagnostics.DiagnosticsReporter createAndRegisterSources() throws Neo4Net.commandline.admin.CommandFailed
 		 private DiagnosticsReporter CreateAndRegisterSources()
 		 {
 			  DiagnosticsReporter reporter = new DiagnosticsReporter();
@@ -278,7 +278,7 @@ namespace Neo4Net.Dbms.CommandLine
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.kernel.configuration.Config getConfig(java.io.File configFile) throws org.Neo4Net.commandline.admin.CommandFailed
+//ORIGINAL LINE: private Neo4Net.kernel.configuration.Config getConfig(java.io.File configFile) throws Neo4Net.commandline.admin.CommandFailed
 		 private Config GetConfig( File configFile )
 		 {
 			  if ( !_fs.fileExists( configFile ) )

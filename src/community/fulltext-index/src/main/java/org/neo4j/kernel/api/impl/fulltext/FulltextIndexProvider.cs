@@ -47,10 +47,10 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 	using IndexDirectoryStructure = Neo4Net.Kernel.Api.Index.IndexDirectoryStructure;
 	using IndexPopulator = Neo4Net.Kernel.Api.Index.IndexPopulator;
 	using IndexProvider = Neo4Net.Kernel.Api.Index.IndexProvider;
-	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
-	using AuxiliaryTransactionState = Neo4Net.Kernel.api.txstate.auxiliary.AuxiliaryTransactionState;
-	using AuxiliaryTransactionStateManager = Neo4Net.Kernel.api.txstate.auxiliary.AuxiliaryTransactionStateManager;
-	using AuxiliaryTransactionStateProvider = Neo4Net.Kernel.api.txstate.auxiliary.AuxiliaryTransactionStateProvider;
+	using SchemaDescriptorFactory = Neo4Net.Kernel.Api.schema.SchemaDescriptorFactory;
+	using AuxiliaryTransactionState = Neo4Net.Kernel.Api.txstate.auxiliary.AuxiliaryTransactionState;
+	using AuxiliaryTransactionStateManager = Neo4Net.Kernel.Api.txstate.auxiliary.AuxiliaryTransactionStateManager;
+	using AuxiliaryTransactionStateProvider = Neo4Net.Kernel.Api.txstate.auxiliary.AuxiliaryTransactionStateProvider;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using KernelTransactionImplementation = Neo4Net.Kernel.Impl.Api.KernelTransactionImplementation;
 	using IndexSamplingConfig = Neo4Net.Kernel.Impl.Api.index.sampling.IndexSamplingConfig;
@@ -68,9 +68,9 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.exceptions.Status_General.InvalidArguments;
+//	import static Neo4Net.kernel.api.exceptions.Status_General.InvalidArguments;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.impl.fulltext.FulltextIndexSettings.readOrInitializeDescriptor;
+//	import static Neo4Net.kernel.api.impl.fulltext.FulltextIndexSettings.readOrInitializeDescriptor;
 
 	internal class FulltextIndexProvider : IndexProvider, FulltextAdapter, AuxiliaryTransactionStateProvider
 	{
@@ -110,7 +110,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private boolean indexIsOnline(org.Neo4Net.kernel.api.impl.index.storage.PartitionedIndexStorage indexStorage, org.Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor descriptor) throws java.io.IOException
+//ORIGINAL LINE: private boolean indexIsOnline(Neo4Net.kernel.api.impl.index.storage.PartitionedIndexStorage indexStorage, Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor descriptor) throws java.io.IOException
 		 private bool IndexIsOnline( PartitionedIndexStorage indexStorage, StoreIndexDescriptor descriptor )
 		 {
 			  using ( SchemaIndex index = LuceneSchemaIndexBuilder.create( descriptor, _config ).withIndexStorage( indexStorage ).build() )
@@ -180,7 +180,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor bless(org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor index) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.MisconfiguredIndexException
+//ORIGINAL LINE: public Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor bless(Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor index) throws Neo4Net.Kernel.Api.Internal.Exceptions.Schema.MisconfiguredIndexException
 		 public override IndexDescriptor Bless( IndexDescriptor index )
 		 {
 			  if ( !( index.Schema() is FulltextSchemaDescriptor ) )
@@ -192,7 +192,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public String getPopulationFailure(org.Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor descriptor) throws IllegalStateException
+//ORIGINAL LINE: public String getPopulationFailure(Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor descriptor) throws IllegalStateException
 		 public override string GetPopulationFailure( StoreIndexDescriptor descriptor )
 		 {
 			  string failure = GetIndexStorage( descriptor.Id ).StoredIndexFailure;
@@ -235,7 +235,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.kernel.api.index.IndexAccessor getOnlineAccessor(org.Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor descriptor, org.Neo4Net.kernel.impl.api.index.sampling.IndexSamplingConfig samplingConfig) throws java.io.IOException
+//ORIGINAL LINE: public Neo4Net.kernel.api.index.IndexAccessor getOnlineAccessor(Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor descriptor, Neo4Net.kernel.impl.api.index.sampling.IndexSamplingConfig samplingConfig) throws java.io.IOException
 		 public override IndexAccessor GetOnlineAccessor( StoreIndexDescriptor descriptor, IndexSamplingConfig samplingConfig )
 		 {
 			  PartitionedIndexStorage indexStorage = GetIndexStorage( descriptor.Id );
@@ -262,7 +262,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public org.Neo4Net.kernel.impl.storemigration.StoreMigrationParticipant storeMigrationParticipant(final org.Neo4Net.io.fs.FileSystemAbstraction fs, org.Neo4Net.io.pagecache.PageCache pageCache)
+//ORIGINAL LINE: public Neo4Net.kernel.impl.storemigration.StoreMigrationParticipant storeMigrationParticipant(final Neo4Net.io.fs.FileSystemAbstraction fs, Neo4Net.io.pagecache.PageCache pageCache)
 		 public override StoreMigrationParticipant StoreMigrationParticipant( FileSystemAbstraction fs, PageCache pageCache )
 		 {
 			  return new SchemaIndexMigrator( fs, this );
@@ -300,7 +300,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public ScoreEntityIterator query(org.Neo4Net.kernel.api.KernelTransaction ktx, String indexName, String queryString) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException, org.apache.lucene.queryparser.classic.ParseException
+//ORIGINAL LINE: public ScoreEntityIterator query(Neo4Net.kernel.api.KernelTransaction ktx, String indexName, String queryString) throws Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException, org.apache.lucene.queryparser.classic.ParseException
 		 public override ScoreEntityIterator Query( KernelTransaction ktx, string indexName, string queryString )
 		 {
 			  KernelTransactionImplementation kti = ( KernelTransactionImplementation ) ktx;

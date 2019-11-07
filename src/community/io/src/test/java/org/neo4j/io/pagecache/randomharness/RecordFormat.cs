@@ -36,7 +36,7 @@ namespace Neo4Net.Io.pagecache.randomharness
 		 public abstract Record CreateRecord( File file, int recordId );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public abstract Record readRecord(org.Neo4Net.io.pagecache.PageCursor cursor) throws java.io.IOException;
+//ORIGINAL LINE: public abstract Record readRecord(Neo4Net.io.pagecache.PageCursor cursor) throws java.io.IOException;
 		 public abstract Record ReadRecord( PageCursor cursor );
 
 		 public abstract Record ZeroRecord();
@@ -50,7 +50,7 @@ namespace Neo4Net.Io.pagecache.randomharness
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public final void writeRecord(Record record, org.Neo4Net.io.fs.StoreChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public final void writeRecord(Record record, Neo4Net.io.fs.StoreChannel channel) throws java.io.IOException
 		 public void WriteRecord( Record record, StoreChannel channel )
 		 {
 			  ByteBuffer buffer = ByteBuffer.allocate( RecordSize );
@@ -78,7 +78,7 @@ namespace Neo4Net.Io.pagecache.randomharness
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public final void assertRecordsWrittenCorrectly(org.Neo4Net.io.pagecache.PageCursor cursor) throws java.io.IOException
+//ORIGINAL LINE: public final void assertRecordsWrittenCorrectly(Neo4Net.io.pagecache.PageCursor cursor) throws java.io.IOException
 		 public void AssertRecordsWrittenCorrectly( PageCursor cursor )
 		 {
 			  int currentPageSize = cursor.CurrentPageSize;
@@ -96,7 +96,7 @@ namespace Neo4Net.Io.pagecache.randomharness
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public final void assertRecordsWrittenCorrectly(java.io.File file, org.Neo4Net.io.fs.StoreChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public final void assertRecordsWrittenCorrectly(java.io.File file, Neo4Net.io.fs.StoreChannel channel) throws java.io.IOException
 		 public void AssertRecordsWrittenCorrectly( File file, StoreChannel channel )
 		 {
 			  int recordSize = RecordSize;

@@ -26,11 +26,11 @@ namespace Neo4Net.Kernel.impl.util
 	public abstract class DirectionWrapper
 	{
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//       OUTGOING() { public long getNextRel(org.Neo4Net.kernel.impl.store.record.RelationshipGroupRecord group) { return group.getFirstOut(); } public void setNextRel(org.Neo4Net.kernel.impl.store.record.RelationshipGroupRecord group, long firstNextRel) { group.setFirstOut(firstNextRel); } },
+//       OUTGOING() { public long getNextRel(Neo4Net.kernel.impl.store.record.RelationshipGroupRecord group) { return group.getFirstOut(); } public void setNextRel(Neo4Net.kernel.impl.store.record.RelationshipGroupRecord group, long firstNextRel) { group.setFirstOut(firstNextRel); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//       INCOMING() { public long getNextRel(org.Neo4Net.kernel.impl.store.record.RelationshipGroupRecord group) { return group.getFirstIn(); } public void setNextRel(org.Neo4Net.kernel.impl.store.record.RelationshipGroupRecord group, long firstNextRel) { group.setFirstIn(firstNextRel); } },
+//       INCOMING() { public long getNextRel(Neo4Net.kernel.impl.store.record.RelationshipGroupRecord group) { return group.getFirstIn(); } public void setNextRel(Neo4Net.kernel.impl.store.record.RelationshipGroupRecord group, long firstNextRel) { group.setFirstIn(firstNextRel); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//       BOTH() { public long getNextRel(org.Neo4Net.kernel.impl.store.record.RelationshipGroupRecord group) { return group.getFirstLoop(); } public void setNextRel(org.Neo4Net.kernel.impl.store.record.RelationshipGroupRecord group, long firstNextRel) { group.setFirstLoop(firstNextRel); } };
+//       BOTH() { public long getNextRel(Neo4Net.kernel.impl.store.record.RelationshipGroupRecord group) { return group.getFirstLoop(); } public void setNextRel(Neo4Net.kernel.impl.store.record.RelationshipGroupRecord group, long firstNextRel) { group.setFirstLoop(firstNextRel); } };
 
 		 private static readonly IList<DirectionWrapper> valueList = new List<DirectionWrapper>();
 

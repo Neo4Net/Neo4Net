@@ -147,8 +147,8 @@ namespace Neo4Net.Server.rest
 			  }
 			  using ( Transaction tx = Graphdb().beginTx() )
 			  {
-					ResourceIterable<Relationship> relationships = ( ResourceIterable<Relationship> ) Data.get()["I"].Relationships;
-					using ( ResourceIterator<Relationship> resourceIterator = relationships.GetEnumerator() )
+					ResourceIterable<Relationship> relationships = (IResourceIterable<Relationship> ) Data.get()["I"].Relationships;
+					using ( IResourceIterator<Relationship> resourceIterator = relationships.GetEnumerator() )
 					{
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
 						 GenConflict.get().expectedStatus(405).payload(CreateJsonStringFor(GetRelationshipUri(resourceIterator.next()), "name", "I")).post(PostRelationshipIndexUri(indexName)).entity();
@@ -192,9 +192,9 @@ namespace Neo4Net.Server.rest
 
 			  using ( Transaction tx = Graphdb().beginTx() )
 			  {
-					ResourceIterable<Relationship> relationshipIterable = ( ResourceIterable<Relationship> ) Data.get()["I"].Relationships;
+					ResourceIterable<Relationship> relationshipIterable = (IResourceIterable<Relationship> ) Data.get()["I"].Relationships;
 					long id;
-					using ( ResourceIterator<Relationship> resourceIterator = relationshipIterable.GetEnumerator() )
+					using ( IResourceIterator<Relationship> resourceIterator = relationshipIterable.GetEnumerator() )
 					{
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
 						 id = resourceIterator.next().Id;
@@ -266,7 +266,7 @@ namespace Neo4Net.Server.rest
 		 /// Lookup list of properties being autoindexed.
 		 /// </summary>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void listAutoIndexingPropertiesForNodes() throws org.Neo4Net.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @Test public void listAutoIndexingPropertiesForNodes() throws Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ListAutoIndexingPropertiesForNodes()
 		 {
@@ -311,7 +311,7 @@ namespace Neo4Net.Server.rest
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void addRemoveAutoIndexedPropertyForNodes() throws org.Neo4Net.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @Test public void addRemoveAutoIndexedPropertyForNodes() throws Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void AddRemoveAutoIndexedPropertyForNodes()
 		 {
@@ -319,7 +319,7 @@ namespace Neo4Net.Server.rest
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void addRemoveAutoIndexedPropertyForRelationships() throws org.Neo4Net.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @Test public void addRemoveAutoIndexedPropertyForRelationships() throws Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void AddRemoveAutoIndexedPropertyForRelationships()
 		 {
@@ -332,7 +332,7 @@ namespace Neo4Net.Server.rest
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void addRemoveAutoIndexedPropertyForType(String uriPartForType) throws org.Neo4Net.server.rest.domain.JsonParseException
+//ORIGINAL LINE: private void addRemoveAutoIndexedPropertyForType(String uriPartForType) throws Neo4Net.server.rest.domain.JsonParseException
 		 private void AddRemoveAutoIndexedPropertyForType( string uriPartForType )
 		 {
 			  int initialPropertiesSize = GetAutoIndexedPropertiesForType( uriPartForType ).Count;
@@ -357,7 +357,7 @@ namespace Neo4Net.Server.rest
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private java.util.List<String> getAutoIndexedPropertiesForType(String uriPartForType) throws org.Neo4Net.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private java.util.List<String> getAutoIndexedPropertiesForType(String uriPartForType) throws Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 private IList<string> GetAutoIndexedPropertiesForType( string uriPartForType )
 		 {

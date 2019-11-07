@@ -46,7 +46,7 @@ namespace Neo4Net.Kernel.impl.storemigration
 		 /// <exception cref="IOException"> if there was an error migrating. </exception>
 		 /// <exception cref="UnsatisfiedDependencyException"> if one or more dependencies were unsatisfied. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void migrate(org.Neo4Net.io.layout.DatabaseLayout directoryLayout, org.Neo4Net.io.layout.DatabaseLayout migrationLayout, org.Neo4Net.kernel.impl.util.monitoring.ProgressReporter progress, String versionToMigrateFrom, String versionToMigrateTo) throws java.io.IOException;
+//ORIGINAL LINE: void migrate(Neo4Net.io.layout.DatabaseLayout directoryLayout, Neo4Net.io.layout.DatabaseLayout migrationLayout, Neo4Net.kernel.impl.util.monitoring.ProgressReporter progress, String versionToMigrateFrom, String versionToMigrateTo) throws java.io.IOException;
 		 void Migrate( DatabaseLayout directoryLayout, DatabaseLayout migrationLayout, ProgressReporter progress, string versionToMigrateFrom, string versionToMigrateTo );
 
 		 /// <summary>
@@ -59,7 +59,7 @@ namespace Neo4Net.Kernel.impl.storemigration
 		 /// <param name="versionToMigrateTo"> the version we want to migrate to </param>
 		 /// <exception cref="IOException"> if unable to move one or more files. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void moveMigratedFiles(org.Neo4Net.io.layout.DatabaseLayout migrationLayout, org.Neo4Net.io.layout.DatabaseLayout directoryLayout, String versionToMigrateFrom, String versionToMigrateTo) throws java.io.IOException;
+//ORIGINAL LINE: void moveMigratedFiles(Neo4Net.io.layout.DatabaseLayout migrationLayout, Neo4Net.io.layout.DatabaseLayout directoryLayout, String versionToMigrateFrom, String versionToMigrateTo) throws java.io.IOException;
 		 void MoveMigratedFiles( DatabaseLayout migrationLayout, DatabaseLayout directoryLayout, string versionToMigrateFrom, string versionToMigrateTo );
 
 		 /// <summary>
@@ -67,7 +67,7 @@ namespace Neo4Net.Kernel.impl.storemigration
 		 /// <param name="migrationLayout"> the directory where migrated files end up. </param>
 		 /// <exception cref="IOException"> if unable to clean up one or more files. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void cleanup(org.Neo4Net.io.layout.DatabaseLayout migrationLayout) throws java.io.IOException;
+//ORIGINAL LINE: void cleanup(Neo4Net.io.layout.DatabaseLayout migrationLayout) throws java.io.IOException;
 		 void Cleanup( DatabaseLayout migrationLayout );
 
 		 /// <returns> descriptive name of this migration participant. </returns>

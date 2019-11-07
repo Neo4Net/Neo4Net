@@ -94,13 +94,13 @@ namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: protected java.util.Map<org.Neo4Net.graphdb.config.Setting<?>,String> getSettings()
+//ORIGINAL LINE: protected java.util.Map<Neo4Net.graphdb.config.Setting<?>,String> getSettings()
 		 protected internal override IDictionary<Setting<object>, string> Settings
 		 {
 			 get
 			 {
 	//JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-	//ORIGINAL LINE: java.util.Map<org.Neo4Net.graphdb.config.Setting<?>,String> settings = new java.util.HashMap<>();
+	//ORIGINAL LINE: java.util.Map<Neo4Net.graphdb.config.Setting<?>,String> settings = new java.util.HashMap<>();
 				  IDictionary<Setting<object>, string> settings = new Dictionary<Setting<object>, string>();
 				  settings[SecuritySettings.auth_provider] = SecuritySettings.LDAP_REALM_NAME;
 				  settings[SecuritySettings.ldap_server] = "0.0.0.0:10389";
@@ -214,7 +214,7 @@ namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertKeepAuthorizationForLifetimeOfTransaction(String username, System.Action<org.Neo4Net.driver.v1.Transaction> assertion) throws Throwable
+//ORIGINAL LINE: private void assertKeepAuthorizationForLifetimeOfTransaction(String username, System.Action<Neo4Net.driver.v1.Transaction> assertion) throws Throwable
 		 private void AssertKeepAuthorizationForLifetimeOfTransaction( string username, System.Action<Transaction> assertion )
 		 {
 			  DoubleLatch latch = new DoubleLatch( 2 );
@@ -366,7 +366,7 @@ namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 		 // ===== Logging tests =====
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldNotLogErrorsFromLdapRealmWhenLoginSuccessfulInNativeRealmNativeFirst() throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: @Test public void shouldNotLogErrorsFromLdapRealmWhenLoginSuccessfulInNativeRealmNativeFirst() throws java.io.IOException, Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldNotLogErrorsFromLdapRealmWhenLoginSuccessfulInNativeRealmNativeFirst()
 		 {
@@ -385,7 +385,7 @@ namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldNotLogErrorsFromLdapRealmWhenLoginSuccessfulInNativeRealmLdapFirst() throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: @Test public void shouldNotLogErrorsFromLdapRealmWhenLoginSuccessfulInNativeRealmLdapFirst() throws java.io.IOException, Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldNotLogErrorsFromLdapRealmWhenLoginSuccessfulInNativeRealmLdapFirst()
 		 {

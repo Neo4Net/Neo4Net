@@ -23,7 +23,7 @@ namespace Neo4Net.Kernel.Api.Internal.Exceptions.Schema
 
 	public class IndexNotFoundKernelException : KernelException
 	{
-		 public IndexNotFoundKernelException( string msg ) : base( org.Neo4Net.kernel.api.exceptions.Status_Schema.IndexNotFound, msg )
+		 public IndexNotFoundKernelException( string msg ) : base( Neo4Net.kernel.api.exceptions.Status_Schema.IndexNotFound, msg )
 		 {
 		 }
 	}

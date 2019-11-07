@@ -48,15 +48,15 @@ namespace Neo4Net.causalclustering.catchup.tx
 	using LogProvider = Neo4Net.Logging.LogProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.pagecache.tracing.cursor.context.EmptyVersionContextSupplier.EMPTY;
+//	import static Neo4Net.io.pagecache.tracing.cursor.context.EmptyVersionContextSupplier.EMPTY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.MetaDataStore.Position.LAST_CLOSED_TRANSACTION_LOG_BYTE_OFFSET;
+//	import static Neo4Net.kernel.impl.store.MetaDataStore.Position.LAST_CLOSED_TRANSACTION_LOG_BYTE_OFFSET;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.MetaDataStore.Position.LAST_TRANSACTION_ID;
+//	import static Neo4Net.kernel.impl.store.MetaDataStore.Position.LAST_TRANSACTION_ID;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.StoreType.META_DATA;
+//	import static Neo4Net.kernel.impl.store.StoreType.META_DATA;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.entry.LogHeader.LOG_HEADER_SIZE;
+//	import static Neo4Net.kernel.impl.transaction.log.entry.LogHeader.LOG_HEADER_SIZE;
 
 	public class TransactionLogCatchUpWriter : TxPullResponseListener, IDisposable
 	{
@@ -74,7 +74,7 @@ namespace Neo4Net.causalclustering.catchup.tx
 		 private long _expectedTxId;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: TransactionLogCatchUpWriter(org.Neo4Net.io.layout.DatabaseLayout databaseLayout, org.Neo4Net.io.fs.FileSystemAbstraction fs, org.Neo4Net.io.pagecache.PageCache pageCache, org.Neo4Net.kernel.configuration.Config config, org.Neo4Net.logging.LogProvider logProvider, long fromTxId, boolean asPartOfStoreCopy, boolean keepTxLogsInStoreDir, boolean forceTransactionRotations) throws java.io.IOException
+//ORIGINAL LINE: TransactionLogCatchUpWriter(Neo4Net.io.layout.DatabaseLayout databaseLayout, Neo4Net.io.fs.FileSystemAbstraction fs, Neo4Net.io.pagecache.PageCache pageCache, Neo4Net.kernel.configuration.Config config, Neo4Net.logging.LogProvider logProvider, long fromTxId, boolean asPartOfStoreCopy, boolean keepTxLogsInStoreDir, boolean forceTransactionRotations) throws java.io.IOException
 		 internal TransactionLogCatchUpWriter( DatabaseLayout databaseLayout, FileSystemAbstraction fs, PageCache pageCache, Config config, LogProvider logProvider, long fromTxId, bool asPartOfStoreCopy, bool keepTxLogsInStoreDir, bool forceTransactionRotations )
 		 {
 			  this._pageCache = pageCache;

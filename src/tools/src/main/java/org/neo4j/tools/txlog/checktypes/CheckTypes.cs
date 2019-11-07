@@ -34,7 +34,7 @@ namespace Neo4Net.tools.txlog.checktypes
 		 public static readonly NeoStoreCheckType NeoStore = new NeoStoreCheckType();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") public static final CheckType<? extends org.Neo4Net.kernel.impl.transaction.command.Command, ? extends org.Neo4Net.kernel.impl.store.record.AbstractBaseRecord>[] CHECK_TYPES = new CheckType[]{NODE, PROPERTY, RELATIONSHIP, RELATIONSHIP_GROUP, NEO_STORE};
+//ORIGINAL LINE: @SuppressWarnings("unchecked") public static final CheckType<? extends Neo4Net.kernel.impl.transaction.command.Command, ? extends Neo4Net.kernel.impl.store.record.AbstractBaseRecord>[] CHECK_TYPES = new CheckType[]{NODE, PROPERTY, RELATIONSHIP, RELATIONSHIP_GROUP, NEO_STORE};
 //JAVA TO C# CONVERTER NOTE: Members cannot have the same name as their enclosing type:
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		 public static readonly CheckType<Command, ? extends AbstractBaseRecord>[] CheckTypesConflict = new CheckType[]{ Node, Property, Relationship, RelationshipGroup, NeoStore };

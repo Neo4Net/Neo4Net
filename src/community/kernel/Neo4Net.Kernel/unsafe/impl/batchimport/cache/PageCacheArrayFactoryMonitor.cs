@@ -26,7 +26,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.cache
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.Format.bytes;
+//	import static Neo4Net.helpers.Format.bytes;
 
 	public class PageCacheArrayFactoryMonitor : NumberArrayFactory_Monitor
 	{

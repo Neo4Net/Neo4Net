@@ -66,11 +66,11 @@ namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.driver.Internal.logging.DevNullLogging.DEV_NULL_LOGGING;
+//	import static Neo4Net.driver.Internal.logging.DevNullLogging.DEV_NULL_LOGGING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.BoltConnector.EncryptionLevel.OPTIONAL;
+//	import static Neo4Net.kernel.configuration.BoltConnector.EncryptionLevel.OPTIONAL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.security.auth.BasicAuthManagerTest.password;
+//	import static Neo4Net.server.security.auth.BasicAuthManagerTest.password;
 
 	public abstract class EnterpriseAuthenticationTestBase : AbstractLdapTestUnit
 	{
@@ -113,7 +113,7 @@ namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: protected abstract java.util.Map<org.Neo4Net.graphdb.config.Setting<?>,String> getSettings();
+//ORIGINAL LINE: protected abstract java.util.Map<Neo4Net.graphdb.config.Setting<?>,String> getSettings();
 		 protected internal abstract IDictionary<Setting<object>, string> Settings { get; }
 
 		 protected internal virtual DatabaseRule GetDatabaseTestRule( TestDirectory testDirectory )
@@ -349,7 +349,7 @@ namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void createNativeUser(String username, String password, String... roles) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: void createNativeUser(String username, String password, String... roles) throws java.io.IOException, Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 		 internal virtual void CreateNativeUser( string username, string password, params string[] roles )
 		 {
 			  EnterpriseAuthAndUserManager authManager = DbRule.resolveDependency( typeof( EnterpriseAuthAndUserManager ) );

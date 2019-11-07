@@ -236,7 +236,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private synchronized void stopWithRequirement(org.Neo4Net.kernel.availability.AvailabilityRequirement requirement) throws Throwable
+//ORIGINAL LINE: private synchronized void stopWithRequirement(Neo4Net.kernel.availability.AvailabilityRequirement requirement) throws Throwable
 		 private void StopWithRequirement( AvailabilityRequirement requirement )
 		 {
 			 lock ( this )

@@ -21,11 +21,11 @@ namespace Neo4Net.Index.Internal.gbptree
 {
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Internal.gbptree.TreeNode.BYTE_POS_LEFTSIBLING;
+//	import static Neo4Net.index.Internal.gbptree.TreeNode.BYTE_POS_LEFTSIBLING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Internal.gbptree.TreeNode.BYTE_POS_RIGHTSIBLING;
+//	import static Neo4Net.index.Internal.gbptree.TreeNode.BYTE_POS_RIGHTSIBLING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Internal.gbptree.TreeNode.BYTE_POS_SUCCESSOR;
+//	import static Neo4Net.index.Internal.gbptree.TreeNode.BYTE_POS_SUCCESSOR;
 
 	public interface GBPTreePointerType
 	{

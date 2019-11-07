@@ -35,16 +35,16 @@ namespace Neo4Net.Kernel.Impl.Api.state
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.GraphDb.Index.IndexManager_Fields.PROVIDER;
+//	import static Neo4Net.GraphDb.Index.IndexManager_Fields.PROVIDER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
+//	import static Neo4Net.helpers.collection.MapUtil.stringMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.DummyIndexExtensionFactory.IDENTIFIER;
+//	import static Neo4Net.kernel.impl.index.DummyIndexExtensionFactory.IDENTIFIER;
 
 	public class NoChangeWriteTransactionTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.DatabaseRule dbr = new org.Neo4Net.test.rule.ImpermanentDatabaseRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.DatabaseRule dbr = new Neo4Net.test.rule.ImpermanentDatabaseRule();
 		 public readonly DatabaseRule Dbr = new ImpermanentDatabaseRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

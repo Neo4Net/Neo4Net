@@ -85,9 +85,9 @@ namespace Neo4Net.causalclustering.core.replication
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.DEFAULT_DATABASE_NAME;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.DEFAULT_DATABASE_NAME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.assertion.Assert.assertEventually;
+//	import static Neo4Net.test.assertion.Assert.assertEventually;
 
 	internal class RaftReplicatorTest
 	{
@@ -518,7 +518,7 @@ namespace Neo4Net.causalclustering.core.replication
 		 private class StubLocalDatabase : LocalDatabase
 		 {
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static org.Neo4Net.causalclustering.catchup.storecopy.LocalDatabase create(System.Func<org.Neo4Net.kernel.internal.DatabaseHealth> databaseHealthSupplier, org.Neo4Net.kernel.availability.AvailabilityGuard availabilityGuard) throws java.io.IOException
+//ORIGINAL LINE: static Neo4Net.causalclustering.catchup.storecopy.LocalDatabase create(System.Func<Neo4Net.kernel.internal.DatabaseHealth> databaseHealthSupplier, Neo4Net.kernel.availability.AvailabilityGuard availabilityGuard) throws java.io.IOException
 			  internal static LocalDatabase Create( System.Func<DatabaseHealth> databaseHealthSupplier, AvailabilityGuard availabilityGuard )
 			  {
 					StoreFiles storeFiles = mock( typeof( StoreFiles ) );

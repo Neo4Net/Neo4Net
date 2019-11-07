@@ -40,7 +40,7 @@ namespace Neo4Net.causalclustering.core.state.machines.tx
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void handle(org.Neo4Net.causalclustering.messaging.marshalling.ReplicatedContentHandler contentHandler) throws java.io.IOException
+//ORIGINAL LINE: public void handle(Neo4Net.causalclustering.messaging.marshalling.ReplicatedContentHandler contentHandler) throws java.io.IOException
 		 public override void Handle( ReplicatedContentHandler contentHandler )
 		 {
 			  contentHandler.Handle( this );
@@ -84,7 +84,7 @@ namespace Neo4Net.causalclustering.core.state.machines.tx
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void marshal(org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public void marshal(Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
 		 public override void Marshal( WritableChannel channel )
 		 {
 			  ReplicatedTransactionSerializer.Marshal( channel, this );

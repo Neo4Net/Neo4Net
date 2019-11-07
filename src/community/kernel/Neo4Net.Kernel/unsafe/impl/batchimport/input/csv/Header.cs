@@ -84,7 +84,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input.csv
 			  internal readonly Group GroupConflict;
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private final org.Neo4Net.csv.reader.Extractor<?> extractor;
+//ORIGINAL LINE: private final Neo4Net.csv.reader.Extractor<?> extractor;
 			  internal readonly Extractor<object> ExtractorConflict;
 			  // This can be used to encapsulate the parameters set in the header for spatial and temporal columns
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
@@ -121,7 +121,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input.csv
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: public org.Neo4Net.csv.reader.Extractor<?> extractor()
+//ORIGINAL LINE: public Neo4Net.csv.reader.Extractor<?> extractor()
 			  public virtual Extractor<object> Extractor()
 			  {
 					return ExtractorConflict;

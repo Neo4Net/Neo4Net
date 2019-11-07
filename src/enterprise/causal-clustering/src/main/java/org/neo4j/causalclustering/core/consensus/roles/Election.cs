@@ -37,7 +37,7 @@ namespace Neo4Net.causalclustering.core.consensus.roles
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static boolean startRealElection(org.Neo4Net.causalclustering.core.consensus.state.ReadableRaftState ctx, org.Neo4Net.causalclustering.core.consensus.outcome.Outcome outcome, org.Neo4Net.logging.Log log) throws java.io.IOException
+//ORIGINAL LINE: public static boolean startRealElection(Neo4Net.causalclustering.core.consensus.state.ReadableRaftState ctx, Neo4Net.causalclustering.core.consensus.outcome.Outcome outcome, Neo4Net.logging.Log log) throws java.io.IOException
 		 public static bool StartRealElection( ReadableRaftState ctx, Outcome outcome, Log log )
 		 {
 			  ISet<MemberId> currentMembers = ctx.VotingMembers();
@@ -59,7 +59,7 @@ namespace Neo4Net.causalclustering.core.consensus.roles
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static boolean startPreElection(org.Neo4Net.causalclustering.core.consensus.state.ReadableRaftState ctx, org.Neo4Net.causalclustering.core.consensus.outcome.Outcome outcome, org.Neo4Net.logging.Log log) throws java.io.IOException
+//ORIGINAL LINE: public static boolean startPreElection(Neo4Net.causalclustering.core.consensus.state.ReadableRaftState ctx, Neo4Net.causalclustering.core.consensus.outcome.Outcome outcome, Neo4Net.logging.Log log) throws java.io.IOException
 		 public static bool StartPreElection( ReadableRaftState ctx, Outcome outcome, Log log )
 		 {
 			  ISet<MemberId> currentMembers = ctx.VotingMembers();

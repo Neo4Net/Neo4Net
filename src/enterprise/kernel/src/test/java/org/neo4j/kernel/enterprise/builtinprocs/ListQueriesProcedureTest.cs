@@ -83,17 +83,17 @@ namespace Neo4Net.Kernel.enterprise.builtinprocs
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.Label.label;
+//	import static Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.cypher_hints_error;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.cypher_hints_error;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.track_query_allocation;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.track_query_allocation;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.track_query_cpu_time;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.track_query_cpu_time;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.FALSE;
+//	import static Neo4Net.kernel.configuration.Settings.FALSE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.rule.concurrent.ThreadingRule.waitingWhileIn;
+//	import static Neo4Net.test.rule.concurrent.ThreadingRule.waitingWhileIn;
 
 	public class ListQueriesProcedureTest
 	{
@@ -124,7 +124,7 @@ namespace Neo4Net.Kernel.enterprise.builtinprocs
 		 private const int SECONDS_TIMEOUT = 240;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.VerboseTimeout timeout = org.Neo4Net.test.rule.VerboseTimeout.builder().withTimeout(SECONDS_TIMEOUT - 2, java.util.concurrent.TimeUnit.SECONDS).build();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.VerboseTimeout timeout = Neo4Net.test.rule.VerboseTimeout.builder().withTimeout(SECONDS_TIMEOUT - 2, java.util.concurrent.TimeUnit.SECONDS).build();
 		 public VerboseTimeout Timeout = VerboseTimeout.builder().withTimeout(SECONDS_TIMEOUT - 2, TimeUnit.SECONDS).build();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -231,7 +231,7 @@ namespace Neo4Net.Kernel.enterprise.builtinprocs
 			  // given
 			  string query = "MATCH (n) SET n.v = n.v + 1";
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.graphdb.Node node;
+//ORIGINAL LINE: final Neo4Net.graphdb.Node node;
 			  Node node;
 			  using ( Resource<Node> test = test( _db.createNode, query ) )
 			  {
@@ -691,7 +691,7 @@ namespace Neo4Net.Kernel.enterprise.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private <T extends org.Neo4Net.graphdb.PropertyContainer> Resource<T> test(System.Func<T> setup, String... queries) throws InterruptedException, java.util.concurrent.ExecutionException
+//ORIGINAL LINE: private <T extends Neo4Net.graphdb.PropertyContainer> Resource<T> test(System.Func<T> setup, String... queries) throws InterruptedException, java.util.concurrent.ExecutionException
 		 private Resource<T> Test<T>( System.Func<T> setup, params string[] queries ) where T : Neo4Net.GraphDb.PropertyContainer
 		 {
 			  System.Threading.CountdownEvent resourceLocked = new System.Threading.CountdownEvent( 1 );

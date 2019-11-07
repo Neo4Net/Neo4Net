@@ -39,7 +39,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 	using Value = Neo4Net.Values.Storable.Value;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.impl.fulltext.LuceneFulltextDocumentStructure.documentRepresentingProperties;
+//	import static Neo4Net.kernel.api.impl.fulltext.LuceneFulltextDocumentStructure.documentRepresentingProperties;
 
 	/// <summary>
 	/// A <seealso cref="TxStateVisitor"/> that adds all entities to a <seealso cref="TransactionStateLuceneIndexWriter"/>, that matches the index according to the

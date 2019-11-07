@@ -39,7 +39,7 @@ namespace Neo4Net.causalclustering.catchup
 	public class SimpleRequestDecoder : MessageToMessageDecoder<ByteBuf>
 	{
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private org.Neo4Net.function.Factory<? extends org.Neo4Net.causalclustering.messaging.Message> factory;
+//ORIGINAL LINE: private Neo4Net.function.Factory<? extends Neo4Net.causalclustering.messaging.Message> factory;
 		 private IFactory<Message> _factory;
 
 		 public SimpleRequestDecoder<T1>( IFactory<T1> factory ) where T1 : Neo4Net.causalclustering.messaging.Message

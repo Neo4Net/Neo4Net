@@ -37,7 +37,7 @@ namespace Neo4Net.Bolt.v1.transport
 	using NullLog = Neo4Net.Logging.NullLog;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.genericMap;
+//	import static Neo4Net.helpers.collection.MapUtil.genericMap;
 
 	public class NettyServerTest
 	{
@@ -55,7 +55,7 @@ namespace Neo4Net.Bolt.v1.transport
 			  using ( ServerSocketChannel ignore = ServerSocketChannel.open().bind(new InetSocketAddress("localhost", port)) )
 			  {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.helpers.ListenSocketAddress address = new org.Neo4Net.helpers.ListenSocketAddress("localhost", port);
+//ORIGINAL LINE: final Neo4Net.helpers.ListenSocketAddress address = new Neo4Net.helpers.ListenSocketAddress("localhost", port);
 					ListenSocketAddress address = new ListenSocketAddress( "localhost", port );
 
 					// Expect
@@ -69,7 +69,7 @@ namespace Neo4Net.Bolt.v1.transport
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private org.Neo4Net.bolt.transport.NettyServer.ProtocolInitializer protocolOnAddress(final org.Neo4Net.helpers.ListenSocketAddress address)
+//ORIGINAL LINE: private Neo4Net.bolt.transport.NettyServer.ProtocolInitializer protocolOnAddress(final Neo4Net.helpers.ListenSocketAddress address)
 		 private NettyServer.ProtocolInitializer ProtocolOnAddress( ListenSocketAddress address )
 		 {
 			  return new ProtocolInitializerAnonymousInnerClass( this, address );

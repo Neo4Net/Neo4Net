@@ -53,7 +53,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void ensureWriterInstantiated() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: void ensureWriterInstantiated() throws Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 internal virtual void EnsureWriterInstantiated()
 		 {
 			  if ( Searcher == null )

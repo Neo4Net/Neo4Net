@@ -43,7 +43,7 @@ namespace Neo4Net.backup.impl
 	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_ID;
+//	import static Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_ID;
 
 	/// <summary>
 	/// In full backup we're more tolerant about missing transactions. Just as long as we fulfill this criterion:
@@ -91,7 +91,7 @@ namespace Neo4Net.backup.impl
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected void extractTransactions(long startingAtTransactionId, org.Neo4Net.helpers.collection.Visitor<org.Neo4Net.kernel.impl.transaction.CommittedTransactionRepresentation,Exception> accumulator) throws Exception
+//ORIGINAL LINE: protected void extractTransactions(long startingAtTransactionId, Neo4Net.helpers.collection.Visitor<Neo4Net.kernel.impl.transaction.CommittedTransactionRepresentation,Exception> accumulator) throws Exception
 		 protected internal override void ExtractTransactions( long startingAtTransactionId, Visitor<CommittedTransactionRepresentation, Exception> accumulator )
 		 {
 			  try

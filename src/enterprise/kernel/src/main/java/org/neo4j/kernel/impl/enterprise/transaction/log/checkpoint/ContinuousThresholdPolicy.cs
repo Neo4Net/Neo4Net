@@ -32,10 +32,10 @@ namespace Neo4Net.Kernel.impl.enterprise.transaction.log.checkpoint
 	using SystemNanoClock = Neo4Net.Time.SystemNanoClock;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.checkpoint.CheckPointThreshold.or;
+//	import static Neo4Net.kernel.impl.transaction.log.checkpoint.CheckPointThreshold.or;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Service.Implementation(CheckPointThresholdPolicy.class) public class ContinuousThresholdPolicy extends org.Neo4Net.kernel.impl.transaction.log.checkpoint.CheckPointThresholdPolicy
+//ORIGINAL LINE: @Service.Implementation(CheckPointThresholdPolicy.class) public class ContinuousThresholdPolicy extends Neo4Net.kernel.impl.transaction.log.checkpoint.CheckPointThresholdPolicy
 	public class ContinuousThresholdPolicy : CheckPointThresholdPolicy
 	{
 		 public ContinuousThresholdPolicy() : base("continuous")

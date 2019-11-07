@@ -52,7 +52,7 @@ namespace Neo4Net.CommandLine.Admin.security
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.assertion.Assert.assertException;
+//	import static Neo4Net.test.assertion.Assert.assertException;
 
 	public class SetDefaultAdminCommandTest
 	{
@@ -81,11 +81,11 @@ namespace Neo4Net.CommandLine.Admin.security
 //ORIGINAL LINE: @Rule public org.junit.rules.ExpectedException expect = org.junit.rules.ExpectedException.none();
 		 public ExpectedException Expect = ExpectedException.none();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.TestDirectory testDir = org.Neo4Net.test.rule.TestDirectory.testDirectory(fileSystem);
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.TestDirectory testDir = Neo4Net.test.rule.TestDirectory.testDirectory(fileSystem);
 		 public TestDirectory TestDir;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Before public void setup() throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: @Before public void setup() throws java.io.IOException, Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void Setup()
 		 {

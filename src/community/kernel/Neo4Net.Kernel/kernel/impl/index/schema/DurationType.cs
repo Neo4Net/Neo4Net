@@ -26,9 +26,9 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using ValueGroup = Neo4Net.Values.Storable.ValueGroup;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.DurationIndexKey.AVG_DAY_SECONDS;
+//	import static Neo4Net.kernel.impl.index.schema.DurationIndexKey.AVG_DAY_SECONDS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.DurationIndexKey.AVG_MONTH_SECONDS;
+//	import static Neo4Net.kernel.impl.index.schema.DurationIndexKey.AVG_MONTH_SECONDS;
 
 	internal class DurationType : Type
 	{

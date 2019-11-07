@@ -33,13 +33,13 @@ namespace Neo4Net.Kernel.enterprise.builtinprocs
 	using PageCursorTracer = Neo4Net.Io.pagecache.tracing.cursor.PageCursorTracer;
 	using PageCursorTracerSupplier = Neo4Net.Io.pagecache.tracing.cursor.PageCursorTracerSupplier;
 	using EmptyVersionContextSupplier = Neo4Net.Io.pagecache.tracing.cursor.context.EmptyVersionContextSupplier;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
-	using KernelTransactionHandle = Neo4Net.Kernel.api.KernelTransactionHandle;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
+	using KernelTransactionHandle = Neo4Net.Kernel.Api.KernelTransactionHandle;
 	using InvalidArgumentsException = Neo4Net.Kernel.Api.Exceptions.InvalidArgumentsException;
-	using AutoIndexing = Neo4Net.Kernel.api.explicitindex.AutoIndexing;
-	using ExecutingQuery = Neo4Net.Kernel.api.query.ExecutingQuery;
-	using QuerySnapshot = Neo4Net.Kernel.api.query.QuerySnapshot;
-	using AuxiliaryTransactionStateManager = Neo4Net.Kernel.api.txstate.auxiliary.AuxiliaryTransactionStateManager;
+	using AutoIndexing = Neo4Net.Kernel.Api.explicitindex.AutoIndexing;
+	using ExecutingQuery = Neo4Net.Kernel.Api.query.ExecutingQuery;
+	using QuerySnapshot = Neo4Net.Kernel.Api.query.QuerySnapshot;
+	using AuxiliaryTransactionStateManager = Neo4Net.Kernel.Api.txstate.auxiliary.AuxiliaryTransactionStateManager;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using KernelTransactionImplementation = Neo4Net.Kernel.Impl.Api.KernelTransactionImplementation;
 	using SchemaState = Neo4Net.Kernel.Impl.Api.SchemaState;
@@ -81,9 +81,9 @@ namespace Neo4Net.Kernel.enterprise.builtinprocs
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.mock;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.util.collection.CollectionsFactorySupplier_Fields.ON_HEAP;
+//	import static Neo4Net.kernel.impl.util.collection.CollectionsFactorySupplier_Fields.ON_HEAP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.MockedNeoStores.mockedTokenHolders;
+//	import static Neo4Net.test.MockedNeoStores.mockedTokenHolders;
 
 	public class TransactionStatusResultTest
 	{
@@ -109,7 +109,7 @@ namespace Neo4Net.Kernel.enterprise.builtinprocs
 		 private TransactionDependenciesResolver _blockerResolver;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void statusOfTransactionWithSingleQuery() throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: @Test public void statusOfTransactionWithSingleQuery() throws Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void StatusOfTransactionWithSingleQuery()
 		 {
@@ -120,7 +120,7 @@ namespace Neo4Net.Kernel.enterprise.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void statusOfTransactionWithoutRunningQuery() throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: @Test public void statusOfTransactionWithoutRunningQuery() throws Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void StatusOfTransactionWithoutRunningQuery()
 		 {
@@ -131,7 +131,7 @@ namespace Neo4Net.Kernel.enterprise.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void statusOfTransactionWithMultipleQueries() throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: @Test public void statusOfTransactionWithMultipleQueries() throws Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void StatusOfTransactionWithMultipleQueries()
 		 {
@@ -142,7 +142,7 @@ namespace Neo4Net.Kernel.enterprise.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void statusOfTransactionWithDifferentTimeZone() throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: @Test public void statusOfTransactionWithDifferentTimeZone() throws Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void StatusOfTransactionWithDifferentTimeZone()
 		 {

@@ -28,21 +28,21 @@ namespace Neo4Net.Values.@virtual
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.booleanValue;
+//	import static Neo4Net.values.storable.Values.booleanValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.intValue;
+//	import static Neo4Net.values.storable.Values.intValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.longValue;
+//	import static Neo4Net.values.storable.Values.longValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.stringValue;
+//	import static Neo4Net.values.storable.Values.stringValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.@virtual.VirtualValueTestUtil.map;
+//	import static Neo4Net.values.@virtual.VirtualValueTestUtil.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.@virtual.VirtualValues.EMPTY_LIST;
+//	import static Neo4Net.values.@virtual.VirtualValues.EMPTY_LIST;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.@virtual.VirtualValues.concat;
+//	import static Neo4Net.values.@virtual.VirtualValues.concat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.@virtual.VirtualValues.list;
+//	import static Neo4Net.values.@virtual.VirtualValues.list;
 
 	internal class ConcatListTest
 	{

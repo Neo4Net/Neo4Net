@@ -65,7 +65,7 @@ namespace Neo4Net.causalclustering.upstream
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public abstract java.util.Optional<org.Neo4Net.causalclustering.identity.MemberId> upstreamDatabase() throws UpstreamDatabaseSelectionException;
+//ORIGINAL LINE: public abstract java.util.Optional<Neo4Net.causalclustering.identity.MemberId> upstreamDatabase() throws UpstreamDatabaseSelectionException;
 		 public abstract Optional<MemberId> UpstreamDatabase();
 
 		 public override string ToString()

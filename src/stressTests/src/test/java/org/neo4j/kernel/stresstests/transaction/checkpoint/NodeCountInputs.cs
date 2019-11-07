@@ -35,7 +35,7 @@ namespace Neo4Net.Kernel.stresstests.transaction.checkpoint
 	using Value = Neo4Net.Values.Storable.Value;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.input.Inputs.knownEstimates;
+//	import static Neo4Net.@unsafe.impl.batchimport.input.Inputs.knownEstimates;
 
 	public class NodeCountInputs : Input
 	{

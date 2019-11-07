@@ -38,7 +38,7 @@ namespace Neo4Net.Kernel.ha.com.master
 	using Clocks = Neo4Net.Time.Clocks;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.ha.HaSettings.lock_read_timeout;
+//	import static Neo4Net.kernel.ha.HaSettings.lock_read_timeout;
 
 	/// <summary>
 	/// Manages <seealso cref="Conversation"/> on master-side in HA.
@@ -103,7 +103,7 @@ namespace Neo4Net.Kernel.ha.com.master
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public Conversation acquire(org.Neo4Net.com.RequestContext context) throws org.Neo4Net.kernel.impl.util.collection.NoSuchEntryException, org.Neo4Net.kernel.impl.util.collection.ConcurrentAccessException
+//ORIGINAL LINE: public Conversation acquire(Neo4Net.com.RequestContext context) throws Neo4Net.kernel.impl.util.collection.NoSuchEntryException, Neo4Net.kernel.impl.util.collection.ConcurrentAccessException
 		 public virtual Conversation Acquire( RequestContext context )
 		 {
 			  return Conversations.acquire( context );
@@ -115,7 +115,7 @@ namespace Neo4Net.Kernel.ha.com.master
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void begin(org.Neo4Net.com.RequestContext context) throws org.Neo4Net.kernel.impl.util.collection.ConcurrentAccessException
+//ORIGINAL LINE: public void begin(Neo4Net.com.RequestContext context) throws Neo4Net.kernel.impl.util.collection.ConcurrentAccessException
 		 public virtual void Begin( RequestContext context )
 		 {
 			  Conversations.begin( context );

@@ -36,7 +36,7 @@ namespace Neo4Net.Kernel.impl.locking.community
 
 
 	// Please note. Except separate test cases for particular classes related to community locking
-	// see also org.Neo4Net.kernel.impl.locking.community.CommunityLocksCompatibility test suite
+	// see also Neo4Net.kernel.impl.locking.community.CommunityLocksCompatibility test suite
 
 	public class CommunityLockClient : Neo4Net.Kernel.impl.locking.Locks_Client
 	{

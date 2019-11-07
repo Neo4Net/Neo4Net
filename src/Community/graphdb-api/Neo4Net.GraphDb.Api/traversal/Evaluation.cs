@@ -23,7 +23,7 @@
 namespace Neo4Net.GraphDb.Traversal
 {
     /// <summary>
-    /// Outcome of <seealso cref="IEvaluator.evaluate(org.Neo4Net.graphdb.Path)"/>. An evaluation
+    /// Outcome of <seealso cref="IEvaluator.Evaluate(Neo4Net.GraphDb.Path)"/>. An evaluation
     /// can tell the traversal whether or not to continue down that
     /// <seealso cref="ITraversalBranch"/> and whether or not to include a
     /// <seealso cref="ITraversalBranch"/> in the result of a traversal.

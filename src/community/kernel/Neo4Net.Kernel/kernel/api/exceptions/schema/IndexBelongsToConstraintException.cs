@@ -28,7 +28,7 @@ namespace Neo4Net.Kernel.Api.Exceptions.schema
 		 private readonly SchemaDescriptor _descriptor;
 		 private const string MESSAGE = "Index belongs to constraint: %s";
 
-		 public IndexBelongsToConstraintException( SchemaDescriptor descriptor ) : base( org.Neo4Net.kernel.api.exceptions.Status_Schema.ForbiddenOnConstraintIndex, format( "Index belongs to constraint: %s", descriptor ) )
+		 public IndexBelongsToConstraintException( SchemaDescriptor descriptor ) : base( Neo4Net.kernel.api.exceptions.Status_Schema.ForbiddenOnConstraintIndex, format( "Index belongs to constraint: %s", descriptor ) )
 		 {
 			  this._descriptor = descriptor;
 		 }

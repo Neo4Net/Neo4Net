@@ -24,7 +24,7 @@ namespace Neo4Net.Cypher.Internal.javacompat
 
 	internal class UnstableSnapshotException : KernelException
 	{
-		 internal UnstableSnapshotException( string message, params object[] parameters ) : base( org.Neo4Net.kernel.api.exceptions.Status_Transaction.Outdated, message, parameters )
+		 internal UnstableSnapshotException( string message, params object[] parameters ) : base( Neo4Net.kernel.api.exceptions.Status_Transaction.Outdated, message, parameters )
 		 {
 		 }
 	}

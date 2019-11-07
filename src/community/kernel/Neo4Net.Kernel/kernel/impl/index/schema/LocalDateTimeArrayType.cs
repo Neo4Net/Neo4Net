@@ -31,7 +31,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 // long0Array (nanoOfSecond)
 		 // long1Array (epochSecond)
 
-		 internal LocalDateTimeArrayType( sbyte typeId ) : base( ValueGroup.LOCAL_DATE_TIME_ARRAY, typeId, ( o1, o2, i ) -> LocalDateTimeType.Compare( o1.long0Array[i], o1.long1Array[i], o2.long0Array[i], o2.long1Array[i] ), ( k, i ) -> LocalDateTimeType.AsValueRaw( k.long0Array[i], k.long1Array[i] ), ( c, k, i ) -> LocalDateTimeType.put( c, k.long0Array[i], k.long1Array[i] ), LocalDateTimeType.read, DateTime[]::new, org.Neo4Net.values.storable.ValueWriter_ArrayType.LocalDateTime )
+		 internal LocalDateTimeArrayType( sbyte typeId ) : base( ValueGroup.LOCAL_DATE_TIME_ARRAY, typeId, ( o1, o2, i ) -> LocalDateTimeType.Compare( o1.long0Array[i], o1.long1Array[i], o2.long0Array[i], o2.long1Array[i] ), ( k, i ) -> LocalDateTimeType.AsValueRaw( k.long0Array[i], k.long1Array[i] ), ( c, k, i ) -> LocalDateTimeType.put( c, k.long0Array[i], k.long1Array[i] ), LocalDateTimeType.read, DateTime[]::new, Neo4Net.values.storable.ValueWriter_ArrayType.LocalDateTime )
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Method reference constructor syntax is not converted by Java to C# Converter:
 		 }

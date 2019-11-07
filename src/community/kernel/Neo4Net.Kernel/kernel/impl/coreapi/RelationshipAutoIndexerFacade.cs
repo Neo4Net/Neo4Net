@@ -23,7 +23,7 @@ namespace Neo4Net.Kernel.impl.coreapi
 	using Relationship = Neo4Net.GraphDb.Relationship;
 	using ReadableRelationshipIndex = Neo4Net.GraphDb.Index.ReadableRelationshipIndex;
 	using RelationshipAutoIndexer = Neo4Net.GraphDb.Index.RelationshipAutoIndexer;
-	using AutoIndexOperations = Neo4Net.Kernel.api.explicitindex.AutoIndexOperations;
+	using AutoIndexOperations = Neo4Net.Kernel.Api.explicitindex.AutoIndexOperations;
 
 	public class RelationshipAutoIndexerFacade : AutoIndexerFacade<Relationship>, RelationshipAutoIndexer
 	{

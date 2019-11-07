@@ -35,7 +35,7 @@ namespace Neo4Net.Index.Internal.gbptree
 
 		 /// <summary>
 		 /// Writes a header into a <seealso cref="GBPTree"/> state page during
-		 /// <seealso cref="GBPTree.checkpoint(org.Neo4Net.io.pagecache.IOLimiter)"/>.
+		 /// <seealso cref="GBPTree.checkpoint(Neo4Net.io.pagecache.IOLimiter)"/>.
 		 /// </summary>
 		 public interface Writer
 		 {

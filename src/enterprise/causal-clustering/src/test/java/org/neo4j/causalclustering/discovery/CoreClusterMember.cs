@@ -47,13 +47,13 @@ namespace Neo4Net.causalclustering.discovery
 	using Level = Neo4Net.Logging.Level;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.log.RaftLog_Fields.RAFT_LOG_DIRECTORY_NAME;
+//	import static Neo4Net.causalclustering.core.consensus.log.RaftLog_Fields.RAFT_LOG_DIRECTORY_NAME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.AdvertisedSocketAddress.advertisedAddress;
+//	import static Neo4Net.helpers.AdvertisedSocketAddress.advertisedAddress;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.ListenSocketAddress.listenAddress;
+//	import static Neo4Net.helpers.ListenSocketAddress.listenAddress;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
+//	import static Neo4Net.helpers.collection.MapUtil.stringMap;
 
 	public class CoreClusterMember : ClusterMember<CoreGraphDatabase>
 	{

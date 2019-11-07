@@ -26,7 +26,7 @@ namespace Neo4Net.causalclustering.core.state.machines.id
 	using Test = org.junit.Test;
 
 	using PrimitiveLongCollections = Neo4Net.Collections.PrimitiveLongCollections;
-	using DatabaseManager = Neo4Net.Dbms.database.DatabaseManager;
+	using IDatabaseManager = Neo4Net.Dbms.database.DatabaseManager;
 	using DefaultFileSystemAbstraction = Neo4Net.Io.fs.DefaultFileSystemAbstraction;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using FileUtils = Neo4Net.Io.fs.FileUtils;
@@ -54,13 +54,13 @@ namespace Neo4Net.causalclustering.core.state.machines.id
 	public class RebuildReplicatedIdGeneratorsTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.TestDirectory testDirectory = Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public TestDirectory TestDirectory = TestDirectory.testDirectory();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.PageCacheRule pageCacheRule = new org.Neo4Net.test.rule.PageCacheRule();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.PageCacheRule pageCacheRule = new Neo4Net.test.rule.PageCacheRule();
 		 public PageCacheRule PageCacheRule = new PageCacheRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.fs.DefaultFileSystemRule fileSystemRule = new org.Neo4Net.test.rule.fs.DefaultFileSystemRule();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.fs.DefaultFileSystemRule fileSystemRule = new Neo4Net.test.rule.fs.DefaultFileSystemRule();
 		 public DefaultFileSystemRule FileSystemRule = new DefaultFileSystemRule();
 		 private ReplicatedIdRangeAcquirer _idRangeAcquirer = mock( typeof( ReplicatedIdRangeAcquirer ) );
 

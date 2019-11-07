@@ -37,16 +37,16 @@ namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 	using FullSecurityLog = Neo4Net.Server.security.enterprise.auth.MultiRealmAuthManagerRule.FullSecurityLog;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.map;
+//	import static Neo4Net.helpers.collection.MapUtil.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.security.auth.BasicAuthManagerTest.password;
+//	import static Neo4Net.server.security.auth.BasicAuthManagerTest.password;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.assertion.Assert.assertException;
+//	import static Neo4Net.test.assertion.Assert.assertException;
 
 	public class BoltInitChangePasswordTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.server.security.enterprise.auth.MultiRealmAuthManagerRule authManagerRule = new org.Neo4Net.server.security.enterprise.auth.MultiRealmAuthManagerRule(new org.Neo4Net.server.security.auth.InMemoryUserRepository(), new org.Neo4Net.server.security.auth.RateLimitedAuthenticationStrategy(java.time.Clock.systemUTC(), org.Neo4Net.kernel.configuration.Config.defaults()));
+//ORIGINAL LINE: @Rule public Neo4Net.server.security.enterprise.auth.MultiRealmAuthManagerRule authManagerRule = new Neo4Net.server.security.enterprise.auth.MultiRealmAuthManagerRule(new Neo4Net.server.security.auth.InMemoryUserRepository(), new Neo4Net.server.security.auth.RateLimitedAuthenticationStrategy(java.time.Clock.systemUTC(), Neo4Net.kernel.configuration.Config.defaults()));
 		 public MultiRealmAuthManagerRule AuthManagerRule = new MultiRealmAuthManagerRule( new InMemoryUserRepository(), new RateLimitedAuthenticationStrategy(Clock.systemUTC(), Config.defaults()) );
 		 private BasicAuthentication _authentication;
 

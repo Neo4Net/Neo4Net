@@ -34,12 +34,12 @@ namespace Neo4Net.Cypher.Internal.codegen
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.MatcherAssert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.map;
+//	import static Neo4Net.helpers.collection.MapUtil.map;
 
 	public class CompiledRuntimeEchoIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.EnterpriseDatabaseRule db = new org.Neo4Net.test.rule.EnterpriseDatabaseRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.EnterpriseDatabaseRule db = new Neo4Net.test.rule.EnterpriseDatabaseRule();
 		 public readonly EnterpriseDatabaseRule Db = new EnterpriseDatabaseRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

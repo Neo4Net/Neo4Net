@@ -26,7 +26,7 @@ namespace Neo4Net.Io.pagecache.impl
 	/// <summary>
 	/// A factory for SingleFilePageSwapper instances.
 	/// </summary>
-	/// <seealso cref= org.Neo4Net.io.pagecache.impl.SingleFilePageSwapper </seealso>
+	/// <seealso cref= Neo4Net.io.pagecache.impl.SingleFilePageSwapper </seealso>
 	public class SingleFilePageSwapperFactory : PageSwapperFactory
 	{
 		 private FileSystemAbstraction _fs;
@@ -37,7 +37,7 @@ namespace Neo4Net.Io.pagecache.impl
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.io.pagecache.PageSwapper createPageSwapper(java.io.File file, int filePageSize, org.Neo4Net.io.pagecache.PageEvictionCallback onEviction, boolean createIfNotExist, boolean noChannelStriping) throws java.io.IOException
+//ORIGINAL LINE: public Neo4Net.io.pagecache.PageSwapper createPageSwapper(java.io.File file, int filePageSize, Neo4Net.io.pagecache.PageEvictionCallback onEviction, boolean createIfNotExist, boolean noChannelStriping) throws java.io.IOException
 		 public override PageSwapper CreatePageSwapper( File file, int filePageSize, PageEvictionCallback onEviction, bool createIfNotExist, bool noChannelStriping )
 		 {
 			  if ( !_fs.fileExists( file ) )

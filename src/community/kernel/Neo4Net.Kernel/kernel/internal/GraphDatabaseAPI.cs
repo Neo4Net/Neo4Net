@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.Internal
 	using URLAccessValidationError = Neo4Net.GraphDb.security.URLAccessValidationError;
 	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
 	using InternalTransaction = Neo4Net.Kernel.impl.coreapi.InternalTransaction;
 	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
 
@@ -50,7 +50,7 @@ namespace Neo4Net.Kernel.Internal
 		 /// <param name="url"> the URL being validated </param>
 		 /// <returns> an updated URL that should be used for accessing the resource </returns>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: java.net.URL validateURLAccess(java.net.URL url) throws org.Neo4Net.graphdb.security.URLAccessValidationError;
+//ORIGINAL LINE: java.net.URL validateURLAccess(java.net.URL url) throws Neo4Net.graphdb.security.URLAccessValidationError;
 		 URL ValidateURLAccess( URL url );
 
 		 /// <returns> underlying database directory </returns>

@@ -65,14 +65,14 @@ namespace Neo4Net.Bolt
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertNotNull;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.TRUE;
+//	import static Neo4Net.kernel.configuration.Settings.TRUE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.assertion.Assert.assertEventually;
+//	import static Neo4Net.test.assertion.Assert.assertEventually;
 
 	public class BookmarkIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory directory = org.Neo4Net.test.rule.TestDirectory.testDirectory(getClass());
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.TestDirectory directory = Neo4Net.test.rule.TestDirectory.testDirectory(getClass());
 		 public readonly TestDirectory Directory = TestDirectory.testDirectory( this.GetType() );
 
 		 private Driver _driver;
@@ -195,7 +195,7 @@ namespace Neo4Net.Bolt
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected void applyToStore(org.Neo4Net.kernel.impl.api.TransactionToApply batch, org.Neo4Net.kernel.impl.transaction.tracing.CommitEvent commitEvent, org.Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode mode) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
+//ORIGINAL LINE: protected void applyToStore(Neo4Net.kernel.impl.api.TransactionToApply batch, Neo4Net.kernel.impl.transaction.tracing.CommitEvent commitEvent, Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode mode) throws Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 			  protected internal override void ApplyToStore( TransactionToApply batch, CommitEvent commitEvent, TransactionApplicationMode mode )
 			  {
 					CommitBlocker.blockWhileWritingToStoreIfNeeded();

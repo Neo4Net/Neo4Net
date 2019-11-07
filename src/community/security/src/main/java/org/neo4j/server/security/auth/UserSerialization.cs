@@ -37,7 +37,7 @@ namespace Neo4Net.Server.Security.Auth
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected org.Neo4Net.kernel.impl.security.User deserializeRecord(String line, int lineNumber) throws org.Neo4Net.server.security.auth.exception.FormatException
+//ORIGINAL LINE: protected Neo4Net.kernel.impl.security.User deserializeRecord(String line, int lineNumber) throws Neo4Net.server.security.auth.exception.FormatException
 		 protected internal override User DeserializeRecord( string line, int lineNumber )
 		 {
 			  string[] parts = line.Split( USER_SEPARATOR, false );
@@ -68,7 +68,7 @@ namespace Neo4Net.Server.Security.Auth
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private LegacyCredential deserializeCredentials(String part, int lineNumber) throws org.Neo4Net.server.security.auth.exception.FormatException
+//ORIGINAL LINE: private LegacyCredential deserializeCredentials(String part, int lineNumber) throws Neo4Net.server.security.auth.exception.FormatException
 		 private LegacyCredential DeserializeCredentials( string part, int lineNumber )
 		 {
 			  string[] split = part.Split( CREDENTIAL_SEPARATOR, false );

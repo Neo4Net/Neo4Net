@@ -36,7 +36,7 @@ namespace Neo4Net.Kernel.ha.management
 	using HighAvailability = Neo4Net.management.HighAvailability;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Service.Implementation(ManagementBeanProvider.class) public final class HighAvailabilityBean extends org.Neo4Net.jmx.impl.ManagementBeanProvider
+//ORIGINAL LINE: @Service.Implementation(ManagementBeanProvider.class) public final class HighAvailabilityBean extends Neo4Net.jmx.impl.ManagementBeanProvider
 	public sealed class HighAvailabilityBean : ManagementBeanProvider
 	{
 		 public HighAvailabilityBean() : base(typeof(HighAvailability))
@@ -53,7 +53,7 @@ namespace Neo4Net.Kernel.ha.management
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected org.Neo4Net.jmx.impl.Neo4NetMBean createMBean(org.Neo4Net.jmx.impl.ManagementData management) throws javax.management.NotCompliantMBeanException
+//ORIGINAL LINE: protected Neo4Net.jmx.impl.Neo4NetMBean createMBean(Neo4Net.jmx.impl.ManagementData management) throws javax.management.NotCompliantMBeanException
 		 protected internal override Neo4NetMBean CreateMBean( ManagementData management )
 		 {
 			  if ( !IsHA( management ) )
@@ -74,7 +74,7 @@ namespace Neo4Net.Kernel.ha.management
 			  internal readonly HighlyAvailableKernelData KernelData;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: HighAvailabilityImpl(org.Neo4Net.jmx.impl.ManagementData management) throws javax.management.NotCompliantMBeanException
+//ORIGINAL LINE: HighAvailabilityImpl(Neo4Net.jmx.impl.ManagementData management) throws javax.management.NotCompliantMBeanException
 			  internal HighAvailabilityImpl( ManagementData management ) : base( management )
 			  {
 					this.ManagementData = management;

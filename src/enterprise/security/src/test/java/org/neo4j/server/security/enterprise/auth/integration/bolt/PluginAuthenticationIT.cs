@@ -46,7 +46,7 @@ namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.Matchers.greaterThanOrEqualTo;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.map;
+//	import static Neo4Net.helpers.collection.MapUtil.map;
 
 	public class PluginAuthenticationIT : EnterpriseAuthenticationTestBase
 	{
@@ -55,7 +55,7 @@ namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 		 private static readonly string _defaultTestPluginRealms = string.join( ", ", _defaultTestPluginRealmList.stream().map(s => StringUtils.prependIfMissing(s, SecuritySettings.PLUGIN_REALM_NAME_PREFIX)).collect(Collectors.toList()) );
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: protected java.util.Map<org.Neo4Net.graphdb.config.Setting<?>,String> getSettings()
+//ORIGINAL LINE: protected java.util.Map<Neo4Net.graphdb.config.Setting<?>,String> getSettings()
 		 protected internal override IDictionary<Setting<object>, string> Settings
 		 {
 			 get

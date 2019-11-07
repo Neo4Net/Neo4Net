@@ -31,8 +31,8 @@ namespace Neo4Net.Kernel.Impl.Api.store
 	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
 	using Iterators = Neo4Net.Collections.Helpers.Iterators;
 	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor;
-	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
-	using ConstraintDescriptorFactory = Neo4Net.Kernel.api.schema.constraints.ConstraintDescriptorFactory;
+	using SchemaDescriptorFactory = Neo4Net.Kernel.Api.schema.SchemaDescriptorFactory;
+	using ConstraintDescriptorFactory = Neo4Net.Kernel.Api.schema.constraints.ConstraintDescriptorFactory;
 	using RecordStorageReaderTestBase = Neo4Net.Kernel.impl.storageengine.impl.recordstorage.RecordStorageReaderTestBase;
 	using TestEnterpriseGraphDatabaseFactory = Neo4Net.Test.TestEnterpriseGraphDatabaseFactory;
 
@@ -43,7 +43,7 @@ namespace Neo4Net.Kernel.Impl.Api.store
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.asSet;
+//	import static Neo4Net.helpers.collection.Iterators.asSet;
 
 	public class RecordStorageReaderSchemaWithPECTest : RecordStorageReaderTestBase
 	{

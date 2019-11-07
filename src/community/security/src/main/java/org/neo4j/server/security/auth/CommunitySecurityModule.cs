@@ -25,18 +25,18 @@ namespace Neo4Net.Server.Security.Auth
 	using Service = Neo4Net.Helpers.Service;
 	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
-	using AuthManager = Neo4Net.Kernel.api.security.AuthManager;
-	using PasswordPolicy = Neo4Net.Kernel.api.security.PasswordPolicy;
-	using SecurityModule = Neo4Net.Kernel.api.security.SecurityModule;
-	using UserManager = Neo4Net.Kernel.api.security.UserManager;
-	using UserManagerSupplier = Neo4Net.Kernel.api.security.UserManagerSupplier;
+	using AuthManager = Neo4Net.Kernel.Api.security.AuthManager;
+	using PasswordPolicy = Neo4Net.Kernel.Api.security.PasswordPolicy;
+	using SecurityModule = Neo4Net.Kernel.Api.security.SecurityModule;
+	using UserManager = Neo4Net.Kernel.Api.security.UserManager;
+	using UserManagerSupplier = Neo4Net.Kernel.Api.security.UserManagerSupplier;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using Procedures = Neo4Net.Kernel.impl.proc.Procedures;
 	using LogProvider = Neo4Net.Logging.LogProvider;
 	using Clocks = Neo4Net.Time.Clocks;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Service.Implementation(SecurityModule.class) public class CommunitySecurityModule extends org.Neo4Net.kernel.api.security.SecurityModule
+//ORIGINAL LINE: @Service.Implementation(SecurityModule.class) public class CommunitySecurityModule extends Neo4Net.kernel.api.security.SecurityModule
 	public class CommunitySecurityModule : SecurityModule
 	{
 		 public const string COMMUNITY_SECURITY_MODULE_ID = "community-security-module";
@@ -48,7 +48,7 @@ namespace Neo4Net.Server.Security.Auth
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void setup(Dependencies dependencies) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: public void setup(Dependencies dependencies) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 public override void Setup( Dependencies dependencies )
 		 {
 			  Config config = dependencies.Config();
@@ -63,7 +63,7 @@ namespace Neo4Net.Server.Security.Auth
 			  UserRepository initialUserRepository = GetInitialUserRepository( config, logProvider, fileSystem );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.api.security.PasswordPolicy passwordPolicy = new BasicPasswordPolicy();
+//ORIGINAL LINE: final Neo4Net.kernel.api.security.PasswordPolicy passwordPolicy = new BasicPasswordPolicy();
 			  PasswordPolicy passwordPolicy = new BasicPasswordPolicy();
 
 			  _authManager = new BasicAuthManager( userRepository, passwordPolicy, Clocks.systemClock(), initialUserRepository, config );

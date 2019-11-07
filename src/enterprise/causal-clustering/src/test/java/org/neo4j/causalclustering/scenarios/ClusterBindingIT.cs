@@ -60,13 +60,13 @@ namespace Neo4Net.causalclustering.scenarios
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.TestStoreId.assertAllStoresHaveTheSameStoreId;
+//	import static Neo4Net.causalclustering.TestStoreId.assertAllStoresHaveTheSameStoreId;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.server.CoreServerModule.CLUSTER_ID_NAME;
+//	import static Neo4Net.causalclustering.core.server.CoreServerModule.CLUSTER_ID_NAME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.Label.label;
+//	import static Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.MetaDataStore.Position.RANDOM_NUMBER;
+//	import static Neo4Net.kernel.impl.store.MetaDataStore.Position.RANDOM_NUMBER;
 
 	public class ClusterBindingIT
 	{
@@ -94,7 +94,7 @@ namespace Neo4Net.causalclustering.scenarios
 		 public RuleChain RuleChain;
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private org.Neo4Net.causalclustering.discovery.Cluster<?> cluster;
+//ORIGINAL LINE: private Neo4Net.causalclustering.discovery.Cluster<?> cluster;
 		 private Cluster<object> _cluster;
 		 private FileSystemAbstraction _fs;
 
@@ -307,7 +307,7 @@ namespace Neo4Net.causalclustering.scenarios
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void changeClusterId(org.Neo4Net.causalclustering.discovery.CoreClusterMember coreMember) throws java.io.IOException
+//ORIGINAL LINE: private void changeClusterId(Neo4Net.causalclustering.discovery.CoreClusterMember coreMember) throws java.io.IOException
 		 private void ChangeClusterId( CoreClusterMember coreMember )
 		 {
 			  SimpleStorage<ClusterId> clusterIdStorage = new SimpleFileStorage<ClusterId>( _fs, coreMember.ClusterStateDirectory(), CLUSTER_ID_NAME, new ClusterId.Marshal(), NullLogProvider.Instance );
@@ -315,7 +315,7 @@ namespace Neo4Net.causalclustering.scenarios
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void changeStoreId(org.Neo4Net.io.layout.DatabaseLayout databaseLayout) throws Exception
+//ORIGINAL LINE: private void changeStoreId(Neo4Net.io.layout.DatabaseLayout databaseLayout) throws Exception
 		 private void ChangeStoreId( DatabaseLayout databaseLayout )
 		 {
 			  File neoStoreFile = databaseLayout.MetadataStore();

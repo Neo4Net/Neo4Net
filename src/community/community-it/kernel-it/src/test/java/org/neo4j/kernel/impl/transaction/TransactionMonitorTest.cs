@@ -40,7 +40,7 @@ namespace Neo4Net.Kernel.impl.transaction
 	{
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Parameterized.Parameter(0) public org.Neo4Net.function.ThrowingConsumer<org.Neo4Net.graphdb.GraphDatabaseService,Exception> dbConsumer;
+//ORIGINAL LINE: @Parameterized.Parameter(0) public Neo4Net.function.ThrowingConsumer<Neo4Net.graphdb.GraphDatabaseService,Exception> dbConsumer;
 		 public ThrowingConsumer<GraphDatabaseService, Exception> DbConsumer;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

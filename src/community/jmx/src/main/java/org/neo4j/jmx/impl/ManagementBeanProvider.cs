@@ -84,7 +84,7 @@ namespace Neo4Net.Jmx.impl
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: final Iterable<? extends Neo4NetMBean> loadBeans(org.Neo4Net.kernel.internal.KernelData kernel, ManagementSupport support) throws Exception
+//ORIGINAL LINE: final Iterable<? extends Neo4NetMBean> loadBeans(Neo4Net.kernel.internal.KernelData kernel, ManagementSupport support) throws Exception
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		 internal IEnumerable<Neo4NetMBean> LoadBeans( KernelData kernel, ManagementSupport support )
 		 {

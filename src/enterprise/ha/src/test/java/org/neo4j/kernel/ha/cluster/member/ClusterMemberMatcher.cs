@@ -102,7 +102,7 @@ namespace Neo4Net.Kernel.ha.cluster.member
 			  if ( item is System.Collections.IEnumerable )
 			  {
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") Iterable<org.Neo4Net.management.ClusterMemberInfo> other = (Iterable<org.Neo4Net.management.ClusterMemberInfo>) item;
+//ORIGINAL LINE: @SuppressWarnings("unchecked") Iterable<Neo4Net.management.ClusterMemberInfo> other = (Iterable<Neo4Net.management.ClusterMemberInfo>) item;
 					IEnumerable<ClusterMemberInfo> other = ( IEnumerable<ClusterMemberInfo> ) item;
 					int foundCount = 0;
 					foreach ( ClusterMemberMatch expectedMember in _expectedMembers )

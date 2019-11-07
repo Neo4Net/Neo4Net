@@ -231,7 +231,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void flushAndForce(org.Neo4Net.io.pagecache.IOLimiter limiter) throws java.io.IOException
+//ORIGINAL LINE: public void flushAndForce(Neo4Net.io.pagecache.IOLimiter limiter) throws java.io.IOException
 			 public override void flushAndForce( IOLimiter limiter )
 			 {
 				  base.flushAndForce( limiter );
@@ -245,7 +245,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 		 {
 			  RecordStorageEngine engine = BuildRecordStorageEngine();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.Collection<org.Neo4Net.Kernel.Api.StorageEngine.StoreFileMetadata> files = engine.listStorageFiles();
+//ORIGINAL LINE: final java.util.Collection<Neo4Net.Kernel.Api.StorageEngine.StoreFileMetadata> files = engine.listStorageFiles();
 			  ICollection<StoreFileMetadata> files = engine.ListStorageFiles();
 //JAVA TO C# CONVERTER TODO TASK: Method reference arbitrary object instance method syntax is not converted by Java to C# Converter:
 //JAVA TO C# CONVERTER TODO TASK: Most Java stream collectors are not converted by Java to C# Converter:
@@ -323,7 +323,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static org.Neo4Net.kernel.impl.api.TransactionToApply newTransactionThatFailsWith(Exception error) throws java.io.IOException
+//ORIGINAL LINE: private static Neo4Net.kernel.impl.api.TransactionToApply newTransactionThatFailsWith(Exception error) throws java.io.IOException
 		 private static TransactionToApply NewTransactionThatFailsWith( Exception error )
 		 {
 			  TransactionRepresentation transaction = mock( typeof( TransactionRepresentation ) );
@@ -376,14 +376,14 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.kernel.impl.api.TransactionApplier startTx(org.Neo4Net.Kernel.Api.StorageEngine.CommandsToApply transaction) throws java.io.IOException
+//ORIGINAL LINE: public Neo4Net.kernel.impl.api.TransactionApplier startTx(Neo4Net.Kernel.Api.StorageEngine.CommandsToApply transaction) throws java.io.IOException
 			  public override TransactionApplier StartTx( CommandsToApply transaction )
 			  {
 					return Actual.startTx( transaction );
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.kernel.impl.api.TransactionApplier startTx(org.Neo4Net.Kernel.Api.StorageEngine.CommandsToApply transaction, org.Neo4Net.kernel.impl.locking.LockGroup lockGroup) throws java.io.IOException
+//ORIGINAL LINE: public Neo4Net.kernel.impl.api.TransactionApplier startTx(Neo4Net.Kernel.Api.StorageEngine.CommandsToApply transaction, Neo4Net.kernel.impl.locking.LockGroup lockGroup) throws java.io.IOException
 			  public override TransactionApplier StartTx( CommandsToApply transaction, LockGroup lockGroup )
 			  {
 					return Actual.startTx( transaction, lockGroup );

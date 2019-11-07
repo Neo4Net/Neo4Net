@@ -85,7 +85,7 @@ namespace Neo4Net.causalclustering.helper
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void set(org.Neo4Net.kernel.lifecycle.Lifecycle lifecycle) throws Throwable
+//ORIGINAL LINE: void set(Neo4Net.kernel.lifecycle.Lifecycle lifecycle) throws Throwable
 			  internal void Set( Neo4Net.Kernel.Lifecycle.Lifecycle lifecycle )
 			  {
 					_operation.accept( lifecycle );

@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.impl.recovery
 	using EphemeralFileSystemAbstraction = Neo4Net.GraphDb.mockfs.EphemeralFileSystemAbstraction;
 	using UncloseableDelegatingFileSystemAbstraction = Neo4Net.GraphDb.mockfs.UncloseableDelegatingFileSystemAbstraction;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
-	using StatementConstants = Neo4Net.Kernel.api.StatementConstants;
+	using StatementConstants = Neo4Net.Kernel.Api.StatementConstants;
 	using NodeCommand = Neo4Net.Kernel.impl.transaction.command.Command.NodeCommand;
 	using NodeCountsCommand = Neo4Net.Kernel.impl.transaction.command.Command.NodeCountsCommand;
 	using LogPosition = Neo4Net.Kernel.impl.transaction.log.LogPosition;
@@ -39,25 +39,25 @@ namespace Neo4Net.Kernel.impl.recovery
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.MatcherAssert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.mockito.matcher.LogMatchers.checkPoint;
+//	import static Neo4Net.test.mockito.matcher.LogMatchers.checkPoint;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.mockito.matcher.LogMatchers.commandEntry;
+//	import static Neo4Net.test.mockito.matcher.LogMatchers.commandEntry;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.mockito.matcher.LogMatchers.commitEntry;
+//	import static Neo4Net.test.mockito.matcher.LogMatchers.commitEntry;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.mockito.matcher.LogMatchers.containsExactly;
+//	import static Neo4Net.test.mockito.matcher.LogMatchers.containsExactly;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.mockito.matcher.LogMatchers.logEntries;
+//	import static Neo4Net.test.mockito.matcher.LogMatchers.logEntries;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.mockito.matcher.LogMatchers.startEntry;
+//	import static Neo4Net.test.mockito.matcher.LogMatchers.startEntry;
 
 	public class KernelRecoveryTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.fs.EphemeralFileSystemRule fsRule = new org.Neo4Net.test.rule.fs.EphemeralFileSystemRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.fs.EphemeralFileSystemRule fsRule = new Neo4Net.test.rule.fs.EphemeralFileSystemRule();
 		 public readonly EphemeralFileSystemRule FsRule = new EphemeralFileSystemRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.TestDirectory testDirectory = Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory TestDirectory = TestDirectory.testDirectory();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

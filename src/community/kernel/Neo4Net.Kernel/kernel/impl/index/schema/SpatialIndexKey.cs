@@ -28,7 +28,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using Values = Neo4Net.Values.Storable.Values;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.NO_VALUE;
+//	import static Neo4Net.values.storable.Values.NO_VALUE;
 
 	/// <summary>
 	/// Includes value and IEntity id (to be able to handle non-unique values).

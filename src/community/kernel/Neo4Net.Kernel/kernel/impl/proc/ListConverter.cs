@@ -26,9 +26,9 @@ namespace Neo4Net.Kernel.impl.proc
 	using Neo4NetTypes = Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.procs.DefaultParameterValue.ntList;
+//	import static Neo4Net.Kernel.Api.Internal.procs.DefaultParameterValue.ntList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.proc.ParseUtil.parseList;
+//	import static Neo4Net.kernel.impl.proc.ParseUtil.parseList;
 
 
 	public class ListConverter : System.Func<string, DefaultParameterValue>

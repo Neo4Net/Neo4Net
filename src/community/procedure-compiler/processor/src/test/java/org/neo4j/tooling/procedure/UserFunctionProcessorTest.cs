@@ -53,9 +53,9 @@ namespace Neo4Net.Tooling.procedure
 
 			  UnsuccessfulCompilationClause compilation = assert_().about(javaSource()).that(function).processedWith(Processor()).failsToCompile().withErrorCount(2);
 
-			  compilation.withErrorContaining( "@org.Neo4Net.procedure.Name usage error: missing on parameter <parameter>" ).@in( function ).onLine( 28 );
+			  compilation.withErrorContaining( "@Neo4Net.procedure.Name usage error: missing on parameter <parameter>" ).@in( function ).onLine( 28 );
 
-			  compilation.withErrorContaining( "@org.Neo4Net.procedure.Name usage error: missing on parameter <otherParam>" ).@in( function ).onLine( 28 );
+			  compilation.withErrorContaining( "@Neo4Net.procedure.Name usage error: missing on parameter <otherParam>" ).@in( function ).onLine( 28 );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -64,7 +64,7 @@ namespace Neo4Net.Tooling.procedure
 		 {
 			  JavaFileObject function = JavaFileObjectUtils.INSTANCE.procedureSource( "invalid/bad_return_type/BadReturnTypeUserFunction.java" );
 
-			  assert_().about(javaSource()).that(function).processedWith(Processor()).failsToCompile().withErrorCount(1).withErrorContaining("Unsupported return type <java.util.stream.Stream<java.lang.Long>> of function defined in " + "<org.Neo4Net.tooling.procedure.procedures.invalid.bad_return_type.BadReturnTypeUserFunction#wrongReturnTypeFunction>").@in(function).onLine(36);
+			  assert_().about(javaSource()).that(function).processedWith(Processor()).failsToCompile().withErrorCount(1).withErrorContaining("Unsupported return type <java.util.stream.Stream<java.lang.Long>> of function defined in " + "<Neo4Net.tooling.procedure.procedures.invalid.bad_return_type.BadReturnTypeUserFunction#wrongReturnTypeFunction>").@in(function).onLine(36);
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -98,7 +98,7 @@ namespace Neo4Net.Tooling.procedure
 			  JavaFileObject firstDuplicate = JavaFileObjectUtils.INSTANCE.procedureSource( "invalid/duplicated/UserFunction1.java" );
 			  JavaFileObject secondDuplicate = JavaFileObjectUtils.INSTANCE.procedureSource( "invalid/duplicated/UserFunction2.java" );
 
-			  assert_().about(javaSources()).that(asList(firstDuplicate, secondDuplicate)).processedWith(Processor()).failsToCompile().withErrorCount(2).withErrorContaining("Procedure|function name <org.Neo4Net.tooling.procedure.procedures.invalid.duplicated.foobar> is " + "already defined 2 times. It should be defined only once!");
+			  assert_().about(javaSources()).that(asList(firstDuplicate, secondDuplicate)).processedWith(Processor()).failsToCompile().withErrorCount(2).withErrorContaining("Procedure|function name <Neo4Net.tooling.procedure.procedures.invalid.duplicated.foobar> is " + "already defined 2 times. It should be defined only once!");
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

@@ -45,16 +45,16 @@ namespace Neo4Net.Server.rest.transactional
 	using TransactionUriScheme = Neo4Net.Server.rest.web.TransactionUriScheme;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.addToCollection;
+//	import static Neo4Net.helpers.collection.Iterators.addToCollection;
 
 	/// <summary>
 	/// Encapsulates executing statements in a transaction, committing the transaction, or rolling it back.
 	/// 
 	/// Constructing a <seealso cref="TransactionHandle"/> does not immediately ask the kernel to create a
-	/// <seealso cref="org.Neo4Net.kernel.api.KernelTransaction"/>; instead a <seealso cref="org.Neo4Net.kernel.api.KernelTransaction"/> is
+	/// <seealso cref="Neo4Net.kernel.api.KernelTransaction"/>; instead a <seealso cref="Neo4Net.kernel.api.KernelTransaction"/> is
 	/// only created when the first statements need to be executed.
 	/// 
-	/// At the end of each statement-executing method, the <seealso cref="org.Neo4Net.kernel.api.KernelTransaction"/> is either
+	/// At the end of each statement-executing method, the <seealso cref="Neo4Net.kernel.api.KernelTransaction"/> is either
 	/// suspended (ready to be resumed by a later operation), or committed, or rolled back.
 	/// 
 	/// If you acquire instances of this class from <seealso cref="TransactionHandleRegistry"/>, it will prevent concurrent access to
@@ -202,7 +202,7 @@ namespace Neo4Net.Server.rest.transactional
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void ensureActiveTransaction() throws org.Neo4Net.server.rest.transactional.error.InternalBeginTransactionError
+//ORIGINAL LINE: private void ensureActiveTransaction() throws Neo4Net.server.rest.transactional.error.InternalBeginTransactionError
 		 private void EnsureActiveTransaction()
 		 {
 			  if ( _context == null )
@@ -358,7 +358,7 @@ namespace Neo4Net.Server.rest.transactional
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.graphdb.Result safelyExecute(Statement statement, boolean hasPeriodicCommit, org.Neo4Net.kernel.impl.query.TransactionalContext tc) throws org.Neo4Net.kernel.impl.query.QueryExecutionKernelException, java.io.IOException
+//ORIGINAL LINE: private Neo4Net.graphdb.Result safelyExecute(Statement statement, boolean hasPeriodicCommit, Neo4Net.kernel.impl.query.TransactionalContext tc) throws Neo4Net.kernel.impl.query.QueryExecutionKernelException, java.io.IOException
 		 private Result SafelyExecute( Statement statement, bool hasPeriodicCommit, TransactionalContext tc )
 		 {
 			  try

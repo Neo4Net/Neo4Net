@@ -23,7 +23,7 @@ namespace Neo4Net.Helpers
 {
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.asSet;
+//	import static Neo4Net.helpers.collection.Iterators.asSet;
 
 	/// <summary>
 	/// Socket address derived from configuration.

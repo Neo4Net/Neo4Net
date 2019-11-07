@@ -25,15 +25,15 @@
 namespace Neo4Net.Server.security.enterprise.auth.plugin
 {
 
-	using InvalidAuthTokenException = Neo4Net.Kernel.api.security.exception.InvalidAuthTokenException;
+	using InvalidAuthTokenException = Neo4Net.Kernel.Api.security.exception.InvalidAuthTokenException;
 	using AuthToken = Neo4Net.Server.security.enterprise.auth.plugin.api.AuthToken;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.security.AuthToken_Fields.PRINCIPAL;
+//	import static Neo4Net.kernel.api.security.AuthToken_Fields.PRINCIPAL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.security.AuthToken_Fields.CREDENTIALS;
+//	import static Neo4Net.kernel.api.security.AuthToken_Fields.CREDENTIALS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.security.AuthToken_Fields.PARAMETERS;
+//	import static Neo4Net.kernel.api.security.AuthToken_Fields.PARAMETERS;
 
 	public class PluginApiAuthToken : AuthToken
 	{
@@ -77,19 +77,19 @@ namespace Neo4Net.Server.security.enterprise.auth.plugin
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static PluginApiAuthToken createFromMap(java.util.Map<String,Object> authTokenMap) throws org.Neo4Net.kernel.api.security.exception.InvalidAuthTokenException
+//ORIGINAL LINE: public static PluginApiAuthToken createFromMap(java.util.Map<String,Object> authTokenMap) throws Neo4Net.kernel.api.security.exception.InvalidAuthTokenException
 		 public static PluginApiAuthToken CreateFromMap( IDictionary<string, object> authTokenMap )
 		 {
-			  string scheme = Neo4Net.Kernel.api.security.AuthToken.safeCast( Neo4Net.Kernel.api.security.AuthToken_Fields.SCHEME_KEY, authTokenMap );
+			  string scheme = Neo4Net.Kernel.Api.security.AuthToken.safeCast( Neo4Net.Kernel.Api.security.AuthToken_Fields.SCHEME_KEY, authTokenMap );
 
 			  // Always require principal
-			  string principal = Neo4Net.Kernel.api.security.AuthToken.safeCast( PRINCIPAL, authTokenMap );
+			  string principal = Neo4Net.Kernel.Api.security.AuthToken.safeCast( PRINCIPAL, authTokenMap );
 
 			  sbyte[] credentials = null;
-			  if ( scheme.Equals( Neo4Net.Kernel.api.security.AuthToken_Fields.BASIC_SCHEME ) )
+			  if ( scheme.Equals( Neo4Net.Kernel.Api.security.AuthToken_Fields.BASIC_SCHEME ) )
 			  {
 					// Basic scheme requires credentials
-					credentials = Neo4Net.Kernel.api.security.AuthToken.safeCastCredentials( CREDENTIALS, authTokenMap );
+					credentials = Neo4Net.Kernel.Api.security.AuthToken.safeCastCredentials( CREDENTIALS, authTokenMap );
 			  }
 			  else
 			  {
@@ -100,7 +100,7 @@ namespace Neo4Net.Server.security.enterprise.auth.plugin
 						 credentials = ( sbyte[] ) credentialsObject;
 					}
 			  }
-			  IDictionary<string, object> parameters = Neo4Net.Kernel.api.security.AuthToken.safeCastMap( PARAMETERS, authTokenMap );
+			  IDictionary<string, object> parameters = Neo4Net.Kernel.Api.security.AuthToken.safeCastMap( PARAMETERS, authTokenMap );
 
 			  return PluginApiAuthToken.Of( principal, credentials != null ? StandardCharsets.UTF_8.decode( ByteBuffer.wrap( credentials ) ).array() : null, parameters );
 		 }

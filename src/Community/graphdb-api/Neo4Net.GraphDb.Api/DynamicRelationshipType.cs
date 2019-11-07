@@ -97,10 +97,7 @@ namespace Neo4Net.GraphDb
       /// names.
       /// </summary>
       /// <returns> the name of the relationship type </returns>
-      public string Name()
-      {
-         return _name;
-      }
+      public string Name => _name;
 
       /// <summary>
       /// Returns a string representation of this dynamic relationship type.

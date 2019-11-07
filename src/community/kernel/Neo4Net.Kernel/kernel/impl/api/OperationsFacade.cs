@@ -22,8 +22,8 @@
 namespace Neo4Net.Kernel.Impl.Api
 {
 
-	using QueryRegistryOperations = Neo4Net.Kernel.api.QueryRegistryOperations;
-	using ExecutingQuery = Neo4Net.Kernel.api.query.ExecutingQuery;
+	using QueryRegistryOperations = Neo4Net.Kernel.Api.QueryRegistryOperations;
+	using ExecutingQuery = Neo4Net.Kernel.Api.query.ExecutingQuery;
 	using QueryRegistrationOperations = Neo4Net.Kernel.Impl.Api.operations.QueryRegistrationOperations;
 	using ClientConnectionInfo = Neo4Net.Kernel.impl.query.clientconnection.ClientConnectionInfo;
 	using MapValue = Neo4Net.Values.@virtual.MapValue;

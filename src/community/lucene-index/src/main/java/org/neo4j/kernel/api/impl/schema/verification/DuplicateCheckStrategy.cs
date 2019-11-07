@@ -48,7 +48,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.verification
 		 /// <param name="nodeId"> checked node id </param>
 		 /// <exception cref="IndexEntryConflictException"> </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: abstract void checkForDuplicate(org.Neo4Net.values.storable.Value[] values, long nodeId) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException;
+//ORIGINAL LINE: abstract void checkForDuplicate(Neo4Net.values.storable.Value[] values, long nodeId) throws Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException;
 		 internal abstract void CheckForDuplicate( Value[] values, long nodeId );
 
 		 /// <summary>
@@ -57,7 +57,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.verification
 		 /// <param name="nodeId"> checked node id </param>
 		 /// <exception cref="IndexEntryConflictException"> </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: abstract void checkForDuplicate(org.Neo4Net.values.storable.Value value, long nodeId) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException;
+//ORIGINAL LINE: abstract void checkForDuplicate(Neo4Net.values.storable.Value value, long nodeId) throws Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException;
 		 internal abstract void CheckForDuplicate( Value value, long nodeId );
 
 		 private static bool PropertyValuesEqual( Value[] properties, Value[] values )
@@ -89,11 +89,11 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.verification
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void checkForDuplicate(org.Neo4Net.values.storable.Value[] values, long nodeId) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: public void checkForDuplicate(Neo4Net.values.storable.Value[] values, long nodeId) throws Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 			  public override void CheckForDuplicate( Value[] values, long nodeId )
 			  {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.values.storable.ValueTuple key = org.Neo4Net.values.storable.ValueTuple.of(values);
+//ORIGINAL LINE: final Neo4Net.values.storable.ValueTuple key = Neo4Net.values.storable.ValueTuple.of(values);
 					ValueTuple key = ValueTuple.of( values );
 					if ( ValueNodeIdMap.containsKey( key ) )
 					{
@@ -103,7 +103,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.verification
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void checkForDuplicate(org.Neo4Net.values.storable.Value value, long nodeId) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: void checkForDuplicate(Neo4Net.values.storable.Value value, long nodeId) throws Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 			  internal override void CheckForDuplicate( Value value, long nodeId )
 			  {
 					if ( ValueNodeIdMap.containsKey( value ) )
@@ -141,7 +141,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.verification
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void checkForDuplicate(org.Neo4Net.values.storable.Value[] values, long nodeId) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: public void checkForDuplicate(Neo4Net.values.storable.Value[] values, long nodeId) throws Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 			  public override void CheckForDuplicate( Value[] values, long nodeId )
 			  {
 					BucketEntry current = BucketEntrySet( Arrays.GetHashCode( values ), BucketSetSize );
@@ -174,7 +174,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.verification
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void checkForDuplicate(org.Neo4Net.values.storable.Value propertyValue, long nodeId) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: void checkForDuplicate(Neo4Net.values.storable.Value propertyValue, long nodeId) throws Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 			  internal override void CheckForDuplicate( Value propertyValue, long nodeId )
 			  {
 					BucketEntry current = BucketEntrySet( propertyValue.GetHashCode(), BucketSetSize );

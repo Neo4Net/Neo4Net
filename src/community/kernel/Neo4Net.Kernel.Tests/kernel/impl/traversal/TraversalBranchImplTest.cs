@@ -44,7 +44,7 @@ namespace Neo4Net.Kernel.impl.traversal
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.traversal.Evaluation.INCLUDE_AND_CONTINUE;
+//	import static Neo4Net.graphdb.traversal.Evaluation.IncludeAndContinue;
 
 	public class TraversalBranchImplTest
 	{
@@ -57,11 +57,11 @@ namespace Neo4Net.Kernel.impl.traversal
 			  Node source = mock( typeof( Node ) );
 			  TraversalBranchImpl branch = new TraversalBranchImpl( parent, source );
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("rawtypes") org.Neo4Net.graphdb.PathExpander expander = mock(org.Neo4Net.graphdb.PathExpander.class);
+//ORIGINAL LINE: @SuppressWarnings("rawtypes") Neo4Net.graphdb.PathExpander expander = mock(Neo4Net.graphdb.PathExpander.class);
 			  PathExpander expander = mock( typeof( PathExpander ) );
 			  when( expander.expand( eq( branch ), any( typeof( BranchState ) ) ) ).thenReturn( Iterables.emptyResourceIterable() );
 			  TraversalContext context = mock( typeof( TraversalContext ) );
-			  when( context.Evaluate( eq( branch ), Null ) ).thenReturn( INCLUDE_AND_CONTINUE );
+			  when( context.Evaluate( eq( branch ), Null ) ).thenReturn( IncludeAndContinue );
 
 			  // WHEN initializing
 			  branch.Initialize( expander, context );

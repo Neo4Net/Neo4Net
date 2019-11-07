@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.impl.util
 	using Neo4Net.GraphDb;
 	using Iterators = Neo4Net.Collections.Helpers.Iterators;
 
-	public class IOCursorAsResourceIterable<T> : ResourceIterable<T>
+	public class IOCursorAsResourceIterable<T> :IResourceIterable<T>
 	{
 		 private readonly IOCursor<T> _cursor;
 
@@ -34,7 +34,7 @@ namespace Neo4Net.Kernel.impl.util
 			  this._cursor = cursor;
 		 }
 
-		 public override ResourceIterator<T> Iterator()
+		 public override IResourceIterator<T> Iterator()
 		 {
 			  try
 			  {
@@ -56,7 +56,7 @@ namespace Neo4Net.Kernel.impl.util
 			  }
 		 }
 
-		 private class ResourceIteratorAnonymousInnerClass : ResourceIterator<T>
+		 private class ResourceIteratorAnonymousInnerClass : IResourceIterator<T>
 		 {
 			 private readonly IOCursorAsResourceIterable<T> _outerInstance;
 

@@ -62,7 +62,7 @@ namespace Neo4Net.Kernel.impl.traversal
 			  return new TraversalBranchWithState( this, Length() + 1, node, relationship, StateForChildren );
 		 }
 
-		 protected internal override ResourceIterator<Relationship> ExpandRelationshipsWithoutChecks( PathExpander expander )
+		 protected internal override IResourceIterator<Relationship> ExpandRelationshipsWithoutChecks( PathExpander expander )
 		 {
 			  System.Collections.IEnumerable expandIterable = expander.expand( this, this );
 			  return Iterators.asResourceIterator( expandIterable.GetEnumerator() );

@@ -34,15 +34,15 @@ namespace Neo4Net.Kernel.impl.traversal
 	using Traverser = Neo4Net.GraphDb.Traversal.Traverser;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.traversal.BranchCollisionPolicies.STANDARD;
+//	import static Neo4Net.graphdb.traversal.BranchCollisionPolicies.STANDARD;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.traversal.SideSelectorPolicies.ALTERNATING;
+//	import static Neo4Net.graphdb.traversal.SideSelectorPolicies.ALTERNATING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.traversal.MonoDirectionalTraversalDescription.NO_STATEMENT;
+//	import static Neo4Net.kernel.impl.traversal.MonoDirectionalTraversalDescription.NO_STATEMENT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.traversal.MonoDirectionalTraversalDescription.addEvaluator;
+//	import static Neo4Net.kernel.impl.traversal.MonoDirectionalTraversalDescription.addEvaluator;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.traversal.MonoDirectionalTraversalDescription.nullCheck;
+//	import static Neo4Net.kernel.impl.traversal.MonoDirectionalTraversalDescription.nullCheck;
 
 	public class BidirectionalTraversalDescriptionImpl : BidirectionalTraversalDescription
 	{
@@ -55,7 +55,7 @@ namespace Neo4Net.Kernel.impl.traversal
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
 		 internal readonly BranchCollisionPolicy CollisionPolicyConflict;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: final System.Func<? extends org.Neo4Net.graphdb.Resource> statementFactory;
+//ORIGINAL LINE: final System.Func<? extends Neo4Net.graphdb.Resource> statementFactory;
 		 internal readonly System.Func<Resource> StatementFactory;
 		 internal readonly int MaxDepth;
 
@@ -123,7 +123,7 @@ namespace Neo4Net.Kernel.impl.traversal
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public org.Neo4Net.graphdb.traversal.Traverser traverse(final Iterable<org.Neo4Net.graphdb.Node> startNodes, final Iterable<org.Neo4Net.graphdb.Node> endNodes)
+//ORIGINAL LINE: public Neo4Net.graphdb.traversal.Traverser traverse(final Iterable<Neo4Net.graphdb.Node> startNodes, final Iterable<Neo4Net.graphdb.Node> endNodes)
 		 public override Traverser Traverse( IEnumerable<Node> startNodes, IEnumerable<Node> endNodes )
 		 {
 			  return new DefaultTraverser(() =>

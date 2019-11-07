@@ -62,7 +62,7 @@ namespace Neo4Net.Cypher.Internal.javacompat
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.graphdb.Result executeQuery(String query, org.Neo4Net.values.virtual.MapValue parameters, org.Neo4Net.kernel.impl.query.TransactionalContext context) throws org.Neo4Net.kernel.impl.query.QueryExecutionKernelException
+//ORIGINAL LINE: public Neo4Net.graphdb.Result executeQuery(String query, Neo4Net.values.virtual.MapValue parameters, Neo4Net.kernel.impl.query.TransactionalContext context) throws Neo4Net.kernel.impl.query.QueryExecutionKernelException
 		 public override Result ExecuteQuery( string query, MapValue parameters, TransactionalContext context )
 		 {
 			  try
@@ -76,7 +76,7 @@ namespace Neo4Net.Cypher.Internal.javacompat
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.graphdb.Result profileQuery(String query, org.Neo4Net.values.virtual.MapValue parameters, org.Neo4Net.kernel.impl.query.TransactionalContext context) throws org.Neo4Net.kernel.impl.query.QueryExecutionKernelException
+//ORIGINAL LINE: public Neo4Net.graphdb.Result profileQuery(String query, Neo4Net.values.virtual.MapValue parameters, Neo4Net.kernel.impl.query.TransactionalContext context) throws Neo4Net.kernel.impl.query.QueryExecutionKernelException
 		 public override Result ProfileQuery( string query, MapValue parameters, TransactionalContext context )
 		 {
 			  try

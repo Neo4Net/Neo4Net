@@ -43,7 +43,7 @@ namespace Neo4Net.GraphDb
 	/// <li><code>double</code></li>
 	/// <li><code>char</code></li>
 	/// <li><code>java.lang.String</code></li>
-	/// <li><code>org.Neo4Net.GraphDb.Spatial.Point</code></li>
+	/// <li><code>Neo4Net.GraphDb.Spatial.Point</code></li>
 	/// <li><code>java.time.LocalDate</code></li>
 	/// <li><code>java.time.OffsetTime</code></li>
 	/// <li><code>java.time.LocalTime</code></li>
@@ -90,7 +90,7 @@ namespace Neo4Net.GraphDb
 		 /// <summary>
 		 /// Returns the property value associated with the given key. The value is of
 		 /// one of the valid property types, i.e. a Java primitive,
-		 /// a <seealso cref="string String"/>, a <seealso cref="org.Neo4Net.GraphDb.Spatial.Point Point"/>,
+		 /// a <seealso cref="string String"/>, a <seealso cref="Neo4Net.GraphDb.Spatial.Point Point"/>,
 		 /// a valid temporal type, or an array of any of the valid types.
 		 /// See the <seealso cref="PropertyContainer the class description"/>
 		 /// for a full list of known types.
@@ -112,7 +112,7 @@ namespace Neo4Net.GraphDb
 		 /// <summary>
 		 /// Returns the property value associated with the given key, or a default
 		 /// value. The value is of one of the valid property types, i.e. a Java primitive,
-		 /// a <seealso cref="string String"/>, a <seealso cref="org.Neo4Net.GraphDb.Spatial.Point Point"/>,
+		 /// a <seealso cref="string String"/>, a <seealso cref="Neo4Net.GraphDb.Spatial.Point Point"/>,
 		 /// a valid temporal type, or an array of any of the valid types.
 		 /// See the <seealso cref="PropertyContainer the class description"/>
 		 /// for a full list of known types.
@@ -126,7 +126,7 @@ namespace Neo4Net.GraphDb
 		 /// <summary>
 		 /// Sets the property value for the given key to <code>value</code>. The
 		 /// property value must be one of the valid property types, i.e. a Java primitive,
-		 /// a <seealso cref="string String"/>, a <seealso cref="org.Neo4Net.GraphDb.Spatial.Point Point"/>,
+		 /// a <seealso cref="string String"/>, a <seealso cref="Neo4Net.GraphDb.Spatial.Point Point"/>,
 		 /// a valid temporal type, or an array of any of the valid types.
 		 /// See the <seealso cref="PropertyContainer the class description"/>
 		 /// for a full list of known types.

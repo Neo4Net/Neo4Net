@@ -20,17 +20,17 @@
 namespace Neo4Net.Kernel.impl.proc
 {
 	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
-	using Context = Neo4Net.Kernel.api.proc.Context;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
+	using Context = Neo4Net.Kernel.Api.Procs.Context;
 	using TerminationGuard = Neo4Net.Procedure.TerminationGuard;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.proc.Context_Fields.KERNEL_TRANSACTION;
+//	import static Neo4Net.kernel.api.proc.Context_Fields.KERNEL_TRANSACTION;
 
 	public class TerminationGuardProvider : ComponentRegistry.Provider<TerminationGuard>
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.procedure.TerminationGuard apply(org.Neo4Net.kernel.api.proc.Context ctx) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
+//ORIGINAL LINE: public Neo4Net.procedure.TerminationGuard apply(Neo4Net.kernel.api.proc.Context ctx) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 		 public override TerminationGuard Apply( Context ctx )
 		 {
 			  KernelTransaction ktx = ctx.Get( KERNEL_TRANSACTION );

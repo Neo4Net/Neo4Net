@@ -23,7 +23,7 @@ namespace Neo4Net.GraphDb.Schema
    /// <summary>
    /// A builder for entering details about a constraint to create. After all details have been entered
    /// <seealso cref="create()"/> must be called for the constraint to actually be created. A constraint creator knows
-   /// which <seealso cref="org.Neo4Net.graphdb.Label label"/> it is to be created for.
+   /// which <seealso cref="Neo4Net.GraphDb.Label label"/> it is to be created for.
    ///
    /// All methods except <seealso cref="create()"/> will return an <seealso cref="IConstraintCreator"/> which should be
    /// used for further interaction.

@@ -118,7 +118,7 @@ namespace Neo4Net.Kernel.impl.locking.community
 
 		 // after invoke the transaction must wait on the resource
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: synchronized void checkWaitOn(Object resource, Object tx) throws org.Neo4Net.kernel.DeadlockDetectedException
+//ORIGINAL LINE: synchronized void checkWaitOn(Object resource, Object tx) throws Neo4Net.kernel.DeadlockDetectedException
 		 internal virtual void CheckWaitOn( object resource, object tx )
 		 {
 			 lock ( this )
@@ -178,7 +178,7 @@ namespace Neo4Net.Kernel.impl.locking.community
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private synchronized void checkWaitOnRecursive(Object lockingTx, Object waitingTx, java.util.List<Object> checkedTransactions, java.util.Deque<Object> graphStack) throws org.Neo4Net.kernel.DeadlockDetectedException
+//ORIGINAL LINE: private synchronized void checkWaitOnRecursive(Object lockingTx, Object waitingTx, java.util.List<Object> checkedTransactions, java.util.Deque<Object> graphStack) throws Neo4Net.kernel.DeadlockDetectedException
 		 private void CheckWaitOnRecursive( object lockingTx, object waitingTx, IList<object> checkedTransactions, Deque<object> graphStack )
 		 {
 			 lock ( this )

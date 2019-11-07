@@ -49,7 +49,7 @@ namespace Neo4Net.Dbms.CommandLine
 		 /// <seealso cref= StoreLocker </seealso>
 		 /// <seealso cref= Files </seealso>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static java.io.Closeable check(org.Neo4Net.io.layout.StoreLayout storeLayout) throws CannotWriteException
+//ORIGINAL LINE: static java.io.Closeable check(Neo4Net.io.layout.StoreLayout storeLayout) throws CannotWriteException
 		 internal static System.IDisposable Check( StoreLayout storeLayout )
 		 {
 			  Path lockFile = storeLayout.StoreLockFile().toPath();

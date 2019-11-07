@@ -31,9 +31,9 @@ namespace Neo4Net.Bolt.v1.transport.integration
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.MatcherAssert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.messaging.util.MessageMatchers.serialize;
+//	import static Neo4Net.bolt.v1.messaging.util.MessageMatchers.serialize;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.transport.integration.TransportTestUtil.eventuallyDisconnects;
+//	import static Neo4Net.bolt.v1.transport.integration.TransportTestUtil.eventuallyDisconnects;
 
 	public class TransportErrorIT : AbstractBoltTransportsTest
 	{
@@ -72,10 +72,10 @@ namespace Neo4Net.Bolt.v1.transport.integration
 		 {
 			  // Given I send a message with the wrong types in its fields
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.bolt.v1.messaging.RecordingByteChannel rawData = new org.Neo4Net.bolt.v1.messaging.RecordingByteChannel();
+//ORIGINAL LINE: final Neo4Net.bolt.v1.messaging.RecordingByteChannel rawData = new Neo4Net.bolt.v1.messaging.RecordingByteChannel();
 			  RecordingByteChannel rawData = new RecordingByteChannel();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.bolt.v1.packstream.PackStream.Packer packer = new org.Neo4Net.bolt.v1.packstream.PackStream.Packer(new org.Neo4Net.bolt.v1.packstream.BufferedChannelOutput(rawData));
+//ORIGINAL LINE: final Neo4Net.bolt.v1.packstream.PackStream.Packer packer = new Neo4Net.bolt.v1.packstream.PackStream.Packer(new Neo4Net.bolt.v1.packstream.BufferedChannelOutput(rawData));
 			  PackStream.Packer packer = new PackStream.Packer( new BufferedChannelOutput( rawData ) );
 
 			  packer.PackStructHeader( 2, RunMessage.SIGNATURE );
@@ -100,10 +100,10 @@ namespace Neo4Net.Bolt.v1.transport.integration
 		 {
 			  // Given I send a message with an invalid type
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.bolt.v1.messaging.RecordingByteChannel rawData = new org.Neo4Net.bolt.v1.messaging.RecordingByteChannel();
+//ORIGINAL LINE: final Neo4Net.bolt.v1.messaging.RecordingByteChannel rawData = new Neo4Net.bolt.v1.messaging.RecordingByteChannel();
 			  RecordingByteChannel rawData = new RecordingByteChannel();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.bolt.v1.packstream.PackStream.Packer packer = new org.Neo4Net.bolt.v1.packstream.PackStream.Packer(new org.Neo4Net.bolt.v1.packstream.BufferedChannelOutput(rawData));
+//ORIGINAL LINE: final Neo4Net.bolt.v1.packstream.PackStream.Packer packer = new Neo4Net.bolt.v1.packstream.PackStream.Packer(new Neo4Net.bolt.v1.packstream.BufferedChannelOutput(rawData));
 			  PackStream.Packer packer = new PackStream.Packer( new BufferedChannelOutput( rawData ) );
 
 			  packer.PackStructHeader( 1, ( sbyte )0x66 ); // Invalid message type
@@ -127,13 +127,13 @@ namespace Neo4Net.Bolt.v1.transport.integration
 		 {
 			  // Given I send a message with an invalid type
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.bolt.v1.messaging.RecordingByteChannel rawData = new org.Neo4Net.bolt.v1.messaging.RecordingByteChannel();
+//ORIGINAL LINE: final Neo4Net.bolt.v1.messaging.RecordingByteChannel rawData = new Neo4Net.bolt.v1.messaging.RecordingByteChannel();
 			  RecordingByteChannel rawData = new RecordingByteChannel();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.bolt.v1.packstream.BufferedChannelOutput out = new org.Neo4Net.bolt.v1.packstream.BufferedChannelOutput(rawData);
+//ORIGINAL LINE: final Neo4Net.bolt.v1.packstream.BufferedChannelOutput out = new Neo4Net.bolt.v1.packstream.BufferedChannelOutput(rawData);
 			  BufferedChannelOutput @out = new BufferedChannelOutput( rawData );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.bolt.v1.packstream.PackStream.Packer packer = new org.Neo4Net.bolt.v1.packstream.PackStream.Packer(out);
+//ORIGINAL LINE: final Neo4Net.bolt.v1.packstream.PackStream.Packer packer = new Neo4Net.bolt.v1.packstream.PackStream.Packer(out);
 			  PackStream.Packer packer = new PackStream.Packer( @out );
 
 			  packer.PackStructHeader( 2, RunMessage.SIGNATURE );

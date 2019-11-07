@@ -69,7 +69,7 @@ namespace Neo4Net.Upgrade.Lucene
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.upgrade.loader.EmbeddedJarLoader createJarLoader() throws ClassNotFoundException, java.io.IOException
+//ORIGINAL LINE: private Neo4Net.upgrade.loader.EmbeddedJarLoader createJarLoader() throws ClassNotFoundException, java.io.IOException
 		 private EmbeddedJarLoader CreateJarLoader()
 		 {
 			  EmbeddedJarLoader jarLoader = Mockito.mock( typeof( EmbeddedJarLoader ) );

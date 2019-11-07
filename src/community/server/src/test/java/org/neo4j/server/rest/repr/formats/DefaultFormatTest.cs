@@ -95,14 +95,14 @@ namespace Neo4Net.Server.rest.repr.formats
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(expected = org.Neo4Net.server.rest.repr.MediaTypeNotSupportedException.class) public void failsWithTheCorrectExceptionWhenGettingTheWrongInput()
+//ORIGINAL LINE: @Test(expected = Neo4Net.server.rest.repr.MediaTypeNotSupportedException.class) public void failsWithTheCorrectExceptionWhenGettingTheWrongInput()
 		 public virtual void FailsWithTheCorrectExceptionWhenGettingTheWrongInput()
 		 {
 			  _input.readValue( "<xml />" );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(expected = org.Neo4Net.server.rest.repr.MediaTypeNotSupportedException.class) public void failsWithTheCorrectExceptionWhenGettingTheWrongInput2() throws org.Neo4Net.server.rest.repr.BadInputException
+//ORIGINAL LINE: @Test(expected = Neo4Net.server.rest.repr.MediaTypeNotSupportedException.class) public void failsWithTheCorrectExceptionWhenGettingTheWrongInput2() throws Neo4Net.server.rest.repr.BadInputException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void FailsWithTheCorrectExceptionWhenGettingTheWrongInput2()
 		 {
@@ -110,7 +110,7 @@ namespace Neo4Net.Server.rest.repr.formats
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(expected = org.Neo4Net.server.rest.repr.MediaTypeNotSupportedException.class) public void failsWithTheCorrectExceptionWhenGettingTheWrongInput3()
+//ORIGINAL LINE: @Test(expected = Neo4Net.server.rest.repr.MediaTypeNotSupportedException.class) public void failsWithTheCorrectExceptionWhenGettingTheWrongInput3()
 		 public virtual void FailsWithTheCorrectExceptionWhenGettingTheWrongInput3()
 		 {
 			  _input.readUri( "<xml />" );

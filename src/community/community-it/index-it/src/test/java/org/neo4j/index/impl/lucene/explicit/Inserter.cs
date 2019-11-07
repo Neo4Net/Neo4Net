@@ -40,10 +40,10 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 {
 			  File path = new File( args[0] );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.graphdb.GraphDatabaseService db = new org.Neo4Net.test.TestGraphDatabaseFactory().newEmbeddedDatabaseBuilder(path).newGraphDatabase();
+//ORIGINAL LINE: final Neo4Net.graphdb.GraphDatabaseService db = new Neo4Net.test.TestGraphDatabaseFactory().newEmbeddedDatabaseBuilder(path).newGraphDatabase();
 			  IGraphDatabaseService db = ( new TestGraphDatabaseFactory() ).newEmbeddedDatabaseBuilder(path).newGraphDatabase();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.GraphDb.Index.Index<org.Neo4Net.graphdb.Node> index = getIndex(db);
+//ORIGINAL LINE: final Neo4Net.GraphDb.Index.Index<Neo4Net.graphdb.Node> index = getIndex(db);
 			  Index<Node> index = GetIndex( db );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final String[] keys = new String[]{"apoc", "zion", "morpheus"};

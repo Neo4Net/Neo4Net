@@ -34,8 +34,8 @@ namespace Neo4Net.Kernel.impl.proc
 	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
 	using Neo4NetTypes = Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes;
-	using BasicContext = Neo4Net.Kernel.api.proc.BasicContext;
-	using CallableUserFunction = Neo4Net.Kernel.api.proc.CallableUserFunction;
+	using BasicContext = Neo4Net.Kernel.Api.Procs.BasicContext;
+	using CallableUserFunction = Neo4Net.Kernel.Api.Procs.CallableUserFunction;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using ValueUtils = Neo4Net.Kernel.impl.util.ValueUtils;
 	using Log = Neo4Net.Logging.Log;
@@ -66,7 +66,7 @@ namespace Neo4Net.Kernel.impl.proc
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verifyNoMoreInteractions;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.procs.UserFunctionSignature.functionSignature;
+//	import static Neo4Net.Kernel.Api.Internal.procs.UserFunctionSignature.functionSignature;
 
 	public class ReflectiveUserFunctionTest
 	{
@@ -86,7 +86,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldInjectLogging() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: @Test public void shouldInjectLogging() throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldInjectLogging()
 		 {
@@ -265,7 +265,7 @@ namespace Neo4Net.Kernel.impl.proc
 
 			  // Expect
 			  Exception.expect( typeof( ProcedureException ) );
-			  Exception.expectMessage( "Failed to invoke function `org.Neo4Net.kernel.impl.proc.throwsAtInvocation`: " + "Caused by: java.lang.IndexOutOfBoundsException" );
+			  Exception.expectMessage( "Failed to invoke function `Neo4Net.kernel.impl.proc.throwsAtInvocation`: " + "Caused by: java.lang.IndexOutOfBoundsException" );
 
 			  // When
 			  proc.Apply( new BasicContext(), new AnyValue[0] );
@@ -277,7 +277,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 public virtual void ShouldLoadWhiteListedFunction()
 		 {
 			  // Given
-			  _procedureCompiler = new ReflectiveProcedureCompiler( new TypeMappers(), _components, new ComponentRegistry(), NullLog.Instance, new ProcedureConfig(Config.defaults(GraphDatabaseSettings.procedure_whitelist, "org.Neo4Net.kernel.impl.proc.listCoolPeople")) );
+			  _procedureCompiler = new ReflectiveProcedureCompiler( new TypeMappers(), _components, new ComponentRegistry(), NullLog.Instance, new ProcedureConfig(Config.defaults(GraphDatabaseSettings.procedure_whitelist, "Neo4Net.kernel.impl.proc.listCoolPeople")) );
 
 			  CallableUserFunction method = Compile( typeof( SingleReadOnlyFunction ) )[0];
 
@@ -296,7 +296,7 @@ namespace Neo4Net.Kernel.impl.proc
 			  _procedureCompiler = new ReflectiveProcedureCompiler( new TypeMappers(), _components, new ComponentRegistry(), log, new ProcedureConfig(Config.defaults(GraphDatabaseSettings.procedure_whitelist, "WrongName")) );
 
 			  IList<CallableUserFunction> method = Compile( typeof( SingleReadOnlyFunction ) );
-			  verify( log ).warn( "The function 'org.Neo4Net.kernel.impl.proc.listCoolPeople' is not on the whitelist and won't be loaded." );
+			  verify( log ).warn( "The function 'Neo4Net.kernel.impl.proc.listCoolPeople' is not on the whitelist and won't be loaded." );
 			  assertThat( method.Count, equalTo( 0 ) );
 		 }
 
@@ -310,7 +310,7 @@ namespace Neo4Net.Kernel.impl.proc
 			  _procedureCompiler = new ReflectiveProcedureCompiler( new TypeMappers(), _components, new ComponentRegistry(), log, new ProcedureConfig(Config.defaults(GraphDatabaseSettings.procedure_whitelist, "")) );
 
 			  IList<CallableUserFunction> method = Compile( typeof( SingleReadOnlyFunction ) );
-			  verify( log ).warn( "The function 'org.Neo4Net.kernel.impl.proc.listCoolPeople' is not on the whitelist and won't be loaded." );
+			  verify( log ).warn( "The function 'Neo4Net.kernel.impl.proc.listCoolPeople' is not on the whitelist and won't be loaded." );
 			  assertThat( method.Count, equalTo( 0 ) );
 		 }
 
@@ -327,7 +327,7 @@ namespace Neo4Net.Kernel.impl.proc
 			  IList<CallableUserFunction> funcs = procedureCompiler.CompileFunction( typeof( FunctionWithDeprecation ) );
 
 			  // Then
-			  verify( log ).warn( "Use of @UserFunction(deprecatedBy) without @Deprecated in org.Neo4Net.kernel.impl.proc.badFunc" );
+			  verify( log ).warn( "Use of @UserFunction(deprecatedBy) without @Deprecated in Neo4Net.kernel.impl.proc.badFunc" );
 			  verifyNoMoreInteractions( log );
 			  foreach ( CallableUserFunction func in funcs )
 			  {
@@ -353,7 +353,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 public class LoggingFunction
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Context public org.Neo4Net.logging.Log log;
+//ORIGINAL LINE: @Context public Neo4Net.logging.Log log;
 			  public Log Log;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -434,7 +434,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 public class FunctionWithStaticContextAnnotatedField
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Context public static org.Neo4Net.graphdb.GraphDatabaseService gdb;
+//ORIGINAL LINE: @Context public static Neo4Net.graphdb.GraphDatabaseService gdb;
 			  public static IGraphDatabaseService Gdb;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -525,7 +525,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.util.List<org.Neo4Net.kernel.api.proc.CallableUserFunction> compile(Class clazz) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: private java.util.List<Neo4Net.kernel.api.proc.CallableUserFunction> compile(Class clazz) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 private IList<CallableUserFunction> Compile( Type clazz )
 		 {
 			  return _procedureCompiler.compileFunction( clazz );

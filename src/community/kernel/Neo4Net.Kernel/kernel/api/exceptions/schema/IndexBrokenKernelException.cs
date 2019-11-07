@@ -23,7 +23,7 @@ namespace Neo4Net.Kernel.Api.Exceptions.schema
 
 	public class IndexBrokenKernelException : KernelException
 	{
-		 public IndexBrokenKernelException( string indexFailureCause ) : base( org.Neo4Net.kernel.api.exceptions.Status_General.IndexCorruptionDetected, "The index is in a failed state: '%s'.", indexFailureCause )
+		 public IndexBrokenKernelException( string indexFailureCause ) : base( Neo4Net.kernel.api.exceptions.Status_General.IndexCorruptionDetected, "The index is in a failed state: '%s'.", indexFailureCause )
 		 {
 		 }
 	}

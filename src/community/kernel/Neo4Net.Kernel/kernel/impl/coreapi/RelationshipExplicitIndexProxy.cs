@@ -28,11 +28,11 @@ namespace Neo4Net.Kernel.impl.coreapi
 	using RelationshipIndex = Neo4Net.GraphDb.Index.RelationshipIndex;
 	using RelationshipExplicitIndexCursor = Neo4Net.Kernel.Api.Internal.RelationshipExplicitIndexCursor;
 	using ExplicitIndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
-	using Statement = Neo4Net.Kernel.api.Statement;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
+	using Statement = Neo4Net.Kernel.Api.Statement;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.StatementConstants.NO_SUCH_NODE;
+//	import static Neo4Net.kernel.api.StatementConstants.NO_SUCH_NODE;
 
 	public class RelationshipExplicitIndexProxy : ExplicitIndexProxy<Relationship>, RelationshipIndex
 	{

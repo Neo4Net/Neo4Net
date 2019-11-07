@@ -30,7 +30,7 @@ namespace Neo4Net.Kernel.Api.StorageEngine.TxState
 		 long Id { get; }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: <EX extends Exception> boolean accept(org.Neo4Net.Kernel.Api.StorageEngine.RelationshipVisitor<EX> visitor) throws EX;
+//ORIGINAL LINE: <EX extends Exception> boolean accept(Neo4Net.Kernel.Api.StorageEngine.RelationshipVisitor<EX> visitor) throws EX;
 		 bool accept<EX>( IRelationshipVisitor<EX> visitor );
 	}
 

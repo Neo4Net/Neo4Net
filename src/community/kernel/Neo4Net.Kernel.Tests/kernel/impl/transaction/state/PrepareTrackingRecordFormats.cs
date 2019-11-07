@@ -189,7 +189,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void read(RECORD record, org.Neo4Net.io.pagecache.PageCursor cursor, org.Neo4Net.kernel.impl.store.record.RecordLoad mode, int recordSize) throws java.io.IOException
+//ORIGINAL LINE: public void read(RECORD record, Neo4Net.io.pagecache.PageCursor cursor, Neo4Net.kernel.impl.store.record.RecordLoad mode, int recordSize) throws java.io.IOException
 			  public override void Read( RECORD record, PageCursor cursor, RecordLoad mode, int recordSize )
 			  {
 					Actual.read( record, cursor, mode, recordSize );
@@ -202,7 +202,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void write(RECORD record, org.Neo4Net.io.pagecache.PageCursor cursor, int recordSize) throws java.io.IOException
+//ORIGINAL LINE: public void write(RECORD record, Neo4Net.io.pagecache.PageCursor cursor, int recordSize) throws java.io.IOException
 			  public override void Write( RECORD record, PageCursor cursor, int recordSize )
 			  {
 					Actual.write( record, cursor, recordSize );

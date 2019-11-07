@@ -23,7 +23,7 @@
 namespace Neo4Net.cluster.com.message
 {
 	/// <summary>
-	/// This is used to process a single message to or from a <seealso cref="org.Neo4Net.cluster.statemachine.StateMachine"/>.
+	/// This is used to process a single message to or from a <seealso cref="Neo4Net.cluster.statemachine.StateMachine"/>.
 	/// They can be chained internally if needed, so that one processor delegates to one or more other processors.
 	/// </summary>
 	public interface MessageProcessor

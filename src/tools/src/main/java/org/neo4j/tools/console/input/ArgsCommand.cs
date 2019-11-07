@@ -35,7 +35,7 @@ namespace Neo4Net.tools.console.input
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected abstract void run(org.Neo4Net.helpers.Args args, java.io.PrintStream out) throws Exception;
+//ORIGINAL LINE: protected abstract void run(Neo4Net.helpers.Args args, java.io.PrintStream out) throws Exception;
 		 protected internal abstract void Run( Args args, PrintStream @out );
 	}
 

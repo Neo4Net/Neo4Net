@@ -21,7 +21,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.pruning
 {
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.parseLongWithUnit;
+//	import static Neo4Net.kernel.configuration.Settings.parseLongWithUnit;
 
 	public class ThresholdConfigParser
 	{

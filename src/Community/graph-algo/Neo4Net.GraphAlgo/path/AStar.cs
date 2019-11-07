@@ -41,12 +41,12 @@ namespace Neo4Net.GraphAlgo.Path
 	using Neo4Net.Collections.Helpers;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.option;
+//	import static Neo4Net.helpers.collection.Iterables.option;
 
 	public class AStar : PathFinder<WeightedPath>
 	{
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private final org.Neo4Net.graphdb.PathExpander<?> expander;
+//ORIGINAL LINE: private final Neo4Net.graphdb.PathExpander<?> expander;
 		 private readonly PathExpander<object> _expander;
 		 private readonly CostEvaluator<double> _lengthEvaluator;
 		 private readonly EstimateEvaluator<double> _estimateEvaluator;
@@ -72,7 +72,7 @@ namespace Neo4Net.GraphAlgo.Path
 						 // Hit, return path
 						 double weight = iterator.VisitData[node.Id].wayLength;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.graphdb.Path path;
+//ORIGINAL LINE: final Neo4Net.graphdb.Path path;
 						 Path path;
 						 if ( start.Id == end.Id )
 						 {
@@ -100,7 +100,7 @@ namespace Neo4Net.GraphAlgo.Path
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public Iterable<org.Neo4Net.graphalgo.WeightedPath> findAllPaths(final org.Neo4Net.graphdb.Node node, final org.Neo4Net.graphdb.Node end)
+//ORIGINAL LINE: public Iterable<Neo4Net.graphalgo.WeightedPath> findAllPaths(final Neo4Net.graphdb.Node node, final Neo4Net.graphdb.Node end)
 		 public override IEnumerable<WeightedPath> FindAllPaths( Node node, Node end )
 		 {
 			  return option( FindSinglePath( node, end ) );

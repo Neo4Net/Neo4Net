@@ -40,21 +40,21 @@ namespace Neo4Net.Kernel.impl.store
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SafeVarargs public static <R extends org.Neo4Net.kernel.impl.store.record.AbstractBaseRecord> org.Neo4Net.graphdb.ResourceIterable<R> scan(final RecordStore<R> store, final System.Predicate<? super R>... filters)
+//ORIGINAL LINE: @SafeVarargs public static <R extends Neo4Net.kernel.impl.store.record.AbstractBaseRecord> Neo4Net.graphdb.ResourceIterable<R> scan(final RecordStore<R> store, final System.Predicate<? super R>... filters)
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-		 public static ResourceIterable<R> Scan<R>( RecordStore<R> store, params System.Predicate<object>[] filters ) where R : Neo4Net.Kernel.Impl.Store.Records.AbstractBaseRecord
+		 public staticIResourceIterable<R> Scan<R>( RecordStore<R> store, params System.Predicate<object>[] filters ) where R : Neo4Net.Kernel.Impl.Store.Records.AbstractBaseRecord
 		 {
 			  return Scan( store, true, filters );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SafeVarargs public static <R extends org.Neo4Net.kernel.impl.store.record.AbstractBaseRecord> org.Neo4Net.graphdb.ResourceIterable<R> scan(final RecordStore<R> store, final boolean forward, final System.Predicate<? super R>... filters)
+//ORIGINAL LINE: @SafeVarargs public static <R extends Neo4Net.kernel.impl.store.record.AbstractBaseRecord> Neo4Net.graphdb.ResourceIterable<R> scan(final RecordStore<R> store, final boolean forward, final System.Predicate<? super R>... filters)
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-		 public static ResourceIterable<R> Scan<R>( RecordStore<R> store, bool forward, params System.Predicate<object>[] filters ) where R : Neo4Net.Kernel.Impl.Store.Records.AbstractBaseRecord
+		 public staticIResourceIterable<R> Scan<R>( RecordStore<R> store, bool forward, params System.Predicate<object>[] filters ) where R : Neo4Net.Kernel.Impl.Store.Records.AbstractBaseRecord
 		 {
 			  return () => new Scan<R>(store, forward, filters);
 		 }

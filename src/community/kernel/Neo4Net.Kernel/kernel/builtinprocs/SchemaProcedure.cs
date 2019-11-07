@@ -36,9 +36,9 @@ namespace Neo4Net.Kernel.builtinprocs
 	using TokenNameLookup = Neo4Net.Kernel.Api.Internal.TokenNameLookup;
 	using TokenRead = Neo4Net.Kernel.Api.Internal.TokenRead;
 	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
-	using SilentTokenNameLookup = Neo4Net.Kernel.api.SilentTokenNameLookup;
-	using Statement = Neo4Net.Kernel.api.Statement;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
+	using SilentTokenNameLookup = Neo4Net.Kernel.Api.SilentTokenNameLookup;
+	using Statement = Neo4Net.Kernel.Api.Statement;
 	using PropertyNameUtils = Neo4Net.Kernel.impl.coreapi.schema.PropertyNameUtils;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
 
@@ -49,7 +49,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 private readonly KernelTransaction _kernelTransaction;
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public SchemaProcedure(final org.Neo4Net.kernel.internal.GraphDatabaseAPI graphDatabaseAPI, final org.Neo4Net.kernel.api.KernelTransaction kernelTransaction)
+//ORIGINAL LINE: public SchemaProcedure(final Neo4Net.kernel.internal.GraphDatabaseAPI graphDatabaseAPI, final Neo4Net.kernel.api.KernelTransaction kernelTransaction)
 		 public SchemaProcedure( GraphDatabaseAPI graphDatabaseAPI, KernelTransaction kernelTransaction )
 		 {
 			  this._graphDatabaseAPI = graphDatabaseAPI;
@@ -74,7 +74,7 @@ namespace Neo4Net.Kernel.builtinprocs
 					using ( Transaction transaction = _graphDatabaseAPI.beginTx() )
 					{
 						 // add all labelsInDatabase
-						 using ( ResourceIterator<Label> labelsInDatabase = _graphDatabaseAPI.AllLabelsInUse.GetEnumerator() )
+						 using ( IResourceIterator<Label> labelsInDatabase = _graphDatabaseAPI.AllLabelsInUse.GetEnumerator() )
 						 {
 							  while ( labelsInDatabase.MoveNext() )
 							  {
@@ -110,14 +110,14 @@ namespace Neo4Net.Kernel.builtinprocs
 
 						 //add all relationships
 
-						 using ( ResourceIterator<RelationshipType> relationshipTypeIterator = _graphDatabaseAPI.AllRelationshipTypesInUse.GetEnumerator() )
+						 using ( IResourceIterator<RelationshipType> relationshipTypeIterator = _graphDatabaseAPI.AllRelationshipTypesInUse.GetEnumerator() )
 						 {
 							  while ( relationshipTypeIterator.MoveNext() )
 							  {
 									RelationshipType relationshipType = relationshipTypeIterator.Current;
 									string relationshipTypeGetName = relationshipType.Name();
 									int relId = tokenRead.RelationshipType( relationshipTypeGetName );
-									using ( ResourceIterator<Label> labelsInUse = _graphDatabaseAPI.AllLabelsInUse.GetEnumerator() )
+									using ( IResourceIterator<Label> labelsInUse = _graphDatabaseAPI.AllLabelsInUse.GetEnumerator() )
 									{
 										 IList<VirtualNodeHack> startNodes = new LinkedList<VirtualNodeHack>();
 										 IList<VirtualNodeHack> endNodes = new LinkedList<VirtualNodeHack>();

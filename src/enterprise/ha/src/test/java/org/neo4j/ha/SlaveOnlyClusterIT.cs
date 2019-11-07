@@ -46,12 +46,12 @@ namespace Neo4Net.ha
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.allSeesAllAsAvailable;
+//	import static Neo4Net.kernel.impl.ha.ClusterManager.allSeesAllAsAvailable;
 
 	public class SlaveOnlyClusterIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.ha.ClusterRule clusterRule = new org.Neo4Net.test.ha.ClusterRule().withInstanceSetting(org.Neo4Net.kernel.ha.HaSettings.slave_only, value -> value == 1 || value == 2 ? org.Neo4Net.kernel.configuration.Settings.TRUE : org.Neo4Net.kernel.configuration.Settings.FALSE);
+//ORIGINAL LINE: @Rule public Neo4Net.test.ha.ClusterRule clusterRule = new Neo4Net.test.ha.ClusterRule().withInstanceSetting(Neo4Net.kernel.ha.HaSettings.slave_only, value -> value == 1 || value == 2 ? Neo4Net.kernel.configuration.Settings.TRUE : Neo4Net.kernel.configuration.Settings.FALSE);
 		 public ClusterRule ClusterRule = new ClusterRule().withInstanceSetting(HaSettings.slave_only, value => value == 1 || value == 2 ? Settings.TRUE : Settings.FALSE);
 
 		 private const string PROPERTY = "foo";

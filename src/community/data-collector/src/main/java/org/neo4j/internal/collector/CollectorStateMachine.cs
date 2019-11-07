@@ -95,7 +95,7 @@ namespace Neo4Net.Internal.Collector
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public synchronized Result collect(java.util.Map<String,Object> config) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: public synchronized Result collect(java.util.Map<String,Object> config) throws Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 		 public virtual Result Collect( IDictionary<string, object> config )
 		 {
 			 lock ( this )
@@ -175,7 +175,7 @@ namespace Neo4Net.Internal.Collector
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected abstract Result doCollect(java.util.Map<String,Object> config, long collectionId) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException;
+//ORIGINAL LINE: protected abstract Result doCollect(java.util.Map<String,Object> config, long collectionId) throws Neo4Net.kernel.api.exceptions.InvalidArgumentsException;
 		 protected internal abstract Result DoCollect( IDictionary<string, object> config, long collectionId );
 		 protected internal abstract Result DoStop();
 		 protected internal abstract Result DoClear();

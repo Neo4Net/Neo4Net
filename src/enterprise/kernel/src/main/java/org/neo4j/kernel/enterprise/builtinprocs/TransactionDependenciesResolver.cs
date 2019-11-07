@@ -27,8 +27,8 @@ namespace Neo4Net.Kernel.enterprise.builtinprocs
 	using StringUtils = org.apache.commons.lang3.StringUtils;
 
 
-	using KernelTransactionHandle = Neo4Net.Kernel.api.KernelTransactionHandle;
-	using QuerySnapshot = Neo4Net.Kernel.api.query.QuerySnapshot;
+	using KernelTransactionHandle = Neo4Net.Kernel.Api.KernelTransactionHandle;
+	using QuerySnapshot = Neo4Net.Kernel.Api.query.QuerySnapshot;
 	using ActiveLock = Neo4Net.Kernel.impl.locking.ActiveLock;
 	using ResourceType = Neo4Net.Kernel.Api.StorageEngine.@lock.ResourceType;
 

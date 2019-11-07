@@ -19,8 +19,8 @@
  */
 namespace Neo4Net.Server.rest.transactional
 {
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
-	using Statement = Neo4Net.Kernel.api.Statement;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
+	using Statement = Neo4Net.Kernel.Api.Statement;
 	using KernelStatement = Neo4Net.Kernel.Impl.Api.KernelStatement;
 
 	public class TransactionStateChecker : IDisposable

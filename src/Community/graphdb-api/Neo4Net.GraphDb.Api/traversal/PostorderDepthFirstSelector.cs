@@ -35,7 +35,7 @@ namespace Neo4Net.GraphDb.Traversal
             _expander = expander;
         }
 
-        public override ITraversalBranch Next(TraversalContext metadata)
+        public override ITraversalBranch Next(ITraversalContext metadata)
         {
             ITraversalBranch result = null;
             while (result == null)

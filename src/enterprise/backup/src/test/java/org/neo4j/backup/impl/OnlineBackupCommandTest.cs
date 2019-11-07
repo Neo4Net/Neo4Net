@@ -89,7 +89,7 @@ namespace Neo4Net.backup.impl
 
 		 private FileSystemAbstraction _fileSystemAbstraction = new DefaultFileSystemAbstraction();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory(fileSystemAbstraction);
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.TestDirectory testDirectory = Neo4Net.test.rule.TestDirectory.testDirectory(fileSystemAbstraction);
 		 public TestDirectory TestDirectory;
 
 		 private BackupStrategyCoordinatorFactory _backupStrategyCoordinatorFactory = mock( typeof( BackupStrategyCoordinatorFactory ) );
@@ -136,7 +136,7 @@ namespace Neo4Net.backup.impl
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void nonExistingBackupDirectoryRaisesException() throws org.Neo4Net.commandline.admin.CommandFailed, org.Neo4Net.commandline.admin.IncorrectUsage, java.io.IOException
+//ORIGINAL LINE: @Test public void nonExistingBackupDirectoryRaisesException() throws Neo4Net.commandline.admin.CommandFailed, Neo4Net.commandline.admin.IncorrectUsage, java.io.IOException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void NonExistingBackupDirectoryRaisesException()
 		 {
@@ -153,7 +153,7 @@ namespace Neo4Net.backup.impl
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void nonExistingReportDirectoryRaisesException() throws org.Neo4Net.commandline.admin.CommandFailed, org.Neo4Net.commandline.admin.IncorrectUsage, java.io.IOException
+//ORIGINAL LINE: @Test public void nonExistingReportDirectoryRaisesException() throws Neo4Net.commandline.admin.CommandFailed, Neo4Net.commandline.admin.IncorrectUsage, java.io.IOException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void NonExistingReportDirectoryRaisesException()
 		 {
@@ -181,7 +181,7 @@ namespace Neo4Net.backup.impl
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void protocolOverrideWarnsUser() throws org.Neo4Net.commandline.admin.CommandFailed, org.Neo4Net.commandline.admin.IncorrectUsage
+//ORIGINAL LINE: @Test public void protocolOverrideWarnsUser() throws Neo4Net.commandline.admin.CommandFailed, Neo4Net.commandline.admin.IncorrectUsage
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ProtocolOverrideWarnsUser()
 		 {
@@ -223,7 +223,7 @@ namespace Neo4Net.backup.impl
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void execute() throws org.Neo4Net.commandline.admin.IncorrectUsage, org.Neo4Net.commandline.admin.CommandFailed
+//ORIGINAL LINE: private void execute() throws Neo4Net.commandline.admin.IncorrectUsage, Neo4Net.commandline.admin.CommandFailed
 		 private void Execute()
 		 {
 			  string[] implementationDoesNotUseArguments = new string[0];

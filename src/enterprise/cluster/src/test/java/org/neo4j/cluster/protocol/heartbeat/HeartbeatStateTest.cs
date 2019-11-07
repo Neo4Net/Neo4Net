@@ -67,11 +67,11 @@ namespace Neo4Net.cluster.protocol.heartbeat
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.asSet;
+//	import static Neo4Net.helpers.collection.Iterables.asSet;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.iterable;
+//	import static Neo4Net.helpers.collection.Iterables.iterable;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.logging.AssertableLogProvider.inLog;
+//	import static Neo4Net.logging.AssertableLogProvider.inLog;
 
 	public class HeartbeatStateTest
 	{

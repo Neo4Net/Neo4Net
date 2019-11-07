@@ -56,7 +56,7 @@ namespace Neo4Net.Kernel.impl.transaction
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
+//	import static Neo4Net.helpers.collection.MapUtil.stringMap;
 
 	/// <summary>
 	/// Here we are verifying that even if we get an exception from the storage layer during commit,
@@ -65,7 +65,7 @@ namespace Neo4Net.Kernel.impl.transaction
 	public class PartialTransactionFailureIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory dir = org.Neo4Net.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.TestDirectory dir = Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory Dir = TestDirectory.testDirectory();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -74,16 +74,16 @@ namespace Neo4Net.Kernel.impl.transaction
 		 public virtual void ConcurrentlyCommittingTransactionsMustNotRotateOutLoggedCommandsOfFailingTransaction()
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.adversaries.ClassGuardedAdversary adversary = new org.Neo4Net.adversaries.ClassGuardedAdversary(new org.Neo4Net.adversaries.CountingAdversary(1, false), org.Neo4Net.kernel.impl.transaction.command.Command.RelationshipCommand.class);
+//ORIGINAL LINE: final Neo4Net.adversaries.ClassGuardedAdversary adversary = new Neo4Net.adversaries.ClassGuardedAdversary(new Neo4Net.adversaries.CountingAdversary(1, false), Neo4Net.kernel.impl.transaction.command.Command.RelationshipCommand.class);
 			  ClassGuardedAdversary adversary = new ClassGuardedAdversary( new CountingAdversary( 1, false ), typeof( Command.RelationshipCommand ) );
 			  adversary.Disable();
 
 			  File storeDir = Dir.storeDir();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.Map<String,String> params = stringMap(org.Neo4Net.graphdb.factory.GraphDatabaseSettings.pagecache_memory.name(), "8m");
+//ORIGINAL LINE: final java.util.Map<String,String> params = stringMap(Neo4Net.graphdb.factory.GraphDatabaseSettings.pagecache_memory.name(), "8m");
 			  IDictionary<string, string> @params = stringMap( GraphDatabaseSettings.pagecache_memory.name(), "8m" );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.graphdb.facade.embedded.EmbeddedGraphDatabase db = new TestEmbeddedGraphDatabase(storeDir, params)
+//ORIGINAL LINE: final Neo4Net.graphdb.facade.embedded.EmbeddedGraphDatabase db = new TestEmbeddedGraphDatabase(storeDir, params)
 			  EmbeddedGraphDatabase db = new TestEmbeddedGraphDatabaseAnonymousInnerClass( this, storeDir, @params, adversary );
 
 			  Node a;
@@ -233,7 +233,7 @@ namespace Neo4Net.Kernel.impl.transaction
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private Runnable createRelationship(final org.Neo4Net.graphdb.facade.embedded.EmbeddedGraphDatabase db, final org.Neo4Net.graphdb.Node x, final org.Neo4Net.graphdb.Node y, final java.util.concurrent.CountDownLatch latch)
+//ORIGINAL LINE: private Runnable createRelationship(final Neo4Net.graphdb.facade.embedded.EmbeddedGraphDatabase db, final Neo4Net.graphdb.Node x, final Neo4Net.graphdb.Node y, final java.util.concurrent.CountDownLatch latch)
 		 private ThreadStart CreateRelationship( EmbeddedGraphDatabase db, Node x, Node y, System.Threading.CountdownEvent latch )
 		 {
 			  return () =>

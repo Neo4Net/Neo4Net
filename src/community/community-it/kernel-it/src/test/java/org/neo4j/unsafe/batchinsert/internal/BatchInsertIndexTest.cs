@@ -41,7 +41,7 @@ namespace Neo4Net.@unsafe.Batchinsert.Internal
 	using IndexReference = Neo4Net.Kernel.Api.Internal.IndexReference;
 	using SchemaRead = Neo4Net.Kernel.Api.Internal.SchemaRead;
 	using TokenRead = Neo4Net.Kernel.Api.Internal.TokenRead;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using ThreadToStatementContextBridge = Neo4Net.Kernel.impl.core.ThreadToStatementContextBridge;
 	using SpatialIndexValueTestUtil = Neo4Net.Kernel.Impl.Index.Schema.config.SpatialIndexValueTestUtil;
@@ -62,9 +62,9 @@ namespace Neo4Net.@unsafe.Batchinsert.Internal
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.default_schema_provider;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.default_schema_provider;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
+//	import static Neo4Net.helpers.collection.MapUtil.stringMap;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class BatchInsertIndexTest
@@ -87,7 +87,7 @@ namespace Neo4Net.@unsafe.Batchinsert.Internal
 		 public RuleChain RuleChain;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Parameterized.Parameters(name = "{0}") public static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.SchemaIndex[] data()
+//ORIGINAL LINE: @Parameterized.Parameters(name = "{0}") public static Neo4Net.graphdb.factory.GraphDatabaseSettings.SchemaIndex[] data()
 		 public static GraphDatabaseSettings.SchemaIndex[] Data()
 		 {
 			  return GraphDatabaseSettings.SchemaIndex.values();
@@ -205,7 +205,7 @@ namespace Neo4Net.@unsafe.Batchinsert.Internal
 
 		 private void AssertSingleCorrectHit( IGraphDatabaseService db, PointValue point )
 		 {
-			  ResourceIterator<Node> nodes = Db.findNodes( TestLabels.LABEL_ONE, "prop", point );
+			  IResourceIterator<Node> nodes = Db.findNodes( TestLabels.LABEL_ONE, "prop", point );
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
 			  assertTrue( nodes.hasNext() );
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
@@ -217,7 +217,7 @@ namespace Neo4Net.@unsafe.Batchinsert.Internal
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.unsafe.batchinsert.BatchInserter newBatchInserter(org.Neo4Net.kernel.configuration.Config config) throws Exception
+//ORIGINAL LINE: private Neo4Net.unsafe.batchinsert.BatchInserter newBatchInserter(Neo4Net.kernel.configuration.Config config) throws Exception
 		 private BatchInserter NewBatchInserter( Config config )
 		 {
 			  return BatchInserters.inserter( _storeDir.databaseDir(), _fileSystemRule.get(), config.Raw );

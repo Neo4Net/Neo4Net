@@ -21,7 +21,7 @@ namespace Neo4Net.Kernel
 {
 	using Test = org.junit.Test;
 
-	using DatabaseManager = Neo4Net.Dbms.database.DatabaseManager;
+	using IDatabaseManager = Neo4Net.Dbms.database.DatabaseManager;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using GlobalKernelExtensions = Neo4Net.Kernel.extension.GlobalKernelExtensions;
 	using KernelExtensionFactoryContractTest = Neo4Net.Kernel.extension.KernelExtensionFactoryContractTest;
@@ -32,7 +32,7 @@ namespace Neo4Net.Kernel
 //	import static org.junit.Assert.assertEquals;
 
 	/// <summary>
-	/// Test the implementation of the <seealso cref="org.Neo4Net.kernel.extension.KernelExtensionFactory"/> framework. Treats the
+	/// Test the implementation of the <seealso cref="Neo4Net.kernel.extension.KernelExtensionFactory"/> framework. Treats the
 	/// framework as a black box and takes the perspective of the extension, making
 	/// sure that the framework fulfills its part of the contract. The parent class (
 	/// <seealso cref="KernelExtensionFactoryContractTest"/>) takes the opposite approach, it treats
@@ -74,7 +74,7 @@ namespace Neo4Net.Kernel
 			  try
 			  {
 					assertEquals( graphdb.DependencyResolver.resolveDependency( typeof( Config ) ), graphdb.DependencyResolver.resolveDependency( typeof( GlobalKernelExtensions ) ).resolveDependency( typeof( DummyExtension ) ).Dependencies.Config );
-					assertEquals( graphdb.DependencyResolver.resolveDependency( typeof( DatabaseManager ) ), graphdb.DependencyResolver.resolveDependency( typeof( GlobalKernelExtensions ) ).resolveDependency( typeof( DummyExtension ) ).Dependencies.DatabaseManager );
+					assertEquals( graphdb.DependencyResolver.resolveDependency( typeof( IDatabaseManager ) ), graphdb.DependencyResolver.resolveDependency( typeof( GlobalKernelExtensions ) ).resolveDependency( typeof( DummyExtension ) ).Dependencies.DatabaseManager );
 			  }
 			  finally
 			  {

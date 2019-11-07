@@ -46,7 +46,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.populator
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void verifyDeferredConstraints(org.Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor accessor) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: public void verifyDeferredConstraints(Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor accessor) throws Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 public override void VerifyDeferredConstraints( NodePropertyAccessor accessor )
 		 {
 			  try
@@ -60,7 +60,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.populator
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public org.Neo4Net.kernel.api.index.IndexUpdater newPopulatingUpdater(final org.Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor accessor)
+//ORIGINAL LINE: public Neo4Net.kernel.api.index.IndexUpdater newPopulatingUpdater(final Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor accessor)
 		 public override IndexUpdater NewPopulatingUpdater( NodePropertyAccessor accessor )
 		 {
 			  return new UniqueLuceneIndexPopulatingUpdater( Writer, _propertyKeyIds, LuceneIndex, accessor, _sampler );

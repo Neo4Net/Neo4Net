@@ -54,17 +54,17 @@ namespace Neo4Net.Kernel.impl.transaction.log.checkpoint
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.LogVersionRepository_Fields.INITIAL_LOG_VERSION;
+//	import static Neo4Net.kernel.impl.transaction.log.LogVersionRepository_Fields.INITIAL_LOG_VERSION;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.entry.LogHeader.LOG_HEADER_SIZE;
+//	import static Neo4Net.kernel.impl.transaction.log.entry.LogHeader.LOG_HEADER_SIZE;
 
 	public class CheckPointerIntegrationTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.fs.EphemeralFileSystemRule fsRule = new org.Neo4Net.test.rule.fs.EphemeralFileSystemRule();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.fs.EphemeralFileSystemRule fsRule = new Neo4Net.test.rule.fs.EphemeralFileSystemRule();
 		 public EphemeralFileSystemRule FsRule = new EphemeralFileSystemRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.TestDirectory testDirectory = Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory TestDirectory = TestDirectory.testDirectory();
 
 		 private GraphDatabaseBuilder _builder;
@@ -128,7 +128,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.checkpoint
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static boolean checkPointInTxLog(org.Neo4Net.graphdb.GraphDatabaseService db) throws java.io.IOException
+//ORIGINAL LINE: private static boolean checkPointInTxLog(Neo4Net.graphdb.GraphDatabaseService db) throws java.io.IOException
 		 private static bool CheckPointInTxLog( IGraphDatabaseService db )
 		 {
 			  LogFiles logFiles = ( ( GraphDatabaseAPI )db ).DependencyResolver.resolveDependency( typeof( LogFiles ) );
@@ -218,7 +218,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.checkpoint
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void triggerCheckPointAttempt(org.Neo4Net.graphdb.GraphDatabaseService db) throws Exception
+//ORIGINAL LINE: private static void triggerCheckPointAttempt(Neo4Net.graphdb.GraphDatabaseService db) throws Exception
 		 private static void TriggerCheckPointAttempt( IGraphDatabaseService db )
 		 {
 			  // Simulates triggering the checkpointer background job which runs now and then, checking whether
@@ -232,7 +232,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.checkpoint
 			  internal readonly LogEntryReader<ReadableClosablePositionAwareChannel> LogEntryReader;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: CheckPointCollector(java.io.File directory, org.Neo4Net.io.fs.FileSystemAbstraction fileSystem) throws java.io.IOException
+//ORIGINAL LINE: CheckPointCollector(java.io.File directory, Neo4Net.io.fs.FileSystemAbstraction fileSystem) throws java.io.IOException
 			  internal CheckPointCollector( File directory, FileSystemAbstraction fileSystem )
 			  {
 					this.LogEntryReader = new VersionAwareLogEntryReader<ReadableClosablePositionAwareChannel>();
@@ -240,7 +240,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.checkpoint
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.util.List<org.Neo4Net.kernel.impl.transaction.log.entry.CheckPoint> find(long version) throws java.io.IOException
+//ORIGINAL LINE: public java.util.List<Neo4Net.kernel.impl.transaction.log.entry.CheckPoint> find(long version) throws java.io.IOException
 			  public virtual IList<CheckPoint> Find( long version )
 			  {
 					IList<CheckPoint> checkPoints = new List<CheckPoint>();

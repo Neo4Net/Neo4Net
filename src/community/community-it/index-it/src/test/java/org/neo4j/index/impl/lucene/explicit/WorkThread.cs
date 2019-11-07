@@ -54,7 +54,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.GraphDb.Index.IndexHits<org.Neo4Net.graphdb.Node> queryIndex(String key, Object value) throws Exception
+//ORIGINAL LINE: public Neo4Net.GraphDb.Index.IndexHits<Neo4Net.graphdb.Node> queryIndex(String key, Object value) throws Exception
 		 public virtual IndexHits<Node> QueryIndex( string key, object value )
 		 {
 			  return Execute( new QueryIndexCommand( key, value ) );
@@ -109,7 +109,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void add(final org.Neo4Net.graphdb.Node node, final String key, final Object value) throws Exception
+//ORIGINAL LINE: public void add(final Neo4Net.graphdb.Node node, final String key, final Object value) throws Exception
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 		 public virtual void Add( Node node, string key, object value )
 		 {
@@ -121,7 +121,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public java.util.concurrent.Future<org.Neo4Net.graphdb.Node> getOrCreate(final String key, final Object value, final Object initialValue)
+//ORIGINAL LINE: public java.util.concurrent.Future<Neo4Net.graphdb.Node> getOrCreate(final String key, final Object value, final Object initialValue)
 		 public virtual Future<Node> GetOrCreate( string key, object value, object initialValue )
 		 {
 			  return ExecuteDontWait(StateConflict =>
@@ -152,7 +152,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public Object getProperty(final org.Neo4Net.graphdb.PropertyContainer IEntity, final String key) throws Exception
+//ORIGINAL LINE: public Object getProperty(final Neo4Net.graphdb.PropertyContainer IEntity, final String key) throws Exception
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 		 public virtual object GetProperty( IPropertyContainer IEntity, string key )
 		 {

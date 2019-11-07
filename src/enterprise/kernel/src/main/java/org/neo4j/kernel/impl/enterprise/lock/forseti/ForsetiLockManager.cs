@@ -197,7 +197,7 @@ namespace Neo4Net.Kernel.impl.enterprise.@lock.forseti
 		 private volatile bool _closed;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") public ForsetiLockManager(org.Neo4Net.kernel.configuration.Config config, java.time.Clock clock, org.Neo4Net.Kernel.Api.StorageEngine.lock.ResourceType... resourceTypes)
+//ORIGINAL LINE: @SuppressWarnings("unchecked") public ForsetiLockManager(Neo4Net.kernel.configuration.Config config, java.time.Clock clock, Neo4Net.Kernel.Api.StorageEngine.lock.ResourceType... resourceTypes)
 		 public ForsetiLockManager( Config config, Clock clock, params ResourceType[] resourceTypes )
 		 {
 			  int maxResourceId = FindMaxResourceId( resourceTypes );

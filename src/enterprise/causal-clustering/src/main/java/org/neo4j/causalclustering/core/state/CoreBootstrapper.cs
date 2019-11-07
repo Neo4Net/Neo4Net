@@ -59,37 +59,37 @@ namespace Neo4Net.causalclustering.core.state
 	using LogProvider = Neo4Net.Logging.LogProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.MetaDataStore.Position.LAST_TRANSACTION_ID;
+//	import static Neo4Net.kernel.impl.store.MetaDataStore.Position.LAST_TRANSACTION_ID;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.id.IdType.ARRAY_BLOCK;
+//	import static Neo4Net.kernel.impl.store.id.IdType.ARRAY_BLOCK;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.id.IdType.LABEL_TOKEN;
+//	import static Neo4Net.kernel.impl.store.id.IdType.LABEL_TOKEN;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.id.IdType.LABEL_TOKEN_NAME;
+//	import static Neo4Net.kernel.impl.store.id.IdType.LABEL_TOKEN_NAME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.id.IdType.NEOSTORE_BLOCK;
+//	import static Neo4Net.kernel.impl.store.id.IdType.NEOSTORE_BLOCK;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.id.IdType.NODE;
+//	import static Neo4Net.kernel.impl.store.id.IdType.NODE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.id.IdType.NODE_LABELS;
+//	import static Neo4Net.kernel.impl.store.id.IdType.NODE_LABELS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.id.IdType.PROPERTY;
+//	import static Neo4Net.kernel.impl.store.id.IdType.PROPERTY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.id.IdType.PROPERTY_KEY_TOKEN;
+//	import static Neo4Net.kernel.impl.store.id.IdType.PROPERTY_KEY_TOKEN;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.id.IdType.PROPERTY_KEY_TOKEN_NAME;
+//	import static Neo4Net.kernel.impl.store.id.IdType.PROPERTY_KEY_TOKEN_NAME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.id.IdType.RELATIONSHIP;
+//	import static Neo4Net.kernel.impl.store.id.IdType.RELATIONSHIP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.id.IdType.RELATIONSHIP_GROUP;
+//	import static Neo4Net.kernel.impl.store.id.IdType.RELATIONSHIP_GROUP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.id.IdType.RELATIONSHIP_TYPE_TOKEN;
+//	import static Neo4Net.kernel.impl.store.id.IdType.RELATIONSHIP_TYPE_TOKEN;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.id.IdType.RELATIONSHIP_TYPE_TOKEN_NAME;
+//	import static Neo4Net.kernel.impl.store.id.IdType.RELATIONSHIP_TYPE_TOKEN_NAME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.id.IdType.SCHEMA;
+//	import static Neo4Net.kernel.impl.store.id.IdType.SCHEMA;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.id.IdType.STRING_BLOCK;
+//	import static Neo4Net.kernel.impl.store.id.IdType.STRING_BLOCK;
 
 	public class CoreBootstrapper
 	{
@@ -116,7 +116,7 @@ namespace Neo4Net.causalclustering.core.state
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.causalclustering.core.state.snapshot.CoreSnapshot bootstrap(java.util.Set<org.Neo4Net.causalclustering.identity.MemberId> members) throws Exception
+//ORIGINAL LINE: public Neo4Net.causalclustering.core.state.snapshot.CoreSnapshot bootstrap(java.util.Set<Neo4Net.causalclustering.identity.MemberId> members) throws Exception
 		 public virtual CoreSnapshot Bootstrap( ISet<MemberId> members )
 		 {
 			  if ( _recoveryRequiredChecker.isRecoveryRequiredAt( _databaseLayout ) )

@@ -48,7 +48,7 @@ namespace Neo4Net.Logging.async
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: static AsyncLogEvent bulkLogEvent(@Nonnull Log log, @Nonnull final java.util.function.Consumer<org.Neo4Net.logging.Log> consumer)
+//ORIGINAL LINE: static AsyncLogEvent bulkLogEvent(@Nonnull Log log, @Nonnull final java.util.function.Consumer<Neo4Net.logging.Log> consumer)
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 		 internal static AsyncLogEvent BulkLogEvent( Log log, System.Action<Log> consumer )
 		 {
@@ -77,7 +77,7 @@ namespace Neo4Net.Logging.async
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: static AsyncLogEvent bulkLogEvent(@Nonnull Logger logger, @Nonnull final java.util.function.Consumer<org.Neo4Net.logging.Logger> consumer)
+//ORIGINAL LINE: static AsyncLogEvent bulkLogEvent(@Nonnull Logger logger, @Nonnull final java.util.function.Consumer<Neo4Net.logging.Logger> consumer)
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 		 internal static AsyncLogEvent BulkLogEvent( Logger logger, System.Action<Logger> consumer )
 		 {

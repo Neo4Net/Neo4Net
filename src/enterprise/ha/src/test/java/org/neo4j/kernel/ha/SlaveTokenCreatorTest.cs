@@ -123,7 +123,7 @@ namespace Neo4Net.Kernel.ha
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(expected = org.Neo4Net.graphdb.TransientTransactionFailureException.class) public void mustTranslateComExceptionsToTransientTransactionFailures()
+//ORIGINAL LINE: @Test(expected = Neo4Net.graphdb.TransientTransactionFailureException.class) public void mustTranslateComExceptionsToTransientTransactionFailures()
 		 public virtual void MustTranslateComExceptionsToTransientTransactionFailures()
 		 {
 			  when( _fixture.callMasterMethod( _master, _requestContext, _name ) ).thenThrow( new ComException() );

@@ -40,7 +40,7 @@ namespace Neo4Net.Bolt.v3.messaging
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.bolt.v1.messaging.BoltRequestMessageWriter write(org.Neo4Net.bolt.messaging.RequestMessage message) throws java.io.IOException
+//ORIGINAL LINE: public Neo4Net.bolt.v1.messaging.BoltRequestMessageWriter write(Neo4Net.bolt.messaging.RequestMessage message) throws java.io.IOException
 		 public override BoltRequestMessageWriter Write( RequestMessage message )
 		 {
 			  if ( message is HelloMessage )

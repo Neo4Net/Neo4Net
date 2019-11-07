@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Server.rest.transactional
 {
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
 	using AvailabilityGuard = Neo4Net.Kernel.availability.AvailabilityGuard;
 	using KernelStatement = Neo4Net.Kernel.Impl.Api.KernelStatement;
 	using ThreadToStatementContextBridge = Neo4Net.Kernel.impl.core.ThreadToStatementContextBridge;

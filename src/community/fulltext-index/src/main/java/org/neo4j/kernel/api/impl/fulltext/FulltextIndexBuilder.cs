@@ -80,7 +80,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 			  if ( ReadOnly )
 			  {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.api.impl.index.partition.ReadOnlyIndexPartitionFactory partitionFactory = new org.Neo4Net.kernel.api.impl.index.partition.ReadOnlyIndexPartitionFactory();
+//ORIGINAL LINE: final Neo4Net.kernel.api.impl.index.partition.ReadOnlyIndexPartitionFactory partitionFactory = new Neo4Net.kernel.api.impl.index.partition.ReadOnlyIndexPartitionFactory();
 					ReadOnlyIndexPartitionFactory partitionFactory = new ReadOnlyIndexPartitionFactory();
 					LuceneFulltextIndex fulltextIndex = new LuceneFulltextIndex( StorageBuilder.build(), partitionFactory, _descriptor, _propertyKeyTokenHolder );
 					return new ReadOnlyFulltextIndex( fulltextIndex );

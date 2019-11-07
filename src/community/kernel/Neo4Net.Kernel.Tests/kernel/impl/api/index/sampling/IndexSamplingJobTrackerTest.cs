@@ -43,7 +43,7 @@ namespace Neo4Net.Kernel.Impl.Api.index.sampling
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
+//	import static Neo4Net.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
 
 	public class IndexSamplingJobTrackerTest
 	{
@@ -62,7 +62,7 @@ namespace Neo4Net.Kernel.Impl.Api.index.sampling
 			  IJobScheduler jobScheduler = createInitializedScheduler();
 			  IndexSamplingJobTracker jobTracker = new IndexSamplingJobTracker( _config, jobScheduler );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.test.DoubleLatch latch = new org.Neo4Net.test.DoubleLatch();
+//ORIGINAL LINE: final Neo4Net.test.DoubleLatch latch = new Neo4Net.test.DoubleLatch();
 			  DoubleLatch latch = new DoubleLatch();
 
 			  // when
@@ -123,10 +123,10 @@ namespace Neo4Net.Kernel.Impl.Api.index.sampling
 //ORIGINAL LINE: final IndexSamplingJobTracker jobTracker = new IndexSamplingJobTracker(config, jobScheduler);
 			  IndexSamplingJobTracker jobTracker = new IndexSamplingJobTracker( _config, jobScheduler );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.test.DoubleLatch latch = new org.Neo4Net.test.DoubleLatch();
+//ORIGINAL LINE: final Neo4Net.test.DoubleLatch latch = new Neo4Net.test.DoubleLatch();
 			  DoubleLatch latch = new DoubleLatch();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.test.DoubleLatch waitingLatch = new org.Neo4Net.test.DoubleLatch();
+//ORIGINAL LINE: final Neo4Net.test.DoubleLatch waitingLatch = new Neo4Net.test.DoubleLatch();
 			  DoubleLatch waitingLatch = new DoubleLatch();
 
 			  // when
@@ -207,7 +207,7 @@ namespace Neo4Net.Kernel.Impl.Api.index.sampling
 			  IndexSamplingJobTracker jobTracker = new IndexSamplingJobTracker( _config, jobScheduler );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.test.DoubleLatch latch = new org.Neo4Net.test.DoubleLatch();
+//ORIGINAL LINE: final Neo4Net.test.DoubleLatch latch = new Neo4Net.test.DoubleLatch();
 			  DoubleLatch latch = new DoubleLatch();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final java.util.concurrent.atomic.AtomicBoolean lastJobExecuted = new java.util.concurrent.atomic.AtomicBoolean();

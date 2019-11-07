@@ -72,7 +72,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		}
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ClassRule public static org.Neo4Net.test.rule.PageCacheRule pageCacheRule = new org.Neo4Net.test.rule.PageCacheRule();
+//ORIGINAL LINE: @ClassRule public static Neo4Net.test.rule.PageCacheRule pageCacheRule = new Neo4Net.test.rule.PageCacheRule();
 		 public static PageCacheRule PageCacheRule = new PageCacheRule();
 		 private readonly EphemeralFileSystemRule _fs = new EphemeralFileSystemRule();
 		 private TestDirectory _testDirectory;
@@ -274,7 +274,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private org.Neo4Net.kernel.impl.transaction.command.Command.PropertyCommand change(final org.Neo4Net.kernel.impl.store.record.PropertyRecord before, final org.Neo4Net.kernel.impl.store.record.PropertyRecord after)
+//ORIGINAL LINE: private Neo4Net.kernel.impl.transaction.command.Command.PropertyCommand change(final Neo4Net.kernel.impl.store.record.PropertyRecord before, final Neo4Net.kernel.impl.store.record.PropertyRecord after)
 		 private Command.PropertyCommand Change( PropertyRecord before, PropertyRecord after )
 		 {
 			  return new Command.PropertyCommand( before, after );

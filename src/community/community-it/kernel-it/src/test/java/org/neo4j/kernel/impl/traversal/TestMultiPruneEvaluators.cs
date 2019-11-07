@@ -38,9 +38,9 @@ namespace Neo4Net.Kernel.impl.traversal
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.traversal.Evaluators.toDepth;
+//	import static Neo4Net.graphdb.traversal.Evaluators.toDepth;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.count;
+//	import static Neo4Net.helpers.collection.Iterators.count;
 
 	public class TestMultiPruneEvaluators : TraversalTestBase
 	{
@@ -55,7 +55,7 @@ namespace Neo4Net.Kernel.impl.traversal
 //ORIGINAL LINE: @Test public void testMaxDepthAndCustomPruneEvaluatorCombined()
 		 public virtual void TestMaxDepthAndCustomPruneEvaluatorCombined()
 		 {
-			  Evaluator lessThanThreeRels = path => count( path.endNode().getRelationships(Direction.OUTGOING).GetEnumerator() ) < 3 ? Evaluation.INCLUDE_AND_PRUNE : Evaluation.INCLUDE_AND_CONTINUE;
+			  Evaluator lessThanThreeRels = path => count( path.endNode().getRelationships(Direction.OUTGOING).GetEnumerator() ) < 3 ? Evaluation.INCLUDE_AND_PRUNE : Evaluation.IncludeAndContinue;
 
 			  TraversalDescription description = GraphDb.traversalDescription().evaluator(Evaluators.all()).evaluator(toDepth(1)).evaluator(lessThanThreeRels);
 			  ISet<string> expectedNodes = new HashSet<string>( asList( "a", "b", "c", "d", "e" ) );

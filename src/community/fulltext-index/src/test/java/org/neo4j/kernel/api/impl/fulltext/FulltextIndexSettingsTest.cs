@@ -25,8 +25,8 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 
 	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
 	using DefaultFileSystemAbstraction = Neo4Net.Io.fs.DefaultFileSystemAbstraction;
-	using MultiTokenSchemaDescriptor = Neo4Net.Kernel.api.schema.MultiTokenSchemaDescriptor;
-	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
+	using MultiTokenSchemaDescriptor = Neo4Net.Kernel.Api.schema.MultiTokenSchemaDescriptor;
+	using SchemaDescriptorFactory = Neo4Net.Kernel.Api.schema.SchemaDescriptorFactory;
 	using TokenHolder = Neo4Net.Kernel.impl.core.TokenHolder;
 	using TokenRegistry = Neo4Net.Kernel.impl.core.TokenRegistry;
 	using EntityType = Neo4Net.Kernel.Api.StorageEngine.EntityType;
@@ -40,11 +40,11 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.Schema.IndexProviderDescriptor.UNDECIDED;
+//	import static Neo4Net.Kernel.Api.Internal.Schema.IndexProviderDescriptor.UNDECIDED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.impl.fulltext.FulltextIndexSettings.readOrInitializeDescriptor;
+//	import static Neo4Net.kernel.api.impl.fulltext.FulltextIndexSettings.readOrInitializeDescriptor;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor.Type.GENERAL;
+//	import static Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor.Type.GENERAL;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @ExtendWith({TestDirectoryExtension.class, DefaultFileSystemExtension.class}) class FulltextIndexSettingsTest

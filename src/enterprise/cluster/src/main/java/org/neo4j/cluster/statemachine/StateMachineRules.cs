@@ -46,7 +46,7 @@ namespace Neo4Net.cluster.statemachine
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: public StateMachineRules rule(State<?, ?> oldState, org.Neo4Net.cluster.com.message.MessageType messageType, State<?, ?> newState, org.Neo4Net.cluster.com.message.Message<?>... messages)
+//ORIGINAL LINE: public StateMachineRules rule(State<?, ?> oldState, Neo4Net.cluster.com.message.MessageType messageType, State<?, ?> newState, Neo4Net.cluster.com.message.Message<?>... messages)
 		 public virtual StateMachineRules Rule<T1, T2>( State<T1> oldState, MessageType messageType, State<T2> newState, params Message<object>[] messages )
 		 {
 			  IList<StateMachineRule> fromRules = _rules.computeIfAbsent( oldState, k => new List<StateMachineRule>() );
@@ -79,7 +79,7 @@ namespace Neo4Net.cluster.statemachine
 			  internal State<object, ?> NewState;
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.cluster.com.message.Message<?>[] messages;
+//ORIGINAL LINE: Neo4Net.cluster.com.message.Message<?>[] messages;
 			  internal Message<object>[] Messages;
 
 			  internal StateMachineRule<T1, T2, T3>( StateMachineRules outerInstance, State<T1> oldState, MessageType messageType, State<T2> newState, Message<T3>[] messages )
@@ -96,7 +96,7 @@ namespace Neo4Net.cluster.statemachine
 					if ( OldState.Equals( transition.OldState ) && transition.Message.MessageType.Equals( MessageType ) && NewState.Equals( transition.NewState ) )
 					{
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: for (org.Neo4Net.cluster.com.message.Message<?> message : messages)
+//ORIGINAL LINE: for (Neo4Net.cluster.com.message.Message<?> message : messages)
 						 foreach ( Message<object> message in Messages )
 						 {
 							  outerInstance.outgoing.Offer( message );

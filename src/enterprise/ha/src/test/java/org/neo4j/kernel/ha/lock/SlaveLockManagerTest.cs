@@ -50,11 +50,11 @@ namespace Neo4Net.Kernel.ha.@lock
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verify;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.function.Suppliers.singleton;
+//	import static Neo4Net.function.Suppliers.singleton;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.DEFAULT_DATABASE_NAME;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.DEFAULT_DATABASE_NAME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.logging.NullLog.getInstance;
+//	import static Neo4Net.logging.NullLog.getInstance;
 
 	public class SlaveLockManagerTest
 	{

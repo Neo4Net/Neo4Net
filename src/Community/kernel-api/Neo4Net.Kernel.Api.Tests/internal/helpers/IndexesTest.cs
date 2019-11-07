@@ -52,7 +52,7 @@ namespace Neo4Net.Kernel.Api.Internal.Helpers
 		 {
 			  // Given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.Kernel.Api.Internal.SchemaRead schemaRead = schemaWithIndexes();
+//ORIGINAL LINE: final Neo4Net.Kernel.Api.Internal.SchemaRead schemaRead = schemaWithIndexes();
 			  SchemaRead schemaRead = SchemaWithIndexes();
 
 			  // Then no exception
@@ -67,7 +67,7 @@ namespace Neo4Net.Kernel.Api.Internal.Helpers
 			  // Given
 			  IndexReference index = mock( typeof( IndexReference ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.Kernel.Api.Internal.SchemaRead schemaRead = schemaWithIndexes(index);
+//ORIGINAL LINE: final Neo4Net.Kernel.Api.Internal.SchemaRead schemaRead = schemaWithIndexes(index);
 			  SchemaRead schemaRead = SchemaWithIndexes( index );
 			  SetUpdates( schemaRead, 0 );
 
@@ -82,7 +82,7 @@ namespace Neo4Net.Kernel.Api.Internal.Helpers
 			  // Given
 			  IndexReference index = mock( typeof( IndexReference ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.Kernel.Api.Internal.SchemaRead schemaRead = schemaWithIndexes(index);
+//ORIGINAL LINE: final Neo4Net.Kernel.Api.Internal.SchemaRead schemaRead = schemaWithIndexes(index);
 			  SchemaRead schemaRead = SchemaWithIndexes( index );
 			  SetUpdates( schemaRead, 1, 2, 3, 0 );
 
@@ -98,7 +98,7 @@ namespace Neo4Net.Kernel.Api.Internal.Helpers
 			  // Given
 			  IndexReference index = mock( typeof( IndexReference ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.Kernel.Api.Internal.SchemaRead schemaRead = schemaWithIndexes(index);
+//ORIGINAL LINE: final Neo4Net.Kernel.Api.Internal.SchemaRead schemaRead = schemaWithIndexes(index);
 			  SchemaRead schemaRead = SchemaWithIndexes( index );
 			  SetUpdates( schemaRead, 1, 2, 3, 2 ); // <- updates went down but didn't reach the first seen value
 
@@ -114,7 +114,7 @@ namespace Neo4Net.Kernel.Api.Internal.Helpers
 			  // Given
 			  IndexReference index = mock( typeof( IndexReference ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.Kernel.Api.Internal.SchemaRead schemaRead = schemaWithIndexes(index);
+//ORIGINAL LINE: final Neo4Net.Kernel.Api.Internal.SchemaRead schemaRead = schemaWithIndexes(index);
 			  SchemaRead schemaRead = SchemaWithIndexes( index );
 			  SetUpdates( schemaRead, 1, 1, 1 );
 
@@ -126,14 +126,14 @@ namespace Neo4Net.Kernel.Api.Internal.Helpers
 		 private SchemaRead SchemaWithIndexes( params IndexReference[] indexes )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.Kernel.Api.Internal.SchemaRead schemaRead = mock(org.Neo4Net.Kernel.Api.Internal.SchemaRead.class);
+//ORIGINAL LINE: final Neo4Net.Kernel.Api.Internal.SchemaRead schemaRead = mock(Neo4Net.Kernel.Api.Internal.SchemaRead.class);
 			  SchemaRead schemaRead = mock( typeof( SchemaRead ) );
 			  when( schemaRead.IndexesGetAll() ).thenReturn(Iterators.iterator(indexes));
 			  return schemaRead;
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void setUpdates(org.Neo4Net.Kernel.Api.Internal.SchemaRead schemaRead, int... updates) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
+//ORIGINAL LINE: private void setUpdates(Neo4Net.Kernel.Api.Internal.SchemaRead schemaRead, int... updates) throws Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
 		 private void SetUpdates( SchemaRead schemaRead, params int[] updates )
 		 {
 			  when( schemaRead.IndexUpdatesAndSize( any( typeof( IndexReference ) ), any( typeof( Neo4Net.Register.Register_DoubleLongRegister ) ) ) ).thenAnswer( new AnswerAnonymousInnerClass( this, updates ) );
@@ -154,7 +154,7 @@ namespace Neo4Net.Kernel.Api.Internal.Helpers
 			 private int i;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.register.Register_DoubleLongRegister answer(org.mockito.invocation.InvocationOnMock invocationOnMock) throws Throwable
+//ORIGINAL LINE: public Neo4Net.register.Register_DoubleLongRegister answer(org.mockito.invocation.InvocationOnMock invocationOnMock) throws Throwable
 			 public override Neo4Net.Register.Register_DoubleLongRegister answer( InvocationOnMock invocationOnMock )
 			 {
 				  Neo4Net.Register.Register_DoubleLongRegister r = invocationOnMock.getArgument( 1 );

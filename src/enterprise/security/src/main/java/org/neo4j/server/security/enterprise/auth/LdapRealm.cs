@@ -44,8 +44,8 @@ namespace Neo4Net.Server.security.enterprise.auth
 	using AuthProviderTimeoutException = Neo4Net.GraphDb.security.AuthProviderTimeoutException;
 	using AuthorizationExpiredException = Neo4Net.GraphDb.security.AuthorizationExpiredException;
 	using AuthenticationResult = Neo4Net.Kernel.Api.Internal.security.AuthenticationResult;
-	using AuthToken = Neo4Net.Kernel.api.security.AuthToken;
-	using InvalidAuthTokenException = Neo4Net.Kernel.api.security.exception.InvalidAuthTokenException;
+	using AuthToken = Neo4Net.Kernel.Api.security.AuthToken;
+	using InvalidAuthTokenException = Neo4Net.Kernel.Api.security.exception.InvalidAuthTokenException;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using SecuritySettings = Neo4Net.Server.security.enterprise.configuration.SecuritySettings;
 	using SecurityLog = Neo4Net.Server.security.enterprise.log.SecurityLog;
@@ -328,7 +328,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 					if ( token is ShiroAuthToken )
 					{
 						 ShiroAuthToken shiroAuthToken = ( ShiroAuthToken ) token;
-						 return shiroAuthToken.Scheme.Equals( Neo4Net.Kernel.api.security.AuthToken_Fields.BASIC_SCHEME ) && ( shiroAuthToken.SupportsRealm( LDAP_REALM ) );
+						 return shiroAuthToken.Scheme.Equals( Neo4Net.Kernel.Api.security.AuthToken_Fields.BASIC_SCHEME ) && ( shiroAuthToken.SupportsRealm( LDAP_REALM ) );
 					}
 					return false;
 			  }

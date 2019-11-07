@@ -26,7 +26,7 @@ namespace Neo4Net.Dbms.diagnostics.jmx
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.commandline.dbms.DiagnosticsReportCommand.PID_KEY;
+//	import static Neo4Net.commandline.dbms.DiagnosticsReportCommand.PID_KEY;
 
 	/// <summary>
 	/// Facilitates JMX Dump for current running Neo4Net instance.

@@ -172,7 +172,7 @@ namespace Synchronization
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private Thread newThreadForNodeAction(final long nodeId, final System.Action<org.Neo4Net.graphdb.Node> nodeConsumer)
+//ORIGINAL LINE: private Thread newThreadForNodeAction(final long nodeId, final System.Action<Neo4Net.graphdb.Node> nodeConsumer)
 		 private Thread NewThreadForNodeAction( long nodeId, System.Action<Node> nodeConsumer )
 		 {
 			  return new Thread(() =>
@@ -195,7 +195,7 @@ namespace Synchronization
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private Thread newThreadForRelationshipAction(final long relationshipId, final System.Action<org.Neo4Net.graphdb.Relationship> relConsumer)
+//ORIGINAL LINE: private Thread newThreadForRelationshipAction(final long relationshipId, final System.Action<Neo4Net.graphdb.Relationship> relConsumer)
 		 private Thread NewThreadForRelationshipAction( long relationshipId, System.Action<Relationship> relConsumer )
 		 {
 			  return new Thread(() =>

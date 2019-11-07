@@ -46,13 +46,13 @@ namespace Neo4Net.Kernel.impl.store.format.highlimit
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.NoStoreHeader.NO_STORE_HEADER;
+//	import static Neo4Net.kernel.impl.store.NoStoreHeader.NO_STORE_HEADER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.RecordPageLocationCalculator.offsetForId;
+//	import static Neo4Net.kernel.impl.store.RecordPageLocationCalculator.offsetForId;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.format.BaseRecordFormat.IN_USE_BIT;
+//	import static Neo4Net.kernel.impl.store.format.BaseRecordFormat.IN_USE_BIT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.format.highlimit.BaseHighLimitRecordFormat.NULL;
+//	import static Neo4Net.kernel.impl.store.format.highlimit.BaseHighLimitRecordFormat.NULL;
 
 	public class RelationshipRecordFormatTest
 	{
@@ -246,7 +246,7 @@ namespace Neo4Net.Kernel.impl.store.format.highlimit
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void verifyRecordsWithPoisonedReference(org.Neo4Net.kernel.impl.store.record.RelationshipRecord source, org.Neo4Net.kernel.impl.store.record.RelationshipRecord target, long poisonedReference, int type) throws java.io.IOException
+//ORIGINAL LINE: private void verifyRecordsWithPoisonedReference(Neo4Net.kernel.impl.store.record.RelationshipRecord source, Neo4Net.kernel.impl.store.record.RelationshipRecord target, long poisonedReference, int type) throws java.io.IOException
 		 private void VerifyRecordsWithPoisonedReference( RelationshipRecord source, RelationshipRecord target, long poisonedReference, int type )
 		 {
 			  bool nullPoison = poisonedReference == NULL;
@@ -287,14 +287,14 @@ namespace Neo4Net.Kernel.impl.store.format.highlimit
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void writeReadRecord(org.Neo4Net.kernel.impl.store.record.RelationshipRecord source, org.Neo4Net.kernel.impl.store.record.RelationshipRecord target) throws java.io.IOException
+//ORIGINAL LINE: private void writeReadRecord(Neo4Net.kernel.impl.store.record.RelationshipRecord source, Neo4Net.kernel.impl.store.record.RelationshipRecord target) throws java.io.IOException
 		 private void WriteReadRecord( RelationshipRecord source, RelationshipRecord target )
 		 {
 			  WriteReadRecord( source, target, _recordSize );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void writeReadRecord(org.Neo4Net.kernel.impl.store.record.RelationshipRecord source, org.Neo4Net.kernel.impl.store.record.RelationshipRecord target, int recordSize) throws java.io.IOException
+//ORIGINAL LINE: private void writeReadRecord(Neo4Net.kernel.impl.store.record.RelationshipRecord source, Neo4Net.kernel.impl.store.record.RelationshipRecord target, int recordSize) throws java.io.IOException
 		 private void WriteReadRecord( RelationshipRecord source, RelationshipRecord target, int recordSize )
 		 {
 			  _format.prepare( source, recordSize, _idSequence );
@@ -310,7 +310,7 @@ namespace Neo4Net.Kernel.impl.store.format.highlimit
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void checkRecord(RelationshipRecordFormat format, int recordSize, org.Neo4Net.io.pagecache.StubPageCursor cursor, long recordId, int recordOffset, org.Neo4Net.kernel.impl.store.record.RelationshipRecord record) throws java.io.IOException
+//ORIGINAL LINE: private void checkRecord(RelationshipRecordFormat format, int recordSize, Neo4Net.io.pagecache.StubPageCursor cursor, long recordId, int recordOffset, Neo4Net.kernel.impl.store.record.RelationshipRecord record) throws java.io.IOException
 		 private void CheckRecord( RelationshipRecordFormat format, int recordSize, StubPageCursor cursor, long recordId, int recordOffset, RelationshipRecord record )
 		 {
 			  format.Write( record, cursor, recordSize );

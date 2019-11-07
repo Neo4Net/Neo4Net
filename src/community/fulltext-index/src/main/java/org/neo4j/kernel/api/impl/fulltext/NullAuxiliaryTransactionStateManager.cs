@@ -19,10 +19,10 @@
  */
 namespace Neo4Net.Kernel.Api.Impl.Fulltext
 {
-	using AuxiliaryTransactionStateHolder = Neo4Net.Kernel.api.txstate.auxiliary.AuxiliaryTransactionStateHolder;
-	using AuxiliaryTransactionStateProvider = Neo4Net.Kernel.api.txstate.auxiliary.AuxiliaryTransactionStateProvider;
+	using AuxiliaryTransactionStateHolder = Neo4Net.Kernel.Api.txstate.auxiliary.AuxiliaryTransactionStateHolder;
+	using AuxiliaryTransactionStateProvider = Neo4Net.Kernel.Api.txstate.auxiliary.AuxiliaryTransactionStateProvider;
 
-	public class NullAuxiliaryTransactionStateManager : Neo4Net.Kernel.api.txstate.auxiliary.AuxiliaryTransactionStateManager
+	public class NullAuxiliaryTransactionStateManager : Neo4Net.Kernel.Api.txstate.auxiliary.AuxiliaryTransactionStateManager
 	{
 		 public override void RegisterProvider( AuxiliaryTransactionStateProvider provider )
 		 {

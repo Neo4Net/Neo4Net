@@ -58,7 +58,7 @@ namespace Neo4Net.Server.rest.repr.formats
 					  using ( Transaction transaction = Db.beginTx() )
 					  {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.graphdb.Node n = db.createNode();
+//ORIGINAL LINE: final Neo4Net.graphdb.Node n = db.createNode();
 						Node n = Db.createNode();
 						_json.assemble( new NodeRepresentation( n ) );
 					  }

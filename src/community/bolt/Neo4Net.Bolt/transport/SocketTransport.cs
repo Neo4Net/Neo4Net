@@ -25,7 +25,7 @@ namespace Neo4Net.Bolt.transport
 	using SslContext = io.netty.handler.ssl.SslContext;
 
 	using ListenSocketAddress = Neo4Net.Helpers.ListenSocketAddress;
-	using NetworkConnectionTracker = Neo4Net.Kernel.api.net.NetworkConnectionTracker;
+	using NetworkConnectionTracker = Neo4Net.Kernel.Api.net.NetworkConnectionTracker;
 	using LogProvider = Neo4Net.Logging.LogProvider;
 
 	/// <summary>

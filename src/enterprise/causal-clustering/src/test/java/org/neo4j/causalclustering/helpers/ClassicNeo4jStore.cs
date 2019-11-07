@@ -126,7 +126,7 @@ namespace Neo4Net.causalclustering.helpers
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void createStore(java.io.File super, org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, String dbName, int nodesToCreate, String recordFormat, boolean recoveryNeeded, String logicalLogsLocation) throws java.io.IOException
+//ORIGINAL LINE: private static void createStore(java.io.File super, Neo4Net.io.fs.FileSystemAbstraction fileSystem, String dbName, int nodesToCreate, String recordFormat, boolean recoveryNeeded, String logicalLogsLocation) throws java.io.IOException
 			  internal static void CreateStore( File @base, FileSystemAbstraction fileSystem, string dbName, int nodesToCreate, string recordFormat, bool recoveryNeeded, string logicalLogsLocation )
 			  {
 					File storeDir = new File( @base, dbName );

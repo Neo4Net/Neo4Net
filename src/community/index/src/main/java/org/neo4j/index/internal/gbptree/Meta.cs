@@ -25,7 +25,7 @@ namespace Neo4Net.Index.Internal.gbptree
 	using PageCursor = Neo4Net.Io.pagecache.PageCursor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Internal.gbptree.PageCursorUtil.checkOutOfBounds;
+//	import static Neo4Net.index.Internal.gbptree.PageCursorUtil.checkOutOfBounds;
 
 	/// <summary>
 	/// About versioning (i.e. the format version {@code int}):
@@ -101,7 +101,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 /// <returns> <seealso cref="Meta"/> instance with all meta information. </returns>
 		 /// <exception cref="IOException"> on <seealso cref="PageCursor"/> I/O error. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static Meta read(org.Neo4Net.io.pagecache.PageCursor cursor, Layout<?,?> layout) throws java.io.IOException
+//ORIGINAL LINE: static Meta read(Neo4Net.io.pagecache.PageCursor cursor, Layout<?,?> layout) throws java.io.IOException
 		 internal static Meta Read<T1>( PageCursor cursor, Layout<T1> layout )
 		 {
 			  int format;

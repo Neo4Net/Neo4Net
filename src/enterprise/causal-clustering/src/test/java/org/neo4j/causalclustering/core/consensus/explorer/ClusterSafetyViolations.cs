@@ -31,7 +31,7 @@ namespace Neo4Net.causalclustering.core.consensus.explorer
 	using MemberId = Neo4Net.causalclustering.identity.MemberId;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.log.RaftLogHelper.readLogEntry;
+//	import static Neo4Net.causalclustering.core.consensus.log.RaftLogHelper.readLogEntry;
 
 	public class ClusterSafetyViolations
 	{

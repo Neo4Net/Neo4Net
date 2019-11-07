@@ -200,7 +200,7 @@ namespace Neo4Net.causalclustering.readreplica
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Service.Implementation(UpstreamDatabaseSelectionStrategy.class) public static class AlwaysChooseFirstMember extends org.Neo4Net.causalclustering.upstream.UpstreamDatabaseSelectionStrategy
+//ORIGINAL LINE: @Service.Implementation(UpstreamDatabaseSelectionStrategy.class) public static class AlwaysChooseFirstMember extends Neo4Net.causalclustering.upstream.UpstreamDatabaseSelectionStrategy
 		 public class AlwaysChooseFirstMember : UpstreamDatabaseSelectionStrategy
 		 {
 			  public AlwaysChooseFirstMember() : base("always-choose-first-member")

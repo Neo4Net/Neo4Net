@@ -26,7 +26,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using Neo4Net.Index.Internal.gbptree;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.stringValue;
+//	import static Neo4Net.values.storable.Values.stringValue;
 
 	internal class ResultCursor : IRawCursor<Hit<StringIndexKey, NativeIndexValue>, IOException>
 	{

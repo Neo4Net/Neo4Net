@@ -52,23 +52,23 @@ namespace Neo4Net.Kernel.ha
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.allSeesAllAsAvailable;
+//	import static Neo4Net.kernel.impl.ha.ClusterManager.allSeesAllAsAvailable;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.clusterOfSize;
+//	import static Neo4Net.kernel.impl.ha.ClusterManager.clusterOfSize;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.masterAvailable;
+//	import static Neo4Net.kernel.impl.ha.ClusterManager.masterAvailable;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.masterSeesSlavesAsAvailable;
+//	import static Neo4Net.kernel.impl.ha.ClusterManager.masterSeesSlavesAsAvailable;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_ID;
+//	import static Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_ID;
 
 	public class TxPushStrategyConfigIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.SuppressOutput suppressOutput = org.Neo4Net.test.rule.SuppressOutput.suppressAll();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.SuppressOutput suppressOutput = Neo4Net.test.rule.SuppressOutput.suppressAll();
 		 public readonly SuppressOutput SuppressOutput = SuppressOutput.suppressAll();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.ha.ClusterRule clusterRule = new org.Neo4Net.test.ha.ClusterRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.ha.ClusterRule clusterRule = new Neo4Net.test.ha.ClusterRule();
 		 public readonly ClusterRule ClusterRule = new ClusterRule();
 
 		 /// <summary>
@@ -196,7 +196,7 @@ namespace Neo4Net.Kernel.ha
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private org.Neo4Net.kernel.impl.ha.ClusterManager.ManagedCluster startCluster(int memberCount, final int pushFactor, final HaSettings.TxPushStrategy pushStrategy)
+//ORIGINAL LINE: private Neo4Net.kernel.impl.ha.ClusterManager.ManagedCluster startCluster(int memberCount, final int pushFactor, final HaSettings.TxPushStrategy pushStrategy)
 		 private ManagedCluster StartCluster( int memberCount, int pushFactor, HaSettings.TxPushStrategy pushStrategy )
 		 {
 			  ManagedCluster cluster = ClusterRule.withCluster( clusterOfSize( memberCount ) ).withSharedSetting( HaSettings.TxPushFactor, "" + pushFactor ).withSharedSetting( HaSettings.TxPushStrategy, pushStrategy.name() ).startCluster();
@@ -262,7 +262,7 @@ namespace Neo4Net.Kernel.ha
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private int createTransaction(final org.Neo4Net.kernel.impl.ha.ClusterManager.ManagedCluster cluster, final org.Neo4Net.kernel.internal.GraphDatabaseAPI db)
+//ORIGINAL LINE: private int createTransaction(final Neo4Net.kernel.impl.ha.ClusterManager.ManagedCluster cluster, final Neo4Net.kernel.internal.GraphDatabaseAPI db)
 		 private int CreateTransaction( ManagedCluster cluster, GraphDatabaseAPI db )
 		 {
 			  TransactionTemplate template = ( new TransactionTemplate() ).with(db).retries(10).backoff(1, TimeUnit.SECONDS).monitor(new Monitor_AdapterAnonymousInnerClass(this, cluster));

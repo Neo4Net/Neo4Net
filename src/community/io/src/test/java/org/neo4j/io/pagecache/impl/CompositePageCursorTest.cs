@@ -40,7 +40,7 @@ namespace Neo4Net.Io.pagecache.impl
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.matchers.ByteArrayMatcher.byteArray;
+//	import static Neo4Net.test.matchers.ByteArrayMatcher.byteArray;
 
 	internal class CompositePageCursorTest
 	{

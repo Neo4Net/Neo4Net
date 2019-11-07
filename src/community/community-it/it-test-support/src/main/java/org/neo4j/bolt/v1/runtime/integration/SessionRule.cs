@@ -31,12 +31,12 @@ namespace Neo4Net.Bolt.v1.runtime.integration
 	using BoltStateMachineFactoryImpl = Neo4Net.Bolt.runtime.BoltStateMachineFactoryImpl;
 	using Authentication = Neo4Net.Bolt.security.auth.Authentication;
 	using BasicAuthentication = Neo4Net.Bolt.security.auth.BasicAuthentication;
-	using DatabaseManager = Neo4Net.Dbms.database.DatabaseManager;
+	using IDatabaseManager = Neo4Net.Dbms.database.DatabaseManager;
 	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
 	using Neo4Net.GraphDb.config;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using AuthManager = Neo4Net.Kernel.api.security.AuthManager;
-	using UserManagerSupplier = Neo4Net.Kernel.api.security.UserManagerSupplier;
+	using AuthManager = Neo4Net.Kernel.Api.security.AuthManager;
+	using UserManagerSupplier = Neo4Net.Kernel.Api.security.UserManagerSupplier;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using TransactionIdStore = Neo4Net.Kernel.impl.transaction.log.TransactionIdStore;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
@@ -71,21 +71,21 @@ namespace Neo4Net.Bolt.v1.runtime.integration
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void evaluate() throws Throwable
-			 public override void evaluate()
+//ORIGINAL LINE: public void Evaluate() throws Throwable
+			 public override void Evaluate()
 			 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Map<org.Neo4Net.graphdb.config.Setting<?>,String> config = new java.util.HashMap<>();
+//ORIGINAL LINE: java.util.Map<Neo4Net.graphdb.config.Setting<?>,String> config = new java.util.HashMap<>();
 				  IDictionary<Setting<object>, string> config = new Dictionary<Setting<object>, string>();
 				  config[GraphDatabaseSettings.auth_enabled] = Convert.ToString( _outerInstance.authEnabled );
 				  _outerInstance.gdb = ( GraphDatabaseAPI ) ( new TestGraphDatabaseFactory() ).newImpermanentDatabase(config);
 				  DependencyResolver resolver = _outerInstance.gdb.DependencyResolver;
-				  DatabaseManager databaseManager = resolver.ResolveDependency( typeof( DatabaseManager ) );
+				  IDatabaseManager databaseManager = resolver.ResolveDependency( typeof( IDatabaseManager ) );
 				  Authentication authentication = authentication( resolver.ResolveDependency( typeof( AuthManager ) ), resolver.ResolveDependency( typeof( UserManagerSupplier ) ) );
 				  _outerInstance.boltFactory = new BoltStateMachineFactoryImpl( databaseManager, new UsageData( null ), authentication, Clock.systemUTC(), Config.defaults(), NullLogService.Instance );
 				  try
 				  {
-						@base.evaluate();
+						@base.Evaluate();
 				  }
 				  finally
 				  {

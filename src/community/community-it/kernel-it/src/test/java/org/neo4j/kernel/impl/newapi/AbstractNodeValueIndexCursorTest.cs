@@ -24,8 +24,8 @@ namespace Neo4Net.Kernel.Impl.Newapi
 	using Neo4Net.Kernel.Api.Internal;
 	using SchemaWrite = Neo4Net.Kernel.Api.Internal.SchemaWrite;
 	using TokenWrite = Neo4Net.Kernel.Api.Internal.TokenWrite;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
-	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
+	using SchemaDescriptorFactory = Neo4Net.Kernel.Api.schema.SchemaDescriptorFactory;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using ThreadToStatementContextBridge = Neo4Net.Kernel.impl.core.ThreadToStatementContextBridge;
 	using ConfiguredSpaceFillingCurveSettingsCache = Neo4Net.Kernel.Impl.Index.Schema.config.ConfiguredSpaceFillingCurveSettingsCache;
@@ -40,7 +40,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 	internal abstract class AbstractNodeValueIndexCursorTest : NodeValueIndexCursorTestBase<ReadTestSupport>
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected void createCompositeIndex(org.Neo4Net.graphdb.GraphDatabaseService graphDb, String label, String... properties) throws Exception
+//ORIGINAL LINE: protected void createCompositeIndex(Neo4Net.graphdb.GraphDatabaseService graphDb, String label, String... properties) throws Exception
 		 protected internal override void CreateCompositeIndex( IGraphDatabaseService graphDb, string label, params string[] properties )
 		 {
 			  GraphDatabaseAPI @internal = ( GraphDatabaseAPI ) graphDb;

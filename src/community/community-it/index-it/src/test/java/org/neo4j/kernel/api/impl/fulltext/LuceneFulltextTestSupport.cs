@@ -110,7 +110,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void applySetting(org.Neo4Net.graphdb.config.Setting<String> setting, String value) throws java.io.IOException
+//ORIGINAL LINE: void applySetting(Neo4Net.graphdb.config.Setting<String> setting, String value) throws java.io.IOException
 		 internal virtual void ApplySetting( Setting<string> setting, string value )
 		 {
 			  Db.restartDatabase( setting.Name(), value );
@@ -168,7 +168,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static org.Neo4Net.kernel.api.KernelTransaction kernelTransaction(org.Neo4Net.graphdb.Transaction tx) throws Exception
+//ORIGINAL LINE: public static Neo4Net.kernel.api.KernelTransaction kernelTransaction(Neo4Net.graphdb.Transaction tx) throws Exception
 		 public static KernelTransaction KernelTransaction( Transaction tx )
 		 {
 			  assertThat( tx, instanceOf( typeof( TopLevelTransaction ) ) );
@@ -178,14 +178,14 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void assertQueryFindsNothing(org.Neo4Net.kernel.api.KernelTransaction ktx, String indexName, String query) throws Exception
+//ORIGINAL LINE: void assertQueryFindsNothing(Neo4Net.kernel.api.KernelTransaction ktx, String indexName, String query) throws Exception
 		 internal virtual void AssertQueryFindsNothing( KernelTransaction ktx, string indexName, string query )
 		 {
 			  AssertQueryFindsIds( ktx, indexName, query );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void assertQueryFindsIds(org.Neo4Net.kernel.api.KernelTransaction ktx, String indexName, String query, long... ids) throws Exception
+//ORIGINAL LINE: void assertQueryFindsIds(Neo4Net.kernel.api.KernelTransaction ktx, String indexName, String query, long... ids) throws Exception
 		 internal virtual void AssertQueryFindsIds( KernelTransaction ktx, string indexName, string query, params long[] ids )
 		 {
 			  ScoreEntityIterator result = FulltextAdapter.query( ktx, indexName, query );
@@ -193,7 +193,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void assertQueryFindsIdsInOrder(org.Neo4Net.kernel.api.KernelTransaction ktx, String indexName, String query, long... ids) throws java.io.IOException, org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException, org.apache.lucene.queryparser.classic.ParseException
+//ORIGINAL LINE: void assertQueryFindsIdsInOrder(Neo4Net.kernel.api.KernelTransaction ktx, String indexName, String query, long... ids) throws java.io.IOException, Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException, org.apache.lucene.queryparser.classic.ParseException
 		 internal virtual void AssertQueryFindsIdsInOrder( KernelTransaction ktx, string indexName, string query, params long[] ids )
 		 {
 			  ScoreEntityIterator result = FulltextAdapter.query( ktx, indexName, query );
@@ -249,7 +249,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void await(org.Neo4Net.Kernel.Api.Internal.IndexReference descriptor) throws Exception
+//ORIGINAL LINE: void await(Neo4Net.Kernel.Api.Internal.IndexReference descriptor) throws Exception
 		 internal virtual void Await( IndexReference descriptor )
 		 {
 			  try

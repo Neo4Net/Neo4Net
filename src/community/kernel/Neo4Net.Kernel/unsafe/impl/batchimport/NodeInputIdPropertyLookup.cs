@@ -25,7 +25,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 	using EncodingIdMapper = Neo4Net.@unsafe.Impl.Batchimport.cache.idmapping.@string.EncodingIdMapper;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.record.RecordLoad.CHECK;
+//	import static Neo4Net.kernel.impl.store.record.RecordLoad.CHECK;
 
 	/// <summary>
 	/// Looks up "input id" from a node. This is used when importing nodes and where the input data specifies ids

@@ -36,11 +36,11 @@ namespace Neo4Net.causalclustering.core
 	using Streams = Neo4Net.Stream.Streams;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.protocol.Protocol_ApplicationProtocolCategory.CATCHUP;
+//	import static Neo4Net.causalclustering.protocol.Protocol_ApplicationProtocolCategory.CATCHUP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.protocol.Protocol_ApplicationProtocolCategory.RAFT;
+//	import static Neo4Net.causalclustering.protocol.Protocol_ApplicationProtocolCategory.RAFT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.protocol.Protocol_ModifierProtocolCategory.COMPRESSION;
+//	import static Neo4Net.causalclustering.protocol.Protocol_ModifierProtocolCategory.COMPRESSION;
 
 	public class SupportedProtocolCreator
 	{

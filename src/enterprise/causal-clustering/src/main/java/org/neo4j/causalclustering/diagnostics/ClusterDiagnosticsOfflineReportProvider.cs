@@ -37,7 +37,7 @@ namespace Neo4Net.causalclustering.diagnostics
 	using NullLog = Neo4Net.Logging.NullLog;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.log.RaftLog_Fields.RAFT_LOG_DIRECTORY_NAME;
+//	import static Neo4Net.causalclustering.core.consensus.log.RaftLog_Fields.RAFT_LOG_DIRECTORY_NAME;
 
 	public class ClusterDiagnosticsOfflineReportProvider : DiagnosticsOfflineReportProvider
 	{
@@ -53,7 +53,7 @@ namespace Neo4Net.causalclustering.diagnostics
 		 {
 			  this._fs = fs;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.io.File dataDir = config.get(org.Neo4Net.graphdb.factory.GraphDatabaseSettings.data_directory);
+//ORIGINAL LINE: final java.io.File dataDir = config.get(Neo4Net.graphdb.factory.GraphDatabaseSettings.data_directory);
 			  File dataDir = config.Get( GraphDatabaseSettings.data_directory );
 			  try
 			  {

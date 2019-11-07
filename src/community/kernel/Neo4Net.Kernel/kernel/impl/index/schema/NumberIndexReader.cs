@@ -61,7 +61,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 					break;
 			  case range:
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.Kernel.Api.Internal.IndexQuery.RangePredicate<?> rangePredicate = (org.Neo4Net.Kernel.Api.Internal.IndexQuery.RangePredicate<?>) predicate;
+//ORIGINAL LINE: Neo4Net.Kernel.Api.Internal.IndexQuery.RangePredicate<?> rangePredicate = (Neo4Net.Kernel.Api.Internal.IndexQuery.RangePredicate<?>) predicate;
 					IndexQuery.RangePredicate<object> rangePredicate = ( IndexQuery.RangePredicate<object> ) predicate;
 					InitFromForRange( rangePredicate, treeKeyFrom );
 					InitToForRange( rangePredicate, treeKeyTo );

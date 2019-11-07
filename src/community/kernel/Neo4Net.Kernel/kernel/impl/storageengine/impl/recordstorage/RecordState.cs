@@ -41,7 +41,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 		 /// <param name="target"> list that commands will be added into. </param>
 		 /// <exception cref="TransactionFailureException"> if the state is invalid or not applicable. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void extractCommands(java.util.Collection<org.Neo4Net.Kernel.Api.StorageEngine.StorageCommand> target) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
+//ORIGINAL LINE: void extractCommands(java.util.Collection<Neo4Net.Kernel.Api.StorageEngine.StorageCommand> target) throws Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
 		 void ExtractCommands( ICollection<StorageCommand> target );
 	}
 

@@ -23,7 +23,6 @@ namespace Neo4Net.GraphAlgo.ShortestPath
 {
 
 	using Neo4Net.GraphAlgo;
-	using Neo4Net.GraphAlgo;
 	using Direction = Neo4Net.GraphDb.Direction;
 	using Node = Neo4Net.GraphDb.Node;
 	using Relationship = Neo4Net.GraphDb.Relationship;
@@ -192,10 +191,10 @@ namespace Neo4Net.GraphAlgo.ShortestPath
 		 /// <param name="targetNode">
 		 ///            The end node. </param>
 		 /// <returns> The shortest path as a list of nodes. </returns>
-		 public virtual IList<Node> GetPath( Node startNode, Node targetNode )
+		 public virtual IList<Node> GetPath( INode startNode, INode targetNode )
 		 {
 			  Calculate();
-			  LinkedList<Node> path = new LinkedList<Node>();
+			  LinkedList<INode> path = new LinkedList<INode>();
 			  int index = NodeIndexes[targetNode];
 			  int startIndex = NodeIndexes[startNode];
 			  Node n = targetNode;

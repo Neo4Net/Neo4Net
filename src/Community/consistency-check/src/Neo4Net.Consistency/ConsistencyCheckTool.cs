@@ -42,15 +42,15 @@ namespace Neo4Net.Consistency
 	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.Args.jarUsage;
+//	import static Neo4Net.helpers.Args.jarUsage;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.Strings.joinAsLines;
+//	import static Neo4Net.helpers.Strings.joinAsLines;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
+//	import static Neo4Net.helpers.collection.MapUtil.stringMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.recovery.RecoveryRequiredChecker.assertRecoveryIsNotRequired;
+//	import static Neo4Net.kernel.impl.recovery.RecoveryRequiredChecker.assertRecoveryIsNotRequired;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
+//	import static Neo4Net.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
 
 	public class ConsistencyCheckTool
 	{
@@ -137,7 +137,7 @@ namespace Neo4Net.Consistency
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void checkDbState(org.Neo4Net.io.layout.DatabaseLayout databaseLayout, org.Neo4Net.kernel.configuration.Config tuningConfiguration) throws ToolFailureException
+//ORIGINAL LINE: private void checkDbState(Neo4Net.io.layout.DatabaseLayout databaseLayout, Neo4Net.kernel.configuration.Config tuningConfiguration) throws ToolFailureException
 		 private void CheckDbState( DatabaseLayout databaseLayout, Config tuningConfiguration )
 		 {
 			  try
@@ -158,7 +158,7 @@ namespace Neo4Net.Consistency
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.io.File determineStoreDirectory(org.Neo4Net.helpers.Args arguments) throws ToolFailureException
+//ORIGINAL LINE: private java.io.File determineStoreDirectory(Neo4Net.helpers.Args arguments) throws ToolFailureException
 		 private File DetermineStoreDirectory( Args arguments )
 		 {
 			  IList<string> unprefixedArguments = arguments.Orphans();
@@ -175,7 +175,7 @@ namespace Neo4Net.Consistency
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static org.Neo4Net.kernel.configuration.Config readConfiguration(org.Neo4Net.helpers.Args arguments) throws ToolFailureException
+//ORIGINAL LINE: private static Neo4Net.kernel.configuration.Config readConfiguration(Neo4Net.helpers.Args arguments) throws ToolFailureException
 		 private static Config ReadConfiguration( Args arguments )
 		 {
 			  string configFilePath = arguments.Get( CONFIG, null );

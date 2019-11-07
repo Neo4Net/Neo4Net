@@ -47,7 +47,7 @@ namespace Neo4Net.Harness
 		 void Close();
 
 		 /// <summary>
-		 /// Access the <seealso cref="org.Neo4Net.graphdb.GraphDatabaseService"/> used by the server </summary>
+		 /// Access the <seealso cref="Neo4Net.graphdb.GraphDatabaseService"/> used by the server </summary>
 		 IGraphDatabaseService Graph();
 
 		 /// <summary>

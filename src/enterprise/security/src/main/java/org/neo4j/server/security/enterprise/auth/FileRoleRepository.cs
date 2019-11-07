@@ -33,9 +33,9 @@ namespace Neo4Net.Server.security.enterprise.auth
 	using FormatException = Neo4Net.Server.Security.Auth.exception.FormatException;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.security.auth.ListSnapshot.FROM_MEMORY;
+//	import static Neo4Net.server.security.auth.ListSnapshot.FROM_MEMORY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.security.auth.ListSnapshot.FROM_PERSISTED;
+//	import static Neo4Net.server.security.auth.ListSnapshot.FROM_PERSISTED;
 
 	/// <summary>
 	/// Stores role data. In memory, but backed by persistent storage so changes to this repository will survive
@@ -71,7 +71,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected org.Neo4Net.server.security.auth.ListSnapshot<RoleRecord> readPersistedRoles() throws java.io.IOException
+//ORIGINAL LINE: protected Neo4Net.server.security.auth.ListSnapshot<RoleRecord> readPersistedRoles() throws java.io.IOException
 		 protected internal override ListSnapshot<RoleRecord> ReadPersistedRoles()
 		 {
 			  if ( _fileSystem.fileExists( _roleFile ) )
@@ -102,7 +102,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.server.security.auth.ListSnapshot<RoleRecord> getPersistedSnapshot() throws java.io.IOException
+//ORIGINAL LINE: public Neo4Net.server.security.auth.ListSnapshot<RoleRecord> getPersistedSnapshot() throws java.io.IOException
 		 public override ListSnapshot<RoleRecord> PersistedSnapshot
 		 {
 			 get

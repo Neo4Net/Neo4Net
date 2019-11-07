@@ -26,9 +26,9 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.cache
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Math.toIntExact;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.pagecache.PagedFile_Fields.PF_NO_GROW;
+//	import static Neo4Net.io.pagecache.PagedFile_Fields.PF_NO_GROW;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.pagecache.PagedFile_Fields.PF_SHARED_WRITE_LOCK;
+//	import static Neo4Net.io.pagecache.PagedFile_Fields.PF_SHARED_WRITE_LOCK;
 
 	/// <summary>
 	/// Abstraction over page cache backed number arrays.
@@ -46,13 +46,13 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.cache
 		 private bool _closed;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: PageCacheNumberArray(org.Neo4Net.io.pagecache.PagedFile pagedFile, int entrySize, long length, long super) throws java.io.IOException
+//ORIGINAL LINE: PageCacheNumberArray(Neo4Net.io.pagecache.PagedFile pagedFile, int entrySize, long length, long super) throws java.io.IOException
 		 internal PageCacheNumberArray( PagedFile pagedFile, int entrySize, long length, long @base ) : this( pagedFile, entrySize, length, 0, @base )
 		 {
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: PageCacheNumberArray(org.Neo4Net.io.pagecache.PagedFile pagedFile, int entrySize, long length, long defaultValue, long super) throws java.io.IOException
+//ORIGINAL LINE: PageCacheNumberArray(Neo4Net.io.pagecache.PagedFile pagedFile, int entrySize, long length, long defaultValue, long super) throws java.io.IOException
 		 internal PageCacheNumberArray( PagedFile pagedFile, int entrySize, long length, long defaultValue, long @base )
 		 {
 			  this.PagedFile = pagedFile;
@@ -74,7 +74,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.cache
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void setLength(org.Neo4Net.io.pagecache.PageCursor cursor, long length) throws java.io.IOException
+//ORIGINAL LINE: private void setLength(Neo4Net.io.pagecache.PageCursor cursor, long length) throws java.io.IOException
 		 private void SetLength( PageCursor cursor, long length )
 		 {
 			  if ( !cursor.Next( ( length - 1 ) / EntriesPerPage ) )

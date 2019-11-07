@@ -26,7 +26,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext.analyzer.providers
 	using Service = Neo4Net.Helpers.Service;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Service.Implementation(AnalyzerProvider.class) public class Spanish extends org.Neo4Net.GraphDb.Index.fulltext.AnalyzerProvider
+//ORIGINAL LINE: @Service.Implementation(AnalyzerProvider.class) public class Spanish extends Neo4Net.GraphDb.Index.fulltext.AnalyzerProvider
 	public class Spanish : AnalyzerProvider
 	{
 		 public Spanish() : base("spanish")

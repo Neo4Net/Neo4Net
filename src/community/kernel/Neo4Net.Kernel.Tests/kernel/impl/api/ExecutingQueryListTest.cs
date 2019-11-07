@@ -26,7 +26,7 @@ namespace Neo4Net.Kernel.Impl.Api
 
 
 	using PageCursorTracer = Neo4Net.Io.pagecache.tracing.cursor.PageCursorTracer;
-	using ExecutingQuery = Neo4Net.Kernel.api.query.ExecutingQuery;
+	using ExecutingQuery = Neo4Net.Kernel.Api.query.ExecutingQuery;
 	using ClientConnectionInfo = Neo4Net.Kernel.impl.query.clientconnection.ClientConnectionInfo;
 	using CpuClock = Neo4Net.Resources.CpuClock;
 	using HeapAllocation = Neo4Net.Resources.HeapAllocation;
@@ -39,7 +39,7 @@ namespace Neo4Net.Kernel.Impl.Api
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.@virtual.VirtualValues.EMPTY_MAP;
+//	import static Neo4Net.values.@virtual.VirtualValues.EMPTY_MAP;
 
 	public class ExecutingQueryListTest
 	{

@@ -37,35 +37,35 @@ namespace Neo4Net.Dbms.CommandLine
 	using NativeIndexFileFilter = Neo4Net.Kernel.Internal.NativeIndexFileFilter;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.commandline.arguments.common.Database.ARG_DATABASE;
+//	import static Neo4Net.commandline.arguments.common.Database.ARG_DATABASE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.configuration.ExternalSettings.initialHeapSize;
+//	import static Neo4Net.configuration.ExternalSettings.initialHeapSize;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.configuration.ExternalSettings.maxHeapSize;
+//	import static Neo4Net.configuration.ExternalSettings.maxHeapSize;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.active_database;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.active_database;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.database_path;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.database_path;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.pagecache_memory;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.pagecache_memory;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.ByteUnit.ONE_GIBI_BYTE;
+//	import static Neo4Net.io.ByteUnit.ONE_GIBI_BYTE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.ByteUnit.ONE_KIBI_BYTE;
+//	import static Neo4Net.io.ByteUnit.ONE_KIBI_BYTE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.ByteUnit.ONE_MEBI_BYTE;
+//	import static Neo4Net.io.ByteUnit.ONE_MEBI_BYTE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.ByteUnit.gibiBytes;
+//	import static Neo4Net.io.ByteUnit.gibiBytes;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.ByteUnit.mebiBytes;
+//	import static Neo4Net.io.ByteUnit.mebiBytes;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.ByteUnit.tebiBytes;
+//	import static Neo4Net.io.ByteUnit.tebiBytes;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.index.IndexDirectoryStructure.baseSchemaIndexFolder;
+//	import static Neo4Net.kernel.api.index.IndexDirectoryStructure.baseSchemaIndexFolder;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.BYTES;
+//	import static Neo4Net.kernel.configuration.Settings.BYTES;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.buildSetting;
+//	import static Neo4Net.kernel.configuration.Settings.buildSetting;
 
 	public class MemoryRecommendationsCommand : AdminCommand
 	{
@@ -197,7 +197,7 @@ namespace Neo4Net.Dbms.CommandLine
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void execute(String[] args) throws org.Neo4Net.commandline.admin.IncorrectUsage, org.Neo4Net.commandline.admin.CommandFailed
+//ORIGINAL LINE: public void execute(String[] args) throws Neo4Net.commandline.admin.IncorrectUsage, Neo4Net.commandline.admin.CommandFailed
 		 public override void Execute( string[] args )
 		 {
 			  Arguments arguments = BuildArgs().parse(args);
@@ -328,7 +328,7 @@ namespace Neo4Net.Dbms.CommandLine
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.kernel.configuration.Config getConfig(java.io.File configFile, String databaseName) throws org.Neo4Net.commandline.admin.CommandFailed
+//ORIGINAL LINE: private Neo4Net.kernel.configuration.Config getConfig(java.io.File configFile, String databaseName) throws Neo4Net.commandline.admin.CommandFailed
 		 private Config GetConfig( File configFile, string databaseName )
 		 {
 			  if ( !_outsideWorld.fileSystem().fileExists(configFile) )

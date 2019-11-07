@@ -25,7 +25,7 @@ namespace Neo4Net.Server.web
 	using HttpConfiguration = org.eclipse.jetty.server.HttpConfiguration;
 	using HttpConnectionFactory = org.eclipse.jetty.server.HttpConnectionFactory;
 
-	using NetworkConnectionTracker = Neo4Net.Kernel.api.net.NetworkConnectionTracker;
+	using NetworkConnectionTracker = Neo4Net.Kernel.Api.net.NetworkConnectionTracker;
 
 	/// <summary>
 	/// Extension of the default Jetty <seealso cref="HttpConnectionFactory"/> which creates connections with additional properties.

@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 {
 
 	using PropertyCursor = Neo4Net.Kernel.Api.Internal.PropertyCursor;
-	using AssertOpen = Neo4Net.Kernel.api.AssertOpen;
+	using AssertOpen = Neo4Net.Kernel.Api.AssertOpen;
 	using StorageProperty = Neo4Net.Kernel.Api.StorageEngine.StorageProperty;
 	using StoragePropertyCursor = Neo4Net.Kernel.Api.StorageEngine.StoragePropertyCursor;
 	using IPropertyContainerState = Neo4Net.Kernel.Api.StorageEngine.TxState.PropertyContainerState;
@@ -34,7 +34,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 	using Neo4Net.Values.Storable;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.record.AbstractBaseRecord.NO_ID;
+//	import static Neo4Net.kernel.impl.store.record.AbstractBaseRecord.NO_ID;
 
 	public class DefaultPropertyCursor : PropertyCursor
 	{

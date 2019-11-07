@@ -17,13 +17,13 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Kernel.api.explicitindex
+namespace Neo4Net.Kernel.Api.explicitindex
 {
 	/// <summary>
 	/// Abstract interface for accessing legacy auto indexing facilities for nodes and relationships
 	/// </summary>
 	/// <seealso cref= AutoIndexOperations </seealso>
-	/// <seealso cref= org.Neo4Net.kernel.impl.api.explicitindex.InternalAutoIndexing </seealso>
+	/// <seealso cref= Neo4Net.kernel.impl.api.explicitindex.InternalAutoIndexing </seealso>
 	public interface AutoIndexing
 	{
 		 /// <summary>

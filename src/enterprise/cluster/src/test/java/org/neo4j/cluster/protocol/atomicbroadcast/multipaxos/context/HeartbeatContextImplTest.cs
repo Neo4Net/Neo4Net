@@ -43,9 +43,9 @@ namespace Neo4Net.cluster.protocol.atomicbroadcast.multipaxos.context
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.cluster.protocol.atomicbroadcast.multipaxos.ClusterProtocolAtomicbroadcastTestUtil.ids;
+//	import static Neo4Net.cluster.protocol.atomicbroadcast.multipaxos.ClusterProtocolAtomicbroadcastTestUtil.ids;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.cluster.protocol.atomicbroadcast.multipaxos.ClusterProtocolAtomicbroadcastTestUtil.members;
+//	import static Neo4Net.cluster.protocol.atomicbroadcast.multipaxos.ClusterProtocolAtomicbroadcastTestUtil.members;
 
 	public class HeartbeatContextImplTest
 	{
@@ -200,7 +200,7 @@ namespace Neo4Net.cluster.protocol.atomicbroadcast.multipaxos.context
 			  HeartbeatContext context = new HeartbeatContextImpl( me, commonState, NullLogProvider.Instance, timeouts, executor );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.List<org.Neo4Net.cluster.InstanceId> failed = new java.util.ArrayList<>(4);
+//ORIGINAL LINE: final java.util.List<Neo4Net.cluster.InstanceId> failed = new java.util.ArrayList<>(4);
 			  IList<InstanceId> failed = new List<InstanceId>( 4 );
 			  HeartbeatListener listener = new HeartbeatListenerAnonymousInnerClass2( this, failed );
 

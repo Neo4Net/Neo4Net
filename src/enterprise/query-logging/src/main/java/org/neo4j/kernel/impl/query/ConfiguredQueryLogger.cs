@@ -28,8 +28,8 @@ namespace Neo4Net.Kernel.impl.query
 {
 
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using ExecutingQuery = Neo4Net.Kernel.api.query.ExecutingQuery;
-	using QuerySnapshot = Neo4Net.Kernel.api.query.QuerySnapshot;
+	using ExecutingQuery = Neo4Net.Kernel.Api.query.ExecutingQuery;
+	using QuerySnapshot = Neo4Net.Kernel.Api.query.QuerySnapshot;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using Log = Neo4Net.Logging.Log;
 

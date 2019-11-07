@@ -82,7 +82,7 @@ namespace Neo4Net.Kernel.Api.Internal
 		 public abstract void CreateTestGraph( IGraphDatabaseService graphDb );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Before public void setupGraph() throws java.io.IOException, org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: @Before public void setupGraph() throws java.io.IOException, Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void SetupGraph()
 		 {
@@ -102,7 +102,7 @@ namespace Neo4Net.Kernel.Api.Internal
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected Transaction BeginTransaction() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
+//ORIGINAL LINE: protected Transaction BeginTransaction() throws Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 protected internal virtual Transaction BeginTransaction()
 		 {
 			  Kernel kernel = TestSupport.kernelToTest();

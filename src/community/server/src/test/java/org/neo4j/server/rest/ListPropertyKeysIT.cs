@@ -33,12 +33,12 @@ namespace Neo4Net.Server.rest
 //	import static org.junit.Assert.assertTrue;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.domain.JsonHelper.readJson;
+//	import static Neo4Net.server.rest.domain.JsonHelper.readJson;
 
 	public class ListPropertyKeysIT : AbstractRestFunctionalTestBase
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test @Documented("List all property keys.") @GraphDescription.Graph(nodes = { @GraphDescription.NODE(name = "a", setNameProperty = true), @GraphDescription.NODE(name = "b", setNameProperty = true), @GraphDescription.NODE(name = "c", setNameProperty = true) }) public void list_all_property_keys_ever_used() throws org.Neo4Net.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @Test @Documented("List all property keys.") @GraphDescription.Graph(nodes = { @GraphDescription.NODE(name = "a", setNameProperty = true), @GraphDescription.NODE(name = "b", setNameProperty = true), @GraphDescription.NODE(name = "c", setNameProperty = true) }) public void list_all_property_keys_ever_used() throws Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Documented("List all property keys.")]
 		 public virtual void ListAllPropertyKeysEverUsed()
@@ -48,7 +48,7 @@ namespace Neo4Net.Server.rest
 			  string body = GenConflict.get().expectedStatus(200).get(uri).entity();
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Set<?> parsed = org.Neo4Net.helpers.collection.Iterables.asSet((java.util.List<?>) readJson(body));
+//ORIGINAL LINE: java.util.Set<?> parsed = Neo4Net.helpers.collection.Iterables.asSet((java.util.List<?>) readJson(body));
 			  ISet<object> parsed = Iterables.asSet( ( IList<object> ) readJson( body ) );
 			  assertTrue( parsed.Contains( "name" ) );
 		 }

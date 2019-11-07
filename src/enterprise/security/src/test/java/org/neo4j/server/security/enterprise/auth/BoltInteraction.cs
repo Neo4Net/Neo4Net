@@ -48,7 +48,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 	using AuthenticationResult = Neo4Net.Kernel.Api.Internal.security.AuthenticationResult;
 	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using EnterpriseAuthManager = Neo4Net.Kernel.enterprise.api.security.EnterpriseAuthManager;
 	using InternalTransaction = Neo4Net.Kernel.impl.coreapi.InternalTransaction;
@@ -68,23 +68,23 @@ namespace Neo4Net.Server.security.enterprise.auth
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.transport.integration.TransportTestUtil.eventuallyReceives;
+//	import static Neo4Net.bolt.v1.transport.integration.TransportTestUtil.eventuallyReceives;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.map;
+//	import static Neo4Net.helpers.collection.MapUtil.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.security.AuthToken_Fields.BASIC_SCHEME;
+//	import static Neo4Net.kernel.api.security.AuthToken_Fields.BASIC_SCHEME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.security.AuthToken_Fields.CREDENTIALS;
+//	import static Neo4Net.kernel.api.security.AuthToken_Fields.CREDENTIALS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.security.AuthToken_Fields.NATIVE_REALM;
+//	import static Neo4Net.kernel.api.security.AuthToken_Fields.NATIVE_REALM;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.security.AuthToken_Fields.PRINCIPAL;
+//	import static Neo4Net.kernel.api.security.AuthToken_Fields.PRINCIPAL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.security.AuthToken_Fields.REALM_KEY;
+//	import static Neo4Net.kernel.api.security.AuthToken_Fields.REALM_KEY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.security.AuthToken_Fields.SCHEME_KEY;
+//	import static Neo4Net.kernel.api.security.AuthToken_Fields.SCHEME_KEY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.security.AuthToken.newBasicAuthToken;
+//	import static Neo4Net.kernel.api.security.AuthToken.newBasicAuthToken;
 
 	internal class BoltInteraction : NeoInteractionLevel<BoltInteraction.BoltSubject>
 	{
@@ -145,7 +145,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.kernel.impl.coreapi.InternalTransaction beginLocalTransactionAsUser(BoltSubject subject, org.Neo4Net.kernel.api.KernelTransaction.Type txType) throws Throwable
+//ORIGINAL LINE: public Neo4Net.kernel.impl.coreapi.InternalTransaction beginLocalTransactionAsUser(BoltSubject subject, Neo4Net.kernel.api.KernelTransaction.Type txType) throws Throwable
 		 public override InternalTransaction BeginLocalTransactionAsUser( BoltSubject subject, KernelTransaction.Type txType )
 		 {
 			  LoginContext loginContext = _authManager.login( newBasicAuthToken( subject.Username, subject.Password ) );
@@ -256,7 +256,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private BoltResult collectResults(org.Neo4Net.bolt.v1.transport.socket.client.TransportConnection client) throws Exception
+//ORIGINAL LINE: private BoltResult collectResults(Neo4Net.bolt.v1.transport.socket.client.TransportConnection client) throws Exception
 		 private BoltResult CollectResults( TransportConnection client )
 		 {
 			  ResponseMessage message = _util.receiveOneResponseMessage( client );
@@ -366,7 +366,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 			  }
 		 }
 
-		 internal class BoltResult : ResourceIterator<IDictionary<string, object>>
+		 internal class BoltResult : IResourceIterator<IDictionary<string, object>>
 		 {
 			  internal int Index;
 			  internal IList<IDictionary<string, object>> Data;

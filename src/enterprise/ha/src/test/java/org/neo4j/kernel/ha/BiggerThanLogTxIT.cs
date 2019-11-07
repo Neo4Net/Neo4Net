@@ -41,14 +41,14 @@ namespace Neo4Net.Kernel.ha
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.parseLongWithUnit;
+//	import static Neo4Net.kernel.configuration.Settings.parseLongWithUnit;
 
 	public class BiggerThanLogTxIT
 	{
 		 private const string ROTATION_THRESHOLD = "1M";
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.ha.ClusterRule clusterRule = new org.Neo4Net.test.ha.ClusterRule().withSharedSetting(org.Neo4Net.graphdb.factory.GraphDatabaseSettings.logical_log_rotation_threshold, ROTATION_THRESHOLD);
+//ORIGINAL LINE: @Rule public Neo4Net.test.ha.ClusterRule clusterRule = new Neo4Net.test.ha.ClusterRule().withSharedSetting(Neo4Net.graphdb.factory.GraphDatabaseSettings.logical_log_rotation_threshold, ROTATION_THRESHOLD);
 		 public ClusterRule ClusterRule = new ClusterRule().withSharedSetting(GraphDatabaseSettings.logical_log_rotation_threshold, ROTATION_THRESHOLD);
 
 		 protected internal ClusterManager.ManagedCluster Cluster;
@@ -160,7 +160,7 @@ namespace Neo4Net.Kernel.ha
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private int commitLargeTx(final org.Neo4Net.graphdb.GraphDatabaseService db)
+//ORIGINAL LINE: private int commitLargeTx(final Neo4Net.graphdb.GraphDatabaseService db)
 		 private int CommitLargeTx( IGraphDatabaseService db )
 		 {
 			  return _template.with( db ).execute(transaction =>

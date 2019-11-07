@@ -37,7 +37,7 @@ namespace Neo4Net.helper
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("WeakerAccess") public Workload(org.Neo4Net.causalclustering.stresstests.Control control, long sleepTimeMillis)
+//ORIGINAL LINE: @SuppressWarnings("WeakerAccess") public Workload(Neo4Net.causalclustering.stresstests.Control control, long sleepTimeMillis)
 		 public Workload( Control control, long sleepTimeMillis )
 		 {
 			  this.Control = control;

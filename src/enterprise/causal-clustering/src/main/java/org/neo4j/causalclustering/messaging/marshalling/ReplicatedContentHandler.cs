@@ -35,35 +35,35 @@ namespace Neo4Net.causalclustering.messaging.marshalling
 	public interface ReplicatedContentHandler
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void handle(org.Neo4Net.causalclustering.core.state.machines.tx.ReplicatedTransaction replicatedTransaction) throws java.io.IOException;
+//ORIGINAL LINE: void handle(Neo4Net.causalclustering.core.state.machines.tx.ReplicatedTransaction replicatedTransaction) throws java.io.IOException;
 		 void Handle( ReplicatedTransaction replicatedTransaction );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void handle(org.Neo4Net.causalclustering.core.consensus.membership.MemberIdSet memberIdSet) throws java.io.IOException;
+//ORIGINAL LINE: void handle(Neo4Net.causalclustering.core.consensus.membership.MemberIdSet memberIdSet) throws java.io.IOException;
 		 void Handle( MemberIdSet memberIdSet );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void handle(org.Neo4Net.causalclustering.core.state.machines.id.ReplicatedIdAllocationRequest replicatedIdAllocationRequest) throws java.io.IOException;
+//ORIGINAL LINE: void handle(Neo4Net.causalclustering.core.state.machines.id.ReplicatedIdAllocationRequest replicatedIdAllocationRequest) throws java.io.IOException;
 		 void Handle( ReplicatedIdAllocationRequest replicatedIdAllocationRequest );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void handle(org.Neo4Net.causalclustering.core.state.machines.token.ReplicatedTokenRequest replicatedTokenRequest) throws java.io.IOException;
+//ORIGINAL LINE: void handle(Neo4Net.causalclustering.core.state.machines.token.ReplicatedTokenRequest replicatedTokenRequest) throws java.io.IOException;
 		 void Handle( ReplicatedTokenRequest replicatedTokenRequest );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void handle(org.Neo4Net.causalclustering.core.consensus.NewLeaderBarrier newLeaderBarrier) throws java.io.IOException;
+//ORIGINAL LINE: void handle(Neo4Net.causalclustering.core.consensus.NewLeaderBarrier newLeaderBarrier) throws java.io.IOException;
 		 void Handle( NewLeaderBarrier newLeaderBarrier );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void handle(org.Neo4Net.causalclustering.core.state.machines.locks.ReplicatedLockTokenRequest replicatedLockTokenRequest) throws java.io.IOException;
+//ORIGINAL LINE: void handle(Neo4Net.causalclustering.core.state.machines.locks.ReplicatedLockTokenRequest replicatedLockTokenRequest) throws java.io.IOException;
 		 void Handle( ReplicatedLockTokenRequest replicatedLockTokenRequest );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void handle(org.Neo4Net.causalclustering.core.replication.DistributedOperation distributedOperation) throws java.io.IOException;
+//ORIGINAL LINE: void handle(Neo4Net.causalclustering.core.replication.DistributedOperation distributedOperation) throws java.io.IOException;
 		 void Handle( DistributedOperation distributedOperation );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void handle(org.Neo4Net.causalclustering.core.state.machines.dummy.DummyRequest dummyRequest) throws java.io.IOException;
+//ORIGINAL LINE: void handle(Neo4Net.causalclustering.core.state.machines.dummy.DummyRequest dummyRequest) throws java.io.IOException;
 		 void Handle( DummyRequest dummyRequest );
 	}
 

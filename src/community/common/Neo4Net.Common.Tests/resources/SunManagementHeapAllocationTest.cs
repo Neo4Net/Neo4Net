@@ -35,9 +35,9 @@ namespace Neo4Net.Resources
    //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
    //	import static org.junit.jupiter.api.Assumptions.assumeFalse;
    //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-   //	import static org.Neo4Net.resources.HeapAllocation.HEAP_ALLOCATION;
+   //	import static Neo4Net.resources.HeapAllocation.HEAP_ALLOCATION;
    //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-   //	import static org.Neo4Net.resources.HeapAllocation.NOT_AVAILABLE;
+   //	import static Neo4Net.resources.HeapAllocation.NOT_AVAILABLE;
 
    internal class SunManagementHeapAllocationTest
    {

@@ -35,23 +35,23 @@ namespace Neo4Net.Server.rest.repr
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.repr.RepresentationTestAccess.serialize;
+//	import static Neo4Net.server.rest.repr.RepresentationTestAccess.serialize;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.repr.RepresentationTestBase.NODE_URI_PATTERN;
+//	import static Neo4Net.server.rest.repr.RepresentationTestBase.NODE_URI_PATTERN;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.repr.RepresentationTestBase.RELATIONSHIP_URI_PATTERN;
+//	import static Neo4Net.server.rest.repr.RepresentationTestBase.RELATIONSHIP_URI_PATTERN;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.repr.RepresentationTestBase.assertUriMatches;
+//	import static Neo4Net.server.rest.repr.RepresentationTestBase.assertUriMatches;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.mockito.mock.GraphMock.node;
+//	import static Neo4Net.test.mockito.mock.GraphMock.node;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.mockito.mock.GraphMock.path;
+//	import static Neo4Net.test.mockito.mock.GraphMock.path;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.mockito.mock.GraphMock.relationship;
+//	import static Neo4Net.test.mockito.mock.GraphMock.relationship;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.mockito.mock.Link.link;
+//	import static Neo4Net.test.mockito.mock.Link.link;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.mockito.mock.Properties.properties;
+//	import static Neo4Net.test.mockito.mock.Properties.properties;
 
 	public class PathRepresentationTest
 	{

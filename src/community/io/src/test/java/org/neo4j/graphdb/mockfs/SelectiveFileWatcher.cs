@@ -42,7 +42,7 @@ namespace Neo4Net.GraphDb.mockfs
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.io.fs.watcher.resource.WatchedResource watch(java.io.File file) throws java.io.IOException
+//ORIGINAL LINE: public Neo4Net.io.fs.watcher.resource.WatchedResource watch(java.io.File file) throws java.io.IOException
 		 public override WatchedResource Watch( File file )
 		 {
 			  return ChooseFileWatcher( file ).watch( file );

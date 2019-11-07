@@ -52,22 +52,22 @@ namespace Neo4Net.backup.impl
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Internal.matchers.ThrowableCauseMatcher.hasCause;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.backup.impl.SelectedBackupProtocol.ANY;
+//	import static Neo4Net.backup.impl.SelectedBackupProtocol.ANY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.logical_logs_location;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.logical_logs_location;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.pagecache_memory;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.pagecache_memory;
 
 	public class OnlineBackupContextFactoryTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.TestDirectory testDirectory = Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public TestDirectory TestDirectory = TestDirectory.testDirectory();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Rule public org.junit.rules.ExpectedException expected = org.junit.rules.ExpectedException.none();
 		 public ExpectedException Expected = ExpectedException.none();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.SuppressOutput suppress = org.Neo4Net.test.rule.SuppressOutput.suppressAll();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.SuppressOutput suppress = Neo4Net.test.rule.SuppressOutput.suppressAll();
 		 public SuppressOutput Suppress = SuppressOutput.suppressAll();
 
 		 private Path _homeDir;
@@ -339,7 +339,7 @@ namespace Neo4Net.backup.impl
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void defaultProtocolIsAny() throws org.Neo4Net.commandline.admin.CommandFailed, org.Neo4Net.commandline.admin.IncorrectUsage
+//ORIGINAL LINE: @Test public void defaultProtocolIsAny() throws Neo4Net.commandline.admin.CommandFailed, Neo4Net.commandline.admin.IncorrectUsage
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void DefaultProtocolIsAny()
 		 {
@@ -354,7 +354,7 @@ namespace Neo4Net.backup.impl
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void overrideWithLegacy() throws org.Neo4Net.commandline.admin.CommandFailed, org.Neo4Net.commandline.admin.IncorrectUsage
+//ORIGINAL LINE: @Test public void overrideWithLegacy() throws Neo4Net.commandline.admin.CommandFailed, Neo4Net.commandline.admin.IncorrectUsage
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void OverrideWithLegacy()
 		 {
@@ -376,7 +376,7 @@ namespace Neo4Net.backup.impl
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void prometheusShouldBeDisabledToAvoidPortConflicts() throws org.Neo4Net.commandline.admin.CommandFailed, org.Neo4Net.commandline.admin.IncorrectUsage
+//ORIGINAL LINE: @Test public void prometheusShouldBeDisabledToAvoidPortConflicts() throws Neo4Net.commandline.admin.CommandFailed, Neo4Net.commandline.admin.IncorrectUsage
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void PrometheusShouldBeDisabledToAvoidPortConflicts()
 		 {
@@ -385,7 +385,7 @@ namespace Neo4Net.backup.impl
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void ipv6CanBeProcessed() throws org.Neo4Net.commandline.admin.CommandFailed, org.Neo4Net.commandline.admin.IncorrectUsage
+//ORIGINAL LINE: @Test public void ipv6CanBeProcessed() throws Neo4Net.commandline.admin.CommandFailed, Neo4Net.commandline.admin.IncorrectUsage
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void Ipv6CanBeProcessed()
 		 {

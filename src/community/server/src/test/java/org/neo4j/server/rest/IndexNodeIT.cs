@@ -50,11 +50,11 @@ namespace Neo4Net.Server.rest
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.helpers.FunctionalTestHelper.CLIENT;
+//	import static Neo4Net.server.helpers.FunctionalTestHelper.CLIENT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.hasProperty;
+//	import static Neo4Net.test.mockito.matcher.Neo4NetMatchers.hasProperty;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.inTx;
+//	import static Neo4Net.test.mockito.matcher.Neo4NetMatchers.inTx;
 
 	public class IndexNodeIT : AbstractRestFunctionalTestBase
 	{
@@ -70,7 +70,7 @@ namespace Neo4Net.Server.rest
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Documented("List node indexes.") @Test public void shouldGetListOfNodeIndexesWhenOneExist() throws org.Neo4Net.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @Documented("List node indexes.") @Test public void shouldGetListOfNodeIndexesWhenOneExist() throws Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Documented("List node indexes.")]
 		 public virtual void ShouldGetListOfNodeIndexesWhenOneExist()
@@ -150,7 +150,7 @@ namespace Neo4Net.Server.rest
 			  JaxRsResponse response = RestRequest.Req().get(_functionalTestHelper.indexNodeUri(indexName, key, URIHelper.encode(value)));
 			  string IEntity = response.Entity;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Collection<?> hits = (java.util.Collection<?>) org.Neo4Net.server.rest.domain.JsonHelper.readJson(entity);
+//ORIGINAL LINE: java.util.Collection<?> hits = (java.util.Collection<?>) Neo4Net.server.rest.domain.JsonHelper.readJson(entity);
 			  ICollection<object> hits = ( ICollection<object> ) JsonHelper.readJson( IEntity );
 			  assertEquals( 1, hits.Count );
 		 }
@@ -173,13 +173,13 @@ namespace Neo4Net.Server.rest
 			  // search it exact
 			  string IEntity = Gen().expectedStatus(200).get(_functionalTestHelper.indexNodeUri(indexName, key, URIHelper.encode(value))).entity();
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Collection<?> hits = (java.util.Collection<?>) org.Neo4Net.server.rest.domain.JsonHelper.readJson(entity);
+//ORIGINAL LINE: java.util.Collection<?> hits = (java.util.Collection<?>) Neo4Net.server.rest.domain.JsonHelper.readJson(entity);
 			  ICollection<object> hits = ( ICollection<object> ) JsonHelper.readJson( IEntity );
 			  assertEquals( 1, hits.Count );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Documented("Find node by query.\n" + "\n" + "The query language used here depends on what type of index you are\n" + "querying. The default index type is Lucene, in which case you should use\n" + "the Lucene query language here. Below an example of a fuzzy search over\n" + "multiple keys.\n" + "\n" + "See: {lucene-base-uri}/queryparser/org/apache/lucene/queryparser/classic/package-summary.html\n" + "\n" + "Getting the results with a predefined ordering requires adding the\n" + "parameter\n" + "\n" + "`order=ordering`\n" + "\n" + "where ordering is one of index, relevance or score. In this case an\n" + "additional field will be added to each result, named score, that holds\n" + "the float value that is the score reported by the query result.") @Test public void shouldAddToIndexAndRetrieveItByQuery() throws org.Neo4Net.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @Documented("Find node by query.\n" + "\n" + "The query language used here depends on what type of index you are\n" + "querying. The default index type is Lucene, in which case you should use\n" + "the Lucene query language here. Below an example of a fuzzy search over\n" + "multiple keys.\n" + "\n" + "See: {lucene-base-uri}/queryparser/org/apache/lucene/queryparser/classic/package-summary.html\n" + "\n" + "Getting the results with a predefined ordering requires adding the\n" + "parameter\n" + "\n" + "`order=ordering`\n" + "\n" + "where ordering is one of index, relevance or score. In this case an\n" + "additional field will be added to each result, named score, that holds\n" + "the float value that is the score reported by the query result.") @Test public void shouldAddToIndexAndRetrieveItByQuery() throws Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Documented("Find node by query.\n" + "\n" + "The query language used here depends on what type of index you are\n" + "querying. The default index type is Lucene, in which case you should use\n" + "the Lucene query language here. Below an example of a fuzzy search over\n" + "multiple keys.\n" + "\n" + "See: {lucene-base-uri}/queryparser/org/apache/lucene/queryparser/classic/package-summary.html\n" + "\n" + "Getting the results with a predefined ordering requires adding the\n" + "parameter\n" + "\n" + "`order=ordering`\n" + "\n" + "where ordering is one of index, relevance or score. In this case an\n" + "additional field will be added to each result, named score, that holds\n" + "the float value that is the score reported by the query result.")]
 		 public virtual void ShouldAddToIndexAndRetrieveItByQuery()
@@ -194,7 +194,7 @@ namespace Neo4Net.Server.rest
 			  string IEntity = Gen().expectedStatus(200).get(_functionalTestHelper.indexNodeUri(indexName) + "?query=" + key + ":Build~0.1%20AND%20Gender:Male").entity();
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Collection<?> hits = (java.util.Collection<?>) org.Neo4Net.server.rest.domain.JsonHelper.readJson(entity);
+//ORIGINAL LINE: java.util.Collection<?> hits = (java.util.Collection<?>) Neo4Net.server.rest.domain.JsonHelper.readJson(entity);
 			  ICollection<object> hits = ( ICollection<object> ) JsonHelper.readJson( IEntity );
 			  assertEquals( 1, hits.Count );
 			  LinkedHashMap<string, string> nodeMap = ( LinkedHashMap ) hits.GetEnumerator().next();
@@ -217,7 +217,7 @@ namespace Neo4Net.Server.rest
 			  string IEntity = Gen().expectedStatus(200).get(_functionalTestHelper.indexNodeUri(indexName) + "?query=" + key + ":Build~0.1%20AND%20Gender:Male").entity();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") java.util.Collection<java.util.LinkedHashMap<String, String>> hits = (java.util.Collection<java.util.LinkedHashMap<String, String>>) org.Neo4Net.server.rest.domain.JsonHelper.readJson(entity);
+//ORIGINAL LINE: @SuppressWarnings("unchecked") java.util.Collection<java.util.LinkedHashMap<String, String>> hits = (java.util.Collection<java.util.LinkedHashMap<String, String>>) Neo4Net.server.rest.domain.JsonHelper.readJson(entity);
 			  ICollection<LinkedHashMap<string, string>> hits = ( ICollection<LinkedHashMap<string, string>> ) JsonHelper.readJson( IEntity );
 			  LinkedHashMap<string, string> nodeMapUnordered = hits.GetEnumerator().next();
 
@@ -238,7 +238,7 @@ namespace Neo4Net.Server.rest
 
 		 //TODO:add compatibility tests for old syntax
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldAddToIndexAndRetrieveItByQuerySorted() throws org.Neo4Net.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @Test public void shouldAddToIndexAndRetrieveItByQuerySorted() throws Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldAddToIndexAndRetrieveItByQuerySorted()
 		 {
@@ -255,7 +255,7 @@ namespace Neo4Net.Server.rest
 			  string IEntity = Gen().expectedStatus(200).get(_functionalTestHelper.indexNodeUri(indexName) + "?query=" + key + ":Builder~%20AND%20Gender:Male&order=relevance").entity();
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Collection<?> hits = (java.util.Collection<?>) org.Neo4Net.server.rest.domain.JsonHelper.readJson(entity);
+//ORIGINAL LINE: java.util.Collection<?> hits = (java.util.Collection<?>) Neo4Net.server.rest.domain.JsonHelper.readJson(entity);
 			  ICollection<object> hits = ( ICollection<object> ) JsonHelper.readJson( IEntity );
 			  assertEquals( 2, hits.Count );
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -279,7 +279,7 @@ namespace Neo4Net.Server.rest
 			  IEntity = Gen().expectedStatus(200).get(_functionalTestHelper.indexNodeUri(indexName) + "?query=" + key + ":Builder~%20AND%20Gender:Male&order=index").entity();
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: hits = (java.util.Collection<?>) org.Neo4Net.server.rest.domain.JsonHelper.readJson(entity);
+//ORIGINAL LINE: hits = (java.util.Collection<?>) Neo4Net.server.rest.domain.JsonHelper.readJson(entity);
 			  hits = ( ICollection<object> ) JsonHelper.readJson( IEntity );
 			  assertEquals( 2, hits.Count );
 			  //noinspection unchecked
@@ -301,7 +301,7 @@ namespace Neo4Net.Server.rest
 			  IEntity = Gen().expectedStatus(200).get(_functionalTestHelper.indexNodeUri(indexName) + "?query=" + key + ":Builder~%20AND%20Gender:Male&order=score").entity();
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: hits = (java.util.Collection<?>) org.Neo4Net.server.rest.domain.JsonHelper.readJson(entity);
+//ORIGINAL LINE: hits = (java.util.Collection<?>) Neo4Net.server.rest.domain.JsonHelper.readJson(entity);
 			  hits = ( ICollection<object> ) JsonHelper.readJson( IEntity );
 			  assertEquals( 2, hits.Count );
 			  //noinspection unchecked
@@ -319,7 +319,7 @@ namespace Neo4Net.Server.rest
 		 }
 
 		 /// <summary>
-		 /// POST ${org.Neo4Net.server.rest.web}/index/node/{indexName}/{key}/{value}
+		 /// POST ${Neo4Net.server.rest.web}/index/node/{indexName}/{key}/{value}
 		 /// "http://uri.for.node.to.index"
 		 /// </summary>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -343,7 +343,7 @@ namespace Neo4Net.Server.rest
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldGetNodeRepresentationFromIndexUri() throws org.Neo4Net.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @Test public void shouldGetNodeRepresentationFromIndexUri() throws Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldGetNodeRepresentationFromIndexUri()
 		 {
@@ -392,7 +392,7 @@ namespace Neo4Net.Server.rest
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldGet200AndArrayOfNodeRepsWhenGettingFromIndex() throws org.Neo4Net.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @Test public void shouldGet200AndArrayOfNodeRepsWhenGettingFromIndex() throws Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldGet200AndArrayOfNodeRepsWhenGettingFromIndex()
 		 {
@@ -429,7 +429,7 @@ namespace Neo4Net.Server.rest
 			  JaxRsResponse response = RestRequest.Req().get(_functionalTestHelper.indexNodeUri(indexName, key, value));
 			  assertEquals( 200, response.Status );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Collection<?> items = (java.util.Collection<?>) org.Neo4Net.server.rest.domain.JsonHelper.readJson(response.getEntity());
+//ORIGINAL LINE: java.util.Collection<?> items = (java.util.Collection<?>) Neo4Net.server.rest.domain.JsonHelper.readJson(response.getEntity());
 			  ICollection<object> items = ( ICollection<object> ) JsonHelper.readJson( response.Entity );
 			  int counter = 0;
 			  foreach ( object item in items )
@@ -576,7 +576,7 @@ namespace Neo4Net.Server.rest
 			  response = request.Get( _functionalTestHelper.indexNodeUri( indexName, key, URIHelper.encode( value ) ) );
 			  assertEquals( Status.OK.StatusCode, response.Status );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Collection<?> hits = (java.util.Collection<?>) org.Neo4Net.server.rest.domain.JsonHelper.readJson(response.getEntity());
+//ORIGINAL LINE: java.util.Collection<?> hits = (java.util.Collection<?>) Neo4Net.server.rest.domain.JsonHelper.readJson(response.getEntity());
 			  ICollection<object> hits = ( ICollection<object> ) JsonHelper.readJson( response.Entity );
 			  assertEquals( 1, hits.Count );
 			  response.Close();
@@ -584,7 +584,7 @@ namespace Neo4Net.Server.rest
 			  CLIENT.resource( location ).delete();
 			  response = request.Get( _functionalTestHelper.indexNodeUri( indexName, key, URIHelper.encode( value ) ) );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: hits = (java.util.Collection<?>) org.Neo4Net.server.rest.domain.JsonHelper.readJson(response.getEntity());
+//ORIGINAL LINE: hits = (java.util.Collection<?>) Neo4Net.server.rest.domain.JsonHelper.readJson(response.getEntity());
 			  hits = ( ICollection<object> ) JsonHelper.readJson( response.Entity );
 			  assertEquals( 0, hits.Count );
 		 }
@@ -761,7 +761,7 @@ namespace Neo4Net.Server.rest
 			  JaxRsResponse response = RestRequest.Req().get(_functionalTestHelper.indexNodeUri(indexName, key, URIHelper.encode(value)));
 			  string IEntity = response.Entity;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Collection<?> hits = (java.util.Collection<?>) org.Neo4Net.server.rest.domain.JsonHelper.readJson(entity);
+//ORIGINAL LINE: java.util.Collection<?> hits = (java.util.Collection<?>) Neo4Net.server.rest.domain.JsonHelper.readJson(entity);
 			  ICollection<object> hits = ( ICollection<object> ) JsonHelper.readJson( IEntity );
 			  assertEquals( 1, hits.Count );
 		 }

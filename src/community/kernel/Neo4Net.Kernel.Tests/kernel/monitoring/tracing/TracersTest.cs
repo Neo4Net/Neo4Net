@@ -58,7 +58,7 @@ namespace Neo4Net.Kernel.monitoring.tracing
 		 public virtual void SetUp()
 		 {
 			  _log = _logProvider.getLog( this.GetType() );
-			  System.setProperty( "org.Neo4Net.helpers.Service.printServiceLoaderStackTraces", "true" );
+			  System.setProperty( "Neo4Net.helpers.Service.printServiceLoaderStackTraces", "true" );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

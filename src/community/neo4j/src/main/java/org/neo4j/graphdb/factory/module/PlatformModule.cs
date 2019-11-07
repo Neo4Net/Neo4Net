@@ -85,13 +85,13 @@ namespace Neo4Net.GraphDb.factory.module
 	using UsageDataKeys = Neo4Net.Udc.UsageDataKeys;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.store_internal_log_path;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.store_internal_log_path;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.tx_state_off_heap_block_cache_size;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.tx_state_off_heap_block_cache_size;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.tx_state_off_heap_max_cacheable_block_size;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.tx_state_off_heap_max_cacheable_block_size;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.lifecycle.LifecycleAdapter.onShutdown;
+//	import static Neo4Net.kernel.lifecycle.LifecycleAdapter.onShutdown;
 
 	/// <summary>
 	/// Platform module for <seealso cref="GraphDatabaseFacadeFactory"/>. This creates
@@ -128,7 +128,7 @@ namespace Neo4Net.GraphDb.factory.module
 
 		 public readonly GlobalKernelExtensions GlobalKernelExtensions;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: public final Iterable<org.Neo4Net.kernel.extension.KernelExtensionFactory<?>> kernelExtensionFactories;
+//ORIGINAL LINE: public final Iterable<Neo4Net.kernel.extension.KernelExtensionFactory<?>> kernelExtensionFactories;
 		 public readonly IEnumerable<KernelExtensionFactory<object>> KernelExtensionFactories;
 		 public readonly IEnumerable<QueryEngineProvider> EngineProviders;
 
@@ -289,7 +289,7 @@ namespace Neo4Net.GraphDb.factory.module
 			  int internalLogMaxArchives = Config.get( GraphDatabaseSettings.store_internal_log_max_archives );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.logging.internal.StoreLogService.Builder builder = org.Neo4Net.logging.internal.StoreLogService.withRotation(internalLogRotationThreshold, internalLogRotationDelay, internalLogMaxArchives, jobScheduler);
+//ORIGINAL LINE: final Neo4Net.logging.internal.StoreLogService.Builder builder = Neo4Net.logging.internal.StoreLogService.withRotation(internalLogRotationThreshold, internalLogRotationDelay, internalLogMaxArchives, jobScheduler);
 			  StoreLogService.Builder builder = StoreLogService.withRotation( internalLogRotationThreshold, internalLogRotationDelay, internalLogMaxArchives, IJobScheduler );
 
 			  if ( userLogProvider != null )
@@ -343,7 +343,7 @@ namespace Neo4Net.GraphDb.factory.module
 		 private static CollectionsFactorySupplier CreateCollectionsFactorySupplier( Config config, LifeSupport life )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.graphdb.factory.GraphDatabaseSettings.TransactionStateMemoryAllocation allocation = config.get(org.Neo4Net.graphdb.factory.GraphDatabaseSettings.tx_state_memory_allocation);
+//ORIGINAL LINE: final Neo4Net.graphdb.factory.GraphDatabaseSettings.TransactionStateMemoryAllocation allocation = config.get(Neo4Net.graphdb.factory.GraphDatabaseSettings.tx_state_memory_allocation);
 			  GraphDatabaseSettings.TransactionStateMemoryAllocation allocation = config.Get( GraphDatabaseSettings.tx_state_memory_allocation );
 			  switch ( allocation )
 			  {
@@ -351,13 +351,13 @@ namespace Neo4Net.GraphDb.factory.module
 					return Neo4Net.Kernel.impl.util.collection.CollectionsFactorySupplier_Fields.OnHeap;
 			  case GraphDatabaseSettings.TransactionStateMemoryAllocation.OFF_HEAP:
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.util.collection.CachingOffHeapBlockAllocator allocator = new org.Neo4Net.kernel.impl.util.collection.CachingOffHeapBlockAllocator(config.get(tx_state_off_heap_max_cacheable_block_size), config.get(tx_state_off_heap_block_cache_size));
+//ORIGINAL LINE: final Neo4Net.kernel.impl.util.collection.CachingOffHeapBlockAllocator allocator = new Neo4Net.kernel.impl.util.collection.CachingOffHeapBlockAllocator(config.get(tx_state_off_heap_max_cacheable_block_size), config.get(tx_state_off_heap_block_cache_size));
 					CachingOffHeapBlockAllocator allocator = new CachingOffHeapBlockAllocator( config.Get( tx_state_off_heap_max_cacheable_block_size ), config.Get( tx_state_off_heap_block_cache_size ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.util.collection.OffHeapBlockAllocator sharedBlockAllocator;
+//ORIGINAL LINE: final Neo4Net.kernel.impl.util.collection.OffHeapBlockAllocator sharedBlockAllocator;
 					OffHeapBlockAllocator sharedBlockAllocator;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final long maxMemory = config.get(org.Neo4Net.graphdb.factory.GraphDatabaseSettings.tx_state_max_off_heap_memory);
+//ORIGINAL LINE: final long maxMemory = config.get(Neo4Net.graphdb.factory.GraphDatabaseSettings.tx_state_max_off_heap_memory);
 					long maxMemory = config.Get( GraphDatabaseSettings.tx_state_max_off_heap_memory );
 					if ( maxMemory > 0 )
 					{

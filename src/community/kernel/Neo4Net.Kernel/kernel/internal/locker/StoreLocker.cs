@@ -58,7 +58,7 @@ namespace Neo4Net.Kernel.Internal.locker
 		 /// </summary>
 		 /// <exception cref="StoreLockException"> if lock could not be acquired </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void checkLock() throws org.Neo4Net.kernel.StoreLockException
+//ORIGINAL LINE: public void checkLock() throws Neo4Net.kernel.StoreLockException
 		 public virtual void CheckLock()
 		 {
 			  if ( HaveLockAlready() )

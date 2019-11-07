@@ -226,8 +226,8 @@ namespace Common
 			  {
 					return null;
 			  }
-			  ResourceIterable<Relationship> relationships = Iterables.asResourceIterable( node1.Relationships );
-			  using ( ResourceIterator<Relationship> resourceIterator = relationships.GetEnumerator() )
+			 IResourceIterable<Relationship> relationships = Iterables.asResourceIterable( node1.Relationships );
+			  using ( IResourceIterator<Relationship> resourceIterator = relationships.GetEnumerator() )
 			  {
 					while ( resourceIterator.MoveNext() )
 					{

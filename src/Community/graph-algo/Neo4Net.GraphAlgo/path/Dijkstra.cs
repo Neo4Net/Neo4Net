@@ -46,11 +46,11 @@ namespace Neo4Net.GraphAlgo.Path
 	using NoneStrictMath = Neo4Net.Kernel.impl.util.NoneStrictMath;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphalgo.impl.util.PathInterestFactory.single;
+//	import static Neo4Net.graphalgo.impl.util.PathInterestFactory.single;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.Direction.OUTGOING;
+//	import static Neo4Net.graphdb.Direction.OUTGOING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.firstOrNull;
+//	import static Neo4Net.helpers.collection.Iterators.firstOrNull;
 
 	/// <summary>
 	/// Find (one or some) simple shortest path(s) between two nodes.
@@ -146,17 +146,17 @@ namespace Neo4Net.GraphAlgo.Path
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public Iterable<org.Neo4Net.graphalgo.WeightedPath> findAllPaths(org.Neo4Net.graphdb.Node start, final org.Neo4Net.graphdb.Node end)
+//ORIGINAL LINE: public Iterable<Neo4Net.graphalgo.WeightedPath> findAllPaths(Neo4Net.graphdb.Node start, final Neo4Net.graphdb.Node end)
 		 public override IEnumerable<WeightedPath> FindAllPaths( Node start, Node end )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.graphdb.traversal.Traverser traverser = traverser(start, end, interest);
+//ORIGINAL LINE: final Neo4Net.graphdb.traversal.Traverser traverser = traverser(start, end, interest);
 			  Traverser traverser = traverser( start, end, _interest );
 			  return () => new WeightedPathIterator(traverser.GetEnumerator(), _costEvaluator, _epsilon, _interest);
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private org.Neo4Net.graphdb.traversal.Traverser traverser(org.Neo4Net.graphdb.Node start, final org.Neo4Net.graphdb.Node end, org.Neo4Net.graphalgo.impl.util.PathInterest<double> interest)
+//ORIGINAL LINE: private Neo4Net.graphdb.traversal.Traverser traverser(Neo4Net.graphdb.Node start, final Neo4Net.graphdb.Node end, Neo4Net.graphalgo.impl.util.PathInterest<double> interest)
 		 private Traverser Traverser( Node start, Node end, PathInterest<double> interest )
 		 {
 			  PathExpander dijkstraExpander;
@@ -194,7 +194,7 @@ namespace Neo4Net.GraphAlgo.Path
 			  protected internal readonly bool StopAfterLowestCost;
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: DijkstraPathExpander(final org.Neo4Net.graphdb.PathExpander source, org.apache.commons.lang3.mutable.MutableDouble shortestSoFar, double epsilon, boolean stopAfterLowestCost)
+//ORIGINAL LINE: DijkstraPathExpander(final Neo4Net.graphdb.PathExpander source, org.apache.commons.lang3.mutable.MutableDouble shortestSoFar, double epsilon, boolean stopAfterLowestCost)
 			  internal DijkstraPathExpander( PathExpander source, MutableDouble shortestSoFar, double epsilon, bool stopAfterLowestCost )
 			  {
 					this.Source = source;

@@ -81,7 +81,7 @@ namespace Neo4Net.Server.rest.web
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.exceptions.Status_Request.InvalidFormat;
+//	import static Neo4Net.kernel.api.exceptions.Status_Request.InvalidFormat;
 
 	public class RestfulGraphDatabaseTest
 	{
@@ -109,7 +109,7 @@ namespace Neo4Net.Server.rest.web
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Before public void deleteAllIndexes() throws org.Neo4Net.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @Before public void deleteAllIndexes() throws Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void DeleteAllIndexes()
 		 {
@@ -138,7 +138,7 @@ namespace Neo4Net.Server.rest.web
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected void stopAutoIndexAllPropertiesAndDisableAutoIndex(String type) throws org.Neo4Net.server.rest.domain.JsonParseException
+//ORIGINAL LINE: protected void stopAutoIndexAllPropertiesAndDisableAutoIndex(String type) throws Neo4Net.server.rest.domain.JsonParseException
 		 protected internal virtual void StopAutoIndexAllPropertiesAndDisableAutoIndex( string type )
 		 {
 			  Response response = _service.getAutoIndexedProperties( type );
@@ -164,7 +164,7 @@ namespace Neo4Net.Server.rest.web
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private static java.util.List<String> IEntityAsList(javax.ws.rs.core.Response response) throws org.Neo4Net.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private static java.util.List<String> IEntityAsList(javax.ws.rs.core.Response response) throws Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 private static IList<string> IEntityAsList( Response response )
 		 {
@@ -193,7 +193,7 @@ namespace Neo4Net.Server.rest.web
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private String createPerson(final String name) throws org.Neo4Net.server.rest.domain.JsonParseException
+//ORIGINAL LINE: private String createPerson(final String name) throws Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 		 private string CreatePerson( string name )
 		 {
@@ -832,13 +832,13 @@ namespace Neo4Net.Server.rest.web
 			  _helper.createRelationship( "LIKES", nodeId, _helper.createNode() );
 			  Response response = _service.getNodeRelationships( nodeId, RelationshipDirection.all, new AmpersandSeparatedCollection( "LIKES&LIKES" ) );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Collection<?> array = (java.util.Collection<?>) org.Neo4Net.server.rest.domain.JsonHelper.readJson(entityAsString(response));
+//ORIGINAL LINE: java.util.Collection<?> array = (java.util.Collection<?>) Neo4Net.server.rest.domain.JsonHelper.readJson(entityAsString(response));
 			  ICollection<object> array = ( ICollection<object> ) JsonHelper.readJson( IEntityAsString( response ) );
 			  assertEquals( 1, array.Count );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void verifyRelReps(int expectedSize, String IEntity) throws org.Neo4Net.server.rest.domain.JsonParseException
+//ORIGINAL LINE: private void verifyRelReps(int expectedSize, String IEntity) throws Neo4Net.server.rest.domain.JsonParseException
 		 private void VerifyRelReps( int expectedSize, string IEntity )
 		 {
 			  IList<IDictionary<string, object>> relreps = JsonHelper.jsonToList( IEntity );
@@ -1084,7 +1084,7 @@ namespace Neo4Net.Server.rest.web
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldBeAbleToGetRoot() throws org.Neo4Net.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @Test public void shouldBeAbleToGetRoot() throws Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldBeAbleToGetRoot()
 		 {
@@ -1526,7 +1526,7 @@ namespace Neo4Net.Server.rest.web
 			  Response response = _service.getIndexedNodes( matrixers.NodeIndexName, indexedKeyValue.Key, indexedKeyValue.Value );
 			  assertEquals( Response.Status.OK.StatusCode, response.Status );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Collection<?> items = (java.util.Collection<?>) org.Neo4Net.server.rest.domain.JsonHelper.readJson(entityAsString(response));
+//ORIGINAL LINE: java.util.Collection<?> items = (java.util.Collection<?>) Neo4Net.server.rest.domain.JsonHelper.readJson(entityAsString(response));
 			  ICollection<object> items = ( ICollection<object> ) JsonHelper.readJson( IEntityAsString( response ) );
 			  int counter = 0;
 			  foreach ( object item in items )
@@ -1557,7 +1557,7 @@ namespace Neo4Net.Server.rest.web
 			  Response response = _service.getIndexedNodesByQuery( matrixers.NodeIndexName, indexedKeyValue.Key + ":" + indexedKeyValue.Value.substring( 0, 1 ) + "*", "" );
 			  assertEquals( Response.Status.OK.StatusCode, response.Status );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Collection<?> items = (java.util.Collection<?>) org.Neo4Net.server.rest.domain.JsonHelper.readJson(entityAsString(response));
+//ORIGINAL LINE: java.util.Collection<?> items = (java.util.Collection<?>) Neo4Net.server.rest.domain.JsonHelper.readJson(entityAsString(response));
 			  ICollection<object> items = ( ICollection<object> ) JsonHelper.readJson( IEntityAsString( response ) );
 			  int counter = 0;
 			  foreach ( object item in items )
@@ -1595,7 +1595,7 @@ namespace Neo4Net.Server.rest.web
 			  Response response = _service.getIndexedNodesByQuery( matrixers.NodeIndexName, indexedKeyValue.Key, indexedKeyValue.Value.substring( 0, 1 ) + "*", "" );
 			  assertEquals( Response.Status.OK.StatusCode, response.Status );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Collection<?> items = (java.util.Collection<?>) org.Neo4Net.server.rest.domain.JsonHelper.readJson(entityAsString(response));
+//ORIGINAL LINE: java.util.Collection<?> items = (java.util.Collection<?>) Neo4Net.server.rest.domain.JsonHelper.readJson(entityAsString(response));
 			  ICollection<object> items = ( ICollection<object> ) JsonHelper.readJson( IEntityAsString( response ) );
 			  int counter = 0;
 			  foreach ( object item in items )
@@ -1645,7 +1645,7 @@ namespace Neo4Net.Server.rest.web
 			  Response response = _service.getIndexedRelationships( indexName, key, value );
 			  assertEquals( Response.Status.OK.StatusCode, response.Status );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Collection<?> items = (java.util.Collection<?>) org.Neo4Net.server.rest.domain.JsonHelper.readJson(entityAsString(response));
+//ORIGINAL LINE: java.util.Collection<?> items = (java.util.Collection<?>) Neo4Net.server.rest.domain.JsonHelper.readJson(entityAsString(response));
 			  ICollection<object> items = ( ICollection<object> ) JsonHelper.readJson( IEntityAsString( response ) );
 			  int counter = 0;
 			  foreach ( object item in items )
@@ -1687,7 +1687,7 @@ namespace Neo4Net.Server.rest.web
 			  Response response = _service.getIndexedRelationshipsByQuery( indexName, key + ":" + value.Substring( 0, 1 ) + "*", "" );
 			  assertEquals( Response.Status.OK.StatusCode, response.Status );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Collection<?> items = (java.util.Collection<?>) org.Neo4Net.server.rest.domain.JsonHelper.readJson(entityAsString(response));
+//ORIGINAL LINE: java.util.Collection<?> items = (java.util.Collection<?>) Neo4Net.server.rest.domain.JsonHelper.readJson(entityAsString(response));
 			  ICollection<object> items = ( ICollection<object> ) JsonHelper.readJson( IEntityAsString( response ) );
 			  int counter = 0;
 			  foreach ( object item in items )
@@ -1730,7 +1730,7 @@ namespace Neo4Net.Server.rest.web
 			  Response response = _service.getIndexedRelationshipsByQuery( indexName, key, value.Substring( 0, 1 ) + "*", "" );
 			  assertEquals( Response.Status.OK.StatusCode, response.Status );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Collection<?> items = (java.util.Collection<?>) org.Neo4Net.server.rest.domain.JsonHelper.readJson(entityAsString(response));
+//ORIGINAL LINE: java.util.Collection<?> items = (java.util.Collection<?>) Neo4Net.server.rest.domain.JsonHelper.readJson(entityAsString(response));
 			  ICollection<object> items = ( ICollection<object> ) JsonHelper.readJson( IEntityAsString( response ) );
 			  int counter = 0;
 			  foreach ( object item in items )
@@ -1910,7 +1910,7 @@ namespace Neo4Net.Server.rest.web
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void addRemoveAutoindexPropertiesOnNodes() throws org.Neo4Net.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @Test public void addRemoveAutoindexPropertiesOnNodes() throws Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void AddRemoveAutoindexPropertiesOnNodes()
 		 {
@@ -1918,7 +1918,7 @@ namespace Neo4Net.Server.rest.web
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void addRemoveAutoindexPropertiesOnRelationships() throws org.Neo4Net.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @Test public void addRemoveAutoindexPropertiesOnRelationships() throws Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void AddRemoveAutoindexPropertiesOnRelationships()
 		 {
@@ -1946,7 +1946,7 @@ namespace Neo4Net.Server.rest.web
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldReturnAllLabelsPresentInTheDatabase() throws org.Neo4Net.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @Test public void shouldReturnAllLabelsPresentInTheDatabase() throws Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldReturnAllLabelsPresentInTheDatabase()
 		 {
@@ -1966,7 +1966,7 @@ namespace Neo4Net.Server.rest.web
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldReturnAllLabelsInUseInTheDatabase() throws org.Neo4Net.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @Test public void shouldReturnAllLabelsInUseInTheDatabase() throws Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldReturnAllLabelsInUseInTheDatabase()
 		 {
@@ -1986,7 +1986,7 @@ namespace Neo4Net.Server.rest.web
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private void addRemoveAutoindexProperties(String type) throws org.Neo4Net.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private void addRemoveAutoindexProperties(String type) throws Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 private void AddRemoveAutoindexProperties( string type )
 		 {
@@ -2042,7 +2042,7 @@ namespace Neo4Net.Server.rest.web
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private String singleErrorCode(javax.ws.rs.core.Response response) throws org.Neo4Net.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private String singleErrorCode(javax.ws.rs.core.Response response) throws Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 private string SingleErrorCode( Response response )
 		 {

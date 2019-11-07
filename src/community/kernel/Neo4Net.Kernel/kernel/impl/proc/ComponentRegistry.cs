@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.impl.proc
 
 	using Neo4Net.Functions;
 	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
-	using Context = Neo4Net.Kernel.api.proc.Context;
+	using Context = Neo4Net.Kernel.Api.Procs.Context;
 
 	/// <summary>
 	/// Tracks components that can be injected into compiled procedures.

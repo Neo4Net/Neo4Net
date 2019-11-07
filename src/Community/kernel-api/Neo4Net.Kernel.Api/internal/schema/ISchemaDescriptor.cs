@@ -33,7 +33,7 @@ namespace Neo4Net.Kernel.Api.Internal.Schema
 	/// how this is done in eg. LabelSchemaDescriptor, and the SchemaProcessor and SchemaComputer interfaces need to be
 	/// extended with methods taking the new concrete type as argument.
 	/// </summary>
-	public interface ISchemaDescriptor : SchemaDescriptorSupplier
+	public interface ISchemaDescriptor : ISchemaDescriptorSupplier
 	{
 	//JAVA TO C# CONVERTER TODO TASK: The following anonymous inner class could not be converted:
 	//	 SchemaDescriptor NO_SCHEMA = new SchemaDescriptor()

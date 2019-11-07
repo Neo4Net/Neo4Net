@@ -35,22 +35,22 @@ namespace Neo4Net.Kernel.builtinprocs
 	using Procedure = Neo4Net.Procedure.Procedure;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.procedure.Mode.DBMS;
+//	import static Neo4Net.procedure.Mode.DBMS;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @SuppressWarnings("unused") public class BuiltInDbmsProcedures
 	public class BuiltInDbmsProcedures
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Context public org.Neo4Net.logging.Log log;
+//ORIGINAL LINE: @Context public Neo4Net.logging.Log log;
 		 public Log Log;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Context public org.Neo4Net.kernel.internal.GraphDatabaseAPI graph;
+//ORIGINAL LINE: @Context public Neo4Net.kernel.internal.GraphDatabaseAPI graph;
 		 public GraphDatabaseAPI Graph;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Context public org.Neo4Net.Kernel.Api.Internal.security.SecurityContext securityContext;
+//ORIGINAL LINE: @Context public Neo4Net.Kernel.Api.Internal.security.SecurityContext securityContext;
 		 public SecurityContext SecurityContext;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

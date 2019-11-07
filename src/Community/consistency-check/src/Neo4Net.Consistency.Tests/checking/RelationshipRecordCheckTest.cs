@@ -38,9 +38,9 @@ namespace Neo4Net.Consistency.checking
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verifyNoMoreInteractions;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.consistency.checking.full.MultiPassStore.NODES;
+//	import static Neo4Net.consistency.checking.full.MultiPassStore.NODES;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.consistency.checking.full.MultiPassStore.RELATIONSHIPS;
+//	import static Neo4Net.consistency.checking.full.MultiPassStore.RELATIONSHIPS;
 
 	internal class RelationshipRecordCheckTest : RecordCheckTestBase<RelationshipRecord, ConsistencyReport_RelationshipConsistencyReport, RelationshipRecordCheck>
 	{

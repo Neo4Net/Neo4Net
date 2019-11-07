@@ -42,13 +42,13 @@ namespace Neo4Net.Kernel.impl.util.diffsets
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.collection.PrimitiveLongCollections.asArray;
+//	import static Neo4Net.collection.PrimitiveLongCollections.asArray;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.collection.PrimitiveLongCollections.iterator;
+//	import static Neo4Net.collection.PrimitiveLongCollections.iterator;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.collection.PrimitiveLongCollections.resourceIterator;
+//	import static Neo4Net.collection.PrimitiveLongCollections.resourceIterator;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.collection.PrimitiveLongCollections.toSet;
+//	import static Neo4Net.collection.PrimitiveLongCollections.toSet;
 
 	public class DiffApplyingPrimitiveLongIteratorTest
 	{

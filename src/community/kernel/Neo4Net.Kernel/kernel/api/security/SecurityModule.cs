@@ -17,13 +17,13 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Kernel.api.security
+namespace Neo4Net.Kernel.Api.security
 {
 
 	using Service = Neo4Net.Helpers.Service;
 	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
-	using SecurityProvider = Neo4Net.Kernel.api.security.provider.SecurityProvider;
+	using SecurityProvider = Neo4Net.Kernel.Api.security.provider.SecurityProvider;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using AccessCapability = Neo4Net.Kernel.impl.factory.AccessCapability;
 	using Procedures = Neo4Net.Kernel.impl.proc.Procedures;
@@ -35,8 +35,8 @@ namespace Neo4Net.Kernel.api.security
 
 	public abstract class SecurityModule : Service, Lifecycle, SecurityProvider
 	{
-		public abstract Neo4Net.Kernel.api.security.UserManagerSupplier UserManagerSupplier();
-		public abstract Neo4Net.Kernel.api.security.AuthManager AuthManager();
+		public abstract Neo4Net.Kernel.Api.security.UserManagerSupplier UserManagerSupplier();
+		public abstract Neo4Net.Kernel.Api.security.AuthManager AuthManager();
 		 protected internal readonly LifeSupport Life = new LifeSupport();
 
 		 public SecurityModule( string key, params string[] altKeys ) : base( key, altKeys )
@@ -44,7 +44,7 @@ namespace Neo4Net.Kernel.api.security
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public abstract void setup(Dependencies dependencies) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException, java.io.IOException;
+//ORIGINAL LINE: public abstract void setup(Dependencies dependencies) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException, java.io.IOException;
 		 public abstract void Setup( Dependencies dependencies );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:

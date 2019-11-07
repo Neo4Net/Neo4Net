@@ -22,7 +22,7 @@
  * More information is also available at:
  * https://Neo4Net.com/licensing/
  */
-namespace Neo4Net.Kernel.api
+namespace Neo4Net.Kernel.Api
 {
 	using Rule = org.junit.Rule;
 	using Test = org.junit.Test;
@@ -42,9 +42,9 @@ namespace Neo4Net.Kernel.api
 	using Exceptions = Neo4Net.Helpers.Exceptions;
 	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using InvalidTransactionTypeKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.InvalidTransactionTypeKernelException;
-	using NodePropertyExistenceConstraintHaIT = Neo4Net.Kernel.api.ConstraintHaIT.NodePropertyExistenceConstraintHaIT;
-	using RelationshipPropertyExistenceConstraintHaIT = Neo4Net.Kernel.api.ConstraintHaIT.RelationshipPropertyExistenceConstraintHaIT;
-	using UniquenessConstraintHaIT = Neo4Net.Kernel.api.ConstraintHaIT.UniquenessConstraintHaIT;
+	using NodePropertyExistenceConstraintHaIT = Neo4Net.Kernel.Api.ConstraintHaIT.NodePropertyExistenceConstraintHaIT;
+	using RelationshipPropertyExistenceConstraintHaIT = Neo4Net.Kernel.Api.ConstraintHaIT.RelationshipPropertyExistenceConstraintHaIT;
+	using UniquenessConstraintHaIT = Neo4Net.Kernel.Api.ConstraintHaIT.UniquenessConstraintHaIT;
 	using HaSettings = Neo4Net.Kernel.ha.HaSettings;
 	using HighlyAvailableGraphDatabase = Neo4Net.Kernel.ha.HighlyAvailableGraphDatabase;
 	using NodePropertyExistenceConstraintDefinition = Neo4Net.Kernel.impl.coreapi.schema.NodePropertyExistenceConstraintDefinition;
@@ -66,15 +66,15 @@ namespace Neo4Net.Kernel.api
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.Label.label;
+//	import static Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.RelationshipType.withName;
+//	import static Neo4Net.graphdb.RelationshipType.withName;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.count;
+//	import static Neo4Net.helpers.collection.Iterables.count;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.single;
+//	import static Neo4Net.helpers.collection.Iterables.single;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.fs.FileUtils.deleteRecursively;
+//	import static Neo4Net.io.fs.FileUtils.deleteRecursively;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Suite.class) @SuiteClasses({ NodePropertyExistenceConstraintHaIT.class, RelationshipPropertyExistenceConstraintHaIT.class, UniquenessConstraintHaIT.class }) public class ConstraintHaIT
@@ -199,7 +199,7 @@ namespace Neo4Net.Kernel.api
 		 public abstract class AbstractConstraintHaIT
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.ha.ClusterRule clusterRule = new org.Neo4Net.test.ha.ClusterRule().withSharedSetting(org.Neo4Net.kernel.ha.HaSettings.read_timeout, "4000s");
+//ORIGINAL LINE: @Rule public Neo4Net.test.ha.ClusterRule clusterRule = new Neo4Net.test.ha.ClusterRule().withSharedSetting(Neo4Net.kernel.ha.HaSettings.read_timeout, "4000s");
 			  public ClusterRule ClusterRule = new ClusterRule().withSharedSetting(HaSettings.read_timeout, "4000s");
 
 			  internal const string TYPE = "Type";

@@ -41,11 +41,11 @@ namespace Neo4Net.Kernel.configuration
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verify;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
+//	import static Neo4Net.helpers.collection.MapUtil.stringMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Connector.ConnectorType.BOLT;
+//	import static Neo4Net.kernel.configuration.Connector.ConnectorType.BOLT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.ConnectorValidator.DEPRECATED_CONNECTOR_MSG;
+//	import static Neo4Net.kernel.configuration.ConnectorValidator.DEPRECATED_CONNECTOR_MSG;
 
 
 	public class BoltConnectorValidatorTest

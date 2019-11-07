@@ -186,7 +186,7 @@ namespace Neo4Net.Consistency.checking
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static <RECORD extends org.Neo4Net.kernel.impl.store.record.AbstractBaseRecord, REPORT extends org.Neo4Net.consistency.report.ConsistencyReport> REPORT check(Class<REPORT> reportClass, RecordCheck<RECORD, REPORT> checker, RECORD record, final org.Neo4Net.consistency.store.RecordAccessStub records)
+//ORIGINAL LINE: public static <RECORD extends Neo4Net.kernel.impl.store.record.AbstractBaseRecord, REPORT extends Neo4Net.consistency.report.ConsistencyReport> REPORT check(Class<REPORT> reportClass, RecordCheck<RECORD, REPORT> checker, RECORD record, final Neo4Net.consistency.store.RecordAccessStub records)
 		 public static REPORT Check<RECORD, REPORT>( Type reportClass, RecordCheck<RECORD, REPORT> checker, RECORD record, RecordAccessStub records ) where RECORD : Neo4Net.Kernel.Impl.Store.Records.AbstractBaseRecord where REPORT : Neo4Net.Consistency.report.ConsistencyReport
 		 {
 				 reportClass = typeof( REPORT );
@@ -196,7 +196,7 @@ namespace Neo4Net.Consistency.checking
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static <RECORD extends org.Neo4Net.kernel.impl.store.record.AbstractBaseRecord, REPORT extends org.Neo4Net.consistency.report.ConsistencyReport> void check(REPORT report, RecordCheck<RECORD, REPORT> checker, RECORD record, final org.Neo4Net.consistency.store.RecordAccessStub records)
+//ORIGINAL LINE: public static <RECORD extends Neo4Net.kernel.impl.store.record.AbstractBaseRecord, REPORT extends Neo4Net.consistency.report.ConsistencyReport> void check(REPORT report, RecordCheck<RECORD, REPORT> checker, RECORD record, final Neo4Net.consistency.store.RecordAccessStub records)
 		 public static void Check<RECORD, REPORT>( REPORT report, RecordCheck<RECORD, REPORT> checker, RECORD record, RecordAccessStub records ) where RECORD : Neo4Net.Kernel.Impl.Store.Records.AbstractBaseRecord where REPORT : Neo4Net.Consistency.report.ConsistencyReport
 		 {
 			  checker.Check( record, records.Engine( record, report ), records );

@@ -26,7 +26,7 @@ namespace Neo4Net.Cypher.Internal.codegen
 	using AnyValue = Neo4Net.Values.AnyValue;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.NO_VALUE;
+//	import static Neo4Net.values.storable.Values.NO_VALUE;
 
 	/// <summary>
 	/// Helper class for dealing with equivalence an hash code in compiled code.

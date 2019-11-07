@@ -42,21 +42,21 @@ namespace Neo4Net.Cypher.Internal.javacompat
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.Label.label;
+//	import static Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.impl.notification.NotificationCode.CREATE_UNIQUE_UNAVAILABLE_FALLBACK;
+//	import static Neo4Net.graphdb.impl.notification.NotificationCode.CREATE_UNIQUE_UNAVAILABLE_FALLBACK;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.impl.notification.NotificationCode.EAGER_LOAD_CSV;
+//	import static Neo4Net.graphdb.impl.notification.NotificationCode.EAGER_LOAD_CSV;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.impl.notification.NotificationCode.INDEX_HINT_UNFULFILLABLE;
+//	import static Neo4Net.graphdb.impl.notification.NotificationCode.INDEX_HINT_UNFULFILLABLE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.impl.notification.NotificationCode.LENGTH_ON_NON_PATH;
+//	import static Neo4Net.graphdb.impl.notification.NotificationCode.LENGTH_ON_NON_PATH;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.impl.notification.NotificationCode.RUNTIME_UNSUPPORTED;
+//	import static Neo4Net.graphdb.impl.notification.NotificationCode.RUNTIME_UNSUPPORTED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.impl.notification.NotificationCode.UNBOUNDED_SHORTEST_PATH;
+//	import static Neo4Net.graphdb.impl.notification.NotificationCode.UNBOUNDED_SHORTEST_PATH;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.impl.notification.NotificationDetail_Factory.index;
+//	import static Neo4Net.graphdb.impl.notification.NotificationDetail_Factory.index;
 
 	public class NotificationAcceptanceTest : NotificationTestSupport
 	{

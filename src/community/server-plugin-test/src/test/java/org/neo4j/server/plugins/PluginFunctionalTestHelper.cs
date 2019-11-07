@@ -49,7 +49,7 @@ namespace Neo4Net.Server.plugins
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static java.util.Map<String, Object> makeGet(String url) throws org.Neo4Net.server.rest.domain.JsonParseException
+//ORIGINAL LINE: public static java.util.Map<String, Object> makeGet(String url) throws Neo4Net.server.rest.domain.JsonParseException
 		 public static IDictionary<string, object> MakeGet( string url )
 		 {
 			  JaxRsResponse response = ( new RestRequest() ).get(url);
@@ -61,7 +61,7 @@ namespace Neo4Net.Server.plugins
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected static java.util.Map<String, Object> deserializeMap(final String body) throws org.Neo4Net.server.rest.domain.JsonParseException
+//ORIGINAL LINE: protected static java.util.Map<String, Object> deserializeMap(final String body) throws Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 		 protected internal static IDictionary<string, object> DeserializeMap( string body )
 		 {
@@ -71,7 +71,7 @@ namespace Neo4Net.Server.plugins
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static java.util.List<java.util.Map<String, Object>> deserializeList(final String body) throws org.Neo4Net.server.rest.domain.JsonParseException
+//ORIGINAL LINE: private static java.util.List<java.util.Map<String, Object>> deserializeList(final String body) throws Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 		 private static IList<IDictionary<string, object>> DeserializeList( string body )
 		 {
@@ -81,7 +81,7 @@ namespace Neo4Net.Server.plugins
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: protected static String getResponseText(final org.Neo4Net.server.rest.JaxRsResponse response)
+//ORIGINAL LINE: protected static String getResponseText(final Neo4Net.server.rest.JaxRsResponse response)
 		 protected internal static string GetResponseText( JaxRsResponse response )
 		 {
 			  string body = response.Entity;
@@ -91,7 +91,7 @@ namespace Neo4Net.Server.plugins
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected static java.util.Map<String, Object> makePostMap(String url) throws org.Neo4Net.server.rest.domain.JsonParseException
+//ORIGINAL LINE: protected static java.util.Map<String, Object> makePostMap(String url) throws Neo4Net.server.rest.domain.JsonParseException
 		 protected internal static IDictionary<string, object> MakePostMap( string url )
 		 {
 			  JaxRsResponse response = ( new RestRequest() ).post(url,null);
@@ -103,7 +103,7 @@ namespace Neo4Net.Server.plugins
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected static java.util.Map<String, Object> makePostMap(String url, java.util.Map<String, Object> params) throws org.Neo4Net.server.rest.domain.JsonParseException
+//ORIGINAL LINE: protected static java.util.Map<String, Object> makePostMap(String url, java.util.Map<String, Object> params) throws Neo4Net.server.rest.domain.JsonParseException
 		 protected internal static IDictionary<string, object> MakePostMap( string url, IDictionary<string, object> @params )
 		 {
 			  string json = JsonHelper.createJsonFrom( @params );
@@ -116,7 +116,7 @@ namespace Neo4Net.Server.plugins
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected static java.util.List<java.util.Map<String, Object>> makePostList(String url) throws org.Neo4Net.server.rest.domain.JsonParseException
+//ORIGINAL LINE: protected static java.util.List<java.util.Map<String, Object>> makePostList(String url) throws Neo4Net.server.rest.domain.JsonParseException
 		 protected internal static IList<IDictionary<string, object>> MakePostList( string url )
 		 {
 			  JaxRsResponse response = ( new RestRequest() ).post(url, null);
@@ -128,7 +128,7 @@ namespace Neo4Net.Server.plugins
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected static java.util.List<java.util.Map<String, Object>> makePostList(String url, java.util.Map<String, Object> params) throws org.Neo4Net.server.rest.domain.JsonParseException
+//ORIGINAL LINE: protected static java.util.List<java.util.Map<String, Object>> makePostList(String url, java.util.Map<String, Object> params) throws Neo4Net.server.rest.domain.JsonParseException
 		 protected internal static IList<IDictionary<string, object>> MakePostList( string url, IDictionary<string, object> @params )
 		 {
 			  string json = JsonHelper.createJsonFrom( @params );

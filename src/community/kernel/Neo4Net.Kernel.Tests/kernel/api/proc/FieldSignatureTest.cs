@@ -17,7 +17,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Kernel.api.proc
+namespace Neo4Net.Kernel.Api.Procs
 {
 	using Test = org.junit.Test;
 
@@ -30,11 +30,11 @@ namespace Neo4Net.Kernel.api.proc
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.procs.DefaultParameterValue.ntString;
+//	import static Neo4Net.Kernel.Api.Internal.procs.DefaultParameterValue.ntString;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.procs.FieldSignature.inputField;
+//	import static Neo4Net.Kernel.Api.Internal.procs.FieldSignature.inputField;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.procs.FieldSignature.outputField;
+//	import static Neo4Net.Kernel.Api.Internal.procs.FieldSignature.outputField;
 
 	public class FieldSignatureTest
 	{

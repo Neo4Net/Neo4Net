@@ -23,11 +23,11 @@ namespace Neo4Net.CodeGen
 {
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.codegen.LocalVariables.copy;
+//	import static Neo4Net.codegen.LocalVariables.copy;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.codegen.MethodReference.methodReference;
+//	import static Neo4Net.codegen.MethodReference.methodReference;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.codegen.TypeReference.typeReference;
+//	import static Neo4Net.codegen.TypeReference.typeReference;
 
 	public class CodeBlock : IDisposable
 	{

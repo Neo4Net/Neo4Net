@@ -51,9 +51,9 @@ namespace Neo4Net.Server.rest
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.hasProperty;
+//	import static Neo4Net.test.mockito.matcher.Neo4NetMatchers.hasProperty;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.inTx;
+//	import static Neo4Net.test.mockito.matcher.Neo4NetMatchers.inTx;
 
 	public class RelationshipIT : AbstractRestFunctionalDocTestBase
 	{
@@ -67,7 +67,7 @@ namespace Neo4Net.Server.rest
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test @Title("Remove properties from a relationship") @Graph(nodes = {@NODE(name = "Romeo", setNameProperty = true), @NODE(name = "Juliet", setNameProperty = true)}, relationships = { @REL(start = "Romeo", end = "Juliet", type = "LOVES", properties = { @PROP(key = "cost", value = "high", type = org.Neo4Net.test.GraphDescription.PropType.STRING)})}) public void shouldReturn204WhenPropertiesAreRemovedFromRelationship()
+//ORIGINAL LINE: @Test @Title("Remove properties from a relationship") @Graph(nodes = {@NODE(name = "Romeo", setNameProperty = true), @NODE(name = "Juliet", setNameProperty = true)}, relationships = { @REL(start = "Romeo", end = "Juliet", type = "LOVES", properties = { @PROP(key = "cost", value = "high", type = Neo4Net.test.GraphDescription.PropType.STRING)})}) public void shouldReturn204WhenPropertiesAreRemovedFromRelationship()
 		 [Title("Remove properties from a relationship"), Graph(nodes : {@NODE(name : "Romeo", setNameProperty : true), @NODE(name : "Juliet", setNameProperty : true)}, relationships : { @REL(start : "Romeo", end : "Juliet", type : "LOVES", properties : { @PROP(key : "cost", value : "high", type : Neo4Net.Test.GraphDescription.PropType.STRING)})})]
 		 public virtual void ShouldReturn204WhenPropertiesAreRemovedFromRelationship()
 		 {
@@ -76,7 +76,7 @@ namespace Neo4Net.Server.rest
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test @Graph("I know you") public void get_Relationship_by_ID() throws org.Neo4Net.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @Test @Graph("I know you") public void get_Relationship_by_ID() throws Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Graph("I know you")]
 		 public virtual void GetRelationshipByID()
@@ -92,7 +92,7 @@ namespace Neo4Net.Server.rest
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test @Title("Remove property from a relationship") @Documented("See the example request below.") @Graph(nodes = {@NODE(name = "Romeo", setNameProperty = true), @NODE(name = "Juliet", setNameProperty = true)}, relationships = { @REL(start = "Romeo", end = "Juliet", type = "LOVES", properties = { @PROP(key = "cost", value = "high", type = org.Neo4Net.test.GraphDescription.PropType.STRING)})}) public void shouldReturn204WhenPropertyIsRemovedFromRelationship()
+//ORIGINAL LINE: @Test @Title("Remove property from a relationship") @Documented("See the example request below.") @Graph(nodes = {@NODE(name = "Romeo", setNameProperty = true), @NODE(name = "Juliet", setNameProperty = true)}, relationships = { @REL(start = "Romeo", end = "Juliet", type = "LOVES", properties = { @PROP(key = "cost", value = "high", type = Neo4Net.test.GraphDescription.PropType.STRING)})}) public void shouldReturn204WhenPropertyIsRemovedFromRelationship()
 		 [Title("Remove property from a relationship"), Documented("See the example request below."), Graph(nodes : {@NODE(name : "Romeo", setNameProperty : true), @NODE(name : "Juliet", setNameProperty : true)}, relationships : { @REL(start : "Romeo", end : "Juliet", type : "LOVES", properties : { @PROP(key : "cost", value : "high", type : Neo4Net.Test.GraphDescription.PropType.STRING)})})]
 		 public virtual void ShouldReturn204WhenPropertyIsRemovedFromRelationship()
 		 {
@@ -103,7 +103,7 @@ namespace Neo4Net.Server.rest
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test @Title("Remove non-existent property from a relationship") @Documented("Attempting to remove a property that doesn't exist results in an error.") @Graph(nodes = {@NODE(name = "Romeo", setNameProperty = true), @NODE(name = "Juliet", setNameProperty = true)}, relationships = { @REL(start = "Romeo", end = "Juliet", type = "LOVES", properties = { @PROP(key = "cost", value = "high", type = org.Neo4Net.test.GraphDescription.PropType.STRING)})}) public void shouldReturn404WhenPropertyWhichDoesNotExistRemovedFromRelationship()
+//ORIGINAL LINE: @Test @Title("Remove non-existent property from a relationship") @Documented("Attempting to remove a property that doesn't exist results in an error.") @Graph(nodes = {@NODE(name = "Romeo", setNameProperty = true), @NODE(name = "Juliet", setNameProperty = true)}, relationships = { @REL(start = "Romeo", end = "Juliet", type = "LOVES", properties = { @PROP(key = "cost", value = "high", type = Neo4Net.test.GraphDescription.PropType.STRING)})}) public void shouldReturn404WhenPropertyWhichDoesNotExistRemovedFromRelationship()
 		 [Title("Remove non-existent property from a relationship"), Documented("Attempting to remove a property that doesn't exist results in an error."), Graph(nodes : {@NODE(name : "Romeo", setNameProperty : true), @NODE(name : "Juliet", setNameProperty : true)}, relationships : { @REL(start : "Romeo", end : "Juliet", type : "LOVES", properties : { @PROP(key : "cost", value : "high", type : Neo4Net.Test.GraphDescription.PropType.STRING)})})]
 		 public virtual void ShouldReturn404WhenPropertyWhichDoesNotExistRemovedFromRelationship()
 		 {
@@ -113,7 +113,7 @@ namespace Neo4Net.Server.rest
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test @Graph(nodes = {@NODE(name = "Romeo", setNameProperty = true), @NODE(name = "Juliet", setNameProperty = true)}, relationships = { @REL(start = "Romeo", end = "Juliet", type = "LOVES", properties = { @PROP(key = "cost", value = "high", type = org.Neo4Net.test.GraphDescription.PropType.STRING)})}) public void shouldReturn404WhenPropertyWhichDoesNotExistRemovedFromRelationshipStreaming()
+//ORIGINAL LINE: @Test @Graph(nodes = {@NODE(name = "Romeo", setNameProperty = true), @NODE(name = "Juliet", setNameProperty = true)}, relationships = { @REL(start = "Romeo", end = "Juliet", type = "LOVES", properties = { @PROP(key = "cost", value = "high", type = Neo4Net.test.GraphDescription.PropType.STRING)})}) public void shouldReturn404WhenPropertyWhichDoesNotExistRemovedFromRelationshipStreaming()
 		 [Graph(nodes : {@NODE(name : "Romeo", setNameProperty : true), @NODE(name : "Juliet", setNameProperty : true)}, relationships : { @REL(start : "Romeo", end : "Juliet", type : "LOVES", properties : { @PROP(key : "cost", value : "high", type : Neo4Net.Test.GraphDescription.PropType.STRING)})})]
 		 public virtual void ShouldReturn404WhenPropertyWhichDoesNotExistRemovedFromRelationshipStreaming()
 		 {
@@ -142,7 +142,7 @@ namespace Neo4Net.Server.rest
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test @Graph(nodes = {@NODE(name = "Romeo", setNameProperty = true), @NODE(name = "Juliet", setNameProperty = true)}, relationships = { @REL(start = "Romeo", end = "Juliet", type = "LOVES", properties = { @PROP(key = "cost", value = "high", type = org.Neo4Net.test.GraphDescription.PropType.STRING)})}) @Title("Delete relationship") public void removeRelationship()
+//ORIGINAL LINE: @Test @Graph(nodes = {@NODE(name = "Romeo", setNameProperty = true), @NODE(name = "Juliet", setNameProperty = true)}, relationships = { @REL(start = "Romeo", end = "Juliet", type = "LOVES", properties = { @PROP(key = "cost", value = "high", type = Neo4Net.test.GraphDescription.PropType.STRING)})}) @Title("Delete relationship") public void removeRelationship()
 		 [Graph(nodes : {@NODE(name : "Romeo", setNameProperty : true), @NODE(name : "Juliet", setNameProperty : true)}, relationships : { @REL(start : "Romeo", end : "Juliet", type : "LOVES", properties : { @PROP(key : "cost", value : "high", type : Neo4Net.Test.GraphDescription.PropType.STRING)})}), Title("Delete relationship")]
 		 public virtual void RemoveRelationship()
 		 {
@@ -153,7 +153,7 @@ namespace Neo4Net.Server.rest
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test @Graph(nodes = {@NODE(name = "Romeo", setNameProperty = true), @NODE(name = "Juliet", setNameProperty = true)}, relationships = { @REL(start = "Romeo", end = "Juliet", type = "LOVES", properties = { @PROP(key = "cost", value = "high", type = org.Neo4Net.test.GraphDescription.PropType.STRING)})}) public void get_single_property_on_a_relationship()
+//ORIGINAL LINE: @Test @Graph(nodes = {@NODE(name = "Romeo", setNameProperty = true), @NODE(name = "Juliet", setNameProperty = true)}, relationships = { @REL(start = "Romeo", end = "Juliet", type = "LOVES", properties = { @PROP(key = "cost", value = "high", type = Neo4Net.test.GraphDescription.PropType.STRING)})}) public void get_single_property_on_a_relationship()
 		 [Graph(nodes : {@NODE(name : "Romeo", setNameProperty : true), @NODE(name : "Juliet", setNameProperty : true)}, relationships : { @REL(start : "Romeo", end : "Juliet", type : "LOVES", properties : { @PROP(key : "cost", value : "high", type : Neo4Net.Test.GraphDescription.PropType.STRING)})})]
 		 public virtual void GetSinglePropertyOnARelationship()
 		 {
@@ -168,7 +168,7 @@ namespace Neo4Net.Server.rest
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test @Graph(nodes = {@NODE(name = "Romeo", setNameProperty = true), @NODE(name = "Juliet", setNameProperty = true)}, relationships = { @REL(start = "Romeo", end = "Juliet", type = "LOVES", properties = { @PROP(key = "cost", value = "high", type = org.Neo4Net.test.GraphDescription.PropType.STRING)})}) public void set_single_property_on_a_relationship()
+//ORIGINAL LINE: @Test @Graph(nodes = {@NODE(name = "Romeo", setNameProperty = true), @NODE(name = "Juliet", setNameProperty = true)}, relationships = { @REL(start = "Romeo", end = "Juliet", type = "LOVES", properties = { @PROP(key = "cost", value = "high", type = Neo4Net.test.GraphDescription.PropType.STRING)})}) public void set_single_property_on_a_relationship()
 		 [Graph(nodes : {@NODE(name : "Romeo", setNameProperty : true), @NODE(name : "Juliet", setNameProperty : true)}, relationships : { @REL(start : "Romeo", end : "Juliet", type : "LOVES", properties : { @PROP(key : "cost", value : "high", type : Neo4Net.Test.GraphDescription.PropType.STRING)})})]
 		 public virtual void SetSinglePropertyOnARelationship()
 		 {
@@ -179,7 +179,7 @@ namespace Neo4Net.Server.rest
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test @Graph(nodes = {@NODE(name = "Romeo", setNameProperty = true), @NODE(name = "Juliet", setNameProperty = true)}, relationships = { @REL(start = "Romeo", end = "Juliet", type = "LOVES", properties = { @PROP(key = "cost", value = "high", type = org.Neo4Net.test.GraphDescription.PropType.STRING), @PROP(key = "since", value = "1day", type = org.Neo4Net.test.GraphDescription.PropType.STRING)})}) public void set_all_properties_on_a_relationship()
+//ORIGINAL LINE: @Test @Graph(nodes = {@NODE(name = "Romeo", setNameProperty = true), @NODE(name = "Juliet", setNameProperty = true)}, relationships = { @REL(start = "Romeo", end = "Juliet", type = "LOVES", properties = { @PROP(key = "cost", value = "high", type = Neo4Net.test.GraphDescription.PropType.STRING), @PROP(key = "since", value = "1day", type = Neo4Net.test.GraphDescription.PropType.STRING)})}) public void set_all_properties_on_a_relationship()
 		 [Graph(nodes : {@NODE(name : "Romeo", setNameProperty : true), @NODE(name : "Juliet", setNameProperty : true)}, relationships : { @REL(start : "Romeo", end : "Juliet", type : "LOVES", properties : { @PROP(key : "cost", value : "high", type : Neo4Net.Test.GraphDescription.PropType.STRING), @PROP(key : "since", value : "1day", type : Neo4Net.Test.GraphDescription.PropType.STRING)})})]
 		 public virtual void SetAllPropertiesOnARelationship()
 		 {
@@ -191,7 +191,7 @@ namespace Neo4Net.Server.rest
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test @Graph(nodes = {@NODE(name = "Romeo", setNameProperty = true), @NODE(name = "Juliet", setNameProperty = true)}, relationships = { @REL(start = "Romeo", end = "Juliet", type = "LOVES", properties = { @PROP(key = "cost", value = "high", type = org.Neo4Net.test.GraphDescription.PropType.STRING), @PROP(key = "since", value = "1day", type = org.Neo4Net.test.GraphDescription.PropType.STRING)})}) public void get_all_properties_on_a_relationship()
+//ORIGINAL LINE: @Test @Graph(nodes = {@NODE(name = "Romeo", setNameProperty = true), @NODE(name = "Juliet", setNameProperty = true)}, relationships = { @REL(start = "Romeo", end = "Juliet", type = "LOVES", properties = { @PROP(key = "cost", value = "high", type = Neo4Net.test.GraphDescription.PropType.STRING), @PROP(key = "since", value = "1day", type = Neo4Net.test.GraphDescription.PropType.STRING)})}) public void get_all_properties_on_a_relationship()
 		 [Graph(nodes : {@NODE(name : "Romeo", setNameProperty : true), @NODE(name : "Juliet", setNameProperty : true)}, relationships : { @REL(start : "Romeo", end : "Juliet", type : "LOVES", properties : { @PROP(key : "cost", value : "high", type : Neo4Net.Test.GraphDescription.PropType.STRING), @PROP(key : "since", value : "1day", type : Neo4Net.Test.GraphDescription.PropType.STRING)})})]
 		 public virtual void GetAllPropertiesOnARelationship()
 		 {
@@ -208,8 +208,8 @@ namespace Neo4Net.Server.rest
    
 				  using ( Transaction transaction = romeo.GraphDatabase.beginTx() )
 				  {
-						ResourceIterable<Relationship> relationships = ( ResourceIterable<Relationship> ) romeo.Relationships;
-						using ( ResourceIterator<Relationship> iterator = relationships.GetEnumerator() )
+						ResourceIterable<Relationship> relationships = (IResourceIterable<Relationship> ) romeo.Relationships;
+						using ( IResourceIterator<Relationship> iterator = relationships.GetEnumerator() )
 						{
 	//JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
 							 return iterator.next();

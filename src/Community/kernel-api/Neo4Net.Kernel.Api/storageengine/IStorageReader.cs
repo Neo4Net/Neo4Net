@@ -148,7 +148,7 @@ namespace Neo4Net.Kernel.Api.StorageEngine
 		 /// <returns> <seealso cref="IndexReference"/> for index. </returns>
 		 /// <exception cref="IndexNotFoundKernelException"> if index not found. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.Neo4Net.Kernel.Api.Internal.IndexReference indexReference(org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor descriptor) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException;
+//ORIGINAL LINE: Neo4Net.Kernel.Api.Internal.IndexReference indexReference(Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor descriptor) throws Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException;
 		 IIndexReference IndexReference( IndexDescriptor descriptor );
 
 		 /// <summary>
@@ -158,7 +158,7 @@ namespace Neo4Net.Kernel.Api.StorageEngine
 		 /// <param name="relationshipVisitor"> <seealso cref="RelationshipVisitor"/> which will see the relationship data. </param>
 		 /// <exception cref="EntityNotFoundException"> if no relationship exists by the given {@code relationshipId}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: <EXCEPTION extends Exception> void relationshipVisit(long relationshipId, RelationshipVisitor<EXCEPTION> relationshipVisitor) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.EntityNotFoundException, EXCEPTION;
+//ORIGINAL LINE: <EXCEPTION extends Exception> void relationshipVisit(long relationshipId, RelationshipVisitor<EXCEPTION> relationshipVisitor) throws Neo4Net.Kernel.Api.Internal.Exceptions.EntityNotFoundException, EXCEPTION;
 		 void relationshipVisit<EXCEPTION>( long relationshipId, IRelationshipVisitor<EXCEPTION> relationshipVisitor );
 
 		 /// <summary>

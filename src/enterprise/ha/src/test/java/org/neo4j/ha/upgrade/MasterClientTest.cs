@@ -90,13 +90,13 @@ namespace Neo4Net.ha.upgrade
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.com.storecopy.ResponseUnpacker_Fields.NO_OP_RESPONSE_UNPACKER;
+//	import static Neo4Net.com.storecopy.ResponseUnpacker_Fields.NO_OP_RESPONSE_UNPACKER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 	using static Neo4Net.com.storecopy.ResponseUnpacker_TxHandler;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.com.storecopy.TransactionCommittingResponseUnpacker.DEFAULT_BATCH_SIZE;
+//	import static Neo4Net.com.storecopy.TransactionCommittingResponseUnpacker.DEFAULT_BATCH_SIZE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.command.Commands.createNode;
+//	import static Neo4Net.kernel.impl.transaction.command.Commands.createNode;
 
 	public class MasterClientTest
 	{
@@ -110,13 +110,13 @@ namespace Neo4Net.ha.upgrade
 //ORIGINAL LINE: @Rule public final org.junit.rules.ExpectedException expectedException = org.junit.rules.ExpectedException.none();
 		 public readonly ExpectedException ExpectedException = ExpectedException.none();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.kernel.lifecycle.LifeRule life = new org.Neo4Net.kernel.lifecycle.LifeRule(true);
+//ORIGINAL LINE: @Rule public final Neo4Net.kernel.lifecycle.LifeRule life = new Neo4Net.kernel.lifecycle.LifeRule(true);
 		 public readonly LifeRule Life = new LifeRule( true );
 		 private readonly Monitors _monitors = new Monitors();
 		 private readonly LogEntryReader<ReadableClosablePositionAwareChannel> _logEntryReader = new VersionAwareLogEntryReader<ReadableClosablePositionAwareChannel>();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(expected = org.Neo4Net.kernel.impl.store.MismatchingStoreIdException.class) public void newClientsShouldNotIgnoreStoreIdDifferences() throws Throwable
+//ORIGINAL LINE: @Test(expected = Neo4Net.kernel.impl.store.MismatchingStoreIdException.class) public void newClientsShouldNotIgnoreStoreIdDifferences() throws Throwable
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void NewClientsShouldNotIgnoreStoreIdDifferences()
 		 {

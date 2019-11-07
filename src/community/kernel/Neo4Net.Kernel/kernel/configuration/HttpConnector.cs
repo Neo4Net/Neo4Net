@@ -29,17 +29,17 @@ namespace Neo4Net.Kernel.configuration
 	using ListenSocketAddress = Neo4Net.Helpers.ListenSocketAddress;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.NO_DEFAULT;
+//	import static Neo4Net.kernel.configuration.Settings.NO_DEFAULT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.advertisedAddress;
+//	import static Neo4Net.kernel.configuration.Settings.advertisedAddress;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.legacyFallback;
+//	import static Neo4Net.kernel.configuration.Settings.legacyFallback;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.listenAddress;
+//	import static Neo4Net.kernel.configuration.Settings.listenAddress;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.optionsObeyCase;
+//	import static Neo4Net.kernel.configuration.Settings.optionsObeyCase;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.setting;
+//	import static Neo4Net.kernel.configuration.Settings.setting;
 
 	[Description("Configuration options for HTTP connectors. " + "\"(http-connector-key)\" is a placeholder for a unique name for the connector, for instance " + "\"http-public\" or some other name that describes what the connector is for.")]
 	public class HttpConnector : Connector

@@ -57,13 +57,13 @@ namespace Neo4Net.Consistency.checking.full
 	using TokenRecord = Neo4Net.Kernel.Impl.Store.Records.TokenRecord;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.consistency.RecordType.ARRAY_PROPERTY;
+//	import static Neo4Net.consistency.RecordType.ARRAY_PROPERTY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.consistency.RecordType.PROPERTY_KEY_NAME;
+//	import static Neo4Net.consistency.RecordType.PROPERTY_KEY_NAME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.consistency.RecordType.RELATIONSHIP_TYPE_NAME;
+//	import static Neo4Net.consistency.RecordType.RELATIONSHIP_TYPE_NAME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.consistency.RecordType.STRING_PROPERTY;
+//	import static Neo4Net.consistency.RecordType.STRING_PROPERTY;
 
 	internal class OwnerCheck : CheckDecorator
 	{
@@ -208,7 +208,7 @@ namespace Neo4Net.Consistency.checking.full
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public org.Neo4Net.consistency.checking.RecordCheck<org.Neo4Net.kernel.impl.store.record.PropertyRecord, org.Neo4Net.consistency.report.ConsistencyReport_PropertyConsistencyReport> decoratePropertyChecker(final org.Neo4Net.consistency.checking.RecordCheck<org.Neo4Net.kernel.impl.store.record.PropertyRecord, org.Neo4Net.consistency.report.ConsistencyReport_PropertyConsistencyReport> checker)
+//ORIGINAL LINE: public Neo4Net.consistency.checking.RecordCheck<Neo4Net.kernel.impl.store.record.PropertyRecord, Neo4Net.consistency.report.ConsistencyReport_PropertyConsistencyReport> decoratePropertyChecker(final Neo4Net.consistency.checking.RecordCheck<Neo4Net.kernel.impl.store.record.PropertyRecord, Neo4Net.consistency.report.ConsistencyReport_PropertyConsistencyReport> checker)
 		 public override RecordCheck<PropertyRecord, ConsistencyReport_PropertyConsistencyReport> DecoratePropertyChecker( RecordCheck<PropertyRecord, ConsistencyReport_PropertyConsistencyReport> checker )
 		 {
 			  if ( _owners == null && _dynamics == null )
@@ -348,7 +348,7 @@ namespace Neo4Net.Consistency.checking.full
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: org.Neo4Net.consistency.checking.RecordCheck<org.Neo4Net.kernel.impl.store.record.DynamicRecord, org.Neo4Net.consistency.report.ConsistencyReport_DynamicConsistencyReport> decorateDynamicChecker(final org.Neo4Net.consistency.RecordType type, final org.Neo4Net.consistency.checking.RecordCheck<org.Neo4Net.kernel.impl.store.record.DynamicRecord, org.Neo4Net.consistency.report.ConsistencyReport_DynamicConsistencyReport> checker)
+//ORIGINAL LINE: Neo4Net.consistency.checking.RecordCheck<Neo4Net.kernel.impl.store.record.DynamicRecord, Neo4Net.consistency.report.ConsistencyReport_DynamicConsistencyReport> decorateDynamicChecker(final Neo4Net.consistency.RecordType type, final Neo4Net.consistency.checking.RecordCheck<Neo4Net.kernel.impl.store.record.DynamicRecord, Neo4Net.consistency.report.ConsistencyReport_DynamicConsistencyReport> checker)
 		 internal virtual RecordCheck<DynamicRecord, ConsistencyReport_DynamicConsistencyReport> DecorateDynamicChecker( RecordType type, RecordCheck<DynamicRecord, ConsistencyReport_DynamicConsistencyReport> checker )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -405,7 +405,7 @@ namespace Neo4Net.Consistency.checking.full
 			  }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Override @SuppressWarnings("unchecked") public void check(RECORD record, org.Neo4Net.consistency.checking.CheckerEngine<RECORD, REPORT> engine, org.Neo4Net.consistency.store.RecordAccess records)
+//ORIGINAL LINE: @Override @SuppressWarnings("unchecked") public void check(RECORD record, Neo4Net.consistency.checking.CheckerEngine<RECORD, REPORT> engine, Neo4Net.consistency.store.RecordAccess records)
 			  public override void Check( RECORD record, CheckerEngine<RECORD, REPORT> engine, RecordAccess records )
 			  {
 					if ( record.inUse() )
@@ -443,7 +443,7 @@ namespace Neo4Net.Consistency.checking.full
 			  }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") @Override public void check(RECORD record, org.Neo4Net.consistency.checking.CheckerEngine<RECORD, REPORT> engine, org.Neo4Net.consistency.store.RecordAccess records)
+//ORIGINAL LINE: @SuppressWarnings("unchecked") @Override public void check(RECORD record, Neo4Net.consistency.checking.CheckerEngine<RECORD, REPORT> engine, Neo4Net.consistency.store.RecordAccess records)
 			  public override void Check( RECORD record, CheckerEngine<RECORD, REPORT> engine, RecordAccess records )
 			  {
 					if ( record.inUse() )

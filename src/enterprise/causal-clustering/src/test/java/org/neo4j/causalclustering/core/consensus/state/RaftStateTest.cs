@@ -51,11 +51,11 @@ namespace Neo4Net.causalclustering.core.consensus.state
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertNull;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.ReplicatedInteger.ValueOf;
+//	import static Neo4Net.causalclustering.core.consensus.ReplicatedInteger.ValueOf;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.roles.Role.CANDIDATE;
+//	import static Neo4Net.causalclustering.core.consensus.roles.Role.CANDIDATE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.identity.RaftTestMember.member;
+//	import static Neo4Net.causalclustering.identity.RaftTestMember.member;
 
 	public class RaftStateTest
 	{

@@ -57,14 +57,14 @@ namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("deprecation") @Override protected java.util.Map<org.Neo4Net.graphdb.config.Setting<?>, String> getSettings()
+//ORIGINAL LINE: @SuppressWarnings("deprecation") @Override protected java.util.Map<Neo4Net.graphdb.config.Setting<?>, String> getSettings()
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		 protected internal override IDictionary<Setting<object>, string> Settings
 		 {
 			 get
 			 {
 	//JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-	//ORIGINAL LINE: java.util.Map<org.Neo4Net.graphdb.config.Setting<?>,String> settings = new java.util.HashMap<>();
+	//ORIGINAL LINE: java.util.Map<Neo4Net.graphdb.config.Setting<?>,String> settings = new java.util.HashMap<>();
 				  IDictionary<Setting<object>, string> settings = new Dictionary<Setting<object>, string>();
 				  settings[SecuritySettings.auth_provider] = SecuritySettings.LDAP_REALM_NAME;
 				  settings[SecuritySettings.native_authentication_enabled] = "false";

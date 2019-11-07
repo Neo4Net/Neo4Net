@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28307.106
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Neo4Net.Kernel.Api", "Neo4Net.Kernel.Api\Neo4Net.Kernel.Api.csproj", "{8862DC00-03E5-4FCE-9589-6BC3BA93C1D9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Neo4Net.Kernel.Api.Tests", "Neo4Net.Kernel.Api.Tests\Neo4Net.Kernel.Api.Tests.csproj", "{52537985-1E71-49DB-BCCB-CF87A3001986}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Neo4Net.Kernel", "..\kernel\Neo4Net.Kernel\Neo4Net.Kernel.csproj", "{036CD0D2-A397-4B21-BF5F-39F599098101}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{8862DC00-03E5-4FCE-9589-6BC3BA93C1D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8862DC00-03E5-4FCE-9589-6BC3BA93C1D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8862DC00-03E5-4FCE-9589-6BC3BA93C1D9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{52537985-1E71-49DB-BCCB-CF87A3001986}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{52537985-1E71-49DB-BCCB-CF87A3001986}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{52537985-1E71-49DB-BCCB-CF87A3001986}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{52537985-1E71-49DB-BCCB-CF87A3001986}.Release|Any CPU.Build.0 = Release|Any CPU
+		{036CD0D2-A397-4B21-BF5F-39F599098101}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{036CD0D2-A397-4B21-BF5F-39F599098101}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{036CD0D2-A397-4B21-BF5F-39F599098101}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{036CD0D2-A397-4B21-BF5F-39F599098101}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

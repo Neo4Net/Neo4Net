@@ -374,7 +374,7 @@ namespace Neo4Net.com
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void acquireResourcesAndExceedTimeout(ResourcePool<Something> pool, org.Neo4Net.time.FakeClock clock, int resourcesToAcquire) throws InterruptedException
+//ORIGINAL LINE: private void acquireResourcesAndExceedTimeout(ResourcePool<Something> pool, Neo4Net.time.FakeClock clock, int resourcesToAcquire) throws InterruptedException
 		 private void AcquireResourcesAndExceedTimeout( ResourcePool<Something> pool, FakeClock clock, int resourcesToAcquire )
 		 {
 			  IList<ResourceHolder> holders = new LinkedList<ResourceHolder>();

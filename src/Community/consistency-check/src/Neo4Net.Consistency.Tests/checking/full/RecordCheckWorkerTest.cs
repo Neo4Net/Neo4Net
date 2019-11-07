@@ -38,7 +38,7 @@ namespace Neo4Net.Consistency.checking.full
 		 {
 			  // GIVEN
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.test.Race race = new org.Neo4Net.test.Race();
+//ORIGINAL LINE: final Neo4Net.test.Race race = new Neo4Net.test.Race();
 			  Race race = new Race();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final java.util.concurrent.atomic.AtomicInteger coordination = new java.util.concurrent.atomic.AtomicInteger(-1);

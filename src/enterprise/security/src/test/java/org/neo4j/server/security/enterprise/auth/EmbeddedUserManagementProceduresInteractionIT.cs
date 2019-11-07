@@ -35,7 +35,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 	public class EmbeddedUserManagementProceduresInteractionIT : AuthProceduresInteractionTestBase<EnterpriseLoginContext>
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected NeoInteractionLevel<org.Neo4Net.kernel.enterprise.api.security.EnterpriseLoginContext> setUpNeoServer(java.util.Map<String, String> config) throws Throwable
+//ORIGINAL LINE: protected NeoInteractionLevel<Neo4Net.kernel.enterprise.api.security.EnterpriseLoginContext> setUpNeoServer(java.util.Map<String, String> config) throws Throwable
 		 protected internal override NeoInteractionLevel<EnterpriseLoginContext> setUpNeoServer( IDictionary<string, string> config )
 		 {
 			  return new EmbeddedInteraction( config );

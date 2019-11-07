@@ -29,13 +29,13 @@ namespace Neo4Net.Server.security.enterprise.auth
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.security.AuthenticationResult.FAILURE;
+//	import static Neo4Net.Kernel.Api.Internal.security.AuthenticationResult.FAILURE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.security.AuthenticationResult.PASSWORD_CHANGE_REQUIRED;
+//	import static Neo4Net.Kernel.Api.Internal.security.AuthenticationResult.PASSWORD_CHANGE_REQUIRED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.security.AuthenticationResult.SUCCESS;
+//	import static Neo4Net.Kernel.Api.Internal.security.AuthenticationResult.SUCCESS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.security.AuthenticationResult.TOO_MANY_ATTEMPTS;
+//	import static Neo4Net.Kernel.Api.Internal.security.AuthenticationResult.TOO_MANY_ATTEMPTS;
 
 	public class ShiroAuthenticationInfoTest
 	{

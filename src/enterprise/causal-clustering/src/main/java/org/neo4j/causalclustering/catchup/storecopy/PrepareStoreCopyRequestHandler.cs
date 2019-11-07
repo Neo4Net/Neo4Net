@@ -33,7 +33,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 	using SimpleTriggerInfo = Neo4Net.Kernel.impl.transaction.log.checkpoint.SimpleTriggerInfo;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.catchup.storecopy.DataSourceChecks.hasSameStoreId;
+//	import static Neo4Net.causalclustering.catchup.storecopy.DataSourceChecks.hasSameStoreId;
 
 	public class PrepareStoreCopyRequestHandler : SimpleChannelInboundHandler<PrepareStoreCopyRequest>
 	{
@@ -86,7 +86,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private PrepareStoreCopyResponse createSuccessfulResponse(org.Neo4Net.kernel.impl.transaction.log.checkpoint.CheckPointer checkPointer, PrepareStoreCopyFiles prepareStoreCopyFiles) throws java.io.IOException
+//ORIGINAL LINE: private PrepareStoreCopyResponse createSuccessfulResponse(Neo4Net.kernel.impl.transaction.log.checkpoint.CheckPointer checkPointer, PrepareStoreCopyFiles prepareStoreCopyFiles) throws java.io.IOException
 		 private PrepareStoreCopyResponse CreateSuccessfulResponse( CheckPointer checkPointer, PrepareStoreCopyFiles prepareStoreCopyFiles )
 		 {
 			  LongSet indexIds = prepareStoreCopyFiles.NonAtomicIndexIds;
@@ -96,7 +96,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.graphdb.Resource tryCheckpointAndAcquireMutex(org.Neo4Net.kernel.impl.transaction.log.checkpoint.CheckPointer checkPointer) throws java.io.IOException
+//ORIGINAL LINE: private Neo4Net.graphdb.Resource tryCheckpointAndAcquireMutex(Neo4Net.kernel.impl.transaction.log.checkpoint.CheckPointer checkPointer) throws java.io.IOException
 		 private Resource TryCheckpointAndAcquireMutex( CheckPointer checkPointer )
 		 {
 			  return _dataSourceSupplier.get().StoreCopyCheckPointMutex.storeCopy(() => checkPointer.TryCheckPoint(new SimpleTriggerInfo("Store copy")));

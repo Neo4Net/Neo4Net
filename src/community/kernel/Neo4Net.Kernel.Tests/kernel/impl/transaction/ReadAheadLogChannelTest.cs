@@ -38,15 +38,15 @@ namespace Neo4Net.Kernel.impl.transaction
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.LogVersionBridge_Fields.NO_MORE_CHANNELS;
+//	import static Neo4Net.kernel.impl.transaction.log.LogVersionBridge_Fields.NO_MORE_CHANNELS;
 
 	public class ReadAheadLogChannelTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.fs.DefaultFileSystemRule fileSystemRule = new org.Neo4Net.test.rule.fs.DefaultFileSystemRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.fs.DefaultFileSystemRule fileSystemRule = new Neo4Net.test.rule.fs.DefaultFileSystemRule();
 		 public readonly DefaultFileSystemRule FileSystemRule = new DefaultFileSystemRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory directory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.TestDirectory directory = Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory Directory = TestDirectory.testDirectory();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -147,7 +147,7 @@ namespace Neo4Net.Kernel.impl.transaction
 			 private bool returned;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.kernel.impl.transaction.log.LogVersionedStoreChannel next(org.Neo4Net.kernel.impl.transaction.log.LogVersionedStoreChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public Neo4Net.kernel.impl.transaction.log.LogVersionedStoreChannel next(Neo4Net.kernel.impl.transaction.log.LogVersionedStoreChannel channel) throws java.io.IOException
 			 public LogVersionedStoreChannel next( LogVersionedStoreChannel channel )
 			 {
 				  if ( !returned )
@@ -161,7 +161,7 @@ namespace Neo4Net.Kernel.impl.transaction
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void writeSomeData(java.io.File file, org.Neo4Net.helpers.collection.Visitor<ByteBuffer, java.io.IOException> visitor) throws java.io.IOException
+//ORIGINAL LINE: private void writeSomeData(java.io.File file, Neo4Net.helpers.collection.Visitor<ByteBuffer, java.io.IOException> visitor) throws java.io.IOException
 		 private void WriteSomeData( File file, Visitor<ByteBuffer, IOException> visitor )
 		 {
 			  using ( StoreChannel channel = FileSystemRule.get().open(file, OpenMode.READ_WRITE) )

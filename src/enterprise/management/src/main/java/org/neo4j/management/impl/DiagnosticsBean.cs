@@ -36,7 +36,7 @@ namespace Neo4Net.management.impl
 	using FormattedLog = Neo4Net.Logging.FormattedLog;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Service.Implementation(ManagementBeanProvider.class) public class DiagnosticsBean extends org.Neo4Net.jmx.impl.ManagementBeanProvider
+//ORIGINAL LINE: @Service.Implementation(ManagementBeanProvider.class) public class DiagnosticsBean extends Neo4Net.jmx.impl.ManagementBeanProvider
 	public class DiagnosticsBean : ManagementBeanProvider
 	{
 		 public DiagnosticsBean() : base(typeof(Diagnostics))
@@ -44,7 +44,7 @@ namespace Neo4Net.management.impl
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected org.Neo4Net.jmx.impl.Neo4NetMBean createMBean(org.Neo4Net.jmx.impl.ManagementData management) throws javax.management.NotCompliantMBeanException
+//ORIGINAL LINE: protected Neo4Net.jmx.impl.Neo4NetMBean createMBean(Neo4Net.jmx.impl.ManagementData management) throws javax.management.NotCompliantMBeanException
 		 protected internal override Neo4NetMBean CreateMBean( ManagementData management )
 		 {
 			  return new DiagnosticsImpl( management );
@@ -56,7 +56,7 @@ namespace Neo4Net.management.impl
 			  internal Config Config;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: DiagnosticsImpl(org.Neo4Net.jmx.impl.ManagementData management) throws javax.management.NotCompliantMBeanException
+//ORIGINAL LINE: DiagnosticsImpl(Neo4Net.jmx.impl.ManagementData management) throws javax.management.NotCompliantMBeanException
 			  internal DiagnosticsImpl( ManagementData management ) : base( management )
 			  {
 					Config = management.ResolveDependency( typeof( Config ) );

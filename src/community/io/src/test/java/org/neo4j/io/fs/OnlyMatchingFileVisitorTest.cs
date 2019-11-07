@@ -36,9 +36,9 @@ namespace Neo4Net.Io.fs
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verify;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.function.Predicates.alwaysFalse;
+//	import static Neo4Net.function.Predicates.alwaysFalse;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.fs.FileVisitors.onlyMatching;
+//	import static Neo4Net.io.fs.FileVisitors.onlyMatching;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(MockitoJUnitRunner.class) public class OnlyMatchingFileVisitorTest

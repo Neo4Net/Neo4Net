@@ -53,7 +53,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index.storage
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.asSet;
+//	import static Neo4Net.helpers.collection.Iterators.asSet;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @ExtendWith({DefaultFileSystemExtension.class, TestDirectoryExtension.class}) class PartitionedIndexStorageTest
@@ -61,10 +61,10 @@ namespace Neo4Net.Kernel.Api.Impl.Index.storage
 	{
 		 private static readonly DirectoryFactory_InMemoryDirectoryFactory _directoryFactory = new DirectoryFactory_InMemoryDirectoryFactory();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.Neo4Net.io.fs.DefaultFileSystemAbstraction fs;
+//ORIGINAL LINE: @Inject private Neo4Net.io.fs.DefaultFileSystemAbstraction fs;
 		 private DefaultFileSystemAbstraction _fs;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.Neo4Net.test.rule.TestDirectory testDir;
+//ORIGINAL LINE: @Inject private Neo4Net.test.rule.TestDirectory testDir;
 		 private TestDirectory _testDir;
 
 		 private PartitionedIndexStorage _storage;

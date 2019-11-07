@@ -31,13 +31,13 @@ namespace Neo4Net.Kernel.Impl.Api
 	using NamedToken = Neo4Net.Kernel.Api.Internal.NamedToken;
 	using SchemaReadCore = Neo4Net.Kernel.Api.Internal.SchemaReadCore;
 	using TokenRead = Neo4Net.Kernel.Api.Internal.TokenRead;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
-	using Statement = Neo4Net.Kernel.api.Statement;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
+	using Statement = Neo4Net.Kernel.Api.Statement;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.Label.label;
+//	import static Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.StatementConstants.ANY_LABEL;
+//	import static Neo4Net.kernel.api.StatementConstants.ANY_LABEL;
 
 	public abstract class TokenAccess<R>
 	{
@@ -100,12 +100,12 @@ namespace Neo4Net.Kernel.Impl.Api
 			 }
 		 }
 
-		 public ResourceIterator<R> InUse( KernelTransaction transaction )
+		 public IResourceIterator<R> InUse( KernelTransaction transaction )
 		 {
 			  return TokenIterator.InUse( transaction, this );
 		 }
 
-		 public ResourceIterator<R> All( KernelTransaction transaction )
+		 public IResourceIterator<R> All( KernelTransaction transaction )
 		 {
 			  return TokenIterator.All( transaction, this );
 		 }
@@ -154,7 +154,7 @@ namespace Neo4Net.Kernel.Impl.Api
 					}
 			  }
 
-			  internal static ResourceIterator<T> InUse<T>( KernelTransaction transaction, TokenAccess<T> access )
+			  internal static IResourceIterator<T> InUse<T>( KernelTransaction transaction, TokenAccess<T> access )
 			  {
 					SchemaReadCore schemaReadCore = transaction.SchemaRead().snapshot();
 					return new TokenIteratorAnonymousInnerClass( transaction, access, schemaReadCore );
@@ -186,7 +186,7 @@ namespace Neo4Net.Kernel.Impl.Api
 				  }
 			  }
 
-			  internal static ResourceIterator<T> All<T>( KernelTransaction transaction, TokenAccess<T> access )
+			  internal static IResourceIterator<T> All<T>( KernelTransaction transaction, TokenAccess<T> access )
 			  {
 					return new TokenIteratorAnonymousInnerClass2( transaction, access );
 			  }

@@ -45,11 +45,11 @@ namespace Neo4Net.causalclustering.discovery.procedures
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.discovery.TestTopology.addressesForCore;
+//	import static Neo4Net.causalclustering.discovery.TestTopology.addressesForCore;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.discovery.TestTopology.addressesForReadReplica;
+//	import static Neo4Net.causalclustering.discovery.TestTopology.addressesForReadReplica;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.asSet;
+//	import static Neo4Net.helpers.collection.Iterators.asSet;
 
 	public class ClusterOverviewProcedureTest
 	{
@@ -60,7 +60,7 @@ namespace Neo4Net.causalclustering.discovery.procedures
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.causalclustering.discovery.CoreTopologyService topologyService = mock(org.Neo4Net.causalclustering.discovery.CoreTopologyService.class);
+//ORIGINAL LINE: final Neo4Net.causalclustering.discovery.CoreTopologyService topologyService = mock(Neo4Net.causalclustering.discovery.CoreTopologyService.class);
 			  CoreTopologyService topologyService = mock( typeof( CoreTopologyService ) );
 
 			  IDictionary<MemberId, CoreServerInfo> coreMembers = new Dictionary<MemberId, CoreServerInfo>();
@@ -92,7 +92,7 @@ namespace Neo4Net.causalclustering.discovery.procedures
 
 			  // when
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.collection.RawIterator<Object[],org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException> members = procedure.apply(null, new Object[0], null);
+//ORIGINAL LINE: final Neo4Net.collection.RawIterator<Object[],Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException> members = procedure.apply(null, new Object[0], null);
 			  RawIterator<object[], ProcedureException> members = procedure.Apply( null, new object[0], null );
 
 			  assertThat( members.Next(), new IsRecord(this, theLeader.Uuid, 5000, RoleInfo.LEADER, asSet("core", "core0")) );

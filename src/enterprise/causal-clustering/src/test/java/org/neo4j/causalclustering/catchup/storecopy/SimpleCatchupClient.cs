@@ -74,28 +74,28 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: PrepareStoreCopyResponse requestListOfFilesFromServer() throws org.Neo4Net.causalclustering.catchup.CatchUpClientException
+//ORIGINAL LINE: PrepareStoreCopyResponse requestListOfFilesFromServer() throws Neo4Net.causalclustering.catchup.CatchUpClientException
 		 internal virtual PrepareStoreCopyResponse RequestListOfFilesFromServer()
 		 {
 			  return RequestListOfFilesFromServer( _correctStoreId );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: PrepareStoreCopyResponse requestListOfFilesFromServer(org.Neo4Net.causalclustering.identity.StoreId expectedStoreId) throws org.Neo4Net.causalclustering.catchup.CatchUpClientException
+//ORIGINAL LINE: PrepareStoreCopyResponse requestListOfFilesFromServer(Neo4Net.causalclustering.identity.StoreId expectedStoreId) throws Neo4Net.causalclustering.catchup.CatchUpClientException
 		 internal virtual PrepareStoreCopyResponse RequestListOfFilesFromServer( StoreId expectedStoreId )
 		 {
 			  return _catchUpClient.makeBlockingRequest( _from, new PrepareStoreCopyRequest( expectedStoreId ), StoreCopyResponseAdaptors.PrepareStoreCopyAdaptor( _streamToDiskProvider, _logProvider.getLog( typeof( SimpleCatchupClient ) ) ) );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: StoreCopyFinishedResponse requestIndividualFile(java.io.File file) throws org.Neo4Net.causalclustering.catchup.CatchUpClientException
+//ORIGINAL LINE: StoreCopyFinishedResponse requestIndividualFile(java.io.File file) throws Neo4Net.causalclustering.catchup.CatchUpClientException
 		 internal virtual StoreCopyFinishedResponse RequestIndividualFile( File file )
 		 {
 			  return RequestIndividualFile( file, _correctStoreId );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: StoreCopyFinishedResponse requestIndividualFile(java.io.File file, org.Neo4Net.causalclustering.identity.StoreId expectedStoreId) throws org.Neo4Net.causalclustering.catchup.CatchUpClientException
+//ORIGINAL LINE: StoreCopyFinishedResponse requestIndividualFile(java.io.File file, Neo4Net.causalclustering.identity.StoreId expectedStoreId) throws Neo4Net.causalclustering.catchup.CatchUpClientException
 		 internal virtual StoreCopyFinishedResponse RequestIndividualFile( File file, StoreId expectedStoreId )
 		 {
 			  long lastTransactionId = GetCheckPointer( _graphDb ).lastCheckPointedTransactionId();
@@ -118,7 +118,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: StoreCopyFinishedResponse requestIndexSnapshot(long indexId) throws org.Neo4Net.causalclustering.catchup.CatchUpClientException
+//ORIGINAL LINE: StoreCopyFinishedResponse requestIndexSnapshot(long indexId) throws Neo4Net.causalclustering.catchup.CatchUpClientException
 		 internal virtual StoreCopyFinishedResponse RequestIndexSnapshot( long indexId )
 		 {
 			  long lastCheckPointedTransactionId = GetCheckPointer( _graphDb ).lastCheckPointedTransactionId();

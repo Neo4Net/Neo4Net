@@ -60,13 +60,13 @@ namespace Neo4Net.Server.rest.transactional
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.mockito.mock.SpatialMocks.mockCartesian;
+//	import static Neo4Net.test.mockito.mock.SpatialMocks.mockCartesian;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.mockito.mock.SpatialMocks.mockCartesian_3D;
+//	import static Neo4Net.test.mockito.mock.SpatialMocks.mockCartesian_3D;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.mockito.mock.SpatialMocks.mockWGS84;
+//	import static Neo4Net.test.mockito.mock.SpatialMocks.mockWGS84;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.mockito.mock.SpatialMocks.mockWGS84_3D;
+//	import static Neo4Net.test.mockito.mock.SpatialMocks.mockWGS84_3D;
 
 	public class Neo4NetJsonCodecTest : TxStateCheckerTestSupport
 	{
@@ -374,7 +374,7 @@ namespace Neo4Net.Server.rest.transactional
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void verifyCRSStructure(org.Neo4Net.GraphDb.Spatial.CRS crs) throws java.io.IOException
+//ORIGINAL LINE: private void verifyCRSStructure(Neo4Net.GraphDb.Spatial.CRS crs) throws java.io.IOException
 		 private void VerifyCRSStructure( CRS crs )
 		 {
 			  // When

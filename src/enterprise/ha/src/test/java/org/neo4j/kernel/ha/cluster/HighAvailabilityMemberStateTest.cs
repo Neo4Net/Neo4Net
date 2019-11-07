@@ -34,17 +34,17 @@ namespace Neo4Net.Kernel.ha.cluster
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.ha.cluster.HighAvailabilityMemberState.ILLEGAL;
+//	import static Neo4Net.kernel.ha.cluster.HighAvailabilityMemberState.ILLEGAL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.ha.cluster.HighAvailabilityMemberState.MASTER;
+//	import static Neo4Net.kernel.ha.cluster.HighAvailabilityMemberState.MASTER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.ha.cluster.HighAvailabilityMemberState.PENDING;
+//	import static Neo4Net.kernel.ha.cluster.HighAvailabilityMemberState.PENDING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.ha.cluster.HighAvailabilityMemberState.SLAVE;
+//	import static Neo4Net.kernel.ha.cluster.HighAvailabilityMemberState.SLAVE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.ha.cluster.HighAvailabilityMemberState.TO_MASTER;
+//	import static Neo4Net.kernel.ha.cluster.HighAvailabilityMemberState.TO_MASTER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.ha.cluster.HighAvailabilityMemberState.TO_SLAVE;
+//	import static Neo4Net.kernel.ha.cluster.HighAvailabilityMemberState.TO_SLAVE;
 
 	/// <summary>
 	/// This is the full specification for state switching in HA according to incoming cluster

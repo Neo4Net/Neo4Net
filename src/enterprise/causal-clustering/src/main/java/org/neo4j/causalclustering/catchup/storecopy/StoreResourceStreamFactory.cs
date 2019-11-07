@@ -30,7 +30,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 	using StoreFileMetadata = Neo4Net.Kernel.Api.StorageEngine.StoreFileMetadata;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.fs.FileUtils.relativePath;
+//	import static Neo4Net.io.fs.FileUtils.relativePath;
 
 	public class StoreResourceStreamFactory
 	{
@@ -44,13 +44,13 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.Neo4Net.cursor.RawCursor<StoreResource,java.io.IOException> create() throws java.io.IOException
+//ORIGINAL LINE: Neo4Net.cursor.RawCursor<StoreResource,java.io.IOException> create() throws java.io.IOException
 		 internal virtual IRawCursor<StoreResource, IOException> Create()
 		 {
 			  NeoStoreDataSource dataSource = _dataSourceSupplier.get();
 
 			  File databaseDirectory = dataSource.DatabaseLayout.databaseDirectory();
-			  ResourceIterator<StoreFileMetadata> files = dataSource.ListStoreFiles( false );
+			  IResourceIterator<StoreFileMetadata> files = dataSource.ListStoreFiles( false );
 
 			  return new RawCursorAnonymousInnerClass( this, databaseDirectory, files );
 		 }
@@ -60,9 +60,9 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 			 private readonly StoreResourceStreamFactory _outerInstance;
 
 			 private File _databaseDirectory;
-			 private ResourceIterator<StoreFileMetadata> _files;
+			 private IResourceIterator<StoreFileMetadata> _files;
 
-			 public RawCursorAnonymousInnerClass( StoreResourceStreamFactory outerInstance, File databaseDirectory, ResourceIterator<StoreFileMetadata> files )
+			 public RawCursorAnonymousInnerClass( StoreResourceStreamFactory outerInstance, File databaseDirectory, IResourceIterator<StoreFileMetadata> files )
 			 {
 				 this.outerInstance = outerInstance;
 				 this._databaseDirectory = databaseDirectory;

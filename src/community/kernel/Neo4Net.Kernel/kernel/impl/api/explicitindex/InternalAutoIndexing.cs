@@ -20,8 +20,8 @@
 namespace Neo4Net.Kernel.Impl.Api.explicitindex
 {
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using AutoIndexOperations = Neo4Net.Kernel.api.explicitindex.AutoIndexOperations;
-	using AutoIndexing = Neo4Net.Kernel.api.explicitindex.AutoIndexing;
+	using AutoIndexOperations = Neo4Net.Kernel.Api.explicitindex.AutoIndexOperations;
+	using AutoIndexing = Neo4Net.Kernel.Api.explicitindex.AutoIndexing;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using TokenHolder = Neo4Net.Kernel.impl.core.TokenHolder;
 

@@ -80,27 +80,27 @@ namespace Neo4Net.causalclustering.catchup.tx
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.command.Commands.createNode;
+//	import static Neo4Net.kernel.impl.transaction.command.Commands.createNode;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_ID;
+//	import static Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_ID;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.entry.LogHeader.LOG_HEADER_SIZE;
+//	import static Neo4Net.kernel.impl.transaction.log.entry.LogHeader.LOG_HEADER_SIZE;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class TransactionLogCatchUpWriterTest
 	public class TransactionLogCatchUpWriterTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory dir = org.Neo4Net.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.TestDirectory dir = Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory Dir = TestDirectory.testDirectory();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.fs.DefaultFileSystemRule fsRule = new org.Neo4Net.test.rule.fs.DefaultFileSystemRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.fs.DefaultFileSystemRule fsRule = new Neo4Net.test.rule.fs.DefaultFileSystemRule();
 		 public readonly DefaultFileSystemRule FsRule = new DefaultFileSystemRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.PageCacheRule pageCacheRule = new org.Neo4Net.test.rule.PageCacheRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.PageCacheRule pageCacheRule = new Neo4Net.test.rule.PageCacheRule();
 		 public readonly PageCacheRule PageCacheRule = new PageCacheRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.NeoStoreDataSourceRule dsRule = new org.Neo4Net.test.rule.NeoStoreDataSourceRule();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.NeoStoreDataSourceRule dsRule = new Neo4Net.test.rule.NeoStoreDataSourceRule();
 		 public NeoStoreDataSourceRule DsRule = new NeoStoreDataSourceRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -201,7 +201,7 @@ namespace Neo4Net.causalclustering.catchup.tx
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void createTransactionLogWithCheckpoint(org.Neo4Net.kernel.configuration.Config config, boolean logsInStoreDir) throws java.io.IOException
+//ORIGINAL LINE: private void createTransactionLogWithCheckpoint(Neo4Net.kernel.configuration.Config config, boolean logsInStoreDir) throws java.io.IOException
 		 private void CreateTransactionLogWithCheckpoint( Config config, bool logsInStoreDir )
 		 {
 			  Neo4Net.Kernel.Api.StorageEngine.StoreId storeId = SimulateStoreCopy();
@@ -235,7 +235,7 @@ namespace Neo4Net.causalclustering.catchup.tx
 		 {
 			  LogEntryReader<ReadableClosablePositionAwareChannel> logEntryReader = new VersionAwareLogEntryReader<ReadableClosablePositionAwareChannel>( new RecordStorageCommandReaderFactory(), InvalidLogEntryHandler.STRICT );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.recovery.LogTailScanner logTailScanner = new org.Neo4Net.kernel.recovery.LogTailScanner(logFiles, logEntryReader, new org.Neo4Net.kernel.monitoring.Monitors());
+//ORIGINAL LINE: final Neo4Net.kernel.recovery.LogTailScanner logTailScanner = new Neo4Net.kernel.recovery.LogTailScanner(logFiles, logEntryReader, new Neo4Net.kernel.monitoring.Monitors());
 			  LogTailScanner logTailScanner = new LogTailScanner( logFiles, logEntryReader, new Monitors() );
 
 			  LogTailScanner.LogTailInformation tailInformation = logTailScanner.TailInformation;
@@ -253,7 +253,7 @@ namespace Neo4Net.causalclustering.catchup.tx
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void verifyTransactionsInLog(org.Neo4Net.kernel.impl.transaction.log.files.LogFiles logFiles, long fromTxId, long endTxId) throws java.io.IOException
+//ORIGINAL LINE: private void verifyTransactionsInLog(Neo4Net.kernel.impl.transaction.log.files.LogFiles logFiles, long fromTxId, long endTxId) throws java.io.IOException
 		 private void VerifyTransactionsInLog( LogFiles logFiles, long fromTxId, long endTxId )
 		 {
 			  long expectedTxId = fromTxId;
@@ -276,7 +276,7 @@ namespace Neo4Net.causalclustering.catchup.tx
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.Kernel.Api.StorageEngine.StoreId simulateStoreCopy() throws java.io.IOException
+//ORIGINAL LINE: private Neo4Net.Kernel.Api.StorageEngine.StoreId simulateStoreCopy() throws java.io.IOException
 		 private Neo4Net.Kernel.Api.StorageEngine.StoreId SimulateStoreCopy()
 		 {
 			  // create an empty store

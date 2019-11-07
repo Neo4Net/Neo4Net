@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel.impl.coreapi
 
 	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
 	using Neo4Net.GraphDb.Index;
-	using AutoIndexOperations = Neo4Net.Kernel.api.explicitindex.AutoIndexOperations;
+	using AutoIndexOperations = Neo4Net.Kernel.Api.explicitindex.AutoIndexOperations;
 
 	/// <summary>
 	/// Facade exposing auto indexing operations for nodes.

@@ -29,7 +29,7 @@ namespace Neo4Net.Server.plugins
 	{
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: Collection<Injectable<?>> start(org.Neo4Net.server.NeoServer neoServer);
+//ORIGINAL LINE: Collection<Injectable<?>> start(Neo4Net.server.NeoServer neoServer);
 		 [Obsolete]
 		 ICollection<Injectable<object>> Start( NeoServer neoServer );
 

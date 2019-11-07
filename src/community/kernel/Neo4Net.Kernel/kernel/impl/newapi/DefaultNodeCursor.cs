@@ -30,12 +30,12 @@ namespace Neo4Net.Kernel.Impl.Newapi
 	using PropertyCursor = Neo4Net.Kernel.Api.Internal.PropertyCursor;
 	using RelationshipGroupCursor = Neo4Net.Kernel.Api.Internal.RelationshipGroupCursor;
 	using RelationshipTraversalCursor = Neo4Net.Kernel.Api.Internal.RelationshipTraversalCursor;
-	using TransactionState = Neo4Net.Kernel.api.txstate.TransactionState;
+	using TransactionState = Neo4Net.Kernel.Api.txstate.TransactionState;
 	using StorageNodeCursor = Neo4Net.Kernel.Api.StorageEngine.StorageNodeCursor;
 	using LongDiffSets = Neo4Net.Kernel.Api.StorageEngine.TxState.LongDiffSets;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.record.AbstractBaseRecord.NO_ID;
+//	import static Neo4Net.kernel.impl.store.record.AbstractBaseRecord.NO_ID;
 
 	internal class DefaultNodeCursor : NodeCursor
 	{

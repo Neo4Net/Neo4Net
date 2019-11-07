@@ -24,11 +24,11 @@ namespace Neo4Net.Kernel.Impl.Api
 
 	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
 	using IOUtils = Neo4Net.Io.IOUtils;
-	using AuxiliaryTransactionState = Neo4Net.Kernel.api.txstate.auxiliary.AuxiliaryTransactionState;
-	using AuxiliaryTransactionStateCloseException = Neo4Net.Kernel.api.txstate.auxiliary.AuxiliaryTransactionStateCloseException;
-	using AuxiliaryTransactionStateHolder = Neo4Net.Kernel.api.txstate.auxiliary.AuxiliaryTransactionStateHolder;
-	using AuxiliaryTransactionStateManager = Neo4Net.Kernel.api.txstate.auxiliary.AuxiliaryTransactionStateManager;
-	using AuxiliaryTransactionStateProvider = Neo4Net.Kernel.api.txstate.auxiliary.AuxiliaryTransactionStateProvider;
+	using AuxiliaryTransactionState = Neo4Net.Kernel.Api.txstate.auxiliary.AuxiliaryTransactionState;
+	using AuxiliaryTransactionStateCloseException = Neo4Net.Kernel.Api.txstate.auxiliary.AuxiliaryTransactionStateCloseException;
+	using AuxiliaryTransactionStateHolder = Neo4Net.Kernel.Api.txstate.auxiliary.AuxiliaryTransactionStateHolder;
+	using AuxiliaryTransactionStateManager = Neo4Net.Kernel.Api.txstate.auxiliary.AuxiliaryTransactionStateManager;
+	using AuxiliaryTransactionStateProvider = Neo4Net.Kernel.Api.txstate.auxiliary.AuxiliaryTransactionStateProvider;
 	using Neo4Net.Kernel.impl.util;
 	using StorageCommand = Neo4Net.Kernel.Api.StorageEngine.StorageCommand;
 
@@ -99,7 +99,7 @@ namespace Neo4Net.Kernel.Impl.Api
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void extractCommands(java.util.Collection<org.Neo4Net.Kernel.Api.StorageEngine.StorageCommand> extractedCommands) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
+//ORIGINAL LINE: public void extractCommands(java.util.Collection<Neo4Net.Kernel.Api.StorageEngine.StorageCommand> extractedCommands) throws Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 			  public override void ExtractCommands( ICollection<StorageCommand> extractedCommands )
 			  {
 					foreach ( AuxiliaryTransactionState state in OpenedStates.Values )
@@ -112,7 +112,7 @@ namespace Neo4Net.Kernel.Impl.Api
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void close() throws org.Neo4Net.kernel.api.txstate.auxiliary.AuxiliaryTransactionStateCloseException
+//ORIGINAL LINE: public void close() throws Neo4Net.kernel.api.txstate.auxiliary.AuxiliaryTransactionStateCloseException
 			  public override void Close()
 			  {
 					IOUtils.close( ( msg, cause ) => new AuxiliaryTransactionStateCloseException( "Failure when closing auxiliary transaction state.", cause ), OpenedStates.Values );

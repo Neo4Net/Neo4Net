@@ -83,10 +83,10 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 
 		 private readonly FileSystemAbstraction _fsa = new DefaultFileSystemAbstraction();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory(fsa);
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.TestDirectory testDirectory = Neo4Net.test.rule.TestDirectory.testDirectory(fsa);
 		 public TestDirectory TestDirectory;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.SuppressOutput suppressOutput = org.Neo4Net.test.rule.SuppressOutput.suppressAll();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.SuppressOutput suppressOutput = Neo4Net.test.rule.SuppressOutput.suppressAll();
 		 public readonly SuppressOutput SuppressOutput = SuppressOutput.suppressAll();
 
 		 private readonly AssertableLogProvider _assertableLogProvider = new AssertableLogProvider( true );
@@ -443,7 +443,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.helpers.AdvertisedSocketAddress secondary() throws org.Neo4Net.causalclustering.catchup.CatchupAddressResolutionException
+//ORIGINAL LINE: public Neo4Net.helpers.AdvertisedSocketAddress secondary() throws Neo4Net.causalclustering.catchup.CatchupAddressResolutionException
 			 public AdvertisedSocketAddress secondary()
 			 {
 				  throw _catchupAddressResolutionException;
@@ -468,7 +468,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static String fileContent(java.io.File file, org.Neo4Net.io.fs.FileSystemAbstraction fsa) throws java.io.IOException
+//ORIGINAL LINE: static String fileContent(java.io.File file, Neo4Net.io.fs.FileSystemAbstraction fsa) throws java.io.IOException
 		 internal static string FileContent( File file, FileSystemAbstraction fsa )
 		 {
 			  int chunkSize = 128;

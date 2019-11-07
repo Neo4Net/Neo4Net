@@ -67,22 +67,22 @@ namespace Neo4Net.Harness
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.harness.TestServerBuilders.newInProcessBuilder;
+//	import static Neo4Net.harness.TestServerBuilders.newInProcessBuilder;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.single;
+//	import static Neo4Net.helpers.collection.Iterators.single;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.ServerTestUtils.connectorAddress;
+//	import static Neo4Net.server.ServerTestUtils.connectorAddress;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.ServerTestUtils.verifyConnector;
+//	import static Neo4Net.server.ServerTestUtils.verifyConnector;
 
 	public class InProcessServerBuilderIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.TestDirectory testDir = org.Neo4Net.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.TestDirectory testDir = Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public TestDirectory TestDir = TestDirectory.testDirectory();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.SuppressOutput suppressOutput = org.Neo4Net.test.rule.SuppressOutput.suppressAll();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.SuppressOutput suppressOutput = Neo4Net.test.rule.SuppressOutput.suppressAll();
 		 public SuppressOutput SuppressOutput = SuppressOutput.suppressAll();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -150,7 +150,7 @@ namespace Neo4Net.Harness
 		 public virtual void ShouldMountUnmanagedExtensionsByPackage()
 		 {
 			  // When
-			  using ( ServerControls server = GetTestServerBuilder( TestDir.directory() ).withExtension("/path/to/my/extension", "org.Neo4Net.harness.extensionpackage").newServer() )
+			  using ( ServerControls server = GetTestServerBuilder( TestDir.directory() ).withExtension("/path/to/my/extension", "Neo4Net.harness.extensionpackage").newServer() )
 			  {
 					// Then
 					assertThat( HTTP.GET( server.HttpURI().ToString() + "path/to/my/extension/myExtension" ).status(), equalTo(234) );
@@ -197,7 +197,7 @@ namespace Neo4Net.Harness
 					// Then
 					using ( Transaction tx = server.Graph().beginTx() )
 					{
-						 ResourceIterable<Node> allNodes = Iterables.asResourceIterable( server.Graph().AllNodes );
+						IResourceIterable<Node> allNodes = Iterables.asResourceIterable( server.Graph().AllNodes );
 
 						 assertTrue( Iterables.count( allNodes ) > 0 );
 
@@ -392,10 +392,10 @@ namespace Neo4Net.Harness
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertDBConfig(ServerControls server, String expected, String key) throws org.Neo4Net.server.rest.domain.JsonParseException
+//ORIGINAL LINE: private void assertDBConfig(ServerControls server, String expected, String key) throws Neo4Net.server.rest.domain.JsonParseException
 		 private void AssertDBConfig( ServerControls server, string expected, string key )
 		 {
-			  JsonNode beans = HTTP.GET( server.HttpURI().ToString() + "db/manage/server/jmx/domain/org.Neo4Net/" ).get("beans");
+			  JsonNode beans = HTTP.GET( server.HttpURI().ToString() + "db/manage/server/jmx/domain/Neo4Net/" ).get("beans");
 			  JsonNode configurationBean = FindNamedBean( beans, "Configuration" ).get( "attributes" );
 			  bool foundKey = false;
 			  foreach ( JsonNode attribute in configurationBean )

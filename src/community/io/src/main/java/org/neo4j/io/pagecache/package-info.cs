@@ -35,8 +35,8 @@
 /// <para>
 /// A file must first be "mapped" into the page cache, before the page cache can cache the contents of the files. When
 /// you no longer have an immediate use for the contents of the file, it can be "unmapped." Mapping a file using the
-/// <seealso cref="org.Neo4Net.io.pagecache.PageCache.map(java.io.File, int, java.nio.file.OpenOption...) map"/> method gives you a
-/// <seealso cref="org.Neo4Net.io.pagecache.PagedFile"/> object, through which the contents of the file can be accessed. Once a file
+/// <seealso cref="Neo4Net.io.pagecache.PageCache.map(java.io.File, int, java.nio.file.OpenOption...) map"/> method gives you a
+/// <seealso cref="Neo4Net.io.pagecache.PagedFile"/> object, through which the contents of the file can be accessed. Once a file
 /// has been mapped with the page cache, it should no longer be accessed directly through the file system, because the
 /// page cache will keep changes in memory, thinking it is managing the only authoritative copy.
 /// </para>
@@ -81,34 +81,34 @@
 /// </para>
 /// <para>
 /// Knowledge of how to move file pages in and out of cache pages is contained in a so called
-/// <seealso cref="org.Neo4Net.io.pagecache.PageSwapper"/>. The {@code Page}s themselves only contain a pointer to their respective
+/// <seealso cref="Neo4Net.io.pagecache.PageSwapper"/>. The {@code Page}s themselves only contain a pointer to their respective
 /// memory area, and a value for how big it is. It is the {@code PageSwapper} that knows how to do the IO that moves
 /// data in and out of the page memory. Every {@code PagedFile} have their own dedicated {@code PageSwapper}, that is
-/// instantiated for the given file by the <seealso cref="org.Neo4Net.io.pagecache.PageSwapperFactory"/>.
+/// instantiated for the given file by the <seealso cref="Neo4Net.io.pagecache.PageSwapperFactory"/>.
 /// </para>
 /// <para>
 /// Once a file has been mapped, and a {@code PagedFile} object made available, the
-/// <seealso cref="org.Neo4Net.io.pagecache.PagedFile.io(long, int) io method"/> can be used to interact with the contents of the
+/// <seealso cref="Neo4Net.io.pagecache.PagedFile.io(long, int) io method"/> can be used to interact with the contents of the
 /// file. It takes in an initial file page id and a bitmap of intentions, such as what locking behaviour to use, and
-/// returns a <seealso cref="org.Neo4Net.io.pagecache.PageCursor"/> object. The {@code PageCursor} is the window into the data
+/// returns a <seealso cref="Neo4Net.io.pagecache.PageCursor"/> object. The {@code PageCursor} is the window into the data
 /// managed by the page cache.
 /// </para>
 /// <para>
 /// Initially, the {@code PageCursor} is not bound to any page. Calling the
-/// <seealso cref="org.Neo4Net.io.pagecache.PageCursor.next()"/> method on the cursor will advance it to its next page. The first
+/// <seealso cref="Neo4Net.io.pagecache.PageCursor.next()"/> method on the cursor will advance it to its next page. The first
 /// page that the cursor binds to, is the page with the file page id given to the {@code io} method. From then on, the
 /// cursor will scan linearly through the file.
 /// </para>
 /// <para>
 /// The {@code next} method returns {@code true} if it successfully bound to the next page in its sequence. This is
-/// usually the case, but when <seealso cref="org.Neo4Net.io.pagecache.PagedFile.PF_SHARED_READ_LOCK"/> or
-/// <seealso cref="org.Neo4Net.io.pagecache.PagedFile.PF_NO_GROW"/> is specified, the {@code next} method will return {@code false}
+/// usually the case, but when <seealso cref="Neo4Net.io.pagecache.PagedFile.PF_SHARED_READ_LOCK"/> or
+/// <seealso cref="Neo4Net.io.pagecache.PagedFile.PF_NO_GROW"/> is specified, the {@code next} method will return {@code false}
 /// if the cursor would otherwise move beyond the end of the file.
 /// </para>
 /// <para>
 /// The {@code next} will grab the desired lock on the page (as specified by the {@code pf_flags} argument to the
 /// {@code io} method call) on the page, and then we can do the IO we intended. Following the IO, the
-/// <seealso cref="org.Neo4Net.io.pagecache.PageCursor.shouldRetry()"/> method must be consulted, and the IO must be redone on the
+/// <seealso cref="Neo4Net.io.pagecache.PageCursor.shouldRetry()"/> method must be consulted, and the IO must be redone on the
 /// page if it returns true. This is best done in a {@code do-while} loop. This retrying allows some optimistic
 /// optimisations in the page cache, that improves performance on average.
 /// </para>

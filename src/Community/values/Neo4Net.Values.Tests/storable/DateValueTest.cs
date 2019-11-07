@@ -37,19 +37,19 @@ namespace Neo4Net.Values.Storable
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assumptions.assumeTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.DateValue.date;
+//	import static Neo4Net.values.storable.DateValue.date;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.DateValue.ordinalDate;
+//	import static Neo4Net.values.storable.DateValue.ordinalDate;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.DateValue.parse;
+//	import static Neo4Net.values.storable.DateValue.parse;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.DateValue.quarterDate;
+//	import static Neo4Net.values.storable.DateValue.quarterDate;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.DateValue.weekDate;
+//	import static Neo4Net.values.storable.DateValue.weekDate;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.utils.AnyValueTestUtil.assertEqual;
+//	import static Neo4Net.values.utils.AnyValueTestUtil.assertEqual;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.utils.AnyValueTestUtil.assertNotEqual;
+//	import static Neo4Net.values.utils.AnyValueTestUtil.assertNotEqual;
 
 	internal class DateValueTest
 	{

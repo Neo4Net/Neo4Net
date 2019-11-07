@@ -132,14 +132,14 @@ namespace Neo4Net.Test.rule
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void evaluate() throws Throwable
-			 public override void evaluate()
+//ORIGINAL LINE: public void Evaluate() throws Throwable
+			 public override void Evaluate()
 			 {
 				  outerInstance.directoryForDescription( _description );
 				  bool success = false;
 				  try
 				  {
-						@base.evaluate();
+						@base.Evaluate();
 						success = true;
 				  }
 				  finally
@@ -313,7 +313,7 @@ namespace Neo4Net.Test.rule
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @VisibleForTesting public org.Neo4Net.io.fs.FileSystemAbstraction getFileSystem()
+//ORIGINAL LINE: @VisibleForTesting public Neo4Net.io.fs.FileSystemAbstraction getFileSystem()
 		 public virtual FileSystemAbstraction FileSystem
 		 {
 			 get
@@ -357,7 +357,7 @@ namespace Neo4Net.Test.rule
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static java.io.File clean(org.Neo4Net.io.fs.FileSystemAbstraction fs, java.io.File dir) throws java.io.IOException
+//ORIGINAL LINE: private static java.io.File clean(Neo4Net.io.fs.FileSystemAbstraction fs, java.io.File dir) throws java.io.IOException
 		 private static File Clean( FileSystemAbstraction fs, File dir )
 		 {
 			  if ( fs.FileExists( dir ) )

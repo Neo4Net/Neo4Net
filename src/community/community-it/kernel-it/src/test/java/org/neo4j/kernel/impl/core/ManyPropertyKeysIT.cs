@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.impl.core
 	using Test = org.junit.Test;
 	using RuleChain = org.junit.rules.RuleChain;
 
-	using DatabaseManager = Neo4Net.Dbms.database.DatabaseManager;
+	using IDatabaseManager = Neo4Net.Dbms.database.DatabaseManager;
 	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
 	using Node = Neo4Net.GraphDb.Node;
 	using Transaction = Neo4Net.GraphDb.Transaction;
@@ -33,9 +33,9 @@ namespace Neo4Net.Kernel.impl.core
 	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
 	using EmptyVersionContextSupplier = Neo4Net.Io.pagecache.tracing.cursor.context.EmptyVersionContextSupplier;
-	using InwardKernel = Neo4Net.Kernel.api.InwardKernel;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
-	using AnonymousContext = Neo4Net.Kernel.api.security.AnonymousContext;
+	using InwardKernel = Neo4Net.Kernel.Api.InwardKernel;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
+	using AnonymousContext = Neo4Net.Kernel.Api.security.AnonymousContext;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using NeoStores = Neo4Net.Kernel.impl.store.NeoStores;
 	using PropertyKeyTokenStore = Neo4Net.Kernel.impl.store.PropertyKeyTokenStore;
@@ -175,7 +175,7 @@ namespace Neo4Net.Kernel.impl.core
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static int propertyKeyCount(org.Neo4Net.kernel.internal.GraphDatabaseAPI db) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
+//ORIGINAL LINE: private static int propertyKeyCount(Neo4Net.kernel.internal.GraphDatabaseAPI db) throws Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 private static int PropertyKeyCount( GraphDatabaseAPI db )
 		 {
 			  InwardKernel kernelAPI = Db.DependencyResolver.resolveDependency( typeof( InwardKernel ) );

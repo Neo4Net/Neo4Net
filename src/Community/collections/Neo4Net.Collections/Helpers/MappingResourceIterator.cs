@@ -21,13 +21,13 @@ namespace Neo4Net.Collections.Helpers
 {
 	using Neo4Net.GraphDb;
 
-	public abstract class MappingResourceIterator<T, S> : ResourceIterator<T>
+	public abstract class MappingResourceIterator<T, S> : IResourceIterator<T>
 	{
-		public abstract ResourceIterator<R> Map( System.Func<T, R> map );
+		public abstract IResourceIterator<R> Map( System.Func<T, R> map );
 		public abstract java.util.stream.Stream<T> Stream();
-		 private ResourceIterator<S> _sourceIterator;
+		 private IResourceIterator<S> _sourceIterator;
 
-		 public MappingResourceIterator( ResourceIterator<S> sourceResourceIterator )
+		 public MappingResourceIterator( IResourceIterator<S> sourceResourceIterator )
 		 {
 			  this._sourceIterator = sourceResourceIterator;
 		 }

@@ -55,7 +55,7 @@ namespace Neo4Net.cluster.protocol.atomicbroadcast.multipaxos
 			  ClusterContext clusterContext = mock( typeof( ClusterContext ) );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.logging.Log log = mock(org.Neo4Net.logging.Log.class);
+//ORIGINAL LINE: final Neo4Net.logging.Log log = mock(Neo4Net.logging.Log.class);
 			  Log log = mock( typeof( Log ) );
 			  LogProvider logProvider = new LogProviderAnonymousInnerClass( this, log );
 
@@ -105,7 +105,7 @@ namespace Neo4Net.cluster.protocol.atomicbroadcast.multipaxos
 			  ClusterContext clusterContext = mock( typeof( ClusterContext ) );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.logging.Log log = mock(org.Neo4Net.logging.Log.class);
+//ORIGINAL LINE: final Neo4Net.logging.Log log = mock(Neo4Net.logging.Log.class);
 			  Log log = mock( typeof( Log ) );
 			  LogProvider logProvider = new LogProviderAnonymousInnerClass2( this, log );
 
@@ -155,7 +155,7 @@ namespace Neo4Net.cluster.protocol.atomicbroadcast.multipaxos
 			  ClusterContext clusterContext = mock( typeof( ClusterContext ) );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.logging.Log log = mock(org.Neo4Net.logging.Log.class);
+//ORIGINAL LINE: final Neo4Net.logging.Log log = mock(Neo4Net.logging.Log.class);
 			  Log log = mock( typeof( Log ) );
 			  LogProvider logProvider = new LogProviderAnonymousInnerClass3( this, log );
 

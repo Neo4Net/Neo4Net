@@ -31,9 +31,9 @@ namespace Neo4Net.causalclustering.discovery
 	using Config = Neo4Net.Kernel.configuration.Config;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.discovery.ClientConnectorAddresses.Scheme.bolt;
+//	import static Neo4Net.causalclustering.discovery.ClientConnectorAddresses.Scheme.bolt;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.asSet;
+//	import static Neo4Net.helpers.collection.Iterators.asSet;
 
 	public class TestTopology
 	{

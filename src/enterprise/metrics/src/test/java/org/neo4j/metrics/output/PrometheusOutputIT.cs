@@ -37,20 +37,20 @@ namespace Neo4Net.metrics.output
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.metrics.MetricsSettings.prometheusEnabled;
+//	import static Neo4Net.metrics.MetricsSettings.prometheusEnabled;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.metrics.MetricsSettings.prometheusEndpoint;
+//	import static Neo4Net.metrics.MetricsSettings.prometheusEndpoint;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.metrics.source.db.EntityCountMetrics.COUNTS_NODE;
+//	import static Neo4Net.metrics.source.db.EntityCountMetrics.COUNTS_NODE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.metrics.source.db.EntityCountMetrics.COUNTS_RELATIONSHIP_TYPE;
+//	import static Neo4Net.metrics.source.db.EntityCountMetrics.COUNTS_RELATIONSHIP_TYPE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.PortUtils.getConnectorAddress;
+//	import static Neo4Net.test.PortUtils.getConnectorAddress;
 
 	public class PrometheusOutputIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.TestDirectory testDirectory = Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public TestDirectory TestDirectory = TestDirectory.testDirectory();
 
 		 private IGraphDatabaseService _database;

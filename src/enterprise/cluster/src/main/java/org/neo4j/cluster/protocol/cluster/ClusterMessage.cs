@@ -122,12 +122,12 @@ namespace Neo4Net.cluster.protocol.cluster
 	//		  private static final long serialVersionUID = -2394291383400324304L;
 	//
 	//		  private Map<InstanceId, URI> nodes;
-	//		  private org.Neo4Net.cluster.protocol.atomicbroadcast.multipaxos.InstanceId latestReceivedInstanceId;
+	//		  private Neo4Net.cluster.protocol.atomicbroadcast.multipaxos.InstanceId latestReceivedInstanceId;
 	//		  private Map<String, InstanceId> roles;
 	//		  private String clusterName;
 	//		  private Set<InstanceId> failedMembers;
 	//
-	//		  public ConfigurationResponseState(Map<String, InstanceId> roles, Map<InstanceId, URI> nodes, org.Neo4Net.cluster.protocol.atomicbroadcast.multipaxos.InstanceId latestReceivedInstanceId, Set<InstanceId> failedMembers, String clusterName)
+	//		  public ConfigurationResponseState(Map<String, InstanceId> roles, Map<InstanceId, URI> nodes, Neo4Net.cluster.protocol.atomicbroadcast.multipaxos.InstanceId latestReceivedInstanceId, Set<InstanceId> failedMembers, String clusterName)
 	//		  {
 	//				this.roles = roles;
 	//				this.nodes = nodes;
@@ -146,7 +146,7 @@ namespace Neo4Net.cluster.protocol.cluster
 	//				return roles;
 	//		  }
 	//
-	//		  public org.Neo4Net.cluster.protocol.atomicbroadcast.multipaxos.InstanceId getLatestReceivedInstanceId()
+	//		  public Neo4Net.cluster.protocol.atomicbroadcast.multipaxos.InstanceId getLatestReceivedInstanceId()
 	//		  {
 	//				return latestReceivedInstanceId;
 	//		  }

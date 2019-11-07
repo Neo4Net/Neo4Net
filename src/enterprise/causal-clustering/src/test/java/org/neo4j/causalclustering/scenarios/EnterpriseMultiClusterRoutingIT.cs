@@ -28,9 +28,9 @@ namespace Neo4Net.causalclustering.scenarios
 
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.scenarios.EnterpriseDiscoveryServiceType.HAZELCAST;
+//	import static Neo4Net.causalclustering.scenarios.EnterpriseDiscoveryServiceType.HAZELCAST;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.scenarios.EnterpriseDiscoveryServiceType.SHARED;
+//	import static Neo4Net.causalclustering.scenarios.EnterpriseDiscoveryServiceType.SHARED;
 
 	public class EnterpriseMultiClusterRoutingIT : BaseMultiClusterRoutingIT
 	{

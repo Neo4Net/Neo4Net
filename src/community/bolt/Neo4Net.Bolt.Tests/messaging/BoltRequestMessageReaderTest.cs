@@ -164,7 +164,7 @@ namespace Neo4Net.Bolt.messaging
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public RequestMessage decode(org.Neo4Net.bolt.messaging.Neo4NetPack_Unpacker unpacker) throws java.io.IOException
+//ORIGINAL LINE: public RequestMessage decode(Neo4Net.bolt.messaging.Neo4NetPack_Unpacker unpacker) throws java.io.IOException
 			  public override RequestMessage Decode( Neo4NetPack_Unpacker unpacker )
 			  {
 					return Message;

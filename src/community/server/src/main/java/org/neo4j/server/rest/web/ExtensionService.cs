@@ -75,7 +75,7 @@ namespace Neo4Net.Server.rest.web
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.graphdb.Node node(long id) throws NodeNotFoundException
+//ORIGINAL LINE: private Neo4Net.graphdb.Node node(long id) throws NodeNotFoundException
 		 private Node Node( long id )
 		 {
 			  try
@@ -95,7 +95,7 @@ namespace Neo4Net.Server.rest.web
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.graphdb.Relationship relationship(long id) throws RelationshipNotFoundException
+//ORIGINAL LINE: private Neo4Net.graphdb.Relationship relationship(long id) throws RelationshipNotFoundException
 		 private Relationship Relationship( long id )
 		 {
 			  try
@@ -308,49 +308,49 @@ namespace Neo4Net.Server.rest.web
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected org.Neo4Net.server.rest.repr.Representation extensionList(String extensionName) throws org.Neo4Net.server.plugins.PluginLookupException
+//ORIGINAL LINE: protected Neo4Net.server.rest.repr.Representation extensionList(String extensionName) throws Neo4Net.server.plugins.PluginLookupException
 		 protected internal virtual Representation ExtensionList( string extensionName )
 		 {
 			  return new ServerExtensionRepresentation( extensionName, _extensions.describeAll( extensionName ) );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected org.Neo4Net.server.rest.repr.Representation invokeGraphDatabaseExtension(String extensionName, String method, org.Neo4Net.server.plugins.ParameterList data) throws org.Neo4Net.server.plugins.PluginLookupException, org.Neo4Net.server.rest.repr.BadInputException, org.Neo4Net.server.plugins.PluginInvocationFailureException, org.Neo4Net.server.plugins.BadPluginInvocationException
+//ORIGINAL LINE: protected Neo4Net.server.rest.repr.Representation invokeGraphDatabaseExtension(String extensionName, String method, Neo4Net.server.plugins.ParameterList data) throws Neo4Net.server.plugins.PluginLookupException, Neo4Net.server.rest.repr.BadInputException, Neo4Net.server.plugins.PluginInvocationFailureException, Neo4Net.server.plugins.BadPluginInvocationException
 		 protected internal virtual Representation InvokeGraphDatabaseExtension( string extensionName, string method, ParameterList data )
 		 {
 			  return _extensions.invoke( _graphDb, extensionName, typeof( IGraphDatabaseService ), method, _graphDb, data );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected org.Neo4Net.server.rest.repr.Representation describeGraphDatabaseExtension(String extensionName, String method) throws org.Neo4Net.server.plugins.PluginLookupException
+//ORIGINAL LINE: protected Neo4Net.server.rest.repr.Representation describeGraphDatabaseExtension(String extensionName, String method) throws Neo4Net.server.plugins.PluginLookupException
 		 protected internal virtual Representation DescribeGraphDatabaseExtension( string extensionName, string method )
 		 {
 			  return _extensions.describe( extensionName, typeof( IGraphDatabaseService ), method );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected org.Neo4Net.server.rest.repr.Representation invokeNodeExtension(long nodeId, String extensionName, String method, org.Neo4Net.server.plugins.ParameterList data) throws NodeNotFoundException, org.Neo4Net.server.plugins.PluginLookupException, org.Neo4Net.server.rest.repr.BadInputException, org.Neo4Net.server.plugins.PluginInvocationFailureException, org.Neo4Net.server.plugins.BadPluginInvocationException
+//ORIGINAL LINE: protected Neo4Net.server.rest.repr.Representation invokeNodeExtension(long nodeId, String extensionName, String method, Neo4Net.server.plugins.ParameterList data) throws NodeNotFoundException, Neo4Net.server.plugins.PluginLookupException, Neo4Net.server.rest.repr.BadInputException, Neo4Net.server.plugins.PluginInvocationFailureException, Neo4Net.server.plugins.BadPluginInvocationException
 		 protected internal virtual Representation InvokeNodeExtension( long nodeId, string extensionName, string method, ParameterList data )
 		 {
 			  return _extensions.invoke( _graphDb, extensionName, typeof( Node ), method, Node( nodeId ), data );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected org.Neo4Net.server.rest.repr.Representation describeNodeExtension(String extensionName, String method) throws org.Neo4Net.server.plugins.PluginLookupException
+//ORIGINAL LINE: protected Neo4Net.server.rest.repr.Representation describeNodeExtension(String extensionName, String method) throws Neo4Net.server.plugins.PluginLookupException
 		 protected internal virtual Representation DescribeNodeExtension( string extensionName, string method )
 		 {
 			  return _extensions.describe( extensionName, typeof( Node ), method );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected org.Neo4Net.server.rest.repr.Representation invokeRelationshipExtension(long relationshipId, String extensionName, String method, org.Neo4Net.server.plugins.ParameterList data) throws RelationshipNotFoundException, org.Neo4Net.server.plugins.PluginLookupException, org.Neo4Net.server.rest.repr.BadInputException, org.Neo4Net.server.plugins.PluginInvocationFailureException, org.Neo4Net.server.plugins.BadPluginInvocationException
+//ORIGINAL LINE: protected Neo4Net.server.rest.repr.Representation invokeRelationshipExtension(long relationshipId, String extensionName, String method, Neo4Net.server.plugins.ParameterList data) throws RelationshipNotFoundException, Neo4Net.server.plugins.PluginLookupException, Neo4Net.server.rest.repr.BadInputException, Neo4Net.server.plugins.PluginInvocationFailureException, Neo4Net.server.plugins.BadPluginInvocationException
 		 protected internal virtual Representation InvokeRelationshipExtension( long relationshipId, string extensionName, string method, ParameterList data )
 		 {
 			  return _extensions.invoke( _graphDb, extensionName, typeof( Relationship ), method, Relationship( relationshipId ), data );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected org.Neo4Net.server.rest.repr.Representation describeRelationshipExtension(String extensionName, String method) throws org.Neo4Net.server.plugins.PluginLookupException
+//ORIGINAL LINE: protected Neo4Net.server.rest.repr.Representation describeRelationshipExtension(String extensionName, String method) throws Neo4Net.server.plugins.PluginLookupException
 		 protected internal virtual Representation DescribeRelationshipExtension( string extensionName, string method )
 		 {
 			  return _extensions.describe( extensionName, typeof( Relationship ), method );

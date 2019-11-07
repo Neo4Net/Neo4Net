@@ -32,7 +32,7 @@ namespace Neo4Net.Kernel.extension
 	using Lifecycle = Neo4Net.Kernel.Lifecycle.Lifecycle;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.stream;
+//	import static Neo4Net.helpers.collection.Iterables.stream;
 
 	public abstract class AbstractKernelExtensions : Neo4Net.GraphDb.DependencyResolver_Adapter, Lifecycle
 	{
@@ -120,7 +120,7 @@ namespace Neo4Net.Kernel.extension
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private static <T> org.Neo4Net.kernel.lifecycle.Lifecycle newInstance(org.Neo4Net.kernel.impl.spi.KernelContext kernelContext, KernelExtensionFactory<T> factory, Object dependencies)
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private static <T> Neo4Net.kernel.lifecycle.Lifecycle newInstance(Neo4Net.kernel.impl.spi.KernelContext kernelContext, KernelExtensionFactory<T> factory, Object dependencies)
 		 private static Lifecycle NewInstance<T>( KernelContext kernelContext, KernelExtensionFactory<T> factory, object dependencies )
 		 {
 			  return factory.NewInstance( kernelContext, ( T )dependencies );

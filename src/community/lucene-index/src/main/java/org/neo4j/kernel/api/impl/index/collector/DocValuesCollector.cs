@@ -130,7 +130,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index.collector
 		 /// <returns> an indexhits iterator over all matches </returns>
 		 /// <exception cref="IOException"> </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.GraphDb.Index.IndexHits<org.apache.lucene.document.Document> getIndexHits(org.apache.lucene.search.Sort sort) throws java.io.IOException
+//ORIGINAL LINE: public Neo4Net.GraphDb.Index.IndexHits<org.apache.lucene.document.Document> getIndexHits(org.apache.lucene.search.Sort sort) throws java.io.IOException
 		 public virtual IndexHits<Document> GetIndexHits( Sort sort )
 		 {
 			  IList<MatchingDocs> matchingDocs = GetMatchingDocs();

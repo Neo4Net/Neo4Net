@@ -186,7 +186,7 @@ namespace Neo4Net.upgrade
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertStoreFormat(org.Neo4Net.kernel.impl.store.format.RecordFormats expected) throws Exception
+//ORIGINAL LINE: private void assertStoreFormat(Neo4Net.kernel.impl.store.format.RecordFormats expected) throws Exception
 		 private void AssertStoreFormat( RecordFormats expected )
 		 {
 			  Config config = Config.defaults( GraphDatabaseSettings.pagecache_memory, "8m" );

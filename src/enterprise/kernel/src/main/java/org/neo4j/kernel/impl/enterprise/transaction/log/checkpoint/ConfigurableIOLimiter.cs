@@ -54,7 +54,7 @@ namespace Neo4Net.Kernel.impl.enterprise.transaction.log.checkpoint
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @VisibleForTesting ConfigurableIOLimiter(org.Neo4Net.kernel.configuration.Config config, System.Action<Object, long> pauseNanos)
+//ORIGINAL LINE: @VisibleForTesting ConfigurableIOLimiter(Neo4Net.kernel.configuration.Config config, System.Action<Object, long> pauseNanos)
 		 internal ConfigurableIOLimiter( Config config, System.Action<object, long> pauseNanos )
 		 {
 			  this._pauseNanos = pauseNanos;

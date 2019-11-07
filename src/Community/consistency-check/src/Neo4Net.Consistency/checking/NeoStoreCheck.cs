@@ -26,7 +26,7 @@ namespace Neo4Net.Consistency.checking
 	internal class NeoStoreCheck : PrimitiveRecordCheck<NeoStoreRecord, ConsistencyReport_NeoStoreConsistencyReport>
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SafeVarargs NeoStoreCheck(RecordField<org.Neo4Net.kernel.impl.store.record.NeoStoreRecord,org.Neo4Net.consistency.report.ConsistencyReport_NeoStoreConsistencyReport>...fields)
+//ORIGINAL LINE: @SafeVarargs NeoStoreCheck(RecordField<Neo4Net.kernel.impl.store.record.NeoStoreRecord,Neo4Net.consistency.report.ConsistencyReport_NeoStoreConsistencyReport>...fields)
 		 internal NeoStoreCheck( params RecordField<NeoStoreRecord, ConsistencyReport_NeoStoreConsistencyReport>[] fields ) : base( fields )
 		 {
 		 }

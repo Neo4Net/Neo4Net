@@ -29,7 +29,7 @@ namespace Neo4Net.Bolt.v3.runtime
 	using AuthorizationExpiredException = Neo4Net.GraphDb.security.AuthorizationExpiredException;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.util.Preconditions.checkState;
+//	import static Neo4Net.util.Preconditions.checkState;
 
 	public abstract class FailSafeBoltStateMachineState : BoltStateMachineState
 	{
@@ -38,7 +38,7 @@ namespace Neo4Net.Bolt.v3.runtime
 		 private BoltStateMachineState _interruptedState;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.bolt.runtime.BoltStateMachineState process(org.Neo4Net.bolt.messaging.RequestMessage message, org.Neo4Net.bolt.runtime.StateMachineContext context) throws org.Neo4Net.bolt.runtime.BoltConnectionFatality
+//ORIGINAL LINE: public Neo4Net.bolt.runtime.BoltStateMachineState process(Neo4Net.bolt.messaging.RequestMessage message, Neo4Net.bolt.runtime.StateMachineContext context) throws Neo4Net.bolt.runtime.BoltConnectionFatality
 		 public override BoltStateMachineState Process( RequestMessage message, StateMachineContext context )
 		 {
 			  AssertInitialized();
@@ -87,7 +87,7 @@ namespace Neo4Net.Bolt.v3.runtime
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected abstract org.Neo4Net.bolt.runtime.BoltStateMachineState processUnsafe(org.Neo4Net.bolt.messaging.RequestMessage message, org.Neo4Net.bolt.runtime.StateMachineContext context) throws Throwable;
+//ORIGINAL LINE: protected abstract Neo4Net.bolt.runtime.BoltStateMachineState processUnsafe(Neo4Net.bolt.messaging.RequestMessage message, Neo4Net.bolt.runtime.StateMachineContext context) throws Throwable;
 		 protected internal abstract BoltStateMachineState ProcessUnsafe( RequestMessage message, StateMachineContext context );
 	}
 

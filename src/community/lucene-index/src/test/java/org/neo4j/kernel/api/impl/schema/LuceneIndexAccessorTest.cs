@@ -45,7 +45,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 //ORIGINAL LINE: @Mock private SchemaIndex schemaIndex;
 		 private SchemaIndex _schemaIndex;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Mock private org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor schemaIndexDescriptor;
+//ORIGINAL LINE: @Mock private Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor schemaIndexDescriptor;
 		 private IndexDescriptor _schemaIndexDescriptor;
 		 private LuceneIndexAccessor _accessor;
 

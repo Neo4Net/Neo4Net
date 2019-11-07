@@ -62,9 +62,9 @@ namespace Neo4Net
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.single;
+//	import static Neo4Net.helpers.collection.Iterables.single;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode.EXTERNAL;
+//	import static Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode.EXTERNAL;
 
 	/// <summary>
 	/// It's master creating a constraint. There are two mini transactions in creating a constraint:
@@ -99,10 +99,10 @@ namespace Neo4Net
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.fs.EphemeralFileSystemRule fs = new org.Neo4Net.test.rule.fs.EphemeralFileSystemRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.fs.EphemeralFileSystemRule fs = new Neo4Net.test.rule.fs.EphemeralFileSystemRule();
 		 public readonly EphemeralFileSystemRule Fs = new EphemeralFileSystemRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.concurrent.OtherThreadRule<Void> t2 = new org.Neo4Net.test.rule.concurrent.OtherThreadRule<>("T2");
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.concurrent.OtherThreadRule<Void> t2 = new Neo4Net.test.rule.concurrent.OtherThreadRule<>("T2");
 		 public readonly OtherThreadRule<Void> T2 = new OtherThreadRule<Void>( "T2" );
 		 private readonly Monitors _monitors = new Monitors();
 
@@ -155,7 +155,7 @@ namespace Neo4Net
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void recoverFromHalfConstraintAppliedBeforeCrash(System.Action<org.Neo4Net.kernel.internal.GraphDatabaseAPI,java.util.List<org.Neo4Net.kernel.impl.transaction.TransactionRepresentation>> applier, System.Action<org.Neo4Net.kernel.internal.GraphDatabaseAPI> constraintCreator, boolean composite) throws Exception
+//ORIGINAL LINE: private void recoverFromHalfConstraintAppliedBeforeCrash(System.Action<Neo4Net.kernel.internal.GraphDatabaseAPI,java.util.List<Neo4Net.kernel.impl.transaction.TransactionRepresentation>> applier, System.Action<Neo4Net.kernel.internal.GraphDatabaseAPI> constraintCreator, boolean composite) throws Exception
 		 private void RecoverFromHalfConstraintAppliedBeforeCrash( System.Action<GraphDatabaseAPI, IList<TransactionRepresentation>> applier, System.Action<GraphDatabaseAPI> constraintCreator, bool composite )
 		 {
 			  // GIVEN
@@ -239,7 +239,7 @@ namespace Neo4Net
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void recoverFromConstraintAppliedBeforeCrash(System.Action<org.Neo4Net.kernel.internal.GraphDatabaseAPI> constraintCreator) throws Exception
+//ORIGINAL LINE: private void recoverFromConstraintAppliedBeforeCrash(System.Action<Neo4Net.kernel.internal.GraphDatabaseAPI> constraintCreator) throws Exception
 		 private void RecoverFromConstraintAppliedBeforeCrash( System.Action<GraphDatabaseAPI> constraintCreator )
 		 {
 			  IList<TransactionRepresentation> transactions = CreateTransactionsForCreatingConstraint( constraintCreator );
@@ -342,7 +342,7 @@ namespace Neo4Net
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static java.util.List<org.Neo4Net.kernel.impl.transaction.TransactionRepresentation> createTransactionsForCreatingConstraint(System.Action<org.Neo4Net.kernel.internal.GraphDatabaseAPI> uniqueConstraintCreator) throws Exception
+//ORIGINAL LINE: private static java.util.List<Neo4Net.kernel.impl.transaction.TransactionRepresentation> createTransactionsForCreatingConstraint(System.Action<Neo4Net.kernel.internal.GraphDatabaseAPI> uniqueConstraintCreator) throws Exception
 		 private static IList<TransactionRepresentation> CreateTransactionsForCreatingConstraint( System.Action<GraphDatabaseAPI> uniqueConstraintCreator )
 		 {
 			  // A separate db altogether

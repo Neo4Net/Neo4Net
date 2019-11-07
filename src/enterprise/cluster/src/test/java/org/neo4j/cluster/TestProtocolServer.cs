@@ -142,7 +142,7 @@ namespace Neo4Net.cluster
 			  public override void Process<T1>( IList<T1> messages ) where T1 : Neo4Net.cluster.com.message.MessageType
 			  {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: for (org.Neo4Net.cluster.com.message.Message<? extends org.Neo4Net.cluster.com.message.MessageType> message : messages)
+//ORIGINAL LINE: for (Neo4Net.cluster.com.message.Message<? extends Neo4Net.cluster.com.message.MessageType> message : messages)
 					foreach ( Message<MessageType> message in messages )
 					{
 						 Process( message );

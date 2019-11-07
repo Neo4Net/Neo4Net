@@ -28,15 +28,15 @@ namespace Neo4Net.cluster.protocol
 	public interface TimeoutsContext
 	{
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: void setTimeout(Object key, org.Neo4Net.cluster.com.message.Message<? extends org.Neo4Net.cluster.com.message.MessageType> timeoutMessage);
+//ORIGINAL LINE: void setTimeout(Object key, Neo4Net.cluster.com.message.Message<? extends Neo4Net.cluster.com.message.MessageType> timeoutMessage);
 		 void setTimeout<T1>( object key, Message<T1> timeoutMessage );
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.cluster.com.message.Message<? extends org.Neo4Net.cluster.com.message.MessageType> cancelTimeout(Object key);
+//ORIGINAL LINE: Neo4Net.cluster.com.message.Message<? extends Neo4Net.cluster.com.message.MessageType> cancelTimeout(Object key);
 		 Message<MessageType> CancelTimeout( object key );
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: long getTimeoutFor(org.Neo4Net.cluster.com.message.Message<? extends org.Neo4Net.cluster.com.message.MessageType> timeoutMessage);
+//ORIGINAL LINE: long getTimeoutFor(Neo4Net.cluster.com.message.Message<? extends Neo4Net.cluster.com.message.MessageType> timeoutMessage);
 		 long getTimeoutFor<T1>( Message<T1> timeoutMessage );
 	}
 

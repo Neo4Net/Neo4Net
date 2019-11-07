@@ -37,20 +37,20 @@ namespace Neo4Net.Kernel.impl.core
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.RelationshipType.withName;
+//	import static Neo4Net.graphdb.RelationshipType.withName;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.hasProperty;
+//	import static Neo4Net.test.mockito.matcher.Neo4NetMatchers.hasProperty;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.inTx;
+//	import static Neo4Net.test.mockito.matcher.Neo4NetMatchers.inTx;
 
 	public class TestShortStringProperties
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ClassRule public static org.Neo4Net.test.rule.DatabaseRule graphdb = new org.Neo4Net.test.rule.ImpermanentDatabaseRule();
+//ORIGINAL LINE: @ClassRule public static Neo4Net.test.rule.DatabaseRule graphdb = new Neo4Net.test.rule.ImpermanentDatabaseRule();
 		 public static DatabaseRule Graphdb = new ImpermanentDatabaseRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.GraphTransactionRule tx = new org.Neo4Net.test.rule.GraphTransactionRule(graphdb);
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.GraphTransactionRule tx = new Neo4Net.test.rule.GraphTransactionRule(graphdb);
 		 public GraphTransactionRule Tx = new GraphTransactionRule( Graphdb );
 
 		 public virtual void Commit()

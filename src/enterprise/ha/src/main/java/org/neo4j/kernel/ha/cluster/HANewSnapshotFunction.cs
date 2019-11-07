@@ -31,9 +31,9 @@ namespace Neo4Net.Kernel.ha.cluster
 	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.ha.cluster.modeswitch.HighAvailabilityModeSwitcher.MASTER;
+//	import static Neo4Net.kernel.ha.cluster.modeswitch.HighAvailabilityModeSwitcher.MASTER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.ha.cluster.modeswitch.HighAvailabilityModeSwitcher.SLAVE;
+//	import static Neo4Net.kernel.ha.cluster.modeswitch.HighAvailabilityModeSwitcher.SLAVE;
 
 	/*
 	 * Filters existing events in a snapshot while adding new ones. Ensures that the snapshot is consistent in the
@@ -45,7 +45,7 @@ namespace Neo4Net.Kernel.ha.cluster
 		 private const long SERIAL_VERSION_UID = -8065136460852260734L;
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public Iterable<org.Neo4Net.cluster.member.paxos.MemberIsAvailable> apply(Iterable<org.Neo4Net.cluster.member.paxos.MemberIsAvailable> previousSnapshot, final org.Neo4Net.cluster.member.paxos.MemberIsAvailable newMessage)
+//ORIGINAL LINE: public Iterable<Neo4Net.cluster.member.paxos.MemberIsAvailable> apply(Iterable<Neo4Net.cluster.member.paxos.MemberIsAvailable> previousSnapshot, final Neo4Net.cluster.member.paxos.MemberIsAvailable newMessage)
 		 public override IEnumerable<MemberIsAvailable> Apply( IEnumerable<MemberIsAvailable> previousSnapshot, MemberIsAvailable newMessage )
 		 {
 			  /*

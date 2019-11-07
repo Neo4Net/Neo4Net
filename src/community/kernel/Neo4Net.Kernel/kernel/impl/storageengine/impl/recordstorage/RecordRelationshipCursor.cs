@@ -94,8 +94,8 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 			  // traverse over relationship records which have been concurrently deleted
 			  // (flagged as inUse = false).
 			  // see
-			  //      org.Neo4Net.kernel.impl.store.RelationshipChainPointerChasingTest
-			  //      org.Neo4Net.kernel.impl.locking.RelationshipCreateDeleteIT
+			  //      Neo4Net.kernel.impl.store.RelationshipChainPointerChasingTest
+			  //      Neo4Net.kernel.impl.locking.RelationshipCreateDeleteIT
 			  RelationshipStore.getRecordByCursor( reference, record, RecordLoad.FORCE, pageCursor );
 		 }
 

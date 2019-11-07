@@ -43,32 +43,32 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.Label.label;
+//	import static Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.loop;
+//	import static Neo4Net.helpers.collection.Iterators.loop;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.impl.schema.DatabaseFunctions.addLabel;
+//	import static Neo4Net.kernel.api.impl.schema.DatabaseFunctions.addLabel;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.impl.schema.DatabaseFunctions.awaitIndexesOnline;
+//	import static Neo4Net.kernel.api.impl.schema.DatabaseFunctions.awaitIndexesOnline;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.impl.schema.DatabaseFunctions.createNode;
+//	import static Neo4Net.kernel.api.impl.schema.DatabaseFunctions.createNode;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.impl.schema.DatabaseFunctions.index;
+//	import static Neo4Net.kernel.api.impl.schema.DatabaseFunctions.index;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.impl.schema.DatabaseFunctions.setProperty;
+//	import static Neo4Net.kernel.api.impl.schema.DatabaseFunctions.setProperty;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.impl.schema.DatabaseFunctions.uniquenessConstraint;
+//	import static Neo4Net.kernel.api.impl.schema.DatabaseFunctions.uniquenessConstraint;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class UniqueIndexApplicationIT
 	public class UniqueIndexApplicationIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.DatabaseRule db = new org.Neo4Net.test.rule.ImpermanentDatabaseRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.DatabaseRule db = new Neo4Net.test.rule.ImpermanentDatabaseRule();
 		 public readonly DatabaseRule Db = new ImpermanentDatabaseRule();
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private final System.Func<org.Neo4Net.graphdb.GraphDatabaseService, ?> createIndex;
+//ORIGINAL LINE: private final System.Func<Neo4Net.graphdb.GraphDatabaseService, ?> createIndex;
 		 private readonly System.Func<GraphDatabaseService, ?> _createIndex;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -166,7 +166,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private System.Func<org.Neo4Net.graphdb.GraphDatabaseService, java.util.List<long>> listNodeIdsFromIndexLookup(final org.Neo4Net.graphdb.Label label, final String propertyKey, final Object value)
+//ORIGINAL LINE: private System.Func<Neo4Net.graphdb.GraphDatabaseService, java.util.List<long>> listNodeIdsFromIndexLookup(final Neo4Net.graphdb.Label label, final String propertyKey, final Object value)
 		 private System.Func<GraphDatabaseService, IList<long>> ListNodeIdsFromIndexLookup( Label label, string propertyKey, object value )
 		 {
 			  return graphDb =>

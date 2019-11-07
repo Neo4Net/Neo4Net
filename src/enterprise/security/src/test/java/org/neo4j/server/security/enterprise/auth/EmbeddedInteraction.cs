@@ -33,7 +33,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 	using HostnamePort = Neo4Net.Helpers.HostnamePort;
 	using AuthenticationResult = Neo4Net.Kernel.Api.Internal.security.AuthenticationResult;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
 	using BoltConnector = Neo4Net.Kernel.configuration.BoltConnector;
 	using ConnectorPortRegister = Neo4Net.Kernel.configuration.ConnectorPortRegister;
 	using LegacySslPolicyConfig = Neo4Net.Kernel.configuration.ssl.LegacySslPolicyConfig;
@@ -48,9 +48,9 @@ namespace Neo4Net.Server.security.enterprise.auth
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.BoltConnector.EncryptionLevel.OPTIONAL;
+//	import static Neo4Net.kernel.configuration.BoltConnector.EncryptionLevel.OPTIONAL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.security.auth.SecurityTestUtils.authToken;
+//	import static Neo4Net.server.security.auth.SecurityTestUtils.authToken;
 
 	public class EmbeddedInteraction : NeoInteractionLevel<EnterpriseLoginContext>
 	{
@@ -67,7 +67,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: EmbeddedInteraction(java.util.Map<String, String> config, System.Func<org.Neo4Net.io.fs.FileSystemAbstraction> fileSystemSupplier) throws Throwable
+//ORIGINAL LINE: EmbeddedInteraction(java.util.Map<String, String> config, System.Func<Neo4Net.io.fs.FileSystemAbstraction> fileSystemSupplier) throws Throwable
 		 internal EmbeddedInteraction( IDictionary<string, string> config, System.Func<FileSystemAbstraction> fileSystemSupplier )
 		 {
 			  TestEnterpriseGraphDatabaseFactory factory = new TestEnterpriseGraphDatabaseFactory();
@@ -78,7 +78,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public EmbeddedInteraction(org.Neo4Net.graphdb.factory.GraphDatabaseBuilder builder, java.util.Map<String, String> config) throws Throwable
+//ORIGINAL LINE: public EmbeddedInteraction(Neo4Net.graphdb.factory.GraphDatabaseBuilder builder, java.util.Map<String, String> config) throws Throwable
 		 public EmbeddedInteraction( GraphDatabaseBuilder builder, IDictionary<string, string> config )
 		 {
 			  Init( builder, config );
@@ -89,7 +89,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected void init(org.Neo4Net.graphdb.factory.GraphDatabaseBuilder builder, java.util.Map<String, String> config) throws Throwable
+//ORIGINAL LINE: protected void init(Neo4Net.graphdb.factory.GraphDatabaseBuilder builder, java.util.Map<String, String> config) throws Throwable
 		 protected internal virtual void Init( GraphDatabaseBuilder builder, IDictionary<string, string> config )
 		 {
 			  builder.SetConfig( ( new BoltConnector( "bolt" ) ).type, "BOLT" );
@@ -158,7 +158,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.kernel.enterprise.api.security.EnterpriseLoginContext login(String username, String password) throws Exception
+//ORIGINAL LINE: public Neo4Net.kernel.enterprise.api.security.EnterpriseLoginContext login(String username, String password) throws Exception
 		 public override EnterpriseLoginContext Login( string username, string password )
 		 {
 			  return _authManager.login( authToken( username, password ) );

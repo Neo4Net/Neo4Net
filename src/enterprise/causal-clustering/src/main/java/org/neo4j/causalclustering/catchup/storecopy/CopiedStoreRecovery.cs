@@ -41,13 +41,13 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.com.storecopy.ExternallyManagedPageCache.graphDatabaseFactoryWithPageCache;
+//	import static Neo4Net.com.storecopy.ExternallyManagedPageCache.graphDatabaseFactoryWithPageCache;
 
 	public class CopiedStoreRecovery : LifecycleAdapter
 	{
 		 private readonly Config _config;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private final Iterable<org.Neo4Net.kernel.extension.KernelExtensionFactory<?>> kernelExtensions;
+//ORIGINAL LINE: private final Iterable<Neo4Net.kernel.extension.KernelExtensionFactory<?>> kernelExtensions;
 		 private readonly IEnumerable<KernelExtensionFactory<object>> _kernelExtensions;
 		 private readonly PageCache _pageCache;
 
@@ -69,7 +69,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public synchronized void recoverCopiedStore(org.Neo4Net.io.layout.DatabaseLayout databaseLayout) throws DatabaseShutdownException
+//ORIGINAL LINE: public synchronized void recoverCopiedStore(Neo4Net.io.layout.DatabaseLayout databaseLayout) throws DatabaseShutdownException
 		 public virtual void RecoverCopiedStore( DatabaseLayout databaseLayout )
 		 {
 			 lock ( this )

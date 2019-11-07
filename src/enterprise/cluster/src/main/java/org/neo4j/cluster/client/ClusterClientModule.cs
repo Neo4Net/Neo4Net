@@ -60,7 +60,7 @@ namespace Neo4Net.cluster.client
 	using LogService = Neo4Net.Logging.Internal.LogService;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.NamedThreadFactory.daemon;
+//	import static Neo4Net.helpers.NamedThreadFactory.daemon;
 
 	/// <summary>
 	/// This is a builder for <seealso cref="ClusterClient"/> instances.
@@ -75,11 +75,11 @@ namespace Neo4Net.cluster.client
 		 private readonly ProtocolServer _server;
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public ClusterClientModule(org.Neo4Net.kernel.lifecycle.LifeSupport life, org.Neo4Net.kernel.impl.util.Dependencies dependencies, final org.Neo4Net.kernel.monitoring.Monitors monitors, final org.Neo4Net.kernel.configuration.Config config, org.Neo4Net.logging.internal.LogService logService, org.Neo4Net.cluster.protocol.election.ElectionCredentialsProvider electionCredentialsProvider)
+//ORIGINAL LINE: public ClusterClientModule(Neo4Net.kernel.lifecycle.LifeSupport life, Neo4Net.kernel.impl.util.Dependencies dependencies, final Neo4Net.kernel.monitoring.Monitors monitors, final Neo4Net.kernel.configuration.Config config, Neo4Net.logging.internal.LogService logService, Neo4Net.cluster.protocol.election.ElectionCredentialsProvider electionCredentialsProvider)
 		 public ClusterClientModule( LifeSupport life, Dependencies dependencies, Monitors monitors, Config config, LogService logService, ElectionCredentialsProvider electionCredentialsProvider )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.logging.LogProvider logging = org.Neo4Net.cluster.logging.AsyncLogging.provider(life, logService.getInternalLogProvider());
+//ORIGINAL LINE: final Neo4Net.logging.LogProvider logging = Neo4Net.cluster.logging.AsyncLogging.provider(life, logService.getInternalLogProvider());
 			  LogProvider logging = AsyncLogging.provider( life, logService.InternalLogProvider );
 			  InternalLoggerFactory.DefaultFactory = new NettyLoggerFactory( logging );
 
@@ -91,10 +91,10 @@ namespace Neo4Net.cluster.client
 			 , logging));
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.cluster.protocol.atomicbroadcast.ObjectInputStreamFactory objectInputStreamFactory = new org.Neo4Net.cluster.protocol.atomicbroadcast.ObjectStreamFactory();
+//ORIGINAL LINE: final Neo4Net.cluster.protocol.atomicbroadcast.ObjectInputStreamFactory objectInputStreamFactory = new Neo4Net.cluster.protocol.atomicbroadcast.ObjectStreamFactory();
 			  ObjectInputStreamFactory objectInputStreamFactory = new ObjectStreamFactory();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.cluster.protocol.atomicbroadcast.ObjectOutputStreamFactory objectOutputStreamFactory = new org.Neo4Net.cluster.protocol.atomicbroadcast.ObjectStreamFactory();
+//ORIGINAL LINE: final Neo4Net.cluster.protocol.atomicbroadcast.ObjectOutputStreamFactory objectOutputStreamFactory = new Neo4Net.cluster.protocol.atomicbroadcast.ObjectStreamFactory();
 			  ObjectOutputStreamFactory objectOutputStreamFactory = new ObjectStreamFactory();
 
 			  receiver.AddNetworkChannelsListener( new NetworkChannelsListenerAnonymousInnerClass( this, logging, objectInputStreamFactory, objectOutputStreamFactory ) );

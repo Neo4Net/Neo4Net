@@ -61,16 +61,16 @@ namespace Neo4Net.GraphDb.facade
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.facade.GraphDatabaseDependencies.newDependencies;
+//	import static Neo4Net.graphdb.facade.GraphDatabaseDependencies.newDependencies;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.factory.DatabaseInfo.COMMUNITY;
+//	import static Neo4Net.kernel.impl.factory.DatabaseInfo.COMMUNITY;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @ExtendWith({EphemeralFileSystemExtension.class, TestDirectoryExtension.class}) class GraphDatabaseFacadeFactoryTest
 	internal class GraphDatabaseFacadeFactoryTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.Neo4Net.test.rule.TestDirectory testDirectory;
+//ORIGINAL LINE: @Inject private Neo4Net.test.rule.TestDirectory testDirectory;
 		 private TestDirectory _testDirectory;
 
 		 private readonly GraphDatabaseFacade _mockFacade = mock( typeof( GraphDatabaseFacade ) );
@@ -148,7 +148,7 @@ namespace Neo4Net.GraphDb.facade
 			 protected internal override PlatformModule createPlatform( File storeDir, Config config, Dependencies dependencies )
 			 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.lifecycle.LifeSupport lifeMock = mock(org.Neo4Net.kernel.lifecycle.LifeSupport.class);
+//ORIGINAL LINE: final Neo4Net.kernel.lifecycle.LifeSupport lifeMock = mock(Neo4Net.kernel.lifecycle.LifeSupport.class);
 				  LifeSupport lifeMock = mock( typeof( LifeSupport ) );
 				  doThrow( _startupError ).when( lifeMock ).start();
 				  doAnswer( invocation => invocation.getArgument( 0 ) ).when( lifeMock ).add( any( typeof( Lifecycle ) ) );

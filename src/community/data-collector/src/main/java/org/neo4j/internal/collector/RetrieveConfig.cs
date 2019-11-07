@@ -33,7 +33,7 @@ namespace Neo4Net.Internal.Collector
 		 private static readonly IntOption _maxInvocations = new IntOption( "maxInvocations", 100 );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static RetrieveConfig of(java.util.Map<String, Object> userMap) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: static RetrieveConfig of(java.util.Map<String, Object> userMap) throws Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 		 internal static RetrieveConfig Of( IDictionary<string, object> userMap )
 		 {
 			  return new RetrieveConfig( _maxInvocations.parseOrDefault( userMap ) );

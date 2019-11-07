@@ -39,7 +39,7 @@ namespace Neo4Net.causalclustering.core.replication
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Math.toIntExact;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.procedure.Mode.DBMS;
+//	import static Neo4Net.procedure.Mode.DBMS;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @SuppressWarnings("unused") public class ReplicationBenchmarkProcedure
@@ -50,11 +50,11 @@ namespace Neo4Net.causalclustering.core.replication
 		 public Replicator Replicator;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Context public org.Neo4Net.Kernel.Api.Internal.security.SecurityContext securityContext;
+//ORIGINAL LINE: @Context public Neo4Net.Kernel.Api.Internal.security.SecurityContext securityContext;
 		 public SecurityContext SecurityContext;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Context public org.Neo4Net.logging.Log log;
+//ORIGINAL LINE: @Context public Neo4Net.logging.Log log;
 		 public Log Log;
 
 		 private static long _startTime;

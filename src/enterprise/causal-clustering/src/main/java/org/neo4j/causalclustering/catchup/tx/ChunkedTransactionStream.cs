@@ -34,9 +34,9 @@ namespace Neo4Net.causalclustering.catchup.tx
 	using Log = Neo4Net.Logging.Log;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.catchup.CatchupResult.E_TRANSACTION_PRUNED;
+//	import static Neo4Net.causalclustering.catchup.CatchupResult.E_TRANSACTION_PRUNED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.catchup.CatchupResult.SUCCESS_END_OF_STREAM;
+//	import static Neo4Net.causalclustering.catchup.CatchupResult.SUCCESS_END_OF_STREAM;
 
 	/// <summary>
 	/// Returns a chunked stream of transactions.

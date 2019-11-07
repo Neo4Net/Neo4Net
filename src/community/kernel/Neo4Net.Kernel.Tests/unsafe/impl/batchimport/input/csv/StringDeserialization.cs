@@ -120,7 +120,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input.csv
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static System.Func<org.Neo4Net.csv.reader.SourceTraceability,Deserialization<String>> factory(final Configuration config)
+//ORIGINAL LINE: public static System.Func<Neo4Net.csv.reader.SourceTraceability,Deserialization<String>> factory(final Configuration config)
 		 public static System.Func<SourceTraceability, Deserialization<string>> Factory( Configuration config )
 		 {
 			  return from => new StringDeserialization( config );

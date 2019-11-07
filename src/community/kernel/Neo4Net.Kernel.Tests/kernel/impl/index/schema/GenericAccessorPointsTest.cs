@@ -39,7 +39,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using IndexEntryConflictException = Neo4Net.Kernel.Api.Exceptions.index.IndexEntryConflictException;
 	using IndexDirectoryStructure = Neo4Net.Kernel.Api.Index.IndexDirectoryStructure;
 	using Neo4Net.Kernel.Api.Index;
-	using TestIndexDescriptorFactory = Neo4Net.Kernel.api.schema.index.TestIndexDescriptorFactory;
+	using TestIndexDescriptorFactory = Neo4Net.Kernel.Api.schema.index.TestIndexDescriptorFactory;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using IndexUpdateMode = Neo4Net.Kernel.Impl.Api.index.IndexUpdateMode;
 	using ConfiguredSpaceFillingCurveSettingsCache = Neo4Net.Kernel.Impl.Index.Schema.config.ConfiguredSpaceFillingCurveSettingsCache;
@@ -66,11 +66,11 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.rules.RuleChain.outerRule;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.index.IndexProvider.Monitor_Fields.EMPTY;
+//	import static Neo4Net.kernel.api.index.IndexProvider.Monitor_Fields.EMPTY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.rule.PageCacheRule.config;
+//	import static Neo4Net.test.rule.PageCacheRule.config;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.CoordinateReferenceSystem.WGS84;
+//	import static Neo4Net.values.storable.CoordinateReferenceSystem.WGS84;
 
 	public class GenericAccessorPointsTest
 	{
@@ -136,7 +136,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 /// We verify this by asserting that we always get exactly one hit on an exact match and that the value is what we expect.
 		 /// </summary>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void mustHandlePointsWithinSameTile() throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException, org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotApplicableKernelException
+//ORIGINAL LINE: @Test public void mustHandlePointsWithinSameTile() throws Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException, Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotApplicableKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void MustHandlePointsWithinSameTile()
 		 {
@@ -151,7 +151,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 
 			  IList<Value> pointValues = new List<Value>();
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.List<org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>> updates = new java.util.ArrayList<>();
+//ORIGINAL LINE: java.util.List<Neo4Net.kernel.api.index.IndexEntryUpdate<?>> updates = new java.util.ArrayList<>();
 			  IList<IndexEntryUpdate<object>> updates = new List<IndexEntryUpdate<object>>();
 			  long nodeId = 1;
 			  for ( int i = 0; i < nbrOfValues / 4; i++ )
@@ -180,7 +180,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 /// We verify this by asserting that we always get exactly one hit on an exact match and that the value is what we expect.
 		 /// </summary>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void mustHandlePointArraysWithinSameTile() throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException, org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotApplicableKernelException
+//ORIGINAL LINE: @Test public void mustHandlePointArraysWithinSameTile() throws Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException, Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotApplicableKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void MustHandlePointArraysWithinSameTile()
 		 {
@@ -195,7 +195,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 
 			  IList<Value> pointArrays = new List<Value>();
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.List<org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>> updates = new java.util.ArrayList<>();
+//ORIGINAL LINE: java.util.List<Neo4Net.kernel.api.index.IndexEntryUpdate<?>> updates = new java.util.ArrayList<>();
 			  IList<IndexEntryUpdate<object>> updates = new List<IndexEntryUpdate<object>>();
 			  for ( int i = 0; i < nbrOfValues; i++ )
 			  {
@@ -269,13 +269,13 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void processAll(java.util.List<org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>> updates) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: private void processAll(java.util.List<Neo4Net.kernel.api.index.IndexEntryUpdate<?>> updates) throws Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 private void ProcessAll<T1>( IList<T1> updates )
 		 {
 			  using ( NativeIndexUpdater updater = _accessor.newUpdater( IndexUpdateMode.ONLINE ) )
 			  {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: for (org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> update : updates)
+//ORIGINAL LINE: for (Neo4Net.kernel.api.index.IndexEntryUpdate<?> update : updates)
 					foreach ( IndexEntryUpdate<object> update in updates )
 					{
 						 //noinspection unchecked
@@ -285,7 +285,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void exactMatchOnAllValues(java.util.List<org.Neo4Net.values.storable.Value> values) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotApplicableKernelException
+//ORIGINAL LINE: private void exactMatchOnAllValues(java.util.List<Neo4Net.values.storable.Value> values) throws Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotApplicableKernelException
 		 private void ExactMatchOnAllValues( IList<Value> values )
 		 {
 			  using ( IndexReader indexReader = _accessor.newReader() )

@@ -36,7 +36,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.reader
 	using PartitionSearcher = Neo4Net.Kernel.Api.Impl.Index.partition.PartitionSearcher;
 	using NonUniqueLuceneIndexSampler = Neo4Net.Kernel.Api.Impl.Schema.sampler.NonUniqueLuceneIndexSampler;
 	using UniqueLuceneIndexSampler = Neo4Net.Kernel.Api.Impl.Schema.sampler.UniqueLuceneIndexSampler;
-	using TestIndexDescriptorFactory = Neo4Net.Kernel.api.schema.index.TestIndexDescriptorFactory;
+	using TestIndexDescriptorFactory = Neo4Net.Kernel.Api.schema.index.TestIndexDescriptorFactory;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using IndexSamplingConfig = Neo4Net.Kernel.Impl.Api.index.sampling.IndexSamplingConfig;
 	using IndexReader = Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader;
@@ -55,9 +55,9 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.reader
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.IndexQuery.range;
+//	import static Neo4Net.Kernel.Api.Internal.IndexQuery.range;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.stringValue;
+//	import static Neo4Net.values.storable.Values.stringValue;
 
 	internal class SimpleIndexReaderTest
 	{

@@ -29,7 +29,7 @@ namespace Neo4Net.causalclustering.stresstests
 	internal abstract class RepeatOnRandomCore : Workload, WorkOnMember
 	{
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private final org.Neo4Net.causalclustering.discovery.Cluster<?> cluster;
+//ORIGINAL LINE: private final Neo4Net.causalclustering.discovery.Cluster<?> cluster;
 		 private readonly Cluster<object> _cluster;
 
 		 internal RepeatOnRandomCore( Control control, Resources resources ) : base( control )
@@ -46,7 +46,7 @@ namespace Neo4Net.causalclustering.stresstests
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public abstract void doWorkOnMember(org.Neo4Net.causalclustering.discovery.ClusterMember core) throws Exception;
+//ORIGINAL LINE: public abstract void doWorkOnMember(Neo4Net.causalclustering.discovery.ClusterMember core) throws Exception;
 		 public override abstract void DoWorkOnMember( ClusterMember core );
 	}
 

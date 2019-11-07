@@ -55,7 +55,7 @@ namespace Neo4Net.causalclustering.core.consensus.log
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static EntryRecord read(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel, org.Neo4Net.causalclustering.messaging.marshalling.ChannelMarshal<org.Neo4Net.causalclustering.core.replication.ReplicatedContent> contentMarshal) throws java.io.IOException, org.Neo4Net.causalclustering.messaging.EndOfStreamException
+//ORIGINAL LINE: public static EntryRecord read(Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel, Neo4Net.causalclustering.messaging.marshalling.ChannelMarshal<Neo4Net.causalclustering.core.replication.ReplicatedContent> contentMarshal) throws java.io.IOException, Neo4Net.causalclustering.messaging.EndOfStreamException
 		 public static EntryRecord Read( ReadableChannel channel, ChannelMarshal<ReplicatedContent> contentMarshal )
 		 {
 			  try
@@ -72,7 +72,7 @@ namespace Neo4Net.causalclustering.core.consensus.log
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static void write(org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel, org.Neo4Net.causalclustering.messaging.marshalling.ChannelMarshal<org.Neo4Net.causalclustering.core.replication.ReplicatedContent> contentMarshal, long logIndex, long term, org.Neo4Net.causalclustering.core.replication.ReplicatedContent content) throws java.io.IOException
+//ORIGINAL LINE: public static void write(Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel, Neo4Net.causalclustering.messaging.marshalling.ChannelMarshal<Neo4Net.causalclustering.core.replication.ReplicatedContent> contentMarshal, long logIndex, long term, Neo4Net.causalclustering.core.replication.ReplicatedContent content) throws java.io.IOException
 		 public static void Write( WritableChannel channel, ChannelMarshal<ReplicatedContent> contentMarshal, long logIndex, long term, ReplicatedContent content )
 		 {
 			  channel.PutLong( logIndex );

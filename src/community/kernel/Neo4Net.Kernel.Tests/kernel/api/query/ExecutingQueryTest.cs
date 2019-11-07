@@ -20,7 +20,7 @@ using System.Threading;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Kernel.api.query
+namespace Neo4Net.Kernel.Api.query
 {
 	using CoreMatchers = org.hamcrest.CoreMatchers;
 	using Description = org.hamcrest.Description;
@@ -56,7 +56,7 @@ namespace Neo4Net.Kernel.api.query
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.@virtual.VirtualValues.EMPTY_MAP;
+//	import static Neo4Net.values.@virtual.VirtualValues.EMPTY_MAP;
 
 	public class ExecutingQueryTest
 	{
@@ -79,10 +79,10 @@ namespace Neo4Net.Kernel.api.query
 
 		 private readonly FakeClock _clock = Clocks.fakeClock( ZonedDateTime.parse( "2016-12-03T15:10:00+01:00" ) );
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.FakeCpuClock cpuClock = new org.Neo4Net.test.FakeCpuClock().add(randomLong(0x1_0000_0000L));
+//ORIGINAL LINE: @Rule public final Neo4Net.test.FakeCpuClock cpuClock = new Neo4Net.test.FakeCpuClock().add(randomLong(0x1_0000_0000L));
 		 public readonly FakeCpuClock CpuClock = new FakeCpuClock().add(RandomLong(0x1_0000_0000L));
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.FakeHeapAllocation heapAllocation = new org.Neo4Net.test.FakeHeapAllocation().add(randomLong(0x1_0000_0000L));
+//ORIGINAL LINE: @Rule public final Neo4Net.test.FakeHeapAllocation heapAllocation = new Neo4Net.test.FakeHeapAllocation().add(randomLong(0x1_0000_0000L));
 		 public readonly FakeHeapAllocation HeapAllocation = new FakeHeapAllocation().add(RandomLong(0x1_0000_0000L));
 		 private readonly PageCursorCountersStub _page = new PageCursorCountersStub();
 		 private long _lockCount;

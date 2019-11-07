@@ -34,7 +34,7 @@ namespace Neo4Net.Cypher.Internal.evaluator
 		 /// <returns> The evaluated Cypher expression. </returns>
 		 /// <exception cref="EvaluationException"> if the evaluation fails. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: <T> T evaluate(String expression, Class<T> type) throws EvaluationException;
+//ORIGINAL LINE: <T> T Evaluate(String expression, Class<T> type) throws EvaluationException;
 		 T evaluate<T>( string expression, Type type );
 	}
 

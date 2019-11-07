@@ -34,7 +34,7 @@ namespace Neo4Net.Kernel.Api.Internal
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.RelationshipType.withName;
+//	import static Neo4Net.graphdb.RelationshipType.withName;
 
 	public class RelationshipTestSupport
 	{
@@ -123,7 +123,7 @@ namespace Neo4Net.Kernel.Api.Internal
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static java.util.Map<String,int> count(org.Neo4Net.Kernel.Api.Internal.Transaction transaction, RelationshipTraversalCursor relationship) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: static java.util.Map<String,int> count(Neo4Net.Kernel.Api.Internal.Transaction transaction, RelationshipTraversalCursor relationship) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 internal static IDictionary<string, int> Count( Neo4Net.Kernel.Api.Internal.Transaction transaction, RelationshipTraversalCursor relationship )
 		 {
 			  Dictionary<string, int> counts = new Dictionary<string, int>();
@@ -136,7 +136,7 @@ namespace Neo4Net.Kernel.Api.Internal
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static void assertCount(org.Neo4Net.Kernel.Api.Internal.Transaction transaction, RelationshipTraversalCursor relationship, java.util.Map<String,int> expectedCounts, int expectedType, org.Neo4Net.graphdb.Direction direction) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: static void assertCount(Neo4Net.Kernel.Api.Internal.Transaction transaction, RelationshipTraversalCursor relationship, java.util.Map<String,int> expectedCounts, int expectedType, Neo4Net.graphdb.Direction direction) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 internal static void AssertCount( Neo4Net.Kernel.Api.Internal.Transaction transaction, RelationshipTraversalCursor relationship, IDictionary<string, int> expectedCounts, int expectedType, Direction direction )
 		 {
 			  string key = ComputeKey( transaction.Token().relationshipTypeName(expectedType), direction );
@@ -214,7 +214,7 @@ namespace Neo4Net.Kernel.Api.Internal
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static String computeKey(org.Neo4Net.Kernel.Api.Internal.Transaction transaction, RelationshipTraversalCursor r) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: private static String computeKey(Neo4Net.Kernel.Api.Internal.Transaction transaction, RelationshipTraversalCursor r) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 private static string ComputeKey( Neo4Net.Kernel.Api.Internal.Transaction transaction, RelationshipTraversalCursor r )
 		 {
 			  Direction d;

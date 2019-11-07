@@ -19,27 +19,27 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Kernel.api.txstate
+namespace Neo4Net.Kernel.Api.txstate
 {
 
 	using ExplicitIndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
-	using AuxiliaryTransactionState = Neo4Net.Kernel.api.txstate.auxiliary.AuxiliaryTransactionState;
+	using AuxiliaryTransactionState = Neo4Net.Kernel.Api.txstate.auxiliary.AuxiliaryTransactionState;
 	using IndexEntityType = Neo4Net.Kernel.impl.index.IndexEntityType;
 
 	/// <summary>
 	/// Defines transactional state for explicit indexes. Since the implementation of this enlists another transaction
 	/// management engine under the hood, these methods have been split out from
 	/// <seealso cref="TransactionState the transaction state"/> in order to be able to keep the implementation of
-	/// <seealso cref="org.Neo4Net.kernel.impl.api.state.TxState transaction state"/> simple with no dependencies.
+	/// <seealso cref="Neo4Net.kernel.impl.api.state.TxState transaction state"/> simple with no dependencies.
 	/// </summary>
 	public interface ExplicitIndexTransactionState : AuxiliaryTransactionState
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.Neo4Net.kernel.api.ExplicitIndex nodeChanges(String indexName) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
+//ORIGINAL LINE: Neo4Net.kernel.api.ExplicitIndex nodeChanges(String indexName) throws Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
 		 ExplicitIndex NodeChanges( string indexName );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.Neo4Net.kernel.api.ExplicitIndex relationshipChanges(String indexName) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
+//ORIGINAL LINE: Neo4Net.kernel.api.ExplicitIndex relationshipChanges(String indexName) throws Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
 		 ExplicitIndex RelationshipChanges( string indexName );
 
 		 void CreateIndex( IndexEntityType EntityType, string indexName, IDictionary<string, string> config );

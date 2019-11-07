@@ -26,8 +26,8 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 
 	using Neo4Net.Collections.Helpers;
 	using IEntityNotFoundException = Neo4Net.Kernel.Api.Internal.Exceptions.EntityNotFoundException;
-	using LabelScanStore = Neo4Net.Kernel.api.labelscan.LabelScanStore;
-	using NodeLabelUpdate = Neo4Net.Kernel.api.labelscan.NodeLabelUpdate;
+	using LabelScanStore = Neo4Net.Kernel.Api.LabelScan.LabelScanStore;
+	using NodeLabelUpdate = Neo4Net.Kernel.Api.LabelScan.NodeLabelUpdate;
 	using IEntityUpdates = Neo4Net.Kernel.Impl.Api.index.EntityUpdates;
 	using IndexStoreView = Neo4Net.Kernel.Impl.Api.index.IndexStoreView;
 	using Neo4Net.Kernel.Impl.Api.index;
@@ -127,7 +127,7 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.values.storable.Value getNodePropertyValue(long nodeId, int propertyKeyId) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.EntityNotFoundException
+//ORIGINAL LINE: public Neo4Net.values.storable.Value getNodePropertyValue(long nodeId, int propertyKeyId) throws Neo4Net.Kernel.Api.Internal.Exceptions.EntityNotFoundException
 		 public override Value GetNodePropertyValue( long nodeId, int propertyKeyId )
 		 {
 			  return _neoStoreIndexStoreView.getNodePropertyValue( nodeId, propertyKeyId );

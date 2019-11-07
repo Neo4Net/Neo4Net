@@ -36,7 +36,7 @@ namespace Neo4Net.Harness
 		 /// <summary>
 		 /// Start a new server. By default, the server will listen to a random free port, and you can determine where to
 		 /// connect using the <seealso cref="ServerControls.httpURI()"/> method. You could also specify explicit ports using the
-		 /// <seealso cref="withConfig(org.Neo4Net.graphdb.config.Setting, string)"/> method. Please refer to the Neo4Net Manual for
+		 /// <seealso cref="withConfig(Neo4Net.graphdb.config.Setting, string)"/> method. Please refer to the Neo4Net Manual for
 		 /// details on available configuration options.
 		 /// 
 		 /// When the returned controls are <seealso cref="ServerControls.close() closed"/>, the temporary directory the server used
@@ -52,10 +52,10 @@ namespace Neo4Net.Harness
 		 /// <param name="value"> the config value </param>
 		 /// <returns> this builder instance </returns>
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: TestServerBuilder withConfig(org.Neo4Net.graphdb.config.Setting<?> key, String value);
+//ORIGINAL LINE: TestServerBuilder withConfig(Neo4Net.graphdb.config.Setting<?> key, String value);
 		 TestServerBuilder withConfig<T1>( Setting<T1> key, string value );
 
-		 /// <seealso cref= #withConfig(org.Neo4Net.graphdb.config.Setting, String) </seealso>
+		 /// <seealso cref= #withConfig(Neo4Net.graphdb.config.Setting, String) </seealso>
 		 TestServerBuilder WithConfig( string key, string value );
 
 		 /// <summary>

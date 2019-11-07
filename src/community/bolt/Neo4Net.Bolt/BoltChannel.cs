@@ -21,7 +21,7 @@ namespace Neo4Net.Bolt
 {
 	using Channel = io.netty.channel.Channel;
 
-	using TrackedNetworkConnection = Neo4Net.Kernel.api.net.TrackedNetworkConnection;
+	using TrackedNetworkConnection = Neo4Net.Kernel.Api.net.TrackedNetworkConnection;
 	using BoltConnectionInfo = Neo4Net.Kernel.impl.query.clientconnection.BoltConnectionInfo;
 	using ClientConnectionInfo = Neo4Net.Kernel.impl.query.clientconnection.ClientConnectionInfo;
 

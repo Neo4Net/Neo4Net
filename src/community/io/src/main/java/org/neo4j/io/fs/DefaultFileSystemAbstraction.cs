@@ -33,7 +33,7 @@ namespace Neo4Net.Io.fs
 		 internal const string UNABLE_TO_CREATE_DIRECTORY_FORMAT = "Unable to create directory path [%s] for Neo4Net store.";
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.io.fs.watcher.FileWatcher fileWatcher() throws java.io.IOException
+//ORIGINAL LINE: public Neo4Net.io.fs.watcher.FileWatcher fileWatcher() throws java.io.IOException
 		 public override FileWatcher FileWatcher()
 		 {
 			  WatchService watchService = FileSystems.Default.newWatchService();

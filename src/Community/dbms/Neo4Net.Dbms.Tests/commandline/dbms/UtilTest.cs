@@ -33,18 +33,18 @@ namespace Neo4Net.Dbms.CommandLine
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.commandline.Util.isSameOrChildFile;
+//	import static Neo4Net.commandline.Util.isSameOrChildFile;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.commandline.Util.isSameOrChildPath;
+//	import static Neo4Net.commandline.Util.isSameOrChildPath;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.commandline.Util.Neo4NetVersion;
+//	import static Neo4Net.commandline.Util.Neo4NetVersion;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @ExtendWith(TestDirectoryExtension.class) class UtilTest
 	internal class UtilTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.Neo4Net.test.rule.TestDirectory directory;
+//ORIGINAL LINE: @Inject private Neo4Net.test.rule.TestDirectory directory;
 		 private TestDirectory _directory;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

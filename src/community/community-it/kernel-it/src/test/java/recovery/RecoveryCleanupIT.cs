@@ -39,7 +39,7 @@ namespace Recovery
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using NeoStoreDataSource = Neo4Net.Kernel.NeoStoreDataSource;
-	using LabelScanStore = Neo4Net.Kernel.api.labelscan.LabelScanStore;
+	using LabelScanStore = Neo4Net.Kernel.Api.LabelScan.LabelScanStore;
 	using CheckPointer = Neo4Net.Kernel.impl.transaction.log.checkpoint.CheckPointer;
 	using SimpleTriggerInfo = Neo4Net.Kernel.impl.transaction.log.checkpoint.SimpleTriggerInfo;
 	using DatabaseHealth = Neo4Net.Kernel.Internal.DatabaseHealth;
@@ -55,12 +55,12 @@ namespace Recovery
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.CoordinateReferenceSystem.Cartesian;
+//	import static Neo4Net.values.storable.CoordinateReferenceSystem.Cartesian;
 
 	public class RecoveryCleanupIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.TestDirectory testDirectory = Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public TestDirectory TestDirectory = TestDirectory.testDirectory();
 
 		 private IGraphDatabaseService _db;
@@ -101,7 +101,7 @@ namespace Recovery
 
 					// WHEN
 					Neo4Net.Test.Barrier_Control recoveryCompleteBarrier = new Neo4Net.Test.Barrier_Control();
-					Neo4Net.Kernel.api.labelscan.LabelScanStore_Monitor recoveryBarrierMonitor = new RecoveryBarrierMonitor( this, recoveryCompleteBarrier );
+					Neo4Net.Kernel.Api.LabelScan.LabelScanStore_Monitor recoveryBarrierMonitor = new RecoveryBarrierMonitor( this, recoveryCompleteBarrier );
 					Monitor = recoveryBarrierMonitor;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 //ORIGINAL LINE: java.util.concurrent.Future<?> recovery = executor.submit(() ->
@@ -174,7 +174,7 @@ namespace Recovery
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void nativeIndexMustLogCrashPointerCleanupDuringRecovery(org.Neo4Net.graphdb.factory.GraphDatabaseSettings.SchemaIndex setting, String... subTypes) throws Exception
+//ORIGINAL LINE: private void nativeIndexMustLogCrashPointerCleanupDuringRecovery(Neo4Net.graphdb.factory.GraphDatabaseSettings.SchemaIndex setting, String... subTypes) throws Exception
 		 private void NativeIndexMustLogCrashPointerCleanupDuringRecovery( GraphDatabaseSettings.SchemaIndex setting, params string[] subTypes )
 		 {
 			  // given
@@ -269,7 +269,7 @@ namespace Recovery
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void checkpoint(org.Neo4Net.graphdb.GraphDatabaseService db) throws java.io.IOException
+//ORIGINAL LINE: private void checkpoint(Neo4Net.graphdb.GraphDatabaseService db) throws java.io.IOException
 		 private void Checkpoint( IGraphDatabaseService db )
 		 {
 			  CheckPointer checkPointer = checkPointer( db );
@@ -326,7 +326,7 @@ namespace Recovery
 			  return ( ( GraphDatabaseAPI ) db ).DependencyResolver;
 		 }
 
-		 private class RecoveryBarrierMonitor : Neo4Net.Kernel.api.labelscan.LabelScanStore_Monitor_Adaptor
+		 private class RecoveryBarrierMonitor : Neo4Net.Kernel.Api.LabelScan.LabelScanStore_Monitor_Adaptor
 		 {
 			 private readonly RecoveryCleanupIT _outerInstance;
 

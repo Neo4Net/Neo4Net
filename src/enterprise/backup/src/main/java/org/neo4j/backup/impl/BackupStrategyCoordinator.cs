@@ -68,7 +68,7 @@ namespace Neo4Net.backup.impl
 		 /// <param name="onlineBackupContext"> filesystem, command arguments and configuration </param>
 		 /// <exception cref="CommandFailed"> when backup failed or there were issues with consistency checks </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void performBackup(OnlineBackupContext onlineBackupContext) throws org.Neo4Net.commandline.admin.CommandFailed
+//ORIGINAL LINE: public void performBackup(OnlineBackupContext onlineBackupContext) throws Neo4Net.commandline.admin.CommandFailed
 		 public virtual void PerformBackup( OnlineBackupContext onlineBackupContext )
 		 {
 			  // Convenience
@@ -113,7 +113,7 @@ namespace Neo4Net.backup.impl
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void performConsistencyCheck(org.Neo4Net.kernel.configuration.Config config, OnlineBackupRequiredArguments requiredArgs, org.Neo4Net.consistency.checking.full.ConsistencyFlags consistencyFlags, org.Neo4Net.io.layout.DatabaseLayout layout) throws org.Neo4Net.commandline.admin.CommandFailed
+//ORIGINAL LINE: private void performConsistencyCheck(Neo4Net.kernel.configuration.Config config, OnlineBackupRequiredArguments requiredArgs, Neo4Net.consistency.checking.full.ConsistencyFlags consistencyFlags, Neo4Net.io.layout.DatabaseLayout layout) throws Neo4Net.commandline.admin.CommandFailed
 		 private void PerformConsistencyCheck( Config config, OnlineBackupRequiredArguments requiredArgs, ConsistencyFlags consistencyFlags, DatabaseLayout layout )
 		 {
 			  try

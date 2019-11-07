@@ -32,14 +32,14 @@ namespace Neo4Net.Io.fs
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verify;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.fs.FileVisitors.onFile;
+//	import static Neo4Net.io.fs.FileVisitors.onFile;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(MockitoJUnitRunner.class) public class OnFileTest
 	public class OnFileTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Mock public org.Neo4Net.function.ThrowingConsumer<java.nio.file.Path, java.io.IOException> operation;
+//ORIGINAL LINE: @Mock public Neo4Net.function.ThrowingConsumer<java.nio.file.Path, java.io.IOException> operation;
 		 public ThrowingConsumer<Path, IOException> Operation;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

@@ -31,7 +31,7 @@ namespace Neo4Net.Kernel.impl.core
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.format.standard.NodeRecordFormat.RECORD_SIZE;
+//	import static Neo4Net.kernel.impl.store.format.standard.NodeRecordFormat.RECORD_SIZE;
 
 	public class TestJumpingIdGenerator
 	{
@@ -101,7 +101,7 @@ namespace Neo4Net.Kernel.impl.core
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private byte readSomethingLikeNodeRecord(org.Neo4Net.kernel.impl.core.JumpingFileSystemAbstraction.JumpingFileChannel channel, long id) throws java.io.IOException
+//ORIGINAL LINE: private byte readSomethingLikeNodeRecord(Neo4Net.kernel.impl.core.JumpingFileSystemAbstraction.JumpingFileChannel channel, long id) throws java.io.IOException
 		 private sbyte ReadSomethingLikeNodeRecord( JumpingFileChannel channel, long id )
 		 {
 			  ByteBuffer buffer = ByteBuffer.allocate( RECORD_SIZE );
@@ -113,7 +113,7 @@ namespace Neo4Net.Kernel.impl.core
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void writeSomethingLikeNodeRecord(org.Neo4Net.kernel.impl.core.JumpingFileSystemAbstraction.JumpingFileChannel channel, long id, int justAByte) throws java.io.IOException
+//ORIGINAL LINE: private void writeSomethingLikeNodeRecord(Neo4Net.kernel.impl.core.JumpingFileSystemAbstraction.JumpingFileChannel channel, long id, int justAByte) throws java.io.IOException
 		 private void WriteSomethingLikeNodeRecord( JumpingFileChannel channel, long id, int justAByte )
 		 {
 			  channel.Position( id * RECORD_SIZE );

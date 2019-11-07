@@ -23,7 +23,7 @@ namespace Neo4Net.Kernel.Api.Index
 	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.Schema.IndexProviderDescriptor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.fs.FileUtils.path;
+//	import static Neo4Net.io.fs.FileUtils.path;
 
 	/// <summary>
 	/// Dictates how directory structure looks for a <seealso cref="IndexProvider"/> and its indexes. Generally there's a

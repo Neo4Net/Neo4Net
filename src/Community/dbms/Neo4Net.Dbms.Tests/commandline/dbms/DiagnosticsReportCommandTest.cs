@@ -58,19 +58,19 @@ namespace Neo4Net.Dbms.CommandLine
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.commandline.dbms.DiagnosticsReportCommand.DEFAULT_CLASSIFIERS;
+//	import static Neo4Net.commandline.dbms.DiagnosticsReportCommand.DEFAULT_CLASSIFIERS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.commandline.dbms.DiagnosticsReportCommand.describeClassifier;
+//	import static Neo4Net.commandline.dbms.DiagnosticsReportCommand.describeClassifier;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @ExtendWith({TestDirectoryExtension.class, DefaultFileSystemExtension.class, SuppressOutputExtension.class}) public class DiagnosticsReportCommandTest
 	public class DiagnosticsReportCommandTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.Neo4Net.test.rule.TestDirectory testDirectory;
+//ORIGINAL LINE: @Inject private Neo4Net.test.rule.TestDirectory testDirectory;
 		 private TestDirectory _testDirectory;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.Neo4Net.io.fs.DefaultFileSystemAbstraction fs;
+//ORIGINAL LINE: @Inject private Neo4Net.io.fs.DefaultFileSystemAbstraction fs;
 		 private DefaultFileSystemAbstraction _fs;
 
 		 private Path _homeDir;
@@ -89,7 +89,7 @@ namespace Neo4Net.Dbms.CommandLine
 			  }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Nonnull @Override protected java.util.List<org.Neo4Net.diagnostics.DiagnosticsReportSource> provideSources(java.util.Set<String> classifiers)
+//ORIGINAL LINE: @Nonnull @Override protected java.util.List<Neo4Net.diagnostics.DiagnosticsReportSource> provideSources(java.util.Set<String> classifiers)
 			  protected internal override IList<DiagnosticsReportSource> ProvideSources( ISet<string> classifiers )
 			  {
 					return Collections.emptyList();

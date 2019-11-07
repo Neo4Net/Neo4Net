@@ -32,7 +32,7 @@ namespace Neo4Net.CommandLine.Admin
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Override @Nonnull public org.Neo4Net.commandline.arguments.Arguments allArguments()
+//ORIGINAL LINE: @Override @Nonnull public Neo4Net.commandline.arguments.Arguments allArguments()
 		 public override Arguments AllArguments()
 		 {
 			  return ( new Arguments() ).withOptionalPositionalArgument(0, "command");

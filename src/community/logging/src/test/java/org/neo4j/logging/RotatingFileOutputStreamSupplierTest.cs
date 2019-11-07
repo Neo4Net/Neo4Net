@@ -76,9 +76,9 @@ namespace Neo4Net.Logging
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verify;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.logging.FormattedLog.OUTPUT_STREAM_CONVERTER;
+//	import static Neo4Net.logging.FormattedLog.OUTPUT_STREAM_CONVERTER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.logging.RotatingFileOutputStreamSupplier.getAllArchives;
+//	import static Neo4Net.logging.RotatingFileOutputStreamSupplier.getAllArchives;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @ExtendWith({SuppressOutputExtension.class, EphemeralFileSystemExtension.class, TestDirectoryExtension.class}) class RotatingFileOutputStreamSupplierTest
@@ -87,13 +87,13 @@ namespace Neo4Net.Logging
 		 private const long TEST_TIMEOUT_MILLIS = 10_000;
 		 private static readonly Executor _directExecutor = ThreadStart.run;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.Neo4Net.graphdb.mockfs.EphemeralFileSystemAbstraction fileSystem;
+//ORIGINAL LINE: @Inject private Neo4Net.graphdb.mockfs.EphemeralFileSystemAbstraction fileSystem;
 		 private EphemeralFileSystemAbstraction _fileSystem;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.Neo4Net.test.rule.TestDirectory testDirectory;
+//ORIGINAL LINE: @Inject private Neo4Net.test.rule.TestDirectory testDirectory;
 		 private TestDirectory _testDirectory;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.Neo4Net.test.rule.SuppressOutput suppressOutput;
+//ORIGINAL LINE: @Inject private Neo4Net.test.rule.SuppressOutput suppressOutput;
 		 private SuppressOutput _suppressOutput;
 
 		 private File _logFile;
@@ -655,7 +655,7 @@ namespace Neo4Net.Logging
 		 internal virtual void ShouldSurviveFilesystemErrors()
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.adversaries.RandomAdversary adversary = new org.Neo4Net.adversaries.RandomAdversary(0.1, 0.1, 0);
+//ORIGINAL LINE: final Neo4Net.adversaries.RandomAdversary adversary = new Neo4Net.adversaries.RandomAdversary(0.1, 0.1, 0);
 			  RandomAdversary adversary = new RandomAdversary( 0.1, 0.1, 0 );
 			  adversary.ProbabilityFactor = 0;
 

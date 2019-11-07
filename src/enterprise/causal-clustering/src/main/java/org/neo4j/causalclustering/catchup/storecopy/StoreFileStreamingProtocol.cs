@@ -29,7 +29,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 	{
 		 /// <summary>
 		 /// This sends operations on the outgoing pipeline or the file, including
-		 /// chunking <seealso cref="org.Neo4Net.causalclustering.catchup.storecopy.FileSender"/> handlers.
+		 /// chunking <seealso cref="Neo4Net.causalclustering.catchup.storecopy.FileSender"/> handlers.
 		 /// <para>
 		 /// Note that we do not block here.
 		 /// </para>

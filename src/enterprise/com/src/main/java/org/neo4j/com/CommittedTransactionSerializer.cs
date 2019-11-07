@@ -46,7 +46,7 @@ namespace Neo4Net.com
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean visit(org.Neo4Net.kernel.impl.transaction.CommittedTransactionRepresentation tx) throws java.io.IOException
+//ORIGINAL LINE: public boolean visit(Neo4Net.kernel.impl.transaction.CommittedTransactionRepresentation tx) throws java.io.IOException
 		 public override bool Visit( CommittedTransactionRepresentation tx )
 		 {
 			  _writer.serialize( tx );

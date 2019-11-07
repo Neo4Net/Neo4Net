@@ -22,12 +22,12 @@ namespace Neo4Net.Kernel.impl.query
 	using Lock = Neo4Net.GraphDb.Lock;
 	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
 	using SecurityContext = Neo4Net.Kernel.Api.Internal.security.SecurityContext;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
-	using ResourceTracker = Neo4Net.Kernel.api.ResourceTracker;
-	using Statement = Neo4Net.Kernel.api.Statement;
-	using DbmsOperations = Neo4Net.Kernel.api.dbms.DbmsOperations;
-	using ExecutingQuery = Neo4Net.Kernel.api.query.ExecutingQuery;
-	using TxStateHolder = Neo4Net.Kernel.api.txstate.TxStateHolder;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
+	using ResourceTracker = Neo4Net.Kernel.Api.ResourceTracker;
+	using Statement = Neo4Net.Kernel.Api.Statement;
+	using DbmsOperations = Neo4Net.Kernel.Api.dbms.DbmsOperations;
+	using ExecutingQuery = Neo4Net.Kernel.Api.query.ExecutingQuery;
+	using TxStateHolder = Neo4Net.Kernel.Api.txstate.TxStateHolder;
 	using StatisticProvider = Neo4Net.Kernel.impl.query.statistic.StatisticProvider;
 
 	public interface TransactionalContext
@@ -66,7 +66,7 @@ namespace Neo4Net.Kernel.impl.query
 
 		 /// <summary>
 		 /// Check that current context satisfy current execution guard.
-		 /// In case if guard criteria is not satisfied <seealso cref="org.Neo4Net.graphdb.TransactionGuardException"/> will be
+		 /// In case if guard criteria is not satisfied <seealso cref="Neo4Net.graphdb.TransactionGuardException"/> will be
 		 /// thrown.
 		 /// </summary>
 		 void Check();
@@ -79,7 +79,7 @@ namespace Neo4Net.Kernel.impl.query
 
 		 StatisticProvider KernelStatisticProvider();
 
-		 Neo4Net.Kernel.api.KernelTransaction_Revertable RestrictCurrentTransaction( SecurityContext context );
+		 Neo4Net.Kernel.Api.KernelTransaction_Revertable RestrictCurrentTransaction( SecurityContext context );
 
 		 ResourceTracker ResourceTracker();
 	}

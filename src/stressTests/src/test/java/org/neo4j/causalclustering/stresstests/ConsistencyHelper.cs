@@ -36,16 +36,16 @@ namespace Neo4Net.causalclustering.stresstests
 	using ThreadPoolJobScheduler = Neo4Net.Scheduler.ThreadPoolJobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.consistency.ConsistencyCheckTool.runConsistencyCheckTool;
+//	import static Neo4Net.consistency.ConsistencyCheckTool.runConsistencyCheckTool;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.facade.GraphDatabaseDependencies.newDependencies;
+//	import static Neo4Net.graphdb.facade.GraphDatabaseDependencies.newDependencies;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.NullOutputStream.NULL_OUTPUT_STREAM;
+//	import static Neo4Net.io.NullOutputStream.NULL_OUTPUT_STREAM;
 
 	internal class ConsistencyHelper
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static void assertStoreConsistent(org.Neo4Net.io.fs.FileSystemAbstraction fs, java.io.File storeDir) throws Exception
+//ORIGINAL LINE: static void assertStoreConsistent(Neo4Net.io.fs.FileSystemAbstraction fs, java.io.File storeDir) throws Exception
 		 internal static void AssertStoreConsistent( FileSystemAbstraction fs, File storeDir )
 		 {
 			  File parent = storeDir.ParentFile;

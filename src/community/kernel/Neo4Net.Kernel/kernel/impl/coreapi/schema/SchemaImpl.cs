@@ -51,9 +51,9 @@ namespace Neo4Net.Kernel.impl.coreapi.schema
 	using RelationTypeSchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.RelationTypeSchemaDescriptor;
 	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
 	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
-	using SilentTokenNameLookup = Neo4Net.Kernel.api.SilentTokenNameLookup;
-	using Statement = Neo4Net.Kernel.api.Statement;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
+	using SilentTokenNameLookup = Neo4Net.Kernel.Api.SilentTokenNameLookup;
+	using Statement = Neo4Net.Kernel.Api.Statement;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using AlreadyConstrainedException = Neo4Net.Kernel.Api.Exceptions.schema.AlreadyConstrainedException;
 	using AlreadyIndexedException = Neo4Net.Kernel.Api.Exceptions.schema.AlreadyIndexedException;
@@ -61,45 +61,45 @@ namespace Neo4Net.Kernel.impl.coreapi.schema
 	using DropIndexFailureException = Neo4Net.Kernel.Api.Exceptions.schema.DropIndexFailureException;
 	using RepeatedSchemaComponentException = Neo4Net.Kernel.Api.Exceptions.schema.RepeatedSchemaComponentException;
 	using SchemaRuleNotFoundException = Neo4Net.Kernel.Api.Exceptions.schema.SchemaRuleNotFoundException;
-	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
-	using ConstraintDescriptorFactory = Neo4Net.Kernel.api.schema.constraints.ConstraintDescriptorFactory;
-	using NodeExistenceConstraintDescriptor = Neo4Net.Kernel.api.schema.constraints.NodeExistenceConstraintDescriptor;
-	using NodeKeyConstraintDescriptor = Neo4Net.Kernel.api.schema.constraints.NodeKeyConstraintDescriptor;
-	using RelExistenceConstraintDescriptor = Neo4Net.Kernel.api.schema.constraints.RelExistenceConstraintDescriptor;
-	using UniquenessConstraintDescriptor = Neo4Net.Kernel.api.schema.constraints.UniquenessConstraintDescriptor;
+	using SchemaDescriptorFactory = Neo4Net.Kernel.Api.schema.SchemaDescriptorFactory;
+	using ConstraintDescriptorFactory = Neo4Net.Kernel.Api.schema.constraints.ConstraintDescriptorFactory;
+	using NodeExistenceConstraintDescriptor = Neo4Net.Kernel.Api.schema.constraints.NodeExistenceConstraintDescriptor;
+	using NodeKeyConstraintDescriptor = Neo4Net.Kernel.Api.schema.constraints.NodeKeyConstraintDescriptor;
+	using RelExistenceConstraintDescriptor = Neo4Net.Kernel.Api.schema.constraints.RelExistenceConstraintDescriptor;
+	using UniquenessConstraintDescriptor = Neo4Net.Kernel.Api.schema.constraints.UniquenessConstraintDescriptor;
 	using IndexPopulationFailure = Neo4Net.Kernel.Impl.Api.index.IndexPopulationFailure;
 	using EntityType = Neo4Net.Kernel.Api.StorageEngine.EntityType;
 	using PopulationProgress = Neo4Net.Kernel.Api.StorageEngine.schema.PopulationProgress;
 	using SchemaRule = Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.Label.label;
+//	import static Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.RelationshipType.withName;
+//	import static Neo4Net.graphdb.RelationshipType.withName;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.GraphDb.Schema.Schema_IndexState.FAILED;
+//	import static Neo4Net.GraphDb.Schema.Schema_IndexState.FAILED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.GraphDb.Schema.Schema_IndexState.ONLINE;
+//	import static Neo4Net.GraphDb.Schema.Schema_IndexState.ONLINE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.GraphDb.Schema.Schema_IndexState.POPULATING;
+//	import static Neo4Net.GraphDb.Schema.Schema_IndexState.POPULATING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.single;
+//	import static Neo4Net.helpers.collection.Iterables.single;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.addToCollection;
+//	import static Neo4Net.helpers.collection.Iterators.addToCollection;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.asCollection;
+//	import static Neo4Net.helpers.collection.Iterators.asCollection;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.map;
+//	import static Neo4Net.helpers.collection.Iterators.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel;
+//	import static Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forRelType;
+//	import static Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forRelType;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.schema.SchemaDescriptorFactory.multiToken;
+//	import static Neo4Net.kernel.api.schema.SchemaDescriptorFactory.multiToken;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.coreapi.schema.IndexDefinitionImpl.labelNameList;
+//	import static Neo4Net.kernel.impl.coreapi.schema.IndexDefinitionImpl.labelNameList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.coreapi.schema.PropertyNameUtils.getOrCreatePropertyKeyIds;
+//	import static Neo4Net.kernel.impl.coreapi.schema.PropertyNameUtils.getOrCreatePropertyKeyIds;
 
 	public class SchemaImpl : Schema
 	{
@@ -118,7 +118,7 @@ namespace Neo4Net.Kernel.impl.coreapi.schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public Iterable<org.Neo4Net.GraphDb.Schema.IndexDefinition> getIndexes(final org.Neo4Net.graphdb.Label label)
+//ORIGINAL LINE: public Iterable<Neo4Net.GraphDb.Schema.IndexDefinition> getIndexes(final Neo4Net.graphdb.Label label)
 		 public override IEnumerable<IndexDefinition> GetIndexes( Label label )
 		 {
 			  KernelTransaction transaction = _transactionSupplier.get();
@@ -153,7 +153,7 @@ namespace Neo4Net.Kernel.impl.coreapi.schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private org.Neo4Net.GraphDb.Schema.IndexDefinition descriptorToDefinition(final org.Neo4Net.Kernel.Api.Internal.TokenRead tokenRead, org.Neo4Net.Kernel.Api.Internal.IndexReference index)
+//ORIGINAL LINE: private Neo4Net.GraphDb.Schema.IndexDefinition descriptorToDefinition(final Neo4Net.Kernel.Api.Internal.TokenRead tokenRead, Neo4Net.Kernel.Api.Internal.IndexReference index)
 		 private IndexDefinition DescriptorToDefinition( TokenRead tokenRead, IndexReference index )
 		 {
 			  try
@@ -189,7 +189,7 @@ namespace Neo4Net.Kernel.impl.coreapi.schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private void addDefinitions(java.util.List<org.Neo4Net.GraphDb.Schema.IndexDefinition> definitions, final org.Neo4Net.Kernel.Api.Internal.TokenRead tokenRead, java.util.Iterator<org.Neo4Net.Kernel.Api.Internal.IndexReference> indexes)
+//ORIGINAL LINE: private void addDefinitions(java.util.List<Neo4Net.GraphDb.Schema.IndexDefinition> definitions, final Neo4Net.Kernel.Api.Internal.TokenRead tokenRead, java.util.Iterator<Neo4Net.Kernel.Api.Internal.IndexReference> indexes)
 		 private void AddDefinitions( IList<IndexDefinition> definitions, TokenRead tokenRead, IEnumerator<IndexReference> indexes )
 		 {
 			  addToCollection( map( index => DescriptorToDefinition( tokenRead, index ), indexes ), definitions );
@@ -273,7 +273,7 @@ namespace Neo4Net.Kernel.impl.coreapi.schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public org.Neo4Net.GraphDb.Schema.Schema_IndexState getIndexState(final org.Neo4Net.GraphDb.Schema.IndexDefinition index)
+//ORIGINAL LINE: public Neo4Net.GraphDb.Schema.Schema_IndexState getIndexState(final Neo4Net.GraphDb.Schema.IndexDefinition index)
 		 public override Neo4Net.GraphDb.Schema.Schema_IndexState GetIndexState( IndexDefinition index )
 		 {
 			  KernelTransaction transaction = SafeAcquireTransaction( _transactionSupplier );
@@ -365,7 +365,7 @@ namespace Neo4Net.Kernel.impl.coreapi.schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public Iterable<org.Neo4Net.GraphDb.Schema.ConstraintDefinition> getConstraints(final org.Neo4Net.graphdb.Label label)
+//ORIGINAL LINE: public Iterable<Neo4Net.GraphDb.Schema.ConstraintDefinition> getConstraints(final Neo4Net.graphdb.Label label)
 		 public virtual IEnumerable<ConstraintDefinition> getConstraints( Label label )
 		 {
 			  KernelTransaction transaction = SafeAcquireTransaction( _transactionSupplier );
@@ -399,7 +399,7 @@ namespace Neo4Net.Kernel.impl.coreapi.schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static org.Neo4Net.Kernel.Api.Internal.IndexReference getIndexReference(org.Neo4Net.Kernel.Api.Internal.SchemaRead schemaRead, org.Neo4Net.Kernel.Api.Internal.TokenRead tokenRead, IndexDefinitionImpl index) throws org.Neo4Net.kernel.api.exceptions.schema.SchemaRuleNotFoundException
+//ORIGINAL LINE: private static Neo4Net.Kernel.Api.Internal.IndexReference getIndexReference(Neo4Net.Kernel.Api.Internal.SchemaRead schemaRead, Neo4Net.Kernel.Api.Internal.TokenRead tokenRead, IndexDefinitionImpl index) throws Neo4Net.kernel.api.exceptions.schema.SchemaRuleNotFoundException
 		 private static IndexReference GetIndexReference( SchemaRead schemaRead, TokenRead tokenRead, IndexDefinitionImpl index )
 		 {
 			  // Use the precise embedded index reference when available.

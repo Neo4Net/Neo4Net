@@ -24,9 +24,9 @@ namespace Neo4Net.Server.web
 	using ContainerRequestFilter = com.sun.jersey.spi.container.ContainerRequestFilter;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.web.XForwardUtil.X_FORWARD_HOST_HEADER_KEY;
+//	import static Neo4Net.server.web.XForwardUtil.X_FORWARD_HOST_HEADER_KEY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.web.XForwardUtil.X_FORWARD_PROTO_HEADER_KEY;
+//	import static Neo4Net.server.web.XForwardUtil.X_FORWARD_PROTO_HEADER_KEY;
 
 	/// <summary>
 	/// Changes the value of the base and request URIs to match the provided

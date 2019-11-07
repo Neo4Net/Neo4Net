@@ -34,7 +34,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using IndexAccessor = Neo4Net.Kernel.Api.Index.IndexAccessor;
 	using IndexUpdater = Neo4Net.Kernel.Api.Index.IndexUpdater;
-	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
+	using SchemaDescriptorFactory = Neo4Net.Kernel.Api.schema.SchemaDescriptorFactory;
 	using ReporterFactories = Neo4Net.Kernel.Impl.Annotations.ReporterFactories;
 	using ReporterFactory = Neo4Net.Kernel.Impl.Annotations.ReporterFactory;
 	using IndexUpdateMode = Neo4Net.Kernel.Impl.Api.index.IndexUpdateMode;
@@ -77,33 +77,33 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Internal.verification.VerificationModeFactory.times;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.ArrayUtil.without;
+//	import static Neo4Net.helpers.ArrayUtil.without;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.fusion.FusionIndexTestHelp.fill;
+//	import static Neo4Net.kernel.impl.index.schema.fusion.FusionIndexTestHelp.fill;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.fusion.FusionIndexTestHelp.verifyFusionCloseThrowIfAllThrow;
+//	import static Neo4Net.kernel.impl.index.schema.fusion.FusionIndexTestHelp.verifyFusionCloseThrowIfAllThrow;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.fusion.FusionIndexTestHelp.verifyFusionCloseThrowOnSingleCloseThrow;
+//	import static Neo4Net.kernel.impl.index.schema.fusion.FusionIndexTestHelp.verifyFusionCloseThrowOnSingleCloseThrow;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.fusion.FusionIndexTestHelp.verifyOtherIsClosedOnSingleThrow;
+//	import static Neo4Net.kernel.impl.index.schema.fusion.FusionIndexTestHelp.verifyOtherIsClosedOnSingleThrow;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.fusion.FusionVersion.v00;
+//	import static Neo4Net.kernel.impl.index.schema.fusion.FusionVersion.v00;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.fusion.FusionVersion.v10;
+//	import static Neo4Net.kernel.impl.index.schema.fusion.FusionVersion.v10;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.fusion.FusionVersion.v20;
+//	import static Neo4Net.kernel.impl.index.schema.fusion.FusionVersion.v20;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.fusion.IndexSlot.LUCENE;
+//	import static Neo4Net.kernel.impl.index.schema.fusion.IndexSlot.LUCENE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.fusion.IndexSlot.NUMBER;
+//	import static Neo4Net.kernel.impl.index.schema.fusion.IndexSlot.NUMBER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.fusion.IndexSlot.SPATIAL;
+//	import static Neo4Net.kernel.impl.index.schema.fusion.IndexSlot.SPATIAL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.fusion.IndexSlot.STRING;
+//	import static Neo4Net.kernel.impl.index.schema.fusion.IndexSlot.STRING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.fusion.IndexSlot.TEMPORAL;
+//	import static Neo4Net.kernel.impl.index.schema.fusion.IndexSlot.TEMPORAL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.stringValue;
+//	import static Neo4Net.values.storable.Values.stringValue;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class FusionIndexAccessorTest
@@ -133,7 +133,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 		 private StoreIndexDescriptor _indexDescriptor;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.RandomRule random = new org.Neo4Net.test.rule.RandomRule();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.RandomRule random = new Neo4Net.test.rule.RandomRule();
 		 public RandomRule Random = new RandomRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

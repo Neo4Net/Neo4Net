@@ -32,7 +32,7 @@ namespace Neo4Net.Bolt.transport.pipeline
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.testing.BoltTestUtil.assertByteBufEquals;
+//	import static Neo4Net.bolt.testing.BoltTestUtil.assertByteBufEquals;
 
 	public class MessageAccumulatorTest
 	{

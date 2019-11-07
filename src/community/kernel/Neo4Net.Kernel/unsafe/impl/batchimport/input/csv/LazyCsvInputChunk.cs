@@ -25,7 +25,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input.csv
 	using Source_Chunk = Neo4Net.Csv.Reader.Source_Chunk;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.input.csv.CsvInputIterator.seeker;
+//	import static Neo4Net.@unsafe.impl.batchimport.input.csv.CsvInputIterator.seeker;
 
 	/// <summary>
 	/// <seealso cref="InputChunk"/> parsing next entry on each call to <seealso cref="next(InputEntityVisitor)"/>.
@@ -61,7 +61,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input.csv
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean fillFrom(org.Neo4Net.csv.reader.Chunker chunker) throws java.io.IOException
+//ORIGINAL LINE: public boolean fillFrom(Neo4Net.csv.reader.Chunker chunker) throws java.io.IOException
 		 public override bool FillFrom( Chunker chunker )
 		 {
 			  if ( chunker.NextChunk( _processingChunk ) )
@@ -85,7 +85,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input.csv
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean next(org.Neo4Net.unsafe.impl.batchimport.input.InputEntityVisitor nakedVisitor) throws java.io.IOException
+//ORIGINAL LINE: public boolean next(Neo4Net.unsafe.impl.batchimport.input.InputEntityVisitor nakedVisitor) throws java.io.IOException
 		 public override bool Next( InputEntityVisitor nakedVisitor )
 		 {
 			  if ( _visitor == null || nakedVisitor != _previousVisitor )

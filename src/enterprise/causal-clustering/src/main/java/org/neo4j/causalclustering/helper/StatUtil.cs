@@ -27,7 +27,7 @@ namespace Neo4Net.causalclustering.helper
 	using Log = Neo4Net.Logging.Log;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.logging.FormattedLogProvider.toOutputStream;
+//	import static Neo4Net.logging.FormattedLogProvider.toOutputStream;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @SuppressWarnings("unused") public class StatUtil

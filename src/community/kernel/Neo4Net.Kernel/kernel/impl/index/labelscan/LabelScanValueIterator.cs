@@ -30,11 +30,11 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 	using Neo4Net.Index.Internal.gbptree;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.labelscan.LabelScanValue.RANGE_SIZE;
+//	import static Neo4Net.kernel.impl.index.labelscan.LabelScanValue.RANGE_SIZE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.labelscan.NativeLabelScanWriter.rangeOf;
+//	import static Neo4Net.kernel.impl.index.labelscan.NativeLabelScanWriter.rangeOf;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.StorageEngine.schema.LabelScanReader_Fields.NO_ID;
+//	import static Neo4Net.Kernel.Api.StorageEngine.schema.LabelScanReader_Fields.NO_ID;
 
 	/// <summary>
 	/// <seealso cref="LongIterator"/> which iterate over multiple <seealso cref="LabelScanValue"/> and for each

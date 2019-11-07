@@ -32,7 +32,7 @@ namespace Neo4Net.Io.fs
 		 /// <returns> specific file system abstract watcher </returns>
 		 /// <exception cref="IOException"> in case exception occur during file watcher creation </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.Neo4Net.io.fs.watcher.FileWatcher fileWatcher() throws java.io.IOException;
+//ORIGINAL LINE: Neo4Net.io.fs.watcher.FileWatcher fileWatcher() throws java.io.IOException;
 		 FileWatcher FileWatcher();
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:

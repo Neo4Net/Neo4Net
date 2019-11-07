@@ -27,7 +27,7 @@ namespace Neo4Net.Server.web
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.web.JettyThreadCalculator.MAX_THREADS;
+//	import static Neo4Net.server.web.JettyThreadCalculator.MAX_THREADS;
 
 	public class JettyThreadCalculatorTest
 	{

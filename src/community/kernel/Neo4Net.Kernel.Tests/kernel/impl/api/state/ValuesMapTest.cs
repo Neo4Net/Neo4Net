@@ -63,14 +63,14 @@ namespace Neo4Net.Kernel.Impl.Api.state
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Internal.verification.VerificationModeFactory.times;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.intValue;
+//	import static Neo4Net.values.storable.Values.intValue;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @ExtendWith(RandomExtension.class) class ValuesMapTest
 	internal class ValuesMapTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.Neo4Net.test.rule.RandomRule rnd;
+//ORIGINAL LINE: @Inject private Neo4Net.test.rule.RandomRule rnd;
 		 private RandomRule _rnd;
 
 		 private readonly ValuesMap _map = NewMap();
@@ -135,7 +135,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 		 internal virtual void getIfAbsentPut_Supplier()
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.eclipse.collections.api.block.function.Function0<org.Neo4Net.values.storable.Value> supplier = mock(org.eclipse.collections.api.block.function.Function0.class);
+//ORIGINAL LINE: final org.eclipse.collections.api.block.function.Function0<Neo4Net.values.storable.Value> supplier = mock(org.eclipse.collections.api.block.function.Function0.class);
 			  Function0<Value> supplier = mock( typeof( Function0 ) );
 			  doReturn( intValue( 10 ), intValue( 11 ), intValue( 12 ) ).when( supplier ).value();
 
@@ -155,7 +155,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 		 internal virtual void getIfAbsentPutWithKey()
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("Convert2Lambda") final org.eclipse.collections.api.block.function.primitive.LongToObjectFunction<org.Neo4Net.values.storable.Value> function = spy(new org.eclipse.collections.api.block.function.primitive.LongToObjectFunction<org.Neo4Net.values.storable.Value>()
+//ORIGINAL LINE: @SuppressWarnings("Convert2Lambda") final org.eclipse.collections.api.block.function.primitive.LongToObjectFunction<Neo4Net.values.storable.Value> function = spy(new org.eclipse.collections.api.block.function.primitive.LongToObjectFunction<Neo4Net.values.storable.Value>()
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 			  LongToObjectFunction<Value> function = spy( new LongToObjectFunctionAnonymousInnerClass( this ) );
 
@@ -192,7 +192,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 		 internal virtual void getIfAbsentPutWith()
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings({"Convert2Lambda", "Anonymous2MethodRef"}) final org.eclipse.collections.api.block.function.Function<String, org.Neo4Net.values.storable.Value> function = spy(new org.eclipse.collections.api.block.function.Function<String, org.Neo4Net.values.storable.Value>()
+//ORIGINAL LINE: @SuppressWarnings({"Convert2Lambda", "Anonymous2MethodRef"}) final org.eclipse.collections.api.block.function.Function<String, Neo4Net.values.storable.Value> function = spy(new org.eclipse.collections.api.block.function.Function<String, Neo4Net.values.storable.Value>()
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 			  Function<string, Value> function = spy( new FunctionAnonymousInnerClass( this ) );
 
@@ -304,7 +304,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 		 internal virtual void ForEachValue()
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.eclipse.collections.api.block.procedure.Procedure<org.Neo4Net.values.storable.Value> consumer = mock(org.eclipse.collections.api.block.procedure.Procedure.class);
+//ORIGINAL LINE: final org.eclipse.collections.api.block.procedure.Procedure<Neo4Net.values.storable.Value> consumer = mock(org.eclipse.collections.api.block.procedure.Procedure.class);
 			  Procedure<Value> consumer = mock( typeof( Procedure ) );
 			  _map.putAll( LongObjectHashMap.newWithKeysValues( 0, intValue( 10 ), 1, intValue( 11 ), 2, intValue( 12 ) ) );
 
@@ -321,7 +321,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 		 internal virtual void ForEachKeyValue()
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.eclipse.collections.api.block.procedure.primitive.LongObjectProcedure<org.Neo4Net.values.storable.Value> consumer = mock(org.eclipse.collections.api.block.procedure.primitive.LongObjectProcedure.class);
+//ORIGINAL LINE: final org.eclipse.collections.api.block.procedure.primitive.LongObjectProcedure<Neo4Net.values.storable.Value> consumer = mock(org.eclipse.collections.api.block.procedure.primitive.LongObjectProcedure.class);
 			  LongObjectProcedure<Value> consumer = mock( typeof( LongObjectProcedure ) );
 			  _map.putAll( LongObjectHashMap.newWithKeysValues( 0, intValue( 10 ), 1, intValue( 11 ), 2, intValue( 12 ) ) );
 
@@ -368,7 +368,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 //ORIGINAL LINE: final java.util.List<ValuesMap> actualMaps = new java.util.ArrayList<>();
 			  IList<ValuesMap> actualMaps = new List<ValuesMap>();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.List<org.eclipse.collections.api.map.primitive.MutableLongObjectMap<org.Neo4Net.values.storable.Value>> expectedMaps = new java.util.ArrayList<>();
+//ORIGINAL LINE: final java.util.List<org.eclipse.collections.api.map.primitive.MutableLongObjectMap<Neo4Net.values.storable.Value>> expectedMaps = new java.util.ArrayList<>();
 			  IList<MutableLongObjectMap<Value>> expectedMaps = new List<MutableLongObjectMap<Value>>();
 
 			  for ( int i = 0; i < maps; i++ )
@@ -390,7 +390,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 			  for ( int i = 0; i < maps; i++ )
 			  {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.eclipse.collections.api.map.primitive.MutableLongObjectMap<org.Neo4Net.values.storable.Value> expected = expectedMaps.get(i);
+//ORIGINAL LINE: final org.eclipse.collections.api.map.primitive.MutableLongObjectMap<Neo4Net.values.storable.Value> expected = expectedMaps.get(i);
 					MutableLongObjectMap<Value> expected = expectedMaps[i];
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final ValuesMap actual = actualMaps.get(i);
@@ -407,7 +407,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 //ORIGINAL LINE: final long key = rnd.nextLong(count);
 					long key = _rnd.nextLong( count );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.values.storable.Value value = rnd.randomValues().nextValue();
+//ORIGINAL LINE: final Neo4Net.values.storable.Value value = rnd.randomValues().nextValue();
 					Value value = _rnd.randomValues().nextValue();
 					actualMap.Put( key, value );
 					expectedMap.put( key, value );
@@ -422,7 +422,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 //ORIGINAL LINE: final long key = rnd.nextLong(count);
 					long key = _rnd.nextLong( count );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.values.storable.Value value = rnd.randomValues().nextValue();
+//ORIGINAL LINE: final Neo4Net.values.storable.Value value = rnd.randomValues().nextValue();
 					Value value = _rnd.randomValues().nextValue();
 					actualMap.Put( key, value );
 					expectedMap.put( key, value );

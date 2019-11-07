@@ -49,11 +49,11 @@ namespace Neo4Net.Kernel.impl.transaction.log.files
 		 long LowestLogVersion { get; }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.Neo4Net.kernel.impl.transaction.log.entry.LogHeader extractHeader(long version) throws java.io.IOException;
+//ORIGINAL LINE: Neo4Net.kernel.impl.transaction.log.entry.LogHeader extractHeader(long version) throws java.io.IOException;
 		 LogHeader ExtractHeader( long version );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.Neo4Net.kernel.impl.transaction.log.PhysicalLogVersionedStoreChannel openForVersion(long version) throws java.io.IOException;
+//ORIGINAL LINE: Neo4Net.kernel.impl.transaction.log.PhysicalLogVersionedStoreChannel openForVersion(long version) throws java.io.IOException;
 		 PhysicalLogVersionedStoreChannel OpenForVersion( long version );
 
 		 bool VersionExists( long version );

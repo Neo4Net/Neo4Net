@@ -44,19 +44,19 @@ namespace Neo4Net.Bolt.v3.runtime.integration
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertNull;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.testing.BoltMatchers.failedWithStatus;
+//	import static Neo4Net.bolt.testing.BoltMatchers.failedWithStatus;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.testing.BoltMatchers.succeededWithMetadata;
+//	import static Neo4Net.bolt.testing.BoltMatchers.succeededWithMetadata;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.testing.BoltMatchers.verifyKillsConnection;
+//	import static Neo4Net.bolt.testing.BoltMatchers.verifyKillsConnection;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.runtime.BoltStateMachineV1SPI.BOLT_SERVER_VERSION_PREFIX;
+//	import static Neo4Net.bolt.v1.runtime.BoltStateMachineV1SPI.BOLT_SERVER_VERSION_PREFIX;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v3.messaging.request.CommitMessage.COMMIT_MESSAGE;
+//	import static Neo4Net.bolt.v3.messaging.request.CommitMessage.COMMIT_MESSAGE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v3.messaging.request.GoodbyeMessage.GOODBYE_MESSAGE;
+//	import static Neo4Net.bolt.v3.messaging.request.GoodbyeMessage.GOODBYE_MESSAGE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v3.messaging.request.RollbackMessage.ROLLBACK_MESSAGE;
+//	import static Neo4Net.bolt.v3.messaging.request.RollbackMessage.ROLLBACK_MESSAGE;
 
 	internal class ConnectedStateIT : BoltStateMachineStateTestBase
 	{
@@ -80,7 +80,7 @@ namespace Neo4Net.Bolt.v3.runtime.integration
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ParameterizedTest @MethodSource("illegalV3Messages") void shouldCloseConnectionOnIllegalV3Messages(org.Neo4Net.bolt.messaging.RequestMessage message) throws Throwable
+//ORIGINAL LINE: @ParameterizedTest @MethodSource("illegalV3Messages") void shouldCloseConnectionOnIllegalV3Messages(Neo4Net.bolt.messaging.RequestMessage message) throws Throwable
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void ShouldCloseConnectionOnIllegalV3Messages( RequestMessage message )
 		 {
@@ -88,7 +88,7 @@ namespace Neo4Net.Bolt.v3.runtime.integration
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ParameterizedTest @MethodSource("illegalV2Messages") void shouldCloseConnectionOnIllegalV2Messages(org.Neo4Net.bolt.messaging.RequestMessage message) throws Throwable
+//ORIGINAL LINE: @ParameterizedTest @MethodSource("illegalV2Messages") void shouldCloseConnectionOnIllegalV2Messages(Neo4Net.bolt.messaging.RequestMessage message) throws Throwable
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void ShouldCloseConnectionOnIllegalV2Messages( RequestMessage message )
 		 {
@@ -96,7 +96,7 @@ namespace Neo4Net.Bolt.v3.runtime.integration
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void shouldCloseConnectionOnIllegalMessages(org.Neo4Net.bolt.messaging.RequestMessage message) throws InterruptedException
+//ORIGINAL LINE: private void shouldCloseConnectionOnIllegalMessages(Neo4Net.bolt.messaging.RequestMessage message) throws InterruptedException
 		 private void ShouldCloseConnectionOnIllegalMessages( RequestMessage message )
 		 {
 			  // Given
@@ -112,7 +112,7 @@ namespace Neo4Net.Bolt.v3.runtime.integration
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static java.util.stream.Stream<org.Neo4Net.bolt.messaging.RequestMessage> illegalV3Messages() throws org.Neo4Net.bolt.messaging.BoltIOException
+//ORIGINAL LINE: private static java.util.stream.Stream<Neo4Net.bolt.messaging.RequestMessage> illegalV3Messages() throws Neo4Net.bolt.messaging.BoltIOException
 		 private static Stream<RequestMessage> IllegalV3Messages()
 		 {
 			  return Stream.of( new RunMessage( "RETURN 1", EmptyParams, EmptyParams ), DiscardAllMessage.INSTANCE, PullAllMessage.INSTANCE, new BeginMessage(), COMMIT_MESSAGE, ROLLBACK_MESSAGE, InterruptSignal.INSTANCE, ResetMessage.INSTANCE, GOODBYE_MESSAGE );

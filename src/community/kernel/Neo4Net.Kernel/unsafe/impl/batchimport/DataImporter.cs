@@ -45,7 +45,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static System.currentTimeMillis;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.stats.Stats.longStat;
+//	import static Neo4Net.@unsafe.impl.batchimport.stats.Stats.longStat;
 
 	/// <summary>
 	/// Imports data from <seealso cref="Input"/> into a store. Only linkage between property records is done, not between nodes/relationships
@@ -113,7 +113,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static long importData(String title, int numRunners, InputIterable data, org.Neo4Net.unsafe.impl.batchimport.store.BatchingNeoStores stores, System.Func<EntityImporter> visitors, org.Neo4Net.unsafe.impl.batchimport.staging.ExecutionMonitor executionMonitor, org.Neo4Net.unsafe.impl.batchimport.stats.StatsProvider memoryStatsProvider) throws java.io.IOException
+//ORIGINAL LINE: private static long importData(String title, int numRunners, InputIterable data, Neo4Net.unsafe.impl.batchimport.store.BatchingNeoStores stores, System.Func<EntityImporter> visitors, Neo4Net.unsafe.impl.batchimport.staging.ExecutionMonitor executionMonitor, Neo4Net.unsafe.impl.batchimport.stats.StatsProvider memoryStatsProvider) throws java.io.IOException
 		 private static long ImportData( string title, int numRunners, InputIterable data, BatchingNeoStores stores, System.Func<EntityImporter> visitors, ExecutionMonitor executionMonitor, StatsProvider memoryStatsProvider )
 		 {
 			  LongAdder roughEntityCountProgress = new LongAdder();
@@ -157,7 +157,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static void importNodes(int numRunners, org.Neo4Net.unsafe.impl.batchimport.input.Input input, org.Neo4Net.unsafe.impl.batchimport.store.BatchingNeoStores stores, org.Neo4Net.unsafe.impl.batchimport.cache.idmapping.IdMapper idMapper, org.Neo4Net.unsafe.impl.batchimport.staging.ExecutionMonitor executionMonitor, Monitor monitor) throws java.io.IOException
+//ORIGINAL LINE: public static void importNodes(int numRunners, Neo4Net.unsafe.impl.batchimport.input.Input input, Neo4Net.unsafe.impl.batchimport.store.BatchingNeoStores stores, Neo4Net.unsafe.impl.batchimport.cache.idmapping.IdMapper idMapper, Neo4Net.unsafe.impl.batchimport.staging.ExecutionMonitor executionMonitor, Monitor monitor) throws java.io.IOException
 		 public static void ImportNodes( int numRunners, Input input, BatchingNeoStores stores, IdMapper idMapper, ExecutionMonitor executionMonitor, Monitor monitor )
 		 {
 			  System.Func<EntityImporter> importers = () => new NodeImporter(stores, idMapper, monitor);
@@ -165,7 +165,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static DataStatistics importRelationships(int numRunners, org.Neo4Net.unsafe.impl.batchimport.input.Input input, org.Neo4Net.unsafe.impl.batchimport.store.BatchingNeoStores stores, org.Neo4Net.unsafe.impl.batchimport.cache.idmapping.IdMapper idMapper, org.Neo4Net.unsafe.impl.batchimport.input.Collector badCollector, org.Neo4Net.unsafe.impl.batchimport.staging.ExecutionMonitor executionMonitor, Monitor monitor, boolean validateRelationshipData) throws java.io.IOException
+//ORIGINAL LINE: public static DataStatistics importRelationships(int numRunners, Neo4Net.unsafe.impl.batchimport.input.Input input, Neo4Net.unsafe.impl.batchimport.store.BatchingNeoStores stores, Neo4Net.unsafe.impl.batchimport.cache.idmapping.IdMapper idMapper, Neo4Net.unsafe.impl.batchimport.input.Collector badCollector, Neo4Net.unsafe.impl.batchimport.staging.ExecutionMonitor executionMonitor, Monitor monitor, boolean validateRelationshipData) throws java.io.IOException
 		 public static DataStatistics ImportRelationships( int numRunners, Input input, BatchingNeoStores stores, IdMapper idMapper, Collector badCollector, ExecutionMonitor executionMonitor, Monitor monitor, bool validateRelationshipData )
 		 {
 			  DataStatistics typeDistribution = new DataStatistics( monitor, new RelationshipTypeCount[0] );

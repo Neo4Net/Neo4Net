@@ -25,7 +25,7 @@ namespace Neo4Net.Index.Internal.gbptree
 	internal interface GBPTreeUnsafe<KEY, VALUE>
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void access(org.Neo4Net.io.pagecache.PagedFile pagedFile, Layout<KEY,VALUE> layout, TreeNode<KEY,VALUE> node, TreeState treeState) throws java.io.IOException;
+//ORIGINAL LINE: void access(Neo4Net.io.pagecache.PagedFile pagedFile, Layout<KEY,VALUE> layout, TreeNode<KEY,VALUE> node, TreeState treeState) throws java.io.IOException;
 		 void Access( PagedFile pagedFile, Layout<KEY, VALUE> layout, TreeNode<KEY, VALUE> node, TreeState treeState );
 	}
 

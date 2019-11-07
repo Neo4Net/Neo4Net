@@ -34,15 +34,15 @@ namespace Neo4Net.Kernel.enterprise.builtinprocs
 	using ProcedureSignature = Neo4Net.Kernel.Api.Internal.procs.ProcedureSignature;
 	using UserFunctionSignature = Neo4Net.Kernel.Api.Internal.procs.UserFunctionSignature;
 	using SecurityContext = Neo4Net.Kernel.Api.Internal.security.SecurityContext;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
-	using KernelTransactionHandle = Neo4Net.Kernel.api.KernelTransactionHandle;
-	using Statement = Neo4Net.Kernel.api.Statement;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
+	using KernelTransactionHandle = Neo4Net.Kernel.Api.KernelTransactionHandle;
+	using Statement = Neo4Net.Kernel.Api.Statement;
 	using InvalidArgumentsException = Neo4Net.Kernel.Api.Exceptions.InvalidArgumentsException;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
-	using NetworkConnectionTracker = Neo4Net.Kernel.api.net.NetworkConnectionTracker;
-	using TrackedNetworkConnection = Neo4Net.Kernel.api.net.TrackedNetworkConnection;
-	using ExecutingQuery = Neo4Net.Kernel.api.query.ExecutingQuery;
-	using QuerySnapshot = Neo4Net.Kernel.api.query.QuerySnapshot;
+	using NetworkConnectionTracker = Neo4Net.Kernel.Api.net.NetworkConnectionTracker;
+	using TrackedNetworkConnection = Neo4Net.Kernel.Api.net.TrackedNetworkConnection;
+	using ExecutingQuery = Neo4Net.Kernel.Api.query.ExecutingQuery;
+	using QuerySnapshot = Neo4Net.Kernel.Api.query.QuerySnapshot;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using KernelTransactions = Neo4Net.Kernel.Impl.Api.KernelTransactions;
 	using EmbeddedProxySPI = Neo4Net.Kernel.impl.core.EmbeddedProxySPI;
@@ -56,17 +56,17 @@ namespace Neo4Net.Kernel.enterprise.builtinprocs
 	using Procedure = Neo4Net.Procedure.Procedure;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.function.ThrowingFunction.catchThrown;
+//	import static Neo4Net.function.ThrowingFunction.catchThrown;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.function.ThrowingFunction.throwIfPresent;
+//	import static Neo4Net.function.ThrowingFunction.throwIfPresent;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.security.AuthorizationViolationException.PERMISSION_DENIED;
+//	import static Neo4Net.graphdb.security.AuthorizationViolationException.PERMISSION_DENIED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.enterprise.builtinprocs.QueryId.fromExternalString;
+//	import static Neo4Net.kernel.enterprise.builtinprocs.QueryId.fromExternalString;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.enterprise.builtinprocs.QueryId.ofInternalId;
+//	import static Neo4Net.kernel.enterprise.builtinprocs.QueryId.ofInternalId;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.procedure.Mode.DBMS;
+//	import static Neo4Net.procedure.Mode.DBMS;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @SuppressWarnings("unused") public class EnterpriseBuiltInDbmsProcedures
@@ -75,15 +75,15 @@ namespace Neo4Net.Kernel.enterprise.builtinprocs
 		 private const int HARD_CHAR_LIMIT = 2048;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Context public org.Neo4Net.graphdb.DependencyResolver resolver;
+//ORIGINAL LINE: @Context public Neo4Net.graphdb.DependencyResolver resolver;
 		 public DependencyResolver Resolver;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Context public org.Neo4Net.kernel.internal.GraphDatabaseAPI graph;
+//ORIGINAL LINE: @Context public Neo4Net.kernel.internal.GraphDatabaseAPI graph;
 		 public GraphDatabaseAPI Graph;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Context public org.Neo4Net.Kernel.Api.Internal.security.SecurityContext securityContext;
+//ORIGINAL LINE: @Context public Neo4Net.Kernel.Api.Internal.security.SecurityContext securityContext;
 		 public SecurityContext SecurityContext;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -285,7 +285,7 @@ namespace Neo4Net.Kernel.enterprise.builtinprocs
 		  */
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.util.stream.Stream<QueryStatusResult> listQueries() throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: public java.util.stream.Stream<QueryStatusResult> listQueries() throws Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 		 [Description("List all queries currently executing at this instance that are visible to the user."), Procedure(name : "dbms.listQueries", mode : DBMS)]
 		 public virtual Stream<QueryStatusResult> ListQueries()
 		 {
@@ -306,7 +306,7 @@ namespace Neo4Net.Kernel.enterprise.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.util.stream.Stream<TransactionStatusResult> listTransactions() throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: public java.util.stream.Stream<TransactionStatusResult> listTransactions() throws Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 		 [Description("List all transactions currently executing at this instance that are visible to the user."), Procedure(name : "dbms.listTransactions", mode : DBMS)]
 		 public virtual Stream<TransactionStatusResult> ListTransactions()
 		 {
@@ -341,7 +341,7 @@ namespace Neo4Net.Kernel.enterprise.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("List the active lock requests granted for the transaction executing the query with the given query id.") @Procedure(name = "dbms.listActiveLocks", mode = DBMS) public java.util.stream.Stream<ActiveLocksResult> listActiveLocks(@Name("queryId") String queryId) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: @Description("List the active lock requests granted for the transaction executing the query with the given query id.") @Procedure(name = "dbms.listActiveLocks", mode = DBMS) public java.util.stream.Stream<ActiveLocksResult> listActiveLocks(@Name("queryId") String queryId) throws Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Description("List the active lock requests granted for the transaction executing the query with the given query id."), Procedure(name : "dbms.listActiveLocks", mode : DBMS)]
 		 public virtual Stream<ActiveLocksResult> ListActiveLocks( string queryId )
@@ -360,7 +360,7 @@ namespace Neo4Net.Kernel.enterprise.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Kill all transactions executing the query with the given query id.") @Procedure(name = "dbms.killQuery", mode = DBMS) public java.util.stream.Stream<QueryTerminationResult> killQuery(@Name("id") String idText) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: @Description("Kill all transactions executing the query with the given query id.") @Procedure(name = "dbms.killQuery", mode = DBMS) public java.util.stream.Stream<QueryTerminationResult> killQuery(@Name("id") String idText) throws Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Description("Kill all transactions executing the query with the given query id."), Procedure(name : "dbms.killQuery", mode : DBMS)]
 		 public virtual Stream<QueryTerminationResult> KillQuery( string idText )
@@ -386,7 +386,7 @@ namespace Neo4Net.Kernel.enterprise.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Kill all transactions executing a query with any of the given query ids.") @Procedure(name = "dbms.killQueries", mode = DBMS) public java.util.stream.Stream<QueryTerminationResult> killQueries(@Name("ids") java.util.List<String> idTexts) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: @Description("Kill all transactions executing a query with any of the given query ids.") @Procedure(name = "dbms.killQueries", mode = DBMS) public java.util.stream.Stream<QueryTerminationResult> killQueries(@Name("ids") java.util.List<String> idTexts) throws Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Description("Kill all transactions executing a query with any of the given query ids."), Procedure(name : "dbms.killQueries", mode : DBMS)]
 		 public virtual Stream<QueryTerminationResult> KillQueries( IList<string> idTexts )
@@ -436,7 +436,7 @@ namespace Neo4Net.Kernel.enterprise.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private QueryTerminationResult killQueryTransaction(org.Neo4Net.helpers.collection.Pair<org.Neo4Net.kernel.api.KernelTransactionHandle, org.Neo4Net.kernel.api.query.ExecutingQuery> pair) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: private QueryTerminationResult killQueryTransaction(Neo4Net.helpers.collection.Pair<Neo4Net.kernel.api.KernelTransactionHandle, Neo4Net.kernel.api.query.ExecutingQuery> pair) throws Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 		 private QueryTerminationResult KillQueryTransaction( Pair<KernelTransactionHandle, ExecutingQuery> pair )
 		 {
 			  ExecutingQuery query = pair.Other();

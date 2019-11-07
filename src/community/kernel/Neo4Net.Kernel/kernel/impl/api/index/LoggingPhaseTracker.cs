@@ -48,7 +48,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @VisibleForTesting LoggingPhaseTracker(long periodIntervalInSeconds, org.Neo4Net.logging.Log log, java.time.Clock clock)
+//ORIGINAL LINE: @VisibleForTesting LoggingPhaseTracker(long periodIntervalInSeconds, Neo4Net.logging.Log log, java.time.Clock clock)
 		 internal LoggingPhaseTracker( long periodIntervalInSeconds, Log log, Clock clock )
 		 {
 			  this._periodInterval = TimeUnit.SECONDS.toMillis( periodIntervalInSeconds );

@@ -78,7 +78,7 @@ namespace Neo4Net.Cypher.Internal.javacompat
 			  return _originalResult.columns();
 		 }
 
-		 public override ResourceIterator<T> ColumnAs<T>( string name )
+		 public override IResourceIterator<T> ColumnAs<T>( string name )
 		 {
 			  return new EagerResultResourceIterator<T>( this, name );
 		 }
@@ -156,7 +156,7 @@ namespace Neo4Net.Cypher.Internal.javacompat
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public <VisitationException extends Exception> void accept(org.Neo4Net.graphdb.Result_ResultVisitor<VisitationException> visitor) throws VisitationException
+//ORIGINAL LINE: public <VisitationException extends Exception> void accept(Neo4Net.graphdb.Result_ResultVisitor<VisitationException> visitor) throws VisitationException
 		 public override void Accept<VisitationException>( Neo4Net.GraphDb.Result_ResultVisitor<VisitationException> visitor ) where VisitationException : Exception
 		 {
 			  try
@@ -194,7 +194,7 @@ namespace Neo4Net.Cypher.Internal.javacompat
 			  }
 		 }
 
-		 private class EagerResultResourceIterator<T> : ResourceIterator<T>
+		 private class EagerResultResourceIterator<T> : IResourceIterator<T>
 		 {
 			 private readonly EagerResult _outerInstance;
 
@@ -242,7 +242,7 @@ namespace Neo4Net.Cypher.Internal.javacompat
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public <E extends Exception> void accept(org.Neo4Net.cypher.result.QueryResult_QueryResultVisitor<E> visitor) throws E
+//ORIGINAL LINE: public <E extends Exception> void accept(Neo4Net.cypher.result.QueryResult_QueryResultVisitor<E> visitor) throws E
 			  public override void Accept<E>( Neo4Net.Cypher.result.QueryResult_QueryResultVisitor<E> visitor ) where E : Exception
 			  {
 					while ( outerInstance.HasNext() )

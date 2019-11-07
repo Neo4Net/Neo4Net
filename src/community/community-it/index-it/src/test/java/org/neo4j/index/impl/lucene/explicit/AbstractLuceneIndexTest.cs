@@ -42,7 +42,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
+//	import static Neo4Net.helpers.collection.MapUtil.stringMap;
 
 	public abstract class AbstractLuceneIndexTest
 	{
@@ -50,7 +50,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 //ORIGINAL LINE: @Rule public final org.junit.rules.TestName testname = new org.junit.rules.TestName();
 		 public readonly TestName Testname = new TestName();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ClassRule public static org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory(AbstractLuceneIndexTest.class);
+//ORIGINAL LINE: @ClassRule public static Neo4Net.test.rule.TestDirectory testDirectory = Neo4Net.test.rule.TestDirectory.testDirectory(AbstractLuceneIndexTest.class);
 		 public static TestDirectory TestDirectory = TestDirectory.testDirectory( typeof( AbstractLuceneIndexTest ) );
 		 protected internal static IGraphDatabaseService GraphDb;
 		 protected internal Transaction Tx;

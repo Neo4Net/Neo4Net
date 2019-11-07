@@ -23,11 +23,11 @@ namespace Neo4Net.GraphDb.Impl.Traversal
     using Neo4Net.GraphDb.Traversal;
     using IBranchSelector = Neo4Net.GraphDb.Traversal.IBranchSelector;
     using ITraversalBranch = Neo4Net.GraphDb.Traversal.ITraversalBranch;
-    using TraversalContext = Neo4Net.GraphDb.Traversal.TraversalContext;
+    using ITraversalContext = Neo4Net.GraphDb.Traversal.ITraversalContext;
 
     public abstract class AbstractSelectorOrderer<T> : ISideSelector
     {
-        public abstract ITraversalBranch Next(TraversalContext metadata);
+        public abstract ITraversalBranch Next(ITraversalContext metadata);
 
         private static readonly IBranchSelector _emptySelector = null;
 
@@ -61,17 +61,17 @@ namespace Neo4Net.GraphDb.Impl.Traversal
             }
         }
 
-        protected internal virtual ITraversalBranch NextBranchFromCurrentSelector(TraversalContext metadata, bool switchIfExhausted)
+        protected internal virtual ITraversalBranch NextBranchFromCurrentSelector(ITraversalContext metadata, bool switchIfExhausted)
         {
             return NextBranchFromSelector(metadata, _selectors[_selectorIndex], switchIfExhausted);
         }
 
-        protected internal virtual ITraversalBranch NextBranchFromNextSelector(TraversalContext metadata, bool switchIfExhausted)
+        protected internal virtual ITraversalBranch NextBranchFromNextSelector(ITraversalContext metadata, bool switchIfExhausted)
         {
             return NextBranchFromSelector(metadata, NextSelector(), switchIfExhausted);
         }
 
-        private ITraversalBranch NextBranchFromSelector(TraversalContext metadata, IBranchSelector selector, bool switchIfExhausted)
+        private ITraversalBranch NextBranchFromSelector(ITraversalContext metadata, IBranchSelector selector, bool switchIfExhausted)
         {
             ITraversalBranch result = selector.Next(metadata);
             if (result == null)

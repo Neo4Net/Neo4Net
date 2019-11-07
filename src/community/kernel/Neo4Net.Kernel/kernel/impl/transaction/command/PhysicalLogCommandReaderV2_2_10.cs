@@ -55,30 +55,30 @@ namespace Neo4Net.Kernel.impl.transaction.command
 	using SchemaRule = Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.Numbers.unsignedShortToInt;
+//	import static Neo4Net.helpers.Numbers.unsignedShortToInt;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.command.CommandReading.COLLECTION_DYNAMIC_RECORD_ADDER;
+//	import static Neo4Net.kernel.impl.transaction.command.CommandReading.COLLECTION_DYNAMIC_RECORD_ADDER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.command.CommandReading.PROPERTY_BLOCK_DYNAMIC_RECORD_ADDER;
+//	import static Neo4Net.kernel.impl.transaction.command.CommandReading.PROPERTY_BLOCK_DYNAMIC_RECORD_ADDER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.command.CommandReading.PROPERTY_DELETED_DYNAMIC_RECORD_ADDER;
+//	import static Neo4Net.kernel.impl.transaction.command.CommandReading.PROPERTY_DELETED_DYNAMIC_RECORD_ADDER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.command.CommandReading.PROPERTY_INDEX_DYNAMIC_RECORD_ADDER;
+//	import static Neo4Net.kernel.impl.transaction.command.CommandReading.PROPERTY_INDEX_DYNAMIC_RECORD_ADDER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.util.Bits.bitFlag;
+//	import static Neo4Net.kernel.impl.util.Bits.bitFlag;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.util.Bits.notFlag;
+//	import static Neo4Net.kernel.impl.util.Bits.notFlag;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.util.IoPrimitiveUtils.read2bLengthAndString;
+//	import static Neo4Net.kernel.impl.util.IoPrimitiveUtils.read2bLengthAndString;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.util.IoPrimitiveUtils.read2bMap;
+//	import static Neo4Net.kernel.impl.util.IoPrimitiveUtils.read2bMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.util.IoPrimitiveUtils.read3bLengthAndString;
+//	import static Neo4Net.kernel.impl.util.IoPrimitiveUtils.read3bLengthAndString;
 
 	public class PhysicalLogCommandReaderV2_2_10 : BaseCommandReader
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected Command read(byte commandType, org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: protected Command read(byte commandType, Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
 		 protected internal override Command Read( sbyte commandType, ReadableChannel channel )
 		 {
 			  switch ( commandType )
@@ -145,7 +145,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private Command visitNodeCommand(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: private Command visitNodeCommand(Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
 		 private Command VisitNodeCommand( ReadableChannel channel )
 		 {
 			  long id = channel.Long;
@@ -167,7 +167,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private Command visitRelationshipCommand(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: private Command visitRelationshipCommand(Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
 		 private Command VisitRelationshipCommand( ReadableChannel channel )
 		 {
 			  long id = channel.Long;
@@ -208,7 +208,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private Command visitPropertyCommand(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: private Command visitPropertyCommand(Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
 		 private Command VisitPropertyCommand( ReadableChannel channel )
 		 {
 			  // ID
@@ -229,7 +229,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private Command visitRelationshipGroupCommand(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: private Command visitRelationshipGroupCommand(Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
 		 private Command VisitRelationshipGroupCommand( ReadableChannel channel )
 		 {
 			  long id = channel.Long;
@@ -252,7 +252,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private Command visitRelationshipTypeTokenCommand(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: private Command visitRelationshipTypeTokenCommand(Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
 		 private Command VisitRelationshipTypeTokenCommand( ReadableChannel channel )
 		 {
 			  // id+in_use(byte)+type_blockId(int)+nr_type_records(int)
@@ -284,7 +284,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private Command visitLabelTokenCommand(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: private Command visitLabelTokenCommand(Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
 		 private Command VisitLabelTokenCommand( ReadableChannel channel )
 		 {
 			  // id+in_use(byte)+type_blockId(int)+nr_type_records(int)
@@ -316,7 +316,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private Command visitPropertyKeyTokenCommand(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: private Command visitPropertyKeyTokenCommand(Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
 		 private Command VisitPropertyKeyTokenCommand( ReadableChannel channel )
 		 {
 			  // id+in_use(byte)+count(int)+key_blockId(int)
@@ -343,7 +343,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private Command visitSchemaRuleCommand(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: private Command visitSchemaRuleCommand(Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
 		 private Command VisitSchemaRuleCommand( ReadableChannel channel )
 		 {
 			  ICollection<DynamicRecord> recordsBefore = new List<DynamicRecord>();
@@ -363,7 +363,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private Command visitNeoStoreCommand(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: private Command visitNeoStoreCommand(Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
 		 private Command VisitNeoStoreCommand( ReadableChannel channel )
 		 {
 			  long nextProp = channel.Long;
@@ -373,7 +373,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.kernel.impl.store.record.NodeRecord readNodeRecord(long id, org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: private Neo4Net.kernel.impl.store.record.NodeRecord readNodeRecord(long id, Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
 		 private NodeRecord ReadNodeRecord( long id, ReadableChannel channel )
 		 {
 			  sbyte inUseFlag = channel.Get();
@@ -407,7 +407,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.kernel.impl.store.record.DynamicRecord readDynamicRecord(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: private Neo4Net.kernel.impl.store.record.DynamicRecord readDynamicRecord(Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
 		 private DynamicRecord ReadDynamicRecord( ReadableChannel channel )
 		 {
 			  // id+type+in_use(byte)+nr_of_bytes(int)+next_block(long)
@@ -434,7 +434,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private <T> int readDynamicRecords(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel, T target, org.Neo4Net.kernel.impl.transaction.command.CommandReading.DynamicRecordAdder<T> adder) throws java.io.IOException
+//ORIGINAL LINE: private <T> int readDynamicRecords(Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel, T target, Neo4Net.kernel.impl.transaction.command.CommandReading.DynamicRecordAdder<T> adder) throws java.io.IOException
 		 private int ReadDynamicRecords<T>( ReadableChannel channel, T target, DynamicRecordAdder<T> adder )
 		 {
 			  int numberOfRecords = channel.Int;
@@ -453,7 +453,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.kernel.impl.store.record.PropertyRecord readPropertyRecord(long id, org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: private Neo4Net.kernel.impl.store.record.PropertyRecord readPropertyRecord(long id, Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
 		 private PropertyRecord ReadPropertyRecord( long id, ReadableChannel channel )
 		 {
 			  // in_use(byte)+type(int)+key_indexId(int)+prop_blockId(long)+
@@ -521,7 +521,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.kernel.impl.store.record.PropertyBlock readPropertyBlock(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: private Neo4Net.kernel.impl.store.record.PropertyBlock readPropertyBlock(Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
 		 private PropertyBlock ReadPropertyBlock( ReadableChannel channel )
 		 {
 			  PropertyBlock toReturn = new PropertyBlock();
@@ -549,7 +549,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private long[] readLongs(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel, int count) throws java.io.IOException
+//ORIGINAL LINE: private long[] readLongs(Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel, int count) throws java.io.IOException
 		 private long[] ReadLongs( ReadableChannel channel, int count )
 		 {
 			  long[] result = new long[count];
@@ -579,7 +579,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private Command visitIndexAddNodeCommand(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: private Command visitIndexAddNodeCommand(Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
 		 private Command VisitIndexAddNodeCommand( ReadableChannel channel )
 		 {
 			  IndexCommandHeader header = ReadIndexCommandHeader( channel );
@@ -591,7 +591,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private Command visitIndexAddRelationshipCommand(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: private Command visitIndexAddRelationshipCommand(Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
 		 private Command VisitIndexAddRelationshipCommand( ReadableChannel channel )
 		 {
 			  IndexCommandHeader header = ReadIndexCommandHeader( channel );
@@ -605,7 +605,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private Command visitIndexRemoveCommand(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: private Command visitIndexRemoveCommand(Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
 		 private Command VisitIndexRemoveCommand( ReadableChannel channel )
 		 {
 			  IndexCommandHeader header = ReadIndexCommandHeader( channel );
@@ -617,7 +617,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private Command visitIndexDeleteCommand(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: private Command visitIndexDeleteCommand(Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
 		 private Command VisitIndexDeleteCommand( ReadableChannel channel )
 		 {
 			  IndexCommandHeader header = ReadIndexCommandHeader( channel );
@@ -627,7 +627,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private Command visitIndexCreateCommand(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: private Command visitIndexCreateCommand(Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
 		 private Command VisitIndexCreateCommand( ReadableChannel channel )
 		 {
 			  IndexCommandHeader header = ReadIndexCommandHeader( channel );
@@ -638,7 +638,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private Command visitIndexDefineCommand(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: private Command visitIndexDefineCommand(Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
 		 private Command VisitIndexDefineCommand( ReadableChannel channel )
 		 {
 			  ReadIndexCommandHeader( channel );
@@ -650,7 +650,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private Command visitNodeCountsCommand(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: private Command visitNodeCountsCommand(Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
 		 private Command VisitNodeCountsCommand( ReadableChannel channel )
 		 {
 			  int labelId = channel.Int;
@@ -659,7 +659,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private Command visitRelationshipCountsCommand(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: private Command visitRelationshipCountsCommand(Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
 		 private Command VisitRelationshipCountsCommand( ReadableChannel channel )
 		 {
 			  int startLabelId = channel.Int;
@@ -670,7 +670,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.eclipse.collections.api.map.primitive.MutableObjectIntMap<String> readMap(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: private org.eclipse.collections.api.map.primitive.MutableObjectIntMap<String> readMap(Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
 		 private MutableObjectIntMap<string> ReadMap( ReadableChannel channel )
 		 {
 			  int size = GetUnsignedShort( channel );
@@ -691,7 +691,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private int getUnsignedShort(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: private int getUnsignedShort(Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
 		 private int GetUnsignedShort( ReadableChannel channel )
 		 {
 			  int result = channel.Short & 0xFFFF;
@@ -699,7 +699,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private IndexCommandHeader readIndexCommandHeader(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: private IndexCommandHeader readIndexCommandHeader(Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
 		 private IndexCommandHeader ReadIndexCommandHeader( ReadableChannel channel )
 		 {
 			  sbyte firstHeaderByte = channel.Get();
@@ -715,7 +715,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private Object readIndexValue(byte valueType, org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: private Object readIndexValue(byte valueType, Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
 		 private object ReadIndexValue( sbyte valueType, ReadableChannel channel )
 		 {
 			  switch ( valueType )

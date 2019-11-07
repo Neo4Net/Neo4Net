@@ -34,7 +34,7 @@ namespace Neo4Net.Consistency.report
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.mock;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.consistency.report.ConsistencyReporter.NO_MONITOR;
+//	import static Neo4Net.consistency.report.ConsistencyReporter.NO_MONITOR;
 
 	internal class PendingReferenceCheckTest
 	{

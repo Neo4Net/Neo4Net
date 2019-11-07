@@ -61,19 +61,19 @@ namespace Neo4Net.Kernel.impl.storemigration.participant
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.mock;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.logical_logs_location;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.logical_logs_location;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.MetaDataStore.Position.LAST_TRANSACTION_CHECKSUM;
+//	import static Neo4Net.kernel.impl.store.MetaDataStore.Position.LAST_TRANSACTION_CHECKSUM;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.MetaDataStore.Position.LAST_TRANSACTION_COMMIT_TIMESTAMP;
+//	import static Neo4Net.kernel.impl.store.MetaDataStore.Position.LAST_TRANSACTION_COMMIT_TIMESTAMP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.MetaDataStore.Position.LAST_TRANSACTION_ID;
+//	import static Neo4Net.kernel.impl.store.MetaDataStore.Position.LAST_TRANSACTION_ID;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.MetaDataStore.getRecord;
+//	import static Neo4Net.kernel.impl.store.MetaDataStore.getRecord;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.MetaDataStore.setRecord;
+//	import static Neo4Net.kernel.impl.store.MetaDataStore.setRecord;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.format.standard.MetaDataRecordFormat.FIELD_NOT_PRESENT;
+//	import static Neo4Net.kernel.impl.store.format.standard.MetaDataRecordFormat.FIELD_NOT_PRESENT;
 
 	public class StoreMigratorTest
 	{
@@ -204,7 +204,7 @@ namespace Neo4Net.Kernel.impl.storemigration.participant
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void extractTransactionalInformationFromLogs(String path, java.io.File customLogLocation, org.Neo4Net.io.layout.DatabaseLayout databaseLayout, java.io.File storeDir) throws java.io.IOException
+//ORIGINAL LINE: private void extractTransactionalInformationFromLogs(String path, java.io.File customLogLocation, Neo4Net.io.layout.DatabaseLayout databaseLayout, java.io.File storeDir) throws java.io.IOException
 		 private void ExtractTransactionalInformationFromLogs( string path, File customLogLocation, DatabaseLayout databaseLayout, File storeDir )
 		 {
 			  LogService logService = new SimpleLogService( NullLogProvider.Instance, NullLogProvider.Instance );

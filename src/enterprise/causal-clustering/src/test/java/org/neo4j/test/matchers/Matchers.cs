@@ -39,7 +39,7 @@ namespace Neo4Net.Test.matchers
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-//ORIGINAL LINE: public static org.hamcrest.Matcher<? super java.util.List<org.Neo4Net.causalclustering.core.consensus.RaftMessages_RaftMessage>> hasMessage(org.Neo4Net.causalclustering.core.consensus.RaftMessages_BaseRaftMessage message)
+//ORIGINAL LINE: public static org.hamcrest.Matcher<? super java.util.List<Neo4Net.causalclustering.core.consensus.RaftMessages_RaftMessage>> hasMessage(Neo4Net.causalclustering.core.consensus.RaftMessages_BaseRaftMessage message)
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		 public static Matcher<object> HasMessage( Neo4Net.causalclustering.core.consensus.RaftMessages_BaseRaftMessage message )
 		 {
@@ -67,7 +67,7 @@ namespace Neo4Net.Test.matchers
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-//ORIGINAL LINE: public static org.hamcrest.Matcher<? super java.util.List<org.Neo4Net.causalclustering.core.consensus.RaftMessages_RaftMessage>> hasRaftLogEntries(java.util.Collection<org.Neo4Net.causalclustering.core.consensus.log.RaftLogEntry> expectedEntries)
+//ORIGINAL LINE: public static org.hamcrest.Matcher<? super java.util.List<Neo4Net.causalclustering.core.consensus.RaftMessages_RaftMessage>> hasRaftLogEntries(java.util.Collection<Neo4Net.causalclustering.core.consensus.log.RaftLogEntry> expectedEntries)
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		 public static Matcher<object> HasRaftLogEntries( ICollection<RaftLogEntry> expectedEntries )
 		 {

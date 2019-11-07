@@ -46,13 +46,13 @@ namespace Neo4Net.Cypher
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.map;
+//	import static Neo4Net.helpers.collection.MapUtil.map;
 
 	public class IGraphDatabaseServiceExecuteTest
 	{
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.DatabaseRule graphDb = new org.Neo4Net.test.rule.ImpermanentDatabaseRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.DatabaseRule graphDb = new Neo4Net.test.rule.ImpermanentDatabaseRule();
 		 public readonly DatabaseRule GraphDb = new ImpermanentDatabaseRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -260,11 +260,11 @@ namespace Neo4Net.Cypher
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private static org.Neo4Net.GraphDb.Spatial.Point makeFakePoint(double x, double y, final org.Neo4Net.GraphDb.Spatial.CRS crs)
+//ORIGINAL LINE: private static Neo4Net.GraphDb.Spatial.Point makeFakePoint(double x, double y, final Neo4Net.GraphDb.Spatial.CRS crs)
 		 private static Point MakeFakePoint( double x, double y, CRS crs )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.GraphDb.Spatial.Coordinate coord = new org.Neo4Net.GraphDb.Spatial.Coordinate(x, y);
+//ORIGINAL LINE: final Neo4Net.GraphDb.Spatial.Coordinate coord = new Neo4Net.GraphDb.Spatial.Coordinate(x, y);
 			  Coordinate coord = new Coordinate( x, y );
 			  return new PointAnonymousInnerClass( crs, coord );
 		 }
@@ -307,11 +307,11 @@ namespace Neo4Net.Cypher
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private static org.Neo4Net.GraphDb.Spatial.Geometry makeFakePointAsGeometry(double x, double y, final org.Neo4Net.GraphDb.Spatial.CRS crs)
+//ORIGINAL LINE: private static Neo4Net.GraphDb.Spatial.Geometry makeFakePointAsGeometry(double x, double y, final Neo4Net.GraphDb.Spatial.CRS crs)
 		 private static Geometry MakeFakePointAsGeometry( double x, double y, CRS crs )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.GraphDb.Spatial.Coordinate coord = new org.Neo4Net.GraphDb.Spatial.Coordinate(x, y);
+//ORIGINAL LINE: final Neo4Net.GraphDb.Spatial.Coordinate coord = new Neo4Net.GraphDb.Spatial.Coordinate(x, y);
 			  Coordinate coord = new Coordinate( x, y );
 			  return new GeometryAnonymousInnerClass( crs, coord );
 		 }

@@ -25,11 +25,11 @@ namespace Neo4Net.Kernel.impl.query
 	public interface QueryExecutionEngine
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.Neo4Net.graphdb.Result executeQuery(String query, org.Neo4Net.values.virtual.MapValue parameters, TransactionalContext context) throws QueryExecutionKernelException;
+//ORIGINAL LINE: Neo4Net.graphdb.Result executeQuery(String query, Neo4Net.values.virtual.MapValue parameters, TransactionalContext context) throws QueryExecutionKernelException;
 		 Result ExecuteQuery( string query, MapValue parameters, TransactionalContext context );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.Neo4Net.graphdb.Result profileQuery(String query, org.Neo4Net.values.virtual.MapValue parameters, TransactionalContext context) throws QueryExecutionKernelException;
+//ORIGINAL LINE: Neo4Net.graphdb.Result profileQuery(String query, Neo4Net.values.virtual.MapValue parameters, TransactionalContext context) throws QueryExecutionKernelException;
 		 Result ProfileQuery( string query, MapValue parameters, TransactionalContext context );
 
 		 bool IsPeriodicCommit( string query );

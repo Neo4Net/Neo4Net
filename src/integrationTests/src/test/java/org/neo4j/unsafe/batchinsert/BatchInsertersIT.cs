@@ -38,9 +38,9 @@ namespace Neo4Net.@unsafe.Batchinsert
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.default_schema_provider;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.default_schema_provider;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.batchinsert.BatchInserters.inserter;
+//	import static Neo4Net.@unsafe.batchinsert.BatchInserters.inserter;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @ExtendWith(TestDirectoryExtension.class) class BatchInsertersIT
@@ -48,7 +48,7 @@ namespace Neo4Net.@unsafe.Batchinsert
 	{
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.Neo4Net.test.rule.TestDirectory testDirectory;
+//ORIGINAL LINE: @Inject private Neo4Net.test.rule.TestDirectory testDirectory;
 		 private TestDirectory _testDirectory;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -69,7 +69,7 @@ namespace Neo4Net.@unsafe.Batchinsert
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private static Iterable<org.Neo4Net.kernel.extension.KernelExtensionFactory<?>> getKernelExtensions()
+//ORIGINAL LINE: private static Iterable<Neo4Net.kernel.extension.KernelExtensionFactory<?>> getKernelExtensions()
 		 private static IEnumerable<KernelExtensionFactory<object>> KernelExtensions
 		 {
 			 get

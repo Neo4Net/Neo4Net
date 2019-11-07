@@ -37,13 +37,13 @@ namespace Neo4Net.causalclustering
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.MetaDataStore.Position.RANDOM_NUMBER;
+//	import static Neo4Net.kernel.impl.store.MetaDataStore.Position.RANDOM_NUMBER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.MetaDataStore.Position.TIME;
+//	import static Neo4Net.kernel.impl.store.MetaDataStore.Position.TIME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.MetaDataStore.Position.UPGRADE_TIME;
+//	import static Neo4Net.kernel.impl.store.MetaDataStore.Position.UPGRADE_TIME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.MetaDataStore.Position.UPGRADE_TRANSACTION_ID;
+//	import static Neo4Net.kernel.impl.store.MetaDataStore.Position.UPGRADE_TRANSACTION_ID;
 
 	public class TestStoreId
 	{
@@ -52,7 +52,7 @@ namespace Neo4Net.causalclustering
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static void assertAllStoresHaveTheSameStoreId(java.util.List<java.io.File> coreStoreDirs, org.Neo4Net.io.fs.FileSystemAbstraction fs) throws Exception
+//ORIGINAL LINE: public static void assertAllStoresHaveTheSameStoreId(java.util.List<java.io.File> coreStoreDirs, Neo4Net.io.fs.FileSystemAbstraction fs) throws Exception
 		 public static void AssertAllStoresHaveTheSameStoreId( IList<File> coreStoreDirs, FileSystemAbstraction fs )
 		 {
 			  ISet<StoreId> storeIds = GetStoreIds( coreStoreDirs, fs );
@@ -60,7 +60,7 @@ namespace Neo4Net.causalclustering
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static java.util.Set<org.Neo4Net.causalclustering.identity.StoreId> getStoreIds(java.util.List<java.io.File> coreStoreDirs, org.Neo4Net.io.fs.FileSystemAbstraction fs) throws Exception
+//ORIGINAL LINE: public static java.util.Set<Neo4Net.causalclustering.identity.StoreId> getStoreIds(java.util.List<java.io.File> coreStoreDirs, Neo4Net.io.fs.FileSystemAbstraction fs) throws Exception
 		 public static ISet<StoreId> GetStoreIds( IList<File> coreStoreDirs, FileSystemAbstraction fs )
 		 {
 			  ISet<StoreId> storeIds = new HashSet<StoreId>();
@@ -76,7 +76,7 @@ namespace Neo4Net.causalclustering
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static org.Neo4Net.causalclustering.identity.StoreId doReadStoreId(java.io.File databaseDirectory, org.Neo4Net.io.pagecache.PageCache pageCache) throws java.io.IOException
+//ORIGINAL LINE: private static Neo4Net.causalclustering.identity.StoreId doReadStoreId(java.io.File databaseDirectory, Neo4Net.io.pagecache.PageCache pageCache) throws java.io.IOException
 		 private static StoreId DoReadStoreId( File databaseDirectory, PageCache pageCache )
 		 {
 			  File metadataStore = DatabaseLayout.of( databaseDirectory ).metadataStore();

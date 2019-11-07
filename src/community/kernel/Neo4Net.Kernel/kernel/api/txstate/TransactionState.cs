@@ -17,23 +17,23 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Kernel.api.txstate
+namespace Neo4Net.Kernel.Api.txstate
 {
 	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
 	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor;
-	using IndexBackedConstraintDescriptor = Neo4Net.Kernel.api.schema.constraints.IndexBackedConstraintDescriptor;
+	using IndexBackedConstraintDescriptor = Neo4Net.Kernel.Api.schema.constraints.IndexBackedConstraintDescriptor;
 	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
 	using ReadableTransactionState = Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState;
 	using Value = Neo4Net.Values.Storable.Value;
 	using ValueTuple = Neo4Net.Values.Storable.ValueTuple;
 
 	/// <summary>
-	/// Kernel transaction state, please see <seealso cref="org.Neo4Net.kernel.impl.api.state.TxState"/> for implementation details.
+	/// Kernel transaction state, please see <seealso cref="Neo4Net.kernel.impl.api.state.TxState"/> for implementation details.
 	/// 
 	/// This interface defines the mutating methods for the transaction state, methods for reading are defined in
 	/// <seealso cref="ReadableTransactionState"/>. These mutating methods follow the rule that they all contain the word "Do" in the name.
 	/// This naming convention helps deciding where to set <seealso cref="hasChanges()"/> in the
-	/// <seealso cref="org.Neo4Net.kernel.impl.api.state.TxState main implementation class"/>.
+	/// <seealso cref="Neo4Net.kernel.impl.api.state.TxState main implementation class"/>.
 	/// </summary>
 	public interface TransactionState : ReadableTransactionState
 	{

@@ -46,7 +46,7 @@ namespace Neo4Net.causalclustering.messaging.marshalling.v1
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public synchronized void encode(io.netty.channel.ChannelHandlerContext ctx, org.Neo4Net.causalclustering.core.consensus.RaftMessages_ClusterIdAwareMessage decoratedMessage, io.netty.buffer.ByteBuf out) throws Exception
+//ORIGINAL LINE: public synchronized void encode(io.netty.channel.ChannelHandlerContext ctx, Neo4Net.causalclustering.core.consensus.RaftMessages_ClusterIdAwareMessage decoratedMessage, io.netty.buffer.ByteBuf out) throws Exception
 		 public override void Encode( ChannelHandlerContext ctx, Neo4Net.causalclustering.core.consensus.RaftMessages_ClusterIdAwareMessage decoratedMessage, ByteBuf @out )
 		 {
 			 lock ( this )
@@ -78,7 +78,7 @@ namespace Neo4Net.causalclustering.messaging.marshalling.v1
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public Void handle(org.Neo4Net.causalclustering.core.consensus.RaftMessages_Vote_Request voteRequest) throws Exception
+//ORIGINAL LINE: public Void handle(Neo4Net.causalclustering.core.consensus.RaftMessages_Vote_Request voteRequest) throws Exception
 			  public override Void Handle( Neo4Net.causalclustering.core.consensus.RaftMessages_Vote_Request voteRequest )
 			  {
 					MemberMarshal.marshal( voteRequest.Candidate(), Channel );
@@ -98,7 +98,7 @@ namespace Neo4Net.causalclustering.messaging.marshalling.v1
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public Void handle(org.Neo4Net.causalclustering.core.consensus.RaftMessages_PreVote_Request preVoteRequest) throws Exception
+//ORIGINAL LINE: public Void handle(Neo4Net.causalclustering.core.consensus.RaftMessages_PreVote_Request preVoteRequest) throws Exception
 			  public override Void Handle( Neo4Net.causalclustering.core.consensus.RaftMessages_PreVote_Request preVoteRequest )
 			  {
 					MemberMarshal.marshal( preVoteRequest.Candidate(), Channel );
@@ -118,7 +118,7 @@ namespace Neo4Net.causalclustering.messaging.marshalling.v1
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public Void handle(org.Neo4Net.causalclustering.core.consensus.RaftMessages_AppendEntries_Request appendRequest) throws Exception
+//ORIGINAL LINE: public Void handle(Neo4Net.causalclustering.core.consensus.RaftMessages_AppendEntries_Request appendRequest) throws Exception
 			  public override Void Handle( Neo4Net.causalclustering.core.consensus.RaftMessages_AppendEntries_Request appendRequest )
 			  {
 					Channel.putLong( appendRequest.LeaderTerm() );
@@ -148,7 +148,7 @@ namespace Neo4Net.causalclustering.messaging.marshalling.v1
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public Void handle(org.Neo4Net.causalclustering.core.consensus.RaftMessages_NewEntry_Request newEntryRequest) throws Exception
+//ORIGINAL LINE: public Void handle(Neo4Net.causalclustering.core.consensus.RaftMessages_NewEntry_Request newEntryRequest) throws Exception
 			  public override Void Handle( Neo4Net.causalclustering.core.consensus.RaftMessages_NewEntry_Request newEntryRequest )
 			  {
 					BoundedNetworkWritableChannel sizeBoundChannel = new BoundedNetworkWritableChannel( Channel.byteBuf(), ByteUnit.gibiBytes(1) );

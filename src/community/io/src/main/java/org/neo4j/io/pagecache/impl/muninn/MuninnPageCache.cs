@@ -41,12 +41,12 @@ namespace Neo4Net.Io.pagecache.impl.muninn
 	using UnsafeUtil = Neo4Net.@unsafe.Impl.Internal.Dragons.UnsafeUtil;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.util.FeatureToggles.flag;
+//	import static Neo4Net.util.FeatureToggles.flag;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.util.FeatureToggles.getInteger;
+//	import static Neo4Net.util.FeatureToggles.getInteger;
 
 	/// <summary>
-	/// The Muninn <seealso cref="org.Neo4Net.io.pagecache.PageCache page cache"/> implementation.
+	/// The Muninn <seealso cref="Neo4Net.io.pagecache.PageCache page cache"/> implementation.
 	/// <pre>
 	///                                                                      ....
 	///                                                                .;okKNWMUWN0ko,
@@ -89,7 +89,7 @@ namespace Neo4Net.Io.pagecache.impl.muninn
 	///     and bring information to the god Odin.
 	/// </para>
 	/// <para>
-	///     This implementation of <seealso cref="org.Neo4Net.io.pagecache.PageCache"/> is optimised for
+	///     This implementation of <seealso cref="Neo4Net.io.pagecache.PageCache"/> is optimised for
 	///     configurations with large memory capacities and large stores, and uses sequence
 	///     locks to make uncontended reads and writes fast.
 	/// </para>
@@ -199,7 +199,7 @@ namespace Neo4Net.Io.pagecache.impl.muninn
 		 /// thread local page cache statistics </param>
 		 /// <param name="versionContextSupplier"> supplier of thread local (transaction local) version context that will provide
 		 /// access to thread local version context </param>
-		 public MuninnPageCache( PageSwapperFactory swapperFactory, int maxPages, PageCacheTracer pageCacheTracer, PageCursorTracerSupplier pageCursorTracerSupplier, VersionContextSupplier versionContextSupplier, IJobScheduler jobScheduler ) : this( swapperFactory, MemoryAllocator.createAllocator( "" + MemoryRequiredForPages( maxPages ), GlobalMemoryTracker.INSTANCE ), org.Neo4Net.io.pagecache.PageCache_Fields.PAGE_SIZE, pageCacheTracer, pageCursorTracerSupplier, versionContextSupplier, jobScheduler )
+		 public MuninnPageCache( PageSwapperFactory swapperFactory, int maxPages, PageCacheTracer pageCacheTracer, PageCursorTracerSupplier pageCursorTracerSupplier, VersionContextSupplier versionContextSupplier, IJobScheduler jobScheduler ) : this( swapperFactory, MemoryAllocator.createAllocator( "" + MemoryRequiredForPages( maxPages ), GlobalMemoryTracker.INSTANCE ), Neo4Net.io.pagecache.PageCache_Fields.PAGE_SIZE, pageCacheTracer, pageCursorTracerSupplier, versionContextSupplier, jobScheduler )
 		 {
 		 }
 
@@ -212,7 +212,7 @@ namespace Neo4Net.Io.pagecache.impl.muninn
 		 /// thread local page cache statistics </param>
 		 /// <param name="versionContextSupplier"> supplier of thread local (transaction local) version context that will provide
 		 ///        access to thread local version context </param>
-		 public MuninnPageCache( PageSwapperFactory swapperFactory, MemoryAllocator memoryAllocator, PageCacheTracer pageCacheTracer, PageCursorTracerSupplier pageCursorTracerSupplier, VersionContextSupplier versionContextSupplier, IJobScheduler jobScheduler ) : this( swapperFactory, memoryAllocator, org.Neo4Net.io.pagecache.PageCache_Fields.PAGE_SIZE, pageCacheTracer, pageCursorTracerSupplier, versionContextSupplier, jobScheduler )
+		 public MuninnPageCache( PageSwapperFactory swapperFactory, MemoryAllocator memoryAllocator, PageCacheTracer pageCacheTracer, PageCursorTracerSupplier pageCursorTracerSupplier, VersionContextSupplier versionContextSupplier, IJobScheduler jobScheduler ) : this( swapperFactory, memoryAllocator, Neo4Net.io.pagecache.PageCache_Fields.PAGE_SIZE, pageCacheTracer, pageCursorTracerSupplier, versionContextSupplier, jobScheduler )
 		 {
 		 }
 
@@ -221,7 +221,7 @@ namespace Neo4Net.Io.pagecache.impl.muninn
 		 /// Only ever use this for testing.
 		 /// </summary>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("DeprecatedIsStillUsed") @Deprecated public MuninnPageCache(org.Neo4Net.io.pagecache.PageSwapperFactory swapperFactory, org.Neo4Net.io.mem.MemoryAllocator memoryAllocator, int cachePageSize, org.Neo4Net.io.pagecache.tracing.PageCacheTracer pageCacheTracer, org.Neo4Net.io.pagecache.tracing.cursor.PageCursorTracerSupplier pageCursorTracerSupplier, org.Neo4Net.io.pagecache.tracing.cursor.context.VersionContextSupplier versionContextSupplier, org.Neo4Net.scheduler.JobScheduler jobScheduler)
+//ORIGINAL LINE: @SuppressWarnings("DeprecatedIsStillUsed") @Deprecated public MuninnPageCache(Neo4Net.io.pagecache.PageSwapperFactory swapperFactory, Neo4Net.io.mem.MemoryAllocator memoryAllocator, int cachePageSize, Neo4Net.io.pagecache.tracing.PageCacheTracer pageCacheTracer, Neo4Net.io.pagecache.tracing.cursor.PageCursorTracerSupplier pageCursorTracerSupplier, Neo4Net.io.pagecache.tracing.cursor.context.VersionContextSupplier versionContextSupplier, Neo4Net.scheduler.JobScheduler jobScheduler)
 		 [Obsolete]
 		 public MuninnPageCache( PageSwapperFactory swapperFactory, MemoryAllocator memoryAllocator, int cachePageSize, PageCacheTracer pageCacheTracer, PageCursorTracerSupplier pageCursorTracerSupplier, VersionContextSupplier versionContextSupplier, IJobScheduler jobScheduler )
 		 {
@@ -278,7 +278,7 @@ namespace Neo4Net.Io.pagecache.impl.muninn
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public synchronized org.Neo4Net.io.pagecache.PagedFile map(java.io.File file, int filePageSize, java.nio.file.OpenOption... openOptions) throws java.io.IOException
+//ORIGINAL LINE: public synchronized Neo4Net.io.pagecache.PagedFile map(java.io.File file, int filePageSize, java.nio.file.OpenOption... openOptions) throws java.io.IOException
 		 public override PagedFile Map( File file, int filePageSize, params OpenOption[] openOptions )
 		 {
 			 lock ( this )
@@ -369,7 +369,7 @@ namespace Neo4Net.Io.pagecache.impl.muninn
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public synchronized java.util.Optional<org.Neo4Net.io.pagecache.PagedFile> getExistingMapping(java.io.File file) throws java.io.IOException
+//ORIGINAL LINE: public synchronized java.util.Optional<Neo4Net.io.pagecache.PagedFile> getExistingMapping(java.io.File file) throws java.io.IOException
 		 public override Optional<PagedFile> GetExistingMapping( File file )
 		 {
 			 lock ( this )
@@ -407,7 +407,7 @@ namespace Neo4Net.Io.pagecache.impl.muninn
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public synchronized java.util.List<org.Neo4Net.io.pagecache.PagedFile> listExistingMappings() throws java.io.IOException
+//ORIGINAL LINE: public synchronized java.util.List<Neo4Net.io.pagecache.PagedFile> listExistingMappings() throws java.io.IOException
 		 public override IList<PagedFile> ListExistingMappings()
 		 {
 			 lock ( this )
@@ -542,7 +542,7 @@ namespace Neo4Net.Io.pagecache.impl.muninn
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void flushAndForce(org.Neo4Net.io.pagecache.IOLimiter limiter) throws java.io.IOException
+//ORIGINAL LINE: public void flushAndForce(Neo4Net.io.pagecache.IOLimiter limiter) throws java.io.IOException
 		 public override void FlushAndForce( IOLimiter limiter )
 		 {
 			  if ( limiter == null )
@@ -567,7 +567,7 @@ namespace Neo4Net.Io.pagecache.impl.muninn
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void flushAllPages(java.util.List<org.Neo4Net.io.pagecache.PagedFile> files, org.Neo4Net.io.pagecache.IOLimiter limiter) throws java.io.IOException
+//ORIGINAL LINE: private void flushAllPages(java.util.List<Neo4Net.io.pagecache.PagedFile> files, Neo4Net.io.pagecache.IOLimiter limiter) throws java.io.IOException
 		 private void FlushAllPages( IList<PagedFile> files, IOLimiter limiter )
 		 {
 			  foreach ( PagedFile file in files )
@@ -577,7 +577,7 @@ namespace Neo4Net.Io.pagecache.impl.muninn
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void flushAllPagesParallel(java.util.List<org.Neo4Net.io.pagecache.PagedFile> files, org.Neo4Net.io.pagecache.IOLimiter limiter) throws java.io.IOException
+//ORIGINAL LINE: private void flushAllPagesParallel(java.util.List<Neo4Net.io.pagecache.PagedFile> files, Neo4Net.io.pagecache.IOLimiter limiter) throws java.io.IOException
 		 private void FlushAllPagesParallel( IList<PagedFile> files, IOLimiter limiter )
 		 {
 			  IList<JobHandle> flushes = new List<JobHandle>( Files.Count );
@@ -613,7 +613,7 @@ namespace Neo4Net.Io.pagecache.impl.muninn
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void flushFile(MuninnPagedFile muninnPagedFile, org.Neo4Net.io.pagecache.IOLimiter limiter) throws java.io.IOException
+//ORIGINAL LINE: private void flushFile(MuninnPagedFile muninnPagedFile, Neo4Net.io.pagecache.IOLimiter limiter) throws java.io.IOException
 		 private void FlushFile( MuninnPagedFile muninnPagedFile, IOLimiter limiter )
 		 {
 			  try
@@ -739,7 +739,7 @@ namespace Neo4Net.Io.pagecache.impl.muninn
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: long grabFreeAndExclusivelyLockedPage(org.Neo4Net.io.pagecache.tracing.PageFaultEvent faultEvent) throws java.io.IOException
+//ORIGINAL LINE: long grabFreeAndExclusivelyLockedPage(Neo4Net.io.pagecache.tracing.PageFaultEvent faultEvent) throws java.io.IOException
 		 internal virtual long GrabFreeAndExclusivelyLockedPage( PageFaultEvent faultEvent )
 		 {
 			  // Review the comment on the freelist field before making changes to
@@ -807,7 +807,7 @@ namespace Neo4Net.Io.pagecache.impl.muninn
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private long cooperativelyEvict(org.Neo4Net.io.pagecache.tracing.PageFaultEvent faultEvent) throws java.io.IOException
+//ORIGINAL LINE: private long cooperativelyEvict(Neo4Net.io.pagecache.tracing.PageFaultEvent faultEvent) throws java.io.IOException
 		 private long CooperativelyEvict( PageFaultEvent faultEvent )
 		 {
 			  int iterations = 0;

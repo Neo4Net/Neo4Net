@@ -26,8 +26,8 @@ namespace Neo4Net.Kernel.impl.index
 	using Neo4Net.GraphDb;
 	using Iterators = Neo4Net.Collections.Helpers.Iterators;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
-	using ExplicitIndex = Neo4Net.Kernel.api.ExplicitIndex;
-	using ExplicitIndexHits = Neo4Net.Kernel.api.ExplicitIndexHits;
+	using ExplicitIndex = Neo4Net.Kernel.Api.ExplicitIndex;
+	using ExplicitIndexHits = Neo4Net.Kernel.Api.ExplicitIndexHits;
 	using TransactionApplier = Neo4Net.Kernel.Impl.Api.TransactionApplier;
 	using LifecycleAdapter = Neo4Net.Kernel.Lifecycle.LifecycleAdapter;
 	using ExplicitIndexProviderTransaction = Neo4Net.Kernel.spi.explicitindex.ExplicitIndexProviderTransaction;
@@ -213,7 +213,7 @@ namespace Neo4Net.Kernel.impl.index
 		 {
 		 }
 
-		 public override ResourceIterator<File> ListStoreFiles()
+		 public override IResourceIterator<File> ListStoreFiles()
 		 {
 			  return Iterators.emptyResourceIterator();
 		 }

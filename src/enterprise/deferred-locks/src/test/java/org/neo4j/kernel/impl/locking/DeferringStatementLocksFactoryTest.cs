@@ -42,7 +42,7 @@ namespace Neo4Net.Kernel.impl.locking
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.locking.DeferringStatementLocksFactory.deferred_locks_enabled;
+//	import static Neo4Net.kernel.impl.locking.DeferringStatementLocksFactory.deferred_locks_enabled;
 
 	public class DeferringStatementLocksFactoryTest
 	{

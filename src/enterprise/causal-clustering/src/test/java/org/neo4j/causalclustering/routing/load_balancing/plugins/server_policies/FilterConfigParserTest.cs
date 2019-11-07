@@ -31,7 +31,7 @@ namespace Neo4Net.causalclustering.routing.load_balancing.plugins.server_policie
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.routing.load_balancing.plugins.server_policies.FilterBuilder.filter;
+//	import static Neo4Net.causalclustering.routing.load_balancing.plugins.server_policies.FilterBuilder.filter;
 
 	public class FilterConfigParserTest
 	{

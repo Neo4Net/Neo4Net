@@ -24,7 +24,7 @@ namespace Neo4Net.Server.database
 	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using GraphDatabaseQueryService = Neo4Net.Kernel.GraphDatabaseQueryService;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
 	using InternalTransaction = Neo4Net.Kernel.impl.coreapi.InternalTransaction;
 	using IPropertyContainerLocker = Neo4Net.Kernel.impl.coreapi.PropertyContainerLocker;
 	using Neo4NetTransactionalContextFactory = Neo4Net.Kernel.impl.query.Neo4NetTransactionalContextFactory;
@@ -38,9 +38,9 @@ namespace Neo4Net.Server.database
 	using MapValue = Neo4Net.Values.@virtual.MapValue;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.security.LoginContext.AUTH_DISABLED;
+//	import static Neo4Net.Kernel.Api.Internal.security.LoginContext.AUTH_DISABLED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.web.HttpHeaderUtils.getTransactionTimeout;
+//	import static Neo4Net.server.web.HttpHeaderUtils.getTransactionTimeout;
 
 	public class CypherExecutor : LifecycleAdapter
 	{

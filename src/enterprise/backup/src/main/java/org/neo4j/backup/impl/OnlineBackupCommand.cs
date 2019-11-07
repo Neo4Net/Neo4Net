@@ -51,7 +51,7 @@ namespace Neo4Net.backup.impl
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void execute(String[] args) throws org.Neo4Net.commandline.admin.IncorrectUsage, org.Neo4Net.commandline.admin.CommandFailed
+//ORIGINAL LINE: public void execute(String[] args) throws Neo4Net.commandline.admin.IncorrectUsage, Neo4Net.commandline.admin.CommandFailed
 		 public override void Execute( string[] args )
 		 {
 			  OnlineBackupContext onlineBackupContext = _contextBuilder.createContext( args );
@@ -70,7 +70,7 @@ namespace Neo4Net.backup.impl
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void checkDestination(java.nio.file.Path path) throws org.Neo4Net.commandline.admin.CommandFailed
+//ORIGINAL LINE: private void checkDestination(java.nio.file.Path path) throws Neo4Net.commandline.admin.CommandFailed
 		 private void CheckDestination( Path path )
 		 {
 			  if ( !_outsideWorld.fileSystem().isDirectory(path.toFile()) )

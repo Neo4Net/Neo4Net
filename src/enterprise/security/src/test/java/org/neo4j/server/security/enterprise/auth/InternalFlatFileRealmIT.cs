@@ -34,7 +34,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 	using DelegatingFileSystemAbstraction = Neo4Net.GraphDb.mockfs.DelegatingFileSystemAbstraction;
 	using EphemeralFileSystemAbstraction = Neo4Net.GraphDb.mockfs.EphemeralFileSystemAbstraction;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
-	using PasswordPolicy = Neo4Net.Kernel.api.security.PasswordPolicy;
+	using PasswordPolicy = Neo4Net.Kernel.Api.security.PasswordPolicy;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using CentralJobScheduler = Neo4Net.Kernel.impl.scheduler.CentralJobScheduler;
 	using LogProvider = Neo4Net.Logging.LogProvider;
@@ -79,19 +79,19 @@ namespace Neo4Net.Server.security.enterprise.auth
 			  UserStoreFile = new File( "dbms", "auth" );
 			  RoleStoreFile = new File( "dbms", "roles" );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.server.security.auth.UserRepository userRepository = new org.Neo4Net.server.security.auth.FileUserRepository(fs, userStoreFile, logProvider);
+//ORIGINAL LINE: final Neo4Net.server.security.auth.UserRepository userRepository = new Neo4Net.server.security.auth.FileUserRepository(fs, userStoreFile, logProvider);
 			  UserRepository userRepository = new FileUserRepository( Fs, UserStoreFile, LogProvider );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final RoleRepository roleRepository = new FileRoleRepository(fs, roleStoreFile, logProvider);
 			  RoleRepository roleRepository = new FileRoleRepository( Fs, RoleStoreFile, LogProvider );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.server.security.auth.UserRepository initialUserRepository = org.Neo4Net.server.security.auth.CommunitySecurityModule.getInitialUserRepository(org.Neo4Net.kernel.configuration.Config.defaults(), logProvider, fs);
+//ORIGINAL LINE: final Neo4Net.server.security.auth.UserRepository initialUserRepository = Neo4Net.server.security.auth.CommunitySecurityModule.getInitialUserRepository(Neo4Net.kernel.configuration.Config.defaults(), logProvider, fs);
 			  UserRepository initialUserRepository = CommunitySecurityModule.getInitialUserRepository( Config.defaults(), LogProvider, Fs );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.server.security.auth.UserRepository defaultAdminRepository = EnterpriseSecurityModule.getDefaultAdminRepository(org.Neo4Net.kernel.configuration.Config.defaults(), logProvider, fs);
+//ORIGINAL LINE: final Neo4Net.server.security.auth.UserRepository defaultAdminRepository = EnterpriseSecurityModule.getDefaultAdminRepository(Neo4Net.kernel.configuration.Config.defaults(), logProvider, fs);
 			  UserRepository defaultAdminRepository = EnterpriseSecurityModule.GetDefaultAdminRepository( Config.defaults(), LogProvider, Fs );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.api.security.PasswordPolicy passwordPolicy = new org.Neo4Net.server.security.auth.BasicPasswordPolicy();
+//ORIGINAL LINE: final Neo4Net.kernel.api.security.PasswordPolicy passwordPolicy = new Neo4Net.server.security.auth.BasicPasswordPolicy();
 			  PasswordPolicy passwordPolicy = new BasicPasswordPolicy();
 			  AuthenticationStrategy authenticationStrategy = new RateLimitedAuthenticationStrategy( Clocks.systemClock(), Config.defaults() );
 

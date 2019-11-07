@@ -25,7 +25,7 @@ namespace Neo4Net.cluster.protocol.atomicbroadcast.multipaxos
 	using MessageType = Neo4Net.cluster.com.message.MessageType;
 
 	/// <summary>
-	/// Messages for the AtomicBroadcast client API. These correspond to the methods in {@link org.Neo4Net.cluster.protocol
+	/// Messages for the AtomicBroadcast client API. These correspond to the methods in {@link Neo4Net.cluster.protocol
 	/// .atomicbroadcast.AtomicBroadcast}
 	/// as well as internal messages for implementing the AB protocol.
 	/// </summary>

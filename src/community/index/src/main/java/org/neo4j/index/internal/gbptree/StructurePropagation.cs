@@ -22,7 +22,7 @@ namespace Neo4Net.Index.Internal.gbptree
 	/// <summary>
 	/// Means of communicating information about splits, caused by insertion, from lower levels of the tree up to parent
 	/// and potentially all the way up to the root. The content of StructurePropagation is acted upon when we are traversing
-	/// back up along the "traversal path" (see <seealso cref="org.Neo4Net.index.internal.gbptree"/>). Level where StructurePropagation
+	/// back up along the "traversal path" (see <seealso cref="Neo4Net.index.internal.gbptree"/>). Level where StructurePropagation
 	/// is evaluated is called "current level". Point of reference is mid child in current level and this is the parts
 	/// of interest:
 	/// <pre>
@@ -145,7 +145,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 /// Depending on keyReplaceStrategy either <seealso cref="KeyReplaceStrategy.REPLACE replace"/> left / right key with
 		 /// <seealso cref="leftKey"/> / <seealso cref="rightKey"/> or replace left / right key by <seealso cref="bubbleKey"/> (with strategy
 		 /// <seealso cref="KeyReplaceStrategy.BUBBLE bubble"/> rightmost from subtree). In the case of bubble, <seealso cref="leftKey"/> / <seealso cref="rightKey"/>
-		 /// is used to find "common ancestor" of leaves involved in merge. See <seealso cref="org.Neo4Net.index.internal.gbptree"/>.
+		 /// is used to find "common ancestor" of leaves involved in merge. See <seealso cref="Neo4Net.index.internal.gbptree"/>.
 		 /// </summary>
 		 internal KeyReplaceStrategy KeyReplaceStrategy;
 		 internal bool HasLeftKeyReplace;

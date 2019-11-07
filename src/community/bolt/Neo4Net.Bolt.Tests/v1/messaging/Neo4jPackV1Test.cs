@@ -55,32 +55,32 @@ namespace Neo4Net.Bolt.v1.messaging
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.messaging.Neo4NetPackV1.UNBOUND_RELATIONSHIP;
+//	import static Neo4Net.bolt.v1.messaging.Neo4NetPackV1.UNBOUND_RELATIONSHIP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.messaging.example.Edges.ALICE_KNOWS_BOB;
+//	import static Neo4Net.bolt.v1.messaging.example.Edges.ALICE_KNOWS_BOB;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.messaging.example.Nodes.ALICE;
+//	import static Neo4Net.bolt.v1.messaging.example.Nodes.ALICE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.messaging.example.Paths.ALL_PATHS;
+//	import static Neo4Net.bolt.v1.messaging.example.Paths.ALL_PATHS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.charArray;
+//	import static Neo4Net.values.storable.Values.charArray;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.charValue;
+//	import static Neo4Net.values.storable.Values.charValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.intValue;
+//	import static Neo4Net.values.storable.Values.intValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.longValue;
+//	import static Neo4Net.values.storable.Values.longValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.stringValue;
+//	import static Neo4Net.values.storable.Values.stringValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.utf8Value;
+//	import static Neo4Net.values.storable.Values.utf8Value;
 
 	public class Neo4NetPackV1Test
 	{
 		 private readonly Neo4NetPackV1 _Neo4NetPack = new Neo4NetPackV1();
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private byte[] packed(org.Neo4Net.values.AnyValue object) throws java.io.IOException
+//ORIGINAL LINE: private byte[] packed(Neo4Net.values.AnyValue object) throws java.io.IOException
 		 private sbyte[] Packed( AnyValue @object )
 		 {
 			  PackedOutputArray output = new PackedOutputArray();
@@ -90,7 +90,7 @@ namespace Neo4Net.Bolt.v1.messaging
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.values.AnyValue unpacked(byte[] bytes) throws java.io.IOException
+//ORIGINAL LINE: private Neo4Net.values.AnyValue unpacked(byte[] bytes) throws java.io.IOException
 		 private AnyValue Unpacked( sbyte[] bytes )
 		 {
 			  PackedInputArray input = new PackedInputArray( bytes );

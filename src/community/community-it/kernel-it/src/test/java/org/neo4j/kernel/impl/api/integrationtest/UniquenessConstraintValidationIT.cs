@@ -28,9 +28,9 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 	using TokenWrite = Neo4Net.Kernel.Api.Internal.TokenWrite;
 	using Transaction = Neo4Net.Kernel.Api.Internal.Transaction;
 	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
-	using SilentTokenNameLookup = Neo4Net.Kernel.api.SilentTokenNameLookup;
+	using SilentTokenNameLookup = Neo4Net.Kernel.Api.SilentTokenNameLookup;
 	using UniquePropertyValueValidationException = Neo4Net.Kernel.Api.Exceptions.schema.UniquePropertyValueValidationException;
-	using AnonymousContext = Neo4Net.Kernel.api.security.AnonymousContext;
+	using AnonymousContext = Neo4Net.Kernel.Api.security.AnonymousContext;
 	using Values = Neo4Net.Values.Storable.Values;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -46,9 +46,9 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.IndexQuery.exact;
+//	import static Neo4Net.Kernel.Api.Internal.IndexQuery.exact;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel;
+//	import static Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel;
 
 	public class UniquenessConstraintValidationIT : KernelIntegrationTest
 	{
@@ -257,7 +257,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldAllowNoopPropertyUpdate() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: @Test public void shouldAllowNoopPropertyUpdate() throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldAllowNoopPropertyUpdate()
 		 {
@@ -275,7 +275,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldAllowNoopLabelUpdate() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: @Test public void shouldAllowNoopLabelUpdate() throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldAllowNoopLabelUpdate()
 		 {
@@ -381,7 +381,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private long createLabeledNode(org.Neo4Net.Kernel.Api.Internal.Transaction transaction, String label) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: private long createLabeledNode(Neo4Net.Kernel.Api.Internal.Transaction transaction, String label) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 private long CreateLabeledNode( Transaction transaction, string label )
 		 {
 			  long node = transaction.DataWrite().nodeCreate();
@@ -391,7 +391,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private long createNode(org.Neo4Net.Kernel.Api.Internal.Transaction transaction, String key, Object value) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: private long createNode(Neo4Net.Kernel.Api.Internal.Transaction transaction, String key, Object value) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 private long CreateNode( Transaction transaction, string key, object value )
 		 {
 			  long node = transaction.DataWrite().nodeCreate();
@@ -401,7 +401,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private long createLabeledNode(org.Neo4Net.Kernel.Api.Internal.Transaction transaction, String label, String key, Object value) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: private long createLabeledNode(Neo4Net.Kernel.Api.Internal.Transaction transaction, String label, String key, Object value) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 private long CreateLabeledNode( Transaction transaction, string label, string key, object value )
 		 {
 			  long node = CreateLabeledNode( transaction, label );
@@ -411,7 +411,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private long constrainedNode(String labelName, String propertyKey, Object propertyValue) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: private long constrainedNode(String labelName, String propertyKey, Object propertyValue) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 private long ConstrainedNode( string labelName, string propertyKey, object propertyValue )
 		 {
 			  long node;
@@ -429,7 +429,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void createConstraint(String label, String propertyKey) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: private void createConstraint(String label, String propertyKey) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 private void CreateConstraint( string label, string propertyKey )
 		 {
 			  int labelId;

@@ -34,11 +34,11 @@ namespace Neo4Net.causalclustering.core.consensus.log.segmented
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.ReplicatedInteger.ValueOf;
+//	import static Neo4Net.causalclustering.core.consensus.ReplicatedInteger.ValueOf;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.log.RaftLog_Fields.RAFT_LOG_DIRECTORY_NAME;
+//	import static Neo4Net.causalclustering.core.consensus.log.RaftLog_Fields.RAFT_LOG_DIRECTORY_NAME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.logging.NullLogProvider.getInstance;
+//	import static Neo4Net.logging.NullLogProvider.getInstance;
 
 	public class SegmentedRaftLogRotationTruncationPruneTest
 	{
@@ -134,7 +134,7 @@ namespace Neo4Net.causalclustering.core.consensus.log.segmented
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.causalclustering.core.consensus.log.RaftLog createRaftLog() throws Exception
+//ORIGINAL LINE: private Neo4Net.causalclustering.core.consensus.log.RaftLog createRaftLog() throws Exception
 		 private RaftLog CreateRaftLog()
 		 {
 			  File directory = new File( RAFT_LOG_DIRECTORY_NAME );

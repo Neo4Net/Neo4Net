@@ -36,11 +36,11 @@ namespace Neo4Net.causalclustering.routing.load_balancing
 	public interface LoadBalancingPlugin : LoadBalancingProcessor
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void validate(org.Neo4Net.kernel.configuration.Config config, org.Neo4Net.logging.Log log) throws org.Neo4Net.graphdb.config.InvalidSettingException;
+//ORIGINAL LINE: void validate(Neo4Net.kernel.configuration.Config config, Neo4Net.logging.Log log) throws Neo4Net.graphdb.config.InvalidSettingException;
 		 void Validate( Config config, Log log );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void init(org.Neo4Net.causalclustering.discovery.TopologyService topologyService, org.Neo4Net.causalclustering.core.consensus.LeaderLocator leaderLocator, org.Neo4Net.logging.LogProvider logProvider, org.Neo4Net.kernel.configuration.Config config) throws Throwable;
+//ORIGINAL LINE: void init(Neo4Net.causalclustering.discovery.TopologyService topologyService, Neo4Net.causalclustering.core.consensus.LeaderLocator leaderLocator, Neo4Net.logging.LogProvider logProvider, Neo4Net.kernel.configuration.Config config) throws Throwable;
 		 void Init( TopologyService topologyService, LeaderLocator leaderLocator, LogProvider logProvider, Config config );
 
 		 string PluginName();

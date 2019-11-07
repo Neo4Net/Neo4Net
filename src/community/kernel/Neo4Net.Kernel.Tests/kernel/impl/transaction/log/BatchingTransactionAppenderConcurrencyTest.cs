@@ -78,11 +78,11 @@ namespace Neo4Net.Kernel.impl.transaction.log
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.DoubleLatch.awaitLatch;
+//	import static Neo4Net.test.DoubleLatch.awaitLatch;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.ThreadTestUtils.awaitThreadState;
+//	import static Neo4Net.test.ThreadTestUtils.awaitThreadState;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.ThreadTestUtils.fork;
+//	import static Neo4Net.test.ThreadTestUtils.fork;
 
 	public class BatchingTransactionAppenderConcurrencyTest
 	{
@@ -277,7 +277,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 //ORIGINAL LINE: final java.util.concurrent.CountDownLatch trap = new java.util.concurrent.CountDownLatch(numberOfAppenders);
 			  System.Threading.CountdownEvent trap = new System.Threading.CountdownEvent( numberOfAppenders );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.transaction.tracing.LogAppendEvent beforeForceTrappingEvent = new org.Neo4Net.kernel.impl.transaction.tracing.LogAppendEvent_Empty()
+//ORIGINAL LINE: final Neo4Net.kernel.impl.transaction.tracing.LogAppendEvent beforeForceTrappingEvent = new Neo4Net.kernel.impl.transaction.tracing.LogAppendEvent_Empty()
 			  LogAppendEvent beforeForceTrappingEvent = new LogAppendEvent_EmptyAnonymousInnerClass( this, trap );
 			  Race race = new Race();
 			  for ( int i = 0; i < numberOfAppenders; i++ )
@@ -425,7 +425,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 			  internal volatile bool ShouldOOM;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public synchronized org.Neo4Net.io.fs.StoreChannel open(java.io.File fileName, org.Neo4Net.io.fs.OpenMode openMode) throws java.io.IOException
+//ORIGINAL LINE: public synchronized Neo4Net.io.fs.StoreChannel open(java.io.File fileName, Neo4Net.io.fs.OpenMode openMode) throws java.io.IOException
 			  public override StoreChannel Open( File fileName, OpenMode openMode )
 			  {
 				  lock ( this )

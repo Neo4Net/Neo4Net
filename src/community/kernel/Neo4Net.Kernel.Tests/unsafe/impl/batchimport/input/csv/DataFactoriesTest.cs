@@ -42,11 +42,11 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input.csv
 //	import static org.junit.Assert.fail;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.csv.reader.Readables.wrap;
+//	import static Neo4Net.csv.reader.Readables.wrap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.ArrayUtil.array;
+//	import static Neo4Net.helpers.ArrayUtil.array;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.input.csv.DataFactories.defaultFormatNodeFileHeader;
+//	import static Neo4Net.@unsafe.impl.batchimport.input.csv.DataFactories.defaultFormatNodeFileHeader;
 
 	public class DataFactoriesTest
 	{
@@ -182,10 +182,10 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input.csv
 		 {
 			  // GIVEN
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.csv.reader.CharReadable firstSource = wrap("id:ID\tname:String\tbirth_date:long");
+//ORIGINAL LINE: final Neo4Net.csv.reader.CharReadable firstSource = wrap("id:ID\tname:String\tbirth_date:long");
 			  CharReadable firstSource = wrap( "id:ID\tname:String\tbirth_date:long" );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.csv.reader.CharReadable secondSource = wrap("0\tThe node\t123456789");
+//ORIGINAL LINE: final Neo4Net.csv.reader.CharReadable secondSource = wrap("0\tThe node\t123456789");
 			  CharReadable secondSource = wrap( "0\tThe node\t123456789" );
 			  DataFactory dataFactory = DataFactories.Data( value => value, () => new MultiReadable(Readables.iterator(IOFunctions.identity(), firstSource, secondSource)) );
 			  Header.Factory headerFactory = defaultFormatNodeFileHeader();
@@ -268,7 +268,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input.csv
 
 		 private class Configuration_OverriddenAnonymousInnerClass : Neo4Net.Csv.Reader.Configuration_Overridden
 		 {
-			 public Configuration_OverriddenAnonymousInnerClass() : base(new org.Neo4Net.csv.reader.Configuration_Default())
+			 public Configuration_OverriddenAnonymousInnerClass() : base(new Neo4Net.csv.reader.Configuration_Default())
 			 {
 			 }
 

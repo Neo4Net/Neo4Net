@@ -49,11 +49,11 @@ namespace Neo4Net.causalclustering.catchup.tx
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.catchup.CatchupResult.E_TRANSACTION_PRUNED;
+//	import static Neo4Net.causalclustering.catchup.CatchupResult.E_TRANSACTION_PRUNED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.catchup.CatchupResult.SUCCESS_END_OF_STREAM;
+//	import static Neo4Net.causalclustering.catchup.CatchupResult.SUCCESS_END_OF_STREAM;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_ID;
+//	import static Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_ID;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @SuppressWarnings({"unchecked", "UnnecessaryLocalVariable"}) public class ChunkedTransactionStreamTest
@@ -121,7 +121,7 @@ namespace Neo4Net.causalclustering.catchup.tx
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("SameParameterValue") private void testTransactionStream(int firstTxId, int lastTxId, int txIdPromise, org.Neo4Net.causalclustering.catchup.CatchupResult expectedResult) throws Exception
+//ORIGINAL LINE: @SuppressWarnings("SameParameterValue") private void testTransactionStream(int firstTxId, int lastTxId, int txIdPromise, Neo4Net.causalclustering.catchup.CatchupResult expectedResult) throws Exception
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 private void TestTransactionStream( int firstTxId, int lastTxId, int txIdPromise, CatchupResult expectedResult )
 		 {

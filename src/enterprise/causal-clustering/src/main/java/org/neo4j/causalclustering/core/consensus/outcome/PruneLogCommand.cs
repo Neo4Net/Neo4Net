@@ -42,7 +42,7 @@ namespace Neo4Net.causalclustering.core.consensus.outcome
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void applyTo(org.Neo4Net.causalclustering.core.consensus.log.RaftLog raftLog, org.Neo4Net.logging.Log log) throws java.io.IOException
+//ORIGINAL LINE: public void applyTo(Neo4Net.causalclustering.core.consensus.log.RaftLog raftLog, Neo4Net.logging.Log log) throws java.io.IOException
 		 public override void ApplyTo( RaftLog raftLog, Log log )
 		 {
 			  raftLog.Prune( _pruneIndex );

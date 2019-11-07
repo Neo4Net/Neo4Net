@@ -47,11 +47,11 @@ namespace Neo4Net.Server.enterprise
 	using StoreLogService = Neo4Net.Logging.Internal.StoreLogService;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.store_internal_log_path;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.store_internal_log_path;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.Exceptions.peel;
+//	import static Neo4Net.helpers.Exceptions.peel;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.scheduler.JobSchedulerFactory.createScheduler;
+//	import static Neo4Net.kernel.impl.scheduler.JobSchedulerFactory.createScheduler;
 
 	public class ArbiterBootstrapper : Bootstrapper, IDisposable
 	{
@@ -71,7 +71,7 @@ namespace Neo4Net.Server.enterprise
 			  catch ( LifecycleException e )
 			  {
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings({"ThrowableResultOfMethodCallIgnored", "unchecked"}) Throwable cause = peel(e, org.Neo4Net.function.Predicates.instanceOf(org.Neo4Net.kernel.lifecycle.LifecycleException.class));
+//ORIGINAL LINE: @SuppressWarnings({"ThrowableResultOfMethodCallIgnored", "unchecked"}) Throwable cause = peel(e, Neo4Net.function.Predicates.instanceOf(Neo4Net.kernel.lifecycle.LifecycleException.class));
 					Exception cause = peel( e, Predicates.instanceOf( typeof( LifecycleException ) ) );
 					if ( cause is ChannelException )
 					{

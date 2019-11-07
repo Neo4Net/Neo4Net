@@ -110,8 +110,8 @@ namespace Neo4Net.Kernel.Api.Impl.Index
 		 /// <exception cref="IOException"> </exception>
 		 /// <seealso cref= WritableIndexSnapshotFileIterator </seealso>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.Neo4Net.graphdb.ResourceIterator<java.io.File> snapshot() throws java.io.IOException;
-		 ResourceIterator<File> Snapshot();
+//ORIGINAL LINE: Neo4Net.graphdb.ResourceIterator<java.io.File> snapshot() throws java.io.IOException;
+		 IResourceIterator<File> Snapshot();
 
 		 /// <summary>
 		 /// Refresh all partitions to make newly inserted data visible for readers.

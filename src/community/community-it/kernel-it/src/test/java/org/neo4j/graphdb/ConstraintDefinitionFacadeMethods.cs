@@ -31,7 +31,7 @@ namespace Neo4Net.GraphDb
 		 public static readonly ConstraintDefinitionFacadeMethods GetRelationshipType = new ConstraintDefinitionFacadeMethods( "GetRelationshipType", InnerEnum.GetRelationshipType, new FacadeMethod<>( "RelationshipType getRelationshipType()", Neo4Net.GraphDb.Schema.ConstraintDefinition::getRelationshipType ) );
 		 public static readonly ConstraintDefinitionFacadeMethods Drop = new ConstraintDefinitionFacadeMethods( "Drop", InnerEnum.Drop, new FacadeMethod<>( "void drop()", Neo4Net.GraphDb.Schema.ConstraintDefinition.drop ) );
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//       IS_CONSTRAINT_TYPE(new FacadeMethod<>("boolean isConstraintType( ConstraintType type )", self -> self.isConstraintType(org.Neo4Net.GraphDb.Schema.ConstraintType.UNIQUENESS))),
+//       IS_CONSTRAINT_TYPE(new FacadeMethod<>("boolean isConstraintType( ConstraintType type )", self -> self.isConstraintType(Neo4Net.GraphDb.Schema.ConstraintType.UNIQUENESS))),
 		 public static readonly ConstraintDefinitionFacadeMethods GetPropertyKeys = new ConstraintDefinitionFacadeMethods( "GetPropertyKeys", InnerEnum.GetPropertyKeys, new FacadeMethod<>( "Iterable<String> getPropertyKeys()", Neo4Net.GraphDb.Schema.ConstraintDefinition::getPropertyKeys ) );
 
 		 private static readonly IList<ConstraintDefinitionFacadeMethods> valueList = new List<ConstraintDefinitionFacadeMethods>();

@@ -26,14 +26,14 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 	using Input = Neo4Net.@unsafe.Impl.Batchimport.input.Input;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.os.OsBeanUtil.VALUE_UNAVAILABLE;
+//	import static Neo4Net.io.os.OsBeanUtil.VALUE_UNAVAILABLE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.ImportMemoryCalculator.estimatedCacheSize;
+//	import static Neo4Net.@unsafe.impl.batchimport.ImportMemoryCalculator.estimatedCacheSize;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.ImportMemoryCalculator.optimalMinimalHeapSize;
+//	import static Neo4Net.@unsafe.impl.batchimport.ImportMemoryCalculator.optimalMinimalHeapSize;
 
 	/// <summary>
-	/// Sanity checking of <seealso cref="org.Neo4Net.unsafe.impl.batchimport.input.Input.Estimates"/> against heap size and free memory.
+	/// Sanity checking of <seealso cref="Neo4Net.unsafe.impl.batchimport.input.Input.Estimates"/> against heap size and free memory.
 	/// Registers warnings onto a <seealso cref="ImportLogic.Monitor"/>.
 	/// </summary>
 	internal class HeapSizeSanityChecker

@@ -26,7 +26,7 @@ namespace Neo4Net.Bolt.v3.runtime
 	using PullAllMessage = Neo4Net.Bolt.v1.messaging.request.PullAllMessage;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.util.Preconditions.checkState;
+//	import static Neo4Net.util.Preconditions.checkState;
 
 	/// <summary>
 	/// When STREAMING, a result is available as a stream of records.
@@ -39,7 +39,7 @@ namespace Neo4Net.Bolt.v3.runtime
 		 protected internal BoltStateMachineState ReadyStateConflict;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.bolt.runtime.BoltStateMachineState processUnsafe(org.Neo4Net.bolt.messaging.RequestMessage message, org.Neo4Net.bolt.runtime.StateMachineContext context) throws Throwable
+//ORIGINAL LINE: public Neo4Net.bolt.runtime.BoltStateMachineState processUnsafe(Neo4Net.bolt.messaging.RequestMessage message, Neo4Net.bolt.runtime.StateMachineContext context) throws Throwable
 		 public override BoltStateMachineState ProcessUnsafe( RequestMessage message, StateMachineContext context )
 		 {
 			  if ( message is PullAllMessage )
@@ -62,7 +62,7 @@ namespace Neo4Net.Bolt.v3.runtime
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: abstract org.Neo4Net.bolt.runtime.BoltStateMachineState processStreamResultMessage(boolean pull, org.Neo4Net.bolt.runtime.StateMachineContext context) throws Throwable;
+//ORIGINAL LINE: abstract Neo4Net.bolt.runtime.BoltStateMachineState processStreamResultMessage(boolean pull, Neo4Net.bolt.runtime.StateMachineContext context) throws Throwable;
 		 internal abstract BoltStateMachineState ProcessStreamResultMessage( bool pull, StateMachineContext context );
 
 		 protected internal override void AssertInitialized()

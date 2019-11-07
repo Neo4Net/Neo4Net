@@ -20,28 +20,28 @@
 
 namespace Neo4Net.GraphDb.Traversal
 {
-    using LongHashSet = org.eclipse.collections.impl.set.mutable.primitive.LongHashSet;
-    using MutableLongSet = org.eclipse.collections.api.set.primitive.MutableLongSet;
+   using LongHashSet = org.eclipse.collections.impl.set.mutable.primitive.LongHashSet;
+   using MutableLongSet = org.eclipse.collections.api.set.primitive.MutableLongSet;
 
-    internal class GloballyUnique : AbstractUniquenessFilter
-    {
-        private readonly MutableLongSet _visited = new LongHashSet(1 << 12);
+   internal class GloballyUnique : AbstractUniquenessFilter
+   {
+      private readonly MutableLongSet _visited = new LongHashSet(1 << 12);
 
-        internal GloballyUnique(PrimitiveTypeFetcher type) : base(type)
-        {
-        }
+      internal GloballyUnique(PrimitiveTypeFetcher type) : base(type)
+      {
+      }
 
-        public override bool Check(ITraversalBranch branch)
-        {
-            return _visited.add(Type.GetId(branch));
-        }
+      public override bool Check(ITraversalBranch branch)
+      {
+         return _visited.add(Type.GetId(branch));
+      }
 
-        public override bool CheckFull(IPath path)
-        {
-            // Since this is for bidirectional uniqueness checks and
-            // uniqueness is enforced through the shared "visited" set
-            // this uniqueness contract is fulfilled automatically.
-            return true;
-        }
-    }
+      public override bool CheckFull(IPath path)
+      {
+         // Since this is for bidirectional uniqueness checks and
+         // uniqueness is enforced through the shared "visited" set
+         // this uniqueness contract is fulfilled automatically.
+         return true;
+      }
+   }
 }

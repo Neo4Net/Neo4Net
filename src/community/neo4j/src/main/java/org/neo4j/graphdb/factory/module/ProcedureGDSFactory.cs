@@ -25,8 +25,8 @@ namespace Neo4Net.GraphDb.factory.module
 	using URLAccessValidationError = Neo4Net.GraphDb.security.URLAccessValidationError;
 	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
 	using SecurityContext = Neo4Net.Kernel.Api.Internal.security.SecurityContext;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
-	using Context = Neo4Net.Kernel.api.proc.Context;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
+	using Context = Neo4Net.Kernel.Api.Procs.Context;
 	using ThreadToStatementContextBridge = Neo4Net.Kernel.impl.core.ThreadToStatementContextBridge;
 	using TokenHolders = Neo4Net.Kernel.impl.core.TokenHolders;
 	using CoreAPIAvailabilityGuard = Neo4Net.Kernel.impl.coreapi.CoreAPIAvailabilityGuard;
@@ -52,10 +52,10 @@ namespace Neo4Net.GraphDb.factory.module
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.graphdb.GraphDatabaseService apply(org.Neo4Net.kernel.api.proc.Context context) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
+//ORIGINAL LINE: public Neo4Net.graphdb.GraphDatabaseService apply(Neo4Net.kernel.api.proc.Context context) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 		 public override IGraphDatabaseService Apply( Context context )
 		 {
-			  KernelTransaction tx = context.GetOrElse( Neo4Net.Kernel.api.proc.Context_Fields.KernelTransaction, null );
+			  KernelTransaction tx = context.GetOrElse( Neo4Net.Kernel.Api.Procs.Context_Fields.KernelTransaction, null );
 			  SecurityContext securityContext;
 			  if ( tx != null )
 			  {
@@ -63,7 +63,7 @@ namespace Neo4Net.GraphDb.factory.module
 			  }
 			  else
 			  {
-					securityContext = context.Get( Neo4Net.Kernel.api.proc.Context_Fields.SecurityContext );
+					securityContext = context.Get( Neo4Net.Kernel.Api.Procs.Context_Fields.SecurityContext );
 			  }
 			  GraphDatabaseFacade facade = new GraphDatabaseFacade();
 			  ProcedureGDBFacadeSPI procedureGDBFacadeSPI = new ProcedureGDBFacadeSPI( _dataSource, _dataSource.neoStoreDataSource.DependencyResolver, _availability, _urlValidator, securityContext, _bridge );

@@ -253,7 +253,7 @@ namespace Neo4Net.causalclustering.core.state
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void applyBatch(long lastIndex, java.util.List<org.Neo4Net.causalclustering.core.replication.DistributedOperation> batch) throws Exception
+//ORIGINAL LINE: private void applyBatch(long lastIndex, java.util.List<Neo4Net.causalclustering.core.replication.DistributedOperation> batch) throws Exception
 		 private void ApplyBatch( long lastIndex, IList<DistributedOperation> batch )
 		 {
 			  if ( batch.Count == 0 )

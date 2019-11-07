@@ -76,7 +76,7 @@ namespace Neo4Net.Cypher.Internal.javacompat
 	public class EagerResultIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.TestDirectory testDirectory = Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory TestDirectory = TestDirectory.testDirectory();
 		 private IGraphDatabaseService _database;
 		 private TestTransactionVersionContextSupplier _testContextSupplier;
@@ -145,7 +145,7 @@ namespace Neo4Net.Cypher.Internal.javacompat
 		 {
 			  Result result = _database.execute( "MATCH (n) RETURN n.c as c, n.b as b" );
 			  assertEquals( 1, _testCursorContext.AdditionalAttempts );
-			  ResourceIterator<object> cValues = result.ColumnAs( "c" );
+			  IResourceIterator<object> cValues = result.ColumnAs( "c" );
 			  int rows = 0;
 			  while ( cValues.MoveNext() )
 			  {
@@ -220,7 +220,7 @@ namespace Neo4Net.Cypher.Internal.javacompat
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(expected = org.Neo4Net.graphdb.QueryExecutionException.class) public void dirtyContextDuringResultVisitResultInUnstableSnapshotException() throws Exception
+//ORIGINAL LINE: @Test(expected = Neo4Net.graphdb.QueryExecutionException.class) public void dirtyContextDuringResultVisitResultInUnstableSnapshotException() throws Exception
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void DirtyContextDuringResultVisitResultInUnstableSnapshotException()
 		 {
@@ -235,7 +235,7 @@ namespace Neo4Net.Cypher.Internal.javacompat
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(expected = org.Neo4Net.graphdb.QueryExecutionException.class) public void dirtyContextEntityNotFoundExceptionDuringResultVisitResultInUnstableSnapshotException() throws Exception
+//ORIGINAL LINE: @Test(expected = Neo4Net.graphdb.QueryExecutionException.class) public void dirtyContextEntityNotFoundExceptionDuringResultVisitResultInUnstableSnapshotException() throws Exception
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void DirtyContextEntityNotFoundExceptionDuringResultVisitResultInUnstableSnapshotException()
 		 {

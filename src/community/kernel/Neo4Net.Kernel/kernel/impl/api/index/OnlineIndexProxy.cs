@@ -88,7 +88,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public org.Neo4Net.kernel.api.index.IndexUpdater newUpdater(final IndexUpdateMode mode)
+//ORIGINAL LINE: public Neo4Net.kernel.api.index.IndexUpdater newUpdater(final IndexUpdateMode mode)
 		 public override IndexUpdater NewUpdater( IndexUpdateMode mode )
 		 {
 			  IndexUpdater actual = Accessor.newUpdater( EscalateModeIfNecessary( mode ) );
@@ -110,7 +110,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private org.Neo4Net.kernel.api.index.IndexUpdater updateCountingUpdater(final org.Neo4Net.kernel.api.index.IndexUpdater indexUpdater)
+//ORIGINAL LINE: private Neo4Net.kernel.api.index.IndexUpdater updateCountingUpdater(final Neo4Net.kernel.api.index.IndexUpdater indexUpdater)
 		 private IndexUpdater UpdateCountingUpdater( IndexUpdater indexUpdater )
 		 {
 			  return new UpdateCountingIndexUpdater( _storeView, _indexId, indexUpdater );
@@ -198,7 +198,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			 }
 		 }
 
-		 public override ResourceIterator<File> SnapshotFiles()
+		 public override IResourceIterator<File> SnapshotFiles()
 		 {
 			  return Accessor.snapshotFiles();
 		 }
@@ -214,7 +214,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void verifyDeferredConstraints(org.Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor nodePropertyAccessor) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: public void verifyDeferredConstraints(Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor nodePropertyAccessor) throws Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 public override void VerifyDeferredConstraints( NodePropertyAccessor nodePropertyAccessor )
 		 {
 			  Accessor.verifyDeferredConstraints( nodePropertyAccessor );

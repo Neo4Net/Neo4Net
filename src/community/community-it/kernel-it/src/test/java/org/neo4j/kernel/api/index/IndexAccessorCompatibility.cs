@@ -49,7 +49,7 @@ namespace Neo4Net.Kernel.Api.Index
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.ByteBufferFactory.heapBufferFactory;
+//	import static Neo4Net.kernel.impl.index.schema.ByteBufferFactory.heapBufferFactory;
 
 	public abstract class IndexAccessorCompatibility : IndexProviderCompatibilityTestSuite.Compatibility
 	{
@@ -110,7 +110,7 @@ namespace Neo4Net.Kernel.Api.Index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected java.util.List<long> query(org.Neo4Net.Kernel.Api.Internal.IndexQuery... predicates) throws Exception
+//ORIGINAL LINE: protected java.util.List<long> query(Neo4Net.Kernel.Api.Internal.IndexQuery... predicates) throws Exception
 		 protected internal virtual IList<long> Query( params IndexQuery[] predicates )
 		 {
 			  using ( IndexReader reader = Accessor.newReader(), )
@@ -132,7 +132,7 @@ namespace Neo4Net.Kernel.Api.Index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected IDisposable query(org.Neo4Net.Kernel.Api.StorageEngine.schema.SimpleNodeValueClient client, org.Neo4Net.Kernel.Api.Internal.IndexOrder order, org.Neo4Net.Kernel.Api.Internal.IndexQuery... predicates) throws Exception
+//ORIGINAL LINE: protected IDisposable query(Neo4Net.Kernel.Api.StorageEngine.schema.SimpleNodeValueClient client, Neo4Net.Kernel.Api.Internal.IndexOrder order, Neo4Net.Kernel.Api.Internal.IndexQuery... predicates) throws Exception
 		 protected internal virtual IDisposable Query( SimpleNodeValueClient client, IndexOrder order, params IndexQuery[] predicates )
 		 {
 			  IndexReader reader = Accessor.newReader();
@@ -141,7 +141,7 @@ namespace Neo4Net.Kernel.Api.Index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: java.util.List<long> assertInOrder(org.Neo4Net.Kernel.Api.Internal.IndexOrder order, org.Neo4Net.Kernel.Api.Internal.IndexQuery... predicates) throws Exception
+//ORIGINAL LINE: java.util.List<long> assertInOrder(Neo4Net.Kernel.Api.Internal.IndexOrder order, Neo4Net.Kernel.Api.Internal.IndexQuery... predicates) throws Exception
 		 internal virtual IList<long> AssertInOrder( IndexOrder order, params IndexQuery[] predicates )
 		 {
 			  IList<long> actualIds;
@@ -248,7 +248,7 @@ namespace Neo4Net.Kernel.Api.Index
 		 /// so therefore it's done explicitly here so that we can filter on them later.
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void updateAndCommit(java.util.Collection<IndexEntryUpdate<?>> updates) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: void updateAndCommit(java.util.Collection<IndexEntryUpdate<?>> updates) throws Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 internal virtual void UpdateAndCommit<T1>( ICollection<T1> updates )
 		 {
 			  using ( IndexUpdater updater = Accessor.newUpdater( IndexUpdateMode.ONLINE ) )

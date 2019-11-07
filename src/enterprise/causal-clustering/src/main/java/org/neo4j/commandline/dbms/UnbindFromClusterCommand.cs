@@ -39,9 +39,9 @@ namespace Neo4Net.Dbms.CommandLine
 	using Validators = Neo4Net.Kernel.impl.util.Validators;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.commandline.arguments.common.Database.ARG_DATABASE;
+//	import static Neo4Net.commandline.arguments.common.Database.ARG_DATABASE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Config.fromFile;
+//	import static Neo4Net.kernel.configuration.Config.fromFile;
 
 	public class UnbindFromClusterCommand : AdminCommand
 	{
@@ -68,7 +68,7 @@ namespace Neo4Net.Dbms.CommandLine
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void execute(String[] args) throws org.Neo4Net.commandline.admin.IncorrectUsage, org.Neo4Net.commandline.admin.CommandFailed
+//ORIGINAL LINE: public void execute(String[] args) throws Neo4Net.commandline.admin.IncorrectUsage, Neo4Net.commandline.admin.CommandFailed
 		 public override void Execute( string[] args )
 		 {
 			  try
@@ -119,7 +119,7 @@ namespace Neo4Net.Dbms.CommandLine
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void confirmTargetDirectoryIsWritable(org.Neo4Net.io.layout.StoreLayout storeLayout) throws CannotWriteException, java.io.IOException
+//ORIGINAL LINE: private static void confirmTargetDirectoryIsWritable(Neo4Net.io.layout.StoreLayout storeLayout) throws CannotWriteException, java.io.IOException
 		 private static void ConfirmTargetDirectoryIsWritable( StoreLayout storeLayout )
 		 {
 			  using ( System.IDisposable ignored = StoreLockChecker.Check( storeLayout ) )

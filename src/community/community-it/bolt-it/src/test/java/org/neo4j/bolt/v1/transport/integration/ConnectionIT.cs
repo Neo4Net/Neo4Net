@@ -53,13 +53,13 @@ namespace Neo4Net.Bolt.v1.transport.integration
 		 public Neo4NetWithSocket Server = new Neo4NetWithSocket( this.GetType() );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Parameterized.Parameter public org.Neo4Net.bolt.v1.transport.socket.client.TransportConnection connection;
+//ORIGINAL LINE: @Parameterized.Parameter public Neo4Net.bolt.v1.transport.socket.client.TransportConnection connection;
 		 public TransportConnection Connection;
 
 		 private HostnamePort _address;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Parameterized.Parameters public static java.util.Collection<org.Neo4Net.bolt.v1.transport.socket.client.TransportConnection> transports()
+//ORIGINAL LINE: @Parameterized.Parameters public static java.util.Collection<Neo4Net.bolt.v1.transport.socket.client.TransportConnection> transports()
 		 public static ICollection<TransportConnection> Transports()
 		 {
 			  return asList( new SecureSocketConnection(), new SocketConnection(), new SecureWebSocketConnection(), new WebSocketConnection() );

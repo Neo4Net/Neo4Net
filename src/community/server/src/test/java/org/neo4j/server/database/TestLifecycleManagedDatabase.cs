@@ -44,11 +44,11 @@ namespace Neo4Net.Server.database
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.logging.AssertableLogProvider.inLog;
+//	import static Neo4Net.logging.AssertableLogProvider.inLog;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.ServerTestUtils.createTempDir;
+//	import static Neo4Net.server.ServerTestUtils.createTempDir;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.rule.SuppressOutput.suppressAll;
+//	import static Neo4Net.test.rule.SuppressOutput.suppressAll;
 
 	public class TestLifecycleManagedDatabase
 	{
@@ -69,13 +69,13 @@ namespace Neo4Net.Server.database
 		}
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.SuppressOutput suppressOutput = suppressAll();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.SuppressOutput suppressOutput = suppressAll();
 		 public SuppressOutput SuppressOutput = suppressAll();
 
 		 private readonly AssertableLogProvider _logProvider = new AssertableLogProvider();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.ImpermanentDatabaseRule dbRule = new org.Neo4Net.test.rule.ImpermanentDatabaseRule(logProvider);
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.ImpermanentDatabaseRule dbRule = new Neo4Net.test.rule.ImpermanentDatabaseRule(logProvider);
 		 public ImpermanentDatabaseRule DbRule;
 
 		 private File _dataDirectory;

@@ -40,7 +40,7 @@ namespace Neo4Net.tools.txlog
 	internal class CommittedRecords<R> where R : Neo4Net.Kernel.Impl.Store.Records.AbstractBaseRecord
 	{
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private final org.Neo4Net.tools.txlog.checktypes.CheckType<?,R> checkType;
+//ORIGINAL LINE: private final Neo4Net.tools.txlog.checktypes.CheckType<?,R> checkType;
 		 private readonly CheckType<object, R> _checkType;
 		 private readonly IDictionary<long, RecordInfo<R>> _recordsById;
 

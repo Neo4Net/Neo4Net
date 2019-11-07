@@ -23,7 +23,7 @@ namespace Neo4Net.Bolt.v1.runtime.spi
 	using Bookmark = Neo4Net.Bolt.v1.runtime.bookmarking.Bookmark;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.stringValue;
+//	import static Neo4Net.values.storable.Values.stringValue;
 
 	public class BookmarkResult : BoltResult
 	{

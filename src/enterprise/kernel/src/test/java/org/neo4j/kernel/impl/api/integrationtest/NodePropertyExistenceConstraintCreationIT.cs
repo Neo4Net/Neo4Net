@@ -37,9 +37,9 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor;
 	using DropConstraintFailureException = Neo4Net.Kernel.Api.Exceptions.schema.DropConstraintFailureException;
 	using NoSuchConstraintException = Neo4Net.Kernel.Api.Exceptions.schema.NoSuchConstraintException;
-	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
-	using ConstraintDescriptorFactory = Neo4Net.Kernel.api.schema.constraints.ConstraintDescriptorFactory;
-	using NodeExistenceConstraintDescriptor = Neo4Net.Kernel.api.schema.constraints.NodeExistenceConstraintDescriptor;
+	using SchemaDescriptorFactory = Neo4Net.Kernel.Api.schema.SchemaDescriptorFactory;
+	using ConstraintDescriptorFactory = Neo4Net.Kernel.Api.schema.constraints.ConstraintDescriptorFactory;
+	using NodeExistenceConstraintDescriptor = Neo4Net.Kernel.Api.schema.constraints.NodeExistenceConstraintDescriptor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.CoreMatchers.instanceOf;
@@ -50,21 +50,21 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.Label.label;
+//	import static Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.single;
+//	import static Neo4Net.helpers.collection.Iterators.single;
 
 	public class NodePropertyExistenceConstraintCreationIT : AbstractConstraintCreationIT<ConstraintDescriptor, LabelSchemaDescriptor>
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: int initializeLabelOrRelType(org.Neo4Net.Kernel.Api.Internal.TokenWrite tokenWrite, String name) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: int initializeLabelOrRelType(Neo4Net.Kernel.Api.Internal.TokenWrite tokenWrite, String name) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 internal override int InitializeLabelOrRelType( TokenWrite tokenWrite, string name )
 		 {
 			  return tokenWrite.LabelGetOrCreateForName( name );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: ConstraintDescriptor createConstraint(org.Neo4Net.Kernel.Api.Internal.SchemaWrite writeOps, org.Neo4Net.Kernel.Api.Internal.Schema.LabelSchemaDescriptor descriptor) throws Exception
+//ORIGINAL LINE: ConstraintDescriptor createConstraint(Neo4Net.Kernel.Api.Internal.SchemaWrite writeOps, Neo4Net.Kernel.Api.Internal.Schema.LabelSchemaDescriptor descriptor) throws Exception
 		 internal override ConstraintDescriptor CreateConstraint( SchemaWrite writeOps, LabelSchemaDescriptor descriptor )
 		 {
 			  return writeOps.NodePropertyExistenceConstraintCreate( descriptor );
@@ -81,7 +81,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void dropConstraint(org.Neo4Net.Kernel.Api.Internal.SchemaWrite writeOps, org.Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor constraint) throws Exception
+//ORIGINAL LINE: void dropConstraint(Neo4Net.Kernel.Api.Internal.SchemaWrite writeOps, Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor constraint) throws Exception
 		 internal override void DropConstraint( SchemaWrite writeOps, ConstraintDescriptor constraint )
 		 {
 			  writeOps.ConstraintDrop( constraint );
@@ -94,7 +94,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 
 		 internal override void RemoveOffendingDataInRunningTx( IGraphDatabaseService db )
 		 {
-			  using ( ResourceIterator<Node> nodes = Db.findNodes( label( KEY ) ) )
+			  using ( IResourceIterator<Node> nodes = Db.findNodes( label( KEY ) ) )
 			  {
 					while ( nodes.MoveNext() )
 					{

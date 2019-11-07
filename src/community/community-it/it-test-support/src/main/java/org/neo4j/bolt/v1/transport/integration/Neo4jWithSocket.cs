@@ -38,7 +38,7 @@ namespace Neo4Net.Bolt.v1.transport.integration
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.BoltConnector.EncryptionLevel.OPTIONAL;
+//	import static Neo4Net.kernel.configuration.BoltConnector.EncryptionLevel.OPTIONAL;
 
 	public class Neo4NetWithSocket : ExternalResource
 	{
@@ -118,8 +118,8 @@ namespace Neo4Net.Bolt.v1.transport.integration
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void evaluate() throws Throwable
-			 public override void evaluate()
+//ORIGINAL LINE: public void Evaluate() throws Throwable
+			 public override void Evaluate()
 			 {
 				  // If this is used as class rule then getMethodName() returns null, so use
 				  // getClassName() instead.
@@ -130,7 +130,7 @@ namespace Neo4Net.Bolt.v1.transport.integration
 				  });
 				  try
 				  {
-						_statement.evaluate();
+						_statement.Evaluate();
 				  }
 				  finally
 				  {

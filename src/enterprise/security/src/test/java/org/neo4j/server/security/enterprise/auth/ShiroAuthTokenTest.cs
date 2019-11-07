@@ -26,8 +26,8 @@ namespace Neo4Net.Server.security.enterprise.auth
 {
 	using Test = org.junit.Test;
 
-	using AuthToken = Neo4Net.Kernel.api.security.AuthToken;
-	using InvalidAuthTokenException = Neo4Net.Kernel.api.security.exception.InvalidAuthTokenException;
+	using AuthToken = Neo4Net.Kernel.Api.security.AuthToken;
+	using InvalidAuthTokenException = Neo4Net.Kernel.Api.security.exception.InvalidAuthTokenException;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.MatcherAssert.assertThat;
@@ -36,11 +36,11 @@ namespace Neo4Net.Server.security.enterprise.auth
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.Matchers.equalTo;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.map;
+//	import static Neo4Net.helpers.collection.MapUtil.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.security.auth.BasicAuthManagerTest.password;
+//	import static Neo4Net.server.security.auth.BasicAuthManagerTest.password;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.AuthTokenUtil.authTokenMatcher;
+//	import static Neo4Net.test.AuthTokenUtil.authTokenMatcher;
 
 	public class ShiroAuthTokenTest
 	{
@@ -53,8 +53,8 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 public virtual void ShouldSupportBasicAuthToken()
 		 {
 			  ShiroAuthToken token = new ShiroAuthToken( AuthToken.newBasicAuthToken( USERNAME, PASSWORD ) );
-			  TestBasicAuthToken( token, USERNAME, PASSWORD, Neo4Net.Kernel.api.security.AuthToken_Fields.BASIC_SCHEME );
-			  assertThat( "Token map should have only expected values", token.AuthTokenMap, authTokenMatcher( map( Neo4Net.Kernel.api.security.AuthToken_Fields.PRINCIPAL, USERNAME, Neo4Net.Kernel.api.security.AuthToken_Fields.CREDENTIALS, PASSWORD, Neo4Net.Kernel.api.security.AuthToken_Fields.SCHEME_KEY, Neo4Net.Kernel.api.security.AuthToken_Fields.BASIC_SCHEME ) ) );
+			  TestBasicAuthToken( token, USERNAME, PASSWORD, Neo4Net.Kernel.Api.security.AuthToken_Fields.BASIC_SCHEME );
+			  assertThat( "Token map should have only expected values", token.AuthTokenMap, authTokenMatcher( map( Neo4Net.Kernel.Api.security.AuthToken_Fields.PRINCIPAL, USERNAME, Neo4Net.Kernel.Api.security.AuthToken_Fields.CREDENTIALS, PASSWORD, Neo4Net.Kernel.Api.security.AuthToken_Fields.SCHEME_KEY, Neo4Net.Kernel.Api.security.AuthToken_Fields.BASIC_SCHEME ) ) );
 			  TestTokenSupportsRealm( token, true, "unknown", "native", "ldap" );
 		 }
 
@@ -64,8 +64,8 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 public virtual void ShouldSupportBasicAuthTokenWithEmptyRealm()
 		 {
 			  ShiroAuthToken token = new ShiroAuthToken( AuthToken.newBasicAuthToken( USERNAME, PASSWORD, "" ) );
-			  TestBasicAuthToken( token, USERNAME, PASSWORD, Neo4Net.Kernel.api.security.AuthToken_Fields.BASIC_SCHEME );
-			  assertThat( "Token map should have only expected values", token.AuthTokenMap, authTokenMatcher( map( Neo4Net.Kernel.api.security.AuthToken_Fields.PRINCIPAL, USERNAME, Neo4Net.Kernel.api.security.AuthToken_Fields.CREDENTIALS, PASSWORD, Neo4Net.Kernel.api.security.AuthToken_Fields.SCHEME_KEY, Neo4Net.Kernel.api.security.AuthToken_Fields.BASIC_SCHEME, Neo4Net.Kernel.api.security.AuthToken_Fields.REALM_KEY, "" ) ) );
+			  TestBasicAuthToken( token, USERNAME, PASSWORD, Neo4Net.Kernel.Api.security.AuthToken_Fields.BASIC_SCHEME );
+			  assertThat( "Token map should have only expected values", token.AuthTokenMap, authTokenMatcher( map( Neo4Net.Kernel.Api.security.AuthToken_Fields.PRINCIPAL, USERNAME, Neo4Net.Kernel.Api.security.AuthToken_Fields.CREDENTIALS, PASSWORD, Neo4Net.Kernel.Api.security.AuthToken_Fields.SCHEME_KEY, Neo4Net.Kernel.Api.security.AuthToken_Fields.BASIC_SCHEME, Neo4Net.Kernel.Api.security.AuthToken_Fields.REALM_KEY, "" ) ) );
 			  TestTokenSupportsRealm( token, true, "unknown", "native", "ldap" );
 		 }
 
@@ -75,8 +75,8 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 public virtual void ShouldSupportBasicAuthTokenWithNullRealm()
 		 {
 			  ShiroAuthToken token = new ShiroAuthToken( AuthToken.newBasicAuthToken( USERNAME, PASSWORD, null ) );
-			  TestBasicAuthToken( token, USERNAME, PASSWORD, Neo4Net.Kernel.api.security.AuthToken_Fields.BASIC_SCHEME );
-			  assertThat( "Token map should have only expected values", token.AuthTokenMap, authTokenMatcher( map( Neo4Net.Kernel.api.security.AuthToken_Fields.PRINCIPAL, USERNAME, Neo4Net.Kernel.api.security.AuthToken_Fields.CREDENTIALS, PASSWORD, Neo4Net.Kernel.api.security.AuthToken_Fields.SCHEME_KEY, Neo4Net.Kernel.api.security.AuthToken_Fields.BASIC_SCHEME, Neo4Net.Kernel.api.security.AuthToken_Fields.REALM_KEY, null ) ) );
+			  TestBasicAuthToken( token, USERNAME, PASSWORD, Neo4Net.Kernel.Api.security.AuthToken_Fields.BASIC_SCHEME );
+			  assertThat( "Token map should have only expected values", token.AuthTokenMap, authTokenMatcher( map( Neo4Net.Kernel.Api.security.AuthToken_Fields.PRINCIPAL, USERNAME, Neo4Net.Kernel.Api.security.AuthToken_Fields.CREDENTIALS, PASSWORD, Neo4Net.Kernel.Api.security.AuthToken_Fields.SCHEME_KEY, Neo4Net.Kernel.Api.security.AuthToken_Fields.BASIC_SCHEME, Neo4Net.Kernel.Api.security.AuthToken_Fields.REALM_KEY, null ) ) );
 			  TestTokenSupportsRealm( token, true, "unknown", "native", "ldap" );
 		 }
 
@@ -86,8 +86,8 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 public virtual void ShouldSupportBasicAuthTokenWithWildcardRealm()
 		 {
 			  ShiroAuthToken token = new ShiroAuthToken( AuthToken.newBasicAuthToken( USERNAME, PASSWORD, "*" ) );
-			  TestBasicAuthToken( token, USERNAME, PASSWORD, Neo4Net.Kernel.api.security.AuthToken_Fields.BASIC_SCHEME );
-			  assertThat( "Token map should have only expected values", token.AuthTokenMap, authTokenMatcher( map( Neo4Net.Kernel.api.security.AuthToken_Fields.PRINCIPAL, USERNAME, Neo4Net.Kernel.api.security.AuthToken_Fields.CREDENTIALS, PASSWORD, Neo4Net.Kernel.api.security.AuthToken_Fields.SCHEME_KEY, Neo4Net.Kernel.api.security.AuthToken_Fields.BASIC_SCHEME, Neo4Net.Kernel.api.security.AuthToken_Fields.REALM_KEY, "*" ) ) );
+			  TestBasicAuthToken( token, USERNAME, PASSWORD, Neo4Net.Kernel.Api.security.AuthToken_Fields.BASIC_SCHEME );
+			  assertThat( "Token map should have only expected values", token.AuthTokenMap, authTokenMatcher( map( Neo4Net.Kernel.Api.security.AuthToken_Fields.PRINCIPAL, USERNAME, Neo4Net.Kernel.Api.security.AuthToken_Fields.CREDENTIALS, PASSWORD, Neo4Net.Kernel.Api.security.AuthToken_Fields.SCHEME_KEY, Neo4Net.Kernel.Api.security.AuthToken_Fields.BASIC_SCHEME, Neo4Net.Kernel.Api.security.AuthToken_Fields.REALM_KEY, "*" ) ) );
 			  TestTokenSupportsRealm( token, true, "unknown", "native", "ldap" );
 		 }
 
@@ -98,8 +98,8 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 {
 			  string realm = "ldap";
 			  ShiroAuthToken token = new ShiroAuthToken( AuthToken.newBasicAuthToken( USERNAME, PASSWORD, realm ) );
-			  TestBasicAuthToken( token, USERNAME, PASSWORD, Neo4Net.Kernel.api.security.AuthToken_Fields.BASIC_SCHEME );
-			  assertThat( "Token map should have only expected values", token.AuthTokenMap, authTokenMatcher( map( Neo4Net.Kernel.api.security.AuthToken_Fields.PRINCIPAL, USERNAME, Neo4Net.Kernel.api.security.AuthToken_Fields.CREDENTIALS, PASSWORD, Neo4Net.Kernel.api.security.AuthToken_Fields.SCHEME_KEY, Neo4Net.Kernel.api.security.AuthToken_Fields.BASIC_SCHEME, Neo4Net.Kernel.api.security.AuthToken_Fields.REALM_KEY, "ldap" ) ) );
+			  TestBasicAuthToken( token, USERNAME, PASSWORD, Neo4Net.Kernel.Api.security.AuthToken_Fields.BASIC_SCHEME );
+			  assertThat( "Token map should have only expected values", token.AuthTokenMap, authTokenMatcher( map( Neo4Net.Kernel.Api.security.AuthToken_Fields.PRINCIPAL, USERNAME, Neo4Net.Kernel.Api.security.AuthToken_Fields.CREDENTIALS, PASSWORD, Neo4Net.Kernel.Api.security.AuthToken_Fields.SCHEME_KEY, Neo4Net.Kernel.Api.security.AuthToken_Fields.BASIC_SCHEME, Neo4Net.Kernel.Api.security.AuthToken_Fields.REALM_KEY, "ldap" ) ) );
 			  TestTokenSupportsRealm( token, true, realm );
 			  TestTokenSupportsRealm( token, false, "unknown", "native" );
 		 }
@@ -110,9 +110,9 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 public virtual void ShouldSupportCustomAuthTokenWithSpecificRealm()
 		 {
 			  string realm = "ldap";
-			  ShiroAuthToken token = new ShiroAuthToken( AuthToken.newCustomAuthToken( USERNAME, PASSWORD, realm, Neo4Net.Kernel.api.security.AuthToken_Fields.BASIC_SCHEME ) );
-			  TestBasicAuthToken( token, USERNAME, PASSWORD, Neo4Net.Kernel.api.security.AuthToken_Fields.BASIC_SCHEME );
-			  assertThat( "Token map should have only expected values", token.AuthTokenMap, authTokenMatcher( map( Neo4Net.Kernel.api.security.AuthToken_Fields.PRINCIPAL, USERNAME, Neo4Net.Kernel.api.security.AuthToken_Fields.CREDENTIALS, PASSWORD, Neo4Net.Kernel.api.security.AuthToken_Fields.SCHEME_KEY, Neo4Net.Kernel.api.security.AuthToken_Fields.BASIC_SCHEME, Neo4Net.Kernel.api.security.AuthToken_Fields.REALM_KEY, "ldap" ) ) );
+			  ShiroAuthToken token = new ShiroAuthToken( AuthToken.newCustomAuthToken( USERNAME, PASSWORD, realm, Neo4Net.Kernel.Api.security.AuthToken_Fields.BASIC_SCHEME ) );
+			  TestBasicAuthToken( token, USERNAME, PASSWORD, Neo4Net.Kernel.Api.security.AuthToken_Fields.BASIC_SCHEME );
+			  assertThat( "Token map should have only expected values", token.AuthTokenMap, authTokenMatcher( map( Neo4Net.Kernel.Api.security.AuthToken_Fields.PRINCIPAL, USERNAME, Neo4Net.Kernel.Api.security.AuthToken_Fields.CREDENTIALS, PASSWORD, Neo4Net.Kernel.Api.security.AuthToken_Fields.SCHEME_KEY, Neo4Net.Kernel.Api.security.AuthToken_Fields.BASIC_SCHEME, Neo4Net.Kernel.Api.security.AuthToken_Fields.REALM_KEY, "ldap" ) ) );
 			  TestTokenSupportsRealm( token, true, realm );
 			  TestTokenSupportsRealm( token, false, "unknown", "native" );
 		 }
@@ -124,9 +124,9 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 {
 			  string realm = "ldap";
 			  IDictionary<string, object> @params = map( "a", "A", "b", "B" );
-			  ShiroAuthToken token = new ShiroAuthToken( AuthToken.newCustomAuthToken( USERNAME, PASSWORD, realm, Neo4Net.Kernel.api.security.AuthToken_Fields.BASIC_SCHEME, @params ) );
-			  TestBasicAuthToken( token, USERNAME, PASSWORD, Neo4Net.Kernel.api.security.AuthToken_Fields.BASIC_SCHEME );
-			  assertThat( "Token map should have only expected values", token.AuthTokenMap, authTokenMatcher( map( Neo4Net.Kernel.api.security.AuthToken_Fields.PRINCIPAL, USERNAME, Neo4Net.Kernel.api.security.AuthToken_Fields.CREDENTIALS, PASSWORD, Neo4Net.Kernel.api.security.AuthToken_Fields.SCHEME_KEY, Neo4Net.Kernel.api.security.AuthToken_Fields.BASIC_SCHEME, Neo4Net.Kernel.api.security.AuthToken_Fields.REALM_KEY, "ldap", "parameters", @params ) ) );
+			  ShiroAuthToken token = new ShiroAuthToken( AuthToken.newCustomAuthToken( USERNAME, PASSWORD, realm, Neo4Net.Kernel.Api.security.AuthToken_Fields.BASIC_SCHEME, @params ) );
+			  TestBasicAuthToken( token, USERNAME, PASSWORD, Neo4Net.Kernel.Api.security.AuthToken_Fields.BASIC_SCHEME );
+			  assertThat( "Token map should have only expected values", token.AuthTokenMap, authTokenMatcher( map( Neo4Net.Kernel.Api.security.AuthToken_Fields.PRINCIPAL, USERNAME, Neo4Net.Kernel.Api.security.AuthToken_Fields.CREDENTIALS, PASSWORD, Neo4Net.Kernel.Api.security.AuthToken_Fields.SCHEME_KEY, Neo4Net.Kernel.Api.security.AuthToken_Fields.BASIC_SCHEME, Neo4Net.Kernel.Api.security.AuthToken_Fields.REALM_KEY, "ldap", "parameters", @params ) ) );
 			  TestTokenSupportsRealm( token, true, realm );
 			  TestTokenSupportsRealm( token, false, "unknown", "native" );
 		 }
@@ -137,7 +137,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 public virtual void ShouldHaveStringRepresentationWithNullRealm()
 		 {
 			  ShiroAuthToken token = new ShiroAuthToken( AuthToken.newBasicAuthToken( USERNAME, PASSWORD, null ) );
-			  TestBasicAuthToken( token, USERNAME, PASSWORD, Neo4Net.Kernel.api.security.AuthToken_Fields.BASIC_SCHEME );
+			  TestBasicAuthToken( token, USERNAME, PASSWORD, Neo4Net.Kernel.Api.security.AuthToken_Fields.BASIC_SCHEME );
 
 			  string stringRepresentation = token.ToString();
 			  assertThat( stringRepresentation, containsString( "realm='null'" ) );
@@ -152,7 +152,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void testBasicAuthToken(ShiroAuthToken token, String username, String password, String scheme) throws org.Neo4Net.kernel.api.security.exception.InvalidAuthTokenException
+//ORIGINAL LINE: private void testBasicAuthToken(ShiroAuthToken token, String username, String password, String scheme) throws Neo4Net.kernel.api.security.exception.InvalidAuthTokenException
 		 private void TestBasicAuthToken( ShiroAuthToken token, string username, string password, string scheme )
 		 {
 			  assertThat( "Token should have basic scheme", token.Scheme, equalTo( scheme ) );

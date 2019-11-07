@@ -68,7 +68,7 @@ namespace Neo4Net.Bolt.transport
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ParameterizedTest(name = "V{0}") @ValueSource(longs = {org.Neo4Net.bolt.v1.BoltProtocolV1.VERSION, org.Neo4Net.bolt.v2.BoltProtocolV2.VERSION, org.Neo4Net.bolt.v3.BoltProtocolV3.VERSION}) void shouldCreateBoltProtocol(long protocolVersion) throws Throwable
+//ORIGINAL LINE: @ParameterizedTest(name = "V{0}") @ValueSource(longs = {Neo4Net.bolt.v1.BoltProtocolV1.VERSION, Neo4Net.bolt.v2.BoltProtocolV2.VERSION, Neo4Net.bolt.v3.BoltProtocolV3.VERSION}) void shouldCreateBoltProtocol(long protocolVersion) throws Throwable
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void ShouldCreateBoltProtocol( long protocolVersion )
 		 {

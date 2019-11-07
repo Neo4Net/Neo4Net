@@ -48,11 +48,11 @@ namespace Neo4Net.Tooling.procedure
 
 			  CompileTester.UnsuccessfulCompilationClause unsuccessfulCompilationClause = assert_().about(javaSource()).that(sproc).processedWith(Processor()).failsToCompile().withErrorCount(4);
 
-			  unsuccessfulCompilationClause.withErrorContaining( "@org.Neo4Net.procedure.Context usage error: field BadContextFields#shouldBeNonStatic should be public, " + "non-static and non-final" ).@in( sproc ).onLine( 35 );
+			  unsuccessfulCompilationClause.withErrorContaining( "@Neo4Net.procedure.Context usage error: field BadContextFields#shouldBeNonStatic should be public, " + "non-static and non-final" ).@in( sproc ).onLine( 35 );
 
-			  unsuccessfulCompilationClause.withErrorContaining( "@org.Neo4Net.procedure.Context usage error: field BadContextFields#shouldBeNonFinal should be public, " + "non-static and non-final" ).@in( sproc ).onLine( 38 );
+			  unsuccessfulCompilationClause.withErrorContaining( "@Neo4Net.procedure.Context usage error: field BadContextFields#shouldBeNonFinal should be public, " + "non-static and non-final" ).@in( sproc ).onLine( 38 );
 
-			  unsuccessfulCompilationClause.withErrorContaining( "@org.Neo4Net.procedure.Context usage error: field BadContextFields#shouldBePublic should be public, " + "non-static and non-final" ).@in( sproc ).onLine( 42 );
+			  unsuccessfulCompilationClause.withErrorContaining( "@Neo4Net.procedure.Context usage error: field BadContextFields#shouldBePublic should be public, " + "non-static and non-final" ).@in( sproc ).onLine( 42 );
 
 			  unsuccessfulCompilationClause.withErrorContaining( "Field BadContextFields#shouldBeStatic should be static" ).@in( sproc ).onLine( 43 );
 		 }
@@ -63,7 +63,7 @@ namespace Neo4Net.Tooling.procedure
 		 {
 			  JavaFileObject sproc = JavaFileObjectUtils.INSTANCE.procedureSource( "invalid/bad_context_field/BadContextRestrictedTypeField.java" );
 
-			  assert_().about(javaSource()).that(sproc).processedWith(Processor()).compilesWithoutError().withWarningCount(2).withWarningContaining("@org.Neo4Net.procedure.Context usage warning: found unsupported restricted type <org.Neo4Net.kernel.internal" + ".GraphDatabaseAPI> on BadContextRestrictedTypeField#notOfficiallySupported.\n" + "  The procedure will not load unless declared via the configuration option 'dbms.security.procedures.unrestricted'.\n" + "  You can ignore this warning by passing the option -AIgnoreContextWarnings to the Java compiler").@in(sproc).onLine(35);
+			  assert_().about(javaSource()).that(sproc).processedWith(Processor()).compilesWithoutError().withWarningCount(2).withWarningContaining("@Neo4Net.procedure.Context usage warning: found unsupported restricted type <Neo4Net.kernel.internal" + ".GraphDatabaseAPI> on BadContextRestrictedTypeField#notOfficiallySupported.\n" + "  The procedure will not load unless declared via the configuration option 'dbms.security.procedures.unrestricted'.\n" + "  You can ignore this warning by passing the option -AIgnoreContextWarnings to the Java compiler").@in(sproc).onLine(35);
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -82,7 +82,7 @@ namespace Neo4Net.Tooling.procedure
 			  JavaFileObject sproc = JavaFileObjectUtils.INSTANCE.procedureSource( "invalid/bad_context_field/BadContextUnsupportedTypeError.java" );
 
 //JAVA TO C# CONVERTER WARNING: The .NET Type.FullName property will not always yield results identical to the Java Class.getName method:
-			  assert_().about(javaSource()).that(sproc).processedWith(Processor()).failsToCompile().withErrorCount(1).withErrorContaining("@org.Neo4Net.procedure.Context usage error: found unknown type <java.lang.String> on field " + "BadContextUnsupportedTypeError#foo, expected one of: <" + typeof(GraphDatabaseService).FullName + ">, <" + typeof(Log).FullName + ">, <" + typeof(TerminationGuard).FullName + ">, <" + typeof(SecurityContext).FullName + ">, <" + typeof(ProcedureTransaction).FullName + ">").@in(sproc).onLine(33);
+			  assert_().about(javaSource()).that(sproc).processedWith(Processor()).failsToCompile().withErrorCount(1).withErrorContaining("@Neo4Net.procedure.Context usage error: found unknown type <java.lang.String> on field " + "BadContextUnsupportedTypeError#foo, expected one of: <" + typeof(GraphDatabaseService).FullName + ">, <" + typeof(Log).FullName + ">, <" + typeof(TerminationGuard).FullName + ">, <" + typeof(SecurityContext).FullName + ">, <" + typeof(ProcedureTransaction).FullName + ">").@in(sproc).onLine(33);
 		 }
 	}
 

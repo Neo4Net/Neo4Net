@@ -28,7 +28,7 @@ namespace Neo4Net.Server.database
 	using GraphDatabaseFacade = Neo4Net.Kernel.impl.factory.GraphDatabaseFacade;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.factory.DatabaseInfo.COMMUNITY;
+//	import static Neo4Net.kernel.impl.factory.DatabaseInfo.COMMUNITY;
 
 	public class CommunityGraphFactory : GraphFactory
 	{

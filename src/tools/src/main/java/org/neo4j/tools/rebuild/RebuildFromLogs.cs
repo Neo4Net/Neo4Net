@@ -43,8 +43,8 @@ namespace Neo4Net.tools.rebuild
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
 	using StandalonePageCacheFactory = Neo4Net.Io.pagecache.impl.muninn.StandalonePageCacheFactory;
-	using DirectStoreAccess = Neo4Net.Kernel.api.direct.DirectStoreAccess;
-	using LabelScanStore = Neo4Net.Kernel.api.labelscan.LabelScanStore;
+	using DirectStoreAccess = Neo4Net.Kernel.Api.direct.DirectStoreAccess;
+	using LabelScanStore = Neo4Net.Kernel.Api.LabelScan.LabelScanStore;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using TransactionCommitProcess = Neo4Net.Kernel.Impl.Api.TransactionCommitProcess;
 	using TransactionQueue = Neo4Net.Kernel.Impl.Api.TransactionQueue;
@@ -73,13 +73,13 @@ namespace Neo4Net.tools.rebuild
 	using FormattedLog = Neo4Net.Logging.FormattedLog;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
+//	import static Neo4Net.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_ID;
+//	import static Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_ID;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.tracing.CommitEvent.NULL;
+//	import static Neo4Net.kernel.impl.transaction.tracing.CommitEvent.NULL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode.EXTERNAL;
+//	import static Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode.EXTERNAL;
 
 	/// <summary>
 	/// Tool to rebuild store based on available transaction logs.
@@ -96,7 +96,7 @@ namespace Neo4Net.tools.rebuild
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static void main(String[] args) throws Exception, org.Neo4Net.consistency.checking.InconsistentStoreException
+//ORIGINAL LINE: public static void main(String[] args) throws Exception, Neo4Net.consistency.checking.InconsistentStoreException
 		 public static void Main( string[] args )
 		 {
 			  if ( args == null )
@@ -156,7 +156,7 @@ namespace Neo4Net.tools.rebuild
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void rebuild(java.io.File source, java.io.File target, long txId) throws Exception, org.Neo4Net.consistency.checking.InconsistentStoreException
+//ORIGINAL LINE: public void rebuild(java.io.File source, java.io.File target, long txId) throws Exception, Neo4Net.consistency.checking.InconsistentStoreException
 		 public virtual void Rebuild( File source, File target, long txId )
 		 {
 			  using ( PageCache pageCache = StandalonePageCacheFactory.createPageCache( _fs, createInitializedScheduler() ) )
@@ -183,7 +183,7 @@ namespace Neo4Net.tools.rebuild
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void checkConsistency(java.io.File target, org.Neo4Net.io.pagecache.PageCache pageCache) throws Exception, org.Neo4Net.consistency.checking.InconsistentStoreException
+//ORIGINAL LINE: void checkConsistency(java.io.File target, Neo4Net.io.pagecache.PageCache pageCache) throws Exception, Neo4Net.consistency.checking.InconsistentStoreException
 		 internal virtual void CheckConsistency( File target, PageCache pageCache )
 		 {
 			  using ( ConsistencyChecker checker = new ConsistencyChecker( target, pageCache ) )
@@ -268,7 +268,7 @@ namespace Neo4Net.tools.rebuild
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void checkConsistency() throws org.Neo4Net.consistency.checking.full.ConsistencyCheckIncompleteException, org.Neo4Net.consistency.checking.InconsistentStoreException
+//ORIGINAL LINE: private void checkConsistency() throws Neo4Net.consistency.checking.full.ConsistencyCheckIncompleteException, Neo4Net.consistency.checking.InconsistentStoreException
 			  internal virtual void CheckConsistency()
 			  {
 					StoreAccess nativeStores = ( new StoreAccess( Graphdb.DependencyResolver.resolveDependency( typeof( RecordStorageEngine ) ).testAccessNeoStores() ) ).initialize();

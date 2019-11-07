@@ -43,7 +43,7 @@ namespace Neo4Net.Configuration
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
+//	import static Neo4Net.helpers.collection.MapUtil.stringMap;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class HaConfigurationValidatorTest
@@ -54,11 +54,11 @@ namespace Neo4Net.Configuration
 		 public ExpectedException Expected = ExpectedException.none();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Parameterized.Parameter public org.Neo4Net.kernel.impl.enterprise.configuration.EnterpriseEditionSettings.Mode mode;
+//ORIGINAL LINE: @Parameterized.Parameter public Neo4Net.kernel.impl.enterprise.configuration.EnterpriseEditionSettings.Mode mode;
 		 public EnterpriseEditionSettings.Mode Mode;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Parameterized.Parameters(name = "{0}") public static java.util.List<org.Neo4Net.kernel.impl.enterprise.configuration.EnterpriseEditionSettings.Mode> recordFormats()
+//ORIGINAL LINE: @Parameterized.Parameters(name = "{0}") public static java.util.List<Neo4Net.kernel.impl.enterprise.configuration.EnterpriseEditionSettings.Mode> recordFormats()
 		 public static IList<EnterpriseEditionSettings.Mode> RecordFormats()
 		 {
 			  return Arrays.asList( EnterpriseEditionSettings.Mode.HA, EnterpriseEditionSettings.Mode.ARBITER );

@@ -29,9 +29,9 @@ namespace Neo4Net.Kernel.impl.core
 	using ReadOnlyDbException = Neo4Net.Kernel.Api.Exceptions.ReadOnlyDbException;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.function.Predicates.ALWAYS_FALSE_INT;
+//	import static Neo4Net.function.Predicates.ALWAYS_FALSE_INT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.TokenRead_Fields.NO_TOKEN;
+//	import static Neo4Net.Kernel.Api.Internal.TokenRead_Fields.NO_TOKEN;
 
 	public abstract class AbstractTokenHolderBase : TokenHolder
 	{
@@ -44,7 +44,7 @@ namespace Neo4Net.Kernel.impl.core
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void setInitialTokens(java.util.List<org.Neo4Net.Kernel.Api.Internal.NamedToken> tokens) throws NonUniqueTokenException
+//ORIGINAL LINE: public void setInitialTokens(java.util.List<Neo4Net.Kernel.Api.Internal.NamedToken> tokens) throws NonUniqueTokenException
 		 public virtual IList<NamedToken> InitialTokens
 		 {
 			 set
@@ -54,7 +54,7 @@ namespace Neo4Net.Kernel.impl.core
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void addToken(org.Neo4Net.Kernel.Api.Internal.NamedToken token) throws NonUniqueTokenException
+//ORIGINAL LINE: public void addToken(Neo4Net.Kernel.Api.Internal.NamedToken token) throws NonUniqueTokenException
 		 public override void AddToken( NamedToken token )
 		 {
 			  TokenRegistry.put( token );
@@ -84,7 +84,7 @@ namespace Neo4Net.Kernel.impl.core
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.Kernel.Api.Internal.NamedToken getTokenById(int id) throws TokenNotFoundException
+//ORIGINAL LINE: public Neo4Net.Kernel.Api.Internal.NamedToken getTokenById(int id) throws TokenNotFoundException
 		 public override NamedToken GetTokenById( int id )
 		 {
 			  NamedToken result = TokenRegistry.getToken( id );
@@ -124,7 +124,7 @@ namespace Neo4Net.Kernel.impl.core
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected abstract int createToken(String tokenName) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
+//ORIGINAL LINE: protected abstract int createToken(String tokenName) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 		 protected internal abstract int CreateToken( string tokenName );
 
 		 internal virtual bool ResolveIds( string[] names, int[] ids, System.Func<int, bool> unresolvedIndexCheck )

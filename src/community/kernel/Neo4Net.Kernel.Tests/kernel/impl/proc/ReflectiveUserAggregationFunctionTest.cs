@@ -35,8 +35,8 @@ namespace Neo4Net.Kernel.impl.proc
 	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
 	using Neo4NetTypes = Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes;
 	using UserAggregator = Neo4Net.Kernel.Api.Internal.procs.UserAggregator;
-	using BasicContext = Neo4Net.Kernel.api.proc.BasicContext;
-	using CallableUserAggregationFunction = Neo4Net.Kernel.api.proc.CallableUserAggregationFunction;
+	using BasicContext = Neo4Net.Kernel.Api.Procs.BasicContext;
+	using CallableUserAggregationFunction = Neo4Net.Kernel.Api.Procs.CallableUserAggregationFunction;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using Log = Neo4Net.Logging.Log;
 	using NullLog = Neo4Net.Logging.NullLog;
@@ -67,7 +67,7 @@ namespace Neo4Net.Kernel.impl.proc
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verifyNoMoreInteractions;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.procs.UserFunctionSignature.functionSignature;
+//	import static Neo4Net.Kernel.Api.Internal.procs.UserFunctionSignature.functionSignature;
 
 	public class ReflectiveUserAggregationFunctionTest
 	{
@@ -120,7 +120,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldInjectLogging() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: @Test public void shouldInjectLogging() throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldInjectLogging()
 		 {
@@ -367,7 +367,7 @@ namespace Neo4Net.Kernel.impl.proc
 
 			  // Expect
 			  Exception.expect( typeof( ProcedureException ) );
-			  Exception.expectMessage( "Failed to invoke function `org.Neo4Net.kernel.impl.proc.test`: " + "Caused by: java.lang.IndexOutOfBoundsException" );
+			  Exception.expectMessage( "Failed to invoke function `Neo4Net.kernel.impl.proc.test`: " + "Caused by: java.lang.IndexOutOfBoundsException" );
 
 			  // When
 			  method.Create( new BasicContext() ).update(new object[] {});
@@ -379,7 +379,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 public virtual void ShouldLoadWhiteListedFunction()
 		 {
 			  // Given
-			  _procedureCompiler = new ReflectiveProcedureCompiler( new TypeMappers(), _components, new ComponentRegistry(), NullLog.Instance, new ProcedureConfig(Config.defaults(GraphDatabaseSettings.procedure_whitelist, "org.Neo4Net.kernel.impl.proc.collectCool")) );
+			  _procedureCompiler = new ReflectiveProcedureCompiler( new TypeMappers(), _components, new ComponentRegistry(), NullLog.Instance, new ProcedureConfig(Config.defaults(GraphDatabaseSettings.procedure_whitelist, "Neo4Net.kernel.impl.proc.collectCool")) );
 
 			  CallableUserAggregationFunction method = Compile( typeof( SingleAggregationFunction ) )[0];
 
@@ -399,7 +399,7 @@ namespace Neo4Net.Kernel.impl.proc
 			  _procedureCompiler = new ReflectiveProcedureCompiler( new TypeMappers(), _components, new ComponentRegistry(), log, new ProcedureConfig(Config.defaults(GraphDatabaseSettings.procedure_whitelist, "WrongName")) );
 
 			  IList<CallableUserAggregationFunction> method = Compile( typeof( SingleAggregationFunction ) );
-			  verify( log ).warn( "The function 'org.Neo4Net.kernel.impl.proc.collectCool' is not on the whitelist and won't be loaded." );
+			  verify( log ).warn( "The function 'Neo4Net.kernel.impl.proc.collectCool' is not on the whitelist and won't be loaded." );
 			  assertThat( method.Count, equalTo( 0 ) );
 		 }
 
@@ -413,7 +413,7 @@ namespace Neo4Net.Kernel.impl.proc
 			  _procedureCompiler = new ReflectiveProcedureCompiler( new TypeMappers(), _components, new ComponentRegistry(), log, new ProcedureConfig(Config.defaults(GraphDatabaseSettings.procedure_whitelist, "")) );
 
 			  IList<CallableUserAggregationFunction> method = Compile( typeof( SingleAggregationFunction ) );
-			  verify( log ).warn( "The function 'org.Neo4Net.kernel.impl.proc.collectCool' is not on the whitelist and won't be loaded." );
+			  verify( log ).warn( "The function 'Neo4Net.kernel.impl.proc.collectCool' is not on the whitelist and won't be loaded." );
 			  assertThat( method.Count, equalTo( 0 ) );
 		 }
 
@@ -430,7 +430,7 @@ namespace Neo4Net.Kernel.impl.proc
 			  IList<CallableUserAggregationFunction> funcs = procedureCompiler.CompileAggregationFunction( typeof( FunctionWithDeprecation ) );
 
 			  // Then
-			  verify( log ).warn( "Use of @UserAggregationFunction(deprecatedBy) without @Deprecated in org.Neo4Net.kernel.impl.proc.badFunc" );
+			  verify( log ).warn( "Use of @UserAggregationFunction(deprecatedBy) without @Deprecated in Neo4Net.kernel.impl.proc.badFunc" );
 			  verifyNoMoreInteractions( log );
 			  foreach ( CallableUserAggregationFunction func in funcs )
 			  {
@@ -627,7 +627,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 public class LoggingFunction
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Context public org.Neo4Net.logging.Log log;
+//ORIGINAL LINE: @Context public Neo4Net.logging.Log log;
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
 			  public Log LogConflict;
 
@@ -752,7 +752,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 public class FunctionWithStaticContextAnnotatedField
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Context public static org.Neo4Net.graphdb.GraphDatabaseService gdb;
+//ORIGINAL LINE: @Context public static Neo4Net.graphdb.GraphDatabaseService gdb;
 			  public static IGraphDatabaseService Gdb;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -954,7 +954,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.util.List<org.Neo4Net.kernel.api.proc.CallableUserAggregationFunction> compile(Class clazz) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: private java.util.List<Neo4Net.kernel.api.proc.CallableUserAggregationFunction> compile(Class clazz) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 private IList<CallableUserAggregationFunction> Compile( Type clazz )
 		 {
 			  return _procedureCompiler.compileAggregationFunction( clazz );

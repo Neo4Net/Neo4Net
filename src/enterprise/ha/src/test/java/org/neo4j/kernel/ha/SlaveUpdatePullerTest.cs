@@ -79,9 +79,9 @@ namespace Neo4Net.Kernel.ha
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
+//	import static Neo4Net.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.logging.AssertableLogProvider.inLog;
+//	import static Neo4Net.logging.AssertableLogProvider.inLog;
 
 	public class SlaveUpdatePullerTest
 	{
@@ -116,7 +116,7 @@ namespace Neo4Net.Kernel.ha
 		 private SlaveUpdatePuller _updatePuller;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.CleanupRule cleanup = new org.Neo4Net.test.rule.CleanupRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.CleanupRule cleanup = new Neo4Net.test.rule.CleanupRule();
 		 public readonly CleanupRule Cleanup = new CleanupRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -257,7 +257,7 @@ namespace Neo4Net.Kernel.ha
 			  }
 			  catch ( System.InvalidOperationException )
 			  { // THEN Good
-					verify( condition ).evaluate( anyInt(), anyInt() );
+					verify( condition ).Evaluate( anyInt(), anyInt() );
 			  }
 		 }
 

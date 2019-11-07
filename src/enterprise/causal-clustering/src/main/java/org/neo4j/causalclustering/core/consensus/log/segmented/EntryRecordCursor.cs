@@ -32,7 +32,7 @@ namespace Neo4Net.causalclustering.core.consensus.log.segmented
 	using Neo4Net.Kernel.impl.transaction.log;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.log.EntryRecord.read;
+//	import static Neo4Net.causalclustering.core.consensus.log.EntryRecord.read;
 
 	/// <summary>
 	/// A cursor for iterating over RAFT log entries starting at an index and until the end of the segment is met.
@@ -52,7 +52,7 @@ namespace Neo4Net.causalclustering.core.consensus.log.segmented
 		 private bool _closed;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: EntryRecordCursor(Reader reader, org.Neo4Net.causalclustering.messaging.marshalling.ChannelMarshal<org.Neo4Net.causalclustering.core.replication.ReplicatedContent> contentMarshal, long currentIndex, long wantedIndex, SegmentFile segment) throws java.io.IOException, org.Neo4Net.causalclustering.messaging.EndOfStreamException
+//ORIGINAL LINE: EntryRecordCursor(Reader reader, Neo4Net.causalclustering.messaging.marshalling.ChannelMarshal<Neo4Net.causalclustering.core.replication.ReplicatedContent> contentMarshal, long currentIndex, long wantedIndex, SegmentFile segment) throws java.io.IOException, Neo4Net.causalclustering.messaging.EndOfStreamException
 		 internal EntryRecordCursor( Reader reader, ChannelMarshal<ReplicatedContent> contentMarshal, long currentIndex, long wantedIndex, SegmentFile segment )
 		 {
 			  this._bufferedReader = new ReadAheadChannel<StoreChannel>( reader.Channel() );

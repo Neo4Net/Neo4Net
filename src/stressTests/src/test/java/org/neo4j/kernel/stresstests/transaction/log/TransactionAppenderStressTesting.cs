@@ -37,11 +37,11 @@ namespace Neo4Net.Kernel.stresstests.transaction.log
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.function.Suppliers.untilTimeExpired;
+//	import static Neo4Net.function.Suppliers.untilTimeExpired;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helper.StressTestingHelper.ensureExistsAndEmpty;
+//	import static Neo4Net.helper.StressTestingHelper.ensureExistsAndEmpty;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helper.StressTestingHelper.fromEnv;
+//	import static Neo4Net.helper.StressTestingHelper.fromEnv;
 
 	/// <summary>
 	/// Notice the class name: this is _not_ going to be run as part of the main build.

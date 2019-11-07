@@ -36,9 +36,9 @@ namespace Neo4Net.causalclustering.stresstests
 	using Log = Neo4Net.Logging.Log;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.function.Predicates.awaitForever;
+//	import static Neo4Net.function.Predicates.awaitForever;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.DependencyResolver_SelectionStrategy.ONLY;
+//	import static Neo4Net.graphdb.DependencyResolver_SelectionStrategy.ONLY;
 
 	internal class CatchupNewReadReplica : Workload
 	{
@@ -48,7 +48,7 @@ namespace Neo4Net.causalclustering.stresstests
 		 private readonly FileSystemAbstraction _fs;
 		 private readonly Log _log;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private final org.Neo4Net.causalclustering.discovery.Cluster<?> cluster;
+//ORIGINAL LINE: private final Neo4Net.causalclustering.discovery.Cluster<?> cluster;
 		 private readonly Cluster<object> _cluster;
 		 private bool _deleteStore;
 
@@ -65,7 +65,7 @@ namespace Neo4Net.causalclustering.stresstests
 		 {
 			  int newMemberId = _cluster.readReplicas().Count;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.causalclustering.discovery.ReadReplica readReplica = cluster.addReadReplicaWithId(newMemberId);
+//ORIGINAL LINE: final Neo4Net.causalclustering.discovery.ReadReplica readReplica = cluster.addReadReplicaWithId(newMemberId);
 			  ReadReplica readReplica = _cluster.addReadReplicaWithId( newMemberId );
 
 			  _log.info( "Adding " + readReplica );

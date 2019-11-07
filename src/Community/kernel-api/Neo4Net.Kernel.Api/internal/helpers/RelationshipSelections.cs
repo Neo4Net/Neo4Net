@@ -113,7 +113,7 @@ namespace Neo4Net.Kernel.Api.Internal.Helpers
 		 /// <param name="types"> The types of the relationship </param>
 		 /// <param name="factory"> factory for creating instance of generic type T </param>
 		 /// <returns> An iterator that allows traversing the relationship chain. </returns>
-		 public static ResourceIterator<T> OutgoingIterator<T>( CursorFactory cursors, INodeCursor node, int[] types, RelationshipFactory<T> factory )
+		 public static IResourceIterator<T> OutgoingIterator<T>( CursorFactory cursors, INodeCursor node, int[] types, RelationshipFactory<T> factory )
 		 {
 			  if ( node.Dense )
 			  {
@@ -137,7 +137,7 @@ namespace Neo4Net.Kernel.Api.Internal.Helpers
 		 /// <param name="types"> The types of the relationship </param>
 		 /// <param name="factory"> factory for creating instance of generic type T </param>
 		 /// <returns> An iterator that allows traversing the relationship chain. </returns>
-		 public static ResourceIterator<T> IncomingIterator<T>( CursorFactory cursors, INodeCursor node, int[] types, RelationshipFactory<T> factory )
+		 public static IResourceIterator<T> IncomingIterator<T>( CursorFactory cursors, INodeCursor node, int[] types, RelationshipFactory<T> factory )
 		 {
 			  if ( node.Dense )
 			  {
@@ -161,7 +161,7 @@ namespace Neo4Net.Kernel.Api.Internal.Helpers
 		 /// <param name="types"> The types of the relationship </param>
 		 /// <param name="factory"> factory for creating instance of generic type T </param>
 		 /// <returns> An iterator that allows traversing the relationship chain. </returns>
-		 public static ResourceIterator<T> AllIterator<T>( CursorFactory cursors, INodeCursor node, int[] types, RelationshipFactory<T> factory )
+		 public static IResourceIterator<T> AllIterator<T>( CursorFactory cursors, INodeCursor node, int[] types, RelationshipFactory<T> factory )
 		 {
 			  if ( node.Dense )
 			  {

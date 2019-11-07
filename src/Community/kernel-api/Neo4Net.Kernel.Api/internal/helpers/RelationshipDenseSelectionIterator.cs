@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.Api.Internal.Helpers
 	/// <summary>
 	/// Helper iterator for traversing specific types and directions of a dense node.
 	/// </summary>
-	public sealed class RelationshipDenseSelectionIterator<R> : RelationshipDenseSelection, ResourceIterator<R>
+	public sealed class RelationshipDenseSelectionIterator<R> : RelationshipDenseSelection, IResourceIterator<R>
 	{
 		 private RelationshipFactory<R> _factory;
 		 private long _next;

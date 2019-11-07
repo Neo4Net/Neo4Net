@@ -36,7 +36,7 @@ namespace Neo4Net.Bolt.v3.runtime.integration
 	using HelloMessage = Neo4Net.Bolt.v3.messaging.request.HelloMessage;
 	using RunMessage = Neo4Net.Bolt.v3.messaging.request.RunMessage;
 	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
-	using KernelTransactionHandle = Neo4Net.Kernel.api.KernelTransactionHandle;
+	using KernelTransactionHandle = Neo4Net.Kernel.Api.KernelTransactionHandle;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using KernelTransactions = Neo4Net.Kernel.Impl.Api.KernelTransactions;
 	using TransactionIdStore = Neo4Net.Kernel.impl.transaction.log.TransactionIdStore;
@@ -60,31 +60,31 @@ namespace Neo4Net.Bolt.v3.runtime.integration
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.Matchers.not;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.messaging.util.MessageMatchers.msgFailure;
+//	import static Neo4Net.bolt.v1.messaging.util.MessageMatchers.msgFailure;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.messaging.util.MessageMatchers.msgIgnored;
+//	import static Neo4Net.bolt.v1.messaging.util.MessageMatchers.msgIgnored;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.messaging.util.MessageMatchers.msgRecord;
+//	import static Neo4Net.bolt.v1.messaging.util.MessageMatchers.msgRecord;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.messaging.util.MessageMatchers.msgSuccess;
+//	import static Neo4Net.bolt.v1.messaging.util.MessageMatchers.msgSuccess;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.runtime.spi.StreamMatchers.eqRecord;
+//	import static Neo4Net.bolt.v1.runtime.spi.StreamMatchers.eqRecord;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.transport.integration.TransportTestUtil.eventuallyReceives;
+//	import static Neo4Net.bolt.v1.transport.integration.TransportTestUtil.eventuallyReceives;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v3.messaging.request.CommitMessage.COMMIT_MESSAGE;
+//	import static Neo4Net.bolt.v3.messaging.request.CommitMessage.COMMIT_MESSAGE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v3.messaging.request.RollbackMessage.ROLLBACK_MESSAGE;
+//	import static Neo4Net.bolt.v3.messaging.request.RollbackMessage.ROLLBACK_MESSAGE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.map;
+//	import static Neo4Net.helpers.collection.MapUtil.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.util.ValueUtils.asMapValue;
+//	import static Neo4Net.kernel.impl.util.ValueUtils.asMapValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.longValue;
+//	import static Neo4Net.values.storable.Values.longValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.stringValue;
+//	import static Neo4Net.values.storable.Values.stringValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.@virtual.VirtualValues.EMPTY_MAP;
+//	import static Neo4Net.values.@virtual.VirtualValues.EMPTY_MAP;
 
 	public class BoltV3TransportIT : BoltV3TransportBase
 	{

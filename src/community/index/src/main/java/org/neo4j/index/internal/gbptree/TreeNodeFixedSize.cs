@@ -25,13 +25,13 @@ namespace Neo4Net.Index.Internal.gbptree
 	using PageCursor = Neo4Net.Io.pagecache.PageCursor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Internal.gbptree.Layout_Fields.FIXED_SIZE_KEY;
+//	import static Neo4Net.index.Internal.gbptree.Layout_Fields.FIXED_SIZE_KEY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Internal.gbptree.Layout_Fields.FIXED_SIZE_VALUE;
+//	import static Neo4Net.index.Internal.gbptree.Layout_Fields.FIXED_SIZE_VALUE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Internal.gbptree.TreeNode.Type.INTERNAL;
+//	import static Neo4Net.index.Internal.gbptree.TreeNode.Type.INTERNAL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Internal.gbptree.TreeNode.Type.LEAF;
+//	import static Neo4Net.index.Internal.gbptree.TreeNode.Type.LEAF;
 
 	/// <summary>
 	/// <para>

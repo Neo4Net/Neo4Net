@@ -35,7 +35,7 @@ namespace Neo4Net.Bolt.v1.messaging.decoder
 	using UTF8StringValue = Neo4Net.Values.Storable.UTF8StringValue;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.NoValue.NO_VALUE;
+//	import static Neo4Net.values.storable.NoValue.NO_VALUE;
 
 	/// <summary>
 	/// <seealso cref="AnyValueWriter Writer"/> that allows to convert <seealso cref="AnyValue"/> to any primitive Java type. It explicitly

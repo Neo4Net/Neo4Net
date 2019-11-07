@@ -29,12 +29,12 @@ namespace Neo4Net.causalclustering.backup_stores
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.helpers.DataCreator.createEmptyNodes;
+//	import static Neo4Net.causalclustering.helpers.DataCreator.createEmptyNodes;
 
 	public class BackupStoreWithSomeDataButNoTransactionLogs : AbstractStoreGenerator
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: CoreClusterMember createData(org.Neo4Net.causalclustering.discovery.Cluster<?> cluster) throws Exception
+//ORIGINAL LINE: CoreClusterMember createData(Neo4Net.causalclustering.discovery.Cluster<?> cluster) throws Exception
 		 internal override CoreClusterMember CreateData<T1>( Cluster<T1> cluster )
 		 {
 			  return createEmptyNodes( cluster, 10 );

@@ -43,7 +43,7 @@ namespace Neo4Net.Bolt
 	using Neo4NetRule = Neo4Net.Harness.junit.Neo4NetRule;
 	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using Iterators = Neo4Net.Collections.Helpers.Iterators;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using Settings = Neo4Net.Kernel.configuration.Settings;
 	using OnlineBackupSettings = Neo4Net.Kernel.impl.enterprise.configuration.OnlineBackupSettings;
@@ -63,7 +63,7 @@ namespace Neo4Net.Bolt
 	public class BoltProceduresIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ClassRule public static final org.Neo4Net.harness.junit.Neo4NetRule db = new org.Neo4Net.harness.junit.Neo4NetRule().withProcedure(BoltTestProcedures.class).withConfig(org.Neo4Net.kernel.impl.enterprise.configuration.OnlineBackupSettings.online_backup_enabled, org.Neo4Net.kernel.configuration.Settings.FALSE);
+//ORIGINAL LINE: @ClassRule public static final Neo4Net.harness.junit.Neo4NetRule db = new Neo4Net.harness.junit.Neo4NetRule().withProcedure(BoltTestProcedures.class).withConfig(Neo4Net.kernel.impl.enterprise.configuration.OnlineBackupSettings.online_backup_enabled, Neo4Net.kernel.configuration.Settings.FALSE);
 		 public static readonly Neo4NetRule Db = new Neo4NetRule().withProcedure(typeof(BoltTestProcedures)).withConfig(OnlineBackupSettings.online_backup_enabled, Settings.FALSE);
 
 		 private static Driver _driver;
@@ -130,11 +130,11 @@ namespace Neo4Net.Bolt
 		 public class BoltTestProcedures
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Context public org.Neo4Net.graphdb.GraphDatabaseService db;
+//ORIGINAL LINE: @Context public Neo4Net.graphdb.GraphDatabaseService db;
 			  public IGraphDatabaseService Db;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Context public org.Neo4Net.kernel.api.KernelTransaction tx;
+//ORIGINAL LINE: @Context public Neo4Net.kernel.api.KernelTransaction tx;
 			  public KernelTransaction Tx;
 
 			  [Procedure(name : "test.readNodesReturnThemAndTerminateTheTransaction", mode : Neo4Net.Procedure.Mode.READ)]
@@ -169,7 +169,7 @@ namespace Neo4Net.Bolt
 			  internal readonly LinkedList<T> Elements;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SafeVarargs private TransactionTerminatingIterator(org.Neo4Net.kernel.api.KernelTransaction tx, T... elements)
+//ORIGINAL LINE: @SafeVarargs private TransactionTerminatingIterator(Neo4Net.kernel.api.KernelTransaction tx, T... elements)
 			  internal TransactionTerminatingIterator( KernelTransaction tx, params T[] elements )
 			  {
 					this.Tx = tx;

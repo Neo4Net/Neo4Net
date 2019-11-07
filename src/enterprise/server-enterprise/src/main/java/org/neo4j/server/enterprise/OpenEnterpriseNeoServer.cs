@@ -60,7 +60,7 @@ namespace Neo4Net.Server.enterprise
 	using WebServer = Neo4Net.Server.web.WebServer;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.configuration.ServerSettings.jmx_module_enabled;
+//	import static Neo4Net.server.configuration.ServerSettings.jmx_module_enabled;
 
 	public class OpenEnterpriseNeoServer : CommunityNeoServer
 	{
@@ -128,7 +128,7 @@ namespace Neo4Net.Server.enterprise
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") @Override protected Iterable<org.Neo4Net.server.modules.ServerModule> createServerModules()
+//ORIGINAL LINE: @SuppressWarnings("unchecked") @Override protected Iterable<Neo4Net.server.modules.ServerModule> createServerModules()
 		 protected internal override IEnumerable<ServerModule> CreateServerModules()
 		 {
 			  IList<ServerModule> modules = new List<ServerModule>();

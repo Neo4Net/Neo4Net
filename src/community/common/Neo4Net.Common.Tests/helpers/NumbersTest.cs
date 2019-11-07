@@ -25,17 +25,17 @@ namespace Neo4Net.Helpers
    //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
    //	import static org.junit.jupiter.api.Assertions.assertEquals;
    //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-   //	import static org.Neo4Net.helpers.Numbers.safeCastIntToShort;
+   //	import static Neo4Net.helpers.Numbers.safeCastIntToShort;
    //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-   //	import static org.Neo4Net.helpers.Numbers.safeCastIntToUnsignedShort;
+   //	import static Neo4Net.helpers.Numbers.safeCastIntToUnsignedShort;
    //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-   //	import static org.Neo4Net.helpers.Numbers.safeCastLongToByte;
+   //	import static Neo4Net.helpers.Numbers.safeCastLongToByte;
    //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-   //	import static org.Neo4Net.helpers.Numbers.safeCastLongToInt;
+   //	import static Neo4Net.helpers.Numbers.safeCastLongToInt;
    //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-   //	import static org.Neo4Net.helpers.Numbers.safeCastLongToShort;
+   //	import static Neo4Net.helpers.Numbers.safeCastLongToShort;
    //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-   //	import static org.Neo4Net.helpers.Numbers.unsignedShortToInt;
+   //	import static Neo4Net.helpers.Numbers.unsignedShortToInt;
 
    //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
    //ORIGINAL LINE: @EnableRuleMigrationSupport public class NumbersTest

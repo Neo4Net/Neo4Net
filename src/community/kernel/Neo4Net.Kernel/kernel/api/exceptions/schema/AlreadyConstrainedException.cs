@@ -35,7 +35,7 @@ namespace Neo4Net.Kernel.Api.Exceptions.schema
 		 private readonly ConstraintDescriptor _constraint;
 		 private readonly OperationContext _context;
 
-		 public AlreadyConstrainedException( ConstraintDescriptor constraint, OperationContext context, TokenNameLookup tokenNameLookup ) : base( org.Neo4Net.kernel.api.exceptions.Status_Schema.ConstraintAlreadyExists, ConstructUserMessage( context, tokenNameLookup, constraint ) )
+		 public AlreadyConstrainedException( ConstraintDescriptor constraint, OperationContext context, TokenNameLookup tokenNameLookup ) : base( Neo4Net.kernel.api.exceptions.Status_Schema.ConstraintAlreadyExists, ConstructUserMessage( context, tokenNameLookup, constraint ) )
 		 {
 			  this._constraint = constraint;
 			  this._context = context;

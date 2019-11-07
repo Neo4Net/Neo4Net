@@ -544,7 +544,7 @@ namespace Neo4Net.Io.pagecache.randomharness
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void runVerificationPhase(org.Neo4Net.io.pagecache.impl.muninn.MuninnPageCache cache) throws Exception
+//ORIGINAL LINE: private void runVerificationPhase(Neo4Net.io.pagecache.impl.muninn.MuninnPageCache cache) throws Exception
 		 private void RunVerificationPhase( MuninnPageCache cache )
 		 {
 			  if ( _verification != null )

@@ -27,13 +27,13 @@ namespace Neo4Net.Kernel.impl.query
 	using ExecutionStatistics = Neo4Net.Kernel.Api.Internal.ExecutionStatistics;
 	using Kernel = Neo4Net.Kernel.Api.Internal.Kernel;
 	using SecurityContext = Neo4Net.Kernel.Api.Internal.security.SecurityContext;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
-	using QueryRegistryOperations = Neo4Net.Kernel.api.QueryRegistryOperations;
-	using ResourceTracker = Neo4Net.Kernel.api.ResourceTracker;
-	using Statement = Neo4Net.Kernel.api.Statement;
-	using DbmsOperations = Neo4Net.Kernel.api.dbms.DbmsOperations;
-	using ExecutingQuery = Neo4Net.Kernel.api.query.ExecutingQuery;
-	using TxStateHolder = Neo4Net.Kernel.api.txstate.TxStateHolder;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
+	using QueryRegistryOperations = Neo4Net.Kernel.Api.QueryRegistryOperations;
+	using ResourceTracker = Neo4Net.Kernel.Api.ResourceTracker;
+	using Statement = Neo4Net.Kernel.Api.Statement;
+	using DbmsOperations = Neo4Net.Kernel.Api.dbms.DbmsOperations;
+	using ExecutingQuery = Neo4Net.Kernel.Api.query.ExecutingQuery;
+	using TxStateHolder = Neo4Net.Kernel.Api.txstate.TxStateHolder;
 	using KernelTransactionImplementation = Neo4Net.Kernel.Impl.Api.KernelTransactionImplementation;
 	using ThreadToStatementContextBridge = Neo4Net.Kernel.impl.core.ThreadToStatementContextBridge;
 	using InternalTransaction = Neo4Net.Kernel.impl.coreapi.InternalTransaction;
@@ -269,7 +269,7 @@ namespace Neo4Net.Kernel.impl.query
 			  return _locker.exclusiveLock( KernelTransaction(), p );
 		 }
 
-		 public override Neo4Net.Kernel.api.KernelTransaction_Revertable RestrictCurrentTransaction( SecurityContext context )
+		 public override Neo4Net.Kernel.Api.KernelTransaction_Revertable RestrictCurrentTransaction( SecurityContext context )
 		 {
 			  return _transaction.overrideWith( context );
 		 }

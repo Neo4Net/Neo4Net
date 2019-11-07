@@ -68,7 +68,7 @@ namespace Neo4Net.Bolt.runtime
 	 public interface BoltResult_Visitor
 	 {
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void visit(org.Neo4Net.cypher.result.QueryResult_Record record) throws Exception;
+//ORIGINAL LINE: void visit(Neo4Net.cypher.result.QueryResult_Record record) throws Exception;
 		  void Visit( Neo4Net.Cypher.result.QueryResult_Record record );
 
 		  /// <summary>

@@ -27,13 +27,13 @@ namespace Neo4Net.Kernel.impl.store.counts
 	using WritableBuffer = Neo4Net.Kernel.impl.store.kvstore.WritableBuffer;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.counts.keys.CountsKeyFactory.indexSampleKey;
+//	import static Neo4Net.kernel.impl.store.counts.keys.CountsKeyFactory.indexSampleKey;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.counts.keys.CountsKeyFactory.indexStatisticsKey;
+//	import static Neo4Net.kernel.impl.store.counts.keys.CountsKeyFactory.indexStatisticsKey;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.counts.keys.CountsKeyFactory.nodeKey;
+//	import static Neo4Net.kernel.impl.store.counts.keys.CountsKeyFactory.nodeKey;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.counts.keys.CountsKeyFactory.relationshipKey;
+//	import static Neo4Net.kernel.impl.store.counts.keys.CountsKeyFactory.relationshipKey;
 
 	internal sealed class CountsUpdater : Neo4Net.Kernel.Impl.Api.CountsAccessor_Updater, Neo4Net.Kernel.Impl.Api.CountsAccessor_IndexStatsUpdater, IDisposable
 	{

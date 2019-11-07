@@ -156,7 +156,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 /// <param name="pageId"> page id to move to. </param>
 		 /// <exception cref="IOException"> on <seealso cref="PageCursor.next(long)"/> exception. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static void goTo(org.Neo4Net.io.pagecache.PageCursor cursor, String messageOnError, long pageId) throws java.io.IOException
+//ORIGINAL LINE: static void goTo(Neo4Net.io.pagecache.PageCursor cursor, String messageOnError, long pageId) throws java.io.IOException
 		 internal static void GoTo( PageCursor cursor, string messageOnError, long pageId )
 		 {
 			  if ( !cursor.Next( pageId ) )

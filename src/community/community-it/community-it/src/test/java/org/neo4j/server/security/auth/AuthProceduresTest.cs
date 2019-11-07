@@ -27,13 +27,13 @@ namespace Neo4Net.Server.Security.Auth
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
 	using ProcedureCallContext = Neo4Net.Kernel.Api.Internal.procs.ProcedureCallContext;
-	using ResourceTracker = Neo4Net.Kernel.api.ResourceTracker;
-	using StubResourceManager = Neo4Net.Kernel.api.StubResourceManager;
-	using AnonymousContext = Neo4Net.Kernel.api.security.AnonymousContext;
+	using ResourceTracker = Neo4Net.Kernel.Api.ResourceTracker;
+	using StubResourceManager = Neo4Net.Kernel.Api.StubResourceManager;
+	using AnonymousContext = Neo4Net.Kernel.Api.security.AnonymousContext;
 	using KernelIntegrationTest = Neo4Net.Kernel.Impl.Api.integrationtest.KernelIntegrationTest;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.procs.ProcedureSignature.procedureName;
+//	import static Neo4Net.Kernel.Api.Internal.procs.ProcedureSignature.procedureName;
 
 	public class AuthProceduresTest : KernelIntegrationTest
 	{

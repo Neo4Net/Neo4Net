@@ -43,16 +43,16 @@ namespace Neo4Net.causalclustering.helper
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verify;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
+//	import static Neo4Net.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.assertion.Assert.assertEventually;
+//	import static Neo4Net.test.assertion.Assert.assertEventually;
 
 	public class RobustJobSchedulerWrapperTest
 	{
 		 private readonly int _defaultTimeoutMs = 5000;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.kernel.lifecycle.LifeRule schedulerLife = new org.Neo4Net.kernel.lifecycle.LifeRule(true);
+//ORIGINAL LINE: @Rule public Neo4Net.kernel.lifecycle.LifeRule schedulerLife = new Neo4Net.kernel.lifecycle.LifeRule(true);
 		 public LifeRule SchedulerLife = new LifeRule( true );
 		 private readonly IJobScheduler _actualScheduler = createInitializedScheduler();
 

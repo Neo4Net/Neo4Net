@@ -53,9 +53,9 @@ namespace Recovery
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assume.assumeNotNull;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.Label.label;
+//	import static Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.rule.SuppressOutput.suppress;
+//	import static Neo4Net.test.rule.SuppressOutput.suppress;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class UniquenessRecoveryTest
@@ -79,10 +79,10 @@ namespace Recovery
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.SuppressOutput muted = suppress(org.Neo4Net.test.rule.SuppressOutput.System.out);
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.SuppressOutput muted = suppress(Neo4Net.test.rule.SuppressOutput.System.out);
 		 public readonly SuppressOutput Muted = suppress( SuppressOutput.System.out );
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory dir = org.Neo4Net.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.TestDirectory dir = Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory Dir = TestDirectory.testDirectory();
 		 private readonly Configuration _config;
 
@@ -237,7 +237,7 @@ namespace Recovery
 		 {
 			  using ( Transaction tx = Db.beginTx() )
 			  {
-					using ( ResourceIterator<Node> person = Db.findNodes( label( "Person" ) ) )
+					using ( IResourceIterator<Node> person = Db.findNodes( label( "Person" ) ) )
 					{
 						 ISet<object> names = new HashSet<object>();
 						 while ( person.MoveNext() )

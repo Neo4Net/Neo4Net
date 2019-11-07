@@ -19,19 +19,19 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Kernel.api.labelscan
+namespace Neo4Net.Kernel.Api.LabelScan
 {
 	using ExceptionUtils = org.apache.commons.lang3.exception.ExceptionUtils;
 
 	using Log = Neo4Net.Logging.Log;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.Format.duration;
+//	import static Neo4Net.helpers.Format.duration;
 
 	/// <summary>
 	/// Logs about important events about <seealso cref="LabelScanStore"/> <seealso cref="Monitor"/>.
 	/// </summary>
-	public class LoggingMonitor : Neo4Net.Kernel.api.labelscan.LabelScanStore_Monitor_Adaptor
+	public class LoggingMonitor : Neo4Net.Kernel.Api.LabelScan.LabelScanStore_Monitor_Adaptor
 	{
 		 private readonly Log _log;
 

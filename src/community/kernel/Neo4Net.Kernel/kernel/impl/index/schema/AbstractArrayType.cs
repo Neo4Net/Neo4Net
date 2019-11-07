@@ -31,13 +31,13 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Integer.min;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.GenericKey.BIGGEST_REASONABLE_ARRAY_LENGTH;
+//	import static Neo4Net.kernel.impl.index.schema.GenericKey.BIGGEST_REASONABLE_ARRAY_LENGTH;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.GenericKey.SIZE_ARRAY_LENGTH;
+//	import static Neo4Net.kernel.impl.index.schema.GenericKey.SIZE_ARRAY_LENGTH;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.GenericKey.setCursorException;
+//	import static Neo4Net.kernel.impl.index.schema.GenericKey.setCursorException;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.GenericKey.toNonNegativeShortExact;
+//	import static Neo4Net.kernel.impl.index.schema.GenericKey.toNonNegativeShortExact;
 
 	/// <summary>
 	/// Common ancestor of all array-types. Many of the methods are implemented by doing array looping and delegating array item operations

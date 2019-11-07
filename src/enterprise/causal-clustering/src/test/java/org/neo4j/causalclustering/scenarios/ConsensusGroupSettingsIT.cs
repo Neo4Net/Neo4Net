@@ -37,11 +37,11 @@ namespace Neo4Net.causalclustering.scenarios
 	public class ConsensusGroupSettingsIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.causalclustering.ClusterRule clusterRule = new org.Neo4Net.test.causalclustering.ClusterRule().withNumberOfCoreMembers(5).withNumberOfReadReplicas(0).withInstanceCoreParam(org.Neo4Net.causalclustering.core.CausalClusteringSettings.minimum_core_cluster_size_at_formation, value -> "5").withInstanceCoreParam(org.Neo4Net.causalclustering.core.CausalClusteringSettings.minimum_core_cluster_size_at_runtime,value -> "3").withInstanceCoreParam(org.Neo4Net.causalclustering.core.CausalClusteringSettings.leader_election_timeout, value -> "1s").withTimeout(1000, SECONDS);
+//ORIGINAL LINE: @Rule public final Neo4Net.test.causalclustering.ClusterRule clusterRule = new Neo4Net.test.causalclustering.ClusterRule().withNumberOfCoreMembers(5).withNumberOfReadReplicas(0).withInstanceCoreParam(Neo4Net.causalclustering.core.CausalClusteringSettings.minimum_core_cluster_size_at_formation, value -> "5").withInstanceCoreParam(Neo4Net.causalclustering.core.CausalClusteringSettings.minimum_core_cluster_size_at_runtime,value -> "3").withInstanceCoreParam(Neo4Net.causalclustering.core.CausalClusteringSettings.leader_election_timeout, value -> "1s").withTimeout(1000, SECONDS);
 		 public readonly ClusterRule ClusterRule = new ClusterRule().withNumberOfCoreMembers(5).withNumberOfReadReplicas(0).withInstanceCoreParam(CausalClusteringSettings.minimum_core_cluster_size_at_formation, value => "5").withInstanceCoreParam(CausalClusteringSettings.minimum_core_cluster_size_at_runtime,value => "3").withInstanceCoreParam(CausalClusteringSettings.leader_election_timeout, value => "1s").withTimeout(1000, SECONDS);
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private org.Neo4Net.causalclustering.discovery.Cluster<?> cluster;
+//ORIGINAL LINE: private Neo4Net.causalclustering.discovery.Cluster<?> cluster;
 		 private Cluster<object> _cluster;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

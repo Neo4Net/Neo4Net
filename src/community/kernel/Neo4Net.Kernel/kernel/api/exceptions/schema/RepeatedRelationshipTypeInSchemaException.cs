@@ -23,7 +23,7 @@ namespace Neo4Net.Kernel.Api.Exceptions.schema
 
 	public class RepeatedRelationshipTypeInSchemaException : RepeatedSchemaComponentException
 	{
-		 public RepeatedRelationshipTypeInSchemaException( SchemaDescriptor schema, OperationContext context ) : base( org.Neo4Net.kernel.api.exceptions.Status_Schema.RepeatedRelationshipTypeInSchema, schema, context, SchemaComponent.RelationshipType )
+		 public RepeatedRelationshipTypeInSchemaException( SchemaDescriptor schema, OperationContext context ) : base( Neo4Net.kernel.api.exceptions.Status_Schema.RepeatedRelationshipTypeInSchema, schema, context, SchemaComponent.RelationshipType )
 		 {
 		 }
 	}

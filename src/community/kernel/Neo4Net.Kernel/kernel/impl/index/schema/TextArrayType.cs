@@ -30,21 +30,21 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using Values = Neo4Net.Values.Storable.Values;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.GenericKey.FALSE;
+//	import static Neo4Net.kernel.impl.index.schema.GenericKey.FALSE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.GenericKey.SIZE_ARRAY_LENGTH;
+//	import static Neo4Net.kernel.impl.index.schema.GenericKey.SIZE_ARRAY_LENGTH;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.GenericKey.setCursorException;
+//	import static Neo4Net.kernel.impl.index.schema.GenericKey.setCursorException;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.GenericKey.toNonNegativeShortExact;
+//	import static Neo4Net.kernel.impl.index.schema.GenericKey.toNonNegativeShortExact;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.TextType.CHAR_TYPE_LENGTH_MARKER;
+//	import static Neo4Net.kernel.impl.index.schema.TextType.CHAR_TYPE_LENGTH_MARKER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.TextType.isCharValueType;
+//	import static Neo4Net.kernel.impl.index.schema.TextType.isCharValueType;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.TextType.setCharType;
+//	import static Neo4Net.kernel.impl.index.schema.TextType.setCharType;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.TextType.textAsChar;
+//	import static Neo4Net.kernel.impl.index.schema.TextType.textAsChar;
 
 	internal class TextArrayType : AbstractArrayType<string>
 	{
@@ -55,7 +55,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 // long3 (isHighest)
 		 // byteArrayArray
 
-		 internal TextArrayType( sbyte typeId ) : base( ValueGroup.TEXT_ARRAY, typeId, ( o1, o2, i ) -> TextType.Compare( o1.byteArrayArray[i], o1.long0Array[i], o1.long2, o1.long3, o2.byteArrayArray[i], o2.long0Array[i], o2.long2, o2.long3 ), ( k, i ) -> AsValueRaw( k.byteArrayArray[i], k.long0Array[i] ), ( c, k, i ) -> TextType.put( c, k.byteArrayArray[i], k.long0Array[i], 0 ), null, string[]::new, org.Neo4Net.values.storable.ValueWriter_ArrayType.String )
+		 internal TextArrayType( sbyte typeId ) : base( ValueGroup.TEXT_ARRAY, typeId, ( o1, o2, i ) -> TextType.Compare( o1.byteArrayArray[i], o1.long0Array[i], o1.long2, o1.long3, o2.byteArrayArray[i], o2.long0Array[i], o2.long2, o2.long3 ), ( k, i ) -> AsValueRaw( k.byteArrayArray[i], k.long0Array[i] ), ( c, k, i ) -> TextType.put( c, k.byteArrayArray[i], k.long0Array[i], 0 ), null, string[]::new, Neo4Net.values.storable.ValueWriter_ArrayType.String )
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Method reference constructor syntax is not converted by Java to C# Converter:
 		 }

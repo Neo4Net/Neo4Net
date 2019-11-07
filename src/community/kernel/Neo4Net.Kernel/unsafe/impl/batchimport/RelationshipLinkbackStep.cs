@@ -27,7 +27,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 	using StatsProvider = Neo4Net.@unsafe.Impl.Batchimport.stats.StatsProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.cache.idmapping.IdMapper_Fields.ID_NOT_FOUND;
+//	import static Neo4Net.@unsafe.impl.batchimport.cache.idmapping.IdMapper_Fields.ID_NOT_FOUND;
 
 	/// <summary>
 	/// Links relationship chains together, the "prev" pointers of them. "next" pointers are set when

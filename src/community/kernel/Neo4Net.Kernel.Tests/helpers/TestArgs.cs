@@ -44,13 +44,13 @@ namespace Neo4Net.Helpers
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verify;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
+//	import static Neo4Net.helpers.collection.MapUtil.stringMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.util.Converters.mandatory;
+//	import static Neo4Net.kernel.impl.util.Converters.mandatory;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.util.Converters.optional;
+//	import static Neo4Net.kernel.impl.util.Converters.optional;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.util.Converters.toInt;
+//	import static Neo4Net.kernel.impl.util.Converters.toInt;
 
 	internal class TestArgs
 	{
@@ -132,7 +132,7 @@ namespace Neo4Net.Helpers
 			  int expectedValue = 42;
 			  Args args = Args.Parse( "--arg", expectedValue.ToString() );
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") org.Neo4Net.kernel.impl.util.Validator<int> validator = mock(org.Neo4Net.kernel.impl.util.Validator.class);
+//ORIGINAL LINE: @SuppressWarnings("unchecked") Neo4Net.kernel.impl.util.Validator<int> validator = mock(Neo4Net.kernel.impl.util.Validator.class);
 			  Validator<int> validator = mock( typeof( Validator ) );
 
 			  // WHEN
@@ -151,7 +151,7 @@ namespace Neo4Net.Helpers
 			  int expectedValue = 42;
 			  Args args = Args.Parse( expectedValue.ToString() );
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") org.Neo4Net.kernel.impl.util.Validator<int> validator = mock(org.Neo4Net.kernel.impl.util.Validator.class);
+//ORIGINAL LINE: @SuppressWarnings("unchecked") Neo4Net.kernel.impl.util.Validator<int> validator = mock(Neo4Net.kernel.impl.util.Validator.class);
 			  Validator<int> validator = mock( typeof( Validator ) );
 
 			  // WHEN

@@ -44,18 +44,18 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.concatResourceIterators;
+//	import static Neo4Net.helpers.collection.Iterators.concatResourceIterators;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Internal.gbptree.GBPTree.NO_HEADER_WRITER;
+//	import static Neo4Net.index.Internal.gbptree.GBPTree.NO_HEADER_WRITER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.fusion.FusionIndexBase.forAll;
+//	import static Neo4Net.kernel.impl.index.schema.fusion.FusionIndexBase.forAll;
 
 	internal class TemporalIndexAccessor : TemporalIndexCache<TemporalIndexAccessor.PartAccessor<JavaToDotNetGenericWildcard>>, IndexAccessor
 	{
 		 private readonly IndexDescriptor _descriptor;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: TemporalIndexAccessor(org.Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor descriptor, org.Neo4Net.kernel.impl.api.index.sampling.IndexSamplingConfig samplingConfig, org.Neo4Net.io.pagecache.PageCache pageCache, org.Neo4Net.io.fs.FileSystemAbstraction fs, org.Neo4Net.index.internal.gbptree.RecoveryCleanupWorkCollector recoveryCleanupWorkCollector, org.Neo4Net.kernel.api.index.IndexProvider.Monitor monitor, TemporalIndexFiles temporalIndexFiles, boolean readOnly) throws java.io.IOException
+//ORIGINAL LINE: TemporalIndexAccessor(Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor descriptor, Neo4Net.kernel.impl.api.index.sampling.IndexSamplingConfig samplingConfig, Neo4Net.io.pagecache.PageCache pageCache, Neo4Net.io.fs.FileSystemAbstraction fs, Neo4Net.index.internal.gbptree.RecoveryCleanupWorkCollector recoveryCleanupWorkCollector, Neo4Net.kernel.api.index.IndexProvider.Monitor monitor, TemporalIndexFiles temporalIndexFiles, boolean readOnly) throws java.io.IOException
 		 internal TemporalIndexAccessor( StoreIndexDescriptor descriptor, IndexSamplingConfig samplingConfig, PageCache pageCache, FileSystemAbstraction fs, RecoveryCleanupWorkCollector recoveryCleanupWorkCollector, IndexProvider.Monitor monitor, TemporalIndexFiles temporalIndexFiles, bool readOnly ) : base( new PartFactory( pageCache, fs, recoveryCleanupWorkCollector, monitor, descriptor, samplingConfig, temporalIndexFiles, readOnly ) )
 		 {
 			  this._descriptor = descriptor;
@@ -150,7 +150,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 			 }
 		 }
 
-		 public override ResourceIterator<File> SnapshotFiles()
+		 public override IResourceIterator<File> SnapshotFiles()
 		 {
 			  IList<ResourceIterator<File>> snapshotFiles = new List<ResourceIterator<File>>();
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:

@@ -34,11 +34,11 @@ namespace Neo4Net.com
 	using Clocks = Neo4Net.Time.Clocks;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.com.Client.DEFAULT_READ_RESPONSE_TIMEOUT_SECONDS;
+//	import static Neo4Net.com.Client.DEFAULT_READ_RESPONSE_TIMEOUT_SECONDS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.com.Protocol.readString;
+//	import static Neo4Net.com.Protocol.readString;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.logging.NullLogProvider.getInstance;
+//	import static Neo4Net.logging.NullLogProvider.getInstance;
 
 	public class MadeUpServer : Server<MadeUpCommunicationInterface, Void>
 	{

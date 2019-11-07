@@ -54,7 +54,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using IndexPopulator = Neo4Net.Kernel.Api.Index.IndexPopulator;
 	using IndexProvider = Neo4Net.Kernel.Api.Index.IndexProvider;
 	using IndexUpdater = Neo4Net.Kernel.Api.Index.IndexUpdater;
-	using IndexBackedConstraintDescriptor = Neo4Net.Kernel.api.schema.constraints.IndexBackedConstraintDescriptor;
+	using IndexBackedConstraintDescriptor = Neo4Net.Kernel.Api.schema.constraints.IndexBackedConstraintDescriptor;
 	using IndexSamplingController = Neo4Net.Kernel.Impl.Api.index.sampling.IndexSamplingController;
 	using IndexSamplingMode = Neo4Net.Kernel.Impl.Api.index.sampling.IndexSamplingMode;
 	using UnderlyingStorageException = Neo4Net.Kernel.impl.store.UnderlyingStorageException;
@@ -74,15 +74,15 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using Value = Neo4Net.Values.Storable.Value;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.asList;
+//	import static Neo4Net.helpers.collection.Iterables.asList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.InternalIndexState.FAILED;
+//	import static Neo4Net.Kernel.Api.Internal.InternalIndexState.FAILED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.InternalIndexState.ONLINE;
+//	import static Neo4Net.Kernel.Api.Internal.InternalIndexState.ONLINE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.InternalIndexState.POPULATING;
+//	import static Neo4Net.Kernel.Api.Internal.InternalIndexState.POPULATING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.api.index.IndexPopulationFailure.failure;
+//	import static Neo4Net.kernel.impl.api.index.IndexPopulationFailure.failure;
 
 	/// <summary>
 	/// Manages the indexes that were introduced in 2.0. These indexes depend on the normal Neo4Net logical log for
@@ -280,7 +280,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  _indexMapRef.indexMapSnapshot().forEachIndexProxy(IndexProxyOperation("refresh", IndexProxy.refresh));
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.eclipse.collections.api.map.primitive.MutableLongObjectMap<org.Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor> rebuildingDescriptors = new org.eclipse.collections.impl.map.mutable.primitive.LongObjectHashMap<>();
+//ORIGINAL LINE: final org.eclipse.collections.api.map.primitive.MutableLongObjectMap<Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor> rebuildingDescriptors = new org.eclipse.collections.impl.map.mutable.primitive.LongObjectHashMap<>();
 			  MutableLongObjectMap<StoreIndexDescriptor> rebuildingDescriptors = new LongObjectHashMap<StoreIndexDescriptor>();
 			  _indexMapRef.modify(indexMap =>
 			  {
@@ -473,28 +473,28 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.register.Register_DoubleLongRegister indexUpdatesAndSize(org.Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor descriptor) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
+//ORIGINAL LINE: public Neo4Net.register.Register_DoubleLongRegister indexUpdatesAndSize(Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor descriptor) throws Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
 		 public virtual Register_DoubleLongRegister IndexUpdatesAndSize( SchemaDescriptor descriptor )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final long indexId = indexMapRef.getOnlineIndexId(descriptor);
 			  long indexId = _indexMapRef.getOnlineIndexId( descriptor );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.register.Register_DoubleLongRegister output = org.Neo4Net.register.Registers.newDoubleLongRegister();
+//ORIGINAL LINE: final Neo4Net.register.Register_DoubleLongRegister output = Neo4Net.register.Registers.newDoubleLongRegister();
 			  Register_DoubleLongRegister output = Registers.newDoubleLongRegister();
 			  _storeView.indexUpdatesAndSize( indexId, output );
 			  return output;
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public double indexUniqueValuesPercentage(org.Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor descriptor) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
+//ORIGINAL LINE: public double indexUniqueValuesPercentage(Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor descriptor) throws Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
 		 public virtual double IndexUniqueValuesPercentage( SchemaDescriptor descriptor )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final long indexId = indexMapRef.getOnlineIndexId(descriptor);
 			  long indexId = _indexMapRef.getOnlineIndexId( descriptor );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.register.Register_DoubleLongRegister output = org.Neo4Net.register.Registers.newDoubleLongRegister();
+//ORIGINAL LINE: final Neo4Net.register.Register_DoubleLongRegister output = Neo4Net.register.Registers.newDoubleLongRegister();
 			  Register_DoubleLongRegister output = Registers.newDoubleLongRegister();
 			  _storeView.indexSample( indexId, output );
 			  long unique = output.ReadFirst();
@@ -515,7 +515,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor getBlessedDescriptorFromProvider(org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor index) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.MisconfiguredIndexException
+//ORIGINAL LINE: public Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor getBlessedDescriptorFromProvider(Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor index) throws Neo4Net.Kernel.Api.Internal.Exceptions.Schema.MisconfiguredIndexException
 		 public override IndexDescriptor GetBlessedDescriptorFromProvider( IndexDescriptor index )
 		 {
 			  IndexProvider provider = _providerMap.lookup( index.ProviderDescriptor() );
@@ -541,7 +541,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 /// <exception cref="UncheckedIOException"> potentially thrown from index updating. </exception>
 		 /// <exception cref="IndexEntryConflictException"> potentially thrown from index updating. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void apply(org.Neo4Net.kernel.impl.transaction.state.IndexUpdates updates) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: public void apply(Neo4Net.kernel.impl.transaction.state.IndexUpdates updates) throws Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 public override void Apply( IndexUpdates updates )
 		 {
 			  if ( _state == State.NotStarted )
@@ -561,7 +561,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void apply(Iterable<org.Neo4Net.kernel.api.index.IndexEntryUpdate<org.Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor>> updates, IndexUpdateMode updateMode) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: private void apply(Iterable<Neo4Net.kernel.api.index.IndexEntryUpdate<Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor>> updates, IndexUpdateMode updateMode) throws Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 private void Apply( IEnumerable<IndexEntryUpdate<SchemaDescriptor>> updates, IndexUpdateMode updateMode )
 		 {
 			  using ( IndexUpdaterMap updaterMap = _indexMapRef.createIndexUpdaterMap( updateMode ) )
@@ -612,7 +612,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void processUpdate(IndexUpdaterMap updaterMap, org.Neo4Net.kernel.api.index.IndexEntryUpdate<org.Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor> indexUpdate) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: private void processUpdate(IndexUpdaterMap updaterMap, Neo4Net.kernel.api.index.IndexEntryUpdate<Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor> indexUpdate) throws Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 private void ProcessUpdate( IndexUpdaterMap updaterMap, IndexEntryUpdate<SchemaDescriptor> indexUpdate )
 		 {
 			  IndexUpdater updater = updaterMap.GetUpdater( indexUpdate.IndexKey().schema() );
@@ -672,7 +672,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void triggerIndexSampling(org.Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor descriptor, org.Neo4Net.kernel.impl.api.index.sampling.IndexSamplingMode mode) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
+//ORIGINAL LINE: public void triggerIndexSampling(Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor descriptor, Neo4Net.kernel.impl.api.index.sampling.IndexSamplingMode mode) throws Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
 		 public virtual void TriggerIndexSampling( SchemaDescriptor descriptor, IndexSamplingMode mode )
 		 {
 			  string description = descriptor.UserDescription( _tokenNameLookup );
@@ -691,7 +691,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void activateIndex(long indexId) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException, org.Neo4Net.kernel.api.exceptions.index.IndexActivationFailedKernelException, org.Neo4Net.kernel.api.exceptions.index.IndexPopulationFailedKernelException
+//ORIGINAL LINE: public void activateIndex(long indexId) throws Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException, Neo4Net.kernel.api.exceptions.index.IndexActivationFailedKernelException, Neo4Net.kernel.api.exceptions.index.IndexPopulationFailedKernelException
 		 public virtual void ActivateIndex( long indexId )
 		 {
 			  try
@@ -712,28 +712,28 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public IndexProxy getIndexProxy(long indexId) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
+//ORIGINAL LINE: public IndexProxy getIndexProxy(long indexId) throws Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
 		 public virtual IndexProxy GetIndexProxy( long indexId )
 		 {
 			  return _indexMapRef.getIndexProxy( indexId );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public IndexProxy getIndexProxy(org.Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor descriptor) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
+//ORIGINAL LINE: public IndexProxy getIndexProxy(Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor descriptor) throws Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
 		 public virtual IndexProxy GetIndexProxy( SchemaDescriptor descriptor )
 		 {
 			  return _indexMapRef.getIndexProxy( descriptor );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public long getIndexId(org.Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor descriptor) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
+//ORIGINAL LINE: public long getIndexId(Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor descriptor) throws Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
 		 public virtual long GetIndexId( SchemaDescriptor descriptor )
 		 {
 			  return _indexMapRef.getIndexId( descriptor );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void validateIndex(long indexId) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException, org.Neo4Net.kernel.api.exceptions.index.IndexPopulationFailedKernelException, org.Neo4Net.kernel.api.exceptions.schema.UniquePropertyValueValidationException
+//ORIGINAL LINE: public void validateIndex(long indexId) throws Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException, Neo4Net.kernel.api.exceptions.index.IndexPopulationFailedKernelException, Neo4Net.kernel.api.exceptions.schema.UniquePropertyValueValidationException
 		 public virtual void ValidateIndex( long indexId )
 		 {
 			  GetIndexProxy( indexId ).validate();
@@ -803,8 +803,8 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.graphdb.ResourceIterator<java.io.File> snapshotIndexFiles() throws java.io.IOException
-		 public virtual ResourceIterator<File> SnapshotIndexFiles()
+//ORIGINAL LINE: public Neo4Net.graphdb.ResourceIterator<java.io.File> snapshotIndexFiles() throws java.io.IOException
+		 public virtual IResourceIterator<File> SnapshotIndexFiles()
 		 {
 			  ICollection<ResourceIterator<File>> snapshots = new List<ResourceIterator<File>>();
 			  foreach ( IndexProxy indexProxy in _indexMapRef.AllIndexProxies )
@@ -863,7 +863,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Method reference arbitrary object instance method syntax is not converted by Java to C# Converter:
 //JAVA TO C# CONVERTER TODO TASK: Most Java stream collectors are not converted by Java to C# Converter:
-			  ISet<string> deprecatedIndexProviders = java.util.org.Neo4Net.graphdb.factory.GraphDatabaseSettings.SchemaIndex.values().Where(GraphDatabaseSettings.SchemaIndex::deprecated).Select(GraphDatabaseSettings.SchemaIndex::providerName).collect(Collectors.toSet());
+			  ISet<string> deprecatedIndexProviders = java.util.Neo4Net.graphdb.factory.GraphDatabaseSettings.SchemaIndex.values().Where(GraphDatabaseSettings.SchemaIndex::deprecated).Select(GraphDatabaseSettings.SchemaIndex::providerName).collect(Collectors.toSet());
 			  StringJoiner joiner = new StringJoiner( ", ", "Deprecated index providers in use: ", ". Use procedure 'db.indexes()' to see what indexes use which index provider." );
 			  MutableBoolean anyDeprecated = new MutableBoolean();
 			  indexProviders.forEach((indexProviderDescriptor, indexLogRecords) =>

@@ -24,8 +24,8 @@ namespace Neo4Net.Internal.Collector
 {
 
 	using InvalidArgumentsException = Neo4Net.Kernel.Api.Exceptions.InvalidArgumentsException;
-	using ExecutingQuery = Neo4Net.Kernel.api.query.ExecutingQuery;
-	using QuerySnapshot = Neo4Net.Kernel.api.query.QuerySnapshot;
+	using ExecutingQuery = Neo4Net.Kernel.Api.query.ExecutingQuery;
+	using QuerySnapshot = Neo4Net.Kernel.Api.query.QuerySnapshot;
 	using QueryExecutionMonitor = Neo4Net.Kernel.impl.query.QueryExecutionMonitor;
 	using Group = Neo4Net.Scheduler.Group;
 	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
@@ -61,7 +61,7 @@ namespace Neo4Net.Internal.Collector
 		 // CollectorStateMachine
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected Result doCollect(java.util.Map<String,Object> config, long collectionId) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: protected Result doCollect(java.util.Map<String,Object> config, long collectionId) throws Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 		 protected internal override Result DoCollect( IDictionary<string, object> config, long collectionId )
 		 {
 			  int collectSeconds = QueryCollectorConfig.Of( config ).CollectSeconds;

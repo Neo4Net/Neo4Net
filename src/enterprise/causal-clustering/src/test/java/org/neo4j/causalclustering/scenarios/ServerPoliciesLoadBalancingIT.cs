@@ -49,7 +49,7 @@ namespace Neo4Net.causalclustering.scenarios
 	using Result = Neo4Net.GraphDb.Result;
 	using AdvertisedSocketAddress = Neo4Net.Helpers.AdvertisedSocketAddress;
 	using MapUtil = Neo4Net.Collections.Helpers.MapUtil;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
 	using EnterpriseLoginContext = Neo4Net.Kernel.enterprise.api.security.EnterpriseLoginContext;
 	using InternalTransaction = Neo4Net.Kernel.impl.coreapi.InternalTransaction;
 	using Standard = Neo4Net.Kernel.impl.store.format.standard.Standard;
@@ -60,21 +60,21 @@ namespace Neo4Net.causalclustering.scenarios
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.routing.load_balancing.procedure.ProcedureNames.GET_SERVERS_V2;
+//	import static Neo4Net.causalclustering.routing.load_balancing.procedure.ProcedureNames.GET_SERVERS_V2;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
+//	import static Neo4Net.helpers.collection.MapUtil.stringMap;
 
 	public class ServerPoliciesLoadBalancingIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.TestDirectory testDir = org.Neo4Net.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.TestDirectory testDir = Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public TestDirectory TestDir = TestDirectory.testDirectory();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.fs.DefaultFileSystemRule fsRule = new org.Neo4Net.test.rule.fs.DefaultFileSystemRule();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.fs.DefaultFileSystemRule fsRule = new Neo4Net.test.rule.fs.DefaultFileSystemRule();
 		 public DefaultFileSystemRule FsRule = new DefaultFileSystemRule();
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private org.Neo4Net.causalclustering.discovery.Cluster<?> cluster;
+//ORIGINAL LINE: private Neo4Net.causalclustering.discovery.Cluster<?> cluster;
 		 private Cluster<object> _cluster;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -193,14 +193,14 @@ namespace Neo4Net.causalclustering.scenarios
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertGetServersEventuallyMatchesOnAllCores(org.hamcrest.Matcher<org.Neo4Net.causalclustering.routing.load_balancing.LoadBalancingResult> matcher) throws InterruptedException
+//ORIGINAL LINE: private void assertGetServersEventuallyMatchesOnAllCores(org.hamcrest.Matcher<Neo4Net.causalclustering.routing.load_balancing.LoadBalancingResult> matcher) throws InterruptedException
 		 private void AssertGetServersEventuallyMatchesOnAllCores( Matcher<LoadBalancingResult> matcher )
 		 {
 			  AssertGetServersEventuallyMatchesOnAllCores( matcher, emptyMap() );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertGetServersEventuallyMatchesOnAllCores(org.hamcrest.Matcher<org.Neo4Net.causalclustering.routing.load_balancing.LoadBalancingResult> matcher, java.util.Map<String,String> context) throws InterruptedException
+//ORIGINAL LINE: private void assertGetServersEventuallyMatchesOnAllCores(org.hamcrest.Matcher<Neo4Net.causalclustering.routing.load_balancing.LoadBalancingResult> matcher, java.util.Map<String,String> context) throws InterruptedException
 		 private void AssertGetServersEventuallyMatchesOnAllCores( Matcher<LoadBalancingResult> matcher, IDictionary<string, string> context )
 		 {
 			  foreach ( CoreClusterMember core in _cluster.coreMembers() )
@@ -233,7 +233,7 @@ namespace Neo4Net.causalclustering.scenarios
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-//ORIGINAL LINE: private static <T, E extends Exception> void assertEventually(org.hamcrest.Matcher<? super T> matcher, org.Neo4Net.function.ThrowingSupplier<T,E> actual) throws InterruptedException, E
+//ORIGINAL LINE: private static <T, E extends Exception> void assertEventually(org.hamcrest.Matcher<? super T> matcher, Neo4Net.function.ThrowingSupplier<T,E> actual) throws InterruptedException, E
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 private static void AssertEventually<T, E, T1>( Matcher<T1> matcher, ThrowingSupplier<T, E> actual ) where E : Exception
 		 {

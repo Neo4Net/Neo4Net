@@ -76,37 +76,37 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input.csv
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verify;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.csv.reader.Readables.wrap;
+//	import static Neo4Net.csv.reader.Readables.wrap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.ArrayUtil.union;
+//	import static Neo4Net.helpers.ArrayUtil.union;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.asRawIterator;
+//	import static Neo4Net.helpers.collection.Iterators.asRawIterator;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.asSet;
+//	import static Neo4Net.helpers.collection.Iterators.asSet;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.iterator;
+//	import static Neo4Net.helpers.collection.Iterators.iterator;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.input.Collectors.silentBadCollector;
+//	import static Neo4Net.@unsafe.impl.batchimport.input.Collectors.silentBadCollector;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.input.Group_Fields.GLOBAL;
+//	import static Neo4Net.@unsafe.impl.batchimport.input.Group_Fields.GLOBAL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.input.InputEntity.NO_PROPERTIES;
+//	import static Neo4Net.@unsafe.impl.batchimport.input.InputEntity.NO_PROPERTIES;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.input.InputEntityDecorators.NO_DECORATOR;
+//	import static Neo4Net.@unsafe.impl.batchimport.input.InputEntityDecorators.NO_DECORATOR;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.input.InputEntityDecorators.additiveLabels;
+//	import static Neo4Net.@unsafe.impl.batchimport.input.InputEntityDecorators.additiveLabels;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.input.InputEntityDecorators.defaultRelationshipType;
+//	import static Neo4Net.@unsafe.impl.batchimport.input.InputEntityDecorators.defaultRelationshipType;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.input.csv.Configuration.COMMAS;
+//	import static Neo4Net.@unsafe.impl.batchimport.input.csv.Configuration.COMMAS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.input.csv.CsvInput.NO_MONITOR;
+//	import static Neo4Net.@unsafe.impl.batchimport.input.csv.CsvInput.NO_MONITOR;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.input.csv.DataFactories.datas;
+//	import static Neo4Net.@unsafe.impl.batchimport.input.csv.DataFactories.datas;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.input.csv.DataFactories.defaultFormatNodeFileHeader;
+//	import static Neo4Net.@unsafe.impl.batchimport.input.csv.DataFactories.defaultFormatNodeFileHeader;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.input.csv.DataFactories.defaultFormatRelationshipFileHeader;
+//	import static Neo4Net.@unsafe.impl.batchimport.input.csv.DataFactories.defaultFormatRelationshipFileHeader;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class CsvInputTest
@@ -121,10 +121,10 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input.csv
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.RandomRule random = new org.Neo4Net.test.rule.RandomRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.RandomRule random = new Neo4Net.test.rule.RandomRule();
 		 public readonly RandomRule Random = new RandomRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory directory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.TestDirectory directory = Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory Directory = TestDirectory.testDirectory();
 		 private readonly Extractors _extractors = new Extractors( ',' );
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -1257,35 +1257,35 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input.csv
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private DataFactory given(final org.Neo4Net.csv.reader.CharReadable data)
+//ORIGINAL LINE: private DataFactory given(final Neo4Net.csv.reader.CharReadable data)
 		 private DataFactory Given( CharReadable data )
 		 {
 			  return config => DataItem( data, InputEntityDecorators.NO_DECORATOR );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private DataFactory data(final org.Neo4Net.csv.reader.CharReadable data, final Decorator decorator)
+//ORIGINAL LINE: private DataFactory data(final Neo4Net.csv.reader.CharReadable data, final Decorator decorator)
 		 private DataFactory Data( CharReadable data, Decorator decorator )
 		 {
 			  return config => DataItem( data, decorator );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private static Data dataItem(final org.Neo4Net.csv.reader.CharReadable data, final Decorator decorator)
+//ORIGINAL LINE: private static Data dataItem(final Neo4Net.csv.reader.CharReadable data, final Decorator decorator)
 		 private static Data DataItem( CharReadable data, Decorator decorator )
 		 {
 			  return DataFactories.Data( decorator, () => data ).create(COMMAS);
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertNextRelationship(org.Neo4Net.unsafe.impl.batchimport.InputIterator relationship, Object startNode, Object endNode, String type, Object[] properties) throws java.io.IOException
+//ORIGINAL LINE: private void assertNextRelationship(Neo4Net.unsafe.impl.batchimport.InputIterator relationship, Object startNode, Object endNode, String type, Object[] properties) throws java.io.IOException
 		 private void AssertNextRelationship( InputIterator relationship, object startNode, object endNode, string type, object[] properties )
 		 {
 			  AssertRelationship( relationship, GLOBAL, startNode, GLOBAL, endNode, type, properties );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertRelationship(org.Neo4Net.unsafe.impl.batchimport.InputIterator data, org.Neo4Net.unsafe.impl.batchimport.input.Group startNodeGroup, Object startNode, org.Neo4Net.unsafe.impl.batchimport.input.Group endNodeGroup, Object endNode, String type, Object[] properties) throws java.io.IOException
+//ORIGINAL LINE: private void assertRelationship(Neo4Net.unsafe.impl.batchimport.InputIterator data, Neo4Net.unsafe.impl.batchimport.input.Group startNodeGroup, Object startNode, Neo4Net.unsafe.impl.batchimport.input.Group endNodeGroup, Object endNode, String type, Object[] properties) throws java.io.IOException
 		 private void AssertRelationship( InputIterator data, Group startNodeGroup, object startNode, Group endNodeGroup, object endNode, string type, object[] properties )
 		 {
 			  assertTrue( ReadNext( data ) );
@@ -1298,14 +1298,14 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input.csv
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertNextNode(org.Neo4Net.unsafe.impl.batchimport.InputIterator data, Object id, Object[] properties, java.util.Set<String> labels) throws java.io.IOException
+//ORIGINAL LINE: private void assertNextNode(Neo4Net.unsafe.impl.batchimport.InputIterator data, Object id, Object[] properties, java.util.Set<String> labels) throws java.io.IOException
 		 private void AssertNextNode( InputIterator data, object id, object[] properties, ISet<string> labels )
 		 {
 			  AssertNextNode( data, GLOBAL, id, properties, labels );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertNextNode(org.Neo4Net.unsafe.impl.batchimport.InputIterator data, org.Neo4Net.unsafe.impl.batchimport.input.Group group, Object id, Object[] properties, java.util.Set<String> labels) throws java.io.IOException
+//ORIGINAL LINE: private void assertNextNode(Neo4Net.unsafe.impl.batchimport.InputIterator data, Neo4Net.unsafe.impl.batchimport.input.Group group, Object id, Object[] properties, java.util.Set<String> labels) throws java.io.IOException
 		 private void AssertNextNode( InputIterator data, Group group, object id, object[] properties, ISet<string> labels )
 		 {
 			  assertTrue( ReadNext( data ) );
@@ -1316,7 +1316,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input.csv
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private boolean readNext(org.Neo4Net.unsafe.impl.batchimport.InputIterator data) throws java.io.IOException
+//ORIGINAL LINE: private boolean readNext(Neo4Net.unsafe.impl.batchimport.InputIterator data) throws java.io.IOException
 		 private bool ReadNext( InputIterator data )
 		 {
 			  if ( _referenceData != data )

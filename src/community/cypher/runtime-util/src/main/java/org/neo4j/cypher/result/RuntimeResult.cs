@@ -43,7 +43,7 @@ namespace Neo4Net.Cypher.result
 		 /// <summary>
 		 /// Consume this result as an iterator. Will complain if <seealso cref="RuntimeResult.isIterable()"/> is false.
 		 /// </summary>
-		 ResourceIterator<IDictionary<string, object>> AsIterator();
+		 IResourceIterator<IDictionary<string, object>> AsIterator();
 
 		 /// <summary>
 		 /// Returns the consumption state of this result. This state changes when the result is served

@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext.analyzer.providers
 	using StandardFoldingAnalyzer = Neo4Net.Index.impl.lucene.@explicit.StandardFoldingAnalyzer;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Service.Implementation(AnalyzerProvider.class) public class StandardFolding extends org.Neo4Net.GraphDb.Index.fulltext.AnalyzerProvider
+//ORIGINAL LINE: @Service.Implementation(AnalyzerProvider.class) public class StandardFolding extends Neo4Net.GraphDb.Index.fulltext.AnalyzerProvider
 	public class StandardFolding : AnalyzerProvider
 	{
 		 public const string STANDARD_FOLDING_ANALYZER_NAME = "standard-folding";

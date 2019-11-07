@@ -81,22 +81,22 @@ namespace Neo4Net.Consistency.checking.full
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.withSettings;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.consistency.ConsistencyCheckService.defaultConsistencyCheckThreadsNumber;
+//	import static Neo4Net.consistency.ConsistencyCheckService.defaultConsistencyCheckThreadsNumber;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.consistency.report.ConsistencyReporter.NO_MONITOR;
+//	import static Neo4Net.consistency.report.ConsistencyReporter.NO_MONITOR;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.Label.label;
+//	import static Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
+//	import static Neo4Net.helpers.collection.MapUtil.stringMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.Property.property;
+//	import static Neo4Net.test.Property.property;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.Property.set;
+//	import static Neo4Net.test.Property.set;
 
 	public class ExecutionOrderIntegrationTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.consistency.checking.GraphStoreFixture fixture = new org.Neo4Net.consistency.checking.GraphStoreFixture(getRecordFormatName())
+//ORIGINAL LINE: @Rule public final Neo4Net.consistency.checking.GraphStoreFixture fixture = new Neo4Net.consistency.checking.GraphStoreFixture(getRecordFormatName())
 		 public GraphStoreFixture fixture = new GraphStoreFixtureAnonymousInnerClass( RecordFormatName );
 
 		 private class GraphStoreFixtureAnonymousInnerClass : GraphStoreFixture
@@ -165,7 +165,7 @@ namespace Neo4Net.Consistency.checking.full
 			  internal readonly IDictionary<string, int> Duplicates = new Dictionary<string, int>();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("ThrowableResultOfMethodCallIgnored") void log(org.Neo4Net.consistency.report.PendingReferenceCheck<?> check, org.mockito.invocation.InvocationOnMock invocation)
+//ORIGINAL LINE: @SuppressWarnings("ThrowableResultOfMethodCallIgnored") void log(Neo4Net.consistency.report.PendingReferenceCheck<?> check, org.mockito.invocation.InvocationOnMock invocation)
 			  internal virtual void Log<T1>( PendingReferenceCheck<T1> check, InvocationOnMock invocation )
 			  {
 					System.Reflection.MethodInfo method = invocation.Method;
@@ -274,7 +274,7 @@ namespace Neo4Net.Consistency.checking.full
 			  }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") @Override public org.Neo4Net.consistency.checking.ComparativeRecordChecker<REC,org.Neo4Net.kernel.impl.store.record.PrimitiveRecord,REP> ownerCheck()
+//ORIGINAL LINE: @SuppressWarnings("unchecked") @Override public Neo4Net.consistency.checking.ComparativeRecordChecker<REC,Neo4Net.kernel.impl.store.record.PrimitiveRecord,REP> ownerCheck()
 			  public override ComparativeRecordChecker<REC, PrimitiveRecord, REP> OwnerCheck()
 			  {
 					if ( Checker is OwningRecordCheck )
@@ -298,7 +298,7 @@ namespace Neo4Net.Consistency.checking.full
 			  }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") @Override public void dispatch(org.Neo4Net.consistency.report.PendingReferenceCheck<T> reporter)
+//ORIGINAL LINE: @SuppressWarnings("unchecked") @Override public void dispatch(Neo4Net.consistency.report.PendingReferenceCheck<T> reporter)
 			  public override void Dispatch( PendingReferenceCheck<T> reporter )
 			  {
 					Reference.dispatch( mock( ( Type<PendingReferenceCheck<T>> ) reporter.GetType(), withSettings().spiedInstance(reporter).defaultAnswer(new ReporterSpy<>(Reference, reporter, Log)) ) );
@@ -323,7 +323,7 @@ namespace Neo4Net.Consistency.checking.full
 			  public override object Answer( InvocationOnMock invocation )
 			  {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: if (!(reference instanceof org.Neo4Net.consistency.store.RecordReference_SkippingReference<?>))
+//ORIGINAL LINE: if (!(reference instanceof Neo4Net.consistency.store.RecordReference_SkippingReference<?>))
 					if ( !( Reference is Neo4Net.Consistency.Store.RecordReference_SkippingReference<object> ) )
 					{
 						 Log.log( Reporter, invocation );

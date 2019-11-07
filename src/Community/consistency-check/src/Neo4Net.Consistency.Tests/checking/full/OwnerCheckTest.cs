@@ -44,35 +44,35 @@ namespace Neo4Net.Consistency.checking.full
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verifyZeroInteractions;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.consistency.checking.DynamicRecordCheckTest.configureDynamicStore;
+//	import static Neo4Net.consistency.checking.DynamicRecordCheckTest.configureDynamicStore;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.consistency.checking.RecordCheckTestBase.NONE;
+//	import static Neo4Net.consistency.checking.RecordCheckTestBase.NONE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.consistency.checking.RecordCheckTestBase.array;
+//	import static Neo4Net.consistency.checking.RecordCheckTestBase.array;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.consistency.checking.RecordCheckTestBase.check;
+//	import static Neo4Net.consistency.checking.RecordCheckTestBase.check;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.consistency.checking.RecordCheckTestBase.dummyDynamicCheck;
+//	import static Neo4Net.consistency.checking.RecordCheckTestBase.dummyDynamicCheck;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.consistency.checking.RecordCheckTestBase.dummyNeoStoreCheck;
+//	import static Neo4Net.consistency.checking.RecordCheckTestBase.dummyNeoStoreCheck;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.consistency.checking.RecordCheckTestBase.dummyNodeCheck;
+//	import static Neo4Net.consistency.checking.RecordCheckTestBase.dummyNodeCheck;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.consistency.checking.RecordCheckTestBase.dummyPropertyChecker;
+//	import static Neo4Net.consistency.checking.RecordCheckTestBase.dummyPropertyChecker;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.consistency.checking.RecordCheckTestBase.dummyPropertyKeyCheck;
+//	import static Neo4Net.consistency.checking.RecordCheckTestBase.dummyPropertyKeyCheck;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.consistency.checking.RecordCheckTestBase.dummyRelationshipChecker;
+//	import static Neo4Net.consistency.checking.RecordCheckTestBase.dummyRelationshipChecker;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.consistency.checking.RecordCheckTestBase.dummyRelationshipLabelCheck;
+//	import static Neo4Net.consistency.checking.RecordCheckTestBase.dummyRelationshipLabelCheck;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.consistency.checking.RecordCheckTestBase.inUse;
+//	import static Neo4Net.consistency.checking.RecordCheckTestBase.inUse;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.consistency.checking.RecordCheckTestBase.notInUse;
+//	import static Neo4Net.consistency.checking.RecordCheckTestBase.notInUse;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.consistency.checking.RecordCheckTestBase.propertyBlock;
+//	import static Neo4Net.consistency.checking.RecordCheckTestBase.propertyBlock;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.consistency.checking.RecordCheckTestBase.@string;
+//	import static Neo4Net.consistency.checking.RecordCheckTestBase.@string;
 
 	internal class OwnerCheckTest
 	{

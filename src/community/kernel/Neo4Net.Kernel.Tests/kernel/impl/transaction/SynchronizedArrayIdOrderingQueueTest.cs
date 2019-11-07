@@ -36,7 +36,7 @@ namespace Neo4Net.Kernel.impl.transaction
 	public class SynchronizedArrayIdOrderingQueueTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.CleanupRule cleanup = new org.Neo4Net.test.rule.CleanupRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.CleanupRule cleanup = new Neo4Net.test.rule.CleanupRule();
 		 public readonly CleanupRule Cleanup = new CleanupRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -144,7 +144,7 @@ namespace Neo4Net.Kernel.impl.transaction
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private org.Neo4Net.test.OtherThreadExecutor.WorkerCommand<Void, Object> awaitHead(final org.Neo4Net.kernel.impl.util.IdOrderingQueue queue, final long id)
+//ORIGINAL LINE: private Neo4Net.test.OtherThreadExecutor.WorkerCommand<Void, Object> awaitHead(final Neo4Net.kernel.impl.util.IdOrderingQueue queue, final long id)
 		 private OtherThreadExecutor.WorkerCommand<Void, object> AwaitHead( IdOrderingQueue queue, long id )
 		 {
 			  return state =>

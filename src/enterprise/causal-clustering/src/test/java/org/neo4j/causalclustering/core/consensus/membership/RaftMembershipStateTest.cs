@@ -43,9 +43,9 @@ namespace Neo4Net.causalclustering.core.consensus.membership
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.identity.RaftTestMember.member;
+//	import static Neo4Net.causalclustering.identity.RaftTestMember.member;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.asSet;
+//	import static Neo4Net.helpers.collection.Iterators.asSet;
 
 	public class RaftMembershipStateTest
 	{
@@ -160,7 +160,7 @@ namespace Neo4Net.causalclustering.core.consensus.membership
 			  ByteBuf buffer = Unpooled.buffer( 1_000 );
 			  marshal.MarshalConflict( _state, new BoundedNetworkWritableChannel( buffer ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final RaftMembershipState recovered = marshal.unmarshal(new org.Neo4Net.causalclustering.messaging.NetworkReadableClosableChannelNetty4(buffer));
+//ORIGINAL LINE: final RaftMembershipState recovered = marshal.unmarshal(new Neo4Net.causalclustering.messaging.NetworkReadableClosableChannelNetty4(buffer));
 			  RaftMembershipState recovered = marshal.unmarshal( new NetworkReadableClosableChannelNetty4( buffer ) );
 
 			  // then

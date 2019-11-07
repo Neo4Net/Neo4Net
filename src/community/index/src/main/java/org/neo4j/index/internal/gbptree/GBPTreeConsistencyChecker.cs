@@ -34,13 +34,13 @@ namespace Neo4Net.Index.Internal.gbptree
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Math.toIntExact;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Internal.gbptree.GenerationSafePointerPair.pointer;
+//	import static Neo4Net.index.Internal.gbptree.GenerationSafePointerPair.pointer;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Internal.gbptree.PageCursorUtil.checkOutOfBounds;
+//	import static Neo4Net.index.Internal.gbptree.PageCursorUtil.checkOutOfBounds;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Internal.gbptree.TreeNode.Type.INTERNAL;
+//	import static Neo4Net.index.Internal.gbptree.TreeNode.Type.INTERNAL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Internal.gbptree.TreeNode.Type.LEAF;
+//	import static Neo4Net.index.Internal.gbptree.TreeNode.Type.LEAF;
 
 	/// <summary>
 	/// <ul>
@@ -79,7 +79,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void check(java.io.File file, org.Neo4Net.io.pagecache.PageCursor cursor, Root root, GBPTreeConsistencyCheckVisitor<KEY> visitor) throws java.io.IOException
+//ORIGINAL LINE: public void check(java.io.File file, Neo4Net.io.pagecache.PageCursor cursor, Root root, GBPTreeConsistencyCheckVisitor<KEY> visitor) throws java.io.IOException
 		 public virtual void Check( File file, PageCursor cursor, Root root, GBPTreeConsistencyCheckVisitor<KEY> visitor )
 		 {
 			  long highId = _lastId + 1;
@@ -135,7 +135,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void checkSubtree(java.io.File file, org.Neo4Net.io.pagecache.PageCursor cursor, KeyRange<KEY> range, long parentNode, long pointerGeneration, GBPTreePointerType parentPointerType, int level, GBPTreeConsistencyCheckVisitor<KEY> visitor, java.util.BitSet seenIds) throws java.io.IOException
+//ORIGINAL LINE: private void checkSubtree(java.io.File file, Neo4Net.io.pagecache.PageCursor cursor, KeyRange<KEY> range, long parentNode, long pointerGeneration, GBPTreePointerType parentPointerType, int level, GBPTreeConsistencyCheckVisitor<KEY> visitor, java.util.BitSet seenIds) throws java.io.IOException
 		 private void CheckSubtree( File file, PageCursor cursor, KeyRange<KEY> range, long parentNode, long pointerGeneration, GBPTreePointerType parentPointerType, int level, GBPTreeConsistencyCheckVisitor<KEY> visitor, BitArray seenIds )
 		 {
 			  long pageId = cursor.CurrentPageId;
@@ -257,7 +257,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertSubtrees(java.io.File file, org.Neo4Net.io.pagecache.PageCursor cursor, KeyRange<KEY> range, int keyCount, int level, GBPTreeConsistencyCheckVisitor<KEY> visitor, java.util.BitSet seenIds) throws java.io.IOException
+//ORIGINAL LINE: private void assertSubtrees(java.io.File file, Neo4Net.io.pagecache.PageCursor cursor, KeyRange<KEY> range, int keyCount, int level, GBPTreeConsistencyCheckVisitor<KEY> visitor, java.util.BitSet seenIds) throws java.io.IOException
 		 private void AssertSubtrees( File file, PageCursor cursor, KeyRange<KEY> range, int keyCount, int level, GBPTreeConsistencyCheckVisitor<KEY> visitor, BitArray seenIds )
 		 {
 			  long pageId = cursor.CurrentPageId;
@@ -317,7 +317,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void checkAfterShouldRetry(org.Neo4Net.io.pagecache.PageCursor cursor) throws org.Neo4Net.io.pagecache.CursorException
+//ORIGINAL LINE: private static void checkAfterShouldRetry(Neo4Net.io.pagecache.PageCursor cursor) throws Neo4Net.io.pagecache.CursorException
 		 private static void CheckAfterShouldRetry( PageCursor cursor )
 		 {
 			  checkOutOfBounds( cursor );
@@ -330,7 +330,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertKeyOrder(java.io.File file, org.Neo4Net.io.pagecache.PageCursor cursor, KeyRange<KEY> range, int keyCount, TreeNode.Type type, GBPTreeConsistencyCheckVisitor<KEY> visitor) throws java.io.IOException
+//ORIGINAL LINE: private void assertKeyOrder(java.io.File file, Neo4Net.io.pagecache.PageCursor cursor, KeyRange<KEY> range, int keyCount, TreeNode.Type type, GBPTreeConsistencyCheckVisitor<KEY> visitor) throws java.io.IOException
 		 private void AssertKeyOrder( File file, PageCursor cursor, KeyRange<KEY> range, int keyCount, TreeNode.Type type, GBPTreeConsistencyCheckVisitor<KEY> visitor )
 		 {
 			  DelayedVisitor<KEY> delayedVisitor = new DelayedVisitor<KEY>( file );
@@ -368,7 +368,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static <KEY> void assertNoCrashOrBrokenPointerInGSPP(java.io.File file, org.Neo4Net.io.pagecache.PageCursor cursor, long stableGeneration, long unstableGeneration, GBPTreePointerType pointerType, int offset, GBPTreeConsistencyCheckVisitor<KEY> visitor) throws java.io.IOException
+//ORIGINAL LINE: static <KEY> void assertNoCrashOrBrokenPointerInGSPP(java.io.File file, Neo4Net.io.pagecache.PageCursor cursor, long stableGeneration, long unstableGeneration, GBPTreePointerType pointerType, int offset, GBPTreeConsistencyCheckVisitor<KEY> visitor) throws java.io.IOException
 		 internal static void AssertNoCrashOrBrokenPointerInGSPP<KEY>( File file, PageCursor cursor, long stableGeneration, long unstableGeneration, GBPTreePointerType pointerType, int offset, GBPTreeConsistencyCheckVisitor<KEY> visitor )
 		 {
 			  long currentNodeId = cursor.CurrentPageId;

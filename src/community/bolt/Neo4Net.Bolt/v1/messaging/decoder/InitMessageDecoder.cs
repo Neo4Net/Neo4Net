@@ -27,7 +27,7 @@ namespace Neo4Net.Bolt.v1.messaging.decoder
 	using RequestMessageDecoder = Neo4Net.Bolt.messaging.RequestMessageDecoder;
 	using BoltResponseHandler = Neo4Net.Bolt.runtime.BoltResponseHandler;
 	using InitMessage = Neo4Net.Bolt.v1.messaging.request.InitMessage;
-	using AuthToken = Neo4Net.Kernel.api.security.AuthToken;
+	using AuthToken = Neo4Net.Kernel.Api.security.AuthToken;
 	using MapValue = Neo4Net.Values.@virtual.MapValue;
 
 	public class InitMessageDecoder : RequestMessageDecoder
@@ -50,7 +50,7 @@ namespace Neo4Net.Bolt.v1.messaging.decoder
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.bolt.messaging.RequestMessage decode(org.Neo4Net.bolt.messaging.Neo4NetPack_Unpacker unpacker) throws java.io.IOException
+//ORIGINAL LINE: public Neo4Net.bolt.messaging.RequestMessage decode(Neo4Net.bolt.messaging.Neo4NetPack_Unpacker unpacker) throws java.io.IOException
 		 public override RequestMessage Decode( Neo4Net.Bolt.messaging.Neo4NetPack_Unpacker unpacker )
 		 {
 			  string userAgent = unpacker.UnpackString();
@@ -59,7 +59,7 @@ namespace Neo4Net.Bolt.v1.messaging.decoder
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static java.util.Map<String,Object> readMetaDataMap(org.Neo4Net.bolt.messaging.Neo4NetPack_Unpacker unpacker) throws java.io.IOException
+//ORIGINAL LINE: public static java.util.Map<String,Object> readMetaDataMap(Neo4Net.bolt.messaging.Neo4NetPack_Unpacker unpacker) throws java.io.IOException
 		 public static IDictionary<string, object> ReadMetaDataMap( Neo4Net.Bolt.messaging.Neo4NetPack_Unpacker unpacker )
 		 {
 			  MapValue metaDataMapValue = unpacker.UnpackMap();

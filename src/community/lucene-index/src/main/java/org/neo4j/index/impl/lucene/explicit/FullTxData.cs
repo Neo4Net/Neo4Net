@@ -52,7 +52,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 	using DocValuesCollector = Neo4Net.Kernel.Api.Impl.Index.collector.DocValuesCollector;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.impl.lucene.@explicit.LuceneExplicitIndex.KEY_DOC_ID;
+//	import static Neo4Net.index.impl.lucene.@explicit.LuceneExplicitIndex.KEY_DOC_ID;
 
 	internal class FullTxData : TxData
 	{

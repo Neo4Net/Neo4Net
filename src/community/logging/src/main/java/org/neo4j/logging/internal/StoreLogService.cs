@@ -29,7 +29,7 @@ namespace Neo4Net.Logging.Internal
 	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.file.Files.createOrOpenAsOutputStream;
+//	import static Neo4Net.io.file.Files.createOrOpenAsOutputStream;
 
 	public class StoreLogService : AbstractLogService, Lifecycle
 	{
@@ -103,7 +103,7 @@ namespace Neo4Net.Logging.Internal
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public StoreLogService build(org.Neo4Net.io.fs.FileSystemAbstraction fileSystem) throws java.io.IOException
+//ORIGINAL LINE: public StoreLogService build(Neo4Net.io.fs.FileSystemAbstraction fileSystem) throws java.io.IOException
 			  public virtual StoreLogService Build( FileSystemAbstraction fileSystem )
 			  {
 					if ( DebugLog == null )
@@ -133,7 +133,7 @@ namespace Neo4Net.Logging.Internal
 		 private readonly SimpleLogService _logService;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private StoreLogService(org.Neo4Net.logging.LogProvider userLogProvider, org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, java.io.File internalLog, java.util.Map<String, org.Neo4Net.logging.Level> logLevels, org.Neo4Net.logging.Level defaultLevel, java.time.ZoneId logTimeZone, long internalLogRotationThreshold, long internalLogRotationDelay, int maxInternalLogArchives, java.util.concurrent.Executor rotationExecutor, final System.Action<org.Neo4Net.logging.LogProvider> rotationListener) throws java.io.IOException
+//ORIGINAL LINE: private StoreLogService(Neo4Net.logging.LogProvider userLogProvider, Neo4Net.io.fs.FileSystemAbstraction fileSystem, java.io.File internalLog, java.util.Map<String, Neo4Net.logging.Level> logLevels, Neo4Net.logging.Level defaultLevel, java.time.ZoneId logTimeZone, long internalLogRotationThreshold, long internalLogRotationDelay, int maxInternalLogArchives, java.util.concurrent.Executor rotationExecutor, final System.Action<Neo4Net.logging.LogProvider> rotationListener) throws java.io.IOException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 		 private StoreLogService( LogProvider userLogProvider, FileSystemAbstraction fileSystem, File internalLog, IDictionary<string, Level> logLevels, Level defaultLevel, ZoneId logTimeZone, long internalLogRotationThreshold, long internalLogRotationDelay, int maxInternalLogArchives, Executor rotationExecutor, System.Action<LogProvider> rotationListener )
 		 {
@@ -143,7 +143,7 @@ namespace Neo4Net.Logging.Internal
 			  }
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.logging.FormattedLogProvider.Builder internalLogBuilder = org.Neo4Net.logging.FormattedLogProvider.withZoneId(logTimeZone).withDefaultLogLevel(defaultLevel).withLogLevels(logLevels);
+//ORIGINAL LINE: final Neo4Net.logging.FormattedLogProvider.Builder internalLogBuilder = Neo4Net.logging.FormattedLogProvider.withZoneId(logTimeZone).withDefaultLogLevel(defaultLevel).withLogLevels(logLevels);
 			  FormattedLogProvider.Builder internalLogBuilder = FormattedLogProvider.withZoneId( logTimeZone ).withDefaultLogLevel( defaultLevel ).withLogLevels( logLevels );
 
 			  FormattedLogProvider internalLogProvider;

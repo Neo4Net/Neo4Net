@@ -50,11 +50,11 @@ namespace Neo4Net.GraphDb.factory
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.keep_logical_logs;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.keep_logical_logs;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
+//	import static Neo4Net.helpers.collection.MapUtil.stringMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.HttpConnector.Encryption.TLS;
+//	import static Neo4Net.kernel.configuration.HttpConnector.Encryption.TLS;
 
 	internal class GraphDatabaseSettingsTest
 	{
@@ -89,7 +89,7 @@ namespace Neo4Net.GraphDb.factory
 					if ( field.Type == typeof( Setting ) )
 					{
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.graphdb.config.Setting<?> setting = (org.Neo4Net.graphdb.config.Setting<?>) field.get(null);
+//ORIGINAL LINE: Neo4Net.graphdb.config.Setting<?> setting = (Neo4Net.graphdb.config.Setting<?>) field.get(null);
 						 Setting<object> setting = ( Setting<object> ) field.get( null );
 
 						 assertFalse( fields.ContainsKey( setting.Name() ), format("'%s' in %s has already been defined in %s", setting.Name(), field.Name, fields[setting.Name()]) );

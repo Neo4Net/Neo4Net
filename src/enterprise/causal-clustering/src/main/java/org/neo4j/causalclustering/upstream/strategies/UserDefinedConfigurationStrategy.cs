@@ -36,7 +36,7 @@ namespace Neo4Net.causalclustering.upstream.strategies
 	using Service = Neo4Net.Helpers.Service;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Service.Implementation(UpstreamDatabaseSelectionStrategy.class) public class UserDefinedConfigurationStrategy extends org.Neo4Net.causalclustering.upstream.UpstreamDatabaseSelectionStrategy
+//ORIGINAL LINE: @Service.Implementation(UpstreamDatabaseSelectionStrategy.class) public class UserDefinedConfigurationStrategy extends Neo4Net.causalclustering.upstream.UpstreamDatabaseSelectionStrategy
 	public class UserDefinedConfigurationStrategy : UpstreamDatabaseSelectionStrategy
 	{
 
@@ -79,7 +79,7 @@ namespace Neo4Net.causalclustering.upstream.strategies
 		 private ISet<ServerInfo> PossibleServers()
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.stream.Stream<java.util.Map.Entry<org.Neo4Net.causalclustering.identity.MemberId,? extends org.Neo4Net.causalclustering.discovery.DiscoveryServerInfo>> infoMap = java.util.stream.Stream.of(topologyService.localReadReplicas(), topologyService.localCoreServers()).map(org.Neo4Net.causalclustering.discovery.Topology::members).map(java.util.Map::entrySet).flatMap(java.util.Set::stream);
+//ORIGINAL LINE: java.util.stream.Stream<java.util.Map.Entry<Neo4Net.causalclustering.identity.MemberId,? extends Neo4Net.causalclustering.discovery.DiscoveryServerInfo>> infoMap = java.util.stream.Stream.of(topologyService.localReadReplicas(), topologyService.localCoreServers()).map(Neo4Net.causalclustering.discovery.Topology::members).map(java.util.Map::entrySet).flatMap(java.util.Set::stream);
 //JAVA TO C# CONVERTER TODO TASK: Method reference arbitrary object instance method syntax is not converted by Java to C# Converter:
 			  Stream<KeyValuePair<MemberId, ? extends DiscoveryServerInfo>> infoMap = Stream.of( TopologyService.localReadReplicas(), TopologyService.localCoreServers() ).map(Topology::members).map(System.Collections.IDictionary.entrySet).flatMap(ISet<object>.stream);
 

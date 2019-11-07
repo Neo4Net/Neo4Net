@@ -32,7 +32,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 		 SchemaDescriptor SchemaFor( EntityType type, string[] IEntityTokens, Properties indexConfiguration, params string[] properties );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: ScoreEntityIterator query(org.Neo4Net.kernel.api.KernelTransaction tx, String indexName, String queryString) throws java.io.IOException, org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException, org.apache.lucene.queryparser.classic.ParseException;
+//ORIGINAL LINE: ScoreEntityIterator query(Neo4Net.kernel.api.KernelTransaction tx, String indexName, String queryString) throws java.io.IOException, Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException, org.apache.lucene.queryparser.classic.ParseException;
 		 ScoreEntityIterator Query( KernelTransaction tx, string indexName, string queryString );
 
 		 void AwaitRefresh();

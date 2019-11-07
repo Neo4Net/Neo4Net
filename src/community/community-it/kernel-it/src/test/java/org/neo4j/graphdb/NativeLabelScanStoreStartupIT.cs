@@ -29,11 +29,11 @@ namespace Neo4Net.GraphDb
 	using GroupingRecoveryCleanupWorkCollector = Neo4Net.Index.Internal.gbptree.GroupingRecoveryCleanupWorkCollector;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using IOLimiter = Neo4Net.Io.pagecache.IOLimiter;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
-	using LabelScanStoreTest = Neo4Net.Kernel.api.impl.labelscan.LabelScanStoreTest;
-	using LabelScanStore = Neo4Net.Kernel.api.labelscan.LabelScanStore;
-	using LabelScanWriter = Neo4Net.Kernel.api.labelscan.LabelScanWriter;
-	using NodeLabelUpdate = Neo4Net.Kernel.api.labelscan.NodeLabelUpdate;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
+	using LabelScanStoreTest = Neo4Net.Kernel.Api.impl.labelscan.LabelScanStoreTest;
+	using LabelScanStore = Neo4Net.Kernel.Api.LabelScan.LabelScanStore;
+	using LabelScanWriter = Neo4Net.Kernel.Api.LabelScan.LabelScanWriter;
+	using NodeLabelUpdate = Neo4Net.Kernel.Api.LabelScan.NodeLabelUpdate;
 	using ThreadToStatementContextBridge = Neo4Net.Kernel.impl.core.ThreadToStatementContextBridge;
 	using LabelScanReader = Neo4Net.Kernel.Api.StorageEngine.schema.LabelScanReader;
 	using DatabaseRule = Neo4Net.Test.rule.DatabaseRule;
@@ -52,10 +52,10 @@ namespace Neo4Net.GraphDb
 		 private static readonly Label _label = Label.label( "testLabel" );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.DatabaseRule dbRule = new org.Neo4Net.test.rule.EmbeddedDatabaseRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.DatabaseRule dbRule = new Neo4Net.test.rule.EmbeddedDatabaseRule();
 		 public readonly DatabaseRule DbRule = new EmbeddedDatabaseRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.RandomRule random = new org.Neo4Net.test.rule.RandomRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.RandomRule random = new Neo4Net.test.rule.RandomRule();
 		 public readonly RandomRule Random = new RandomRule();
 
 		 private int _labelId;
@@ -162,7 +162,7 @@ namespace Neo4Net.GraphDb
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void corruptLabelScanStoreFiles(org.Neo4Net.io.layout.DatabaseLayout databaseLayout) throws java.io.IOException
+//ORIGINAL LINE: private void corruptLabelScanStoreFiles(Neo4Net.io.layout.DatabaseLayout databaseLayout) throws java.io.IOException
 		 private void CorruptLabelScanStoreFiles( DatabaseLayout databaseLayout )
 		 {
 			  ScrambleFile( StoreFile( databaseLayout ) );
@@ -174,7 +174,7 @@ namespace Neo4Net.GraphDb
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void checkLabelScanStoreAccessible(org.Neo4Net.kernel.api.labelscan.LabelScanStore labelScanStore) throws java.io.IOException
+//ORIGINAL LINE: private static void checkLabelScanStoreAccessible(Neo4Net.kernel.api.labelscan.LabelScanStore labelScanStore) throws java.io.IOException
 		 private static void CheckLabelScanStoreAccessible( LabelScanStore labelScanStore )
 		 {
 			  int labelId = 1;

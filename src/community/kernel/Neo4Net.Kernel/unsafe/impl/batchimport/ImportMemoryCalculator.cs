@@ -24,17 +24,17 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 	using Input = Neo4Net.@unsafe.Impl.Batchimport.input.Input;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.ByteUnit.gibiBytes;
+//	import static Neo4Net.io.ByteUnit.gibiBytes;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.NoStoreHeader.NO_STORE_HEADER;
+//	import static Neo4Net.kernel.impl.store.NoStoreHeader.NO_STORE_HEADER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.cache.GatheringMemoryStatsVisitor.highestMemoryUsageOf;
+//	import static Neo4Net.@unsafe.impl.batchimport.cache.GatheringMemoryStatsVisitor.highestMemoryUsageOf;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.cache.GatheringMemoryStatsVisitor.totalMemoryUsageOf;
+//	import static Neo4Net.@unsafe.impl.batchimport.cache.GatheringMemoryStatsVisitor.totalMemoryUsageOf;
 
 	/// <summary>
 	/// Aims to collect logic for calculating memory usage, optimal heap size and more, mostly based on
-	/// <seealso cref="org.Neo4Net.unsafe.impl.batchimport.input.Input.Estimates"/>. The reason why we're trying so hard to calculate
+	/// <seealso cref="Neo4Net.unsafe.impl.batchimport.input.Input.Estimates"/>. The reason why we're trying so hard to calculate
 	/// these things is that for large imports... getting the balance between heap and off-heap memory just right
 	/// will allow the importer to use available memory and can mean difference between a failed and successful import.
 	/// 

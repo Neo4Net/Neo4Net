@@ -52,7 +52,7 @@ namespace Neo4Net.Kernel.ha.com.master
 		 /// the master.
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.Neo4Net.com.Response<long> commit(org.Neo4Net.com.RequestContext context, org.Neo4Net.kernel.impl.transaction.TransactionRepresentation channel) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
+//ORIGINAL LINE: Neo4Net.com.Response<long> commit(Neo4Net.com.RequestContext context, Neo4Net.kernel.impl.transaction.TransactionRepresentation channel) throws Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
 		 Response<long> Commit( RequestContext context, TransactionRepresentation channel );
 
 		 /// <summary>
@@ -60,7 +60,7 @@ namespace Neo4Net.Kernel.ha.com.master
 		 /// session with the provided <seealso cref="RequestContext"/>.
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.Neo4Net.com.Response<Void> newLockSession(org.Neo4Net.com.RequestContext context) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
+//ORIGINAL LINE: Neo4Net.com.Response<Void> newLockSession(Neo4Net.com.RequestContext context) throws Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
 		 Response<Void> NewLockSession( RequestContext context );
 
 		 /// <summary>

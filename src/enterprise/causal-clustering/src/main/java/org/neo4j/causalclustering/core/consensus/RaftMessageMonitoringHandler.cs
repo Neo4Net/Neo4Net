@@ -31,7 +31,7 @@ namespace Neo4Net.causalclustering.core.consensus
 	public class RaftMessageMonitoringHandler : LifecycleMessageHandler<RaftMessages_ReceivedInstantClusterIdAwareMessage<JavaToDotNetGenericWildcard>>
 	{
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private final org.Neo4Net.causalclustering.messaging.LifecycleMessageHandler<RaftMessages_ReceivedInstantClusterIdAwareMessage<?>> raftMessageHandler;
+//ORIGINAL LINE: private final Neo4Net.causalclustering.messaging.LifecycleMessageHandler<RaftMessages_ReceivedInstantClusterIdAwareMessage<?>> raftMessageHandler;
 		 private readonly LifecycleMessageHandler<RaftMessages_ReceivedInstantClusterIdAwareMessage<object>> _raftMessageHandler;
 		 private readonly Clock _clock;
 		 private readonly RaftMessageProcessingMonitor _raftMessageDelayMonitor;
@@ -81,7 +81,7 @@ namespace Neo4Net.causalclustering.core.consensus
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void start(org.Neo4Net.causalclustering.identity.ClusterId clusterId) throws Throwable
+//ORIGINAL LINE: public void start(Neo4Net.causalclustering.identity.ClusterId clusterId) throws Throwable
 		 public override void Start( ClusterId clusterId )
 		 {
 			  _raftMessageHandler.start( clusterId );

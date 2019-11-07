@@ -17,7 +17,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Kernel.api.txstate
+namespace Neo4Net.Kernel.Api.txstate
 {
 	using LongSet = org.eclipse.collections.api.set.primitive.LongSet;
 
@@ -34,9 +34,9 @@ namespace Neo4Net.Kernel.api.txstate
 	using TxStateVisitor = Neo4Net.Kernel.Api.StorageEngine.TxState.TxStateVisitor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.StatementConstants.ANY_LABEL;
+//	import static Neo4Net.kernel.api.StatementConstants.ANY_LABEL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.StatementConstants.ANY_RELATIONSHIP_TYPE;
+//	import static Neo4Net.kernel.api.StatementConstants.ANY_RELATIONSHIP_TYPE;
 
 	public class TransactionCountingStateVisitor : Neo4Net.Kernel.Api.StorageEngine.TxState.TxStateVisitor_Delegator
 	{
@@ -97,7 +97,7 @@ namespace Neo4Net.Kernel.api.txstate
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void visitCreatedRelationship(long id, int type, long startNode, long endNode) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.ConstraintValidationException
+//ORIGINAL LINE: public void visitCreatedRelationship(long id, int type, long startNode, long endNode) throws Neo4Net.Kernel.Api.Internal.Exceptions.Schema.ConstraintValidationException
 		 public override void VisitCreatedRelationship( long id, int type, long startNode, long endNode )
 		 {
 			  UpdateRelationshipCount( startNode, type, endNode, 1 );
@@ -119,7 +119,7 @@ namespace Neo4Net.Kernel.api.txstate
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void visitNodeLabelChanges(long id, final org.eclipse.collections.api.set.primitive.LongSet added, final org.eclipse.collections.api.set.primitive.LongSet removed) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.ConstraintValidationException
+//ORIGINAL LINE: public void visitNodeLabelChanges(long id, final org.eclipse.collections.api.set.primitive.LongSet added, final org.eclipse.collections.api.set.primitive.LongSet removed) throws Neo4Net.Kernel.Api.Internal.Exceptions.Schema.ConstraintValidationException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 		 public override void VisitNodeLabelChanges( long id, LongSet added, LongSet removed )
 		 {

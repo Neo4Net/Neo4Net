@@ -83,7 +83,7 @@ namespace Neo4Net.Collections
 		 /// when the supplier returns null.
 		 /// </summary>
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java static interface methods:
-//		 static <T, EX> RawIterator<T, EX> from(org.Neo4Net.function.ThrowingSupplier<T, EX> supplier)
+//		 static <T, EX> RawIterator<T, EX> from(Neo4Net.function.ThrowingSupplier<T, EX> supplier)
 	//	 {
 	//		  return new PrefetchingRawIterator<T,EX>()
 	//		  {

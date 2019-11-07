@@ -40,9 +40,9 @@ namespace Neo4Net.tools.util
 	using LogFiles = Neo4Net.Kernel.impl.transaction.log.files.LogFiles;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.entry.LogHeader.LOG_HEADER_SIZE;
+//	import static Neo4Net.kernel.impl.transaction.log.entry.LogHeader.LOG_HEADER_SIZE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.entry.LogHeaderReader.readLogHeader;
+//	import static Neo4Net.kernel.impl.transaction.log.entry.LogHeaderReader.readLogHeader;
 
 	public class TransactionLogUtils
 	{
@@ -52,7 +52,7 @@ namespace Neo4Net.tools.util
 		 /// <param name="fs"> <seealso cref="FileSystemAbstraction"/> to find {@code storeDirectory} in. </param>
 		 /// <param name="logFiles"> the physical log files to read from </param>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static org.Neo4Net.kernel.impl.transaction.log.LogEntryCursor openLogs(final org.Neo4Net.io.fs.FileSystemAbstraction fs, org.Neo4Net.kernel.impl.transaction.log.files.LogFiles logFiles) throws java.io.IOException
+//ORIGINAL LINE: public static Neo4Net.kernel.impl.transaction.log.LogEntryCursor openLogs(final Neo4Net.io.fs.FileSystemAbstraction fs, Neo4Net.kernel.impl.transaction.log.files.LogFiles logFiles) throws java.io.IOException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 		 public static LogEntryCursor OpenLogs( FileSystemAbstraction fs, LogFiles logFiles )
 		 {
@@ -67,7 +67,7 @@ namespace Neo4Net.tools.util
 		 /// <param name="file"> file to open </param>
 		 /// <param name="readerLogVersionBridge"> log version bridge to use </param>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static org.Neo4Net.kernel.impl.transaction.log.LogEntryCursor openLogEntryCursor(org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, java.io.File file, org.Neo4Net.kernel.impl.transaction.log.LogVersionBridge readerLogVersionBridge) throws java.io.IOException
+//ORIGINAL LINE: public static Neo4Net.kernel.impl.transaction.log.LogEntryCursor openLogEntryCursor(Neo4Net.io.fs.FileSystemAbstraction fileSystem, java.io.File file, Neo4Net.kernel.impl.transaction.log.LogVersionBridge readerLogVersionBridge) throws java.io.IOException
 		 public static LogEntryCursor OpenLogEntryCursor( FileSystemAbstraction fileSystem, File file, LogVersionBridge readerLogVersionBridge )
 		 {
 			  LogVersionedStoreChannel channel = OpenVersionedChannel( fileSystem, file );
@@ -84,7 +84,7 @@ namespace Neo4Net.tools.util
 		 /// <returns> <seealso cref="LogVersionedStoreChannel"/> for the file. Its version is determined by its log header. </returns>
 		 /// <exception cref="IOException"> on I/O error. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static org.Neo4Net.kernel.impl.transaction.log.PhysicalLogVersionedStoreChannel openVersionedChannel(org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, java.io.File file) throws java.io.IOException
+//ORIGINAL LINE: public static Neo4Net.kernel.impl.transaction.log.PhysicalLogVersionedStoreChannel openVersionedChannel(Neo4Net.io.fs.FileSystemAbstraction fileSystem, java.io.File file) throws java.io.IOException
 		 public static PhysicalLogVersionedStoreChannel OpenVersionedChannel( FileSystemAbstraction fileSystem, File file )
 		 {
 			  StoreChannel fileChannel = fileSystem.Open( file, OpenMode.READ );

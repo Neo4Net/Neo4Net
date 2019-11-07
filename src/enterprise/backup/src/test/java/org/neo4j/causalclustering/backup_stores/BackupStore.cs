@@ -28,7 +28,7 @@ namespace Neo4Net.causalclustering.backup_stores
 	public interface BackupStore
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: java.util.Optional<java.io.File> generate(java.io.File backupDir, org.Neo4Net.causalclustering.discovery.Cluster<?> backupCluster) throws Exception;
+//ORIGINAL LINE: java.util.Optional<java.io.File> generate(java.io.File backupDir, Neo4Net.causalclustering.discovery.Cluster<?> backupCluster) throws Exception;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		 Optional<File> generate<T1>( File backupDir, Cluster<T1> backupCluster );
 	}

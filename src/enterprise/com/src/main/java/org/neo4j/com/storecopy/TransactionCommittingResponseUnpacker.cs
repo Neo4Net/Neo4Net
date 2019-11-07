@@ -24,7 +24,7 @@ namespace Neo4Net.com.storecopy
 {
 	using Neo4Net.com;
 	using Neo4Net.com;
-	using DatabaseManager = Neo4Net.Dbms.database.DatabaseManager;
+	using IDatabaseManager = Neo4Net.Dbms.database.DatabaseManager;
 	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using VersionContextSupplier = Neo4Net.Io.pagecache.tracing.cursor.context.VersionContextSupplier;
@@ -285,7 +285,7 @@ namespace Neo4Net.com.storecopy
 			  {
 				  get
 				  {
-						DatabaseManager databaseManager = GlobalResolver.resolveDependency( typeof( DatabaseManager ) );
+						DatabaseManager databaseManager = GlobalResolver.resolveDependency( typeof( IDatabaseManager ) );
 						Config config = GlobalResolver.resolveDependency( typeof( Config ) );
 						GraphDatabaseFacade facade = databaseManager.GetDatabaseFacade( config.Get( GraphDatabaseSettings.active_database ) ).get();
 						return facade.DependencyResolver;
@@ -325,7 +325,7 @@ namespace Neo4Net.com.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void unpackResponse(org.Neo4Net.com.Response<?> response, ResponseUnpacker_TxHandler txHandler) throws Exception
+//ORIGINAL LINE: public void unpackResponse(Neo4Net.com.Response<?> response, ResponseUnpacker_TxHandler txHandler) throws Exception
 		 public override void UnpackResponse<T1>( Response<T1> response, ResponseUnpacker_TxHandler txHandler )
 		 {
 			  if ( _stopped )

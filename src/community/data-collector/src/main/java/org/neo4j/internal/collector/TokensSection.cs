@@ -39,7 +39,7 @@ namespace Neo4Net.Internal.Collector
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static java.util.stream.Stream<RetrieveResult> retrieve(org.Neo4Net.Kernel.Api.Internal.Kernel kernel) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
+//ORIGINAL LINE: static java.util.stream.Stream<RetrieveResult> retrieve(Neo4Net.Kernel.Api.Internal.Kernel kernel) throws Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 internal static Stream<RetrieveResult> Retrieve( Kernel kernel )
 		 {
 			  using ( Transaction tx = kernel.BeginTransaction( Neo4Net.Kernel.Api.Internal.Transaction_Type.Explicit, LoginContext.AUTH_DISABLED ) )
@@ -64,7 +64,7 @@ namespace Neo4Net.Internal.Collector
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static void putTokenCounts(java.util.Map<String,Object> metaData, org.Neo4Net.Kernel.Api.Internal.Kernel kernel) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
+//ORIGINAL LINE: static void putTokenCounts(java.util.Map<String,Object> metaData, Neo4Net.Kernel.Api.Internal.Kernel kernel) throws Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 internal static void PutTokenCounts( IDictionary<string, object> metaData, Kernel kernel )
 		 {
 			  using ( Transaction tx = kernel.BeginTransaction( Neo4Net.Kernel.Api.Internal.Transaction_Type.Explicit, LoginContext.AUTH_DISABLED ) )

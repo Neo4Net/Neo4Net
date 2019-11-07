@@ -34,14 +34,14 @@ namespace Neo4Net.causalclustering.core
 	using Log = Neo4Net.Logging.Log;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.CausalClusteringSettings.minimum_core_cluster_size_at_runtime;
+//	import static Neo4Net.causalclustering.core.CausalClusteringSettings.minimum_core_cluster_size_at_runtime;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.CausalClusteringSettings.minimum_core_cluster_size_at_formation;
+//	import static Neo4Net.causalclustering.core.CausalClusteringSettings.minimum_core_cluster_size_at_formation;
 
 	public class CausalClusterConfigurationValidator : ConfigurationValidator
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Override public java.util.Map<String,String> validate(@Nonnull Config config, @Nonnull Log log) throws org.Neo4Net.graphdb.config.InvalidSettingException
+//ORIGINAL LINE: @Override public java.util.Map<String,String> validate(@Nonnull Config config, @Nonnull Log log) throws Neo4Net.graphdb.config.InvalidSettingException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public override IDictionary<string, string> Validate( Config config, Log log )
 		 {

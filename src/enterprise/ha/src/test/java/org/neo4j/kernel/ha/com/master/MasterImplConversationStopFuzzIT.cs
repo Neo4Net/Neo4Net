@@ -64,15 +64,15 @@ namespace Neo4Net.Kernel.ha.com.master
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.mock;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.cluster.ClusterSettings.server_id;
+//	import static Neo4Net.cluster.ClusterSettings.server_id;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.com.StoreIdTestFactory.newStoreIdForCurrentVersion;
+//	import static Neo4Net.com.StoreIdTestFactory.newStoreIdForCurrentVersion;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
+//	import static Neo4Net.helpers.collection.MapUtil.stringMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.ha.HaSettings.lock_read_timeout;
+//	import static Neo4Net.kernel.ha.HaSettings.lock_read_timeout;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
+//	import static Neo4Net.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
 
 	/// <summary>
 	///  Current test will try to emulate client master conversation lifecycle
@@ -118,7 +118,7 @@ namespace Neo4Net.Kernel.ha.com.master
 		 private static MasterExecutionStatistic _executionStatistic = new MasterExecutionStatistic();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.VerboseTimeout timeout = org.Neo4Net.test.rule.VerboseTimeout.builder().withTimeout(50, java.util.concurrent.TimeUnit.SECONDS).describeOnFailure(locks, MasterImplConversationStopFuzzIT::getLocksDescriptionFunction).build();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.VerboseTimeout timeout = Neo4Net.test.rule.VerboseTimeout.builder().withTimeout(50, java.util.concurrent.TimeUnit.SECONDS).describeOnFailure(locks, MasterImplConversationStopFuzzIT::getLocksDescriptionFunction).build();
 		 public VerboseTimeout Timeout;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -191,11 +191,11 @@ namespace Neo4Net.Kernel.ha.com.master
 			  internal abstract class State
 			  {
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//               UNINITIALIZED { State next(SlaveEmulatorWorker worker) { HandshakeResult handshake = worker.master.handshake(worker.lastTx, org.Neo4Net.Kernel.Api.StorageEngine.StoreId).response(); worker.epoch = handshake.epoch(); return IDLE; } },
+//               UNINITIALIZED { State next(SlaveEmulatorWorker worker) { HandshakeResult handshake = worker.master.handshake(worker.lastTx, Neo4Net.Kernel.Api.StorageEngine.StoreId).response(); worker.epoch = handshake.epoch(); return IDLE; } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//               IDLE { State next(SlaveEmulatorWorker worker) throws Exception { if(lowProbabilityEvent(worker)) { return UNINITIALIZED; } else if(lowProbabilityEvent(worker)) { return commit(worker, new org.Neo4Net.com.RequestContext(worker.epoch, worker.machineId, -1, worker.lastTx, 0)); } else { try { worker.master.newLockSession(worker.newRequestContext()); return IN_SESSION; } catch(org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException e) { if(e.getCause() instanceof org.Neo4Net.kernel.impl.util.collection.ConcurrentAccessException) { executionStatistic.reportAlreadyInUseError(); return IDLE; } else { throw e; } } } } },
+//               IDLE { State next(SlaveEmulatorWorker worker) throws Exception { if(lowProbabilityEvent(worker)) { return UNINITIALIZED; } else if(lowProbabilityEvent(worker)) { return commit(worker, new Neo4Net.com.RequestContext(worker.epoch, worker.machineId, -1, worker.lastTx, 0)); } else { try { worker.master.newLockSession(worker.newRequestContext()); return IN_SESSION; } catch(Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException e) { if(e.getCause() instanceof Neo4Net.kernel.impl.util.collection.ConcurrentAccessException) { executionStatistic.reportAlreadyInUseError(); return IDLE; } else { throw e; } } } } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//               IN_SESSION { State next(SlaveEmulatorWorker worker) throws Exception { if(lowProbabilityEvent(worker)) { return UNINITIALIZED; } else { int i = worker.random.nextInt(10); if(i >= 5) { return commit(worker, worker.requestContext); } else if(i >= 4) { worker.master.acquireExclusiveLock(worker.requestContext, org.Neo4Net.kernel.impl.locking.ResourceTypes.NODE, randomResource(worker)); return IN_SESSION; } else if(i >= 1) { worker.master.acquireSharedLock(worker.requestContext, org.Neo4Net.kernel.impl.locking.ResourceTypes.NODE, randomResource(worker)); return IN_SESSION; } else { endLockSession(worker); return IDLE; } } } },
+//               IN_SESSION { State next(SlaveEmulatorWorker worker) throws Exception { if(lowProbabilityEvent(worker)) { return UNINITIALIZED; } else { int i = worker.random.nextInt(10); if(i >= 5) { return commit(worker, worker.requestContext); } else if(i >= 4) { worker.master.acquireExclusiveLock(worker.requestContext, Neo4Net.kernel.impl.locking.ResourceTypes.NODE, randomResource(worker)); return IN_SESSION; } else if(i >= 1) { worker.master.acquireSharedLock(worker.requestContext, Neo4Net.kernel.impl.locking.ResourceTypes.NODE, randomResource(worker)); return IN_SESSION; } else { endLockSession(worker); return IDLE; } } } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
 //               CLOSING_SESSION { State next(SlaveEmulatorWorker worker) { if(lowProbabilityEvent(worker)) { return UNINITIALIZED; } else { endLockSession(worker); return IDLE; } } };
 
@@ -234,7 +234,7 @@ namespace Neo4Net.Kernel.ha.com.master
 					internal abstract State next( SlaveEmulatorWorker worker );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected State commit(SlaveEmulatorWorker worker, org.Neo4Net.com.RequestContext requestContext) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
+//ORIGINAL LINE: protected State commit(SlaveEmulatorWorker worker, Neo4Net.com.RequestContext requestContext) throws Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 					protected internal State Commit( SlaveEmulatorWorker worker, Neo4Net.com.RequestContext requestContext )
 					{
 						 try

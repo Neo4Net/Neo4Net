@@ -44,8 +44,8 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException;
 	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.LabelSchemaDescriptor;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
-	using Statement = Neo4Net.Kernel.api.Statement;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
+	using Statement = Neo4Net.Kernel.Api.Statement;
 	using ThreadToStatementContextBridge = Neo4Net.Kernel.impl.core.ThreadToStatementContextBridge;
 	using RecordStorageEngine = Neo4Net.Kernel.impl.storageengine.impl.recordstorage.RecordStorageEngine;
 	using NeoStores = Neo4Net.Kernel.impl.store.NeoStores;
@@ -77,9 +77,9 @@ namespace Neo4Net.Kernel.Impl.Api.index
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.runners.Parameterized.Parameters;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.filter;
+//	import static Neo4Net.helpers.collection.Iterables.filter;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel;
+//	import static Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel;
 
 	/// <summary>
 	/// This test validates that we count the correct amount of index updates. In the process it also verifies that the populated index has
@@ -111,10 +111,10 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 public bool MultiThreadedPopulationEnabled;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.DatabaseRule dbRule = new org.Neo4Net.test.rule.EmbeddedDatabaseRule().withSetting(org.Neo4Net.graphdb.factory.GraphDatabaseSettings.index_background_sampling_enabled, "false").startLazily();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.DatabaseRule dbRule = new Neo4Net.test.rule.EmbeddedDatabaseRule().withSetting(Neo4Net.graphdb.factory.GraphDatabaseSettings.index_background_sampling_enabled, "false").startLazily();
 		 public readonly DatabaseRule DbRule = new EmbeddedDatabaseRule().withSetting(GraphDatabaseSettings.index_background_sampling_enabled, "false").startLazily();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.RandomRule random = new org.Neo4Net.test.rule.RandomRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.RandomRule random = new Neo4Net.test.rule.RandomRule();
 		 public readonly RandomRule Random = new RandomRule();
 
 		 private IGraphDatabaseService _db;
@@ -156,7 +156,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldProvideIndexStatisticsForDataCreatedWhenPopulationBeforeTheIndexIsOnline() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: @Test public void shouldProvideIndexStatisticsForDataCreatedWhenPopulationBeforeTheIndexIsOnline() throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldProvideIndexStatisticsForDataCreatedWhenPopulationBeforeTheIndexIsOnline()
 		 {
@@ -175,7 +175,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldNotSeeDataCreatedAfterPopulation() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: @Test public void shouldNotSeeDataCreatedAfterPopulation() throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldNotSeeDataCreatedAfterPopulation()
 		 {
@@ -194,7 +194,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldProvideIndexStatisticsForDataSeenDuringPopulationAndIgnoreDataCreatedAfterPopulation() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: @Test public void shouldProvideIndexStatisticsForDataSeenDuringPopulationAndIgnoreDataCreatedAfterPopulation() throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldProvideIndexStatisticsForDataSeenDuringPopulationAndIgnoreDataCreatedAfterPopulation()
 		 {
@@ -214,7 +214,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldRemoveIndexStatisticsAfterIndexIsDeleted() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: @Test public void shouldRemoveIndexStatisticsAfterIndexIsDeleted() throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldRemoveIndexStatisticsAfterIndexIsDeleted()
 		 {
@@ -382,7 +382,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 
 			  // when populating while creating
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.Kernel.Api.Internal.IndexReference index = createPersonNameIndex();
+//ORIGINAL LINE: final Neo4Net.Kernel.Api.Internal.IndexReference index = createPersonNameIndex();
 			  IndexReference index = CreatePersonNameIndex();
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -499,7 +499,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private int createNamedPeople(long[] nodes, int offset) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: private int createNamedPeople(long[] nodes, int offset) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 private int CreateNamedPeople( long[] nodes, int offset )
 		 {
 			  using ( Transaction tx = _db.beginTx() )
@@ -535,7 +535,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 //ORIGINAL LINE: final java.util.concurrent.ExecutorService service = java.util.concurrent.Executors.newFixedThreadPool(threads);
 			  ExecutorService service = Executors.newFixedThreadPool( threads );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.concurrent.atomic.AtomicReference<org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException> exception = new java.util.concurrent.atomic.AtomicReference<>();
+//ORIGINAL LINE: final java.util.concurrent.atomic.AtomicReference<Neo4Net.Kernel.Api.Internal.Exceptions.KernelException> exception = new java.util.concurrent.atomic.AtomicReference<>();
 			  AtomicReference<KernelException> exception = new AtomicReference<KernelException>();
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -588,7 +588,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void dropIndex(org.Neo4Net.Kernel.Api.Internal.IndexReference index) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: private void dropIndex(Neo4Net.Kernel.Api.Internal.IndexReference index) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 private void DropIndex( IndexReference index )
 		 {
 			  using ( Transaction tx = _db.beginTx() )
@@ -603,21 +603,21 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private long indexSize(org.Neo4Net.Kernel.Api.Internal.IndexReference reference) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: private long indexSize(Neo4Net.Kernel.Api.Internal.IndexReference reference) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 private long IndexSize( IndexReference reference )
 		 {
 			  return ( ( GraphDatabaseAPI ) _db ).DependencyResolver.resolveDependency( typeof( IndexingService ) ).indexUpdatesAndSize( reference.Schema() ).readSecond();
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private long indexUpdates(org.Neo4Net.Kernel.Api.Internal.IndexReference reference) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: private long indexUpdates(Neo4Net.Kernel.Api.Internal.IndexReference reference) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 private long IndexUpdates( IndexReference reference )
 		 {
 			  return ( ( GraphDatabaseAPI ) _db ).DependencyResolver.resolveDependency( typeof( IndexingService ) ).indexUpdatesAndSize( reference.Schema() ).readFirst();
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private double indexSelectivity(org.Neo4Net.Kernel.Api.Internal.IndexReference reference) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: private double indexSelectivity(Neo4Net.Kernel.Api.Internal.IndexReference reference) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 private double IndexSelectivity( IndexReference reference )
 		 {
 			  using ( Transaction tx = _db.beginTx() )
@@ -629,7 +629,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private double getSelectivity(org.Neo4Net.Kernel.Api.Internal.IndexReference reference) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
+//ORIGINAL LINE: private double getSelectivity(Neo4Net.Kernel.Api.Internal.IndexReference reference) throws Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
 		 private double GetSelectivity( IndexReference reference )
 		 {
 
@@ -645,7 +645,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void createSomePersons() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: private void createSomePersons() throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 private void CreateSomePersons()
 		 {
 			  using ( Transaction tx = _db.beginTx() )
@@ -660,7 +660,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private long createPersonNode(org.Neo4Net.kernel.api.KernelTransaction ktx, Object value) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: private long createPersonNode(Neo4Net.kernel.api.KernelTransaction ktx, Object value) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 private long CreatePersonNode( KernelTransaction ktx, object value )
 		 {
 			  int labelId = ktx.TokenWrite().labelGetOrCreateForName(PERSON_LABEL);
@@ -672,7 +672,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.Kernel.Api.Internal.IndexReference createPersonNameIndex() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: private Neo4Net.Kernel.Api.Internal.IndexReference createPersonNameIndex() throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 private IndexReference CreatePersonNameIndex()
 		 {
 			  using ( Transaction tx = _db.beginTx() )
@@ -705,35 +705,35 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private UpdatesTracker executeCreations(int numberOfCreations) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException, InterruptedException
+//ORIGINAL LINE: private UpdatesTracker executeCreations(int numberOfCreations) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException, InterruptedException
 		 private UpdatesTracker ExecuteCreations( int numberOfCreations )
 		 {
 			  return InternalExecuteCreationsDeletionsAndUpdates( null, numberOfCreations, false, false );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private UpdatesTracker executeCreationsAndDeletions(long[] nodes, int numberOfCreations) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException, InterruptedException
+//ORIGINAL LINE: private UpdatesTracker executeCreationsAndDeletions(long[] nodes, int numberOfCreations) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException, InterruptedException
 		 private UpdatesTracker ExecuteCreationsAndDeletions( long[] nodes, int numberOfCreations )
 		 {
 			  return InternalExecuteCreationsDeletionsAndUpdates( nodes, numberOfCreations, true, false );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private UpdatesTracker executeCreationsAndUpdates(long[] nodes, int numberOfCreations) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException, InterruptedException
+//ORIGINAL LINE: private UpdatesTracker executeCreationsAndUpdates(long[] nodes, int numberOfCreations) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException, InterruptedException
 		 private UpdatesTracker ExecuteCreationsAndUpdates( long[] nodes, int numberOfCreations )
 		 {
 			  return InternalExecuteCreationsDeletionsAndUpdates( nodes, numberOfCreations, false, true );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private UpdatesTracker executeCreationsDeletionsAndUpdates(long[] nodes, int numberOfCreations) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException, InterruptedException
+//ORIGINAL LINE: private UpdatesTracker executeCreationsDeletionsAndUpdates(long[] nodes, int numberOfCreations) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException, InterruptedException
 		 private UpdatesTracker ExecuteCreationsDeletionsAndUpdates( long[] nodes, int numberOfCreations )
 		 {
 			  return InternalExecuteCreationsDeletionsAndUpdates( nodes, numberOfCreations, true, true );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private UpdatesTracker internalExecuteCreationsDeletionsAndUpdates(long[] nodes, int numberOfCreations, boolean allowDeletions, boolean allowUpdates) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException, InterruptedException
+//ORIGINAL LINE: private UpdatesTracker internalExecuteCreationsDeletionsAndUpdates(long[] nodes, int numberOfCreations, boolean allowDeletions, boolean allowUpdates) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException, InterruptedException
 		 private UpdatesTracker InternalExecuteCreationsDeletionsAndUpdates( long[] nodes, int numberOfCreations, bool allowDeletions, bool allowUpdates )
 		 {
 			  if ( Random.nextBoolean() )

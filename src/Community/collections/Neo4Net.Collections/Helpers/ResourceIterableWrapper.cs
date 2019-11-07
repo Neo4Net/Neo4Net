@@ -28,19 +28,19 @@ namespace Neo4Net.Collections.Helpers
 	/// </summary>
 	/// @param <T> the type of items to return </param>
 	/// @param <U> the type of items to wrap/convert from </param>
-	public abstract class ResourceIterableWrapper<T, U> : ResourceIterable<T>
+	public abstract class ResourceIterableWrapper<T, U> :IResourceIterable<T>
 	{
 		public abstract java.util.stream.Stream<T> Stream();
-		 private ResourceIterable<U> _source;
+		 privateIResourceIterable<U> _source;
 
-		 public ResourceIterableWrapper( ResourceIterable<U> source )
+		 public ResourceIterableWrapper(IResourceIterable<U> source )
 		 {
 			  this._source = source;
 		 }
 
 		 protected internal abstract T Map( U @object );
 
-		 public override ResourceIterator<T> Iterator()
+		 public override IResourceIterator<T> Iterator()
 		 {
 			  return new MappingResourceIteratorAnonymousInnerClass( this, _source.GetEnumerator() );
 		 }
@@ -49,7 +49,7 @@ namespace Neo4Net.Collections.Helpers
 		 {
 			 private readonly ResourceIterableWrapper<T, U> _outerInstance;
 
-			 public MappingResourceIteratorAnonymousInnerClass( ResourceIterableWrapper<T, U> outerInstance, ResourceIterator<U> iterator ) : base( iterator )
+			 public MappingResourceIteratorAnonymousInnerClass( ResourceIterableWrapper<T, U> outerInstance, IResourceIterator<U> iterator ) : base( iterator )
 			 {
 				 this.outerInstance = outerInstance;
 			 }

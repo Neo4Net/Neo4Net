@@ -378,7 +378,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 		 private void Property( PropertyRecord record, long reference, PageCursor pageCursor )
 		 {
 			  // We need to load forcefully here since otherwise we can have inconsistent reads
-			  // for properties across blocks, see org.Neo4Net.graphdb.ConsistentPropertyReadsIT
+			  // for properties across blocks, see Neo4Net.graphdb.ConsistentPropertyReadsIT
 			  _read.getRecordByCursor( reference, record, RecordLoad.FORCE, pageCursor );
 		 }
 

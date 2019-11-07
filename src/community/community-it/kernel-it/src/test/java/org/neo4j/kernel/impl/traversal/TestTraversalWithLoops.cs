@@ -46,7 +46,7 @@ namespace Neo4Net.Kernel.impl.traversal
 			  {
 					Node a = GetNodeWithName( "a" );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.graphdb.Node e = getNodeWithName("e");
+//ORIGINAL LINE: final Neo4Net.graphdb.Node e = getNodeWithName("e");
 					Node e = GetNodeWithName( "e" );
 					Evaluator onlyEndNode = path => Evaluation.ofIncludes( path.endNode().Equals(e) );
 					TraversalDescription basicTraverser = GraphDb.traversalDescription().evaluator(onlyEndNode);

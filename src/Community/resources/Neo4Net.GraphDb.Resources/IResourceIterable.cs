@@ -19,7 +19,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.GraphDb
+namespace Neo4Net.GraphDb.Resources
 {
 
 	/// <summary>
@@ -36,7 +36,7 @@ namespace Neo4Net.GraphDb
 	/// 
 	/// <pre>
 	/// {@code
-	/// ResourceIterable<Object> iterable;
+	///IResourceIterable<Object> iterable;
 	/// for ( Object item : iterable )
 	/// {
 	///     ...
@@ -50,8 +50,8 @@ namespace Neo4Net.GraphDb
 	/// 
 	/// <pre>
 	/// {@code
-	/// ResourceIterable<Object> iterable;
-	/// ResourceIterator<Object> iterator = iterable.iterator();
+	///IResourceIterable<Object> iterable;
+	/// IResourceIterator<Object> iterator = iterable.iterator();
 	/// try
 	/// {
 	///     while ( iterator.hasNext() )
@@ -75,12 +75,12 @@ namespace Neo4Net.GraphDb
 	/// @param <T> the type of values returned through the iterators
 	/// </param>
 	/// <seealso cref= ResourceIterator </seealso>
-	public interface ResourceIterable<T> : IEnumerable<T>
+	public interface IResourceIterable<T> : IEnumerable<T>
 	{
 		 /// <summary>
 		 /// Returns an <seealso cref="ResourceIterator iterator"/> with associated resources that may be managed.
 		 /// </summary>
-		 ResourceIterator<T> Iterator();
+		 IResourceIterator<T> Iterator();
 
 		 /// <returns> this iterable as a <seealso cref="Stream"/> </returns>
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:

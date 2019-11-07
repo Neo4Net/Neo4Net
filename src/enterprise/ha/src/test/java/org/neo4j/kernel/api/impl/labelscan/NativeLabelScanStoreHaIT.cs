@@ -20,7 +20,7 @@
  * More information is also available at:
  * https://Neo4Net.com/licensing/
  */
-namespace Neo4Net.Kernel.api.impl.labelscan
+namespace Neo4Net.Kernel.Api.impl.labelscan
 {
 	using After = org.junit.After;
 	using Before = org.junit.Before;
@@ -31,7 +31,7 @@ namespace Neo4Net.Kernel.api.impl.labelscan
 	using Label = Neo4Net.GraphDb.Label;
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using TestHighlyAvailableGraphDatabaseFactory = Neo4Net.GraphDb.factory.TestHighlyAvailableGraphDatabaseFactory;
-	using LabelScanStore = Neo4Net.Kernel.api.labelscan.LabelScanStore;
+	using LabelScanStore = Neo4Net.Kernel.Api.LabelScan.LabelScanStore;
 	using Settings = Neo4Net.Kernel.configuration.Settings;
 	using OnlineBackupSettings = Neo4Net.Kernel.impl.enterprise.configuration.OnlineBackupSettings;
 	using ClusterManager = Neo4Net.Kernel.impl.ha.ClusterManager;
@@ -46,16 +46,16 @@ namespace Neo4Net.Kernel.api.impl.labelscan
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.count;
+//	import static Neo4Net.helpers.collection.Iterators.count;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.allAvailabilityGuardsReleased;
+//	import static Neo4Net.kernel.impl.ha.ClusterManager.allAvailabilityGuardsReleased;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.allSeesAllAsAvailable;
+//	import static Neo4Net.kernel.impl.ha.ClusterManager.allSeesAllAsAvailable;
 
 	public class NativeLabelScanStoreHaIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.TestDirectory testDirectory = Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory TestDirectory = TestDirectory.testDirectory();
 		 private readonly LifeSupport _life = new LifeSupport();
 		 private ClusterManager.ManagedCluster _cluster;
@@ -151,7 +151,7 @@ namespace Neo4Net.Kernel.api.impl.labelscan
 			  }
 		 }
 
-		 private class TestMonitor : Neo4Net.Kernel.api.labelscan.LabelScanStore_Monitor_Adaptor
+		 private class TestMonitor : Neo4Net.Kernel.Api.LabelScan.LabelScanStore_Monitor_Adaptor
 		 {
 			  internal readonly AtomicInteger InitCalls = new AtomicInteger();
 			  internal readonly AtomicInteger TimesRebuiltWithData = new AtomicInteger();

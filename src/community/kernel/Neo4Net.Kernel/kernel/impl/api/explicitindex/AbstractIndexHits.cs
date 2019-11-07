@@ -29,7 +29,7 @@ namespace Neo4Net.Kernel.Impl.Api.explicitindex
 		public abstract float CurrentScore();
 		public abstract java.util.stream.Stream<T> Stream();
 		public abstract int Size();
-		 public override ResourceIterator<T> Iterator()
+		 public override IResourceIterator<T> Iterator()
 		 {
 			  return this;
 		 }

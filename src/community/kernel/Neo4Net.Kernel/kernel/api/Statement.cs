@@ -17,7 +17,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Kernel.api
+namespace Neo4Net.Kernel.Api
 {
 	using Resource = Neo4Net.GraphDb.Resource;
 
@@ -28,7 +28,7 @@ namespace Neo4Net.Kernel.api
 	/// then close all resources at statement close.
 	/// 
 	/// Note that Statement used to be the access-point for all kernel reads and writes before 3.4. For
-	/// accessing the graph now, see <seealso cref="org.Neo4Net.Kernel.Api.Internal.Transaction"/>. The only remainder
+	/// accessing the graph now, see <seealso cref="Neo4Net.Kernel.Api.Internal.Transaction"/>. The only remainder
 	/// the QueryRegistryOperations, which will eventually also move from here.
 	/// </summary>
 	public interface IStatement : Resource, ResourceManager

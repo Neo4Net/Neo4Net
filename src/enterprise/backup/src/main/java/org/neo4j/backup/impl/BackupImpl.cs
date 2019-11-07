@@ -38,7 +38,7 @@ namespace Neo4Net.backup.impl
 	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.com.RequestContext.anonymous;
+//	import static Neo4Net.com.RequestContext.anonymous;
 
 	public class BackupImpl : TheBackupInterface
 	{

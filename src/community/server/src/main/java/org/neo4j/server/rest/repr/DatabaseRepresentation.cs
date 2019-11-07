@@ -22,29 +22,29 @@ namespace Neo4Net.Server.rest.repr
 	using Version = Neo4Net.Kernel.Internal.Version;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.web.Surface_Fields.PATH_BATCH;
+//	import static Neo4Net.server.rest.web.Surface_Fields.PATH_BATCH;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.web.Surface_Fields.PATH_CYPHER;
+//	import static Neo4Net.server.rest.web.Surface_Fields.PATH_CYPHER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.web.Surface_Fields.PATH_EXTENSIONS;
+//	import static Neo4Net.server.rest.web.Surface_Fields.PATH_EXTENSIONS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.web.Surface_Fields.PATH_LABELS;
+//	import static Neo4Net.server.rest.web.Surface_Fields.PATH_LABELS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.web.Surface_Fields.PATH_NODES;
+//	import static Neo4Net.server.rest.web.Surface_Fields.PATH_NODES;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.web.Surface_Fields.PATH_NODE_INDEX;
+//	import static Neo4Net.server.rest.web.Surface_Fields.PATH_NODE_INDEX;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.web.Surface_Fields.PATH_RELATIONSHIPS;
+//	import static Neo4Net.server.rest.web.Surface_Fields.PATH_RELATIONSHIPS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.web.Surface_Fields.PATH_RELATIONSHIP_INDEX;
+//	import static Neo4Net.server.rest.web.Surface_Fields.PATH_RELATIONSHIP_INDEX;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.web.Surface_Fields.PATH_RELATIONSHIP_TYPES;
+//	import static Neo4Net.server.rest.web.Surface_Fields.PATH_RELATIONSHIP_TYPES;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.web.Surface_Fields.PATH_SCHEMA_CONSTRAINT;
+//	import static Neo4Net.server.rest.web.Surface_Fields.PATH_SCHEMA_CONSTRAINT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.web.Surface_Fields.PATH_SCHEMA_INDEX;
+//	import static Neo4Net.server.rest.web.Surface_Fields.PATH_SCHEMA_INDEX;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.web.Surface_Fields.PATH_TRANSACTION;
+//	import static Neo4Net.server.rest.web.Surface_Fields.PATH_TRANSACTION;
 
 	public class DatabaseRepresentation : MappingRepresentation, ExtensibleRepresentation
 	{

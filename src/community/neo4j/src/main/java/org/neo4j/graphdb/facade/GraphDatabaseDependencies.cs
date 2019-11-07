@@ -40,13 +40,13 @@ namespace Neo4Net.GraphDb.facade
 	using Group = Neo4Net.Scheduler.Group;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.concat;
+//	import static Neo4Net.helpers.collection.Iterables.concat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.asImmutableList;
+//	import static Neo4Net.helpers.collection.Iterables.asImmutableList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.asImmutableMap;
+//	import static Neo4Net.helpers.collection.Iterables.asImmutableMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.asIterable;
+//	import static Neo4Net.helpers.collection.Iterables.asIterable;
 
 	public class GraphDatabaseDependencies : GraphDatabaseFacadeFactory.Dependencies
 	{
@@ -59,7 +59,7 @@ namespace Neo4Net.GraphDb.facade
 		 {
 			  ImmutableList<Type> settingsClasses = ImmutableListFactoryImpl.INSTANCE.empty();
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.eclipse.collections.api.list.ImmutableList<org.Neo4Net.kernel.extension.KernelExtensionFactory<?>> kernelExtensions = asImmutableList(getKernelExtensions(org.Neo4Net.helpers.Service.load(org.Neo4Net.kernel.extension.KernelExtensionFactory.class).iterator()));
+//ORIGINAL LINE: org.eclipse.collections.api.list.ImmutableList<Neo4Net.kernel.extension.KernelExtensionFactory<?>> kernelExtensions = asImmutableList(getKernelExtensions(Neo4Net.helpers.Service.load(Neo4Net.kernel.extension.KernelExtensionFactory.class).iterator()));
 			  ImmutableList<KernelExtensionFactory<object>> kernelExtensions = asImmutableList( GetKernelExtensions( Service.load( typeof( KernelExtensionFactory ) ).GetEnumerator() ) );
 
 			  ImmutableMap<string, URLAccessRule> urlAccessRules = ImmutableMapFactoryImpl.INSTANCE.of( "http", URLAccessRules.alwaysPermitted(), "https", URLAccessRules.alwaysPermitted(), "ftp", URLAccessRules.alwaysPermitted(), "file", URLAccessRules.fileAccess() );
@@ -74,7 +74,7 @@ namespace Neo4Net.GraphDb.facade
 		 private readonly LogProvider _userLogProvider;
 		 private readonly ImmutableList<Type> _settingsClasses;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private final org.eclipse.collections.api.list.ImmutableList<org.Neo4Net.kernel.extension.KernelExtensionFactory<?>> kernelExtensions;
+//ORIGINAL LINE: private final org.eclipse.collections.api.list.ImmutableList<Neo4Net.kernel.extension.KernelExtensionFactory<?>> kernelExtensions;
 		 private readonly ImmutableList<KernelExtensionFactory<object>> _kernelExtensions;
 		 private readonly ImmutableMap<string, URLAccessRule> _urlAccessRules;
 		 private readonly ImmutableList<QueryEngineProvider> _queryEngineProviders;
@@ -125,7 +125,7 @@ namespace Neo4Net.GraphDb.facade
 		 public virtual GraphDatabaseDependencies UrlAccessRules( IDictionary<string, URLAccessRule> urlAccessRules )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.Map<String,org.Neo4Net.graphdb.security.URLAccessRule> newUrlAccessRules = this.urlAccessRules.toMap();
+//ORIGINAL LINE: final java.util.Map<String,Neo4Net.graphdb.security.URLAccessRule> newUrlAccessRules = this.urlAccessRules.toMap();
 			  IDictionary<string, URLAccessRule> newUrlAccessRules = this._urlAccessRules.toMap();
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET Dictionary equivalent to the Java 'putAll' method:
 			  newUrlAccessRules.putAll( urlAccessRules );
@@ -154,7 +154,7 @@ namespace Neo4Net.GraphDb.facade
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: public Iterable<org.Neo4Net.kernel.extension.KernelExtensionFactory<?>> kernelExtensions()
+//ORIGINAL LINE: public Iterable<Neo4Net.kernel.extension.KernelExtensionFactory<?>> kernelExtensions()
 		 public override IEnumerable<KernelExtensionFactory<object>> KernelExtensions()
 		 {
 			  return _kernelExtensions;
@@ -178,11 +178,11 @@ namespace Neo4Net.GraphDb.facade
 		 // This method is needed to convert the non generic KernelExtensionFactory type returned from Service.load
 		 // to KernelExtensionFactory<?> generic types
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private static java.util.Iterator<org.Neo4Net.kernel.extension.KernelExtensionFactory<?>> getKernelExtensions(java.util.Iterator<org.Neo4Net.kernel.extension.KernelExtensionFactory> parent)
+//ORIGINAL LINE: private static java.util.Iterator<Neo4Net.kernel.extension.KernelExtensionFactory<?>> getKernelExtensions(java.util.Iterator<Neo4Net.kernel.extension.KernelExtensionFactory> parent)
 		 private static IEnumerator<KernelExtensionFactory<object>> GetKernelExtensions( IEnumerator<KernelExtensionFactory> parent )
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: return new java.util.Iterator<org.Neo4Net.kernel.extension.KernelExtensionFactory<?>>()
+//ORIGINAL LINE: return new java.util.Iterator<Neo4Net.kernel.extension.KernelExtensionFactory<?>>()
 			  return new IteratorAnonymousInnerClass( parent );
 		 }
 
@@ -202,7 +202,7 @@ namespace Neo4Net.GraphDb.facade
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: public org.Neo4Net.kernel.extension.KernelExtensionFactory<?> next()
+//ORIGINAL LINE: public Neo4Net.kernel.extension.KernelExtensionFactory<?> next()
 			 public KernelExtensionFactory<object> next()
 			 {
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:

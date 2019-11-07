@@ -78,7 +78,7 @@ namespace Neo4Net.backup.impl
 			  TheBackupInterface backup = mock( typeof( TheBackupInterface ) );
 			  RequestContext ctx = new RequestContext( 0, 1, 0, -1, 12 );
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") org.Neo4Net.com.TargetCaller<org.Neo4Net.backup.TheBackupInterface, Void> targetCaller = (org.Neo4Net.com.TargetCaller<org.Neo4Net.backup.TheBackupInterface,Void>) org.Neo4Net.backup.impl.BackupClient.BackupRequestType.FULL_BACKUP.getTargetCaller();
+//ORIGINAL LINE: @SuppressWarnings("unchecked") Neo4Net.com.TargetCaller<Neo4Net.backup.TheBackupInterface, Void> targetCaller = (Neo4Net.com.TargetCaller<Neo4Net.backup.TheBackupInterface,Void>) Neo4Net.backup.impl.BackupClient.BackupRequestType.FULL_BACKUP.getTargetCaller();
 			  TargetCaller<TheBackupInterface, Void> targetCaller = ( TargetCaller<TheBackupInterface, Void> ) BackupRequestType.FULL_BACKUP.TargetCaller;
 			  targetCaller.Call( backup, ctx, EMPTY_BUFFER, null );
 			  verify( backup ).fullBackup( any( typeof( StoreWriter ) ), eq( false ) );

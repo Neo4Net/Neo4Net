@@ -26,17 +26,17 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using ValueGroup = Neo4Net.Values.Storable.ValueGroup;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.TemporalIndexCache.Offset.date;
+//	import static Neo4Net.kernel.impl.index.schema.TemporalIndexCache.Offset.date;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.TemporalIndexCache.Offset.duration;
+//	import static Neo4Net.kernel.impl.index.schema.TemporalIndexCache.Offset.duration;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.TemporalIndexCache.Offset.localDateTime;
+//	import static Neo4Net.kernel.impl.index.schema.TemporalIndexCache.Offset.localDateTime;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.TemporalIndexCache.Offset.localTime;
+//	import static Neo4Net.kernel.impl.index.schema.TemporalIndexCache.Offset.localTime;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.TemporalIndexCache.Offset.zonedDateTime;
+//	import static Neo4Net.kernel.impl.index.schema.TemporalIndexCache.Offset.zonedDateTime;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.TemporalIndexCache.Offset.zonedTime;
+//	import static Neo4Net.kernel.impl.index.schema.TemporalIndexCache.Offset.zonedTime;
 
 	/// <summary>
 	/// Cache for lazily creating parts of the temporal index. Each part is created using the factory
@@ -151,7 +151,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private T getOrCreatePart(Offset key, org.Neo4Net.function.ThrowingSupplier<T,java.io.IOException> factory) throws java.io.UncheckedIOException
+//ORIGINAL LINE: private T getOrCreatePart(Offset key, Neo4Net.function.ThrowingSupplier<T,java.io.IOException> factory) throws java.io.UncheckedIOException
 		 private T GetOrCreatePart( Offset key, ThrowingSupplier<T, IOException> factory )
 		 {
 			  T existing = Cache[key];

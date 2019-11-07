@@ -26,7 +26,7 @@ namespace Neo4Net.CommandLine.Admin.security
 
 
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
-	using UserManager = Neo4Net.Kernel.api.security.UserManager;
+	using UserManager = Neo4Net.Kernel.Api.security.UserManager;
 	using User = Neo4Net.Kernel.impl.security.User;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
 	using CommunitySecurityModule = Neo4Net.Server.Security.Auth.CommunitySecurityModule;
@@ -47,7 +47,7 @@ namespace Neo4Net.CommandLine.Admin.security
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.assertion.Assert.assertException;
+//	import static Neo4Net.test.assertion.Assert.assertException;
 
 	public class SetInitialPasswordCommandTest
 	{
@@ -175,7 +175,7 @@ namespace Neo4Net.CommandLine.Admin.security
 			  assertTrue( _fileSystem.fileExists( _authInitFile ) );
 			  FileUserRepository userRepository = new FileUserRepository( _fileSystem, _authInitFile, NullLogProvider.Instance );
 			  userRepository.Start();
-			  User Neo4Net = userRepository.GetUserByName( Neo4Net.Kernel.api.security.UserManager_Fields.INITIAL_USER_NAME );
+			  User Neo4Net = userRepository.GetUserByName( Neo4Net.Kernel.Api.security.UserManager_Fields.INITIAL_USER_NAME );
 			  assertNotNull( Neo4Net );
 			  assertTrue( Neo4Net.Credentials().matchesPassword(password) );
 			  assertFalse( Neo4Net.HasFlag( User.PASSWORD_CHANGE_REQUIRED ) );

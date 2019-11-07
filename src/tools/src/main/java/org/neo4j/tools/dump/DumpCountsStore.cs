@@ -34,7 +34,7 @@ namespace Neo4Net.tools.dump
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
 	using EmptyVersionContextSupplier = Neo4Net.Io.pagecache.tracing.cursor.context.EmptyVersionContextSupplier;
-	using StatementConstants = Neo4Net.Kernel.api.StatementConstants;
+	using StatementConstants = Neo4Net.Kernel.Api.StatementConstants;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using CountsVisitor = Neo4Net.Kernel.Impl.Api.CountsVisitor;
 	using NeoStores = Neo4Net.Kernel.impl.store.NeoStores;
@@ -56,9 +56,9 @@ namespace Neo4Net.tools.dump
 	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.pagecache.impl.muninn.StandalonePageCacheFactory.createPageCache;
+//	import static Neo4Net.io.pagecache.impl.muninn.StandalonePageCacheFactory.createPageCache;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
+//	import static Neo4Net.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
 
 	/// <summary>
 	/// Tool that will dump content of count store content into a simple string representation for further analysis.
@@ -81,7 +81,7 @@ namespace Neo4Net.tools.dump
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static void dumpCountsStore(org.Neo4Net.io.fs.FileSystemAbstraction fs, java.io.File path, java.io.PrintStream out) throws Exception
+//ORIGINAL LINE: public static void dumpCountsStore(Neo4Net.io.fs.FileSystemAbstraction fs, java.io.File path, java.io.PrintStream out) throws Exception
 //JAVA TO C# CONVERTER NOTE: Members cannot have the same name as their enclosing type:
 		 public static void DumpCountsStoreConflict( FileSystemAbstraction fs, File path, PrintStream @out )
 		 {
@@ -140,7 +140,7 @@ namespace Neo4Net.tools.dump
 		 {
 			  @out.printf( "Counts Store:\t%s%n", file );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: for (org.Neo4Net.kernel.impl.store.kvstore.HeaderField<?> headerField : headers.fields())
+//ORIGINAL LINE: for (Neo4Net.kernel.impl.store.kvstore.HeaderField<?> headerField : headers.fields())
 			  foreach ( HeaderField<object> headerField in headers.Fields() )
 			  {
 					@out.printf( "%s:\t%s%n", headerField.ToString(), headers.Get(headerField) );
@@ -298,7 +298,7 @@ namespace Neo4Net.tools.dump
 		 private static IList<NamedToken> AllTokensFrom<T1>( TokenStore<T1> store )
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: try (org.Neo4Net.kernel.impl.store.TokenStore<?> tokens = store)
+//ORIGINAL LINE: try (Neo4Net.kernel.impl.store.TokenStore<?> tokens = store)
 			  using ( TokenStore<object> tokens = store )
 			  {
 					return tokens.Tokens;
@@ -325,7 +325,7 @@ namespace Neo4Net.tools.dump
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void visitFile(java.io.File path, org.Neo4Net.kernel.impl.api.CountsVisitor visitor) throws java.io.IOException
+//ORIGINAL LINE: public void visitFile(java.io.File path, Neo4Net.kernel.impl.api.CountsVisitor visitor) throws java.io.IOException
 			  public override void VisitFile( File path, CountsVisitor visitor )
 			  {
 					base.VisitFile( path, visitor );

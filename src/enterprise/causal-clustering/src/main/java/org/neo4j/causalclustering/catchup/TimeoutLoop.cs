@@ -35,7 +35,7 @@ namespace Neo4Net.causalclustering.catchup
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static <T> T waitForCompletion(java.util.concurrent.Future<T> future, String operation, System.Func<java.util.Optional<long>> millisSinceLastResponseSupplier, long inactivityTimeoutMillis, org.Neo4Net.logging.Log log) throws CatchUpClientException
+//ORIGINAL LINE: static <T> T waitForCompletion(java.util.concurrent.Future<T> future, String operation, System.Func<java.util.Optional<long>> millisSinceLastResponseSupplier, long inactivityTimeoutMillis, Neo4Net.logging.Log log) throws CatchUpClientException
 		 internal static T WaitForCompletion<T>( Future<T> future, string operation, System.Func<long?> millisSinceLastResponseSupplier, long inactivityTimeoutMillis, Log log )
 		 {
 			  long remainingTimeoutMillis = inactivityTimeoutMillis;

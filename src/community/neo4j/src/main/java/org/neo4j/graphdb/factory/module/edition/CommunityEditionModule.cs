@@ -28,8 +28,8 @@ namespace Neo4Net.GraphDb.factory.module.edition
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using IOLimiter = Neo4Net.Io.pagecache.IOLimiter;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
-	using SecurityModule = Neo4Net.Kernel.api.security.SecurityModule;
-	using NoAuthSecurityProvider = Neo4Net.Kernel.api.security.provider.NoAuthSecurityProvider;
+	using SecurityModule = Neo4Net.Kernel.Api.security.SecurityModule;
+	using NoAuthSecurityProvider = Neo4Net.Kernel.Api.security.provider.NoAuthSecurityProvider;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using SslPolicyLoader = Neo4Net.Kernel.configuration.ssl.SslPolicyLoader;
 	using SchemaWriteGuard = Neo4Net.Kernel.Impl.Api.SchemaWriteGuard;
@@ -62,9 +62,9 @@ namespace Neo4Net.GraphDb.factory.module.edition
 	using UsageData = Neo4Net.Udc.UsageData;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.EditionLocksFactories.createLockFactory;
+//	import static Neo4Net.graphdb.factory.EditionLocksFactories.createLockFactory;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.EditionLocksFactories.createLockManager;
+//	import static Neo4Net.graphdb.factory.EditionLocksFactories.createLockManager;
 
 	/// <summary>
 	/// This implementation of <seealso cref="AbstractEditionModule"/> creates the implementations of services
@@ -205,7 +205,7 @@ namespace Neo4Net.GraphDb.factory.module.edition
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void registerEditionSpecificProcedures(org.Neo4Net.kernel.impl.proc.Procedures procedures) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: public void registerEditionSpecificProcedures(Neo4Net.kernel.impl.proc.Procedures procedures) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 public override void RegisterEditionSpecificProcedures( Procedures procedures )
 		 {
 			  // Community does not add any extra procedures

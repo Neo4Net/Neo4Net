@@ -54,37 +54,37 @@ namespace Neo4Net.Bolt.v2.transport.integration
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.runners.Parameterized.Parameters;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.messaging.util.MessageMatchers.msgRecord;
+//	import static Neo4Net.bolt.v1.messaging.util.MessageMatchers.msgRecord;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.messaging.util.MessageMatchers.msgSuccess;
+//	import static Neo4Net.bolt.v1.messaging.util.MessageMatchers.msgSuccess;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.runtime.spi.StreamMatchers.eqRecord;
+//	import static Neo4Net.bolt.v1.runtime.spi.StreamMatchers.eqRecord;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.transport.integration.TransportTestUtil.eventuallyReceives;
+//	import static Neo4Net.bolt.v1.transport.integration.TransportTestUtil.eventuallyReceives;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.auth_enabled;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.auth_enabled;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.CoordinateReferenceSystem.Cartesian;
+//	import static Neo4Net.values.storable.CoordinateReferenceSystem.Cartesian;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.CoordinateReferenceSystem.WGS84;
+//	import static Neo4Net.values.storable.CoordinateReferenceSystem.WGS84;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.DateTimeValue.datetime;
+//	import static Neo4Net.values.storable.DateTimeValue.datetime;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.DateValue.date;
+//	import static Neo4Net.values.storable.DateValue.date;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.DurationValue.duration;
+//	import static Neo4Net.values.storable.DurationValue.duration;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.LocalDateTimeValue.localDateTime;
+//	import static Neo4Net.values.storable.LocalDateTimeValue.localDateTime;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.LocalTimeValue.localTime;
+//	import static Neo4Net.values.storable.LocalTimeValue.localTime;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.TimeValue.time;
+//	import static Neo4Net.values.storable.TimeValue.time;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.longValue;
+//	import static Neo4Net.values.storable.Values.longValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.pointValue;
+//	import static Neo4Net.values.storable.Values.pointValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.@virtual.VirtualValues.map;
+//	import static Neo4Net.values.@virtual.VirtualValues.map;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class BoltV2TransportIT
@@ -93,7 +93,7 @@ namespace Neo4Net.Bolt.v2.transport.integration
 		 private const string USER_AGENT = "TestClient/2.0";
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.bolt.v1.transport.integration.Neo4NetWithSocket server = new org.Neo4Net.bolt.v1.transport.integration.Neo4NetWithSocket(getClass(), settings -> settings.put(auth_enabled.name(), "false"));
+//ORIGINAL LINE: @Rule public Neo4Net.bolt.v1.transport.integration.Neo4NetWithSocket server = new Neo4Net.bolt.v1.transport.integration.Neo4NetWithSocket(getClass(), settings -> settings.put(auth_enabled.name(), "false"));
 		 public Neo4NetWithSocket Server = new Neo4NetWithSocket( this.GetType(), settings => settings.put(auth_enabled.name(), "false") );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -345,7 +345,7 @@ namespace Neo4Net.Bolt.v2.transport.integration
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private <T extends org.Neo4Net.values.AnyValue> void testSendingOfBoltV2Value(T value) throws Exception
+//ORIGINAL LINE: private <T extends Neo4Net.values.AnyValue> void testSendingOfBoltV2Value(T value) throws Exception
 		 private void TestSendingOfBoltV2Value<T>( T value ) where T : Neo4Net.Values.AnyValue
 		 {
 			  NegotiateBoltV2();
@@ -356,7 +356,7 @@ namespace Neo4Net.Bolt.v2.transport.integration
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private <T extends org.Neo4Net.values.AnyValue> void testReceivingOfBoltV2Value(String query, T expectedValue) throws Exception
+//ORIGINAL LINE: private <T extends Neo4Net.values.AnyValue> void testReceivingOfBoltV2Value(String query, T expectedValue) throws Exception
 		 private void TestReceivingOfBoltV2Value<T>( string query, T expectedValue ) where T : Neo4Net.Values.AnyValue
 		 {
 			  NegotiateBoltV2();
@@ -367,7 +367,7 @@ namespace Neo4Net.Bolt.v2.transport.integration
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private <T extends org.Neo4Net.values.AnyValue> void testSendingAndReceivingOfBoltV2Value(T value) throws Exception
+//ORIGINAL LINE: private <T extends Neo4Net.values.AnyValue> void testSendingAndReceivingOfBoltV2Value(T value) throws Exception
 		 private void TestSendingAndReceivingOfBoltV2Value<T>( T value ) where T : Neo4Net.Values.AnyValue
 		 {
 			  NegotiateBoltV2();

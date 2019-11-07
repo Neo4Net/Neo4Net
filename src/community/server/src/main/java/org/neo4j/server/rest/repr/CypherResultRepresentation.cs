@@ -30,7 +30,7 @@ namespace Neo4Net.Server.rest.repr
 	using Neo4Net.Collections.Helpers;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.loop;
+//	import static Neo4Net.helpers.collection.Iterators.loop;
 
 	public class CypherResultRepresentation : MappingRepresentation
 	{
@@ -42,7 +42,7 @@ namespace Neo4Net.Server.rest.repr
 		 private readonly MappingRepresentation _plan;
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public CypherResultRepresentation(final org.Neo4Net.graphdb.Result result, boolean includeStats, boolean includePlan)
+//ORIGINAL LINE: public CypherResultRepresentation(final Neo4Net.graphdb.Result result, boolean includeStats, boolean includePlan)
 		 public CypherResultRepresentation( Result result, bool includeStats, bool includePlan ) : base( RepresentationType.String )
 		 {
 			  _resultRepresentation = CreateResultRepresentation( result );
@@ -170,7 +170,7 @@ namespace Neo4Net.Server.rest.repr
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private System.Func<Object, org.Neo4Net.graphdb.ExecutionPlanDescription> planProvider(final org.Neo4Net.graphdb.Result result)
+//ORIGINAL LINE: private System.Func<Object, Neo4Net.graphdb.ExecutionPlanDescription> planProvider(final Neo4Net.graphdb.Result result)
 		 private System.Func<object, ExecutionPlanDescription> PlanProvider( Result result )
 		 {
 			  return from => result.ExecutionPlanDescription;

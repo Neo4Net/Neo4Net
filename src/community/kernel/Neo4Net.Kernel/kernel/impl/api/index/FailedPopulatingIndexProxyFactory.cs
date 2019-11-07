@@ -26,7 +26,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using CapableIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.CapableIndexDescriptor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.api.index.IndexPopulationFailure.failure;
+//	import static Neo4Net.kernel.impl.api.index.IndexPopulationFailure.failure;
 
 	public class FailedPopulatingIndexProxyFactory : FailedIndexProxyFactory
 	{

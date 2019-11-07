@@ -68,7 +68,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void setupAuthManager(org.Neo4Net.server.security.auth.AuthenticationStrategy authStrategy) throws Throwable
+//ORIGINAL LINE: private void setupAuthManager(Neo4Net.server.security.auth.AuthenticationStrategy authStrategy) throws Throwable
 		 private void SetupAuthManager( AuthenticationStrategy authStrategy )
 		 {
 			  FormattedLog.Builder builder = FormattedLog.withUTCTimeZone();
@@ -115,12 +115,12 @@ namespace Neo4Net.Server.security.enterprise.auth
 				 this.@base = @base;
 			 }
 
-			 public override void evaluate()
+			 public override void Evaluate()
 			 {
 				  try
 				  {
 						_outerInstance.setupAuthManager( _outerInstance.authStrategy );
-						@base.evaluate();
+						@base.Evaluate();
 				  }
 				  catch ( Exception t )
 				  {

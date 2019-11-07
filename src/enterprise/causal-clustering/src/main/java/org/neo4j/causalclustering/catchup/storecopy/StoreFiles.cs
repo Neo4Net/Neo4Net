@@ -57,7 +57,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void delete(java.io.File storeDir, org.Neo4Net.kernel.impl.transaction.log.files.LogFiles logFiles) throws java.io.IOException
+//ORIGINAL LINE: public void delete(java.io.File storeDir, Neo4Net.kernel.impl.transaction.log.files.LogFiles logFiles) throws java.io.IOException
 		 public virtual void Delete( File storeDir, LogFiles logFiles )
 		 {
 			  // 'files' can be null if the directory doesn't exist. This is fine, we just ignore it then.
@@ -87,7 +87,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.util.stream.Stream<org.Neo4Net.io.fs.FileHandle> acceptedPageCachedFiles(java.io.File databaseDirectory) throws java.io.IOException
+//ORIGINAL LINE: private java.util.stream.Stream<Neo4Net.io.fs.FileHandle> acceptedPageCachedFiles(java.io.File databaseDirectory) throws java.io.IOException
 		 private Stream<FileHandle> AcceptedPageCachedFiles( File databaseDirectory )
 		 {
 			  try
@@ -104,7 +104,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void moveTo(java.io.File source, java.io.File target, org.Neo4Net.kernel.impl.transaction.log.files.LogFiles logFiles) throws java.io.IOException
+//ORIGINAL LINE: public void moveTo(java.io.File source, java.io.File target, Neo4Net.kernel.impl.transaction.log.files.LogFiles logFiles) throws java.io.IOException
 		 public virtual void MoveTo( File source, File target, LogFiles logFiles )
 		 {
 			  _fs.mkdirs( logFiles.LogFilesDirectory() );
@@ -151,7 +151,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.causalclustering.identity.StoreId readStoreId(org.Neo4Net.io.layout.DatabaseLayout databaseLayout) throws java.io.IOException
+//ORIGINAL LINE: public Neo4Net.causalclustering.identity.StoreId readStoreId(Neo4Net.io.layout.DatabaseLayout databaseLayout) throws java.io.IOException
 		 public virtual StoreId ReadStoreId( DatabaseLayout databaseLayout )
 		 {
 			  File neoStoreFile = databaseLayout.MetadataStore();

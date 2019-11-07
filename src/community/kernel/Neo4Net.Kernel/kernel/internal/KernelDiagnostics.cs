@@ -148,7 +148,7 @@ namespace Neo4Net.Kernel.Internal
 					{
 						 this.Layout = layout;
 //JAVA TO C# CONVERTER TODO TASK: Method reference arbitrary object instance method syntax is not converted by Java to C# Converter:
-						 MappedCandidates = java.util.org.Neo4Net.kernel.impl.store.StoreType.values().Where(StoreType::isRecordStore).Select(StoreType::getDatabaseFile).flatMap(layout.file).ToList();
+						 MappedCandidates = java.util.Neo4Net.kernel.impl.store.StoreType.values().Where(StoreType::isRecordStore).Select(StoreType::getDatabaseFile).flatMap(layout.file).ToList();
 						 MappedIndexFilter = new NativeIndexFileFilter( layout.DatabaseDirectory() );
 					}
 

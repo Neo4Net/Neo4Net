@@ -77,7 +77,7 @@ namespace Neo4Net.causalclustering.messaging.marshalling
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static void marshal(org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel, String string) throws java.io.IOException
+//ORIGINAL LINE: public static void marshal(Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel, String string) throws java.io.IOException
 		 public static void Marshal( WritableChannel channel, string @string )
 		 {
 			  if ( string.ReferenceEquals( @string, null ) )
@@ -93,7 +93,7 @@ namespace Neo4Net.causalclustering.messaging.marshalling
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static String unmarshal(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public static String unmarshal(Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
 		 public static string Unmarshal( ReadableChannel channel )
 		 {
 			  int len = channel.Int;

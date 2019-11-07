@@ -58,15 +58,15 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.BlockStorage.Monitor_Fields.NO_MONITOR;
+//	import static Neo4Net.kernel.impl.index.schema.BlockStorage.Monitor_Fields.NO_MONITOR;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.BlockStorage.NOT_CANCELLABLE;
+//	import static Neo4Net.kernel.impl.index.schema.BlockStorage.NOT_CANCELLABLE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.ByteBufferFactory.HEAP_ALLOCATOR;
+//	import static Neo4Net.kernel.impl.index.schema.ByteBufferFactory.HEAP_ALLOCATOR;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.ByteBufferFactory.heapBufferFactory;
+//	import static Neo4Net.kernel.impl.index.schema.ByteBufferFactory.heapBufferFactory;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.OtherThreadExecutor.command;
+//	import static Neo4Net.test.OtherThreadExecutor.command;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @ExtendWith({TestDirectoryExtension.class, RandomExtension.class}) class BlockStorageTest
@@ -449,7 +449,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertContents(org.Neo4Net.index.internal.gbptree.SimpleLongLayout layout, BlockStorage<org.apache.commons.lang3.mutable.MutableLong,org.apache.commons.lang3.mutable.MutableLong> storage, Iterable<java.util.List<BlockEntry<org.apache.commons.lang3.mutable.MutableLong,org.apache.commons.lang3.mutable.MutableLong>>> expectedBlocks) throws java.io.IOException
+//ORIGINAL LINE: private void assertContents(Neo4Net.index.internal.gbptree.SimpleLongLayout layout, BlockStorage<org.apache.commons.lang3.mutable.MutableLong,org.apache.commons.lang3.mutable.MutableLong> storage, Iterable<java.util.List<BlockEntry<org.apache.commons.lang3.mutable.MutableLong,org.apache.commons.lang3.mutable.MutableLong>>> expectedBlocks) throws java.io.IOException
 		 private void AssertContents( SimpleLongLayout layout, BlockStorage<MutableLong, MutableLong> storage, IEnumerable<IList<BlockEntry<MutableLong, MutableLong>>> expectedBlocks )
 		 {
 			  using ( BlockReader<MutableLong, MutableLong> reader = storage.Reader() )

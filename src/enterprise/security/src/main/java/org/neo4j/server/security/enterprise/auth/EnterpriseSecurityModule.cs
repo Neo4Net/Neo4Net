@@ -36,9 +36,9 @@ namespace Neo4Net.Server.security.enterprise.auth
 	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 	using SecurityContext = Neo4Net.Kernel.Api.Internal.security.SecurityContext;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
-	using AuthManager = Neo4Net.Kernel.api.security.AuthManager;
-	using SecurityModule = Neo4Net.Kernel.api.security.SecurityModule;
-	using UserManagerSupplier = Neo4Net.Kernel.api.security.UserManagerSupplier;
+	using AuthManager = Neo4Net.Kernel.Api.security.AuthManager;
+	using SecurityModule = Neo4Net.Kernel.Api.security.SecurityModule;
+	using UserManagerSupplier = Neo4Net.Kernel.Api.security.UserManagerSupplier;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using EnterpriseAuthManager = Neo4Net.Kernel.enterprise.api.security.EnterpriseAuthManager;
 	using EnterpriseSecurityContext = Neo4Net.Kernel.enterprise.api.security.EnterpriseSecurityContext;
@@ -63,10 +63,10 @@ namespace Neo4Net.Server.security.enterprise.auth
 	using Clocks = Neo4Net.Time.Clocks;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.proc.Context_Fields.SECURITY_CONTEXT;
+//	import static Neo4Net.kernel.api.proc.Context_Fields.SECURITY_CONTEXT;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Service.Implementation(SecurityModule.class) public class EnterpriseSecurityModule extends org.Neo4Net.kernel.api.security.SecurityModule
+//ORIGINAL LINE: @Service.Implementation(SecurityModule.class) public class EnterpriseSecurityModule extends Neo4Net.kernel.api.security.SecurityModule
 	public class EnterpriseSecurityModule : SecurityModule
 	{
 		 public const string ROLE_STORE_FILENAME = "roles";
@@ -84,7 +84,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void setup(Dependencies dependencies) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: public void setup(Dependencies dependencies) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 public override void Setup( Dependencies dependencies )
 		 {
 			  Config config = dependencies.Config();

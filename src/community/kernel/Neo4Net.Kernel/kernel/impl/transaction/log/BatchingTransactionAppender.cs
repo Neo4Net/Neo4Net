@@ -39,9 +39,9 @@ namespace Neo4Net.Kernel.impl.transaction.log
 	using LifecycleAdapter = Neo4Net.Kernel.Lifecycle.LifecycleAdapter;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.api.TransactionToApply.TRANSACTION_ID_NOT_SPECIFIED;
+//	import static Neo4Net.kernel.impl.api.TransactionToApply.TRANSACTION_ID_NOT_SPECIFIED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.entry.LogEntryStart.checksum;
+//	import static Neo4Net.kernel.impl.transaction.log.entry.LogEntryStart.checksum;
 
 	/// <summary>
 	/// Concurrently appends transactions to the transaction log, while coordinating with the log rotation and forcing the
@@ -86,7 +86,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public long append(org.Neo4Net.kernel.impl.api.TransactionToApply batch, org.Neo4Net.kernel.impl.transaction.tracing.LogAppendEvent logAppendEvent) throws java.io.IOException
+//ORIGINAL LINE: public long append(Neo4Net.kernel.impl.api.TransactionToApply batch, Neo4Net.kernel.impl.transaction.tracing.LogAppendEvent logAppendEvent) throws java.io.IOException
 		 public override long Append( TransactionToApply batch, LogAppendEvent logAppendEvent )
 		 {
 			  // Assigned base tx id just to make compiler happy
@@ -161,7 +161,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void checkPoint(LogPosition logPosition, org.Neo4Net.kernel.impl.transaction.tracing.LogCheckPointEvent logCheckPointEvent) throws java.io.IOException
+//ORIGINAL LINE: public void checkPoint(LogPosition logPosition, Neo4Net.kernel.impl.transaction.tracing.LogCheckPointEvent logCheckPointEvent) throws java.io.IOException
 		 public override void CheckPoint( LogPosition logPosition, LogCheckPointEvent logCheckPointEvent )
 		 {
 			  // Synchronized with logFile to get absolute control over concurrent rotations happening
@@ -183,7 +183,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 		 /// <returns> A TransactionCommitment instance with metadata about the committed transaction, such as whether or not
 		 /// this transaction contains any explicit index changes. </returns>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private TransactionCommitment appendToLog(org.Neo4Net.kernel.impl.transaction.TransactionRepresentation transaction, long transactionId) throws java.io.IOException
+//ORIGINAL LINE: private TransactionCommitment appendToLog(Neo4Net.kernel.impl.transaction.TransactionRepresentation transaction, long transactionId) throws java.io.IOException
 		 private TransactionCommitment AppendToLog( TransactionRepresentation transaction, long transactionId )
 		 {
 			  // Reset command writer so that we, after we've written the transaction, can ask it whether or
@@ -229,7 +229,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 		 /// <param name="logForceEvents"> A trace event for the given log append operation. </param>
 		 /// <returns> {@code true} if we got lucky and were the ones forcing the log. </returns>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected boolean forceAfterAppend(org.Neo4Net.kernel.impl.transaction.tracing.LogForceEvents logForceEvents) throws java.io.IOException
+//ORIGINAL LINE: protected boolean forceAfterAppend(Neo4Net.kernel.impl.transaction.tracing.LogForceEvents logForceEvents) throws java.io.IOException
 		 protected internal virtual bool ForceAfterAppend( LogForceEvents logForceEvents )
 		 {
 			  // There's a benign race here, where we add our link before we update our next pointer.
@@ -280,7 +280,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void forceLog(org.Neo4Net.kernel.impl.transaction.tracing.LogForceEvents logForceEvents) throws java.io.IOException
+//ORIGINAL LINE: private void forceLog(Neo4Net.kernel.impl.transaction.tracing.LogForceEvents logForceEvents) throws java.io.IOException
 		 private void ForceLog( LogForceEvents logForceEvents )
 		 {
 			  ThreadLink links = _threadLinkHead.getAndSet( ThreadLink.End );

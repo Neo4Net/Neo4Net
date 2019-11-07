@@ -38,7 +38,7 @@ namespace Neo4Net.GraphDb
 	public class ConsistentPropertyReadsIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.DatabaseRule db = new org.Neo4Net.test.rule.EmbeddedDatabaseRule();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.DatabaseRule db = new Neo4Net.test.rule.EmbeddedDatabaseRule();
 		 public DatabaseRule Db = new EmbeddedDatabaseRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

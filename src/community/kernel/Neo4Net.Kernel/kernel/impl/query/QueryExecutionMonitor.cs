@@ -21,7 +21,7 @@
  */
 namespace Neo4Net.Kernel.impl.query
 {
-	using ExecutingQuery = Neo4Net.Kernel.api.query.ExecutingQuery;
+	using ExecutingQuery = Neo4Net.Kernel.Api.query.ExecutingQuery;
 
 	public interface QueryExecutionMonitor
 	{

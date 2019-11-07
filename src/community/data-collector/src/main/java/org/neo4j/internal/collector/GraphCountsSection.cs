@@ -34,7 +34,7 @@ namespace Neo4Net.Internal.Collector
 	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException;
 	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor;
 	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
-	using SilentTokenNameLookup = Neo4Net.Kernel.api.SilentTokenNameLookup;
+	using SilentTokenNameLookup = Neo4Net.Kernel.Api.SilentTokenNameLookup;
 	using Register = Neo4Net.Register.Register;
 	using Registers = Neo4Net.Register.Registers;
 	using EntityType = Neo4Net.Kernel.Api.StorageEngine.EntityType;
@@ -52,7 +52,7 @@ namespace Neo4Net.Internal.Collector
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static java.util.stream.Stream<RetrieveResult> retrieve(org.Neo4Net.Kernel.Api.Internal.Kernel kernel, Anonymizer anonymizer) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException, org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
+//ORIGINAL LINE: static java.util.stream.Stream<RetrieveResult> retrieve(Neo4Net.Kernel.Api.Internal.Kernel kernel, Anonymizer anonymizer) throws Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException, Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
 		 internal static Stream<RetrieveResult> Retrieve( Kernel kernel, Anonymizer anonymizer )
 		 {
 			  using ( Transaction tx = kernel.BeginTransaction( Neo4Net.Kernel.Api.Internal.Transaction_Type.Explicit, LoginContext.AUTH_DISABLED ) )
@@ -133,7 +133,7 @@ namespace Neo4Net.Internal.Collector
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static java.util.List<java.util.Map<String,Object>> indexes(org.Neo4Net.Kernel.Api.Internal.TokenRead tokens, org.Neo4Net.Kernel.Api.Internal.SchemaRead schemaRead, Anonymizer anonymizer) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
+//ORIGINAL LINE: private static java.util.List<java.util.Map<String,Object>> indexes(Neo4Net.Kernel.Api.Internal.TokenRead tokens, Neo4Net.Kernel.Api.Internal.SchemaRead schemaRead, Anonymizer anonymizer) throws Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
 		 private static IList<IDictionary<string, object>> Indexes( TokenRead tokens, SchemaRead schemaRead, Anonymizer anonymizer )
 		 {
 			  IList<IDictionary<string, object>> indexes = new List<IDictionary<string, object>>();

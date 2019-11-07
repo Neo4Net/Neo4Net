@@ -35,7 +35,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input
 		 /// Ensures that all input nodes will at least have the given set of labels.
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static org.Neo4Net.unsafe.impl.batchimport.input.csv.Decorator additiveLabels(final String[] labelNamesToAdd)
+//ORIGINAL LINE: public static Neo4Net.unsafe.impl.batchimport.input.csv.Decorator additiveLabels(final String[] labelNamesToAdd)
 		 public static Decorator AdditiveLabels( string[] labelNamesToAdd )
 		 {
 			  if ( labelNamesToAdd == null || labelNamesToAdd.Length == 0 )
@@ -51,7 +51,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input
 		 /// the specified default relationship type.
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static org.Neo4Net.unsafe.impl.batchimport.input.csv.Decorator defaultRelationshipType(final String defaultType)
+//ORIGINAL LINE: public static Neo4Net.unsafe.impl.batchimport.input.csv.Decorator defaultRelationshipType(final String defaultType)
 		 public static Decorator DefaultRelationshipType( string defaultType )
 		 {
 			  return string.ReferenceEquals( defaultType, null ) ? NoDecorator : relationship => new RelationshipTypeDecorator( relationship, defaultType );
@@ -156,7 +156,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static org.Neo4Net.unsafe.impl.batchimport.input.csv.Decorator decorators(final org.Neo4Net.unsafe.impl.batchimport.input.csv.Decorator... decorators)
+//ORIGINAL LINE: public static Neo4Net.unsafe.impl.batchimport.input.csv.Decorator decorators(final Neo4Net.unsafe.impl.batchimport.input.csv.Decorator... decorators)
 		 public static Decorator Decorators( params Decorator[] decorators )
 		 {
 			  return new DecoratorAnonymousInnerClass( decorators );

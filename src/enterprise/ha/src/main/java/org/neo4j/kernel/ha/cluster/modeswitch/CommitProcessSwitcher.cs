@@ -22,7 +22,7 @@
  */
 namespace Neo4Net.Kernel.ha.cluster.modeswitch
 {
-	using DatabaseManager = Neo4Net.Dbms.database.DatabaseManager;
+	using IDatabaseManager = Neo4Net.Dbms.database.DatabaseManager;
 	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Config = Neo4Net.Kernel.configuration.Config;
@@ -69,7 +69,7 @@ namespace Neo4Net.Kernel.ha.cluster.modeswitch
 		 {
 			 get
 			 {
-				  GraphDatabaseFacade databaseFacade = this._dependencyResolver.resolveDependency( typeof( DatabaseManager ) ).getDatabaseFacade( _activeDatabaseName ).get();
+				  GraphDatabaseFacade databaseFacade = this._dependencyResolver.resolveDependency( typeof( IDatabaseManager ) ).getDatabaseFacade( _activeDatabaseName ).get();
 				  DependencyResolver databaseResolver = databaseFacade.DependencyResolver;
 				  TransactionCommitProcess commitProcess = new TransactionRepresentationCommitProcess( databaseResolver.ResolveDependency( typeof( TransactionAppender ) ), databaseResolver.ResolveDependency( typeof( StorageEngine ) ) );
    

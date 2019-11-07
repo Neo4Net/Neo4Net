@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.Impl.Api.explicitindex
 	using PropertyKeyIdNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.PropertyKeyIdNotFoundKernelException;
 	using AutoIndexingKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.AutoIndexingKernelException;
 	using ExplicitIndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
-	using AutoIndexOperations = Neo4Net.Kernel.api.explicitindex.AutoIndexOperations;
+	using AutoIndexOperations = Neo4Net.Kernel.Api.explicitindex.AutoIndexOperations;
 	using TokenHolder = Neo4Net.Kernel.impl.core.TokenHolder;
 	using TokenNotFoundException = Neo4Net.Kernel.impl.core.TokenNotFoundException;
 	using Value = Neo4Net.Values.Storable.Value;
@@ -37,9 +37,9 @@ namespace Neo4Net.Kernel.Impl.Api.explicitindex
 		 public abstract class EntityType
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           NODE { public void add(org.Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite ops, long IEntityId, String keyName, Object value) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException { ops.nodeAddToExplicitIndex(InternalAutoIndexing.NODE_AUTO_INDEX, IEntityId, keyName, value); } public void remove(org.Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite ops, long IEntityId, String keyName, Object value) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException { ops.nodeRemoveFromExplicitIndex(InternalAutoIndexing.NODE_AUTO_INDEX, IEntityId, keyName, value); } public void remove(org.Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite ops, long IEntityId, String keyName) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException { ops.nodeRemoveFromExplicitIndex(InternalAutoIndexing.NODE_AUTO_INDEX, IEntityId, keyName); } public void remove(org.Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite ops, long IEntityId) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException { ops.nodeRemoveFromExplicitIndex(InternalAutoIndexing.NODE_AUTO_INDEX, IEntityId); } public void ensureIndexExists(org.Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite ops) { ops.nodeExplicitIndexCreateLazily(InternalAutoIndexing.NODE_AUTO_INDEX, null); } },
+//           NODE { public void add(Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite ops, long IEntityId, String keyName, Object value) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException { ops.nodeAddToExplicitIndex(InternalAutoIndexing.NODE_AUTO_INDEX, IEntityId, keyName, value); } public void remove(Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite ops, long IEntityId, String keyName, Object value) throws Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException { ops.nodeRemoveFromExplicitIndex(InternalAutoIndexing.NODE_AUTO_INDEX, IEntityId, keyName, value); } public void remove(Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite ops, long IEntityId, String keyName) throws Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException { ops.nodeRemoveFromExplicitIndex(InternalAutoIndexing.NODE_AUTO_INDEX, IEntityId, keyName); } public void remove(Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite ops, long IEntityId) throws Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException { ops.nodeRemoveFromExplicitIndex(InternalAutoIndexing.NODE_AUTO_INDEX, IEntityId); } public void ensureIndexExists(Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite ops) { ops.nodeExplicitIndexCreateLazily(InternalAutoIndexing.NODE_AUTO_INDEX, null); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           RELATIONSHIP { public void add(org.Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite ops, long IEntityId, String keyName, Object value) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException { ops.relationshipAddToExplicitIndex(InternalAutoIndexing.RELATIONSHIP_AUTO_INDEX, IEntityId, keyName, value); } public void remove(org.Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite ops, long IEntityId, String keyName, Object value) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException { ops.relationshipRemoveFromExplicitIndex(InternalAutoIndexing.RELATIONSHIP_AUTO_INDEX, IEntityId, keyName, value); } public void remove(org.Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite ops, long IEntityId, String keyName) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException { ops.relationshipRemoveFromExplicitIndex(InternalAutoIndexing.RELATIONSHIP_AUTO_INDEX, IEntityId, keyName); } public void remove(org.Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite ops, long IEntityId) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException { ops.relationshipRemoveFromExplicitIndex(InternalAutoIndexing.RELATIONSHIP_AUTO_INDEX, IEntityId); } public void ensureIndexExists(org.Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite ops) { ops.relationshipExplicitIndexCreateLazily(InternalAutoIndexing.RELATIONSHIP_AUTO_INDEX, null); } };
+//           RELATIONSHIP { public void add(Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite ops, long IEntityId, String keyName, Object value) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException { ops.relationshipAddToExplicitIndex(InternalAutoIndexing.RELATIONSHIP_AUTO_INDEX, IEntityId, keyName, value); } public void remove(Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite ops, long IEntityId, String keyName, Object value) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException { ops.relationshipRemoveFromExplicitIndex(InternalAutoIndexing.RELATIONSHIP_AUTO_INDEX, IEntityId, keyName, value); } public void remove(Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite ops, long IEntityId, String keyName) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException { ops.relationshipRemoveFromExplicitIndex(InternalAutoIndexing.RELATIONSHIP_AUTO_INDEX, IEntityId, keyName); } public void remove(Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite ops, long IEntityId) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException { ops.relationshipRemoveFromExplicitIndex(InternalAutoIndexing.RELATIONSHIP_AUTO_INDEX, IEntityId); } public void ensureIndexExists(Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite ops) { ops.relationshipExplicitIndexCreateLazily(InternalAutoIndexing.RELATIONSHIP_AUTO_INDEX, null); } };
 
 			  private static readonly IList<EntityType> valueList = new List<EntityType>();
 
@@ -68,19 +68,19 @@ namespace Neo4Net.Kernel.Impl.Api.explicitindex
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public abstract void add(org.Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite ops, long IEntityId, String keyName, Object value) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
+//ORIGINAL LINE: public abstract void add(Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite ops, long IEntityId, String keyName, Object value) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 			  public abstract void add( Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite ops, long IEntityId, string keyName, object value );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public abstract void remove(org.Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite ops, long IEntityId, String keyName, Object value) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
+//ORIGINAL LINE: public abstract void remove(Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite ops, long IEntityId, String keyName, Object value) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 			  public abstract void remove( Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite ops, long IEntityId, string keyName, object value );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public abstract void remove(org.Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite ops, long IEntityId, String keyName) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
+//ORIGINAL LINE: public abstract void remove(Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite ops, long IEntityId, String keyName) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 			  public abstract void remove( Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite ops, long IEntityId, string keyName );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public abstract void remove(org.Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite ops, long IEntityId) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
+//ORIGINAL LINE: public abstract void remove(Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite ops, long IEntityId) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 			  public abstract void remove( Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite ops, long IEntityId );
 
 			  public abstract void ensureIndexExists( Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite write );
@@ -128,7 +128,7 @@ namespace Neo4Net.Kernel.Impl.Api.explicitindex
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void propertyAdded(org.Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite ops, long IEntityId, int propertyKeyId, org.Neo4Net.values.storable.Value value) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.AutoIndexingKernelException
+//ORIGINAL LINE: public void propertyAdded(Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite ops, long IEntityId, int propertyKeyId, Neo4Net.values.storable.Value value) throws Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.AutoIndexingKernelException
 		 public override void PropertyAdded( ExplicitIndexWrite ops, long IEntityId, int propertyKeyId, Value value )
 		 {
 			  if ( _enabled )
@@ -156,7 +156,7 @@ namespace Neo4Net.Kernel.Impl.Api.explicitindex
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void propertyChanged(org.Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite ops, long IEntityId, int propertyKeyId, org.Neo4Net.values.storable.Value oldValue, org.Neo4Net.values.storable.Value newValue) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.AutoIndexingKernelException
+//ORIGINAL LINE: public void propertyChanged(Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite ops, long IEntityId, int propertyKeyId, Neo4Net.values.storable.Value oldValue, Neo4Net.values.storable.Value newValue) throws Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.AutoIndexingKernelException
 		 public override void PropertyChanged( ExplicitIndexWrite ops, long IEntityId, int propertyKeyId, Value oldValue, Value newValue )
 		 {
 			  if ( _enabled )
@@ -185,7 +185,7 @@ namespace Neo4Net.Kernel.Impl.Api.explicitindex
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void propertyRemoved(org.Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite ops, long IEntityId, int propertyKey) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.AutoIndexingKernelException
+//ORIGINAL LINE: public void propertyRemoved(Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite ops, long IEntityId, int propertyKey) throws Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.AutoIndexingKernelException
 		 public override void PropertyRemoved( ExplicitIndexWrite ops, long IEntityId, int propertyKey )
 		 {
 			  if ( _enabled )
@@ -213,7 +213,7 @@ namespace Neo4Net.Kernel.Impl.Api.explicitindex
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void IEntityRemoved(org.Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite ops, long IEntityId) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.AutoIndexingKernelException
+//ORIGINAL LINE: public void IEntityRemoved(Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite ops, long IEntityId) throws Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.AutoIndexingKernelException
 		 public override void IEntityRemoved( ExplicitIndexWrite ops, long IEntityId )
 		 {
 			  if ( _enabled )

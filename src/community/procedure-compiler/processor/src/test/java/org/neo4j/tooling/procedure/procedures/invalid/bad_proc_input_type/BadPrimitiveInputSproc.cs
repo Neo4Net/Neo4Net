@@ -90,19 +90,19 @@ namespace Neo4Net.Tooling.procedure.procedures.invalid.bad_proc_input_type
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Procedure public void works10(@Name("test") org.Neo4Net.graphdb.Node supported)
+//ORIGINAL LINE: @Procedure public void works10(@Name("test") Neo4Net.graphdb.Node supported)
 		 public virtual void Works10( Node supported )
 		 {
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Procedure public void works11(@Name("test") org.Neo4Net.graphdb.Relationship supported)
+//ORIGINAL LINE: @Procedure public void works11(@Name("test") Neo4Net.graphdb.Relationship supported)
 		 public virtual void Works11( Relationship supported )
 		 {
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Procedure public void works12(@Name("test") org.Neo4Net.graphdb.Path supported)
+//ORIGINAL LINE: @Procedure public void works12(@Name("test") Neo4Net.graphdb.Path supported)
 		 public virtual void Works12( Path supported )
 		 {
 		 }

@@ -20,7 +20,7 @@ using System.Threading;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Kernel.api.txtracking
+namespace Neo4Net.Kernel.Api.TxTracking
 {
 
 	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
@@ -29,7 +29,7 @@ namespace Neo4Net.Kernel.api.txtracking
 	using TransactionIdStore = Neo4Net.Kernel.impl.transaction.log.TransactionIdStore;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_ID;
+//	import static Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_ID;
 
 	/// <summary>
 	/// Facility to allow a user to run a query on different members of the cluster and ensure that a member is at least as
@@ -71,7 +71,7 @@ namespace Neo4Net.Kernel.api.txtracking
 		 /// <param name="timeout"> maximum duration to wait for OAT to be applied </param>
 		 /// <exception cref="TransactionFailureException"> when OAT did not get applied within the given duration </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void awaitUpToDate(long oldestAcceptableTxId, java.time.Duration timeout) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
+//ORIGINAL LINE: public void awaitUpToDate(long oldestAcceptableTxId, java.time.Duration timeout) throws Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 public virtual void AwaitUpToDate( long oldestAcceptableTxId, Duration timeout )
 		 {
 			  if ( oldestAcceptableTxId <= BASE_TX_ID )

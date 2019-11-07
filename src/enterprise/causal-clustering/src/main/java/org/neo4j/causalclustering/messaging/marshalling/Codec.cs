@@ -34,7 +34,7 @@ namespace Neo4Net.causalclustering.messaging.marshalling
 		 void Encode( CONTENT type, IList<object> output );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: ContentBuilder<CONTENT> decode(io.netty.buffer.ByteBuf byteBuf) throws java.io.IOException, org.Neo4Net.causalclustering.messaging.EndOfStreamException;
+//ORIGINAL LINE: ContentBuilder<CONTENT> decode(io.netty.buffer.ByteBuf byteBuf) throws java.io.IOException, Neo4Net.causalclustering.messaging.EndOfStreamException;
 		 ContentBuilder<CONTENT> Decode( ByteBuf byteBuf );
 	}
 

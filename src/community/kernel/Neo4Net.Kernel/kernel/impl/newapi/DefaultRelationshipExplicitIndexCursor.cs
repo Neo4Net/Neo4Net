@@ -26,7 +26,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 	using IndexProgressor_ExplicitClient = Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor_ExplicitClient;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.record.AbstractBaseRecord.NO_ID;
+//	import static Neo4Net.kernel.impl.store.record.AbstractBaseRecord.NO_ID;
 
 	internal class DefaultRelationshipExplicitIndexCursor : IndexCursor<IndexProgressor>, RelationshipExplicitIndexCursor, IndexProgressor_ExplicitClient
 	{

@@ -73,14 +73,14 @@ namespace Neo4Net.Server.rest.transactional
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public TransactionHandle findTransactionHandle(long txId) throws org.Neo4Net.server.rest.transactional.error.TransactionLifecycleException
+//ORIGINAL LINE: public TransactionHandle findTransactionHandle(long txId) throws Neo4Net.server.rest.transactional.error.TransactionLifecycleException
 		 public virtual TransactionHandle FindTransactionHandle( long txId )
 		 {
 			  return _registry.acquire( txId );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public TransactionHandle terminate(long txId) throws org.Neo4Net.server.rest.transactional.error.TransactionLifecycleException
+//ORIGINAL LINE: public TransactionHandle terminate(long txId) throws Neo4Net.server.rest.transactional.error.TransactionLifecycleException
 		 public virtual TransactionHandle Terminate( long txId )
 		 {
 			  return _registry.terminate( txId );

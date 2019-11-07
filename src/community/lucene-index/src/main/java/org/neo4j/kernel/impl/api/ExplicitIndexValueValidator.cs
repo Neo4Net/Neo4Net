@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Kernel.Impl.Api
 {
-	using ExplicitIndex = Neo4Net.Kernel.api.ExplicitIndex;
+	using ExplicitIndex = Neo4Net.Kernel.Api.ExplicitIndex;
 	using Neo4Net.Kernel.impl.util;
 
 	/// <summary>

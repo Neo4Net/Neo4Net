@@ -310,7 +310,7 @@ namespace Neo4Net.GraphDb.mockfs
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static ByteBuffer readLong(org.Neo4Net.io.fs.StoreChannel readChannel) throws java.io.IOException
+//ORIGINAL LINE: private static ByteBuffer readLong(Neo4Net.io.fs.StoreChannel readChannel) throws java.io.IOException
 		 private static ByteBuffer ReadLong( StoreChannel readChannel )
 		 {
 			  ByteBuffer readBuffer = allocate( 8 );
@@ -320,7 +320,7 @@ namespace Neo4Net.GraphDb.mockfs
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void writeLong(org.Neo4Net.io.fs.StoreChannel channel, long value) throws java.io.IOException
+//ORIGINAL LINE: private static void writeLong(Neo4Net.io.fs.StoreChannel channel, long value) throws java.io.IOException
 		 private static void WriteLong( StoreChannel channel, long value )
 		 {
 			  ByteBuffer buffer = allocate( 8 );

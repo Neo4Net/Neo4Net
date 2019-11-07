@@ -45,7 +45,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.rotation
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean rotateLogIfNeeded(org.Neo4Net.kernel.impl.transaction.tracing.LogAppendEvent logAppendEvent) throws java.io.IOException
+//ORIGINAL LINE: public boolean rotateLogIfNeeded(Neo4Net.kernel.impl.transaction.tracing.LogAppendEvent logAppendEvent) throws java.io.IOException
 		 public override bool RotateLogIfNeeded( LogAppendEvent logAppendEvent )
 		 {
 			  /* We synchronize on the writer because we want to have a monitor that another thread

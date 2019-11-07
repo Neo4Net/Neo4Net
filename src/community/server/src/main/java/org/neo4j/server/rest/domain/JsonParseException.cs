@@ -24,7 +24,7 @@ namespace Neo4Net.Server.rest.domain
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("serial") public class JsonParseException extends Exception implements org.Neo4Net.kernel.api.exceptions.Status_HasStatus
+//ORIGINAL LINE: @SuppressWarnings("serial") public class JsonParseException extends Exception implements Neo4Net.kernel.api.exceptions.Status_HasStatus
 	public class JsonParseException : Exception, Neo4Net.Kernel.Api.Exceptions.Status_HasStatus
 	{
 		 public JsonParseException( string message, Exception cause ) : base( message, cause )

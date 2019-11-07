@@ -25,9 +25,9 @@ namespace Neo4Net.GraphDb
 	using Schema = Neo4Net.GraphDb.Schema.Schema;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.FacadeMethod.INDEX_DEFINITION;
+//	import static Neo4Net.graphdb.FacadeMethod.INDEX_DEFINITION;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.FacadeMethod.LABEL;
+//	import static Neo4Net.graphdb.FacadeMethod.LABEL;
 
 	public sealed class SchemaFacadeMethods : Consumer<Schema>
 	{

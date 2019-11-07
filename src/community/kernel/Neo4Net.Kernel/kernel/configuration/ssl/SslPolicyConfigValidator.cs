@@ -32,7 +32,7 @@ namespace Neo4Net.Kernel.configuration.ssl
 	public class SslPolicyConfigValidator : SettingGroup<object>
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.util.Map<String,String> validate(java.util.Map<String,String> params, System.Action<String> warningConsumer) throws org.Neo4Net.graphdb.config.InvalidSettingException
+//ORIGINAL LINE: public java.util.Map<String,String> validate(java.util.Map<String,String> params, System.Action<String> warningConsumer) throws Neo4Net.graphdb.config.InvalidSettingException
 		 public override IDictionary<string, string> Validate( IDictionary<string, string> @params, System.Action<string> warningConsumer )
 		 {
 			  IDictionary<string, string> validatedParams = new Dictionary<string, string>();

@@ -41,7 +41,7 @@ namespace Neo4Net.Server
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.AbstractNeoServer.Neo4Net_IS_STARTING_MESSAGE;
+//	import static Neo4Net.server.AbstractNeoServer.Neo4Net_IS_STARTING_MESSAGE;
 
 	public class NeoServerStartupLoggingIT : ExclusiveServerTestBase
 	{
@@ -83,7 +83,7 @@ namespace Neo4Net.Server
 			  Client nonRedirectingClient = Client.create();
 			  nonRedirectingClient.FollowRedirects = false;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.server.rest.JaxRsResponse response = new org.Neo4Net.server.rest.RestRequest(server.baseUri(), nonRedirectingClient).get();
+//ORIGINAL LINE: final Neo4Net.server.rest.JaxRsResponse response = new Neo4Net.server.rest.RestRequest(server.baseUri(), nonRedirectingClient).get();
 			  JaxRsResponse response = ( new RestRequest( _server.baseUri(), nonRedirectingClient ) ).get();
 			  assertThat( response.Status, @is( greaterThan( 199 ) ) );
 

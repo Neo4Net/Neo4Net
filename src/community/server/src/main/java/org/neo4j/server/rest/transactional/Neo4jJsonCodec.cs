@@ -38,7 +38,7 @@ namespace Neo4Net.Server.rest.transactional
 	using Point = Neo4Net.GraphDb.Spatial.Point;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.genericMap;
+//	import static Neo4Net.helpers.collection.MapUtil.genericMap;
 
 	public class Neo4NetJsonCodec : ObjectMapper
 	{
@@ -269,7 +269,7 @@ namespace Neo4Net.Server.rest.transactional
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void writePath(org.codehaus.jackson.JsonGenerator out, java.util.Iterator<org.Neo4Net.graphdb.PropertyContainer> value, TransactionStateChecker txStateChecker) throws java.io.IOException
+//ORIGINAL LINE: private void writePath(org.codehaus.jackson.JsonGenerator out, java.util.Iterator<Neo4Net.graphdb.PropertyContainer> value, TransactionStateChecker txStateChecker) throws java.io.IOException
 		 private void WritePath( JsonGenerator @out, IEnumerator<PropertyContainer> value, TransactionStateChecker txStateChecker )
 		 {
 			  @out.writeStartArray();
@@ -287,7 +287,7 @@ namespace Neo4Net.Server.rest.transactional
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void writePropertyContainer(org.codehaus.jackson.JsonGenerator out, org.Neo4Net.graphdb.PropertyContainer value, TransactionStateChecker txStateChecker) throws java.io.IOException
+//ORIGINAL LINE: private void writePropertyContainer(org.codehaus.jackson.JsonGenerator out, Neo4Net.graphdb.PropertyContainer value, TransactionStateChecker txStateChecker) throws java.io.IOException
 		 private void WritePropertyContainer( JsonGenerator @out, IPropertyContainer value, TransactionStateChecker txStateChecker )
 		 {
 			  if ( value is Node )
@@ -305,7 +305,7 @@ namespace Neo4Net.Server.rest.transactional
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void writeNodeOrRelationship(org.codehaus.jackson.JsonGenerator out, org.Neo4Net.graphdb.PropertyContainer IEntity, boolean isDeleted) throws java.io.IOException
+//ORIGINAL LINE: private void writeNodeOrRelationship(org.codehaus.jackson.JsonGenerator out, Neo4Net.graphdb.PropertyContainer IEntity, boolean isDeleted) throws java.io.IOException
 		 private void WriteNodeOrRelationship( JsonGenerator @out, IPropertyContainer IEntity, bool isDeleted )
 		 {
 			  @out.writeStartObject();
@@ -401,7 +401,7 @@ namespace Neo4Net.Server.rest.transactional
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private Neo4NetJsonMetaType parseGeometryType(org.Neo4Net.GraphDb.Spatial.Geometry value) throws java.io.IOException
+//ORIGINAL LINE: private Neo4NetJsonMetaType parseGeometryType(Neo4Net.GraphDb.Spatial.Geometry value) throws java.io.IOException
 		 private Neo4NetJsonMetaType ParseGeometryType( Geometry value )
 		 {
 			  Neo4NetJsonMetaType type = null;
@@ -447,7 +447,7 @@ namespace Neo4Net.Server.rest.transactional
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void writeMetaPath(org.codehaus.jackson.JsonGenerator out, org.Neo4Net.graphdb.Path value) throws java.io.IOException
+//ORIGINAL LINE: private void writeMetaPath(org.codehaus.jackson.JsonGenerator out, Neo4Net.graphdb.Path value) throws java.io.IOException
 		 private void WriteMetaPath( JsonGenerator @out, Path value )
 		 {
 			  @out.writeStartArray();

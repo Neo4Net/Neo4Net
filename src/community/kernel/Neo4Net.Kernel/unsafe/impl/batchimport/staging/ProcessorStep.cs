@@ -152,7 +152,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.staging
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private org.Neo4Net.util.concurrent.AsyncApply sendDownstream(long ticket, Object batch, org.Neo4Net.util.concurrent.AsyncApply downstreamAsync)
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private Neo4Net.util.concurrent.AsyncApply sendDownstream(long ticket, Object batch, Neo4Net.util.concurrent.AsyncApply downstreamAsync)
 		 private AsyncApply SendDownstream( long ticket, object batch, AsyncApply downstreamAsync )
 		 {
 			  if ( Guarantees( Step_Fields.ORDER_SEND_DOWNSTREAM ) )

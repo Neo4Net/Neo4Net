@@ -42,7 +42,7 @@ namespace Neo4Net.management
 	public class ManagementBeansTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ClassRule public static org.Neo4Net.test.rule.EmbeddedDatabaseRule dbRule = new org.Neo4Net.test.rule.EmbeddedDatabaseRule();
+//ORIGINAL LINE: @ClassRule public static Neo4Net.test.rule.EmbeddedDatabaseRule dbRule = new Neo4Net.test.rule.EmbeddedDatabaseRule();
 		 public static EmbeddedDatabaseRule DbRule = new EmbeddedDatabaseRule();
 		 private static GraphDatabaseAPI _graphDb;
 

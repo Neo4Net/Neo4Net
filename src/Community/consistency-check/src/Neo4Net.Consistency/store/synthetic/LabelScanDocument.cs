@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Consistency.Store.Synthetic
 {
-	using NodeLabelRange = Neo4Net.Kernel.api.labelscan.NodeLabelRange;
+	using NodeLabelRange = Neo4Net.Kernel.Api.LabelScan.NodeLabelRange;
 	using AbstractBaseRecord = Neo4Net.Kernel.Impl.Store.Records.AbstractBaseRecord;
 
 	/// <summary>

@@ -30,7 +30,7 @@ namespace Neo4Net.Io.pagecache.impl.muninn
 	using UnsafeUtil = Neo4Net.@unsafe.Impl.Internal.Dragons.UnsafeUtil;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.util.FeatureToggles.flag;
+//	import static Neo4Net.util.FeatureToggles.flag;
 
 	/// <summary>
 	/// The PageList maintains the off-heap meta-data for the individual memory pages.
@@ -413,7 +413,7 @@ namespace Neo4Net.Io.pagecache.impl.muninn
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void fault(long pageRef, org.Neo4Net.io.pagecache.PageSwapper swapper, int swapperId, long filePageId, org.Neo4Net.io.pagecache.tracing.PageFaultEvent event) throws java.io.IOException
+//ORIGINAL LINE: void fault(long pageRef, Neo4Net.io.pagecache.PageSwapper swapper, int swapperId, long filePageId, Neo4Net.io.pagecache.tracing.PageFaultEvent event) throws java.io.IOException
 		 internal virtual void Fault( long pageRef, PageSwapper swapper, int swapperId, long filePageId, PageFaultEvent @event )
 		 {
 			  if ( swapper == null )
@@ -452,7 +452,7 @@ namespace Neo4Net.Io.pagecache.impl.muninn
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: boolean tryEvict(long pageRef, org.Neo4Net.io.pagecache.tracing.EvictionEventOpportunity evictionOpportunity) throws java.io.IOException
+//ORIGINAL LINE: boolean tryEvict(long pageRef, Neo4Net.io.pagecache.tracing.EvictionEventOpportunity evictionOpportunity) throws java.io.IOException
 		 internal virtual bool TryEvict( long pageRef, EvictionEventOpportunity evictionOpportunity )
 		 {
 			  if ( TryExclusiveLock( pageRef ) )
@@ -471,7 +471,7 @@ namespace Neo4Net.Io.pagecache.impl.muninn
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void evict(long pageRef, org.Neo4Net.io.pagecache.tracing.EvictionEvent evictionEvent) throws java.io.IOException
+//ORIGINAL LINE: private void evict(long pageRef, Neo4Net.io.pagecache.tracing.EvictionEvent evictionEvent) throws java.io.IOException
 		 private void Evict( long pageRef, EvictionEvent evictionEvent )
 		 {
 			  long filePageId = GetFilePageId( pageRef );
@@ -500,7 +500,7 @@ namespace Neo4Net.Io.pagecache.impl.muninn
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void flushModifiedPage(long pageRef, org.Neo4Net.io.pagecache.tracing.EvictionEvent evictionEvent, long filePageId, org.Neo4Net.io.pagecache.PageSwapper swapper) throws java.io.IOException
+//ORIGINAL LINE: private void flushModifiedPage(long pageRef, Neo4Net.io.pagecache.tracing.EvictionEvent evictionEvent, long filePageId, Neo4Net.io.pagecache.PageSwapper swapper) throws java.io.IOException
 		 private void FlushModifiedPage( long pageRef, EvictionEvent evictionEvent, long filePageId, PageSwapper swapper )
 		 {
 			  FlushEvent flushEvent = evictionEvent.FlushEventOpportunity().beginFlush(filePageId, pageRef, swapper);

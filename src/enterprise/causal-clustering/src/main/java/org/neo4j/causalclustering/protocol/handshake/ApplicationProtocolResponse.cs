@@ -23,7 +23,7 @@
 namespace Neo4Net.causalclustering.protocol.handshake
 {
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.protocol.handshake.StatusCode.FAILURE;
+//	import static Neo4Net.causalclustering.protocol.handshake.StatusCode.FAILURE;
 
 	public class ApplicationProtocolResponse : BaseProtocolResponse<int>
 	{

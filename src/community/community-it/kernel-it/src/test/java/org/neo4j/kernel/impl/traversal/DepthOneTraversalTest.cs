@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.impl.traversal
 	using TraversalDescription = Neo4Net.GraphDb.Traversal.TraversalDescription;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.traversal.Evaluators.atDepth;
+//	import static Neo4Net.graphdb.traversal.Evaluators.atDepth;
 
 	public class DepthOneTraversalTest : TraversalTestBase
 	{

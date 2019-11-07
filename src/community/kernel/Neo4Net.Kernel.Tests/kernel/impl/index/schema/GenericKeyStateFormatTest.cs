@@ -51,7 +51,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	public class GenericKeyStateFormatTest : FormatCompatibilityVerifier
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.PageCacheRule pageCacheRule = new org.Neo4Net.test.rule.PageCacheRule();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.PageCacheRule pageCacheRule = new Neo4Net.test.rule.PageCacheRule();
 		 public PageCacheRule PageCacheRule = new PageCacheRule();
 
 		 private const int IEntity_ID = 19570320;
@@ -250,7 +250,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void withCursor(java.io.File storeFile, boolean create, System.Action<org.Neo4Net.io.pagecache.PageCursor> cursorConsumer) throws java.io.IOException
+//ORIGINAL LINE: private void withCursor(java.io.File storeFile, boolean create, System.Action<Neo4Net.io.pagecache.PageCursor> cursorConsumer) throws java.io.IOException
 		 private void WithCursor( File storeFile, bool create, System.Action<PageCursor> cursorConsumer )
 		 {
 			  OpenOption[] openOptions = create ? new OpenOption[]{ StandardOpenOption.WRITE, StandardOpenOption.CREATE } : new OpenOption[]{ StandardOpenOption.WRITE };

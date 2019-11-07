@@ -29,7 +29,7 @@ namespace Neo4Net.Dbms.archive
 	using VisibleForTesting = Neo4Net.Utils.VisibleForTesting;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.dbms.archive.Utils.checkWritableDirectory;
+//	import static Neo4Net.dbms.archive.Utils.checkWritableDirectory;
 
 	public class Loader
 	{

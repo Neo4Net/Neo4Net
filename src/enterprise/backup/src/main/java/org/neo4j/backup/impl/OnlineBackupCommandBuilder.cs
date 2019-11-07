@@ -145,7 +145,7 @@ namespace Neo4Net.backup.impl
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean backup(java.io.File Neo4NetHome, String backupName) throws org.Neo4Net.commandline.admin.CommandFailed, org.Neo4Net.commandline.admin.IncorrectUsage
+//ORIGINAL LINE: public boolean backup(java.io.File Neo4NetHome, String backupName) throws Neo4Net.commandline.admin.CommandFailed, Neo4Net.commandline.admin.IncorrectUsage
 		 public virtual bool Backup( File Neo4NetHome, string backupName )
 		 {
 			  File targetLocation = new File( Neo4NetHome, backupName );
@@ -267,7 +267,7 @@ namespace Neo4Net.backup.impl
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static void writeConfigToFile(org.Neo4Net.kernel.configuration.Config config, java.io.File file) throws java.io.IOException
+//ORIGINAL LINE: static void writeConfigToFile(Neo4Net.kernel.configuration.Config config, java.io.File file) throws java.io.IOException
 		 internal static void WriteConfigToFile( Config config, File file )
 		 {
 			  using ( Writer fileWriter = new StreamWriter( file ) )

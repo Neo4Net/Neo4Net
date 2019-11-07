@@ -76,35 +76,35 @@ namespace Neo4Net.Tooling
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.Label.label;
+//	import static Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.RelationshipType.withName;
+//	import static Neo4Net.graphdb.RelationshipType.withName;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.logs_directory;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.logs_directory;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.store_internal_log_path;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.store_internal_log_path;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.ArrayUtil.join;
+//	import static Neo4Net.helpers.ArrayUtil.join;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.Exceptions.contains;
+//	import static Neo4Net.helpers.Exceptions.contains;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.Exceptions.withMessage;
+//	import static Neo4Net.helpers.Exceptions.withMessage;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.asList;
+//	import static Neo4Net.helpers.collection.Iterables.asList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.asSet;
+//	import static Neo4Net.helpers.collection.Iterators.asSet;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.count;
+//	import static Neo4Net.helpers.collection.Iterators.count;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.store;
+//	import static Neo4Net.helpers.collection.MapUtil.store;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
+//	import static Neo4Net.helpers.collection.MapUtil.stringMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.fs.FileUtils.WriteToFile;
+//	import static Neo4Net.io.fs.FileUtils.WriteToFile;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.tooling.ImportTool.MULTI_FILE_DELIMITER;
+//	import static Neo4Net.tooling.ImportTool.MULTI_FILE_DELIMITER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.Configuration_Fields.BAD_FILE_NAME;
+//	import static Neo4Net.@unsafe.impl.batchimport.Configuration_Fields.BAD_FILE_NAME;
 
 	public class ImportToolTest
 	{
@@ -114,13 +114,13 @@ namespace Neo4Net.Tooling
 		 private static readonly System.Func<int, bool> @true = i => true;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.EmbeddedDatabaseRule dbRule = new org.Neo4Net.test.rule.EmbeddedDatabaseRule().startLazily();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.EmbeddedDatabaseRule dbRule = new Neo4Net.test.rule.EmbeddedDatabaseRule().startLazily();
 		 public readonly EmbeddedDatabaseRule DbRule = new EmbeddedDatabaseRule().startLazily();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.RandomRule random = new org.Neo4Net.test.rule.RandomRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.RandomRule random = new Neo4Net.test.rule.RandomRule();
 		 public readonly RandomRule Random = new RandomRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.SuppressOutput suppressOutput = org.Neo4Net.test.rule.SuppressOutput.suppressAll();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.SuppressOutput suppressOutput = Neo4Net.test.rule.SuppressOutput.suppressAll();
 		 public readonly SuppressOutput SuppressOutput = SuppressOutput.suppressAll();
 		 private int _dataIndex;
 
@@ -856,7 +856,7 @@ namespace Neo4Net.Tooling
 						for ( int i = 0; i < MAX_LABEL_ID; i++ )
 						{
 							 Label label = label( LabelName( i ) );
-							 using ( ResourceIterator<Node> nodesByLabel = Db.findNodes( label ) )
+							 using ( IResourceIterator<Node> nodesByLabel = Db.findNodes( label ) )
 							 {
 								  while ( nodesByLabel.MoveNext() )
 								  {
@@ -986,10 +986,10 @@ namespace Neo4Net.Tooling
 			  IList<string> nodeIds = nodeIds();
 			  Configuration config = Configuration.COMMAS;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.graphdb.Label label1 = label("My First Label");
+//ORIGINAL LINE: final Neo4Net.graphdb.Label label1 = label("My First Label");
 			  Label label1 = label( "My First Label" );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.graphdb.Label label2 = label("My Other Label");
+//ORIGINAL LINE: final Neo4Net.graphdb.Label label2 = label("My Other Label");
 			  Label label2 = label( "My Other Label" );
 
 			  // WHEN
@@ -1138,7 +1138,7 @@ namespace Neo4Net.Tooling
 
 			  // THEN
 			  IGraphDatabaseService db = DbRule.GraphDatabaseAPI;
-			  using ( Transaction tx = Db.beginTx(), ResourceIterator<Node> allNodes = Db.AllNodes.GetEnumerator() )
+			  using ( Transaction tx = Db.beginTx(), IResourceIterator<Node> allNodes = Db.AllNodes.GetEnumerator() )
 			  {
 					ISet<string> names = new HashSet<string>();
 					while ( allNodes.MoveNext() )
@@ -1942,7 +1942,7 @@ namespace Neo4Net.Tooling
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private System.Predicate<org.Neo4Net.graphdb.Node> nodeFilter(final String id)
+//ORIGINAL LINE: private System.Predicate<Neo4Net.graphdb.Node> nodeFilter(final String id)
 		 private System.Predicate<Node> NodeFilter( string id )
 		 {
 			  return node => node.getProperty( "id", "" ).Equals( id );
@@ -2005,7 +2005,7 @@ namespace Neo4Net.Tooling
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private org.Neo4Net.graphdb.Relationship findRelationship(org.Neo4Net.graphdb.Node startNode, final org.Neo4Net.graphdb.Node endNode, final RelationshipDataLine relationship)
+//ORIGINAL LINE: private Neo4Net.graphdb.Relationship findRelationship(Neo4Net.graphdb.Node startNode, final Neo4Net.graphdb.Node endNode, final RelationshipDataLine relationship)
 		 private Relationship FindRelationship( Node startNode, Node endNode, RelationshipDataLine relationship )
 		 {
 			  return Iterators.singleOrNull( Iterators.filter( item => item.EndNode.Equals( endNode ) && item.getProperty( "name" ).Equals( relationship.Name ), startNode.GetRelationships( withName( relationship.Type ) ).GetEnumerator() ) );
@@ -2051,21 +2051,21 @@ namespace Neo4Net.Tooling
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.io.File nodeData(boolean includeHeader, org.Neo4Net.unsafe.impl.batchimport.input.csv.Configuration config, java.util.List<String> nodeIds, System.Func<int, boolean> linePredicate) throws Exception
+//ORIGINAL LINE: private java.io.File nodeData(boolean includeHeader, Neo4Net.unsafe.impl.batchimport.input.csv.Configuration config, java.util.List<String> nodeIds, System.Func<int, boolean> linePredicate) throws Exception
 		 private File NodeData( bool includeHeader, Configuration config, IList<string> nodeIds, System.Func<int, bool> linePredicate )
 		 {
 			  return NodeData( includeHeader, config, nodeIds, linePredicate, Charset.defaultCharset() );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.io.File nodeData(boolean includeHeader, org.Neo4Net.unsafe.impl.batchimport.input.csv.Configuration config, java.util.List<String> nodeIds, System.Func<int, boolean> linePredicate, java.nio.charset.Charset encoding) throws Exception
+//ORIGINAL LINE: private java.io.File nodeData(boolean includeHeader, Neo4Net.unsafe.impl.batchimport.input.csv.Configuration config, java.util.List<String> nodeIds, System.Func<int, boolean> linePredicate, java.nio.charset.Charset encoding) throws Exception
 		 private File NodeData( bool includeHeader, Configuration config, IList<string> nodeIds, System.Func<int, bool> linePredicate, Charset encoding )
 		 {
 			  return NodeData( includeHeader, config, nodeIds, linePredicate, encoding, 0 );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.io.File nodeData(boolean includeHeader, org.Neo4Net.unsafe.impl.batchimport.input.csv.Configuration config, java.util.List<String> nodeIds, System.Func<int, boolean> linePredicate, java.nio.charset.Charset encoding, int extraColumns) throws Exception
+//ORIGINAL LINE: private java.io.File nodeData(boolean includeHeader, Neo4Net.unsafe.impl.batchimport.input.csv.Configuration config, java.util.List<String> nodeIds, System.Func<int, boolean> linePredicate, java.nio.charset.Charset encoding, int extraColumns) throws Exception
 		 private File NodeData( bool includeHeader, Configuration config, IList<string> nodeIds, System.Func<int, bool> linePredicate, Charset encoding, int extraColumns )
 		 {
 			  File file = file( FileName( "nodes.csv" ) );
@@ -2088,21 +2088,21 @@ namespace Neo4Net.Tooling
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.io.File nodeHeader(org.Neo4Net.unsafe.impl.batchimport.input.csv.Configuration config) throws Exception
+//ORIGINAL LINE: private java.io.File nodeHeader(Neo4Net.unsafe.impl.batchimport.input.csv.Configuration config) throws Exception
 		 private File NodeHeader( Configuration config )
 		 {
 			  return NodeHeader( config, null );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.io.File nodeHeader(org.Neo4Net.unsafe.impl.batchimport.input.csv.Configuration config, String idGroup) throws Exception
+//ORIGINAL LINE: private java.io.File nodeHeader(Neo4Net.unsafe.impl.batchimport.input.csv.Configuration config, String idGroup) throws Exception
 		 private File NodeHeader( Configuration config, string idGroup )
 		 {
 			  return NodeHeader( config, idGroup, Charset.defaultCharset() );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.io.File nodeHeader(org.Neo4Net.unsafe.impl.batchimport.input.csv.Configuration config, String idGroup, java.nio.charset.Charset encoding) throws Exception
+//ORIGINAL LINE: private java.io.File nodeHeader(Neo4Net.unsafe.impl.batchimport.input.csv.Configuration config, String idGroup, java.nio.charset.Charset encoding) throws Exception
 		 private File NodeHeader( Configuration config, string idGroup, Charset encoding )
 		 {
 			  File file = file( FileName( "nodes-header.csv" ) );
@@ -2181,28 +2181,28 @@ namespace Neo4Net.Tooling
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.io.File relationshipData(boolean includeHeader, org.Neo4Net.unsafe.impl.batchimport.input.csv.Configuration config, java.util.List<String> nodeIds, System.Func<int, boolean> linePredicate, boolean specifyType) throws Exception
+//ORIGINAL LINE: private java.io.File relationshipData(boolean includeHeader, Neo4Net.unsafe.impl.batchimport.input.csv.Configuration config, java.util.List<String> nodeIds, System.Func<int, boolean> linePredicate, boolean specifyType) throws Exception
 		 private File RelationshipData( bool includeHeader, Configuration config, IList<string> nodeIds, System.Func<int, bool> linePredicate, bool specifyType )
 		 {
 			  return RelationshipData( includeHeader, config, nodeIds, linePredicate, specifyType, Charset.defaultCharset() );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.io.File relationshipData(boolean includeHeader, org.Neo4Net.unsafe.impl.batchimport.input.csv.Configuration config, java.util.List<String> nodeIds, System.Func<int, boolean> linePredicate, boolean specifyType, java.nio.charset.Charset encoding) throws Exception
+//ORIGINAL LINE: private java.io.File relationshipData(boolean includeHeader, Neo4Net.unsafe.impl.batchimport.input.csv.Configuration config, java.util.List<String> nodeIds, System.Func<int, boolean> linePredicate, boolean specifyType, java.nio.charset.Charset encoding) throws Exception
 		 private File RelationshipData( bool includeHeader, Configuration config, IList<string> nodeIds, System.Func<int, bool> linePredicate, bool specifyType, Charset encoding )
 		 {
 			  return RelationshipData( includeHeader, config, RandomRelationships( nodeIds ), linePredicate, specifyType, encoding );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.io.File relationshipData(boolean includeHeader, org.Neo4Net.unsafe.impl.batchimport.input.csv.Configuration config, java.util.Iterator<RelationshipDataLine> data, System.Func<int, boolean> linePredicate, boolean specifyType) throws Exception
+//ORIGINAL LINE: private java.io.File relationshipData(boolean includeHeader, Neo4Net.unsafe.impl.batchimport.input.csv.Configuration config, java.util.Iterator<RelationshipDataLine> data, System.Func<int, boolean> linePredicate, boolean specifyType) throws Exception
 		 private File RelationshipData( bool includeHeader, Configuration config, IEnumerator<RelationshipDataLine> data, System.Func<int, bool> linePredicate, bool specifyType )
 		 {
 			  return RelationshipData( includeHeader, config, data, linePredicate, specifyType, Charset.defaultCharset() );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.io.File relationshipData(boolean includeHeader, org.Neo4Net.unsafe.impl.batchimport.input.csv.Configuration config, java.util.Iterator<RelationshipDataLine> data, System.Func<int, boolean> linePredicate, boolean specifyType, java.nio.charset.Charset encoding) throws Exception
+//ORIGINAL LINE: private java.io.File relationshipData(boolean includeHeader, Neo4Net.unsafe.impl.batchimport.input.csv.Configuration config, java.util.Iterator<RelationshipDataLine> data, System.Func<int, boolean> linePredicate, boolean specifyType, java.nio.charset.Charset encoding) throws Exception
 		 private File RelationshipData( bool includeHeader, Configuration config, IEnumerator<RelationshipDataLine> data, System.Func<int, bool> linePredicate, bool specifyType, Charset encoding )
 		 {
 			  File file = file( FileName( "relationships.csv" ) );
@@ -2218,28 +2218,28 @@ namespace Neo4Net.Tooling
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.io.File relationshipHeader(org.Neo4Net.unsafe.impl.batchimport.input.csv.Configuration config) throws Exception
+//ORIGINAL LINE: private java.io.File relationshipHeader(Neo4Net.unsafe.impl.batchimport.input.csv.Configuration config) throws Exception
 		 private File RelationshipHeader( Configuration config )
 		 {
 			  return RelationshipHeader( config, Charset.defaultCharset() );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.io.File relationshipHeader(org.Neo4Net.unsafe.impl.batchimport.input.csv.Configuration config, java.nio.charset.Charset encoding) throws Exception
+//ORIGINAL LINE: private java.io.File relationshipHeader(Neo4Net.unsafe.impl.batchimport.input.csv.Configuration config, java.nio.charset.Charset encoding) throws Exception
 		 private File RelationshipHeader( Configuration config, Charset encoding )
 		 {
 			  return RelationshipHeader( config, null, null, true, encoding );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.io.File relationshipHeader(org.Neo4Net.unsafe.impl.batchimport.input.csv.Configuration config, String startIdGroup, String endIdGroup, boolean specifyType) throws Exception
+//ORIGINAL LINE: private java.io.File relationshipHeader(Neo4Net.unsafe.impl.batchimport.input.csv.Configuration config, String startIdGroup, String endIdGroup, boolean specifyType) throws Exception
 		 private File RelationshipHeader( Configuration config, string startIdGroup, string endIdGroup, bool specifyType )
 		 {
 			  return RelationshipHeader( config, startIdGroup, endIdGroup, specifyType, Charset.defaultCharset() );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.io.File relationshipHeader(org.Neo4Net.unsafe.impl.batchimport.input.csv.Configuration config, String startIdGroup, String endIdGroup, boolean specifyType, java.nio.charset.Charset encoding) throws Exception
+//ORIGINAL LINE: private java.io.File relationshipHeader(Neo4Net.unsafe.impl.batchimport.input.csv.Configuration config, String startIdGroup, String endIdGroup, boolean specifyType, java.nio.charset.Charset encoding) throws Exception
 		 private File RelationshipHeader( Configuration config, string startIdGroup, string endIdGroup, bool specifyType, Charset encoding )
 		 {
 			  File file = file( FileName( "relationships-header.csv" ) );

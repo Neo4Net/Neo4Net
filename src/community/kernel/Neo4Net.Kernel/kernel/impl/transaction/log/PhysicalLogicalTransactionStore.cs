@@ -35,15 +35,15 @@ namespace Neo4Net.Kernel.impl.transaction.log
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_CHECKSUM;
+//	import static Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_CHECKSUM;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_COMMIT_TIMESTAMP;
+//	import static Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_COMMIT_TIMESTAMP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_ID;
+//	import static Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_ID;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.entry.LogEntryByteCodes.TX_COMMIT;
+//	import static Neo4Net.kernel.impl.transaction.log.entry.LogEntryByteCodes.TX_COMMIT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.entry.LogEntryByteCodes.TX_START;
+//	import static Neo4Net.kernel.impl.transaction.log.entry.LogEntryByteCodes.TX_START;
 
 	public class PhysicalLogicalTransactionStore : LogicalTransactionStore
 	{
@@ -111,7 +111,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.kernel.impl.transaction.log.TransactionMetadataCache.TransactionMetadata getMetadataFor(long transactionId) throws java.io.IOException
+//ORIGINAL LINE: public Neo4Net.kernel.impl.transaction.log.TransactionMetadataCache.TransactionMetadata getMetadataFor(long transactionId) throws java.io.IOException
 		 public override TransactionMetadata GetMetadataFor( long transactionId )
 		 {
 			  if ( transactionId <= BASE_TX_ID )

@@ -33,7 +33,7 @@ namespace Neo4Net.Kernel
 	public class DiagnosticsLoggingTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.CleanupRule cleanupRule = new org.Neo4Net.test.rule.CleanupRule();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.CleanupRule cleanupRule = new Neo4Net.test.rule.CleanupRule();
 		 public CleanupRule CleanupRule = new CleanupRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

@@ -95,7 +95,7 @@ namespace Neo4Net.Logging.slf4j
 			 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: public void bulk(@Nonnull Consumer<org.Neo4Net.logging.Logger> consumer)
+//ORIGINAL LINE: public void bulk(@Nonnull Consumer<Neo4Net.logging.Logger> consumer)
 			 public void bulk( Consumer<Logger> consumer )
 			 {
 				  lock ( _outerInstance.@lock )
@@ -148,7 +148,7 @@ namespace Neo4Net.Logging.slf4j
 			 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: public void bulk(@Nonnull Consumer<org.Neo4Net.logging.Logger> consumer)
+//ORIGINAL LINE: public void bulk(@Nonnull Consumer<Neo4Net.logging.Logger> consumer)
 			 public void bulk( Consumer<Logger> consumer )
 			 {
 				  lock ( _outerInstance.@lock )
@@ -201,7 +201,7 @@ namespace Neo4Net.Logging.slf4j
 			 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: public void bulk(@Nonnull Consumer<org.Neo4Net.logging.Logger> consumer)
+//ORIGINAL LINE: public void bulk(@Nonnull Consumer<Neo4Net.logging.Logger> consumer)
 			 public void bulk( Consumer<Logger> consumer )
 			 {
 				  lock ( _outerInstance.@lock )
@@ -254,7 +254,7 @@ namespace Neo4Net.Logging.slf4j
 			 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: public void bulk(@Nonnull Consumer<org.Neo4Net.logging.Logger> consumer)
+//ORIGINAL LINE: public void bulk(@Nonnull Consumer<Neo4Net.logging.Logger> consumer)
 			 public void bulk( Consumer<Logger> consumer )
 			 {
 				  lock ( _outerInstance.@lock )
@@ -273,35 +273,35 @@ namespace Neo4Net.Logging.slf4j
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Nonnull @Override public org.Neo4Net.logging.Logger debugLogger()
+//ORIGINAL LINE: @Nonnull @Override public Neo4Net.logging.Logger debugLogger()
 		 public override Logger DebugLogger()
 		 {
 			  return this._debugLogger;
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Nonnull @Override public org.Neo4Net.logging.Logger infoLogger()
+//ORIGINAL LINE: @Nonnull @Override public Neo4Net.logging.Logger infoLogger()
 		 public override Logger InfoLogger()
 		 {
 			  return this._infoLogger;
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Nonnull @Override public org.Neo4Net.logging.Logger warnLogger()
+//ORIGINAL LINE: @Nonnull @Override public Neo4Net.logging.Logger warnLogger()
 		 public override Logger WarnLogger()
 		 {
 			  return this._warnLogger;
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Nonnull @Override public org.Neo4Net.logging.Logger errorLogger()
+//ORIGINAL LINE: @Nonnull @Override public Neo4Net.logging.Logger errorLogger()
 		 public override Logger ErrorLogger()
 		 {
 			  return this._errorLogger;
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Override public void bulk(@Nonnull Consumer<org.Neo4Net.logging.Log> consumer)
+//ORIGINAL LINE: @Override public void bulk(@Nonnull Consumer<Neo4Net.logging.Log> consumer)
 		 public override void Bulk( Consumer<Log> consumer )
 		 {
 			  lock ( @lock )

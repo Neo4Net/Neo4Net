@@ -39,9 +39,9 @@ namespace Neo4Net.Dbms.CommandLine
 	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
+//	import static Neo4Net.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.format.RecordFormatSelector.findSuccessor;
+//	import static Neo4Net.kernel.impl.store.format.RecordFormatSelector.findSuccessor;
 
 	public class StoreInfoCommand : AdminCommand
 	{
@@ -55,7 +55,7 @@ namespace Neo4Net.Dbms.CommandLine
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void execute(String[] args) throws org.Neo4Net.commandline.admin.IncorrectUsage, org.Neo4Net.commandline.admin.CommandFailed
+//ORIGINAL LINE: public void execute(String[] args) throws Neo4Net.commandline.admin.IncorrectUsage, Neo4Net.commandline.admin.CommandFailed
 		 public override void Execute( string[] args )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -70,7 +70,7 @@ namespace Neo4Net.Dbms.CommandLine
 					  using ( System.IDisposable ignored = StoreLockChecker.Check( databaseLayout.StoreLayout ), DefaultFileSystemAbstraction fileSystem = new DefaultFileSystemAbstraction(), IJobScheduler jobScheduler = createInitializedScheduler(), PageCache pageCache = StandalonePageCacheFactory.createPageCache(fileSystem, jobScheduler) )
 					  {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final String storeVersion = new org.Neo4Net.kernel.impl.storemigration.StoreVersionCheck(pageCache).getVersion(databaseLayout.metadataStore()).orElseThrow(() -> new org.Neo4Net.commandline.admin.CommandFailed(String.format("Could not find version metadata in store '%s'", databaseDirectory)));
+//ORIGINAL LINE: final String storeVersion = new Neo4Net.kernel.impl.storemigration.StoreVersionCheck(pageCache).getVersion(databaseLayout.metadataStore()).orElseThrow(() -> new Neo4Net.commandline.admin.CommandFailed(String.format("Could not find version metadata in store '%s'", databaseDirectory)));
 						string storeVersion = ( new StoreVersionCheck( pageCache ) ).getVersion( databaseLayout.MetadataStore() ).orElseThrow(() => new CommandFailed(string.Format("Could not find version metadata in store '{0}'", databaseDirectory)));
       
 						const string fmt = "%-30s%s";

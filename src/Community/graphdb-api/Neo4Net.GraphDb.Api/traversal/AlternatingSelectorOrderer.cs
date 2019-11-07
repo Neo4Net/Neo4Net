@@ -33,7 +33,7 @@ namespace Neo4Net.GraphDb.Traversal
             return 0;
         }
 
-        public override ITraversalBranch Next(TraversalContext metadata)
+        public override ITraversalBranch Next(ITraversalContext metadata)
         {
             ITraversalBranch branch = NextBranchFromNextSelector(metadata, true);
             int? previousDepth = StateForCurrentSelector;

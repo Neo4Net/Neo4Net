@@ -44,11 +44,11 @@ namespace Neo4Net.CommandLine.Admin
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.commandline.Util.Neo4NetVersion;
+//	import static Neo4Net.commandline.Util.Neo4NetVersion;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.commandline.admin.AdminTool.STATUS_ERROR;
+//	import static Neo4Net.commandline.admin.AdminTool.STATUS_ERROR;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.commandline.admin.AdminTool.STATUS_SUCCESS;
+//	import static Neo4Net.commandline.admin.AdminTool.STATUS_SUCCESS;
 
 	internal class AdminToolTest
 	{
@@ -328,7 +328,7 @@ namespace Neo4Net.CommandLine.Admin
 			 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Override @Nonnull public org.Neo4Net.commandline.arguments.Arguments allArguments()
+//ORIGINAL LINE: @Override @Nonnull public Neo4Net.commandline.arguments.Arguments allArguments()
 			 public override Arguments allArguments()
 			 {
 				  return Arguments.NO_ARGS;

@@ -17,7 +17,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Kernel.api.schema.constraints
+namespace Neo4Net.Kernel.Api.schema.constraints
 {
 	using TokenNameLookup = Neo4Net.Kernel.Api.Internal.TokenNameLookup;
 	using RelationTypeSchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.RelationTypeSchemaDescriptor;
@@ -26,7 +26,7 @@ namespace Neo4Net.Kernel.api.schema.constraints
 	{
 		 private readonly RelationTypeSchemaDescriptor _schema;
 
-		 internal RelExistenceConstraintDescriptor( RelationTypeSchemaDescriptor schema ) : base( org.Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor_Type.Exists )
+		 internal RelExistenceConstraintDescriptor( RelationTypeSchemaDescriptor schema ) : base( Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor_Type.Exists )
 		 {
 			  this._schema = schema;
 		 }

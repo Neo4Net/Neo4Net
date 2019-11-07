@@ -49,23 +49,23 @@ namespace Neo4Net.causalclustering.core.consensus.roles
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.TestMessageBuilders.preVoteRequest;
+//	import static Neo4Net.causalclustering.core.consensus.TestMessageBuilders.preVoteRequest;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.TestMessageBuilders.preVoteResponse;
+//	import static Neo4Net.causalclustering.core.consensus.TestMessageBuilders.preVoteResponse;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.TestMessageBuilders.voteRequest;
+//	import static Neo4Net.causalclustering.core.consensus.TestMessageBuilders.voteRequest;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.TestMessageBuilders.voteResponse;
+//	import static Neo4Net.causalclustering.core.consensus.TestMessageBuilders.voteResponse;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.roles.Role.CANDIDATE;
+//	import static Neo4Net.causalclustering.core.consensus.roles.Role.CANDIDATE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.roles.Role.FOLLOWER;
+//	import static Neo4Net.causalclustering.core.consensus.roles.Role.FOLLOWER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.roles.Role.LEADER;
+//	import static Neo4Net.causalclustering.core.consensus.roles.Role.LEADER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.state.RaftStateBuilder.raftState;
+//	import static Neo4Net.causalclustering.core.consensus.state.RaftStateBuilder.raftState;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.identity.RaftTestMember.member;
+//	import static Neo4Net.causalclustering.identity.RaftTestMember.member;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(MockitoJUnitRunner.class) public class CandidateTest
@@ -222,7 +222,7 @@ namespace Neo4Net.causalclustering.core.consensus.roles
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.causalclustering.core.consensus.state.RaftState newState() throws java.io.IOException
+//ORIGINAL LINE: public Neo4Net.causalclustering.core.consensus.state.RaftState newState() throws java.io.IOException
 		 public virtual RaftState NewState()
 		 {
 			  return raftState().myself(_myself).build();

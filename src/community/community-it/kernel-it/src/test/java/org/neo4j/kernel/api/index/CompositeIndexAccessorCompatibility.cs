@@ -31,7 +31,7 @@ namespace Neo4Net.Kernel.Api.Index
 	using IndexOrder = Neo4Net.Kernel.Api.Internal.IndexOrder;
 	using IndexQuery = Neo4Net.Kernel.Api.Internal.IndexQuery;
 	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
-	using TestIndexDescriptorFactory = Neo4Net.Kernel.api.schema.index.TestIndexDescriptorFactory;
+	using TestIndexDescriptorFactory = Neo4Net.Kernel.Api.schema.index.TestIndexDescriptorFactory;
 	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
 	using SimpleNodeValueClient = Neo4Net.Kernel.Api.StorageEngine.schema.SimpleNodeValueClient;
 	using ArrayValue = Neo4Net.Values.Storable.ArrayValue;
@@ -59,39 +59,39 @@ namespace Neo4Net.Kernel.Api.Index
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.single;
+//	import static Neo4Net.helpers.collection.Iterables.single;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.IndexQuery.exists;
+//	import static Neo4Net.Kernel.Api.Internal.IndexQuery.exists;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.IndexQuery.range;
+//	import static Neo4Net.Kernel.Api.Internal.IndexQuery.range;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.index.IndexQueryHelper.exact;
+//	import static Neo4Net.kernel.api.index.IndexQueryHelper.exact;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.CoordinateReferenceSystem.Cartesian;
+//	import static Neo4Net.values.storable.CoordinateReferenceSystem.Cartesian;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.CoordinateReferenceSystem.WGS84;
+//	import static Neo4Net.values.storable.CoordinateReferenceSystem.WGS84;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.DateTimeValue.datetime;
+//	import static Neo4Net.values.storable.DateTimeValue.datetime;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.DateValue.epochDate;
+//	import static Neo4Net.values.storable.DateValue.epochDate;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.ValueGroup.GEOMETRY;
+//	import static Neo4Net.values.storable.ValueGroup.GEOMETRY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.ValueGroup.GEOMETRY_ARRAY;
+//	import static Neo4Net.values.storable.ValueGroup.GEOMETRY_ARRAY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.booleanArray;
+//	import static Neo4Net.values.storable.Values.booleanArray;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.intValue;
+//	import static Neo4Net.values.storable.Values.intValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.longArray;
+//	import static Neo4Net.values.storable.Values.longArray;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.pointArray;
+//	import static Neo4Net.values.storable.Values.pointArray;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.pointValue;
+//	import static Neo4Net.values.storable.Values.pointValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.stringArray;
+//	import static Neo4Net.values.storable.Values.stringArray;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.stringValue;
+//	import static Neo4Net.values.storable.Values.stringValue;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Ignore("Not a test. This is a compatibility suite that provides test cases for verifying" + " IndexProvider implementations. Each index provider that is to be tested by this suite" + " must create their own test class extending IndexProviderCompatibilityTestSuite." + " The @Ignore annotation doesn't prevent these tests to run, it rather removes some annoying" + " errors or warnings in some IDEs about test classes needing a public zero-arg constructor.") public abstract class CompositeIndexAccessorCompatibility extends IndexAccessorCompatibility
@@ -175,7 +175,7 @@ namespace Neo4Net.Kernel.Api.Index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void testIndexScanAndSeekExactWithExact(org.Neo4Net.values.storable.Value a, org.Neo4Net.values.storable.Value b) throws Exception
+//ORIGINAL LINE: private void testIndexScanAndSeekExactWithExact(Neo4Net.values.storable.Value a, Neo4Net.values.storable.Value b) throws Exception
 		 private void TestIndexScanAndSeekExactWithExact( Value a, Value b )
 		 {
 			  UpdateAndCommit( asList( Add( 1L, Descriptor.schema(), a, a ), Add(2L, Descriptor.schema(), b, b), Add(3L, Descriptor.schema(), a, b) ) );
@@ -286,7 +286,7 @@ namespace Neo4Net.Kernel.Api.Index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void testIndexSeekExactWithRange(org.Neo4Net.values.storable.Value base1, org.Neo4Net.values.storable.Value base2, org.Neo4Net.values.storable.Value obj1, org.Neo4Net.values.storable.Value obj2, org.Neo4Net.values.storable.Value obj3, org.Neo4Net.values.storable.Value obj4, org.Neo4Net.values.storable.Value obj5) throws Exception
+//ORIGINAL LINE: private void testIndexSeekExactWithRange(Neo4Net.values.storable.Value base1, Neo4Net.values.storable.Value base2, Neo4Net.values.storable.Value obj1, Neo4Net.values.storable.Value obj2, Neo4Net.values.storable.Value obj3, Neo4Net.values.storable.Value obj4, Neo4Net.values.storable.Value obj5) throws Exception
 		 private void TestIndexSeekExactWithRange( Value base1, Value base2, Value obj1, Value obj2, Value obj3, Value obj4, Value obj5 )
 		 {
 			  Assume.assumeTrue( "Assume support for granular composite queries", TestSuite.supportsGranularCompositeQueries() );
@@ -339,7 +339,7 @@ namespace Neo4Net.Kernel.Api.Index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void testIndexSeekExactWithRangeByBooleanType(org.Neo4Net.values.storable.Value base1, org.Neo4Net.values.storable.Value base2, org.Neo4Net.values.storable.Value obj1, org.Neo4Net.values.storable.Value obj2) throws Exception
+//ORIGINAL LINE: private void testIndexSeekExactWithRangeByBooleanType(Neo4Net.values.storable.Value base1, Neo4Net.values.storable.Value base2, Neo4Net.values.storable.Value obj1, Neo4Net.values.storable.Value obj2) throws Exception
 		 private void TestIndexSeekExactWithRangeByBooleanType( Value base1, Value base2, Value obj1, Value obj2 )
 		 {
 			  UpdateAndCommit( asList( Add( 1L, Descriptor.schema(), base1, obj1 ), Add(2L, Descriptor.schema(), base1, obj2), Add(3L, Descriptor.schema(), base2, obj1), Add(4L, Descriptor.schema(), base2, obj2) ) );
@@ -488,7 +488,7 @@ namespace Neo4Net.Kernel.Api.Index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void testIndexSeekExactWithExists(org.Neo4Net.values.storable.Value a, org.Neo4Net.values.storable.Value b) throws Exception
+//ORIGINAL LINE: private void testIndexSeekExactWithExists(Neo4Net.values.storable.Value a, Neo4Net.values.storable.Value b) throws Exception
 		 private void TestIndexSeekExactWithExists( Value a, Value b )
 		 {
 			  Assume.assumeTrue( "Assume support for granular composite queries", TestSuite.supportsGranularCompositeQueries() );
@@ -638,7 +638,7 @@ namespace Neo4Net.Kernel.Api.Index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void testIndexSeekRangeWithExists(org.Neo4Net.values.storable.Value obj1, org.Neo4Net.values.storable.Value obj2, org.Neo4Net.values.storable.Value obj3, org.Neo4Net.values.storable.Value obj4, org.Neo4Net.values.storable.Value obj5) throws Exception
+//ORIGINAL LINE: private void testIndexSeekRangeWithExists(Neo4Net.values.storable.Value obj1, Neo4Net.values.storable.Value obj2, Neo4Net.values.storable.Value obj3, Neo4Net.values.storable.Value obj4, Neo4Net.values.storable.Value obj5) throws Exception
 		 private void TestIndexSeekRangeWithExists( Value obj1, Value obj2, Value obj3, Value obj4, Value obj5 )
 		 {
 			  Assume.assumeTrue( "Assume support for granular composite queries", TestSuite.supportsGranularCompositeQueries() );
@@ -1140,7 +1140,7 @@ namespace Neo4Net.Kernel.Api.Index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void shouldSeekInOrderExactWithRange(org.Neo4Net.Kernel.Api.Internal.IndexOrder order, Object o0, Object o1, Object o2, Object o3, Object o4, Object o5) throws Exception
+//ORIGINAL LINE: private void shouldSeekInOrderExactWithRange(Neo4Net.Kernel.Api.Internal.IndexOrder order, Object o0, Object o1, Object o2, Object o3, Object o4, Object o5) throws Exception
 		 private void ShouldSeekInOrderExactWithRange( IndexOrder order, object o0, object o1, object o2, object o3, object o4, object o5 )
 		 {
 			  object baseValue = 1; // Todo use random value instead
@@ -1316,7 +1316,7 @@ namespace Neo4Net.Kernel.Api.Index
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void testDuplicatesInIndexSeek(org.Neo4Net.values.storable.Value value) throws Exception
+//ORIGINAL LINE: private void testDuplicatesInIndexSeek(Neo4Net.values.storable.Value value) throws Exception
 			  internal virtual void TestDuplicatesInIndexSeek( Value value )
 			  {
 					UpdateAndCommit( asList( Add( 1L, Descriptor.schema(), value, value ), Add(2L, Descriptor.schema(), value, value) ) );

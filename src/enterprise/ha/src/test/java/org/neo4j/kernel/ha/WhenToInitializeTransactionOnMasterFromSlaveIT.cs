@@ -43,7 +43,7 @@ namespace Neo4Net.Kernel.ha
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verifyNoMoreInteractions;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.count;
+//	import static Neo4Net.helpers.collection.Iterables.count;
 
 	/// <summary>
 	/// Determines when slaves should initialize a transaction on the master. This is particularly relevant for read operations
@@ -52,7 +52,7 @@ namespace Neo4Net.Kernel.ha
 	public class WhenToInitializeTransactionOnMasterFromSlaveIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.ha.ClusterRule clusterRule = new org.Neo4Net.test.ha.ClusterRule();
+//ORIGINAL LINE: @Rule public Neo4Net.test.ha.ClusterRule clusterRule = new Neo4Net.test.ha.ClusterRule();
 		 public ClusterRule ClusterRule = new ClusterRule();
 
 		 private IGraphDatabaseService _slave;

@@ -75,7 +75,7 @@ namespace Neo4Net.com
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.kernel.impl.transaction.TransactionRepresentation read(org.jboss.netty.buffer.ChannelBuffer buffer, ByteBuffer temporaryBuffer) throws java.io.IOException
+//ORIGINAL LINE: public Neo4Net.kernel.impl.transaction.TransactionRepresentation read(org.jboss.netty.buffer.ChannelBuffer buffer, ByteBuffer temporaryBuffer) throws java.io.IOException
 			  public override TransactionRepresentation Read( ChannelBuffer buffer, ByteBuffer temporaryBuffer )
 			  {
 					NetworkReadableClosableChannel channel = new NetworkReadableClosableChannel( buffer );
@@ -189,7 +189,7 @@ namespace Neo4Net.com
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public <PAYLOAD> Response<PAYLOAD> deserializeResponse(org.jboss.netty.handler.queue.BlockingReadHandler<org.jboss.netty.buffer.ChannelBuffer> reader, ByteBuffer input, long timeout, Deserializer<PAYLOAD> payloadDeserializer, ResourceReleaser channelReleaser, final org.Neo4Net.kernel.impl.transaction.log.entry.LogEntryReader<org.Neo4Net.kernel.impl.transaction.log.ReadableClosablePositionAwareChannel> entryReader) throws java.io.IOException
+//ORIGINAL LINE: public <PAYLOAD> Response<PAYLOAD> deserializeResponse(org.jboss.netty.handler.queue.BlockingReadHandler<org.jboss.netty.buffer.ChannelBuffer> reader, ByteBuffer input, long timeout, Deserializer<PAYLOAD> payloadDeserializer, ResourceReleaser channelReleaser, final Neo4Net.kernel.impl.transaction.log.entry.LogEntryReader<Neo4Net.kernel.impl.transaction.log.ReadableClosablePositionAwareChannel> entryReader) throws java.io.IOException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 		 public virtual Response<PAYLOAD> DeserializeResponse<PAYLOAD>( BlockingReadHandler<ChannelBuffer> reader, ByteBuffer input, long timeout, Deserializer<PAYLOAD> payloadDeserializer, ResourceReleaser channelReleaser, LogEntryReader<ReadableClosablePositionAwareChannel> entryReader )
 		 {

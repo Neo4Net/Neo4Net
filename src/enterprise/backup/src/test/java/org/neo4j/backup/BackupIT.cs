@@ -92,15 +92,15 @@ namespace Neo4Net.backup
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.dense_node_threshold;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.dense_node_threshold;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.logs_directory;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.logs_directory;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.store_internal_log_path;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.store_internal_log_path;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.Exceptions.rootCause;
+//	import static Neo4Net.helpers.Exceptions.rootCause;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.MyRelTypes.TEST;
+//	import static Neo4Net.kernel.impl.MyRelTypes.TEST;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class BackupIT
@@ -128,7 +128,7 @@ namespace Neo4Net.backup
 		 private readonly RandomRule _random = new RandomRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.junit.rules.RuleChain ruleChain = org.junit.rules.RuleChain.outerRule(fileSystemRule).around(testDir).around(pageCacheRule).around(org.Neo4Net.test.rule.SuppressOutput.suppressAll()).around(random);
+//ORIGINAL LINE: @Rule public final org.junit.rules.RuleChain ruleChain = org.junit.rules.RuleChain.outerRule(fileSystemRule).around(testDir).around(pageCacheRule).around(Neo4Net.test.rule.SuppressOutput.suppressAll()).around(random);
 		 public RuleChain RuleChain;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -425,7 +425,7 @@ namespace Neo4Net.backup
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static long getLastCommittedTx(org.Neo4Net.io.layout.DatabaseLayout databaseLayout, org.Neo4Net.io.pagecache.PageCache pageCache) throws java.io.IOException
+//ORIGINAL LINE: private static long getLastCommittedTx(Neo4Net.io.layout.DatabaseLayout databaseLayout, Neo4Net.io.pagecache.PageCache pageCache) throws java.io.IOException
 		 private static long GetLastCommittedTx( DatabaseLayout databaseLayout, PageCache pageCache )
 		 {
 			  File neoStore = databaseLayout.MetadataStore();
@@ -639,7 +639,7 @@ namespace Neo4Net.backup
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void ensureStoresHaveIdFiles(org.Neo4Net.io.layout.DatabaseLayout databaseLayout) throws java.io.IOException
+//ORIGINAL LINE: private void ensureStoresHaveIdFiles(Neo4Net.io.layout.DatabaseLayout databaseLayout) throws java.io.IOException
 		 private void EnsureStoresHaveIdFiles( DatabaseLayout databaseLayout )
 		 {
 			  foreach ( File idFile in databaseLayout.IdFiles() )
@@ -683,7 +683,7 @@ namespace Neo4Net.backup
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static long lastTxChecksumOf(org.Neo4Net.io.layout.DatabaseLayout databaseLayout, org.Neo4Net.io.pagecache.PageCache pageCache) throws java.io.IOException
+//ORIGINAL LINE: private static long lastTxChecksumOf(Neo4Net.io.layout.DatabaseLayout databaseLayout, Neo4Net.io.pagecache.PageCache pageCache) throws java.io.IOException
 		 private static long LastTxChecksumOf( DatabaseLayout databaseLayout, PageCache pageCache )
 		 {
 			  File neoStore = databaseLayout.MetadataStore();

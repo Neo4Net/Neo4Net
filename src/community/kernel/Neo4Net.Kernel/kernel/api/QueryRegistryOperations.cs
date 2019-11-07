@@ -19,10 +19,10 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Kernel.api
+namespace Neo4Net.Kernel.Api
 {
 
-	using ExecutingQuery = Neo4Net.Kernel.api.query.ExecutingQuery;
+	using ExecutingQuery = Neo4Net.Kernel.Api.query.ExecutingQuery;
 	using ClientConnectionInfo = Neo4Net.Kernel.impl.query.clientconnection.ClientConnectionInfo;
 	using MapValue = Neo4Net.Values.@virtual.MapValue;
 

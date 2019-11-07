@@ -63,7 +63,7 @@ namespace Neo4Net.Kernel.impl.traversal
 			  this._uniqueness = MakeSureStartAndEndHasSameUniqueness( start, end );
 
 			  // A little chicken-and-egg problem. This happens when constructing the start/end
-			  // selectors and they initially call evaluate() and isUniqueFirst, where the selector is used.
+			  // selectors and they initially call Evaluate() and isUniqueFirst, where the selector is used.
 			  // Solved this way for now, to have it return the start side to begin with.
 			  this._selector = FixedSide( Direction.OUTGOING );
 			  BranchSelector startSelector = start.BranchOrdering.create( new AsOneStartBranch( this, startNodes, start.InitialState, start.UniquenessConflict ), start.Expander );
@@ -96,7 +96,7 @@ namespace Neo4Net.Kernel.impl.traversal
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private org.Neo4Net.graphdb.traversal.SideSelector fixedSide(final org.Neo4Net.graphdb.Direction direction)
+//ORIGINAL LINE: private Neo4Net.graphdb.traversal.SideSelector fixedSide(final Neo4Net.graphdb.Direction direction)
 		 private SideSelector FixedSide( Direction direction )
 		 {
 			  return new SideSelectorAnonymousInnerClass( this, direction );
@@ -149,7 +149,7 @@ namespace Neo4Net.Kernel.impl.traversal
 						 Close();
 						 return null;
 					}
-					IEnumerable<Path> pathCollisions = _collisionDetector.evaluate( result, _selector.currentSide() );
+					IEnumerable<Path> pathCollisions = _collisionDetector.Evaluate( result, _selector.currentSide() );
 					if ( pathCollisions != null )
 					{
 						 _foundPaths = pathCollisions.GetEnumerator();
@@ -171,7 +171,7 @@ namespace Neo4Net.Kernel.impl.traversal
 
 		 public override Evaluation Evaluate( TraversalBranch branch, BranchState state )
 		 {
-			  return CurrentSideDescription().Description.evaluator.evaluate(branch, state);
+			  return CurrentSideDescription().Description.evaluator.Evaluate(branch, state);
 		 }
 
 		 public override bool IsUniqueFirst( TraversalBranch branch )

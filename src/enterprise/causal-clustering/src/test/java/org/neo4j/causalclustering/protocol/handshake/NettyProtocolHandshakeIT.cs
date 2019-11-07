@@ -56,11 +56,11 @@ namespace Neo4Net.causalclustering.protocol.handshake
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.protocol.Protocol_ApplicationProtocolCategory.CATCHUP;
+//	import static Neo4Net.causalclustering.protocol.Protocol_ApplicationProtocolCategory.CATCHUP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.protocol.Protocol_ApplicationProtocolCategory.RAFT;
+//	import static Neo4Net.causalclustering.protocol.Protocol_ApplicationProtocolCategory.RAFT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.protocol.Protocol_ModifierProtocolCategory.COMPRESSION;
+//	import static Neo4Net.causalclustering.protocol.Protocol_ModifierProtocolCategory.COMPRESSION;
 
 	public class NettyProtocolHandshakeIT
 	{

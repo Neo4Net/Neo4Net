@@ -38,6 +38,6 @@ namespace Neo4Net.GraphDb.Traversal
         /// <param name="metadata"> the context for the traversal </param>
         /// <returns> the next position based on the current position and the
         /// {@code rules} of the traversal. </returns>
-        ITraversalBranch Next(TraversalContext metadata);
+        ITraversalBranch Next(ITraversalContext metadata);
     }
 }

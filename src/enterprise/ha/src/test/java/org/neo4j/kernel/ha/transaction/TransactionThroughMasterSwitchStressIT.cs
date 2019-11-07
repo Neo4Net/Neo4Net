@@ -45,15 +45,15 @@ namespace Neo4Net.Kernel.ha.transaction
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.TimeUtil.parseTimeMillis;
+//	import static Neo4Net.helpers.TimeUtil.parseTimeMillis;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.ha.cluster.modeswitch.HighAvailabilityModeSwitcher.MASTER;
+//	import static Neo4Net.kernel.ha.cluster.modeswitch.HighAvailabilityModeSwitcher.MASTER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.ha.cluster.modeswitch.HighAvailabilityModeSwitcher.UNKNOWN;
+//	import static Neo4Net.kernel.ha.cluster.modeswitch.HighAvailabilityModeSwitcher.UNKNOWN;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.MyRelTypes.TEST;
+//	import static Neo4Net.kernel.impl.MyRelTypes.TEST;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.memberThinksItIsRole;
+//	import static Neo4Net.kernel.impl.ha.ClusterManager.memberThinksItIsRole;
 
 	/// <summary>
 	/// Non-deterministically tries to reproduce a problem where transactions may, at the time of master switches,
@@ -78,12 +78,12 @@ namespace Neo4Net.Kernel.ha.transaction
 	/// transactions made changes off of stale values and still managed to commit.
 	/// 
 	/// This test is a stress test and duration of execution can be controlled via system property
-	/// -D<seealso cref="org.Neo4Net.kernel.ha.transaction.TransactionThroughMasterSwitchStressIT"/>.duration
+	/// -D<seealso cref="Neo4Net.kernel.ha.transaction.TransactionThroughMasterSwitchStressIT"/>.duration
 	/// </summary>
 	public class TransactionThroughMasterSwitchStressIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.ha.ClusterRule clusterRule = new org.Neo4Net.test.ha.ClusterRule().withInstanceSetting(org.Neo4Net.kernel.ha.HaSettings.slave_only, value -> value == 1 || value == 2 ? org.Neo4Net.kernel.configuration.Settings.TRUE : org.Neo4Net.kernel.configuration.Settings.FALSE);
+//ORIGINAL LINE: @Rule public final Neo4Net.test.ha.ClusterRule clusterRule = new Neo4Net.test.ha.ClusterRule().withInstanceSetting(Neo4Net.kernel.ha.HaSettings.slave_only, value -> value == 1 || value == 2 ? Neo4Net.kernel.configuration.Settings.TRUE : Neo4Net.kernel.configuration.Settings.FALSE);
 		 public readonly ClusterRule ClusterRule = new ClusterRule().withInstanceSetting(HaSettings.slave_only, value => value == 1 || value == 2 ? Settings.TRUE : Settings.FALSE);
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -110,7 +110,7 @@ namespace Neo4Net.Kernel.ha.transaction
 			  const string key = "key";
 			  ClusterManager.ManagedCluster cluster = ClusterRule.startCluster();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.graphdb.GraphDatabaseService master = cluster.getMaster();
+//ORIGINAL LINE: final Neo4Net.graphdb.GraphDatabaseService master = cluster.getMaster();
 			  IGraphDatabaseService master = cluster.Master;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final long nodeId = createNode(master);
@@ -190,7 +190,7 @@ namespace Neo4Net.Kernel.ha.transaction
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void reelectTheSameMasterMakingItGoToPendingAndBack(org.Neo4Net.kernel.impl.ha.ClusterManager.ManagedCluster cluster) throws Throwable
+//ORIGINAL LINE: private void reelectTheSameMasterMakingItGoToPendingAndBack(Neo4Net.kernel.impl.ha.ClusterManager.ManagedCluster cluster) throws Throwable
 		 private void ReelectTheSameMasterMakingItGoToPendingAndBack( ClusterManager.ManagedCluster cluster )
 		 {
 			  HighlyAvailableGraphDatabase master = cluster.Master;

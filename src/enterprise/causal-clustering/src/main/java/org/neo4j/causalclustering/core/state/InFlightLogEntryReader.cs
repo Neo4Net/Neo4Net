@@ -45,7 +45,7 @@ namespace Neo4Net.causalclustering.core.state
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.causalclustering.core.consensus.log.RaftLogEntry get(long logIndex) throws java.io.IOException
+//ORIGINAL LINE: public Neo4Net.causalclustering.core.consensus.log.RaftLogEntry get(long logIndex) throws java.io.IOException
 		 public virtual RaftLogEntry Get( long logIndex )
 		 {
 			  RaftLogEntry entry = null;
@@ -75,7 +75,7 @@ namespace Neo4Net.causalclustering.core.state
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.causalclustering.core.consensus.log.RaftLogEntry getUsingCursor(long logIndex) throws java.io.IOException
+//ORIGINAL LINE: private Neo4Net.causalclustering.core.consensus.log.RaftLogEntry getUsingCursor(long logIndex) throws java.io.IOException
 		 private RaftLogEntry GetUsingCursor( long logIndex )
 		 {
 			  if ( _cursor == null )

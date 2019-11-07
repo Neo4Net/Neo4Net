@@ -81,7 +81,7 @@ namespace Neo4Net.Kernel.Api.Internal
       //	 }
 
       //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-      //		 default boolean singleWildcard(org.Neo4Net.values.storable.ValueCategory[] valueCategories)
+      //		 default boolean singleWildcard(Neo4Net.values.storable.ValueCategory[] valueCategories)
       //	 {
       //		  return valueCategories.length == 1 && valueCategories[0] == ValueCategory.UNKNOWN;
       //	 }

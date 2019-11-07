@@ -46,16 +46,16 @@ namespace Neo4Net.causalclustering.core.consensus.membership
 //	import static org.junit.Assert.assertFalse;
 	using static Neo4Net.causalclustering.core.consensus.membership.RaftMembershipState.Marshal;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.identity.RaftTestMemberSetBuilder.INSTANCE;
+//	import static Neo4Net.causalclustering.identity.RaftTestMemberSetBuilder.INSTANCE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.logging.NullLogProvider.getInstance;
+//	import static Neo4Net.logging.NullLogProvider.getInstance;
 
 	public class RaftMembershipManagerTest
 	{
 		 private readonly Log _log = NullLog.Instance;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.kernel.lifecycle.LifeRule lifeRule = new org.Neo4Net.kernel.lifecycle.LifeRule(true);
+//ORIGINAL LINE: @Rule public Neo4Net.kernel.lifecycle.LifeRule lifeRule = new Neo4Net.kernel.lifecycle.LifeRule(true);
 		 public LifeRule LifeRule = new LifeRule( true );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -65,7 +65,7 @@ namespace Neo4Net.causalclustering.core.consensus.membership
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.causalclustering.core.consensus.log.InMemoryRaftLog log = new org.Neo4Net.causalclustering.core.consensus.log.InMemoryRaftLog();
+//ORIGINAL LINE: final Neo4Net.causalclustering.core.consensus.log.InMemoryRaftLog log = new Neo4Net.causalclustering.core.consensus.log.InMemoryRaftLog();
 			  InMemoryRaftLog log = new InMemoryRaftLog();
 
 			  RaftMembershipManager membershipManager = LifeRule.add( RaftMembershipManager( log ) );
@@ -84,7 +84,7 @@ namespace Neo4Net.causalclustering.core.consensus.membership
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.causalclustering.core.consensus.log.InMemoryRaftLog raftLog = new org.Neo4Net.causalclustering.core.consensus.log.InMemoryRaftLog();
+//ORIGINAL LINE: final Neo4Net.causalclustering.core.consensus.log.InMemoryRaftLog raftLog = new Neo4Net.causalclustering.core.consensus.log.InMemoryRaftLog();
 			  InMemoryRaftLog raftLog = new InMemoryRaftLog();
 
 			  RaftMembershipManager membershipManager = LifeRule.add( RaftMembershipManager( raftLog ) );
@@ -111,7 +111,7 @@ namespace Neo4Net.causalclustering.core.consensus.membership
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.causalclustering.core.consensus.log.InMemoryRaftLog raftLog = new org.Neo4Net.causalclustering.core.consensus.log.InMemoryRaftLog();
+//ORIGINAL LINE: final Neo4Net.causalclustering.core.consensus.log.InMemoryRaftLog raftLog = new Neo4Net.causalclustering.core.consensus.log.InMemoryRaftLog();
 			  InMemoryRaftLog raftLog = new InMemoryRaftLog();
 
 			  RaftMembershipManager membershipManager = LifeRule.add( RaftMembershipManager( raftLog ) );

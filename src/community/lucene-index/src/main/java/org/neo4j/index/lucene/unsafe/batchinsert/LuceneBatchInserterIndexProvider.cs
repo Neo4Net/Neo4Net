@@ -30,8 +30,8 @@ namespace Neo4Net.Index.lucene.@unsafe.batchinsert
 	using BatchInserterIndexProvider = Neo4Net.@unsafe.Batchinsert.BatchInserterIndexProvider;
 
 	/// <summary>
-	/// The <seealso cref="org.Neo4Net.unsafe.batchinsert.BatchInserter"/> version of the Lucene-based indexes. Indexes
-	/// created and populated using <seealso cref="org.Neo4Net.unsafe.batchinsert.BatchInserterIndex"/>s from this provider
+	/// The <seealso cref="Neo4Net.unsafe.batchinsert.BatchInserter"/> version of the Lucene-based indexes. Indexes
+	/// created and populated using <seealso cref="Neo4Net.unsafe.batchinsert.BatchInserterIndex"/>s from this provider
 	/// are compatible with the normal <seealso cref="Index"/>es. </summary>
 	/// @deprecated This API will be removed in next major release. Please consider using schema indexes instead. 
 	[Obsolete("This API will be removed in next major release. Please consider using schema indexes instead.")]
@@ -40,7 +40,7 @@ namespace Neo4Net.Index.lucene.@unsafe.batchinsert
 		 private readonly BatchInserterIndexProvider _provider;
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public LuceneBatchInserterIndexProvider(final org.Neo4Net.unsafe.batchinsert.BatchInserter inserter)
+//ORIGINAL LINE: public LuceneBatchInserterIndexProvider(final Neo4Net.unsafe.batchinsert.BatchInserter inserter)
 		 [Obsolete]
 		 public LuceneBatchInserterIndexProvider( BatchInserter inserter )
 		 {

@@ -27,7 +27,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input.csv
 	using Source_Chunk = Neo4Net.Csv.Reader.Source_Chunk;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.csv.reader.CharSeekers.charSeeker;
+//	import static Neo4Net.csv.reader.CharSeekers.charSeeker;
 
 	/// <summary>
 	/// <seealso cref="Chunker"/> which parses a chunk of entities when calling <seealso cref="nextChunk(Chunk)"/>,
@@ -49,7 +49,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input.csv
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean nextChunk(org.Neo4Net.csv.reader.Source_Chunk chunk) throws java.io.IOException
+//ORIGINAL LINE: public boolean nextChunk(Neo4Net.csv.reader.Source_Chunk chunk) throws java.io.IOException
 		 public override bool NextChunk( Source_Chunk chunk )
 		 {
 			  InputEntityArray entities = new InputEntityArray( _chunkSize );

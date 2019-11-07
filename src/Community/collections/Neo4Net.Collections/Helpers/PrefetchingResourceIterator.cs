@@ -21,9 +21,9 @@ namespace Neo4Net.Collections.Helpers
 {
 	using Neo4Net.GraphDb;
 
-	public abstract class PrefetchingResourceIterator<T> : PrefetchingIterator<T>, ResourceIterator<T>
+	public abstract class PrefetchingResourceIterator<T> : PrefetchingIterator<T>, IResourceIterator<T>
 	{
-		public abstract ResourceIterator<R> Map( System.Func<T, R> map );
+		public abstract IResourceIterator<R> Map( System.Func<T, R> map );
 		public abstract java.util.stream.Stream<T> Stream();
 		public abstract void Close();
 	}

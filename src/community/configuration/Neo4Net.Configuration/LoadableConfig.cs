@@ -27,7 +27,7 @@ namespace Neo4Net.Configuration
 	/// <summary>
 	/// Every class which contains settings should implement this interface to allow the configuration to find the
 	/// settings via service loading. Note that service loading requires you to additionally list the service class
-	/// under META-INF/services/org.Neo4Net.configuration.LoadableConfig
+	/// under META-INF/services/Neo4Net.configuration.LoadableConfig
 	/// </summary>
 	public interface LoadableConfig
 	{

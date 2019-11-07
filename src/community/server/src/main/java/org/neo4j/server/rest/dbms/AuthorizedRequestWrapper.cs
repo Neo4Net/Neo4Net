@@ -24,7 +24,7 @@ namespace Neo4Net.Server.rest.dbms
 
 
 	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
-	using AnonymousContext = Neo4Net.Kernel.api.security.AnonymousContext;
+	using AnonymousContext = Neo4Net.Kernel.Api.security.AnonymousContext;
 
 	public class AuthorizedRequestWrapper : HttpServletRequestWrapper
 	{
@@ -56,7 +56,7 @@ namespace Neo4Net.Server.rest.dbms
 		 private readonly DelegatingPrincipal _principal;
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public AuthorizedRequestWrapper(final String authType, final String username, final javax.servlet.http.HttpServletRequest request, org.Neo4Net.Kernel.Api.Internal.security.LoginContext loginContext)
+//ORIGINAL LINE: public AuthorizedRequestWrapper(final String authType, final String username, final javax.servlet.http.HttpServletRequest request, Neo4Net.Kernel.Api.Internal.security.LoginContext loginContext)
 		 public AuthorizedRequestWrapper( string authType, string username, HttpServletRequest request, LoginContext loginContext ) : base( request )
 		 {
 			  this._authType = authType;

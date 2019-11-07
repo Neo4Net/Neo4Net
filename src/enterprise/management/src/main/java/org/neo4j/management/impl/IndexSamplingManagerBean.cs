@@ -30,7 +30,7 @@ namespace Neo4Net.management.impl
 	using ManagementData = Neo4Net.Jmx.impl.ManagementData;
 	using Neo4NetMBean = Neo4Net.Jmx.impl.Neo4NetMBean;
 	using NeoStoreDataSource = Neo4Net.Kernel.NeoStoreDataSource;
-	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
+	using SchemaDescriptorFactory = Neo4Net.Kernel.Api.schema.SchemaDescriptorFactory;
 	using IndexingService = Neo4Net.Kernel.Impl.Api.index.IndexingService;
 	using IndexSamplingMode = Neo4Net.Kernel.Impl.Api.index.sampling.IndexSamplingMode;
 	using TokenHolders = Neo4Net.Kernel.impl.core.TokenHolders;
@@ -38,10 +38,10 @@ namespace Neo4Net.management.impl
 	using StorageEngine = Neo4Net.Kernel.Api.StorageEngine.StorageEngine;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.TokenRead_Fields.NO_TOKEN;
+//	import static Neo4Net.Kernel.Api.Internal.TokenRead_Fields.NO_TOKEN;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Service.Implementation(ManagementBeanProvider.class) public final class IndexSamplingManagerBean extends org.Neo4Net.jmx.impl.ManagementBeanProvider
+//ORIGINAL LINE: @Service.Implementation(ManagementBeanProvider.class) public final class IndexSamplingManagerBean extends Neo4Net.jmx.impl.ManagementBeanProvider
 	public sealed class IndexSamplingManagerBean : ManagementBeanProvider
 	{
 		 public IndexSamplingManagerBean() : base(typeof(IndexSamplingManager))
@@ -49,7 +49,7 @@ namespace Neo4Net.management.impl
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected org.Neo4Net.jmx.impl.Neo4NetMBean createMBean(org.Neo4Net.jmx.impl.ManagementData management) throws javax.management.NotCompliantMBeanException
+//ORIGINAL LINE: protected Neo4Net.jmx.impl.Neo4NetMBean createMBean(Neo4Net.jmx.impl.ManagementData management) throws javax.management.NotCompliantMBeanException
 		 protected internal override Neo4NetMBean CreateMBean( ManagementData management )
 		 {
 			  return new IndexSamplingManagerImpl( management );
@@ -65,7 +65,7 @@ namespace Neo4Net.management.impl
 			  internal readonly StoreAccess Access;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: IndexSamplingManagerImpl(org.Neo4Net.jmx.impl.ManagementData management) throws javax.management.NotCompliantMBeanException
+//ORIGINAL LINE: IndexSamplingManagerImpl(Neo4Net.jmx.impl.ManagementData management) throws javax.management.NotCompliantMBeanException
 			  internal IndexSamplingManagerImpl( ManagementData management ) : base( management )
 			  {
 					this.Access = Access( management );

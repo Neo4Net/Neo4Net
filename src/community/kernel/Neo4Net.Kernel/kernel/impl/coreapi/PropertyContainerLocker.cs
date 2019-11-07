@@ -25,8 +25,8 @@ namespace Neo4Net.Kernel.impl.coreapi
 	using Node = Neo4Net.GraphDb.Node;
 	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
 	using Relationship = Neo4Net.GraphDb.Relationship;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
-	using Statement = Neo4Net.Kernel.api.Statement;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
+	using Statement = Neo4Net.Kernel.Api.Statement;
 
 	/// <summary>
 	/// Manages user-facing locks.

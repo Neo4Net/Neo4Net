@@ -40,15 +40,15 @@ namespace Neo4Net.causalclustering.catchup.tx
 	using LogProvider = Neo4Net.Logging.LogProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.catchup.CatchupResult.E_INVALID_REQUEST;
+//	import static Neo4Net.causalclustering.catchup.CatchupResult.E_INVALID_REQUEST;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.catchup.CatchupResult.E_STORE_ID_MISMATCH;
+//	import static Neo4Net.causalclustering.catchup.CatchupResult.E_STORE_ID_MISMATCH;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.catchup.CatchupResult.E_STORE_UNAVAILABLE;
+//	import static Neo4Net.causalclustering.catchup.CatchupResult.E_STORE_UNAVAILABLE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.catchup.CatchupResult.E_TRANSACTION_PRUNED;
+//	import static Neo4Net.causalclustering.catchup.CatchupResult.E_TRANSACTION_PRUNED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.catchup.CatchupResult.SUCCESS_END_OF_STREAM;
+//	import static Neo4Net.causalclustering.catchup.CatchupResult.SUCCESS_END_OF_STREAM;
 
 	public class TxPullRequestHandler : SimpleChannelInboundHandler<TxPullRequest>
 	{
@@ -124,7 +124,7 @@ namespace Neo4Net.causalclustering.catchup.tx
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.cursor.IOCursor<org.Neo4Net.kernel.impl.transaction.CommittedTransactionRepresentation> getCursor(long txIdPromise, io.netty.channel.ChannelHandlerContext ctx, long firstTxId, org.Neo4Net.causalclustering.identity.StoreId localStoreId, org.Neo4Net.causalclustering.identity.StoreId expectedStoreId) throws java.io.IOException
+//ORIGINAL LINE: private Neo4Net.cursor.IOCursor<Neo4Net.kernel.impl.transaction.CommittedTransactionRepresentation> getCursor(long txIdPromise, io.netty.channel.ChannelHandlerContext ctx, long firstTxId, Neo4Net.causalclustering.identity.StoreId localStoreId, Neo4Net.causalclustering.identity.StoreId expectedStoreId) throws java.io.IOException
 		 private IOCursor<CommittedTransactionRepresentation> GetCursor( long txIdPromise, ChannelHandlerContext ctx, long firstTxId, StoreId localStoreId, StoreId expectedStoreId )
 		 {
 			  if ( localStoreId == null || !localStoreId.Equals( expectedStoreId ) )

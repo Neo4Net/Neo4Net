@@ -45,7 +45,7 @@ namespace Neo4Net.Index
 	public class AccessExplicitIndexReadOnlyIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.DatabaseRule db = new org.Neo4Net.test.rule.EmbeddedDatabaseRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.DatabaseRule db = new Neo4Net.test.rule.EmbeddedDatabaseRule();
 		 public readonly DatabaseRule Db = new EmbeddedDatabaseRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -93,7 +93,7 @@ namespace Neo4Net.Index
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.io.layout.DatabaseLayout databaseLayout = db.databaseLayout();
+//ORIGINAL LINE: final Neo4Net.io.layout.DatabaseLayout databaseLayout = db.databaseLayout();
 			  DatabaseLayout databaseLayout = Db.databaseLayout();
 			  // Make sure we have database to start on
 			  Db.shutdown();

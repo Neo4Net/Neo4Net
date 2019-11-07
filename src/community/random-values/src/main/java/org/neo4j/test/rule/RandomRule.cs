@@ -88,8 +88,8 @@ namespace Neo4Net.Test.rule
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void evaluate() throws Throwable
-			 public override void evaluate()
+//ORIGINAL LINE: public void Evaluate() throws Throwable
+			 public override void Evaluate()
 			 {
 				  if ( !_outerInstance.hasGlobalSeed )
 				  {
@@ -109,7 +109,7 @@ namespace Neo4Net.Test.rule
 				  }
 				  try
 				  {
-						@base.evaluate();
+						@base.Evaluate();
 				  }
 				  catch ( Exception t )
 				  {

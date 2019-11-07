@@ -34,7 +34,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 /// Apply updates to the relevant indexes.
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void apply(org.Neo4Net.kernel.impl.transaction.state.IndexUpdates updates) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException;
+//ORIGINAL LINE: void apply(Neo4Net.kernel.impl.transaction.state.IndexUpdates updates) throws java.io.IOException, Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException;
 		 void Apply( IndexUpdates updates );
 
 		 /// <summary>

@@ -25,9 +25,9 @@ namespace Neo4Net.Kernel.Impl.Store.Records
 
 	using MalformedSchemaRuleException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.MalformedSchemaRuleException;
 	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.Schema.IndexProviderDescriptor;
-	using LabelSchemaDescriptor = Neo4Net.Kernel.api.schema.LabelSchemaDescriptor;
-	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
-	using ConstraintDescriptorFactory = Neo4Net.Kernel.api.schema.constraints.ConstraintDescriptorFactory;
+	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.schema.LabelSchemaDescriptor;
+	using SchemaDescriptorFactory = Neo4Net.Kernel.Api.schema.SchemaDescriptorFactory;
+	using ConstraintDescriptorFactory = Neo4Net.Kernel.Api.schema.constraints.ConstraintDescriptorFactory;
 	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
 	using IndexDescriptorFactory = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptorFactory;
 	using SchemaRule = Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule;
@@ -35,9 +35,9 @@ namespace Neo4Net.Kernel.Impl.Store.Records
 	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.Numbers.safeCastLongToInt;
+//	import static Neo4Net.helpers.Numbers.safeCastLongToInt;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@string.UTF8.getDecodedStringFrom;
+//	import static Neo4Net.@string.UTF8.getDecodedStringFrom;
 
 	/// <summary>
 	/// Deserializes SchemaRules from a ByteBuffer.
@@ -56,7 +56,7 @@ namespace Neo4Net.Kernel.Impl.Store.Records
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static org.Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule deserialize(long id, int labelId, byte kindByte, ByteBuffer buffer) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.MalformedSchemaRuleException
+//ORIGINAL LINE: static Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule deserialize(long id, int labelId, byte kindByte, ByteBuffer buffer) throws Neo4Net.Kernel.Api.Internal.Exceptions.Schema.MalformedSchemaRuleException
 		 internal static SchemaRule Deserialize( long id, int labelId, sbyte kindByte, ByteBuffer buffer )
 		 {
 			  SchemaRule_Kind kind = SchemaRule_Kind.forId( kindByte );

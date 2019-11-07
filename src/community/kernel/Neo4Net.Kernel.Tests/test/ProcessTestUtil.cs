@@ -26,9 +26,9 @@ namespace Neo4Net.Test
 	using Neo4Net.Helpers;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.proc.ProcessUtil.getClassPath;
+//	import static Neo4Net.test.proc.ProcessUtil.getClassPath;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.proc.ProcessUtil.getJavaExecutable;
+//	import static Neo4Net.test.proc.ProcessUtil.getJavaExecutable;
 
 	public class ProcessTestUtil
 	{
@@ -62,7 +62,7 @@ namespace Neo4Net.Test
 			  ProcessStreamHandler processOutput = new ProcessStreamHandler( process, false );
 			  processOutput.Launch();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.concurrent.Future<int> realFuture = org.Neo4Net.helpers.FutureAdapter.processFuture(process);
+//ORIGINAL LINE: final java.util.concurrent.Future<int> realFuture = Neo4Net.helpers.FutureAdapter.processFuture(process);
 			  Future<int> realFuture = FutureAdapter.processFuture( process );
 			  return new FutureAnonymousInnerClass( processOutput, realFuture );
 		 }

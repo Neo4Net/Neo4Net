@@ -69,7 +69,7 @@ namespace Neo4Net.Harness.junit
 			  Statement statement = rule.apply(new StatementAnonymousInnerClass(rule, uriRef)
 			 , createTestDescription( typeof( Neo4NetRuleTest ), "test" ));
 
-			  statement.evaluate();
+			  statement.Evaluate();
 			  return uriRef.get();
 		 }
 
@@ -85,8 +85,8 @@ namespace Neo4Net.Harness.junit
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void evaluate() throws Throwable
-			 public override void evaluate()
+//ORIGINAL LINE: public void Evaluate() throws Throwable
+			 public override void Evaluate()
 			 {
 				  _uriRef.set( _rule.httpsURI() );
 			 }

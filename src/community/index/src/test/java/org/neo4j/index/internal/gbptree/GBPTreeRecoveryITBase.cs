@@ -45,11 +45,11 @@ namespace Neo4Net.Index.Internal.gbptree
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.rules.RuleChain.outerRule;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Internal.gbptree.ThrowingRunnable.throwing;
+//	import static Neo4Net.index.Internal.gbptree.ThrowingRunnable.throwing;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.pagecache.IOLimiter_Fields.UNLIMITED;
+//	import static Neo4Net.io.pagecache.IOLimiter_Fields.UNLIMITED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.rule.PageCacheRule.config;
+//	import static Neo4Net.test.rule.PageCacheRule.config;
 
 	public abstract class GBPTreeRecoveryITBase<KEY, VALUE>
 	{
@@ -471,7 +471,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private GBPTree<KEY,VALUE> createIndex(org.Neo4Net.io.pagecache.PageCache pageCache, java.io.File file) throws java.io.IOException
+//ORIGINAL LINE: private GBPTree<KEY,VALUE> createIndex(Neo4Net.io.pagecache.PageCache pageCache, java.io.File file) throws java.io.IOException
 		 private GBPTree<KEY, VALUE> CreateIndex( PageCache pageCache, File file )
 		 {
 			  return ( new GBPTreeBuilder<KEY, VALUE>( pageCache, file, _layout ) ).build();

@@ -74,9 +74,9 @@ namespace Upgrade
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.consistency.store.StoreAssertions.assertConsistentStore;
+//	import static Neo4Net.consistency.store.StoreAssertions.assertConsistentStore;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.storemigration.MigrationTestUtils.checkNeoStoreHasDefaultFormatVersion;
+//	import static Neo4Net.kernel.impl.storemigration.MigrationTestUtils.checkNeoStoreHasDefaultFormatVersion;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class StoreUpgraderInterruptionTestIT
@@ -143,7 +143,7 @@ namespace Upgrade
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldSucceedWithUpgradeAfterPreviousAttemptDiedDuringMigration() throws java.io.IOException, org.Neo4Net.consistency.checking.full.ConsistencyCheckIncompleteException
+//ORIGINAL LINE: @Test public void shouldSucceedWithUpgradeAfterPreviousAttemptDiedDuringMigration() throws java.io.IOException, Neo4Net.consistency.checking.full.ConsistencyCheckIncompleteException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldSucceedWithUpgradeAfterPreviousAttemptDiedDuringMigration()
 		 {
@@ -187,7 +187,7 @@ namespace Upgrade
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void migrate(org.Neo4Net.io.layout.DatabaseLayout directoryLayout, org.Neo4Net.io.layout.DatabaseLayout migrationLayout, org.Neo4Net.kernel.impl.util.monitoring.ProgressReporter progressReporter, String versionToMigrateFrom, String versionToMigrateTo) throws java.io.IOException
+//ORIGINAL LINE: public void migrate(Neo4Net.io.layout.DatabaseLayout directoryLayout, Neo4Net.io.layout.DatabaseLayout migrationLayout, Neo4Net.kernel.impl.util.monitoring.ProgressReporter progressReporter, String versionToMigrateFrom, String versionToMigrateTo) throws java.io.IOException
 			 public override void migrate( DatabaseLayout directoryLayout, DatabaseLayout migrationLayout, ProgressReporter progressReporter, string versionToMigrateFrom, string versionToMigrateTo )
 			 {
 				  base.migrate( directoryLayout, migrationLayout, progressReporter, versionToMigrateFrom, versionToMigrateTo );
@@ -196,7 +196,7 @@ namespace Upgrade
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.kernel.impl.storemigration.UpgradableDatabase getUpgradableDatabase(org.Neo4Net.kernel.impl.storemigration.StoreVersionCheck check) throws java.io.IOException
+//ORIGINAL LINE: private Neo4Net.kernel.impl.storemigration.UpgradableDatabase getUpgradableDatabase(Neo4Net.kernel.impl.storemigration.StoreVersionCheck check) throws java.io.IOException
 		 private UpgradableDatabase GetUpgradableDatabase( StoreVersionCheck check )
 		 {
 			  VersionAwareLogEntryReader<ReadableClosablePositionAwareChannel> logEntryReader = new VersionAwareLogEntryReader<ReadableClosablePositionAwareChannel>();
@@ -211,7 +211,7 @@ namespace Upgrade
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldSucceedWithUpgradeAfterPreviousAttemptDiedDuringMovingFiles() throws java.io.IOException, org.Neo4Net.consistency.checking.full.ConsistencyCheckIncompleteException
+//ORIGINAL LINE: @Test public void shouldSucceedWithUpgradeAfterPreviousAttemptDiedDuringMovingFiles() throws java.io.IOException, Neo4Net.consistency.checking.full.ConsistencyCheckIncompleteException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldSucceedWithUpgradeAfterPreviousAttemptDiedDuringMovingFiles()
 		 {
@@ -258,7 +258,7 @@ namespace Upgrade
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void moveMigratedFiles(org.Neo4Net.io.layout.DatabaseLayout migrationLayout, org.Neo4Net.io.layout.DatabaseLayout directoryLayout, String versionToUpgradeFrom, String versionToMigrateTo) throws java.io.IOException
+//ORIGINAL LINE: public void moveMigratedFiles(Neo4Net.io.layout.DatabaseLayout migrationLayout, Neo4Net.io.layout.DatabaseLayout directoryLayout, String versionToUpgradeFrom, String versionToMigrateTo) throws java.io.IOException
 			 public override void moveMigratedFiles( DatabaseLayout migrationLayout, DatabaseLayout directoryLayout, string versionToUpgradeFrom, string versionToMigrateTo )
 			 {
 				  base.moveMigratedFiles( migrationLayout, directoryLayout, versionToUpgradeFrom, versionToMigrateTo );

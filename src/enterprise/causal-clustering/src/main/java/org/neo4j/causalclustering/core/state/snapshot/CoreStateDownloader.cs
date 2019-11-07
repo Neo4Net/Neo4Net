@@ -47,9 +47,9 @@ namespace Neo4Net.causalclustering.core.state.snapshot
 	using LogProvider = Neo4Net.Logging.LogProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.catchup.CatchupResult.E_TRANSACTION_PRUNED;
+//	import static Neo4Net.causalclustering.catchup.CatchupResult.E_TRANSACTION_PRUNED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.catchup.CatchupResult.SUCCESS_END_OF_STREAM;
+//	import static Neo4Net.causalclustering.catchup.CatchupResult.SUCCESS_END_OF_STREAM;
 
 	public class CoreStateDownloader
 	{
@@ -89,7 +89,7 @@ namespace Neo4Net.causalclustering.core.state.snapshot
 		 /// <exception cref="IOException"> An issue with I/O. </exception>
 		 /// <exception cref="DatabaseShutdownException"> The database is shutting down. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: boolean downloadSnapshot(org.Neo4Net.causalclustering.catchup.CatchupAddressProvider addressProvider) throws org.Neo4Net.kernel.lifecycle.LifecycleException, java.io.IOException, org.Neo4Net.causalclustering.catchup.storecopy.DatabaseShutdownException
+//ORIGINAL LINE: boolean downloadSnapshot(Neo4Net.causalclustering.catchup.CatchupAddressProvider addressProvider) throws Neo4Net.kernel.lifecycle.LifecycleException, java.io.IOException, Neo4Net.causalclustering.catchup.storecopy.DatabaseShutdownException
 		 internal virtual bool DownloadSnapshot( CatchupAddressProvider addressProvider )
 		 {
 			  /* Extract some key properties before shutting it down. */

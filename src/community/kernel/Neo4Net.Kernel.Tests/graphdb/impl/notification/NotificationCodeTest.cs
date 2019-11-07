@@ -30,13 +30,13 @@ namespace Neo4Net.GraphDb.impl.notification
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.MatcherAssert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.impl.notification.NotificationCode.CARTESIAN_PRODUCT;
+//	import static Neo4Net.graphdb.impl.notification.NotificationCode.CARTESIAN_PRODUCT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.impl.notification.NotificationCode.DEPRECATED_PROCEDURE;
+//	import static Neo4Net.graphdb.impl.notification.NotificationCode.DEPRECATED_PROCEDURE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.impl.notification.NotificationCode.INDEX_HINT_UNFULFILLABLE;
+//	import static Neo4Net.graphdb.impl.notification.NotificationCode.INDEX_HINT_UNFULFILLABLE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.impl.notification.NotificationCode.JOIN_HINT_UNFULFILLABLE;
+//	import static Neo4Net.graphdb.impl.notification.NotificationCode.JOIN_HINT_UNFULFILLABLE;
 
 	internal class NotificationCodeTest
 	{

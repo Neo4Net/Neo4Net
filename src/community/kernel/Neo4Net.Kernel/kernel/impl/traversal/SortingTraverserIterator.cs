@@ -32,7 +32,7 @@ namespace Neo4Net.Kernel.impl.traversal
 	internal class SortingTraverserIterator : PrefetchingResourceIterator<Path>, TraverserIterator
 	{
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-//ORIGINAL LINE: private final java.util.Comparator<? super org.Neo4Net.graphdb.Path> sortingStrategy;
+//ORIGINAL LINE: private final java.util.Comparator<? super Neo4Net.graphdb.Path> sortingStrategy;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		 private readonly IComparer<object> _sortingStrategy;
 		 private readonly MonoDirectionalTraverserIterator _source;
@@ -40,7 +40,7 @@ namespace Neo4Net.Kernel.impl.traversal
 		 private IEnumerator<Path> _sortedResultIterator;
 
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-//ORIGINAL LINE: SortingTraverserIterator(org.Neo4Net.graphdb.Resource resource, java.util.Comparator<? super org.Neo4Net.graphdb.Path> sortingStrategy, MonoDirectionalTraverserIterator source)
+//ORIGINAL LINE: SortingTraverserIterator(Neo4Net.graphdb.Resource resource, java.util.Comparator<? super Neo4Net.graphdb.Path> sortingStrategy, MonoDirectionalTraverserIterator source)
 		 internal SortingTraverserIterator<T1>( Resource resource, IComparer<T1> sortingStrategy, MonoDirectionalTraverserIterator source )
 		 {
 			  this._resource = resource;
@@ -86,7 +86,7 @@ namespace Neo4Net.Kernel.impl.traversal
 
 		 public override Evaluation Evaluate( TraversalBranch branch, BranchState state )
 		 {
-			  return _source.evaluate( branch, state );
+			  return _source.Evaluate( branch, state );
 		 }
 
 		 protected internal override Path FetchNextOrNull()

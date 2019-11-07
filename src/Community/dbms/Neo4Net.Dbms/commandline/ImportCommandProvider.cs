@@ -34,14 +34,14 @@ namespace Neo4Net.Dbms.CommandLine
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Override @Nonnull public org.Neo4Net.commandline.arguments.Arguments allArguments()
+//ORIGINAL LINE: @Override @Nonnull public Neo4Net.commandline.arguments.Arguments allArguments()
 		 public override Arguments AllArguments()
 		 {
 			  return ImportCommand.AllArguments();
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Override @Nonnull public java.util.List<org.Neo4Net.commandline.arguments.Arguments> possibleArguments()
+//ORIGINAL LINE: @Override @Nonnull public java.util.List<Neo4Net.commandline.arguments.Arguments> possibleArguments()
 		 public override IList<Arguments> PossibleArguments()
 		 {
 			  return Arrays.asList( ImportCommand.CsvArguments(), ImportCommand.DatabaseArguments() );
@@ -63,14 +63,14 @@ namespace Neo4Net.Dbms.CommandLine
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Override @Nonnull public org.Neo4Net.commandline.admin.AdminCommandSection commandSection()
+//ORIGINAL LINE: @Override @Nonnull public Neo4Net.commandline.admin.AdminCommandSection commandSection()
 		 public override AdminCommandSection CommandSection()
 		 {
 			  return AdminCommandSection.general();
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Override @Nonnull public org.Neo4Net.commandline.admin.AdminCommand create(java.nio.file.Path homeDir, java.nio.file.Path configDir, org.Neo4Net.commandline.admin.OutsideWorld outsideWorld)
+//ORIGINAL LINE: @Override @Nonnull public Neo4Net.commandline.admin.AdminCommand create(java.nio.file.Path homeDir, java.nio.file.Path configDir, Neo4Net.commandline.admin.OutsideWorld outsideWorld)
 		 public override AdminCommand Create( Path homeDir, Path configDir, OutsideWorld outsideWorld )
 		 {
 			  return new ImportCommand( homeDir, configDir, outsideWorld );

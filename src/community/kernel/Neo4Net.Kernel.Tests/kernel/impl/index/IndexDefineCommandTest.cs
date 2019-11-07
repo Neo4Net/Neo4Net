@@ -110,7 +110,7 @@ namespace Neo4Net.Kernel.impl.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private boolean serialize(org.Neo4Net.kernel.impl.transaction.log.InMemoryClosableChannel channel, IndexDefineCommand command) throws java.io.IOException
+//ORIGINAL LINE: private boolean serialize(Neo4Net.kernel.impl.transaction.log.InMemoryClosableChannel channel, IndexDefineCommand command) throws java.io.IOException
 		 private bool Serialize( InMemoryClosableChannel channel, IndexDefineCommand command )
 		 {
 			  try

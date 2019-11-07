@@ -31,7 +31,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.ByteBufferFactory.heapBufferFactory;
+//	import static Neo4Net.kernel.impl.index.schema.ByteBufferFactory.heapBufferFactory;
 
 	/// <summary>
 	/// Helper class of <seealso cref="IndexingService"/>. Used mainly as factory of index proxies.
@@ -54,7 +54,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: IndexProxy createPopulatingIndexProxy(final org.Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor descriptor, final boolean flipToTentative, final IndexingService.Monitor monitor, final IndexPopulationJob populationJob)
+//ORIGINAL LINE: IndexProxy createPopulatingIndexProxy(final Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor descriptor, final boolean flipToTentative, final IndexingService.Monitor monitor, final IndexPopulationJob populationJob)
 		 internal virtual IndexProxy CreatePopulatingIndexProxy( StoreIndexDescriptor descriptor, bool flipToTentative, IndexingService.Monitor monitor, IndexPopulationJob populationJob )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -129,7 +129,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private String indexUserDescription(final org.Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor descriptor)
+//ORIGINAL LINE: private String indexUserDescription(final Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor descriptor)
 		 private string IndexUserDescription( StoreIndexDescriptor descriptor )
 		 {
 			  return format( "%s [provider: %s]", descriptor.Schema().userDescription(_tokenNameLookup), descriptor.ProviderDescriptor().ToString() );
@@ -142,7 +142,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.kernel.api.index.IndexAccessor onlineAccessorFromProvider(org.Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor descriptor, org.Neo4Net.kernel.impl.api.index.sampling.IndexSamplingConfig samplingConfig) throws java.io.IOException
+//ORIGINAL LINE: private Neo4Net.kernel.api.index.IndexAccessor onlineAccessorFromProvider(Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor descriptor, Neo4Net.kernel.impl.api.index.sampling.IndexSamplingConfig samplingConfig) throws java.io.IOException
 		 private IndexAccessor OnlineAccessorFromProvider( StoreIndexDescriptor descriptor, IndexSamplingConfig samplingConfig )
 		 {
 			  IndexProvider indexProvider = _providerMap.lookup( descriptor.ProviderDescriptor() );

@@ -31,7 +31,7 @@ namespace Neo4Net.causalclustering.catchup
 	using LogProvider = Neo4Net.Logging.LogProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.catchup.ResponseMessageType.from;
+//	import static Neo4Net.causalclustering.catchup.ResponseMessageType.from;
 
 	public class ClientMessageTypeHandler : ChannelInboundHandlerAdapter
 	{

@@ -33,13 +33,13 @@ namespace Neo4Net.Kernel.recovery
 	using LifecycleAdapter = Neo4Net.Kernel.Lifecycle.LifecycleAdapter;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode.RECOVERY;
+//	import static Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode.RECOVERY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode.REVERSE_RECOVERY;
+//	import static Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode.REVERSE_RECOVERY;
 
 	/// <summary>
 	/// This is the process of doing a recovery on the transaction log and store, and is executed
-	/// at startup of <seealso cref="org.Neo4Net.kernel.NeoStoreDataSource"/>.
+	/// at startup of <seealso cref="Neo4Net.kernel.NeoStoreDataSource"/>.
 	/// </summary>
 	public class Recovery : LifecycleAdapter
 	{

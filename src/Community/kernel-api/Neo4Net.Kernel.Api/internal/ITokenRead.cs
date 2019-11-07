@@ -46,7 +46,7 @@ namespace Neo4Net.Kernel.Api.Internal
 		 /// <returns> The name of the label </returns>
 		 /// <exception cref="LabelNotFoundKernelException"> if no label is associates with this id </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: String nodeLabelName(int labelId) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.LabelNotFoundKernelException;
+//ORIGINAL LINE: String nodeLabelName(int labelId) throws Neo4Net.Kernel.Api.Internal.Exceptions.LabelNotFoundKernelException;
 		 string NodeLabelName( int labelId );
 
 		 /// <summary>
@@ -62,7 +62,7 @@ namespace Neo4Net.Kernel.Api.Internal
 		 /// <param name="relationshipTypeId"> The id of the relationship type </param>
 		 /// <returns> The name of the relationship type </returns>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: String relationshipTypeName(int relationshipTypeId) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
+//ORIGINAL LINE: String relationshipTypeName(int relationshipTypeId) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 		 string RelationshipTypeName( int relationshipTypeId );
 
 		 /// <summary>
@@ -79,7 +79,7 @@ namespace Neo4Net.Kernel.Api.Internal
 		 /// <returns> The name of the key </returns>
 		 /// <exception cref="PropertyKeyIdNotFoundKernelException"> if no key is associated with the id </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: String propertyKeyName(int propertyKeyId) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.PropertyKeyIdNotFoundKernelException;
+//ORIGINAL LINE: String propertyKeyName(int propertyKeyId) throws Neo4Net.Kernel.Api.Internal.Exceptions.PropertyKeyIdNotFoundKernelException;
 		 string PropertyKeyName( int propertyKeyId );
 
 		 /// <summary>

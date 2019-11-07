@@ -330,7 +330,7 @@ namespace Neo4Net.Helpers
       public static bool Contains(Exception cause, string containsMessage, params Type[] anyOfTheseClasses)
       {
          //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-         //ORIGINAL LINE: final System.Predicate<Throwable> anyOfClasses = org.Neo4Net.function.Predicates.instanceOfAny(anyOfTheseClasses);
+         //ORIGINAL LINE: final System.Predicate<Throwable> anyOfClasses = Neo4Net.function.Predicates.instanceOfAny(anyOfTheseClasses);
          System.Predicate<Exception> anyOfClasses = Predicates.instanceOfAny(anyOfTheseClasses);
          return contains(cause, item => item.Message != null && item.Message.contains(containsMessage) && anyOfClasses(item));
       }

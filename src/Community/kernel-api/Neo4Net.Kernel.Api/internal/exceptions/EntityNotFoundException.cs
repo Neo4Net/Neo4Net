@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.Api.Internal.Exceptions
 		 private readonly EntityType _entityType;
 		 private readonly long _entityId;
 
-		 public IEntityNotFoundException( EntityType EntityType, long IEntityId ) : base( org.Neo4Net.kernel.api.exceptions.Status_Statement.EntityNotFound, "Unable to load %s with id %s.", EntityType.name(), IEntityId )
+		 public IEntityNotFoundException( EntityType EntityType, long IEntityId ) : base( Neo4Net.kernel.api.exceptions.Status_Statement.EntityNotFound, "Unable to load %s with id %s.", EntityType.name(), IEntityId )
 		 {
 			  this._entityType = EntityType;
 			  this._entityId = IEntityId;

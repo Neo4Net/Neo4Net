@@ -25,14 +25,14 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 
 	using NamedToken = Neo4Net.Kernel.Api.Internal.NamedToken;
 	using Transaction = Neo4Net.Kernel.Api.Internal.Transaction;
-	using AnonymousContext = Neo4Net.Kernel.api.security.AnonymousContext;
+	using AnonymousContext = Neo4Net.Kernel.Api.security.AnonymousContext;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.core.IsCollectionContaining.hasItems;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.asCollection;
+//	import static Neo4Net.helpers.collection.Iterators.asCollection;
 
 	public class LabelIT : KernelIntegrationTest
 	{

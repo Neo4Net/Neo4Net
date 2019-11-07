@@ -27,13 +27,13 @@ namespace Neo4Net.Kernel.impl.transaction.log.entry
 	using WritableChannel = Neo4Net.Kernel.Api.StorageEngine.WritableChannel;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.entry.LogEntryByteCodes.CHECK_POINT;
+//	import static Neo4Net.kernel.impl.transaction.log.entry.LogEntryByteCodes.CHECK_POINT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.entry.LogEntryByteCodes.TX_COMMIT;
+//	import static Neo4Net.kernel.impl.transaction.log.entry.LogEntryByteCodes.TX_COMMIT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.entry.LogEntryByteCodes.TX_START;
+//	import static Neo4Net.kernel.impl.transaction.log.entry.LogEntryByteCodes.TX_START;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.entry.LogEntryVersion.CURRENT;
+//	import static Neo4Net.kernel.impl.transaction.log.entry.LogEntryVersion.CURRENT;
 
 	public class LogEntryWriter
 	{
@@ -50,7 +50,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.entry
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected static void writeLogEntryHeader(byte type, org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: protected static void writeLogEntryHeader(byte type, Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
 		 protected internal static void WriteLogEntryHeader( sbyte type, WritableChannel channel )
 		 {
 			  channel.Put( CURRENT.byteCode() ).put(type);
@@ -87,14 +87,14 @@ namespace Neo4Net.Kernel.impl.transaction.log.entry
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void serialize(org.Neo4Net.kernel.impl.transaction.TransactionRepresentation tx) throws java.io.IOException
+//ORIGINAL LINE: public void serialize(Neo4Net.kernel.impl.transaction.TransactionRepresentation tx) throws java.io.IOException
 		 public virtual void Serialize( TransactionRepresentation tx )
 		 {
 			  tx.Accept( _serializer );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void serialize(org.Neo4Net.kernel.impl.transaction.CommittedTransactionRepresentation tx) throws java.io.IOException
+//ORIGINAL LINE: public void serialize(Neo4Net.kernel.impl.transaction.CommittedTransactionRepresentation tx) throws java.io.IOException
 		 public virtual void Serialize( CommittedTransactionRepresentation tx )
 		 {
 			  WriteStartEntry( tx.StartEntry );
@@ -103,7 +103,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.entry
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void serialize(java.util.Collection<org.Neo4Net.Kernel.Api.StorageEngine.StorageCommand> commands) throws java.io.IOException
+//ORIGINAL LINE: public void serialize(java.util.Collection<Neo4Net.Kernel.Api.StorageEngine.StorageCommand> commands) throws java.io.IOException
 		 public virtual void Serialize( ICollection<StorageCommand> commands )
 		 {
 			  foreach ( StorageCommand command in commands )
@@ -113,7 +113,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.entry
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void writeCheckPointEntry(org.Neo4Net.kernel.impl.transaction.log.LogPosition logPosition) throws java.io.IOException
+//ORIGINAL LINE: public void writeCheckPointEntry(Neo4Net.kernel.impl.transaction.log.LogPosition logPosition) throws java.io.IOException
 		 public virtual void WriteCheckPointEntry( LogPosition logPosition )
 		 {
 			  WriteLogEntryHeader( CHECK_POINT, Channel );

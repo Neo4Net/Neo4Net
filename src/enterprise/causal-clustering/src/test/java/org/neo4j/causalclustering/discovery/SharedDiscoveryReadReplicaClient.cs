@@ -34,7 +34,7 @@ namespace Neo4Net.causalclustering.discovery
 	using LogProvider = Neo4Net.Logging.LogProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.SocketAddressParser.socketAddress;
+//	import static Neo4Net.helpers.SocketAddressParser.socketAddress;
 
 	internal class SharedDiscoveryReadReplicaClient : SafeLifecycle, TopologyService
 	{

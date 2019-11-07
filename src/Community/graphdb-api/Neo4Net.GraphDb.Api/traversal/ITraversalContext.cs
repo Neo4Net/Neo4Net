@@ -23,7 +23,7 @@ namespace Neo4Net.GraphDb.Traversal
 	/// Provides a context for <seealso cref="ITraversalBranch"/>es which they need to
 	/// move further and report their progress.
 	/// </summary>
-	public interface TraversalContext : ITraversalMetadata
+	public interface ITraversalContext : ITraversalMetadata
 	{
 		 /// <summary>
 		 /// Reports that one more relationship has been traversed in this
@@ -62,7 +62,7 @@ namespace Neo4Net.GraphDb.Traversal
 		 /// <param name="state"> the <seealso cref="BranchState"/> for the branch. </param>
 		 /// @param <STATE> the type of the state object. </param>
 		 /// <returns> an <seealso cref="Evaluation"/> of the branch in this traversal. </returns>
-		 Evaluation evaluate<STATE>( ITraversalBranch branch, IBranchState<STATE> state );
+		 Evaluation Evaluate<STATE>( ITraversalBranch branch, IBranchState<STATE> state );
 	}
 
 }

@@ -40,7 +40,7 @@ namespace Neo4Net.causalclustering.catchup
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: CHANNEL acquire(org.Neo4Net.helpers.AdvertisedSocketAddress catchUpAddress) throws Exception
+//ORIGINAL LINE: CHANNEL acquire(Neo4Net.helpers.AdvertisedSocketAddress catchUpAddress) throws Exception
 		 internal virtual CHANNEL Acquire( AdvertisedSocketAddress catchUpAddress )
 		 {
 			  CHANNEL channel = GetIdleChannel( catchUpAddress );
@@ -66,7 +66,7 @@ namespace Neo4Net.causalclustering.catchup
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertActive(CHANNEL channel, org.Neo4Net.helpers.AdvertisedSocketAddress address) throws java.net.ConnectException
+//ORIGINAL LINE: private void assertActive(CHANNEL channel, Neo4Net.helpers.AdvertisedSocketAddress address) throws java.net.ConnectException
 		 private void AssertActive( CHANNEL channel, AdvertisedSocketAddress address )
 		 {
 			  if ( !channel.Active )

@@ -42,23 +42,23 @@ namespace Neo4Net.Server.rest
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.domain.JsonHelper.createJsonFrom;
+//	import static Neo4Net.server.rest.domain.JsonHelper.createJsonFrom;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.web.Surface_Fields.PATH_NODES;
+//	import static Neo4Net.server.rest.web.Surface_Fields.PATH_NODES;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.web.Surface_Fields.PATH_NODE_INDEX;
+//	import static Neo4Net.server.rest.web.Surface_Fields.PATH_NODE_INDEX;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.web.Surface_Fields.PATH_RELATIONSHIPS;
+//	import static Neo4Net.server.rest.web.Surface_Fields.PATH_RELATIONSHIPS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.web.Surface_Fields.PATH_RELATIONSHIP_INDEX;
+//	import static Neo4Net.server.rest.web.Surface_Fields.PATH_RELATIONSHIP_INDEX;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.web.Surface_Fields.PATH_SCHEMA_CONSTRAINT;
+//	import static Neo4Net.server.rest.web.Surface_Fields.PATH_SCHEMA_CONSTRAINT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.web.Surface_Fields.PATH_SCHEMA_INDEX;
+//	import static Neo4Net.server.rest.web.Surface_Fields.PATH_SCHEMA_INDEX;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.server.HTTP.POST;
+//	import static Neo4Net.test.server.HTTP.POST;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.server.HTTP.RawPayload.quotedJson;
+//	import static Neo4Net.test.server.HTTP.RawPayload.quotedJson;
 
 	public class AbstractRestFunctionalTestBase : SharedServerTestBase, GraphHolder
 	{
@@ -79,16 +79,16 @@ namespace Neo4Net.Server.rest
 		}
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.TestData<java.util.Map<String,org.Neo4Net.graphdb.Node>> data = org.Neo4Net.test.TestData.producedThrough(org.Neo4Net.test.GraphDescription.createGraphFor(this, true));
+//ORIGINAL LINE: @Rule public Neo4Net.test.TestData<java.util.Map<String,Neo4Net.graphdb.Node>> data = Neo4Net.test.TestData.producedThrough(Neo4Net.test.GraphDescription.createGraphFor(this, true));
 		 public TestData<IDictionary<string, Node>> Data;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.TestData<RESTRequestGenerator> gen = org.Neo4Net.test.TestData.producedThrough(RESTRequestGenerator.PRODUCER);
+//ORIGINAL LINE: @Rule public Neo4Net.test.TestData<RESTRequestGenerator> gen = Neo4Net.test.TestData.producedThrough(RESTRequestGenerator.PRODUCER);
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
 		 public TestData<RESTRequestGenerator> GenConflict = TestData.producedThrough( RESTRequestGenerator.PRODUCER );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SafeVarargs public final String doCypherRestCall(String endpoint, String scriptTemplate, javax.ws.rs.core.Response.Status status, org.Neo4Net.helpers.collection.Pair<String, String>... params)
+//ORIGINAL LINE: @SafeVarargs public final String doCypherRestCall(String endpoint, String scriptTemplate, javax.ws.rs.core.Response.Status status, Neo4Net.helpers.collection.Pair<String, String>... params)
 		 public string DoCypherRestCall( string endpoint, string scriptTemplate, Status status, params Pair<string, string>[] @params )
 		 {
 			  string parameterString = CreateParameterString( @params );
@@ -232,7 +232,7 @@ namespace Neo4Net.Server.rest
 			  try
 			  {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: hits = (java.util.Collection<?>) org.Neo4Net.server.rest.domain.JsonHelper.readJson(entity);
+//ORIGINAL LINE: hits = (java.util.Collection<?>) Neo4Net.server.rest.domain.JsonHelper.readJson(entity);
 					hits = ( ICollection<object> ) JsonHelper.readJson( IEntity );
 					assertEquals( expectedSize, hits.Count );
 			  }
@@ -347,7 +347,7 @@ namespace Neo4Net.Server.rest
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static void assertNoErrors(org.Neo4Net.test.server.HTTP.Response response) throws org.Neo4Net.server.rest.domain.JsonParseException
+//ORIGINAL LINE: public static void assertNoErrors(Neo4Net.test.server.HTTP.Response response) throws Neo4Net.server.rest.domain.JsonParseException
 		 public static void AssertNoErrors( HTTP.Response response )
 		 {
 			  assertEquals( "[]", response.Get( "errors" ).ToString() );

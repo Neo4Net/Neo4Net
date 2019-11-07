@@ -39,7 +39,7 @@ namespace Neo4Net.Logging.async
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.CoreMatchers.startsWith;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.logging.AssertableLogProvider.inLog;
+//	import static Neo4Net.logging.AssertableLogProvider.inLog;
 
 	public class AsyncLogTest
 	{
@@ -92,9 +92,9 @@ namespace Neo4Net.Logging.async
 		 internal abstract class Invocation
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           DIRECT { Log decorate(org.Neo4Net.logging.Log log) { return new DirectLog(log); } },
+//           DIRECT { Log decorate(Neo4Net.logging.Log log) { return new DirectLog(log); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           INDIRECT { Log decorate(org.Neo4Net.logging.Log log) { return log; } };
+//           INDIRECT { Log decorate(Neo4Net.logging.Log log) { return log; } };
 
 			  private static readonly IList<Invocation> valueList = new List<Invocation>();
 
@@ -155,13 +155,13 @@ namespace Neo4Net.Logging.async
 		 internal abstract class Level
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           DEBUG { Logger logger(org.Neo4Net.logging.Log log) { return log.debugLogger(); } },
+//           DEBUG { Logger logger(Neo4Net.logging.Log log) { return log.debugLogger(); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           INFO { Logger logger(org.Neo4Net.logging.Log log) { return log.infoLogger(); } },
+//           INFO { Logger logger(Neo4Net.logging.Log log) { return log.infoLogger(); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           WARN { Logger logger(org.Neo4Net.logging.Log log) { return log.warnLogger(); } },
+//           WARN { Logger logger(Neo4Net.logging.Log log) { return log.warnLogger(); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           ERROR { Logger logger(org.Neo4Net.logging.Log log) { return log.errorLogger(); } };
+//           ERROR { Logger logger(Neo4Net.logging.Log log) { return log.errorLogger(); } };
 
 			  private static readonly IList<Level> valueList = new List<Level>();
 
@@ -226,11 +226,11 @@ namespace Neo4Net.Logging.async
 		 internal abstract class Style
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           MESSAGE { void invoke(AsyncLogTest state, org.Neo4Net.logging.Logger logger) { logger.log("a message"); } public String toString() { return " <message> "; } },
+//           MESSAGE { void invoke(AsyncLogTest state, Neo4Net.logging.Logger logger) { logger.log("a message"); } public String toString() { return " <message> "; } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           THROWABLE { void invoke(AsyncLogTest state, org.Neo4Net.logging.Logger logger) { logger.log("an exception", exception); } public String toString() { return " <message>, <exception> "; } },
+//           THROWABLE { void invoke(AsyncLogTest state, Neo4Net.logging.Logger logger) { logger.log("an exception", exception); } public String toString() { return " <message>, <exception> "; } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           FORMAT { void invoke(AsyncLogTest state, org.Neo4Net.logging.Logger logger) { logger.log("a %s message", "formatted"); } public String toString() { return " <format>, <parameters...> "; } };
+//           FORMAT { void invoke(AsyncLogTest state, Neo4Net.logging.Logger logger) { logger.log("a %s message", "formatted"); } public String toString() { return " <format>, <parameters...> "; } };
 
 			  private static readonly IList<Style> valueList = new List<Style>();
 
@@ -327,14 +327,14 @@ namespace Neo4Net.Logging.async
 			  }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Override public void bulk(@Nonnull Consumer<org.Neo4Net.logging.Log> consumer)
+//ORIGINAL LINE: @Override public void bulk(@Nonnull Consumer<Neo4Net.logging.Log> consumer)
 			  public override void Bulk( Consumer<Log> consumer )
 			  {
 					throw new System.NotSupportedException();
 			  }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Nonnull @Override public org.Neo4Net.logging.Logger debugLogger()
+//ORIGINAL LINE: @Nonnull @Override public Neo4Net.logging.Logger debugLogger()
 			  public override Logger DebugLogger()
 			  {
 					return new LoggerAnonymousInnerClass( this );
@@ -371,7 +371,7 @@ namespace Neo4Net.Logging.async
 				  }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: public void bulk(@Nonnull Consumer<org.Neo4Net.logging.Logger> consumer)
+//ORIGINAL LINE: public void bulk(@Nonnull Consumer<Neo4Net.logging.Logger> consumer)
 				  public void bulk( Consumer<Logger> consumer )
 				  {
 						throw new System.NotSupportedException();
@@ -379,7 +379,7 @@ namespace Neo4Net.Logging.async
 			  }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Nonnull @Override public org.Neo4Net.logging.Logger infoLogger()
+//ORIGINAL LINE: @Nonnull @Override public Neo4Net.logging.Logger infoLogger()
 			  public override Logger InfoLogger()
 			  {
 					return new LoggerAnonymousInnerClass2( this );
@@ -416,7 +416,7 @@ namespace Neo4Net.Logging.async
 				  }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: public void bulk(@Nonnull Consumer<org.Neo4Net.logging.Logger> consumer)
+//ORIGINAL LINE: public void bulk(@Nonnull Consumer<Neo4Net.logging.Logger> consumer)
 				  public void bulk( Consumer<Logger> consumer )
 				  {
 						throw new System.NotSupportedException();
@@ -424,7 +424,7 @@ namespace Neo4Net.Logging.async
 			  }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Nonnull @Override public org.Neo4Net.logging.Logger warnLogger()
+//ORIGINAL LINE: @Nonnull @Override public Neo4Net.logging.Logger warnLogger()
 			  public override Logger WarnLogger()
 			  {
 					return new LoggerAnonymousInnerClass3( this );
@@ -461,7 +461,7 @@ namespace Neo4Net.Logging.async
 				  }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: public void bulk(@Nonnull Consumer<org.Neo4Net.logging.Logger> consumer)
+//ORIGINAL LINE: public void bulk(@Nonnull Consumer<Neo4Net.logging.Logger> consumer)
 				  public void bulk( Consumer<Logger> consumer )
 				  {
 						throw new System.NotSupportedException();
@@ -469,7 +469,7 @@ namespace Neo4Net.Logging.async
 			  }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Nonnull @Override public org.Neo4Net.logging.Logger errorLogger()
+//ORIGINAL LINE: @Nonnull @Override public Neo4Net.logging.Logger errorLogger()
 			  public override Logger ErrorLogger()
 			  {
 					return new LoggerAnonymousInnerClass4( this );
@@ -506,7 +506,7 @@ namespace Neo4Net.Logging.async
 				  }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: public void bulk(@Nonnull Consumer<org.Neo4Net.logging.Logger> consumer)
+//ORIGINAL LINE: public void bulk(@Nonnull Consumer<Neo4Net.logging.Logger> consumer)
 				  public void bulk( Consumer<Logger> consumer )
 				  {
 						throw new System.NotSupportedException();
@@ -539,14 +539,14 @@ namespace Neo4Net.Logging.async
 			  }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Override public void bulk(@Nonnull Consumer<org.Neo4Net.logging.Log> consumer)
+//ORIGINAL LINE: @Override public void bulk(@Nonnull Consumer<Neo4Net.logging.Log> consumer)
 			  public override void Bulk( Consumer<Log> consumer )
 			  {
 					throw new System.NotSupportedException();
 			  }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Nonnull @Override public org.Neo4Net.logging.Logger debugLogger()
+//ORIGINAL LINE: @Nonnull @Override public Neo4Net.logging.Logger debugLogger()
 			  public override Logger DebugLogger()
 			  {
 					return new LoggerAnonymousInnerClass( this );
@@ -583,7 +583,7 @@ namespace Neo4Net.Logging.async
 				  }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: public void bulk(@Nonnull Consumer<org.Neo4Net.logging.Logger> consumer)
+//ORIGINAL LINE: public void bulk(@Nonnull Consumer<Neo4Net.logging.Logger> consumer)
 				  public void bulk( Consumer<Logger> consumer )
 				  {
 						throw new System.NotSupportedException();
@@ -591,7 +591,7 @@ namespace Neo4Net.Logging.async
 			  }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Nonnull @Override public org.Neo4Net.logging.Logger infoLogger()
+//ORIGINAL LINE: @Nonnull @Override public Neo4Net.logging.Logger infoLogger()
 			  public override Logger InfoLogger()
 			  {
 					return new LoggerAnonymousInnerClass2( this );
@@ -628,7 +628,7 @@ namespace Neo4Net.Logging.async
 				  }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: public void bulk(@Nonnull Consumer<org.Neo4Net.logging.Logger> consumer)
+//ORIGINAL LINE: public void bulk(@Nonnull Consumer<Neo4Net.logging.Logger> consumer)
 				  public void bulk( Consumer<Logger> consumer )
 				  {
 						throw new System.NotSupportedException();
@@ -636,7 +636,7 @@ namespace Neo4Net.Logging.async
 			  }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Nonnull @Override public org.Neo4Net.logging.Logger warnLogger()
+//ORIGINAL LINE: @Nonnull @Override public Neo4Net.logging.Logger warnLogger()
 			  public override Logger WarnLogger()
 			  {
 					return new LoggerAnonymousInnerClass3( this );
@@ -673,7 +673,7 @@ namespace Neo4Net.Logging.async
 				  }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: public void bulk(@Nonnull Consumer<org.Neo4Net.logging.Logger> consumer)
+//ORIGINAL LINE: public void bulk(@Nonnull Consumer<Neo4Net.logging.Logger> consumer)
 				  public void bulk( Consumer<Logger> consumer )
 				  {
 						throw new System.NotSupportedException();
@@ -681,7 +681,7 @@ namespace Neo4Net.Logging.async
 			  }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Nonnull @Override public org.Neo4Net.logging.Logger errorLogger()
+//ORIGINAL LINE: @Nonnull @Override public Neo4Net.logging.Logger errorLogger()
 			  public override Logger ErrorLogger()
 			  {
 					return new LoggerAnonymousInnerClass4( this );
@@ -718,7 +718,7 @@ namespace Neo4Net.Logging.async
 				  }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: public void bulk(@Nonnull Consumer<org.Neo4Net.logging.Logger> consumer)
+//ORIGINAL LINE: public void bulk(@Nonnull Consumer<Neo4Net.logging.Logger> consumer)
 				  public void bulk( Consumer<Logger> consumer )
 				  {
 						throw new System.NotSupportedException();

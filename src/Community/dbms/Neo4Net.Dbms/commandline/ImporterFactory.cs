@@ -28,7 +28,7 @@ namespace Neo4Net.Dbms.CommandLine
 	internal class ImporterFactory
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: Importer getImporterForMode(String mode, org.Neo4Net.helpers.Args parsedArgs, org.Neo4Net.kernel.configuration.Config config, org.Neo4Net.commandline.admin.OutsideWorld outsideWorld) throws org.Neo4Net.commandline.admin.IncorrectUsage, org.Neo4Net.commandline.admin.CommandFailed
+//ORIGINAL LINE: Importer getImporterForMode(String mode, Neo4Net.helpers.Args parsedArgs, Neo4Net.kernel.configuration.Config config, Neo4Net.commandline.admin.OutsideWorld outsideWorld) throws Neo4Net.commandline.admin.IncorrectUsage, Neo4Net.commandline.admin.CommandFailed
 		 internal virtual Importer GetImporterForMode( string mode, Args parsedArgs, Config config, OutsideWorld outsideWorld )
 		 {
 			  Importer importer;

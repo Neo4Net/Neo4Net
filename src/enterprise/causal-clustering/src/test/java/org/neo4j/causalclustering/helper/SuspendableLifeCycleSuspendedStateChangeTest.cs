@@ -37,27 +37,27 @@ namespace Neo4Net.causalclustering.helper
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.helper.SuspendableLifecycleStateTestHelpers.setInitialState;
+//	import static Neo4Net.causalclustering.helper.SuspendableLifecycleStateTestHelpers.setInitialState;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class SuspendableLifeCycleSuspendedStateChangeTest
 	public class SuspendableLifeCycleSuspendedStateChangeTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Parameterized.Parameter() public org.Neo4Net.causalclustering.helper.SuspendableLifecycleStateTestHelpers.LifeCycleState fromState;
+//ORIGINAL LINE: @Parameterized.Parameter() public Neo4Net.causalclustering.helper.SuspendableLifecycleStateTestHelpers.LifeCycleState fromState;
 		 public LifeCycleState FromState;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Parameterized.Parameter(1) public org.Neo4Net.causalclustering.helper.SuspendableLifecycleStateTestHelpers.SuspendedState fromSuspendedState;
+//ORIGINAL LINE: @Parameterized.Parameter(1) public Neo4Net.causalclustering.helper.SuspendableLifecycleStateTestHelpers.SuspendedState fromSuspendedState;
 		 public SuspendedState FromSuspendedState;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Parameterized.Parameter(2) public org.Neo4Net.causalclustering.helper.SuspendableLifecycleStateTestHelpers.SuspendedState toSuspendedState;
+//ORIGINAL LINE: @Parameterized.Parameter(2) public Neo4Net.causalclustering.helper.SuspendableLifecycleStateTestHelpers.SuspendedState toSuspendedState;
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
 		 public SuspendedState ToSuspendedStateConflict;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Parameterized.Parameter(3) public org.Neo4Net.causalclustering.helper.SuspendableLifecycleStateTestHelpers.LifeCycleState shouldEndInState;
+//ORIGINAL LINE: @Parameterized.Parameter(3) public Neo4Net.causalclustering.helper.SuspendableLifecycleStateTestHelpers.LifeCycleState shouldEndInState;
 		 public LifeCycleState ShouldEndInState;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

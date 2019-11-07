@@ -46,7 +46,7 @@ namespace Neo4Net.causalclustering.core.consensus
 		 /// </summary>
 		 /// <param name="outcome"> The outcome which contains details of the leader event </param>
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//		 default void onLeaderEvent(org.Neo4Net.causalclustering.core.consensus.outcome.Outcome outcome)
+//		 default void onLeaderEvent(Neo4Net.causalclustering.core.consensus.outcome.Outcome outcome)
 	//	 {
 	//		  outcome.stepDownTerm().ifPresent(this::onLeaderStepDown);
 	//		  onLeaderSwitch(new LeaderInfo(outcome.getLeader(), outcome.getTerm()));

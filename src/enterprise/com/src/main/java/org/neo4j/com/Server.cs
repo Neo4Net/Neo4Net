@@ -57,15 +57,15 @@ namespace Neo4Net.com
 	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.com.DechunkingChannelBuffer.assertSameProtocolVersion;
+//	import static Neo4Net.com.DechunkingChannelBuffer.assertSameProtocolVersion;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.com.Protocol.addLengthFieldPipes;
+//	import static Neo4Net.com.Protocol.addLengthFieldPipes;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.com.Protocol.assertChunkSizeIsWithinFrameSize;
+//	import static Neo4Net.com.Protocol.assertChunkSizeIsWithinFrameSize;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.NamedThreadFactory.daemon;
+//	import static Neo4Net.helpers.NamedThreadFactory.daemon;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.NamedThreadFactory.named;
+//	import static Neo4Net.helpers.NamedThreadFactory.named;
 
 	/// <summary>
 	/// Receives requests from <seealso cref="Client clients"/>. Delegates actual work to an instance

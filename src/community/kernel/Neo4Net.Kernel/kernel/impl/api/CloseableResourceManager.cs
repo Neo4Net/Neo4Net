@@ -23,7 +23,7 @@ namespace Neo4Net.Kernel.Impl.Api
 {
 
 	using IOUtils = Neo4Net.Io.IOUtils;
-	using ResourceManager = Neo4Net.Kernel.api.ResourceManager;
+	using ResourceManager = Neo4Net.Kernel.Api.ResourceManager;
 	using ResourceCloseFailureException = Neo4Net.Kernel.Api.Exceptions.ResourceCloseFailureException;
 
 	public class CloseableResourceManager : ResourceManager

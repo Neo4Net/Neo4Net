@@ -30,7 +30,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 	using Iterators = Neo4Net.Collections.Helpers.Iterators;
 	using Transaction = Neo4Net.Kernel.Api.Internal.Transaction;
 	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
-	using AnonymousContext = Neo4Net.Kernel.api.security.AnonymousContext;
+	using AnonymousContext = Neo4Net.Kernel.Api.security.AnonymousContext;
 	using Neo4Net.Test.rule.concurrent;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -42,18 +42,18 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.Direction.BOTH;
+//	import static Neo4Net.graphdb.Direction.BOTH;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.Direction.INCOMING;
+//	import static Neo4Net.graphdb.Direction.INCOMING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.Direction.OUTGOING;
+//	import static Neo4Net.graphdb.Direction.OUTGOING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.Transaction_Type.@implicit;
+//	import static Neo4Net.Kernel.Api.Internal.Transaction_Type.@implicit;
 
 	public class RelationshipIT : KernelIntegrationTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.concurrent.OtherThreadRule<Object> otherThread = new org.Neo4Net.test.rule.concurrent.OtherThreadRule<>(10, java.util.concurrent.TimeUnit.SECONDS);
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.concurrent.OtherThreadRule<Object> otherThread = new Neo4Net.test.rule.concurrent.OtherThreadRule<>(10, java.util.concurrent.TimeUnit.SECONDS);
 		 public OtherThreadRule<object> OtherThread = new OtherThreadRule<object>( 10, TimeUnit.SECONDS );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -199,7 +199,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertRelsInSeparateTx(final long refNode, final org.Neo4Net.graphdb.Direction both, final long... longs) throws InterruptedException, java.util.concurrent.ExecutionException, java.util.concurrent.TimeoutException
+//ORIGINAL LINE: private void assertRelsInSeparateTx(final long refNode, final Neo4Net.graphdb.Direction both, final long... longs) throws InterruptedException, java.util.concurrent.ExecutionException, java.util.concurrent.TimeoutException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 		 private void AssertRelsInSeparateTx( long refNode, Direction both, params long[] longs )
 		 {

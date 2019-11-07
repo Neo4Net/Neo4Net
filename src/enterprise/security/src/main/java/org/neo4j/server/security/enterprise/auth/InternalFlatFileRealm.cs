@@ -44,10 +44,10 @@ namespace Neo4Net.Server.security.enterprise.auth
 
 	using SetDefaultAdminCommand = Neo4Net.CommandLine.Admin.security.SetDefaultAdminCommand;
 	using InvalidArgumentsException = Neo4Net.Kernel.Api.Exceptions.InvalidArgumentsException;
-	using AuthToken = Neo4Net.Kernel.api.security.AuthToken;
+	using AuthToken = Neo4Net.Kernel.Api.security.AuthToken;
 	using AuthenticationResult = Neo4Net.Kernel.Api.Internal.security.AuthenticationResult;
-	using PasswordPolicy = Neo4Net.Kernel.api.security.PasswordPolicy;
-	using InvalidAuthTokenException = Neo4Net.Kernel.api.security.exception.InvalidAuthTokenException;
+	using PasswordPolicy = Neo4Net.Kernel.Api.security.PasswordPolicy;
+	using InvalidAuthTokenException = Neo4Net.Kernel.Api.security.exception.InvalidAuthTokenException;
 	using LegacyCredential = Neo4Net.Server.Security.Auth.LegacyCredential;
 	using User = Neo4Net.Kernel.impl.security.User;
 	using Group = Neo4Net.Scheduler.Group;
@@ -215,16 +215,16 @@ namespace Neo4Net.Server.security.enterprise.auth
 			  {
 					if ( _userRepository.numberOfUsers() == 0 )
 					{
-						 User Neo4Net = NewUser( Neo4Net.Kernel.api.security.UserManager_Fields.INITIAL_USER_NAME, UTF8.encode( Neo4Net.Kernel.api.security.UserManager_Fields.INITIAL_PASSWORD ), true );
+						 User Neo4Net = NewUser( Neo4Net.Kernel.Api.security.UserManager_Fields.INITIAL_USER_NAME, UTF8.encode( Neo4Net.Kernel.Api.security.UserManager_Fields.INITIAL_PASSWORD ), true );
 						 if ( _initialUserRepository.numberOfUsers() > 0 )
 						 {
-							  User initUser = _initialUserRepository.getUserByName( Neo4Net.Kernel.api.security.UserManager_Fields.INITIAL_USER_NAME );
+							  User initUser = _initialUserRepository.getUserByName( Neo4Net.Kernel.Api.security.UserManager_Fields.INITIAL_USER_NAME );
 							  if ( initUser != null )
 							  {
 									_userRepository.update( Neo4Net, initUser );
 							  }
 						 }
-						 return Collections.singleton( Neo4Net.Kernel.api.security.UserManager_Fields.INITIAL_USER_NAME );
+						 return Collections.singleton( Neo4Net.Kernel.Api.security.UserManager_Fields.INITIAL_USER_NAME );
 					}
 			  }
 			  return Collections.emptySet();
@@ -232,7 +232,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 
 		 /* Builds all predefined roles if no roles exist. Adds 'Neo4Net' to admin role if no admin is assigned */
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void ensureDefaultRoles(java.util.Set<String> addedDefaultUsers) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: private void ensureDefaultRoles(java.util.Set<String> addedDefaultUsers) throws java.io.IOException, Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 		 private void EnsureDefaultRoles( ISet<string> addedDefaultUsers )
 		 {
 			  if ( _authenticationEnabled || _authorizationEnabled )
@@ -262,9 +262,9 @@ namespace Neo4Net.Server.security.enterprise.auth
 							  {
 									newAdmins.Add( usernames.GetEnumerator().next() );
 							  }
-							  else if ( usernames.Contains( Neo4Net.Kernel.api.security.UserManager_Fields.INITIAL_USER_NAME ) )
+							  else if ( usernames.Contains( Neo4Net.Kernel.Api.security.UserManager_Fields.INITIAL_USER_NAME ) )
 							  {
-									newAdmins.Add( Neo4Net.Kernel.api.security.UserManager_Fields.INITIAL_USER_NAME );
+									newAdmins.Add( Neo4Net.Kernel.Api.security.UserManager_Fields.INITIAL_USER_NAME );
 							  }
 							  else
 							  {
@@ -322,7 +322,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 					if ( token is ShiroAuthToken )
 					{
 						 ShiroAuthToken shiroAuthToken = ( ShiroAuthToken ) token;
-						 return shiroAuthToken.Scheme.Equals( Neo4Net.Kernel.api.security.AuthToken_Fields.BASIC_SCHEME ) && ( shiroAuthToken.SupportsRealm( Neo4Net.Kernel.api.security.AuthToken_Fields.NATIVE_REALM ) );
+						 return shiroAuthToken.Scheme.Equals( Neo4Net.Kernel.Api.security.AuthToken_Fields.BASIC_SCHEME ) && ( shiroAuthToken.SupportsRealm( Neo4Net.Kernel.Api.security.AuthToken_Fields.NATIVE_REALM ) );
 					}
 					return false;
 			  }
@@ -377,8 +377,8 @@ namespace Neo4Net.Server.security.enterprise.auth
 			  sbyte[] password;
 			  try
 			  {
-					username = AuthToken.safeCast( Neo4Net.Kernel.api.security.AuthToken_Fields.PRINCIPAL, shiroAuthToken.AuthTokenMap );
-					password = AuthToken.safeCastCredentials( Neo4Net.Kernel.api.security.AuthToken_Fields.CREDENTIALS, shiroAuthToken.AuthTokenMap );
+					username = AuthToken.safeCast( Neo4Net.Kernel.Api.security.AuthToken_Fields.PRINCIPAL, shiroAuthToken.AuthTokenMap );
+					password = AuthToken.safeCastCredentials( Neo4Net.Kernel.Api.security.AuthToken_Fields.CREDENTIALS, shiroAuthToken.AuthTokenMap );
 			  }
 			  catch ( InvalidAuthTokenException e )
 			  {
@@ -437,7 +437,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.kernel.impl.security.User newUser(String username, byte[] initialPassword, boolean requirePasswordChange) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: public Neo4Net.kernel.impl.security.User newUser(String username, byte[] initialPassword, boolean requirePasswordChange) throws java.io.IOException, Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 		 [Obsolete]
 		 public override User NewUser( string username, sbyte[] initialPassword, bool requirePasswordChange )
 		 {
@@ -465,7 +465,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void newRole(String roleName, String... usernames) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: public void newRole(String roleName, String... usernames) throws java.io.IOException, Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 		 [Obsolete]
 		 public override void NewRole( string roleName, params string[] usernames )
 		 {
@@ -489,7 +489,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean deleteRole(String roleName) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: public boolean deleteRole(String roleName) throws java.io.IOException, Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 		 [Obsolete]
 		 public override bool DeleteRole( string roleName )
 		 {
@@ -513,7 +513,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private RoleRecord getRole(String roleName) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: private RoleRecord getRole(String roleName) throws Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 		 private RoleRecord GetRole( string roleName )
 		 {
 			  RoleRecord role = _roleRepository.getRoleByName( roleName );
@@ -525,7 +525,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void assertRoleExists(String roleName) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: public void assertRoleExists(String roleName) throws Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 		 [Obsolete]
 		 public override void AssertRoleExists( string roleName )
 		 {
@@ -538,7 +538,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void addRoleToUser(String roleName, String username) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: public void addRoleToUser(String roleName, String username) throws java.io.IOException, Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 		 [Obsolete]
 		 public override void AddRoleToUser( string roleName, string username )
 		 {
@@ -564,7 +564,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void removeRoleFromUser(String roleName, String username) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: public void removeRoleFromUser(String roleName, String username) throws java.io.IOException, Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 		 [Obsolete]
 		 public override void RemoveRoleFromUser( string roleName, string username )
 		 {
@@ -592,7 +592,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean deleteUser(String username) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: public boolean deleteUser(String username) throws java.io.IOException, Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 		 [Obsolete]
 		 public override bool DeleteUser( string username )
 		 {
@@ -609,7 +609,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.kernel.impl.security.User getUser(String username) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: public Neo4Net.kernel.impl.security.User getUser(String username) throws Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 		 [Obsolete]
 		 public override User GetUser( string username )
 		 {
@@ -628,7 +628,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void setUserPassword(String username, byte[] password, boolean requirePasswordChange) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: public void setUserPassword(String username, byte[] password, boolean requirePasswordChange) throws java.io.IOException, Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 		 [Obsolete]
 		 public override void SetUserPassword( string username, sbyte[] password, bool requirePasswordChange )
 		 {
@@ -668,7 +668,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void suspendUser(String username) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: public void suspendUser(String username) throws java.io.IOException, Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 		 [Obsolete]
 		 public override void SuspendUser( string username )
 		 {
@@ -693,7 +693,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void activateUser(String username, boolean requirePasswordChange) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: public void activateUser(String username, boolean requirePasswordChange) throws java.io.IOException, Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 		 [Obsolete]
 		 public override void ActivateUser( string username, bool requirePasswordChange )
 		 {
@@ -727,7 +727,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.util.Set<String> getRoleNamesForUser(String username) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: public java.util.Set<String> getRoleNamesForUser(String username) throws Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 		 [Obsolete]
 		 public override ISet<string> GetRoleNamesForUser( string username )
 		 {
@@ -742,7 +742,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.util.Set<String> getUsernamesForRole(String roleName) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: public java.util.Set<String> getUsernamesForRole(String roleName) throws Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 		 [Obsolete]
 		 public override ISet<string> GetUsernamesForRole( string roleName )
 		 {
@@ -783,7 +783,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertNotPredefinedRoleName(String roleName) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: private void assertNotPredefinedRoleName(String roleName) throws Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 		 private void AssertNotPredefinedRoleName( string roleName )
 		 {
 			  if ( !string.ReferenceEquals( roleName, null ) && PredefinedRolesBuilder.Roles.Keys.Contains( roleName ) )

@@ -26,7 +26,7 @@ namespace Neo4Net.Collections
 	using ResourceUtils = Neo4Net.GraphDb.ResourceUtils;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.collection.PrimitiveLongCollections.resourceIterator;
+//	import static Neo4Net.collection.PrimitiveLongCollections.resourceIterator;
 
 	public class PrimitiveLongResourceCollections
 	{
@@ -50,7 +50,7 @@ namespace Neo4Net.Collections
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static PrimitiveLongResourceIterator iterator(org.Neo4Net.graphdb.Resource resource, final long... items)
+//ORIGINAL LINE: public static PrimitiveLongResourceIterator iterator(Neo4Net.graphdb.Resource resource, final long... items)
 		 public static PrimitiveLongResourceIterator Iterator( Resource resource, params long[] items )
 		 {
 			  return resourceIterator( PrimitiveLongCollections.Iterator( items ), resource );

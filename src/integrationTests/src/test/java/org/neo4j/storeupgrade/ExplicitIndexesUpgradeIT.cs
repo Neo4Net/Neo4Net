@@ -56,16 +56,16 @@ namespace Neo4Net.storeupgrade
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertNotNull;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.single;
+//	import static Neo4Net.helpers.collection.Iterators.single;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.impl.lucene.@explicit.LuceneIndexImplementation.EXACT_CONFIG;
+//	import static Neo4Net.index.impl.lucene.@explicit.LuceneIndexImplementation.EXACT_CONFIG;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.impl.lucene.@explicit.LuceneIndexImplementation.FULLTEXT_CONFIG;
+//	import static Neo4Net.index.impl.lucene.@explicit.LuceneIndexImplementation.FULLTEXT_CONFIG;
 
 	public class ExplicitIndexesUpgradeIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory testDir = org.Neo4Net.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.TestDirectory testDir = Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory TestDir = TestDirectory.testDirectory();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -73,7 +73,7 @@ namespace Neo4Net.storeupgrade
 		 public readonly ExpectedException ExpectedException = ExpectedException.none();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.SuppressOutput suppressOutput = org.Neo4Net.test.rule.SuppressOutput.suppressAll();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.SuppressOutput suppressOutput = Neo4Net.test.rule.SuppressOutput.suppressAll();
 		 public readonly SuppressOutput SuppressOutput = SuppressOutput.suppressAll();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -192,7 +192,7 @@ namespace Neo4Net.storeupgrade
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private static org.Neo4Net.function.Factory<org.Neo4Net.graphdb.Node> readNodes(final org.Neo4Net.graphdb.GraphDatabaseService db)
+//ORIGINAL LINE: private static Neo4Net.function.Factory<Neo4Net.graphdb.Node> readNodes(final Neo4Net.graphdb.GraphDatabaseService db)
 		 private static IFactory<Node> ReadNodes( IGraphDatabaseService db )
 		 {
 			  return new FactoryAnonymousInnerClass( db );
@@ -216,7 +216,7 @@ namespace Neo4Net.storeupgrade
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private static org.Neo4Net.function.Factory<org.Neo4Net.graphdb.Relationship> readRelationships(final org.Neo4Net.graphdb.GraphDatabaseService db)
+//ORIGINAL LINE: private static Neo4Net.function.Factory<Neo4Net.graphdb.Relationship> readRelationships(final Neo4Net.graphdb.GraphDatabaseService db)
 		 private static IFactory<Relationship> ReadRelationships( IGraphDatabaseService db )
 		 {
 			  return new FactoryAnonymousInnerClass2( db );

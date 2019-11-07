@@ -53,7 +53,7 @@ namespace Neo4Net.Cypher
 		 private const int CONNECTIONS = 100;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.DatabaseRule db = new org.Neo4Net.test.rule.ImpermanentDatabaseRule().withSetting(org.Neo4Net.graphdb.factory.GraphDatabaseSettings.query_statistics_divergence_threshold, "0.5").withSetting(org.Neo4Net.graphdb.factory.GraphDatabaseSettings.cypher_min_replan_interval, "1s");
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.DatabaseRule db = new Neo4Net.test.rule.ImpermanentDatabaseRule().withSetting(Neo4Net.graphdb.factory.GraphDatabaseSettings.query_statistics_divergence_threshold, "0.5").withSetting(Neo4Net.graphdb.factory.GraphDatabaseSettings.cypher_min_replan_interval, "1s");
 		 public readonly DatabaseRule Db = new ImpermanentDatabaseRule().withSetting(GraphDatabaseSettings.query_statistics_divergence_threshold, "0.5").withSetting(GraphDatabaseSettings.cypher_min_replan_interval, "1s");
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

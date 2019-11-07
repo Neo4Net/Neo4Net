@@ -166,7 +166,7 @@ namespace Neo4Net.GraphDb.impl.notification
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Java to C# Converter does not convert types within enums:
-//		 public final class Notification implements org.Neo4Net.graphdb.Notification
+//		 public final class Notification implements Neo4Net.graphdb.Notification
 	//	 {
 	//		  private final InputPosition position;
 	//		  private final String detailedDescription;

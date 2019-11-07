@@ -32,7 +32,7 @@ namespace Neo4Net.Cypher.Internal.evaluator
 		 private InternalExpressionEvaluator _evaluator = new SimpleInternalExpressionEvaluator();
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public <T> T evaluate(String expression, Class<T> type) throws EvaluationException
+//ORIGINAL LINE: public <T> T Evaluate(String expression, Class<T> type) throws EvaluationException
 		 public override T Evaluate<T>( string expression, Type type )
 		 {
 				 type = typeof( T );
@@ -45,7 +45,7 @@ namespace Neo4Net.Cypher.Internal.evaluator
 					throw new EvaluationException( "Cannot evaluate to type null" );
 			  }
 
-			  return Cast( Map( _evaluator.evaluate( expression ) ), type );
+			  return Cast( Map( _evaluator.Evaluate( expression ) ), type );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
@@ -65,7 +65,7 @@ namespace Neo4Net.Cypher.Internal.evaluator
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private Object map(org.Neo4Net.values.AnyValue value) throws EvaluationException
+//ORIGINAL LINE: private Object map(Neo4Net.values.AnyValue value) throws EvaluationException
 		 private object Map( AnyValue value )
 		 {
 			  try

@@ -157,7 +157,7 @@ namespace Neo4Net.causalclustering.routing.load_balancing
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void validate(org.Neo4Net.kernel.configuration.Config config, org.Neo4Net.logging.Log log) throws org.Neo4Net.graphdb.config.InvalidSettingException
+//ORIGINAL LINE: public void validate(Neo4Net.kernel.configuration.Config config, Neo4Net.logging.Log log) throws Neo4Net.graphdb.config.InvalidSettingException
 			  public override void Validate( Config config, Log log )
 			  {
 					Optional<string> invalidSetting = config.GetRaw( SettingFor( DUMMY_PLUGIN_NAME, DO_NOT_USE_THIS_CONFIG ) );

@@ -33,7 +33,7 @@ namespace Neo4Net.causalclustering.core
 	public class ClusterBindingHandler : LifecycleMessageHandler<Neo4Net.causalclustering.core.consensus.RaftMessages_ReceivedInstantClusterIdAwareMessage<JavaToDotNetGenericWildcard>>
 	{
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private final org.Neo4Net.causalclustering.messaging.LifecycleMessageHandler<org.Neo4Net.causalclustering.core.consensus.RaftMessages_ReceivedInstantClusterIdAwareMessage<?>> delegateHandler;
+//ORIGINAL LINE: private final Neo4Net.causalclustering.messaging.LifecycleMessageHandler<Neo4Net.causalclustering.core.consensus.RaftMessages_ReceivedInstantClusterIdAwareMessage<?>> delegateHandler;
 		 private readonly LifecycleMessageHandler<Neo4Net.causalclustering.core.consensus.RaftMessages_ReceivedInstantClusterIdAwareMessage<object>> _delegateHandler;
 		 private volatile ClusterId _boundClusterId;
 		 private readonly Log _log;
@@ -50,7 +50,7 @@ namespace Neo4Net.causalclustering.core
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void start(org.Neo4Net.causalclustering.identity.ClusterId clusterId) throws Throwable
+//ORIGINAL LINE: public void start(Neo4Net.causalclustering.identity.ClusterId clusterId) throws Throwable
 		 public override void Start( ClusterId clusterId )
 		 {
 			  this._boundClusterId = clusterId;

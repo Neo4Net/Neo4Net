@@ -24,7 +24,7 @@ namespace Neo4Net.GraphDb
 	using StandardExpander = Neo4Net.GraphDb.impl.StandardExpander;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.Direction.BOTH;
+//	import static Neo4Net.GraphDb.Direction.BOTH;
 
 	/// <summary>
 	/// A fluent builder for creating specialized <seealso cref="PathExpander path expanders"/>.

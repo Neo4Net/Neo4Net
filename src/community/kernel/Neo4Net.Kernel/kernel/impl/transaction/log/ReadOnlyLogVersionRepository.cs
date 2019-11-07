@@ -30,7 +30,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 		 private volatile bool _incrementVersionCalled;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public ReadOnlyLogVersionRepository(org.Neo4Net.io.pagecache.PageCache pageCache, org.Neo4Net.io.layout.DatabaseLayout databaseLayout) throws java.io.IOException
+//ORIGINAL LINE: public ReadOnlyLogVersionRepository(Neo4Net.io.pagecache.PageCache pageCache, Neo4Net.io.layout.DatabaseLayout databaseLayout) throws java.io.IOException
 		 public ReadOnlyLogVersionRepository( PageCache pageCache, DatabaseLayout databaseLayout )
 		 {
 			  File neoStore = databaseLayout.MetadataStore();
@@ -68,7 +68,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static long readLogVersion(org.Neo4Net.io.pagecache.PageCache pageCache, java.io.File neoStore) throws java.io.IOException
+//ORIGINAL LINE: private static long readLogVersion(Neo4Net.io.pagecache.PageCache pageCache, java.io.File neoStore) throws java.io.IOException
 		 private static long ReadLogVersion( PageCache pageCache, File neoStore )
 		 {
 			  try

@@ -37,7 +37,7 @@ namespace Neo4Net.backup.impl
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.mock;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.backup.impl.BackupSupportingClassesFactoryProvider.getProvidersByPriority;
+//	import static Neo4Net.backup.impl.BackupSupportingClassesFactoryProvider.getProvidersByPriority;
 	public class OnlineBackupCommandProviderTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

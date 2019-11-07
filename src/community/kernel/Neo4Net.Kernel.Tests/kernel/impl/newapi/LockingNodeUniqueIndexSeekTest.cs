@@ -26,7 +26,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 	using IndexQuery = Neo4Net.Kernel.Api.Internal.IndexQuery;
 	using IndexReference = Neo4Net.Kernel.Api.Internal.IndexReference;
 	using NodeValueIndexCursor = Neo4Net.Kernel.Api.Internal.NodeValueIndexCursor;
-	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
+	using SchemaDescriptorFactory = Neo4Net.Kernel.Api.schema.SchemaDescriptorFactory;
 	using Locks = Neo4Net.Kernel.impl.locking.Locks;
 	using Neo4Net.Kernel.Impl.Newapi.LockingNodeUniqueIndexSeek;
 	using LockTracer = Neo4Net.Kernel.Api.StorageEngine.@lock.LockTracer;
@@ -47,11 +47,11 @@ namespace Neo4Net.Kernel.Impl.Newapi
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.IndexQuery.exact;
+//	import static Neo4Net.Kernel.Api.Internal.IndexQuery.exact;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.locking.ResourceTypes.INDEX_ENTRY;
+//	import static Neo4Net.kernel.impl.locking.ResourceTypes.INDEX_ENTRY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.locking.ResourceTypes.indexEntryResourceId;
+//	import static Neo4Net.kernel.impl.locking.ResourceTypes.indexEntryResourceId;
 
 	public class LockingNodeUniqueIndexSeekTest
 	{

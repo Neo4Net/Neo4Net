@@ -31,8 +31,8 @@ namespace Neo4Net.Kernel.Impl.Api.state
 
 	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using Iterators = Neo4Net.Collections.Helpers.Iterators;
-	using PropertyKeyValue = Neo4Net.Kernel.api.properties.PropertyKeyValue;
-	using TransactionState = Neo4Net.Kernel.api.txstate.TransactionState;
+	using PropertyKeyValue = Neo4Net.Kernel.Api.properties.PropertyKeyValue;
+	using TransactionState = Neo4Net.Kernel.Api.txstate.TransactionState;
 	using StorageProperty = Neo4Net.Kernel.Api.StorageEngine.StorageProperty;
 	using TxStateVisitor = Neo4Net.Kernel.Api.StorageEngine.TxState.TxStateVisitor;
 	using Value = Neo4Net.Values.Storable.Value;

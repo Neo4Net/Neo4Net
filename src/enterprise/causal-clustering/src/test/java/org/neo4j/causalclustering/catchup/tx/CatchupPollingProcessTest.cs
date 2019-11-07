@@ -69,17 +69,17 @@ namespace Neo4Net.causalclustering.catchup.tx
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.catchup.tx.CatchupPollingProcess.State.PANIC;
+//	import static Neo4Net.causalclustering.catchup.tx.CatchupPollingProcess.State.PANIC;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.catchup.tx.CatchupPollingProcess.State.STORE_COPYING;
+//	import static Neo4Net.causalclustering.catchup.tx.CatchupPollingProcess.State.STORE_COPYING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.catchup.tx.CatchupPollingProcess.State.TX_PULLING;
+//	import static Neo4Net.causalclustering.catchup.tx.CatchupPollingProcess.State.TX_PULLING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.catchup.tx.CatchupPollingProcess.Timers.TX_PULLER_TIMER;
+//	import static Neo4Net.causalclustering.catchup.tx.CatchupPollingProcess.Timers.TX_PULLER_TIMER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.single;
+//	import static Neo4Net.helpers.collection.Iterables.single;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_ID;
+//	import static Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_ID;
 
 	public class CatchupPollingProcessTest
 	{

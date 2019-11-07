@@ -105,7 +105,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected FulltextIndexReader createSimpleReader(java.util.List<org.Neo4Net.kernel.api.impl.index.partition.AbstractIndexPartition> partitions) throws java.io.IOException
+//ORIGINAL LINE: protected FulltextIndexReader createSimpleReader(java.util.List<Neo4Net.kernel.api.impl.index.partition.AbstractIndexPartition> partitions) throws java.io.IOException
 		 protected internal override FulltextIndexReader CreateSimpleReader( IList<AbstractIndexPartition> partitions )
 		 {
 			  AbstractIndexPartition singlePartition = GetFirstPartition( partitions );
@@ -114,7 +114,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected FulltextIndexReader createPartitionedReader(java.util.List<org.Neo4Net.kernel.api.impl.index.partition.AbstractIndexPartition> partitions) throws java.io.IOException
+//ORIGINAL LINE: protected FulltextIndexReader createPartitionedReader(java.util.List<Neo4Net.kernel.api.impl.index.partition.AbstractIndexPartition> partitions) throws java.io.IOException
 		 protected internal override FulltextIndexReader CreatePartitionedReader( IList<AbstractIndexPartition> partitions )
 		 {
 			  IList<PartitionSearcher> searchers = AcquireSearchers( partitions );

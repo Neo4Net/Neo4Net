@@ -41,7 +41,7 @@ namespace Neo4Net.Server.rest
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertNotNull;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
+//	import static Neo4Net.helpers.collection.MapUtil.stringMap;
 
 	public class GetNodePropertiesIT : AbstractRestFunctionalDocTestBase
 	{
@@ -79,7 +79,7 @@ namespace Neo4Net.Server.rest
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldGetCorrectContentEncodingRetrievingProperties() throws org.Neo4Net.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @Test public void shouldGetCorrectContentEncodingRetrievingProperties() throws Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldGetCorrectContentEncodingRetrievingProperties()
 		 {
@@ -98,7 +98,7 @@ namespace Neo4Net.Server.rest
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldGetCorrectContentEncodingRetrievingPropertiesWithStreaming() throws org.Neo4Net.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @Test public void shouldGetCorrectContentEncodingRetrievingPropertiesWithStreaming() throws Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldGetCorrectContentEncodingRetrievingPropertiesWithStreaming()
 		 {
@@ -109,7 +109,7 @@ namespace Neo4Net.Server.rest
 
 			  string IEntity = JsonHelper.createJsonFrom( Collections.singletonMap( "foo", complicatedString ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final RestRequest request = req.header(org.Neo4Net.server.rest.repr.formats.StreamingJsonFormat.STREAM_HEADER, "true");
+//ORIGINAL LINE: final RestRequest request = req.header(Neo4Net.server.rest.repr.formats.StreamingJsonFormat.STREAM_HEADER, "true");
 			  RestRequest request = _req.header( StreamingJsonFormat.STREAM_HEADER, "true" );
 			  JaxRsResponse createResponse = request.Post( _functionalTestHelper.dataUri() + "node/", IEntity );
 			  string response = ( string ) JsonHelper.readJson( request.Get( GetPropertyUri( createResponse.Location.ToString(), "foo" ), new MediaType("application", "json", stringMap("stream", "true")) ).Entity );

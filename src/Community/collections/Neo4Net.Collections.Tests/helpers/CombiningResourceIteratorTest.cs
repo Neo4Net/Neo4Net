@@ -36,9 +36,9 @@ namespace Neo4Net.Collections.Helpers
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verify;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.asResourceIterator;
+//	import static Neo4Net.helpers.collection.Iterators.asResourceIterator;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.iterator;
+//	import static Neo4Net.helpers.collection.Iterators.iterator;
 
 	internal class CombiningResourceIteratorTest
 	{
@@ -47,8 +47,8 @@ namespace Neo4Net.Collections.Helpers
 		 internal virtual void ShouldNotCloseDuringIteration()
 		 {
 			  // Given
-			  ResourceIterator<long> it1 = spy( asResourceIterator( iterator( 1L, 2L, 3L ) ) );
-			  ResourceIterator<long> it2 = spy( asResourceIterator( iterator( 5L, 6L, 7L ) ) );
+			  IResourceIterator<long> it1 = spy( asResourceIterator( iterator( 1L, 2L, 3L ) ) );
+			  IResourceIterator<long> it2 = spy( asResourceIterator( iterator( 5L, 6L, 7L ) ) );
 			  CombiningResourceIterator<long> combingIterator = new CombiningResourceIterator<long>( iterator( it1, it2 ) );
 
 			  // When I iterate through it, things come back in the right order
@@ -64,8 +64,8 @@ namespace Neo4Net.Collections.Helpers
 		 internal virtual void ClosesAllIteratorsOnShutdown()
 		 {
 			  // Given
-			  ResourceIterator<long> it1 = spy( asResourceIterator( iterator( 1L, 2L, 3L ) ) );
-			  ResourceIterator<long> it2 = spy( asResourceIterator( iterator( 5L, 6L, 7L ) ) );
+			  IResourceIterator<long> it1 = spy( asResourceIterator( iterator( 1L, 2L, 3L ) ) );
+			  IResourceIterator<long> it2 = spy( asResourceIterator( iterator( 5L, 6L, 7L ) ) );
 			  CombiningResourceIterator<long> combingIterator = new CombiningResourceIterator<long>( iterator( it1, it2 ) );
 
 			  // Given I iterate through half of it
@@ -89,8 +89,8 @@ namespace Neo4Net.Collections.Helpers
 		 internal virtual void ShouldHandleSingleItemIterators()
 		 {
 			  // Given
-			  ResourceIterator<long> it1 = asResourceIterator( iterator( 1L ) );
-			  ResourceIterator<long> it2 = asResourceIterator( iterator( 5L, 6L, 7L ) );
+			  IResourceIterator<long> it1 = asResourceIterator( iterator( 1L ) );
+			  IResourceIterator<long> it2 = asResourceIterator( iterator( 5L, 6L, 7L ) );
 			  CombiningResourceIterator<long> combingIterator = new CombiningResourceIterator<long>( iterator( it1, it2 ) );
 
 			  // When I iterate through it, things come back in the right order

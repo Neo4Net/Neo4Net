@@ -1,4 +1,6 @@
-﻿/*
+﻿using System.Collections.Generic;
+
+/*
  * Copyright © 2018-2020 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
@@ -17,22 +19,26 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Kernel.Api.Internal.Schema
-{
-	/// <summary>
-	/// A SchemaProcessor performs from side-effect processing on a SchemaDescriptor. To get the concrete type of the
-	/// target schema descriptor, a visitor pattern is used to bounce the code path into the correct overloaded
-	/// processSpecific variant. See SchemaComputer.
-	/// </summary>
-	public interface ISchemaProcessor
-	{
-		 /*
-		 The following section contains the overloaded process signatures for all concrete SchemaDescriptor implementers.
-		 Add new overloaded methods here when adding more concrete SchemaDescriptors.
-		  */
-		 void ProcessSpecific( LabelSchemaDescriptor schema );
-		 void ProcessSpecific( RelationTypeSchemaDescriptor schema );
-		 void ProcessSpecific( SchemaDescriptor schema );
-	}
 
+namespace Neo4Net.Dbms.database
+{
+   using GraphDatabaseFacade = Neo4Net.Kernel.impl.factory.GraphDatabaseFacade;
+   using Lifecycle = Neo4Net.Kernel.Lifecycle.ILifecycle;
+
+   public interface IDatabaseManager : Lifecycle
+   {
+      Optional<GraphDatabaseFacade> GetDatabaseFacade(string name);
+
+      GraphDatabaseFacade CreateDatabase(string name);
+
+      /// <summary>
+      /// Shutdown database with specified name. </summary>
+      /// <param name="name"> database name to shutdown </param>
+      void ShutdownDatabase(string name);
+
+      /// <summary>
+      /// Return sorted list of known database names </summary>
+      /// <returns> sorted list of known database names </returns>
+      IList<string> ListDatabases();
+   }
 }

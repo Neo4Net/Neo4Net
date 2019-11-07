@@ -37,7 +37,7 @@ namespace Neo4Net.Configuration
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
+//	import static Neo4Net.helpers.collection.MapUtil.stringMap;
 
 	internal class LoadableConfigTest
 	{
@@ -54,7 +54,7 @@ namespace Neo4Net.Configuration
 			  assertEquals( 4, options.Count );
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.graphdb.config.SettingGroup<?> integerSetting = options.get(0).settingGroup();
+//ORIGINAL LINE: Neo4Net.graphdb.config.SettingGroup<?> integerSetting = options.get(0).settingGroup();
 			  SettingGroup<object> integerSetting = options[0].SettingGroup();
 			  assertEquals( 1, integerSetting.Values( emptyMap() )[TestConfig.integer.name()] );
 			  assertEquals( 123, integerSetting.Values( config )[TestConfig.integer.name()] );
@@ -64,7 +64,7 @@ namespace Neo4Net.Configuration
 			  assertEquals( null, integerSetting.Replacement() );
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.graphdb.config.SettingGroup<?> stringSetting = options.get(1).settingGroup();
+//ORIGINAL LINE: Neo4Net.graphdb.config.SettingGroup<?> stringSetting = options.get(1).settingGroup();
 			  SettingGroup<object> stringSetting = options[1].SettingGroup();
 			  assertEquals( "bob", stringSetting.Values( emptyMap() )[TestConfig.@string.name()] );
 			  assertEquals( "bah", stringSetting.Values( config )[TestConfig.@string.name()] );
@@ -74,7 +74,7 @@ namespace Neo4Net.Configuration
 			  assertEquals( null, stringSetting.Replacement() );
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.graphdb.config.SettingGroup<?> oldStringSetting = options.get(2).settingGroup();
+//ORIGINAL LINE: Neo4Net.graphdb.config.SettingGroup<?> oldStringSetting = options.get(2).settingGroup();
 			  SettingGroup<object> oldStringSetting = options[2].SettingGroup();
 			  assertEquals( "tim", oldStringSetting.Values( emptyMap() )[TestConfig.oldString.name()] );
 			  assertEquals( "moo", oldStringSetting.Values( config )[TestConfig.oldString.name()] );
@@ -84,7 +84,7 @@ namespace Neo4Net.Configuration
 			  assertEquals( TestConfig.@string.name(), oldStringSetting.Replacement().get() );
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.graphdb.config.SettingGroup<?> dynamicSetting = options.get(3).settingGroup();
+//ORIGINAL LINE: Neo4Net.graphdb.config.SettingGroup<?> dynamicSetting = options.get(3).settingGroup();
 			  SettingGroup<object> dynamicSetting = options[3].SettingGroup();
 			  assertEquals( "defaultDynamic", dynamicSetting.Values( emptyMap() )[TestConfig.dynamic.name()] );
 			  assertEquals( "foo", dynamicSetting.Values( config )[TestConfig.dynamic.name()] );
@@ -219,7 +219,7 @@ namespace Neo4Net.Configuration
 			  }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unused") @Description("A private setting which is not accessible") private static final org.Neo4Net.graphdb.config.Setting<String> ignoredSetting = new StringSetting()
+//ORIGINAL LINE: @SuppressWarnings("unused") @Description("A private setting which is not accessible") private static final Neo4Net.graphdb.config.Setting<String> ignoredSetting = new StringSetting()
 			  [Description("A private setting which is not accessible")]
 			  internal static readonly Setting<string> ignoredSetting = new StringSettingAnonymousInnerClass3();
 
@@ -255,7 +255,7 @@ namespace Neo4Net.Configuration
 			  }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("A dynamic string setting") @Dynamic public static final org.Neo4Net.graphdb.config.Setting<String> dynamic = new StringSetting()
+//ORIGINAL LINE: @Description("A dynamic string setting") @Dynamic public static final Neo4Net.graphdb.config.Setting<String> dynamic = new StringSetting()
 			  [Description("A dynamic string setting")]
 			  public static readonly Setting<string> dynamic = new StringSettingAnonymousInnerClass4();
 

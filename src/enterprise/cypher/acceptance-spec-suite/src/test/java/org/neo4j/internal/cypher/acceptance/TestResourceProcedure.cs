@@ -50,7 +50,7 @@ namespace Neo4Net.Internal.cypher.acceptance
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Context public org.Neo4Net.graphdb.GraphDatabaseService db;
+//ORIGINAL LINE: @Context public Neo4Net.graphdb.GraphDatabaseService db;
 		 public IGraphDatabaseService Db;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -112,10 +112,10 @@ namespace Neo4Net.Internal.cypher.acceptance
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Procedure(name = "org.Neo4Net.test.testResourceProcedure", mode = org.Neo4Net.procedure.Mode.READ) @Description("Returns a stream of integers from 1 to the given argument") public java.util.stream.Stream<Output> testResourceProcedure(@Name(value = "resultCount", defaultValue = "4") long resultCount) throws Exception
+//ORIGINAL LINE: @Procedure(name = "Neo4Net.test.testResourceProcedure", mode = Neo4Net.procedure.Mode.READ) @Description("Returns a stream of integers from 1 to the given argument") public java.util.stream.Stream<Output> testResourceProcedure(@Name(value = "resultCount", defaultValue = "4") long resultCount) throws Exception
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 //JAVA TO C# CONVERTER NOTE: Members cannot have the same name as their enclosing type:
-		 [Procedure(name : "org.Neo4Net.test.testResourceProcedure", mode : Neo4Net.Procedure.Mode.READ), Description("Returns a stream of integers from 1 to the given argument")]
+		 [Procedure(name : "Neo4Net.test.testResourceProcedure", mode : Neo4Net.Procedure.Mode.READ), Description("Returns a stream of integers from 1 to the given argument")]
 		 public virtual Stream<Output> TestResourceProcedureConflict( long resultCount )
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Method reference constructor syntax is not converted by Java to C# Converter:
@@ -129,9 +129,9 @@ namespace Neo4Net.Internal.cypher.acceptance
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Procedure(name = "org.Neo4Net.test.testFailingResourceProcedure", mode = org.Neo4Net.procedure.Mode.READ) @Description("Returns a stream of integers from 1 to the given argument, but throws an exception when reaching the last element") public java.util.stream.Stream<Output> testFailingResourceProcedure(@Name(value = "failCount", defaultValue = "3") long failCount) throws Exception
+//ORIGINAL LINE: @Procedure(name = "Neo4Net.test.testFailingResourceProcedure", mode = Neo4Net.procedure.Mode.READ) @Description("Returns a stream of integers from 1 to the given argument, but throws an exception when reaching the last element") public java.util.stream.Stream<Output> testFailingResourceProcedure(@Name(value = "failCount", defaultValue = "3") long failCount) throws Exception
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-		 [Procedure(name : "org.Neo4Net.test.testFailingResourceProcedure", mode : Neo4Net.Procedure.Mode.READ), Description("Returns a stream of integers from 1 to the given argument, but throws an exception when reaching the last element")]
+		 [Procedure(name : "Neo4Net.test.testFailingResourceProcedure", mode : Neo4Net.Procedure.Mode.READ), Description("Returns a stream of integers from 1 to the given argument, but throws an exception when reaching the last element")]
 		 public virtual Stream<Output> TestFailingResourceProcedure( long failCount )
 		 {
 			  IEnumerator<Output> failingIterator = new IteratorAnonymousInnerClass( this, failCount );
@@ -176,9 +176,9 @@ namespace Neo4Net.Internal.cypher.acceptance
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Procedure(name = "org.Neo4Net.test.testOnCloseFailingResourceProcedure", mode = org.Neo4Net.procedure.Mode.READ) @Description("Returns a stream of integers from 1 to the given argument. Throws an exception on close.") public java.util.stream.Stream<Output> testOnCloseFailingResourceProcedure(@Name(value = "resultCount", defaultValue = "4") long resultCount) throws Exception
+//ORIGINAL LINE: @Procedure(name = "Neo4Net.test.testOnCloseFailingResourceProcedure", mode = Neo4Net.procedure.Mode.READ) @Description("Returns a stream of integers from 1 to the given argument. Throws an exception on close.") public java.util.stream.Stream<Output> testOnCloseFailingResourceProcedure(@Name(value = "resultCount", defaultValue = "4") long resultCount) throws Exception
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-		 [Procedure(name : "org.Neo4Net.test.testOnCloseFailingResourceProcedure", mode : Neo4Net.Procedure.Mode.READ), Description("Returns a stream of integers from 1 to the given argument. Throws an exception on close.")]
+		 [Procedure(name : "Neo4Net.test.testOnCloseFailingResourceProcedure", mode : Neo4Net.Procedure.Mode.READ), Description("Returns a stream of integers from 1 to the given argument. Throws an exception on close.")]
 		 public virtual Stream<Output> TestOnCloseFailingResourceProcedure( long resultCount )
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Method reference constructor syntax is not converted by Java to C# Converter:
@@ -193,8 +193,8 @@ namespace Neo4Net.Internal.cypher.acceptance
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @UserFunction(name = "org.Neo4Net.test.fail") @Description("org.Neo4Net.test.fail") public String fail(@Name(value = "input") String input)
-		 [UserFunction(name : "org.Neo4Net.test.fail"), Description("org.Neo4Net.test.fail")]
+//ORIGINAL LINE: @UserFunction(name = "Neo4Net.test.fail") @Description("Neo4Net.test.fail") public String fail(@Name(value = "input") String input)
+		 [UserFunction(name : "Neo4Net.test.fail"), Description("Neo4Net.test.fail")]
 		 public virtual string Fail( string input )
 		 {
 			  throw new SimulateFailureException();

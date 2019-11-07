@@ -40,9 +40,9 @@ namespace Neo4Net.Server.rest
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.hasProperty;
+//	import static Neo4Net.test.mockito.matcher.Neo4NetMatchers.hasProperty;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.inTx;
+//	import static Neo4Net.test.mockito.matcher.Neo4NetMatchers.inTx;
 
 	public class SetNodePropertiesIT : AbstractRestFunctionalTestBase
 	{
@@ -97,7 +97,7 @@ namespace Neo4Net.Server.rest
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.net.URI getPropertyUri(org.Neo4Net.graphdb.Node node, String key) throws Exception
+//ORIGINAL LINE: private java.net.URI getPropertyUri(Neo4Net.graphdb.Node node, String key) throws Exception
 		 private URI GetPropertyUri( Node node, string key )
 		 {
 			  return new URI( GetPropertiesUri( node ) + "/" + key );

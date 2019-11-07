@@ -31,13 +31,13 @@ namespace Neo4Net.backup.impl
 	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.backup.impl.BackupPageCacheContainer.of;
+//	import static Neo4Net.backup.impl.BackupPageCacheContainer.of;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.pagecache.ConfigurableStandalonePageCacheFactory.createPageCache;
+//	import static Neo4Net.kernel.impl.pagecache.ConfigurableStandalonePageCacheFactory.createPageCache;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
+//	import static Neo4Net.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.logging.FormattedLogProvider.toOutputStream;
+//	import static Neo4Net.logging.FormattedLogProvider.toOutputStream;
 
 	public sealed class BackupProtocolServiceFactory
 	{

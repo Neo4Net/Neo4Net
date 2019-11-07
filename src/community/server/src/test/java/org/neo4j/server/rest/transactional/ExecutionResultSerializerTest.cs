@@ -72,33 +72,33 @@ namespace Neo4Net.Server.rest.transactional
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.asSet;
+//	import static Neo4Net.helpers.collection.Iterators.asSet;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.map;
+//	import static Neo4Net.helpers.collection.MapUtil.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.domain.JsonHelper.jsonNode;
+//	import static Neo4Net.server.rest.domain.JsonHelper.jsonNode;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.domain.JsonHelper.readJson;
+//	import static Neo4Net.server.rest.domain.JsonHelper.readJson;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.Property.property;
+//	import static Neo4Net.test.Property.property;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.mockito.mock.GraphMock.link;
+//	import static Neo4Net.test.mockito.mock.GraphMock.link;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.mockito.mock.GraphMock.node;
+//	import static Neo4Net.test.mockito.mock.GraphMock.node;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.mockito.mock.GraphMock.path;
+//	import static Neo4Net.test.mockito.mock.GraphMock.path;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.mockito.mock.GraphMock.relationship;
+//	import static Neo4Net.test.mockito.mock.GraphMock.relationship;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.mockito.mock.Properties.properties;
+//	import static Neo4Net.test.mockito.mock.Properties.properties;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.mockito.mock.SpatialMocks.mockCartesian;
+//	import static Neo4Net.test.mockito.mock.SpatialMocks.mockCartesian;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.mockito.mock.SpatialMocks.mockCartesian_3D;
+//	import static Neo4Net.test.mockito.mock.SpatialMocks.mockCartesian_3D;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.mockito.mock.SpatialMocks.mockWGS84;
+//	import static Neo4Net.test.mockito.mock.SpatialMocks.mockWGS84;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.mockito.mock.SpatialMocks.mockWGS84_3D;
+//	import static Neo4Net.test.mockito.mock.SpatialMocks.mockWGS84_3D;
 
 	public class ExecutionResultSerializerTest : TxStateCheckerTestSupport
 	{
@@ -786,7 +786,7 @@ namespace Neo4Net.Server.rest.transactional
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.codehaus.jackson.JsonNode assertIsPlanRoot(String result) throws org.Neo4Net.server.rest.domain.JsonParseException
+//ORIGINAL LINE: private org.codehaus.jackson.JsonNode assertIsPlanRoot(String result) throws Neo4Net.server.rest.domain.JsonParseException
 		 private JsonNode AssertIsPlanRoot( string result )
 		 {
 			  JsonNode json = jsonNode( result );
@@ -802,7 +802,7 @@ namespace Neo4Net.Server.rest.transactional
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private java.util.Map<String, ?> planRootMap(String resultString) throws org.Neo4Net.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private java.util.Map<String, ?> planRootMap(String resultString) throws Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		 private IDictionary<string, ?> PlanRootMap( string resultString )
@@ -927,21 +927,21 @@ namespace Neo4Net.Server.rest.transactional
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SafeVarargs private static org.Neo4Net.graphdb.Result mockExecutionResult(java.util.Map<String, Object>... rows)
+//ORIGINAL LINE: @SafeVarargs private static Neo4Net.graphdb.Result mockExecutionResult(java.util.Map<String, Object>... rows)
 		 private static Result MockExecutionResult( params IDictionary<string, object>[] rows )
 		 {
 			  return MockExecutionResult( null, rows );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SafeVarargs private static org.Neo4Net.graphdb.Result mockExecutionResult(org.Neo4Net.graphdb.ExecutionPlanDescription planDescription, java.util.Map<String,Object>... rows)
+//ORIGINAL LINE: @SafeVarargs private static Neo4Net.graphdb.Result mockExecutionResult(Neo4Net.graphdb.ExecutionPlanDescription planDescription, java.util.Map<String,Object>... rows)
 		 private static Result MockExecutionResult( ExecutionPlanDescription planDescription, params IDictionary<string, object>[] rows )
 		 {
 			  return MockExecutionResult( planDescription, Collections.emptyList(), rows );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SafeVarargs private static org.Neo4Net.graphdb.Result mockExecutionResult(org.Neo4Net.graphdb.ExecutionPlanDescription planDescription, Iterable<org.Neo4Net.graphdb.Notification> notifications, java.util.Map<String, Object>... rows)
+//ORIGINAL LINE: @SafeVarargs private static Neo4Net.graphdb.Result mockExecutionResult(Neo4Net.graphdb.ExecutionPlanDescription planDescription, Iterable<Neo4Net.graphdb.Notification> notifications, java.util.Map<String, Object>... rows)
 		 private static Result MockExecutionResult( ExecutionPlanDescription planDescription, IEnumerable<Notification> notifications, params IDictionary<string, object>[] rows )
 		 {
 			  ISet<string> keys = new SortedSet<string>();

@@ -37,7 +37,7 @@ namespace Neo4Net.GraphDb
 	using LabelSet = Neo4Net.Kernel.Api.Internal.LabelSet;
 	using NodeCursor = Neo4Net.Kernel.Api.Internal.NodeCursor;
 	using PropertyCursor = Neo4Net.Kernel.Api.Internal.PropertyCursor;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using ThreadToStatementContextBridge = Neo4Net.Kernel.impl.core.ThreadToStatementContextBridge;
 	using DatabaseInfo = Neo4Net.Kernel.impl.factory.DatabaseInfo;
@@ -71,33 +71,33 @@ namespace Neo4Net.GraphDb
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.Label.label;
+//	import static Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.asList;
+//	import static Neo4Net.helpers.collection.Iterables.asList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.map;
+//	import static Neo4Net.helpers.collection.Iterables.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.asSet;
+//	import static Neo4Net.helpers.collection.Iterators.asSet;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.hasLabel;
+//	import static Neo4Net.test.mockito.matcher.Neo4NetMatchers.hasLabel;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.hasLabels;
+//	import static Neo4Net.test.mockito.matcher.Neo4NetMatchers.hasLabels;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.hasNoLabels;
+//	import static Neo4Net.test.mockito.matcher.Neo4NetMatchers.hasNoLabels;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.hasNoNodes;
+//	import static Neo4Net.test.mockito.matcher.Neo4NetMatchers.hasNoNodes;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.hasNodes;
+//	import static Neo4Net.test.mockito.matcher.Neo4NetMatchers.hasNodes;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.inTx;
+//	import static Neo4Net.test.mockito.matcher.Neo4NetMatchers.inTx;
 
 	public class LabelsAcceptanceTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.ImpermanentDatabaseRule dbRule = new org.Neo4Net.test.rule.ImpermanentDatabaseRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.ImpermanentDatabaseRule dbRule = new Neo4Net.test.rule.ImpermanentDatabaseRule();
 		 public readonly ImpermanentDatabaseRule DbRule = new ImpermanentDatabaseRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.TestDirectory testDirectory = Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory TestDirectory = TestDirectory.testDirectory();
 
 		 private enum Labels
@@ -833,7 +833,7 @@ namespace Neo4Net.GraphDb
 		 private IGraphDatabaseService BeansAPIWithNoMoreLabelIds()
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.test.impl.EphemeralIdGenerator.Factory idFactory = new org.Neo4Net.test.impl.EphemeralIdGenerator.Factory()
+//ORIGINAL LINE: final Neo4Net.test.impl.EphemeralIdGenerator.Factory idFactory = new Neo4Net.test.impl.EphemeralIdGenerator.Factory()
 			  EphemeralIdGenerator.Factory idFactory = new FactoryAnonymousInnerClass( this );
 
 			  TestGraphDatabaseFactory dbFactory = new TestGraphDatabaseFactoryAnonymousInnerClass( this, idFactory );
@@ -899,7 +899,7 @@ namespace Neo4Net.GraphDb
 			 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: protected org.Neo4Net.graphdb.factory.GraphDatabaseBuilder.DatabaseCreator createImpermanentDatabaseCreator(final java.io.File storeDir, final org.Neo4Net.test.TestGraphDatabaseFactoryState state)
+//ORIGINAL LINE: protected Neo4Net.graphdb.factory.GraphDatabaseBuilder.DatabaseCreator createImpermanentDatabaseCreator(final java.io.File storeDir, final Neo4Net.test.TestGraphDatabaseFactoryState state)
 			 protected internal override GraphDatabaseBuilder.DatabaseCreator createImpermanentDatabaseCreator( File storeDir, TestGraphDatabaseFactoryState state )
 			 {
 				  return new DatabaseCreatorAnonymousInnerClass( this, storeDir, state );

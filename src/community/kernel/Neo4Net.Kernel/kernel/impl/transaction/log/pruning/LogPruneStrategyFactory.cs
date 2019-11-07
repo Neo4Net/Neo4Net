@@ -26,7 +26,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.pruning
 	using VisibleForTesting = Neo4Net.Utils.VisibleForTesting;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.pruning.ThresholdConfigParser.parse;
+//	import static Neo4Net.kernel.impl.transaction.log.pruning.ThresholdConfigParser.parse;
 
 	public class LogPruneStrategyFactory
 	{
@@ -78,7 +78,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.pruning
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @VisibleForTesting static Threshold getThresholdByType(org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, java.time.Clock clock, org.Neo4Net.kernel.impl.transaction.log.pruning.ThresholdConfigParser.ThresholdConfigValue value, String originalConfigValue)
+//ORIGINAL LINE: @VisibleForTesting static Threshold getThresholdByType(Neo4Net.io.fs.FileSystemAbstraction fileSystem, java.time.Clock clock, Neo4Net.kernel.impl.transaction.log.pruning.ThresholdConfigParser.ThresholdConfigValue value, String originalConfigValue)
 		 internal static Threshold GetThresholdByType( FileSystemAbstraction fileSystem, Clock clock, ThresholdConfigValue value, string originalConfigValue )
 		 {
 			  long thresholdValue = value.Value;

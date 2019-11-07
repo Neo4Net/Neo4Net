@@ -60,16 +60,16 @@ namespace Neo4Net.Server.security.enterprise.auth.plugin
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.Matchers.equalTo;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.Transaction_Type.@explicit;
+//	import static Neo4Net.Kernel.Api.Internal.Transaction_Type.@explicit;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.security.auth.BasicAuthManagerTest.password;
+//	import static Neo4Net.server.security.auth.BasicAuthManagerTest.password;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.security.auth.SecurityTestUtils.authToken;
+//	import static Neo4Net.server.security.auth.SecurityTestUtils.authToken;
 
 	public class PropertyLevelSecurityIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.TestDirectory testDirectory = Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public TestDirectory TestDirectory = TestDirectory.testDirectory();
 
 		 private GraphDatabaseFacade _db;
@@ -622,7 +622,7 @@ namespace Neo4Net.Server.security.enterprise.auth.plugin
 		 public class TestProcedure
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Context public org.Neo4Net.graphdb.GraphDatabaseService db;
+//ORIGINAL LINE: @Context public Neo4Net.graphdb.GraphDatabaseService db;
 			  public IGraphDatabaseService Db;
 
 			  [Procedure(name : "test.getAlias", mode : Neo4Net.Procedure.Mode.READ)]

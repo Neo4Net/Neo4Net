@@ -22,19 +22,19 @@ namespace Neo4Net.Kernel.builtinprocs
 	using Neo4Net.Collections;
 	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
 	using QualifiedName = Neo4Net.Kernel.Api.Internal.procs.QualifiedName;
-	using ResourceTracker = Neo4Net.Kernel.api.ResourceTracker;
-	using CallableProcedure = Neo4Net.Kernel.api.proc.CallableProcedure;
-	using Context = Neo4Net.Kernel.api.proc.Context;
+	using ResourceTracker = Neo4Net.Kernel.Api.ResourceTracker;
+	using CallableProcedure = Neo4Net.Kernel.Api.Procs.CallableProcedure;
+	using Context = Neo4Net.Kernel.Api.Procs.Context;
 	using Mode = Neo4Net.Procedure.Mode;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.asRawIterator;
+//	import static Neo4Net.helpers.collection.Iterators.asRawIterator;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes.NTList;
+//	import static Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes.NTList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes.NTString;
+//	import static Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes.NTString;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.procs.ProcedureSignature.procedureSignature;
+//	import static Neo4Net.Kernel.Api.Internal.procs.ProcedureSignature.procedureSignature;
 
 	/// <summary>
 	/// This procedure lists "components" and their version.
@@ -50,7 +50,7 @@ namespace Neo4Net.Kernel.builtinprocs
 	/// This would include things like Kernel, Storage Engine, Query Engines,
 	/// Bolt protocol versions et cetera.
 	/// </summary>
-	public class ListComponentsProcedure : Neo4Net.Kernel.api.proc.CallableProcedure_BasicProcedure
+	public class ListComponentsProcedure : Neo4Net.Kernel.Api.Procs.CallableProcedure_BasicProcedure
 	{
 		 private readonly string _Neo4NetVersion;
 		 private readonly string _Neo4NetEdition;
@@ -62,7 +62,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.collection.RawIterator<Object[],org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException> apply(org.Neo4Net.kernel.api.proc.Context ctx, Object[] input, org.Neo4Net.kernel.api.ResourceTracker resourceTracker) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
+//ORIGINAL LINE: public Neo4Net.collection.RawIterator<Object[],Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException> apply(Neo4Net.kernel.api.proc.Context ctx, Object[] input, Neo4Net.kernel.api.ResourceTracker resourceTracker) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 		 public override RawIterator<object[], ProcedureException> Apply( Context ctx, object[] input, ResourceTracker resourceTracker )
 		 {
 			  return asRawIterator( singletonList( new object[]{ "Neo4Net Kernel", singletonList( _Neo4NetVersion ), _Neo4NetEdition } ).GetEnumerator() );

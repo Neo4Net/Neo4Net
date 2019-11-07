@@ -53,14 +53,14 @@ namespace Neo4Net.backup.impl
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void copy(org.Neo4Net.helpers.AdvertisedSocketAddress fromAddress, org.Neo4Net.causalclustering.identity.StoreId expectedStoreId, org.Neo4Net.io.layout.DatabaseLayout databaseLayout) throws org.Neo4Net.causalclustering.catchup.storecopy.StoreCopyFailedException
+//ORIGINAL LINE: void copy(Neo4Net.helpers.AdvertisedSocketAddress fromAddress, Neo4Net.causalclustering.identity.StoreId expectedStoreId, Neo4Net.io.layout.DatabaseLayout databaseLayout) throws Neo4Net.causalclustering.catchup.storecopy.StoreCopyFailedException
 		 internal virtual void Copy( AdvertisedSocketAddress fromAddress, StoreId expectedStoreId, DatabaseLayout databaseLayout )
 		 {
 			  _remoteStore.copy( new Neo4Net.causalclustering.catchup.CatchupAddressProvider_SingleAddressProvider( fromAddress ), expectedStoreId, databaseLayout, true );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.Neo4Net.causalclustering.catchup.CatchupResult tryCatchingUp(org.Neo4Net.helpers.AdvertisedSocketAddress fromAddress, org.Neo4Net.causalclustering.identity.StoreId expectedStoreId, org.Neo4Net.io.layout.DatabaseLayout databaseLayout) throws org.Neo4Net.causalclustering.catchup.storecopy.StoreCopyFailedException
+//ORIGINAL LINE: Neo4Net.causalclustering.catchup.CatchupResult tryCatchingUp(Neo4Net.helpers.AdvertisedSocketAddress fromAddress, Neo4Net.causalclustering.identity.StoreId expectedStoreId, Neo4Net.io.layout.DatabaseLayout databaseLayout) throws Neo4Net.causalclustering.catchup.storecopy.StoreCopyFailedException
 		 internal virtual CatchupResult TryCatchingUp( AdvertisedSocketAddress fromAddress, StoreId expectedStoreId, DatabaseLayout databaseLayout )
 		 {
 			  try
@@ -84,7 +84,7 @@ namespace Neo4Net.backup.impl
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.causalclustering.identity.StoreId fetchStoreId(org.Neo4Net.helpers.AdvertisedSocketAddress fromAddress) throws org.Neo4Net.causalclustering.catchup.storecopy.StoreIdDownloadFailedException
+//ORIGINAL LINE: public Neo4Net.causalclustering.identity.StoreId fetchStoreId(Neo4Net.helpers.AdvertisedSocketAddress fromAddress) throws Neo4Net.causalclustering.catchup.storecopy.StoreIdDownloadFailedException
 		 public virtual StoreId FetchStoreId( AdvertisedSocketAddress fromAddress )
 		 {
 			  return _storeCopyClient.fetchStoreId( fromAddress );

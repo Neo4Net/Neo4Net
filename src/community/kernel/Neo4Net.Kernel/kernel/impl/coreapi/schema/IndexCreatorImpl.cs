@@ -61,7 +61,7 @@ namespace Neo4Net.Kernel.impl.coreapi.schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.GraphDb.Schema.IndexDefinition create() throws org.Neo4Net.graphdb.ConstraintViolationException
+//ORIGINAL LINE: public Neo4Net.GraphDb.Schema.IndexDefinition create() throws Neo4Net.graphdb.ConstraintViolationException
 		 public override IndexDefinition Create()
 		 {
 			  AssertInUnterminatedTransaction();

@@ -34,15 +34,15 @@ namespace Neo4Net.causalclustering.core.consensus.explorer
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.ReplicatedInteger.ValueOf;
+//	import static Neo4Net.causalclustering.core.consensus.ReplicatedInteger.ValueOf;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.explorer.ClusterSafetyViolations.inconsistentCommittedLogEntries;
+//	import static Neo4Net.causalclustering.core.consensus.explorer.ClusterSafetyViolations.inconsistentCommittedLogEntries;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.explorer.ClusterSafetyViolations.multipleLeadersInSameTerm;
+//	import static Neo4Net.causalclustering.core.consensus.explorer.ClusterSafetyViolations.multipleLeadersInSameTerm;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.identity.RaftTestMember.member;
+//	import static Neo4Net.causalclustering.identity.RaftTestMember.member;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.asSet;
+//	import static Neo4Net.helpers.collection.Iterators.asSet;
 
 	public class ClusterSafetyViolationsTest
 	{
@@ -182,7 +182,7 @@ namespace Neo4Net.causalclustering.core.consensus.explorer
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void commit(ClusterState clusterState, org.Neo4Net.causalclustering.identity.MemberId member, long commitIndex) throws java.io.IOException
+//ORIGINAL LINE: private void commit(ClusterState clusterState, Neo4Net.causalclustering.identity.MemberId member, long commitIndex) throws java.io.IOException
 		 private void Commit( ClusterState clusterState, MemberId member, long commitIndex )
 		 {
 			  ComparableRaftState state = clusterState.States[member];

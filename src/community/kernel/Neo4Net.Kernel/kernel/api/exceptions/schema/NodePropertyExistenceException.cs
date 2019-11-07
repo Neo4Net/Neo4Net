@@ -23,7 +23,7 @@ namespace Neo4Net.Kernel.Api.Exceptions.schema
 	using ConstraintValidationException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.ConstraintValidationException;
 	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.LabelSchemaDescriptor;
 	using SchemaUtil = Neo4Net.Kernel.Api.Internal.Schema.SchemaUtil;
-	using ConstraintDescriptorFactory = Neo4Net.Kernel.api.schema.constraints.ConstraintDescriptorFactory;
+	using ConstraintDescriptorFactory = Neo4Net.Kernel.Api.schema.constraints.ConstraintDescriptorFactory;
 
 	public class NodePropertyExistenceException : ConstraintValidationException
 	{

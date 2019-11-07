@@ -22,7 +22,7 @@ namespace Neo4Net.Kernel.Impl.Api.transaciton.monitor
 	using Test = org.junit.jupiter.api.Test;
 
 	using Iterators = Neo4Net.Collections.Helpers.Iterators;
-	using KernelTransactionHandle = Neo4Net.Kernel.api.KernelTransactionHandle;
+	using KernelTransactionHandle = Neo4Net.Kernel.Api.KernelTransactionHandle;
 	using NullLogService = Neo4Net.Logging.Internal.NullLogService;
 	using FakeClock = Neo4Net.Time.FakeClock;
 

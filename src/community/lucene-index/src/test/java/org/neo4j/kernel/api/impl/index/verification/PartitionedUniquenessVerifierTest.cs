@@ -44,20 +44,20 @@ namespace Neo4Net.Kernel.Api.Impl.Index.verification
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verify;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.impl.LuceneTestUtil.valueTupleList;
+//	import static Neo4Net.kernel.api.impl.LuceneTestUtil.valueTupleList;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(MockitoJUnitRunner.class) public class PartitionedUniquenessVerifierTest
 	public class PartitionedUniquenessVerifierTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Mock(answer = org.mockito.Answers.RETURNS_DEEP_STUBS) private org.Neo4Net.kernel.api.impl.index.partition.PartitionSearcher searcher1;
+//ORIGINAL LINE: @Mock(answer = org.mockito.Answers.RETURNS_DEEP_STUBS) private Neo4Net.kernel.api.impl.index.partition.PartitionSearcher searcher1;
 		 private PartitionSearcher _searcher1;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Mock(answer = org.mockito.Answers.RETURNS_DEEP_STUBS) private org.Neo4Net.kernel.api.impl.index.partition.PartitionSearcher searcher2;
+//ORIGINAL LINE: @Mock(answer = org.mockito.Answers.RETURNS_DEEP_STUBS) private Neo4Net.kernel.api.impl.index.partition.PartitionSearcher searcher2;
 		 private PartitionSearcher _searcher2;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Mock(answer = org.mockito.Answers.RETURNS_DEEP_STUBS) private org.Neo4Net.kernel.api.impl.index.partition.PartitionSearcher searcher3;
+//ORIGINAL LINE: @Mock(answer = org.mockito.Answers.RETURNS_DEEP_STUBS) private Neo4Net.kernel.api.impl.index.partition.PartitionSearcher searcher3;
 		 private PartitionSearcher _searcher3;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -103,7 +103,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index.verification
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void verifySearchInvocations(org.Neo4Net.kernel.api.impl.index.partition.PartitionSearcher searcher, Object... values) throws java.io.IOException
+//ORIGINAL LINE: private static void verifySearchInvocations(Neo4Net.kernel.api.impl.index.partition.PartitionSearcher searcher, Object... values) throws java.io.IOException
 		 private static void VerifySearchInvocations( PartitionSearcher searcher, params object[] values )
 		 {
 			  foreach ( object value in values )

@@ -29,7 +29,7 @@ namespace Neo4Net.causalclustering.core.consensus.membership
 	using ReplicatedContentHandler = Neo4Net.causalclustering.messaging.marshalling.ReplicatedContentHandler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.identity.RaftTestMember.member;
+//	import static Neo4Net.causalclustering.identity.RaftTestMember.member;
 
 	public class RaftTestGroup : RaftGroup<MemberId>
 	{

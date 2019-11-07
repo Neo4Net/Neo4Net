@@ -158,14 +158,14 @@ namespace Neo4Net.Test.rule.concurrent
          }
 
          //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-         //ORIGINAL LINE: public void evaluate() throws Throwable
-         public override void evaluate()
+         //ORIGINAL LINE: public void Evaluate() throws Throwable
+         public override void Evaluate()
          {
             string threadName = !string.ReferenceEquals(_outerInstance.name, null) ? _outerInstance.name + "-" + _description.DisplayName : _description.DisplayName;
             _outerInstance.executor = new OtherThreadExecutor<STATE>(threadName, _outerInstance.timeout, _outerInstance.unit, _outerInstance.initialState());
             try
             {
-               @base.evaluate();
+               @base.Evaluate();
             }
             finally
             {

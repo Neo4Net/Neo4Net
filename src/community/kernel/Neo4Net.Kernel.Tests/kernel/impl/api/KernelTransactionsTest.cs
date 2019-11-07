@@ -35,12 +35,12 @@ namespace Neo4Net.Kernel.Impl.Api
 	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using EmptyVersionContextSupplier = Neo4Net.Io.pagecache.tracing.cursor.context.EmptyVersionContextSupplier;
 	using VersionContextSupplier = Neo4Net.Io.pagecache.tracing.cursor.context.VersionContextSupplier;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
-	using KernelTransactionHandle = Neo4Net.Kernel.api.KernelTransactionHandle;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
+	using KernelTransactionHandle = Neo4Net.Kernel.Api.KernelTransactionHandle;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
-	using AutoIndexing = Neo4Net.Kernel.api.explicitindex.AutoIndexing;
-	using AnonymousContext = Neo4Net.Kernel.api.security.AnonymousContext;
-	using AuxiliaryTransactionStateManager = Neo4Net.Kernel.api.txstate.auxiliary.AuxiliaryTransactionStateManager;
+	using AutoIndexing = Neo4Net.Kernel.Api.explicitindex.AutoIndexing;
+	using AnonymousContext = Neo4Net.Kernel.Api.security.AnonymousContext;
+	using AuxiliaryTransactionStateManager = Neo4Net.Kernel.Api.txstate.auxiliary.AuxiliaryTransactionStateManager;
 	using AvailabilityGuard = Neo4Net.Kernel.availability.AvailabilityGuard;
 	using DatabaseAvailabilityGuard = Neo4Net.Kernel.availability.DatabaseAvailabilityGuard;
 	using Config = Neo4Net.Kernel.configuration.Config;
@@ -122,26 +122,26 @@ namespace Neo4Net.Kernel.Impl.Api
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.DEFAULT_DATABASE_NAME;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.DEFAULT_DATABASE_NAME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.asSet;
+//	import static Neo4Net.helpers.collection.Iterators.asSet;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.Transaction_Type.@explicit;
+//	import static Neo4Net.Kernel.Api.Internal.Transaction_Type.@explicit;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.security.LoginContext.AUTH_DISABLED;
+//	import static Neo4Net.Kernel.Api.Internal.security.LoginContext.AUTH_DISABLED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.TransactionHeaderInformationFactory.DEFAULT;
+//	import static Neo4Net.kernel.impl.transaction.TransactionHeaderInformationFactory.DEFAULT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.util.collection.CollectionsFactorySupplier_Fields.ON_HEAP;
+//	import static Neo4Net.kernel.impl.util.collection.CollectionsFactorySupplier_Fields.ON_HEAP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.MockedNeoStores.mockedTokenHolders;
+//	import static Neo4Net.test.MockedNeoStores.mockedTokenHolders;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.assertion.Assert.assertException;
+//	import static Neo4Net.test.assertion.Assert.assertException;
 
 	public class KernelTransactionsTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.concurrent.OtherThreadRule<Void> t2 = new org.Neo4Net.test.rule.concurrent.OtherThreadRule<>("T2-" + getClass().getName());
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.concurrent.OtherThreadRule<Void> t2 = new Neo4Net.test.rule.concurrent.OtherThreadRule<>("T2-" + getClass().getName());
 //JAVA TO C# CONVERTER WARNING: The .NET Type.FullName property will not always yield results identical to the Java Class.getName method:
 		 public readonly OtherThreadRule<Void> T2 = new OtherThreadRule<Void>( "T2-" + this.GetType().FullName );
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -608,14 +608,14 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static KernelTransactions newKernelTransactions(TransactionCommitProcess commitProcess, org.Neo4Net.Kernel.Api.StorageEngine.StorageReader firstReader, org.Neo4Net.Kernel.Api.StorageEngine.StorageReader... otherReaders) throws Throwable
+//ORIGINAL LINE: private static KernelTransactions newKernelTransactions(TransactionCommitProcess commitProcess, Neo4Net.Kernel.Api.StorageEngine.StorageReader firstReader, Neo4Net.Kernel.Api.StorageEngine.StorageReader... otherReaders) throws Throwable
 		 private static KernelTransactions NewKernelTransactions( TransactionCommitProcess commitProcess, StorageReader firstReader, params StorageReader[] otherReaders )
 		 {
 			  return NewKernelTransactions( false, commitProcess, firstReader, otherReaders );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static KernelTransactions newKernelTransactions(boolean testKernelTransactions, TransactionCommitProcess commitProcess, org.Neo4Net.Kernel.Api.StorageEngine.StorageReader firstReader, org.Neo4Net.Kernel.Api.StorageEngine.StorageReader... otherReaders) throws Throwable
+//ORIGINAL LINE: private static KernelTransactions newKernelTransactions(boolean testKernelTransactions, TransactionCommitProcess commitProcess, Neo4Net.Kernel.Api.StorageEngine.StorageReader firstReader, Neo4Net.Kernel.Api.StorageEngine.StorageReader... otherReaders) throws Throwable
 		 private static KernelTransactions NewKernelTransactions( bool testKernelTransactions, TransactionCommitProcess commitProcess, StorageReader firstReader, params StorageReader[] otherReaders )
 		 {
 			  Locks locks = mock( typeof( Locks ) );
@@ -670,7 +670,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static TransactionCommitProcess newRememberingCommitProcess(final org.Neo4Net.kernel.impl.transaction.TransactionRepresentation[] slot) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
+//ORIGINAL LINE: private static TransactionCommitProcess newRememberingCommitProcess(final Neo4Net.kernel.impl.transaction.TransactionRepresentation[] slot) throws Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 		 private static TransactionCommitProcess NewRememberingCommitProcess( TransactionRepresentation[] slot )
 		 {

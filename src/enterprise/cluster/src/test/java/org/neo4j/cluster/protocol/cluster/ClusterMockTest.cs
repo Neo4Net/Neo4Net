@@ -72,7 +72,7 @@ namespace Neo4Net.cluster.protocol.cluster
 		 internal IDictionary<int, URI> Members = new Dictionary<int, URI>();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.LoggerRule logger = new org.Neo4Net.test.rule.LoggerRule(java.util.logging.Level.OFF);
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.LoggerRule logger = new Neo4Net.test.rule.LoggerRule(java.util.logging.Level.OFF);
 		 public LoggerRule Logger = new LoggerRule( Level.OFF );
 
 		 public NetworkMock Network;
@@ -96,7 +96,7 @@ namespace Neo4Net.cluster.protocol.cluster
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected void testCluster(int nrOfServers, org.Neo4Net.cluster.NetworkMock mock, ClusterTestScript script) throws java.net.URISyntaxException
+//ORIGINAL LINE: protected void testCluster(int nrOfServers, Neo4Net.cluster.NetworkMock mock, ClusterTestScript script) throws java.net.URISyntaxException
 		 protected internal virtual void TestCluster( int nrOfServers, NetworkMock mock, ClusterTestScript script )
 		 {
 			  int[] serverIds = new int[nrOfServers];
@@ -108,7 +108,7 @@ namespace Neo4Net.cluster.protocol.cluster
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected void testCluster(int[] serverIds, org.Neo4Net.cluster.VerifyInstanceConfiguration[] finalConfig, org.Neo4Net.cluster.NetworkMock mock, ClusterTestScript script) throws java.net.URISyntaxException
+//ORIGINAL LINE: protected void testCluster(int[] serverIds, Neo4Net.cluster.VerifyInstanceConfiguration[] finalConfig, Neo4Net.cluster.NetworkMock mock, ClusterTestScript script) throws java.net.URISyntaxException
 		 protected internal virtual void TestCluster( int[] serverIds, VerifyInstanceConfiguration[] finalConfig, NetworkMock mock, ClusterTestScript script )
 		 {
 			  this.Script = script;
@@ -308,7 +308,7 @@ namespace Neo4Net.cluster.protocol.cluster
 					StateMachines stateMachines = protocolServers[j].Server.StateMachines;
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.cluster.statemachine.State<?, ?> clusterState = stateMachines.getStateMachine(ClusterMessage.class).getState();
+//ORIGINAL LINE: Neo4Net.cluster.statemachine.State<?, ?> clusterState = stateMachines.getStateMachine(ClusterMessage.class).getState();
 					State<object, ?> clusterState = stateMachines.GetStateMachine( typeof( ClusterMessage ) ).State;
 					if ( !clusterState.Equals( ClusterState.Entered ) )
 					{
@@ -356,7 +356,7 @@ namespace Neo4Net.cluster.protocol.cluster
 					StateMachines stateMachines = protocolServers[j].Server.StateMachines;
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.cluster.statemachine.State<?, ?> clusterState = stateMachines.getStateMachine(ClusterMessage.class).getState();
+//ORIGINAL LINE: Neo4Net.cluster.statemachine.State<?, ?> clusterState = stateMachines.getStateMachine(ClusterMessage.class).getState();
 					State<object, ?> clusterState = stateMachines.GetStateMachine( typeof( ClusterMessage ) ).State;
 					if ( !clusterState.Equals( ClusterState.Entered ) )
 					{
@@ -402,7 +402,7 @@ namespace Neo4Net.cluster.protocol.cluster
 			  int myId = context.MyId.toIntegerIndex();
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.cluster.statemachine.State<?, ?> clusterState = stateMachines.getStateMachine(ClusterMessage.class).getState();
+//ORIGINAL LINE: Neo4Net.cluster.statemachine.State<?, ?> clusterState = stateMachines.getStateMachine(ClusterMessage.class).getState();
 			  State<object, ?> clusterState = stateMachines.GetStateMachine( typeof( ClusterMessage ) ).State;
 			  if ( !clusterState.Equals( ClusterState.Entered ) )
 			  {
@@ -570,7 +570,7 @@ namespace Neo4Net.cluster.protocol.cluster
 					StateMachines stateMachines = protocolServers[j].Server.StateMachines;
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.cluster.statemachine.State<?, ?> clusterState = stateMachines.getStateMachine(ClusterMessage.class).getState();
+//ORIGINAL LINE: Neo4Net.cluster.statemachine.State<?, ?> clusterState = stateMachines.getStateMachine(ClusterMessage.class).getState();
 					State<object, ?> clusterState = stateMachines.GetStateMachine( typeof( ClusterMessage ) ).State;
 					if ( !clusterState.Equals( ClusterState.Entered ) )
 					{

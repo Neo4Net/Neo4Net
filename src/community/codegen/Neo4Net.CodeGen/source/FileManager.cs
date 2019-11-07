@@ -38,7 +38,7 @@ namespace Neo4Net.CodeGen.Source
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: public Iterable<? extends org.Neo4Net.codegen.ByteCodes> bytecodes()
+//ORIGINAL LINE: public Iterable<? extends Neo4Net.codegen.ByteCodes> bytecodes()
 		 public virtual IEnumerable<ByteCodes> Bytecodes()
 		 {
 			  return _classes.Values;

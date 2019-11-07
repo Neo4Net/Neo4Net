@@ -29,7 +29,7 @@ namespace Neo4Net.Server.rest.transactional.error
 	/// This is an initial move towards unified errors - it should not live here in the server, but should probably
 	/// exist in the kernel or similar, where it can be shared across surfaces other than the server.
 	/// <para>
-	/// It's put in place here in order to enforce that the <seealso cref="org.Neo4Net.server.rest.web.TransactionalService"/>
+	/// It's put in place here in order to enforce that the <seealso cref="Neo4Net.server.rest.web.TransactionalService"/>
 	/// is strictly tied down towards what errors it handles and returns to the client, to create a waterproof abstraction
 	/// between the runtime-exception landscape that lives below, and the errors we send to the user.
 	/// </para>

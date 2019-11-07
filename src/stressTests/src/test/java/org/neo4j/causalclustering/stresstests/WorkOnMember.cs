@@ -27,7 +27,7 @@ namespace Neo4Net.causalclustering.stresstests
 	internal interface WorkOnMember
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void doWorkOnMember(org.Neo4Net.causalclustering.discovery.ClusterMember member) throws Exception;
+//ORIGINAL LINE: void doWorkOnMember(Neo4Net.causalclustering.discovery.ClusterMember member) throws Exception;
 		 void DoWorkOnMember( ClusterMember member );
 	}
 

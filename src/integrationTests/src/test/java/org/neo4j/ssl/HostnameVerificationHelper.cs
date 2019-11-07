@@ -36,7 +36,7 @@ namespace Neo4Net.Ssl
 		 private static readonly PkiUtils _pkiUtils = new PkiUtils();
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static org.Neo4Net.kernel.configuration.Config aConfig(String hostname, org.Neo4Net.test.rule.TestDirectory testDirectory) throws java.security.GeneralSecurityException, java.io.IOException, org.bouncycastle.operator.OperatorCreationException
+//ORIGINAL LINE: public static Neo4Net.kernel.configuration.Config aConfig(String hostname, Neo4Net.test.rule.TestDirectory testDirectory) throws java.security.GeneralSecurityException, java.io.IOException, org.bouncycastle.operator.OperatorCreationException
 		 public static Config AConfig( string hostname, TestDirectory testDirectory )
 		 {
 			  string random = System.Guid.randomUUID().ToString();
@@ -52,7 +52,7 @@ namespace Neo4Net.Ssl
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static void trust(org.Neo4Net.kernel.configuration.Config target, org.Neo4Net.kernel.configuration.Config subject) throws java.io.IOException
+//ORIGINAL LINE: public static void trust(Neo4Net.kernel.configuration.Config target, Neo4Net.kernel.configuration.Config subject) throws java.io.IOException
 		 public static void Trust( Config target, Config subject )
 		 {
 			  SslPolicyConfig sslPolicyConfig = new SslPolicyConfig( POLICY_NAME );

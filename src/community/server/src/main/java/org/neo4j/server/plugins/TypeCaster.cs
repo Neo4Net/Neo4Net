@@ -26,18 +26,18 @@ namespace Neo4Net.Server.plugins
 	internal abstract class TypeCaster
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: abstract Object get(org.Neo4Net.kernel.internal.GraphDatabaseAPI graphDb, ParameterList parameters, String name) throws org.Neo4Net.server.rest.repr.BadInputException;
+//ORIGINAL LINE: abstract Object get(Neo4Net.kernel.internal.GraphDatabaseAPI graphDb, ParameterList parameters, String name) throws Neo4Net.server.rest.repr.BadInputException;
 		 internal abstract object Get( GraphDatabaseAPI graphDb, ParameterList parameters, string name );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: Object convert(Object[] result) throws org.Neo4Net.server.rest.repr.BadInputException
+//ORIGINAL LINE: Object convert(Object[] result) throws Neo4Net.server.rest.repr.BadInputException
 		 internal virtual object Convert( object[] result )
 		 {
 			  throw new BadInputException( "Cannot convert to primitive array: " + Arrays.ToString( result ) );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: abstract Object[] getList(org.Neo4Net.kernel.internal.GraphDatabaseAPI graphDb, ParameterList parameters, String name) throws org.Neo4Net.server.rest.repr.BadInputException;
+//ORIGINAL LINE: abstract Object[] getList(Neo4Net.kernel.internal.GraphDatabaseAPI graphDb, ParameterList parameters, String name) throws Neo4Net.server.rest.repr.BadInputException;
 		 internal abstract object[] GetList( GraphDatabaseAPI graphDb, ParameterList parameters, string name );
 	}
 

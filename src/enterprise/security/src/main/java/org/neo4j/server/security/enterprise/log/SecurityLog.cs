@@ -39,7 +39,7 @@ namespace Neo4Net.Server.security.enterprise.log
 	using SecuritySettings = Neo4Net.Server.security.enterprise.configuration.SecuritySettings;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.Strings.escape;
+//	import static Neo4Net.helpers.Strings.escape;
 
 	public class SecurityLog : LifecycleAdapter, Log
 	{
@@ -47,7 +47,7 @@ namespace Neo4Net.Server.security.enterprise.log
 		 private readonly Log _inner;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public SecurityLog(org.Neo4Net.kernel.configuration.Config config, org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, java.util.concurrent.Executor executor) throws java.io.IOException
+//ORIGINAL LINE: public SecurityLog(Neo4Net.kernel.configuration.Config config, Neo4Net.io.fs.FileSystemAbstraction fileSystem, java.util.concurrent.Executor executor) throws java.io.IOException
 		 public SecurityLog( Config config, FileSystemAbstraction fileSystem, Executor executor )
 		 {
 			  ZoneId logTimeZoneId = config.Get( GraphDatabaseSettings.db_timezone ).ZoneId;

@@ -41,7 +41,7 @@ namespace Neo4Net.Kernel.Api.Internal
 		 string PropertyKeyGetName( int propertyKeyId );
 
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//		 default String[] IEntityTokensGetNames(org.Neo4Net.Kernel.Api.StorageEngine.EntityType type, int[] IEntityTokenIds)
+//		 default String[] IEntityTokensGetNames(Neo4Net.Kernel.Api.StorageEngine.EntityType type, int[] IEntityTokenIds)
 	//	 {
 	//		  IntFunction<String> mapper;
 	//		  switch (type)

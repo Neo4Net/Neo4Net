@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.@unsafe.Impl.Batchimport
 {
-	using StatementConstants = Neo4Net.Kernel.api.StatementConstants;
+	using StatementConstants = Neo4Net.Kernel.Api.StatementConstants;
 	using CountsAccessor = Neo4Net.Kernel.Impl.Api.CountsAccessor;
 	using RelationshipRecord = Neo4Net.Kernel.Impl.Store.Records.RelationshipRecord;
 	using LongArray = Neo4Net.@unsafe.Impl.Batchimport.cache.LongArray;

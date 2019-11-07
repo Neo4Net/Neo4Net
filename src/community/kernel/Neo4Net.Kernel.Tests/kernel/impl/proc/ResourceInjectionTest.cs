@@ -30,12 +30,12 @@ namespace Neo4Net.Kernel.impl.proc
 
 	using Iterators = Neo4Net.Collections.Helpers.Iterators;
 	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
-	using ResourceTracker = Neo4Net.Kernel.api.ResourceTracker;
-	using StubResourceManager = Neo4Net.Kernel.api.StubResourceManager;
-	using BasicContext = Neo4Net.Kernel.api.proc.BasicContext;
-	using CallableProcedure = Neo4Net.Kernel.api.proc.CallableProcedure;
-	using CallableUserAggregationFunction = Neo4Net.Kernel.api.proc.CallableUserAggregationFunction;
-	using CallableUserFunction = Neo4Net.Kernel.api.proc.CallableUserFunction;
+	using ResourceTracker = Neo4Net.Kernel.Api.ResourceTracker;
+	using StubResourceManager = Neo4Net.Kernel.Api.StubResourceManager;
+	using BasicContext = Neo4Net.Kernel.Api.Procs.BasicContext;
+	using CallableProcedure = Neo4Net.Kernel.Api.Procs.CallableProcedure;
+	using CallableUserAggregationFunction = Neo4Net.Kernel.Api.Procs.CallableUserAggregationFunction;
+	using CallableUserFunction = Neo4Net.Kernel.Api.Procs.CallableUserFunction;
 	using Log = Neo4Net.Logging.Log;
 	using Context = Neo4Net.Procedure.Context;
 	using Procedure = Neo4Net.Procedure.Procedure;
@@ -124,7 +124,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 {
 			  //When
 			  Exception.expect( typeof( ProcedureException ) );
-			  Exception.expectMessage( "Unable to set up injection for procedure `ProcedureWithUnknownAPI`, " + "the field `api` has type `class org.Neo4Net.kernel.impl.proc.ResourceInjectionTest$UnknownAPI` " + "which is not a known injectable component." );
+			  Exception.expectMessage( "Unable to set up injection for procedure `ProcedureWithUnknownAPI`, " + "the field `api` has type `class Neo4Net.kernel.impl.proc.ResourceInjectionTest$UnknownAPI` " + "which is not a known injectable component." );
 
 			  // Then
 			  _compiler.compileProcedure( typeof( ProcedureWithUnknownAPI ), null, true );
@@ -155,7 +155,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 {
 			  //When
 			  IList<CallableProcedure> procList = _compiler.compileProcedure( typeof( ProcedureWithUnsafeAPI ), null, false );
-			  verify( _log ).warn( NotAvailableMessage( "org.Neo4Net.kernel.impl.proc.listCoolPeople" ) );
+			  verify( _log ).warn( NotAvailableMessage( "Neo4Net.kernel.impl.proc.listCoolPeople" ) );
 
 			  assertThat( procList.Count, equalTo( 1 ) );
 			  try
@@ -165,7 +165,7 @@ namespace Neo4Net.Kernel.impl.proc
 			  }
 			  catch ( ProcedureException e )
 			  {
-					assertThat( e.Message, NotAvailableMessageMatcher( "org.Neo4Net.kernel.impl.proc.listCoolPeople" ) );
+					assertThat( e.Message, NotAvailableMessageMatcher( "Neo4Net.kernel.impl.proc.listCoolPeople" ) );
 			  }
 		 }
 
@@ -191,7 +191,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 {
 			  //When
 			  Exception.expect( typeof( ProcedureException ) );
-			  Exception.expectMessage( "Unable to set up injection for procedure `FunctionWithUnknownAPI`, " + "the field `api` has type `class org.Neo4Net.kernel.impl.proc.ResourceInjectionTest$UnknownAPI` " + "which is not a known injectable component." );
+			  Exception.expectMessage( "Unable to set up injection for procedure `FunctionWithUnknownAPI`, " + "the field `api` has type `class Neo4Net.kernel.impl.proc.ResourceInjectionTest$UnknownAPI` " + "which is not a known injectable component." );
 
 			  // Then
 			  _compiler.compileFunction( typeof( FunctionWithUnknownAPI ) );
@@ -204,7 +204,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 {
 			  //When
 			  IList<CallableUserFunction> procList = _compiler.compileFunction( typeof( FunctionWithUnsafeAPI ) );
-			  verify( _log ).warn( NotAvailableMessage( "org.Neo4Net.kernel.impl.proc.listCoolPeople" ) );
+			  verify( _log ).warn( NotAvailableMessage( "Neo4Net.kernel.impl.proc.listCoolPeople" ) );
 
 			  assertThat( procList.Count, equalTo( 1 ) );
 			  try
@@ -214,7 +214,7 @@ namespace Neo4Net.Kernel.impl.proc
 			  }
 			  catch ( ProcedureException e )
 			  {
-					assertThat( e.Message, NotAvailableMessageMatcher( "org.Neo4Net.kernel.impl.proc.listCoolPeople" ) );
+					assertThat( e.Message, NotAvailableMessageMatcher( "Neo4Net.kernel.impl.proc.listCoolPeople" ) );
 			  }
 		 }
 
@@ -240,7 +240,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 {
 			  //When
 			  Exception.expect( typeof( ProcedureException ) );
-			  Exception.expectMessage( "Unable to set up injection for procedure `AggregationFunctionWithUnknownAPI`, " + "the field `api` has type `class org.Neo4Net.kernel.impl.proc.ResourceInjectionTest$UnknownAPI` " + "which is not a known injectable component." );
+			  Exception.expectMessage( "Unable to set up injection for procedure `AggregationFunctionWithUnknownAPI`, " + "the field `api` has type `class Neo4Net.kernel.impl.proc.ResourceInjectionTest$UnknownAPI` " + "which is not a known injectable component." );
 
 			  // Then
 			  _compiler.compileAggregationFunction( typeof( AggregationFunctionWithUnknownAPI ) );
@@ -253,7 +253,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 {
 			  //When
 			  IList<CallableUserAggregationFunction> procList = _compiler.compileAggregationFunction( typeof( AggregationFunctionWithUnsafeAPI ) );
-			  verify( _log ).warn( NotAvailableMessage( "org.Neo4Net.kernel.impl.proc.listCoolPeople" ) );
+			  verify( _log ).warn( NotAvailableMessage( "Neo4Net.kernel.impl.proc.listCoolPeople" ) );
 
 			  assertThat( procList.Count, equalTo( 1 ) );
 			  try
@@ -264,7 +264,7 @@ namespace Neo4Net.Kernel.impl.proc
 			  }
 			  catch ( ProcedureException e )
 			  {
-					assertThat( e.Message, NotAvailableMessageMatcher( "org.Neo4Net.kernel.impl.proc.listCoolPeople" ) );
+					assertThat( e.Message, NotAvailableMessageMatcher( "Neo4Net.kernel.impl.proc.listCoolPeople" ) );
 			  }
 		 }
 
@@ -279,10 +279,10 @@ namespace Neo4Net.Kernel.impl.proc
 			  _compiler.compileAggregationFunction( typeof( FunctionsAndProcedureUnsafe ) );
 			  // Then
 
-			  verify( _log ).warn( NotAvailableMessage( "org.Neo4Net.kernel.impl.proc.safeUserFunctionInUnsafeAPIClass" ) );
-			  verify( _log ).warn( NotAvailableMessage( "org.Neo4Net.kernel.impl.proc.listCoolPeopleProcedure" ) );
+			  verify( _log ).warn( NotAvailableMessage( "Neo4Net.kernel.impl.proc.safeUserFunctionInUnsafeAPIClass" ) );
+			  verify( _log ).warn( NotAvailableMessage( "Neo4Net.kernel.impl.proc.listCoolPeopleProcedure" ) );
 			  // With extra ' ' space at the end to distinguish from procedure form:
-			  verify( _log ).warn( NotAvailableMessage( "org.Neo4Net.kernel.impl.proc.listCoolPeople " ) );
+			  verify( _log ).warn( NotAvailableMessage( "Neo4Net.kernel.impl.proc.listCoolPeople " ) );
 		 }
 
 		 public class MyOutputRecord

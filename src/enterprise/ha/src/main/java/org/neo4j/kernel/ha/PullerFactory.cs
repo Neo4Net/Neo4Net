@@ -23,7 +23,7 @@
 namespace Neo4Net.Kernel.ha
 {
 	using InstanceId = Neo4Net.cluster.InstanceId;
-	using DatabaseManager = Neo4Net.Dbms.database.DatabaseManager;
+	using IDatabaseManager = Neo4Net.Dbms.database.DatabaseManager;
 	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using AvailabilityGuard = Neo4Net.Kernel.availability.AvailabilityGuard;
@@ -85,7 +85,7 @@ namespace Neo4Net.Kernel.ha
 		 {
 			  return new UpdatePullingTransactionObligationFulfiller(updatePuller, _memberStateMachine, _serverId, () =>
 			  {
-				GraphDatabaseFacade databaseFacade = this._dependencyResolver.resolveDependency( typeof( DatabaseManager ) ).getDatabaseFacade( _activeDatabaseName ).get();
+				GraphDatabaseFacade databaseFacade = this._dependencyResolver.resolveDependency( typeof( IDatabaseManager ) ).getDatabaseFacade( _activeDatabaseName ).get();
 				DependencyResolver databaseResolver = databaseFacade.DependencyResolver;
 				return databaseResolver.resolveDependency( typeof( TransactionIdStore ) );
 			  });

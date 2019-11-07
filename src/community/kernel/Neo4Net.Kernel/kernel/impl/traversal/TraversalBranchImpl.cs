@@ -36,7 +36,7 @@ namespace Neo4Net.Kernel.impl.traversal
 	using Neo4Net.Collections.Helpers;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.asResourceIterator;
+//	import static Neo4Net.helpers.collection.Iterators.asResourceIterator;
 
 	internal class TraversalBranchImpl : TraversalBranch
 	{
@@ -44,7 +44,7 @@ namespace Neo4Net.Kernel.impl.traversal
 		 internal readonly TraversalBranch ParentConflict;
 		 private readonly Relationship _howIGotHere;
 		 private readonly Node _source;
-		 private ResourceIterator<Relationship> _relationships;
+		 private IResourceIterator<Relationship> _relationships;
 		 // high bit here [cidd,dddd][dddd,dddd][dddd,dddd][dddd,dddd]
 		 private int _depthAndEvaluationBits;
 		 private int _expandedCount;
@@ -113,7 +113,7 @@ namespace Neo4Net.Kernel.impl.traversal
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public void initialize(final org.Neo4Net.graphdb.PathExpander expander, org.Neo4Net.graphdb.traversal.TraversalContext metadata)
+//ORIGINAL LINE: public void initialize(final Neo4Net.graphdb.PathExpander expander, Neo4Net.graphdb.traversal.TraversalContext metadata)
 		 public override void Initialize( PathExpander expander, TraversalContext metadata )
 		 {
 			  Evaluate( metadata );

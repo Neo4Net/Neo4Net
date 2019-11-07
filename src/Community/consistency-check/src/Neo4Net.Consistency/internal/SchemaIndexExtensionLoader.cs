@@ -45,13 +45,13 @@ namespace Neo4Net.Consistency.Internal
 	{
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") public static org.Neo4Net.kernel.extension.DatabaseKernelExtensions instantiateKernelExtensions(java.io.File databaseDirectory, org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, org.Neo4Net.kernel.configuration.Config config, org.Neo4Net.logging.internal.LogService logService, org.Neo4Net.io.pagecache.PageCache pageCache, org.Neo4Net.scheduler.JobScheduler jobScheduler, org.Neo4Net.index.internal.gbptree.RecoveryCleanupWorkCollector recoveryCollector, org.Neo4Net.kernel.impl.factory.DatabaseInfo databaseInfo, org.Neo4Net.kernel.monitoring.Monitors monitors, org.Neo4Net.kernel.impl.core.TokenHolders tokenHolders)
+//ORIGINAL LINE: @SuppressWarnings("unchecked") public static Neo4Net.kernel.extension.DatabaseKernelExtensions instantiateKernelExtensions(java.io.File databaseDirectory, Neo4Net.io.fs.FileSystemAbstraction fileSystem, Neo4Net.kernel.configuration.Config config, Neo4Net.logging.internal.LogService logService, Neo4Net.io.pagecache.PageCache pageCache, Neo4Net.scheduler.JobScheduler jobScheduler, Neo4Net.index.internal.gbptree.RecoveryCleanupWorkCollector recoveryCollector, Neo4Net.kernel.impl.factory.DatabaseInfo databaseInfo, Neo4Net.kernel.monitoring.Monitors monitors, Neo4Net.kernel.impl.core.TokenHolders tokenHolders)
 		 public static DatabaseKernelExtensions InstantiateKernelExtensions( File databaseDirectory, FileSystemAbstraction fileSystem, Config config, LogService logService, PageCache pageCache, IJobScheduler jobScheduler, RecoveryCleanupWorkCollector recoveryCollector, DatabaseInfo databaseInfo, Monitors monitors, TokenHolders tokenHolders )
 		 {
 			  Dependencies deps = new Dependencies();
 			  deps.SatisfyDependencies( fileSystem, config, logService, pageCache, recoveryCollector, monitors, jobScheduler, tokenHolders );
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("rawtypes") Iterable kernelExtensions = org.Neo4Net.helpers.Service.load(org.Neo4Net.kernel.extension.KernelExtensionFactory.class);
+//ORIGINAL LINE: @SuppressWarnings("rawtypes") Iterable kernelExtensions = Neo4Net.helpers.Service.load(Neo4Net.kernel.extension.KernelExtensionFactory.class);
 			  System.Collections.IEnumerable kernelExtensions = Service.load( typeof( KernelExtensionFactory ) );
 			  KernelContext kernelContext = new SimpleKernelContext( databaseDirectory, databaseInfo, deps );
 			  return new DatabaseKernelExtensions( kernelContext, kernelExtensions, deps, KernelExtensionFailureStrategies.ignore() );

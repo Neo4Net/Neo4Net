@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.impl.pagecache.monitor
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static System.currentTimeMillis;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.Format.duration;
+//	import static Neo4Net.helpers.Format.duration;
 
 	public class PageCacheWarmerLoggingMonitor : PageCacheWarmerMonitorAdapter
 	{

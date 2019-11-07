@@ -23,7 +23,7 @@ namespace Neo4Net.GraphAlgo.Utils
 	using TraversalBranch = Neo4Net.GraphDb.Traversal.TraversalBranch;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.Direction.OUTGOING;
+//	import static Neo4Net.graphdb.Direction.OUTGOING;
 
 	public class DijkstraSelectorFactory : BestFirstSelectorFactory<double, double>
 	{

@@ -44,7 +44,7 @@ namespace Neo4Net.GraphDb.Traversal
     /// <para>
     /// When all the rules and behaviors have been described the traversal is started
     /// by using <seealso cref="traverse(INode)"/> where a starting node is supplied. The
-    /// <seealso cref="Traverser"/> that is returned is then used to step through the graph,
+    /// <seealso cref="ITraverser"/> that is returned is then used to step through the graph,
     /// and return the positions that matches the rules.
     /// </para>
     /// </summary>
@@ -75,16 +75,16 @@ namespace Neo4Net.GraphDb.Traversal
         /// Adds {@code evaluator} to the list of evaluators which will control the
         /// behavior of the traversal. Each <seealso cref="Evaluator"/> can decide whether or
         /// not to include a position in the traverser result, i.e. return it from
-        /// the <seealso cref="Traverser"/> iterator and also whether to continue down that
+        /// the <seealso cref="ITraverser"/> iterator and also whether to continue down that
         /// path or to prune, so that the traverser won't continue further down that
         /// path.
         ///
         /// Multiple <seealso cref="Evaluator"/>s can be added. For a path to be included in
         /// the result, all evaluators must agree to include it, i.e. returning
-        /// either <seealso cref="Evaluation.INCLUDE_AND_CONTINUE"/> or
+        /// either <seealso cref="Evaluation.IncludeAndContinue"/> or
         /// <seealso cref="Evaluation.INCLUDE_AND_PRUNE"/>. For making the traversal continue
         /// down that path all evaluators must agree to continue from that path, i.e.
-        /// returning either <seealso cref="Evaluation.INCLUDE_AND_CONTINUE"/> or
+        /// returning either <seealso cref="Evaluation.IncludeAndContinue"/> or
         /// <seealso cref="Evaluation.EXCLUDE_AND_CONTINUE"/>.
         /// </summary>
         /// <param name="evaluator"> the <seealso cref="Evaluator"/> to add to the traversal </param>
@@ -95,16 +95,16 @@ namespace Neo4Net.GraphDb.Traversal
         /// Adds {@code evaluator} to the list of evaluators which will control the
         /// behavior of the traversal. Each <seealso cref="PathEvaluator"/> can decide whether or
         /// not to include a position in the traverser result, i.e. return it from
-        /// the <seealso cref="Traverser"/> iterator and also whether to continue down that
+        /// the <seealso cref="ITraverser"/> iterator and also whether to continue down that
         /// path or to prune, so that the traverser won't continue further down that
         /// path.
         ///
         /// Multiple <seealso cref="PathEvaluator"/>s can be added. For a path to be included in
         /// the result, all evaluators must agree to include it, i.e. returning
-        /// either <seealso cref="Evaluation.INCLUDE_AND_CONTINUE"/> or
+        /// either <seealso cref="Evaluation.IncludeAndContinue"/> or
         /// <seealso cref="Evaluation.INCLUDE_AND_PRUNE"/>. For making the traversal continue
         /// down that path all evaluators must agree to continue from that path, i.e.
-        /// returning either <seealso cref="Evaluation.INCLUDE_AND_CONTINUE"/> or
+        /// returning either <seealso cref="Evaluation.IncludeAndContinue"/> or
         /// <seealso cref="Evaluation.EXCLUDE_AND_CONTINUE"/>.
         /// </summary>
         /// <param name="evaluator"> the <seealso cref="PathEvaluator"/> to add to the traversal </param>
@@ -169,7 +169,7 @@ namespace Neo4Net.GraphDb.Traversal
         /// <param name="expander"> the <seealso cref="PathExpander"/> to use. </param>
         /// <returns> a new traversal description with the new modifications. </returns>
         //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-        //ORIGINAL LINE: TraversalDescription expand(org.Neo4Net.graphdb.PathExpander<?> expander);
+        //ORIGINAL LINE: TraversalDescription expand(Neo4Net.GraphDb.PathExpander<?> expander);
         ITraversalDescription expand<T1>(IPathExpander<T1> expander);
 
         /// <summary>
@@ -191,7 +191,7 @@ namespace Neo4Net.GraphDb.Traversal
         /// <param name="comparator"> the <seealso cref="System.Collections.IComparer"/> to use for sorting the paths. </param>
         /// <returns> the paths from this traversal sorted according to {@code comparator}. </returns>
         //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-        //ORIGINAL LINE: TraversalDescription sort(java.util.Comparator<? super org.Neo4Net.graphdb.Path> comparator);
+        //ORIGINAL LINE: TraversalDescription sort(java.util.Comparator<? super Neo4Net.GraphDb.Path> comparator);
         //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
         ITraversalDescription sort<T1>(IComparer<T1> comparator);
 
@@ -204,35 +204,35 @@ namespace Neo4Net.GraphDb.Traversal
 
         /// <summary>
         /// Traverse from a single start node based on all the rules and behavior
-        /// in this description. A <seealso cref="Traverser"/> is returned which is
+        /// in this description. A <seealso cref="ITraverser"/> is returned which is
         /// used to step through the graph and getting results back. The traversal
         /// is not guaranteed to start before the Traverser is used.
         /// </summary>
         /// <param name="startNode"> <seealso cref="INode"/> to start traversing from. </param>
-        /// <returns> a <seealso cref="Traverser"/> used to step through the graph and to get
+        /// <returns> a <seealso cref="ITraverser"/> used to step through the graph and to get
         /// results from. </returns>
-        Traverser Traverse(INode startNode);
+        ITraverser Traverse(INode startNode);
 
         /// <summary>
         /// Traverse from a set of start nodes based on all the rules and behavior
-        /// in this description. A <seealso cref="Traverser"/> is returned which is
+        /// in this description. A <seealso cref="ITraverser"/> is returned which is
         /// used to step through the graph and getting results back. The traversal
         /// is not guaranteed to start before the Traverser is used.
         /// </summary>
         /// <param name="startNodes"> <seealso cref="INode"/>s to start traversing from. </param>
-        /// <returns> a <seealso cref="Traverser"/> used to step through the graph and to get
+        /// <returns> a <seealso cref="ITraverser"/> used to step through the graph and to get
         /// results from. </returns>
-        Traverser Traverse(params INode[] startNodes);
+        ITraverser Traverse(params INode[] startNodes);
 
         /// <summary>
         /// Traverse from a iterable of start nodes based on all the rules and behavior
-        /// in this description. A <seealso cref="Traverser"/> is returned which is
+        /// in this description. A <seealso cref="ITraverser"/> is returned which is
         /// used to step through the graph and getting results back. The traversal
         /// is not guaranteed to start before the Traverser is used.
         /// </summary>
         /// <param name="iterableStartNodes"> <seealso cref="INode"/>s to start traversing from. </param>
-        /// <returns> a <seealso cref="Traverser"/> used to step through the graph and to get
+        /// <returns> a <seealso cref="ITraverser"/> used to step through the graph and to get
         /// results from. </returns>
-        Traverser Traverse(IEnumerable<INode> iterableStartNodes);
+        ITraverser Traverse(IEnumerable<INode> iterableStartNodes);
     }
 }

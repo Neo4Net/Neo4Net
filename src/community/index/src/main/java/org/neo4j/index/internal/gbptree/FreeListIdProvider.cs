@@ -24,9 +24,9 @@ namespace Neo4Net.Index.Internal.gbptree
 	using PagedFile = Neo4Net.Io.pagecache.PagedFile;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Internal.gbptree.PageCursorUtil.checkOutOfBounds;
+//	import static Neo4Net.index.Internal.gbptree.PageCursorUtil.checkOutOfBounds;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Internal.gbptree.PageCursorUtil.goTo;
+//	import static Neo4Net.index.Internal.gbptree.PageCursorUtil.goTo;
 
 	internal class FreeListIdProvider : IdProvider
 	{

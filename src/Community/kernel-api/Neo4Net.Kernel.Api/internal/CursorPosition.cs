@@ -28,9 +28,9 @@ namespace Neo4Net.Kernel.Api.Internal
    {
       private Position _tail;
 
-      public Position Push(Position head)
+      public Position Push( Position head )
       {
-         ((CursorPosition<Position>)head)._tail = this;
+         ( ( CursorPosition<Position> ) head )._tail = this;
          return head;
       }
 

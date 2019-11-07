@@ -35,7 +35,7 @@ namespace Neo4Net.backup.impl
 	internal class BackupTransactionLogFilesHelper
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static org.Neo4Net.kernel.impl.transaction.log.files.LogFiles readLogFiles(org.Neo4Net.io.layout.DatabaseLayout databaseLayout) throws java.io.IOException
+//ORIGINAL LINE: static Neo4Net.kernel.impl.transaction.log.files.LogFiles readLogFiles(Neo4Net.io.layout.DatabaseLayout databaseLayout) throws java.io.IOException
 		 internal static LogFiles ReadLogFiles( DatabaseLayout databaseLayout )
 		 {
 			  FileSystemAbstraction fileSystemAbstraction = new DefaultFileSystemAbstraction();

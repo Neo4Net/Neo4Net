@@ -32,11 +32,11 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.staging
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Math.pow;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.Format.date;
+//	import static Neo4Net.helpers.Format.date;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.Format.duration;
+//	import static Neo4Net.helpers.Format.duration;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.last;
+//	import static Neo4Net.helpers.collection.Iterables.last;
 
 	/// <summary>
 	/// This is supposed to be a beautiful one-line <seealso cref="ExecutionMonitor"/>, looking like:
@@ -116,7 +116,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.staging
 			  width -= 2 + PROGRESS_WIDTH;
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.helpers.collection.Pair<Step<?>,float> bottleNeck = execution.stepsOrderedBy(org.Neo4Net.unsafe.impl.batchimport.stats.Keys.avg_processing_time, false).iterator().next();
+//ORIGINAL LINE: Neo4Net.helpers.collection.Pair<Step<?>,float> bottleNeck = execution.stepsOrderedBy(Neo4Net.unsafe.impl.batchimport.stats.Keys.avg_processing_time, false).iterator().next();
 			  Pair<Step<object>, float> bottleNeck = execution.StepsOrderedBy( Keys.avg_processing_time, false ).GetEnumerator().next();
 			  QuantizedProjection projection = new QuantizedProjection( total, width );
 			  long lastDoneBatches = 0;

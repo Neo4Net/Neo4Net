@@ -210,7 +210,7 @@ namespace Neo4Net.Consistency.checking.full
 		 internal static IntObjectMap<PropertyBlock> Properties( IList<PropertyBlock> propertyBlocks )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.eclipse.collections.api.map.primitive.MutableIntObjectMap<org.Neo4Net.kernel.impl.store.record.PropertyBlock> propertyIds = new org.eclipse.collections.impl.map.mutable.primitive.IntObjectHashMap<>();
+//ORIGINAL LINE: final org.eclipse.collections.api.map.primitive.MutableIntObjectMap<Neo4Net.kernel.impl.store.record.PropertyBlock> propertyIds = new org.eclipse.collections.impl.map.mutable.primitive.IntObjectHashMap<>();
 			  MutableIntObjectMap<PropertyBlock> propertyIds = new IntObjectHashMap<PropertyBlock>();
 			  foreach ( PropertyBlock propertyBlock in propertyBlocks )
 			  {

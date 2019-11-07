@@ -21,7 +21,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 {
 	using Neo4Net.Kernel.Api.Internal;
 	using Transaction = Neo4Net.Kernel.Api.Internal.Transaction;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 
 	public class NodeIndexTransactionStateTest : NodeIndexTransactionStateTestBase<WriteTestSupport>

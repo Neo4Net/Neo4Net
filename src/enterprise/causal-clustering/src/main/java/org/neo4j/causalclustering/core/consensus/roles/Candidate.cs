@@ -28,18 +28,18 @@ namespace Neo4Net.causalclustering.core.consensus.roles
 	using Log = Neo4Net.Logging.Log;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.MajorityIncludingSelfQuorum.isQuorum;
+//	import static Neo4Net.causalclustering.core.consensus.MajorityIncludingSelfQuorum.isQuorum;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.roles.Role.CANDIDATE;
+//	import static Neo4Net.causalclustering.core.consensus.roles.Role.CANDIDATE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.roles.Role.FOLLOWER;
+//	import static Neo4Net.causalclustering.core.consensus.roles.Role.FOLLOWER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.roles.Role.LEADER;
+//	import static Neo4Net.causalclustering.core.consensus.roles.Role.LEADER;
 
 	internal class Candidate : RaftMessageHandler
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.causalclustering.core.consensus.outcome.Outcome handle(org.Neo4Net.causalclustering.core.consensus.RaftMessages_RaftMessage message, org.Neo4Net.causalclustering.core.consensus.state.ReadableRaftState ctx, org.Neo4Net.logging.Log log) throws java.io.IOException
+//ORIGINAL LINE: public Neo4Net.causalclustering.core.consensus.outcome.Outcome handle(Neo4Net.causalclustering.core.consensus.RaftMessages_RaftMessage message, Neo4Net.causalclustering.core.consensus.state.ReadableRaftState ctx, Neo4Net.logging.Log log) throws java.io.IOException
 		 public override Outcome Handle( Neo4Net.causalclustering.core.consensus.RaftMessages_RaftMessage message, ReadableRaftState ctx, Log log )
 		 {
 			  return message.Dispatch( new Handler( ctx, log ) );
@@ -59,7 +59,7 @@ namespace Neo4Net.causalclustering.core.consensus.roles
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.causalclustering.core.consensus.outcome.Outcome handle(org.Neo4Net.causalclustering.core.consensus.RaftMessages_Heartbeat req) throws java.io.IOException
+//ORIGINAL LINE: public Neo4Net.causalclustering.core.consensus.outcome.Outcome handle(Neo4Net.causalclustering.core.consensus.RaftMessages_Heartbeat req) throws java.io.IOException
 			  public override Outcome Handle( Neo4Net.causalclustering.core.consensus.RaftMessages_Heartbeat req )
 			  {
 					if ( req.LeaderTerm() < Ctx.term() )
@@ -74,7 +74,7 @@ namespace Neo4Net.causalclustering.core.consensus.roles
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.causalclustering.core.consensus.outcome.Outcome handle(org.Neo4Net.causalclustering.core.consensus.RaftMessages_AppendEntries_Request req) throws java.io.IOException
+//ORIGINAL LINE: public Neo4Net.causalclustering.core.consensus.outcome.Outcome handle(Neo4Net.causalclustering.core.consensus.RaftMessages_AppendEntries_Request req) throws java.io.IOException
 			  public override Outcome Handle( Neo4Net.causalclustering.core.consensus.RaftMessages_AppendEntries_Request req )
 			  {
 					if ( req.LeaderTerm() < Ctx.term() )
@@ -92,7 +92,7 @@ namespace Neo4Net.causalclustering.core.consensus.roles
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.causalclustering.core.consensus.outcome.Outcome handle(org.Neo4Net.causalclustering.core.consensus.RaftMessages_Vote_Response res) throws java.io.IOException
+//ORIGINAL LINE: public Neo4Net.causalclustering.core.consensus.outcome.Outcome handle(Neo4Net.causalclustering.core.consensus.RaftMessages_Vote_Response res) throws java.io.IOException
 			  public override Outcome Handle( Neo4Net.causalclustering.core.consensus.RaftMessages_Vote_Response res )
 			  {
 					if ( res.Term() > Ctx.term() )
@@ -128,7 +128,7 @@ namespace Neo4Net.causalclustering.core.consensus.roles
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.causalclustering.core.consensus.outcome.Outcome handle(org.Neo4Net.causalclustering.core.consensus.RaftMessages_Vote_Request req) throws java.io.IOException
+//ORIGINAL LINE: public Neo4Net.causalclustering.core.consensus.outcome.Outcome handle(Neo4Net.causalclustering.core.consensus.RaftMessages_Vote_Request req) throws java.io.IOException
 			  public override Outcome Handle( Neo4Net.causalclustering.core.consensus.RaftMessages_Vote_Request req )
 			  {
 					if ( req.Term() > Ctx.term() )
@@ -145,7 +145,7 @@ namespace Neo4Net.causalclustering.core.consensus.roles
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.causalclustering.core.consensus.outcome.Outcome handle(org.Neo4Net.causalclustering.core.consensus.RaftMessages_Timeout_Election election) throws java.io.IOException
+//ORIGINAL LINE: public Neo4Net.causalclustering.core.consensus.outcome.Outcome handle(Neo4Net.causalclustering.core.consensus.RaftMessages_Timeout_Election election) throws java.io.IOException
 			  public override Outcome Handle( Neo4Net.causalclustering.core.consensus.RaftMessages_Timeout_Election election )
 			  {
 					Log.info( "Failed to get elected. Got votes from: %s", Ctx.votesForMe() );
@@ -158,7 +158,7 @@ namespace Neo4Net.causalclustering.core.consensus.roles
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.causalclustering.core.consensus.outcome.Outcome handle(org.Neo4Net.causalclustering.core.consensus.RaftMessages_PreVote_Request req) throws java.io.IOException
+//ORIGINAL LINE: public Neo4Net.causalclustering.core.consensus.outcome.Outcome handle(Neo4Net.causalclustering.core.consensus.RaftMessages_PreVote_Request req) throws java.io.IOException
 			  public override Outcome Handle( Neo4Net.causalclustering.core.consensus.RaftMessages_PreVote_Request req )
 			  {
 					if ( Ctx.supportPreVoting() )

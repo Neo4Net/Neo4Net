@@ -49,7 +49,7 @@ namespace Neo4Net.causalclustering.core.consensus
 	using LogProvider = Neo4Net.Logging.LogProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.roles.Role.LEADER;
+//	import static Neo4Net.causalclustering.core.consensus.roles.Role.LEADER;
 
 	/// <summary>
 	/// Implements the Raft Consensus Algorithm.
@@ -156,7 +156,7 @@ namespace Neo4Net.causalclustering.core.consensus
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public synchronized void installCoreState(org.Neo4Net.causalclustering.core.state.snapshot.RaftCoreState coreState) throws java.io.IOException
+//ORIGINAL LINE: public synchronized void installCoreState(Neo4Net.causalclustering.core.state.snapshot.RaftCoreState coreState) throws java.io.IOException
 		 public virtual void InstallCoreState( RaftCoreState coreState )
 		 {
 			 lock ( this )
@@ -182,7 +182,7 @@ namespace Neo4Net.causalclustering.core.consensus
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.causalclustering.identity.MemberId getLeader() throws NoLeaderFoundException
+//ORIGINAL LINE: public Neo4Net.causalclustering.identity.MemberId getLeader() throws NoLeaderFoundException
 		 public virtual MemberId Leader
 		 {
 			 get
@@ -192,7 +192,7 @@ namespace Neo4Net.causalclustering.core.consensus
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.causalclustering.identity.MemberId waitForLeader(long timeoutMillis, System.Predicate<org.Neo4Net.causalclustering.identity.MemberId> predicate) throws NoLeaderFoundException
+//ORIGINAL LINE: private Neo4Net.causalclustering.identity.MemberId waitForLeader(long timeoutMillis, System.Predicate<Neo4Net.causalclustering.identity.MemberId> predicate) throws NoLeaderFoundException
 		 private MemberId WaitForLeader( long timeoutMillis, System.Predicate<MemberId> predicate )
 		 {
 			  try
@@ -274,7 +274,7 @@ namespace Neo4Net.causalclustering.core.consensus
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public synchronized org.Neo4Net.causalclustering.core.consensus.outcome.ConsensusOutcome handle(RaftMessages_RaftMessage incomingMessage) throws java.io.IOException
+//ORIGINAL LINE: public synchronized Neo4Net.causalclustering.core.consensus.outcome.ConsensusOutcome handle(RaftMessages_RaftMessage incomingMessage) throws java.io.IOException
 		 public virtual ConsensusOutcome Handle( RaftMessages_RaftMessage incomingMessage )
 		 {
 			 lock ( this )
@@ -302,7 +302,7 @@ namespace Neo4Net.causalclustering.core.consensus
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void driveMembership(org.Neo4Net.causalclustering.core.consensus.outcome.Outcome outcome) throws java.io.IOException
+//ORIGINAL LINE: private void driveMembership(Neo4Net.causalclustering.core.consensus.outcome.Outcome outcome) throws java.io.IOException
 		 private void DriveMembership( Outcome outcome )
 		 {
 			  _membershipManager.processLog( outcome.CommitIndex, outcome.LogCommands );

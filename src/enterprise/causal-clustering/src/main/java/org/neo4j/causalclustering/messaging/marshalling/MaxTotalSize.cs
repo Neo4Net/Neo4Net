@@ -30,7 +30,7 @@ namespace Neo4Net.causalclustering.messaging.marshalling
 	using ByteUnit = Neo4Net.Io.ByteUnit;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.util.Preconditions.requirePositive;
+//	import static Neo4Net.util.Preconditions.requirePositive;
 
 	public class MaxTotalSize : ChunkedInput<ByteBuf>
 	{

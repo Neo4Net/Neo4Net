@@ -32,11 +32,11 @@ namespace Neo4Net.Kernel.Impl.Api.index
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Math.toIntExact;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.collection.PrimitiveArrays.isSortedSet;
+//	import static Neo4Net.collection.PrimitiveArrays.isSortedSet;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor_PropertySchemaType.COMPLETE_ALL_TOKENS;
+//	import static Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor_PropertySchemaType.COMPLETE_ALL_TOKENS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor_PropertySchemaType.PARTIAL_ANY_TOKEN;
+//	import static Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor_PropertySchemaType.PARTIAL_ANY_TOKEN;
 
 	/// <summary>
 	/// Collects and provides efficient access to <seealso cref="SchemaDescriptor"/>, based on complete list of IEntity tokens and partial or complete list of property keys.

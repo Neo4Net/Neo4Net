@@ -34,19 +34,19 @@ namespace Neo4Net.Dbms.CommandLine
 	using Config = Neo4Net.Kernel.configuration.Config;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.commandline.Util.canonicalPath;
+//	import static Neo4Net.commandline.Util.canonicalPath;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.commandline.Util.checkLock;
+//	import static Neo4Net.commandline.Util.checkLock;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.commandline.Util.isSameOrChildPath;
+//	import static Neo4Net.commandline.Util.isSameOrChildPath;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.commandline.Util.wrapIOException;
+//	import static Neo4Net.commandline.Util.wrapIOException;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.commandline.arguments.common.Database.ARG_DATABASE;
+//	import static Neo4Net.commandline.arguments.common.Database.ARG_DATABASE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.database_path;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.database_path;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.logical_logs_location;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.logical_logs_location;
 
 	public class LoadCommand : AdminCommand
 	{
@@ -67,7 +67,7 @@ namespace Neo4Net.Dbms.CommandLine
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void execute(String[] args) throws org.Neo4Net.commandline.admin.IncorrectUsage, org.Neo4Net.commandline.admin.CommandFailed
+//ORIGINAL LINE: public void execute(String[] args) throws Neo4Net.commandline.admin.IncorrectUsage, Neo4Net.commandline.admin.CommandFailed
 		 public override void Execute( string[] args )
 		 {
 			  _arguments.parse( args );
@@ -100,7 +100,7 @@ namespace Neo4Net.Dbms.CommandLine
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void deleteIfNecessary(java.nio.file.Path databaseDirectory, java.nio.file.Path transactionLogsDirectory, boolean force) throws org.Neo4Net.commandline.admin.CommandFailed
+//ORIGINAL LINE: private void deleteIfNecessary(java.nio.file.Path databaseDirectory, java.nio.file.Path transactionLogsDirectory, boolean force) throws Neo4Net.commandline.admin.CommandFailed
 		 private void DeleteIfNecessary( Path databaseDirectory, Path transactionLogsDirectory, bool force )
 		 {
 			  try
@@ -122,7 +122,7 @@ namespace Neo4Net.Dbms.CommandLine
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void load(java.nio.file.Path archive, String database, java.nio.file.Path databaseDirectory, java.nio.file.Path transactionLogsDirectory) throws org.Neo4Net.commandline.admin.CommandFailed
+//ORIGINAL LINE: private void load(java.nio.file.Path archive, String database, java.nio.file.Path databaseDirectory, java.nio.file.Path transactionLogsDirectory) throws Neo4Net.commandline.admin.CommandFailed
 		 private void Load( Path archive, string database, Path databaseDirectory, Path transactionLogsDirectory )
 		 {
 			  try

@@ -160,8 +160,8 @@ namespace Common
 		 {
 			  IList<string> unexpectedDefs = new List<string>();
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: try (org.Neo4Net.graphdb.ResourceIterator<? extends org.Neo4Net.graphdb.Path> iterator = org.Neo4Net.helpers.collection.Iterators.asResourceIterator(paths.iterator()))
-			  using ( ResourceIterator<Path> iterator = Iterators.asResourceIterator( paths.GetEnumerator() ) )
+//ORIGINAL LINE: try (Neo4Net.graphdb.ResourceIterator<? extends Neo4Net.graphdb.Path> iterator = Neo4Net.helpers.collection.Iterators.asResourceIterator(paths.iterator()))
+			  using ( IResourceIterator<Path> iterator = Iterators.asResourceIterator( paths.GetEnumerator() ) )
 			  {
 					while ( iterator.MoveNext() )
 					{

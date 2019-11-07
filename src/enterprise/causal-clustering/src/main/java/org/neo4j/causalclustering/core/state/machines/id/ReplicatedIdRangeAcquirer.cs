@@ -34,7 +34,7 @@ namespace Neo4Net.causalclustering.core.state.machines.id
 	using LogProvider = Neo4Net.Logging.LogProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.collection.PrimitiveLongCollections.EMPTY_LONG_ARRAY;
+//	import static Neo4Net.collection.PrimitiveLongCollections.EMPTY_LONG_ARRAY;
 
 	/// <summary>
 	/// Replicates commands to assign next available id range to this member.

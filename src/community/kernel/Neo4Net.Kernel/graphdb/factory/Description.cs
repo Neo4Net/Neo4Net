@@ -23,7 +23,7 @@ namespace Neo4Net.GraphDb.factory
 {
 
 	/// <summary>
-	/// DEPRECATED: Please use <seealso cref="org.Neo4Net.configuration.Description"/> instead. This will be removed in 4.0.
+	/// DEPRECATED: Please use <seealso cref="Neo4Net.configuration.Description"/> instead. This will be removed in 4.0.
 	/// </summary>
 	[Obsolete, AttributeUsage(AttributeTargets.Class | AttributeTargets.Field, AllowMultiple = false, Inherited = false)]
 	public class Description : System.Attribute

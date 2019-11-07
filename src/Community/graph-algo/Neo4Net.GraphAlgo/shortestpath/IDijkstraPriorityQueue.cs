@@ -26,7 +26,7 @@ namespace Neo4Net.GraphAlgo.ShortestPath
 	/// of) alternative implementations easier. </summary>
 	/// @param <CostType>
 	///            The datatype the path weights are represented by. </param>
-	public interface DijkstraPriorityQueue<CostType>
+	public interface IDijkstraPriorityQueue<CostType>
 	{
 		 /// <summary>
 		 /// Used to insert a new value into the queue. </summary>

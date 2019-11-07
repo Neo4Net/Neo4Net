@@ -316,14 +316,14 @@ namespace Neo4Net.causalclustering.core.state.storage
 				  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void marshal(System.Nullable<long> aLong, org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public void marshal(System.Nullable<long> aLong, Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
 				  public override void marshal( long? aLong, WritableChannel channel )
 				  {
 						channel.PutLong( aLong.Value );
 				  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public System.Nullable<long> unmarshal0(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public System.Nullable<long> unmarshal0(Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
 				  public override long? unmarshal0( ReadableChannel channel )
 				  {
 						return channel.Long;

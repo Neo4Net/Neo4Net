@@ -70,13 +70,13 @@ namespace Neo4Net.Kernel.impl.locking.community
 //ORIGINAL LINE: final RagManager ragManager = new RagManager();
 			  RagManager ragManager = new RagManager();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final LockResource resource = new LockResource(org.Neo4Net.kernel.impl.locking.ResourceTypes.NODE, 0);
+//ORIGINAL LINE: final LockResource resource = new LockResource(Neo4Net.kernel.impl.locking.ResourceTypes.NODE, 0);
 			  LockResource resource = new LockResource( ResourceTypes.NODE, 0 );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final RWLock lock = createRWLock(ragManager, resource);
 			  RWLock @lock = CreateRWLock( ragManager, resource );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.graphdb.Transaction tx1 = mock(org.Neo4Net.graphdb.Transaction.class);
+//ORIGINAL LINE: final Neo4Net.graphdb.Transaction tx1 = mock(Neo4Net.graphdb.Transaction.class);
 			  Transaction tx1 = mock( typeof( Transaction ) );
 
 			  @lock.Mark();
@@ -96,13 +96,13 @@ namespace Neo4Net.Kernel.impl.locking.community
 //ORIGINAL LINE: final RagManager ragManager = new RagManager();
 			  RagManager ragManager = new RagManager();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final LockResource resource = new LockResource(org.Neo4Net.kernel.impl.locking.ResourceTypes.NODE, 0);
+//ORIGINAL LINE: final LockResource resource = new LockResource(Neo4Net.kernel.impl.locking.ResourceTypes.NODE, 0);
 			  LockResource resource = new LockResource( ResourceTypes.NODE, 0 );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final RWLock lock = createRWLock(ragManager, resource);
 			  RWLock @lock = CreateRWLock( ragManager, resource );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.graphdb.Transaction tx1 = mock(org.Neo4Net.graphdb.Transaction.class);
+//ORIGINAL LINE: final Neo4Net.graphdb.Transaction tx1 = mock(Neo4Net.graphdb.Transaction.class);
 			  Transaction tx1 = mock( typeof( Transaction ) );
 
 			  @lock.Mark();

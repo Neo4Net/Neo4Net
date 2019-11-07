@@ -40,16 +40,16 @@ namespace Neo4Net.Kernel.ha
 	using Neo4Net.Test.rule.concurrent;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.masterAvailable;
+//	import static Neo4Net.kernel.impl.ha.ClusterManager.masterAvailable;
 
 	public class IdBufferingRoleSwitchIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.ha.ClusterRule clusterRule = new org.Neo4Net.test.ha.ClusterRule().withSharedSetting(HaSettings.pull_interval, "0").withSharedSetting(HaSettings.tx_push_factor, "0").withSharedSetting(org.Neo4Net.cluster.ClusterSettings.join_timeout, "60s").withConsistencyCheckAfterwards();
+//ORIGINAL LINE: @Rule public Neo4Net.test.ha.ClusterRule clusterRule = new Neo4Net.test.ha.ClusterRule().withSharedSetting(HaSettings.pull_interval, "0").withSharedSetting(HaSettings.tx_push_factor, "0").withSharedSetting(Neo4Net.cluster.ClusterSettings.join_timeout, "60s").withConsistencyCheckAfterwards();
 		 public ClusterRule ClusterRule = new ClusterRule().withSharedSetting(HaSettings.PullInterval, "0").withSharedSetting(HaSettings.TxPushFactor, "0").withSharedSetting(ClusterSettings.join_timeout, "60s").withConsistencyCheckAfterwards();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.concurrent.OtherThreadRule<Void> t2 = new org.Neo4Net.test.rule.concurrent.OtherThreadRule<>();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.concurrent.OtherThreadRule<Void> t2 = new Neo4Net.test.rule.concurrent.OtherThreadRule<>();
 		 public OtherThreadRule<Void> T2 = new OtherThreadRule<Void>();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -96,7 +96,7 @@ namespace Neo4Net.Kernel.ha
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private org.Neo4Net.test.OtherThreadExecutor.WorkerCommand<Void,Void> barrierControlledReadTransaction(final org.Neo4Net.graphdb.GraphDatabaseService slave, final org.Neo4Net.test.Barrier_Control barrier)
+//ORIGINAL LINE: private Neo4Net.test.OtherThreadExecutor.WorkerCommand<Void,Void> barrierControlledReadTransaction(final Neo4Net.graphdb.GraphDatabaseService slave, final Neo4Net.test.Barrier_Control barrier)
 		 private WorkerCommand<Void, Void> BarrierControlledReadTransaction( IGraphDatabaseService slave, Neo4Net.Test.Barrier_Control barrier )
 		 {
 			  return state =>

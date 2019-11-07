@@ -29,7 +29,7 @@ namespace Neo4Net.Kernel.ha
 	using TransactionIdStore = Neo4Net.Kernel.impl.transaction.log.TransactionIdStore;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.Exceptions.withMessage;
+//	import static Neo4Net.helpers.Exceptions.withMessage;
 
 	/// <summary>
 	/// Transaction meta data can normally be looked up using <seealso cref="LogicalTransactionStore.getMetadataFor(long)"/>.

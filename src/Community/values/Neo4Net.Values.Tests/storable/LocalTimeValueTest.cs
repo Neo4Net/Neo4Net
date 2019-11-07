@@ -32,13 +32,13 @@ namespace Neo4Net.Values.Storable
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertThrows;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.LocalTimeValue.localTime;
+//	import static Neo4Net.values.storable.LocalTimeValue.localTime;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.LocalTimeValue.parse;
+//	import static Neo4Net.values.storable.LocalTimeValue.parse;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.utils.AnyValueTestUtil.assertEqual;
+//	import static Neo4Net.values.utils.AnyValueTestUtil.assertEqual;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.utils.AnyValueTestUtil.assertNotEqual;
+//	import static Neo4Net.values.utils.AnyValueTestUtil.assertNotEqual;
 
 	internal class LocalTimeValueTest
 	{

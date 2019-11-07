@@ -48,7 +48,7 @@ namespace Neo4Net.causalclustering.core.state.machines.dummy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void handle(org.Neo4Net.causalclustering.messaging.marshalling.ReplicatedContentHandler contentHandler) throws java.io.IOException
+//ORIGINAL LINE: public void handle(Neo4Net.causalclustering.messaging.marshalling.ReplicatedContentHandler contentHandler) throws java.io.IOException
 		 public override void Handle( ReplicatedContentHandler contentHandler )
 		 {
 			  contentHandler.Handle( this );
@@ -87,7 +87,7 @@ namespace Neo4Net.causalclustering.core.state.machines.dummy
 			  public static readonly Marshal Instance = new Marshal();
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void marshal(DummyRequest dummy, org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public void marshal(DummyRequest dummy, Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
 //JAVA TO C# CONVERTER NOTE: Members cannot have the same name as their enclosing type:
 			  public override void MarshalConflict( DummyRequest dummy, WritableChannel channel )
 			  {
@@ -103,7 +103,7 @@ namespace Neo4Net.causalclustering.core.state.machines.dummy
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected DummyRequest unmarshal0(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: protected DummyRequest unmarshal0(Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
 			  protected internal override DummyRequest Unmarshal0( ReadableChannel channel )
 			  {
 					int length = channel.Int;

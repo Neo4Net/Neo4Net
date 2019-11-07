@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel.impl.coreapi
 
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using SecurityContext = Neo4Net.Kernel.Api.Internal.security.SecurityContext;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 
 	public interface IInternalTransaction : Transaction
@@ -33,7 +33,7 @@ namespace Neo4Net.Kernel.impl.coreapi
 
 		 SecurityContext SecurityContext();
 
-		 Neo4Net.Kernel.api.KernelTransaction_Revertable OverrideWith( SecurityContext context );
+		 Neo4Net.Kernel.Api.KernelTransaction_Revertable OverrideWith( SecurityContext context );
 
 		 Optional<Status> TerminationReason();
 

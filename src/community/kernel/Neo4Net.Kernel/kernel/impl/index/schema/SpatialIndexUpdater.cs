@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using PointValue = Neo4Net.Values.Storable.PointValue;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.fusion.FusionIndexBase.forAll;
+//	import static Neo4Net.kernel.impl.index.schema.fusion.FusionIndexBase.forAll;
 
 	public class SpatialIndexUpdater : SpatialIndexCache<NativeIndexUpdater<JavaToDotNetGenericWildcard, NativeIndexValue>>, IndexUpdater
 	{
@@ -36,7 +36,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void process(org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> update) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: public void process(Neo4Net.kernel.api.index.IndexEntryUpdate<?> update) throws Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 public override void Process<T1>( IndexEntryUpdate<T1> update )
 		 {
 			  IndexUpdater to = Select( ( ( PointValue )update.Values()[0] ).CoordinateReferenceSystem );
@@ -84,7 +84,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: public NativeIndexUpdater<?,NativeIndexValue> newSpatial(org.Neo4Net.values.storable.CoordinateReferenceSystem crs)
+//ORIGINAL LINE: public NativeIndexUpdater<?,NativeIndexValue> newSpatial(Neo4Net.values.storable.CoordinateReferenceSystem crs)
 			  public override NativeIndexUpdater<object, NativeIndexValue> NewSpatial( CoordinateReferenceSystem crs )
 			  {
 					return Accessor.select( crs ).newUpdater( Mode );

@@ -38,7 +38,7 @@ namespace Neo4Net.Io.pagecache.stress
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.Matchers.greaterThanOrEqualTo;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.pagecache.tracing.PageCacheTracer.NULL;
+//	import static Neo4Net.io.pagecache.tracing.PageCacheTracer.NULL;
 
 	/// <summary>
 	/// A stress test for page cache(s).

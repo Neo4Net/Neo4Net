@@ -25,8 +25,8 @@ namespace Neo4Net.Kernel.Api.Exceptions.index
 
 	using TokenNameLookup = Neo4Net.Kernel.Api.Internal.TokenNameLookup;
 	using SchemaUtil = Neo4Net.Kernel.Api.Internal.Schema.SchemaUtil;
-	using LabelSchemaDescriptor = Neo4Net.Kernel.api.schema.LabelSchemaDescriptor;
-	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
+	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.schema.LabelSchemaDescriptor;
+	using SchemaDescriptorFactory = Neo4Net.Kernel.Api.schema.SchemaDescriptorFactory;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.CoreMatchers.equalTo;

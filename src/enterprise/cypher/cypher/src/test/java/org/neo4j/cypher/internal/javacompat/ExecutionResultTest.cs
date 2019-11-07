@@ -53,7 +53,7 @@ namespace Neo4Net.Cypher.Internal.javacompat
 	{
 		 private const string CURRENT_VERSION = "CYPHER 3.5";
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.EnterpriseDatabaseRule db = new org.Neo4Net.test.rule.EnterpriseDatabaseRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.EnterpriseDatabaseRule db = new Neo4Net.test.rule.EnterpriseDatabaseRule();
 		 public readonly EnterpriseDatabaseRule Db = new EnterpriseDatabaseRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -109,7 +109,7 @@ namespace Neo4Net.Cypher.Internal.javacompat
 
 			  // When
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.List<org.Neo4Net.graphdb.Result_ResultRow> listResult = new java.util.ArrayList<>();
+//ORIGINAL LINE: final java.util.List<Neo4Net.graphdb.Result_ResultRow> listResult = new java.util.ArrayList<>();
 			  IList<Neo4Net.GraphDb.Result_ResultRow> listResult = new List<Neo4Net.GraphDb.Result_ResultRow>();
 			  using ( Result result = Db.execute( "CYPHER runtime=compiled MATCH (n) RETURN n" ) )
 			  {
@@ -134,7 +134,7 @@ namespace Neo4Net.Cypher.Internal.javacompat
 
 			  // When
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.List<org.Neo4Net.graphdb.Result_ResultRow> listResult = new java.util.ArrayList<>();
+//ORIGINAL LINE: final java.util.List<Neo4Net.graphdb.Result_ResultRow> listResult = new java.util.ArrayList<>();
 			  IList<Neo4Net.GraphDb.Result_ResultRow> listResult = new List<Neo4Net.GraphDb.Result_ResultRow>();
 			  using ( Result result = Db.execute( "CYPHER runtime=compiled MATCH (n) RETURN n" ) )
 			  {

@@ -39,27 +39,27 @@ namespace Neo4Net.Dbms.CommandLine
 	using IdType = Neo4Net.@unsafe.Impl.Batchimport.input.csv.IdType;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.util.Converters.withDefault;
+//	import static Neo4Net.kernel.impl.util.Converters.withDefault;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.tooling.ImportTool.csvConfiguration;
+//	import static Neo4Net.tooling.ImportTool.csvConfiguration;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.tooling.ImportTool.extractInputFiles;
+//	import static Neo4Net.tooling.ImportTool.extractInputFiles;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.tooling.ImportTool.importConfiguration;
+//	import static Neo4Net.tooling.ImportTool.importConfiguration;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.tooling.ImportTool.nodeData;
+//	import static Neo4Net.tooling.ImportTool.nodeData;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.tooling.ImportTool.relationshipData;
+//	import static Neo4Net.tooling.ImportTool.relationshipData;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.tooling.ImportTool.validateInputFiles;
+//	import static Neo4Net.tooling.ImportTool.validateInputFiles;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.input.Collectors.badCollector;
+//	import static Neo4Net.@unsafe.impl.batchimport.input.Collectors.badCollector;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.input.Collectors.collect;
+//	import static Neo4Net.@unsafe.impl.batchimport.input.Collectors.collect;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.input.csv.DataFactories.defaultFormatNodeFileHeader;
+//	import static Neo4Net.@unsafe.impl.batchimport.input.csv.DataFactories.defaultFormatNodeFileHeader;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.input.csv.DataFactories.defaultFormatRelationshipFileHeader;
+//	import static Neo4Net.@unsafe.impl.batchimport.input.csv.DataFactories.defaultFormatRelationshipFileHeader;
 
 	internal class CsvImporter : Importer
 	{
@@ -77,7 +77,7 @@ namespace Neo4Net.Dbms.CommandLine
 		 private readonly bool? _highIO;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: CsvImporter(org.Neo4Net.helpers.Args args, org.Neo4Net.kernel.configuration.Config databaseConfig, org.Neo4Net.commandline.admin.OutsideWorld outsideWorld) throws org.Neo4Net.commandline.admin.IncorrectUsage
+//ORIGINAL LINE: CsvImporter(Neo4Net.helpers.Args args, Neo4Net.kernel.configuration.Config databaseConfig, Neo4Net.commandline.admin.OutsideWorld outsideWorld) throws Neo4Net.commandline.admin.IncorrectUsage
 		 internal CsvImporter( Args args, Config databaseConfig, OutsideWorld outsideWorld )
 		 {
 			  this._args = args;

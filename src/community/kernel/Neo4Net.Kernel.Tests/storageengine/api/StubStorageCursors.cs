@@ -45,7 +45,7 @@ namespace Neo4Net.Kernel.Api.StorageEngine
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.apache.commons.lang3.ArrayUtils.contains;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.core.TokenHolder_Fields.TYPE_PROPERTY_KEY;
+//	import static Neo4Net.kernel.impl.core.TokenHolder_Fields.TYPE_PROPERTY_KEY;
 
 	/// <summary>
 	/// Implementation of <seealso cref="StorageReader"/> with focus on making testing the storage read cursors easy without resorting to mocking.
@@ -275,7 +275,7 @@ namespace Neo4Net.Kernel.Api.StorageEngine
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public <EXCEPTION extends Exception> void relationshipVisit(long relationshipId, RelationshipVisitor<EXCEPTION> relationshipVisitor) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.EntityNotFoundException, EXCEPTION
+//ORIGINAL LINE: public <EXCEPTION extends Exception> void relationshipVisit(long relationshipId, RelationshipVisitor<EXCEPTION> relationshipVisitor) throws Neo4Net.Kernel.Api.Internal.Exceptions.EntityNotFoundException, EXCEPTION
 		 public override void RelationshipVisit<EXCEPTION>( long relationshipId, RelationshipVisitor<EXCEPTION> relationshipVisitor ) where EXCEPTION : Exception
 		 {
 			  RelationshipData data = this._relationshipData[relationshipId];

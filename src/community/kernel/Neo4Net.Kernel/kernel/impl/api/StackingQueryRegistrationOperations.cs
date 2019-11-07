@@ -22,7 +22,7 @@
 namespace Neo4Net.Kernel.Impl.Api
 {
 
-	using ExecutingQuery = Neo4Net.Kernel.api.query.ExecutingQuery;
+	using ExecutingQuery = Neo4Net.Kernel.Api.query.ExecutingQuery;
 	using QueryRegistrationOperations = Neo4Net.Kernel.Impl.Api.operations.QueryRegistrationOperations;
 	using ClientConnectionInfo = Neo4Net.Kernel.impl.query.clientconnection.ClientConnectionInfo;
 	using MonotonicCounter = Neo4Net.Kernel.impl.util.MonotonicCounter;

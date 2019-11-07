@@ -125,7 +125,7 @@ namespace Neo4Net.Dbms.diagnostics.jmx
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void addToArchive(java.nio.file.Path archiveDestination, org.Neo4Net.diagnostics.DiagnosticsReporterProgress progress) throws java.io.IOException
+//ORIGINAL LINE: public void addToArchive(java.nio.file.Path archiveDestination, Neo4Net.diagnostics.DiagnosticsReporterProgress progress) throws java.io.IOException
 			 public void addToArchive( Path archiveDestination, DiagnosticsReporterProgress progress )
 			 {
 				  // Heap dump has to target an actual file, we cannot stream directly to the archive
@@ -147,7 +147,7 @@ namespace Neo4Net.Dbms.diagnostics.jmx
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public long estimatedSize(org.Neo4Net.diagnostics.DiagnosticsReporterProgress progress) throws java.io.IOException
+//ORIGINAL LINE: public long estimatedSize(Neo4Net.diagnostics.DiagnosticsReporterProgress progress) throws java.io.IOException
 			 public long estimatedSize( DiagnosticsReporterProgress progress )
 			 {
 				  MemoryMXBean bean = ManagementFactory.getPlatformMXBean( _outerInstance.mBeanServer, typeof( MemoryMXBean ) );
@@ -187,7 +187,7 @@ namespace Neo4Net.Dbms.diagnostics.jmx
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void addToArchive(java.nio.file.Path archiveDestination, org.Neo4Net.diagnostics.DiagnosticsReporterProgress progress) throws java.io.IOException
+//ORIGINAL LINE: public void addToArchive(java.nio.file.Path archiveDestination, Neo4Net.diagnostics.DiagnosticsReporterProgress progress) throws java.io.IOException
 			 public void addToArchive( Path archiveDestination, DiagnosticsReporterProgress progress )
 			 {
 				  using ( PrintStream printStream = new PrintStream( Files.newOutputStream( archiveDestination ) ) )
@@ -220,7 +220,7 @@ namespace Neo4Net.Dbms.diagnostics.jmx
 			  {
 				try
 				{
-					 ObjectName name = new ObjectName( "org.Neo4Net:instance=kernel#0,name=Reports" );
+					 ObjectName name = new ObjectName( "Neo4Net:instance=kernel#0,name=Reports" );
 					 Reports reportsBean = JMX.newMBeanProxy( _mBeanServer, name, typeof( Reports ) );
 					 return reportsInvoker.Invoke( reportsBean );
 				}

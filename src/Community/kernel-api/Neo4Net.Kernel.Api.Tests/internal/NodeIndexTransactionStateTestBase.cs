@@ -42,7 +42,7 @@ namespace Neo4Net.Kernel.Api.Internal
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.stringValue;
+//	import static Neo4Net.values.storable.Values.stringValue;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public abstract class NodeIndexTransactionStateTestBase<G extends KernelAPIWriteTestSupport> extends KernelAPIWriteTestBase<G>
@@ -372,7 +372,7 @@ namespace Neo4Net.Kernel.Api.Internal
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.helpers.collection.Pair<long,org.Neo4Net.values.storable.Value> nodeWithProp(Transaction tx, Object value) throws Exception
+//ORIGINAL LINE: private Neo4Net.helpers.collection.Pair<long,Neo4Net.values.storable.Value> nodeWithProp(Transaction tx, Object value) throws Exception
 		 private Pair<long, Value> NodeWithProp( Transaction tx, object value )
 		 {
 			  Write write = tx.DataWrite();
@@ -410,7 +410,7 @@ namespace Neo4Net.Kernel.Api.Internal
 		 /// will create a node with that value, after initializing the cursor and assert that the new node is not found. </param>
 		 /// <param name="queries"> the index queries </param>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertNodeAndValueForSeek(java.util.Set<org.Neo4Net.helpers.collection.Pair<long,org.Neo4Net.values.storable.Value>> expected, Transaction tx, IndexReference index, boolean needsValues, Object anotherValueFoundByQuery, IndexQuery... queries) throws Exception
+//ORIGINAL LINE: private void assertNodeAndValueForSeek(java.util.Set<Neo4Net.helpers.collection.Pair<long,Neo4Net.values.storable.Value>> expected, Transaction tx, IndexReference index, boolean needsValues, Object anotherValueFoundByQuery, IndexQuery... queries) throws Exception
 		 private void AssertNodeAndValueForSeek( ISet<Pair<long, Value>> expected, Transaction tx, IndexReference index, bool needsValues, object anotherValueFoundByQuery, params IndexQuery[] queries )
 		 {
 			  using ( NodeValueIndexCursor nodes = tx.Cursors().allocateNodeValueIndexCursor() )
@@ -432,7 +432,7 @@ namespace Neo4Net.Kernel.Api.Internal
 		 /// <param name="anotherValueFoundByQuery"> a values that would be found by, if a node with that value existed. This method
 		 /// will create a node with that value, after initializing the cursor and assert that the new node is not found. </param>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertNodeAndValueForScan(java.util.Set<org.Neo4Net.helpers.collection.Pair<long,org.Neo4Net.values.storable.Value>> expected, Transaction tx, IndexReference index, boolean needsValues, Object anotherValueFoundByQuery) throws Exception
+//ORIGINAL LINE: private void assertNodeAndValueForScan(java.util.Set<Neo4Net.helpers.collection.Pair<long,Neo4Net.values.storable.Value>> expected, Transaction tx, IndexReference index, boolean needsValues, Object anotherValueFoundByQuery) throws Exception
 		 private void AssertNodeAndValueForScan( ISet<Pair<long, Value>> expected, Transaction tx, IndexReference index, bool needsValues, object anotherValueFoundByQuery )
 		 {
 			  using ( NodeValueIndexCursor nodes = tx.Cursors().allocateNodeValueIndexCursor() )
@@ -443,7 +443,7 @@ namespace Neo4Net.Kernel.Api.Internal
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertNodeAndValue(java.util.Set<org.Neo4Net.helpers.collection.Pair<long,org.Neo4Net.values.storable.Value>> expected, Transaction tx, boolean needsValues, Object anotherValueFoundByQuery, NodeValueIndexCursor nodes) throws Exception
+//ORIGINAL LINE: private void assertNodeAndValue(java.util.Set<Neo4Net.helpers.collection.Pair<long,Neo4Net.values.storable.Value>> expected, Transaction tx, boolean needsValues, Object anotherValueFoundByQuery, NodeValueIndexCursor nodes) throws Exception
 		 private void AssertNodeAndValue( ISet<Pair<long, Value>> expected, Transaction tx, bool needsValues, object anotherValueFoundByQuery, NodeValueIndexCursor nodes )
 		 {
 			  // Modify tx state with changes that should not be reflected in the cursor, since it was already initialized in the above statement

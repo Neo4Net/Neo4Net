@@ -39,11 +39,11 @@ namespace Neo4Net.Bolt.v1.transport.integration
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.Matchers.contains;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.transport.integration.Neo4NetWithSocket.DEFAULT_CONNECTOR_KEY;
+//	import static Neo4Net.bolt.v1.transport.integration.Neo4NetWithSocket.DEFAULT_CONNECTOR_KEY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.ssl.LegacySslPolicyConfig.tls_certificate_file;
+//	import static Neo4Net.kernel.configuration.ssl.LegacySslPolicyConfig.tls_certificate_file;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.ssl.LegacySslPolicyConfig.tls_key_file;
+//	import static Neo4Net.kernel.configuration.ssl.LegacySslPolicyConfig.tls_key_file;
 
 	public class CertificatesIT
 	{

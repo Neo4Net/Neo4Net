@@ -29,16 +29,16 @@ namespace Neo4Net.Kernel.impl.util.dbstructure
 	using Neo4Net.Collections.Helpers;
 	using LabelSchemaSupplier = Neo4Net.Kernel.Api.Internal.Schema.LabelSchemaSupplier;
 	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
-	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
-	using NodeExistenceConstraintDescriptor = Neo4Net.Kernel.api.schema.constraints.NodeExistenceConstraintDescriptor;
-	using NodeKeyConstraintDescriptor = Neo4Net.Kernel.api.schema.constraints.NodeKeyConstraintDescriptor;
-	using RelExistenceConstraintDescriptor = Neo4Net.Kernel.api.schema.constraints.RelExistenceConstraintDescriptor;
-	using UniquenessConstraintDescriptor = Neo4Net.Kernel.api.schema.constraints.UniquenessConstraintDescriptor;
+	using SchemaDescriptorFactory = Neo4Net.Kernel.Api.schema.SchemaDescriptorFactory;
+	using NodeExistenceConstraintDescriptor = Neo4Net.Kernel.Api.schema.constraints.NodeExistenceConstraintDescriptor;
+	using NodeKeyConstraintDescriptor = Neo4Net.Kernel.Api.schema.constraints.NodeKeyConstraintDescriptor;
+	using RelExistenceConstraintDescriptor = Neo4Net.Kernel.Api.schema.constraints.RelExistenceConstraintDescriptor;
+	using UniquenessConstraintDescriptor = Neo4Net.Kernel.Api.schema.constraints.UniquenessConstraintDescriptor;
 	using EntityType = Neo4Net.Kernel.Api.StorageEngine.EntityType;
 	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor.Type.UNIQUE;
+//	import static Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor.Type.UNIQUE;
 
 	public class DbStructureCollector : DbStructureVisitor
 	{
@@ -350,7 +350,7 @@ namespace Neo4Net.Kernel.impl.util.dbstructure
 			  public override IEnumerator<Pair<string[], string[]>> Iterator()
 			  {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.Iterator<org.Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor> iterator = indexMap.keySet().iterator();
+//ORIGINAL LINE: final java.util.Iterator<Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor> iterator = indexMap.keySet().iterator();
 					IEnumerator<SchemaDescriptor> iterator = IndexMap.Keys.GetEnumerator();
 					return new IteratorAnonymousInnerClass( this, iterator );
 			  }

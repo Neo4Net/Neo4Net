@@ -61,7 +61,7 @@ namespace Neo4Net.Kernel.impl.util
 		 /// <param name="object"> the object to turned into a AnyValue </param>
 		 /// <returns> the AnyValue corresponding to object. </returns>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") public static org.Neo4Net.values.AnyValue of(Object object)
+//ORIGINAL LINE: @SuppressWarnings("unchecked") public static Neo4Net.values.AnyValue of(Object object)
 		 public static AnyValue Of( object @object )
 		 {
 			  Value value = Values.unsafeOf( @object, true );

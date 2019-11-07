@@ -32,7 +32,7 @@ namespace Neo4Net.Kernel.impl.enterprise.transaction.log.checkpoint
 	using SystemNanoClock = Neo4Net.Time.SystemNanoClock;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Service.Implementation(CheckPointThresholdPolicy.class) public class VolumetricCheckPointPolicy extends org.Neo4Net.kernel.impl.transaction.log.checkpoint.CheckPointThresholdPolicy
+//ORIGINAL LINE: @Service.Implementation(CheckPointThresholdPolicy.class) public class VolumetricCheckPointPolicy extends Neo4Net.kernel.impl.transaction.log.checkpoint.CheckPointThresholdPolicy
 	public class VolumetricCheckPointPolicy : CheckPointThresholdPolicy
 	{
 		 public VolumetricCheckPointPolicy() : base("volumetric")

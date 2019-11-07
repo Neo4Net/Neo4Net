@@ -24,7 +24,7 @@ namespace Neo4Net.Bolt.runtime
 	public interface BoltStateMachineState
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: BoltStateMachineState process(org.Neo4Net.bolt.messaging.RequestMessage message, StateMachineContext context) throws BoltConnectionFatality;
+//ORIGINAL LINE: BoltStateMachineState process(Neo4Net.bolt.messaging.RequestMessage message, StateMachineContext context) throws BoltConnectionFatality;
 		 BoltStateMachineState Process( RequestMessage message, StateMachineContext context );
 
 		 string Name();

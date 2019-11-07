@@ -103,7 +103,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.cache
 		 protected internal abstract ThreadStart FileRangeRacer( NumberArray array, int contestant );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected abstract NumberArray getNumberArray(org.Neo4Net.io.pagecache.PagedFile file) throws java.io.IOException;
+//ORIGINAL LINE: protected abstract NumberArray getNumberArray(Neo4Net.io.pagecache.PagedFile file) throws java.io.IOException;
 		 protected internal abstract NumberArray GetNumberArray( PagedFile file );
 
 		 protected internal abstract ThreadStart WholeFileRacer( NumberArray array, int contestant );

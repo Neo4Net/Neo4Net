@@ -47,7 +47,7 @@ namespace Neo4Net.Server.rest.domain
 		 /// <param name="entity"> </param>
 		 /// <param name="properties"> </param>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void setAllProperties(org.Neo4Net.graphdb.PropertyContainer IEntity, java.util.Map<String, Object> properties) throws org.Neo4Net.server.rest.web.PropertyValueException
+//ORIGINAL LINE: public void setAllProperties(Neo4Net.graphdb.PropertyContainer IEntity, java.util.Map<String, Object> properties) throws Neo4Net.server.rest.web.PropertyValueException
 		 public virtual void SetAllProperties( IPropertyContainer IEntity, IDictionary<string, object> properties )
 		 {
 			  IDictionary<string, object> propsToSet = properties == null ? new Dictionary<string, object>() : properties;
@@ -73,7 +73,7 @@ namespace Neo4Net.Server.rest.domain
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void setProperties(org.Neo4Net.graphdb.PropertyContainer IEntity, java.util.Map<String, Object> properties) throws org.Neo4Net.server.rest.web.PropertyValueException
+//ORIGINAL LINE: public void setProperties(Neo4Net.graphdb.PropertyContainer IEntity, java.util.Map<String, Object> properties) throws Neo4Net.server.rest.web.PropertyValueException
 		 public virtual void SetProperties( IPropertyContainer IEntity, IDictionary<string, object> properties )
 		 {
 			  if ( properties != null )
@@ -90,7 +90,7 @@ namespace Neo4Net.Server.rest.domain
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void setProperty(org.Neo4Net.graphdb.PropertyContainer IEntity, String key, Object value) throws org.Neo4Net.server.rest.web.PropertyValueException
+//ORIGINAL LINE: public void setProperty(Neo4Net.graphdb.PropertyContainer IEntity, String key, Object value) throws Neo4Net.server.rest.web.PropertyValueException
 		 public virtual void SetProperty( IPropertyContainer IEntity, string key, object value )
 		 {
 			  if ( value is System.Collections.ICollection )
@@ -142,7 +142,7 @@ namespace Neo4Net.Server.rest.domain
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public Object convert(Object value) throws org.Neo4Net.server.rest.web.PropertyValueException
+//ORIGINAL LINE: public Object convert(Object value) throws Neo4Net.server.rest.web.PropertyValueException
 		 public virtual object Convert( object value )
 		 {
 			  if ( !( value is System.Collections.ICollection ) )

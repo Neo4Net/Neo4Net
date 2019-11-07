@@ -34,9 +34,9 @@ namespace Neo4Net.cluster.protocol.atomicbroadcast.multipaxos.context
 	using LogProvider = Neo4Net.Logging.LogProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.asList;
+//	import static Neo4Net.helpers.collection.Iterables.asList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.limit;
+//	import static Neo4Net.helpers.collection.Iterables.limit;
 
 
 	internal class ProposerContextImpl : AbstractContextImpl, ProposerContext

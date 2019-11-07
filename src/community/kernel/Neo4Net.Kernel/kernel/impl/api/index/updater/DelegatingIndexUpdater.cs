@@ -34,7 +34,7 @@ namespace Neo4Net.Kernel.Impl.Api.index.updater
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void process(org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> update) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: public void process(Neo4Net.kernel.api.index.IndexEntryUpdate<?> update) throws Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 public override void Process<T1>( IndexEntryUpdate<T1> update )
 		 {
 			  Delegate.process( update );

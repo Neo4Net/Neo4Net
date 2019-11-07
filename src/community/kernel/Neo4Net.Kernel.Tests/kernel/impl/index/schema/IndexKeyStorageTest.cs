@@ -45,9 +45,9 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.ByteBufferFactory.HEAP_ALLOCATOR;
+//	import static Neo4Net.kernel.impl.index.schema.ByteBufferFactory.HEAP_ALLOCATOR;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.NativeIndexKey.Inclusion.NEUTRAL;
+//	import static Neo4Net.kernel.impl.index.schema.NativeIndexKey.Inclusion.NEUTRAL;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @ExtendWith({TestDirectoryExtension.class, RandomExtension.class}) class IndexKeyStorageTest
@@ -57,11 +57,11 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 private static readonly IndexSpecificSpaceFillingCurveSettingsCache _spatialSettings = new IndexSpecificSpaceFillingCurveSettingsCache( new ConfiguredSpaceFillingCurveSettingsCache( Config.defaults() ), new Dictionary<Neo4Net.Values.Storable.CoordinateReferenceSystem, SpaceFillingCurveSettings>() );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject protected org.Neo4Net.test.rule.TestDirectory directory;
+//ORIGINAL LINE: @Inject protected Neo4Net.test.rule.TestDirectory directory;
 		 protected internal TestDirectory Directory;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject protected org.Neo4Net.test.rule.RandomRule random;
+//ORIGINAL LINE: @Inject protected Neo4Net.test.rule.RandomRule random;
 		 protected internal RandomRule Random;
 
 		 private GenericLayout _layout;

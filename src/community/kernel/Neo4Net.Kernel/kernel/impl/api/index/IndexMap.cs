@@ -34,7 +34,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 
 	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
 	using SchemaDescriptorSupplier = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptorSupplier;
-	using IndexBackedConstraintDescriptor = Neo4Net.Kernel.api.schema.constraints.IndexBackedConstraintDescriptor;
+	using IndexBackedConstraintDescriptor = Neo4Net.Kernel.Api.schema.constraints.IndexBackedConstraintDescriptor;
 	using ConstraintRule = Neo4Net.Kernel.Impl.Store.Records.ConstraintRule;
 	using EntityType = Neo4Net.Kernel.Api.StorageEngine.EntityType;
 	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
@@ -308,7 +308,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 private static MutableObjectLongMap<SchemaDescriptor> IndexIdsByDescriptor( LongObjectMap<IndexProxy> indexesById )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.eclipse.collections.api.map.primitive.MutableObjectLongMap<org.Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor> map = new org.eclipse.collections.impl.map.mutable.primitive.ObjectLongHashMap<>(indexesById.size());
+//ORIGINAL LINE: final org.eclipse.collections.api.map.primitive.MutableObjectLongMap<Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor> map = new org.eclipse.collections.impl.map.mutable.primitive.ObjectLongHashMap<>(indexesById.size());
 			  MutableObjectLongMap<SchemaDescriptor> map = new ObjectLongHashMap<SchemaDescriptor>( indexesById.size() );
 			  indexesById.forEachKeyValue( ( id, indexProxy ) => map.put( indexProxy.Descriptor.schema(), id ) );
 			  return map;

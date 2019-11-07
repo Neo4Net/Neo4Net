@@ -157,8 +157,8 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.graphdb.ResourceIterator<java.io.File> listStoreFiles() throws java.io.IOException
-		 public override ResourceIterator<File> ListStoreFiles()
+//ORIGINAL LINE: public Neo4Net.graphdb.ResourceIterator<java.io.File> listStoreFiles() throws java.io.IOException
+		 public override IResourceIterator<File> ListStoreFiles()
 		 {
 			  return _dataSource.listStoreFiles();
 		 }

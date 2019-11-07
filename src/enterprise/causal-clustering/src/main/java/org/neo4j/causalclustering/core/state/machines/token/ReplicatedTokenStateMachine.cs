@@ -46,7 +46,7 @@ namespace Neo4Net.causalclustering.core.state.machines.token
 	using TransactionApplicationMode = Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.state.machines.tx.LogIndexTxHeaderEncoding.encodeLogIndexAsTxHeader;
+//	import static Neo4Net.causalclustering.core.state.machines.tx.LogIndexTxHeaderEncoding.encodeLogIndexAsTxHeader;
 
 	public class ReplicatedTokenStateMachine : StateMachine<ReplicatedTokenRequest>
 	{
@@ -106,7 +106,7 @@ namespace Neo4Net.causalclustering.core.state.machines.token
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private int applyToStore(java.util.Collection<org.Neo4Net.Kernel.Api.StorageEngine.StorageCommand> commands, long logIndex) throws org.Neo4Net.kernel.impl.util.collection.NoSuchEntryException
+//ORIGINAL LINE: private int applyToStore(java.util.Collection<Neo4Net.Kernel.Api.StorageEngine.StorageCommand> commands, long logIndex) throws Neo4Net.kernel.impl.util.collection.NoSuchEntryException
 		 private int ApplyToStore( ICollection<StorageCommand> commands, long logIndex )
 		 {
 			  int tokenId = ExtractTokenId( commands );
@@ -130,7 +130,7 @@ namespace Neo4Net.causalclustering.core.state.machines.token
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private int extractTokenId(java.util.Collection<org.Neo4Net.Kernel.Api.StorageEngine.StorageCommand> commands) throws org.Neo4Net.kernel.impl.util.collection.NoSuchEntryException
+//ORIGINAL LINE: private int extractTokenId(java.util.Collection<Neo4Net.Kernel.Api.StorageEngine.StorageCommand> commands) throws Neo4Net.kernel.impl.util.collection.NoSuchEntryException
 		 private int ExtractTokenId( ICollection<StorageCommand> commands )
 		 {
 			  foreach ( StorageCommand command in commands )
@@ -138,7 +138,7 @@ namespace Neo4Net.causalclustering.core.state.machines.token
 					if ( command is Command.TokenCommand )
 					{
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: return ((org.Neo4Net.kernel.impl.transaction.command.Command.TokenCommand<? extends org.Neo4Net.kernel.impl.store.record.TokenRecord>) command).getAfter().getIntId();
+//ORIGINAL LINE: return ((Neo4Net.kernel.impl.transaction.command.Command.TokenCommand<? extends Neo4Net.kernel.impl.store.record.TokenRecord>) command).getAfter().getIntId();
 						 return ( ( Command.TokenCommand<TokenRecord> ) command ).After.IntId;
 					}
 			  }

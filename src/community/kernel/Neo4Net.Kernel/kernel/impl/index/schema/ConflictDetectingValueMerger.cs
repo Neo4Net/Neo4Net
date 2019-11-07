@@ -72,7 +72,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void reportConflict(REPORT_TYPE toReport) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: void reportConflict(REPORT_TYPE toReport) throws Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 internal virtual void ReportConflict( REPORT_TYPE toReport )
 		 {
 			  _conflict = false;
@@ -80,7 +80,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void checkConflict(REPORT_TYPE toReport) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: void checkConflict(REPORT_TYPE toReport) throws Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 internal virtual void CheckConflict( REPORT_TYPE toReport )
 		 {
 			  if ( WasConflicting() )
@@ -90,7 +90,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: abstract void doReportConflict(long existingNodeId, long addedNodeId, REPORT_TYPE toReport) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException;
+//ORIGINAL LINE: abstract void doReportConflict(long existingNodeId, long addedNodeId, REPORT_TYPE toReport) throws Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException;
 		 internal abstract void DoReportConflict( long existingNodeId, long addedNodeId, REPORT_TYPE toReport );
 	}
 

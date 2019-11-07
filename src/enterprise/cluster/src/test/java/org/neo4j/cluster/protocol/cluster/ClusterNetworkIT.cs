@@ -329,7 +329,7 @@ namespace Neo4Net.cluster.protocol.cluster
 		 private static IList<Cluster> @in = new List<Cluster>();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ClassRule public static org.Neo4Net.test.rule.LoggerRule logger = new org.Neo4Net.test.rule.LoggerRule(java.util.logging.Level.OFF);
+//ORIGINAL LINE: @ClassRule public static Neo4Net.test.rule.LoggerRule logger = new Neo4Net.test.rule.LoggerRule(java.util.logging.Level.OFF);
 		 public static LoggerRule Logger = new LoggerRule( Level.OFF );
 
 		 private IList<AtomicReference<ClusterConfiguration>> _configurations = new List<AtomicReference<ClusterConfiguration>>();
@@ -354,7 +354,7 @@ namespace Neo4Net.cluster.protocol.cluster
 			  for ( int i = 0; i < nrOfServers; i++ )
 			  {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.net.URI uri = new java.net.URI("Neo4Net://localhost:" + org.Neo4Net.ports.allocation.PortAuthority.allocatePort());
+//ORIGINAL LINE: final java.net.URI uri = new java.net.URI("Neo4Net://localhost:" + Neo4Net.ports.allocation.PortAuthority.allocatePort());
 					URI uri = new URI( "Neo4Net://localhost:" + PortAuthority.allocatePort() );
 
 					Monitors monitors = new Monitors();

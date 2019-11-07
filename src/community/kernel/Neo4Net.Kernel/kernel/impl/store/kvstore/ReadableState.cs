@@ -21,7 +21,7 @@ namespace Neo4Net.Kernel.impl.store.kvstore
 {
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.kvstore.DataProvider.EMPTY_DATA_PROVIDER;
+//	import static Neo4Net.kernel.impl.store.kvstore.DataProvider.EMPTY_DATA_PROVIDER;
 
 	internal abstract class ReadableState<Key> : System.IDisposable
 	{

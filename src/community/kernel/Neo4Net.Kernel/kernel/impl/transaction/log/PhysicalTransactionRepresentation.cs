@@ -60,7 +60,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean accept(org.Neo4Net.helpers.collection.Visitor<org.Neo4Net.Kernel.Api.StorageEngine.StorageCommand,java.io.IOException> visitor) throws java.io.IOException
+//ORIGINAL LINE: public boolean accept(Neo4Net.helpers.collection.Visitor<Neo4Net.Kernel.Api.StorageEngine.StorageCommand,java.io.IOException> visitor) throws java.io.IOException
 		 public override bool Accept( Visitor<StorageCommand, IOException> visitor )
 		 {
 			  foreach ( StorageCommand command in _commands )

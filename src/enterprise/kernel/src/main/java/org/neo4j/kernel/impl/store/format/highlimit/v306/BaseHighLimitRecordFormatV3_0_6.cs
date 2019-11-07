@@ -33,9 +33,9 @@ namespace Neo4Net.Kernel.impl.store.format.highlimit.v306
 	using RecordLoad = Neo4Net.Kernel.Impl.Store.Records.RecordLoad;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.RecordPageLocationCalculator.offsetForId;
+//	import static Neo4Net.kernel.impl.store.RecordPageLocationCalculator.offsetForId;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.RecordPageLocationCalculator.pageIdForRecord;
+//	import static Neo4Net.kernel.impl.store.RecordPageLocationCalculator.pageIdForRecord;
 
 	/// <summary>
 	/// Base class for record format which utilizes dynamically sized references to other record IDs and with ability
@@ -90,7 +90,7 @@ namespace Neo4Net.Kernel.impl.store.format.highlimit.v306
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void read(RECORD record, org.Neo4Net.io.pagecache.PageCursor primaryCursor, org.Neo4Net.kernel.impl.store.record.RecordLoad mode, int recordSize) throws java.io.IOException
+//ORIGINAL LINE: public void read(RECORD record, Neo4Net.io.pagecache.PageCursor primaryCursor, Neo4Net.kernel.impl.store.record.RecordLoad mode, int recordSize) throws java.io.IOException
 		 public override void Read( RECORD record, PageCursor primaryCursor, RecordLoad mode, int recordSize )
 		 {
 			  int primaryStartOffset = primaryCursor.Offset;
@@ -159,7 +159,7 @@ namespace Neo4Net.Kernel.impl.store.format.highlimit.v306
 		 protected internal abstract void DoReadInternal( RECORD record, PageCursor cursor, int recordSize, long inUseByte, bool inUse );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void write(RECORD record, org.Neo4Net.io.pagecache.PageCursor primaryCursor, int recordSize) throws java.io.IOException
+//ORIGINAL LINE: public void write(RECORD record, Neo4Net.io.pagecache.PageCursor primaryCursor, int recordSize) throws java.io.IOException
 		 public override void Write( RECORD record, PageCursor primaryCursor, int recordSize )
 		 {
 			  if ( record.inUse() )
@@ -218,7 +218,7 @@ namespace Neo4Net.Kernel.impl.store.format.highlimit.v306
 		  * if record has a reference to a secondary unit.
 		  */
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected void markAsUnused(org.Neo4Net.io.pagecache.PageCursor cursor, RECORD record, int recordSize) throws java.io.IOException
+//ORIGINAL LINE: protected void markAsUnused(Neo4Net.io.pagecache.PageCursor cursor, RECORD record, int recordSize) throws java.io.IOException
 		 protected internal virtual void MarkAsUnused( PageCursor cursor, RECORD record, int recordSize )
 		 {
 			  markAsUnused( cursor );

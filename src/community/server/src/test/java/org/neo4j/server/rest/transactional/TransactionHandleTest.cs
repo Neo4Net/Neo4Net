@@ -87,13 +87,13 @@ namespace Neo4Net.Server.rest.transactional
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.hamcrest.MockitoHamcrest.argThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.map;
+//	import static Neo4Net.helpers.collection.MapUtil.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.Transaction_Type.@explicit;
+//	import static Neo4Net.Kernel.Api.Internal.Transaction_Type.@explicit;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.security.LoginContext.AUTH_DISABLED;
+//	import static Neo4Net.Kernel.Api.Internal.security.LoginContext.AUTH_DISABLED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.transactional.StubStatementDeserializer.statements;
+//	import static Neo4Net.server.rest.transactional.StubStatementDeserializer.statements;
 
 	public class TransactionHandleTest
 	{
@@ -584,7 +584,7 @@ namespace Neo4Net.Server.rest.transactional
 		 private static Matcher<IEnumerable<Neo4NetError>> HasErrors( params Status[] codes )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.Set<org.Neo4Net.kernel.api.exceptions.Status> expectedErrorsCodes = new java.util.HashSet<>(asList(codes));
+//ORIGINAL LINE: final java.util.Set<Neo4Net.kernel.api.exceptions.Status> expectedErrorsCodes = new java.util.HashSet<>(asList(codes));
 			  ISet<Status> expectedErrorsCodes = new HashSet<Status>( asList( codes ) );
 
 			  return new TypeSafeMatcherAnonymousInnerClass( expectedErrorsCodes );

@@ -48,13 +48,13 @@ namespace Neo4Net.backup.stresstests
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helper.DatabaseConfiguration.configureBackup;
+//	import static Neo4Net.helper.DatabaseConfiguration.configureBackup;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helper.DatabaseConfiguration.configureTxLogRotationAndPruning;
+//	import static Neo4Net.helper.DatabaseConfiguration.configureTxLogRotationAndPruning;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helper.StressTestingHelper.ensureExistsAndEmpty;
+//	import static Neo4Net.helper.StressTestingHelper.ensureExistsAndEmpty;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helper.StressTestingHelper.fromEnv;
+//	import static Neo4Net.helper.StressTestingHelper.fromEnv;
 
 	/// <summary>
 	/// Notice the class name: this is _not_ going to be run as part of the main build.

@@ -53,17 +53,17 @@ namespace Neo4Net.causalclustering.discovery
 	using DbRepresentation = Neo4Net.Test.DbRepresentation;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.function.Predicates.await;
+//	import static Neo4Net.function.Predicates.await;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.function.Predicates.awaitEx;
+//	import static Neo4Net.function.Predicates.awaitEx;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.function.Predicates.notNull;
+//	import static Neo4Net.function.Predicates.notNull;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.firstOrNull;
+//	import static Neo4Net.helpers.collection.Iterables.firstOrNull;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.exceptions.Status_Transaction.LockSessionExpired;
+//	import static Neo4Net.kernel.api.exceptions.Status_Transaction.LockSessionExpired;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.util.concurrent.Futures.combine;
+//	import static Neo4Net.util.concurrent.Futures.combine;
 
 	public abstract class Cluster<T> where T : DiscoveryServiceFactory
 	{
@@ -173,7 +173,7 @@ namespace Neo4Net.causalclustering.discovery
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: public ReadReplica addReadReplicaWithIdAndMonitors(@SuppressWarnings("SameParameterValue") int memberId, org.Neo4Net.kernel.monitoring.Monitors monitors)
+//ORIGINAL LINE: public ReadReplica addReadReplicaWithIdAndMonitors(@SuppressWarnings("SameParameterValue") int memberId, Neo4Net.kernel.monitoring.Monitors monitors)
 		 public virtual ReadReplica AddReadReplicaWithIdAndMonitors( int memberId, Monitors monitors )
 		 {
 			  return AddReadReplica( memberId, _recordFormat, monitors );
@@ -221,7 +221,7 @@ namespace Neo4Net.causalclustering.discovery
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private static void shutdownMembers(java.util.Collection<? extends ClusterMember> clusterMembers, org.Neo4Net.causalclustering.helper.ErrorHandler errorHandler)
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private static void shutdownMembers(java.util.Collection<? extends ClusterMember> clusterMembers, Neo4Net.causalclustering.helper.ErrorHandler errorHandler)
 		 private static void ShutdownMembers<T1>( ICollection<T1> clusterMembers, ErrorHandler errorHandler ) where T1 : ClusterMember
 		 {
 			  errorHandler.Execute(() => combine(InvokeAll("cluster-shutdown", clusterMembers, cm =>
@@ -405,14 +405,14 @@ namespace Neo4Net.causalclustering.discovery
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public CoreClusterMember awaitCoreMemberWithRole(org.Neo4Net.causalclustering.core.consensus.roles.Role role, long timeout, java.util.concurrent.TimeUnit timeUnit) throws java.util.concurrent.TimeoutException
+//ORIGINAL LINE: public CoreClusterMember awaitCoreMemberWithRole(Neo4Net.causalclustering.core.consensus.roles.Role role, long timeout, java.util.concurrent.TimeUnit timeUnit) throws java.util.concurrent.TimeoutException
 		 public virtual CoreClusterMember AwaitCoreMemberWithRole( Role role, long timeout, TimeUnit timeUnit )
 		 {
 			  return await( () => GetMemberWithRole(role), notNull(), timeout, timeUnit );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public CoreClusterMember awaitCoreMemberWithRole(String dbName, org.Neo4Net.causalclustering.core.consensus.roles.Role role, long timeout, java.util.concurrent.TimeUnit timeUnit) throws java.util.concurrent.TimeoutException
+//ORIGINAL LINE: public CoreClusterMember awaitCoreMemberWithRole(String dbName, Neo4Net.causalclustering.core.consensus.roles.Role role, long timeout, java.util.concurrent.TimeUnit timeUnit) throws java.util.concurrent.TimeoutException
 		 public virtual CoreClusterMember AwaitCoreMemberWithRole( string dbName, Role role, long timeout, TimeUnit timeUnit )
 		 {
 			  return await( () => GetMemberWithRole(dbName, role), notNull(), timeout, timeUnit );
@@ -431,7 +431,7 @@ namespace Neo4Net.causalclustering.discovery
 		 /// Perform a transaction against the core cluster, selecting the target and retrying as necessary.
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public CoreClusterMember coreTx(System.Action<org.Neo4Net.causalclustering.core.CoreGraphDatabase,org.Neo4Net.graphdb.Transaction> op) throws Exception
+//ORIGINAL LINE: public CoreClusterMember coreTx(System.Action<Neo4Net.causalclustering.core.CoreGraphDatabase,Neo4Net.graphdb.Transaction> op) throws Exception
 		 public virtual CoreClusterMember CoreTx( System.Action<CoreGraphDatabase, Transaction> op )
 		 {
 			  string dbName = CausalClusteringSettings.database.DefaultValue;
@@ -442,7 +442,7 @@ namespace Neo4Net.causalclustering.discovery
 		 /// Perform a transaction against the core cluster, selecting the target and retrying as necessary.
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public CoreClusterMember coreTx(String dbName, System.Action<org.Neo4Net.causalclustering.core.CoreGraphDatabase,org.Neo4Net.graphdb.Transaction> op) throws Exception
+//ORIGINAL LINE: public CoreClusterMember coreTx(String dbName, System.Action<Neo4Net.causalclustering.core.CoreGraphDatabase,Neo4Net.graphdb.Transaction> op) throws Exception
 		 public virtual CoreClusterMember CoreTx( string dbName, System.Action<CoreGraphDatabase, Transaction> op )
 		 {
 			  EnsureDBName( dbName );
@@ -453,7 +453,7 @@ namespace Neo4Net.causalclustering.discovery
 		 /// Perform a transaction against the leader of the core cluster, retrying as necessary.
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private CoreClusterMember leaderTx(String dbName, System.Action<org.Neo4Net.causalclustering.core.CoreGraphDatabase,org.Neo4Net.graphdb.Transaction> op, int timeout, java.util.concurrent.TimeUnit timeUnit) throws Exception
+//ORIGINAL LINE: private CoreClusterMember leaderTx(String dbName, System.Action<Neo4Net.causalclustering.core.CoreGraphDatabase,Neo4Net.graphdb.Transaction> op, int timeout, java.util.concurrent.TimeUnit timeUnit) throws Exception
 		 private CoreClusterMember LeaderTx( string dbName, System.Action<CoreGraphDatabase, Transaction> op, int timeout, TimeUnit timeUnit )
 		 {
 			  ThrowingSupplier<CoreClusterMember, Exception> supplier = () =>
@@ -516,7 +516,7 @@ namespace Neo4Net.causalclustering.discovery
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private void createCoreMembers(final int noOfCoreMembers, java.util.List<org.Neo4Net.helpers.AdvertisedSocketAddress> initialHosts, java.util.Map<String,String> extraParams, java.util.Map<String,System.Func<int, String>> instanceExtraParams, String recordFormat)
+//ORIGINAL LINE: private void createCoreMembers(final int noOfCoreMembers, java.util.List<Neo4Net.helpers.AdvertisedSocketAddress> initialHosts, java.util.Map<String,String> extraParams, java.util.Map<String,System.Func<int, String>> instanceExtraParams, String recordFormat)
 		 private void CreateCoreMembers( int noOfCoreMembers, IList<AdvertisedSocketAddress> initialHosts, IDictionary<string, string> extraParams, IDictionary<string, System.Func<int, string>> instanceExtraParams, string recordFormat )
 		 {
 			  for ( int i = 0; i < initialHosts.Count; i++ )
@@ -578,7 +578,7 @@ namespace Neo4Net.causalclustering.discovery
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private void createReadReplicas(int noOfReadReplicas, final java.util.List<org.Neo4Net.helpers.AdvertisedSocketAddress> initialHosts, java.util.Map<String,String> extraParams, java.util.Map<String,System.Func<int, String>> instanceExtraParams, String recordFormat)
+//ORIGINAL LINE: private void createReadReplicas(int noOfReadReplicas, final java.util.List<Neo4Net.helpers.AdvertisedSocketAddress> initialHosts, java.util.Map<String,String> extraParams, java.util.Map<String,System.Func<int, String>> instanceExtraParams, String recordFormat)
 		 private void CreateReadReplicas( int noOfReadReplicas, IList<AdvertisedSocketAddress> initialHosts, IDictionary<string, string> extraParams, IDictionary<string, System.Func<int, string>> instanceExtraParams, string recordFormat )
 		 {
 			  for ( int i = 0; i < noOfReadReplicas; i++ )
@@ -642,7 +642,7 @@ namespace Neo4Net.causalclustering.discovery
 		 /// <param name="source">  The database to check against </param>
 		 /// <param name="targets"> The databases expected to match the contents of <code>member</code> </param>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static <T extends ClusterMember> void dataMatchesEventually(org.Neo4Net.test.DbRepresentation source, java.util.Collection<T> targets) throws java.util.concurrent.TimeoutException
+//ORIGINAL LINE: public static <T extends ClusterMember> void dataMatchesEventually(Neo4Net.test.DbRepresentation source, java.util.Collection<T> targets) throws java.util.concurrent.TimeoutException
 		 public static void DataMatchesEventually<T>( DbRepresentation source, ICollection<T> targets ) where T : ClusterMember
 		 {
 			  foreach ( ClusterMember targetDB in targets )

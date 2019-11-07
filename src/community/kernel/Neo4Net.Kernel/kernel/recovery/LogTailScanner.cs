@@ -39,9 +39,9 @@ namespace Neo4Net.Kernel.recovery
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.LogVersionRepository_Fields.INITIAL_LOG_VERSION;
+//	import static Neo4Net.kernel.impl.transaction.log.LogVersionRepository_Fields.INITIAL_LOG_VERSION;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.recovery.Recovery.throwUnableToCleanRecover;
+//	import static Neo4Net.kernel.recovery.Recovery.throwUnableToCleanRecover;
 
 	/// <summary>
 	/// This class collects information about the latest entries in the transaction log. Since the only way we have to collect
@@ -171,14 +171,14 @@ namespace Neo4Net.Kernel.recovery
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private boolean hasUnreadableBytes(org.Neo4Net.kernel.impl.transaction.log.LogVersionedStoreChannel channel, long maxEntryReadEndPosition) throws java.io.IOException
+//ORIGINAL LINE: private boolean hasUnreadableBytes(Neo4Net.kernel.impl.transaction.log.LogVersionedStoreChannel channel, long maxEntryReadEndPosition) throws java.io.IOException
 		 private bool HasUnreadableBytes( LogVersionedStoreChannel channel, long maxEntryReadEndPosition )
 		 {
 			  return channel.position() > maxEntryReadEndPosition;
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected LogTailInformation checkpointTailInformation(long highestLogVersion, org.Neo4Net.kernel.impl.transaction.log.entry.LogEntryStart latestStartEntry, long oldestVersionFound, org.Neo4Net.kernel.impl.transaction.log.entry.LogEntryVersion latestLogEntryVersion, org.Neo4Net.kernel.impl.transaction.log.entry.CheckPoint latestCheckPoint, boolean corruptedTransactionLogs) throws java.io.IOException
+//ORIGINAL LINE: protected LogTailInformation checkpointTailInformation(long highestLogVersion, Neo4Net.kernel.impl.transaction.log.entry.LogEntryStart latestStartEntry, long oldestVersionFound, Neo4Net.kernel.impl.transaction.log.entry.LogEntryVersion latestLogEntryVersion, Neo4Net.kernel.impl.transaction.log.entry.CheckPoint latestCheckPoint, boolean corruptedTransactionLogs) throws java.io.IOException
 		 protected internal virtual LogTailInformation CheckpointTailInformation( long highestLogVersion, LogEntryStart latestStartEntry, long oldestVersionFound, LogEntryVersion latestLogEntryVersion, CheckPoint latestCheckPoint, bool corruptedTransactionLogs )
 		 {
 			  LogPosition checkPointLogPosition = latestCheckPoint.LogPosition;
@@ -201,7 +201,7 @@ namespace Neo4Net.Kernel.recovery
 		 /// there was some exception during transaction log processing. </returns>
 		 /// <exception cref="IOException"> on channel close I/O error. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected ExtractedTransactionRecord extractFirstTxIdAfterPosition(org.Neo4Net.kernel.impl.transaction.log.LogPosition initialPosition, long maxLogVersion) throws java.io.IOException
+//ORIGINAL LINE: protected ExtractedTransactionRecord extractFirstTxIdAfterPosition(Neo4Net.kernel.impl.transaction.log.LogPosition initialPosition, long maxLogVersion) throws java.io.IOException
 		 protected internal virtual ExtractedTransactionRecord ExtractFirstTxIdAfterPosition( LogPosition initialPosition, long maxLogVersion )
 		 {
 			  LogPosition currentPosition = initialPosition;
@@ -254,7 +254,7 @@ namespace Neo4Net.Kernel.recovery
 		 /// <returns> snapshot of the state of the transaction logs tail at startup. </returns>
 		 /// <exception cref="UnderlyingStorageException"> if any errors occurs while parsing the transaction logs </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public LogTailInformation getTailInformation() throws org.Neo4Net.kernel.impl.store.UnderlyingStorageException
+//ORIGINAL LINE: public LogTailInformation getTailInformation() throws Neo4Net.kernel.impl.store.UnderlyingStorageException
 		 public virtual LogTailInformation TailInformation
 		 {
 			 get

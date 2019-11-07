@@ -35,9 +35,9 @@ namespace Neo4Net.Kernel.Impl.Api
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.api.ExplicitIndexValueValidator.INSTANCE;
+//	import static Neo4Net.kernel.impl.api.ExplicitIndexValueValidator.INSTANCE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.api.LuceneIndexValueValidator.MAX_TERM_LENGTH;
+//	import static Neo4Net.kernel.impl.api.LuceneIndexValueValidator.MAX_TERM_LENGTH;
 
 	internal class ExplicitIndexValueValidatorTest
 	{

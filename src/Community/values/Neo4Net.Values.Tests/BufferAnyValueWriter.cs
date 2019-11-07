@@ -95,7 +95,7 @@ namespace Neo4Net.Values
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void writeNode(long nodeId, org.Neo4Net.values.storable.TextArray labels, org.Neo4Net.values.virtual.MapValue properties) throws RuntimeException
+//ORIGINAL LINE: public void writeNode(long nodeId, Neo4Net.values.storable.TextArray labels, Neo4Net.values.virtual.MapValue properties) throws RuntimeException
 		 public override void WriteNode( long nodeId, TextArray labels, MapValue properties )
 		 {
 			  Buffer.Add( Specials.WriteNode( nodeId, labels, properties ) );
@@ -107,7 +107,7 @@ namespace Neo4Net.Values
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void writeRelationship(long relId, long startNodeId, long endNodeId, org.Neo4Net.values.storable.TextValue type, org.Neo4Net.values.virtual.MapValue properties) throws RuntimeException
+//ORIGINAL LINE: public void writeRelationship(long relId, long startNodeId, long endNodeId, Neo4Net.values.storable.TextValue type, Neo4Net.values.virtual.MapValue properties) throws RuntimeException
 		 public override void WriteRelationship( long relId, long startNodeId, long endNodeId, TextValue type, MapValue properties )
 		 {
 			  Buffer.Add( Specials.WriteRelationship( relId, startNodeId, endNodeId, type, properties ) );
@@ -134,7 +134,7 @@ namespace Neo4Net.Values
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void writePath(org.Neo4Net.values.virtual.NodeValue[] nodes, org.Neo4Net.values.virtual.RelationshipValue[] relationships) throws RuntimeException
+//ORIGINAL LINE: public void writePath(Neo4Net.values.virtual.NodeValue[] nodes, Neo4Net.values.virtual.RelationshipValue[] relationships) throws RuntimeException
 		 public override void WritePath( NodeValue[] nodes, RelationshipValue[] relationships )
 		 {
 			  Buffer.Add( Specials.WritePath( nodes, relationships ) );

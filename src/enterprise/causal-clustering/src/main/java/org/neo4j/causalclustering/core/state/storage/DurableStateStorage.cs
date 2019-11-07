@@ -96,7 +96,7 @@ namespace Neo4Net.causalclustering.core.state.storage
 		 private void Recover()
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.causalclustering.core.state.StateRecoveryManager.RecoveryStatus<STATE> recoveryStatus = recoveryManager.recover(fileA, fileB);
+//ORIGINAL LINE: final Neo4Net.causalclustering.core.state.StateRecoveryManager.RecoveryStatus<STATE> recoveryStatus = recoveryManager.recover(fileA, fileB);
 			  StateRecoveryManager.RecoveryStatus<STATE> recoveryStatus = _recoveryManager.recover( _fileA, _fileB );
 
 			  this._currentStoreFile = recoveryStatus.ActiveFile();
@@ -172,7 +172,7 @@ namespace Neo4Net.causalclustering.core.state.storage
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.kernel.impl.transaction.log.PhysicalFlushableChannel resetStoreFile(java.io.File nextStore) throws java.io.IOException
+//ORIGINAL LINE: private Neo4Net.kernel.impl.transaction.log.PhysicalFlushableChannel resetStoreFile(java.io.File nextStore) throws java.io.IOException
 		 private PhysicalFlushableChannel ResetStoreFile( File nextStore )
 		 {
 			  _fsa.truncate( nextStore, 0 );

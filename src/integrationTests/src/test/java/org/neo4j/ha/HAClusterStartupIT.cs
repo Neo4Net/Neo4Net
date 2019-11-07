@@ -38,7 +38,7 @@ namespace Neo4Net.ha
 	using EnterpriseGraphDatabaseFactory = Neo4Net.GraphDb.factory.EnterpriseGraphDatabaseFactory;
 	using DefaultFileSystemAbstraction = Neo4Net.Io.fs.DefaultFileSystemAbstraction;
 	using FileUtils = Neo4Net.Io.fs.FileUtils;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
 	using Settings = Neo4Net.Kernel.configuration.Settings;
 	using EnterpriseLoginContext = Neo4Net.Kernel.enterprise.api.security.EnterpriseLoginContext;
 	using HighlyAvailableGraphDatabase = Neo4Net.Kernel.ha.HighlyAvailableGraphDatabase;
@@ -52,13 +52,13 @@ namespace Neo4Net.ha
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.consistency.store.StoreAssertions.assertConsistentStore;
+//	import static Neo4Net.consistency.store.StoreAssertions.assertConsistentStore;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.allSeesAllAsAvailable;
+//	import static Neo4Net.kernel.impl.ha.ClusterManager.allSeesAllAsAvailable;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.clusterOfSize;
+//	import static Neo4Net.kernel.impl.ha.ClusterManager.clusterOfSize;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.@virtual.VirtualValues.EMPTY_MAP;
+//	import static Neo4Net.values.@virtual.VirtualValues.EMPTY_MAP;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Enclosed.class) public class HAClusterStartupIT
@@ -67,7 +67,7 @@ namespace Neo4Net.ha
 		 public class SimpleCluster
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.ha.ClusterRule clusterRule = new org.Neo4Net.test.ha.ClusterRule().withCluster(clusterOfSize(3));
+//ORIGINAL LINE: @Rule public final Neo4Net.test.ha.ClusterRule clusterRule = new Neo4Net.test.ha.ClusterRule().withCluster(clusterOfSize(3));
 			  public readonly ClusterRule ClusterRule = new ClusterRule().withCluster(clusterOfSize(3));
 			  internal HighlyAvailableGraphDatabase OldMaster;
 			  internal HighlyAvailableGraphDatabase OldSlave1;
@@ -201,7 +201,7 @@ namespace Neo4Net.ha
 		 public class ClusterWithSeed
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.ha.ClusterRule clusterRule = new org.Neo4Net.test.ha.ClusterRule().withCluster(clusterOfSize(3)).withSeedDir(dbWithOutLogs());
+//ORIGINAL LINE: @Rule public final Neo4Net.test.ha.ClusterRule clusterRule = new Neo4Net.test.ha.ClusterRule().withCluster(clusterOfSize(3)).withSeedDir(dbWithOutLogs());
 			  public readonly ClusterRule ClusterRule = new ClusterRule().withCluster(clusterOfSize(3)).withSeedDir(DbWithOutLogs());
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
@@ -265,14 +265,14 @@ namespace Neo4Net.ha
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void deleteAllFilesOn(org.Neo4Net.kernel.ha.HighlyAvailableGraphDatabase instance) throws java.io.IOException
+//ORIGINAL LINE: private static void deleteAllFilesOn(Neo4Net.kernel.ha.HighlyAvailableGraphDatabase instance) throws java.io.IOException
 		 private static void DeleteAllFilesOn( HighlyAvailableGraphDatabase instance )
 		 {
 			  FileUtils.deleteRecursively( instance.DatabaseLayout().databaseDirectory() );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void deleteAllLogsOn(org.Neo4Net.kernel.ha.HighlyAvailableGraphDatabase instance) throws java.io.IOException
+//ORIGINAL LINE: private static void deleteAllLogsOn(Neo4Net.kernel.ha.HighlyAvailableGraphDatabase instance) throws java.io.IOException
 		 private static void DeleteAllLogsOn( HighlyAvailableGraphDatabase instance )
 		 {
 			  DeleteAllLogsOn( instance.DatabaseLayout().databaseDirectory() );
@@ -293,7 +293,7 @@ namespace Neo4Net.ha
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void restartingTheClusterShouldWork(org.Neo4Net.test.ha.ClusterRule clusterRule) throws Exception
+//ORIGINAL LINE: private static void restartingTheClusterShouldWork(Neo4Net.test.ha.ClusterRule clusterRule) throws Exception
 		 private static void RestartingTheClusterShouldWork( ClusterRule clusterRule )
 		 {
 			  ClusterManager.ManagedCluster cluster = clusterRule.StartCluster();
@@ -310,7 +310,7 @@ namespace Neo4Net.ha
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void assertAllStoreConsistent(org.Neo4Net.kernel.impl.ha.ClusterManager.ManagedCluster cluster) throws org.Neo4Net.consistency.checking.full.ConsistencyCheckIncompleteException
+//ORIGINAL LINE: private static void assertAllStoreConsistent(Neo4Net.kernel.impl.ha.ClusterManager.ManagedCluster cluster) throws Neo4Net.consistency.checking.full.ConsistencyCheckIncompleteException
 		 private static void AssertAllStoreConsistent( ClusterManager.ManagedCluster cluster )
 		 {
 			  foreach ( HighlyAvailableGraphDatabase slave in cluster.AllMembers )

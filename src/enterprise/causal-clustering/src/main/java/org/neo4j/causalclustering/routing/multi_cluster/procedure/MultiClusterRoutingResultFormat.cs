@@ -27,7 +27,7 @@ namespace Neo4Net.causalclustering.routing.multi_cluster.procedure
 
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.routing.procedure.RoutingResultFormatHelper.parseEndpoints;
+//	import static Neo4Net.causalclustering.routing.procedure.RoutingResultFormatHelper.parseEndpoints;
 
 	/// <summary>
 	/// The result format of <seealso cref="GetRoutersForDatabaseProcedure"/> and

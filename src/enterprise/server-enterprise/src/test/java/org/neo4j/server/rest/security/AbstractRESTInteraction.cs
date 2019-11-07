@@ -39,7 +39,7 @@ namespace Neo4Net.Server.rest.security
 	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using DefaultFileSystemAbstraction = Neo4Net.Io.fs.DefaultFileSystemAbstraction;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
 	using BoltConnector = Neo4Net.Kernel.configuration.BoltConnector;
 	using ConnectorPortRegister = Neo4Net.Kernel.configuration.ConnectorPortRegister;
 	using LegacySslPolicyConfig = Neo4Net.Kernel.configuration.ssl.LegacySslPolicyConfig;
@@ -66,9 +66,9 @@ namespace Neo4Net.Server.rest.security
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.security.AuthToken.newBasicAuthToken;
+//	import static Neo4Net.kernel.api.security.AuthToken.newBasicAuthToken;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.BoltConnector.EncryptionLevel.OPTIONAL;
+//	import static Neo4Net.kernel.configuration.BoltConnector.EncryptionLevel.OPTIONAL;
 
 	internal abstract class AbstractRESTInteraction : CommunityServerTestBase, NeoInteractionLevel<RESTSubject>
 	{
@@ -115,7 +115,7 @@ namespace Neo4Net.Server.rest.security
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.server.security.enterprise.auth.EnterpriseUserManager getLocalUserManager() throws Exception
+//ORIGINAL LINE: public Neo4Net.server.security.enterprise.auth.EnterpriseUserManager getLocalUserManager() throws Exception
 		 public virtual EnterpriseUserManager LocalUserManager
 		 {
 			 get
@@ -142,7 +142,7 @@ namespace Neo4Net.Server.rest.security
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.kernel.impl.coreapi.InternalTransaction beginLocalTransactionAsUser(RESTSubject subject, org.Neo4Net.kernel.api.KernelTransaction.Type txType) throws Throwable
+//ORIGINAL LINE: public Neo4Net.kernel.impl.coreapi.InternalTransaction beginLocalTransactionAsUser(RESTSubject subject, Neo4Net.kernel.api.KernelTransaction.Type txType) throws Throwable
 		 public override InternalTransaction BeginLocalTransactionAsUser( RESTSubject subject, KernelTransaction.Type txType )
 		 {
 			  LoginContext loginContext = _authManager.login( newBasicAuthToken( subject.Username, subject.Password ) );
@@ -261,9 +261,9 @@ namespace Neo4Net.Server.rest.security
 			  return Server.baseUri().resolve(CommitPath()).ToString();
 		 }
 
-		 internal abstract class AbstractRESTResult : ResourceIterator<IDictionary<string, object>>
+		 internal abstract class AbstractRESTResult : IResourceIterator<IDictionary<string, object>>
 		 {
-			 public abstract ResourceIterator<R> Map( System.Func<T, R> map );
+			 public abstract IResourceIterator<R> Map( System.Func<T, R> map );
 			 public abstract java.util.stream.Stream<T> Stream();
 			 private readonly AbstractRESTInteraction _outerInstance;
 

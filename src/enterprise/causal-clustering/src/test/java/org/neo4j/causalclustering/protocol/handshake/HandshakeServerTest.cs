@@ -50,29 +50,29 @@ namespace Neo4Net.causalclustering.protocol.handshake
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verify;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.protocol.Protocol_ApplicationProtocolCategory.RAFT;
+//	import static Neo4Net.causalclustering.protocol.Protocol_ApplicationProtocolCategory.RAFT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 	using static Neo4Net.causalclustering.protocol.Protocol_ModifierProtocol;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.protocol.Protocol_ModifierProtocolCategory.COMPRESSION;
+//	import static Neo4Net.causalclustering.protocol.Protocol_ModifierProtocolCategory.COMPRESSION;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.protocol.Protocol_ModifierProtocolCategory.GRATUITOUS_OBFUSCATION;
+//	import static Neo4Net.causalclustering.protocol.Protocol_ModifierProtocolCategory.GRATUITOUS_OBFUSCATION;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.protocol.handshake.StatusCode.FAILURE;
+//	import static Neo4Net.causalclustering.protocol.handshake.StatusCode.FAILURE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.protocol.handshake.StatusCode.SUCCESS;
+//	import static Neo4Net.causalclustering.protocol.handshake.StatusCode.SUCCESS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.protocol.handshake.TestProtocols_TestApplicationProtocols.RAFT_1;
+//	import static Neo4Net.causalclustering.protocol.handshake.TestProtocols_TestApplicationProtocols.RAFT_1;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.protocol.handshake.TestProtocols_TestModifierProtocols.LZ4;
+//	import static Neo4Net.causalclustering.protocol.handshake.TestProtocols_TestModifierProtocols.LZ4;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.protocol.handshake.TestProtocols_TestModifierProtocols.LZO;
+//	import static Neo4Net.causalclustering.protocol.handshake.TestProtocols_TestModifierProtocols.LZO;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.protocol.handshake.TestProtocols_TestModifierProtocols.ROT13;
+//	import static Neo4Net.causalclustering.protocol.handshake.TestProtocols_TestModifierProtocols.ROT13;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.protocol.handshake.TestProtocols_TestModifierProtocols.SNAPPY;
+//	import static Neo4Net.causalclustering.protocol.handshake.TestProtocols_TestModifierProtocols.SNAPPY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.asSet;
+//	import static Neo4Net.helpers.collection.Iterators.asSet;
 
 	/// <seealso cref= HandshakeServerEnsureMagicTest </seealso>
 	public class HandshakeServerTest

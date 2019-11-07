@@ -24,9 +24,9 @@ using System.Collections.Generic;
 namespace Neo4Net.Functions
 {
    //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-   //	import static org.Neo4Net.function.ThrowingPredicate.throwingPredicate;
+   //	import static Neo4Net.function.ThrowingPredicate.throwingPredicate;
    //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-   //	import static org.Neo4Net.function.ThrowingSupplier.throwingSupplier;
+   //	import static Neo4Net.function.ThrowingSupplier.throwingSupplier;
 
    /// <summary>
    /// Constructors for basic <seealso cref="Predicate"/> types

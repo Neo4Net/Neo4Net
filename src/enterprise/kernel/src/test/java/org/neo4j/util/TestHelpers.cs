@@ -30,9 +30,9 @@ namespace Neo4Net.Utils
 	using StreamConsumer = Neo4Net.Test.StreamConsumer;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.proc.ProcessUtil.getClassPath;
+//	import static Neo4Net.test.proc.ProcessUtil.getClassPath;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.proc.ProcessUtil.getJavaExecutable;
+//	import static Neo4Net.test.proc.ProcessUtil.getJavaExecutable;
 
 	public class TestHelpers
 	{

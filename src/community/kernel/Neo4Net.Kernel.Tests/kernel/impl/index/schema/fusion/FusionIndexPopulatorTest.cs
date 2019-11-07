@@ -57,27 +57,27 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verify;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.fusion.FusionIndexTestHelp.add;
+//	import static Neo4Net.kernel.impl.index.schema.fusion.FusionIndexTestHelp.add;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.fusion.FusionIndexTestHelp.fill;
+//	import static Neo4Net.kernel.impl.index.schema.fusion.FusionIndexTestHelp.fill;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.fusion.FusionIndexTestHelp.verifyCallFail;
+//	import static Neo4Net.kernel.impl.index.schema.fusion.FusionIndexTestHelp.verifyCallFail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.fusion.FusionVersion.v00;
+//	import static Neo4Net.kernel.impl.index.schema.fusion.FusionVersion.v00;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.fusion.FusionVersion.v10;
+//	import static Neo4Net.kernel.impl.index.schema.fusion.FusionVersion.v10;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.fusion.FusionVersion.v20;
+//	import static Neo4Net.kernel.impl.index.schema.fusion.FusionVersion.v20;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.fusion.IndexSlot.LUCENE;
+//	import static Neo4Net.kernel.impl.index.schema.fusion.IndexSlot.LUCENE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.fusion.IndexSlot.NUMBER;
+//	import static Neo4Net.kernel.impl.index.schema.fusion.IndexSlot.NUMBER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.fusion.IndexSlot.SPATIAL;
+//	import static Neo4Net.kernel.impl.index.schema.fusion.IndexSlot.SPATIAL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.fusion.IndexSlot.STRING;
+//	import static Neo4Net.kernel.impl.index.schema.fusion.IndexSlot.STRING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.fusion.IndexSlot.TEMPORAL;
+//	import static Neo4Net.kernel.impl.index.schema.fusion.IndexSlot.TEMPORAL;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class FusionIndexPopulatorTest
@@ -266,7 +266,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void verifyAddWithCorrectPopulator(org.Neo4Net.kernel.api.index.IndexPopulator correctPopulator, org.Neo4Net.values.storable.Value... numberValues) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException, java.io.IOException
+//ORIGINAL LINE: private void verifyAddWithCorrectPopulator(Neo4Net.kernel.api.index.IndexPopulator correctPopulator, Neo4Net.values.storable.Value... numberValues) throws Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException, java.io.IOException
 		 private void VerifyAddWithCorrectPopulator( IndexPopulator correctPopulator, params Value[] numberValues )
 		 {
 			  ICollection<IndexEntryUpdate<LabelSchemaDescriptor>> update = Collections.singletonList( add( numberValues ) );
@@ -358,7 +358,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void verifyOtherCloseOnThrow(org.Neo4Net.kernel.api.index.IndexPopulator throwingPopulator) throws Exception
+//ORIGINAL LINE: private void verifyOtherCloseOnThrow(Neo4Net.kernel.api.index.IndexPopulator throwingPopulator) throws Exception
 		 private void VerifyOtherCloseOnThrow( IndexPopulator throwingPopulator )
 		 {
 			  // given

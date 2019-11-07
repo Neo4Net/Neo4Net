@@ -62,8 +62,8 @@ namespace Neo4Net.Kernel.Lifecycle
          }
 
          //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-         //ORIGINAL LINE: public void evaluate() throws Throwable
-         public override void evaluate()
+         //ORIGINAL LINE: public void Evaluate() throws Throwable
+         public override void Evaluate()
          {
             try
             {
@@ -71,7 +71,7 @@ namespace Neo4Net.Kernel.Lifecycle
                {
                   outerInstance.Start();
                }
-               @base.evaluate();
+               @base.Evaluate();
                _outerInstance.life.shutdown();
             }
             catch (Exception failure)

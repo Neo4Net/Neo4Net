@@ -19,7 +19,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Kernel.api.proc
+namespace Neo4Net.Kernel.Api.Procs
 {
 
 	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
@@ -32,8 +32,7 @@ namespace Neo4Net.Kernel.api.proc
 	{
 		 private readonly IDictionary<string, object> _values = new Dictionary<string, object>();
 
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public <T> T get(Key<T> key) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
+
 		 public override T Get<T>( Key<T> key )
 		 {
 			  object o = _values[key.Name()];

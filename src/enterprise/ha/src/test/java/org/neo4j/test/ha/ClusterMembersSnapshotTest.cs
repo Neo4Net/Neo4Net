@@ -44,11 +44,11 @@ namespace Neo4Net.Test.ha
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.ha.cluster.modeswitch.HighAvailabilityModeSwitcher.MASTER;
+//	import static Neo4Net.kernel.ha.cluster.modeswitch.HighAvailabilityModeSwitcher.MASTER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.ha.cluster.modeswitch.HighAvailabilityModeSwitcher.SLAVE;
+//	import static Neo4Net.kernel.ha.cluster.modeswitch.HighAvailabilityModeSwitcher.SLAVE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.StorageEngine.StoreId.DEFAULT;
+//	import static Neo4Net.Kernel.Api.StorageEngine.StoreId.DEFAULT;
 
 	public class ClusterMembersSnapshotTest
 	{
@@ -186,7 +186,7 @@ namespace Neo4Net.Test.ha
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private static org.hamcrest.Matcher<org.Neo4Net.cluster.member.paxos.MemberIsAvailable> memberIsAvailable(final org.Neo4Net.cluster.member.paxos.MemberIsAvailable expected)
+//ORIGINAL LINE: private static org.hamcrest.Matcher<Neo4Net.cluster.member.paxos.MemberIsAvailable> memberIsAvailable(final Neo4Net.cluster.member.paxos.MemberIsAvailable expected)
 		 private static Matcher<MemberIsAvailable> MemberIsAvailable( MemberIsAvailable expected )
 		 {
 			  return new BaseMatcherAnonymousInnerClass( expected );

@@ -46,17 +46,17 @@ namespace Neo4Net.Test.ha
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.cluster.ClusterSettings.default_timeout;
+//	import static Neo4Net.cluster.ClusterSettings.default_timeout;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.cluster.ClusterSettings.join_timeout;
+//	import static Neo4Net.cluster.ClusterSettings.join_timeout;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.pagecache_memory;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.pagecache_memory;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.store_internal_log_level;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.store_internal_log_level;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.ha.HaSettings.tx_push_factor;
+//	import static Neo4Net.kernel.ha.HaSettings.tx_push_factor;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.allSeesAllAsAvailable;
+//	import static Neo4Net.kernel.impl.ha.ClusterManager.allSeesAllAsAvailable;
 
 	/// <summary>
 	/// Starts, manages and in the end shuts down an HA cluster as a JUnit {@code Rule} or <seealso cref="ClassRule"/>.
@@ -147,7 +147,7 @@ namespace Neo4Net.Test.ha
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SafeVarargs @Override public final ClusterRule withAvailabilityChecks(System.Predicate<org.Neo4Net.kernel.impl.ha.ClusterManager.ManagedCluster>... checks)
+//ORIGINAL LINE: @SafeVarargs @Override public final ClusterRule withAvailabilityChecks(System.Predicate<Neo4Net.kernel.impl.ha.ClusterManager.ManagedCluster>... checks)
 		 public override ClusterRule WithAvailabilityChecks( params System.Predicate<ClusterManager.ManagedCluster>[] checks )
 		 {
 			  return Set( _clusterManagerBuilder.withAvailabilityChecks( checks ) );
@@ -230,14 +230,14 @@ namespace Neo4Net.Test.ha
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void evaluate() throws Throwable
-			 public override void evaluate()
+//ORIGINAL LINE: public void Evaluate() throws Throwable
+			 public override void Evaluate()
 			 {
 				  // If this is used as class rule then getMethodName() returns null, so use
 				  // getClassName() instead.
 				  string name = _description.MethodName != null ? _description.MethodName : _description.ClassName;
 				  _outerInstance.storeDirectory = _outerInstance.testDirectory.directory( name );
-				  @base.evaluate();
+				  @base.Evaluate();
 			 }
 		 }
 

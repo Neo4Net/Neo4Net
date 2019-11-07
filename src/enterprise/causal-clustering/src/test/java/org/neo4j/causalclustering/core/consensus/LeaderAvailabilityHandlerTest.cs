@@ -57,7 +57,7 @@ namespace Neo4Net.causalclustering.core.consensus
 		}
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private org.Neo4Net.causalclustering.messaging.LifecycleMessageHandler<RaftMessages_ReceivedInstantClusterIdAwareMessage<?>> delegate = org.mockito.Mockito.mock(org.Neo4Net.causalclustering.messaging.LifecycleMessageHandler.class);
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private Neo4Net.causalclustering.messaging.LifecycleMessageHandler<RaftMessages_ReceivedInstantClusterIdAwareMessage<?>> delegate = org.mockito.Mockito.mock(Neo4Net.causalclustering.messaging.LifecycleMessageHandler.class);
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		 private LifecycleMessageHandler<RaftMessages_ReceivedInstantClusterIdAwareMessage<object>> @delegate = Mockito.mock( typeof( LifecycleMessageHandler ) );
 		 private LeaderAvailabilityTimers _leaderAvailabilityTimers = Mockito.mock( typeof( LeaderAvailabilityTimers ) );
@@ -72,7 +72,7 @@ namespace Neo4Net.causalclustering.core.consensus
 //ORIGINAL LINE: private RaftMessages_ReceivedInstantClusterIdAwareMessage<?> heartbeat = RaftMessages_ReceivedInstantClusterIdAwareMessage.of(java.time.Instant.now(), clusterId, new RaftMessages_Heartbeat(leader, term.getAsLong(), 0, 0));
 		 private RaftMessages_ReceivedInstantClusterIdAwareMessage<object> _heartbeat;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private RaftMessages_ReceivedInstantClusterIdAwareMessage<?> appendEntries = RaftMessages_ReceivedInstantClusterIdAwareMessage.of(java.time.Instant.now(), clusterId, new RaftMessages_AppendEntries_Request(leader, term.getAsLong(), 0, 0, org.Neo4Net.causalclustering.core.consensus.log.RaftLogEntry.empty, 0)
+//ORIGINAL LINE: private RaftMessages_ReceivedInstantClusterIdAwareMessage<?> appendEntries = RaftMessages_ReceivedInstantClusterIdAwareMessage.of(java.time.Instant.now(), clusterId, new RaftMessages_AppendEntries_Request(leader, term.getAsLong(), 0, 0, Neo4Net.causalclustering.core.consensus.log.RaftLogEntry.empty, 0)
 		 private RaftMessages_ReceivedInstantClusterIdAwareMessage<object> appendEntries = RaftMessages_ReceivedInstantClusterIdAwareMessage.of(Instant.now(), _clusterId, new RaftMessages_AppendEntries_Request(_leader, _term.AsLong, 0, 0, RaftLogEntry.empty, 0)
 				  );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
@@ -144,7 +144,7 @@ namespace Neo4Net.causalclustering.core.consensus
 		 public void shouldNotRenewElectionTimeoutsForAppendEntriesRequestsFromEarlierTerms() throws Exception
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: RaftMessages_ReceivedInstantClusterIdAwareMessage<?> appendEntries = RaftMessages_ReceivedInstantClusterIdAwareMessage.of(java.time.Instant.now(), clusterId, new RaftMessages_AppendEntries_Request(leader, term.getAsLong() - 1, 0, 0, org.Neo4Net.causalclustering.core.consensus.log.RaftLogEntry.empty, 0)
+//ORIGINAL LINE: RaftMessages_ReceivedInstantClusterIdAwareMessage<?> appendEntries = RaftMessages_ReceivedInstantClusterIdAwareMessage.of(java.time.Instant.now(), clusterId, new RaftMessages_AppendEntries_Request(leader, term.getAsLong() - 1, 0, 0, Neo4Net.causalclustering.core.consensus.log.RaftLogEntry.empty, 0)
 			  RaftMessages_ReceivedInstantClusterIdAwareMessage<object> appendEntries = RaftMessages_ReceivedInstantClusterIdAwareMessage.of(Instant.now(), _clusterId, new RaftMessages_AppendEntries_Request(_leader, _term.AsLong - 1, 0, 0, RaftLogEntry.empty, 0)
 			 );
 

@@ -87,7 +87,7 @@ namespace Neo4Net.causalclustering.readreplica
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void start() throws java.io.IOException, org.Neo4Net.causalclustering.catchup.storecopy.DatabaseShutdownException
+//ORIGINAL LINE: public void start() throws java.io.IOException, Neo4Net.causalclustering.catchup.storecopy.DatabaseShutdownException
 		 public override void Start()
 		 {
 			  bool syncedWithUpstream = false;
@@ -156,7 +156,7 @@ namespace Neo4Net.causalclustering.readreplica
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void syncStoreWithUpstream(org.Neo4Net.causalclustering.identity.MemberId source) throws java.io.IOException, org.Neo4Net.causalclustering.catchup.storecopy.StoreIdDownloadFailedException, org.Neo4Net.causalclustering.catchup.storecopy.StoreCopyFailedException, org.Neo4Net.causalclustering.core.state.snapshot.TopologyLookupException, org.Neo4Net.causalclustering.catchup.storecopy.DatabaseShutdownException
+//ORIGINAL LINE: private void syncStoreWithUpstream(Neo4Net.causalclustering.identity.MemberId source) throws java.io.IOException, Neo4Net.causalclustering.catchup.storecopy.StoreIdDownloadFailedException, Neo4Net.causalclustering.catchup.storecopy.StoreCopyFailedException, Neo4Net.causalclustering.core.state.snapshot.TopologyLookupException, Neo4Net.causalclustering.catchup.storecopy.DatabaseShutdownException
 		 private void SyncStoreWithUpstream( MemberId source )
 		 {
 			  if ( _localDatabase.Empty )
@@ -180,7 +180,7 @@ namespace Neo4Net.causalclustering.readreplica
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void ensureSameStoreIdAs(org.Neo4Net.causalclustering.identity.MemberId upstream) throws org.Neo4Net.causalclustering.catchup.storecopy.StoreIdDownloadFailedException, org.Neo4Net.causalclustering.core.state.snapshot.TopologyLookupException
+//ORIGINAL LINE: private void ensureSameStoreIdAs(Neo4Net.causalclustering.identity.MemberId upstream) throws Neo4Net.causalclustering.catchup.storecopy.StoreIdDownloadFailedException, Neo4Net.causalclustering.core.state.snapshot.TopologyLookupException
 		 private void EnsureSameStoreIdAs( MemberId upstream )
 		 {
 			  StoreId localStoreId = _localDatabase.storeId();

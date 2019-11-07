@@ -90,21 +90,21 @@ namespace Neo4Net
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.facade.GraphDatabaseDependencies.newDependencies;
+//	import static Neo4Net.graphdb.facade.GraphDatabaseDependencies.newDependencies;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.transaction_timeout;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.transaction_timeout;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.exceptions.Status_Transaction.TransactionNotFound;
+//	import static Neo4Net.kernel.api.exceptions.Status_Transaction.TransactionNotFound;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.server.HTTP.RawPayload.quotedJson;
+//	import static Neo4Net.test.server.HTTP.RawPayload.quotedJson;
 
 	public class TransactionGuardIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ClassRule public static final org.Neo4Net.test.rule.CleanupRule cleanupRule = new org.Neo4Net.test.rule.CleanupRule();
+//ORIGINAL LINE: @ClassRule public static final Neo4Net.test.rule.CleanupRule cleanupRule = new Neo4Net.test.rule.CleanupRule();
 		 public static readonly CleanupRule CleanupRule = new CleanupRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ClassRule public static final org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @ClassRule public static final Neo4Net.test.rule.TestDirectory testDirectory = Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public static readonly TestDirectory TestDirectory = TestDirectory.testDirectory();
 
 		 private const string BOLT_CONNECTOR_KEY = "bolt";
@@ -442,7 +442,7 @@ namespace Neo4Net
 			  if ( _databaseWithTimeout == null )
 			  {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Map<org.Neo4Net.graphdb.config.Setting<?>,String> configMap = getSettingsWithTimeoutAndBolt();
+//ORIGINAL LINE: java.util.Map<Neo4Net.graphdb.config.Setting<?>,String> configMap = getSettingsWithTimeoutAndBolt();
 					IDictionary<Setting<object>, string> configMap = SettingsWithTimeoutAndBolt;
 					_databaseWithTimeout = StartCustomDatabase( TestDirectory.directory( "dbWithTimeout" ), configMap );
 					_boltPortDatabaseWithTimeout = GetBoltConnectorPort( _databaseWithTimeout );
@@ -461,7 +461,7 @@ namespace Neo4Net
 			  if ( _databaseWithoutTimeout == null )
 			  {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Map<org.Neo4Net.graphdb.config.Setting<?>,String> configMap = getSettingsWithoutTransactionTimeout();
+//ORIGINAL LINE: java.util.Map<Neo4Net.graphdb.config.Setting<?>,String> configMap = getSettingsWithoutTransactionTimeout();
 					IDictionary<Setting<object>, string> configMap = SettingsWithoutTransactionTimeout;
 					_databaseWithoutTimeout = StartCustomDatabase( TestDirectory.directory( "dbWithoutTimeout" ), configMap );
 			  }
@@ -477,7 +477,7 @@ namespace Neo4Net
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.server.enterprise.OpenEnterpriseNeoServer startNeoServer(org.Neo4Net.kernel.impl.factory.GraphDatabaseFacade database) throws java.io.IOException
+//ORIGINAL LINE: private Neo4Net.server.enterprise.OpenEnterpriseNeoServer startNeoServer(Neo4Net.kernel.impl.factory.GraphDatabaseFacade database) throws java.io.IOException
 		 private OpenEnterpriseNeoServer StartNeoServer( GraphDatabaseFacade database )
 		 {
 			  if ( _neoServer == null )
@@ -494,7 +494,7 @@ namespace Neo4Net
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private java.util.Map<org.Neo4Net.graphdb.config.Setting<?>,String> getSettingsWithTimeoutAndBolt()
+//ORIGINAL LINE: private java.util.Map<Neo4Net.graphdb.config.Setting<?>,String> getSettingsWithTimeoutAndBolt()
 		 private IDictionary<Setting<object>, string> SettingsWithTimeoutAndBolt
 		 {
 			 get
@@ -505,7 +505,7 @@ namespace Neo4Net
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private java.util.Map<org.Neo4Net.graphdb.config.Setting<?>,String> getSettingsWithoutTransactionTimeout()
+//ORIGINAL LINE: private java.util.Map<Neo4Net.graphdb.config.Setting<?>,String> getSettingsWithoutTransactionTimeout()
 		 private IDictionary<Setting<object>, string> SettingsWithoutTransactionTimeout
 		 {
 			 get

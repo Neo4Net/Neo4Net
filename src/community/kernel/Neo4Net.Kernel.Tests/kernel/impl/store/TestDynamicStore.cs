@@ -30,7 +30,7 @@ namespace Neo4Net.Kernel.impl.store
 	using RuleChain = org.junit.rules.RuleChain;
 
 
-	using DatabaseManager = Neo4Net.Dbms.database.DatabaseManager;
+	using IDatabaseManager = Neo4Net.Dbms.database.DatabaseManager;
 	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using EmptyVersionContextSupplier = Neo4Net.Io.pagecache.tracing.cursor.context.EmptyVersionContextSupplier;
 	using Config = Neo4Net.Kernel.configuration.Config;
@@ -46,7 +46,7 @@ namespace Neo4Net.Kernel.impl.store
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.record.RecordLoad.NORMAL;
+//	import static Neo4Net.kernel.impl.store.record.RecordLoad.NORMAL;
 
 	public class TestDynamicStore
 	{

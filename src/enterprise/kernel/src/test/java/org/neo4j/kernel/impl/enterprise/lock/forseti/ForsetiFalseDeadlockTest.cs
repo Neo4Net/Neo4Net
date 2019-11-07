@@ -350,9 +350,9 @@ namespace Neo4Net.Kernel.impl.enterprise.@lock.forseti
 		 public abstract class LockType
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           EXCLUSIVE { public void acquire(org.Neo4Net.kernel.impl.locking.Locks_Client client, org.Neo4Net.Kernel.Api.StorageEngine.lock.ResourceType resourceType, int resource) { client.acquireExclusive(org.Neo4Net.Kernel.Api.StorageEngine.lock.LockTracer.NONE, resourceType, resource); } public void release(org.Neo4Net.kernel.impl.locking.Locks_Client client, org.Neo4Net.Kernel.Api.StorageEngine.lock.ResourceType resourceType, int resource) { client.releaseExclusive(resourceType, resource); } },
+//           EXCLUSIVE { public void acquire(Neo4Net.kernel.impl.locking.Locks_Client client, Neo4Net.Kernel.Api.StorageEngine.lock.ResourceType resourceType, int resource) { client.acquireExclusive(Neo4Net.Kernel.Api.StorageEngine.lock.LockTracer.NONE, resourceType, resource); } public void release(Neo4Net.kernel.impl.locking.Locks_Client client, Neo4Net.Kernel.Api.StorageEngine.lock.ResourceType resourceType, int resource) { client.releaseExclusive(resourceType, resource); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           SHARED { public void acquire(org.Neo4Net.kernel.impl.locking.Locks_Client client, org.Neo4Net.Kernel.Api.StorageEngine.lock.ResourceType resourceType, int resource) { client.acquireShared(org.Neo4Net.Kernel.Api.StorageEngine.lock.LockTracer.NONE, resourceType, resource); } public void release(org.Neo4Net.kernel.impl.locking.Locks_Client client, org.Neo4Net.Kernel.Api.StorageEngine.lock.ResourceType resourceType, int resource) { client.releaseShared(resourceType, resource); } };
+//           SHARED { public void acquire(Neo4Net.kernel.impl.locking.Locks_Client client, Neo4Net.Kernel.Api.StorageEngine.lock.ResourceType resourceType, int resource) { client.acquireShared(Neo4Net.Kernel.Api.StorageEngine.lock.LockTracer.NONE, resourceType, resource); } public void release(Neo4Net.kernel.impl.locking.Locks_Client client, Neo4Net.Kernel.Api.StorageEngine.lock.ResourceType resourceType, int resource) { client.releaseShared(resourceType, resource); } };
 
 			  private static readonly IList<LockType> valueList = new List<LockType>();
 
@@ -415,9 +415,9 @@ namespace Neo4Net.Kernel.impl.enterprise.@lock.forseti
 		 public abstract class LockManager
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           COMMUNITY { public org.Neo4Net.kernel.impl.locking.Locks create(org.Neo4Net.Kernel.Api.StorageEngine.lock.ResourceType resourceType) { return new org.Neo4Net.kernel.impl.locking.community.CommunityLockManger(org.Neo4Net.kernel.configuration.Config.defaults(), java.time.Clock.systemDefaultZone()); } },
+//           COMMUNITY { public Neo4Net.kernel.impl.locking.Locks create(Neo4Net.Kernel.Api.StorageEngine.lock.ResourceType resourceType) { return new Neo4Net.kernel.impl.locking.community.CommunityLockManger(Neo4Net.kernel.configuration.Config.defaults(), java.time.Clock.systemDefaultZone()); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           FORSETI { public org.Neo4Net.kernel.impl.locking.Locks create(org.Neo4Net.Kernel.Api.StorageEngine.lock.ResourceType resourceType) { return new ForsetiLockManager(org.Neo4Net.kernel.configuration.Config.defaults(), java.time.Clock.systemDefaultZone(), resourceType); } };
+//           FORSETI { public Neo4Net.kernel.impl.locking.Locks create(Neo4Net.Kernel.Api.StorageEngine.lock.ResourceType resourceType) { return new ForsetiLockManager(Neo4Net.kernel.configuration.Config.defaults(), java.time.Clock.systemDefaultZone(), resourceType); } };
 
 			  private static readonly IList<LockManager> valueList = new List<LockManager>();
 

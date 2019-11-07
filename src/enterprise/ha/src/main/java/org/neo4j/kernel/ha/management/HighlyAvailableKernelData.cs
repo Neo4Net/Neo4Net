@@ -37,9 +37,9 @@ namespace Neo4Net.Kernel.ha.management
 	using ClusterMemberInfo = Neo4Net.management.ClusterMemberInfo;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.asArray;
+//	import static Neo4Net.helpers.collection.Iterables.asArray;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.map;
+//	import static Neo4Net.helpers.collection.Iterables.map;
 
 	public class HighlyAvailableKernelData : KernelData
 	{

@@ -42,7 +42,7 @@ namespace Neo4Net.upgrade
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Parameterized.Parameters(name = "{0}") public static java.util.Collection<org.Neo4Net.kernel.impl.store.format.RecordFormats> versions()
+//ORIGINAL LINE: @Parameterized.Parameters(name = "{0}") public static java.util.Collection<Neo4Net.kernel.impl.store.format.RecordFormats> versions()
 		 public static ICollection<RecordFormats> Versions()
 		 {
 			  return singletonList( HighLimitV3_0_0.RECORD_FORMATS );
@@ -65,7 +65,7 @@ namespace Neo4Net.upgrade
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected void prepareSampleDatabase(String version, org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, org.Neo4Net.io.layout.DatabaseLayout databaseLayout, java.io.File databaseDirectory) throws java.io.IOException
+//ORIGINAL LINE: protected void prepareSampleDatabase(String version, Neo4Net.io.fs.FileSystemAbstraction fileSystem, Neo4Net.io.layout.DatabaseLayout databaseLayout, java.io.File databaseDirectory) throws java.io.IOException
 		 protected internal override void PrepareSampleDatabase( string version, FileSystemAbstraction fileSystem, DatabaseLayout databaseLayout, File databaseDirectory )
 		 {
 			  File resourceDirectory = FindFormatStoreDirectoryForVersion( version, databaseDirectory );

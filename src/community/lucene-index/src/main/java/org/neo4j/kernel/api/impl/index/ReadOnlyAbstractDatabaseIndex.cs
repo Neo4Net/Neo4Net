@@ -83,8 +83,8 @@ namespace Neo4Net.Kernel.Api.Impl.Index
 		 /// {@inheritDoc}
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.graphdb.ResourceIterator<java.io.File> snapshot() throws java.io.IOException
-		 public override ResourceIterator<File> Snapshot()
+//ORIGINAL LINE: public Neo4Net.graphdb.ResourceIterator<java.io.File> snapshot() throws java.io.IOException
+		 public override IResourceIterator<File> Snapshot()
 		 {
 			  return luceneIndex.snapshot();
 		 }

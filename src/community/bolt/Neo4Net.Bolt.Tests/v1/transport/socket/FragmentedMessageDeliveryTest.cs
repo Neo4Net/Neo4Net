@@ -61,7 +61,7 @@ namespace Neo4Net.Bolt.v1.transport.socket
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.@virtual.VirtualValues.EMPTY_MAP;
+//	import static Neo4Net.values.@virtual.VirtualValues.EMPTY_MAP;
 
 	/// <summary>
 	/// This tests network fragmentation of messages. Given a set of messages, it will serialize and chunk the message up
@@ -90,11 +90,11 @@ namespace Neo4Net.Bolt.v1.transport.socket
 		 private RequestMessage[] _messages = new RequestMessage[]{ new RunMessage( "Mjölnir" ) };
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Parameter public org.Neo4Net.bolt.messaging.Neo4NetPack Neo4NetPack;
+//ORIGINAL LINE: @Parameter public Neo4Net.bolt.messaging.Neo4NetPack Neo4NetPack;
 		 public Neo4NetPack Neo4NetPack;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Parameters(name = "{0}") public static java.util.List<org.Neo4Net.bolt.messaging.Neo4NetPack> parameters()
+//ORIGINAL LINE: @Parameters(name = "{0}") public static java.util.List<Neo4Net.bolt.messaging.Neo4NetPack> parameters()
 		 public static IList<Neo4NetPack> Parameters()
 		 {
 			  return Arrays.asList( new Neo4NetPackV1(), new Neo4NetPackV2() );
@@ -190,7 +190,7 @@ namespace Neo4Net.Bolt.v1.transport.socket
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private byte[] serialize(int chunkSize, org.Neo4Net.bolt.messaging.RequestMessage... msgs) throws java.io.IOException
+//ORIGINAL LINE: private byte[] serialize(int chunkSize, Neo4Net.bolt.messaging.RequestMessage... msgs) throws java.io.IOException
 		 private sbyte[] Serialize( int chunkSize, params RequestMessage[] msgs )
 		 {
 			  sbyte[][] serialized = new sbyte[msgs.Length][];

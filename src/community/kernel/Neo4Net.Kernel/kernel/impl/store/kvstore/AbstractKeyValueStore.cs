@@ -34,9 +34,9 @@ namespace Neo4Net.Kernel.impl.store.kvstore
 	using FeatureToggles = Neo4Net.Utils.FeatureToggles;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.kvstore.LockWrapper.readLock;
+//	import static Neo4Net.kernel.impl.store.kvstore.LockWrapper.readLock;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.kvstore.LockWrapper.writeLock;
+//	import static Neo4Net.kernel.impl.store.kvstore.LockWrapper.writeLock;
 
 	/// <summary>
 	/// The base for building a key value store based on rotating immutable
@@ -61,7 +61,7 @@ namespace Neo4Net.Kernel.impl.store.kvstore
 		 private volatile bool _stopped;
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: public AbstractKeyValueStore(org.Neo4Net.io.fs.FileSystemAbstraction fs, org.Neo4Net.io.pagecache.PageCache pages, org.Neo4Net.io.layout.DatabaseLayout databaseLayout, RotationMonitor monitor, org.Neo4Net.logging.Logger logger, RotationTimerFactory timerFactory, org.Neo4Net.io.pagecache.tracing.cursor.context.VersionContextSupplier versionContextSupplier, int keySize, int valueSize, HeaderField<?>... headerFields)
+//ORIGINAL LINE: public AbstractKeyValueStore(Neo4Net.io.fs.FileSystemAbstraction fs, Neo4Net.io.pagecache.PageCache pages, Neo4Net.io.layout.DatabaseLayout databaseLayout, RotationMonitor monitor, Neo4Net.logging.Logger logger, RotationTimerFactory timerFactory, Neo4Net.io.pagecache.tracing.cursor.context.VersionContextSupplier versionContextSupplier, int keySize, int valueSize, HeaderField<?>... headerFields)
 		 public AbstractKeyValueStore( FileSystemAbstraction fs, PageCache pages, DatabaseLayout databaseLayout, RotationMonitor monitor, Logger logger, RotationTimerFactory timerFactory, VersionContextSupplier versionContextSupplier, int keySize, int valueSize, params HeaderField<object>[] headerFields )
 		 {
 			  this._fs = fs;

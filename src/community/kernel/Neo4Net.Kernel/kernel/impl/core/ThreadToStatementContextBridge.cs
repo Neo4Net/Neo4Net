@@ -25,8 +25,8 @@ namespace Neo4Net.Kernel.impl.core
 	using DatabaseShutdownException = Neo4Net.GraphDb.DatabaseShutdownException;
 	using NotInTransactionException = Neo4Net.GraphDb.NotInTransactionException;
 	using TransactionTerminatedException = Neo4Net.GraphDb.TransactionTerminatedException;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
-	using Statement = Neo4Net.Kernel.api.Statement;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
+	using Statement = Neo4Net.Kernel.Api.Statement;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using AvailabilityGuard = Neo4Net.Kernel.availability.AvailabilityGuard;
 

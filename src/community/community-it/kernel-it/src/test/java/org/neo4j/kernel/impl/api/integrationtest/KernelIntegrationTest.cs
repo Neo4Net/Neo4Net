@@ -43,9 +43,9 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
 	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
-	using DbmsOperations = Neo4Net.Kernel.api.dbms.DbmsOperations;
-	using AnonymousContext = Neo4Net.Kernel.api.security.AnonymousContext;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
+	using DbmsOperations = Neo4Net.Kernel.Api.dbms.DbmsOperations;
+	using AnonymousContext = Neo4Net.Kernel.Api.security.AnonymousContext;
 	using IndexingService = Neo4Net.Kernel.Impl.Api.index.IndexingService;
 	using ThreadToStatementContextBridge = Neo4Net.Kernel.impl.core.ThreadToStatementContextBridge;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
@@ -55,17 +55,17 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 	using Value = Neo4Net.Values.Storable.Value;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.Transaction_Type.@implicit;
+//	import static Neo4Net.Kernel.Api.Internal.Transaction_Type.@implicit;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.Helpers.RelationshipSelections.allIterator;
+//	import static Neo4Net.Kernel.Api.Internal.Helpers.RelationshipSelections.allIterator;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.Helpers.RelationshipSelections.incomingIterator;
+//	import static Neo4Net.Kernel.Api.Internal.Helpers.RelationshipSelections.incomingIterator;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.Helpers.RelationshipSelections.outgoingIterator;
+//	import static Neo4Net.Kernel.Api.Internal.Helpers.RelationshipSelections.outgoingIterator;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.security.LoginContext.AUTH_DISABLED;
+//	import static Neo4Net.Kernel.Api.Internal.security.LoginContext.AUTH_DISABLED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.NO_VALUE;
+//	import static Neo4Net.values.storable.Values.NO_VALUE;
 
 	public abstract class KernelIntegrationTest
 	{
@@ -101,7 +101,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 		 protected internal DependencyResolver DependencyResolver;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected org.Neo4Net.Kernel.Api.Internal.TokenWrite tokenWriteInNewTransaction() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: protected Neo4Net.Kernel.Api.Internal.TokenWrite tokenWriteInNewTransaction() throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 protected internal virtual TokenWrite TokenWriteInNewTransaction()
 		 {
 			  _transaction = Kernel.BeginTransaction( @implicit, AnonymousContext.WriteToken() );
@@ -109,7 +109,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected org.Neo4Net.Kernel.Api.Internal.Write dataWriteInNewTransaction() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: protected Neo4Net.Kernel.Api.Internal.Write dataWriteInNewTransaction() throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 protected internal virtual Write DataWriteInNewTransaction()
 		 {
 			  _transaction = Kernel.BeginTransaction( @implicit, AnonymousContext.write() );
@@ -117,7 +117,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected org.Neo4Net.Kernel.Api.Internal.SchemaWrite schemaWriteInNewTransaction() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: protected Neo4Net.Kernel.Api.Internal.SchemaWrite schemaWriteInNewTransaction() throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 protected internal virtual SchemaWrite SchemaWriteInNewTransaction()
 		 {
 			  _transaction = Kernel.BeginTransaction( @implicit, AUTH_DISABLED );
@@ -125,7 +125,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected org.Neo4Net.Kernel.Api.Internal.Procedures procs() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
+//ORIGINAL LINE: protected Neo4Net.Kernel.Api.Internal.Procedures procs() throws Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 protected internal virtual Procedures Procs()
 		 {
 			  _transaction = Kernel.BeginTransaction( @implicit, AnonymousContext.read() );
@@ -133,7 +133,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected org.Neo4Net.Kernel.Api.Internal.Procedures procsSchema() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
+//ORIGINAL LINE: protected Neo4Net.Kernel.Api.Internal.Procedures procsSchema() throws Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 protected internal virtual Procedures ProcsSchema()
 		 {
 			  _transaction = Kernel.BeginTransaction( KernelTransaction.Type.@implicit, AnonymousContext.full() );
@@ -141,7 +141,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected org.Neo4Net.Kernel.Api.Internal.Transaction newTransaction() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
+//ORIGINAL LINE: protected Neo4Net.Kernel.Api.Internal.Transaction newTransaction() throws Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 protected internal virtual Transaction NewTransaction()
 		 {
 			  _transaction = Kernel.BeginTransaction( @implicit, AnonymousContext.read() );
@@ -149,7 +149,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected org.Neo4Net.Kernel.Api.Internal.Transaction newTransaction(org.Neo4Net.Kernel.Api.Internal.security.LoginContext loginContext) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
+//ORIGINAL LINE: protected Neo4Net.Kernel.Api.Internal.Transaction newTransaction(Neo4Net.Kernel.Api.Internal.security.LoginContext loginContext) throws Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 protected internal virtual Transaction NewTransaction( LoginContext loginContext )
 		 {
 			  _transaction = Kernel.BeginTransaction( @implicit, loginContext );
@@ -175,7 +175,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected void commit() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
+//ORIGINAL LINE: protected void commit() throws Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 protected internal virtual void Commit()
 		 {
 			  _transaction.success();
@@ -190,7 +190,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected void rollback() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
+//ORIGINAL LINE: protected void rollback() throws Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 protected internal virtual void Rollback()
 		 {
 			  _transaction.failure();
@@ -251,7 +251,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void dbWithNoCache() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
+//ORIGINAL LINE: void dbWithNoCache() throws Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 internal virtual void DbWithNoCache()
 		 {
 			  StopDb();
@@ -259,7 +259,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void stopDb() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
+//ORIGINAL LINE: private void stopDb() throws Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 private void StopDb()
 		 {
 			  if ( _transaction != null && _transaction.Open )
@@ -270,7 +270,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void restartDb() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
+//ORIGINAL LINE: void restartDb() throws Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 internal virtual void RestartDb()
 		 {
 			  StopDb();

@@ -70,7 +70,7 @@ namespace Neo4Net.backup.impl
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void tryCatchingUpDelegatesToRemoteStore() throws org.Neo4Net.causalclustering.catchup.storecopy.StoreCopyFailedException, java.io.IOException
+//ORIGINAL LINE: @Test public void tryCatchingUpDelegatesToRemoteStore() throws Neo4Net.causalclustering.catchup.storecopy.StoreCopyFailedException, java.io.IOException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void TryCatchingUpDelegatesToRemoteStore()
 		 {
@@ -109,7 +109,7 @@ namespace Neo4Net.backup.impl
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void fetchStoreIdDelegatesToStoreCopyClient() throws org.Neo4Net.causalclustering.catchup.storecopy.StoreIdDownloadFailedException
+//ORIGINAL LINE: @Test public void fetchStoreIdDelegatesToStoreCopyClient() throws Neo4Net.causalclustering.catchup.storecopy.StoreIdDownloadFailedException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void FetchStoreIdDelegatesToStoreCopyClient()
 		 {
@@ -128,7 +128,7 @@ namespace Neo4Net.backup.impl
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void retrieveStoreDelegatesToStoreCopyService() throws org.Neo4Net.causalclustering.catchup.storecopy.StoreCopyFailedException, org.Neo4Net.causalclustering.catchup.CatchupAddressResolutionException
+//ORIGINAL LINE: @Test public void retrieveStoreDelegatesToStoreCopyService() throws Neo4Net.causalclustering.catchup.storecopy.StoreCopyFailedException, Neo4Net.causalclustering.catchup.CatchupAddressResolutionException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void RetrieveStoreDelegatesToStoreCopyService()
 		 {

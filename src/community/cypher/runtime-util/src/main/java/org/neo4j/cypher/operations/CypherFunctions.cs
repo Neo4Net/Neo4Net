@@ -57,21 +57,21 @@ namespace Neo4Net.Cypher.operations
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Long.parseLong;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.EMPTY_STRING;
+//	import static Neo4Net.values.storable.Values.EMPTY_STRING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.FALSE;
+//	import static Neo4Net.values.storable.Values.FALSE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.NO_VALUE;
+//	import static Neo4Net.values.storable.Values.NO_VALUE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.TRUE;
+//	import static Neo4Net.values.storable.Values.TRUE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.doubleValue;
+//	import static Neo4Net.values.storable.Values.doubleValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.longValue;
+//	import static Neo4Net.values.storable.Values.longValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.stringValue;
+//	import static Neo4Net.values.storable.Values.stringValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.@virtual.VirtualValues.EMPTY_LIST;
+//	import static Neo4Net.values.@virtual.VirtualValues.EMPTY_LIST;
 
 	/// <summary>
 	/// This class contains static helper methods for the set of Cypher functions
@@ -430,7 +430,7 @@ namespace Neo4Net.Cypher.operations
 					return ( ( MapValue ) container ).get( key );
 			  }
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: else if (container instanceof org.Neo4Net.values.storable.TemporalValue<?,?>)
+//ORIGINAL LINE: else if (container instanceof Neo4Net.values.storable.TemporalValue<?,?>)
 			  else if ( container is TemporalValue<object, ?> )
 			  {
 					return ( ( TemporalValue ) container ).get( key );

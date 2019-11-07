@@ -73,7 +73,7 @@ namespace Neo4Net.causalclustering.identity
 			  internal static readonly System.Guid Nil = new System.Guid( 0L, 0L );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void marshal(ClusterId clusterId, org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public void marshal(ClusterId clusterId, Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
 //JAVA TO C# CONVERTER NOTE: Members cannot have the same name as their enclosing type:
 			  public override void MarshalConflict( ClusterId clusterId, WritableChannel channel )
 			  {
@@ -83,7 +83,7 @@ namespace Neo4Net.causalclustering.identity
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public ClusterId unmarshal0(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public ClusterId unmarshal0(Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
 			  public override ClusterId Unmarshal0( ReadableChannel channel )
 			  {
 					long mostSigBits = channel.Long;

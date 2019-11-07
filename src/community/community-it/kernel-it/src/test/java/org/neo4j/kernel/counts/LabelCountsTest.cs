@@ -29,8 +29,8 @@ namespace Neo4Net.Kernel.counts
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using Read = Neo4Net.Kernel.Api.Internal.Read;
 	using TokenRead = Neo4Net.Kernel.Api.Internal.TokenRead;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
-	using StatementConstants = Neo4Net.Kernel.api.StatementConstants;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
+	using StatementConstants = Neo4Net.Kernel.Api.StatementConstants;
 	using ThreadToStatementContextBridge = Neo4Net.Kernel.impl.core.ThreadToStatementContextBridge;
 	using DatabaseRule = Neo4Net.Test.rule.DatabaseRule;
 	using ImpermanentDatabaseRule = Neo4Net.Test.rule.ImpermanentDatabaseRule;
@@ -38,12 +38,12 @@ namespace Neo4Net.Kernel.counts
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.Label.label;
+//	import static Neo4Net.graphdb.Label.label;
 
 	public class LabelCountsTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.DatabaseRule db = new org.Neo4Net.test.rule.ImpermanentDatabaseRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.DatabaseRule db = new Neo4Net.test.rule.ImpermanentDatabaseRule();
 		 public readonly DatabaseRule Db = new ImpermanentDatabaseRule();
 
 		 private System.Func<KernelTransaction> _transactionSupplier;

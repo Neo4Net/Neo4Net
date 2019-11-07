@@ -40,7 +40,7 @@ namespace Neo4Net.com
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public Connection bindToFirstAvailablePortInRange(org.Neo4Net.helpers.HostnamePort serverAddress) throws org.jboss.netty.channel.ChannelException
+//ORIGINAL LINE: public Connection bindToFirstAvailablePortInRange(Neo4Net.helpers.HostnamePort serverAddress) throws org.jboss.netty.channel.ChannelException
 		 public virtual Connection BindToFirstAvailablePortInRange( HostnamePort serverAddress )
 		 {
 			  int[] ports = serverAddress.Ports;

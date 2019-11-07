@@ -37,7 +37,7 @@ namespace Neo4Net.Kernel.Api.Internal
       /// <param name="needsValues"> if the index should fetch property values together with node ids for index queries </param>
       /// <param name="query"> Combination of <seealso cref="IndexQuery index queries"/> to run against referenced index. </param>
       //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-      //ORIGINAL LINE: void nodeIndexSeek(IndexReference index, NodeValueIndexCursor cursor, IndexOrder indexOrder, boolean needsValues, IndexQuery... query) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
+      //ORIGINAL LINE: void nodeIndexSeek(IndexReference index, NodeValueIndexCursor cursor, IndexOrder indexOrder, boolean needsValues, IndexQuery... query) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
       void NodeIndexSeek(IIndexReference index, INodeValueIndexCursor cursor, IndexOrder indexOrder, bool needsValues, params IndexQuery[] query);
 
       /// <summary>
@@ -56,7 +56,7 @@ namespace Neo4Net.Kernel.Api.Internal
       /// <param name="cursor"> <seealso cref="INodeValueIndexCursor"/> receiving distinct count data. </param>
       /// <param name="needsValues"> whether or not values should be loaded and given to the cursor. </param>
       //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-      //ORIGINAL LINE: void nodeIndexDistinctValues(IndexReference index, NodeValueIndexCursor cursor, boolean needsValues) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException;
+      //ORIGINAL LINE: void nodeIndexDistinctValues(IndexReference index, NodeValueIndexCursor cursor, boolean needsValues) throws Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException;
       void NodeIndexDistinctValues(IIndexReference index, INodeValueIndexCursor cursor, bool needsValues);
 
       /// <summary>
@@ -70,7 +70,7 @@ namespace Neo4Net.Kernel.Api.Internal
       ///              <seealso cref="IIndexReference referenced index"/>, or <seealso cref="IndexOrder.NONE"/>. </param>
       /// <param name="predicates"> Combination of <seealso cref="IndexQuery.ExactPredicate index queries"/> to run against referenced index. </param>
       //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-      //ORIGINAL LINE: long lockingNodeUniqueIndexSeek(IndexReference index, IndexQuery.ExactPredicate... predicates) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
+      //ORIGINAL LINE: long lockingNodeUniqueIndexSeek(IndexReference index, IndexQuery.ExactPredicate... predicates) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
       long LockingNodeUniqueIndexSeek(IIndexReference index, params IndexQuery.ExactPredicate[] predicates);
 
       /// <summary>
@@ -82,7 +82,7 @@ namespace Neo4Net.Kernel.Api.Internal
       /// <seealso cref="IIndexReference referenced index"/>, or <seealso cref="IndexOrder.NONE"/>. </param>
       /// <param name="needsValues"> if the index should fetch property values together with node ids for index queries </param>
       //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-      //ORIGINAL LINE: void nodeIndexScan(IndexReference index, NodeValueIndexCursor cursor, IndexOrder indexOrder, boolean needsValues) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
+      //ORIGINAL LINE: void nodeIndexScan(IndexReference index, NodeValueIndexCursor cursor, IndexOrder indexOrder, boolean needsValues) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
       void NodeIndexScan(IIndexReference index, INodeValueIndexCursor cursor, IndexOrder indexOrder, bool needsValues);
 
       void NodeLabelScan(int label, INodeLabelIndexCursor ICursor);

@@ -41,7 +41,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 private bool _keepStore;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public TemporaryStoreDirectory(org.Neo4Net.io.fs.FileSystemAbstraction fs, org.Neo4Net.io.pagecache.PageCache pageCache, java.io.File parent) throws java.io.IOException
+//ORIGINAL LINE: public TemporaryStoreDirectory(Neo4Net.io.fs.FileSystemAbstraction fs, Neo4Net.io.pagecache.PageCache pageCache, java.io.File parent) throws java.io.IOException
 		 public TemporaryStoreDirectory( FileSystemAbstraction fs, PageCache pageCache, File parent )
 		 {
 			  this._tempStoreDir = new File( parent, TEMP_COPY_DIRECTORY_NAME );

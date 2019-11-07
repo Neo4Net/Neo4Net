@@ -36,19 +36,19 @@ namespace Neo4Net.causalclustering.protocol.handshake
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.protocol.Protocol_ModifierProtocolCategory.COMPRESSION;
+//	import static Neo4Net.causalclustering.protocol.Protocol_ModifierProtocolCategory.COMPRESSION;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.protocol.Protocol_ModifierProtocolCategory.GRATUITOUS_OBFUSCATION;
+//	import static Neo4Net.causalclustering.protocol.Protocol_ModifierProtocolCategory.GRATUITOUS_OBFUSCATION;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.protocol.handshake.TestProtocols_TestModifierProtocols.LZ4;
+//	import static Neo4Net.causalclustering.protocol.handshake.TestProtocols_TestModifierProtocols.LZ4;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.protocol.handshake.TestProtocols_TestModifierProtocols.LZO;
+//	import static Neo4Net.causalclustering.protocol.handshake.TestProtocols_TestModifierProtocols.LZO;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.protocol.handshake.TestProtocols_TestModifierProtocols.NAME_CLASH;
+//	import static Neo4Net.causalclustering.protocol.handshake.TestProtocols_TestModifierProtocols.NAME_CLASH;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.protocol.handshake.TestProtocols_TestModifierProtocols.SNAPPY;
+//	import static Neo4Net.causalclustering.protocol.handshake.TestProtocols_TestModifierProtocols.SNAPPY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.asSet;
+//	import static Neo4Net.helpers.collection.Iterators.asSet;
 
 	/// <seealso cref= ApplicationProtocolRepositoryTest for tests on base class </seealso>
 	public class ModifierProtocolRepositoryTest

@@ -102,7 +102,7 @@ namespace Neo4Net.GraphDb.Impl.Traversal
 
         protected internal virtual bool IncludePath(IPath path, ITraversalBranch startPath, ITraversalBranch endPath)
         {
-            Evaluation eval = _evaluator.evaluate(path);
+            Evaluation eval = _evaluator.Evaluate(path);
             if (!eval.continues())
             {
                 startPath.Evaluation(eval);

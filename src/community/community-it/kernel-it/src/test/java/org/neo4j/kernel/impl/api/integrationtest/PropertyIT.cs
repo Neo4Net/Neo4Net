@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 	using Transaction = Neo4Net.Kernel.Api.Internal.Transaction;
 	using Write = Neo4Net.Kernel.Api.Internal.Write;
 	using IEntityNotFoundException = Neo4Net.Kernel.Api.Internal.Exceptions.EntityNotFoundException;
-	using AnonymousContext = Neo4Net.Kernel.api.security.AnonymousContext;
+	using AnonymousContext = Neo4Net.Kernel.Api.security.AnonymousContext;
 	using Values = Neo4Net.Values.Storable.Values;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -39,7 +39,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.asCollection;
+//	import static Neo4Net.helpers.collection.Iterators.asCollection;
 
 	public class PropertyIT : KernelIntegrationTest
 	{

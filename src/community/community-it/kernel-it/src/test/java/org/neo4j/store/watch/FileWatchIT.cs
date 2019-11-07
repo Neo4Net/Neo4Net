@@ -66,7 +66,7 @@ namespace Neo4Net.Store.Watch
 		 private const long TEST_TIMEOUT = 600_000;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.TestDirectory testDirectory = Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory TestDirectory = TestDirectory.testDirectory();
 
 		 private File _storeDir;
@@ -317,7 +317,7 @@ namespace Neo4Net.Store.Watch
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void forceCheckpoint(org.Neo4Net.kernel.impl.transaction.log.checkpoint.CheckPointer checkPointer) throws java.io.IOException
+//ORIGINAL LINE: private static void forceCheckpoint(Neo4Net.kernel.impl.transaction.log.checkpoint.CheckPointer checkPointer) throws java.io.IOException
 		 private static void ForceCheckpoint( CheckPointer checkPointer )
 		 {
 			  checkPointer.ForceCheckPoint( new SimpleTriggerInfo( "testForceCheckPoint" ) );
@@ -377,7 +377,7 @@ namespace Neo4Net.Store.Watch
 		 private class NonWatchableFileSystemAbstraction : DefaultFileSystemAbstraction
 		 {
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.io.fs.watcher.FileWatcher fileWatcher() throws java.io.IOException
+//ORIGINAL LINE: public Neo4Net.io.fs.watcher.FileWatcher fileWatcher() throws java.io.IOException
 			  public override FileWatcher FileWatcher()
 			  {
 					throw new IOException( "You can't watch me!" );

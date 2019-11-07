@@ -45,29 +45,29 @@ namespace Neo4Net.GraphDb
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.asSet;
+//	import static Neo4Net.helpers.collection.Iterators.asSet;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.count;
+//	import static Neo4Net.helpers.collection.Iterators.count;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.map;
+//	import static Neo4Net.helpers.collection.MapUtil.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.containsOnly;
+//	import static Neo4Net.test.mockito.matcher.Neo4NetMatchers.containsOnly;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.findNodesByLabelAndProperty;
+//	import static Neo4Net.test.mockito.matcher.Neo4NetMatchers.findNodesByLabelAndProperty;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.hasProperty;
+//	import static Neo4Net.test.mockito.matcher.Neo4NetMatchers.hasProperty;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.inTx;
+//	import static Neo4Net.test.mockito.matcher.Neo4NetMatchers.inTx;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.isEmpty;
+//	import static Neo4Net.test.mockito.matcher.Neo4NetMatchers.isEmpty;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.mockito.mock.SpatialMocks.mockCartesian;
+//	import static Neo4Net.test.mockito.mock.SpatialMocks.mockCartesian;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.mockito.mock.SpatialMocks.mockCartesian_3D;
+//	import static Neo4Net.test.mockito.mock.SpatialMocks.mockCartesian_3D;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.mockito.mock.SpatialMocks.mockWGS84;
+//	import static Neo4Net.test.mockito.mock.SpatialMocks.mockWGS84;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.mockito.mock.SpatialMocks.mockWGS84_3D;
+//	import static Neo4Net.test.mockito.mock.SpatialMocks.mockWGS84_3D;
 
 	public class IndexingAcceptanceTest
 	{
@@ -519,7 +519,7 @@ namespace Neo4Net.GraphDb
 						 string key = propertyKeyPrefix + i;
 						 string value = propertyValuePrefix + i;
 
-						 ResourceIterator<Node> nodes = Db.findNodes( label, key, value );
+						 IResourceIterator<Node> nodes = Db.findNodes( label, key, value );
 						 assertEquals( 1, Iterators.count( nodes ) );
 					}
 					tx.Success();
@@ -542,7 +542,7 @@ namespace Neo4Net.GraphDb
 		 public const string LONG_STRING = "a long string that has to be stored in dynamic records";
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ClassRule public static org.Neo4Net.test.rule.ImpermanentDatabaseRule dbRule = new org.Neo4Net.test.rule.ImpermanentDatabaseRule();
+//ORIGINAL LINE: @ClassRule public static Neo4Net.test.rule.ImpermanentDatabaseRule dbRule = new Neo4Net.test.rule.ImpermanentDatabaseRule();
 		 public static ImpermanentDatabaseRule DbRule = new ImpermanentDatabaseRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Rule public final org.junit.rules.TestName testName = new org.junit.rules.TestName();
@@ -576,7 +576,7 @@ namespace Neo4Net.GraphDb
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.Deferred<Label> labels(final Node myNode)
+//ORIGINAL LINE: private Neo4Net.test.mockito.matcher.Neo4NetMatchers.Deferred<Label> labels(final Node myNode)
 		 private Neo4NetMatchers.Deferred<Label> Labels( Node myNode )
 		 {
 			  return new DeferredAnonymousInnerClass( this, DbRule.GraphDatabaseAPI, myNode );

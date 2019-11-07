@@ -26,8 +26,8 @@ namespace Neo4Net.Kernel.impl.transaction.command
 
 	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.Schema.IndexProviderDescriptor;
-	using LabelScanWriter = Neo4Net.Kernel.api.labelscan.LabelScanWriter;
-	using NodeLabelUpdate = Neo4Net.Kernel.api.labelscan.NodeLabelUpdate;
+	using LabelScanWriter = Neo4Net.Kernel.Api.LabelScan.LabelScanWriter;
+	using NodeLabelUpdate = Neo4Net.Kernel.Api.LabelScan.NodeLabelUpdate;
 	using TransactionApplier = Neo4Net.Kernel.Impl.Api.TransactionApplier;
 	using TransactionToApply = Neo4Net.Kernel.Impl.Api.TransactionToApply;
 	using IndexingService = Neo4Net.Kernel.Impl.Api.index.IndexingService;
@@ -61,13 +61,13 @@ namespace Neo4Net.Kernel.impl.transaction.command
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel;
+//	import static Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.record.Record.NO_NEXT_PROPERTY;
+//	import static Neo4Net.kernel.impl.store.record.Record.NO_NEXT_PROPERTY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.record.Record.NO_NEXT_RELATIONSHIP;
+//	import static Neo4Net.kernel.impl.store.record.Record.NO_NEXT_RELATIONSHIP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptorFactory.uniqueForSchema;
+//	import static Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptorFactory.uniqueForSchema;
 
 	public class IndexBatchTransactionApplierTest
 	{
@@ -158,7 +158,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private System.Func<org.Neo4Net.kernel.api.labelscan.LabelScanWriter> singletonProvider(final org.Neo4Net.kernel.api.labelscan.LabelScanWriter writer)
+//ORIGINAL LINE: private System.Func<Neo4Net.kernel.api.labelscan.LabelScanWriter> singletonProvider(final Neo4Net.kernel.api.labelscan.LabelScanWriter writer)
 		 private System.Func<LabelScanWriter> SingletonProvider( LabelScanWriter writer )
 		 {
 			  return () => writer;

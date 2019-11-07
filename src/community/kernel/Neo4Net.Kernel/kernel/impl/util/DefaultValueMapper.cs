@@ -38,7 +38,7 @@ namespace Neo4Net.Kernel.impl.util
 	using VirtualRelationshipValue = Neo4Net.Values.@virtual.VirtualRelationshipValue;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.iteratorsEqual;
+//	import static Neo4Net.helpers.collection.Iterators.iteratorsEqual;
 
 	public class DefaultValueMapper : Neo4Net.Values.ValueMapper_JavaMapper
 	{

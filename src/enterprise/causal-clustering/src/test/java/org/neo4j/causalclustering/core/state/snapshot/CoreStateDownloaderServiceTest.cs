@@ -54,9 +54,9 @@ namespace Neo4Net.causalclustering.core.state.snapshot
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Internal.verification.VerificationModeFactory.times;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.state.snapshot.PersistentSnapshotDownloader.OPERATION_NAME;
+//	import static Neo4Net.causalclustering.core.state.snapshot.PersistentSnapshotDownloader.OPERATION_NAME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
+//	import static Neo4Net.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
 
 	public class CoreStateDownloaderServiceTest
 	{
@@ -104,11 +104,11 @@ namespace Neo4Net.causalclustering.core.state.snapshot
 			  CoreStateDownloader coreStateDownloader = mock( typeof( CoreStateDownloader ) );
 			  when( coreStateDownloader.DownloadSnapshot( any() ) ).thenReturn(true);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.causalclustering.core.state.CommandApplicationProcess applicationProcess = mock(org.Neo4Net.causalclustering.core.state.CommandApplicationProcess.class);
+//ORIGINAL LINE: final Neo4Net.causalclustering.core.state.CommandApplicationProcess applicationProcess = mock(Neo4Net.causalclustering.core.state.CommandApplicationProcess.class);
 			  CommandApplicationProcess applicationProcess = mock( typeof( CommandApplicationProcess ) );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.logging.Log log = mock(org.Neo4Net.logging.Log.class);
+//ORIGINAL LINE: final Neo4Net.logging.Log log = mock(Neo4Net.logging.Log.class);
 			  Log log = mock( typeof( Log ) );
 			  CoreStateDownloaderService coreStateDownloaderService = new CoreStateDownloaderService( _centralJobScheduler, coreStateDownloader, applicationProcess, LogProvider( log ), new NoTimeout(), () => _dbHealth, new Monitors() );
 			  coreStateDownloaderService.ScheduleDownload( _catchupAddressProvider );
@@ -129,11 +129,11 @@ namespace Neo4Net.causalclustering.core.state.snapshot
 			  Semaphore blockDownloader = new Semaphore( 0 );
 			  CoreStateDownloader coreStateDownloader = new BlockingCoreStateDownloader( blockDownloader );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.causalclustering.core.state.CommandApplicationProcess applicationProcess = mock(org.Neo4Net.causalclustering.core.state.CommandApplicationProcess.class);
+//ORIGINAL LINE: final Neo4Net.causalclustering.core.state.CommandApplicationProcess applicationProcess = mock(Neo4Net.causalclustering.core.state.CommandApplicationProcess.class);
 			  CommandApplicationProcess applicationProcess = mock( typeof( CommandApplicationProcess ) );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.logging.Log log = mock(org.Neo4Net.logging.Log.class);
+//ORIGINAL LINE: final Neo4Net.logging.Log log = mock(Neo4Net.logging.Log.class);
 			  Log log = mock( typeof( Log ) );
 			  CoreStateDownloaderService coreStateDownloaderService = new CoreStateDownloaderService( countingJobScheduler, coreStateDownloader, applicationProcess, LogProvider( log ), new NoTimeout(), () => _dbHealth, new Monitors() );
 
@@ -164,7 +164,7 @@ namespace Neo4Net.causalclustering.core.state.snapshot
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void waitForApplierToResume(org.Neo4Net.causalclustering.core.state.CommandApplicationProcess applicationProcess) throws java.util.concurrent.TimeoutException
+//ORIGINAL LINE: private void waitForApplierToResume(Neo4Net.causalclustering.core.state.CommandApplicationProcess applicationProcess) throws java.util.concurrent.TimeoutException
 		 private void WaitForApplierToResume( CommandApplicationProcess applicationProcess )
 		 {
 			  Predicates.await(() =>

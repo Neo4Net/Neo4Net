@@ -34,7 +34,7 @@ namespace Neo4Net.causalclustering.core.consensus.log.segmented
 		 private long _timeStamp;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: Reader(org.Neo4Net.io.fs.FileSystemAbstraction fsa, java.io.File file, long version) throws java.io.IOException
+//ORIGINAL LINE: Reader(Neo4Net.io.fs.FileSystemAbstraction fsa, java.io.File file, long version) throws java.io.IOException
 		 internal Reader( FileSystemAbstraction fsa, File file, long version )
 		 {
 			  this._storeChannel = fsa.Open( file, OpenMode.READ );

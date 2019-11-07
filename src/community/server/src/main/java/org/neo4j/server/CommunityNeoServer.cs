@@ -22,7 +22,7 @@
 namespace Neo4Net.Server
 {
 
-	using NetworkConnectionTracker = Neo4Net.Kernel.api.net.NetworkConnectionTracker;
+	using NetworkConnectionTracker = Neo4Net.Kernel.Api.net.NetworkConnectionTracker;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using ConnectorPortRegister = Neo4Net.Kernel.configuration.ConnectorPortRegister;
 	using LogProvider = Neo4Net.Logging.LogProvider;
@@ -47,7 +47,7 @@ namespace Neo4Net.Server
 
 	using static Neo4Net.GraphDb.facade.GraphDatabaseFacadeFactory.Dependencies;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.discovery.CommunityDiscoverableURIs.communityDiscoverableURIs;
+//	import static Neo4Net.server.rest.discovery.CommunityDiscoverableURIs.communityDiscoverableURIs;
 
 	public class CommunityNeoServer : AbstractNeoServer
 	{

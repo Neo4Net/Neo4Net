@@ -36,7 +36,7 @@ namespace Neo4Net.Tooling
 	using StringDeserialization = Neo4Net.@unsafe.Impl.Batchimport.input.csv.StringDeserialization;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.ByteUnit.mebiBytes;
+//	import static Neo4Net.io.ByteUnit.mebiBytes;
 
 	public class CsvOutput : BatchImporter
 	{
@@ -63,7 +63,7 @@ namespace Neo4Net.Tooling
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void doImport(org.Neo4Net.unsafe.impl.batchimport.input.Input input) throws java.io.IOException
+//ORIGINAL LINE: public void doImport(Neo4Net.unsafe.impl.batchimport.input.Input input) throws java.io.IOException
 		 public override void DoImport( Input input )
 		 {
 			  Consume( "nodes", input.Nodes().GetEnumerator(), _nodeHeader, RandomEntityDataGenerator.convert );
@@ -71,7 +71,7 @@ namespace Neo4Net.Tooling
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void consume(String name, org.Neo4Net.unsafe.impl.batchimport.InputIterator entities, org.Neo4Net.unsafe.impl.batchimport.input.csv.Header header, Deserializer deserializer) throws java.io.IOException
+//ORIGINAL LINE: private void consume(String name, Neo4Net.unsafe.impl.batchimport.InputIterator entities, Neo4Net.unsafe.impl.batchimport.input.csv.Header header, Deserializer deserializer) throws java.io.IOException
 		 private void Consume( string name, InputIterator entities, Header header, Deserializer deserializer )
 		 {
 			  using ( PrintStream @out = File( name + "header.csv" ) )

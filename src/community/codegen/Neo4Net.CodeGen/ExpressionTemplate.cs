@@ -24,11 +24,11 @@ namespace Neo4Net.CodeGen
 {
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.codegen.TypeReference.OBJECT;
+//	import static Neo4Net.codegen.TypeReference.OBJECT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.codegen.TypeReference.VOID;
+//	import static Neo4Net.codegen.TypeReference.VOID;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.codegen.TypeReference.typeReference;
+//	import static Neo4Net.codegen.TypeReference.typeReference;
 
 	public abstract class ExpressionTemplate
 	{

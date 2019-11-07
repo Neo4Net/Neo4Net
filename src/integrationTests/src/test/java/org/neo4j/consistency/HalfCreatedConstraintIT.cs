@@ -36,9 +36,9 @@ namespace Neo4Net.Consistency
 	using EnterpriseGraphDatabaseFactory = Neo4Net.GraphDb.factory.EnterpriseGraphDatabaseFactory;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using SchemaKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.SchemaKernelException;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
-	using LabelSchemaDescriptor = Neo4Net.Kernel.api.schema.LabelSchemaDescriptor;
-	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
+	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.schema.LabelSchemaDescriptor;
+	using SchemaDescriptorFactory = Neo4Net.Kernel.Api.schema.SchemaDescriptorFactory;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using ThreadToStatementContextBridge = Neo4Net.Kernel.impl.core.ThreadToStatementContextBridge;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
@@ -54,7 +54,7 @@ namespace Neo4Net.Consistency
 	public class HalfCreatedConstraintIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.TestDirectory testDirectory = Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory TestDirectory = TestDirectory.testDirectory();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -105,7 +105,7 @@ namespace Neo4Net.Consistency
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void addIndex(org.Neo4Net.graphdb.GraphDatabaseService database) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.SchemaKernelException
+//ORIGINAL LINE: private static void addIndex(Neo4Net.graphdb.GraphDatabaseService database) throws Neo4Net.Kernel.Api.Internal.Exceptions.Schema.SchemaKernelException
 		 private static void AddIndex( IGraphDatabaseService database )
 		 {
 			  using ( Transaction transaction = database.BeginTx() )

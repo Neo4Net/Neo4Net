@@ -38,9 +38,9 @@ namespace Neo4Net.Kernel.impl.pagecache
 	using StoreFileMetadata = Neo4Net.Kernel.Api.StorageEngine.StoreFileMetadata;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.pagecache.PagedFile_Fields.PF_NO_FAULT;
+//	import static Neo4Net.io.pagecache.PagedFile_Fields.PF_NO_FAULT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.pagecache.PagedFile_Fields.PF_SHARED_READ_LOCK;
+//	import static Neo4Net.io.pagecache.PagedFile_Fields.PF_SHARED_READ_LOCK;
 
 	/// <summary>
 	/// The page cache warmer profiles the page cache to figure out what data is in memory and what is not, and uses those
@@ -84,7 +84,7 @@ namespace Neo4Net.Kernel.impl.pagecache
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public synchronized org.Neo4Net.graphdb.Resource addFilesTo(java.util.Collection<org.Neo4Net.Kernel.Api.StorageEngine.StoreFileMetadata> coll) throws java.io.IOException
+//ORIGINAL LINE: public synchronized Neo4Net.graphdb.Resource addFilesTo(java.util.Collection<Neo4Net.Kernel.Api.StorageEngine.StoreFileMetadata> coll) throws java.io.IOException
 		 public override Resource AddFilesTo( ICollection<StoreFileMetadata> coll )
 		 {
 			 lock ( this )
@@ -212,7 +212,7 @@ namespace Neo4Net.Kernel.impl.pagecache
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private long reheat(org.Neo4Net.io.pagecache.PagedFile file, Profile[] existingProfiles) throws java.io.IOException
+//ORIGINAL LINE: private long reheat(Neo4Net.io.pagecache.PagedFile file, Profile[] existingProfiles) throws java.io.IOException
 		 private long Reheat( PagedFile file, Profile[] existingProfiles )
 		 {
 			  Optional<Profile> savedProfile = FilterRelevant( existingProfiles, file ).sorted( System.Collections.IComparer.reverseOrder() ).filter(this.verifyChecksum).findFirst();
@@ -273,7 +273,7 @@ namespace Neo4Net.Kernel.impl.pagecache
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private long profile(org.Neo4Net.io.pagecache.PagedFile file, Profile[] existingProfiles) throws java.io.IOException
+//ORIGINAL LINE: private long profile(Neo4Net.io.pagecache.PagedFile file, Profile[] existingProfiles) throws java.io.IOException
 		 private long Profile( PagedFile file, Profile[] existingProfiles )
 		 {
 			  long pagesInMemory = 0;

@@ -864,7 +864,7 @@ namespace Neo4Net.Bolt.v1.packstream
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static void ensureCorrectStructSize(org.Neo4Net.bolt.messaging.StructType structType, int expected, long actual) throws java.io.IOException
+//ORIGINAL LINE: public static void ensureCorrectStructSize(Neo4Net.bolt.messaging.StructType structType, int expected, long actual) throws java.io.IOException
 			  public static void EnsureCorrectStructSize( StructType structType, int expected, long actual )
 			  {
 					if ( expected != actual )

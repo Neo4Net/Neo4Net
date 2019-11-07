@@ -34,7 +34,7 @@ namespace Neo4Net.Server.rest.domain
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") public static org.Neo4Net.graphdb.PathExpander describeRelationships(java.util.Map<String, Object> description)
+//ORIGINAL LINE: @SuppressWarnings("unchecked") public static Neo4Net.graphdb.PathExpander describeRelationships(java.util.Map<String, Object> description)
 		 public static PathExpander DescribeRelationships( IDictionary<string, object> description )
 		 {
 			  PathExpanderBuilder expander = PathExpanderBuilder.allTypesAndDirections();

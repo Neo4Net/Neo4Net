@@ -47,7 +47,7 @@ namespace Neo4Net.Kernel.ha.cluster.member
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static System.Predicate<ClusterMember> hasInstanceId(final org.Neo4Net.cluster.InstanceId instanceId)
+//ORIGINAL LINE: public static System.Predicate<ClusterMember> hasInstanceId(final Neo4Net.cluster.InstanceId instanceId)
 		 public static System.Predicate<ClusterMember> HasInstanceId( InstanceId instanceId )
 		 {
 			  return item => item.InstanceId.Equals( instanceId );

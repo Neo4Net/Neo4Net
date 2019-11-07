@@ -37,7 +37,7 @@ namespace Neo4Net.Bolt.v3.messaging
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.mock;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.messaging.util.MessageMatchers.serialize;
+//	import static Neo4Net.bolt.v1.messaging.util.MessageMatchers.serialize;
 
 	/// <summary>
 	/// A helper factory to generate boltV3 component in tests
@@ -60,7 +60,7 @@ namespace Neo4Net.Bolt.v3.messaging
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static byte[] encode(org.Neo4Net.bolt.messaging.Neo4NetPack Neo4NetPack, org.Neo4Net.bolt.messaging.RequestMessage... messages) throws java.io.IOException
+//ORIGINAL LINE: public static byte[] encode(Neo4Net.bolt.messaging.Neo4NetPack Neo4NetPack, Neo4Net.bolt.messaging.RequestMessage... messages) throws java.io.IOException
 		 public static sbyte[] Encode( Neo4NetPack Neo4NetPack, params RequestMessage[] messages )
 		 {
 			  RecordingByteChannel rawData = new RecordingByteChannel();
@@ -84,14 +84,14 @@ namespace Neo4Net.Bolt.v3.messaging
 		 private class MessageEncoderAnonymousInnerClass : TransportTestUtil.MessageEncoder
 		 {
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public byte[] encode(org.Neo4Net.bolt.messaging.Neo4NetPack Neo4NetPack, org.Neo4Net.bolt.messaging.RequestMessage... messages) throws java.io.IOException
+//ORIGINAL LINE: public byte[] encode(Neo4Net.bolt.messaging.Neo4NetPack Neo4NetPack, Neo4Net.bolt.messaging.RequestMessage... messages) throws java.io.IOException
 			 public sbyte[] encode( Neo4NetPack Neo4NetPack, params RequestMessage[] messages )
 			 {
 				  return BoltProtocolV3ComponentFactory.Encode( Neo4NetPack, messages );
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public byte[] encode(org.Neo4Net.bolt.messaging.Neo4NetPack Neo4NetPack, org.Neo4Net.bolt.messaging.ResponseMessage... messages) throws java.io.IOException
+//ORIGINAL LINE: public byte[] encode(Neo4Net.bolt.messaging.Neo4NetPack Neo4NetPack, Neo4Net.bolt.messaging.ResponseMessage... messages) throws java.io.IOException
 			 public sbyte[] encode( Neo4NetPack Neo4NetPack, params ResponseMessage[] messages )
 			 {
 				  return serialize( Neo4NetPack, messages );

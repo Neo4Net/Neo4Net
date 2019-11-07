@@ -24,7 +24,7 @@ namespace Neo4Net.Server.web
 	using Test = org.junit.Test;
 
 	using ListenSocketAddress = Neo4Net.Helpers.ListenSocketAddress;
-	using NetworkConnectionTracker = Neo4Net.Kernel.api.net.NetworkConnectionTracker;
+	using NetworkConnectionTracker = Neo4Net.Kernel.Api.net.NetworkConnectionTracker;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
 	using ImpermanentDatabaseRule = Neo4Net.Test.rule.ImpermanentDatabaseRule;
@@ -32,15 +32,15 @@ namespace Neo4Net.Server.web
 	using ExclusiveServerTestBase = Neo4Net.Test.server.ExclusiveServerTestBase;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.rule.SuppressOutput.suppressAll;
+//	import static Neo4Net.test.rule.SuppressOutput.suppressAll;
 
 	public class Jetty9WebServerIT : ExclusiveServerTestBase
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.SuppressOutput suppressOutput = suppressAll();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.SuppressOutput suppressOutput = suppressAll();
 		 public new SuppressOutput SuppressOutput = suppressAll();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.ImpermanentDatabaseRule dbRule = new org.Neo4Net.test.rule.ImpermanentDatabaseRule();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.ImpermanentDatabaseRule dbRule = new Neo4Net.test.rule.ImpermanentDatabaseRule();
 		 public ImpermanentDatabaseRule DbRule = new ImpermanentDatabaseRule();
 
 		 private Jetty9WebServer _webServer;

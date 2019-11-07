@@ -37,11 +37,11 @@ namespace Neo4Net.causalclustering.discovery.procedures
 	using Neo4NetTypes = Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes;
 	using ProcedureSignature = Neo4Net.Kernel.Api.Internal.procs.ProcedureSignature;
 	using QualifiedName = Neo4Net.Kernel.Api.Internal.procs.QualifiedName;
-	using ResourceTracker = Neo4Net.Kernel.api.ResourceTracker;
-	using CallableProcedure = Neo4Net.Kernel.api.proc.CallableProcedure;
-	using Context = Neo4Net.Kernel.api.proc.Context;
+	using ResourceTracker = Neo4Net.Kernel.Api.ResourceTracker;
+	using CallableProcedure = Neo4Net.Kernel.Api.Procs.CallableProcedure;
+	using Context = Neo4Net.Kernel.Api.Procs.Context;
 
-	public class InstalledProtocolsProcedure : Neo4Net.Kernel.api.proc.CallableProcedure_BasicProcedure
+	public class InstalledProtocolsProcedure : Neo4Net.Kernel.Api.Procs.CallableProcedure_BasicProcedure
 	{
 		 private static readonly string[] _procedureNamespace = new string[] { "dbms", "cluster" };
 

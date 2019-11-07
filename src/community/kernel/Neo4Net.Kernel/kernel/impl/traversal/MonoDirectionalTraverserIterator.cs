@@ -50,7 +50,7 @@ namespace Neo4Net.Kernel.impl.traversal
 
 		 public override Evaluation Evaluate( TraversalBranch branch, BranchState state )
 		 {
-			  return _evaluator.evaluate( branch, state );
+			  return _evaluator.Evaluate( branch, state );
 		 }
 
 		 protected internal override Path FetchNextOrNull()

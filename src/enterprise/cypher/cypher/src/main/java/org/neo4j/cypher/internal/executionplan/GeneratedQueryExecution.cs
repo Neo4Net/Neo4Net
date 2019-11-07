@@ -29,7 +29,7 @@ namespace Neo4Net.Cypher.Internal.executionplan
 	public interface GeneratedQueryExecution
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: <E extends Exception> void accept(org.Neo4Net.cypher.result.QueryResult_QueryResultVisitor<E> visitor) throws E;
+//ORIGINAL LINE: <E extends Exception> void accept(Neo4Net.cypher.result.QueryResult_QueryResultVisitor<E> visitor) throws E;
 		 void accept<E>( Neo4Net.Cypher.result.QueryResult_QueryResultVisitor<E> visitor );
 
 		 ExecutionMode ExecutionMode();

@@ -39,14 +39,14 @@ namespace Neo4Net.Kernel.Impl.Api.constraints
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.SchemaIndex.NATIVE20;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.SchemaIndex.NATIVE20;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.default_schema_provider;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.default_schema_provider;
 
 	public class ConstraintCreationIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.EmbeddedDatabaseRule db = new org.Neo4Net.test.rule.EmbeddedDatabaseRule().startLazily();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.EmbeddedDatabaseRule db = new Neo4Net.test.rule.EmbeddedDatabaseRule().startLazily();
 		 public EmbeddedDatabaseRule Db = new EmbeddedDatabaseRule().startLazily();
 
 		 private static readonly Label _label = Label.label( "label1" );

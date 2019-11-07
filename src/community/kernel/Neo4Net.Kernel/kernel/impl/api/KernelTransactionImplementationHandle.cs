@@ -23,10 +23,10 @@ namespace Neo4Net.Kernel.Impl.Api
 {
 
 	using AuthSubject = Neo4Net.Kernel.Api.Internal.security.AuthSubject;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
-	using KernelTransactionHandle = Neo4Net.Kernel.api.KernelTransactionHandle;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
+	using KernelTransactionHandle = Neo4Net.Kernel.Api.KernelTransactionHandle;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
-	using ExecutingQuery = Neo4Net.Kernel.api.query.ExecutingQuery;
+	using ExecutingQuery = Neo4Net.Kernel.Api.query.ExecutingQuery;
 	using ActiveLock = Neo4Net.Kernel.impl.locking.ActiveLock;
 	using SystemNanoClock = Neo4Net.Time.SystemNanoClock;
 
@@ -154,7 +154,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: public java.util.stream.Stream<? extends org.Neo4Net.kernel.impl.locking.ActiveLock> activeLocks()
+//ORIGINAL LINE: public java.util.stream.Stream<? extends Neo4Net.kernel.impl.locking.ActiveLock> activeLocks()
 		 public override Stream<ActiveLock> ActiveLocks()
 		 {
 			  return _tx.activeLocks();

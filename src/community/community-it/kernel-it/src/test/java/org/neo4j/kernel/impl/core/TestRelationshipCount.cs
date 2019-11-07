@@ -487,7 +487,7 @@ namespace Neo4Net.Kernel.impl.core
 			  Relationship last = null;
 			  int counter = 0;
 			  IEnumerable<Relationship> relationships = node.GetRelationships( type, direction );
-			  using ( ResourceIterator<Relationship> relationshipIterator = ( ResourceIterator ) relationships.GetEnumerator() )
+			  using ( IResourceIterator<Relationship> relationshipIterator = ( ResourceIterator ) relationships.GetEnumerator() )
 			  {
 					while ( relationshipIterator.MoveNext() )
 					{

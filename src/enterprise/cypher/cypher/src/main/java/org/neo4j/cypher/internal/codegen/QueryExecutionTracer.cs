@@ -22,7 +22,7 @@
  */
 namespace Neo4Net.Cypher.Internal.codegen
 {
-	//import org.Neo4Net.cypher.internal.compiler.v3_1.codegen.QueryExecutionEvent;
+	//import Neo4Net.cypher.internal.compiler.v3_1.codegen.QueryExecutionEvent;
 	using QueryExecutionEvent = Neo4Net.Cypher.Internal.runtime.compiled.codegen.QueryExecutionEvent;
 	using Id = Neo4Net.Cypher.Internal.v3_5.util.attribution.Id;
 

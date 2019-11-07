@@ -34,17 +34,17 @@ namespace Neo4Net.Kernel.Impl.Api.state
 	using SchemaKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.SchemaKernelException;
 	using OperationContext = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.SchemaKernelException.OperationContext;
 	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
-	using SilentTokenNameLookup = Neo4Net.Kernel.api.SilentTokenNameLookup;
-	using Statement = Neo4Net.Kernel.api.Statement;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
+	using SilentTokenNameLookup = Neo4Net.Kernel.Api.SilentTokenNameLookup;
+	using Statement = Neo4Net.Kernel.Api.Statement;
 	using IndexEntryConflictException = Neo4Net.Kernel.Api.Exceptions.index.IndexEntryConflictException;
 	using IndexPopulationFailedKernelException = Neo4Net.Kernel.Api.Exceptions.index.IndexPopulationFailedKernelException;
 	using AlreadyConstrainedException = Neo4Net.Kernel.Api.Exceptions.schema.AlreadyConstrainedException;
 	using AlreadyIndexedException = Neo4Net.Kernel.Api.Exceptions.schema.AlreadyIndexedException;
 	using UniquePropertyValueValidationException = Neo4Net.Kernel.Api.Exceptions.schema.UniquePropertyValueValidationException;
 	using NodePropertyAccessor = Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor;
-	using ConstraintDescriptorFactory = Neo4Net.Kernel.api.schema.constraints.ConstraintDescriptorFactory;
-	using UniquenessConstraintDescriptor = Neo4Net.Kernel.api.schema.constraints.UniquenessConstraintDescriptor;
+	using ConstraintDescriptorFactory = Neo4Net.Kernel.Api.schema.constraints.ConstraintDescriptorFactory;
+	using UniquenessConstraintDescriptor = Neo4Net.Kernel.Api.schema.constraints.UniquenessConstraintDescriptor;
 	using IndexProxy = Neo4Net.Kernel.Impl.Api.index.IndexProxy;
 	using IndexingService = Neo4Net.Kernel.Impl.Api.index.IndexingService;
 	using Locks_Client = Neo4Net.Kernel.impl.locking.Locks_Client;
@@ -53,13 +53,13 @@ namespace Neo4Net.Kernel.Impl.Api.state
 	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.Transaction_Type.@implicit;
+//	import static Neo4Net.Kernel.Api.Internal.Transaction_Type.@implicit;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.ConstraintValidationException.Phase.VERIFICATION;
+//	import static Neo4Net.Kernel.Api.Internal.Exceptions.Schema.ConstraintValidationException.Phase.VERIFICATION;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.SchemaKernelException.OperationContext.CONSTRAINT_CREATION;
+//	import static Neo4Net.Kernel.Api.Internal.Exceptions.Schema.SchemaKernelException.OperationContext.CONSTRAINT_CREATION;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.security.SecurityContext.AUTH_DISABLED;
+//	import static Neo4Net.Kernel.Api.Internal.security.SecurityContext.AUTH_DISABLED;
 
 	public class ConstraintIndexCreator
 	{
@@ -96,7 +96,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 		 /// </ol>
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public long createUniquenessConstraintIndex(org.Neo4Net.kernel.impl.api.KernelTransactionImplementation transaction, org.Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor descriptor, String provider) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException, org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.CreateConstraintFailureException, org.Neo4Net.kernel.api.exceptions.schema.UniquePropertyValueValidationException, org.Neo4Net.kernel.api.exceptions.schema.AlreadyConstrainedException
+//ORIGINAL LINE: public long createUniquenessConstraintIndex(Neo4Net.kernel.impl.api.KernelTransactionImplementation transaction, Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor descriptor, String provider) throws Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException, Neo4Net.Kernel.Api.Internal.Exceptions.Schema.CreateConstraintFailureException, Neo4Net.kernel.api.exceptions.schema.UniquePropertyValueValidationException, Neo4Net.kernel.api.exceptions.schema.AlreadyConstrainedException
 		 public virtual long CreateUniquenessConstraintIndex( KernelTransactionImplementation transaction, SchemaDescriptor descriptor, string provider )
 		 {
 			  UniquenessConstraintDescriptor constraint = ConstraintDescriptorFactory.uniqueForSchema( descriptor );
@@ -189,7 +189,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 		 /// You MUST hold a schema write lock before you call this method.
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void dropUniquenessConstraintIndex(org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor descriptor) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
+//ORIGINAL LINE: public void dropUniquenessConstraintIndex(Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor descriptor) throws Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 public virtual void DropUniquenessConstraintIndex( IndexDescriptor descriptor )
 		 {
 			  using ( Transaction transaction = _kernelSupplier.get().BeginTransaction(@implicit, AUTH_DISABLED), Statement ignore = ((KernelTransaction)transaction).acquireStatement() )
@@ -200,7 +200,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void awaitConstraintIndexPopulation(org.Neo4Net.kernel.api.schema.constraints.UniquenessConstraintDescriptor constraint, org.Neo4Net.kernel.impl.api.index.IndexProxy proxy, org.Neo4Net.kernel.impl.api.KernelTransactionImplementation transaction) throws InterruptedException, org.Neo4Net.kernel.api.exceptions.schema.UniquePropertyValueValidationException
+//ORIGINAL LINE: private void awaitConstraintIndexPopulation(Neo4Net.kernel.api.schema.constraints.UniquenessConstraintDescriptor constraint, Neo4Net.kernel.impl.api.index.IndexProxy proxy, Neo4Net.kernel.impl.api.KernelTransactionImplementation transaction) throws InterruptedException, Neo4Net.kernel.api.exceptions.schema.UniquePropertyValueValidationException
 		 private void AwaitConstraintIndexPopulation( UniquenessConstraintDescriptor constraint, IndexProxy proxy, KernelTransactionImplementation transaction )
 		 {
 			  try
@@ -230,7 +230,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.Kernel.Api.Internal.IndexReference getOrCreateUniquenessConstraintIndex(org.Neo4Net.Kernel.Api.Internal.SchemaRead schemaRead, org.Neo4Net.Kernel.Api.Internal.TokenRead tokenRead, org.Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor schema, String provider) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.SchemaKernelException, org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
+//ORIGINAL LINE: private Neo4Net.Kernel.Api.Internal.IndexReference getOrCreateUniquenessConstraintIndex(Neo4Net.Kernel.Api.Internal.SchemaRead schemaRead, Neo4Net.Kernel.Api.Internal.TokenRead tokenRead, Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor schema, String provider) throws Neo4Net.Kernel.Api.Internal.Exceptions.Schema.SchemaKernelException, Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
 		 private IndexReference GetOrCreateUniquenessConstraintIndex( SchemaRead schemaRead, TokenRead tokenRead, SchemaDescriptor schema, string provider )
 		 {
 			  IndexReference descriptor = schemaRead.Index( schema );
@@ -256,7 +256,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor createConstraintIndex(final org.Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor schema, String provider)
+//ORIGINAL LINE: public Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor createConstraintIndex(final Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor schema, String provider)
 		 public virtual IndexDescriptor CreateConstraintIndex( SchemaDescriptor schema, string provider )
 		 {
 			  try

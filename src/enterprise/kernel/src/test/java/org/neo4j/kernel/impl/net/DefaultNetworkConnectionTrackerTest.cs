@@ -24,8 +24,8 @@ namespace Neo4Net.Kernel.impl.net
 {
 	using Test = org.junit.jupiter.api.Test;
 
-	using NetworkConnectionTracker = Neo4Net.Kernel.api.net.NetworkConnectionTracker;
-	using TrackedNetworkConnection = Neo4Net.Kernel.api.net.TrackedNetworkConnection;
+	using NetworkConnectionTracker = Neo4Net.Kernel.Api.net.NetworkConnectionTracker;
+	using TrackedNetworkConnection = Neo4Net.Kernel.Api.net.TrackedNetworkConnection;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.MatcherAssert.assertThat;

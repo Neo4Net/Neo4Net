@@ -47,21 +47,21 @@ namespace Neo4Net.causalclustering.core.state
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.ReplicationModule.SESSION_TRACKER_NAME;
+//	import static Neo4Net.causalclustering.ReplicationModule.SESSION_TRACKER_NAME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.IdentityModule.CORE_MEMBER_ID_NAME;
+//	import static Neo4Net.causalclustering.core.IdentityModule.CORE_MEMBER_ID_NAME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.ConsensusModule.RAFT_MEMBERSHIP_NAME;
+//	import static Neo4Net.causalclustering.core.consensus.ConsensusModule.RAFT_MEMBERSHIP_NAME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.ConsensusModule.RAFT_TERM_NAME;
+//	import static Neo4Net.causalclustering.core.consensus.ConsensusModule.RAFT_TERM_NAME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.ConsensusModule.RAFT_VOTE_NAME;
+//	import static Neo4Net.causalclustering.core.consensus.ConsensusModule.RAFT_VOTE_NAME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.server.CoreServerModule.LAST_FLUSHED_NAME;
+//	import static Neo4Net.causalclustering.core.server.CoreServerModule.LAST_FLUSHED_NAME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.state.machines.CoreStateMachinesModule.ID_ALLOCATION_NAME;
+//	import static Neo4Net.causalclustering.core.state.machines.CoreStateMachinesModule.ID_ALLOCATION_NAME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.state.machines.CoreStateMachinesModule.LOCK_TOKEN_NAME;
+//	import static Neo4Net.causalclustering.core.state.machines.CoreStateMachinesModule.LOCK_TOKEN_NAME;
 
 	public class DumpClusterStateTest
 	{
@@ -82,7 +82,7 @@ namespace Neo4Net.causalclustering.core.state
 		}
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.fs.EphemeralFileSystemRule fsa = new org.Neo4Net.test.rule.fs.EphemeralFileSystemRule();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.fs.EphemeralFileSystemRule fsa = new Neo4Net.test.rule.fs.EphemeralFileSystemRule();
 		 public EphemeralFileSystemRule Fsa = new EphemeralFileSystemRule();
 		 private File _dataDir = new File( "data" );
 		 private ClusterStateDirectory _clusterStateDirectory;

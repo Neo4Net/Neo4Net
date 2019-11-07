@@ -34,7 +34,7 @@ namespace Neo4Net.Bolt.v1.transport.socket
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.transport.ChunkedOutput.CHUNK_HEADER_SIZE;
+//	import static Neo4Net.bolt.v1.transport.ChunkedOutput.CHUNK_HEADER_SIZE;
 
 	/// <summary>
 	/// Helper to chunk up serialized data for testing </summary>

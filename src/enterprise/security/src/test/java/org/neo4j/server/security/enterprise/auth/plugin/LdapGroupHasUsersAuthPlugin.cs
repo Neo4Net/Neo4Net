@@ -44,7 +44,7 @@ namespace Neo4Net.Server.security.enterprise.auth.plugin
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.server.security.enterprise.auth.plugin.spi.AuthInfo authenticateAndAuthorize(org.Neo4Net.server.security.enterprise.auth.plugin.api.AuthToken authToken) throws org.Neo4Net.server.security.enterprise.auth.plugin.api.AuthenticationException
+//ORIGINAL LINE: public Neo4Net.server.security.enterprise.auth.plugin.spi.AuthInfo authenticateAndAuthorize(Neo4Net.server.security.enterprise.auth.plugin.api.AuthToken authToken) throws Neo4Net.server.security.enterprise.auth.plugin.api.AuthenticationException
 		 public override AuthInfo AuthenticateAndAuthorize( AuthToken authToken )
 		 {
 			  try

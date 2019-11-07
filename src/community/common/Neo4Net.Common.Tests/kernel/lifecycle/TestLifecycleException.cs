@@ -27,13 +27,13 @@ namespace Neo4Net.Kernel.Lifecycle
    //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
    //	import static org.hamcrest.core.Is.@is;
    //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-   //	import static org.Neo4Net.kernel.lifecycle.LifecycleStatus.NONE;
+   //	import static Neo4Net.kernel.lifecycle.LifecycleStatus.NONE;
    //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-   //	import static org.Neo4Net.kernel.lifecycle.LifecycleStatus.SHUTDOWN;
+   //	import static Neo4Net.kernel.lifecycle.LifecycleStatus.SHUTDOWN;
    //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-   //	import static org.Neo4Net.kernel.lifecycle.LifecycleStatus.STARTED;
+   //	import static Neo4Net.kernel.lifecycle.LifecycleStatus.STARTED;
    //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-   //	import static org.Neo4Net.kernel.lifecycle.LifecycleStatus.STOPPED;
+   //	import static Neo4Net.kernel.lifecycle.LifecycleStatus.STOPPED;
 
    internal class TestLifecycleException
    {

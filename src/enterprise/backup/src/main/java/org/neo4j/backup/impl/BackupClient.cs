@@ -45,9 +45,9 @@ namespace Neo4Net.backup.impl
 	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.backup.impl.BackupServer.BACKUP_PROTOCOL_VERSION;
+//	import static Neo4Net.backup.impl.BackupServer.BACKUP_PROTOCOL_VERSION;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.backup.impl.BackupServer.FRAME_LENGTH;
+//	import static Neo4Net.backup.impl.BackupServer.FRAME_LENGTH;
 
 	public class BackupClient : Client<TheBackupInterface>, TheBackupInterface
 	{
@@ -59,7 +59,7 @@ namespace Neo4Net.backup.impl
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public org.Neo4Net.com.Response<Void> fullBackup(org.Neo4Net.com.storecopy.StoreWriter storeWriter, final boolean forensics)
+//ORIGINAL LINE: public Neo4Net.com.Response<Void> fullBackup(Neo4Net.com.storecopy.StoreWriter storeWriter, final boolean forensics)
 		 public override Response<Void> FullBackup( StoreWriter storeWriter, bool forensics )
 		 {
 			  return SendRequest( BackupRequestType.FullBackup, RequestContext.EMPTY, buffer => buffer.writeByte( forensics ? ( sbyte ) 1 : ( sbyte ) 0 ), new Protocol.FileStreamsDeserializer310( storeWriter ) );
@@ -86,9 +86,9 @@ namespace Neo4Net.backup.impl
 		 public sealed class BackupRequestType : RequestType
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           FULL_BACKUP((org.Neo4Net.com.TargetCaller<org.Neo4Net.backup.TheBackupInterface, Void>)(master, context, input, target) ->{boolean forensics = input.readable() && booleanOf(input.readByte());return master.fullBackup(new org.Neo4Net.com.storecopy.ToNetworkStoreWriter(target, new org.Neo4Net.kernel.monitoring.Monitors()), forensics);}, org.Neo4Net.com.Protocol.VOID_SERIALIZER),
+//           FULL_BACKUP((Neo4Net.com.TargetCaller<Neo4Net.backup.TheBackupInterface, Void>)(master, context, input, target) ->{boolean forensics = input.readable() && booleanOf(input.readByte());return master.fullBackup(new Neo4Net.com.storecopy.ToNetworkStoreWriter(target, new Neo4Net.kernel.monitoring.Monitors()), forensics);}, Neo4Net.com.Protocol.VOID_SERIALIZER),
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           INCREMENTAL_BACKUP((org.Neo4Net.com.TargetCaller<org.Neo4Net.backup.TheBackupInterface, Void>)(master, context, input, target) -> master.incrementalBackup(context), org.Neo4Net.com.Protocol.VOID_SERIALIZER);
+//           INCREMENTAL_BACKUP((Neo4Net.com.TargetCaller<Neo4Net.backup.TheBackupInterface, Void>)(master, context, input, target) -> master.incrementalBackup(context), Neo4Net.com.Protocol.VOID_SERIALIZER);
 
 			  private static readonly IList<BackupRequestType> valueList = new List<BackupRequestType>();
 

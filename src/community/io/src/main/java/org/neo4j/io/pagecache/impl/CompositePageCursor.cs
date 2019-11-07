@@ -470,7 +470,7 @@ namespace Neo4Net.Io.pagecache.impl
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void checkAndClearCursorException() throws org.Neo4Net.io.pagecache.CursorException
+//ORIGINAL LINE: public void checkAndClearCursorException() throws Neo4Net.io.pagecache.CursorException
 		 public override void CheckAndClearCursorException()
 		 {
 			  _first.checkAndClearCursorException();

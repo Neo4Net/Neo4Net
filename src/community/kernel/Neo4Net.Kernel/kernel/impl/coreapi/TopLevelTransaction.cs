@@ -32,7 +32,7 @@ namespace Neo4Net.Kernel.impl.coreapi
 	using TransientTransactionFailureException = Neo4Net.GraphDb.TransientTransactionFailureException;
 	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 	using SecurityContext = Neo4Net.Kernel.Api.Internal.security.SecurityContext;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
 	using ConstraintViolationTransactionFailureException = Neo4Net.Kernel.Api.Exceptions.ConstraintViolationTransactionFailureException;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using Status_Classification = Neo4Net.Kernel.Api.Exceptions.Status_Classification;
@@ -125,7 +125,7 @@ namespace Neo4Net.Kernel.impl.coreapi
 			  return _transaction.securityContext();
 		 }
 
-		 public override Neo4Net.Kernel.api.KernelTransaction_Revertable OverrideWith( SecurityContext context )
+		 public override Neo4Net.Kernel.Api.KernelTransaction_Revertable OverrideWith( SecurityContext context )
 		 {
 			  return _transaction.overrideWith( context );
 		 }

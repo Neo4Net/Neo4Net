@@ -30,19 +30,19 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 	using Neo4Net.Collections.Helpers;
 	using Neo4Net.Index.Internal.gbptree;
 	using Neo4Net.Index.Internal.gbptree;
-	using AllEntriesLabelScanReader = Neo4Net.Kernel.api.labelscan.AllEntriesLabelScanReader;
-	using NodeLabelRange = Neo4Net.Kernel.api.labelscan.NodeLabelRange;
+	using AllEntriesLabelScanReader = Neo4Net.Kernel.Api.LabelScan.AllEntriesLabelScanReader;
+	using NodeLabelRange = Neo4Net.Kernel.Api.LabelScan.NodeLabelRange;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Long.min;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Arrays.fill;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.labelscan.NodeLabelRange.convertState;
+//	import static Neo4Net.kernel.api.labelscan.NodeLabelRange.convertState;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.labelscan.NodeLabelRange.readBitmap;
+//	import static Neo4Net.kernel.api.labelscan.NodeLabelRange.readBitmap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.labelscan.LabelScanValue.RANGE_SIZE;
+//	import static Neo4Net.kernel.impl.index.labelscan.LabelScanValue.RANGE_SIZE;
 
 	/// <summary>
 	/// <seealso cref="AllEntriesLabelScanReader"/> for <seealso cref="NativeLabelScanStore"/>.

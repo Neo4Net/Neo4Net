@@ -32,7 +32,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.config
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.pagecache.PageCache_Fields.PAGE_SIZE;
+//	import static Neo4Net.io.pagecache.PageCache_Fields.PAGE_SIZE;
 
 	internal class SpaceFillingCurveSettingsHeaderTest
 	{

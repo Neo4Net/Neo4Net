@@ -39,13 +39,13 @@ namespace Neo4Net.Kernel.impl.transaction.log.reverse
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.GivenTransactionCursor.exhaust;
+//	import static Neo4Net.kernel.impl.transaction.log.GivenTransactionCursor.exhaust;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.GivenTransactionCursor.given;
+//	import static Neo4Net.kernel.impl.transaction.log.GivenTransactionCursor.given;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.LogPosition.start;
+//	import static Neo4Net.kernel.impl.transaction.log.LogPosition.start;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.entry.LogHeader.LOG_HEADER_SIZE;
+//	import static Neo4Net.kernel.impl.transaction.log.entry.LogHeader.LOG_HEADER_SIZE;
 
 	public class ReversedMultiFileTransactionCursorTest
 	{
@@ -136,13 +136,13 @@ namespace Neo4Net.Kernel.impl.transaction.log.reverse
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.function.ThrowingFunction<org.Neo4Net.kernel.impl.transaction.log.LogPosition,org.Neo4Net.kernel.impl.transaction.log.TransactionCursor,java.io.IOException> log(int... transactionCounts) throws java.io.IOException
+//ORIGINAL LINE: private Neo4Net.function.ThrowingFunction<Neo4Net.kernel.impl.transaction.log.LogPosition,Neo4Net.kernel.impl.transaction.log.TransactionCursor,java.io.IOException> log(int... transactionCounts) throws java.io.IOException
 		 private ThrowingFunction<LogPosition, TransactionCursor, IOException> Log( params int[] transactionCounts )
 		 {
 			  long baseOffset = LogPosition.start( 0 ).ByteOffset;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") org.Neo4Net.function.ThrowingFunction<org.Neo4Net.kernel.impl.transaction.log.LogPosition,org.Neo4Net.kernel.impl.transaction.log.TransactionCursor,java.io.IOException> result = mock(org.Neo4Net.function.ThrowingFunction.class);
+//ORIGINAL LINE: @SuppressWarnings("unchecked") Neo4Net.function.ThrowingFunction<Neo4Net.kernel.impl.transaction.log.LogPosition,Neo4Net.kernel.impl.transaction.log.TransactionCursor,java.io.IOException> result = mock(Neo4Net.function.ThrowingFunction.class);
 			  ThrowingFunction<LogPosition, TransactionCursor, IOException> result = mock( typeof( ThrowingFunction ) );
 			  AtomicLong txId = new AtomicLong( 0 );
 			  CommittedTransactionRepresentation[][] logs = new CommittedTransactionRepresentation[transactionCounts.Length][];

@@ -43,7 +43,7 @@ namespace Neo4Net.causalclustering.upstream.strategies
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.upstream.strategies.UserDefinedConfigurationStrategyTest.memberIDs;
+//	import static Neo4Net.causalclustering.upstream.strategies.UserDefinedConfigurationStrategyTest.memberIDs;
 
 	public class ConnectRandomlyToServerGroupStrategyTest
 	{

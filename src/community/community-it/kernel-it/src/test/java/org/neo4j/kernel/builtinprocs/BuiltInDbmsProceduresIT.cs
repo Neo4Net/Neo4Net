@@ -29,8 +29,8 @@ namespace Neo4Net.Kernel.builtinprocs
 	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
 	using ProcedureCallContext = Neo4Net.Kernel.Api.Internal.procs.ProcedureCallContext;
 	using QualifiedName = Neo4Net.Kernel.Api.Internal.procs.QualifiedName;
-	using ResourceTracker = Neo4Net.Kernel.api.ResourceTracker;
-	using StubResourceManager = Neo4Net.Kernel.api.StubResourceManager;
+	using ResourceTracker = Neo4Net.Kernel.Api.ResourceTracker;
+	using StubResourceManager = Neo4Net.Kernel.Api.StubResourceManager;
 	using KernelIntegrationTest = Neo4Net.Kernel.Impl.Api.integrationtest.KernelIntegrationTest;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -48,11 +48,11 @@ namespace Neo4Net.Kernel.builtinprocs
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.asList;
+//	import static Neo4Net.helpers.collection.Iterators.asList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.procs.ProcedureSignature.procedureName;
+//	import static Neo4Net.Kernel.Api.Internal.procs.ProcedureSignature.procedureName;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.security.SecurityContext.AUTH_DISABLED;
+//	import static Neo4Net.Kernel.Api.Internal.security.SecurityContext.AUTH_DISABLED;
 
 	public class BuiltInDbmsProceduresIT : KernelIntegrationTest
 	{
@@ -101,7 +101,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void listDynamicSetting() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
+//ORIGINAL LINE: @Test public void listDynamicSetting() throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ListDynamicSetting()
 		 {
@@ -112,7 +112,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void listNotDynamicSetting() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
+//ORIGINAL LINE: @Test public void listNotDynamicSetting() throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ListNotDynamicSetting()
 		 {
@@ -123,7 +123,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.util.List<Object[]> callListConfig(String seatchString) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
+//ORIGINAL LINE: private java.util.List<Object[]> callListConfig(String seatchString) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 		 private IList<object[]> CallListConfig( string seatchString )
 		 {
 			  QualifiedName procedureName = procedureName( "dbms", "listConfig" );

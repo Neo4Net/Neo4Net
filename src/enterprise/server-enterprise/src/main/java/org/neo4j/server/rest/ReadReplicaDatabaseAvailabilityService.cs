@@ -30,10 +30,10 @@ namespace Neo4Net.Server.rest
 
 
 	/// <summary>
-	/// To be deprecated by <seealso cref="org.Neo4Net.server.rest.causalclustering.CausalClusteringService"/>.
+	/// To be deprecated by <seealso cref="Neo4Net.server.rest.causalclustering.CausalClusteringService"/>.
 	/// </summary>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Path(ReadReplicaDatabaseAvailabilityService.BASE_PATH) public class ReadReplicaDatabaseAvailabilityService implements org.Neo4Net.server.rest.management.AdvertisableService
+//ORIGINAL LINE: @Path(ReadReplicaDatabaseAvailabilityService.BASE_PATH) public class ReadReplicaDatabaseAvailabilityService implements Neo4Net.server.rest.management.AdvertisableService
 	public class ReadReplicaDatabaseAvailabilityService : AdvertisableService
 	{
 		 internal const string BASE_PATH = "server/read-replica";

@@ -32,17 +32,17 @@ namespace Neo4Net.Tooling.procedure.procedures.invalid.bad_context_field
 	{
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Context public static org.Neo4Net.graphdb.GraphDatabaseService shouldBeNonStatic;
+//ORIGINAL LINE: @Context public static Neo4Net.graphdb.GraphDatabaseService shouldBeNonStatic;
 		 public static IGraphDatabaseService ShouldBeNonStatic;
 		 public static string Value;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Context public final org.Neo4Net.graphdb.GraphDatabaseService shouldBeNonFinal = null;
+//ORIGINAL LINE: @Context public final Neo4Net.graphdb.GraphDatabaseService shouldBeNonFinal = null;
 		 public readonly IGraphDatabaseService ShouldBeNonFinal = null;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Context public org.Neo4Net.graphdb.GraphDatabaseService db;
+//ORIGINAL LINE: @Context public Neo4Net.graphdb.GraphDatabaseService db;
 		 public IGraphDatabaseService Db;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Context protected org.Neo4Net.graphdb.GraphDatabaseService shouldBePublic;
+//ORIGINAL LINE: @Context protected Neo4Net.graphdb.GraphDatabaseService shouldBePublic;
 		 protected internal IGraphDatabaseService ShouldBePublic;
 		 internal string ShouldBeStatic;
 

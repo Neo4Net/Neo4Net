@@ -26,7 +26,7 @@ namespace Neo4Net.Server
 	using Neo4Net.Server.database;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Provider public class LoggingProvider extends org.Neo4Net.server.database.InjectableProvider<org.Neo4Net.logging.LogProvider>
+//ORIGINAL LINE: @Provider public class LoggingProvider extends Neo4Net.server.database.InjectableProvider<Neo4Net.logging.LogProvider>
 	public class LoggingProvider : InjectableProvider<LogProvider>
 	{
 		 private readonly LogProvider _logProvider;

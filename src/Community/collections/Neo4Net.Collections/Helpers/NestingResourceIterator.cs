@@ -27,7 +27,7 @@ namespace Neo4Net.Collections.Helpers
 	public abstract class NestingResourceIterator<T, U> : PrefetchingResourceIterator<T>
 	{
 		 private readonly IEnumerator<U> _source;
-		 private ResourceIterator<T> _currentNestedIterator;
+		 private IResourceIterator<T> _currentNestedIterator;
 		 private U _currentSurfaceItem;
 
 		 public NestingResourceIterator( IEnumerator<U> source )
@@ -35,7 +35,7 @@ namespace Neo4Net.Collections.Helpers
 			  this._source = source;
 		 }
 
-		 protected internal abstract ResourceIterator<T> CreateNestedIterator( U item );
+		 protected internal abstract IResourceIterator<T> CreateNestedIterator( U item );
 
 		 protected internal override T FetchNextOrNull()
 		 {

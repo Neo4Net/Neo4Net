@@ -31,7 +31,7 @@ namespace Neo4Net.Server.rest
 	using Builder = Neo4Net.Server.rest.discovery.DiscoverableURIs.Builder;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.discovery.CommunityDiscoverableURIs.communityDiscoverableURIs;
+//	import static Neo4Net.server.rest.discovery.CommunityDiscoverableURIs.communityDiscoverableURIs;
 
 	public class EnterpriseDiscoverableURIs
 	{

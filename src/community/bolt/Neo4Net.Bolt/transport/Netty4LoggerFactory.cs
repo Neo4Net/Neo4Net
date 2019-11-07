@@ -29,7 +29,7 @@ namespace Neo4Net.Bolt.transport
 	using LogProvider = Neo4Net.Logging.LogProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.logging.Internal.LogMessageUtil.slf4jToStringFormatPlaceholders;
+//	import static Neo4Net.logging.Internal.LogMessageUtil.slf4jToStringFormatPlaceholders;
 
 	/// <summary>
 	/// This class replaces Nettys regular logging system, injecting our own.
@@ -46,7 +46,7 @@ namespace Neo4Net.Bolt.transport
 		 public override InternalLogger NewInstance( string name )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.logging.Log log = logProvider.getLog(name);
+//ORIGINAL LINE: final Neo4Net.logging.Log log = logProvider.getLog(name);
 			  Log log = _logProvider.getLog( name );
 			  return new AbstractInternalLoggerAnonymousInnerClass( this, name, log );
 		 }

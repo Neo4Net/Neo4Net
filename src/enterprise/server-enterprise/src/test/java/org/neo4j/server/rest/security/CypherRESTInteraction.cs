@@ -31,7 +31,7 @@ namespace Neo4Net.Server.rest.security
 	using HTTP = Neo4Net.Test.server.HTTP;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.server.HTTP.RawPayload.quotedJson;
+//	import static Neo4Net.test.server.HTTP.RawPayload.quotedJson;
 
 	internal class CypherRESTInteraction : AbstractRESTInteraction
 	{

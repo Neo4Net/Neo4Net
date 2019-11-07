@@ -69,31 +69,31 @@ namespace Neo4Net.Test.ha
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.Exceptions.rootCause;
+//	import static Neo4Net.helpers.Exceptions.rootCause;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
+//	import static Neo4Net.helpers.collection.MapUtil.stringMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.pagecache.impl.muninn.StandalonePageCacheFactory.createPageCache;
+//	import static Neo4Net.io.pagecache.impl.muninn.StandalonePageCacheFactory.createPageCache;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.allSeesAllAsAvailable;
+//	import static Neo4Net.kernel.impl.ha.ClusterManager.allSeesAllAsAvailable;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.clusterOfSize;
+//	import static Neo4Net.kernel.impl.ha.ClusterManager.clusterOfSize;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.masterAvailable;
+//	import static Neo4Net.kernel.impl.ha.ClusterManager.masterAvailable;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.masterSeesSlavesAsAvailable;
+//	import static Neo4Net.kernel.impl.ha.ClusterManager.masterSeesSlavesAsAvailable;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
+//	import static Neo4Net.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.MetaDataStore.Position.LAST_TRANSACTION_COMMIT_TIMESTAMP;
+//	import static Neo4Net.kernel.impl.store.MetaDataStore.Position.LAST_TRANSACTION_COMMIT_TIMESTAMP;
 
 	public class ClusterIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.LoggerRule logging = new org.Neo4Net.test.rule.LoggerRule(java.util.logging.Level.ALL);
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.LoggerRule logging = new Neo4Net.test.rule.LoggerRule(java.util.logging.Level.ALL);
 		 public LoggerRule Logging = new LoggerRule( Level.ALL );
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.TestDirectory testDirectory = Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public TestDirectory TestDirectory = TestDirectory.testDirectory();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Rule public org.junit.rules.TestName testName = new org.junit.rules.TestName();
@@ -326,7 +326,7 @@ namespace Neo4Net.Test.ha
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void createClusterWithNode(org.Neo4Net.kernel.impl.ha.ClusterManager clusterManager) throws Throwable
+//ORIGINAL LINE: private static void createClusterWithNode(Neo4Net.kernel.impl.ha.ClusterManager clusterManager) throws Throwable
 		 private static void CreateClusterWithNode( ClusterManager clusterManager )
 		 {
 			  try
@@ -359,7 +359,7 @@ namespace Neo4Net.Test.ha
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void deleteLogs(org.Neo4Net.io.layout.DatabaseLayout databaseLayout) throws java.io.IOException
+//ORIGINAL LINE: private static void deleteLogs(Neo4Net.io.layout.DatabaseLayout databaseLayout) throws java.io.IOException
 		 private static void DeleteLogs( DatabaseLayout databaseLayout )
 		 {
 			  using ( DefaultFileSystemAbstraction fileSystem = new DefaultFileSystemAbstraction() )
@@ -388,7 +388,7 @@ namespace Neo4Net.Test.ha
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void clearLastTransactionCommitTimestampField(org.Neo4Net.io.layout.DatabaseLayout databaseLayout) throws Exception
+//ORIGINAL LINE: private static void clearLastTransactionCommitTimestampField(Neo4Net.io.layout.DatabaseLayout databaseLayout) throws Exception
 		 private static void ClearLastTransactionCommitTimestampField( DatabaseLayout databaseLayout )
 		 {
 			  using ( FileSystemAbstraction fileSystem = new DefaultFileSystemAbstraction(), IJobScheduler jobScheduler = createInitializedScheduler(), PageCache pageCache = createPageCache(fileSystem, jobScheduler) )

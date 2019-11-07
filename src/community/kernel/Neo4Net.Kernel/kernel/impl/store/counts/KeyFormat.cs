@@ -30,7 +30,7 @@ namespace Neo4Net.Kernel.impl.store.counts
 	using WritableBuffer = Neo4Net.Kernel.impl.store.kvstore.WritableBuffer;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.counts.keys.CountsKeyFactory.indexStatisticsKey;
+//	import static Neo4Net.kernel.impl.store.counts.keys.CountsKeyFactory.indexStatisticsKey;
 
 	internal class KeyFormat : CountsVisitor
 	{
@@ -88,7 +88,7 @@ namespace Neo4Net.Kernel.impl.store.counts
 		 ///  k - entry (sub)type - "{@link #INDEX_STATS}"
 		 ///  i - index id
 		 /// </pre>
-		 /// For value format, see <seealso cref="org.Neo4Net.kernel.impl.store.counts.CountsUpdater.replaceIndexUpdateAndSize(long, long, long)"/>.
+		 /// For value format, see <seealso cref="Neo4Net.kernel.impl.store.counts.CountsUpdater.replaceIndexUpdateAndSize(long, long, long)"/>.
 		 /// </summary>
 		 public override void VisitIndexStatistics( long indexId, long updates, long size )
 		 {
@@ -104,7 +104,7 @@ namespace Neo4Net.Kernel.impl.store.counts
 		 ///  k - entry (sub)type - "{@link #INDEX_SAMPLE}"
 		 ///  i - index id
 		 /// </pre>
-		 /// For value format, see <seealso cref="org.Neo4Net.kernel.impl.store.counts.CountsUpdater.replaceIndexSample(long , long, long)"/>.
+		 /// For value format, see <seealso cref="Neo4Net.kernel.impl.store.counts.CountsUpdater.replaceIndexSample(long , long, long)"/>.
 		 /// </summary>
 		 public override void VisitIndexSample( long indexId, long unique, long size )
 		 {
@@ -117,7 +117,7 @@ namespace Neo4Net.Kernel.impl.store.counts
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static org.Neo4Net.kernel.impl.store.counts.keys.CountsKey readKey(org.Neo4Net.kernel.impl.store.kvstore.ReadableBuffer key) throws org.Neo4Net.kernel.impl.store.kvstore.UnknownKey
+//ORIGINAL LINE: public static Neo4Net.kernel.impl.store.counts.keys.CountsKey readKey(Neo4Net.kernel.impl.store.kvstore.ReadableBuffer key) throws Neo4Net.kernel.impl.store.kvstore.UnknownKey
 		 public static CountsKey ReadKey( ReadableBuffer key )
 		 {
 			  switch ( key.GetByte( 0 ) )

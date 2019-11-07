@@ -63,20 +63,20 @@ namespace Neo4Net.Kernel.ha
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.com.StoreIdTestFactory.newStoreIdForCurrentVersion;
+//	import static Neo4Net.com.StoreIdTestFactory.newStoreIdForCurrentVersion;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.ha.com.master.SlavePriorities.givenOrder;
+//	import static Neo4Net.kernel.ha.com.master.SlavePriorities.givenOrder;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.ha.com.master.SlavePriorities.roundRobin;
+//	import static Neo4Net.kernel.ha.com.master.SlavePriorities.roundRobin;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
+//	import static Neo4Net.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.logging.AssertableLogProvider.Level.ERROR;
+//	import static Neo4Net.logging.AssertableLogProvider.Level.ERROR;
 
 	public class TestMasterCommittingAtSlave
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.CleanupRule cleanup = new org.Neo4Net.test.rule.CleanupRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.CleanupRule cleanup = new Neo4Net.test.rule.CleanupRule();
 		 public readonly CleanupRule Cleanup = new CleanupRule();
 		 private const int MASTER_SERVER_ID = 0;
 

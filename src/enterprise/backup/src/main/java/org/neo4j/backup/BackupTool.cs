@@ -45,9 +45,9 @@ namespace Neo4Net.backup
 	using SimpleLogService = Neo4Net.Logging.Internal.SimpleLogService;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.backup.impl.BackupProtocolServiceFactory.backupProtocolService;
+//	import static Neo4Net.backup.impl.BackupProtocolServiceFactory.backupProtocolService;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
+//	import static Neo4Net.helpers.collection.MapUtil.stringMap;
 
 	/// @deprecated Use the {@code Neo4Net-admin backup} instead. 
 	[Obsolete("Use the {@code Neo4Net-admin backup} instead.")]
@@ -108,7 +108,7 @@ namespace Neo4Net.backup
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.Neo4Net.backup.impl.BackupOutcome run(String[] args) throws ToolFailureException
+//ORIGINAL LINE: Neo4Net.backup.impl.BackupOutcome run(String[] args) throws ToolFailureException
 		 internal virtual BackupOutcome Run( string[] args )
 		 {
 			  Args arguments = Args.withFlags( VERIFY ).parse( args );
@@ -133,7 +133,7 @@ namespace Neo4Net.backup
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.backup.impl.BackupOutcome runBackupWithLegacyArgs(org.Neo4Net.helpers.Args args) throws ToolFailureException
+//ORIGINAL LINE: private Neo4Net.backup.impl.BackupOutcome runBackupWithLegacyArgs(Neo4Net.helpers.Args args) throws ToolFailureException
 		 private BackupOutcome RunBackupWithLegacyArgs( Args args )
 		 {
 			  string from = args.Get( FROM ).Trim();
@@ -163,7 +163,7 @@ namespace Neo4Net.backup
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.backup.impl.BackupOutcome runBackup(org.Neo4Net.helpers.Args args) throws ToolFailureException
+//ORIGINAL LINE: private Neo4Net.backup.impl.BackupOutcome runBackup(Neo4Net.helpers.Args args) throws ToolFailureException
 		 private BackupOutcome RunBackup( Args args )
 		 {
 			  string host = args.Get( HOST ).Trim();
@@ -195,7 +195,7 @@ namespace Neo4Net.backup
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.Neo4Net.backup.impl.BackupOutcome executeBackup(org.Neo4Net.helpers.HostnamePort hostnamePort, java.nio.file.Path to, org.Neo4Net.backup.impl.ConsistencyCheck consistencyCheck, org.Neo4Net.kernel.configuration.Config config, long timeout, boolean forensics) throws ToolFailureException
+//ORIGINAL LINE: Neo4Net.backup.impl.BackupOutcome executeBackup(Neo4Net.helpers.HostnamePort hostnamePort, java.nio.file.Path to, Neo4Net.backup.impl.ConsistencyCheck consistencyCheck, Neo4Net.kernel.configuration.Config config, long timeout, boolean forensics) throws ToolFailureException
 		 internal virtual BackupOutcome ExecuteBackup( HostnamePort hostnamePort, Path to, ConsistencyCheck consistencyCheck, Config config, long timeout, bool forensics )
 		 {
 			  try
@@ -223,7 +223,7 @@ namespace Neo4Net.backup
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static org.Neo4Net.kernel.configuration.Config readConfiguration(org.Neo4Net.helpers.Args arguments) throws ToolFailureException
+//ORIGINAL LINE: private static Neo4Net.kernel.configuration.Config readConfiguration(Neo4Net.helpers.Args arguments) throws ToolFailureException
 		 private static Config ReadConfiguration( Args arguments )
 		 {
 
@@ -244,7 +244,7 @@ namespace Neo4Net.backup
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static java.net.URI resolveBackupUri(String from, org.Neo4Net.helpers.Args arguments, org.Neo4Net.kernel.configuration.Config config) throws ToolFailureException
+//ORIGINAL LINE: private static java.net.URI resolveBackupUri(String from, Neo4Net.helpers.Args arguments, Neo4Net.kernel.configuration.Config config) throws ToolFailureException
 		 private static URI ResolveBackupUri( string from, Args arguments, Config config )
 		 {
 			  if ( from.Contains( "," ) )
@@ -290,7 +290,7 @@ namespace Neo4Net.backup
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static java.net.URI resolveUriWithProvider(String providerName, org.Neo4Net.kernel.configuration.Config config, String from, org.Neo4Net.helpers.Args args) throws ToolFailureException
+//ORIGINAL LINE: private static java.net.URI resolveUriWithProvider(String providerName, Neo4Net.kernel.configuration.Config config, String from, Neo4Net.helpers.Args args) throws ToolFailureException
 		 private static URI ResolveUriWithProvider( string providerName, Config config, string from, Args args )
 		 {
 			  BackupExtensionService service;
@@ -316,7 +316,7 @@ namespace Neo4Net.backup
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static org.Neo4Net.helpers.HostnamePort newHostnamePort(java.net.URI backupURI) throws ToolFailureException
+//ORIGINAL LINE: private static Neo4Net.helpers.HostnamePort newHostnamePort(java.net.URI backupURI) throws ToolFailureException
 		 private static HostnamePort NewHostnamePort( URI backupURI )
 		 {
 			  if ( backupURI == null || backupURI.Host == null )

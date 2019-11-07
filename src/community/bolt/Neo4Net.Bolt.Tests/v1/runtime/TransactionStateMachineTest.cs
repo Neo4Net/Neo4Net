@@ -32,7 +32,7 @@ namespace Neo4Net.Bolt.v1.runtime
 	using MapUtil = Neo4Net.Collections.Helpers.MapUtil;
 	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using QueryExecutionKernelException = Neo4Net.Kernel.impl.query.QueryExecutionKernelException;
 	using ValueUtils = Neo4Net.Kernel.impl.util.ValueUtils;
@@ -74,9 +74,9 @@ namespace Neo4Net.Bolt.v1.runtime
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.security.auth.AuthenticationResult.AUTH_DISABLED;
+//	import static Neo4Net.bolt.security.auth.AuthenticationResult.AUTH_DISABLED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.@virtual.VirtualValues.EMPTY_MAP;
+//	import static Neo4Net.values.@virtual.VirtualValues.EMPTY_MAP;
 
 	internal class TransactionStateMachineTest
 	{
@@ -554,7 +554,7 @@ namespace Neo4Net.Bolt.v1.runtime
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static TransactionStateMachineV1SPI newTransactionStateMachineSPI(org.Neo4Net.kernel.api.KernelTransaction transaction) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: private static TransactionStateMachineV1SPI newTransactionStateMachineSPI(Neo4Net.kernel.api.KernelTransaction transaction) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 private static TransactionStateMachineV1SPI NewTransactionStateMachineSPI( KernelTransaction transaction )
 		 {
 			  BoltResultHandle resultHandle = NewResultHandle();
@@ -567,7 +567,7 @@ namespace Neo4Net.Bolt.v1.runtime
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static TransactionStateMachineV1SPI newTransactionStateMachineSPI(org.Neo4Net.kernel.api.KernelTransaction transaction, org.Neo4Net.bolt.runtime.BoltResultHandle resultHandle) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: private static TransactionStateMachineV1SPI newTransactionStateMachineSPI(Neo4Net.kernel.api.KernelTransaction transaction, Neo4Net.bolt.runtime.BoltResultHandle resultHandle) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 private static TransactionStateMachineV1SPI NewTransactionStateMachineSPI( KernelTransaction transaction, BoltResultHandle resultHandle )
 		 {
 			  TransactionStateMachineV1SPI stateMachineSPI = mock( typeof( TransactionStateMachineV1SPI ) );
@@ -579,7 +579,7 @@ namespace Neo4Net.Bolt.v1.runtime
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static org.Neo4Net.bolt.runtime.BoltResultHandle newResultHandle() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: private static Neo4Net.bolt.runtime.BoltResultHandle newResultHandle() throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 private static BoltResultHandle NewResultHandle()
 		 {
 			  BoltResultHandle resultHandle = mock( typeof( BoltResultHandle ) );
@@ -590,7 +590,7 @@ namespace Neo4Net.Bolt.v1.runtime
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static org.Neo4Net.bolt.runtime.BoltResultHandle newResultHandle(Throwable t) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: private static Neo4Net.bolt.runtime.BoltResultHandle newResultHandle(Throwable t) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 private static BoltResultHandle NewResultHandle( Exception t )
 		 {
 			  BoltResultHandle resultHandle = mock( typeof( BoltResultHandle ) );

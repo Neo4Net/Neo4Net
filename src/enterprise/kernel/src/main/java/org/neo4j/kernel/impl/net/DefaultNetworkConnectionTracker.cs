@@ -26,9 +26,9 @@ using System.Collections.Generic;
 namespace Neo4Net.Kernel.impl.net
 {
 
-	using NetworkConnectionIdGenerator = Neo4Net.Kernel.api.net.NetworkConnectionIdGenerator;
-	using NetworkConnectionTracker = Neo4Net.Kernel.api.net.NetworkConnectionTracker;
-	using TrackedNetworkConnection = Neo4Net.Kernel.api.net.TrackedNetworkConnection;
+	using NetworkConnectionIdGenerator = Neo4Net.Kernel.Api.net.NetworkConnectionIdGenerator;
+	using NetworkConnectionTracker = Neo4Net.Kernel.Api.net.NetworkConnectionTracker;
+	using TrackedNetworkConnection = Neo4Net.Kernel.Api.net.TrackedNetworkConnection;
 
 	/// <summary>
 	/// A <seealso cref="NetworkConnectionTracker"/> that keeps all given connections in a <seealso cref="System.Collections.Concurrent.ConcurrentDictionary"/>.

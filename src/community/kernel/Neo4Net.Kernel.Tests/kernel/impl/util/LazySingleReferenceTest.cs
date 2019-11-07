@@ -34,7 +34,7 @@ namespace Neo4Net.Kernel.impl.util
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.DoubleLatch.awaitLatch;
+//	import static Neo4Net.test.DoubleLatch.awaitLatch;
 
 	public class LazySingleReferenceTest
 	{
@@ -230,14 +230,14 @@ namespace Neo4Net.Kernel.impl.util
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private org.Neo4Net.test.OtherThreadExecutor.WorkerCommand<Void,int> evaluate(final LazySingleReference<int> ref)
+//ORIGINAL LINE: private Neo4Net.test.OtherThreadExecutor.WorkerCommand<Void,int> Evaluate(final LazySingleReference<int> ref)
 		 private OtherThreadExecutor.WorkerCommand<Void, int> Evaluate( LazySingleReference<int> @ref )
 		 {
 			  return state => @ref.Get();
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private org.Neo4Net.test.OtherThreadExecutor.WorkerCommand<Void,Void> invalidate(final LazySingleReference<int> ref)
+//ORIGINAL LINE: private Neo4Net.test.OtherThreadExecutor.WorkerCommand<Void,Void> invalidate(final LazySingleReference<int> ref)
 		 private OtherThreadExecutor.WorkerCommand<Void, Void> Invalidate( LazySingleReference<int> @ref )
 		 {
 			  return state =>

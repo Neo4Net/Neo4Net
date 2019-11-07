@@ -48,10 +48,10 @@ namespace Neo4Net.storeupgrade
 	using SchemaRead = Neo4Net.Kernel.Api.Internal.SchemaRead;
 	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
-	using InwardKernel = Neo4Net.Kernel.api.InwardKernel;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
-	using Statement = Neo4Net.Kernel.api.Statement;
-	using AnonymousContext = Neo4Net.Kernel.api.security.AnonymousContext;
+	using InwardKernel = Neo4Net.Kernel.Api.InwardKernel;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
+	using Statement = Neo4Net.Kernel.Api.Statement;
+	using AnonymousContext = Neo4Net.Kernel.Api.security.AnonymousContext;
 	using BoltConnector = Neo4Net.Kernel.configuration.BoltConnector;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using HttpConnector = Neo4Net.Kernel.configuration.HttpConnector;
@@ -87,15 +87,15 @@ namespace Neo4Net.storeupgrade
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.consistency.store.StoreAssertions.assertConsistentStore;
+//	import static Neo4Net.consistency.store.StoreAssertions.assertConsistentStore;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.count;
+//	import static Neo4Net.helpers.collection.Iterables.count;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.Transaction_Type.@implicit;
+//	import static Neo4Net.Kernel.Api.Internal.Transaction_Type.@implicit;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.allSeesAllAsAvailable;
+//	import static Neo4Net.kernel.impl.ha.ClusterManager.allSeesAllAsAvailable;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.clusterOfSize;
+//	import static Neo4Net.kernel.impl.ha.ClusterManager.clusterOfSize;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Enclosed.class) public class StoreUpgradeIT
@@ -121,10 +121,10 @@ namespace Neo4Net.storeupgrade
 			  }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.SuppressOutput suppressOutput = org.Neo4Net.test.rule.SuppressOutput.suppressAll();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.SuppressOutput suppressOutput = Neo4Net.test.rule.SuppressOutput.suppressAll();
 			  public SuppressOutput SuppressOutput = SuppressOutput.suppressAll();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.TestDirectory testDir = org.Neo4Net.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.TestDirectory testDir = Neo4Net.test.rule.TestDirectory.testDirectory();
 			  public TestDirectory TestDir = TestDirectory.testDirectory();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -257,7 +257,7 @@ namespace Neo4Net.storeupgrade
 		 public class StoreUpgradeFailingTest
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory testDir = org.Neo4Net.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.TestDirectory testDir = Neo4Net.test.rule.TestDirectory.testDirectory();
 			  public readonly TestDirectory TestDir = TestDirectory.testDirectory();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -316,7 +316,7 @@ namespace Neo4Net.storeupgrade
 			  }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory testDir = org.Neo4Net.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.TestDirectory testDir = Neo4Net.test.rule.TestDirectory.testDirectory();
 			  public readonly TestDirectory TestDir = TestDirectory.testDirectory();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -411,7 +411,7 @@ namespace Neo4Net.storeupgrade
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void checkInstance(Store store, org.Neo4Net.kernel.internal.GraphDatabaseAPI db) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: private static void checkInstance(Store store, Neo4Net.kernel.internal.GraphDatabaseAPI db) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 private static void CheckInstance( Store store, GraphDatabaseAPI db )
 		 {
 			  CheckProvidedParameters( store, db );
@@ -421,7 +421,7 @@ namespace Neo4Net.storeupgrade
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void checkIndexCounts(Store store, org.Neo4Net.kernel.internal.GraphDatabaseAPI db) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: private static void checkIndexCounts(Store store, Neo4Net.kernel.internal.GraphDatabaseAPI db) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 private static void CheckIndexCounts( Store store, GraphDatabaseAPI db )
 		 {
 			  InwardKernel kernel = Db.DependencyResolver.resolveDependency( typeof( InwardKernel ) );
@@ -542,7 +542,7 @@ namespace Neo4Net.storeupgrade
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static org.Neo4Net.Kernel.Api.Internal.IndexReference awaitOnline(org.Neo4Net.Kernel.Api.Internal.SchemaRead schemRead, org.Neo4Net.Kernel.Api.Internal.IndexReference index) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: private static Neo4Net.Kernel.Api.Internal.IndexReference awaitOnline(Neo4Net.Kernel.Api.Internal.SchemaRead schemRead, Neo4Net.Kernel.Api.Internal.IndexReference index) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 private static IndexReference AwaitOnline( SchemaRead schemRead, IndexReference index )
 		 {
 			  long start = DateTimeHelper.CurrentUnixTimeMillis();

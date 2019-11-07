@@ -41,7 +41,7 @@ namespace Neo4Net.causalclustering.catchup
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.helpers.AdvertisedSocketAddress get() throws CatchupAddressResolutionException
+//ORIGINAL LINE: public Neo4Net.helpers.AdvertisedSocketAddress get() throws CatchupAddressResolutionException
 		 public override AdvertisedSocketAddress Get()
 		 {
 			  try

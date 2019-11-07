@@ -33,7 +33,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 	using IndexQuery = Neo4Net.Kernel.Api.Internal.IndexQuery;
 	using NodeCursor = Neo4Net.Kernel.Api.Internal.NodeCursor;
 	using NodeValueIndexCursor = Neo4Net.Kernel.Api.Internal.NodeValueIndexCursor;
-	using TransactionState = Neo4Net.Kernel.api.txstate.TransactionState;
+	using TransactionState = Neo4Net.Kernel.Api.txstate.TransactionState;
 	using AddedAndRemoved = Neo4Net.Kernel.Impl.Newapi.TxStateIndexChanges.AddedAndRemoved;
 	using AddedWithValuesAndRemoved = Neo4Net.Kernel.Impl.Newapi.TxStateIndexChanges.AddedWithValuesAndRemoved;
 	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
@@ -42,27 +42,27 @@ namespace Neo4Net.Kernel.Impl.Newapi
 	using Value = Neo4Net.Values.Storable.Value;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.collection.PrimitiveLongCollections.mergeToSet;
+//	import static Neo4Net.collection.PrimitiveLongCollections.mergeToSet;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.newapi.TxStateIndexChanges.indexUpdatesForRangeSeek;
+//	import static Neo4Net.kernel.impl.newapi.TxStateIndexChanges.indexUpdatesForRangeSeek;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.newapi.TxStateIndexChanges.indexUpdatesForRangeSeekByPrefix;
+//	import static Neo4Net.kernel.impl.newapi.TxStateIndexChanges.indexUpdatesForRangeSeekByPrefix;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.newapi.TxStateIndexChanges.indexUpdatesForScan;
+//	import static Neo4Net.kernel.impl.newapi.TxStateIndexChanges.indexUpdatesForScan;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.newapi.TxStateIndexChanges.indexUpdatesForSeek;
+//	import static Neo4Net.kernel.impl.newapi.TxStateIndexChanges.indexUpdatesForSeek;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.newapi.TxStateIndexChanges.indexUpdatesForSuffixOrContains;
+//	import static Neo4Net.kernel.impl.newapi.TxStateIndexChanges.indexUpdatesForSuffixOrContains;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.newapi.TxStateIndexChanges.indexUpdatesWithValuesForRangeSeek;
+//	import static Neo4Net.kernel.impl.newapi.TxStateIndexChanges.indexUpdatesWithValuesForRangeSeek;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.newapi.TxStateIndexChanges.indexUpdatesWithValuesForRangeSeekByPrefix;
+//	import static Neo4Net.kernel.impl.newapi.TxStateIndexChanges.indexUpdatesWithValuesForRangeSeekByPrefix;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.newapi.TxStateIndexChanges.indexUpdatesWithValuesForScan;
+//	import static Neo4Net.kernel.impl.newapi.TxStateIndexChanges.indexUpdatesWithValuesForScan;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.newapi.TxStateIndexChanges.indexUpdatesWithValuesForSuffixOrContains;
+//	import static Neo4Net.kernel.impl.newapi.TxStateIndexChanges.indexUpdatesWithValuesForSuffixOrContains;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.record.AbstractBaseRecord.NO_ID;
+//	import static Neo4Net.kernel.impl.store.record.AbstractBaseRecord.NO_ID;
 
 	internal sealed class DefaultNodeValueIndexCursor : IndexCursor<IndexProgressor>, NodeValueIndexCursor, IndexProgressor_NodeValueClient, SortedMergeJoin.Sink
 	{

@@ -78,15 +78,15 @@ namespace Neo4Net.Kernel.impl.ha
 	using StorageEngine = Neo4Net.Kernel.Api.StorageEngine.StorageEngine;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.ArrayUtil.contains;
+//	import static Neo4Net.helpers.ArrayUtil.contains;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.asList;
+//	import static Neo4Net.helpers.collection.Iterables.asList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.count;
+//	import static Neo4Net.helpers.collection.Iterables.count;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
+//	import static Neo4Net.helpers.collection.MapUtil.stringMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.fs.FileUtils.copyRecursively;
+//	import static Neo4Net.io.fs.FileUtils.copyRecursively;
 
 	/// <summary>
 	/// Utility for spinning up an HA cluster inside the same JVM. Only intended for being used in tests
@@ -130,7 +130,7 @@ namespace Neo4Net.Kernel.impl.ha
 		 public interface RepairKit
 		 {
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.Neo4Net.kernel.ha.HighlyAvailableGraphDatabase repair() throws Throwable;
+//ORIGINAL LINE: Neo4Net.kernel.ha.HighlyAvailableGraphDatabase repair() throws Throwable;
 			  HighlyAvailableGraphDatabase Repair();
 		 }
 
@@ -292,11 +292,11 @@ namespace Neo4Net.Kernel.impl.ha
 		 /// re-election of a different master.
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static System.Predicate<ManagedCluster> masterAvailable(final org.Neo4Net.kernel.ha.HighlyAvailableGraphDatabase... except)
+//ORIGINAL LINE: public static System.Predicate<ManagedCluster> masterAvailable(final Neo4Net.kernel.ha.HighlyAvailableGraphDatabase... except)
 		 public static System.Predicate<ManagedCluster> MasterAvailable( params HighlyAvailableGraphDatabase[] except )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.Collection<org.Neo4Net.kernel.ha.HighlyAvailableGraphDatabase> excludedNodes = asList(except);
+//ORIGINAL LINE: final java.util.Collection<Neo4Net.kernel.ha.HighlyAvailableGraphDatabase> excludedNodes = asList(except);
 			  ICollection<HighlyAvailableGraphDatabase> excludedNodes = asList( except );
 			  return new PredicateAnonymousInnerClass2( excludedNodes );
 		 }
@@ -467,7 +467,7 @@ namespace Neo4Net.Kernel.impl.ha
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static System.Predicate<ClusterManager.ManagedCluster> instanceEvicted(final org.Neo4Net.kernel.ha.HighlyAvailableGraphDatabase instance)
+//ORIGINAL LINE: public static System.Predicate<ClusterManager.ManagedCluster> instanceEvicted(final Neo4Net.kernel.ha.HighlyAvailableGraphDatabase instance)
 		 public static System.Predicate<ClusterManager.ManagedCluster> InstanceEvicted( HighlyAvailableGraphDatabase instance )
 		 {
 			  return _managedCluster =>
@@ -490,7 +490,7 @@ namespace Neo4Net.Kernel.impl.ha
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static System.Predicate<ManagedCluster> memberSeesOtherMemberAsFailed(final org.Neo4Net.kernel.ha.HighlyAvailableGraphDatabase observer, final org.Neo4Net.kernel.ha.HighlyAvailableGraphDatabase observed)
+//ORIGINAL LINE: public static System.Predicate<ManagedCluster> memberSeesOtherMemberAsFailed(final Neo4Net.kernel.ha.HighlyAvailableGraphDatabase observer, final Neo4Net.kernel.ha.HighlyAvailableGraphDatabase observed)
 		 public static System.Predicate<ManagedCluster> MemberSeesOtherMemberAsFailed( HighlyAvailableGraphDatabase observer, HighlyAvailableGraphDatabase observed )
 		 {
 			  return cluster =>
@@ -508,7 +508,7 @@ namespace Neo4Net.Kernel.impl.ha
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static System.Predicate<ManagedCluster> entireClusterSeesMemberAsNotAvailable(final org.Neo4Net.kernel.ha.HighlyAvailableGraphDatabase observed)
+//ORIGINAL LINE: public static System.Predicate<ManagedCluster> entireClusterSeesMemberAsNotAvailable(final Neo4Net.kernel.ha.HighlyAvailableGraphDatabase observed)
 		 public static System.Predicate<ManagedCluster> EntireClusterSeesMemberAsNotAvailable( HighlyAvailableGraphDatabase observed )
 		 {
 			  return cluster =>
@@ -536,7 +536,7 @@ namespace Neo4Net.Kernel.impl.ha
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static System.Predicate<ManagedCluster> memberThinksItIsRole(final org.Neo4Net.kernel.ha.HighlyAvailableGraphDatabase member, final String role)
+//ORIGINAL LINE: public static System.Predicate<ManagedCluster> memberThinksItIsRole(final Neo4Net.kernel.ha.HighlyAvailableGraphDatabase member, final String role)
 		 public static System.Predicate<ManagedCluster> MemberThinksItIsRole( HighlyAvailableGraphDatabase member, string role )
 		 {
 			  return cluster => role.Equals( member.Role() );
@@ -648,7 +648,7 @@ namespace Neo4Net.Kernel.impl.ha
 			  /// <seealso cref="Setting"/> instance as key as well.
 			  /// </summary>
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: SELF withInstanceSetting(org.Neo4Net.graphdb.config.Setting<?> setting, System.Func<int, String> valueFunction);
+//ORIGINAL LINE: SELF withInstanceSetting(Neo4Net.graphdb.config.Setting<?> setting, System.Func<int, String> valueFunction);
 			  SELF withInstanceSetting<T1>( Setting<T1> setting, System.Func<int, string> valueFunction );
 
 			  /// <summary>
@@ -661,7 +661,7 @@ namespace Neo4Net.Kernel.impl.ha
 			  /// <seealso cref="Setting"/> instance as key as well.
 			  /// </summary>
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: SELF withSharedSetting(org.Neo4Net.graphdb.config.Setting<?> setting, String value);
+//ORIGINAL LINE: SELF withSharedSetting(Neo4Net.graphdb.config.Setting<?> setting, String value);
 			  SELF withSharedSetting<T1>( Setting<T1> setting, string value );
 
 			  /// <summary>
@@ -845,7 +845,7 @@ namespace Neo4Net.Kernel.impl.ha
 			  internal readonly File Parent;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: ManagedCluster(org.Neo4Net.cluster.client.Cluster spec) throws java.net.URISyntaxException
+//ORIGINAL LINE: ManagedCluster(Neo4Net.cluster.client.Cluster spec) throws java.net.URISyntaxException
 			  internal ManagedCluster( ClusterManager outerInstance, Cluster spec )
 			  {
 				  this._outerInstance = outerInstance;
@@ -912,7 +912,7 @@ namespace Neo4Net.Kernel.impl.ha
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void consistencyCheck(org.Neo4Net.io.layout.DatabaseLayout databaseLayout) throws Throwable
+//ORIGINAL LINE: private void consistencyCheck(Neo4Net.io.layout.DatabaseLayout databaseLayout) throws Throwable
 			  internal virtual void ConsistencyCheck( DatabaseLayout databaseLayout )
 			  {
 					StoreAssertions.assertConsistentStore( databaseLayout );
@@ -1153,7 +1153,7 @@ namespace Neo4Net.Kernel.impl.ha
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.kernel.ha.HighlyAvailableGraphDatabase startMemberNow(org.Neo4Net.cluster.InstanceId serverId) throws java.io.IOException, java.net.URISyntaxException
+//ORIGINAL LINE: private Neo4Net.kernel.ha.HighlyAvailableGraphDatabase startMemberNow(Neo4Net.cluster.InstanceId serverId) throws java.io.IOException, java.net.URISyntaxException
 			  internal virtual HighlyAvailableGraphDatabase StartMemberNow( InstanceId serverId )
 			  {
 					Cluster.Member member = MemberSpec( serverId );
@@ -1209,7 +1209,7 @@ namespace Neo4Net.Kernel.impl.ha
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.net.URI clusterUri(org.Neo4Net.cluster.client.Cluster.Member member) throws java.net.URISyntaxException
+//ORIGINAL LINE: private java.net.URI clusterUri(Neo4Net.cluster.client.Cluster.Member member) throws java.net.URISyntaxException
 			  internal virtual URI ClusterUri( Cluster.Member member )
 			  {
 					return new URI( "cluster://" + member.Host );
@@ -1221,7 +1221,7 @@ namespace Neo4Net.Kernel.impl.ha
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void startMember(org.Neo4Net.cluster.InstanceId serverId) throws java.net.URISyntaxException
+//ORIGINAL LINE: private void startMember(Neo4Net.cluster.InstanceId serverId) throws java.net.URISyntaxException
 			  internal virtual void StartMember( InstanceId serverId )
 			  {
 					Cluster.Member member = MemberSpec( serverId );
@@ -1475,7 +1475,7 @@ namespace Neo4Net.Kernel.impl.ha
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.kernel.ha.HighlyAvailableGraphDatabase repair() throws Throwable
+//ORIGINAL LINE: public Neo4Net.kernel.ha.HighlyAvailableGraphDatabase repair() throws Throwable
 			  public override HighlyAvailableGraphDatabase Repair()
 			  {
 					return Cluster.startMemberNow( ServerId );

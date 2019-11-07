@@ -29,25 +29,25 @@ namespace Neo4Net.Kernel.configuration.ssl
 	using ClientAuth = Neo4Net.Ssl.ClientAuth;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.BOOLEAN;
+//	import static Neo4Net.kernel.configuration.Settings.BOOLEAN;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.FALSE;
+//	import static Neo4Net.kernel.configuration.Settings.FALSE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.NO_DEFAULT;
+//	import static Neo4Net.kernel.configuration.Settings.NO_DEFAULT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.PATH;
+//	import static Neo4Net.kernel.configuration.Settings.PATH;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.STRING;
+//	import static Neo4Net.kernel.configuration.Settings.STRING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.STRING_LIST;
+//	import static Neo4Net.kernel.configuration.Settings.STRING_LIST;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.derivedSetting;
+//	import static Neo4Net.kernel.configuration.Settings.derivedSetting;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.optionsIgnoreCase;
+//	import static Neo4Net.kernel.configuration.Settings.optionsIgnoreCase;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.pathSetting;
+//	import static Neo4Net.kernel.configuration.Settings.pathSetting;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.setting;
+//	import static Neo4Net.kernel.configuration.Settings.setting;
 
 	[Group("dbms.ssl.policy")]
 	public class SslPolicyConfig : LoadableConfig
@@ -68,7 +68,7 @@ namespace Neo4Net.Kernel.configuration.ssl
 		 public readonly Setting<File> PrivateKey;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Internal @Description("The password for the private key.") public final org.Neo4Net.graphdb.config.Setting<String> private_key_password;
+//ORIGINAL LINE: @Internal @Description("The password for the private key.") public final Neo4Net.graphdb.config.Setting<String> private_key_password;
 		 [Description("The password for the private key.")]
 		 public readonly Setting<string> PrivateKeyPassword;
 

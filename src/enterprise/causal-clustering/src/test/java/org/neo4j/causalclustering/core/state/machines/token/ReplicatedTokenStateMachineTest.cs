@@ -48,11 +48,11 @@ namespace Neo4Net.causalclustering.core.state.machines.token
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.mock;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.state.machines.token.ReplicatedTokenRequestSerializer.commandBytes;
+//	import static Neo4Net.causalclustering.core.state.machines.token.ReplicatedTokenRequestSerializer.commandBytes;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.state.machines.token.TokenType.LABEL;
+//	import static Neo4Net.causalclustering.core.state.machines.token.TokenType.LABEL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.state.machines.tx.LogIndexTxHeaderEncoding.decodeLogIndexFromTxHeader;
+//	import static Neo4Net.causalclustering.core.state.machines.tx.LogIndexTxHeaderEncoding.decodeLogIndexFromTxHeader;
 
 	public class ReplicatedTokenStateMachineTest
 	{
@@ -141,7 +141,7 @@ namespace Neo4Net.causalclustering.core.state.machines.token
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public long commit(org.Neo4Net.kernel.impl.api.TransactionToApply batch, org.Neo4Net.kernel.impl.transaction.tracing.CommitEvent commitEvent, org.Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode mode) throws org.Neo4Net.graphdb.TransactionFailureException
+//ORIGINAL LINE: public long commit(Neo4Net.kernel.impl.api.TransactionToApply batch, Neo4Net.kernel.impl.transaction.tracing.CommitEvent commitEvent, Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode mode) throws Neo4Net.graphdb.TransactionFailureException
 			  public override long Commit( TransactionToApply batch, CommitEvent commitEvent, TransactionApplicationMode mode )
 			  {
 					TransactionsToApply.Add( batch.TransactionRepresentation() );

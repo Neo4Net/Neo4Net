@@ -65,17 +65,17 @@ namespace Neo4Net.Kernel.ha.management
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.filter;
+//	import static Neo4Net.helpers.collection.Iterables.filter;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.firstOrNull;
+//	import static Neo4Net.helpers.collection.Iterables.firstOrNull;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.ha.cluster.modeswitch.HighAvailabilityModeSwitcher.MASTER;
+//	import static Neo4Net.kernel.ha.cluster.modeswitch.HighAvailabilityModeSwitcher.MASTER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.ha.cluster.modeswitch.HighAvailabilityModeSwitcher.SLAVE;
+//	import static Neo4Net.kernel.ha.cluster.modeswitch.HighAvailabilityModeSwitcher.SLAVE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.ha.cluster.modeswitch.HighAvailabilityModeSwitcher.UNKNOWN;
+//	import static Neo4Net.kernel.ha.cluster.modeswitch.HighAvailabilityModeSwitcher.UNKNOWN;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.StorageEngine.StoreId.DEFAULT;
+//	import static Neo4Net.Kernel.Api.StorageEngine.StoreId.DEFAULT;
 
 	public class HighAvailabilityBeanTest
 	{
@@ -106,7 +106,7 @@ namespace Neo4Net.Kernel.ha.management
 		 private HighAvailability _haBean;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.TestDirectory testDirectory = Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public TestDirectory TestDirectory = TestDirectory.testDirectory();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -308,14 +308,14 @@ namespace Neo4Net.Kernel.ha.management
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.kernel.ha.cluster.member.ClusterMember clusterMember(int serverId, String role, int port) throws java.net.URISyntaxException
+//ORIGINAL LINE: private Neo4Net.kernel.ha.cluster.member.ClusterMember clusterMember(int serverId, String role, int port) throws java.net.URISyntaxException
 		 private ClusterMember ClusterMember( int serverId, string role, int port )
 		 {
 			  return ClusterMember( serverId, role, port, true );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.kernel.ha.cluster.member.ClusterMember clusterMember(int serverId, String role, int port, boolean alive) throws java.net.URISyntaxException
+//ORIGINAL LINE: private Neo4Net.kernel.ha.cluster.member.ClusterMember clusterMember(int serverId, String role, int port, boolean alive) throws java.net.URISyntaxException
 		 private ClusterMember ClusterMember( int serverId, string role, int port, bool alive )
 		 {
 			  URI uri = HighAvailabilityModeSwitcher.UNKNOWN.Equals( role ) ? null : new URI( "ha://" + role + ":" + port );

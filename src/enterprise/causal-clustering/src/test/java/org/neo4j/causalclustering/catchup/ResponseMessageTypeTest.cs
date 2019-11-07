@@ -27,23 +27,23 @@ namespace Neo4Net.causalclustering.catchup
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.catchup.ResponseMessageType.CORE_SNAPSHOT;
+//	import static Neo4Net.causalclustering.catchup.ResponseMessageType.CORE_SNAPSHOT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.catchup.ResponseMessageType.FILE;
+//	import static Neo4Net.causalclustering.catchup.ResponseMessageType.FILE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.catchup.ResponseMessageType.INDEX_SNAPSHOT_RESPONSE;
+//	import static Neo4Net.causalclustering.catchup.ResponseMessageType.INDEX_SNAPSHOT_RESPONSE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.catchup.ResponseMessageType.PREPARE_STORE_COPY_RESPONSE;
+//	import static Neo4Net.causalclustering.catchup.ResponseMessageType.PREPARE_STORE_COPY_RESPONSE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.catchup.ResponseMessageType.STORE_COPY_FINISHED;
+//	import static Neo4Net.causalclustering.catchup.ResponseMessageType.STORE_COPY_FINISHED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.catchup.ResponseMessageType.STORE_ID;
+//	import static Neo4Net.causalclustering.catchup.ResponseMessageType.STORE_ID;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.catchup.ResponseMessageType.TX;
+//	import static Neo4Net.causalclustering.catchup.ResponseMessageType.TX;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.catchup.ResponseMessageType.TX_STREAM_FINISHED;
+//	import static Neo4Net.causalclustering.catchup.ResponseMessageType.TX_STREAM_FINISHED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.catchup.ResponseMessageType.UNKNOWN;
+//	import static Neo4Net.causalclustering.catchup.ResponseMessageType.UNKNOWN;
 
 	public class ResponseMessageTypeTest
 	{

@@ -35,7 +35,7 @@ namespace Neo4Net.Server.web
 	public class NeoServletContainer : ServletContainer
 	{
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private final java.util.Collection<org.Neo4Net.server.database.InjectableProvider<?>> injectables;
+//ORIGINAL LINE: private final java.util.Collection<Neo4Net.server.database.InjectableProvider<?>> injectables;
 		 private readonly ICollection<InjectableProvider<object>> _injectables;
 
 		 public NeoServletContainer<T1>( ICollection<T1> injectables )

@@ -47,12 +47,12 @@ namespace Neo4Net.Server
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.Matchers.hasSize;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.ServerTestUtils.createTempDir;
+//	import static Neo4Net.server.ServerTestUtils.createTempDir;
 
 	public class BoltQueryLoggingIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.harness.junit.Neo4NetRule Neo4Net;
+//ORIGINAL LINE: @Rule public final Neo4Net.harness.junit.Neo4NetRule Neo4Net;
 		 public readonly Neo4NetRule Neo4Net;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:

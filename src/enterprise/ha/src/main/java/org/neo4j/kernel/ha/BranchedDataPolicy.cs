@@ -30,26 +30,26 @@ namespace Neo4Net.Kernel.ha
 	using LogService = Neo4Net.Logging.Internal.LogService;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.com.storecopy.StoreUtil.cleanStoreDir;
+//	import static Neo4Net.com.storecopy.StoreUtil.cleanStoreDir;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.com.storecopy.StoreUtil.deleteRecursive;
+//	import static Neo4Net.com.storecopy.StoreUtil.deleteRecursive;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.com.storecopy.StoreUtil.getBranchedDataRootDirectory;
+//	import static Neo4Net.com.storecopy.StoreUtil.getBranchedDataRootDirectory;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.com.storecopy.StoreUtil.isBranchedDataDirectory;
+//	import static Neo4Net.com.storecopy.StoreUtil.isBranchedDataDirectory;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.com.storecopy.StoreUtil.moveAwayDb;
+//	import static Neo4Net.com.storecopy.StoreUtil.moveAwayDb;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.com.storecopy.StoreUtil.newBranchedDataDir;
+//	import static Neo4Net.com.storecopy.StoreUtil.newBranchedDataDir;
 
 	public abstract class BranchedDataPolicy
 	{
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//       keep_all { public void handle(java.io.File databaseDirectory, org.Neo4Net.io.pagecache.PageCache pageCache, org.Neo4Net.logging.internal.LogService logService) throws java.io.IOException { org.Neo4Net.logging.Log msgLog = logService.getInternalLog(getClass()); java.io.File branchedDataDir = newBranchedDataDir(databaseDirectory); msgLog.debug("Moving store from " + databaseDirectory + " to " + branchedDataDir); moveAwayDb(databaseDirectory, branchedDataDir); } },
+//       keep_all { public void handle(java.io.File databaseDirectory, Neo4Net.io.pagecache.PageCache pageCache, Neo4Net.logging.internal.LogService logService) throws java.io.IOException { Neo4Net.logging.Log msgLog = logService.getInternalLog(getClass()); java.io.File branchedDataDir = newBranchedDataDir(databaseDirectory); msgLog.debug("Moving store from " + databaseDirectory + " to " + branchedDataDir); moveAwayDb(databaseDirectory, branchedDataDir); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//       keep_last { public void handle(java.io.File databaseDirectory, org.Neo4Net.io.pagecache.PageCache pageCache, org.Neo4Net.logging.internal.LogService logService) throws java.io.IOException { org.Neo4Net.logging.Log msgLog = logService.getInternalLog(getClass()); java.io.File branchedDataDir = newBranchedDataDir(databaseDirectory); msgLog.debug("Moving store from " + databaseDirectory + " to " + branchedDataDir); moveAwayDb(databaseDirectory, branchedDataDir); File[] files = getBranchedDataRootDirectory(databaseDirectory).listFiles(); if(files != null) { for(java.io.File file : files) { if(isBranchedDataDirectory(file) && !file.equals(branchedDataDir)) { deleteRecursive(file); } } } } },
+//       keep_last { public void handle(java.io.File databaseDirectory, Neo4Net.io.pagecache.PageCache pageCache, Neo4Net.logging.internal.LogService logService) throws java.io.IOException { Neo4Net.logging.Log msgLog = logService.getInternalLog(getClass()); java.io.File branchedDataDir = newBranchedDataDir(databaseDirectory); msgLog.debug("Moving store from " + databaseDirectory + " to " + branchedDataDir); moveAwayDb(databaseDirectory, branchedDataDir); File[] files = getBranchedDataRootDirectory(databaseDirectory).listFiles(); if(files != null) { for(java.io.File file : files) { if(isBranchedDataDirectory(file) && !file.equals(branchedDataDir)) { deleteRecursive(file); } } } } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//       keep_none { public void handle(java.io.File databaseDirectory, org.Neo4Net.io.pagecache.PageCache pageCache, org.Neo4Net.logging.internal.LogService logService) throws java.io.IOException { org.Neo4Net.logging.Log msgLog = logService.getInternalLog(getClass()); msgLog.debug("Removing store  " + databaseDirectory); cleanStoreDir(databaseDirectory); } };
+//       keep_none { public void handle(java.io.File databaseDirectory, Neo4Net.io.pagecache.PageCache pageCache, Neo4Net.logging.internal.LogService logService) throws java.io.IOException { Neo4Net.logging.Log msgLog = logService.getInternalLog(getClass()); msgLog.debug("Removing store  " + databaseDirectory); cleanStoreDir(databaseDirectory); } };
 
 		 private static readonly IList<BranchedDataPolicy> valueList = new List<BranchedDataPolicy>();
 
@@ -80,7 +80,7 @@ namespace Neo4Net.Kernel.ha
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public abstract void handle(java.io.File databaseDirectory, org.Neo4Net.io.pagecache.PageCache pageCache, org.Neo4Net.logging.internal.LogService msgLog) throws java.io.IOException;
+//ORIGINAL LINE: public abstract void handle(java.io.File databaseDirectory, Neo4Net.io.pagecache.PageCache pageCache, Neo4Net.logging.internal.LogService msgLog) throws java.io.IOException;
 		 public abstract void handle( java.io.File databaseDirectory, Neo4Net.Io.pagecache.PageCache pageCache, Neo4Net.Logging.Internal.LogService msgLog );
 
 		public static IList<BranchedDataPolicy> values()

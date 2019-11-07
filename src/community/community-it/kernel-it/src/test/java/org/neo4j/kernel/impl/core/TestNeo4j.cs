@@ -39,7 +39,7 @@ namespace Neo4Net.Kernel.impl.core
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.asResourceIterator;
+//	import static Neo4Net.helpers.collection.Iterators.asResourceIterator;
 
 	public class TestNeo4Net : AbstractNeo4NetTestCase
 	{
@@ -62,28 +62,28 @@ namespace Neo4Net.Kernel.impl.core
 
 			  // Verify that the node reports that it has a relationship of
 			  // the type we created above
-			  using ( ResourceIterator<Relationship> iterator = asResourceIterator( firstNode.GetRelationships( relType ).GetEnumerator() ) )
+			  using ( IResourceIterator<Relationship> iterator = asResourceIterator( firstNode.GetRelationships( relType ).GetEnumerator() ) )
 			  {
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
 					assertTrue( iterator.hasNext() );
 			  }
-			  using ( ResourceIterator<Relationship> iterator = asResourceIterator( secondNode.GetRelationships( relType ).GetEnumerator() ) )
+			  using ( IResourceIterator<Relationship> iterator = asResourceIterator( secondNode.GetRelationships( relType ).GetEnumerator() ) )
 			  {
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
 					assertTrue( iterator.hasNext() );
 			  }
 
-			  ResourceIterable<Relationship> allRels;
+			 IResourceIterable<Relationship> allRels;
 
 			  // Verify that both nodes return the relationship we created above
-			  allRels = ( ResourceIterable<Relationship> ) firstNode.Relationships;
+			  allRels = (IResourceIterable<Relationship> ) firstNode.Relationships;
 			  assertTrue( this.ObjectExistsInIterable( rel, allRels ) );
-			  allRels = ( ResourceIterable<Relationship> ) firstNode.GetRelationships( relType );
+			  allRels = (IResourceIterable<Relationship> ) firstNode.GetRelationships( relType );
 			  assertTrue( this.ObjectExistsInIterable( rel, allRels ) );
 
-			  allRels = ( ResourceIterable<Relationship> ) secondNode.Relationships;
+			  allRels = (IResourceIterable<Relationship> ) secondNode.Relationships;
 			  assertTrue( this.ObjectExistsInIterable( rel, allRels ) );
-			  allRels = ( ResourceIterable<Relationship> ) secondNode.GetRelationships( relType );
+			  allRels = (IResourceIterable<Relationship> ) secondNode.GetRelationships( relType );
 			  assertTrue( this.ObjectExistsInIterable( rel, allRels ) );
 
 			  // Verify that the relationship reports that it is associated with
@@ -99,9 +99,9 @@ namespace Neo4Net.Kernel.impl.core
 			  firstNode.Delete();
 		 }
 
-		 private bool ObjectExistsInIterable( Relationship rel, ResourceIterable<Relationship> allRels )
+		 private bool ObjectExistsInIterable( Relationship rel,IResourceIterable<Relationship> allRels )
 		 {
-			  using ( ResourceIterator<Relationship> resourceIterator = allRels.GetEnumerator() )
+			  using ( IResourceIterator<Relationship> resourceIterator = allRels.GetEnumerator() )
 			  {
 					while ( resourceIterator.MoveNext() )
 					{

@@ -43,7 +43,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.default_schema_provider;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.default_schema_provider;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class DefaultSchemaIndexConfigTest
@@ -54,7 +54,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 		 private static readonly GraphDatabaseBuilder _dbBuilder = new TestGraphDatabaseFactory().newImpermanentDatabaseBuilder();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Parameterized.Parameters(name = "{0}") public static java.util.List<org.Neo4Net.graphdb.factory.GraphDatabaseSettings.SchemaIndex> providers()
+//ORIGINAL LINE: @Parameterized.Parameters(name = "{0}") public static java.util.List<Neo4Net.graphdb.factory.GraphDatabaseSettings.SchemaIndex> providers()
 		 public static IList<GraphDatabaseSettings.SchemaIndex> Providers()
 		 {
 			  IList<GraphDatabaseSettings.SchemaIndex> providers = new List<GraphDatabaseSettings.SchemaIndex>( Arrays.asList( GraphDatabaseSettings.SchemaIndex.values() ) );
@@ -63,11 +63,11 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Parameterized.Parameter public org.Neo4Net.graphdb.factory.GraphDatabaseSettings.SchemaIndex provider;
+//ORIGINAL LINE: @Parameterized.Parameter public Neo4Net.graphdb.factory.GraphDatabaseSettings.SchemaIndex provider;
 		 public GraphDatabaseSettings.SchemaIndex Provider;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldUseConfiguredIndexProvider() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
+//ORIGINAL LINE: @Test public void shouldUseConfiguredIndexProvider() throws Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldUseConfiguredIndexProvider()
 		 {
@@ -88,7 +88,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertIndexProvider(org.Neo4Net.graphdb.GraphDatabaseService db, String expectedProviderIdentifier) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
+//ORIGINAL LINE: private void assertIndexProvider(Neo4Net.graphdb.GraphDatabaseService db, String expectedProviderIdentifier) throws Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
 		 private void AssertIndexProvider( IGraphDatabaseService db, string expectedProviderIdentifier )
 		 {
 			  GraphDatabaseAPI graphDatabaseAPI = ( GraphDatabaseAPI ) db;

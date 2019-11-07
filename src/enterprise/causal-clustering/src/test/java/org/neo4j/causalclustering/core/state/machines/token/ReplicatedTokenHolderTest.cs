@@ -129,7 +129,7 @@ namespace Neo4Net.causalclustering.core.state.machines.token
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private org.Neo4Net.Kernel.Api.StorageEngine.StorageEngine mockedStorageEngine() throws Exception
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private Neo4Net.Kernel.Api.StorageEngine.StorageEngine mockedStorageEngine() throws Exception
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 private StorageEngine MockedStorageEngine()
 		 {

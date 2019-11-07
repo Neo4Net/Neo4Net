@@ -22,7 +22,7 @@ namespace Neo4Net.Index.Internal.gbptree
 	using MutableLong = org.apache.commons.lang3.mutable.MutableLong;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Internal.gbptree.SimpleLongLayout.longLayout;
+//	import static Neo4Net.index.Internal.gbptree.SimpleLongLayout.longLayout;
 
 	public class GBPTreeReadWriteFixedSizeTest : GBPTreeReadWriteTestBase<MutableLong, MutableLong>
 	{

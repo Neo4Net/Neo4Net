@@ -36,7 +36,7 @@ namespace Neo4Net.restore
 	using Config = Neo4Net.Kernel.configuration.Config;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.commandline.arguments.common.Database.ARG_DATABASE;
+//	import static Neo4Net.commandline.arguments.common.Database.ARG_DATABASE;
 
 	public class RestoreDatabaseCli : AdminCommand
 	{
@@ -56,7 +56,7 @@ namespace Neo4Net.restore
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void execute(String[] incomingArguments) throws org.Neo4Net.commandline.admin.IncorrectUsage, org.Neo4Net.commandline.admin.CommandFailed
+//ORIGINAL LINE: public void execute(String[] incomingArguments) throws Neo4Net.commandline.admin.IncorrectUsage, Neo4Net.commandline.admin.CommandFailed
 		 public override void Execute( string[] incomingArguments )
 		 {
 			  string databaseName;

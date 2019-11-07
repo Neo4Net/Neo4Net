@@ -125,7 +125,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 /// </summary>
 		 /// <param name="cursor"> <seealso cref="PageCursor"/> to write into, at its current offset. </param>
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//		 default void writeMetaData(org.Neo4Net.io.pagecache.PageCursor cursor)
+//		 default void writeMetaData(Neo4Net.io.pagecache.PageCursor cursor)
 	//	 { // no meta-data by default
 	//	 }
 
@@ -138,7 +138,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 /// </summary>
 		 /// <param name="cursor"> <seealso cref="PageCursor"/> to read from, at its current offset. </param>
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//		 default void readMetaData(org.Neo4Net.io.pagecache.PageCursor cursor)
+//		 default void readMetaData(Neo4Net.io.pagecache.PageCursor cursor)
 	//	 { // no meta-data by default
 	//	 }
 

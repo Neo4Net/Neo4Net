@@ -30,7 +30,7 @@ namespace Neo4Net.Consistency.checking.cache
 	using NodeRecord = Neo4Net.Kernel.Impl.Store.Records.NodeRecord;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.record.RecordLoad.FORCE;
+//	import static Neo4Net.kernel.impl.store.record.RecordLoad.FORCE;
 
 	/// <summary>
 	/// Action to be manipulate the <seealso cref="CacheAccess"/> in some way.
@@ -59,9 +59,9 @@ namespace Neo4Net.Consistency.checking.cache
 
 		 public class CacheNextRel : CacheTask
 		 {
-			  internal readonly ResourceIterable<NodeRecord> Nodes;
+			  internal readonlyIResourceIterable<NodeRecord> Nodes;
 
-			  public CacheNextRel( Stage stage, CacheAccess cacheAccess, ResourceIterable<NodeRecord> nodes ) : base( stage, cacheAccess )
+			  public CacheNextRel( Stage stage, CacheAccess cacheAccess,IResourceIterable<NodeRecord> nodes ) : base( stage, cacheAccess )
 			  {
 					this.Nodes = nodes;
 			  }
@@ -71,7 +71,7 @@ namespace Neo4Net.Consistency.checking.cache
 					CacheAccess.clearCache();
 					long[] fields = new long[] { -1, 1, 0 };
 					CacheAccess_Client client = CacheAccess.client();
-					using ( ResourceIterator<NodeRecord> nodeRecords = Nodes.GetEnumerator() )
+					using ( IResourceIterator<NodeRecord> nodeRecords = Nodes.GetEnumerator() )
 					{
 						 while ( nodeRecords.MoveNext() )
 						 {

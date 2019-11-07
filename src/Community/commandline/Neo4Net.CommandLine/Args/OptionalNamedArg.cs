@@ -25,9 +25,9 @@ namespace Neo4Net.CommandLine.Args
 	using Args = Neo4Net.Helpers.Args;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.util.Converters.identity;
+//	import static Neo4Net.kernel.impl.util.Converters.identity;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.util.Converters.withDefault;
+//	import static Neo4Net.kernel.impl.util.Converters.withDefault;
 
 	public class OptionalNamedArg : NamedArgument
 	{

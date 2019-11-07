@@ -40,9 +40,9 @@ namespace Neo4Net.Kernel.impl.traversal
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.traversal.BranchOrderingPolicies.POSTORDER_BREADTH_FIRST;
+//	import static Neo4Net.graphdb.traversal.BranchOrderingPolicies.POSTORDER_BREADTH_FIRST;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.traversal.BranchOrderingPolicies.POSTORDER_DEPTH_FIRST;
+//	import static Neo4Net.graphdb.traversal.BranchOrderingPolicies.POSTORDER_DEPTH_FIRST;
 
 	public class TreeGraphTest : TraversalTestBase
 	{

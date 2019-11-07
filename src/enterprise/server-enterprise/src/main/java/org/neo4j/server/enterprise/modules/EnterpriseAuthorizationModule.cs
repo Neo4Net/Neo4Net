@@ -23,7 +23,7 @@
 namespace Neo4Net.Server.enterprise.modules
 {
 
-	using AuthManager = Neo4Net.Kernel.api.security.AuthManager;
+	using AuthManager = Neo4Net.Kernel.Api.security.AuthManager;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using LogProvider = Neo4Net.Logging.LogProvider;
 	using AuthorizationModule = Neo4Net.Server.modules.AuthorizationModule;

@@ -59,11 +59,11 @@ namespace Neo4Net.causalclustering.core.consensus.shipping
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.identity.RaftTestMember.member;
+//	import static Neo4Net.causalclustering.identity.RaftTestMember.member;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.scheduler.JobSchedulerFactory.createScheduler;
+//	import static Neo4Net.kernel.impl.scheduler.JobSchedulerFactory.createScheduler;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.matchers.Matchers.hasMessage;
+//	import static Neo4Net.test.matchers.Matchers.hasMessage;
 
 	public class RaftLogShipperTest
 	{
@@ -84,7 +84,7 @@ namespace Neo4Net.causalclustering.core.consensus.shipping
 		}
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.kernel.lifecycle.LifeRule life = new org.Neo4Net.kernel.lifecycle.LifeRule(true);
+//ORIGINAL LINE: @Rule public Neo4Net.kernel.lifecycle.LifeRule life = new Neo4Net.kernel.lifecycle.LifeRule(true);
 		 public LifeRule Life = new LifeRule( true );
 		 private IJobScheduler _scheduler;
 

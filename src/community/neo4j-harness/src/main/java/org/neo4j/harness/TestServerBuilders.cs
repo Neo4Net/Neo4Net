@@ -23,7 +23,7 @@ namespace Neo4Net.Harness
 	using InProcessServerBuilder = Neo4Net.Harness.Internal.InProcessServerBuilder;
 
 	/// <summary>
-	/// Factories for creating <seealso cref="org.Neo4Net.harness.TestServerBuilder"/> instances.
+	/// Factories for creating <seealso cref="Neo4Net.harness.TestServerBuilder"/> instances.
 	/// </summary>
 	public sealed class TestServerBuilders
 	{

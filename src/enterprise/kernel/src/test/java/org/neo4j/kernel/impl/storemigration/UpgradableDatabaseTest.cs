@@ -67,13 +67,13 @@ namespace Neo4Net.Kernel.impl.storemigration
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.MetaDataStore.Position.STORE_VERSION;
+//	import static Neo4Net.kernel.impl.store.MetaDataStore.Position.STORE_VERSION;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.storemigration.MigrationTestUtils.changeVersionNumber;
+//	import static Neo4Net.kernel.impl.storemigration.MigrationTestUtils.changeVersionNumber;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.storemigration.MigrationTestUtils.removeCheckPointFromTxLog;
+//	import static Neo4Net.kernel.impl.storemigration.MigrationTestUtils.removeCheckPointFromTxLog;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.storemigration.StoreUpgrader.UnexpectedUpgradingStoreVersionException.MESSAGE;
+//	import static Neo4Net.kernel.impl.storemigration.StoreUpgrader.UnexpectedUpgradingStoreVersionException.MESSAGE;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Enclosed.class) public class UpgradableDatabaseTest

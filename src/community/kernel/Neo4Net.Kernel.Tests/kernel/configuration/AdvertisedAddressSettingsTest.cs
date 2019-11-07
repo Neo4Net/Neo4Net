@@ -33,11 +33,11 @@ namespace Neo4Net.Kernel.configuration
 //	import static org.junit.Assert.assertEquals;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
+//	import static Neo4Net.helpers.collection.MapUtil.stringMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.advertisedAddress;
+//	import static Neo4Net.kernel.configuration.Settings.advertisedAddress;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.listenAddress;
+//	import static Neo4Net.kernel.configuration.Settings.listenAddress;
 
 	public class AdvertisedAddressSettingsTest
 	{

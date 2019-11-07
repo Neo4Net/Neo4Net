@@ -23,7 +23,7 @@ namespace Neo4Net.Kernel.Api.Index
 	using Test = org.junit.Test;
 	using ExpectedException = org.junit.rules.ExpectedException;
 
-	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
+	using SchemaDescriptorFactory = Neo4Net.Kernel.Api.schema.SchemaDescriptorFactory;
 	using Value = Neo4Net.Values.Storable.Value;
 	using Values = Neo4Net.Values.Storable.Values;
 
@@ -48,10 +48,10 @@ namespace Neo4Net.Kernel.Api.Index
 		 public virtual void IndexEntryUpdatesShouldBeEqual()
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: IndexEntryUpdate<?> a = IndexEntryUpdate.add(0, org.Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel(3, 4), singleValue);
+//ORIGINAL LINE: IndexEntryUpdate<?> a = IndexEntryUpdate.add(0, Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel(3, 4), singleValue);
 			  IndexEntryUpdate<object> a = IndexEntryUpdate.Add( 0, SchemaDescriptorFactory.forLabel( 3, 4 ), _singleValue );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: IndexEntryUpdate<?> b = IndexEntryUpdate.add(0, org.Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel(3, 4), singleValue);
+//ORIGINAL LINE: IndexEntryUpdate<?> b = IndexEntryUpdate.add(0, Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel(3, 4), singleValue);
 			  IndexEntryUpdate<object> b = IndexEntryUpdate.Add( 0, SchemaDescriptorFactory.forLabel( 3, 4 ), _singleValue );
 			  assertThat( a, equalTo( b ) );
 			  assertThat( a.GetHashCode(), equalTo(b.GetHashCode()) );
@@ -62,10 +62,10 @@ namespace Neo4Net.Kernel.Api.Index
 		 public virtual void AddShouldRetainValues()
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: IndexEntryUpdate<?> single = IndexEntryUpdate.add(0, org.Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel(3, 4), singleValue);
+//ORIGINAL LINE: IndexEntryUpdate<?> single = IndexEntryUpdate.add(0, Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel(3, 4), singleValue);
 			  IndexEntryUpdate<object> single = IndexEntryUpdate.Add( 0, SchemaDescriptorFactory.forLabel( 3, 4 ), _singleValue );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: IndexEntryUpdate<?> multi = IndexEntryUpdate.add(0, org.Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel(3, 4, 5), multiValue);
+//ORIGINAL LINE: IndexEntryUpdate<?> multi = IndexEntryUpdate.add(0, Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel(3, 4, 5), multiValue);
 			  IndexEntryUpdate<object> multi = IndexEntryUpdate.Add( 0, SchemaDescriptorFactory.forLabel( 3, 4, 5 ), _multiValue );
 			  assertThat( single, not( equalTo( multi ) ) );
 			  assertThat( single.Values(), equalTo(new object[]{ _singleValue }) );
@@ -77,10 +77,10 @@ namespace Neo4Net.Kernel.Api.Index
 		 public virtual void RemoveShouldRetainValues()
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: IndexEntryUpdate<?> single = IndexEntryUpdate.remove(0, org.Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel(3, 4), singleValue);
+//ORIGINAL LINE: IndexEntryUpdate<?> single = IndexEntryUpdate.remove(0, Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel(3, 4), singleValue);
 			  IndexEntryUpdate<object> single = IndexEntryUpdate.Remove( 0, SchemaDescriptorFactory.forLabel( 3, 4 ), _singleValue );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: IndexEntryUpdate<?> multi = IndexEntryUpdate.remove(0, org.Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel(3, 4, 5), multiValue);
+//ORIGINAL LINE: IndexEntryUpdate<?> multi = IndexEntryUpdate.remove(0, Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel(3, 4, 5), multiValue);
 			  IndexEntryUpdate<object> multi = IndexEntryUpdate.Remove( 0, SchemaDescriptorFactory.forLabel( 3, 4, 5 ), _multiValue );
 			  assertThat( single, not( equalTo( multi ) ) );
 			  assertThat( single.Values(), equalTo(new object[]{ _singleValue }) );
@@ -92,7 +92,7 @@ namespace Neo4Net.Kernel.Api.Index
 		 public virtual void AddShouldThrowIfAskedForChanged()
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: IndexEntryUpdate<?> single = IndexEntryUpdate.add(0, org.Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel(3, 4), singleValue);
+//ORIGINAL LINE: IndexEntryUpdate<?> single = IndexEntryUpdate.add(0, Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel(3, 4), singleValue);
 			  IndexEntryUpdate<object> single = IndexEntryUpdate.Add( 0, SchemaDescriptorFactory.forLabel( 3, 4 ), _singleValue );
 			  Thrown.expect( typeof( System.NotSupportedException ) );
 			  single.BeforeValues();
@@ -103,7 +103,7 @@ namespace Neo4Net.Kernel.Api.Index
 		 public virtual void RemoveShouldThrowIfAskedForChanged()
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: IndexEntryUpdate<?> single = IndexEntryUpdate.remove(0, org.Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel(3, 4), singleValue);
+//ORIGINAL LINE: IndexEntryUpdate<?> single = IndexEntryUpdate.remove(0, Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel(3, 4), singleValue);
 			  IndexEntryUpdate<object> single = IndexEntryUpdate.Remove( 0, SchemaDescriptorFactory.forLabel( 3, 4 ), _singleValue );
 			  Thrown.expect( typeof( System.NotSupportedException ) );
 			  single.BeforeValues();
@@ -114,23 +114,23 @@ namespace Neo4Net.Kernel.Api.Index
 		 public virtual void UpdatesShouldEqualRegardlessOfCreationMethod()
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: IndexEntryUpdate<?> singleAdd = IndexEntryUpdate.add(0, org.Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel(3, 4), singleValue);
+//ORIGINAL LINE: IndexEntryUpdate<?> singleAdd = IndexEntryUpdate.add(0, Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel(3, 4), singleValue);
 			  IndexEntryUpdate<object> singleAdd = IndexEntryUpdate.Add( 0, SchemaDescriptorFactory.forLabel( 3, 4 ), _singleValue );
 			  Value[] singleAsArray = new Value[] { _singleValue };
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: IndexEntryUpdate<?> multiAdd = IndexEntryUpdate.add(0, org.Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel(3, 4), singleAsArray);
+//ORIGINAL LINE: IndexEntryUpdate<?> multiAdd = IndexEntryUpdate.add(0, Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel(3, 4), singleAsArray);
 			  IndexEntryUpdate<object> multiAdd = IndexEntryUpdate.Add( 0, SchemaDescriptorFactory.forLabel( 3, 4 ), singleAsArray );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: IndexEntryUpdate<?> singleRemove = IndexEntryUpdate.remove(0, org.Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel(3, 4), singleValue);
+//ORIGINAL LINE: IndexEntryUpdate<?> singleRemove = IndexEntryUpdate.remove(0, Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel(3, 4), singleValue);
 			  IndexEntryUpdate<object> singleRemove = IndexEntryUpdate.Remove( 0, SchemaDescriptorFactory.forLabel( 3, 4 ), _singleValue );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: IndexEntryUpdate<?> multiRemove = IndexEntryUpdate.remove(0, org.Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel(3, 4), singleAsArray);
+//ORIGINAL LINE: IndexEntryUpdate<?> multiRemove = IndexEntryUpdate.remove(0, Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel(3, 4), singleAsArray);
 			  IndexEntryUpdate<object> multiRemove = IndexEntryUpdate.Remove( 0, SchemaDescriptorFactory.forLabel( 3, 4 ), singleAsArray );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: IndexEntryUpdate<?> singleChange = IndexEntryUpdate.change(0, org.Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel(3, 4), singleValue, singleValue);
+//ORIGINAL LINE: IndexEntryUpdate<?> singleChange = IndexEntryUpdate.change(0, Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel(3, 4), singleValue, singleValue);
 			  IndexEntryUpdate<object> singleChange = IndexEntryUpdate.Change( 0, SchemaDescriptorFactory.forLabel( 3, 4 ), _singleValue, _singleValue );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: IndexEntryUpdate<?> multiChange = IndexEntryUpdate.change(0, org.Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel(3, 4), singleAsArray, singleAsArray);
+//ORIGINAL LINE: IndexEntryUpdate<?> multiChange = IndexEntryUpdate.change(0, Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel(3, 4), singleAsArray, singleAsArray);
 			  IndexEntryUpdate<object> multiChange = IndexEntryUpdate.Change( 0, SchemaDescriptorFactory.forLabel( 3, 4 ), singleAsArray, singleAsArray );
 			  assertThat( singleAdd, equalTo( multiAdd ) );
 			  assertThat( singleRemove, equalTo( multiRemove ) );
@@ -143,11 +143,11 @@ namespace Neo4Net.Kernel.Api.Index
 		 {
 			  Value singleAfter = Values.of( "Hello" );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: IndexEntryUpdate<?> singleChange = IndexEntryUpdate.change(0, org.Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel(3, 4), singleValue, singleAfter);
+//ORIGINAL LINE: IndexEntryUpdate<?> singleChange = IndexEntryUpdate.change(0, Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel(3, 4), singleValue, singleAfter);
 			  IndexEntryUpdate<object> singleChange = IndexEntryUpdate.Change( 0, SchemaDescriptorFactory.forLabel( 3, 4 ), _singleValue, singleAfter );
 			  Value[] multiAfter = new Value[] { Values.of( "Hello" ), Values.of( "Hi" ) };
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: IndexEntryUpdate<?> multiChange = IndexEntryUpdate.change(0, org.Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel(3, 4, 5), multiValue, multiAfter);
+//ORIGINAL LINE: IndexEntryUpdate<?> multiChange = IndexEntryUpdate.change(0, Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel(3, 4, 5), multiValue, multiAfter);
 			  IndexEntryUpdate<object> multiChange = IndexEntryUpdate.Change( 0, SchemaDescriptorFactory.forLabel( 3, 4, 5 ), _multiValue, multiAfter );
 			  assertThat( new object[]{ _singleValue }, equalTo( singleChange.BeforeValues() ) );
 			  assertThat( new object[]{ singleAfter }, equalTo( singleChange.Values() ) );

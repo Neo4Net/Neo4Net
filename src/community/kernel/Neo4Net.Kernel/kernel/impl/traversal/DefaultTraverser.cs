@@ -40,7 +40,7 @@ namespace Neo4Net.Kernel.impl.traversal
 			  this._traverserIteratorFactory = traverserIteratorFactory;
 		 }
 
-		 public override ResourceIterable<Node> Nodes()
+		 public overrideIResourceIterable<Node> Nodes()
 		 {
 			  return new ResourcePathIterableWrapperAnonymousInnerClass( this );
 		 }
@@ -60,7 +60,7 @@ namespace Neo4Net.Kernel.impl.traversal
 			 }
 		 }
 
-		 public override ResourceIterable<Relationship> Relationships()
+		 public overrideIResourceIterable<Relationship> Relationships()
 		 {
 			  return new ResourcePathIterableWrapperAnonymousInnerClass2( this );
 		 }
@@ -74,11 +74,11 @@ namespace Neo4Net.Kernel.impl.traversal
 				 this.outerInstance = outerInstance;
 			 }
 
-			 public override ResourceIterator<Relationship> iterator()
+			 public override IResourceIterator<Relationship> iterator()
 			 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.graphdb.ResourceIterator<org.Neo4Net.graphdb.Path> pathIterator = pathIterator();
-				  ResourceIterator<Path> pathIterator = pathIterator();
+//ORIGINAL LINE: final Neo4Net.graphdb.ResourceIterator<Neo4Net.graphdb.Path> pathIterator = pathIterator();
+				  IResourceIterator<Path> pathIterator = pathIterator();
 				  return new PrefetchingResourceIteratorAnonymousInnerClass( this, pathIterator );
 			 }
 
@@ -86,9 +86,9 @@ namespace Neo4Net.Kernel.impl.traversal
 			 {
 				 private readonly ResourcePathIterableWrapperAnonymousInnerClass2 _outerInstance;
 
-				 private ResourceIterator<Path> _pathIterator;
+				 private IResourceIterator<Path> _pathIterator;
 
-				 public PrefetchingResourceIteratorAnonymousInnerClass( ResourcePathIterableWrapperAnonymousInnerClass2 outerInstance, ResourceIterator<Path> pathIterator )
+				 public PrefetchingResourceIteratorAnonymousInnerClass( ResourcePathIterableWrapperAnonymousInnerClass2 outerInstance, IResourceIterator<Path> pathIterator )
 				 {
 					 this.outerInstance = outerInstance;
 					 this._pathIterator = pathIterator;
@@ -119,7 +119,7 @@ namespace Neo4Net.Kernel.impl.traversal
 			 }
 		 }
 
-		 public override ResourceIterator<Path> Iterator()
+		 public override IResourceIterator<Path> Iterator()
 		 {
 			  TraverserIterator traverserIterator = _traverserIteratorFactory.newInstance();
 			  _lastIterator = traverserIterator;
@@ -131,25 +131,25 @@ namespace Neo4Net.Kernel.impl.traversal
 			  return _lastIterator;
 		 }
 
-		 private abstract class ResourcePathIterableWrapper<T> : ResourceIterable<T>
+		 private abstract class ResourcePathIterableWrapper<T> :IResourceIterable<T>
 		 {
 			 public abstract java.util.stream.Stream<T> Stream();
-			  internal readonly ResourceIterable<Path> IterableToWrap;
+			  internal readonlyIResourceIterable<Path> IterableToWrap;
 
-			  protected internal ResourcePathIterableWrapper( ResourceIterable<Path> iterableToWrap )
+			  protected internal ResourcePathIterableWrapper(IResourceIterable<Path> iterableToWrap )
 			  {
 					this.IterableToWrap = iterableToWrap;
 			  }
 
-			  protected internal virtual ResourceIterator<Path> PathIterator()
+			  protected internal virtual IResourceIterator<Path> PathIterator()
 			  {
 					return IterableToWrap.GetEnumerator();
 			  }
 
-			  public override ResourceIterator<T> Iterator()
+			  public override IResourceIterator<T> Iterator()
 			  {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.graphdb.ResourceIterator<org.Neo4Net.graphdb.Path> iterator = pathIterator();
+//ORIGINAL LINE: final Neo4Net.graphdb.ResourceIterator<Neo4Net.graphdb.Path> iterator = pathIterator();
 					ResourceIterator<Path> iterator = PathIterator();
 					return new PrefetchingResourceIteratorAnonymousInnerClass2( this, iterator );
 			  }
@@ -158,9 +158,9 @@ namespace Neo4Net.Kernel.impl.traversal
 			  {
 				  private readonly ResourcePathIterableWrapper<T> _outerInstance;
 
-				  private ResourceIterator<Path> _iterator;
+				  private IResourceIterator<Path> _iterator;
 
-				  public PrefetchingResourceIteratorAnonymousInnerClass2( ResourcePathIterableWrapper<T> outerInstance, ResourceIterator<Path> iterator )
+				  public PrefetchingResourceIteratorAnonymousInnerClass2( ResourcePathIterableWrapper<T> outerInstance, IResourceIterator<Path> iterator )
 				  {
 					  this.outerInstance = outerInstance;
 					  this._iterator = iterator;

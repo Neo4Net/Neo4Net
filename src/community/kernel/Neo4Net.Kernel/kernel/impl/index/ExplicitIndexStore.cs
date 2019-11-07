@@ -31,16 +31,16 @@ namespace Neo4Net.Kernel.impl.index
 	using Kernel = Neo4Net.Kernel.Api.Internal.Kernel;
 	using Transaction = Neo4Net.Kernel.Api.Internal.Transaction;
 	using ExplicitIndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
-	using Statement = Neo4Net.Kernel.api.Statement;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
+	using Statement = Neo4Net.Kernel.Api.Statement;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using ExplicitIndexProvider = Neo4Net.Kernel.Impl.Api.ExplicitIndexProvider;
 	using IndexImplementation = Neo4Net.Kernel.spi.explicitindex.IndexImplementation;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.GraphDb.Index.IndexManager_Fields.PROVIDER;
+//	import static Neo4Net.GraphDb.Index.IndexManager_Fields.PROVIDER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.security.LoginContext.AUTH_DISABLED;
+//	import static Neo4Net.Kernel.Api.Internal.security.LoginContext.AUTH_DISABLED;
 
 	/// <summary>
 	/// Uses an <seealso cref="IndexConfigStore"/> and puts logic around providers and configuration comparison.
@@ -53,7 +53,7 @@ namespace Neo4Net.Kernel.impl.index
 		 private readonly System.Func<Kernel> _kernel;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: public ExplicitIndexStore(@Nonnull Config config, IndexConfigStore indexStore, java.util.function.Supplier<org.Neo4Net.Kernel.Api.Internal.Kernel> kernel, org.Neo4Net.kernel.impl.api.ExplicitIndexProvider defaultExplicitIndexProvider)
+//ORIGINAL LINE: public ExplicitIndexStore(@Nonnull Config config, IndexConfigStore indexStore, java.util.function.Supplier<Neo4Net.Kernel.Api.Internal.Kernel> kernel, Neo4Net.kernel.impl.api.ExplicitIndexProvider defaultExplicitIndexProvider)
 		 public ExplicitIndexStore( Config config, IndexConfigStore indexStore, System.Func<Kernel> kernel, ExplicitIndexProvider defaultExplicitIndexProvider )
 		 {
 			  this._config = config;
@@ -199,7 +199,7 @@ namespace Neo4Net.Kernel.impl.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public String setNodeIndexConfiguration(String indexName, String key, String value) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: public String setNodeIndexConfiguration(String indexName, String key, String value) throws Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 public virtual string SetNodeIndexConfiguration( string indexName, string key, string value )
 		 {
 			  AssertLegalConfigKey( key );
@@ -210,7 +210,7 @@ namespace Neo4Net.Kernel.impl.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public String setRelationshipIndexConfiguration(String indexName, String key, String value) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: public String setRelationshipIndexConfiguration(String indexName, String key, String value) throws Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 public virtual string SetRelationshipIndexConfiguration( string indexName, string key, string value )
 		 {
 			  AssertLegalConfigKey( key );
@@ -221,7 +221,7 @@ namespace Neo4Net.Kernel.impl.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public String removeNodeIndexConfiguration(String indexName, String key) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: public String removeNodeIndexConfiguration(String indexName, String key) throws Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 public virtual string RemoveNodeIndexConfiguration( string indexName, string key )
 		 {
 			  AssertLegalConfigKey( key );
@@ -235,7 +235,7 @@ namespace Neo4Net.Kernel.impl.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public String removeRelationshipIndexConfiguration(String indexName, String key) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: public String removeRelationshipIndexConfiguration(String indexName, String key) throws Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 public virtual string RemoveRelationshipIndexConfiguration( string indexName, string key )
 		 {
 			  AssertLegalConfigKey( key );
@@ -249,7 +249,7 @@ namespace Neo4Net.Kernel.impl.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.util.Map<String, String> getNodeIndexConfiguration(String indexName) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: public java.util.Map<String, String> getNodeIndexConfiguration(String indexName) throws Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 public virtual IDictionary<string, string> GetNodeIndexConfiguration( string indexName )
 		 {
 			  IDictionary<string, string> config = _indexStore.get( typeof( Node ), indexName );
@@ -261,7 +261,7 @@ namespace Neo4Net.Kernel.impl.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.util.Map<String, String> getRelationshipIndexConfiguration(String indexName) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: public java.util.Map<String, String> getRelationshipIndexConfiguration(String indexName) throws Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 public virtual IDictionary<string, string> GetRelationshipIndexConfiguration( string indexName )
 		 {
 			  IDictionary<string, string> config = _indexStore.get( typeof( Relationship ), indexName );

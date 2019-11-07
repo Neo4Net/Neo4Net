@@ -33,7 +33,7 @@ namespace Neo4Net.Server.rest.management.console
 	using CypherExecutor = Neo4Net.Server.database.CypherExecutor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.@virtual.VirtualValues.emptyMap;
+//	import static Neo4Net.values.@virtual.VirtualValues.emptyMap;
 
 	public class CypherSession : ScriptSession
 	{

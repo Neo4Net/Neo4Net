@@ -38,7 +38,7 @@ namespace Neo4Net.GraphDb.factory
 	/// <summary>
 	/// Factory for Neo4Net database instances with Enterprise Edition and High-Availability features.
 	/// </summary>
-	/// <seealso cref= org.Neo4Net.graphdb.factory.GraphDatabaseFactory </seealso>
+	/// <seealso cref= Neo4Net.graphdb.factory.GraphDatabaseFactory </seealso>
 	/// @deprecated high availability database/edition is deprecated in favour of causal clustering. It will be removed in next major release. 
 	[Obsolete("high availability database/edition is deprecated in favour of causal clustering. It will be removed in next major release.")]
 	public class HighlyAvailableGraphDatabaseFactory : GraphDatabaseFactory

@@ -30,8 +30,8 @@ namespace Neo4Net.Kernel.Internal
 	using TransactionData = Neo4Net.GraphDb.Events.TransactionData;
 	using Neo4Net.GraphDb.Events;
 	using Iterables = Neo4Net.Collections.Helpers.Iterables;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
-	using Neo4Net.Kernel.api;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
+	using Neo4Net.Kernel.Api;
 	using EmbeddedProxySPI = Neo4Net.Kernel.impl.core.EmbeddedProxySPI;
 	using TxStateTransactionDataSnapshot = Neo4Net.Kernel.impl.coreapi.TxStateTransactionDataSnapshot;
 	using Lifecycle = Neo4Net.Kernel.Lifecycle.Lifecycle;
@@ -105,7 +105,7 @@ namespace Neo4Net.Kernel.Internal
 			  while ( handlers.MoveNext() )
 			  {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.graphdb.event.TransactionEventHandler<?> handler = handlers.Current;
+//ORIGINAL LINE: Neo4Net.graphdb.event.TransactionEventHandler<?> handler = handlers.Current;
 					TransactionEventHandler<object> handler = handlers.Current;
 					try
 					{
@@ -121,7 +121,7 @@ namespace Neo4Net.Kernel.Internal
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Override @SuppressWarnings("unchecked") public void afterCommit(org.Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState state, org.Neo4Net.kernel.api.KernelTransaction transaction, TransactionHandlerState handlerState)
+//ORIGINAL LINE: @Override @SuppressWarnings("unchecked") public void afterCommit(Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState state, Neo4Net.kernel.api.KernelTransaction transaction, TransactionHandlerState handlerState)
 		 public override void AfterCommit( ReadableTransactionState state, KernelTransaction transaction, TransactionHandlerState handlerState )
 		 {
 			  if ( handlerState == null )
@@ -138,7 +138,7 @@ namespace Neo4Net.Kernel.Internal
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Override @SuppressWarnings("unchecked") public void afterRollback(org.Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState state, org.Neo4Net.kernel.api.KernelTransaction transaction, TransactionHandlerState handlerState)
+//ORIGINAL LINE: @Override @SuppressWarnings("unchecked") public void afterRollback(Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState state, Neo4Net.kernel.api.KernelTransaction transaction, TransactionHandlerState handlerState)
 		 public override void AfterRollback( ReadableTransactionState state, KernelTransaction transaction, TransactionHandlerState handlerState )
 		 {
 			  if ( handlerState == null )
@@ -173,7 +173,7 @@ namespace Neo4Net.Kernel.Internal
 			  }
 		 }
 
-		 public class TransactionHandlerState : Neo4Net.Kernel.api.TransactionHook_Outcome
+		 public class TransactionHandlerState : Neo4Net.Kernel.Api.TransactionHook_Outcome
 		 {
 			  internal readonly TransactionData TxData;
 			  internal readonly IList<HandlerAndState> States = new LinkedList<HandlerAndState>();

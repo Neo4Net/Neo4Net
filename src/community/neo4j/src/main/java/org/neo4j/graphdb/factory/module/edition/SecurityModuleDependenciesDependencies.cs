@@ -20,7 +20,7 @@
 namespace Neo4Net.GraphDb.factory.module.edition
 {
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
-	using SecurityModule = Neo4Net.Kernel.api.security.SecurityModule;
+	using SecurityModule = Neo4Net.Kernel.Api.security.SecurityModule;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using AccessCapability = Neo4Net.Kernel.impl.factory.AccessCapability;
 	using Procedures = Neo4Net.Kernel.impl.proc.Procedures;

@@ -65,7 +65,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 		 /// <exception cref="IOException"> </exception>
 		 /// <seealso cref= UniquenessVerifier#verify(NodePropertyAccessor, int[]) </seealso>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void verifyUniqueness(org.Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor accessor, int[] propertyKeyIds) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: public void verifyUniqueness(Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor accessor, int[] propertyKeyIds) throws java.io.IOException, Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 public virtual void VerifyUniqueness( NodePropertyAccessor accessor, int[] propertyKeyIds )
 		 {
 			  Flush( true );
@@ -85,7 +85,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 		 /// <exception cref="IOException"> </exception>
 		 /// <seealso cref= UniquenessVerifier#verify(NodePropertyAccessor, int[], List) </seealso>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void verifyUniqueness(org.Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor accessor, int[] propertyKeyIds, java.util.List<org.Neo4Net.values.storable.Value[]> updatedValueTuples) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: public void verifyUniqueness(Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor accessor, int[] propertyKeyIds, java.util.List<Neo4Net.values.storable.Value[]> updatedValueTuples) throws java.io.IOException, Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 public virtual void VerifyUniqueness( NodePropertyAccessor accessor, int[] propertyKeyIds, IList<Value[]> updatedValueTuples )
 		 {
 			  using ( UniquenessVerifier verifier = CreateUniquenessVerifier() )
@@ -109,7 +109,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.kernel.api.impl.schema.verification.UniquenessVerifier createUniquenessVerifier() throws java.io.IOException
+//ORIGINAL LINE: private Neo4Net.kernel.api.impl.schema.verification.UniquenessVerifier createUniquenessVerifier() throws java.io.IOException
 		 private UniquenessVerifier CreateUniquenessVerifier()
 		 {
 			  EnsureOpen();
@@ -119,7 +119,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.kernel.api.impl.schema.verification.UniquenessVerifier createSimpleUniquenessVerifier(java.util.List<org.Neo4Net.kernel.api.impl.index.partition.AbstractIndexPartition> partitions) throws java.io.IOException
+//ORIGINAL LINE: private Neo4Net.kernel.api.impl.schema.verification.UniquenessVerifier createSimpleUniquenessVerifier(java.util.List<Neo4Net.kernel.api.impl.index.partition.AbstractIndexPartition> partitions) throws java.io.IOException
 		 private UniquenessVerifier CreateSimpleUniquenessVerifier( IList<AbstractIndexPartition> partitions )
 		 {
 			  AbstractIndexPartition singlePartition = GetFirstPartition( partitions );
@@ -128,7 +128,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.kernel.api.impl.schema.verification.UniquenessVerifier createPartitionedUniquenessVerifier(java.util.List<org.Neo4Net.kernel.api.impl.index.partition.AbstractIndexPartition> partitions) throws java.io.IOException
+//ORIGINAL LINE: private Neo4Net.kernel.api.impl.schema.verification.UniquenessVerifier createPartitionedUniquenessVerifier(java.util.List<Neo4Net.kernel.api.impl.index.partition.AbstractIndexPartition> partitions) throws java.io.IOException
 		 private UniquenessVerifier CreatePartitionedUniquenessVerifier( IList<AbstractIndexPartition> partitions )
 		 {
 			  IList<PartitionSearcher> searchers = AcquireSearchers( partitions );
@@ -136,7 +136,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected org.Neo4Net.kernel.api.impl.schema.reader.SimpleIndexReader createSimpleReader(java.util.List<org.Neo4Net.kernel.api.impl.index.partition.AbstractIndexPartition> partitions) throws java.io.IOException
+//ORIGINAL LINE: protected Neo4Net.kernel.api.impl.schema.reader.SimpleIndexReader createSimpleReader(java.util.List<Neo4Net.kernel.api.impl.index.partition.AbstractIndexPartition> partitions) throws java.io.IOException
 		 protected internal override SimpleIndexReader CreateSimpleReader( IList<AbstractIndexPartition> partitions )
 		 {
 			  AbstractIndexPartition singlePartition = GetFirstPartition( partitions );
@@ -144,7 +144,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected org.Neo4Net.kernel.api.impl.schema.reader.PartitionedIndexReader createPartitionedReader(java.util.List<org.Neo4Net.kernel.api.impl.index.partition.AbstractIndexPartition> partitions) throws java.io.IOException
+//ORIGINAL LINE: protected Neo4Net.kernel.api.impl.schema.reader.PartitionedIndexReader createPartitionedReader(java.util.List<Neo4Net.kernel.api.impl.index.partition.AbstractIndexPartition> partitions) throws java.io.IOException
 		 protected internal override PartitionedIndexReader CreatePartitionedReader( IList<AbstractIndexPartition> partitions )
 		 {
 			  IList<PartitionSearcher> searchers = AcquireSearchers( partitions );

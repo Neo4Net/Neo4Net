@@ -30,7 +30,7 @@ namespace Neo4Net.com
 	public interface TransactionStream
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void accept(org.Neo4Net.helpers.collection.Visitor<org.Neo4Net.kernel.impl.transaction.CommittedTransactionRepresentation,Exception> visitor) throws Exception;
+//ORIGINAL LINE: void accept(Neo4Net.helpers.collection.Visitor<Neo4Net.kernel.impl.transaction.CommittedTransactionRepresentation,Exception> visitor) throws Exception;
 		 void Accept( Visitor<CommittedTransactionRepresentation, Exception> visitor );
 	}
 

@@ -19,7 +19,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Kernel.api.impl
+namespace Neo4Net.Kernel.Api.impl
 {
 	using Document = org.apache.lucene.document.Document;
 	using Query = org.apache.lucene.search.Query;

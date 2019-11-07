@@ -27,10 +27,10 @@ namespace Neo4Net.Kernel.builtinprocs
 	using TokenRead = Neo4Net.Kernel.Api.Internal.TokenRead;
 	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
 	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using SchemaRuleNotFoundException = Neo4Net.Kernel.Api.Exceptions.schema.SchemaRuleNotFoundException;
-	using TestIndexDescriptorFactory = Neo4Net.Kernel.api.schema.index.TestIndexDescriptorFactory;
+	using TestIndexDescriptorFactory = Neo4Net.Kernel.Api.schema.index.TestIndexDescriptorFactory;
 	using IndexingService = Neo4Net.Kernel.Impl.Api.index.IndexingService;
 	using IndexSamplingMode = Neo4Net.Kernel.Impl.Api.index.sampling.IndexSamplingMode;
 	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
@@ -112,7 +112,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldLookUpTheIndexByLabelIdAndPropertyKeyId() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException, org.Neo4Net.kernel.api.exceptions.schema.SchemaRuleNotFoundException
+//ORIGINAL LINE: @Test public void shouldLookUpTheIndexByLabelIdAndPropertyKeyId() throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException, Neo4Net.kernel.api.exceptions.schema.SchemaRuleNotFoundException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldLookUpTheIndexByLabelIdAndPropertyKeyId()
 		 {
@@ -127,7 +127,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldLookUpTheCompositeIndexByLabelIdAndPropertyKeyId() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException, org.Neo4Net.kernel.api.exceptions.schema.SchemaRuleNotFoundException
+//ORIGINAL LINE: @Test public void shouldLookUpTheCompositeIndexByLabelIdAndPropertyKeyId() throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException, Neo4Net.kernel.api.exceptions.schema.SchemaRuleNotFoundException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldLookUpTheCompositeIndexByLabelIdAndPropertyKeyId()
 		 {
@@ -143,7 +143,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldThrowAnExceptionIfTheIndexDoesNotExist() throws org.Neo4Net.kernel.api.exceptions.schema.SchemaRuleNotFoundException
+//ORIGINAL LINE: @Test public void shouldThrowAnExceptionIfTheIndexDoesNotExist() throws Neo4Net.kernel.api.exceptions.schema.SchemaRuleNotFoundException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldThrowAnExceptionIfTheIndexDoesNotExist()
 
@@ -164,7 +164,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldTriggerResampling() throws org.Neo4Net.kernel.api.exceptions.schema.SchemaRuleNotFoundException, org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException, org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
+//ORIGINAL LINE: @Test public void shouldTriggerResampling() throws Neo4Net.kernel.api.exceptions.schema.SchemaRuleNotFoundException, Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException, Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldTriggerResampling()
 		 {

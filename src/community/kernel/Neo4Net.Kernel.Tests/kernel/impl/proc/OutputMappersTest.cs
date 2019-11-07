@@ -38,9 +38,9 @@ namespace Neo4Net.Kernel.impl.proc
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.procs.FieldSignature.outputField;
+//	import static Neo4Net.Kernel.Api.Internal.procs.FieldSignature.outputField;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes.NTString;
+//	import static Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes.NTString;
 
 	public class OutputMappersTest
 	{
@@ -139,7 +139,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 {
 			  // Expect
 			  Exception.expect( typeof( ProcedureException ) );
-			  Exception.expectMessage( "Field `wat` in record `UnmappableRecord` cannot be converted to a Neo4Net type:" + " Don't know how to map `org.Neo4Net.kernel.impl.proc.OutputMappersTest$UnmappableRecord`" );
+			  Exception.expectMessage( "Field `wat` in record `UnmappableRecord` cannot be converted to a Neo4Net type:" + " Don't know how to map `Neo4Net.kernel.impl.proc.OutputMappersTest$UnmappableRecord`" );
 
 			  // When
 			  Mapper( typeof( UnmappableRecord ) );
@@ -165,7 +165,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 {
 			  // Expect
 			  Exception.expect( typeof( ProcedureException ) );
-			  Exception.expectMessage( "Field `wat` in record `RecordWithNonStringKeyMap` cannot be converted " + "to a Neo4Net type: Maps are required to have `String` keys - but this map " + "has `org.Neo4Net.kernel.impl.proc.OutputMappersTest$RecordWithNonStringKeyMap` keys." );
+			  Exception.expectMessage( "Field `wat` in record `RecordWithNonStringKeyMap` cannot be converted " + "to a Neo4Net type: Maps are required to have `String` keys - but this map " + "has `Neo4Net.kernel.impl.proc.OutputMappersTest$RecordWithNonStringKeyMap` keys." );
 
 			  // When
 			  Mapper( typeof( RecordWithNonStringKeyMap ) );
@@ -190,7 +190,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.kernel.impl.proc.OutputMappers.OutputMapper mapper(Class clazz) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
+//ORIGINAL LINE: private Neo4Net.kernel.impl.proc.OutputMappers.OutputMapper mapper(Class clazz) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 		 private OutputMapper Mapper( Type clazz )
 		 {
 			  return ( new OutputMappers( new TypeMappers() ) ).Mapper(clazz);

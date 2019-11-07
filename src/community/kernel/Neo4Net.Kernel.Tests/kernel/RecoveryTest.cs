@@ -88,22 +88,22 @@ namespace Neo4Net.Kernel
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verifyZeroInteractions;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_COMMIT_TIMESTAMP;
+//	import static Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_COMMIT_TIMESTAMP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.entry.LogHeaderWriter.writeLogHeader;
+//	import static Neo4Net.kernel.impl.transaction.log.entry.LogHeaderWriter.writeLogHeader;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.entry.LogVersions.CURRENT_LOG_VERSION;
+//	import static Neo4Net.kernel.impl.transaction.log.entry.LogVersions.CURRENT_LOG_VERSION;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.recovery.RecoveryStartInformationProvider.NO_MONITOR;
+//	import static Neo4Net.kernel.recovery.RecoveryStartInformationProvider.NO_MONITOR;
 
 	public class RecoveryTest
 	{
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.fs.DefaultFileSystemRule fileSystemRule = new org.Neo4Net.test.rule.fs.DefaultFileSystemRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.fs.DefaultFileSystemRule fileSystemRule = new Neo4Net.test.rule.fs.DefaultFileSystemRule();
 		 public readonly DefaultFileSystemRule FileSystemRule = new DefaultFileSystemRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory directory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.TestDirectory directory = Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory Directory = TestDirectory.testDirectory();
 		 private readonly LogVersionRepository _logVersionRepository = new SimpleLogVersionRepository();
 		 private readonly TransactionIdStore _transactionIdStore = new SimpleTransactionIdStore( 5L, 0, BASE_TX_COMMIT_TIMESTAMP, 0, 0 );
@@ -175,7 +175,7 @@ namespace Neo4Net.Kernel
 			  {
 					StorageEngine storageEngine = mock( typeof( StorageEngine ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.transaction.log.entry.LogEntryReader<org.Neo4Net.kernel.impl.transaction.log.ReadableClosablePositionAwareChannel> reader = new org.Neo4Net.kernel.impl.transaction.log.entry.VersionAwareLogEntryReader<>();
+//ORIGINAL LINE: final Neo4Net.kernel.impl.transaction.log.entry.LogEntryReader<Neo4Net.kernel.impl.transaction.log.ReadableClosablePositionAwareChannel> reader = new Neo4Net.kernel.impl.transaction.log.entry.VersionAwareLogEntryReader<>();
 					LogEntryReader<ReadableClosablePositionAwareChannel> reader = new VersionAwareLogEntryReader<ReadableClosablePositionAwareChannel>();
 					LogTailScanner tailScanner = GetTailScanner( _logFiles, reader );
 
@@ -218,7 +218,7 @@ namespace Neo4Net.Kernel
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.kernel.recovery.RecoveryApplier getRecoveryApplier(org.Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode mode) throws Exception
+//ORIGINAL LINE: public Neo4Net.kernel.recovery.RecoveryApplier getRecoveryApplier(Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode mode) throws Exception
 			 public override RecoveryApplier getRecoveryApplier( TransactionApplicationMode mode )
 			 {
 				  RecoveryApplier actual = base.getRecoveryApplier( mode );
@@ -250,7 +250,7 @@ namespace Neo4Net.Kernel
 				 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean visit(org.Neo4Net.kernel.impl.transaction.CommittedTransactionRepresentation tx) throws Exception
+//ORIGINAL LINE: public boolean visit(Neo4Net.kernel.impl.transaction.CommittedTransactionRepresentation tx) throws Exception
 				 public bool visit( CommittedTransactionRepresentation tx )
 				 {
 					  _actual.visit( tx );
@@ -304,7 +304,7 @@ namespace Neo4Net.Kernel
 			  {
 					StorageEngine storageEngine = mock( typeof( StorageEngine ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.transaction.log.entry.LogEntryReader<org.Neo4Net.kernel.impl.transaction.log.ReadableClosablePositionAwareChannel> reader = new org.Neo4Net.kernel.impl.transaction.log.entry.VersionAwareLogEntryReader<>();
+//ORIGINAL LINE: final Neo4Net.kernel.impl.transaction.log.entry.LogEntryReader<Neo4Net.kernel.impl.transaction.log.ReadableClosablePositionAwareChannel> reader = new Neo4Net.kernel.impl.transaction.log.entry.VersionAwareLogEntryReader<>();
 					LogEntryReader<ReadableClosablePositionAwareChannel> reader = new VersionAwareLogEntryReader<ReadableClosablePositionAwareChannel>();
 					LogTailScanner tailScanner = GetTailScanner( _logFiles, reader );
 
@@ -347,7 +347,7 @@ namespace Neo4Net.Kernel
 			  // GIVEN
 			  File file = _logFiles.getLogFileForVersion( _logVersion );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.transaction.log.LogPositionMarker marker = new org.Neo4Net.kernel.impl.transaction.log.LogPositionMarker();
+//ORIGINAL LINE: final Neo4Net.kernel.impl.transaction.log.LogPositionMarker marker = new Neo4Net.kernel.impl.transaction.log.LogPositionMarker();
 			  LogPositionMarker marker = new LogPositionMarker();
 
 			  WriteSomeData(file, pair =>
@@ -403,7 +403,7 @@ namespace Neo4Net.Kernel
 			  // GIVEN
 			  File file = _logFiles.getLogFileForVersion( _logVersion );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.transaction.log.LogPositionMarker marker = new org.Neo4Net.kernel.impl.transaction.log.LogPositionMarker();
+//ORIGINAL LINE: final Neo4Net.kernel.impl.transaction.log.LogPositionMarker marker = new Neo4Net.kernel.impl.transaction.log.LogPositionMarker();
 			  LogPositionMarker marker = new LogPositionMarker();
 
 			  WriteSomeData(file, pair =>
@@ -438,7 +438,7 @@ namespace Neo4Net.Kernel
 			  // GIVEN
 			  File file = _logFiles.getLogFileForVersion( _logVersion );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.transaction.log.LogPositionMarker marker = new org.Neo4Net.kernel.impl.transaction.log.LogPositionMarker();
+//ORIGINAL LINE: final Neo4Net.kernel.impl.transaction.log.LogPositionMarker marker = new Neo4Net.kernel.impl.transaction.log.LogPositionMarker();
 			  LogPositionMarker marker = new LogPositionMarker();
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -485,7 +485,7 @@ namespace Neo4Net.Kernel
 			  {
 					StorageEngine storageEngine = mock( typeof( StorageEngine ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.transaction.log.entry.LogEntryReader<org.Neo4Net.kernel.impl.transaction.log.ReadableClosablePositionAwareChannel> reader = new org.Neo4Net.kernel.impl.transaction.log.entry.VersionAwareLogEntryReader<>();
+//ORIGINAL LINE: final Neo4Net.kernel.impl.transaction.log.entry.LogEntryReader<Neo4Net.kernel.impl.transaction.log.ReadableClosablePositionAwareChannel> reader = new Neo4Net.kernel.impl.transaction.log.entry.VersionAwareLogEntryReader<>();
 					LogEntryReader<ReadableClosablePositionAwareChannel> reader = new VersionAwareLogEntryReader<ReadableClosablePositionAwareChannel>();
 					LogTailScanner tailScanner = GetTailScanner( logFiles, reader );
 
@@ -528,7 +528,7 @@ namespace Neo4Net.Kernel
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void writeSomeData(java.io.File file, org.Neo4Net.helpers.collection.Visitor<org.Neo4Net.helpers.collection.Pair<org.Neo4Net.kernel.impl.transaction.log.entry.LogEntryWriter,System.Action<org.Neo4Net.kernel.impl.transaction.log.LogPositionMarker>>,java.io.IOException> visitor) throws java.io.IOException
+//ORIGINAL LINE: private void writeSomeData(java.io.File file, Neo4Net.helpers.collection.Visitor<Neo4Net.helpers.collection.Pair<Neo4Net.kernel.impl.transaction.log.entry.LogEntryWriter,System.Action<Neo4Net.kernel.impl.transaction.log.LogPositionMarker>>,java.io.IOException> visitor) throws java.io.IOException
 		 private void WriteSomeData( File file, Visitor<Pair<LogEntryWriter, System.Action<LogPositionMarker>>, IOException> visitor )
 		 {
 

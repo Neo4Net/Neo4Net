@@ -132,7 +132,7 @@ namespace Neo4Net.Test
 //ORIGINAL LINE: final Title title = description.getAnnotation(Title.class);
 			  Title title = description.getAnnotation( typeof( Title ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.annotations.Documented doc = description.getAnnotation(org.Neo4Net.kernel.impl.annotations.Documented.class);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.annotations.Documented doc = description.getAnnotation(Neo4Net.kernel.impl.annotations.Documented.class);
 			  Documented doc = description.getAnnotation( typeof( Documented ) );
 			  GraphDescription.Graph g = description.getAnnotation( typeof( GraphDescription.Graph ) );
 			  if ( g == null )
@@ -166,15 +166,15 @@ namespace Neo4Net.Test
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void evaluate() throws Throwable
-			 public override void evaluate()
+//ORIGINAL LINE: public void Evaluate() throws Throwable
+			 public override void Evaluate()
 			 {
 				  _outerInstance.product.set( Create( _graph, _title == null ? null : _title.value(), _doc == null ? null : _doc.value(), _description.MethodName ) );
 				  try
 				  {
 						try
 						{
-							 @base.evaluate();
+							 @base.Evaluate();
 						}
 						catch ( Exception err )
 						{

@@ -28,7 +28,7 @@ namespace Neo4Net.com.storecopy
 	{
 		 /// <param name="txHandler"> for getting an insight into which transactions gets applied. </param>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void unpackResponse(org.Neo4Net.com.Response<?> response, ResponseUnpacker_TxHandler txHandler) throws Exception;
+//ORIGINAL LINE: void unpackResponse(Neo4Net.com.Response<?> response, ResponseUnpacker_TxHandler txHandler) throws Exception;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		 void unpackResponse<T1>( Response<T1> response, ResponseUnpacker_TxHandler txHandler );
 	}

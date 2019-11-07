@@ -84,7 +84,7 @@ namespace Neo4Net.Kernel.impl.store
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.rule.TestDirectory.testDirectory;
+//	import static Neo4Net.test.rule.TestDirectory.testDirectory;
 
 	public class CommonAbstractStoreTest
 	{

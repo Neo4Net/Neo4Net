@@ -34,9 +34,9 @@ namespace Neo4Net.Values.Storable
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertThrows;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.CoordinateReferenceSystem.Cartesian;
+//	import static Neo4Net.values.storable.CoordinateReferenceSystem.Cartesian;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.CoordinateReferenceSystem.WGS84;
+//	import static Neo4Net.values.storable.CoordinateReferenceSystem.WGS84;
 
 	internal class CoordinateReferenceSystemTest
 	{

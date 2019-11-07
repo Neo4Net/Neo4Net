@@ -47,9 +47,9 @@ namespace Neo4Net.Test.mockito.matcher
 	using Neo4Net.Kernel.impl.util;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.entry.LogHeader.LOG_HEADER_SIZE;
+//	import static Neo4Net.kernel.impl.transaction.log.entry.LogHeader.LOG_HEADER_SIZE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.entry.LogHeaderReader.readLogHeader;
+//	import static Neo4Net.kernel.impl.transaction.log.entry.LogHeaderReader.readLogHeader;
 
 	/// <summary>
 	/// A set of hamcrest matchers for asserting logical logs look in certain ways.
@@ -63,7 +63,7 @@ namespace Neo4Net.Test.mockito.matcher
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static java.util.List<org.Neo4Net.kernel.impl.transaction.log.entry.LogEntry> logEntries(org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, String logPath) throws java.io.IOException
+//ORIGINAL LINE: public static java.util.List<Neo4Net.kernel.impl.transaction.log.entry.LogEntry> logEntries(Neo4Net.io.fs.FileSystemAbstraction fileSystem, String logPath) throws java.io.IOException
 		 public static IList<LogEntry> LogEntries( FileSystemAbstraction fileSystem, string logPath )
 		 {
 			  File logFile = new File( logPath );
@@ -80,14 +80,14 @@ namespace Neo4Net.Test.mockito.matcher
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static java.util.List<org.Neo4Net.kernel.impl.transaction.log.entry.LogEntry> logEntries(org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, java.io.File file) throws java.io.IOException
+//ORIGINAL LINE: public static java.util.List<Neo4Net.kernel.impl.transaction.log.entry.LogEntry> logEntries(Neo4Net.io.fs.FileSystemAbstraction fileSystem, java.io.File file) throws java.io.IOException
 		 public static IList<LogEntry> LogEntries( FileSystemAbstraction fileSystem, File file )
 		 {
 			  return logEntries( fileSystem, file.Path );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static org.hamcrest.Matcher<java.util.List<org.Neo4Net.kernel.impl.transaction.log.entry.LogEntry>> containsExactly(final org.hamcrest.Matcher<? extends org.Neo4Net.kernel.impl.transaction.log.entry.LogEntry>... matchers)
+//ORIGINAL LINE: public static org.hamcrest.Matcher<java.util.List<Neo4Net.kernel.impl.transaction.log.entry.LogEntry>> containsExactly(final org.hamcrest.Matcher<? extends Neo4Net.kernel.impl.transaction.log.entry.LogEntry>... matchers)
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		 public static Matcher<IList<LogEntry>> ContainsExactly( params Matcher<LogEntry>[] matchers )
 		 {
@@ -97,7 +97,7 @@ namespace Neo4Net.Test.mockito.matcher
 		 private class TypeSafeMatcherAnonymousInnerClass : TypeSafeMatcher<IList<LogEntry>>
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private org.hamcrest.Matcher<JavaToDotNetGenericWildcard extends org.Neo4Net.kernel.impl.transaction.log.entry.LogEntry>[] matchers;
+//ORIGINAL LINE: private org.hamcrest.Matcher<JavaToDotNetGenericWildcard extends Neo4Net.kernel.impl.transaction.log.entry.LogEntry>[] matchers;
 			 private Matcher<LogEntry>[] _matchers;
 
 			 public TypeSafeMatcherAnonymousInnerClass<T1>( Matcher<T1>[] matchers ) where T1 : Neo4Net.Kernel.impl.transaction.log.entry.LogEntry
@@ -110,7 +110,7 @@ namespace Neo4Net.Test.mockito.matcher
 				  IEnumerator<LogEntry> actualEntries = item.GetEnumerator();
 				  {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: for (org.hamcrest.Matcher<? extends org.Neo4Net.kernel.impl.transaction.log.entry.LogEntry> matcher : matchers)
+//ORIGINAL LINE: for (org.hamcrest.Matcher<? extends Neo4Net.kernel.impl.transaction.log.entry.LogEntry> matcher : matchers)
 						foreach ( Matcher<LogEntry> matcher in _matchers )
 						{
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
@@ -146,7 +146,7 @@ namespace Neo4Net.Test.mockito.matcher
 			 public override void describeTo( Description description )
 			 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: for (org.hamcrest.Matcher<? extends org.Neo4Net.kernel.impl.transaction.log.entry.LogEntry> matcher : matchers)
+//ORIGINAL LINE: for (org.hamcrest.Matcher<? extends Neo4Net.kernel.impl.transaction.log.entry.LogEntry> matcher : matchers)
 				  foreach ( Matcher<LogEntry> matcher in _matchers )
 				  {
 						description.appendDescriptionOf( matcher ).appendText( ",\n" );
@@ -155,7 +155,7 @@ namespace Neo4Net.Test.mockito.matcher
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static org.hamcrest.Matcher<? extends org.Neo4Net.kernel.impl.transaction.log.entry.LogEntry> startEntry(final int masterId, final int localId)
+//ORIGINAL LINE: public static org.hamcrest.Matcher<? extends Neo4Net.kernel.impl.transaction.log.entry.LogEntry> startEntry(final int masterId, final int localId)
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		 public static Matcher<LogEntry> StartEntry( int masterId, int localId )
 		 {
@@ -185,7 +185,7 @@ namespace Neo4Net.Test.mockito.matcher
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static org.hamcrest.Matcher<? extends org.Neo4Net.kernel.impl.transaction.log.entry.LogEntry> commitEntry(final long txId)
+//ORIGINAL LINE: public static org.hamcrest.Matcher<? extends Neo4Net.kernel.impl.transaction.log.entry.LogEntry> commitEntry(final long txId)
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		 public static Matcher<LogEntry> CommitEntry( long txId )
 		 {
@@ -213,7 +213,7 @@ namespace Neo4Net.Test.mockito.matcher
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static org.hamcrest.Matcher<? extends org.Neo4Net.kernel.impl.transaction.log.entry.LogEntry> checkPoint(final org.Neo4Net.kernel.impl.transaction.log.LogPosition position)
+//ORIGINAL LINE: public static org.hamcrest.Matcher<? extends Neo4Net.kernel.impl.transaction.log.entry.LogEntry> checkPoint(final Neo4Net.kernel.impl.transaction.log.LogPosition position)
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		 public static Matcher<LogEntry> CheckPoint( LogPosition position )
 		 {
@@ -241,7 +241,7 @@ namespace Neo4Net.Test.mockito.matcher
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static org.hamcrest.Matcher<? extends org.Neo4Net.kernel.impl.transaction.log.entry.LogEntry> commandEntry(final long key, final Class commandClass)
+//ORIGINAL LINE: public static org.hamcrest.Matcher<? extends Neo4Net.kernel.impl.transaction.log.entry.LogEntry> commandEntry(final long key, final Class commandClass)
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		 public static Matcher<LogEntry> CommandEntry( long key, Type commandClass )
 		 {

@@ -56,13 +56,13 @@ namespace Neo4Net.causalclustering.messaging
 		 private CappedLogger _cappedLogger;
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: ReconnectingChannel(io.netty.bootstrap.Bootstrap bootstrap, io.netty.channel.EventLoop eventLoop, org.Neo4Net.helpers.SocketAddress destination, final org.Neo4Net.logging.Log log)
+//ORIGINAL LINE: ReconnectingChannel(io.netty.bootstrap.Bootstrap bootstrap, io.netty.channel.EventLoop eventLoop, Neo4Net.helpers.SocketAddress destination, final Neo4Net.logging.Log log)
 		 internal ReconnectingChannel( Bootstrap bootstrap, EventLoop eventLoop, SocketAddress destination, Log log ) : this( bootstrap, eventLoop, destination, log, new ExponentialBackoffStrategy( 100, 1600, MILLISECONDS ) )
 		 {
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private ReconnectingChannel(io.netty.bootstrap.Bootstrap bootstrap, io.netty.channel.EventLoop eventLoop, org.Neo4Net.helpers.SocketAddress destination, final org.Neo4Net.logging.Log log, org.Neo4Net.causalclustering.helper.TimeoutStrategy connectionBackoffStrategy)
+//ORIGINAL LINE: private ReconnectingChannel(io.netty.bootstrap.Bootstrap bootstrap, io.netty.channel.EventLoop eventLoop, Neo4Net.helpers.SocketAddress destination, final Neo4Net.logging.Log log, Neo4Net.causalclustering.helper.TimeoutStrategy connectionBackoffStrategy)
 		 private ReconnectingChannel( Bootstrap bootstrap, EventLoop eventLoop, SocketAddress destination, Log log, TimeoutStrategy connectionBackoffStrategy )
 		 {
 			  this._bootstrap = bootstrap;

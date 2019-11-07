@@ -53,13 +53,13 @@ namespace Upgrade
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.consistency.store.StoreAssertions.assertConsistentStore;
+//	import static Neo4Net.consistency.store.StoreAssertions.assertConsistentStore;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.storemigration.MigrationTestUtils.checkNeoStoreHasDefaultFormatVersion;
+//	import static Neo4Net.kernel.impl.storemigration.MigrationTestUtils.checkNeoStoreHasDefaultFormatVersion;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.storemigration.MigrationTestUtils.prepareSampleLegacyDatabase;
+//	import static Neo4Net.kernel.impl.storemigration.MigrationTestUtils.prepareSampleLegacyDatabase;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.storemigration.MigrationTestUtils.removeCheckPointFromTxLog;
+//	import static Neo4Net.kernel.impl.storemigration.MigrationTestUtils.removeCheckPointFromTxLog;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class StoreUpgradeOnStartupTest
@@ -120,7 +120,7 @@ namespace Upgrade
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldUpgradeAutomaticallyOnDatabaseStartup() throws org.Neo4Net.consistency.checking.full.ConsistencyCheckIncompleteException
+//ORIGINAL LINE: @Test public void shouldUpgradeAutomaticallyOnDatabaseStartup() throws Neo4Net.consistency.checking.full.ConsistencyCheckIncompleteException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldUpgradeAutomaticallyOnDatabaseStartup()
 		 {

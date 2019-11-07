@@ -40,7 +40,7 @@ namespace Neo4Net.Kernel.impl.transaction
 		 private readonly long _lastTxIdInLog = 67;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldFindLogPosition() throws org.Neo4Net.kernel.impl.transaction.log.NoSuchTransactionException
+//ORIGINAL LINE: @Test public void shouldFindLogPosition() throws Neo4Net.kernel.impl.transaction.log.NoSuchTransactionException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldFindLogPosition()
 		 {
@@ -48,11 +48,11 @@ namespace Neo4Net.Kernel.impl.transaction
 			  const long txId = 42L;
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.transaction.log.PhysicalLogicalTransactionStore.LogVersionLocator locator = new org.Neo4Net.kernel.impl.transaction.log.PhysicalLogicalTransactionStore.LogVersionLocator(txId);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.transaction.log.PhysicalLogicalTransactionStore.LogVersionLocator locator = new Neo4Net.kernel.impl.transaction.log.PhysicalLogicalTransactionStore.LogVersionLocator(txId);
 			  PhysicalLogicalTransactionStore.LogVersionLocator locator = new PhysicalLogicalTransactionStore.LogVersionLocator( txId );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.transaction.log.LogPosition position = new org.Neo4Net.kernel.impl.transaction.log.LogPosition(1, 128);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.transaction.log.LogPosition position = new Neo4Net.kernel.impl.transaction.log.LogPosition(1, 128);
 			  LogPosition position = new LogPosition( 1, 128 );
 
 			  // when
@@ -73,11 +73,11 @@ namespace Neo4Net.Kernel.impl.transaction
 			  const long txId = 1L;
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.transaction.log.PhysicalLogicalTransactionStore.LogVersionLocator locator = new org.Neo4Net.kernel.impl.transaction.log.PhysicalLogicalTransactionStore.LogVersionLocator(txId);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.transaction.log.PhysicalLogicalTransactionStore.LogVersionLocator locator = new Neo4Net.kernel.impl.transaction.log.PhysicalLogicalTransactionStore.LogVersionLocator(txId);
 			  PhysicalLogicalTransactionStore.LogVersionLocator locator = new PhysicalLogicalTransactionStore.LogVersionLocator( txId );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.transaction.log.LogPosition position = new org.Neo4Net.kernel.impl.transaction.log.LogPosition(1, 128);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.transaction.log.LogPosition position = new Neo4Net.kernel.impl.transaction.log.LogPosition(1, 128);
 			  LogPosition position = new LogPosition( 1, 128 );
 
 			  // when
@@ -107,7 +107,7 @@ namespace Neo4Net.Kernel.impl.transaction
 			  const long txId = 1L;
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.transaction.log.PhysicalLogicalTransactionStore.LogVersionLocator locator = new org.Neo4Net.kernel.impl.transaction.log.PhysicalLogicalTransactionStore.LogVersionLocator(txId);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.transaction.log.PhysicalLogicalTransactionStore.LogVersionLocator locator = new Neo4Net.kernel.impl.transaction.log.PhysicalLogicalTransactionStore.LogVersionLocator(txId);
 			  PhysicalLogicalTransactionStore.LogVersionLocator locator = new PhysicalLogicalTransactionStore.LogVersionLocator( txId );
 
 			  // then

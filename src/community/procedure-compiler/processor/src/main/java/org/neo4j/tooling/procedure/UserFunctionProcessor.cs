@@ -31,10 +31,10 @@ namespace Neo4Net.Tooling.procedure
 	using UserFunctionVisitor = Neo4Net.Tooling.procedure.visitors.UserFunctionVisitor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.tooling.procedure.CompilerOptions.IGNORE_CONTEXT_WARNINGS_OPTION;
+//	import static Neo4Net.tooling.procedure.CompilerOptions.IGNORE_CONTEXT_WARNINGS_OPTION;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @AutoService(Processor.class) public class UserFunctionProcessor extends DuplicationAwareBaseProcessor<org.Neo4Net.procedure.UserFunction>
+//ORIGINAL LINE: @AutoService(Processor.class) public class UserFunctionProcessor extends DuplicationAwareBaseProcessor<Neo4Net.procedure.UserFunction>
 	public class UserFunctionProcessor : DuplicationAwareBaseProcessor<UserFunction>
 	{
 

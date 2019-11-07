@@ -51,7 +51,7 @@ namespace Neo4Net.Io.pagecache.stress
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void stress(org.Neo4Net.io.pagecache.PageCache pageCache, Condition condition) throws Exception
+//ORIGINAL LINE: public void stress(Neo4Net.io.pagecache.PageCache pageCache, Condition condition) throws Exception
 		 public virtual void Stress( PageCache pageCache, Condition condition )
 		 {
 			  File file = Files.createTempFile( _workingDirectory.toPath(), "pagecacheundertest", ".bin" ).toFile();
@@ -103,7 +103,7 @@ namespace Neo4Net.Io.pagecache.stress
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void verifyResults(RecordFormat format, org.Neo4Net.io.pagecache.PagedFile pagedFile, java.util.List<RecordStresser> recordStressers) throws java.io.IOException
+//ORIGINAL LINE: private void verifyResults(RecordFormat format, Neo4Net.io.pagecache.PagedFile pagedFile, java.util.List<RecordStresser> recordStressers) throws java.io.IOException
 		 private void VerifyResults( RecordFormat format, PagedFile pagedFile, IList<RecordStresser> recordStressers )
 		 {
 			  foreach ( RecordStresser stresser in recordStressers )

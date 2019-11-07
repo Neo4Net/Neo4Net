@@ -39,7 +39,7 @@ namespace Neo4Net.Kernel.impl.pagecache
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: PageLoader getLoader(org.Neo4Net.io.pagecache.PagedFile file) throws java.io.IOException
+//ORIGINAL LINE: PageLoader getLoader(Neo4Net.io.pagecache.PagedFile file) throws java.io.IOException
 		 internal virtual PageLoader GetLoader( PagedFile file )
 		 {
 			  if ( FileUtils.highIODevice( file.File().toPath(), false ) )

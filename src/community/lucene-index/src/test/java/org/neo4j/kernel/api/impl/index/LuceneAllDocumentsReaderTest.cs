@@ -97,7 +97,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static org.Neo4Net.kernel.api.impl.index.partition.PartitionSearcher createPartitionSearcher(int maxDoc, int partition, int maxSize) throws java.io.IOException
+//ORIGINAL LINE: private static Neo4Net.kernel.api.impl.index.partition.PartitionSearcher createPartitionSearcher(int maxDoc, int partition, int maxSize) throws java.io.IOException
 		 private static PartitionSearcher CreatePartitionSearcher( int maxDoc, int partition, int maxSize )
 		 {
 			  PartitionSearcher partitionSearcher = mock( typeof( PartitionSearcher ) );

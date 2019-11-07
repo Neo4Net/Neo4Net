@@ -37,7 +37,7 @@ namespace Neo4Net.cluster.member.paxos
 	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
 
 	/// <summary>
-	/// Paxos based implementation of <seealso cref="org.Neo4Net.cluster.member.ClusterMemberAvailability"/>
+	/// Paxos based implementation of <seealso cref="Neo4Net.cluster.member.ClusterMemberAvailability"/>
 	/// </summary>
 	public class PaxosClusterMemberAvailability : ClusterMemberAvailability, Lifecycle
 	{

@@ -54,21 +54,21 @@ namespace Neo4Net.causalclustering.core.consensus.roles
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.MessageUtils.messageFor;
+//	import static Neo4Net.causalclustering.core.consensus.MessageUtils.messageFor;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 	using static Neo4Net.causalclustering.core.consensus.RaftMessages_AppendEntries;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.TestMessageBuilders.appendEntriesRequest;
+//	import static Neo4Net.causalclustering.core.consensus.TestMessageBuilders.appendEntriesRequest;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.roles.Role.CANDIDATE;
+//	import static Neo4Net.causalclustering.core.consensus.roles.Role.CANDIDATE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.roles.Role.FOLLOWER;
+//	import static Neo4Net.causalclustering.core.consensus.roles.Role.FOLLOWER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.state.RaftStateBuilder.raftState;
+//	import static Neo4Net.causalclustering.core.consensus.state.RaftStateBuilder.raftState;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.identity.RaftTestMember.member;
+//	import static Neo4Net.causalclustering.identity.RaftTestMember.member;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.asSet;
+//	import static Neo4Net.helpers.collection.Iterators.asSet;
 
 	public class FollowerTest
 	{
@@ -1081,21 +1081,21 @@ namespace Neo4Net.causalclustering.core.consensus.roles
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.causalclustering.core.consensus.state.RaftState preElectionActive() throws java.io.IOException
+//ORIGINAL LINE: private Neo4Net.causalclustering.core.consensus.state.RaftState preElectionActive() throws java.io.IOException
 		 private RaftState PreElectionActive()
 		 {
 			  return raftState().myself(_myself).supportsPreVoting(true).setPreElection(true).votingMembers(asSet(_myself, _member1, _member2, _member3)).build();
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.causalclustering.core.consensus.state.RaftState preElectionSupported() throws java.io.IOException
+//ORIGINAL LINE: private Neo4Net.causalclustering.core.consensus.state.RaftState preElectionSupported() throws java.io.IOException
 		 private RaftState PreElectionSupported()
 		 {
 			  return raftState().myself(_myself).supportsPreVoting(true).votingMembers(asSet(_myself, _member1, _member2)).build();
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void appendSomeEntriesToLog(org.Neo4Net.causalclustering.core.consensus.state.RaftState raft, Follower follower, int numberOfEntriesToAppend, int term, int firstIndex) throws java.io.IOException
+//ORIGINAL LINE: private void appendSomeEntriesToLog(Neo4Net.causalclustering.core.consensus.state.RaftState raft, Follower follower, int numberOfEntriesToAppend, int term, int firstIndex) throws java.io.IOException
 		 private void AppendSomeEntriesToLog( RaftState raft, Follower follower, int numberOfEntriesToAppend, int term, int firstIndex )
 		 {
 			  for ( int i = 0; i < numberOfEntriesToAppend; i++ )

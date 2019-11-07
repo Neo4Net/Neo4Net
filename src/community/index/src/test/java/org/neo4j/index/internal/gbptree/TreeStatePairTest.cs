@@ -187,25 +187,25 @@ namespace Neo4Net.Index.Internal.gbptree
 		 internal abstract class State
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           EMPTY { void write(org.Neo4Net.io.pagecache.PageCursor cursor) { } },
+//           EMPTY { void write(Neo4Net.io.pagecache.PageCursor cursor) { } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           BROKEN { void write(org.Neo4Net.io.pagecache.PageCursor cursor) { TreeState.write(cursor, 1, 2, 3, 4, 5, 6, 7, 8, 9, true); cursor.rewind(); long someOfTheBits = cursor.getLong(cursor.getOffset()); cursor.putLong(cursor.getOffset(), ~someOfTheBits); } },
+//           BROKEN { void write(Neo4Net.io.pagecache.PageCursor cursor) { TreeState.write(cursor, 1, 2, 3, 4, 5, 6, 7, 8, 9, true); cursor.rewind(); long someOfTheBits = cursor.getLong(cursor.getOffset()); cursor.putLong(cursor.getOffset(), ~someOfTheBits); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           VALID { void write(org.Neo4Net.io.pagecache.PageCursor cursor) { TreeState.write(cursor, 5, 6, 7, 8, 9, 10, 11, 12, 13, true); } },
+//           VALID { void write(Neo4Net.io.pagecache.PageCursor cursor) { TreeState.write(cursor, 5, 6, 7, 8, 9, 10, 11, 12, 13, true); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           CRASH_VALID { void write(org.Neo4Net.io.pagecache.PageCursor cursor) { TreeState.write(cursor, 5, 7, 7, 8, 9, 10, 11, 12, 13, true); } },
+//           CRASH_VALID { void write(Neo4Net.io.pagecache.PageCursor cursor) { TreeState.write(cursor, 5, 7, 7, 8, 9, 10, 11, 12, 13, true); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           WIDE_VALID { void write(org.Neo4Net.io.pagecache.PageCursor cursor) { TreeState.write(cursor, 4, 8, 9, 10, 11, 12, 13, 14, 15, true); } },
+//           WIDE_VALID { void write(Neo4Net.io.pagecache.PageCursor cursor) { TreeState.write(cursor, 4, 8, 9, 10, 11, 12, 13, 14, 15, true); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           OLD_VALID { void write(org.Neo4Net.io.pagecache.PageCursor cursor) { TreeState.write(cursor, 2, 3, 4, 5, 6, 7, 8, 9, 10, true); } },
+//           OLD_VALID { void write(Neo4Net.io.pagecache.PageCursor cursor) { TreeState.write(cursor, 2, 3, 4, 5, 6, 7, 8, 9, 10, true); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           VALID_DIRTY { void write(org.Neo4Net.io.pagecache.PageCursor cursor) { TreeState.write(cursor, 5, 6, 7, 8, 9, 10, 11, 12, 13, false); } },
+//           VALID_DIRTY { void write(Neo4Net.io.pagecache.PageCursor cursor) { TreeState.write(cursor, 5, 6, 7, 8, 9, 10, 11, 12, 13, false); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           CRASH_VALID_DIRTY { void write(org.Neo4Net.io.pagecache.PageCursor cursor) { TreeState.write(cursor, 5, 7, 7, 8, 9, 10, 11, 12, 13, false); } },
+//           CRASH_VALID_DIRTY { void write(Neo4Net.io.pagecache.PageCursor cursor) { TreeState.write(cursor, 5, 7, 7, 8, 9, 10, 11, 12, 13, false); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           WIDE_VALID_DIRTY { void write(org.Neo4Net.io.pagecache.PageCursor cursor) { TreeState.write(cursor, 4, 8, 9, 10, 11, 12, 13, 14, 15, false); } },
+//           WIDE_VALID_DIRTY { void write(Neo4Net.io.pagecache.PageCursor cursor) { TreeState.write(cursor, 4, 8, 9, 10, 11, 12, 13, 14, 15, false); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           OLD_VALID_DIRTY { void write(org.Neo4Net.io.pagecache.PageCursor cursor) { TreeState.write(cursor, 2, 3, 4, 5, 6, 7, 8, 9, 10, false); } };
+//           OLD_VALID_DIRTY { void write(Neo4Net.io.pagecache.PageCursor cursor) { TreeState.write(cursor, 2, 3, 4, 5, 6, 7, 8, 9, 10, false); } };
 
 			  private static readonly IList<State> valueList = new List<State>();
 

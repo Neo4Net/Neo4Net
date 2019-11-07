@@ -27,9 +27,9 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using UpdateMode = Neo4Net.Kernel.Impl.Api.index.UpdateMode;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.NativeIndexUpdater.initializeKeyAndValueFromUpdate;
+//	import static Neo4Net.kernel.impl.index.schema.NativeIndexUpdater.initializeKeyAndValueFromUpdate;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.NativeIndexUpdater.initializeKeyFromUpdate;
+//	import static Neo4Net.kernel.impl.index.schema.NativeIndexUpdater.initializeKeyFromUpdate;
 
 	/// <summary>
 	/// Buffer <seealso cref="IndexEntryUpdate"/> by writing them out to a file. Can be read back in insert order through <seealso cref="reader()"/>.
@@ -42,7 +42,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 private readonly VALUE _value;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: IndexUpdateStorage(org.Neo4Net.io.fs.FileSystemAbstraction fs, java.io.File file, ByteBufferFactory.Allocator byteBufferFactory, int blockSize, org.Neo4Net.index.internal.gbptree.Layout<KEY,VALUE> layout) throws java.io.IOException
+//ORIGINAL LINE: IndexUpdateStorage(Neo4Net.io.fs.FileSystemAbstraction fs, java.io.File file, ByteBufferFactory.Allocator byteBufferFactory, int blockSize, Neo4Net.index.internal.gbptree.Layout<KEY,VALUE> layout) throws java.io.IOException
 		 internal IndexUpdateStorage( FileSystemAbstraction fs, File file, ByteBufferFactory.Allocator byteBufferFactory, int blockSize, Layout<KEY, VALUE> layout ) : base( fs, file, byteBufferFactory, blockSize )
 		 {
 			  this._layout = layout;
@@ -52,7 +52,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void add(org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> update, org.Neo4Net.io.pagecache.PageCursor pageCursor) throws java.io.IOException
+//ORIGINAL LINE: public void add(Neo4Net.kernel.api.index.IndexEntryUpdate<?> update, Neo4Net.io.pagecache.PageCursor pageCursor) throws java.io.IOException
 		 public override void Add<T1>( IndexEntryUpdate<T1> update, PageCursor pageCursor )
 		 {
 			  int entrySize = TYPE_SIZE;

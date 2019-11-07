@@ -155,7 +155,7 @@ namespace Neo4Net.Kernel.impl.store
 		 private IList<Pair<string, object>> GetPropertiesFromRecord( long recordId )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.record.PropertyRecord record = propertyStore().getRecord(recordId, propertyStore().newRecord(), org.Neo4Net.kernel.impl.store.record.RecordLoad.FORCE);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.store.record.PropertyRecord record = propertyStore().getRecord(recordId, propertyStore().newRecord(), Neo4Net.kernel.impl.store.record.RecordLoad.FORCE);
 			  PropertyRecord record = PropertyStore().getRecord(recordId, PropertyStore().newRecord(), RecordLoad.FORCE);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final java.util.List<org.eclipse.collections.api.tuple.Pair<String, Object>> props = new java.util.ArrayList<>();
@@ -805,7 +805,7 @@ namespace Neo4Net.Kernel.impl.store
 		 public virtual void DeleteNodeWithNewPropertyRecordShouldFreeTheNewRecord()
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final long propcount = getIdGenerator(org.Neo4Net.kernel.impl.store.id.IdType.PROPERTY).getNumberOfIdsInUse();
+//ORIGINAL LINE: final long propcount = getIdGenerator(Neo4Net.kernel.impl.store.id.IdType.PROPERTY).getNumberOfIdsInUse();
 			  long propcount = GetIdGenerator( IdType.PROPERTY ).NumberOfIdsInUse;
 			  Node node = GraphDb.createNode();
 			  node.SetProperty( "one", 1 );

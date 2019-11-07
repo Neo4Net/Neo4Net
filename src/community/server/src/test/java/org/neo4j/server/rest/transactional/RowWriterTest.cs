@@ -36,9 +36,9 @@ namespace Neo4Net.Server.rest.transactional
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.CoreMatchers.@is;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.map;
+//	import static Neo4Net.helpers.collection.MapUtil.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.domain.JsonHelper.jsonNode;
+//	import static Neo4Net.server.rest.domain.JsonHelper.jsonNode;
 
 	public class RowWriterTest
 	{
@@ -60,7 +60,7 @@ namespace Neo4Net.Server.rest.transactional
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.codehaus.jackson.JsonNode serialize(java.io.ByteArrayOutputStream out, org.codehaus.jackson.JsonGenerator json, ResultDataContentWriter resultDataContentWriter) throws java.io.IOException, org.Neo4Net.server.rest.domain.JsonParseException
+//ORIGINAL LINE: private org.codehaus.jackson.JsonNode serialize(java.io.ByteArrayOutputStream out, org.codehaus.jackson.JsonGenerator json, ResultDataContentWriter resultDataContentWriter) throws java.io.IOException, Neo4Net.server.rest.domain.JsonParseException
 		 private JsonNode Serialize( MemoryStream @out, JsonGenerator json, ResultDataContentWriter resultDataContentWriter )
 		 {
 			  json.writeStartObject();

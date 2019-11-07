@@ -49,7 +49,7 @@ namespace Neo4Net.Kernel.impl.store
 	public class NeoStoreOpenFailureTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.PageCacheAndDependenciesRule rules = new org.Neo4Net.test.rule.PageCacheAndDependenciesRule().with(new org.Neo4Net.test.rule.fs.DefaultFileSystemRule());
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.PageCacheAndDependenciesRule rules = new Neo4Net.test.rule.PageCacheAndDependenciesRule().with(new Neo4Net.test.rule.fs.DefaultFileSystemRule());
 		 public PageCacheAndDependenciesRule Rules = new PageCacheAndDependenciesRule().with(new DefaultFileSystemRule());
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

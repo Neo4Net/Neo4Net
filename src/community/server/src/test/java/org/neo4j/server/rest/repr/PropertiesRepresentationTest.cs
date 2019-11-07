@@ -37,7 +37,7 @@ namespace Neo4Net.Server.rest.repr
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.repr.RepresentationTestAccess.serialize;
+//	import static Neo4Net.server.rest.repr.RepresentationTestAccess.serialize;
 
 	public class PropertiesRepresentationTest
 	{

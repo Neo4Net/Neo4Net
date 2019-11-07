@@ -55,13 +55,13 @@ namespace Neo4Net.com.storecopy
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Math.max;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.Format.bytes;
+//	import static Neo4Net.helpers.Format.bytes;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_ID;
+//	import static Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_ID;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.entry.LogHeader.LOG_HEADER_SIZE;
+//	import static Neo4Net.kernel.impl.transaction.log.entry.LogHeader.LOG_HEADER_SIZE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.entry.LogHeaderWriter.writeLogHeader;
+//	import static Neo4Net.kernel.impl.transaction.log.entry.LogHeaderWriter.writeLogHeader;
 
 	/// <summary>
 	/// Client-side store copier. Deals with issuing a request to a source of a database, which will
@@ -80,7 +80,7 @@ namespace Neo4Net.com.storecopy
 		 public interface IStoreCopyRequester
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.com.Response<?> copyStore(StoreWriter writer);
+//ORIGINAL LINE: Neo4Net.com.Response<?> copyStore(StoreWriter writer);
 			  Response<object> CopyStore( StoreWriter writer );
 
 			  void Done();
@@ -89,7 +89,7 @@ namespace Neo4Net.com.storecopy
 		 private readonly DatabaseLayout _databaseLayout;
 		 private readonly Config _config;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private final Iterable<org.Neo4Net.kernel.extension.KernelExtensionFactory<?>> kernelExtensions;
+//ORIGINAL LINE: private final Iterable<Neo4Net.kernel.extension.KernelExtensionFactory<?>> kernelExtensions;
 		 private readonly IEnumerable<KernelExtensionFactory<object>> _kernelExtensions;
 		 private readonly Log _log;
 		 private readonly FileSystemAbstraction _fs;
@@ -116,7 +116,7 @@ namespace Neo4Net.com.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void copyStore(StoreCopyRequester requester, org.Neo4Net.helpers.CancellationRequest cancellationRequest, MoveAfterCopy moveAfterCopy) throws Exception
+//ORIGINAL LINE: public void copyStore(StoreCopyRequester requester, Neo4Net.helpers.CancellationRequest cancellationRequest, MoveAfterCopy moveAfterCopy) throws Exception
 		 public virtual void CopyStore( StoreCopyRequester requester, CancellationRequest cancellationRequest, MoveAfterCopy moveAfterCopy )
 		 {
 			  // Create a temp directory (or clean if present)
@@ -129,11 +129,11 @@ namespace Neo4Net.com.storecopy
 					_monitor.startReceivingStoreFiles();
 					ToFileStoreWriter storeWriter = new ToFileStoreWriter( tempDatabaseDirectory, _fs, _monitor );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: try (org.Neo4Net.com.Response<?> response = requester.copyStore(decorateWithProgressIndicator(storeWriter)))
+//ORIGINAL LINE: try (Neo4Net.com.Response<?> response = requester.copyStore(decorateWithProgressIndicator(storeWriter)))
 					try
 					{
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: using (org.Neo4Net.com.Response<JavaToDotNetGenericWildcard> response = requester.copyStore(decorateWithProgressIndicator(storeWriter)))
+//ORIGINAL LINE: using (Neo4Net.com.Response<JavaToDotNetGenericWildcard> response = requester.copyStore(decorateWithProgressIndicator(storeWriter)))
 							using ( Response<object> response = requester.CopyStore( DecorateWithProgressIndicator( storeWriter ) ) )
 							{
 							 _monitor.finishReceivingStoreFiles();
@@ -193,7 +193,7 @@ namespace Neo4Net.com.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void writeTransactionsToActiveLogFile(org.Neo4Net.io.layout.DatabaseLayout databaseLayout, org.Neo4Net.com.Response<?> response) throws Exception
+//ORIGINAL LINE: private void writeTransactionsToActiveLogFile(Neo4Net.io.layout.DatabaseLayout databaseLayout, Neo4Net.com.Response<?> response) throws Exception
 		 private void WriteTransactionsToActiveLogFile<T1>( DatabaseLayout databaseLayout, Response<T1> response )
 		 {
 			  LifeSupport life = new LifeSupport();
@@ -210,7 +210,7 @@ namespace Neo4Net.com.storecopy
 					// use a TransactionAppender, since it has checks for which transactions one can append.
 					FlushableChannel channel = logFiles.LogFile.Writer;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.transaction.log.TransactionLogWriter writer = new org.Neo4Net.kernel.impl.transaction.log.TransactionLogWriter(new org.Neo4Net.kernel.impl.transaction.log.entry.LogEntryWriter(channel));
+//ORIGINAL LINE: final Neo4Net.kernel.impl.transaction.log.TransactionLogWriter writer = new Neo4Net.kernel.impl.transaction.log.TransactionLogWriter(new Neo4Net.kernel.impl.transaction.log.entry.LogEntryWriter(channel));
 					TransactionLogWriter writer = new TransactionLogWriter( new LogEntryWriter( channel ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final java.util.concurrent.atomic.AtomicLong firstTxId = new java.util.concurrent.atomic.AtomicLong(BASE_TX_ID);
@@ -342,7 +342,7 @@ namespace Neo4Net.com.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void checkCancellation(org.Neo4Net.helpers.CancellationRequest cancellationRequest, java.io.File tempStore) throws java.io.IOException
+//ORIGINAL LINE: private void checkCancellation(Neo4Net.helpers.CancellationRequest cancellationRequest, java.io.File tempStore) throws java.io.IOException
 		 private void CheckCancellation( CancellationRequest cancellationRequest, File tempStore )
 		 {
 			  if ( cancellationRequest.CancellationRequested() )

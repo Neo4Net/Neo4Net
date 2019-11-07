@@ -27,7 +27,7 @@ namespace Neo4Net.Helpers
 	using Neo4Net.Collections.Helpers;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.util.FeatureToggles.flag;
+//	import static Neo4Net.util.FeatureToggles.flag;
 
 	/// <summary>
 	/// A utility for locating services. This implements the same functionality as <a
@@ -38,7 +38,7 @@ namespace Neo4Net.Helpers
 	/// that are differentiated by a String key. An example implementation might be:
 	/// <pre>
 	/// <code>
-	/// public abstract class StringConverter extends org.Neo4Net.commons.Service
+	/// public abstract class StringConverter extends Neo4Net.commons.Service
 	/// {
 	///     protected StringConverter(String id)
 	///     {
@@ -49,7 +49,7 @@ namespace Neo4Net.Helpers
 	/// 
 	///     public static StringConverter load( String id )
 	///     {
-	///         return org.Neo4Net.commons.Service.load( StringConverter.class, id );
+	///         return Neo4Net.commons.Service.load( StringConverter.class, id );
 	///     }
 	/// }
 	/// </code>

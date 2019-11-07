@@ -42,9 +42,9 @@ namespace Neo4Net.tools.applytx
 	using ConsoleInput = Neo4Net.tools.console.input.ConsoleInput;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.record.RecordLoad.NORMAL;
+//	import static Neo4Net.kernel.impl.store.record.RecordLoad.NORMAL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.tools.console.input.ConsoleUtil.airlineHelp;
+//	import static Neo4Net.tools.console.input.ConsoleUtil.airlineHelp;
 
 	/// <summary>
 	/// Able to dump records and record chains. Works as a <seealso cref="ConsoleInput"/> <seealso cref="Command"/>.
@@ -62,7 +62,7 @@ namespace Neo4Net.tools.applytx
 		 private readonly System.Func<StoreAccess> _store;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") public DumpRecordsCommand(System.Func<org.Neo4Net.kernel.impl.store.StoreAccess> store)
+//ORIGINAL LINE: @SuppressWarnings("unchecked") public DumpRecordsCommand(System.Func<Neo4Net.kernel.impl.store.StoreAccess> store)
 		 public DumpRecordsCommand( System.Func<StoreAccess> store )
 		 {
 			  this._store = store;

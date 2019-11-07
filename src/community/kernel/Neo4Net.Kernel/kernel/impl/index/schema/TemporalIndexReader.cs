@@ -38,7 +38,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using ValueGroup = Neo4Net.Values.Storable.ValueGroup;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.fusion.FusionIndexBase.forAll;
+//	import static Neo4Net.kernel.impl.index.schema.fusion.FusionIndexBase.forAll;
 
 	internal class TemporalIndexReader : TemporalIndexCache<TemporalIndexPartReader<JavaToDotNetGenericWildcard>>, IndexReader
 	{

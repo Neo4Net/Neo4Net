@@ -38,7 +38,7 @@ namespace Neo4Net.causalclustering.core.state.storage
 		 void WriteState( T state );
 
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//		 default <E> void writeOrVerify(T state, org.Neo4Net.function.ThrowingConsumer<T, E> verify) throws E, java.io.IOException
+//		 default <E> void writeOrVerify(T state, Neo4Net.function.ThrowingConsumer<T, E> verify) throws E, java.io.IOException
 	//	 {
 	//		  if (exists())
 	//		  {

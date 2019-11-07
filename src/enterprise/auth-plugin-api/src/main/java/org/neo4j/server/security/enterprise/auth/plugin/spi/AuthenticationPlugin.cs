@@ -64,10 +64,10 @@ namespace Neo4Net.Server.security.enterprise.auth.plugin.spi
 		 /// <returns> an <seealso cref="AuthenticationInfo"/> object if authentication was successful, otherwise {@code null} </returns>
 		 /// <exception cref="AuthenticationException"> if authentication failed
 		 /// </exception>
-		 /// <seealso cref= org.Neo4Net.server.security.enterprise.auth.plugin.api.AuthToken </seealso>
+		 /// <seealso cref= Neo4Net.server.security.enterprise.auth.plugin.api.AuthToken </seealso>
 		 /// <seealso cref= AuthProviderOperations#setAuthenticationCachingEnabled(boolean) </seealso>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: AuthenticationInfo authenticate(org.Neo4Net.server.security.enterprise.auth.plugin.api.AuthToken authToken) throws org.Neo4Net.server.security.enterprise.auth.plugin.api.AuthenticationException;
+//ORIGINAL LINE: AuthenticationInfo authenticate(Neo4Net.server.security.enterprise.auth.plugin.api.AuthToken authToken) throws Neo4Net.server.security.enterprise.auth.plugin.api.AuthenticationException;
 		 AuthenticationInfo Authenticate( AuthToken authToken );
 	}
 

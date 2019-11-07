@@ -35,7 +35,7 @@ namespace Neo4Net.Kernel.configuration
 		 /// <returns> a map containing any additional settings to add the the configuration </returns>
 		 /// <exception cref="InvalidSettingException"> in case of invalid values. </exception>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: java.util.Map<String,String> validate(@Nonnull Config config, @Nonnull Log log) throws org.Neo4Net.graphdb.config.InvalidSettingException;
+//ORIGINAL LINE: java.util.Map<String,String> validate(@Nonnull Config config, @Nonnull Log log) throws Neo4Net.graphdb.config.InvalidSettingException;
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 IDictionary<string, string> Validate( Config config, Log log );
 	}

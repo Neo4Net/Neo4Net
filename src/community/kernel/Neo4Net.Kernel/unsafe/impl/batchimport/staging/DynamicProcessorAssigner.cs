@@ -81,7 +81,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.staging
 		 private void AssignProcessorsToPotentialBottleNeck( StageExecution execution, int permits )
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.helpers.collection.Pair<Step<?>,float> bottleNeck = execution.stepsOrderedBy(org.Neo4Net.unsafe.impl.batchimport.stats.Keys.avg_processing_time, false).iterator().next();
+//ORIGINAL LINE: Neo4Net.helpers.collection.Pair<Step<?>,float> bottleNeck = execution.stepsOrderedBy(Neo4Net.unsafe.impl.batchimport.stats.Keys.avg_processing_time, false).iterator().next();
 			  Pair<Step<object>, float> bottleNeck = execution.StepsOrderedBy( Keys.avg_processing_time, false ).GetEnumerator().next();
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 //ORIGINAL LINE: Step<?> bottleNeckStep = bottleNeck.first();
@@ -104,7 +104,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.staging
 		 private void RemoveProcessorFromPotentialIdleStep( StageExecution execution )
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: for (org.Neo4Net.helpers.collection.Pair<Step<?>,float> fast : execution.stepsOrderedBy(org.Neo4Net.unsafe.impl.batchimport.stats.Keys.avg_processing_time, true))
+//ORIGINAL LINE: for (Neo4Net.helpers.collection.Pair<Step<?>,float> fast : execution.stepsOrderedBy(Neo4Net.unsafe.impl.batchimport.stats.Keys.avg_processing_time, true))
 			  foreach ( Pair<Step<object>, float> fast in execution.StepsOrderedBy( Keys.avg_processing_time, true ) )
 			  {
 					int numberOfProcessors = fast.First().processors(0);

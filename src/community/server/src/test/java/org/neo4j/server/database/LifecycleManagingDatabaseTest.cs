@@ -43,7 +43,7 @@ namespace Neo4Net.Server.database
 		 {
 			  // Given a lifecycled database that'll try to warm up Cypher when it starts
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.factory.GraphDatabaseFacade mockDb = mock(org.Neo4Net.kernel.impl.factory.GraphDatabaseFacade.class);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.factory.GraphDatabaseFacade mockDb = mock(Neo4Net.kernel.impl.factory.GraphDatabaseFacade.class);
 			  GraphDatabaseFacade mockDb = mock( typeof( GraphDatabaseFacade ) );
 			  Config config = Config.defaults();
 			  GraphDatabaseFacadeFactory.Dependencies deps = GraphDatabaseDependencies.newDependencies().userLogProvider(NullLogProvider.Instance);

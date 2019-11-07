@@ -54,7 +54,7 @@ namespace Neo4Net.Server.rest.security
 		}
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.server.security.enterprise.auth.MultiRealmAuthManagerRule authManagerRule = new org.Neo4Net.server.security.enterprise.auth.MultiRealmAuthManagerRule(userRepository, mock(org.Neo4Net.server.security.auth.AuthenticationStrategy.class));
+//ORIGINAL LINE: @Rule public Neo4Net.server.security.enterprise.auth.MultiRealmAuthManagerRule authManagerRule = new Neo4Net.server.security.enterprise.auth.MultiRealmAuthManagerRule(userRepository, mock(Neo4Net.server.security.auth.AuthenticationStrategy.class));
 		 public MultiRealmAuthManagerRule AuthManagerRule;
 
 		 protected internal override void SetupAuthManagerAndSubject()

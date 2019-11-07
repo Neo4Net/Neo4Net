@@ -39,7 +39,7 @@ namespace Neo4Net.Kernel.impl.pagecache
 	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Service.Implementation(KernelExtensionFactory.class) public class PageCacheWarmerKernelExtensionFactory extends org.Neo4Net.kernel.extension.KernelExtensionFactory<PageCacheWarmerKernelExtensionFactory.Dependencies>
+//ORIGINAL LINE: @Service.Implementation(KernelExtensionFactory.class) public class PageCacheWarmerKernelExtensionFactory extends Neo4Net.kernel.extension.KernelExtensionFactory<PageCacheWarmerKernelExtensionFactory.Dependencies>
 	public class PageCacheWarmerKernelExtensionFactory : KernelExtensionFactory<PageCacheWarmerKernelExtensionFactory.Dependencies>
 	{
 		 public interface Dependencies

@@ -28,7 +28,7 @@ namespace Neo4Net.Server.rest.causalclustering
 	using OutputFormat = Neo4Net.Server.rest.repr.OutputFormat;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Path(CausalClusteringService.BASE_PATH) public class CausalClusteringService implements org.Neo4Net.server.rest.management.AdvertisableService
+//ORIGINAL LINE: @Path(CausalClusteringService.BASE_PATH) public class CausalClusteringService implements Neo4Net.server.rest.management.AdvertisableService
 	public class CausalClusteringService : AdvertisableService
 	{
 		 internal const string BASE_PATH = "server/causalclustering/";

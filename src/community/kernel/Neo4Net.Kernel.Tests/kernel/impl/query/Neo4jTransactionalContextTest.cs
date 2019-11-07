@@ -33,11 +33,11 @@ namespace Neo4Net.Kernel.impl.query
 	using ExecutionStatistics = Neo4Net.Kernel.Api.Internal.ExecutionStatistics;
 	using Kernel = Neo4Net.Kernel.Api.Internal.Kernel;
 	using SecurityContext = Neo4Net.Kernel.Api.Internal.security.SecurityContext;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
-	using QueryRegistryOperations = Neo4Net.Kernel.api.QueryRegistryOperations;
-	using Statement = Neo4Net.Kernel.api.Statement;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
+	using QueryRegistryOperations = Neo4Net.Kernel.Api.QueryRegistryOperations;
+	using Statement = Neo4Net.Kernel.Api.Statement;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
-	using ExecutingQuery = Neo4Net.Kernel.api.query.ExecutingQuery;
+	using ExecutingQuery = Neo4Net.Kernel.Api.query.ExecutingQuery;
 	using KernelStatement = Neo4Net.Kernel.Impl.Api.KernelStatement;
 	using ThreadToStatementContextBridge = Neo4Net.Kernel.impl.core.ThreadToStatementContextBridge;
 	using InternalTransaction = Neo4Net.Kernel.impl.coreapi.InternalTransaction;
@@ -71,7 +71,7 @@ namespace Neo4Net.Kernel.impl.query
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.@virtual.VirtualValues.EMPTY_MAP;
+//	import static Neo4Net.values.@virtual.VirtualValues.EMPTY_MAP;
 
 	public class Neo4NetTransactionalContextTest
 	{

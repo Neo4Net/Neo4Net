@@ -33,7 +33,7 @@ namespace Neo4Net.Tooling.procedure
 	using Neo4Net.Tooling.procedure.validators;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.tooling.procedure.CompilerOptions.IGNORE_CONTEXT_WARNINGS_OPTION;
+//	import static Neo4Net.tooling.procedure.CompilerOptions.IGNORE_CONTEXT_WARNINGS_OPTION;
 
 	/// <summary>
 	/// Base processor that processes <seealso cref="Element"/> annotated with {@code T}.

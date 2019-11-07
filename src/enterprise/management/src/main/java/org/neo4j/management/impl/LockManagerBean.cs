@@ -34,7 +34,7 @@ namespace Neo4Net.management.impl
 	using LockInfo = Neo4Net.Kernel.info.LockInfo;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Service.Implementation(ManagementBeanProvider.class) public final class LockManagerBean extends org.Neo4Net.jmx.impl.ManagementBeanProvider
+//ORIGINAL LINE: @Service.Implementation(ManagementBeanProvider.class) public final class LockManagerBean extends Neo4Net.jmx.impl.ManagementBeanProvider
 	public sealed class LockManagerBean : ManagementBeanProvider
 	{
 		 public LockManagerBean() : base(typeof(LockManager))
@@ -42,7 +42,7 @@ namespace Neo4Net.management.impl
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected org.Neo4Net.jmx.impl.Neo4NetMBean createMBean(org.Neo4Net.jmx.impl.ManagementData management) throws javax.management.NotCompliantMBeanException
+//ORIGINAL LINE: protected Neo4Net.jmx.impl.Neo4NetMBean createMBean(Neo4Net.jmx.impl.ManagementData management) throws javax.management.NotCompliantMBeanException
 		 protected internal override Neo4NetMBean CreateMBean( ManagementData management )
 		 {
 			  return new LockManagerImpl( management );
@@ -59,7 +59,7 @@ namespace Neo4Net.management.impl
 			  internal readonly Locks LockManagerConflict;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: LockManagerImpl(org.Neo4Net.jmx.impl.ManagementData management) throws javax.management.NotCompliantMBeanException
+//ORIGINAL LINE: LockManagerImpl(Neo4Net.jmx.impl.ManagementData management) throws javax.management.NotCompliantMBeanException
 			  internal LockManagerImpl( ManagementData management ) : base( management )
 			  {
 					this.LockManagerConflict = LockManager( management );
@@ -97,7 +97,7 @@ namespace Neo4Net.management.impl
 				  get
 				  {
 	//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-	//ORIGINAL LINE: final java.util.List<org.Neo4Net.kernel.info.LockInfo> locks = new java.util.ArrayList<>();
+	//ORIGINAL LINE: final java.util.List<Neo4Net.kernel.info.LockInfo> locks = new java.util.ArrayList<>();
 						IList<LockInfo> locks = new List<LockInfo>();
 						LockManagerConflict.accept( ( resourceType, resourceId, description, waitTime, lockIdentityHashCode ) => locks.Add( new LockInfo( resourceType.ToString(), resourceId.ToString(), description ) ) );
 						return locks;
@@ -105,7 +105,7 @@ namespace Neo4Net.management.impl
 			  }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public java.util.List<org.Neo4Net.kernel.info.LockInfo> getContendedLocks(final long minWaitTime)
+//ORIGINAL LINE: public java.util.List<Neo4Net.kernel.info.LockInfo> getContendedLocks(final long minWaitTime)
 			  public override IList<LockInfo> GetContendedLocks( long minWaitTime )
 			  {
 					// Contended locks can no longer be found by the new lock manager, since that knowledge is not centralized.

@@ -52,15 +52,15 @@ namespace Neo4Net.Bolt.v1.transport.integration
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.MatcherAssert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.messaging.util.MessageMatchers.msgFailure;
+//	import static Neo4Net.bolt.v1.messaging.util.MessageMatchers.msgFailure;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.messaging.util.MessageMatchers.msgSuccess;
+//	import static Neo4Net.bolt.v1.messaging.util.MessageMatchers.msgSuccess;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.transport.integration.TransportTestUtil.eventuallyDisconnects;
+//	import static Neo4Net.bolt.v1.transport.integration.TransportTestUtil.eventuallyDisconnects;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.auth_enabled;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.auth_enabled;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.pointValue;
+//	import static Neo4Net.values.storable.Values.pointValue;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class UnsupportedStructTypesV1IT
@@ -181,7 +181,7 @@ namespace Neo4Net.Bolt.v1.transport.integration
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void testFailureWithV2Value(org.Neo4Net.values.AnyValue value, String description) throws Exception
+//ORIGINAL LINE: private void testFailureWithV2Value(Neo4Net.values.AnyValue value, String description) throws Exception
 		 private void TestFailureWithV2Value( AnyValue value, string description )
 		 {
 			  _connection.connect( _address ).send( _util.defaultAcceptedVersions() );
@@ -196,7 +196,7 @@ namespace Neo4Net.Bolt.v1.transport.integration
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private byte[] createRunWithV2Value(org.Neo4Net.values.AnyValue value) throws java.io.IOException
+//ORIGINAL LINE: private byte[] createRunWithV2Value(Neo4Net.values.AnyValue value) throws java.io.IOException
 		 private sbyte[] CreateRunWithV2Value( AnyValue value )
 		 {
 			  PackedOutputArray @out = new PackedOutputArray();

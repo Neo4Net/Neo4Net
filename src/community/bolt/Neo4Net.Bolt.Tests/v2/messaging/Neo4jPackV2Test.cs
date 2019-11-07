@@ -46,27 +46,27 @@ namespace Neo4Net.Bolt.v2.messaging
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.packstream.PackStream.INT_16;
+//	import static Neo4Net.bolt.v1.packstream.PackStream.INT_16;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.packstream.PackStream.INT_32;
+//	import static Neo4Net.bolt.v1.packstream.PackStream.INT_32;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.CoordinateReferenceSystem.Cartesian;
+//	import static Neo4Net.values.storable.CoordinateReferenceSystem.Cartesian;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.CoordinateReferenceSystem.Cartesian_3D;
+//	import static Neo4Net.values.storable.CoordinateReferenceSystem.Cartesian_3D;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.CoordinateReferenceSystem.WGS84;
+//	import static Neo4Net.values.storable.CoordinateReferenceSystem.WGS84;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.CoordinateReferenceSystem.WGS84_3D;
+//	import static Neo4Net.values.storable.CoordinateReferenceSystem.WGS84_3D;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.DateTimeValue.datetime;
+//	import static Neo4Net.values.storable.DateTimeValue.datetime;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.doubleValue;
+//	import static Neo4Net.values.storable.Values.doubleValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.intValue;
+//	import static Neo4Net.values.storable.Values.intValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.unsafePointValue;
+//	import static Neo4Net.values.storable.Values.unsafePointValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.@virtual.VirtualValues.list;
+//	import static Neo4Net.values.@virtual.VirtualValues.list;
 
 	public class Neo4NetPackV2Test
 	{
@@ -78,7 +78,7 @@ namespace Neo4Net.Bolt.v2.messaging
 		 private const int RANDOM_LIST_MAX_SIZE = 500;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.RandomRule random = new org.Neo4Net.test.rule.RandomRule();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.RandomRule random = new Neo4Net.test.rule.RandomRule();
 		 public RandomRule Random = new RandomRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -361,7 +361,7 @@ namespace Neo4Net.Bolt.v2.messaging
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private static <T extends org.Neo4Net.values.AnyValue> T unpack(org.Neo4Net.bolt.v1.packstream.PackedOutputArray output)
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private static <T extends Neo4Net.values.AnyValue> T unpack(Neo4Net.bolt.v1.packstream.PackedOutputArray output)
 		 private static T Unpack<T>( PackedOutputArray output ) where T : Neo4Net.Values.AnyValue
 		 {
 			  try

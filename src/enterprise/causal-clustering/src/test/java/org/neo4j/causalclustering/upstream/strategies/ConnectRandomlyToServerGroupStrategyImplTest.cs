@@ -43,11 +43,11 @@ namespace Neo4Net.causalclustering.upstream.strategies
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.Matchers.isIn;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.upstream.strategies.ConnectToRandomCoreServerStrategyTest.fakeCoreTopology;
+//	import static Neo4Net.causalclustering.upstream.strategies.ConnectToRandomCoreServerStrategyTest.fakeCoreTopology;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.upstream.strategies.UserDefinedConfigurationStrategyTest.fakeTopologyService;
+//	import static Neo4Net.causalclustering.upstream.strategies.UserDefinedConfigurationStrategyTest.fakeTopologyService;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.upstream.strategies.UserDefinedConfigurationStrategyTest.memberIDs;
+//	import static Neo4Net.causalclustering.upstream.strategies.UserDefinedConfigurationStrategyTest.memberIDs;
 
 	public class ConnectRandomlyToServerGroupStrategyImplTest
 	{

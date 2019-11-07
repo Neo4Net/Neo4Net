@@ -21,7 +21,7 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 {
 	using Test = org.junit.Test;
 
-	using NodeLabelUpdate = Neo4Net.Kernel.api.labelscan.NodeLabelUpdate;
+	using NodeLabelUpdate = Neo4Net.Kernel.Api.LabelScan.NodeLabelUpdate;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertArrayEquals;

@@ -25,7 +25,7 @@ namespace Neo4Net.Server.database
 	using HttpContext = com.sun.jersey.api.core.HttpContext;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Provider public class IGraphDatabaseServiceProvider extends InjectableProvider<org.Neo4Net.graphdb.GraphDatabaseService>
+//ORIGINAL LINE: @Provider public class IGraphDatabaseServiceProvider extends InjectableProvider<Neo4Net.graphdb.GraphDatabaseService>
 	public class IGraphDatabaseServiceProvider : InjectableProvider<GraphDatabaseService>
 	{
 		 public Database Database;

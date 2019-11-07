@@ -61,7 +61,7 @@ namespace Neo4Net.Kernel.impl.enterprise.store.id
 		 private const int OPERATIONS_COUNT = 10_000;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.DatabaseRule db = new org.Neo4Net.test.rule.EnterpriseDatabaseRule().withSetting(org.Neo4Net.kernel.impl.enterprise.configuration.EnterpriseEditionSettings.idTypesToReuse, org.Neo4Net.kernel.impl.store.id.IdType.NODE.name());
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.DatabaseRule db = new Neo4Net.test.rule.EnterpriseDatabaseRule().withSetting(Neo4Net.kernel.impl.enterprise.configuration.EnterpriseEditionSettings.idTypesToReuse, Neo4Net.kernel.impl.store.id.IdType.NODE.name());
 		 public readonly DatabaseRule Db = new EnterpriseDatabaseRule().withSetting(EnterpriseEditionSettings.idTypesToReuse, IdType.NODE.name());
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

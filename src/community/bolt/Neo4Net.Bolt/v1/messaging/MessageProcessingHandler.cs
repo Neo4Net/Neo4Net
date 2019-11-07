@@ -39,7 +39,7 @@ namespace Neo4Net.Bolt.v1.messaging
 	using MapValueBuilder = Neo4Net.Values.@virtual.MapValueBuilder;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.messaging.response.IgnoredMessage.IGNORED_MESSAGE;
+//	import static Neo4Net.bolt.v1.messaging.response.IgnoredMessage.IGNORED_MESSAGE;
 
 	public class MessageProcessingHandler : BoltResponseHandler
 	{
@@ -62,7 +62,7 @@ namespace Neo4Net.Bolt.v1.messaging
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void onRecords(org.Neo4Net.bolt.runtime.BoltResult result, boolean pull) throws Exception
+//ORIGINAL LINE: public void onRecords(Neo4Net.bolt.runtime.BoltResult result, boolean pull) throws Exception
 		 public override void OnRecords( BoltResult result, bool pull )
 		 {
 		 }

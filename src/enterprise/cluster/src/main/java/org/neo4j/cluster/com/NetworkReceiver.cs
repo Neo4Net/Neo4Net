@@ -56,7 +56,7 @@ namespace Neo4Net.cluster.com
 	using LogProvider = Neo4Net.Logging.LogProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.NamedThreadFactory.daemon;
+//	import static Neo4Net.helpers.NamedThreadFactory.daemon;
 
 	/// <summary>
 	/// TCP version of a Networked Instance. This handles receiving messages to be consumed by local state-machines and
@@ -337,7 +337,7 @@ namespace Neo4Net.cluster.com
 					}
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.cluster.com.message.Message message = (org.Neo4Net.cluster.com.message.Message) event.getMessage();
+//ORIGINAL LINE: final Neo4Net.cluster.com.message.Message message = (Neo4Net.cluster.com.message.Message) event.getMessage();
 					Message message = ( Message ) @event.Message;
 
 					// Fix HEADER_FROM header since sender cannot know it's correct IP/hostname

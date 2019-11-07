@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.impl.storemigration.participant
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.stream.Streams.ofOptional;
+//	import static Neo4Net.stream.Streams.ofOptional;
 
 	internal class StoreMigratorFileOperation
 	{
@@ -40,7 +40,7 @@ namespace Neo4Net.Kernel.impl.storemigration.participant
 		 /// <param name="toLayout"> directory to receive the database files. </param>
 		 /// <exception cref="IOException"> if any of the operations fail for any reason. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static void fileOperation(org.Neo4Net.kernel.impl.storemigration.FileOperation operation, org.Neo4Net.io.fs.FileSystemAbstraction fs, org.Neo4Net.io.layout.DatabaseLayout fromLayout, org.Neo4Net.io.layout.DatabaseLayout toLayout, Iterable<org.Neo4Net.io.layout.DatabaseFile> databaseFiles, boolean allowSkipNonExistentFiles, org.Neo4Net.kernel.impl.storemigration.ExistingTargetStrategy existingTargetStrategy) throws java.io.IOException
+//ORIGINAL LINE: static void fileOperation(Neo4Net.kernel.impl.storemigration.FileOperation operation, Neo4Net.io.fs.FileSystemAbstraction fs, Neo4Net.io.layout.DatabaseLayout fromLayout, Neo4Net.io.layout.DatabaseLayout toLayout, Iterable<Neo4Net.io.layout.DatabaseFile> databaseFiles, boolean allowSkipNonExistentFiles, Neo4Net.kernel.impl.storemigration.ExistingTargetStrategy existingTargetStrategy) throws java.io.IOException
 		 internal static void FileOperation( FileOperation operation, FileSystemAbstraction fs, DatabaseLayout fromLayout, DatabaseLayout toLayout, IEnumerable<DatabaseFile> databaseFiles, bool allowSkipNonExistentFiles, ExistingTargetStrategy existingTargetStrategy )
 		 {
 			  foreach ( DatabaseFile databaseStore in databaseFiles )
@@ -52,7 +52,7 @@ namespace Neo4Net.Kernel.impl.storemigration.participant
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void perform(org.Neo4Net.kernel.impl.storemigration.FileOperation operation, org.Neo4Net.io.fs.FileSystemAbstraction fs, org.Neo4Net.io.layout.DatabaseLayout fromLayout, org.Neo4Net.io.layout.DatabaseLayout toLayout, boolean allowSkipNonExistentFiles, org.Neo4Net.kernel.impl.storemigration.ExistingTargetStrategy existingTargetStrategy, java.io.File[] files) throws java.io.IOException
+//ORIGINAL LINE: private static void perform(Neo4Net.kernel.impl.storemigration.FileOperation operation, Neo4Net.io.fs.FileSystemAbstraction fs, Neo4Net.io.layout.DatabaseLayout fromLayout, Neo4Net.io.layout.DatabaseLayout toLayout, boolean allowSkipNonExistentFiles, Neo4Net.kernel.impl.storemigration.ExistingTargetStrategy existingTargetStrategy, java.io.File[] files) throws java.io.IOException
 		 private static void Perform( FileOperation operation, FileSystemAbstraction fs, DatabaseLayout fromLayout, DatabaseLayout toLayout, bool allowSkipNonExistentFiles, ExistingTargetStrategy existingTargetStrategy, File[] files )
 		 {
 			  foreach ( File file in files )

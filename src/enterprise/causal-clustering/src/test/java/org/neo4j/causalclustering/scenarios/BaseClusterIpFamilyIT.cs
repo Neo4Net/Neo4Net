@@ -38,9 +38,9 @@ namespace Neo4Net.causalclustering.scenarios
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.discovery.Cluster.dataMatchesEventually;
+//	import static Neo4Net.causalclustering.discovery.Cluster.dataMatchesEventually;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.helpers.DataCreator.countNodes;
+//	import static Neo4Net.causalclustering.helpers.DataCreator.countNodes;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public abstract class BaseClusterIpFamilyIT
@@ -53,11 +53,11 @@ namespace Neo4Net.causalclustering.scenarios
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.causalclustering.ClusterRule clusterRule = new org.Neo4Net.test.causalclustering.ClusterRule().withNumberOfCoreMembers(3).withNumberOfReadReplicas(3).withSharedCoreParam(org.Neo4Net.causalclustering.core.CausalClusteringSettings.disable_middleware_logging, "false").withSharedReadReplicaParam(org.Neo4Net.causalclustering.core.CausalClusteringSettings.disable_middleware_logging, "false").withSharedCoreParam(org.Neo4Net.causalclustering.core.CausalClusteringSettings.middleware_logging_level, "0").withSharedReadReplicaParam(org.Neo4Net.causalclustering.core.CausalClusteringSettings.middleware_logging_level, "0");
+//ORIGINAL LINE: @Rule public final Neo4Net.test.causalclustering.ClusterRule clusterRule = new Neo4Net.test.causalclustering.ClusterRule().withNumberOfCoreMembers(3).withNumberOfReadReplicas(3).withSharedCoreParam(Neo4Net.causalclustering.core.CausalClusteringSettings.disable_middleware_logging, "false").withSharedReadReplicaParam(Neo4Net.causalclustering.core.CausalClusteringSettings.disable_middleware_logging, "false").withSharedCoreParam(Neo4Net.causalclustering.core.CausalClusteringSettings.middleware_logging_level, "0").withSharedReadReplicaParam(Neo4Net.causalclustering.core.CausalClusteringSettings.middleware_logging_level, "0");
 		 public readonly ClusterRule ClusterRule = new ClusterRule().withNumberOfCoreMembers(3).withNumberOfReadReplicas(3).withSharedCoreParam(CausalClusteringSettings.disable_middleware_logging, "false").withSharedReadReplicaParam(CausalClusteringSettings.disable_middleware_logging, "false").withSharedCoreParam(CausalClusteringSettings.middleware_logging_level, "0").withSharedReadReplicaParam(CausalClusteringSettings.middleware_logging_level, "0");
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private org.Neo4Net.causalclustering.discovery.Cluster<?> cluster;
+//ORIGINAL LINE: private Neo4Net.causalclustering.discovery.Cluster<?> cluster;
 		 private Cluster<object> _cluster;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

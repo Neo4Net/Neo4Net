@@ -28,30 +28,30 @@ namespace Neo4Net.Kernel.builtinprocs
 	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
 	using Neo4NetTypes = Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes;
 	using QualifiedName = Neo4Net.Kernel.Api.Internal.procs.QualifiedName;
-	using ResourceTracker = Neo4Net.Kernel.api.ResourceTracker;
+	using ResourceTracker = Neo4Net.Kernel.Api.ResourceTracker;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
-	using CallableProcedure = Neo4Net.Kernel.api.proc.CallableProcedure;
-	using Context = Neo4Net.Kernel.api.proc.Context;
+	using CallableProcedure = Neo4Net.Kernel.Api.Procs.CallableProcedure;
+	using Context = Neo4Net.Kernel.Api.Procs.Context;
 	using Mode = Neo4Net.Procedure.Mode;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.map;
+//	import static Neo4Net.helpers.collection.MapUtil.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Pair.pair;
+//	import static Neo4Net.helpers.collection.Pair.pair;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.procs.ProcedureSignature.procedureSignature;
+//	import static Neo4Net.Kernel.Api.Internal.procs.ProcedureSignature.procedureSignature;
 
-	public class JmxQueryProcedure : Neo4Net.Kernel.api.proc.CallableProcedure_BasicProcedure
+	public class JmxQueryProcedure : Neo4Net.Kernel.Api.Procs.CallableProcedure_BasicProcedure
 	{
 		 private readonly MBeanServer _jmxServer;
 
-		 public JmxQueryProcedure( QualifiedName name, MBeanServer jmxServer ) : base( procedureSignature( name ).@in( "query", Neo4NetTypes.NTString ).@out( "name", Neo4NetTypes.NTString ).@out( "description", Neo4NetTypes.NTString ).@out( "attributes", Neo4NetTypes.NTMap ).mode( Mode.DBMS ).description( "Query JMX management data by domain and name. For instance, \"org.Neo4Net:*\"" ).build() )
+		 public JmxQueryProcedure( QualifiedName name, MBeanServer jmxServer ) : base( procedureSignature( name ).@in( "query", Neo4NetTypes.NTString ).@out( "name", Neo4NetTypes.NTString ).@out( "description", Neo4NetTypes.NTString ).@out( "attributes", Neo4NetTypes.NTMap ).mode( Mode.DBMS ).description( "Query JMX management data by domain and name. For instance, \"Neo4Net:*\"" ).build() )
 		 {
 			  this._jmxServer = jmxServer;
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.collection.RawIterator<Object[], org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException> apply(org.Neo4Net.kernel.api.proc.Context ctx, Object[] input, org.Neo4Net.kernel.api.ResourceTracker resourceTracker) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
+//ORIGINAL LINE: public Neo4Net.collection.RawIterator<Object[], Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException> apply(Neo4Net.kernel.api.proc.Context ctx, Object[] input, Neo4Net.kernel.api.ResourceTracker resourceTracker) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 		 public override RawIterator<object[], ProcedureException> Apply( Context ctx, object[] input, ResourceTracker resourceTracker )
 		 {
 			  string query = input[0].ToString();
@@ -82,7 +82,7 @@ namespace Neo4Net.Kernel.builtinprocs
 			  }
 			  catch ( MalformedObjectNameException )
 			  {
-					throw new ProcedureException( Neo4Net.Kernel.Api.Exceptions.Status_Procedure.ProcedureCallFailed, "'%s' is an invalid JMX name pattern. Valid queries should use" + "the syntax outlined in the javax.management.ObjectName API documentation." + "For instance, try 'org.Neo4Net:*' to find all JMX beans of the 'org.Neo4Net' " + "domain, or '*:*' to find every JMX bean.", query );
+					throw new ProcedureException( Neo4Net.Kernel.Api.Exceptions.Status_Procedure.ProcedureCallFailed, "'%s' is an invalid JMX name pattern. Valid queries should use" + "the syntax outlined in the javax.management.ObjectName API documentation." + "For instance, try 'Neo4Net:*' to find all JMX beans of the 'Neo4Net' " + "domain, or '*:*' to find every JMX bean.", query );
 			  }
 		 }
 

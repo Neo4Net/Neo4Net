@@ -19,7 +19,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Kernel.api
+namespace Neo4Net.Kernel.Api
 {
 	using StorageReader = Neo4Net.Kernel.Api.StorageEngine.StorageReader;
 	using ReadableTransactionState = Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState;

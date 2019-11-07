@@ -73,11 +73,11 @@ namespace Neo4Net.Kernel.ha.cluster.modeswitch
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.ha.cluster.HighAvailabilityMemberState.PENDING;
+//	import static Neo4Net.kernel.ha.cluster.HighAvailabilityMemberState.PENDING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.ha.cluster.HighAvailabilityMemberState.TO_SLAVE;
+//	import static Neo4Net.kernel.ha.cluster.HighAvailabilityMemberState.TO_SLAVE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.logging.AssertableLogProvider.inLog;
+//	import static Neo4Net.logging.AssertableLogProvider.inLog;
 
 	public class HighAvailabilityModeSwitcherTest
 	{
@@ -178,7 +178,7 @@ namespace Neo4Net.Kernel.ha.cluster.modeswitch
 			  ClusterMemberAvailability availability = mock( typeof( ClusterMemberAvailability ) );
 			  SwitchToSlaveCopyThenBranch switchToSlave = mock( typeof( SwitchToSlaveCopyThenBranch ) );
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("resource") org.Neo4Net.kernel.ha.cluster.SwitchToMaster switchToMaster = mock(org.Neo4Net.kernel.ha.cluster.SwitchToMaster.class);
+//ORIGINAL LINE: @SuppressWarnings("resource") Neo4Net.kernel.ha.cluster.SwitchToMaster switchToMaster = mock(Neo4Net.kernel.ha.cluster.SwitchToMaster.class);
 			  SwitchToMaster switchToMaster = mock( typeof( SwitchToMaster ) );
 
 			  when( switchToSlave.SwitchToSlaveConflict( any( typeof( LifeSupport ) ), any( typeof( URI ) ), any( typeof( URI ) ), any( typeof( CancellationRequest ) ) ) ).thenAnswer(invocationOnMock =>
@@ -591,7 +591,7 @@ namespace Neo4Net.Kernel.ha.cluster.modeswitch
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") public static System.Func<org.Neo4Net.Kernel.Api.StorageEngine.StoreId> storeSupplierMock()
+//ORIGINAL LINE: @SuppressWarnings("unchecked") public static System.Func<Neo4Net.Kernel.Api.StorageEngine.StoreId> storeSupplierMock()
 		 public static System.Func<StoreId> StoreSupplierMock()
 		 {
 			  System.Func<StoreId> supplier = mock( typeof( System.Func ) );

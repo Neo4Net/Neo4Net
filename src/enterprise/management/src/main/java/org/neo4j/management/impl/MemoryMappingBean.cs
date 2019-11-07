@@ -32,7 +32,7 @@ namespace Neo4Net.management.impl
 	using NeoStoreDataSource = Neo4Net.Kernel.NeoStoreDataSource;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Deprecated @Service.Implementation(ManagementBeanProvider.class) public final class MemoryMappingBean extends org.Neo4Net.jmx.impl.ManagementBeanProvider
+//ORIGINAL LINE: @Deprecated @Service.Implementation(ManagementBeanProvider.class) public final class MemoryMappingBean extends Neo4Net.jmx.impl.ManagementBeanProvider
 	[Obsolete]
 	public sealed class MemoryMappingBean : ManagementBeanProvider
 	{
@@ -41,7 +41,7 @@ namespace Neo4Net.management.impl
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected org.Neo4Net.jmx.impl.Neo4NetMBean createMBean(org.Neo4Net.jmx.impl.ManagementData management) throws javax.management.NotCompliantMBeanException
+//ORIGINAL LINE: protected Neo4Net.jmx.impl.Neo4NetMBean createMBean(Neo4Net.jmx.impl.ManagementData management) throws javax.management.NotCompliantMBeanException
 		 protected internal override Neo4NetMBean CreateMBean( ManagementData management )
 		 {
 			  return new MemoryMappingImpl( management );
@@ -57,7 +57,7 @@ namespace Neo4Net.management.impl
 			  internal readonly NeoStoreDataSource Datasource;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: MemoryMappingImpl(org.Neo4Net.jmx.impl.ManagementData management) throws javax.management.NotCompliantMBeanException
+//ORIGINAL LINE: MemoryMappingImpl(Neo4Net.jmx.impl.ManagementData management) throws javax.management.NotCompliantMBeanException
 			  internal MemoryMappingImpl( ManagementData management ) : base( management )
 			  {
 					this.Datasource = NeoDataSource( management );

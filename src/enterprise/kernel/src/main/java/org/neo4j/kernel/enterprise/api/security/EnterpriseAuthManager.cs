@@ -25,16 +25,16 @@
 namespace Neo4Net.Kernel.enterprise.api.security
 {
 
-	using AuthManager = Neo4Net.Kernel.api.security.AuthManager;
-	using AuthToken = Neo4Net.Kernel.api.security.AuthToken;
-	using InvalidAuthTokenException = Neo4Net.Kernel.api.security.exception.InvalidAuthTokenException;
+	using AuthManager = Neo4Net.Kernel.Api.security.AuthManager;
+	using AuthToken = Neo4Net.Kernel.Api.security.AuthToken;
+	using InvalidAuthTokenException = Neo4Net.Kernel.Api.security.exception.InvalidAuthTokenException;
 
 	public interface EnterpriseAuthManager : AuthManager
 	{
 		 void ClearAuthCache();
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: EnterpriseLoginContext login(java.util.Map<String,Object> authToken) throws org.Neo4Net.kernel.api.security.exception.InvalidAuthTokenException;
+//ORIGINAL LINE: EnterpriseLoginContext login(java.util.Map<String,Object> authToken) throws Neo4Net.kernel.api.security.exception.InvalidAuthTokenException;
 		 EnterpriseLoginContext Login( IDictionary<string, object> authToken );
 
 		 /// <summary>

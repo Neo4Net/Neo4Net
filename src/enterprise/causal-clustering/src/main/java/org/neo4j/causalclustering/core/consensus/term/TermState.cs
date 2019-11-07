@@ -76,7 +76,7 @@ namespace Neo4Net.causalclustering.core.consensus.term
 		 public class Marshal : SafeStateMarshal<TermState>
 		 {
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void marshal(TermState termState, org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public void marshal(TermState termState, Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
 //JAVA TO C# CONVERTER NOTE: Members cannot have the same name as their enclosing type:
 			  public override void MarshalConflict( TermState termState, WritableChannel channel )
 			  {
@@ -84,7 +84,7 @@ namespace Neo4Net.causalclustering.core.consensus.term
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected TermState unmarshal0(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: protected TermState unmarshal0(Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
 			  protected internal override TermState Unmarshal0( ReadableChannel channel )
 			  {
 					return new TermState( channel.Long );

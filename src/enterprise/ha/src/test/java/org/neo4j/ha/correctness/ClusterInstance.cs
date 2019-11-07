@@ -102,7 +102,7 @@ namespace Neo4Net.ha.correctness
 
 			  DelayedDirectExecutor executor = new DelayedDirectExecutor( logging );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.cluster.protocol.atomicbroadcast.multipaxos.context.MultiPaxosContext context = new org.Neo4Net.cluster.protocol.atomicbroadcast.multipaxos.context.MultiPaxosContext(id, org.Neo4Net.helpers.collection.Iterables.iterable(new org.Neo4Net.cluster.protocol.election.ElectionRole(org.Neo4Net.cluster.protocol.cluster.ClusterConfiguration.COORDINATOR)), new org.Neo4Net.cluster.protocol.cluster.ClusterConfiguration(configuration.getName(), logging, configuration.getMemberURIs()), executor, logging, objStreamFactory, objStreamFactory, acceptorInstances, timeouts, new org.Neo4Net.kernel.ha.cluster.DefaultElectionCredentialsProvider(id, new StateVerifierLastTxIdGetter(), new MemberInfoProvider()), config);
+//ORIGINAL LINE: final Neo4Net.cluster.protocol.atomicbroadcast.multipaxos.context.MultiPaxosContext context = new Neo4Net.cluster.protocol.atomicbroadcast.multipaxos.context.MultiPaxosContext(id, Neo4Net.helpers.collection.Iterables.iterable(new Neo4Net.cluster.protocol.election.ElectionRole(Neo4Net.cluster.protocol.cluster.ClusterConfiguration.COORDINATOR)), new Neo4Net.cluster.protocol.cluster.ClusterConfiguration(configuration.getName(), logging, configuration.getMemberURIs()), executor, logging, objStreamFactory, objStreamFactory, acceptorInstances, timeouts, new Neo4Net.kernel.ha.cluster.DefaultElectionCredentialsProvider(id, new StateVerifierLastTxIdGetter(), new MemberInfoProvider()), config);
 			  MultiPaxosContext context = new MultiPaxosContext( id, Iterables.iterable( new ElectionRole( ClusterConfiguration.COORDINATOR ) ), new ClusterConfiguration( configuration.Name, logging, configuration.MemberURIs ), executor, logging, objStreamFactory, objStreamFactory, acceptorInstances, timeouts, new DefaultElectionCredentialsProvider( id, new StateVerifierLastTxIdGetter(), new MemberInfoProvider() ), config );
 			  context.ClusterContext.BoundAt = uri;
 
@@ -137,7 +137,7 @@ namespace Neo4Net.ha.correctness
 		 /// Process a message, returns all messages generated as output.
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: public Iterable<org.Neo4Net.cluster.com.message.Message<? extends org.Neo4Net.cluster.com.message.MessageType>> process(org.Neo4Net.cluster.com.message.Message<? extends org.Neo4Net.cluster.com.message.MessageType> message)
+//ORIGINAL LINE: public Iterable<Neo4Net.cluster.com.message.Message<? extends Neo4Net.cluster.com.message.MessageType>> process(Neo4Net.cluster.com.message.Message<? extends Neo4Net.cluster.com.message.MessageType> message)
 		 public virtual IEnumerable<Message<MessageType>> Process<T1>( Message<T1> message ) where T1 : Neo4Net.cluster.com.message.MessageType
 		 {
 			  if ( _online )
@@ -329,7 +329,7 @@ namespace Neo4Net.ha.correctness
 		 {
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private final java.util.List<org.Neo4Net.cluster.com.message.Message<? extends org.Neo4Net.cluster.com.message.MessageType>> messages = new java.util.ArrayList<>();
+//ORIGINAL LINE: private final java.util.List<Neo4Net.cluster.com.message.Message<? extends Neo4Net.cluster.com.message.MessageType>> messages = new java.util.ArrayList<>();
 			  internal readonly IList<Message<MessageType>> MessagesConflict = new List<Message<MessageType>>();
 			  internal readonly URI Uri;
 
@@ -347,7 +347,7 @@ namespace Neo4Net.ha.correctness
 			  public override void Process<T1>( IList<T1> msgList ) where T1 : Neo4Net.cluster.com.message.MessageType
 			  {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: for (org.Neo4Net.cluster.com.message.Message<? extends org.Neo4Net.cluster.com.message.MessageType> msg : msgList)
+//ORIGINAL LINE: for (Neo4Net.cluster.com.message.Message<? extends Neo4Net.cluster.com.message.MessageType> msg : msgList)
 					foreach ( Message<MessageType> msg in msgList )
 					{
 						 Process( msg );
@@ -355,7 +355,7 @@ namespace Neo4Net.ha.correctness
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: public Iterable<org.Neo4Net.cluster.com.message.Message<? extends org.Neo4Net.cluster.com.message.MessageType>> messages()
+//ORIGINAL LINE: public Iterable<Neo4Net.cluster.com.message.Message<? extends Neo4Net.cluster.com.message.MessageType>> messages()
 			  public virtual IEnumerable<Message<MessageType>> Messages()
 			  {
 					return MessagesConflict;

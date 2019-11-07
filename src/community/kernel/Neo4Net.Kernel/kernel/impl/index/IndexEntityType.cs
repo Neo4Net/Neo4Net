@@ -29,9 +29,9 @@ namespace Neo4Net.Kernel.impl.index
 	public abstract class IndexEntityType
 	{
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//       Node((byte) 0) { public Class IEntityClass() { return org.Neo4Net.graphdb.Node.class; } },
+//       Node((byte) 0) { public Class IEntityClass() { return Neo4Net.graphdb.Node.class; } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//       Relationship((byte) 1) { public Class IEntityClass() { return org.Neo4Net.graphdb.Relationship.class; } };
+//       Relationship((byte) 1) { public Class IEntityClass() { return Neo4Net.graphdb.Relationship.class; } };
 
 		 private static readonly IList<IndexEntityType> valueList = new List<IndexEntityType>();
 

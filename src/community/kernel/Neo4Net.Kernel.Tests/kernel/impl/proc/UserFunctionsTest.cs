@@ -30,11 +30,11 @@ namespace Neo4Net.Kernel.impl.proc
 	using Neo4NetTypes = Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes;
 	using UserAggregator = Neo4Net.Kernel.Api.Internal.procs.UserAggregator;
 	using UserFunctionSignature = Neo4Net.Kernel.Api.Internal.procs.UserFunctionSignature;
-	using BasicContext = Neo4Net.Kernel.api.proc.BasicContext;
-	using CallableUserAggregationFunction = Neo4Net.Kernel.api.proc.CallableUserAggregationFunction;
-	using CallableUserFunction = Neo4Net.Kernel.api.proc.CallableUserFunction;
-	using Context = Neo4Net.Kernel.api.proc.Context;
-	using Neo4Net.Kernel.api.proc;
+	using BasicContext = Neo4Net.Kernel.Api.Procs.BasicContext;
+	using CallableUserAggregationFunction = Neo4Net.Kernel.Api.Procs.CallableUserAggregationFunction;
+	using CallableUserFunction = Neo4Net.Kernel.Api.Procs.CallableUserFunction;
+	using Context = Neo4Net.Kernel.Api.Procs.Context;
+	using Neo4Net.Kernel.Api.Procs;
 	using AnyValue = Neo4Net.Values.AnyValue;
 	using Values = Neo4Net.Values.Storable.Values;
 
@@ -47,11 +47,11 @@ namespace Neo4Net.Kernel.impl.proc
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.procs.UserFunctionSignature.functionSignature;
+//	import static Neo4Net.Kernel.Api.Internal.procs.UserFunctionSignature.functionSignature;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.proc.Key.key;
+//	import static Neo4Net.kernel.api.proc.Key.key;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.numberValue;
+//	import static Neo4Net.values.storable.Values.numberValue;
 
 	public class UserFunctionsTest
 	{
@@ -193,7 +193,7 @@ namespace Neo4Net.Kernel.impl.proc
 			  assertThat( result, equalTo( Values.of( "hello, world" ) ) );
 		 }
 
-		 private class CallableUserFunction_BasicUserFunctionAnonymousInnerClass : Neo4Net.Kernel.api.proc.CallableUserFunction_BasicUserFunction
+		 private class CallableUserFunction_BasicUserFunctionAnonymousInnerClass : Neo4Net.Kernel.Api.Procs.CallableUserFunction_BasicUserFunction
 		 {
 			 private readonly UserFunctionsTest _outerInstance;
 
@@ -206,7 +206,7 @@ namespace Neo4Net.Kernel.impl.proc
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.values.AnyValue apply(org.Neo4Net.kernel.api.proc.Context ctx, org.Neo4Net.values.AnyValue[] input) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
+//ORIGINAL LINE: public Neo4Net.values.AnyValue apply(Neo4Net.kernel.api.proc.Context ctx, Neo4Net.values.AnyValue[] input) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 			 public override AnyValue apply( Context ctx, AnyValue[] input )
 			 {
 				  return Values.stringValue( ctx.Get( _someKey ) );
@@ -218,7 +218,7 @@ namespace Neo4Net.Kernel.impl.proc
 			  return new CallableUserFunction_BasicUserFunctionAnonymousInnerClass2( this, signature );
 		 }
 
-		 private class CallableUserFunction_BasicUserFunctionAnonymousInnerClass2 : Neo4Net.Kernel.api.proc.CallableUserFunction_BasicUserFunction
+		 private class CallableUserFunction_BasicUserFunctionAnonymousInnerClass2 : Neo4Net.Kernel.Api.Procs.CallableUserFunction_BasicUserFunction
 		 {
 			 private readonly UserFunctionsTest _outerInstance;
 
@@ -238,7 +238,7 @@ namespace Neo4Net.Kernel.impl.proc
 			  return new CallableUserAggregationFunction_BasicUserAggregationFunctionAnonymousInnerClass( this, signature );
 		 }
 
-		 private class CallableUserAggregationFunction_BasicUserAggregationFunctionAnonymousInnerClass : Neo4Net.Kernel.api.proc.CallableUserAggregationFunction_BasicUserAggregationFunction
+		 private class CallableUserAggregationFunction_BasicUserAggregationFunctionAnonymousInnerClass : Neo4Net.Kernel.Api.Procs.CallableUserAggregationFunction_BasicUserAggregationFunction
 		 {
 			 private readonly UserFunctionsTest _outerInstance;
 

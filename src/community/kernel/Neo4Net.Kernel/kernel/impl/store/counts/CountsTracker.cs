@@ -49,15 +49,15 @@ namespace Neo4Net.Kernel.impl.store.counts
 	using SystemNanoClock = Neo4Net.Time.SystemNanoClock;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.counts_store_rotation_timeout;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.counts_store_rotation_timeout;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.counts.keys.CountsKeyFactory.indexSampleKey;
+//	import static Neo4Net.kernel.impl.store.counts.keys.CountsKeyFactory.indexSampleKey;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.counts.keys.CountsKeyFactory.indexStatisticsKey;
+//	import static Neo4Net.kernel.impl.store.counts.keys.CountsKeyFactory.indexStatisticsKey;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.counts.keys.CountsKeyFactory.nodeKey;
+//	import static Neo4Net.kernel.impl.store.counts.keys.CountsKeyFactory.nodeKey;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.counts.keys.CountsKeyFactory.relationshipKey;
+//	import static Neo4Net.kernel.impl.store.counts.keys.CountsKeyFactory.relationshipKey;
 
 	/// <summary>
 	/// This is the main class for the counts store.
@@ -73,7 +73,7 @@ namespace Neo4Net.Kernel.impl.store.counts
 	/// The <seealso cref="AbstractKeyValueStore parent class"/> defines the life cycle of the store.
 	/// 
 	/// The pattern of immutable store files, and rotation strategy, et.c. is defined in the
-	/// {@code kvstore}-package, see <seealso cref="org.Neo4Net.kernel.impl.store.kvstore.KeyValueStoreFile"/> for a good entry point.
+	/// {@code kvstore}-package, see <seealso cref="Neo4Net.kernel.impl.store.kvstore.KeyValueStoreFile"/> for a good entry point.
 	/// </summary>
 	[Rotation(value : Rotation.Strategy.LEFT_RIGHT)]
 	public class CountsTracker : AbstractKeyValueStore<CountsKey>, Neo4Net.Kernel.Impl.Api.CountsVisitor_Visitable, CountsAccessor
@@ -82,25 +82,25 @@ namespace Neo4Net.Kernel.impl.store.counts
 		 /// The format specifier for the current version of the store file format. </summary>
 		 private static readonly sbyte[] _format = new sbyte[] { ( sbyte )'N', ( sbyte )'e', ( sbyte )'o', ( sbyte )'C', ( sbyte )'o', ( sbyte )'u', ( sbyte )'n', ( sbyte )'t', ( sbyte )'S', ( sbyte )'t', ( sbyte )'o', ( sbyte )'r', ( sbyte )'e', 0, 2, ( sbyte )'V' };
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private static final org.Neo4Net.kernel.impl.store.kvstore.HeaderField<?>[] HEADER_FIELDS = new org.Neo4Net.kernel.impl.store.kvstore.HeaderField[]{FileVersion.FILE_VERSION};
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private static final Neo4Net.kernel.impl.store.kvstore.HeaderField<?>[] HEADER_FIELDS = new Neo4Net.kernel.impl.store.kvstore.HeaderField[]{FileVersion.FILE_VERSION};
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		 private static readonly HeaderField<object>[] _headerFields = new HeaderField[]{ FileVersion.FILE_VERSION };
 		 public const string TYPE_DESCRIPTOR = "CountsStore";
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public CountsTracker(final org.Neo4Net.logging.LogProvider logProvider, org.Neo4Net.io.fs.FileSystemAbstraction fs, org.Neo4Net.io.pagecache.PageCache pages, org.Neo4Net.kernel.configuration.Config config, org.Neo4Net.io.layout.DatabaseLayout databaseLayout, org.Neo4Net.io.pagecache.tracing.cursor.context.VersionContextSupplier versionContextSupplier)
+//ORIGINAL LINE: public CountsTracker(final Neo4Net.logging.LogProvider logProvider, Neo4Net.io.fs.FileSystemAbstraction fs, Neo4Net.io.pagecache.PageCache pages, Neo4Net.kernel.configuration.Config config, Neo4Net.io.layout.DatabaseLayout databaseLayout, Neo4Net.io.pagecache.tracing.cursor.context.VersionContextSupplier versionContextSupplier)
 		 public CountsTracker( LogProvider logProvider, FileSystemAbstraction fs, PageCache pages, Config config, DatabaseLayout databaseLayout, VersionContextSupplier versionContextSupplier ) : this( logProvider, fs, pages, config, databaseLayout, Clocks.nanoClock(), versionContextSupplier )
 		 {
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public CountsTracker(final org.Neo4Net.logging.LogProvider logProvider, org.Neo4Net.io.fs.FileSystemAbstraction fs, org.Neo4Net.io.pagecache.PageCache pages, org.Neo4Net.kernel.configuration.Config config, org.Neo4Net.io.layout.DatabaseLayout databaseLayout, org.Neo4Net.time.SystemNanoClock clock, org.Neo4Net.io.pagecache.tracing.cursor.context.VersionContextSupplier versionContextSupplier)
+//ORIGINAL LINE: public CountsTracker(final Neo4Net.logging.LogProvider logProvider, Neo4Net.io.fs.FileSystemAbstraction fs, Neo4Net.io.pagecache.PageCache pages, Neo4Net.kernel.configuration.Config config, Neo4Net.io.layout.DatabaseLayout databaseLayout, Neo4Net.time.SystemNanoClock clock, Neo4Net.io.pagecache.tracing.cursor.context.VersionContextSupplier versionContextSupplier)
 		 public CountsTracker( LogProvider logProvider, FileSystemAbstraction fs, PageCache pages, Config config, DatabaseLayout databaseLayout, SystemNanoClock clock, VersionContextSupplier versionContextSupplier ) : base( fs, pages, databaseLayout, new CountsTrackerRotationMonitor( logProvider ), logProvider.GetLog( typeof( CountsTracker ) ).infoLogger(), new RotationTimerFactory(clock, config.Get(counts_store_rotation_timeout).toMillis()), versionContextSupplier, 16, 16, _headerFields )
 		 {
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public CountsTracker setInitializer(final org.Neo4Net.kernel.impl.store.kvstore.DataInitializer<org.Neo4Net.kernel.impl.api.CountsAccessor_Updater> initializer)
+//ORIGINAL LINE: public CountsTracker setInitializer(final Neo4Net.kernel.impl.store.kvstore.DataInitializer<Neo4Net.kernel.impl.api.CountsAccessor_Updater> initializer)
 		 public virtual CountsTracker setInitializer( DataInitializer<Neo4Net.Kernel.Impl.Api.CountsAccessor_Updater> initializer )
 		 {
 			  EntryUpdaterInitializer = new DataInitializerAnonymousInnerClass( this, initializer );
@@ -162,7 +162,7 @@ namespace Neo4Net.Kernel.impl.store.counts
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public org.Neo4Net.register.Register_DoubleLongRegister nodeCount(int labelId, final org.Neo4Net.register.Register_DoubleLongRegister target)
+//ORIGINAL LINE: public Neo4Net.register.Register_DoubleLongRegister nodeCount(int labelId, final Neo4Net.register.Register_DoubleLongRegister target)
 		 public override Neo4Net.Register.Register_DoubleLongRegister NodeCount( int labelId, Neo4Net.Register.Register_DoubleLongRegister target )
 		 {
 			  return Get( nodeKey( labelId ), target );
@@ -200,7 +200,7 @@ namespace Neo4Net.Kernel.impl.store.counts
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public void accept(final org.Neo4Net.kernel.impl.api.CountsVisitor visitor)
+//ORIGINAL LINE: public void accept(final Neo4Net.kernel.impl.api.CountsVisitor visitor)
 		 public override void Accept( CountsVisitor visitor )
 		 {
 			  try
@@ -214,7 +214,7 @@ namespace Neo4Net.Kernel.impl.store.counts
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected void visitFile(java.io.File path, org.Neo4Net.kernel.impl.api.CountsVisitor visitor) throws java.io.IOException
+//ORIGINAL LINE: protected void visitFile(java.io.File path, Neo4Net.kernel.impl.api.CountsVisitor visitor) throws java.io.IOException
 		 protected internal virtual void VisitFile( File path, CountsVisitor visitor )
 		 {
 			  base.VisitFile( path, new DelegatingVisitor( this, visitor ) );
@@ -241,14 +241,14 @@ namespace Neo4Net.Kernel.impl.store.counts
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: protected void writeKey(org.Neo4Net.kernel.impl.store.counts.keys.CountsKey key, final org.Neo4Net.kernel.impl.store.kvstore.WritableBuffer buffer)
+//ORIGINAL LINE: protected void writeKey(Neo4Net.kernel.impl.store.counts.keys.CountsKey key, final Neo4Net.kernel.impl.store.kvstore.WritableBuffer buffer)
 		 protected internal override void WriteKey( CountsKey key, WritableBuffer buffer )
 		 {
 			  key.Accept( new KeyFormat( buffer ), 0, 0 );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected org.Neo4Net.kernel.impl.store.counts.keys.CountsKey readKey(org.Neo4Net.kernel.impl.store.kvstore.ReadableBuffer key) throws org.Neo4Net.kernel.impl.store.kvstore.UnknownKey
+//ORIGINAL LINE: protected Neo4Net.kernel.impl.store.counts.keys.CountsKey readKey(Neo4Net.kernel.impl.store.kvstore.ReadableBuffer key) throws Neo4Net.kernel.impl.store.kvstore.UnknownKey
 		 protected internal override CountsKey ReadKey( ReadableBuffer key )
 		 {
 			  return KeyFormat.ReadKey( key );
@@ -322,7 +322,7 @@ namespace Neo4Net.Kernel.impl.store.counts
 			  }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") @Override public void visitMetadata(java.io.File path, org.Neo4Net.kernel.impl.store.kvstore.Headers headers, int entryCount)
+//ORIGINAL LINE: @SuppressWarnings("unchecked") @Override public void visitMetadata(java.io.File path, Neo4Net.kernel.impl.store.kvstore.Headers headers, int entryCount)
 			  public override void VisitMetadata( File path, Headers headers, int entryCount )
 			  {
 					if ( Visitor is MetadataVisitor )

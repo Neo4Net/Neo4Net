@@ -42,7 +42,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected RoleRecord deserializeRecord(String line, int lineNumber) throws org.Neo4Net.server.security.auth.exception.FormatException
+//ORIGINAL LINE: protected RoleRecord deserializeRecord(String line, int lineNumber) throws Neo4Net.server.security.auth.exception.FormatException
 		 protected internal override RoleRecord DeserializeRecord( string line, int lineNumber )
 		 {
 			  string[] parts = line.Split( ROLE_SEPARATOR, false );

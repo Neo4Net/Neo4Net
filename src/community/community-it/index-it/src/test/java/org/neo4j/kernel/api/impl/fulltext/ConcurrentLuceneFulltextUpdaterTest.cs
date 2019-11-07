@@ -41,7 +41,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.StorageEngine.EntityType.NODE;
+//	import static Neo4Net.Kernel.Api.StorageEngine.EntityType.NODE;
 
 	/// <summary>
 	/// Concurrent updates and index changes should result in valid state, and not create conflicts or exceptions during
@@ -79,7 +79,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.Kernel.Api.Internal.IndexReference createInitialIndex(org.Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor descriptor) throws Exception
+//ORIGINAL LINE: private Neo4Net.Kernel.Api.Internal.IndexReference createInitialIndex(Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor descriptor) throws Exception
 		 private IndexReference CreateInitialIndex( SchemaDescriptor descriptor )
 		 {
 			  IndexReference index;
@@ -94,7 +94,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void raceContestantsAndVerifyResults(org.Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor newDescriptor, Runnable aliceWork, Runnable changeConfig, Runnable bobWork) throws Throwable
+//ORIGINAL LINE: private void raceContestantsAndVerifyResults(Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor newDescriptor, Runnable aliceWork, Runnable changeConfig, Runnable bobWork) throws Throwable
 		 private void RaceContestantsAndVerifyResults( SchemaDescriptor newDescriptor, ThreadStart aliceWork, ThreadStart changeConfig, ThreadStart bobWork )
 		 {
 			  _race.addContestants( _aliceThreads, aliceWork );

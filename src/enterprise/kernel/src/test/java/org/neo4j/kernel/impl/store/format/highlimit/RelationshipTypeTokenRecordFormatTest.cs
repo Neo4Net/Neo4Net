@@ -38,11 +38,11 @@ namespace Neo4Net.Kernel.impl.store.format.highlimit
 //	import static org.mockito.Mockito.verifyNoMoreInteractions;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.ByteUnit.kibiBytes;
+//	import static Neo4Net.io.ByteUnit.kibiBytes;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.NoStoreHeader.NO_STORE_HEADER;
+//	import static Neo4Net.kernel.impl.store.NoStoreHeader.NO_STORE_HEADER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.record.RecordLoad.NORMAL;
+//	import static Neo4Net.kernel.impl.store.record.RecordLoad.NORMAL;
 
 	public class RelationshipTypeTokenRecordFormatTest
 	{

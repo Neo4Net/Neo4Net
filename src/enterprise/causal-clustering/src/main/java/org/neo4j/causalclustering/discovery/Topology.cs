@@ -45,13 +45,13 @@ namespace Neo4Net.causalclustering.discovery
 	//	 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//		 default java.util.Optional<T> find(org.Neo4Net.causalclustering.identity.MemberId memberId)
+//		 default java.util.Optional<T> find(Neo4Net.causalclustering.identity.MemberId memberId)
 	//	 {
 	//		  return Optional.ofNullable(members().get(memberId));
 	//	 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//		 default java.util.Map<org.Neo4Net.causalclustering.identity.MemberId, T> filterHostsByDb(java.util.Map<org.Neo4Net.causalclustering.identity.MemberId, T> s, String dbName)
+//		 default java.util.Map<Neo4Net.causalclustering.identity.MemberId, T> filterHostsByDb(java.util.Map<Neo4Net.causalclustering.identity.MemberId, T> s, String dbName)
 	//	 {
 	//		  return s.entrySet().stream().filter(e -> e.getValue().getDatabaseName().equals(dbName)).collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
 	//	 }

@@ -97,9 +97,9 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.DependencyResolver_SelectionStrategy.ONLY;
+//	import static Neo4Net.graphdb.DependencyResolver_SelectionStrategy.ONLY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.single;
+//	import static Neo4Net.helpers.collection.Iterables.single;
 
 	public class FulltextProceduresTest
 	{
@@ -774,7 +774,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 			  using ( Transaction tx = _db.beginTx() )
 			  {
 					ISet<string> analyzers = new HashSet<string>();
-					using ( ResourceIterator<string> iterator = _db.execute( LIST_AVAILABLE_ANALYZERS ).columnAs( "analyzer" ) )
+					using ( IResourceIterator<string> iterator = _db.execute( LIST_AVAILABLE_ANALYZERS ).columnAs( "analyzer" ) )
 					{
 						 while ( iterator.MoveNext() )
 						 {
@@ -2496,7 +2496,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 			  _db = CreateDatabase();
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.graphdb.Label label = org.Neo4Net.graphdb.Label.label("label");
+//ORIGINAL LINE: final Neo4Net.graphdb.Label label = Neo4Net.graphdb.Label.label("label");
 			  Label label = Label.label( "label" );
 			  const string prop = "prop";
 			  using ( Transaction tx = _db.beginTx() )
@@ -2533,7 +2533,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 			  _db = CreateDatabase();
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.graphdb.Label label = org.Neo4Net.graphdb.Label.label("label");
+//ORIGINAL LINE: final Neo4Net.graphdb.Label label = Neo4Net.graphdb.Label.label("label");
 			  Label label = Label.label( "label" );
 			  const string prop = "prop";
 			  using ( Transaction tx = _db.beginTx() )
@@ -2580,7 +2580,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 			  catch ( Exception e )
 			  {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final Throwable cause = org.Neo4Net.helpers.Exceptions.rootCause(e);
+//ORIGINAL LINE: final Throwable cause = Neo4Net.helpers.Exceptions.rootCause(e);
 					Exception cause = Exceptions.rootCause( e );
 					assertThat( cause, instanceOf( typeof( RepeatedPropertyInSchemaException ) ) );
 			  }
@@ -2603,7 +2603,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 			  catch ( Exception e )
 			  {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final Throwable cause = org.Neo4Net.helpers.Exceptions.rootCause(e);
+//ORIGINAL LINE: final Throwable cause = Neo4Net.helpers.Exceptions.rootCause(e);
 					Exception cause = Exceptions.rootCause( e );
 					assertThat( cause, instanceOf( typeof( RepeatedLabelInSchemaException ) ) );
 			  }
@@ -2626,7 +2626,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 			  catch ( Exception e )
 			  {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final Throwable cause = org.Neo4Net.helpers.Exceptions.rootCause(e);
+//ORIGINAL LINE: final Throwable cause = Neo4Net.helpers.Exceptions.rootCause(e);
 					Exception cause = Exceptions.rootCause( e );
 					assertThat( cause, instanceOf( typeof( RepeatedRelationshipTypeInSchemaException ) ) );
 			  }

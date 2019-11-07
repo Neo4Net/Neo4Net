@@ -52,7 +52,7 @@ namespace Neo4Net.Cypher.Internal.javacompat
 		 /// <returns> profiler statistics for this execution step iff available </returns>
 		 /// <exception cref="ProfilerStatisticsNotReadyException"> iff profiler statistics are not available </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: ProfilerStatistics getProfilerStatistics() throws org.Neo4Net.cypher.ProfilerStatisticsNotReadyException;
+//ORIGINAL LINE: ProfilerStatistics getProfilerStatistics() throws Neo4Net.cypher.ProfilerStatisticsNotReadyException;
 		 ProfilerStatistics ProfilerStatistics { get; }
 	}
 

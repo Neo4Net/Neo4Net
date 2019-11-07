@@ -70,7 +70,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.entry
 		 {
 			  File storeDir = _testDirectory.databaseDir();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.graphdb.GraphDatabaseService db = new org.Neo4Net.test.TestGraphDatabaseFactory().setFileSystem(fs.get()).newImpermanentDatabase(storeDir);
+//ORIGINAL LINE: final Neo4Net.graphdb.GraphDatabaseService db = new Neo4Net.test.TestGraphDatabaseFactory().setFileSystem(fs.get()).newImpermanentDatabase(storeDir);
 			  IGraphDatabaseService db = ( new TestGraphDatabaseFactory() ).setFileSystem(_fs.get()).newImpermanentDatabase(storeDir);
 			  CreateSomeTransactions( db );
 			  EphemeralFileSystemAbstraction snapshot = _fs.snapshot( Db.shutdown );

@@ -41,21 +41,21 @@ namespace Neo4Net.Index.Internal.gbptree
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Internal.gbptree.GBPTreeTestUtil.contains;
+//	import static Neo4Net.index.Internal.gbptree.GBPTreeTestUtil.contains;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Internal.gbptree.GenerationSafePointerPair.pointer;
+//	import static Neo4Net.index.Internal.gbptree.GenerationSafePointerPair.pointer;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Internal.gbptree.GenerationSafePointerPair.resultIsFromSlotA;
+//	import static Neo4Net.index.Internal.gbptree.GenerationSafePointerPair.resultIsFromSlotA;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Internal.gbptree.TreeNode.NO_NODE_FLAG;
+//	import static Neo4Net.index.Internal.gbptree.TreeNode.NO_NODE_FLAG;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Internal.gbptree.TreeNode.Overflow.NO_NEED_DEFRAG;
+//	import static Neo4Net.index.Internal.gbptree.TreeNode.Overflow.NO_NEED_DEFRAG;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Internal.gbptree.TreeNode.Overflow.YES;
+//	import static Neo4Net.index.Internal.gbptree.TreeNode.Overflow.YES;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Internal.gbptree.TreeNode.Type.INTERNAL;
+//	import static Neo4Net.index.Internal.gbptree.TreeNode.Type.INTERNAL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Internal.gbptree.TreeNode.Type.LEAF;
+//	import static Neo4Net.index.Internal.gbptree.TreeNode.Type.LEAF;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @ExtendWith(RandomExtension.class) public abstract class TreeNodeTestBase<KEY,VALUE>
@@ -73,7 +73,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 private readonly GenerationKeeper _generationTarget = new GenerationKeeper();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.Neo4Net.test.rule.RandomRule random;
+//ORIGINAL LINE: @Inject private Neo4Net.test.rule.RandomRule random;
 		 private RandomRule _random;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

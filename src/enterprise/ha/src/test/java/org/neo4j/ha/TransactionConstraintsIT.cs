@@ -65,11 +65,11 @@ namespace Neo4Net.ha
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.allSeesAllAsAvailable;
+//	import static Neo4Net.kernel.impl.ha.ClusterManager.allSeesAllAsAvailable;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.masterAvailable;
+//	import static Neo4Net.kernel.impl.ha.ClusterManager.masterAvailable;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.rule.dump.DumpProcessInformationRule.localVm;
+//	import static Neo4Net.test.rule.dump.DumpProcessInformationRule.localVm;
 
 	public class TransactionConstraintsIT
 	{
@@ -92,7 +92,7 @@ namespace Neo4Net.ha
 		 private static readonly int _slaveOnlyId = ClusterManager.FIRST_SERVER_ID + 1;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.ha.ClusterRule clusterRule = new org.Neo4Net.test.ha.ClusterRule().withSharedSetting(org.Neo4Net.kernel.ha.HaSettings.pull_interval, "0").withInstanceSetting(org.Neo4Net.kernel.ha.HaSettings.slave_only, serverId -> serverId == SLAVE_ONLY_ID ? "true" : "false");
+//ORIGINAL LINE: @Rule public final Neo4Net.test.ha.ClusterRule clusterRule = new Neo4Net.test.ha.ClusterRule().withSharedSetting(Neo4Net.kernel.ha.HaSettings.pull_interval, "0").withInstanceSetting(Neo4Net.kernel.ha.HaSettings.slave_only, serverId -> serverId == SLAVE_ONLY_ID ? "true" : "false");
 		 public readonly ClusterRule ClusterRule = new ClusterRule().withSharedSetting(HaSettings.pull_interval, "0").withInstanceSetting(HaSettings.slave_only, serverId => serverId == _slaveOnlyId ? "true" : "false");
 
 		 private DumpProcessInformationRule _dumpInfo = new DumpProcessInformationRule( 1, MINUTES, localVm( System.out ) );
@@ -313,14 +313,14 @@ namespace Neo4Net.ha
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void deadlockDetectionBetween(org.Neo4Net.kernel.ha.HighlyAvailableGraphDatabase slave1, final org.Neo4Net.kernel.ha.HighlyAvailableGraphDatabase slave2) throws Exception
+//ORIGINAL LINE: private void deadlockDetectionBetween(Neo4Net.kernel.ha.HighlyAvailableGraphDatabase slave1, final Neo4Net.kernel.ha.HighlyAvailableGraphDatabase slave2) throws Exception
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 		 private void DeadlockDetectionBetween( HighlyAvailableGraphDatabase slave1, HighlyAvailableGraphDatabase slave2 )
 		 {
 			  // GIVEN
 			  // -- two members acquiring a read lock on the same IEntity
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.graphdb.Node commonNode;
+//ORIGINAL LINE: final Neo4Net.graphdb.Node commonNode;
 			  Node commonNode;
 			  using ( Transaction tx = slave1.BeginTx() )
 			  {
@@ -489,7 +489,7 @@ namespace Neo4Net.ha
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void awaitFullyOperational(org.Neo4Net.graphdb.GraphDatabaseService db) throws InterruptedException
+//ORIGINAL LINE: private void awaitFullyOperational(Neo4Net.graphdb.GraphDatabaseService db) throws InterruptedException
 		 private void AwaitFullyOperational( IGraphDatabaseService db )
 		 {
 			  long endTime = currentTimeMillis() + MINUTES.toMillis(1);

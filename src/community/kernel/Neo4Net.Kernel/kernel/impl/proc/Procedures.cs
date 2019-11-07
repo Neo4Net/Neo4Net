@@ -34,11 +34,11 @@ namespace Neo4Net.Kernel.impl.proc
 	using UserAggregator = Neo4Net.Kernel.Api.Internal.procs.UserAggregator;
 	using UserFunctionHandle = Neo4Net.Kernel.Api.Internal.procs.UserFunctionHandle;
 	using UserFunctionSignature = Neo4Net.Kernel.Api.Internal.procs.UserFunctionSignature;
-	using ResourceTracker = Neo4Net.Kernel.api.ResourceTracker;
-	using CallableProcedure = Neo4Net.Kernel.api.proc.CallableProcedure;
-	using CallableUserAggregationFunction = Neo4Net.Kernel.api.proc.CallableUserAggregationFunction;
-	using CallableUserFunction = Neo4Net.Kernel.api.proc.CallableUserFunction;
-	using Context = Neo4Net.Kernel.api.proc.Context;
+	using ResourceTracker = Neo4Net.Kernel.Api.ResourceTracker;
+	using CallableProcedure = Neo4Net.Kernel.Api.Procs.CallableProcedure;
+	using CallableUserAggregationFunction = Neo4Net.Kernel.Api.Procs.CallableUserAggregationFunction;
+	using CallableUserFunction = Neo4Net.Kernel.Api.Procs.CallableUserFunction;
+	using Context = Neo4Net.Kernel.Api.Procs.Context;
 	using SpecialBuiltInProcedures = Neo4Net.Kernel.builtinprocs.SpecialBuiltInProcedures;
 	using EmbeddedProxySPI = Neo4Net.Kernel.impl.core.EmbeddedProxySPI;
 	using LifecycleAdapter = Neo4Net.Kernel.Lifecycle.LifecycleAdapter;
@@ -83,7 +83,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 /// Register a new procedure. This method must not be called concurrently with <seealso cref="procedure(QualifiedName)"/>. </summary>
 		 /// <param name="proc"> the procedure. </param>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void register(org.Neo4Net.kernel.api.proc.CallableProcedure proc) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
+//ORIGINAL LINE: public void register(Neo4Net.kernel.api.proc.CallableProcedure proc) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 		 public virtual void Register( CallableProcedure proc )
 		 {
 			  Register( proc, false );
@@ -93,7 +93,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 /// Register a new function. This method must not be called concurrently with <seealso cref="procedure(QualifiedName)"/>. </summary>
 		 /// <param name="function"> the function. </param>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void register(org.Neo4Net.kernel.api.proc.CallableUserFunction function) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
+//ORIGINAL LINE: public void register(Neo4Net.kernel.api.proc.CallableUserFunction function) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 		 public virtual void Register( CallableUserFunction function )
 		 {
 			  Register( function, false );
@@ -103,7 +103,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 /// Register a new function. This method must not be called concurrently with <seealso cref="procedure(QualifiedName)"/>. </summary>
 		 /// <param name="function"> the function. </param>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void register(org.Neo4Net.kernel.api.proc.CallableUserAggregationFunction function) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
+//ORIGINAL LINE: public void register(Neo4Net.kernel.api.proc.CallableUserAggregationFunction function) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 		 public virtual void Register( CallableUserAggregationFunction function )
 		 {
 			  Register( function, false );
@@ -113,7 +113,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 /// Register a new procedure. This method must not be called concurrently with <seealso cref="procedure(QualifiedName)"/>. </summary>
 		 /// <param name="function"> the function. </param>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void register(org.Neo4Net.kernel.api.proc.CallableUserFunction function, boolean overrideCurrentImplementation) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
+//ORIGINAL LINE: public void register(Neo4Net.kernel.api.proc.CallableUserFunction function, boolean overrideCurrentImplementation) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 		 public virtual void Register( CallableUserFunction function, bool overrideCurrentImplementation )
 		 {
 			  _registry.register( function, overrideCurrentImplementation );
@@ -123,7 +123,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 /// Register a new procedure. This method must not be called concurrently with <seealso cref="procedure(QualifiedName)"/>. </summary>
 		 /// <param name="function"> the function. </param>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void register(org.Neo4Net.kernel.api.proc.CallableUserAggregationFunction function, boolean overrideCurrentImplementation) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
+//ORIGINAL LINE: public void register(Neo4Net.kernel.api.proc.CallableUserAggregationFunction function, boolean overrideCurrentImplementation) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 		 public virtual void Register( CallableUserAggregationFunction function, bool overrideCurrentImplementation )
 		 {
 			  _registry.register( function, overrideCurrentImplementation );
@@ -133,7 +133,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 /// Register a new procedure. This method must not be called concurrently with <seealso cref="procedure(QualifiedName)"/>. </summary>
 		 /// <param name="proc"> the procedure. </param>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void register(org.Neo4Net.kernel.api.proc.CallableProcedure proc, boolean overrideCurrentImplementation) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
+//ORIGINAL LINE: public void register(Neo4Net.kernel.api.proc.CallableProcedure proc, boolean overrideCurrentImplementation) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 		 public virtual void Register( CallableProcedure proc, bool overrideCurrentImplementation )
 		 {
 			  _registry.register( proc, overrideCurrentImplementation );
@@ -143,7 +143,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 /// Register a new internal procedure defined with annotations on a java class. </summary>
 		 /// <param name="proc"> the procedure class </param>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void registerProcedure(Class proc) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: public void registerProcedure(Class proc) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 public virtual void RegisterProcedure( Type proc )
 		 {
 			  RegisterProcedure( proc, false );
@@ -154,7 +154,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 /// <param name="proc"> the procedure class </param>
 		 /// <param name="overrideCurrentImplementation"> set to true if procedures within this class should override older procedures with the same name </param>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void registerProcedure(Class proc, boolean overrideCurrentImplementation) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: public void registerProcedure(Class proc, boolean overrideCurrentImplementation) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 public virtual void RegisterProcedure( Type proc, bool overrideCurrentImplementation )
 		 {
 			  RegisterProcedure( proc, overrideCurrentImplementation, null );
@@ -166,7 +166,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 /// <param name="overrideCurrentImplementation"> set to true if procedures within this class should override older procedures with the same name </param>
 		 /// <param name="warning"> the warning the procedure should generate when called </param>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void registerProcedure(Class proc, boolean overrideCurrentImplementation, String warning) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: public void registerProcedure(Class proc, boolean overrideCurrentImplementation, String warning) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 public virtual void RegisterProcedure( Type proc, bool overrideCurrentImplementation, string warning )
 		 {
 			  foreach ( CallableProcedure procedure in _compiler.compileProcedure( proc, warning, true ) )
@@ -179,7 +179,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 /// Register a new function defined with annotations on a java class. </summary>
 		 /// <param name="func"> the function class </param>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void registerBuiltInFunctions(Class func) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: public void registerBuiltInFunctions(Class func) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 public virtual void RegisterBuiltInFunctions( Type func )
 		 {
 			  foreach ( CallableUserFunction function in _compiler.withoutNamingRestrictions().compileFunction(func) )
@@ -192,7 +192,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 /// Register a new function defined with annotations on a java class. </summary>
 		 /// <param name="func"> the function class </param>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void registerFunction(Class func) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: public void registerFunction(Class func) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 public virtual void RegisterFunction( Type func )
 		 {
 			  RegisterFunction( func, false );
@@ -202,7 +202,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 /// Register a new aggregation function defined with annotations on a java class. </summary>
 		 /// <param name="func"> the function class </param>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void registerAggregationFunction(Class func, boolean overrideCurrentImplementation) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: public void registerAggregationFunction(Class func, boolean overrideCurrentImplementation) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 public virtual void RegisterAggregationFunction( Type func, bool overrideCurrentImplementation )
 		 {
 			  foreach ( CallableUserAggregationFunction function in _compiler.compileAggregationFunction( func ) )
@@ -215,7 +215,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 /// Register a new aggregation function defined with annotations on a java class. </summary>
 		 /// <param name="func"> the function class </param>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void registerAggregationFunction(Class func) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: public void registerAggregationFunction(Class func) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 public virtual void RegisterAggregationFunction( Type func )
 		 {
 			  RegisterAggregationFunction( func, false );
@@ -225,7 +225,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 /// Register a new function defined with annotations on a java class. </summary>
 		 /// <param name="func"> the function class </param>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void registerFunction(Class func, boolean overrideCurrentImplementation) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: public void registerFunction(Class func, boolean overrideCurrentImplementation) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 public virtual void RegisterFunction( Type func, bool overrideCurrentImplementation )
 		 {
 			  foreach ( CallableUserFunction function in _compiler.compileFunction( func ) )
@@ -262,7 +262,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.Kernel.Api.Internal.procs.ProcedureHandle procedure(org.Neo4Net.Kernel.Api.Internal.procs.QualifiedName name) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
+//ORIGINAL LINE: public Neo4Net.Kernel.Api.Internal.procs.ProcedureHandle procedure(Neo4Net.Kernel.Api.Internal.procs.QualifiedName name) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 		 public virtual ProcedureHandle Procedure( QualifiedName name )
 		 {
 			  return _registry.procedure( name );
@@ -295,42 +295,42 @@ namespace Neo4Net.Kernel.impl.proc
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.collection.RawIterator<Object[], org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException> callProcedure(org.Neo4Net.kernel.api.proc.Context ctx, org.Neo4Net.Kernel.Api.Internal.procs.QualifiedName name, Object[] input, org.Neo4Net.kernel.api.ResourceTracker resourceTracker) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
+//ORIGINAL LINE: public Neo4Net.collection.RawIterator<Object[], Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException> callProcedure(Neo4Net.kernel.api.proc.Context ctx, Neo4Net.Kernel.Api.Internal.procs.QualifiedName name, Object[] input, Neo4Net.kernel.api.ResourceTracker resourceTracker) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 		 public virtual RawIterator<object[], ProcedureException> CallProcedure( Context ctx, QualifiedName name, object[] input, ResourceTracker resourceTracker )
 		 {
 			  return _registry.callProcedure( ctx, name, input, resourceTracker );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.collection.RawIterator<Object[], org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException> callProcedure(org.Neo4Net.kernel.api.proc.Context ctx, int id, Object[] input, org.Neo4Net.kernel.api.ResourceTracker resourceTracker) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
+//ORIGINAL LINE: public Neo4Net.collection.RawIterator<Object[], Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException> callProcedure(Neo4Net.kernel.api.proc.Context ctx, int id, Object[] input, Neo4Net.kernel.api.ResourceTracker resourceTracker) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 		 public virtual RawIterator<object[], ProcedureException> CallProcedure( Context ctx, int id, object[] input, ResourceTracker resourceTracker )
 		 {
 			  return _registry.callProcedure( ctx, id, input, resourceTracker );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.values.AnyValue callFunction(org.Neo4Net.kernel.api.proc.Context ctx, org.Neo4Net.Kernel.Api.Internal.procs.QualifiedName name, org.Neo4Net.values.AnyValue[] input) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
+//ORIGINAL LINE: public Neo4Net.values.AnyValue callFunction(Neo4Net.kernel.api.proc.Context ctx, Neo4Net.Kernel.Api.Internal.procs.QualifiedName name, Neo4Net.values.AnyValue[] input) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 		 public virtual AnyValue CallFunction( Context ctx, QualifiedName name, AnyValue[] input )
 		 {
 			  return _registry.callFunction( ctx, name, input );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.values.AnyValue callFunction(org.Neo4Net.kernel.api.proc.Context ctx, int id, org.Neo4Net.values.AnyValue[] input) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
+//ORIGINAL LINE: public Neo4Net.values.AnyValue callFunction(Neo4Net.kernel.api.proc.Context ctx, int id, Neo4Net.values.AnyValue[] input) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 		 public virtual AnyValue CallFunction( Context ctx, int id, AnyValue[] input )
 		 {
 			  return _registry.callFunction( ctx, id, input );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.Kernel.Api.Internal.procs.UserAggregator createAggregationFunction(org.Neo4Net.kernel.api.proc.Context ctx, org.Neo4Net.Kernel.Api.Internal.procs.QualifiedName name) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
+//ORIGINAL LINE: public Neo4Net.Kernel.Api.Internal.procs.UserAggregator createAggregationFunction(Neo4Net.kernel.api.proc.Context ctx, Neo4Net.Kernel.Api.Internal.procs.QualifiedName name) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 		 public virtual UserAggregator CreateAggregationFunction( Context ctx, QualifiedName name )
 		 {
 			  return _registry.createAggregationFunction( ctx, name );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.Kernel.Api.Internal.procs.UserAggregator createAggregationFunction(org.Neo4Net.kernel.api.proc.Context ctx, int id) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
+//ORIGINAL LINE: public Neo4Net.Kernel.Api.Internal.procs.UserAggregator createAggregationFunction(Neo4Net.kernel.api.proc.Context ctx, int id) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 		 public virtual UserAggregator CreateAggregationFunction( Context ctx, int id )
 		 {
 			  return _registry.createAggregationFunction( ctx, id );

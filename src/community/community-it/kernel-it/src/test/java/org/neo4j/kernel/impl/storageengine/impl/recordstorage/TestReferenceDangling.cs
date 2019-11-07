@@ -34,7 +34,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 	public class TestReferenceDangling
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.ImpermanentDatabaseRule dbRule = new org.Neo4Net.test.rule.ImpermanentDatabaseRule();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.ImpermanentDatabaseRule dbRule = new Neo4Net.test.rule.ImpermanentDatabaseRule();
 		 public ImpermanentDatabaseRule DbRule = new ImpermanentDatabaseRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -101,7 +101,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void restartNeoDataSource(org.Neo4Net.kernel.internal.GraphDatabaseAPI slave) throws Throwable
+//ORIGINAL LINE: private void restartNeoDataSource(Neo4Net.kernel.internal.GraphDatabaseAPI slave) throws Throwable
 		 private void RestartNeoDataSource( GraphDatabaseAPI slave )
 		 {
 			  slave.DependencyResolver.resolveDependency( typeof( DataSourceManager ) ).DataSource.stop();

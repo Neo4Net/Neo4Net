@@ -33,7 +33,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 	using LockTracer = Neo4Net.Kernel.Api.StorageEngine.@lock.LockTracer;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.StatementConstants.NO_SUCH_RELATIONSHIP;
+//	import static Neo4Net.kernel.api.StatementConstants.NO_SUCH_RELATIONSHIP;
 
 	internal class TwoPhaseNodeForRelationshipLocking
 	{
@@ -53,7 +53,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void lockAllNodesAndConsumeRelationships(long nodeId, final org.Neo4Net.Kernel.Api.Internal.Transaction transaction, org.Neo4Net.Kernel.Api.Internal.NodeCursor nodes) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: void lockAllNodesAndConsumeRelationships(long nodeId, final Neo4Net.Kernel.Api.Internal.Transaction transaction, Neo4Net.Kernel.Api.Internal.NodeCursor nodes) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 		 internal virtual void LockAllNodesAndConsumeRelationships( long nodeId, Transaction transaction, NodeCursor nodes )
 		 {
@@ -129,7 +129,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private boolean performAction(long rel, boolean first) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: private boolean performAction(long rel, boolean first) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 private bool PerformAction( long rel, bool first )
 		 {
 			  if ( first )

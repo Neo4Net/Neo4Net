@@ -51,7 +51,7 @@ namespace Neo4Net.causalclustering.discovery
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.discovery.MultiRetryStrategyTest.testRetryStrategy;
+//	import static Neo4Net.causalclustering.discovery.MultiRetryStrategyTest.testRetryStrategy;
 
 	public class DnsHostnameResolverTest
 	{

@@ -33,7 +33,7 @@ namespace Neo4Net.Server.rest
 	using ExclusiveServerTestBase = Neo4Net.Test.server.ExclusiveServerTestBase;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.rule.SuppressOutput.suppressAll;
+//	import static Neo4Net.test.rule.SuppressOutput.suppressAll;
 
 	public abstract class EnterpriseVersionIT : ExclusiveServerTestBase
 	{

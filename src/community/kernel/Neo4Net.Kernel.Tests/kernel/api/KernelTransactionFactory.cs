@@ -17,7 +17,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Kernel.api
+namespace Neo4Net.Kernel.Api
 {
 
 	using Neo4Net.Collections.Pooling;
@@ -25,8 +25,8 @@ namespace Neo4Net.Kernel.api
 	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using PageCursorTracerSupplier = Neo4Net.Io.pagecache.tracing.cursor.PageCursorTracerSupplier;
 	using EmptyVersionContextSupplier = Neo4Net.Io.pagecache.tracing.cursor.context.EmptyVersionContextSupplier;
-	using AutoIndexing = Neo4Net.Kernel.api.explicitindex.AutoIndexing;
-	using AuxiliaryTransactionStateManager = Neo4Net.Kernel.api.txstate.auxiliary.AuxiliaryTransactionStateManager;
+	using AutoIndexing = Neo4Net.Kernel.Api.explicitindex.AutoIndexing;
+	using AuxiliaryTransactionStateManager = Neo4Net.Kernel.Api.txstate.auxiliary.AuxiliaryTransactionStateManager;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using KernelTransactionImplementation = Neo4Net.Kernel.Impl.Api.KernelTransactionImplementation;
 	using SchemaState = Neo4Net.Kernel.Impl.Api.SchemaState;
@@ -59,11 +59,11 @@ namespace Neo4Net.Kernel.api
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.tracing.TransactionTracer_Fields.NULL;
+//	import static Neo4Net.kernel.impl.transaction.tracing.TransactionTracer_Fields.NULL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.util.collection.CollectionsFactorySupplier_Fields.ON_HEAP;
+//	import static Neo4Net.kernel.impl.util.collection.CollectionsFactorySupplier_Fields.ON_HEAP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.MockedNeoStores.mockedTokenHolders;
+//	import static Neo4Net.test.MockedNeoStores.mockedTokenHolders;
 
 	public class KernelTransactionFactory
 	{

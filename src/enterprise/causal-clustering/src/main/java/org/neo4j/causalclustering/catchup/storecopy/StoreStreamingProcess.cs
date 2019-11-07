@@ -33,7 +33,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 	using StoreCopyCheckPointMutex = Neo4Net.Kernel.impl.transaction.log.checkpoint.StoreCopyCheckPointMutex;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.catchup.storecopy.StoreCopyFinishedResponse.Status.SUCCESS;
+//	import static Neo4Net.causalclustering.catchup.storecopy.StoreCopyFinishedResponse.Status.SUCCESS;
 
 	public class StoreStreamingProcess
 	{

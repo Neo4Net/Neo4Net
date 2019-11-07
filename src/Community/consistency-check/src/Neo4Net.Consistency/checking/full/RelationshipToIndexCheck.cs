@@ -40,11 +40,11 @@ namespace Neo4Net.Consistency.checking.full
 	using Values = Neo4Net.Values.Storable.Values;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.consistency.checking.full.PropertyAndNodeIndexedCheck.entityIntersectsSchema;
+//	import static Neo4Net.consistency.checking.full.PropertyAndNodeIndexedCheck.entityIntersectsSchema;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.consistency.checking.full.PropertyAndNodeIndexedCheck.getPropertyValues;
+//	import static Neo4Net.consistency.checking.full.PropertyAndNodeIndexedCheck.getPropertyValues;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.consistency.checking.full.PropertyAndNodeIndexedCheck.properties;
+//	import static Neo4Net.consistency.checking.full.PropertyAndNodeIndexedCheck.properties;
 
 	public class RelationshipToIndexCheck : RecordCheck<RelationshipRecord, Neo4Net.Consistency.report.ConsistencyReport_RelationshipConsistencyReport>
 	{

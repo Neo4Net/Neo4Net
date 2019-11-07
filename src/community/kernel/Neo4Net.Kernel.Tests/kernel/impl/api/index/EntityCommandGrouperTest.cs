@@ -52,7 +52,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	internal class IEntityCommandGrouperTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.Neo4Net.test.rule.RandomRule random;
+//ORIGINAL LINE: @Inject private Neo4Net.test.rule.RandomRule random;
 		 private RandomRule _random;
 
 		 private long _nextPropertyId;
@@ -80,7 +80,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  IEntityCommandGrouper grouper = new IEntityCommandGrouper<>( factory.command( 0 ).GetType(), 8 );
 			  long IEntityId = 1;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.kernel.impl.transaction.command.Command.BaseCommand<? extends org.Neo4Net.kernel.impl.store.record.PrimitiveRecord> IEntity = factory.command(entityId);
+//ORIGINAL LINE: Neo4Net.kernel.impl.transaction.command.Command.BaseCommand<? extends Neo4Net.kernel.impl.store.record.PrimitiveRecord> IEntity = factory.command(entityId);
 			  Command.BaseCommand<PrimitiveRecord> IEntity = factory.command( IEntityId );
 			  Command.PropertyCommand property1 = Property( IEntity.After );
 			  Command.PropertyCommand property2 = Property( IEntity.After );
@@ -101,7 +101,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  IEntityCommandGrouper grouper = new IEntityCommandGrouper<>( factory.command( 0 ).GetType(), 8 );
 			  long IEntityId = 1;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.kernel.impl.transaction.command.Command.BaseCommand<? extends org.Neo4Net.kernel.impl.store.record.PrimitiveRecord> IEntity = factory.command(entityId);
+//ORIGINAL LINE: Neo4Net.kernel.impl.transaction.command.Command.BaseCommand<? extends Neo4Net.kernel.impl.store.record.PrimitiveRecord> IEntity = factory.command(entityId);
 			  Command.BaseCommand<PrimitiveRecord> IEntity = factory.command( IEntityId );
 			  Command.PropertyCommand property1 = Property( IEntity.After );
 			  Command.PropertyCommand property2 = Property( IEntity.After );
@@ -152,10 +152,10 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  // given
 			  IEntityCommandGrouper grouper = new IEntityCommandGrouper<>( factory.command( 0 ).GetType(), 16 );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.kernel.impl.transaction.command.Command.BaseCommand<? extends org.Neo4Net.kernel.impl.store.record.PrimitiveRecord> IEntity0 = factory.command(0);
+//ORIGINAL LINE: Neo4Net.kernel.impl.transaction.command.Command.BaseCommand<? extends Neo4Net.kernel.impl.store.record.PrimitiveRecord> IEntity0 = factory.command(0);
 			  Command.BaseCommand<PrimitiveRecord> IEntity0 = factory.command( 0 );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.kernel.impl.transaction.command.Command.BaseCommand<? extends org.Neo4Net.kernel.impl.store.record.PrimitiveRecord> IEntity1 = factory.command(1);
+//ORIGINAL LINE: Neo4Net.kernel.impl.transaction.command.Command.BaseCommand<? extends Neo4Net.kernel.impl.store.record.PrimitiveRecord> IEntity1 = factory.command(1);
 			  Command.BaseCommand<PrimitiveRecord> IEntity1 = factory.command( 1 );
 			  grouper.add( IEntity0 );
 			  grouper.add( IEntity1 );
@@ -165,11 +165,11 @@ namespace Neo4Net.Kernel.Impl.Api.index
 
 			  // when
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.kernel.impl.transaction.command.Command.BaseCommand<? extends org.Neo4Net.kernel.impl.store.record.PrimitiveRecord> IEntity2 = factory.command(2);
+//ORIGINAL LINE: Neo4Net.kernel.impl.transaction.command.Command.BaseCommand<? extends Neo4Net.kernel.impl.store.record.PrimitiveRecord> IEntity2 = factory.command(2);
 			  Command.BaseCommand<PrimitiveRecord> IEntity2 = factory.command( 2 );
 			  Command.PropertyCommand IEntityProperty = Property( IEntity2.After );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.kernel.impl.transaction.command.Command.BaseCommand<? extends org.Neo4Net.kernel.impl.store.record.PrimitiveRecord> IEntity3 = factory.command(3);
+//ORIGINAL LINE: Neo4Net.kernel.impl.transaction.command.Command.BaseCommand<? extends Neo4Net.kernel.impl.store.record.PrimitiveRecord> IEntity3 = factory.command(3);
 			  Command.BaseCommand<PrimitiveRecord> IEntity3 = factory.command( 3 );
 			  grouper.add( IEntity2 );
 			  grouper.add( IEntityProperty );
@@ -251,9 +251,9 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 private abstract class Factory
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           NODE { NodeCommand command(long value) { return new org.Neo4Net.kernel.impl.transaction.command.Command.NodeCommand(new org.Neo4Net.kernel.impl.store.record.NodeRecord(value), new org.Neo4Net.kernel.impl.store.record.NodeRecord(value)); } },
+//           NODE { NodeCommand command(long value) { return new Neo4Net.kernel.impl.transaction.command.Command.NodeCommand(new Neo4Net.kernel.impl.store.record.NodeRecord(value), new Neo4Net.kernel.impl.store.record.NodeRecord(value)); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           RELATIONSHIP { RelationshipCommand command(long value) { return new org.Neo4Net.kernel.impl.transaction.command.Command.RelationshipCommand(new org.Neo4Net.kernel.impl.store.record.RelationshipRecord(value), new org.Neo4Net.kernel.impl.store.record.RelationshipRecord(value)); } };
+//           RELATIONSHIP { RelationshipCommand command(long value) { return new Neo4Net.kernel.impl.transaction.command.Command.RelationshipCommand(new Neo4Net.kernel.impl.store.record.RelationshipRecord(value), new Neo4Net.kernel.impl.store.record.RelationshipRecord(value)); } };
 
 			  private static readonly IList<Factory> valueList = new List<Factory>();
 

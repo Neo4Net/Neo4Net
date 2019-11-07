@@ -116,7 +116,7 @@ namespace Neo4Net.Kernel.ha.cluster
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public long applyPreparedTransaction(org.Neo4Net.kernel.impl.transaction.TransactionRepresentation preparedTransaction) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
+//ORIGINAL LINE: public long applyPreparedTransaction(Neo4Net.kernel.impl.transaction.TransactionRepresentation preparedTransaction) throws Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 public override long ApplyPreparedTransaction( TransactionRepresentation preparedTransaction )
 		 {
 			  return _transactionCommitProcess.commit( new TransactionToApply( preparedTransaction ), CommitEvent.NULL, TransactionApplicationMode.EXTERNAL );

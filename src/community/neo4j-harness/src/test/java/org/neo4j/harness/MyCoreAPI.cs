@@ -23,9 +23,9 @@ namespace Neo4Net.Harness
 {
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
-	using AnonymousContext = Neo4Net.Kernel.api.security.AnonymousContext;
+	using AnonymousContext = Neo4Net.Kernel.Api.security.AnonymousContext;
 	using ThreadToStatementContextBridge = Neo4Net.Kernel.impl.core.ThreadToStatementContextBridge;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
 	using Log = Neo4Net.Logging.Log;
@@ -44,7 +44,7 @@ namespace Neo4Net.Harness
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public long makeNode(String label) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
+//ORIGINAL LINE: public long makeNode(String label) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 		 public virtual long MakeNode( string label )
 		 {
 			  long result;

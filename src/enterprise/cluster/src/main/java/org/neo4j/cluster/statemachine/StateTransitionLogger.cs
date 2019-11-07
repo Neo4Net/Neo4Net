@@ -33,11 +33,11 @@ namespace Neo4Net.cluster.statemachine
 	using LogProvider = Neo4Net.Logging.LogProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.cluster.com.message.Message.HEADER_CONVERSATION_ID;
+//	import static Neo4Net.cluster.com.message.Message.HEADER_CONVERSATION_ID;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.cluster.com.message.Message.HEADER_FROM;
+//	import static Neo4Net.cluster.com.message.Message.HEADER_FROM;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.cluster.protocol.atomicbroadcast.multipaxos.InstanceId.INSTANCE;
+//	import static Neo4Net.cluster.protocol.atomicbroadcast.multipaxos.InstanceId.INSTANCE;
 
 	/// <summary>
 	/// Logs state transitions in <seealso cref="StateMachine"/>s. Use this for debugging mainly.

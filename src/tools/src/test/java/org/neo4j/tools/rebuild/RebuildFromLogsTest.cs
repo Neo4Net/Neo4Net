@@ -53,7 +53,7 @@ namespace Neo4Net.tools.rebuild
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_ID;
+//	import static Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_ID;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class RebuildFromLogsTest
@@ -85,7 +85,7 @@ namespace Neo4Net.tools.rebuild
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldRebuildFromLog() throws Exception, org.Neo4Net.consistency.checking.InconsistentStoreException
+//ORIGINAL LINE: @Test public void shouldRebuildFromLog() throws Exception, Neo4Net.consistency.checking.InconsistentStoreException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldRebuildFromLog()
 		 {
@@ -102,7 +102,7 @@ namespace Neo4Net.tools.rebuild
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void failRebuildFromLogIfStoreIsInconsistentAfterRebuild() throws org.Neo4Net.consistency.checking.InconsistentStoreException, Exception
+//ORIGINAL LINE: @Test public void failRebuildFromLogIfStoreIsInconsistentAfterRebuild() throws Neo4Net.consistency.checking.InconsistentStoreException, Exception
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void FailRebuildFromLogIfStoreIsInconsistentAfterRebuild()
 		 {
@@ -117,7 +117,7 @@ namespace Neo4Net.tools.rebuild
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldRebuildFromLogUpToATx() throws Exception, org.Neo4Net.consistency.checking.InconsistentStoreException
+//ORIGINAL LINE: @Test public void shouldRebuildFromLogUpToATx() throws Exception, Neo4Net.consistency.checking.InconsistentStoreException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldRebuildFromLogUpToATx()
 		 {
@@ -197,15 +197,15 @@ namespace Neo4Net.tools.rebuild
 		 internal sealed class Transaction
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           CREATE_NODE { void applyTx(org.Neo4Net.graphdb.GraphDatabaseService graphDb) { graphDb.createNode(); } },
+//           CREATE_NODE { void applyTx(Neo4Net.graphdb.GraphDatabaseService graphDb) { graphDb.createNode(); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           CREATE_NODE_WITH_PROPERTY { void applyTx(org.Neo4Net.graphdb.GraphDatabaseService graphDb) { graphDb.createNode().setProperty(name(), "value"); } },
+//           CREATE_NODE_WITH_PROPERTY { void applyTx(Neo4Net.graphdb.GraphDatabaseService graphDb) { graphDb.createNode().setProperty(name(), "value"); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           SET_PROPERTY(CREATE_NODE) { void applyTx(org.Neo4Net.graphdb.GraphDatabaseService graphDb) { firstNode(graphDb).setProperty(name(), "value"); } },
+//           SET_PROPERTY(CREATE_NODE) { void applyTx(Neo4Net.graphdb.GraphDatabaseService graphDb) { firstNode(graphDb).setProperty(name(), "value"); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           CHANGE_PROPERTY(CREATE_NODE_WITH_PROPERTY) { void applyTx(org.Neo4Net.graphdb.GraphDatabaseService graphDb) { org.Neo4Net.graphdb.ResourceIterable<org.Neo4Net.graphdb.Node> nodes = graphDb.getAllNodes(); try(org.Neo4Net.graphdb.ResourceIterator<org.Neo4Net.graphdb.Node> iterator = nodes.iterator()) { while (iterator.hasNext()) { org.Neo4Net.graphdb.Node node = iterator.next(); if("value".equals(node.getProperty(CREATE_NODE_WITH_PROPERTY.name(), null))) { node.setProperty(CREATE_NODE_WITH_PROPERTY.name(), "other"); break; } } } } },
+//           CHANGE_PROPERTY(CREATE_NODE_WITH_PROPERTY) { void applyTx(Neo4Net.graphdb.GraphDatabaseService graphDb) { Neo4Net.graphdb.ResourceIterable<Neo4Net.graphdb.Node> nodes = graphDb.getAllNodes(); try(Neo4Net.graphdb.ResourceIterator<Neo4Net.graphdb.Node> iterator = nodes.iterator()) { while (iterator.hasNext()) { Neo4Net.graphdb.Node node = iterator.next(); if("value".equals(node.getProperty(CREATE_NODE_WITH_PROPERTY.name(), null))) { node.setProperty(CREATE_NODE_WITH_PROPERTY.name(), "other"); break; } } } } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           EXPLICIT_INDEX_NODE(CREATE_NODE) { void applyTx(org.Neo4Net.graphdb.GraphDatabaseService graphDb) { org.Neo4Net.graphdb.Node node = firstNode(graphDb); graphDb.index().forNodes(name()).add(node, "foo", "bar"); } };
+//           EXPLICIT_INDEX_NODE(CREATE_NODE) { void applyTx(Neo4Net.graphdb.GraphDatabaseService graphDb) { Neo4Net.graphdb.Node node = firstNode(graphDb); graphDb.index().forNodes(name()).add(node, "foo", "bar"); } };
 
 			  private static readonly IList<Transaction> valueList = new List<Transaction>();
 
@@ -374,7 +374,7 @@ namespace Neo4Net.tools.rebuild
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void checkConsistency(java.io.File target, org.Neo4Net.io.pagecache.PageCache pageCache) throws org.Neo4Net.consistency.checking.InconsistentStoreException
+//ORIGINAL LINE: void checkConsistency(java.io.File target, Neo4Net.io.pagecache.PageCache pageCache) throws Neo4Net.consistency.checking.InconsistentStoreException
 			  internal override void CheckConsistency( File target, PageCache pageCache )
 			  {
 					throw new InconsistentStoreException( new ConsistencySummaryStatistics() );

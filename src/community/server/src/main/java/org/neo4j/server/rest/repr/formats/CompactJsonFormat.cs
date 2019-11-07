@@ -28,12 +28,12 @@ namespace Neo4Net.Server.rest.repr.formats
 	using JsonParseException = Neo4Net.Server.rest.domain.JsonParseException;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.domain.JsonHelper.assertSupportedPropertyValue;
+//	import static Neo4Net.server.rest.domain.JsonHelper.assertSupportedPropertyValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.domain.JsonHelper.readJson;
+//	import static Neo4Net.server.rest.domain.JsonHelper.readJson;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Service.Implementation(RepresentationFormat.class) public class CompactJsonFormat extends org.Neo4Net.server.rest.repr.RepresentationFormat
+//ORIGINAL LINE: @Service.Implementation(RepresentationFormat.class) public class CompactJsonFormat extends Neo4Net.server.rest.repr.RepresentationFormat
 	public class CompactJsonFormat : RepresentationFormat
 	{
 		 public static readonly MediaType MediaType = new MediaType( MediaType.APPLICATION_JSON_TYPE.Type, MediaType.APPLICATION_JSON_TYPE.Subtype, MapUtil.stringMap( "compact", "true" ) );
@@ -45,13 +45,13 @@ namespace Neo4Net.Server.rest.repr.formats
 		 private abstract class MappingTemplate
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           NODE(org.Neo4Net.server.rest.repr.Representation.NODE) { String render(java.util.Map<String, Object> serialized) { return org.Neo4Net.server.rest.domain.JsonHelper.createJsonFrom(org.Neo4Net.helpers.collection.MapUtil.map("self", serialized.get("self"), "data", serialized.get("data"))); } },
+//           NODE(Neo4Net.server.rest.repr.Representation.NODE) { String render(java.util.Map<String, Object> serialized) { return Neo4Net.server.rest.domain.JsonHelper.createJsonFrom(Neo4Net.helpers.collection.MapUtil.map("self", serialized.get("self"), "data", serialized.get("data"))); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           RELATIONSHIP(org.Neo4Net.server.rest.repr.Representation.RELATIONSHIP) { String render(java.util.Map<String, Object> serialized) { return org.Neo4Net.server.rest.domain.JsonHelper.createJsonFrom(org.Neo4Net.helpers.collection.MapUtil.map("self", serialized.get("self"), "data", serialized.get("data"))); } },
+//           RELATIONSHIP(Neo4Net.server.rest.repr.Representation.RELATIONSHIP) { String render(java.util.Map<String, Object> serialized) { return Neo4Net.server.rest.domain.JsonHelper.createJsonFrom(Neo4Net.helpers.collection.MapUtil.map("self", serialized.get("self"), "data", serialized.get("data"))); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           STRING(org.Neo4Net.server.rest.repr.Representation.STRING) { String render(java.util.Map<String, Object> serialized) { return org.Neo4Net.server.rest.domain.JsonHelper.createJsonFrom(serialized); } },
+//           STRING(Neo4Net.server.rest.repr.Representation.STRING) { String render(java.util.Map<String, Object> serialized) { return Neo4Net.server.rest.domain.JsonHelper.createJsonFrom(serialized); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           EXCEPTION(org.Neo4Net.server.rest.repr.Representation.EXCEPTION) { String render(java.util.Map<String, Object> data) { return org.Neo4Net.server.rest.domain.JsonHelper.createJsonFrom(data); } };
+//           EXCEPTION(Neo4Net.server.rest.repr.Representation.EXCEPTION) { String render(java.util.Map<String, Object> data) { return Neo4Net.server.rest.domain.JsonHelper.createJsonFrom(data); } };
 
 			  private static readonly IList<MappingTemplate> valueList = new List<MappingTemplate>();
 
@@ -200,7 +200,7 @@ namespace Neo4Net.Server.rest.repr.formats
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.util.Map<String, Object> readMap(String input, String... requiredKeys) throws org.Neo4Net.server.rest.repr.BadInputException
+//ORIGINAL LINE: public java.util.Map<String, Object> readMap(String input, String... requiredKeys) throws Neo4Net.server.rest.repr.BadInputException
 		 public override IDictionary<string, object> ReadMap( string input, params string[] requiredKeys )
 		 {
 			  if ( Empty( input ) )
@@ -224,7 +224,7 @@ namespace Neo4Net.Server.rest.repr.formats
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public Object readValue(String input) throws org.Neo4Net.server.rest.repr.BadInputException
+//ORIGINAL LINE: public Object readValue(String input) throws Neo4Net.server.rest.repr.BadInputException
 		 public override object ReadValue( string input )
 		 {
 			  if ( Empty( input ) )
@@ -242,7 +242,7 @@ namespace Neo4Net.Server.rest.repr.formats
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.net.URI readUri(String input) throws org.Neo4Net.server.rest.repr.BadInputException
+//ORIGINAL LINE: public java.net.URI readUri(String input) throws Neo4Net.server.rest.repr.BadInputException
 		 public override URI ReadUri( string input )
 		 {
 			  try

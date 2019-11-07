@@ -22,9 +22,9 @@ namespace Neo4Net.Index.Internal.gbptree
 	using PageCursor = Neo4Net.Io.pagecache.PageCursor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Internal.gbptree.PageCursorUtil.getUnsignedShort;
+//	import static Neo4Net.index.Internal.gbptree.PageCursorUtil.getUnsignedShort;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Internal.gbptree.PageCursorUtil.putUnsignedShort;
+//	import static Neo4Net.index.Internal.gbptree.PageCursorUtil.putUnsignedShort;
 
 	/// <summary>
 	/// Gather utility methods for reading and writing individual dynamic sized

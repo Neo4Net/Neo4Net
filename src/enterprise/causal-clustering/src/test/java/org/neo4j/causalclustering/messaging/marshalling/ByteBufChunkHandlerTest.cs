@@ -37,11 +37,11 @@ namespace Neo4Net.causalclustering.messaging.marshalling
 	public class ByteBufChunkHandlerTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.causalclustering.helpers.Buffers buffers = new org.Neo4Net.causalclustering.helpers.Buffers();
+//ORIGINAL LINE: @Rule public final Neo4Net.causalclustering.helpers.Buffers buffers = new Neo4Net.causalclustering.helpers.Buffers();
 		 public readonly Buffers Buffers = new Buffers();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(expected = org.Neo4Net.causalclustering.messaging.MessageTooBigException.class) public void shouldThrowExceptioIfToLarge() throws Exception
+//ORIGINAL LINE: @Test(expected = Neo4Net.causalclustering.messaging.MessageTooBigException.class) public void shouldThrowExceptioIfToLarge() throws Exception
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldThrowExceptioIfToLarge()
 		 {

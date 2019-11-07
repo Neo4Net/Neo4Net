@@ -231,7 +231,7 @@ namespace Neo4Net.Server.plugins
 			 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Override @SuppressWarnings("boxing") org.Neo4Net.server.rest.repr.Representation convert(Object obj)
+//ORIGINAL LINE: @Override @SuppressWarnings("boxing") Neo4Net.server.rest.repr.Representation convert(Object obj)
 			 internal override Representation convert( object obj )
 			 {
 				  return ValueRepresentation.@bool( ( bool? ) obj.Value );
@@ -259,7 +259,7 @@ namespace Neo4Net.Server.plugins
 			 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Override @SuppressWarnings("boxing") org.Neo4Net.server.rest.repr.Representation convert(Object obj)
+//ORIGINAL LINE: @Override @SuppressWarnings("boxing") Neo4Net.server.rest.repr.Representation convert(Object obj)
 			 internal override Representation convert( object obj )
 			 {
 				  return ValueRepresentation.number( ( char? ) obj );
@@ -289,7 +289,7 @@ namespace Neo4Net.Server.plugins
 			  }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Override @SuppressWarnings("unchecked") org.Neo4Net.server.rest.repr.Representation convert(Object obj)
+//ORIGINAL LINE: @Override @SuppressWarnings("unchecked") Neo4Net.server.rest.repr.Representation convert(Object obj)
 			  internal override Representation Convert( object obj )
 			  {
 					return new ListRepresentation( ItemConverter.type(), new IterableWrapperAnonymousInnerClass(this) );

@@ -64,7 +64,7 @@ namespace Neo4Net.ha.correctness
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: public org.Neo4Net.cluster.com.message.Message<? extends org.Neo4Net.cluster.com.message.MessageType> cancelTimeout(Object key)
+//ORIGINAL LINE: public Neo4Net.cluster.com.message.Message<? extends Neo4Net.cluster.com.message.MessageType> cancelTimeout(Object key)
 		 public override Message<MessageType> CancelTimeout( object key )
 		 {
 			  Pair<ProverTimeout, long> timeout = _timeouts.Remove( key );

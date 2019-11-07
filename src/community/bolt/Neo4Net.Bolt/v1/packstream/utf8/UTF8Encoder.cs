@@ -50,7 +50,7 @@ namespace Neo4Net.Bolt.v1.packstream.utf8
 	//	 {
 	//		  try
 	//		  {
-	//				return (UTF8Encoder)Class.forName("org.Neo4Net.bolt.v1.packstream.utf8.SunMiscUTF8Encoder").getConstructor().newInstance();
+	//				return (UTF8Encoder)Class.forName("Neo4Net.bolt.v1.packstream.utf8.SunMiscUTF8Encoder").getConstructor().newInstance();
 	//		  }
 	//		  catch (Throwable e)
 	//		  {

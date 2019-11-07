@@ -63,14 +63,14 @@ namespace Neo4Net.causalclustering.core.consensus
 		 private Monitors _monitors = new Monitors();
 		 private RaftMessageProcessingMonitor _monitor = mock( typeof( RaftMessageProcessingMonitor ) );
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private org.Neo4Net.causalclustering.messaging.LifecycleMessageHandler<RaftMessages_ReceivedInstantClusterIdAwareMessage<?>> downstream = mock(org.Neo4Net.causalclustering.messaging.LifecycleMessageHandler.class);
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private Neo4Net.causalclustering.messaging.LifecycleMessageHandler<RaftMessages_ReceivedInstantClusterIdAwareMessage<?>> downstream = mock(Neo4Net.causalclustering.messaging.LifecycleMessageHandler.class);
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		 private LifecycleMessageHandler<RaftMessages_ReceivedInstantClusterIdAwareMessage<object>> _downstream = mock( typeof( LifecycleMessageHandler ) );
 
 		 private Duration _messageQueueDelay = Duration.ofMillis( 5 );
 		 private Duration _messageProcessingDelay = Duration.ofMillis( 7 );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private RaftMessages_ReceivedInstantClusterIdAwareMessage<?> message = RaftMessages_ReceivedInstantClusterIdAwareMessage.of(now.minus(messageQueueDelay), new org.Neo4Net.causalclustering.identity.ClusterId(java.util.UUID.randomUUID()), new RaftMessages_Heartbeat(new org.Neo4Net.causalclustering.identity.MemberId(java.util.UUID.randomUUID()), 0, 0, 0)
+//ORIGINAL LINE: private RaftMessages_ReceivedInstantClusterIdAwareMessage<?> message = RaftMessages_ReceivedInstantClusterIdAwareMessage.of(now.minus(messageQueueDelay), new Neo4Net.causalclustering.identity.ClusterId(java.util.UUID.randomUUID()), new RaftMessages_Heartbeat(new Neo4Net.causalclustering.identity.MemberId(java.util.UUID.randomUUID()), 0, 0, 0)
 		 private RaftMessages_ReceivedInstantClusterIdAwareMessage<object> message = RaftMessages_ReceivedInstantClusterIdAwareMessage.of(_now.minus(_messageQueueDelay), new ClusterId(System.Guid.randomUUID()), new RaftMessages_Heartbeat(new MemberId(System.Guid.randomUUID()), 0, 0, 0)
 		);
 		 private Clock _clock = Clocks.tickOnAccessClock( _now, _messageProcessingDelay );

@@ -25,7 +25,7 @@ namespace Neo4Net.Server.web
 	using ServerConnector = org.eclipse.jetty.server.ServerConnector;
 
 	using ListenSocketAddress = Neo4Net.Helpers.ListenSocketAddress;
-	using NetworkConnectionTracker = Neo4Net.Kernel.api.net.NetworkConnectionTracker;
+	using NetworkConnectionTracker = Neo4Net.Kernel.Api.net.NetworkConnectionTracker;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using ServerSettings = Neo4Net.Server.configuration.ServerSettings;
 

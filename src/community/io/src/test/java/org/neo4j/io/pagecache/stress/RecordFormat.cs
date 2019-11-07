@@ -85,7 +85,7 @@ namespace Neo4Net.Io.pagecache.stress
 		 /// Sum up the fields for the given thread for all records on the given page.
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public long sumCountsForThread(org.Neo4Net.io.pagecache.PageCursor cursor, int threadId) throws java.io.IOException
+//ORIGINAL LINE: public long sumCountsForThread(Neo4Net.io.pagecache.PageCursor cursor, int threadId) throws java.io.IOException
 		 public virtual long SumCountsForThread( PageCursor cursor, int threadId )
 		 {
 			  int recordsPerPage = RecordsPerPage;
@@ -106,7 +106,7 @@ namespace Neo4Net.Io.pagecache.stress
 		 /// Verify the checksums on all the records on the given page
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void verifyCheckSums(org.Neo4Net.io.pagecache.PageCursor cursor) throws java.io.IOException
+//ORIGINAL LINE: public void verifyCheckSums(Neo4Net.io.pagecache.PageCursor cursor) throws java.io.IOException
 		 public virtual void VerifyCheckSums( PageCursor cursor )
 		 {
 			  int recordsPerPage = RecordsPerPage;

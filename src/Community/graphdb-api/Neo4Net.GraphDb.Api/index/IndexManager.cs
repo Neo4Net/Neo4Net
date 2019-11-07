@@ -152,7 +152,7 @@
 ////////////////////		 /// <param name="index"> the index to get the configuration for </param>
 ////////////////////		 /// <returns> configuration for the {@code index}. </returns>
 //////////////////////JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//////////////////////ORIGINAL LINE: Map<String, String> getConfiguration(Index<? extends org.Neo4Net.graphdb.PropertyContainer> index);
+//////////////////////ORIGINAL LINE: Map<String, String> getConfiguration(Index<? extends Neo4Net.GraphDb.PropertyContainer> index);
 ////////////////////		 [Obsolete]
 ////////////////////		 IDictionary<string, string> getConfiguration<T1>( Index<T1> index );
 
@@ -171,7 +171,7 @@
 ////////////////////		 /// <param name="value"> the new value of the configuration parameter. </param>
 ////////////////////		 /// <returns> the overwritten value if any. </returns>
 //////////////////////JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//////////////////////ORIGINAL LINE: String setConfiguration(Index<? extends org.Neo4Net.graphdb.PropertyContainer> index, String key, String value);
+//////////////////////ORIGINAL LINE: String setConfiguration(Index<? extends Neo4Net.GraphDb.PropertyContainer> index, String key, String value);
 ////////////////////		 [Obsolete]
 ////////////////////		 string setConfiguration<T1>( Index<T1> index, string key, string value );
 
@@ -190,7 +190,7 @@
 ////////////////////		 /// <param name="key"> the configuration parameter key. </param>
 ////////////////////		 /// <returns> the removed value if any. </returns>
 //////////////////////JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//////////////////////ORIGINAL LINE: String removeConfiguration(Index<? extends org.Neo4Net.graphdb.PropertyContainer> index, String key);
+//////////////////////ORIGINAL LINE: String removeConfiguration(Index<? extends Neo4Net.GraphDb.PropertyContainer> index, String key);
 ////////////////////		 [Obsolete]
 ////////////////////		 string removeConfiguration<T1>( Index<T1> index, string key );
 

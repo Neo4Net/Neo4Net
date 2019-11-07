@@ -31,7 +31,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 // long0Array (nanosOfDayUTC)
 		 // long1Array (zoneOffsetSeconds)
 
-		 internal ZonedTimeArrayType( sbyte typeId ) : base( ValueGroup.ZONED_TIME_ARRAY, typeId, ( o1, o2, i ) -> ZonedTimeType.Compare( o1.long0Array[i], o1.long1Array[i], o2.long0Array[i], o2.long1Array[i] ), ( k, i ) -> ZonedTimeType.AsValueRaw( k.long0Array[i], k.long1Array[i] ), ( c, k, i ) -> ZonedTimeType.put( c, k.long0Array[i], k.long1Array[i] ), ZonedTimeType.read, OffsetTime[]::new, org.Neo4Net.values.storable.ValueWriter_ArrayType.ZonedTime )
+		 internal ZonedTimeArrayType( sbyte typeId ) : base( ValueGroup.ZONED_TIME_ARRAY, typeId, ( o1, o2, i ) -> ZonedTimeType.Compare( o1.long0Array[i], o1.long1Array[i], o2.long0Array[i], o2.long1Array[i] ), ( k, i ) -> ZonedTimeType.AsValueRaw( k.long0Array[i], k.long1Array[i] ), ( c, k, i ) -> ZonedTimeType.put( c, k.long0Array[i], k.long1Array[i] ), ZonedTimeType.read, OffsetTime[]::new, Neo4Net.values.storable.ValueWriter_ArrayType.ZonedTime )
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Method reference constructor syntax is not converted by Java to C# Converter:
 		 }

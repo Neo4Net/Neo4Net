@@ -32,7 +32,7 @@ namespace Neo4Net.causalclustering.helpers
 	using Neo4Net.Collections.Helpers;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.count;
+//	import static Neo4Net.helpers.collection.Iterables.count;
 
 	public class DataCreator
 	{
@@ -41,7 +41,7 @@ namespace Neo4Net.causalclustering.helpers
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static org.Neo4Net.causalclustering.discovery.CoreClusterMember createLabelledNodesWithProperty(org.Neo4Net.causalclustering.discovery.Cluster<?> cluster, int numberOfNodes, org.Neo4Net.graphdb.Label label, System.Func<org.Neo4Net.helpers.collection.Pair<String,Object>> propertyPair) throws Exception
+//ORIGINAL LINE: public static Neo4Net.causalclustering.discovery.CoreClusterMember createLabelledNodesWithProperty(Neo4Net.causalclustering.discovery.Cluster<?> cluster, int numberOfNodes, Neo4Net.graphdb.Label label, System.Func<Neo4Net.helpers.collection.Pair<String,Object>> propertyPair) throws Exception
 		 public static CoreClusterMember CreateLabelledNodesWithProperty<T1>( Cluster<T1> cluster, int numberOfNodes, Label label, System.Func<Pair<string, object>> propertyPair )
 		 {
 			  CoreClusterMember last = null;
@@ -58,7 +58,7 @@ namespace Neo4Net.causalclustering.helpers
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static org.Neo4Net.causalclustering.discovery.CoreClusterMember createEmptyNodes(org.Neo4Net.causalclustering.discovery.Cluster<?> cluster, int numberOfNodes) throws Exception
+//ORIGINAL LINE: public static Neo4Net.causalclustering.discovery.CoreClusterMember createEmptyNodes(Neo4Net.causalclustering.discovery.Cluster<?> cluster, int numberOfNodes) throws Exception
 		 public static CoreClusterMember CreateEmptyNodes<T1>( Cluster<T1> cluster, int numberOfNodes )
 		 {
 			  CoreClusterMember last = null;

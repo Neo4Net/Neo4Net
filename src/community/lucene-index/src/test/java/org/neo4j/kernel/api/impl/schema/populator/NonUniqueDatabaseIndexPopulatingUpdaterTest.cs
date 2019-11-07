@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.populator
 
 	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
 	using LuceneIndexWriter = Neo4Net.Kernel.Api.Impl.Schema.writer.LuceneIndexWriter;
-	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
+	using SchemaDescriptorFactory = Neo4Net.Kernel.Api.schema.SchemaDescriptorFactory;
 	using DefaultNonUniqueIndexSampler = Neo4Net.Kernel.Impl.Api.index.sampling.DefaultNonUniqueIndexSampler;
 	using NonUniqueIndexSampler = Neo4Net.Kernel.Impl.Api.index.sampling.NonUniqueIndexSampler;
 	using IndexSample = Neo4Net.Kernel.Api.StorageEngine.schema.IndexSample;
@@ -42,15 +42,15 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.populator
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.hamcrest.MockitoHamcrest.argThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.impl.LuceneTestUtil.documentRepresentingProperties;
+//	import static Neo4Net.kernel.api.impl.LuceneTestUtil.documentRepresentingProperties;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.impl.schema.LuceneDocumentStructure.newTermForChangeOrRemove;
+//	import static Neo4Net.kernel.api.impl.schema.LuceneDocumentStructure.newTermForChangeOrRemove;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.index.IndexQueryHelper.add;
+//	import static Neo4Net.kernel.api.index.IndexQueryHelper.add;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.index.IndexQueryHelper.change;
+//	import static Neo4Net.kernel.api.index.IndexQueryHelper.change;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.index.IndexQueryHelper.remove;
+//	import static Neo4Net.kernel.api.index.IndexQueryHelper.remove;
 
 	internal class NonUniqueDatabaseIndexPopulatingUpdaterTest
 	{
@@ -285,7 +285,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.populator
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void verifydocument(org.Neo4Net.kernel.api.impl.schema.writer.LuceneIndexWriter writer, org.apache.lucene.index.Term eq, String documentString) throws java.io.IOException
+//ORIGINAL LINE: private void verifydocument(Neo4Net.kernel.api.impl.schema.writer.LuceneIndexWriter writer, org.apache.lucene.index.Term eq, String documentString) throws java.io.IOException
 		 private void Verifydocument( LuceneIndexWriter writer, Term eq, string documentString )
 		 {
 			  verify( writer ).updateDocument( eq( eq ), argThat( hasToString( documentString ) ) );

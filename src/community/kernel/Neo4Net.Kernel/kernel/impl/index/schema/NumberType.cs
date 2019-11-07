@@ -27,19 +27,19 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using Values = Neo4Net.Values.Storable.Values;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.GenericKey.SIZE_NUMBER_BYTE;
+//	import static Neo4Net.kernel.impl.index.schema.GenericKey.SIZE_NUMBER_BYTE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.GenericKey.SIZE_NUMBER_DOUBLE;
+//	import static Neo4Net.kernel.impl.index.schema.GenericKey.SIZE_NUMBER_DOUBLE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.GenericKey.SIZE_NUMBER_FLOAT;
+//	import static Neo4Net.kernel.impl.index.schema.GenericKey.SIZE_NUMBER_FLOAT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.GenericKey.SIZE_NUMBER_INT;
+//	import static Neo4Net.kernel.impl.index.schema.GenericKey.SIZE_NUMBER_INT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.GenericKey.SIZE_NUMBER_LONG;
+//	import static Neo4Net.kernel.impl.index.schema.GenericKey.SIZE_NUMBER_LONG;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.GenericKey.SIZE_NUMBER_SHORT;
+//	import static Neo4Net.kernel.impl.index.schema.GenericKey.SIZE_NUMBER_SHORT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.GenericKey.SIZE_NUMBER_TYPE;
+//	import static Neo4Net.kernel.impl.index.schema.GenericKey.SIZE_NUMBER_TYPE;
 
 	internal class NumberType : Type
 	{

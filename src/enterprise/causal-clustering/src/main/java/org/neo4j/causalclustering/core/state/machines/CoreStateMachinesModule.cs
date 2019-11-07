@@ -73,43 +73,43 @@ namespace Neo4Net.causalclustering.core.state.machines
 	using StorageEngine = Neo4Net.Kernel.Api.StorageEngine.StorageEngine;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.CausalClusteringSettings.array_block_id_allocation_size;
+//	import static Neo4Net.causalclustering.core.CausalClusteringSettings.array_block_id_allocation_size;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.CausalClusteringSettings.id_alloc_state_size;
+//	import static Neo4Net.causalclustering.core.CausalClusteringSettings.id_alloc_state_size;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.CausalClusteringSettings.label_token_id_allocation_size;
+//	import static Neo4Net.causalclustering.core.CausalClusteringSettings.label_token_id_allocation_size;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.CausalClusteringSettings.label_token_name_id_allocation_size;
+//	import static Neo4Net.causalclustering.core.CausalClusteringSettings.label_token_name_id_allocation_size;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.CausalClusteringSettings.neostore_block_id_allocation_size;
+//	import static Neo4Net.causalclustering.core.CausalClusteringSettings.neostore_block_id_allocation_size;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.CausalClusteringSettings.node_id_allocation_size;
+//	import static Neo4Net.causalclustering.core.CausalClusteringSettings.node_id_allocation_size;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.CausalClusteringSettings.node_labels_id_allocation_size;
+//	import static Neo4Net.causalclustering.core.CausalClusteringSettings.node_labels_id_allocation_size;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.CausalClusteringSettings.property_id_allocation_size;
+//	import static Neo4Net.causalclustering.core.CausalClusteringSettings.property_id_allocation_size;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.CausalClusteringSettings.property_key_token_id_allocation_size;
+//	import static Neo4Net.causalclustering.core.CausalClusteringSettings.property_key_token_id_allocation_size;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.CausalClusteringSettings.property_key_token_name_id_allocation_size;
+//	import static Neo4Net.causalclustering.core.CausalClusteringSettings.property_key_token_name_id_allocation_size;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.CausalClusteringSettings.relationship_group_id_allocation_size;
+//	import static Neo4Net.causalclustering.core.CausalClusteringSettings.relationship_group_id_allocation_size;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.CausalClusteringSettings.relationship_id_allocation_size;
+//	import static Neo4Net.causalclustering.core.CausalClusteringSettings.relationship_id_allocation_size;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.CausalClusteringSettings.relationship_type_token_id_allocation_size;
+//	import static Neo4Net.causalclustering.core.CausalClusteringSettings.relationship_type_token_id_allocation_size;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.CausalClusteringSettings.relationship_type_token_name_id_allocation_size;
+//	import static Neo4Net.causalclustering.core.CausalClusteringSettings.relationship_type_token_name_id_allocation_size;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.CausalClusteringSettings.replicated_lock_token_state_size;
+//	import static Neo4Net.causalclustering.core.CausalClusteringSettings.replicated_lock_token_state_size;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.CausalClusteringSettings.schema_id_allocation_size;
+//	import static Neo4Net.causalclustering.core.CausalClusteringSettings.schema_id_allocation_size;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.CausalClusteringSettings.state_machine_apply_max_batch_size;
+//	import static Neo4Net.causalclustering.core.CausalClusteringSettings.state_machine_apply_max_batch_size;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.CausalClusteringSettings.string_block_id_allocation_size;
+//	import static Neo4Net.causalclustering.core.CausalClusteringSettings.string_block_id_allocation_size;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.EditionLocksFactories.createLockFactory;
+//	import static Neo4Net.graphdb.factory.EditionLocksFactories.createLockFactory;
 
 	public class CoreStateMachinesModule
 	{
@@ -130,10 +130,10 @@ namespace Neo4Net.causalclustering.core.state.machines
 			  StateStorage<IdAllocationState> idAllocationState;
 			  StateStorage<ReplicatedLockTokenState> lockTokenState;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.lifecycle.LifeSupport life = platformModule.life;
+//ORIGINAL LINE: final Neo4Net.kernel.lifecycle.LifeSupport life = platformModule.life;
 			  LifeSupport life = platformModule.Life;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.io.fs.FileSystemAbstraction fileSystem = platformModule.fileSystem;
+//ORIGINAL LINE: final Neo4Net.io.fs.FileSystemAbstraction fileSystem = platformModule.fileSystem;
 			  FileSystemAbstraction fileSystem = platformModule.FileSystem;
 			  LogService logging = platformModule.Logging;
 			  LogProvider logProvider = logging.InternalLogProvider;
@@ -216,7 +216,7 @@ namespace Neo4Net.causalclustering.core.state.machines
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private org.Neo4Net.kernel.impl.store.id.IdGeneratorFactory createIdGeneratorFactory(org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, final org.Neo4Net.causalclustering.core.state.machines.id.ReplicatedIdRangeAcquirer idRangeAcquirer, final org.Neo4Net.logging.LogProvider logProvider, org.Neo4Net.kernel.impl.store.id.configuration.IdTypeConfigurationProvider idTypeConfigurationProvider)
+//ORIGINAL LINE: private Neo4Net.kernel.impl.store.id.IdGeneratorFactory createIdGeneratorFactory(Neo4Net.io.fs.FileSystemAbstraction fileSystem, final Neo4Net.causalclustering.core.state.machines.id.ReplicatedIdRangeAcquirer idRangeAcquirer, final Neo4Net.logging.LogProvider logProvider, Neo4Net.kernel.impl.store.id.configuration.IdTypeConfigurationProvider idTypeConfigurationProvider)
 		 private IdGeneratorFactory CreateIdGeneratorFactory( FileSystemAbstraction fileSystem, ReplicatedIdRangeAcquirer idRangeAcquirer, LogProvider logProvider, IdTypeConfigurationProvider idTypeConfigurationProvider )
 		 {
 			  return new ReplicatedIdGeneratorFactory( fileSystem, idRangeAcquirer, logProvider, idTypeConfigurationProvider );

@@ -27,14 +27,14 @@ namespace Neo4Net.Kernel.impl.pagecache
 	using PagedFile = Neo4Net.Io.pagecache.PagedFile;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.pagecache.PagedFile_Fields.PF_SHARED_READ_LOCK;
+//	import static Neo4Net.io.pagecache.PagedFile_Fields.PF_SHARED_READ_LOCK;
 
 	internal class SingleCursorPageLoader : PageLoader
 	{
 		 private readonly PageCursor _cursor;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: SingleCursorPageLoader(org.Neo4Net.io.pagecache.PagedFile file) throws java.io.IOException
+//ORIGINAL LINE: SingleCursorPageLoader(Neo4Net.io.pagecache.PagedFile file) throws java.io.IOException
 		 internal SingleCursorPageLoader( PagedFile file )
 		 {
 			  _cursor = file.Io( 0, PF_SHARED_READ_LOCK );

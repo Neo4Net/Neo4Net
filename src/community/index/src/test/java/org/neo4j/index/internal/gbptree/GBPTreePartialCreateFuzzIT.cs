@@ -44,11 +44,11 @@ namespace Neo4Net.Index.Internal.gbptree
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertNotEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.config.Configuration.EMPTY;
+//	import static Neo4Net.graphdb.config.Configuration.EMPTY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Internal.gbptree.GBPTree.NO_HEADER_READER;
+//	import static Neo4Net.index.Internal.gbptree.GBPTree.NO_HEADER_READER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Internal.gbptree.SimpleLongLayout.longLayout;
+//	import static Neo4Net.index.Internal.gbptree.SimpleLongLayout.longLayout;
 
 	/// <summary>
 	/// Tests functionality around process crashing, or similar, when having started, but not completed creation of an index file,
@@ -61,7 +61,7 @@ namespace Neo4Net.Index.Internal.gbptree
 	public class GBPTreePartialCreateFuzzIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.PageCacheAndDependenciesRule storage = new org.Neo4Net.test.rule.PageCacheAndDependenciesRule().with(new org.Neo4Net.test.rule.fs.DefaultFileSystemRule());
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.PageCacheAndDependenciesRule storage = new Neo4Net.test.rule.PageCacheAndDependenciesRule().with(new Neo4Net.test.rule.fs.DefaultFileSystemRule());
 		 public readonly PageCacheAndDependenciesRule Storage = new PageCacheAndDependenciesRule().with(new DefaultFileSystemRule());
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

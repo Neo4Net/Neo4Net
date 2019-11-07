@@ -48,7 +48,7 @@ namespace Neo4Net.Kernel.impl.locking
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.rule.concurrent.OtherThreadRule.isWaiting;
+//	import static Neo4Net.test.rule.concurrent.OtherThreadRule.isWaiting;
 
 	/// <summary>
 	/// Base for locking tests. </summary>
@@ -73,19 +73,19 @@ namespace Neo4Net.Kernel.impl.locking
 		 public abstract class Compatibility
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.concurrent.OtherThreadRule<Void> threadA = new org.Neo4Net.test.rule.concurrent.OtherThreadRule<>();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.concurrent.OtherThreadRule<Void> threadA = new Neo4Net.test.rule.concurrent.OtherThreadRule<>();
 			  public OtherThreadRule<Void> ThreadA = new OtherThreadRule<Void>();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.concurrent.OtherThreadRule<Void> threadB = new org.Neo4Net.test.rule.concurrent.OtherThreadRule<>();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.concurrent.OtherThreadRule<Void> threadB = new Neo4Net.test.rule.concurrent.OtherThreadRule<>();
 			  public OtherThreadRule<Void> ThreadB = new OtherThreadRule<Void>();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.concurrent.OtherThreadRule<Void> threadC = new org.Neo4Net.test.rule.concurrent.OtherThreadRule<>();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.concurrent.OtherThreadRule<Void> threadC = new Neo4Net.test.rule.concurrent.OtherThreadRule<>();
 			  public OtherThreadRule<Void> ThreadC = new OtherThreadRule<Void>();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.TestDirectory testDir = org.Neo4Net.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.TestDirectory testDir = Neo4Net.test.rule.TestDirectory.testDirectory();
 			  public TestDirectory TestDir = TestDirectory.testDirectory();
 
 			  protected internal readonly LockingCompatibilityTestSuite Suite;
@@ -172,7 +172,7 @@ namespace Neo4Net.Kernel.impl.locking
 					}
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: abstract void doWork(Locks_Client client) throws org.Neo4Net.Kernel.Api.StorageEngine.lock.AcquireLockTimeoutException;
+//ORIGINAL LINE: abstract void doWork(Locks_Client client) throws Neo4Net.Kernel.Api.StorageEngine.lock.AcquireLockTimeoutException;
 					internal abstract void DoWork( Locks_Client client );
 
 					public virtual Locks_Client Client()
@@ -182,7 +182,7 @@ namespace Neo4Net.Kernel.impl.locking
 			  }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: protected LockCommand acquireExclusive(final Locks_Client client, final org.Neo4Net.Kernel.Api.StorageEngine.lock.LockTracer tracer, final org.Neo4Net.Kernel.Api.StorageEngine.lock.ResourceType resourceType, final long key)
+//ORIGINAL LINE: protected LockCommand acquireExclusive(final Locks_Client client, final Neo4Net.Kernel.Api.StorageEngine.lock.LockTracer tracer, final Neo4Net.Kernel.Api.StorageEngine.lock.ResourceType resourceType, final long key)
 			  protected internal virtual LockCommand AcquireExclusive( Locks_Client client, LockTracer tracer, ResourceType resourceType, long key )
 			  {
 					return new LockCommandAnonymousInnerClass( this, ClientToThreadMap[client], client, tracer, resourceType, key );
@@ -207,7 +207,7 @@ namespace Neo4Net.Kernel.impl.locking
 				  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void doWork(Locks_Client client) throws org.Neo4Net.Kernel.Api.StorageEngine.lock.AcquireLockTimeoutException
+//ORIGINAL LINE: public void doWork(Locks_Client client) throws Neo4Net.Kernel.Api.StorageEngine.lock.AcquireLockTimeoutException
 				  public override void doWork( Locks_Client client )
 				  {
 						client.AcquireExclusive( _tracer, _resourceType, _key );
@@ -215,7 +215,7 @@ namespace Neo4Net.Kernel.impl.locking
 			  }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: protected LockCommand acquireShared(Locks_Client client, final org.Neo4Net.Kernel.Api.StorageEngine.lock.LockTracer tracer, final org.Neo4Net.Kernel.Api.StorageEngine.lock.ResourceType resourceType, final long key)
+//ORIGINAL LINE: protected LockCommand acquireShared(Locks_Client client, final Neo4Net.Kernel.Api.StorageEngine.lock.LockTracer tracer, final Neo4Net.Kernel.Api.StorageEngine.lock.ResourceType resourceType, final long key)
 			  protected internal virtual LockCommand AcquireShared( Locks_Client client, LockTracer tracer, ResourceType resourceType, long key )
 			  {
 					return new LockCommandAnonymousInnerClass2( this, ClientToThreadMap[client], client, tracer, resourceType, key );
@@ -240,7 +240,7 @@ namespace Neo4Net.Kernel.impl.locking
 				  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void doWork(Locks_Client client) throws org.Neo4Net.Kernel.Api.StorageEngine.lock.AcquireLockTimeoutException
+//ORIGINAL LINE: public void doWork(Locks_Client client) throws Neo4Net.Kernel.Api.StorageEngine.lock.AcquireLockTimeoutException
 				  public override void doWork( Locks_Client client )
 				  {
 						client.AcquireShared( _tracer, _resourceType, _key );
@@ -248,7 +248,7 @@ namespace Neo4Net.Kernel.impl.locking
 			  }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: protected LockCommand release(final Locks_Client client, final org.Neo4Net.Kernel.Api.StorageEngine.lock.ResourceType resourceType, final long key)
+//ORIGINAL LINE: protected LockCommand release(final Locks_Client client, final Neo4Net.Kernel.Api.StorageEngine.lock.ResourceType resourceType, final long key)
 			  protected internal virtual LockCommand Release( Locks_Client client, ResourceType resourceType, long key )
 			  {
 					return new LockCommandAnonymousInnerClass3( this, ClientToThreadMap[client], client, resourceType, key );

@@ -33,7 +33,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using Value = Neo4Net.Values.Storable.Value;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.emptyResourceIterator;
+//	import static Neo4Net.helpers.collection.Iterators.emptyResourceIterator;
 
 	public class IndexProxyAdapter : IndexProxy
 	{
@@ -100,7 +100,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 {
 		 }
 
-		 public override ResourceIterator<File> SnapshotFiles()
+		 public override IResourceIterator<File> SnapshotFiles()
 		 {
 			  return emptyResourceIterator();
 		 }

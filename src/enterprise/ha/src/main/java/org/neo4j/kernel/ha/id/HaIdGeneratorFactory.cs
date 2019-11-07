@@ -45,7 +45,7 @@ namespace Neo4Net.Kernel.ha.id
 	using LogProvider = Neo4Net.Logging.LogProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.id.IdRangeIterator.EMPTY_ID_RANGE_ITERATOR;
+//	import static Neo4Net.kernel.impl.store.id.IdRangeIterator.EMPTY_ID_RANGE_ITERATOR;
 
 	public class HaIdGeneratorFactory : IdGeneratorFactory
 	{

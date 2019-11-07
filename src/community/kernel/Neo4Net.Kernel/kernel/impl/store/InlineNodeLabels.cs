@@ -30,17 +30,17 @@ namespace Neo4Net.Kernel.impl.store
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Long.highestOneBit;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.collection.PrimitiveLongCollections.EMPTY_LONG_ARRAY;
+//	import static Neo4Net.collection.PrimitiveLongCollections.EMPTY_LONG_ARRAY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.LabelIdArray.concatAndSort;
+//	import static Neo4Net.kernel.impl.store.LabelIdArray.concatAndSort;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.LabelIdArray.filter;
+//	import static Neo4Net.kernel.impl.store.LabelIdArray.filter;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.NodeLabelsField.parseLabelsBody;
+//	import static Neo4Net.kernel.impl.store.NodeLabelsField.parseLabelsBody;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.util.Bits.bits;
+//	import static Neo4Net.kernel.impl.util.Bits.bits;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.util.Bits.bitsFromLongs;
+//	import static Neo4Net.kernel.impl.util.Bits.bitsFromLongs;
 
 	public class InlineNodeLabels : NodeLabels
 	{

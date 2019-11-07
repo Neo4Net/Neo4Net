@@ -20,7 +20,7 @@ using System.Text;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Kernel.api.labelscan
+namespace Neo4Net.Kernel.Api.LabelScan
 {
 	using LongList = org.eclipse.collections.api.list.primitive.LongList;
 	using MutableLongList = org.eclipse.collections.api.list.primitive.MutableLongList;
@@ -29,7 +29,7 @@ namespace Neo4Net.Kernel.api.labelscan
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Math.toIntExact;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.collection.PrimitiveLongCollections.EMPTY_LONG_ARRAY;
+//	import static Neo4Net.collection.PrimitiveLongCollections.EMPTY_LONG_ARRAY;
 
 	/// <summary>
 	/// Represents a range of nodes and label ids attached to those nodes. All nodes in the range are present in

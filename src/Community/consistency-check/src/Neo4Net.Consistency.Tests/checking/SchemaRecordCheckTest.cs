@@ -43,18 +43,18 @@ namespace Neo4Net.Consistency.checking
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.consistency.checking.SchemaRuleUtil.constraintIndexRule;
+//	import static Neo4Net.consistency.checking.SchemaRuleUtil.constraintIndexRule;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.consistency.checking.SchemaRuleUtil.indexRule;
+//	import static Neo4Net.consistency.checking.SchemaRuleUtil.indexRule;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.consistency.checking.SchemaRuleUtil.uniquenessConstraintRule;
+//	import static Neo4Net.consistency.checking.SchemaRuleUtil.uniquenessConstraintRule;
 
 	internal class SchemaRecordCheckTest : RecordCheckTestBase<DynamicRecord, Neo4Net.Consistency.report.ConsistencyReport_SchemaConsistencyReport, SchemaRecordCheck>
 	{
 		 private readonly int _labelId = 1;
 		 private readonly int _propertyKeyId = 2;
 
-		 internal SchemaRecordCheckTest() : base(new SchemaRecordCheck(ConfigureSchemaStore(), ConfigureIndexAccessors()), typeof(org.Neo4Net.consistency.report.ConsistencyReport_SchemaConsistencyReport), new int[0])
+		 internal SchemaRecordCheckTest() : base(new SchemaRecordCheck(ConfigureSchemaStore(), ConfigureIndexAccessors()), typeof(Neo4Net.consistency.report.ConsistencyReport_SchemaConsistencyReport), new int[0])
 		 {
 		 }
 

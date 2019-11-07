@@ -66,7 +66,7 @@ namespace Neo4Net.causalclustering.core.state
 		 /// the non-migrating version is used.
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public ClusterStateDirectory initialize(org.Neo4Net.io.fs.FileSystemAbstraction fs) throws ClusterStateException
+//ORIGINAL LINE: public ClusterStateDirectory initialize(Neo4Net.io.fs.FileSystemAbstraction fs) throws ClusterStateException
 		 public virtual ClusterStateDirectory Initialize( FileSystemAbstraction fs )
 		 {
 			  Debug.Assert( !_initialized );
@@ -97,7 +97,7 @@ namespace Neo4Net.causalclustering.core.state
 		 /// that. It will now reside under the data directory.
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void migrateIfNeeded(org.Neo4Net.io.fs.FileSystemAbstraction fs) throws ClusterStateException
+//ORIGINAL LINE: private void migrateIfNeeded(Neo4Net.io.fs.FileSystemAbstraction fs) throws ClusterStateException
 		 private void MigrateIfNeeded( FileSystemAbstraction fs )
 		 {
 			  File oldStateDir = new File( _storeDir, CLUSTER_STATE_DIRECTORY_NAME );
@@ -122,7 +122,7 @@ namespace Neo4Net.causalclustering.core.state
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void ensureDirectoryExists(org.Neo4Net.io.fs.FileSystemAbstraction fs) throws ClusterStateException
+//ORIGINAL LINE: private void ensureDirectoryExists(Neo4Net.io.fs.FileSystemAbstraction fs) throws ClusterStateException
 		 private void EnsureDirectoryExists( FileSystemAbstraction fs )
 		 {
 			  if ( !fs.FileExists( _stateDir ) )

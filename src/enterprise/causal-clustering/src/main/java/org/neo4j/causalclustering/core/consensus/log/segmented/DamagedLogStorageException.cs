@@ -30,11 +30,11 @@ namespace Neo4Net.causalclustering.core.consensus.log.segmented
 	// TODO: Should this really be a KernelException?
 	public class DamagedLogStorageException : KernelException
 	{
-		 public DamagedLogStorageException( string format, params object[] args ) : base( org.Neo4Net.kernel.api.exceptions.Status_General.StorageDamageDetected, format, args )
+		 public DamagedLogStorageException( string format, params object[] args ) : base( Neo4Net.kernel.api.exceptions.Status_General.StorageDamageDetected, format, args )
 		 {
 		 }
 
-		 public DamagedLogStorageException( Exception cause, string format, params object[] args ) : base( org.Neo4Net.kernel.api.exceptions.Status_General.StorageDamageDetected, cause, format, args )
+		 public DamagedLogStorageException( Exception cause, string format, params object[] args ) : base( Neo4Net.kernel.api.exceptions.Status_General.StorageDamageDetected, cause, format, args )
 		 {
 		 }
 	}

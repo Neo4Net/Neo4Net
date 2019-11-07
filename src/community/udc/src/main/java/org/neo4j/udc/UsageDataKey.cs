@@ -21,7 +21,7 @@ namespace Neo4Net.Udc
 {
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.function.Suppliers.singleton;
+//	import static Neo4Net.function.Suppliers.singleton;
 
 	/// <summary>
 	/// A lookup key to publish or retrieve data in <seealso cref="UsageData"/>. </summary>

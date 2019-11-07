@@ -25,9 +25,9 @@ namespace Neo4Net.Logging.async
 	using Neo4Net.Utils.Concurrent;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.logging.async.AsyncLogEvent.bulkLogEvent;
+//	import static Neo4Net.logging.async.AsyncLogEvent.bulkLogEvent;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.logging.async.AsyncLogEvent.logEvent;
+//	import static Neo4Net.logging.async.AsyncLogEvent.logEvent;
 
 	public class AsyncLog : AbstractLog
 	{
@@ -51,35 +51,35 @@ namespace Neo4Net.Logging.async
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Nonnull @Override public org.Neo4Net.logging.Logger debugLogger()
+//ORIGINAL LINE: @Nonnull @Override public Neo4Net.logging.Logger debugLogger()
 		 public override Logger DebugLogger()
 		 {
 			  return new AsyncLogger( _events, _log.debugLogger() );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Nonnull @Override public org.Neo4Net.logging.Logger infoLogger()
+//ORIGINAL LINE: @Nonnull @Override public Neo4Net.logging.Logger infoLogger()
 		 public override Logger InfoLogger()
 		 {
 			  return new AsyncLogger( _events, _log.infoLogger() );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Nonnull @Override public org.Neo4Net.logging.Logger warnLogger()
+//ORIGINAL LINE: @Nonnull @Override public Neo4Net.logging.Logger warnLogger()
 		 public override Logger WarnLogger()
 		 {
 			  return new AsyncLogger( _events, _log.warnLogger() );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Nonnull @Override public org.Neo4Net.logging.Logger errorLogger()
+//ORIGINAL LINE: @Nonnull @Override public Neo4Net.logging.Logger errorLogger()
 		 public override Logger ErrorLogger()
 		 {
 			  return new AsyncLogger( _events, _log.errorLogger() );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Override public void bulk(@Nonnull Consumer<org.Neo4Net.logging.Log> consumer)
+//ORIGINAL LINE: @Override public void bulk(@Nonnull Consumer<Neo4Net.logging.Log> consumer)
 		 public override void Bulk( Consumer<Log> consumer )
 		 {
 			  _events.send( bulkLogEvent( _log, consumer ) );
@@ -122,7 +122,7 @@ namespace Neo4Net.Logging.async
 			  }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Override public void bulk(@Nonnull Consumer<org.Neo4Net.logging.Logger> consumer)
+//ORIGINAL LINE: @Override public void bulk(@Nonnull Consumer<Neo4Net.logging.Logger> consumer)
 			  public override void Bulk( Consumer<Logger> consumer )
 			  {
 					Events.send( bulkLogEvent( Logger, consumer ) );

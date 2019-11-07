@@ -25,7 +25,7 @@ namespace Neo4Net.CommandLine.Admin
 	using Args = Neo4Net.Helpers.Args;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.commandline.Util.Neo4NetVersion;
+//	import static Neo4Net.commandline.Util.Neo4NetVersion;
 
 	public class AdminTool
 	{

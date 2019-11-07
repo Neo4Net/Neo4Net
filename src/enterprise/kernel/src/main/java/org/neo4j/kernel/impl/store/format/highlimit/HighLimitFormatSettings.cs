@@ -42,10 +42,10 @@ namespace Neo4Net.Kernel.impl.store.format.highlimit
 		 internal const int DYNAMIC_MAXIMUM_ID_BITS = DEFAULT_MAXIMUM_BITS_PER_ID;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unused") static final int PROPERTY_TOKEN_MAXIMUM_ID_BITS = org.Neo4Net.kernel.impl.store.format.standard.StandardFormatSettings.PROPERTY_TOKEN_MAXIMUM_ID_BITS;
+//ORIGINAL LINE: @SuppressWarnings("unused") static final int PROPERTY_TOKEN_MAXIMUM_ID_BITS = Neo4Net.kernel.impl.store.format.standard.StandardFormatSettings.PROPERTY_TOKEN_MAXIMUM_ID_BITS;
 		 internal const int PROPERTY_TOKEN_MAXIMUM_ID_BITS = StandardFormatSettings.PROPERTY_TOKEN_MAXIMUM_ID_BITS;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unused") static final int LABEL_TOKEN_MAXIMUM_ID_BITS = org.Neo4Net.kernel.impl.store.format.standard.StandardFormatSettings.LABEL_TOKEN_MAXIMUM_ID_BITS;
+//ORIGINAL LINE: @SuppressWarnings("unused") static final int LABEL_TOKEN_MAXIMUM_ID_BITS = Neo4Net.kernel.impl.store.format.standard.StandardFormatSettings.LABEL_TOKEN_MAXIMUM_ID_BITS;
 		 internal const int LABEL_TOKEN_MAXIMUM_ID_BITS = StandardFormatSettings.LABEL_TOKEN_MAXIMUM_ID_BITS;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @SuppressWarnings("unused") static final int RELATIONSHIP_TYPE_TOKEN_MAXIMUM_ID_BITS = Byte.SIZE * 3;

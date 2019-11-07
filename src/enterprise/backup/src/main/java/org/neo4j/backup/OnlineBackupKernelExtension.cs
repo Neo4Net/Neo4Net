@@ -55,7 +55,7 @@ namespace Neo4Net.backup
 	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.enterprise.configuration.OnlineBackupSettings.online_backup_server;
+//	import static Neo4Net.kernel.impl.enterprise.configuration.OnlineBackupSettings.online_backup_server;
 
 	/// @deprecated This will be moved to an internal package in the future. 
 	[Obsolete("This will be moved to an internal package in the future.")]
@@ -84,7 +84,7 @@ namespace Neo4Net.backup
 		 private volatile URI _me;
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public OnlineBackupKernelExtension(org.Neo4Net.kernel.configuration.Config config, final org.Neo4Net.kernel.internal.GraphDatabaseAPI graphDatabaseAPI, final org.Neo4Net.logging.LogProvider logProvider, final org.Neo4Net.kernel.monitoring.Monitors monitors, final org.Neo4Net.kernel.NeoStoreDataSource neoStoreDataSource, final org.Neo4Net.io.fs.FileSystemAbstraction fileSystemAbstraction)
+//ORIGINAL LINE: public OnlineBackupKernelExtension(Neo4Net.kernel.configuration.Config config, final Neo4Net.kernel.internal.GraphDatabaseAPI graphDatabaseAPI, final Neo4Net.logging.LogProvider logProvider, final Neo4Net.kernel.monitoring.Monitors monitors, final Neo4Net.kernel.NeoStoreDataSource neoStoreDataSource, final Neo4Net.io.fs.FileSystemAbstraction fileSystemAbstraction)
 		 public OnlineBackupKernelExtension( Config config, GraphDatabaseAPI graphDatabaseAPI, LogProvider logProvider, Monitors monitors, NeoStoreDataSource neoStoreDataSource, FileSystemAbstraction fileSystemAbstraction ) : this(config, graphDatabaseAPI, () ->
 		 {
 		  {

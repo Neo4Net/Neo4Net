@@ -44,10 +44,10 @@ namespace Neo4Net.Kernel.ha
 	public class BasicHaOperationsIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ClassRule public static org.Neo4Net.test.rule.LoggerRule logger = new org.Neo4Net.test.rule.LoggerRule(java.util.logging.Level.OFF);
+//ORIGINAL LINE: @ClassRule public static Neo4Net.test.rule.LoggerRule logger = new Neo4Net.test.rule.LoggerRule(java.util.logging.Level.OFF);
 		 public static LoggerRule Logger = new LoggerRule( Level.OFF );
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.ha.ClusterRule clusterRule = new org.Neo4Net.test.ha.ClusterRule().withSharedSetting(HaSettings.tx_push_factor, "2");
+//ORIGINAL LINE: @Rule public Neo4Net.test.ha.ClusterRule clusterRule = new Neo4Net.test.ha.ClusterRule().withSharedSetting(HaSettings.tx_push_factor, "2");
 		 public ClusterRule ClusterRule = new ClusterRule().withSharedSetting(HaSettings.TxPushFactor, "2");
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

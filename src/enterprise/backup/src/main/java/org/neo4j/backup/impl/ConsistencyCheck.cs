@@ -72,7 +72,7 @@ namespace Neo4Net.backup.impl
 		 string Name();
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: boolean runFull(org.Neo4Net.io.layout.DatabaseLayout databaseLayout, org.Neo4Net.kernel.configuration.Config tuningConfiguration, org.Neo4Net.helpers.progress.ProgressMonitorFactory progressFactory, org.Neo4Net.logging.LogProvider logProvider, org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, org.Neo4Net.io.pagecache.PageCache pageCache, boolean verbose, org.Neo4Net.consistency.checking.full.ConsistencyFlags consistencyFlags) throws ConsistencyCheckFailedException;
+//ORIGINAL LINE: boolean runFull(Neo4Net.io.layout.DatabaseLayout databaseLayout, Neo4Net.kernel.configuration.Config tuningConfiguration, Neo4Net.helpers.progress.ProgressMonitorFactory progressFactory, Neo4Net.logging.LogProvider logProvider, Neo4Net.io.fs.FileSystemAbstraction fileSystem, Neo4Net.io.pagecache.PageCache pageCache, boolean verbose, Neo4Net.consistency.checking.full.ConsistencyFlags consistencyFlags) throws ConsistencyCheckFailedException;
 		 bool RunFull( DatabaseLayout databaseLayout, Config tuningConfiguration, ProgressMonitorFactory progressFactory, LogProvider logProvider, FileSystemAbstraction fileSystem, PageCache pageCache, bool verbose, ConsistencyFlags consistencyFlags );
 
 		 String ();

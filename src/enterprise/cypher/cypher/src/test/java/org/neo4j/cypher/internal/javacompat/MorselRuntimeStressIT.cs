@@ -78,7 +78,7 @@ namespace Neo4Net.Cypher.Internal.javacompat
 		 private AtomicInteger _counter = new AtomicInteger( 0 );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.EnterpriseDatabaseRule db = new org.Neo4Net.test.rule.EnterpriseDatabaseRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.EnterpriseDatabaseRule db = new Neo4Net.test.rule.EnterpriseDatabaseRule();
 		 public readonly EnterpriseDatabaseRule Db = new EnterpriseDatabaseRule();
 
 		 private ExecutorService _service = Executors.newFixedThreadPool( N_THREADS );

@@ -44,15 +44,15 @@ namespace Neo4Net.Cypher.Internal.javacompat
 	/// Holds Cypher query result sets, in tabular form. Each row of the result is a map
 	/// of column name to result object. Each column name correlates directly
 	/// with the terms used in the "return" clause of the Cypher query.
-	/// The result objects could be <seealso cref="org.Neo4Net.graphdb.Node Nodes"/>,
-	/// <seealso cref="org.Neo4Net.graphdb.Relationship Relationships"/> or java primitives.
+	/// The result objects could be <seealso cref="Neo4Net.graphdb.Node Nodes"/>,
+	/// <seealso cref="Neo4Net.graphdb.Relationship Relationships"/> or java primitives.
 	/// 
 	/// 
 	/// Either iterate directly over the ExecutionResult to retrieve each row of the result
 	/// set, or use <code>columnAs()</code> to access a single column with result objects
 	/// cast to a type.
 	/// </summary>
-	public class ExecutionResult : ResourceIterable<IDictionary<string, object>>, Result, QueryResultProvider
+	public class ExecutionResult :IResourceIterable<IDictionary<string, object>>, Result, QueryResultProvider
 	{
 		 private readonly InternalExecutionResult _inner;
 
@@ -60,12 +60,12 @@ namespace Neo4Net.Cypher.Internal.javacompat
 		 /// Initialized lazily and should be accessed with <seealso cref="innerIterator()"/> method
 		 /// because <seealso cref="accept(ResultVisitor)"/> does not require iterator.
 		 /// </summary>
-		 private ResourceIterator<IDictionary<string, object>> _innerIterator;
+		 private IResourceIterator<IDictionary<string, object>> _innerIterator;
 
 		 /// <summary>
 		 /// Constructor used by the Cypher framework. End-users should not
 		 /// create an ExecutionResult directly, but instead use the result
-		 /// returned from calling <seealso cref="QueryExecutionEngine.executeQuery(string, MapValue, org.Neo4Net.kernel.impl.query.TransactionalContext)"/>.
+		 /// returned from calling <seealso cref="QueryExecutionEngine.executeQuery(string, MapValue, Neo4Net.kernel.impl.query.TransactionalContext)"/>.
 		 /// </summary>
 		 /// <param name="projection"> Execution result projection to use. </param>
 		 public ExecutionResult( InternalExecutionResult projection )
@@ -90,8 +90,8 @@ namespace Neo4Net.Cypher.Internal.javacompat
 		 /// @param <T> desired type cast for the result objects </param>
 		 /// <returns> an iterator of the result objects, possibly empty </returns>
 		 /// <exception cref="ClassCastException"> when the result object can not be cast to the requested type </exception>
-		 /// <exception cref="org.Neo4Net.graphdb.NotFoundException"> when the column name does not appear in the original query </exception>
-		 public override ResourceIterator<T> ColumnAs<T>( string n )
+		 /// <exception cref="Neo4Net.graphdb.NotFoundException"> when the column name does not appear in the original query </exception>
+		 public override IResourceIterator<T> ColumnAs<T>( string n )
 		 {
 			  // this method is both a legacy method, and a method on Result,
 			  // prefer conforming to the new API and convert exceptions
@@ -192,7 +192,7 @@ namespace Neo4Net.Cypher.Internal.javacompat
 		 /// called.</b></para>
 		 /// </summary>
 		 /// <returns> An iterator over the result of the query as a map from projected column name to value </returns>
-		 public override ResourceIterator<IDictionary<string, object>> Iterator()
+		 public override IResourceIterator<IDictionary<string, object>> Iterator()
 		 {
 			  return InnerIterator(); // legacy method - don't convert exceptions...
 		 }
@@ -293,7 +293,7 @@ namespace Neo4Net.Cypher.Internal.javacompat
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public <VisitationException extends Exception> void accept(org.Neo4Net.graphdb.Result_ResultVisitor<VisitationException> visitor) throws VisitationException
+//ORIGINAL LINE: public <VisitationException extends Exception> void accept(Neo4Net.graphdb.Result_ResultVisitor<VisitationException> visitor) throws VisitationException
 		 public override void Accept<VisitationException>( Neo4Net.GraphDb.Result_ResultVisitor<VisitationException> visitor ) where VisitationException : Exception
 		 {
 			  _inner.accept( visitor );
@@ -307,7 +307,7 @@ namespace Neo4Net.Cypher.Internal.javacompat
 			 }
 		 }
 
-		 private ResourceIterator<IDictionary<string, object>> InnerIterator()
+		 private IResourceIterator<IDictionary<string, object>> InnerIterator()
 		 {
 			  if ( _innerIterator == null )
 			  {
@@ -316,11 +316,11 @@ namespace Neo4Net.Cypher.Internal.javacompat
 			  return _innerIterator;
 		 }
 
-		 private class ExceptionConversion<T> : ResourceIterator<T>
+		 private class ExceptionConversion<T> : IResourceIterator<T>
 		 {
-			  internal readonly ResourceIterator<T> Inner;
+			  internal readonly IResourceIterator<T> Inner;
 
-			  internal ExceptionConversion( ResourceIterator<T> inner )
+			  internal ExceptionConversion( IResourceIterator<T> inner )
 			  {
 					this.Inner = inner;
 			  }

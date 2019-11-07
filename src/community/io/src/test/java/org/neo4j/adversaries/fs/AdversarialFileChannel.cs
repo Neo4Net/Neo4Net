@@ -24,7 +24,7 @@ namespace Neo4Net.Adversaries.fs
 	using StoreFileChannel = Neo4Net.Io.fs.StoreFileChannel;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") public class AdversarialFileChannel extends org.Neo4Net.io.fs.StoreFileChannel
+//ORIGINAL LINE: @SuppressWarnings("unchecked") public class AdversarialFileChannel extends Neo4Net.io.fs.StoreFileChannel
 	public class AdversarialFileChannel : StoreFileChannel
 	{
 		 private readonly StoreChannel @delegate;
@@ -89,7 +89,7 @@ namespace Neo4Net.Adversaries.fs
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.io.fs.StoreFileChannel truncate(long size) throws java.io.IOException
+//ORIGINAL LINE: public Neo4Net.io.fs.StoreFileChannel truncate(long size) throws java.io.IOException
 		 public override StoreFileChannel Truncate( long size )
 		 {
 			  _adversary.injectFailure( typeof( IOException ) );
@@ -97,7 +97,7 @@ namespace Neo4Net.Adversaries.fs
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.io.fs.StoreFileChannel position(long newPosition) throws java.io.IOException
+//ORIGINAL LINE: public Neo4Net.io.fs.StoreFileChannel position(long newPosition) throws java.io.IOException
 		 public override StoreFileChannel Position( long newPosition )
 		 {
 			  _adversary.injectFailure( typeof( IOException ) );

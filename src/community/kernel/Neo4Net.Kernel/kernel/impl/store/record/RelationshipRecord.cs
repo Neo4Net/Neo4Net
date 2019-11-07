@@ -23,9 +23,9 @@ namespace Neo4Net.Kernel.Impl.Store.Records
 {
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.record.Record.NO_NEXT_PROPERTY;
+//	import static Neo4Net.kernel.impl.store.record.Record.NO_NEXT_PROPERTY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.record.Record.NO_NEXT_RELATIONSHIP;
+//	import static Neo4Net.kernel.impl.store.record.Record.NO_NEXT_RELATIONSHIP;
 
 	public class RelationshipRecord : PrimitiveRecord
 	{

@@ -58,13 +58,13 @@ namespace Neo4Net.Kernel.impl.transaction.log
 	{
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.TestDirectory testDirectory = Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory TestDirectory = TestDirectory.testDirectory();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.fs.DefaultFileSystemRule fileSystem = new org.Neo4Net.test.rule.fs.DefaultFileSystemRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.fs.DefaultFileSystemRule fileSystem = new Neo4Net.test.rule.fs.DefaultFileSystemRule();
 		 public readonly DefaultFileSystemRule FileSystem = new DefaultFileSystemRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.kernel.lifecycle.LifeRule life = new org.Neo4Net.kernel.lifecycle.LifeRule(true);
+//ORIGINAL LINE: @Rule public final Neo4Net.kernel.lifecycle.LifeRule life = new Neo4Net.kernel.lifecycle.LifeRule(true);
 		 public readonly LifeRule Life = new LifeRule( true );
 		 private readonly SimpleLogVersionRepository _logVersionRepository = new SimpleLogVersionRepository();
 		 private readonly SimpleTransactionIdStore _transactionIdStore = new SimpleTransactionIdStore();
@@ -111,7 +111,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.kernel.impl.transaction.log.files.LogFiles getLogFiles(org.Neo4Net.kernel.impl.transaction.SimpleLogVersionRepository logVersionRepository, org.Neo4Net.kernel.impl.transaction.SimpleTransactionIdStore transactionIdStore) throws java.io.IOException
+//ORIGINAL LINE: private Neo4Net.kernel.impl.transaction.log.files.LogFiles getLogFiles(Neo4Net.kernel.impl.transaction.SimpleLogVersionRepository logVersionRepository, Neo4Net.kernel.impl.transaction.SimpleTransactionIdStore transactionIdStore) throws java.io.IOException
 		 private LogFiles GetLogFiles( SimpleLogVersionRepository logVersionRepository, SimpleTransactionIdStore transactionIdStore )
 		 {
 			  return LogFilesBuilder.builder( TestDirectory.databaseLayout(), FileSystem.get() ).withLogVersionRepository(logVersionRepository).withTransactionIdStore(transactionIdStore).build();

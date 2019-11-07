@@ -24,7 +24,7 @@ namespace Neo4Net.Dmbs.Database
 	using Test = org.junit.jupiter.api.Test;
 	using ExtendWith = org.junit.jupiter.api.extension.ExtendWith;
 
-	using DatabaseManager = Neo4Net.Dbms.database.DatabaseManager;
+	using IDatabaseManager = Neo4Net.Dbms.database.DatabaseManager;
 	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
 	using GraphDatabaseFactory = Neo4Net.GraphDb.factory.GraphDatabaseFactory;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
@@ -46,7 +46,7 @@ namespace Neo4Net.Dmbs.Database
 	internal class DefaultDatabaseManagerIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.Neo4Net.test.rule.TestDirectory testDirectory;
+//ORIGINAL LINE: @Inject private Neo4Net.test.rule.TestDirectory testDirectory;
 		 private TestDirectory _testDirectory;
 		 private IGraphDatabaseService _database;
 
@@ -68,7 +68,7 @@ namespace Neo4Net.Dmbs.Database
 //ORIGINAL LINE: @Test void createDatabase()
 		 internal virtual void CreateDatabase()
 		 {
-			  DatabaseManager databaseManager = DatabaseManager;
+			  IDatabaseManager databaseManager = IDatabaseManager;
 			  assertThrows( typeof( System.InvalidOperationException ), () => databaseManager.CreateDatabase(GraphDatabaseSettings.DEFAULT_DATABASE_NAME) );
 		 }
 
@@ -76,7 +76,7 @@ namespace Neo4Net.Dmbs.Database
 //ORIGINAL LINE: @Test void lookupExistingDatabase()
 		 internal virtual void LookupExistingDatabase()
 		 {
-			  DatabaseManager databaseManager = DatabaseManager;
+			  IDatabaseManager databaseManager = IDatabaseManager;
 			  Optional<GraphDatabaseFacade> database = databaseManager.GetDatabaseFacade( GraphDatabaseSettings.DEFAULT_DATABASE_NAME );
 			  assertTrue( database.Present );
 		 }
@@ -86,16 +86,16 @@ namespace Neo4Net.Dmbs.Database
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void ShutdownDatabaseOnStop()
 		 {
-			  DatabaseManager databaseManager = DatabaseManager;
+			  IDatabaseManager databaseManager = IDatabaseManager;
 			  databaseManager.Stop();
 			  assertFalse( _database.isAvailable( 0 ) );
 		 }
 
-		 private DatabaseManager DatabaseManager
+		 private IDatabaseManager IDatabaseManager
 		 {
 			 get
 			 {
-				  return ( ( GraphDatabaseAPI )_database ).DependencyResolver.resolveDependency( typeof( DatabaseManager ) );
+				  return ( ( GraphDatabaseAPI )_database ).DependencyResolver.resolveDependency( typeof( IDatabaseManager ) );
 			 }
 		 }
 

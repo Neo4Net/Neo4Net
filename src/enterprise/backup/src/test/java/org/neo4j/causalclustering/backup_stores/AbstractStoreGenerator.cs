@@ -27,18 +27,18 @@ namespace Neo4Net.causalclustering.backup_stores
 	using CoreClusterMember = Neo4Net.causalclustering.discovery.CoreClusterMember;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.BackupUtil.createBackupFromCore;
+//	import static Neo4Net.causalclustering.BackupUtil.createBackupFromCore;
 
 	public abstract class AbstractStoreGenerator : BackupStore
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: abstract org.Neo4Net.causalclustering.discovery.CoreClusterMember createData(org.Neo4Net.causalclustering.discovery.Cluster<?> cluster) throws Exception;
+//ORIGINAL LINE: abstract Neo4Net.causalclustering.discovery.CoreClusterMember createData(Neo4Net.causalclustering.discovery.Cluster<?> cluster) throws Exception;
 		 internal abstract CoreClusterMember createData<T1>( Cluster<T1> cluster );
 
 		 internal abstract void Modify( File backup );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.util.Optional<java.io.File> generate(java.io.File backupDir, org.Neo4Net.causalclustering.discovery.Cluster<?> backupCluster) throws Exception
+//ORIGINAL LINE: public java.util.Optional<java.io.File> generate(java.io.File backupDir, Neo4Net.causalclustering.discovery.Cluster<?> backupCluster) throws Exception
 		 public override Optional<File> Generate<T1>( File backupDir, Cluster<T1> backupCluster )
 		 {
 			  CoreClusterMember core = CreateData( backupCluster );

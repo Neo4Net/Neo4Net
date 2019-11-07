@@ -47,13 +47,13 @@ namespace Neo4Net.Server.enterprise.functional
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.cluster.ClusterSettings.cluster_server;
+//	import static Neo4Net.cluster.ClusterSettings.cluster_server;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.cluster.ClusterSettings.initial_hosts;
+//	import static Neo4Net.cluster.ClusterSettings.initial_hosts;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.cluster.ClusterSettings.server_id;
+//	import static Neo4Net.cluster.ClusterSettings.server_id;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.enterprise.configuration.EnterpriseEditionSettings.mode;
+//	import static Neo4Net.kernel.impl.enterprise.configuration.EnterpriseEditionSettings.mode;
 
 	public class EnterpriseServerIT
 	{
@@ -61,7 +61,7 @@ namespace Neo4Net.Server.enterprise.functional
 //ORIGINAL LINE: @Rule public final org.junit.rules.TemporaryFolder folder = new org.junit.rules.TemporaryFolder();
 		 public readonly TemporaryFolder Folder = new TemporaryFolder();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.SuppressOutput suppressOutput = org.Neo4Net.test.rule.SuppressOutput.suppressAll();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.SuppressOutput suppressOutput = Neo4Net.test.rule.SuppressOutput.suppressAll();
 		 public readonly SuppressOutput SuppressOutput = SuppressOutput.suppressAll();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

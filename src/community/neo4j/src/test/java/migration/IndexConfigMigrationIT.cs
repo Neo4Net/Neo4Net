@@ -44,7 +44,7 @@ namespace Migration
 	using ZipUtils = Neo4Net.Io.compress.ZipUtils;
 	using DefaultFileSystemAbstraction = Neo4Net.Io.fs.DefaultFileSystemAbstraction;
 	using FileUtils = Neo4Net.Io.fs.FileUtils;
-	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
+	using SchemaDescriptorFactory = Neo4Net.Kernel.Api.schema.SchemaDescriptorFactory;
 	using Settings = Neo4Net.Kernel.configuration.Settings;
 	using IndexProxy = Neo4Net.Kernel.Impl.Api.index.IndexProxy;
 	using IndexingService = Neo4Net.Kernel.Impl.Api.index.IndexingService;
@@ -65,35 +65,35 @@ namespace Migration
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.SchemaIndex.LUCENE10;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.SchemaIndex.LUCENE10;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.SchemaIndex.NATIVE10;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.SchemaIndex.NATIVE10;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.SchemaIndex.NATIVE20;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.SchemaIndex.NATIVE20;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.SchemaIndex.NATIVE_BTREE10;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.SchemaIndex.NATIVE_BTREE10;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.impl.fulltext.FulltextIndexSettings.INDEX_CONFIG_ANALYZER;
+//	import static Neo4Net.kernel.api.impl.fulltext.FulltextIndexSettings.INDEX_CONFIG_ANALYZER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.impl.fulltext.FulltextIndexSettings.INDEX_CONFIG_EVENTUALLY_CONSISTENT;
+//	import static Neo4Net.kernel.api.impl.fulltext.FulltextIndexSettings.INDEX_CONFIG_EVENTUALLY_CONSISTENT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.config.SpatialIndexSettings.makeCRSRangeSetting;
+//	import static Neo4Net.kernel.impl.index.schema.config.SpatialIndexSettings.makeCRSRangeSetting;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.config.SpatialIndexSettings.space_filling_curve_max_bits;
+//	import static Neo4Net.kernel.impl.index.schema.config.SpatialIndexSettings.space_filling_curve_max_bits;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.Unzip.unzip;
+//	import static Neo4Net.test.Unzip.unzip;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.CoordinateReferenceSystem.Cartesian;
+//	import static Neo4Net.values.storable.CoordinateReferenceSystem.Cartesian;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.CoordinateReferenceSystem.Cartesian_3D;
+//	import static Neo4Net.values.storable.CoordinateReferenceSystem.Cartesian_3D;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.CoordinateReferenceSystem.WGS84;
+//	import static Neo4Net.values.storable.CoordinateReferenceSystem.WGS84;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.CoordinateReferenceSystem.WGS84_3D;
+//	import static Neo4Net.values.storable.CoordinateReferenceSystem.WGS84_3D;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.CoordinateReferenceSystem.all;
+//	import static Neo4Net.values.storable.CoordinateReferenceSystem.all;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.COMPARATOR;
+//	import static Neo4Net.values.storable.Values.COMPARATOR;
 
 	/// <summary>
 	/// This test should verify that index configurations from a 3.5 store stay intact when opened again, with migration if needed.
@@ -339,7 +339,7 @@ namespace Migration
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.Neo4Net.test.rule.TestDirectory directory;
+//ORIGINAL LINE: @Inject private Neo4Net.test.rule.TestDirectory directory;
 		 private TestDirectory _directory;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
@@ -379,7 +379,7 @@ namespace Migration
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void shouldHaveCorrectDataAndIndexConfiguration() throws java.io.IOException, org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
+//ORIGINAL LINE: @Test void shouldHaveCorrectDataAndIndexConfiguration() throws java.io.IOException, Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void ShouldHaveCorrectDataAndIndexConfiguration()
 		 {
@@ -415,7 +415,7 @@ namespace Migration
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void assertIndexConfiguration(org.Neo4Net.kernel.internal.GraphDatabaseAPI db) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
+//ORIGINAL LINE: private static void assertIndexConfiguration(Neo4Net.kernel.internal.GraphDatabaseAPI db) throws Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
 		 private static void AssertIndexConfiguration( GraphDatabaseAPI db )
 		 {
 			  foreach ( Label label in _labels )
@@ -435,7 +435,7 @@ namespace Migration
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void assertFulltextIndexConfiguration(org.Neo4Net.kernel.internal.GraphDatabaseAPI db) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
+//ORIGINAL LINE: private static void assertFulltextIndexConfiguration(Neo4Net.kernel.internal.GraphDatabaseAPI db) throws Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
 		 private static void AssertFulltextIndexConfiguration( GraphDatabaseAPI db )
 		 {
 			  foreach ( FulltextIndexDescription fulltextIndex in FulltextIndexDescription.values() )
@@ -450,7 +450,7 @@ namespace Migration
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static java.util.Map<String,org.Neo4Net.values.storable.Value> getFulltextIndexConfig(org.Neo4Net.kernel.internal.GraphDatabaseAPI db, String indexName) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
+//ORIGINAL LINE: private static java.util.Map<String,Neo4Net.values.storable.Value> getFulltextIndexConfig(Neo4Net.kernel.internal.GraphDatabaseAPI db, String indexName) throws Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
 		 private static IDictionary<string, Value> GetFulltextIndexConfig( GraphDatabaseAPI db, string indexName )
 		 {
 			  IndexingService indexingService = GetIndexingService( db );
@@ -460,7 +460,7 @@ namespace Migration
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("SameParameterValue") private static java.util.Map<String,org.Neo4Net.values.storable.Value> getIndexConfig(org.Neo4Net.kernel.internal.GraphDatabaseAPI db, org.Neo4Net.graphdb.Label label, String propKey) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
+//ORIGINAL LINE: @SuppressWarnings("SameParameterValue") private static java.util.Map<String,Neo4Net.values.storable.Value> getIndexConfig(Neo4Net.kernel.internal.GraphDatabaseAPI db, Neo4Net.graphdb.Label label, String propKey) throws Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 private static IDictionary<string, Value> GetIndexConfig( GraphDatabaseAPI db, Label label, string propKey )
 		 {
@@ -473,7 +473,7 @@ namespace Migration
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("SameParameterValue") private static void hasIndexCount(org.Neo4Net.kernel.internal.GraphDatabaseAPI db, int expectedIndexCount)
+//ORIGINAL LINE: @SuppressWarnings("SameParameterValue") private static void hasIndexCount(Neo4Net.kernel.internal.GraphDatabaseAPI db, int expectedIndexCount)
 		 private static void HasIndexCount( GraphDatabaseAPI db, int expectedIndexCount )
 		 {
 			  IEnumerable<IndexDefinition> indexes = Db.schema().Indexes;

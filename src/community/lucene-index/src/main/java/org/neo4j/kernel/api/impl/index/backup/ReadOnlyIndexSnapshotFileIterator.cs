@@ -32,7 +32,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index.backup
 	/// Applicable only to a single Lucene index partition.
 	/// 
 	/// </summary>
-	internal class ReadOnlyIndexSnapshotFileIterator : PrefetchingIterator<File>, ResourceIterator<File>
+	internal class ReadOnlyIndexSnapshotFileIterator : PrefetchingIterator<File>, IResourceIterator<File>
 	{
 		 private readonly File _indexDirectory;
 		 private readonly IEnumerator<string> _fileNames;

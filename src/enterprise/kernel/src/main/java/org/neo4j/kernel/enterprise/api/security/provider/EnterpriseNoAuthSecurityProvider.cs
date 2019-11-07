@@ -22,9 +22,9 @@
  */
 namespace Neo4Net.Kernel.enterprise.api.security.provider
 {
-	using AuthManager = Neo4Net.Kernel.api.security.AuthManager;
-	using UserManagerSupplier = Neo4Net.Kernel.api.security.UserManagerSupplier;
-	using SecurityProvider = Neo4Net.Kernel.api.security.provider.SecurityProvider;
+	using AuthManager = Neo4Net.Kernel.Api.security.AuthManager;
+	using UserManagerSupplier = Neo4Net.Kernel.Api.security.UserManagerSupplier;
+	using SecurityProvider = Neo4Net.Kernel.Api.security.provider.SecurityProvider;
 	using LifecycleAdapter = Neo4Net.Kernel.Lifecycle.LifecycleAdapter;
 
 	public class EnterpriseNoAuthSecurityProvider : LifecycleAdapter, SecurityProvider

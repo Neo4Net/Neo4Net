@@ -48,7 +48,7 @@ namespace Neo4Net.Bolt.v3.messaging.request
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static java.time.Duration parseTransactionTimeout(org.Neo4Net.values.virtual.MapValue meta) throws org.Neo4Net.bolt.messaging.BoltIOException
+//ORIGINAL LINE: static java.time.Duration parseTransactionTimeout(Neo4Net.values.virtual.MapValue meta) throws Neo4Net.bolt.messaging.BoltIOException
 		 internal static Duration ParseTransactionTimeout( MapValue meta )
 		 {
 			  AnyValue anyValue = meta.Get( TX_TIMEOUT_KEY );
@@ -67,7 +67,7 @@ namespace Neo4Net.Bolt.v3.messaging.request
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static java.util.Map<String,Object> parseTransactionMetadata(org.Neo4Net.values.virtual.MapValue meta) throws org.Neo4Net.bolt.messaging.BoltIOException
+//ORIGINAL LINE: static java.util.Map<String,Object> parseTransactionMetadata(Neo4Net.values.virtual.MapValue meta) throws Neo4Net.bolt.messaging.BoltIOException
 		 internal static IDictionary<string, object> ParseTransactionMetadata( MapValue meta )
 		 {
 			  AnyValue anyValue = meta.Get( TX_META_DATA_KEY );

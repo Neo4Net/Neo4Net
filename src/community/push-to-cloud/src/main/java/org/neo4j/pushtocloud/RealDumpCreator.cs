@@ -23,7 +23,7 @@ namespace Neo4Net.Pushtocloud
 	using DumpCommandProvider = Neo4Net.Dbms.CommandLine.DumpCommandProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.array;
+//	import static Neo4Net.helpers.collection.Iterators.array;
 
 	internal class RealDumpCreator : PushToCloudCommand.DumpCreator
 	{
@@ -39,7 +39,7 @@ namespace Neo4Net.Pushtocloud
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void dumpDatabase(String database, java.nio.file.Path targetDumpFile) throws org.Neo4Net.commandline.admin.CommandFailed, org.Neo4Net.commandline.admin.IncorrectUsage
+//ORIGINAL LINE: public void dumpDatabase(String database, java.nio.file.Path targetDumpFile) throws Neo4Net.commandline.admin.CommandFailed, Neo4Net.commandline.admin.IncorrectUsage
 		 public override void DumpDatabase( string database, Path targetDumpFile )
 		 {
 			  string[] args = array( "--database", database, "--to", targetDumpFile.ToString() );

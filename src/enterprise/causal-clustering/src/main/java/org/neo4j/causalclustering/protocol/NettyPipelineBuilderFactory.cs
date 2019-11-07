@@ -38,21 +38,21 @@ namespace Neo4Net.causalclustering.protocol
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public ClientNettyPipelineBuilder client(io.netty.channel.Channel channel, org.Neo4Net.logging.Log log) throws Exception
+//ORIGINAL LINE: public ClientNettyPipelineBuilder client(io.netty.channel.Channel channel, Neo4Net.logging.Log log) throws Exception
 		 public virtual ClientNettyPipelineBuilder Client( Channel channel, Log log )
 		 {
 			  return Create( channel, NettyPipelineBuilder.Client( channel.pipeline(), log ) );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public ServerNettyPipelineBuilder server(io.netty.channel.Channel channel, org.Neo4Net.logging.Log log) throws Exception
+//ORIGINAL LINE: public ServerNettyPipelineBuilder server(io.netty.channel.Channel channel, Neo4Net.logging.Log log) throws Exception
 		 public virtual ServerNettyPipelineBuilder Server( Channel channel, Log log )
 		 {
 			  return Create( channel, NettyPipelineBuilder.Server( channel.pipeline(), log ) );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private <O extends org.Neo4Net.causalclustering.protocol.ProtocolInstaller_Orientation, BUILDER extends NettyPipelineBuilder<O,BUILDER>> BUILDER create(io.netty.channel.Channel channel, BUILDER nettyPipelineBuilder) throws Exception
+//ORIGINAL LINE: private <O extends Neo4Net.causalclustering.protocol.ProtocolInstaller_Orientation, BUILDER extends NettyPipelineBuilder<O,BUILDER>> BUILDER create(io.netty.channel.Channel channel, BUILDER nettyPipelineBuilder) throws Exception
 		 private BUILDER Create<O, BUILDER>( Channel channel, BUILDER nettyPipelineBuilder ) where O : Neo4Net.causalclustering.protocol.ProtocolInstaller_Orientation where BUILDER : NettyPipelineBuilder<O,BUILDER>
 		 {
 			  int i = 0;

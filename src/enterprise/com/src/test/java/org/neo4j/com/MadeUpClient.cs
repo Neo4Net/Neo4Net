@@ -35,15 +35,15 @@ namespace Neo4Net.com
 	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.com.MadeUpServer.FRAME_LENGTH;
+//	import static Neo4Net.com.MadeUpServer.FRAME_LENGTH;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.com.Protocol.writeString;
+//	import static Neo4Net.com.Protocol.writeString;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.com.RequestContext.EMPTY;
+//	import static Neo4Net.com.RequestContext.EMPTY;
 
 	public abstract class MadeUpClient : Client<MadeUpCommunicationInterface>, MadeUpCommunicationInterface
 	{
-		 public MadeUpClient( int port, StoreId storeIdToExpect, int chunkSize, ResponseUnpacker responseUnpacker ) : base( Localhost(), port, null, NullLogProvider.Instance, storeIdToExpect, FRAME_LENGTH, Client.DEFAULT_READ_RESPONSE_TIMEOUT_SECONDS * 1000, Client.DEFAULT_MAX_NUMBER_OF_CONCURRENT_CHANNELS_PER_CLIENT, chunkSize, responseUnpacker, (new Monitors()).newMonitor(typeof(ByteCounterMonitor)), (new Monitors()).newMonitor(typeof(RequestMonitor)), new VersionAwareLogEntryReader<org.Neo4Net.kernel.impl.transaction.log.ReadableClosablePositionAwareChannel>() )
+		 public MadeUpClient( int port, StoreId storeIdToExpect, int chunkSize, ResponseUnpacker responseUnpacker ) : base( Localhost(), port, null, NullLogProvider.Instance, storeIdToExpect, FRAME_LENGTH, Client.DEFAULT_READ_RESPONSE_TIMEOUT_SECONDS * 1000, Client.DEFAULT_MAX_NUMBER_OF_CONCURRENT_CHANNELS_PER_CLIENT, chunkSize, responseUnpacker, (new Monitors()).newMonitor(typeof(ByteCounterMonitor)), (new Monitors()).newMonitor(typeof(RequestMonitor)), new VersionAwareLogEntryReader<Neo4Net.kernel.impl.transaction.log.ReadableClosablePositionAwareChannel>() )
 		 {
 		 }
 

@@ -59,11 +59,11 @@ namespace Neo4Net.Kernel.impl.core
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.FALSE;
+//	import static Neo4Net.kernel.configuration.Settings.FALSE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.hasProperty;
+//	import static Neo4Net.test.mockito.matcher.Neo4NetMatchers.hasProperty;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.inTx;
+//	import static Neo4Net.test.mockito.matcher.Neo4NetMatchers.inTx;
 
 	/// <summary>
 	/// Test for making sure that slow id generator rebuild is exercised
@@ -71,10 +71,10 @@ namespace Neo4Net.Kernel.impl.core
 	public class TestCrashWithRebuildSlow
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory testDir = org.Neo4Net.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.TestDirectory testDir = Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory TestDir = TestDirectory.testDirectory();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.fs.EphemeralFileSystemRule fs = new org.Neo4Net.test.rule.fs.EphemeralFileSystemRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.fs.EphemeralFileSystemRule fs = new Neo4Net.test.rule.fs.EphemeralFileSystemRule();
 		 public readonly EphemeralFileSystemRule Fs = new EphemeralFileSystemRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -83,7 +83,7 @@ namespace Neo4Net.Kernel.impl.core
 		 public virtual void CrashAndRebuildSlowWithDynamicStringDeletions()
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.internal.GraphDatabaseAPI db = (org.Neo4Net.kernel.internal.GraphDatabaseAPI) new org.Neo4Net.test.TestGraphDatabaseFactory().setFileSystem(fs.get()).newImpermanentDatabaseBuilder(testDir.databaseDir()).setConfig(org.Neo4Net.graphdb.factory.GraphDatabaseSettings.record_id_batch_size, "1").newGraphDatabase();
+//ORIGINAL LINE: final Neo4Net.kernel.internal.GraphDatabaseAPI db = (Neo4Net.kernel.internal.GraphDatabaseAPI) new Neo4Net.test.TestGraphDatabaseFactory().setFileSystem(fs.get()).newImpermanentDatabaseBuilder(testDir.databaseDir()).setConfig(Neo4Net.graphdb.factory.GraphDatabaseSettings.record_id_batch_size, "1").newGraphDatabase();
 			  GraphDatabaseAPI db = ( GraphDatabaseAPI ) ( new TestGraphDatabaseFactory() ).setFileSystem(Fs.get()).newImpermanentDatabaseBuilder(TestDir.databaseDir()).setConfig(GraphDatabaseSettings.record_id_batch_size, "1").newGraphDatabase();
 			  IList<long> deletedNodeIds = ProduceNonCleanDefraggedStringStore( db );
 			  IDictionary<IdType, long> highIdsBeforeCrash = GetHighIds( db );
@@ -207,7 +207,7 @@ namespace Neo4Net.Kernel.impl.core
 		 private static IDictionary<IdType, long> GetHighIds( GraphDatabaseAPI db )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.Map<org.Neo4Net.kernel.impl.store.id.IdType,long> highIds = new java.util.HashMap<>();
+//ORIGINAL LINE: final java.util.Map<Neo4Net.kernel.impl.store.id.IdType,long> highIds = new java.util.HashMap<>();
 			  IDictionary<IdType, long> highIds = new Dictionary<IdType, long>();
 			  NeoStores neoStores = Db.DependencyResolver.resolveDependency( typeof( RecordStorageEngine ) ).testAccessNeoStores();
 			  Visitor<CommonAbstractStore, Exception> visitor = store =>

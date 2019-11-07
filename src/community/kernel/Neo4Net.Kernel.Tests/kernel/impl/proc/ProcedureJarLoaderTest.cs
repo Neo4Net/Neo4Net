@@ -31,10 +31,10 @@ namespace Neo4Net.Kernel.impl.proc
 
 	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
 	using ProcedureSignature = Neo4Net.Kernel.Api.Internal.procs.ProcedureSignature;
-	using ResourceTracker = Neo4Net.Kernel.api.ResourceTracker;
-	using StubResourceManager = Neo4Net.Kernel.api.StubResourceManager;
-	using BasicContext = Neo4Net.Kernel.api.proc.BasicContext;
-	using CallableProcedure = Neo4Net.Kernel.api.proc.CallableProcedure;
+	using ResourceTracker = Neo4Net.Kernel.Api.ResourceTracker;
+	using StubResourceManager = Neo4Net.Kernel.Api.StubResourceManager;
+	using BasicContext = Neo4Net.Kernel.Api.Procs.BasicContext;
+	using CallableProcedure = Neo4Net.Kernel.Api.Procs.CallableProcedure;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using AssertableLogProvider = Neo4Net.Logging.AssertableLogProvider;
 	using Log = Neo4Net.Logging.Log;
@@ -59,13 +59,13 @@ namespace Neo4Net.Kernel.impl.proc
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.mock;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.procedure_unrestricted;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.procedure_unrestricted;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.asList;
+//	import static Neo4Net.helpers.collection.Iterators.asList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes.NTInteger;
+//	import static Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes.NTInteger;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.procs.ProcedureSignature.procedureSignature;
+//	import static Neo4Net.Kernel.Api.Internal.procs.ProcedureSignature.procedureSignature;
 
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -249,7 +249,7 @@ namespace Neo4Net.Kernel.impl.proc
 
 			  // Expect
 			  Exception.expect( typeof( ProcedureException ) );
-			  Exception.expectMessage( string.Format( "Procedures must return a Stream of records, where a record is a concrete class%n" + "that you define and not a parameterized type such as java.util.List<org.Neo4Net" + ".kernel.impl.proc.ProcedureJarLoaderTest$Output>." ) );
+			  Exception.expectMessage( string.Format( "Procedures must return a Stream of records, where a record is a concrete class%n" + "that you define and not a parameterized type such as java.util.List<Neo4Net" + ".kernel.impl.proc.ProcedureJarLoaderTest$Output>." ) );
 
 			  // When
 			  _jarloader.loadProceduresFromDir( ParentDir( jar ) );
@@ -505,7 +505,7 @@ namespace Neo4Net.Kernel.impl.proc
 
 		 private ProcedureConfig ProcedureConfig()
 		 {
-			  Config config = Config.defaults( procedure_unrestricted, "org.Neo4Net.kernel.impl.proc.unsafeFullAccess*" );
+			  Config config = Config.defaults( procedure_unrestricted, "Neo4Net.kernel.impl.proc.unsafeFullAccess*" );
 			  return new ProcedureConfig( config );
 		 }
 	}

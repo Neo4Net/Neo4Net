@@ -19,9 +19,9 @@
  */
 namespace Neo4Net.Kernel.Api.Internal.Schema
 {
-	public interface RelationTypeSchemaDescriptor : SchemaDescriptor
+	public interface ILabelSchemaSupplier : ISchemaDescriptorSupplier
 	{
-		 int RelTypeId { get; }
+		 ILabelSchemaDescriptor Schema();
 	}
 
 }

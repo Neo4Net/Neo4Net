@@ -54,7 +54,7 @@ namespace Neo4Net.causalclustering.messaging
 		 private class SafeChannelMarshalAnonymousInnerClass : SafeChannelMarshal<ReplicatedContent>
 		 {
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void marshal(org.Neo4Net.causalclustering.core.replication.ReplicatedContent content, org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public void marshal(Neo4Net.causalclustering.core.replication.ReplicatedContent content, Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
 			 public override void marshal( ReplicatedContent content, WritableChannel channel )
 			 {
 				  if ( content is ReplicatedInteger )
@@ -69,12 +69,12 @@ namespace Neo4Net.causalclustering.messaging
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.causalclustering.core.replication.ReplicatedContent unmarshal0(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public Neo4Net.causalclustering.core.replication.ReplicatedContent unmarshal0(Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
 			 public override ReplicatedContent unmarshal0( ReadableChannel channel )
 			 {
 				  sbyte type = channel.Get();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.causalclustering.core.replication.ReplicatedContent content;
+//ORIGINAL LINE: final Neo4Net.causalclustering.core.replication.ReplicatedContent content;
 				  ReplicatedContent content;
 				  switch ( type )
 				  {

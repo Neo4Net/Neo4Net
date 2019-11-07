@@ -41,11 +41,11 @@ namespace Neo4Net.Test.mockito.matcher
 	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.map;
+//	import static Neo4Net.helpers.collection.Iterables.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.asSet;
+//	import static Neo4Net.helpers.collection.Iterators.asSet;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.loop;
+//	import static Neo4Net.helpers.collection.Iterators.loop;
 
 	public class Neo4NetMatchers
 	{
@@ -54,7 +54,7 @@ namespace Neo4Net.Test.mockito.matcher
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-//ORIGINAL LINE: public static <T> org.hamcrest.Matcher<? super T> inTx(final org.Neo4Net.graphdb.GraphDatabaseService db, final org.hamcrest.Matcher<T> inner)
+//ORIGINAL LINE: public static <T> org.hamcrest.Matcher<? super T> inTx(final Neo4Net.graphdb.GraphDatabaseService db, final org.hamcrest.Matcher<T> inner)
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		 public static Matcher<object> InTx<T>( IGraphDatabaseService db, Matcher<T> inner )
@@ -63,7 +63,7 @@ namespace Neo4Net.Test.mockito.matcher
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-//ORIGINAL LINE: public static <T> org.hamcrest.Matcher<? super T> inTx(final org.Neo4Net.graphdb.GraphDatabaseService db, final org.hamcrest.Matcher<T> inner, final boolean successful)
+//ORIGINAL LINE: public static <T> org.hamcrest.Matcher<? super T> inTx(final Neo4Net.graphdb.GraphDatabaseService db, final org.hamcrest.Matcher<T> inner, final boolean successful)
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		 public static Matcher<object> InTx<T>( IGraphDatabaseService db, Matcher<T> inner, bool successful )
@@ -114,7 +114,7 @@ namespace Neo4Net.Test.mockito.matcher
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static org.hamcrest.TypeSafeDiagnosingMatcher<org.Neo4Net.graphdb.Node> hasLabel(final org.Neo4Net.graphdb.Label myLabel)
+//ORIGINAL LINE: public static org.hamcrest.TypeSafeDiagnosingMatcher<Neo4Net.graphdb.Node> hasLabel(final Neo4Net.graphdb.Label myLabel)
 		 public static TypeSafeDiagnosingMatcher<Node> HasLabel( Label myLabel )
 		 {
 			  return new TypeSafeDiagnosingMatcherAnonymousInnerClass( myLabel );
@@ -167,7 +167,7 @@ namespace Neo4Net.Test.mockito.matcher
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static org.hamcrest.TypeSafeDiagnosingMatcher<org.Neo4Net.graphdb.Node> hasLabels(final java.util.Set<String> expectedLabels)
+//ORIGINAL LINE: public static org.hamcrest.TypeSafeDiagnosingMatcher<Neo4Net.graphdb.Node> hasLabels(final java.util.Set<String> expectedLabels)
 		 public static TypeSafeDiagnosingMatcher<Node> HasLabels( ISet<string> expectedLabels )
 		 {
 			  return new TypeSafeDiagnosingMatcherAnonymousInnerClass2( expectedLabels );
@@ -204,7 +204,7 @@ namespace Neo4Net.Test.mockito.matcher
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static org.hamcrest.TypeSafeDiagnosingMatcher<org.Neo4Net.graphdb.GraphDatabaseService> hasNoNodes(final org.Neo4Net.graphdb.Label withLabel)
+//ORIGINAL LINE: public static org.hamcrest.TypeSafeDiagnosingMatcher<Neo4Net.graphdb.GraphDatabaseService> hasNoNodes(final Neo4Net.graphdb.Label withLabel)
 		 public static TypeSafeDiagnosingMatcher<GraphDatabaseService> HasNoNodes( Label withLabel )
 		 {
 			  return new TypeSafeDiagnosingMatcherAnonymousInnerClass3( withLabel );
@@ -237,7 +237,7 @@ namespace Neo4Net.Test.mockito.matcher
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static org.hamcrest.TypeSafeDiagnosingMatcher<org.Neo4Net.graphdb.GraphDatabaseService> hasNodes(final org.Neo4Net.graphdb.Label withLabel, final org.Neo4Net.graphdb.Node... expectedNodes)
+//ORIGINAL LINE: public static org.hamcrest.TypeSafeDiagnosingMatcher<Neo4Net.graphdb.GraphDatabaseService> hasNodes(final Neo4Net.graphdb.Label withLabel, final Neo4Net.graphdb.Node... expectedNodes)
 		 public static TypeSafeDiagnosingMatcher<GraphDatabaseService> HasNodes( Label withLabel, params Node[] expectedNodes )
 		 {
 			  return new TypeSafeDiagnosingMatcherAnonymousInnerClass4( withLabel, expectedNodes );
@@ -370,7 +370,7 @@ namespace Neo4Net.Test.mockito.matcher
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static Deferred<org.Neo4Net.graphdb.Node> findNodesByLabelAndProperty(final org.Neo4Net.graphdb.Label label, final String propertyName, final Object propertyValue, final org.Neo4Net.graphdb.GraphDatabaseService db)
+//ORIGINAL LINE: public static Deferred<Neo4Net.graphdb.Node> findNodesByLabelAndProperty(final Neo4Net.graphdb.Label label, final String propertyName, final Object propertyValue, final Neo4Net.graphdb.GraphDatabaseService db)
 		 public static Deferred<Node> FindNodesByLabelAndProperty( Label label, string propertyName, object propertyValue, IGraphDatabaseService db )
 		 {
 			  return new DeferredAnonymousInnerClass( db, label, propertyName, propertyValue );
@@ -398,7 +398,7 @@ namespace Neo4Net.Test.mockito.matcher
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static Deferred<org.Neo4Net.GraphDb.Schema.IndexDefinition> getIndexes(final org.Neo4Net.graphdb.GraphDatabaseService db, final org.Neo4Net.graphdb.Label label)
+//ORIGINAL LINE: public static Deferred<Neo4Net.GraphDb.Schema.IndexDefinition> getIndexes(final Neo4Net.graphdb.GraphDatabaseService db, final Neo4Net.graphdb.Label label)
 		 public static Deferred<IndexDefinition> GetIndexes( IGraphDatabaseService db, Label label )
 		 {
 			  return new DeferredAnonymousInnerClass2( db, label );
@@ -422,7 +422,7 @@ namespace Neo4Net.Test.mockito.matcher
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static Deferred<String> getPropertyKeys(final org.Neo4Net.graphdb.GraphDatabaseService db, final org.Neo4Net.graphdb.PropertyContainer IPropertyContainer)
+//ORIGINAL LINE: public static Deferred<String> getPropertyKeys(final Neo4Net.graphdb.GraphDatabaseService db, final Neo4Net.graphdb.PropertyContainer IPropertyContainer)
 		 public static Deferred<string> GetPropertyKeys( IGraphDatabaseService db, IPropertyContainer IPropertyContainer )
 		 {
 			  return new DeferredAnonymousInnerClass3( db, IPropertyContainer );
@@ -444,7 +444,7 @@ namespace Neo4Net.Test.mockito.matcher
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static Deferred<org.Neo4Net.GraphDb.Schema.ConstraintDefinition> getConstraints(final org.Neo4Net.graphdb.GraphDatabaseService db, final org.Neo4Net.graphdb.Label label)
+//ORIGINAL LINE: public static Deferred<Neo4Net.GraphDb.Schema.ConstraintDefinition> getConstraints(final Neo4Net.graphdb.GraphDatabaseService db, final Neo4Net.graphdb.Label label)
 		 public static Deferred<ConstraintDefinition> GetConstraints( IGraphDatabaseService db, Label label )
 		 {
 			  return new DeferredAnonymousInnerClass4( db, label );
@@ -468,7 +468,7 @@ namespace Neo4Net.Test.mockito.matcher
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static Deferred<org.Neo4Net.GraphDb.Schema.ConstraintDefinition> getConstraints(final org.Neo4Net.graphdb.GraphDatabaseService db, final org.Neo4Net.graphdb.RelationshipType type)
+//ORIGINAL LINE: public static Deferred<Neo4Net.GraphDb.Schema.ConstraintDefinition> getConstraints(final Neo4Net.graphdb.GraphDatabaseService db, final Neo4Net.graphdb.RelationshipType type)
 		 public static Deferred<ConstraintDefinition> GetConstraints( IGraphDatabaseService db, RelationshipType type )
 		 {
 			  return new DeferredAnonymousInnerClass5( db, type );
@@ -492,7 +492,7 @@ namespace Neo4Net.Test.mockito.matcher
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static Deferred<org.Neo4Net.GraphDb.Schema.ConstraintDefinition> getConstraints(final org.Neo4Net.graphdb.GraphDatabaseService db)
+//ORIGINAL LINE: public static Deferred<Neo4Net.GraphDb.Schema.ConstraintDefinition> getConstraints(final Neo4Net.graphdb.GraphDatabaseService db)
 		 public static Deferred<ConstraintDefinition> GetConstraints( IGraphDatabaseService db )
 		 {
 			  return new DeferredAnonymousInnerClass6( db );
@@ -614,7 +614,7 @@ namespace Neo4Net.Test.mockito.matcher
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static org.hamcrest.TypeSafeDiagnosingMatcher<Neo4NetMatchers.Deferred<org.Neo4Net.GraphDb.Schema.IndexDefinition>> haveState(final org.Neo4Net.graphdb.GraphDatabaseService db, final org.Neo4Net.GraphDb.Schema.Schema_IndexState expectedState)
+//ORIGINAL LINE: public static org.hamcrest.TypeSafeDiagnosingMatcher<Neo4NetMatchers.Deferred<Neo4Net.GraphDb.Schema.IndexDefinition>> haveState(final Neo4Net.graphdb.GraphDatabaseService db, final Neo4Net.GraphDb.Schema.Schema_IndexState expectedState)
 		 public static TypeSafeDiagnosingMatcher<Neo4NetMatchers.Deferred<IndexDefinition>> HaveState( IGraphDatabaseService db, Neo4Net.GraphDb.Schema.Schema_IndexState expectedState )
 		 {
 			  return new TypeSafeDiagnosingMatcherAnonymousInnerClass3( db, expectedState );

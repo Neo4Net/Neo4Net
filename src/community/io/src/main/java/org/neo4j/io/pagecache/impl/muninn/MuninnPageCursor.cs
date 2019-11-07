@@ -30,15 +30,15 @@ namespace Neo4Net.Io.pagecache.impl.muninn
 	using UnsafeUtil = Neo4Net.@unsafe.Impl.Internal.Dragons.UnsafeUtil;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.pagecache.PagedFile_Fields.PF_EAGER_FLUSH;
+//	import static Neo4Net.io.pagecache.PagedFile_Fields.PF_EAGER_FLUSH;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.pagecache.PagedFile_Fields.PF_NO_FAULT;
+//	import static Neo4Net.io.pagecache.PagedFile_Fields.PF_NO_FAULT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.pagecache.PagedFile_Fields.PF_SHARED_WRITE_LOCK;
+//	import static Neo4Net.io.pagecache.PagedFile_Fields.PF_SHARED_WRITE_LOCK;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.pagecache.impl.muninn.MuninnPagedFile.UNMAPPED_TTE;
+//	import static Neo4Net.io.pagecache.impl.muninn.MuninnPagedFile.UNMAPPED_TTE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.util.FeatureToggles.flag;
+//	import static Neo4Net.util.FeatureToggles.flag;
 
 	internal abstract class MuninnPageCursor : PageCursor
 	{
@@ -356,7 +356,7 @@ namespace Neo4Net.Io.pagecache.impl.muninn
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private long pageFault(long filePageId, org.Neo4Net.io.pagecache.PageSwapper swapper, long chunkOffset, int[] chunk, LatchMap.Latch latch) throws java.io.IOException
+//ORIGINAL LINE: private long pageFault(long filePageId, Neo4Net.io.pagecache.PageSwapper swapper, long chunkOffset, int[] chunk, LatchMap.Latch latch) throws java.io.IOException
 		 private long PageFault( long filePageId, PageSwapper swapper, long chunkOffset, int[] chunk, LatchMap.Latch latch )
 		 {
 			  // We are page faulting. This is a critical time, because we currently have the given latch in the chunk array
@@ -422,7 +422,7 @@ namespace Neo4Net.Io.pagecache.impl.muninn
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: long assertPagedFileStillMappedAndGetIdOfLastPage() throws org.Neo4Net.io.pagecache.impl.FileIsNotMappedException
+//ORIGINAL LINE: long assertPagedFileStillMappedAndGetIdOfLastPage() throws Neo4Net.io.pagecache.impl.FileIsNotMappedException
 		 internal virtual long AssertPagedFileStillMappedAndGetIdOfLastPage()
 		 {
 			  return PagedFile.LastPageId;
@@ -433,7 +433,7 @@ namespace Neo4Net.Io.pagecache.impl.muninn
 		 protected internal abstract void ConvertPageFaultLock( long pageRef );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected abstract void pinCursorToPage(long pageRef, long filePageId, org.Neo4Net.io.pagecache.PageSwapper swapper) throws org.Neo4Net.io.pagecache.impl.FileIsNotMappedException;
+//ORIGINAL LINE: protected abstract void pinCursorToPage(long pageRef, long filePageId, Neo4Net.io.pagecache.PageSwapper swapper) throws Neo4Net.io.pagecache.impl.FileIsNotMappedException;
 		 protected internal abstract void PinCursorToPage( long pageRef, long filePageId, PageSwapper swapper );
 
 		 protected internal abstract bool TryLockPage( long pageRef );
@@ -955,7 +955,7 @@ namespace Neo4Net.Io.pagecache.impl.muninn
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void checkAndClearCursorException() throws org.Neo4Net.io.pagecache.CursorException
+//ORIGINAL LINE: public void checkAndClearCursorException() throws Neo4Net.io.pagecache.CursorException
 		 public override void CheckAndClearCursorException()
 		 {
 			  MuninnPageCursor cursor = this;

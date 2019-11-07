@@ -55,8 +55,8 @@ namespace Neo4Net.causalclustering.scenarios
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
 	using PageCacheCounters = Neo4Net.Io.pagecache.monitoring.PageCacheCounters;
-	using LabelScanStore = Neo4Net.Kernel.api.labelscan.LabelScanStore;
-	using TransactionIdTracker = Neo4Net.Kernel.api.txtracking.TransactionIdTracker;
+	using LabelScanStore = Neo4Net.Kernel.Api.LabelScan.LabelScanStore;
+	using TransactionIdTracker = Neo4Net.Kernel.Api.TxTracking.TransactionIdTracker;
 	using AvailabilityGuard = Neo4Net.Kernel.availability.AvailabilityGuard;
 	using DatabaseAvailabilityGuard = Neo4Net.Kernel.availability.DatabaseAvailabilityGuard;
 	using GraphDatabaseFacade = Neo4Net.Kernel.impl.factory.GraphDatabaseFacade;
@@ -98,19 +98,19 @@ namespace Neo4Net.causalclustering.scenarios
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.mock;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.scenarios.SampleData.createData;
+//	import static Neo4Net.causalclustering.scenarios.SampleData.createData;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.function.Predicates.awaitEx;
+//	import static Neo4Net.function.Predicates.awaitEx;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.Label.label;
+//	import static Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.count;
+//	import static Neo4Net.helpers.collection.Iterables.count;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
+//	import static Neo4Net.helpers.collection.MapUtil.stringMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.MetaDataStore.Position.TIME;
+//	import static Neo4Net.kernel.impl.store.MetaDataStore.Position.TIME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.assertion.Assert.assertEventually;
+//	import static Neo4Net.test.assertion.Assert.assertEventually;
 
 	public class ReadReplicaReplicationIT
 	{
@@ -118,7 +118,7 @@ namespace Neo4Net.causalclustering.scenarios
 		 private const int NR_READ_REPLICAS = 1;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.causalclustering.ClusterRule clusterRule = new org.Neo4Net.test.causalclustering.ClusterRule().withNumberOfCoreMembers(NR_CORE_MEMBERS).withNumberOfReadReplicas(NR_READ_REPLICAS).withSharedCoreParam(org.Neo4Net.causalclustering.core.CausalClusteringSettings.cluster_topology_refresh, "5s").withDiscoveryServiceType(EnterpriseDiscoveryServiceType.HAZELCAST);
+//ORIGINAL LINE: @Rule public final Neo4Net.test.causalclustering.ClusterRule clusterRule = new Neo4Net.test.causalclustering.ClusterRule().withNumberOfCoreMembers(NR_CORE_MEMBERS).withNumberOfReadReplicas(NR_READ_REPLICAS).withSharedCoreParam(Neo4Net.causalclustering.core.CausalClusteringSettings.cluster_topology_refresh, "5s").withDiscoveryServiceType(EnterpriseDiscoveryServiceType.HAZELCAST);
 		 public readonly ClusterRule ClusterRule = new ClusterRule().withNumberOfCoreMembers(NR_CORE_MEMBERS).withNumberOfReadReplicas(NR_READ_REPLICAS).withSharedCoreParam(CausalClusteringSettings.cluster_topology_refresh, "5s").withDiscoveryServiceType(EnterpriseDiscoveryServiceType.Hazelcast);
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -128,7 +128,7 @@ namespace Neo4Net.causalclustering.scenarios
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.causalclustering.discovery.Cluster<?> cluster = clusterRule.startCluster();
+//ORIGINAL LINE: Neo4Net.causalclustering.discovery.Cluster<?> cluster = clusterRule.startCluster();
 			  Cluster<object> cluster = ClusterRule.startCluster();
 
 			  ReadReplicaGraphDatabase readReplica = cluster.FindAnyReadReplica().database();
@@ -158,7 +158,7 @@ namespace Neo4Net.causalclustering.scenarios
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.causalclustering.discovery.Cluster<?> cluster = clusterRule.startCluster();
+//ORIGINAL LINE: Neo4Net.causalclustering.discovery.Cluster<?> cluster = clusterRule.startCluster();
 			  Cluster<object> cluster = ClusterRule.startCluster();
 
 			  // then
@@ -176,7 +176,7 @@ namespace Neo4Net.causalclustering.scenarios
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.causalclustering.discovery.Cluster<?> cluster = clusterRule.withNumberOfReadReplicas(0).startCluster();
+//ORIGINAL LINE: Neo4Net.causalclustering.discovery.Cluster<?> cluster = clusterRule.withNumberOfReadReplicas(0).startCluster();
 			  Cluster<object> cluster = ClusterRule.withNumberOfReadReplicas( 0 ).startCluster();
 			  int nodesBeforeReadReplicaStarts = 1;
 
@@ -246,7 +246,7 @@ namespace Neo4Net.causalclustering.scenarios
 		 {
 			  Path databaseDirectory = Db.databaseLayout().databaseDirectory().toPath();
 			  LabelScanStore labelScanStore = Db.DependencyResolver.resolveDependency( typeof( LabelScanStore ) );
-			  using ( ResourceIterator<File> files = labelScanStore.SnapshotStoreFiles() )
+			  using ( IResourceIterator<File> files = labelScanStore.SnapshotStoreFiles() )
 			  {
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
 					Path relativePath = databaseDirectory.relativize( Files.next().toPath().toAbsolutePath() );
@@ -260,7 +260,7 @@ namespace Neo4Net.causalclustering.scenarios
 		 public virtual void ShouldShutdownRatherThanPullUpdatesFromCoreMemberWithDifferentStoreIdIfLocalStoreIsNonEmpty()
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.causalclustering.discovery.Cluster<?> cluster = clusterRule.withNumberOfReadReplicas(0).startCluster();
+//ORIGINAL LINE: Neo4Net.causalclustering.discovery.Cluster<?> cluster = clusterRule.withNumberOfReadReplicas(0).startCluster();
 			  Cluster<object> cluster = ClusterRule.withNumberOfReadReplicas( 0 ).startCluster();
 
 			  cluster.CoreTx( _createSomeData );
@@ -297,7 +297,7 @@ namespace Neo4Net.causalclustering.scenarios
 		 {
 			  int readReplicaId = 4;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.causalclustering.discovery.Cluster<?> cluster = clusterRule.withNumberOfReadReplicas(0).startCluster();
+//ORIGINAL LINE: Neo4Net.causalclustering.discovery.Cluster<?> cluster = clusterRule.withNumberOfReadReplicas(0).startCluster();
 			  Cluster<object> cluster = ClusterRule.withNumberOfReadReplicas( 0 ).startCluster();
 
 			  cluster.CoreTx( _createSomeData );
@@ -335,7 +335,7 @@ namespace Neo4Net.causalclustering.scenarios
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.causalclustering.discovery.Cluster<?> cluster = clusterRule.startCluster();
+//ORIGINAL LINE: Neo4Net.causalclustering.discovery.Cluster<?> cluster = clusterRule.startCluster();
 			  Cluster<object> cluster = ClusterRule.startCluster();
 
 			  // when
@@ -359,7 +359,7 @@ namespace Neo4Net.causalclustering.scenarios
 			  IDictionary<string, string> @params = stringMap( GraphDatabaseSettings.keep_logical_logs.name(), "keep_none", GraphDatabaseSettings.logical_log_rotation_threshold.name(), "1M", GraphDatabaseSettings.check_point_interval_time.name(), "100ms" );
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.causalclustering.discovery.Cluster<?> cluster = clusterRule.withSharedCoreParams(params).startCluster();
+//ORIGINAL LINE: Neo4Net.causalclustering.discovery.Cluster<?> cluster = clusterRule.withSharedCoreParams(params).startCluster();
 			  Cluster<object> cluster = ClusterRule.withSharedCoreParams( @params ).startCluster();
 
 			  cluster.CoreTx((db, tx) =>
@@ -404,7 +404,7 @@ namespace Neo4Net.causalclustering.scenarios
 			  IDictionary<string, string> @params = stringMap( GraphDatabaseSettings.keep_logical_logs.name(), "keep_none", GraphDatabaseSettings.logical_log_rotation_threshold.name(), "1M", GraphDatabaseSettings.check_point_interval_time.name(), "100ms" );
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.causalclustering.discovery.Cluster<?> cluster = clusterRule.withSharedCoreParams(params).startCluster();
+//ORIGINAL LINE: Neo4Net.causalclustering.discovery.Cluster<?> cluster = clusterRule.withSharedCoreParams(params).startCluster();
 			  Cluster<object> cluster = ClusterRule.withSharedCoreParams( @params ).startCluster();
 
 			  cluster.CoreTx((db, tx) =>
@@ -453,7 +453,7 @@ namespace Neo4Net.causalclustering.scenarios
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.causalclustering.discovery.Cluster<?> cluster = clusterRule.startCluster();
+//ORIGINAL LINE: Neo4Net.causalclustering.discovery.Cluster<?> cluster = clusterRule.startCluster();
 			  Cluster<object> cluster = ClusterRule.startCluster();
 
 			  ReadReplicaGraphDatabase readReplicaGraphDatabase = cluster.FindAnyReadReplica().database();
@@ -505,7 +505,7 @@ namespace Neo4Net.causalclustering.scenarios
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void changeStoreId(org.Neo4Net.causalclustering.discovery.ReadReplica replica) throws java.io.IOException
+//ORIGINAL LINE: private static void changeStoreId(Neo4Net.causalclustering.discovery.ReadReplica replica) throws java.io.IOException
 		 private static void ChangeStoreId( ReadReplica replica )
 		 {
 			  File neoStoreFile = DatabaseLayout.of( replica.DatabaseDirectory() ).metadataStore();
@@ -540,7 +540,7 @@ namespace Neo4Net.causalclustering.scenarios
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.causalclustering.discovery.Cluster<?> cluster = clusterRule.withNumberOfReadReplicas(0).withRecordFormat(org.Neo4Net.kernel.impl.store.format.highlimit.HighLimit.NAME).startCluster();
+//ORIGINAL LINE: Neo4Net.causalclustering.discovery.Cluster<?> cluster = clusterRule.withNumberOfReadReplicas(0).withRecordFormat(Neo4Net.kernel.impl.store.format.highlimit.HighLimit.NAME).startCluster();
 			  Cluster<object> cluster = ClusterRule.withNumberOfReadReplicas( 0 ).withRecordFormat( HighLimit.NAME ).startCluster();
 
 			  // when
@@ -566,7 +566,7 @@ namespace Neo4Net.causalclustering.scenarios
 			  // given
 			  IDictionary<string, string> @params = stringMap( CausalClusteringSettings.raft_log_rotation_size.name(), "1k", CausalClusteringSettings.raft_log_pruning_frequency.name(), "500ms", CausalClusteringSettings.state_machine_flush_window_size.name(), "1", CausalClusteringSettings.raft_log_pruning_strategy.name(), "1 entries" );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.causalclustering.discovery.Cluster<?> cluster = clusterRule.withNumberOfReadReplicas(0).withSharedCoreParams(params).withRecordFormat(org.Neo4Net.kernel.impl.store.format.highlimit.HighLimit.NAME).startCluster();
+//ORIGINAL LINE: Neo4Net.causalclustering.discovery.Cluster<?> cluster = clusterRule.withNumberOfReadReplicas(0).withSharedCoreParams(params).withRecordFormat(Neo4Net.kernel.impl.store.format.highlimit.HighLimit.NAME).startCluster();
 			  Cluster<object> cluster = ClusterRule.withNumberOfReadReplicas( 0 ).withSharedCoreParams( @params ).withRecordFormat( HighLimit.NAME ).startCluster();
 
 			  cluster.CoreTx((db, tx) =>
@@ -627,7 +627,7 @@ namespace Neo4Net.causalclustering.scenarios
 		 {
 			  // Given initial pin counts on all members
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.causalclustering.discovery.Cluster<?> cluster = clusterRule.startCluster();
+//ORIGINAL LINE: Neo4Net.causalclustering.discovery.Cluster<?> cluster = clusterRule.startCluster();
 			  Cluster<object> cluster = ClusterRule.startCluster();
 			  System.Func<ReadReplica, PageCacheCounters> getPageCacheCounters = ccm => ccm.database().DependencyResolver.resolveDependency(typeof(PageCacheCounters));
 			  IList<PageCacheCounters> countersList = cluster.ReadReplicas().Select(getPageCacheCounters).ToList();

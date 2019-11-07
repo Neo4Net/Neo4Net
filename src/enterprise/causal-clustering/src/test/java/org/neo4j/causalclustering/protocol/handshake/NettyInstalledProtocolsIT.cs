@@ -67,15 +67,15 @@ namespace Neo4Net.causalclustering.protocol.handshake
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.Matchers.contains;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.protocol.Protocol_ApplicationProtocolCategory.RAFT;
+//	import static Neo4Net.causalclustering.protocol.Protocol_ApplicationProtocolCategory.RAFT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.protocol.Protocol_ApplicationProtocols.RAFT_1;
+//	import static Neo4Net.causalclustering.protocol.Protocol_ApplicationProtocols.RAFT_1;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.protocol.Protocol_ApplicationProtocols.RAFT_2;
+//	import static Neo4Net.causalclustering.protocol.Protocol_ApplicationProtocols.RAFT_2;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.protocol.Protocol_ModifierProtocolCategory.COMPRESSION;
+//	import static Neo4Net.causalclustering.protocol.Protocol_ModifierProtocolCategory.COMPRESSION;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.assertion.Assert.assertEventually;
+//	import static Neo4Net.test.assertion.Assert.assertEventually;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class NettyInstalledProtocolsIT
@@ -101,7 +101,7 @@ namespace Neo4Net.causalclustering.protocol.handshake
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("OptionalUsedAsFieldOrParameterType") private static Parameters raft1WithCompressionModifier(java.util.Optional<org.Neo4Net.causalclustering.protocol.Protocol_ModifierProtocol> protocol)
+//ORIGINAL LINE: @SuppressWarnings("OptionalUsedAsFieldOrParameterType") private static Parameters raft1WithCompressionModifier(java.util.Optional<Neo4Net.causalclustering.protocol.Protocol_ModifierProtocol> protocol)
 		 private static Parameters Raft1WithCompressionModifier( Optional<Protocol_ModifierProtocol> protocol )
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Method reference arbitrary object instance method syntax is not converted by Java to C# Converter:
@@ -110,7 +110,7 @@ namespace Neo4Net.causalclustering.protocol.handshake
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("OptionalUsedAsFieldOrParameterType") private static Parameters raft2WithCompressionModifiers(java.util.Optional<org.Neo4Net.causalclustering.protocol.Protocol_ModifierProtocol> protocol)
+//ORIGINAL LINE: @SuppressWarnings("OptionalUsedAsFieldOrParameterType") private static Parameters raft2WithCompressionModifiers(java.util.Optional<Neo4Net.causalclustering.protocol.Protocol_ModifierProtocol> protocol)
 		 private static Parameters Raft2WithCompressionModifiers( Optional<Protocol_ModifierProtocol> protocol )
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Method reference arbitrary object instance method syntax is not converted by Java to C# Converter:
@@ -210,7 +210,7 @@ namespace Neo4Net.causalclustering.protocol.handshake
 			  }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: void start(final ApplicationProtocolRepository applicationProtocolRepository, final ModifierProtocolRepository modifierProtocolRepository, org.Neo4Net.logging.LogProvider logProvider)
+//ORIGINAL LINE: void start(final ApplicationProtocolRepository applicationProtocolRepository, final ModifierProtocolRepository modifierProtocolRepository, Neo4Net.logging.LogProvider logProvider)
 			  internal virtual void Start( ApplicationProtocolRepository applicationProtocolRepository, ModifierProtocolRepository modifierProtocolRepository, LogProvider logProvider )
 			  {
 					RaftProtocolServerInstallerV2.Factory raftFactoryV2 = new RaftProtocolServerInstallerV2.Factory( nettyHandler, PipelineBuilderFactory, logProvider );
@@ -291,7 +291,7 @@ namespace Neo4Net.causalclustering.protocol.handshake
 			 private readonly NettyInstalledProtocolsIT _outerInstance;
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private final org.Neo4Net.causalclustering.core.consensus.RaftMessages_ClusterIdAwareMessage<? extends org.Neo4Net.causalclustering.core.consensus.RaftMessages_RaftMessage> expected;
+//ORIGINAL LINE: private final Neo4Net.causalclustering.core.consensus.RaftMessages_ClusterIdAwareMessage<? extends Neo4Net.causalclustering.core.consensus.RaftMessages_RaftMessage> expected;
 			  internal readonly Neo4Net.causalclustering.core.consensus.RaftMessages_ClusterIdAwareMessage<Neo4Net.causalclustering.core.consensus.RaftMessages_RaftMessage> Expected;
 
 			  internal MessageMatcher<T1>( NettyInstalledProtocolsIT outerInstance, Neo4Net.causalclustering.core.consensus.RaftMessages_ClusterIdAwareMessage<T1> expected ) where T1 : Neo4Net.causalclustering.core.consensus.RaftMessages_RaftMessage
@@ -303,11 +303,11 @@ namespace Neo4Net.causalclustering.protocol.handshake
 			  public override bool Matches( object item )
 			  {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: if (item instanceof org.Neo4Net.causalclustering.core.consensus.RaftMessages_ClusterIdAwareMessage<?>)
+//ORIGINAL LINE: if (item instanceof Neo4Net.causalclustering.core.consensus.RaftMessages_ClusterIdAwareMessage<?>)
 					if ( item is Neo4Net.causalclustering.core.consensus.RaftMessages_ClusterIdAwareMessage<object> )
 					{
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.causalclustering.core.consensus.RaftMessages_ClusterIdAwareMessage<?> message = (org.Neo4Net.causalclustering.core.consensus.RaftMessages_ClusterIdAwareMessage<?>) item;
+//ORIGINAL LINE: Neo4Net.causalclustering.core.consensus.RaftMessages_ClusterIdAwareMessage<?> message = (Neo4Net.causalclustering.core.consensus.RaftMessages_ClusterIdAwareMessage<?>) item;
 						 Neo4Net.causalclustering.core.consensus.RaftMessages_ClusterIdAwareMessage<object> message = ( Neo4Net.causalclustering.core.consensus.RaftMessages_ClusterIdAwareMessage<object> ) item;
 						 return message.ClusterId().Equals(Expected.clusterId()) && message.message().Equals(Expected.message());
 					}

@@ -78,9 +78,9 @@ namespace Neo4Net.causalclustering.core.server
 	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.CausalClusteringSettings.transaction_listen_address;
+//	import static Neo4Net.causalclustering.core.CausalClusteringSettings.transaction_listen_address;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.time.Clocks.systemClock;
+//	import static Neo4Net.time.Clocks.systemClock;
 
 	public class CoreServerModule
 	{
@@ -91,7 +91,7 @@ namespace Neo4Net.causalclustering.core.server
 		 public readonly MembershipWaiterLifecycle MembershipWaiterLifecycle;
 		 private readonly Server _catchupServer;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("OptionalUsedAsFieldOrParameterType") private final java.util.Optional<org.Neo4Net.causalclustering.net.Server> backupServer;
+//ORIGINAL LINE: @SuppressWarnings("OptionalUsedAsFieldOrParameterType") private final java.util.Optional<Neo4Net.causalclustering.net.Server> backupServer;
 		 private readonly Optional<Server> _backupServer;
 		 private readonly IdentityModule _identityModule;
 		 private readonly CoreStateMachinesModule _coreStateMachinesModule;
@@ -109,7 +109,7 @@ namespace Neo4Net.causalclustering.core.server
 		 private readonly PlatformModule _platformModule;
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public CoreServerModule(org.Neo4Net.causalclustering.core.IdentityModule identityModule, final org.Neo4Net.graphdb.factory.module.PlatformModule platformModule, org.Neo4Net.causalclustering.core.consensus.ConsensusModule consensusModule, org.Neo4Net.causalclustering.core.state.machines.CoreStateMachinesModule coreStateMachinesModule, org.Neo4Net.causalclustering.core.state.ClusteringModule clusteringModule, org.Neo4Net.causalclustering.ReplicationModule replicationModule, org.Neo4Net.causalclustering.catchup.storecopy.LocalDatabase localDatabase, System.Func<org.Neo4Net.kernel.internal.DatabaseHealth> dbHealthSupplier, java.io.File clusterStateDirectory, org.Neo4Net.causalclustering.protocol.NettyPipelineBuilderFactory clientPipelineBuilderFactory, org.Neo4Net.causalclustering.protocol.NettyPipelineBuilderFactory serverPipelineBuilderFactory, org.Neo4Net.causalclustering.protocol.NettyPipelineBuilderFactory backupServerPipelineBuilderFactory, org.Neo4Net.causalclustering.net.InstalledProtocolHandler installedProtocolsHandler)
+//ORIGINAL LINE: public CoreServerModule(Neo4Net.causalclustering.core.IdentityModule identityModule, final Neo4Net.graphdb.factory.module.PlatformModule platformModule, Neo4Net.causalclustering.core.consensus.ConsensusModule consensusModule, Neo4Net.causalclustering.core.state.machines.CoreStateMachinesModule coreStateMachinesModule, Neo4Net.causalclustering.core.state.ClusteringModule clusteringModule, Neo4Net.causalclustering.ReplicationModule replicationModule, Neo4Net.causalclustering.catchup.storecopy.LocalDatabase localDatabase, System.Func<Neo4Net.kernel.internal.DatabaseHealth> dbHealthSupplier, java.io.File clusterStateDirectory, Neo4Net.causalclustering.protocol.NettyPipelineBuilderFactory clientPipelineBuilderFactory, Neo4Net.causalclustering.protocol.NettyPipelineBuilderFactory serverPipelineBuilderFactory, Neo4Net.causalclustering.protocol.NettyPipelineBuilderFactory backupServerPipelineBuilderFactory, Neo4Net.causalclustering.net.InstalledProtocolHandler installedProtocolsHandler)
 		 public CoreServerModule( IdentityModule identityModule, PlatformModule platformModule, ConsensusModule consensusModule, CoreStateMachinesModule coreStateMachinesModule, ClusteringModule clusteringModule, ReplicationModule replicationModule, LocalDatabase localDatabase, System.Func<DatabaseHealth> dbHealthSupplier, File clusterStateDirectory, NettyPipelineBuilderFactory clientPipelineBuilderFactory, NettyPipelineBuilderFactory serverPipelineBuilderFactory, NettyPipelineBuilderFactory backupServerPipelineBuilderFactory, InstalledProtocolHandler installedProtocolsHandler )
 		 {
 			  this._identityModule = identityModule;
@@ -124,16 +124,16 @@ namespace Neo4Net.causalclustering.core.server
 			  this._jobScheduler = platformModule.JobScheduler;
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.util.Dependencies dependencies = platformModule.dependencies;
+//ORIGINAL LINE: final Neo4Net.kernel.impl.util.Dependencies dependencies = platformModule.dependencies;
 			  Dependencies dependencies = platformModule.Dependencies;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.logging.internal.LogService logging = platformModule.logging;
+//ORIGINAL LINE: final Neo4Net.logging.internal.LogService logging = platformModule.logging;
 			  LogService logging = platformModule.Logging;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.io.fs.FileSystemAbstraction fileSystem = platformModule.fileSystem;
+//ORIGINAL LINE: final Neo4Net.io.fs.FileSystemAbstraction fileSystem = platformModule.fileSystem;
 			  FileSystemAbstraction fileSystem = platformModule.FileSystem;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.lifecycle.LifeSupport life = platformModule.life;
+//ORIGINAL LINE: final Neo4Net.kernel.lifecycle.LifeSupport life = platformModule.life;
 			  LifeSupport life = platformModule.Life;
 
 			  this._logProvider = logging.InternalLogProvider;
@@ -148,7 +148,7 @@ namespace Neo4Net.causalclustering.core.server
 			  CoreState coreState = new CoreState( coreStateMachinesModule.CoreStateMachines, replicationModule.SessionTracker, lastFlushedStorage );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final System.Func<org.Neo4Net.kernel.internal.DatabaseHealth> databaseHealthSupplier = () -> platformModule.dataSourceManager.getDataSource().getDependencyResolver().resolveDependency(org.Neo4Net.kernel.internal.DatabaseHealth.class);
+//ORIGINAL LINE: final System.Func<Neo4Net.kernel.internal.DatabaseHealth> databaseHealthSupplier = () -> platformModule.dataSourceManager.getDataSource().getDependencyResolver().resolveDependency(Neo4Net.kernel.internal.DatabaseHealth.class);
 			  System.Func<DatabaseHealth> databaseHealthSupplier = () => platformModule.DataSourceManager.DataSource.DependencyResolver.resolveDependency(typeof(DatabaseHealth));
 			  _commandApplicationProcess = new CommandApplicationProcess( consensusModule.RaftLog(), platformModule.Config.get(CausalClusteringSettings.state_machine_apply_max_batch_size), platformModule.Config.get(CausalClusteringSettings.state_machine_flush_window_size), databaseHealthSupplier, _logProvider, replicationModule.ProgressTracker, replicationModule.SessionTracker, coreState, consensusModule.InFlightCache(), platformModule.Monitors );
 

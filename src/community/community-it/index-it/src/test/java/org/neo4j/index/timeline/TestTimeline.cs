@@ -42,7 +42,7 @@ namespace Neo4Net.Index.timeline
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.asCollection;
+//	import static Neo4Net.helpers.collection.Iterators.asCollection;
 
 	public class TestTimeline
 	{
@@ -131,7 +131,7 @@ namespace Neo4Net.Index.timeline
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private java.util.List<org.Neo4Net.graphdb.PropertyContainer> sortedEntities(java.util.LinkedList<org.Neo4Net.helpers.collection.Pair<org.Neo4Net.graphdb.PropertyContainer, long>> timestamps, final boolean reversed)
+//ORIGINAL LINE: private java.util.List<Neo4Net.graphdb.PropertyContainer> sortedEntities(java.util.LinkedList<Neo4Net.helpers.collection.Pair<Neo4Net.graphdb.PropertyContainer, long>> timestamps, final boolean reversed)
 		 private IList<PropertyContainer> SortedEntities( LinkedList<Pair<PropertyContainer, long>> timestamps, bool reversed )
 		 {
 			  IList<Pair<PropertyContainer, long>> sorted = new List<Pair<PropertyContainer, long>>( timestamps );

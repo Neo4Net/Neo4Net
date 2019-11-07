@@ -26,7 +26,7 @@ namespace Neo4Net.Io.layout
 	using Streams = Neo4Net.Stream.Streams;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.fs.FileUtils.getCanonicalFile;
+//	import static Neo4Net.io.fs.FileUtils.getCanonicalFile;
 
 	/// <summary>
 	/// File layout representation of the particular database. Facade for any kind of file lookup for a particular database storage implementation.

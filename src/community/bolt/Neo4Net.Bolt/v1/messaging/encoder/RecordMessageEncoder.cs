@@ -28,7 +28,7 @@ namespace Neo4Net.Bolt.v1.messaging.encoder
 	public class RecordMessageEncoder : ResponseMessageEncoder<RecordMessage>
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void encode(org.Neo4Net.bolt.messaging.Neo4NetPack_Packer packer, org.Neo4Net.bolt.v1.messaging.response.RecordMessage message) throws java.io.IOException
+//ORIGINAL LINE: public void encode(Neo4Net.bolt.messaging.Neo4NetPack_Packer packer, Neo4Net.bolt.v1.messaging.response.RecordMessage message) throws java.io.IOException
 		 public override void Encode( Neo4Net.Bolt.messaging.Neo4NetPack_Packer packer, RecordMessage message )
 		 {
 			  AnyValue[] fields = message.Fields();

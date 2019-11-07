@@ -54,7 +54,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 		 /// <exception cref="IOException"> if there was a problem appending the transaction. See method javadoc body for
 		 /// how to handle exceptions in general thrown from this method. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: long append(org.Neo4Net.kernel.impl.api.TransactionToApply batch, org.Neo4Net.kernel.impl.transaction.tracing.LogAppendEvent logAppendEvent) throws java.io.IOException;
+//ORIGINAL LINE: long append(Neo4Net.kernel.impl.api.TransactionToApply batch, Neo4Net.kernel.impl.transaction.tracing.LogAppendEvent logAppendEvent) throws java.io.IOException;
 		 long Append( TransactionToApply batch, LogAppendEvent logAppendEvent );
 
 		 /// <summary>
@@ -66,7 +66,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 		 /// <exception cref="IOException"> if there was a problem appending the transaction. See method javadoc body for
 		 /// how to handle exceptions in general thrown from this method. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void checkPoint(LogPosition logPosition, org.Neo4Net.kernel.impl.transaction.tracing.LogCheckPointEvent logCheckPointEvent) throws java.io.IOException;
+//ORIGINAL LINE: void checkPoint(LogPosition logPosition, Neo4Net.kernel.impl.transaction.tracing.LogCheckPointEvent logCheckPointEvent) throws java.io.IOException;
 		 void CheckPoint( LogPosition logPosition, LogCheckPointEvent logCheckPointEvent );
 	}
 

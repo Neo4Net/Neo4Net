@@ -31,7 +31,7 @@ namespace Neo4Net.causalclustering.core.consensus.explorer
 	using MemberId = Neo4Net.causalclustering.identity.MemberId;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.state.RaftStateBuilder.raftState;
+//	import static Neo4Net.causalclustering.core.consensus.state.RaftStateBuilder.raftState;
 
 	public class ClusterState
 	{
@@ -40,7 +40,7 @@ namespace Neo4Net.causalclustering.core.consensus.explorer
 		 public readonly IDictionary<MemberId, LinkedList<Neo4Net.causalclustering.core.consensus.RaftMessages_RaftMessage>> Queues;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public ClusterState(java.util.Set<org.Neo4Net.causalclustering.identity.MemberId> members) throws java.io.IOException
+//ORIGINAL LINE: public ClusterState(java.util.Set<Neo4Net.causalclustering.identity.MemberId> members) throws java.io.IOException
 		 public ClusterState( ISet<MemberId> members )
 		 {
 			  this.Roles = new Dictionary<MemberId, Role>();

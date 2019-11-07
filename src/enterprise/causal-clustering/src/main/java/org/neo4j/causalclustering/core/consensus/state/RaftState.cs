@@ -193,7 +193,7 @@ namespace Neo4Net.causalclustering.core.consensus.state
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void update(org.Neo4Net.causalclustering.core.consensus.outcome.Outcome outcome) throws java.io.IOException
+//ORIGINAL LINE: public void update(Neo4Net.causalclustering.core.consensus.outcome.Outcome outcome) throws java.io.IOException
 		 public virtual void Update( Outcome outcome )
 		 {
 			  if ( TermState().update(outcome.Term) )

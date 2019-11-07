@@ -38,7 +38,7 @@ namespace Neo4Net.Consistency.checking.full
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static <RECORD> void distributeRecords(int numberOfThreads, String workerNames, int queueSize, java.util.Iterator<RECORD> records, final org.Neo4Net.helpers.progress.ProgressListener progress, RecordProcessor<RECORD> processor, org.Neo4Net.consistency.checking.full.QueueDistribution_QueueDistributor<RECORD> idDistributor)
+//ORIGINAL LINE: public static <RECORD> void distributeRecords(int numberOfThreads, String workerNames, int queueSize, java.util.Iterator<RECORD> records, final Neo4Net.helpers.progress.ProgressListener progress, RecordProcessor<RECORD> processor, Neo4Net.consistency.checking.full.QueueDistribution_QueueDistributor<RECORD> idDistributor)
 		 public static void DistributeRecords<RECORD>( int numberOfThreads, string workerNames, int queueSize, IEnumerator<RECORD> records, ProgressListener progress, RecordProcessor<RECORD> processor, QueueDistribution_QueueDistributor<RECORD> idDistributor )
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
@@ -52,7 +52,7 @@ namespace Neo4Net.Consistency.checking.full
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 			  ArrayBlockingQueue<RECORD>[] recordQ = new ArrayBlockingQueue[numberOfThreads];
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.unsafe.impl.batchimport.cache.idmapping.string.Workers<RecordCheckWorker<RECORD>> workers = new org.Neo4Net.unsafe.impl.batchimport.cache.idmapping.string.Workers<>(workerNames);
+//ORIGINAL LINE: final Neo4Net.unsafe.impl.batchimport.cache.idmapping.string.Workers<RecordCheckWorker<RECORD>> workers = new Neo4Net.unsafe.impl.batchimport.cache.idmapping.string.Workers<>(workerNames);
 			  Workers<RecordCheckWorker<RECORD>> workers = new Workers<RecordCheckWorker<RECORD>>( workerNames );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final java.util.concurrent.atomic.AtomicInteger idGroup = new java.util.concurrent.atomic.AtomicInteger(-1);

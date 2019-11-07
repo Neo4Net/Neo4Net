@@ -24,7 +24,7 @@
  */
 namespace Neo4Net.com.storecopy
 {
-	using KernelTransactionHandle = Neo4Net.Kernel.api.KernelTransactionHandle;
+	using KernelTransactionHandle = Neo4Net.Kernel.Api.KernelTransactionHandle;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
 	using KernelTransactions = Neo4Net.Kernel.Impl.Api.KernelTransactions;
@@ -36,11 +36,11 @@ namespace Neo4Net.com.storecopy
 	using Log = Neo4Net.Logging.Log;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.Format.duration;
+//	import static Neo4Net.helpers.Format.duration;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.Format.time;
+//	import static Neo4Net.helpers.Format.time;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode.EXTERNAL;
+//	import static Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode.EXTERNAL;
 
 	internal class TransactionBatchCommitter : TransactionQueue.Applier
 	{
@@ -60,7 +60,7 @@ namespace Neo4Net.com.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void apply(org.Neo4Net.kernel.impl.api.TransactionToApply first, org.Neo4Net.kernel.impl.api.TransactionToApply last) throws Exception
+//ORIGINAL LINE: public void apply(Neo4Net.kernel.impl.api.TransactionToApply first, Neo4Net.kernel.impl.api.TransactionToApply last) throws Exception
 		 public override void Apply( TransactionToApply first, TransactionToApply last )
 		 {
 			  /*
@@ -113,7 +113,7 @@ namespace Neo4Net.com.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private long commit(org.Neo4Net.kernel.impl.api.TransactionToApply first) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
+//ORIGINAL LINE: private long commit(Neo4Net.kernel.impl.api.TransactionToApply first) throws Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 private long Commit( TransactionToApply first )
 		 {
 			  return _commitProcess.commit( first, CommitEvent.NULL, EXTERNAL );

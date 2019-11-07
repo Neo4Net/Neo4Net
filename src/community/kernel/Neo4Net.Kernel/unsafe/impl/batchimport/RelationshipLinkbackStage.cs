@@ -32,11 +32,11 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 	using PrepareIdSequence = Neo4Net.@unsafe.Impl.Batchimport.store.PrepareIdSequence;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.RecordIdIterator.backwards;
+//	import static Neo4Net.@unsafe.impl.batchimport.RecordIdIterator.backwards;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.staging.Step_Fields.ORDER_SEND_DOWNSTREAM;
+//	import static Neo4Net.@unsafe.impl.batchimport.staging.Step_Fields.ORDER_SEND_DOWNSTREAM;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.staging.Step_Fields.RECYCLE_BATCHES;
+//	import static Neo4Net.@unsafe.impl.batchimport.staging.Step_Fields.RECYCLE_BATCHES;
 
 	/// <summary>
 	/// Sets <seealso cref="RelationshipRecord.setFirstPrevRel(long)"/> and <seealso cref="RelationshipRecord.setSecondPrevRel(long)"/>
@@ -62,11 +62,11 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 			  RelationshipStore store = stores.RelationshipStore;
 			  Add( new BatchFeedStep( Control(), config, backwards(0, store.HighId, config), store.RecordSize ) );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: add(new org.Neo4Net.unsafe.impl.batchimport.staging.ReadRecordsStep<>(control(), config, true, store, new org.Neo4Net.unsafe.impl.batchimport.staging.RecordDataAssembler<>(store::newRecord, readFilter)));
+//ORIGINAL LINE: add(new Neo4Net.unsafe.impl.batchimport.staging.ReadRecordsStep<>(control(), config, true, store, new Neo4Net.unsafe.impl.batchimport.staging.RecordDataAssembler<>(store::newRecord, readFilter)));
 			  Add( new ReadRecordsStep<object>( Control(), config, true, store, new RecordDataAssembler<object>(store.newRecord, readFilter) ) );
 			  Add( new RelationshipLinkbackStep( Control(), config, cache, changeFilter, nodeTypes, additionalStatsProvider ) );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: add(new UpdateRecordsStep<>(control(), config, store, org.Neo4Net.unsafe.impl.batchimport.store.PrepareIdSequence.of(stores.usesDoubleRelationshipRecordUnits())));
+//ORIGINAL LINE: add(new UpdateRecordsStep<>(control(), config, store, Neo4Net.unsafe.impl.batchimport.store.PrepareIdSequence.of(stores.usesDoubleRelationshipRecordUnits())));
 			  Add( new UpdateRecordsStep<object>( Control(), config, store, PrepareIdSequence.of(stores.UsesDoubleRelationshipRecordUnits()) ) );
 		 }
 	}

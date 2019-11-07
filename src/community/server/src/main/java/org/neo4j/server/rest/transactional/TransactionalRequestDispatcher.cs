@@ -26,7 +26,7 @@ namespace Neo4Net.Server.rest.transactional
 
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
 	using GraphDatabaseFacade = Neo4Net.Kernel.impl.factory.GraphDatabaseFacade;
 	using Database = Neo4Net.Server.database.Database;
 	using AuthorizedRequestWrapper = Neo4Net.Server.rest.dbms.AuthorizedRequestWrapper;
@@ -38,7 +38,7 @@ namespace Neo4Net.Server.rest.transactional
 	using RestfulGraphDatabase = Neo4Net.Server.rest.web.RestfulGraphDatabase;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.repr.RepresentationWriteHandler.DO_NOTHING;
+//	import static Neo4Net.server.rest.repr.RepresentationWriteHandler.DO_NOTHING;
 
 	public class TransactionalRequestDispatcher : RequestDispatcher
 	{
@@ -60,14 +60,14 @@ namespace Neo4Net.Server.rest.transactional
 			  LoginContext loginContext = AuthorizedRequestWrapper.getLoginContextFromHttpContext( httpContext );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.factory.GraphDatabaseFacade graph = database.getGraph();
+//ORIGINAL LINE: final Neo4Net.kernel.impl.factory.GraphDatabaseFacade graph = database.getGraph();
 			  GraphDatabaseFacade graph = _database.Graph;
 			  if ( o is RestfulGraphDatabase )
 			  {
 					RestfulGraphDatabase restfulGraphDatabase = ( RestfulGraphDatabase ) o;
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.graphdb.Transaction transaction = graph.BeginTransaction(org.Neo4Net.kernel.api.KernelTransaction.Type.implicit, loginContext);
+//ORIGINAL LINE: final Neo4Net.graphdb.Transaction transaction = graph.BeginTransaction(Neo4Net.kernel.api.KernelTransaction.Type.implicit, loginContext);
 					Transaction transaction = graph.BeginTransaction( KernelTransaction.Type.@implicit, loginContext );
 
 					restfulGraphDatabase.OutputFormat.RepresentationWriteHandler = representationWriteHandler = new CommitOnSuccessfulStatusCodeRepresentationWriteHandler( httpContext, transaction );
@@ -77,7 +77,7 @@ namespace Neo4Net.Server.rest.transactional
 					BatchOperationService batchOperationService = ( BatchOperationService ) o;
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.graphdb.Transaction transaction = graph.BeginTransaction(org.Neo4Net.kernel.api.KernelTransaction.Type.explicit, loginContext);
+//ORIGINAL LINE: final Neo4Net.graphdb.Transaction transaction = graph.BeginTransaction(Neo4Net.kernel.api.KernelTransaction.Type.explicit, loginContext);
 					Transaction transaction = graph.BeginTransaction( KernelTransaction.Type.@explicit, loginContext );
 
 					batchOperationService.RepresentationWriteHandler = representationWriteHandler = new CommitOnSuccessfulStatusCodeRepresentationWriteHandler( httpContext, transaction );
@@ -87,7 +87,7 @@ namespace Neo4Net.Server.rest.transactional
 					CypherService cypherService = ( CypherService ) o;
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.graphdb.Transaction transaction = graph.BeginTransaction(org.Neo4Net.kernel.api.KernelTransaction.Type.explicit, loginContext);
+//ORIGINAL LINE: final Neo4Net.graphdb.Transaction transaction = graph.BeginTransaction(Neo4Net.kernel.api.KernelTransaction.Type.explicit, loginContext);
 					Transaction transaction = graph.BeginTransaction( KernelTransaction.Type.@explicit, loginContext );
 
 					cypherService.OutputFormat.RepresentationWriteHandler = representationWriteHandler = new CommitOnSuccessfulStatusCodeRepresentationWriteHandler( httpContext, transaction );
@@ -97,7 +97,7 @@ namespace Neo4Net.Server.rest.transactional
 					DatabaseMetadataService databaseMetadataService = ( DatabaseMetadataService ) o;
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.graphdb.Transaction transaction = graph.BeginTransaction(org.Neo4Net.kernel.api.KernelTransaction.Type.implicit, loginContext);
+//ORIGINAL LINE: final Neo4Net.graphdb.Transaction transaction = graph.BeginTransaction(Neo4Net.kernel.api.KernelTransaction.Type.implicit, loginContext);
 					Transaction transaction = graph.BeginTransaction( KernelTransaction.Type.@implicit, loginContext );
 
 					databaseMetadataService.RepresentationWriteHandler = representationWriteHandler = new RepresentationWriteHandlerAnonymousInnerClass( this, transaction );

@@ -28,7 +28,7 @@ namespace Neo4Net.Server.rest.transactional
 	internal class RowWriter : ResultDataContentWriter
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void write(org.codehaus.jackson.JsonGenerator out, Iterable<String> columns, org.Neo4Net.graphdb.Result_ResultRow row, TransactionStateChecker txStateChecker) throws java.io.IOException
+//ORIGINAL LINE: public void write(org.codehaus.jackson.JsonGenerator out, Iterable<String> columns, Neo4Net.graphdb.Result_ResultRow row, TransactionStateChecker txStateChecker) throws java.io.IOException
 		 public override void Write( JsonGenerator @out, IEnumerable<string> columns, Neo4Net.GraphDb.Result_ResultRow row, TransactionStateChecker txStateChecker )
 		 {
 			  @out.writeArrayFieldStart( "row" );
@@ -47,7 +47,7 @@ namespace Neo4Net.Server.rest.transactional
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void writeMeta(org.codehaus.jackson.JsonGenerator out, Iterable<String> columns, org.Neo4Net.graphdb.Result_ResultRow row) throws java.io.IOException
+//ORIGINAL LINE: private void writeMeta(org.codehaus.jackson.JsonGenerator out, Iterable<String> columns, Neo4Net.graphdb.Result_ResultRow row) throws java.io.IOException
 		 private void WriteMeta( JsonGenerator @out, IEnumerable<string> columns, Neo4Net.GraphDb.Result_ResultRow row )
 		 {
 			  @out.writeArrayFieldStart( "meta" );

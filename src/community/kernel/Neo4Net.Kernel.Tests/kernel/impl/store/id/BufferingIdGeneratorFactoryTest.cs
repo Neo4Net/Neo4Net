@@ -41,7 +41,7 @@ namespace Neo4Net.Kernel.impl.store.id
 	public class BufferingIdGeneratorFactoryTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.fs.EphemeralFileSystemRule fs = new org.Neo4Net.test.rule.fs.EphemeralFileSystemRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.fs.EphemeralFileSystemRule fs = new Neo4Net.test.rule.fs.EphemeralFileSystemRule();
 		 public readonly EphemeralFileSystemRule Fs = new EphemeralFileSystemRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -78,7 +78,7 @@ namespace Neo4Net.Kernel.impl.store.id
 			  // GIVEN
 			  MockedIdGeneratorFactory actual = new MockedIdGeneratorFactory();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.time.FakeClock clock = org.Neo4Net.time.Clocks.fakeClock();
+//ORIGINAL LINE: final Neo4Net.time.FakeClock clock = Neo4Net.time.Clocks.fakeClock();
 			  FakeClock clock = Clocks.fakeClock();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final long safeZone = MINUTES.toMillis(1);

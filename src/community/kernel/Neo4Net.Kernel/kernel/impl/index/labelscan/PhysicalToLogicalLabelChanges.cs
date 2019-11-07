@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Kernel.impl.index.labelscan
 {
-	using NodeLabelUpdate = Neo4Net.Kernel.api.labelscan.NodeLabelUpdate;
+	using NodeLabelUpdate = Neo4Net.Kernel.Api.LabelScan.NodeLabelUpdate;
 
 	internal class PhysicalToLogicalLabelChanges
 	{

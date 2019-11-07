@@ -37,10 +37,10 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
 	using VersionContextSupplier = Neo4Net.Io.pagecache.tracing.cursor.context.VersionContextSupplier;
 	using TransactionApplyKernelException = Neo4Net.Kernel.Api.Exceptions.TransactionApplyKernelException;
-	using LabelScanStore = Neo4Net.Kernel.api.labelscan.LabelScanStore;
-	using LabelScanWriter = Neo4Net.Kernel.api.labelscan.LabelScanWriter;
-	using LoggingMonitor = Neo4Net.Kernel.api.labelscan.LoggingMonitor;
-	using TransactionCountingStateVisitor = Neo4Net.Kernel.api.txstate.TransactionCountingStateVisitor;
+	using LabelScanStore = Neo4Net.Kernel.Api.LabelScan.LabelScanStore;
+	using LabelScanWriter = Neo4Net.Kernel.Api.LabelScan.LabelScanWriter;
+	using LoggingMonitor = Neo4Net.Kernel.Api.LabelScan.LoggingMonitor;
+	using TransactionCountingStateVisitor = Neo4Net.Kernel.Api.txstate.TransactionCountingStateVisitor;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using BatchTransactionApplier = Neo4Net.Kernel.Impl.Api.BatchTransactionApplier;
 	using BatchTransactionApplierFacade = Neo4Net.Kernel.Impl.Api.BatchTransactionApplierFacade;
@@ -113,11 +113,11 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 	using Neo4Net.Utils.Concurrent;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.locking.LockService.NO_LOCK_SERVICE;
+//	import static Neo4Net.kernel.impl.locking.LockService.NO_LOCK_SERVICE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode.RECOVERY;
+//	import static Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode.RECOVERY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode.REVERSE_RECOVERY;
+//	import static Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode.REVERSE_RECOVERY;
 
 	public class RecordStorageEngine : StorageEngine, Lifecycle
 	{
@@ -212,7 +212,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("resource") @Override public void createCommands(java.util.Collection<org.Neo4Net.Kernel.Api.StorageEngine.StorageCommand> commands, org.Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState txState, org.Neo4Net.Kernel.Api.StorageEngine.StorageReader storageReader, org.Neo4Net.Kernel.Api.StorageEngine.lock.ResourceLocker locks, long lastTransactionIdWhenStarted, org.Neo4Net.Kernel.Api.StorageEngine.TxState.TxStateVisitor_Decorator additionalTxStateVisitor) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException, org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.CreateConstraintFailureException, org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.ConstraintValidationException
+//ORIGINAL LINE: @SuppressWarnings("resource") @Override public void createCommands(java.util.Collection<Neo4Net.Kernel.Api.StorageEngine.StorageCommand> commands, Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState txState, Neo4Net.Kernel.Api.StorageEngine.StorageReader storageReader, Neo4Net.Kernel.Api.StorageEngine.lock.ResourceLocker locks, long lastTransactionIdWhenStarted, Neo4Net.Kernel.Api.StorageEngine.TxState.TxStateVisitor_Decorator additionalTxStateVisitor) throws Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException, Neo4Net.Kernel.Api.Internal.Exceptions.Schema.CreateConstraintFailureException, Neo4Net.Kernel.Api.Internal.Exceptions.Schema.ConstraintValidationException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public override void CreateCommands( ICollection<StorageCommand> commands, ReadableTransactionState txState, StorageReader storageReader, ResourceLocker locks, long lastTransactionIdWhenStarted, Neo4Net.Kernel.Api.StorageEngine.TxState.TxStateVisitor_Decorator additionalTxStateVisitor )
 		 {
@@ -241,7 +241,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void apply(org.Neo4Net.Kernel.Api.StorageEngine.CommandsToApply batch, org.Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode mode) throws Exception
+//ORIGINAL LINE: public void apply(Neo4Net.Kernel.Api.StorageEngine.CommandsToApply batch, Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode mode) throws Exception
 		 public override void Apply( CommandsToApply batch, TransactionApplicationMode mode )
 		 {
 			  // Have these command appliers as separate try-with-resource to have better control over
@@ -413,7 +413,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 					else
 					{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.RecordStore<org.Neo4Net.kernel.impl.store.record.AbstractBaseRecord> recordStore = neoStores.getRecordStore(type);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.store.RecordStore<Neo4Net.kernel.impl.store.record.AbstractBaseRecord> recordStore = neoStores.getRecordStore(type);
 						 RecordStore<AbstractBaseRecord> recordStore = _neoStores.getRecordStore( type );
 						 StoreFileMetadata metadata = new StoreFileMetadata( recordStore.StorageFile, recordStore.RecordSize );
 						 Files.Add( metadata );
@@ -437,7 +437,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 		 /// are important tests which asserts details about the neo stores that are very important to test,
 		 /// but to convert all those tests might be a bigger piece of work. </returns>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @VisibleForTesting public org.Neo4Net.kernel.impl.store.NeoStores testAccessNeoStores()
+//ORIGINAL LINE: @VisibleForTesting public Neo4Net.kernel.impl.store.NeoStores testAccessNeoStores()
 		 public virtual NeoStores TestAccessNeoStores()
 		 {
 			  return _neoStores;

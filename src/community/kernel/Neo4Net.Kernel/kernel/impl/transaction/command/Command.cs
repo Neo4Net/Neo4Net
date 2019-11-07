@@ -46,13 +46,13 @@ namespace Neo4Net.Kernel.impl.transaction.command
 	using SchemaRule = Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.util.Bits.bitFlag;
+//	import static Neo4Net.kernel.impl.util.Bits.bitFlag;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.util.Bits.bitFlags;
+//	import static Neo4Net.kernel.impl.util.Bits.bitFlags;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.util.IdPrettyPrinter.label;
+//	import static Neo4Net.kernel.impl.util.IdPrettyPrinter.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.util.IdPrettyPrinter.relationshipType;
+//	import static Neo4Net.kernel.impl.util.IdPrettyPrinter.relationshipType;
 
 	/// <summary>
 	/// Command implementations for all the commands that can be performed on a Neo
@@ -186,7 +186,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public abstract boolean handle(org.Neo4Net.kernel.impl.api.CommandVisitor handler) throws java.io.IOException;
+//ORIGINAL LINE: public abstract boolean handle(Neo4Net.kernel.impl.api.CommandVisitor handler) throws java.io.IOException;
 		 public abstract bool Handle( CommandVisitor handler );
 
 		 protected internal virtual string BeforeAndAfterToString( AbstractBaseRecord before, AbstractBaseRecord after )
@@ -195,14 +195,14 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void writeDynamicRecords(org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel, java.util.Collection<org.Neo4Net.kernel.impl.store.record.DynamicRecord> records) throws java.io.IOException
+//ORIGINAL LINE: void writeDynamicRecords(Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel, java.util.Collection<Neo4Net.kernel.impl.store.record.DynamicRecord> records) throws java.io.IOException
 		 internal virtual void WriteDynamicRecords( WritableChannel channel, ICollection<DynamicRecord> records )
 		 {
 			  WriteDynamicRecords( channel, records, records.Count );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void writeDynamicRecords(org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel, Iterable<org.Neo4Net.kernel.impl.store.record.DynamicRecord> records, int size) throws java.io.IOException
+//ORIGINAL LINE: void writeDynamicRecords(Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel, Iterable<Neo4Net.kernel.impl.store.record.DynamicRecord> records, int size) throws java.io.IOException
 		 internal virtual void WriteDynamicRecords( WritableChannel channel, IEnumerable<DynamicRecord> records, int size )
 		 {
 			  channel.PutInt( size ); // 4
@@ -213,7 +213,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void writeDynamicRecord(org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel, org.Neo4Net.kernel.impl.store.record.DynamicRecord record) throws java.io.IOException
+//ORIGINAL LINE: void writeDynamicRecord(Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel, Neo4Net.kernel.impl.store.record.DynamicRecord record) throws java.io.IOException
 		 internal virtual void WriteDynamicRecord( WritableChannel channel, DynamicRecord record )
 		 {
 			  // id+type+in_use(byte)+nr_of_bytes(int)+next_block(long)
@@ -279,14 +279,14 @@ namespace Neo4Net.Kernel.impl.transaction.command
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean handle(org.Neo4Net.kernel.impl.api.CommandVisitor handler) throws java.io.IOException
+//ORIGINAL LINE: public boolean handle(Neo4Net.kernel.impl.api.CommandVisitor handler) throws java.io.IOException
 			  public override bool Handle( CommandVisitor handler )
 			  {
 					return handler.VisitNodeCommand( this );
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void serialize(org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public void serialize(Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
 			  public override void Serialize( WritableChannel channel )
 			  {
 					channel.Put( NeoCommandType_Fields.NodeCommand );
@@ -296,7 +296,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void writeNodeRecord(org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel, org.Neo4Net.kernel.impl.store.record.NodeRecord record) throws java.io.IOException
+//ORIGINAL LINE: private void writeNodeRecord(Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel, Neo4Net.kernel.impl.store.record.NodeRecord record) throws java.io.IOException
 			  internal virtual void WriteNodeRecord( WritableChannel channel, NodeRecord record )
 			  {
 					sbyte flags = bitFlags( bitFlag( record.InUse(), Record.IN_USE.byteValue() ), bitFlag(record.Created, Record.CREATED_IN_TX), bitFlag(record.RequiresSecondaryUnit(), Record.REQUIRE_SECONDARY_UNIT), bitFlag(record.HasSecondaryUnitId(), Record.HAS_SECONDARY_UNIT), bitFlag(record.UseFixedReferences, Record.USES_FIXED_REFERENCE_FORMAT) );
@@ -324,14 +324,14 @@ namespace Neo4Net.Kernel.impl.transaction.command
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean handle(org.Neo4Net.kernel.impl.api.CommandVisitor handler) throws java.io.IOException
+//ORIGINAL LINE: public boolean handle(Neo4Net.kernel.impl.api.CommandVisitor handler) throws java.io.IOException
 			  public override bool Handle( CommandVisitor handler )
 			  {
 					return handler.VisitRelationshipCommand( this );
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void serialize(org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public void serialize(Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
 			  public override void Serialize( WritableChannel channel )
 			  {
 					channel.Put( NeoCommandType_Fields.RelCommand );
@@ -341,7 +341,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void writeRelationshipRecord(org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel, org.Neo4Net.kernel.impl.store.record.RelationshipRecord record) throws java.io.IOException
+//ORIGINAL LINE: private void writeRelationshipRecord(Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel, Neo4Net.kernel.impl.store.record.RelationshipRecord record) throws java.io.IOException
 			  internal virtual void WriteRelationshipRecord( WritableChannel channel, RelationshipRecord record )
 			  {
 					sbyte flags = bitFlags( bitFlag( record.InUse(), Record.IN_USE.byteValue() ), bitFlag(record.Created, Record.CREATED_IN_TX), bitFlag(record.RequiresSecondaryUnit(), Record.REQUIRE_SECONDARY_UNIT), bitFlag(record.HasSecondaryUnitId(), Record.HAS_SECONDARY_UNIT), bitFlag(record.UseFixedReferences, Record.USES_FIXED_REFERENCE_FORMAT) );
@@ -368,14 +368,14 @@ namespace Neo4Net.Kernel.impl.transaction.command
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean handle(org.Neo4Net.kernel.impl.api.CommandVisitor handler) throws java.io.IOException
+//ORIGINAL LINE: public boolean handle(Neo4Net.kernel.impl.api.CommandVisitor handler) throws java.io.IOException
 			  public override bool Handle( CommandVisitor handler )
 			  {
 					return handler.VisitRelationshipGroupCommand( this );
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void serialize(org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public void serialize(Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
 			  public override void Serialize( WritableChannel channel )
 			  {
 					channel.Put( NeoCommandType_Fields.RelGroupCommand );
@@ -385,7 +385,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void writeRelationshipGroupRecord(org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel, org.Neo4Net.kernel.impl.store.record.RelationshipGroupRecord record) throws java.io.IOException
+//ORIGINAL LINE: private void writeRelationshipGroupRecord(Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel, Neo4Net.kernel.impl.store.record.RelationshipGroupRecord record) throws java.io.IOException
 			  internal virtual void WriteRelationshipGroupRecord( WritableChannel channel, RelationshipGroupRecord record )
 			  {
 					sbyte flags = bitFlags( bitFlag( record.InUse(), Record.IN_USE.byteValue() ), bitFlag(record.RequiresSecondaryUnit(), Record.REQUIRE_SECONDARY_UNIT), bitFlag(record.HasSecondaryUnitId(), Record.HAS_SECONDARY_UNIT), bitFlag(record.UseFixedReferences, Record.USES_FIXED_REFERENCE_FORMAT) );
@@ -410,14 +410,14 @@ namespace Neo4Net.Kernel.impl.transaction.command
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean handle(org.Neo4Net.kernel.impl.api.CommandVisitor handler) throws java.io.IOException
+//ORIGINAL LINE: public boolean handle(Neo4Net.kernel.impl.api.CommandVisitor handler) throws java.io.IOException
 			  public override bool Handle( CommandVisitor handler )
 			  {
 					return handler.VisitNeoStoreCommand( this );
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void serialize(org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public void serialize(Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
 			  public override void Serialize( WritableChannel channel )
 			  {
 					channel.Put( NeoCommandType_Fields.NeostoreCommand );
@@ -426,7 +426,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void writeNeoStoreRecord(org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel, org.Neo4Net.kernel.impl.store.record.NeoStoreRecord record) throws java.io.IOException
+//ORIGINAL LINE: private void writeNeoStoreRecord(Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel, Neo4Net.kernel.impl.store.record.NeoStoreRecord record) throws java.io.IOException
 			  internal virtual void WriteNeoStoreRecord( WritableChannel channel, NeoStoreRecord record )
 			  {
 					channel.PutLong( record.NextProp );
@@ -440,7 +440,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean handle(org.Neo4Net.kernel.impl.api.CommandVisitor handler) throws java.io.IOException
+//ORIGINAL LINE: public boolean handle(Neo4Net.kernel.impl.api.CommandVisitor handler) throws java.io.IOException
 			  public override bool Handle( CommandVisitor handler )
 			  {
 					return handler.VisitPropertyCommand( this );
@@ -479,7 +479,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void serialize(org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public void serialize(Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
 			  public override void Serialize( WritableChannel channel )
 			  {
 					channel.Put( NeoCommandType_Fields.PropCommand );
@@ -489,7 +489,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void writePropertyRecord(org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel, org.Neo4Net.kernel.impl.store.record.PropertyRecord record) throws java.io.IOException
+//ORIGINAL LINE: private void writePropertyRecord(Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel, Neo4Net.kernel.impl.store.record.PropertyRecord record) throws java.io.IOException
 			  internal virtual void WritePropertyRecord( WritableChannel channel, PropertyRecord record )
 			  {
 					sbyte flags = bitFlags( bitFlag( record.InUse(), Record.IN_USE.byteValue() ), bitFlag(record.RelId != -1, Record.REL_PROPERTY.byteValue()), bitFlag(record.RequiresSecondaryUnit(), Record.REQUIRE_SECONDARY_UNIT), bitFlag(record.HasSecondaryUnitId(), Record.HAS_SECONDARY_UNIT), bitFlag(record.UseFixedReferences, Record.USES_FIXED_REFERENCE_FORMAT) );
@@ -526,7 +526,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void writePropertyBlock(org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel, org.Neo4Net.kernel.impl.store.record.PropertyBlock block) throws java.io.IOException
+//ORIGINAL LINE: private void writePropertyBlock(Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel, Neo4Net.kernel.impl.store.record.PropertyBlock block) throws java.io.IOException
 			  internal virtual void WritePropertyBlock( WritableChannel channel, PropertyBlock block )
 			  {
 					sbyte blockSize = ( sbyte ) block.Size;
@@ -579,14 +579,14 @@ namespace Neo4Net.Kernel.impl.transaction.command
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean handle(org.Neo4Net.kernel.impl.api.CommandVisitor handler) throws java.io.IOException
+//ORIGINAL LINE: public boolean handle(Neo4Net.kernel.impl.api.CommandVisitor handler) throws java.io.IOException
 			  public override bool Handle( CommandVisitor handler )
 			  {
 					return handler.VisitPropertyKeyTokenCommand( this );
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void serialize(org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public void serialize(Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
 			  public override void Serialize( WritableChannel channel )
 			  {
 					channel.Put( NeoCommandType_Fields.PropIndexCommand );
@@ -596,7 +596,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void writePropertyKeyTokenRecord(org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel, org.Neo4Net.kernel.impl.store.record.PropertyKeyTokenRecord record) throws java.io.IOException
+//ORIGINAL LINE: private void writePropertyKeyTokenRecord(Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel, Neo4Net.kernel.impl.store.record.PropertyKeyTokenRecord record) throws java.io.IOException
 			  internal virtual void WritePropertyKeyTokenRecord( WritableChannel channel, PropertyKeyTokenRecord record )
 			  {
 					// id+in_use(byte)+count(int)+key_blockId(int)+nr_key_records(int)
@@ -621,14 +621,14 @@ namespace Neo4Net.Kernel.impl.transaction.command
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean handle(org.Neo4Net.kernel.impl.api.CommandVisitor handler) throws java.io.IOException
+//ORIGINAL LINE: public boolean handle(Neo4Net.kernel.impl.api.CommandVisitor handler) throws java.io.IOException
 			  public override bool Handle( CommandVisitor handler )
 			  {
 					return handler.VisitRelationshipTypeTokenCommand( this );
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void serialize(org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public void serialize(Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
 			  public override void Serialize( WritableChannel channel )
 			  {
 					channel.Put( NeoCommandType_Fields.RelTypeCommand );
@@ -638,7 +638,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void writeRelationshipTypeTokenRecord(org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel, org.Neo4Net.kernel.impl.store.record.RelationshipTypeTokenRecord record) throws java.io.IOException
+//ORIGINAL LINE: private void writeRelationshipTypeTokenRecord(Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel, Neo4Net.kernel.impl.store.record.RelationshipTypeTokenRecord record) throws java.io.IOException
 			  internal virtual void WriteRelationshipTypeTokenRecord( WritableChannel channel, RelationshipTypeTokenRecord record )
 			  {
 					// id+in_use(byte)+count(int)+key_blockId(int)+nr_key_records(int)
@@ -663,14 +663,14 @@ namespace Neo4Net.Kernel.impl.transaction.command
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean handle(org.Neo4Net.kernel.impl.api.CommandVisitor handler) throws java.io.IOException
+//ORIGINAL LINE: public boolean handle(Neo4Net.kernel.impl.api.CommandVisitor handler) throws java.io.IOException
 			  public override bool Handle( CommandVisitor handler )
 			  {
 					return handler.VisitLabelTokenCommand( this );
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void serialize(org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public void serialize(Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
 			  public override void Serialize( WritableChannel channel )
 			  {
 					channel.Put( NeoCommandType_Fields.LabelKeyCommand );
@@ -680,7 +680,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void writeLabelTokenRecord(org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel, org.Neo4Net.kernel.impl.store.record.LabelTokenRecord record) throws java.io.IOException
+//ORIGINAL LINE: private void writeLabelTokenRecord(Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel, Neo4Net.kernel.impl.store.record.LabelTokenRecord record) throws java.io.IOException
 			  internal virtual void WriteLabelTokenRecord( WritableChannel channel, LabelTokenRecord record )
 			  {
 					// id+in_use(byte)+type_blockId(int)+nr_type_records(int)
@@ -721,7 +721,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean handle(org.Neo4Net.kernel.impl.api.CommandVisitor handler) throws java.io.IOException
+//ORIGINAL LINE: public boolean handle(Neo4Net.kernel.impl.api.CommandVisitor handler) throws java.io.IOException
 			  public override bool Handle( CommandVisitor handler )
 			  {
 					return handler.VisitSchemaRuleCommand( this );
@@ -752,7 +752,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void serialize(org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public void serialize(Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
 			  public override void Serialize( WritableChannel channel )
 			  {
 					channel.Put( NeoCommandType_Fields.SchemaRuleCommand );
@@ -783,7 +783,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean handle(org.Neo4Net.kernel.impl.api.CommandVisitor handler) throws java.io.IOException
+//ORIGINAL LINE: public boolean handle(Neo4Net.kernel.impl.api.CommandVisitor handler) throws java.io.IOException
 			  public override bool Handle( CommandVisitor handler )
 			  {
 					return handler.VisitNodeCountsCommand( this );
@@ -800,7 +800,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void serialize(org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public void serialize(Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
 			  public override void Serialize( WritableChannel channel )
 			  {
 					channel.Put( NeoCommandType_Fields.UpdateNodeCountsCommand );
@@ -835,7 +835,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean handle(org.Neo4Net.kernel.impl.api.CommandVisitor handler) throws java.io.IOException
+//ORIGINAL LINE: public boolean handle(Neo4Net.kernel.impl.api.CommandVisitor handler) throws java.io.IOException
 			  public override bool Handle( CommandVisitor handler )
 			  {
 					return handler.VisitRelationshipCountsCommand( this );
@@ -862,7 +862,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void serialize(org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public void serialize(Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
 			  public override void Serialize( WritableChannel channel )
 			  {
 					channel.Put( NeoCommandType_Fields.UpdateRelationshipCountsCommand );

@@ -35,7 +35,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 
 		 private bool _closed;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private final java.util.Collection<org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>> updates = new java.util.ArrayList<>();
+//ORIGINAL LINE: private final java.util.Collection<Neo4Net.kernel.api.index.IndexEntryUpdate<?>> updates = new java.util.ArrayList<>();
 		 private readonly ICollection<IndexEntryUpdate<object>> _updates = new List<IndexEntryUpdate<object>>();
 
 		 public CollectingIndexUpdater( Applier applier )
@@ -50,7 +50,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void close() throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: public void close() throws Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 public override void Close()
 		 {
 			  AssertOpen();
@@ -75,7 +75,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 public interface Applier
 		 {
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void accept(java.util.Collection<org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>> updates) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException;
+//ORIGINAL LINE: void accept(java.util.Collection<Neo4Net.kernel.api.index.IndexEntryUpdate<?>> updates) throws Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 			  void accept<T1>( ICollection<T1> updates );
 		 }

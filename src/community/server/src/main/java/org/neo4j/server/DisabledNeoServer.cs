@@ -37,9 +37,9 @@ namespace Neo4Net.Server
 
 	using static Neo4Net.GraphDb.facade.GraphDatabaseFacadeFactory.Dependencies;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.AbstractNeoServer.Neo4Net_IS_STARTING_MESSAGE;
+//	import static Neo4Net.server.AbstractNeoServer.Neo4Net_IS_STARTING_MESSAGE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.exception.ServerStartupErrors.translateToServerStartupError;
+//	import static Neo4Net.server.exception.ServerStartupErrors.translateToServerStartupError;
 
 	public class DisabledNeoServer : NeoServer
 	{

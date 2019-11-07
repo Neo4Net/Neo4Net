@@ -22,7 +22,7 @@
  * More information is also available at:
  * https://Neo4Net.com/licensing/
  */
-namespace Neo4Net.tools.org.Neo4Net.index
+namespace Neo4Net.tools.Neo4Net.index
 {
 	using MutableBoolean = org.apache.commons.lang3.mutable.MutableBoolean;
 	using MutableLong = org.apache.commons.lang3.mutable.MutableLong;
@@ -39,15 +39,15 @@ namespace Neo4Net.tools.org.Neo4Net.index
 	using ConsoleInput = Neo4Net.tools.console.input.ConsoleInput;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Internal.gbptree.GBPTree.NO_HEADER_READER;
+//	import static Neo4Net.index.Internal.gbptree.GBPTree.NO_HEADER_READER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Internal.gbptree.GBPTree.NO_HEADER_WRITER;
+//	import static Neo4Net.index.Internal.gbptree.GBPTree.NO_HEADER_WRITER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Internal.gbptree.GBPTree.NO_MONITOR;
+//	import static Neo4Net.index.Internal.gbptree.GBPTree.NO_MONITOR;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
+//	import static Neo4Net.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.tools.console.input.ConsoleUtil.staticPrompt;
+//	import static Neo4Net.tools.console.input.ConsoleUtil.staticPrompt;
 
 	public class GBPTreePlayground
 	{

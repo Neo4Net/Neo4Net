@@ -19,7 +19,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Kernel.api
+namespace Neo4Net.Kernel.Api
 {
 
 	using Kernel = Neo4Net.Kernel.Api.Internal.Kernel;
@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.api
 	using AuthSubject = Neo4Net.Kernel.Api.Internal.security.AuthSubject;
 	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
-	using ExecutingQuery = Neo4Net.Kernel.api.query.ExecutingQuery;
+	using ExecutingQuery = Neo4Net.Kernel.Api.query.ExecutingQuery;
 	using TransactionExecutionStatistic = Neo4Net.Kernel.Impl.Api.TransactionExecutionStatistic;
 	using ActiveLock = Neo4Net.Kernel.impl.locking.ActiveLock;
 
@@ -57,7 +57,7 @@ namespace Neo4Net.Kernel.api
 
 		 /// <summary>
 		 /// The start time of the underlying transaction. I.e. basically <seealso cref="System.nanoTime()"/> ()} when user
-		 /// called <seealso cref="org.Neo4Net.Kernel.Api.Internal.Session.BeginTransaction(KernelTransaction.Type)"/>.
+		 /// called <seealso cref="Neo4Net.Kernel.Api.Internal.Session.BeginTransaction(KernelTransaction.Type)"/>.
 		 /// 
 		 /// This can be used to measure elapsed time in a safe way that is not affected by system time changes.
 		 /// </summary>
@@ -126,7 +126,7 @@ namespace Neo4Net.Kernel.api
 
 		 /// <returns> the lock requests granted for this transaction. </returns>
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.stream.Stream<? extends org.Neo4Net.kernel.impl.locking.ActiveLock> activeLocks();
+//ORIGINAL LINE: java.util.stream.Stream<? extends Neo4Net.kernel.impl.locking.ActiveLock> activeLocks();
 		 Stream<ActiveLock> ActiveLocks();
 
 		 /// <summary>

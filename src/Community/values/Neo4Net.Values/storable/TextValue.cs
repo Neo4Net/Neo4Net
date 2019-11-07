@@ -26,9 +26,9 @@ namespace Neo4Net.Values.Storable
 	using ListValue = Neo4Net.Values.@virtual.ListValue;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.stringArray;
+//	import static Neo4Net.values.storable.Values.stringArray;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.@virtual.VirtualValues.fromArray;
+//	import static Neo4Net.values.@virtual.VirtualValues.fromArray;
 
 	public abstract class TextValue : ScalarValue
 	{

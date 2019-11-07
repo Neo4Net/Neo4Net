@@ -33,9 +33,9 @@ namespace Neo4Net.Kernel.ha
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertNotNull;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.RelationshipType.withName;
+//	import static Neo4Net.graphdb.RelationshipType.withName;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.clusterOfSize;
+//	import static Neo4Net.kernel.impl.ha.ClusterManager.clusterOfSize;
 
 	/// <summary>
 	/// Test for a regression:
@@ -48,19 +48,19 @@ namespace Neo4Net.Kernel.ha
 	/// java.lang.IndexOutOfBoundsException: index -1
 	///     at java.util.concurrent.atomic.AtomicReferenceArray.checkedByteOffset(AtomicReferenceArray.java:50)
 	///     at java.util.concurrent.atomic.AtomicReferenceArray.get(AtomicReferenceArray.java:95)
-	///     at org.Neo4Net.kernel.impl.cache.GCResistantCache.get(GCResistantCache.java:188)
-	///     at org.Neo4Net.kernel.impl.core.NodeManager.invalidateNode(NodeManager.java:567)
-	///     at org.Neo4Net.kernel.impl.core.NodeManager.patchDeletedRelationshipNodes(NodeManager.java:561)
-	///     at org.Neo4Net.kernel.impl.core.WritableTransactionState.patchDeletedRelationshipNodes(WritableTransactionState.java:558)
-	///     at org.Neo4Net.kernel.impl.nioneo.xa.Command$RelationshipCommand.removeFromCache(Command.java:432)
-	///     at org.Neo4Net.kernel.impl.nioneo.xa.WriteTransaction.executeDeleted(WriteTransaction.java:562)
-	///     at org.Neo4Net.kernel.impl.nioneo.xa.WriteTransaction.applyCommit(WriteTransaction.java:476)
-	///     at org.Neo4Net.kernel.impl.nioneo.xa.WriteTransaction.doCommit(WriteTransaction.java:426)
+	///     at Neo4Net.kernel.impl.cache.GCResistantCache.get(GCResistantCache.java:188)
+	///     at Neo4Net.kernel.impl.core.NodeManager.invalidateNode(NodeManager.java:567)
+	///     at Neo4Net.kernel.impl.core.NodeManager.patchDeletedRelationshipNodes(NodeManager.java:561)
+	///     at Neo4Net.kernel.impl.core.WritableTransactionState.patchDeletedRelationshipNodes(WritableTransactionState.java:558)
+	///     at Neo4Net.kernel.impl.nioneo.xa.Command$RelationshipCommand.removeFromCache(Command.java:432)
+	///     at Neo4Net.kernel.impl.nioneo.xa.WriteTransaction.executeDeleted(WriteTransaction.java:562)
+	///     at Neo4Net.kernel.impl.nioneo.xa.WriteTransaction.applyCommit(WriteTransaction.java:476)
+	///     at Neo4Net.kernel.impl.nioneo.xa.WriteTransaction.doCommit(WriteTransaction.java:426)
 	/// </summary>
 	public class DeletionIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.ha.ClusterRule clusterRule = new org.Neo4Net.test.ha.ClusterRule().withCluster(clusterOfSize(2));
+//ORIGINAL LINE: @Rule public Neo4Net.test.ha.ClusterRule clusterRule = new Neo4Net.test.ha.ClusterRule().withCluster(clusterOfSize(2));
 		 public ClusterRule ClusterRule = new ClusterRule().withCluster(clusterOfSize(2));
 
 		 /// <summary>

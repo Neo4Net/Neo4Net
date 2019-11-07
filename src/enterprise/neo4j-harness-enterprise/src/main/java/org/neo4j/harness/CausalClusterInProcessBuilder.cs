@@ -77,7 +77,7 @@ namespace Neo4Net.Harness
 
 			  public override WithPath WithLogger( LogProvider l )
 			  {
-					Log = l.GetLog( "org.Neo4Net.harness.CausalCluster" );
+					Log = l.GetLog( "Neo4Net.harness.CausalCluster" );
 					return this;
 			  }
 

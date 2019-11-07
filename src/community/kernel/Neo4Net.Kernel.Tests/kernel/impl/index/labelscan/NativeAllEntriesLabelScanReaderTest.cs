@@ -31,8 +31,8 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 	using Neo4Net.Cursors;
 	using Neo4Net.Collections.Helpers;
 	using Neo4Net.Index.Internal.gbptree;
-	using AllEntriesLabelScanReader = Neo4Net.Kernel.api.labelscan.AllEntriesLabelScanReader;
-	using NodeLabelRange = Neo4Net.Kernel.api.labelscan.NodeLabelRange;
+	using AllEntriesLabelScanReader = Neo4Net.Kernel.Api.LabelScan.AllEntriesLabelScanReader;
+	using NodeLabelRange = Neo4Net.Kernel.Api.LabelScan.NodeLabelRange;
 	using RandomRule = Neo4Net.Test.rule.RandomRule;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -48,14 +48,14 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.collection.PrimitiveLongCollections.asArray;
+//	import static Neo4Net.collection.PrimitiveLongCollections.asArray;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.labelscan.LabelScanValue.RANGE_SIZE;
+//	import static Neo4Net.kernel.impl.index.labelscan.LabelScanValue.RANGE_SIZE;
 
 	public class NativeAllEntriesLabelScanReaderTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.RandomRule random = new org.Neo4Net.test.rule.RandomRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.RandomRule random = new Neo4Net.test.rule.RandomRule();
 		 public readonly RandomRule Random = new RandomRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

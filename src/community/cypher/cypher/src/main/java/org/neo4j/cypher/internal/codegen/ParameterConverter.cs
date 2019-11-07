@@ -42,7 +42,7 @@ namespace Neo4Net.Cypher.Internal.codegen
 	using VirtualValues = Neo4Net.Values.@virtual.VirtualValues;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.iteratorsEqual;
+//	import static Neo4Net.helpers.collection.Iterators.iteratorsEqual;
 
 	/// <summary>
 	/// Used for turning parameters into appropriate types in the compiled runtime
@@ -234,10 +234,10 @@ namespace Neo4Net.Cypher.Internal.codegen
 				 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Iterator<? extends org.Neo4Net.graphdb.PropertyContainer> current;
+//ORIGINAL LINE: java.util.Iterator<? extends Neo4Net.graphdb.PropertyContainer> current;
 				 internal IEnumerator<PropertyContainer> current;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Iterator<? extends org.Neo4Net.graphdb.PropertyContainer> next;
+//ORIGINAL LINE: java.util.Iterator<? extends Neo4Net.graphdb.PropertyContainer> next;
 				 internal IEnumerator<PropertyContainer> next;
 
 				 public bool hasNext()
@@ -254,7 +254,7 @@ namespace Neo4Net.Cypher.Internal.codegen
 					  finally
 					  {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Iterator<? extends org.Neo4Net.graphdb.PropertyContainer> temp = current;
+//ORIGINAL LINE: java.util.Iterator<? extends Neo4Net.graphdb.PropertyContainer> temp = current;
 							IEnumerator<PropertyContainer> temp = current;
 							current = next;
 							next = temp;

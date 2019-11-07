@@ -55,9 +55,9 @@ namespace Neo4Net.Kernel.impl.core
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.NamedThreadFactory.named;
+//	import static Neo4Net.helpers.NamedThreadFactory.named;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.DoubleLatch.awaitLatch;
+//	import static Neo4Net.test.DoubleLatch.awaitLatch;
 
 	public class NodeProxyTest : IPropertyContainerProxyTest
 	{
@@ -194,7 +194,7 @@ namespace Neo4Net.Kernel.impl.core
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(expected = org.Neo4Net.graphdb.NotFoundException.class) public void deletionOfSameNodeTwiceInOneTransactionShouldNotRollbackIt()
+//ORIGINAL LINE: @Test(expected = Neo4Net.graphdb.NotFoundException.class) public void deletionOfSameNodeTwiceInOneTransactionShouldNotRollbackIt()
 		 public virtual void DeletionOfSameNodeTwiceInOneTransactionShouldNotRollbackIt()
 		 {
 			  // Given
@@ -233,7 +233,7 @@ namespace Neo4Net.Kernel.impl.core
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(expected = org.Neo4Net.graphdb.NotFoundException.class) public void deletionOfAlreadyDeletedNodeShouldThrow()
+//ORIGINAL LINE: @Test(expected = Neo4Net.graphdb.NotFoundException.class) public void deletionOfAlreadyDeletedNodeShouldThrow()
 		 public virtual void DeletionOfAlreadyDeletedNodeShouldThrow()
 		 {
 			  // Given

@@ -60,7 +60,7 @@ namespace Neo4Net.GraphDb.mockfs
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.io.fs.StoreChannel truncate(long size) throws java.io.IOException
+//ORIGINAL LINE: public Neo4Net.io.fs.StoreChannel truncate(long size) throws java.io.IOException
 		 public override StoreChannel Truncate( long size )
 		 {
 			  Delegate.truncate( size );
@@ -153,7 +153,7 @@ namespace Neo4Net.GraphDb.mockfs
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.io.fs.StoreChannel position(long newPosition) throws java.io.IOException
+//ORIGINAL LINE: public Neo4Net.io.fs.StoreChannel position(long newPosition) throws java.io.IOException
 		 public override StoreChannel Position( long newPosition )
 		 {
 			  Delegate.position( newPosition );

@@ -33,7 +33,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void process(org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> update) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: public void process(Neo4Net.kernel.api.index.IndexEntryUpdate<?> update) throws Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 public override void Process<T1>( IndexEntryUpdate<T1> update )
 		 {
 			  switch ( update.UpdateMode() )
@@ -70,7 +70,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void close() throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: public void close() throws Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 public override void Close()
 		 {
 			  foreach ( IndexUpdater part in this )
@@ -91,42 +91,42 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.kernel.api.index.IndexUpdater newDate() throws java.io.IOException
+//ORIGINAL LINE: public Neo4Net.kernel.api.index.IndexUpdater newDate() throws java.io.IOException
 			  public override IndexUpdater NewDate()
 			  {
 					return Populator.select( ValueGroup.DATE ).newPopulatingUpdater( NodePropertyAccessor );
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.kernel.api.index.IndexUpdater newLocalDateTime() throws java.io.IOException
+//ORIGINAL LINE: public Neo4Net.kernel.api.index.IndexUpdater newLocalDateTime() throws java.io.IOException
 			  public override IndexUpdater NewLocalDateTime()
 			  {
 					return Populator.select( ValueGroup.LOCAL_DATE_TIME ).newPopulatingUpdater( NodePropertyAccessor );
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.kernel.api.index.IndexUpdater newZonedDateTime() throws java.io.IOException
+//ORIGINAL LINE: public Neo4Net.kernel.api.index.IndexUpdater newZonedDateTime() throws java.io.IOException
 			  public override IndexUpdater NewZonedDateTime()
 			  {
 					return Populator.select( ValueGroup.ZONED_DATE_TIME ).newPopulatingUpdater( NodePropertyAccessor );
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.kernel.api.index.IndexUpdater newLocalTime() throws java.io.IOException
+//ORIGINAL LINE: public Neo4Net.kernel.api.index.IndexUpdater newLocalTime() throws java.io.IOException
 			  public override IndexUpdater NewLocalTime()
 			  {
 					return Populator.select( ValueGroup.LOCAL_TIME ).newPopulatingUpdater( NodePropertyAccessor );
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.kernel.api.index.IndexUpdater newZonedTime() throws java.io.IOException
+//ORIGINAL LINE: public Neo4Net.kernel.api.index.IndexUpdater newZonedTime() throws java.io.IOException
 			  public override IndexUpdater NewZonedTime()
 			  {
 					return Populator.select( ValueGroup.ZONED_TIME ).newPopulatingUpdater( NodePropertyAccessor );
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.kernel.api.index.IndexUpdater newDuration() throws java.io.IOException
+//ORIGINAL LINE: public Neo4Net.kernel.api.index.IndexUpdater newDuration() throws java.io.IOException
 			  public override IndexUpdater NewDuration()
 			  {
 					return Populator.select( ValueGroup.DURATION ).newPopulatingUpdater( NodePropertyAccessor );

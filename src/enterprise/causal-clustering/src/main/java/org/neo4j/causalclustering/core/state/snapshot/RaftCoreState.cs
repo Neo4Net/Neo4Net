@@ -58,7 +58,7 @@ namespace Neo4Net.causalclustering.core.state.snapshot
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void marshal(RaftCoreState raftCoreState, org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public void marshal(RaftCoreState raftCoreState, Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
 //JAVA TO C# CONVERTER NOTE: Members cannot have the same name as their enclosing type:
 			  public override void MarshalConflict( RaftCoreState raftCoreState, WritableChannel channel )
 			  {
@@ -67,7 +67,7 @@ namespace Neo4Net.causalclustering.core.state.snapshot
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected RaftCoreState unmarshal0(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException, org.Neo4Net.causalclustering.messaging.EndOfStreamException
+//ORIGINAL LINE: protected RaftCoreState unmarshal0(Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException, Neo4Net.causalclustering.messaging.EndOfStreamException
 			  protected internal override RaftCoreState Unmarshal0( ReadableChannel channel )
 			  {
 					return new RaftCoreState( MembershipMarshal.unmarshal( channel ) );

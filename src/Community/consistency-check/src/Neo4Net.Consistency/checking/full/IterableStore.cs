@@ -29,17 +29,17 @@ namespace Neo4Net.Consistency.checking.full
 	using AbstractBaseRecord = Neo4Net.Kernel.Impl.Store.Records.AbstractBaseRecord;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.consistency.checking.full.CloningRecordIterator.cloned;
+//	import static Neo4Net.consistency.checking.full.CloningRecordIterator.cloned;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.Scanner.scan;
+//	import static Neo4Net.kernel.impl.store.Scanner.scan;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.record.RecordLoad.FORCE;
+//	import static Neo4Net.kernel.impl.store.record.RecordLoad.FORCE;
 
 	public class IterableStore<RECORD> : BoundedIterable<RECORD> where RECORD : Neo4Net.Kernel.Impl.Store.Records.AbstractBaseRecord
 	{
 		 private readonly RecordStore<RECORD> _store;
 		 private readonly bool _forward;
-		 private ResourceIterator<RECORD> _iterator;
+		 private IResourceIterator<RECORD> _iterator;
 
 		 public IterableStore( RecordStore<RECORD> store, bool forward )
 		 {
@@ -69,7 +69,7 @@ namespace Neo4Net.Consistency.checking.full
 		 public override IEnumerator<RECORD> Iterator()
 		 {
 			  CloseIterator();
-			  ResourceIterable<RECORD> iterable = scan( _store, _forward );
+			 IResourceIterable<RECORD> iterable = scan( _store, _forward );
 			  return cloned( _iterator = iterable.GetEnumerator() );
 		 }
 

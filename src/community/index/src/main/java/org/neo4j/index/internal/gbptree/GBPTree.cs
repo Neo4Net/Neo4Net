@@ -35,23 +35,23 @@ namespace Neo4Net.Index.Internal.gbptree
 	using VisibleForTesting = Neo4Net.Utils.VisibleForTesting;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.Exceptions.withMessage;
+//	import static Neo4Net.helpers.Exceptions.withMessage;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Internal.gbptree.Generation.generation;
+//	import static Neo4Net.index.Internal.gbptree.Generation.generation;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Internal.gbptree.Generation.stableGeneration;
+//	import static Neo4Net.index.Internal.gbptree.Generation.stableGeneration;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Internal.gbptree.Generation.unstableGeneration;
+//	import static Neo4Net.index.Internal.gbptree.Generation.unstableGeneration;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Internal.gbptree.GenerationSafePointer.MIN_GENERATION;
+//	import static Neo4Net.index.Internal.gbptree.GenerationSafePointer.MIN_GENERATION;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Internal.gbptree.Header.CARRY_OVER_PREVIOUS_HEADER;
+//	import static Neo4Net.index.Internal.gbptree.Header.CARRY_OVER_PREVIOUS_HEADER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Internal.gbptree.Header.replace;
+//	import static Neo4Net.index.Internal.gbptree.Header.replace;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Internal.gbptree.PageCursorUtil.checkOutOfBounds;
+//	import static Neo4Net.index.Internal.gbptree.PageCursorUtil.checkOutOfBounds;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Internal.gbptree.PointerChecking.assertNoSuccessor;
+//	import static Neo4Net.index.Internal.gbptree.PointerChecking.assertNoSuccessor;
 
 	/// <summary>
 	/// A generation-aware B+tree (GB+Tree) implementation directly atop a <seealso cref="PageCache"/> with no caching in between.
@@ -486,7 +486,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 /// <exception cref="UncheckedIOException"> on page cache error </exception>
 		 /// <exception cref="MetadataMismatchException"> if meta information does not match constructor parameters or meta page is missing </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public GBPTree(org.Neo4Net.io.pagecache.PageCache pageCache, java.io.File indexFile, Layout<KEY,VALUE> layout, int tentativePageSize, Monitor monitor, Header.Reader headerReader, System.Action<org.Neo4Net.io.pagecache.PageCursor> headerWriter, RecoveryCleanupWorkCollector recoveryCleanupWorkCollector, boolean readOnly) throws MetadataMismatchException
+//ORIGINAL LINE: public GBPTree(Neo4Net.io.pagecache.PageCache pageCache, java.io.File indexFile, Layout<KEY,VALUE> layout, int tentativePageSize, Monitor monitor, Header.Reader headerReader, System.Action<Neo4Net.io.pagecache.PageCursor> headerWriter, RecoveryCleanupWorkCollector recoveryCleanupWorkCollector, boolean readOnly) throws MetadataMismatchException
 		 public GBPTree( PageCache pageCache, File indexFile, Layout<KEY, VALUE> layout, int tentativePageSize, Monitor monitor, Header.Reader headerReader, System.Action<PageCursor> headerWriter, RecoveryCleanupWorkCollector recoveryCleanupWorkCollector, bool readOnly )
 		 {
 			 if ( !InstanceFieldsInitialized )
@@ -575,7 +575,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void initializeAfterCreation(System.Action<org.Neo4Net.io.pagecache.PageCursor> headerWriter) throws java.io.IOException
+//ORIGINAL LINE: private void initializeAfterCreation(System.Action<Neo4Net.io.pagecache.PageCursor> headerWriter) throws java.io.IOException
 		 private void InitializeAfterCreation( System.Action<PageCursor> headerWriter )
 		 {
 			  // Initialize state
@@ -603,7 +603,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.io.pagecache.PagedFile openOrCreate(org.Neo4Net.io.pagecache.PageCache pageCache, java.io.File indexFile, int pageSizeForCreation) throws java.io.IOException, MetadataMismatchException
+//ORIGINAL LINE: private Neo4Net.io.pagecache.PagedFile openOrCreate(Neo4Net.io.pagecache.PageCache pageCache, java.io.File indexFile, int pageSizeForCreation) throws java.io.IOException, MetadataMismatchException
 		 private PagedFile OpenOrCreate( PageCache pageCache, File indexFile, int pageSizeForCreation )
 		 {
 			  try
@@ -621,7 +621,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static org.Neo4Net.io.pagecache.PagedFile openExistingIndexFile(org.Neo4Net.io.pagecache.PageCache pageCache, java.io.File indexFile) throws java.io.IOException, MetadataMismatchException
+//ORIGINAL LINE: private static Neo4Net.io.pagecache.PagedFile openExistingIndexFile(Neo4Net.io.pagecache.PageCache pageCache, java.io.File indexFile) throws java.io.IOException, MetadataMismatchException
 		 private static PagedFile OpenExistingIndexFile( PageCache pageCache, File indexFile )
 		 {
 			  PagedFile pagedFile = pageCache.Map( indexFile, pageCache.PageSize() );
@@ -650,7 +650,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.io.pagecache.PagedFile createNewIndexFile(org.Neo4Net.io.pagecache.PageCache pageCache, java.io.File indexFile, int pageSizeForCreation) throws java.io.IOException
+//ORIGINAL LINE: private Neo4Net.io.pagecache.PagedFile createNewIndexFile(Neo4Net.io.pagecache.PageCache pageCache, java.io.File indexFile, int pageSizeForCreation) throws java.io.IOException
 		 private PagedFile CreateNewIndexFile( PageCache pageCache, File indexFile, int pageSizeForCreation )
 		 {
 			  // First time
@@ -668,7 +668,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void loadState(org.Neo4Net.io.pagecache.PagedFile pagedFile, Header.Reader headerReader) throws java.io.IOException
+//ORIGINAL LINE: private void loadState(Neo4Net.io.pagecache.PagedFile pagedFile, Header.Reader headerReader) throws java.io.IOException
 		 private void LoadState( PagedFile pagedFile, Header.Reader headerReader )
 		 {
 			  Pair<TreeState, TreeState> states = LoadStatePages( pagedFile );
@@ -701,7 +701,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 /// <exception cref="IOException"> On page cache error </exception>
 		 /// <exception cref="MetadataMismatchException"> if some meta page is missing (tree not fully initialized) </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static void readHeader(org.Neo4Net.io.pagecache.PageCache pageCache, java.io.File indexFile, Header.Reader headerReader) throws java.io.IOException, MetadataMismatchException
+//ORIGINAL LINE: public static void readHeader(Neo4Net.io.pagecache.PageCache pageCache, java.io.File indexFile, Header.Reader headerReader) throws java.io.IOException, MetadataMismatchException
 		 public static void ReadHeader( PageCache pageCache, File indexFile, Header.Reader headerReader )
 		 {
 			  try
@@ -728,7 +728,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void doReadHeader(Header.Reader headerReader, org.Neo4Net.io.pagecache.PageCursor cursor) throws java.io.IOException
+//ORIGINAL LINE: private static void doReadHeader(Header.Reader headerReader, Neo4Net.io.pagecache.PageCursor cursor) throws java.io.IOException
 		 private static void DoReadHeader( Header.Reader headerReader, PageCursor cursor )
 		 {
 			  int headerDataLength;
@@ -750,7 +750,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void writeState(org.Neo4Net.io.pagecache.PagedFile pagedFile, Header.Writer headerWriter) throws java.io.IOException
+//ORIGINAL LINE: private void writeState(Neo4Net.io.pagecache.PagedFile pagedFile, Header.Writer headerWriter) throws java.io.IOException
 		 private void WriteState( PagedFile pagedFile, Header.Writer headerWriter )
 		 {
 			  Pair<TreeState, TreeState> states = ReadStatePages( pagedFile );
@@ -769,7 +769,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void writerHeader(org.Neo4Net.io.pagecache.PagedFile pagedFile, Header.Writer headerWriter, TreeState otherState, org.Neo4Net.io.pagecache.PageCursor cursor) throws java.io.IOException
+//ORIGINAL LINE: private static void writerHeader(Neo4Net.io.pagecache.PagedFile pagedFile, Header.Writer headerWriter, TreeState otherState, Neo4Net.io.pagecache.PageCursor cursor) throws java.io.IOException
 		 private static void WriterHeader( PagedFile pagedFile, Header.Writer headerWriter, TreeState otherState, PageCursor cursor )
 		 {
 			  // Write/carry over header
@@ -815,7 +815,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 /// <exception cref="MetadataMismatchException"> if state pages are missing (file is smaller than that) or if they are both empty. </exception>
 		 /// <exception cref="IOException"> on <seealso cref="PageCursor"/> error. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static org.apache.commons.lang3.tuple.Pair<TreeState,TreeState> loadStatePages(org.Neo4Net.io.pagecache.PagedFile pagedFile) throws MetadataMismatchException, java.io.IOException
+//ORIGINAL LINE: private static org.apache.commons.lang3.tuple.Pair<TreeState,TreeState> loadStatePages(Neo4Net.io.pagecache.PagedFile pagedFile) throws MetadataMismatchException, java.io.IOException
 		 private static Pair<TreeState, TreeState> LoadStatePages( PagedFile pagedFile )
 		 {
 			  try
@@ -834,7 +834,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static org.apache.commons.lang3.tuple.Pair<TreeState,TreeState> readStatePages(org.Neo4Net.io.pagecache.PagedFile pagedFile) throws java.io.IOException
+//ORIGINAL LINE: private static org.apache.commons.lang3.tuple.Pair<TreeState,TreeState> readStatePages(Neo4Net.io.pagecache.PagedFile pagedFile) throws java.io.IOException
 		 private static Pair<TreeState, TreeState> ReadStatePages( PagedFile pagedFile )
 		 {
 			  Pair<TreeState, TreeState> states;
@@ -846,7 +846,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static org.Neo4Net.io.pagecache.PageCursor openMetaPageCursor(org.Neo4Net.io.pagecache.PagedFile pagedFile, int pfFlags) throws java.io.IOException
+//ORIGINAL LINE: private static Neo4Net.io.pagecache.PageCursor openMetaPageCursor(Neo4Net.io.pagecache.PagedFile pagedFile, int pfFlags) throws java.io.IOException
 		 private static PageCursor OpenMetaPageCursor( PagedFile pagedFile, int pfFlags )
 		 {
 			  PageCursor metaCursor = pagedFile.Io( IdSpace.META_PAGE_ID, pfFlags );
@@ -855,7 +855,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static <KEY,VALUE> Meta readMeta(Layout<KEY,VALUE> layout, org.Neo4Net.io.pagecache.PagedFile pagedFile) throws java.io.IOException
+//ORIGINAL LINE: private static <KEY,VALUE> Meta readMeta(Layout<KEY,VALUE> layout, Neo4Net.io.pagecache.PagedFile pagedFile) throws java.io.IOException
 		 private static Meta ReadMeta<KEY, VALUE>( Layout<KEY, VALUE> layout, PagedFile pagedFile )
 		 {
 			  using ( PageCursor metaCursor = OpenMetaPageCursor( pagedFile, Neo4Net.Io.pagecache.PagedFile_Fields.PF_SHARED_READ_LOCK ) )
@@ -865,7 +865,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void writeMeta(Layout<KEY,VALUE> layout, TreeNodeSelector.Factory format, org.Neo4Net.io.pagecache.PagedFile pagedFile) throws java.io.IOException
+//ORIGINAL LINE: private void writeMeta(Layout<KEY,VALUE> layout, TreeNodeSelector.Factory format, Neo4Net.io.pagecache.PagedFile pagedFile) throws java.io.IOException
 		 private void WriteMeta( Layout<KEY, VALUE> layout, TreeNodeSelector.Factory format, PagedFile pagedFile )
 		 {
 			  Meta meta = new Meta( format.FormatIdentifier(), format.FormatVersion(), _pageSize, layout );
@@ -876,7 +876,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static org.Neo4Net.io.pagecache.PagedFile mapWithCorrectPageSize(org.Neo4Net.io.pagecache.PageCache pageCache, java.io.File indexFile, org.Neo4Net.io.pagecache.PagedFile pagedFile, int pageSize) throws java.io.IOException
+//ORIGINAL LINE: private static Neo4Net.io.pagecache.PagedFile mapWithCorrectPageSize(Neo4Net.io.pagecache.PageCache pageCache, java.io.File indexFile, Neo4Net.io.pagecache.PagedFile pagedFile, int pageSize) throws java.io.IOException
 		 private static PagedFile MapWithCorrectPageSize( PageCache pageCache, File indexFile, PagedFile pagedFile, int pageSize )
 		 {
 			  // This index was created with another page size, re-open with that actual page size
@@ -901,7 +901,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 /// placed at the current root and has had <seealso cref="PageCursor.next()"/> called. </returns>
 		 /// <exception cref="IOException"> on <seealso cref="PageCursor"/> error. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.io.pagecache.PageCursor openRootCursor(int pfFlags) throws java.io.IOException
+//ORIGINAL LINE: private Neo4Net.io.pagecache.PageCursor openRootCursor(int pfFlags) throws java.io.IOException
 		 private PageCursor OpenRootCursor( int pfFlags )
 		 {
 			  PageCursor cursor = _pagedFile.io( 0L, pfFlags );
@@ -932,7 +932,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 /// <returns> a <seealso cref="RawCursor"/> used to iterate over the hits within the specified key range. </returns>
 		 /// <exception cref="IOException"> on error reading from index. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.cursor.RawCursor<Hit<KEY,VALUE>,java.io.IOException> seek(KEY fromInclusive, KEY toExclusive) throws java.io.IOException
+//ORIGINAL LINE: public Neo4Net.cursor.RawCursor<Hit<KEY,VALUE>,java.io.IOException> seek(KEY fromInclusive, KEY toExclusive) throws java.io.IOException
 		 public virtual IRawCursor<Hit<KEY, VALUE>, IOException> Seek( KEY fromInclusive, KEY toExclusive )
 		 {
 			  long generation = this._generation;
@@ -992,7 +992,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void checkpoint(org.Neo4Net.io.pagecache.IOLimiter ioLimiter, Header.Writer headerWriter) throws java.io.IOException
+//ORIGINAL LINE: private void checkpoint(Neo4Net.io.pagecache.IOLimiter ioLimiter, Header.Writer headerWriter) throws java.io.IOException
 		 private void Checkpoint( IOLimiter ioLimiter, Header.Writer headerWriter )
 		 {
 			  if ( _readOnly )

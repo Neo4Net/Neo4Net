@@ -44,14 +44,14 @@ namespace Neo4Net.GraphDb
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.array;
+//	import static Neo4Net.helpers.collection.Iterators.array;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class IndexingCompositeQueryAcceptanceTest
 	public class IndexingCompositeQueryAcceptanceTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ClassRule public static org.Neo4Net.test.rule.ImpermanentDatabaseRule dbRule = new org.Neo4Net.test.rule.ImpermanentDatabaseRule();
+//ORIGINAL LINE: @ClassRule public static Neo4Net.test.rule.ImpermanentDatabaseRule dbRule = new Neo4Net.test.rule.ImpermanentDatabaseRule();
 		 public static ImpermanentDatabaseRule DbRule = new ImpermanentDatabaseRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Rule public final org.junit.rules.TestName testName = new org.junit.rules.TestName();
@@ -267,7 +267,7 @@ namespace Neo4Net.GraphDb
 			  return propertyValues;
 		 }
 
-		 public virtual void CollectNodes( MutableLongSet bucket, ResourceIterator<Node> toCollect )
+		 public virtual void CollectNodes( MutableLongSet bucket, IResourceIterator<Node> toCollect )
 		 {
 			  while ( toCollect.MoveNext() )
 			  {
@@ -318,7 +318,7 @@ namespace Neo4Net.GraphDb
 
 		 private interface IIndexSeek
 		 {
-			  ResourceIterator<Node> FindNodes( string[] keys, object[] values, IGraphDatabaseService db );
+			  IResourceIterator<Node> FindNodes( string[] keys, object[] values, IGraphDatabaseService db );
 		 }
 
 		 private static IndexSeek _biIndexSeek = ( Keys, Values, _db ) =>

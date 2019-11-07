@@ -52,7 +52,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 /// <returns> the generation where the current root was assigned. </returns>
 		 /// <exception cref="IOException"> on <seealso cref="PageCursor"/> error. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: long goTo(org.Neo4Net.io.pagecache.PageCursor cursor) throws java.io.IOException
+//ORIGINAL LINE: long goTo(Neo4Net.io.pagecache.PageCursor cursor) throws java.io.IOException
 		 internal virtual long GoTo( PageCursor cursor )
 		 {
 			  PageCursorUtil.GoTo( cursor, "root", _rootId );

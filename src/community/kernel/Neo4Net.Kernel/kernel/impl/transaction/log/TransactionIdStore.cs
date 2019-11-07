@@ -23,7 +23,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 	using TransactionId = Neo4Net.Kernel.impl.store.TransactionId;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.entry.LogHeader.LOG_HEADER_SIZE;
+//	import static Neo4Net.kernel.impl.transaction.log.entry.LogHeader.LOG_HEADER_SIZE;
 
 	/// <summary>
 	/// Keeps a latest transaction id. There's one counter for {@code committed transaction id} and one for
@@ -48,7 +48,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 		 /// <summary>
 		 /// Tx id counting starting from this value (this value means no transaction ever committed).
 		 /// 
-		 /// Note that a read only transaction will get txId = 0, see <seealso cref="org.Neo4Net.Kernel.Api.Internal.Transaction"/>.
+		 /// Note that a read only transaction will get txId = 0, see <seealso cref="Neo4Net.Kernel.Api.Internal.Transaction"/>.
 		 /// </summary>
 
 		 /// <summary>

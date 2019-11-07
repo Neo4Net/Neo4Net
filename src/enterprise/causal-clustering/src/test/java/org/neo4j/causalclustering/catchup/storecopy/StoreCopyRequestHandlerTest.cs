@@ -208,7 +208,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 				  this._outerInstance = outerInstance;
 			  }
 
-			  internal override ResourceIterator<StoreFileMetadata> Files( StoreCopyRequest request, NeoStoreDataSource neoStoreDataSource )
+			  internal override IResourceIterator<StoreFileMetadata> Files( StoreCopyRequest request, NeoStoreDataSource neoStoreDataSource )
 			  {
 					return Iterators.emptyResourceIterator();
 			  }
@@ -223,7 +223,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 				  this._outerInstance = outerInstance;
 			  }
 
-			  internal override ResourceIterator<StoreFileMetadata> Files( StoreCopyRequest request, NeoStoreDataSource neoStoreDataSource )
+			  internal override IResourceIterator<StoreFileMetadata> Files( StoreCopyRequest request, NeoStoreDataSource neoStoreDataSource )
 			  {
 					throw new System.InvalidOperationException( "I am evil" );
 			  }
@@ -259,7 +259,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public long tryCheckPoint(org.Neo4Net.kernel.impl.transaction.log.checkpoint.TriggerInfo triggerInfo, System.Func<boolean> timeout) throws java.io.IOException
+//ORIGINAL LINE: public long tryCheckPoint(Neo4Net.kernel.impl.transaction.log.checkpoint.TriggerInfo triggerInfo, System.Func<boolean> timeout) throws java.io.IOException
 			  public override long TryCheckPoint( TriggerInfo triggerInfo, System.Func<bool> timeout )
 			  {
 					return TryCheckPoint( triggerInfo, () => false );

@@ -27,12 +27,12 @@ namespace Neo4Net.Kernel.Impl.Api
 	using Read = Neo4Net.Kernel.Api.Internal.Read;
 	using SchemaWrite = Neo4Net.Kernel.Api.Internal.SchemaWrite;
 	using Write = Neo4Net.Kernel.Api.Internal.Write;
-	using AnonymousContext = Neo4Net.Kernel.api.security.AnonymousContext;
+	using AnonymousContext = Neo4Net.Kernel.Api.security.AnonymousContext;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertNotNull;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.security.LoginContext.AUTH_DISABLED;
+//	import static Neo4Net.Kernel.Api.Internal.security.LoginContext.AUTH_DISABLED;
 
 	public class KernelTransactionSecurityContextTest : KernelTransactionTestBase
 	{

@@ -89,7 +89,7 @@ namespace Neo4Net.Kernel.ha.transaction
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public void queuePush(org.Neo4Net.kernel.ha.com.master.Slave slave, final long txId)
+//ORIGINAL LINE: public void queuePush(Neo4Net.kernel.ha.com.master.Slave slave, final long txId)
 		 public virtual void QueuePush( Slave slave, long txId )
 		 {
 			  PullUpdateFuture pullRequest = new PullUpdateFuture( slave, txId );

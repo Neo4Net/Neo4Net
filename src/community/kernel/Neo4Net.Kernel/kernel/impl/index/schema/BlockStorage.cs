@@ -67,7 +67,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 private long _entryCount;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: BlockStorage(org.Neo4Net.index.internal.gbptree.Layout<KEY,VALUE> layout, ByteBufferFactory bufferFactory, org.Neo4Net.io.fs.FileSystemAbstraction fs, java.io.File blockFile, Monitor monitor) throws java.io.IOException
+//ORIGINAL LINE: BlockStorage(Neo4Net.index.internal.gbptree.Layout<KEY,VALUE> layout, ByteBufferFactory bufferFactory, Neo4Net.io.fs.FileSystemAbstraction fs, java.io.File blockFile, Monitor monitor) throws java.io.IOException
 		 internal BlockStorage( Layout<KEY, VALUE> layout, ByteBufferFactory bufferFactory, FileSystemAbstraction fs, File blockFile, Monitor monitor )
 		 {
 			  this._layout = layout;
@@ -256,7 +256,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 /// <returns> The number of blocks that where merged, most often this will be equal to mergeFactor but can be less if there are fewer blocks left in source. </returns>
 		 /// <exception cref="IOException"> If something goes wrong when reading from file. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private int performSingleMerge(int mergeFactor, BlockReader<KEY,VALUE> reader, org.Neo4Net.io.fs.StoreChannel targetChannel, Cancellation cancellation, ByteBuffer[] readBuffers, ByteBuffer writeBuffer) throws java.io.IOException
+//ORIGINAL LINE: private int performSingleMerge(int mergeFactor, BlockReader<KEY,VALUE> reader, Neo4Net.io.fs.StoreChannel targetChannel, Cancellation cancellation, ByteBuffer[] readBuffers, ByteBuffer writeBuffer) throws java.io.IOException
 		 private int PerformSingleMerge( int mergeFactor, BlockReader<KEY, VALUE> reader, StoreChannel targetChannel, Cancellation cancellation, ByteBuffer[] readBuffers, ByteBuffer writeBuffer )
 		 {
 			  using ( MergingBlockEntryReader<KEY, VALUE> merger = new MergingBlockEntryReader<KEY, VALUE>( _layout ) )
@@ -289,7 +289,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void writeBlock(org.Neo4Net.io.fs.StoreChannel targetChannel, BlockEntryCursor<KEY,VALUE> blockEntryCursor, long blockSize, long entryCount, Cancellation cancellation, System.Action<int> entryCountReporter, ByteBuffer byteBuffer) throws java.io.IOException
+//ORIGINAL LINE: private void writeBlock(Neo4Net.io.fs.StoreChannel targetChannel, BlockEntryCursor<KEY,VALUE> blockEntryCursor, long blockSize, long entryCount, Cancellation cancellation, System.Action<int> entryCountReporter, ByteBuffer byteBuffer) throws java.io.IOException
 		 private void WriteBlock( StoreChannel targetChannel, BlockEntryCursor<KEY, VALUE> blockEntryCursor, long blockSize, long entryCount, Cancellation cancellation, System.Action<int> entryCountReporter, ByteBuffer byteBuffer )
 		 {
 			  WriteHeader( byteBuffer, blockSize, entryCount );
@@ -304,7 +304,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static <KEY, VALUE> long writeEntries(org.Neo4Net.io.fs.StoreChannel targetChannel, ByteBuffer byteBuffer, org.Neo4Net.index.internal.gbptree.Layout<KEY,VALUE> layout, BlockEntryCursor<KEY,VALUE> blockEntryCursor, Cancellation cancellation, System.Action<int> entryCountReporter) throws java.io.IOException
+//ORIGINAL LINE: private static <KEY, VALUE> long writeEntries(Neo4Net.io.fs.StoreChannel targetChannel, ByteBuffer byteBuffer, Neo4Net.index.internal.gbptree.Layout<KEY,VALUE> layout, BlockEntryCursor<KEY,VALUE> blockEntryCursor, Cancellation cancellation, System.Action<int> entryCountReporter) throws java.io.IOException
 		 private static long WriteEntries<KEY, VALUE>( StoreChannel targetChannel, ByteBuffer byteBuffer, Layout<KEY, VALUE> layout, BlockEntryCursor<KEY, VALUE> blockEntryCursor, Cancellation cancellation, System.Action<int> entryCountReporter )
 		 {
 			  // Loop over block entries
@@ -345,7 +345,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void writeLastEntriesWithPadding(org.Neo4Net.io.fs.StoreChannel channel, ByteBuffer byteBuffer, long padding) throws java.io.IOException
+//ORIGINAL LINE: private static void writeLastEntriesWithPadding(Neo4Net.io.fs.StoreChannel channel, ByteBuffer byteBuffer, long padding) throws java.io.IOException
 		 private static void WriteLastEntriesWithPadding( StoreChannel channel, ByteBuffer byteBuffer, long padding )
 		 {
 			  bool didWrite;

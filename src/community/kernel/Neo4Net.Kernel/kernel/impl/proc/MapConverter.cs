@@ -25,9 +25,9 @@ namespace Neo4Net.Kernel.impl.proc
 	using DefaultParameterValue = Neo4Net.Kernel.Api.Internal.procs.DefaultParameterValue;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.procs.DefaultParameterValue.ntMap;
+//	import static Neo4Net.Kernel.Api.Internal.procs.DefaultParameterValue.ntMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.proc.ParseUtil.parseMap;
+//	import static Neo4Net.kernel.impl.proc.ParseUtil.parseMap;
 
 	/// <summary>
 	/// A naive implementation of a Cypher-map/json parser. If you find yourself using this

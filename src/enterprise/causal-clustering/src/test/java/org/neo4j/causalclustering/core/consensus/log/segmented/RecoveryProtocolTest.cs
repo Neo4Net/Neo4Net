@@ -44,7 +44,7 @@ namespace Neo4Net.causalclustering.core.consensus.log.segmented
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.logging.NullLogProvider.getInstance;
+//	import static Neo4Net.logging.NullLogProvider.getInstance;
 
 	public class RecoveryProtocolTest
 	{
@@ -67,7 +67,7 @@ namespace Neo4Net.causalclustering.core.consensus.log.segmented
 		}
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.fs.EphemeralFileSystemRule fileSystemRule = new org.Neo4Net.test.rule.fs.EphemeralFileSystemRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.fs.EphemeralFileSystemRule fileSystemRule = new Neo4Net.test.rule.fs.EphemeralFileSystemRule();
 		 public readonly EphemeralFileSystemRule FileSystemRule = new EphemeralFileSystemRule();
 
 		 private EphemeralFileSystemAbstraction _fsa;
@@ -328,7 +328,7 @@ namespace Neo4Net.causalclustering.core.consensus.log.segmented
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void createLogFile(org.Neo4Net.graphdb.mockfs.EphemeralFileSystemAbstraction fsa, long prevFileLastIndex, long fileNameVersion, long headerVersion, long prevIndex, long prevTerm) throws java.io.IOException
+//ORIGINAL LINE: private void createLogFile(Neo4Net.graphdb.mockfs.EphemeralFileSystemAbstraction fsa, long prevFileLastIndex, long fileNameVersion, long headerVersion, long prevIndex, long prevTerm) throws java.io.IOException
 		 private void CreateLogFile( EphemeralFileSystemAbstraction fsa, long prevFileLastIndex, long fileNameVersion, long headerVersion, long prevIndex, long prevTerm )
 		 {
 			  StoreChannel channel = fsa.Open( _fileNames.getForVersion( fileNameVersion ), OpenMode.READ_WRITE );
@@ -339,7 +339,7 @@ namespace Neo4Net.causalclustering.core.consensus.log.segmented
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void createEmptyLogFile(org.Neo4Net.graphdb.mockfs.EphemeralFileSystemAbstraction fsa, long fileNameVersion) throws java.io.IOException
+//ORIGINAL LINE: private void createEmptyLogFile(Neo4Net.graphdb.mockfs.EphemeralFileSystemAbstraction fsa, long fileNameVersion) throws java.io.IOException
 		 private void CreateEmptyLogFile( EphemeralFileSystemAbstraction fsa, long fileNameVersion )
 		 {
 			  StoreChannel channel = fsa.Open( _fileNames.getForVersion( fileNameVersion ), OpenMode.READ_WRITE );

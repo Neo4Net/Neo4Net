@@ -42,7 +42,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 		 private readonly LogicalTransactionStore _physicalStore;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public ReadOnlyTransactionStore(org.Neo4Net.io.pagecache.PageCache pageCache, org.Neo4Net.io.fs.FileSystemAbstraction fs, org.Neo4Net.io.layout.DatabaseLayout fromDatabaseLayout, org.Neo4Net.kernel.configuration.Config config, org.Neo4Net.kernel.monitoring.Monitors monitors) throws java.io.IOException
+//ORIGINAL LINE: public ReadOnlyTransactionStore(Neo4Net.io.pagecache.PageCache pageCache, Neo4Net.io.fs.FileSystemAbstraction fs, Neo4Net.io.layout.DatabaseLayout fromDatabaseLayout, Neo4Net.kernel.configuration.Config config, Neo4Net.kernel.monitoring.Monitors monitors) throws java.io.IOException
 		 public ReadOnlyTransactionStore( PageCache pageCache, FileSystemAbstraction fs, DatabaseLayout fromDatabaseLayout, Config config, Monitors monitors )
 		 {
 			  TransactionMetadataCache transactionMetadataCache = new TransactionMetadataCache();
@@ -73,7 +73,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.kernel.impl.transaction.log.TransactionMetadataCache.TransactionMetadata getMetadataFor(long transactionId) throws java.io.IOException
+//ORIGINAL LINE: public Neo4Net.kernel.impl.transaction.log.TransactionMetadataCache.TransactionMetadata getMetadataFor(long transactionId) throws java.io.IOException
 		 public override TransactionMetadata GetMetadataFor( long transactionId )
 		 {
 			  return _physicalStore.getMetadataFor( transactionId );

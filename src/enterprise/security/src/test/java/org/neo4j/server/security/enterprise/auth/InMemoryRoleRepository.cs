@@ -28,7 +28,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 	using Neo4Net.Server.Security.Auth;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.security.auth.ListSnapshot.FROM_MEMORY;
+//	import static Neo4Net.server.security.auth.ListSnapshot.FROM_MEMORY;
 
 	/// <summary>
 	/// A role repository implementation that just stores roles in memory </summary>

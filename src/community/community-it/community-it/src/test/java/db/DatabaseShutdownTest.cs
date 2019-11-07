@@ -56,7 +56,7 @@ namespace Db
 	internal class DatabaseShutdownTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.Neo4Net.test.rule.TestDirectory testDirectory;
+//ORIGINAL LINE: @Inject private Neo4Net.test.rule.TestDirectory testDirectory;
 		 private TestDirectory _testDirectory;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -131,7 +131,7 @@ namespace Db
 						  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void flushAndForce(org.Neo4Net.io.pagecache.IOLimiter ioLimiter) throws java.io.IOException
+//ORIGINAL LINE: public void flushAndForce(Neo4Net.io.pagecache.IOLimiter ioLimiter) throws java.io.IOException
 						  public override void flushAndForce( IOLimiter ioLimiter )
 						  {
 								// this is simulating a failing check pointing on shutdown

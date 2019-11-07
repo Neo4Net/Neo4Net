@@ -39,14 +39,14 @@ namespace Recovery
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.proc.ProcessUtil.getClassPath;
+//	import static Neo4Net.test.proc.ProcessUtil.getClassPath;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.proc.ProcessUtil.getJavaExecutable;
+//	import static Neo4Net.test.proc.ProcessUtil.getJavaExecutable;
 
 	public class TestRecoveryMultipleDataSources
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.TestDirectory testDirectory = Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory TestDirectory = TestDirectory.testDirectory();
 
 		 /// <summary>
@@ -74,7 +74,7 @@ namespace Recovery
 			  // Then
 			  try
 			  {
-					  using ( Transaction ignored = Db.beginTx(), ResourceIterator<RelationshipType> typeResourceIterator = Db.AllRelationshipTypes.GetEnumerator() )
+					  using ( Transaction ignored = Db.beginTx(), IResourceIterator<RelationshipType> typeResourceIterator = Db.AllRelationshipTypes.GetEnumerator() )
 					  {
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
 						assertEquals( MyRelTypes.TEST.name(), typeResourceIterator.next().name() );

@@ -20,14 +20,14 @@
 namespace Neo4Net.Kernel.Impl.Api.operations
 {
 
-	using ExecutingQuery = Neo4Net.Kernel.api.query.ExecutingQuery;
+	using ExecutingQuery = Neo4Net.Kernel.Api.query.ExecutingQuery;
 	using ClientConnectionInfo = Neo4Net.Kernel.impl.query.clientconnection.ClientConnectionInfo;
 	using MapValue = Neo4Net.Values.@virtual.MapValue;
 
 	/// <summary>
 	/// Query execution monitoring operations.
 	/// </summary>
-	/// <seealso cref= org.Neo4Net.kernel.impl.api.OperationsFacade </seealso>
+	/// <seealso cref= Neo4Net.kernel.impl.api.OperationsFacade </seealso>
 	public interface QueryRegistrationOperations
 	{
 		 Stream<ExecutingQuery> ExecutingQueries( KernelStatement statement );

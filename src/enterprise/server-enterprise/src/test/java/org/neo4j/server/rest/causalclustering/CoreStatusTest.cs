@@ -63,7 +63,7 @@ namespace Neo4Net.Server.rest.causalclustering
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.causalclustering.ReadReplicaStatusTest.responseAsMap;
+//	import static Neo4Net.server.rest.causalclustering.ReadReplicaStatusTest.responseAsMap;
 
 	public class CoreStatusTest
 	{
@@ -178,7 +178,7 @@ namespace Neo4Net.Server.rest.causalclustering
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void expectedStatusFieldsAreIncluded() throws java.io.IOException, org.Neo4Net.causalclustering.core.consensus.NoLeaderFoundException, InterruptedException
+//ORIGINAL LINE: @Test public void expectedStatusFieldsAreIncluded() throws java.io.IOException, Neo4Net.causalclustering.core.consensus.NoLeaderFoundException, InterruptedException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ExpectedStatusFieldsAreIncluded()
 		 {

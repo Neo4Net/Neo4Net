@@ -107,7 +107,7 @@ namespace Neo4Net.causalclustering.core.state.machines.tx
 			  TransactionCommitProcess localCommitProcess = mock( typeof( TransactionCommitProcess ) );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final ReplicatedTransactionStateMachine stateMachine = new ReplicatedTransactionStateMachine(commandIndexTracker, lockState(currentLockSessionId), batchSize, logProvider, org.Neo4Net.io.pagecache.tracing.cursor.PageCursorTracerSupplier_Fields.NULL, org.Neo4Net.io.pagecache.tracing.cursor.context.EmptyVersionContextSupplier.EMPTY);
+//ORIGINAL LINE: final ReplicatedTransactionStateMachine stateMachine = new ReplicatedTransactionStateMachine(commandIndexTracker, lockState(currentLockSessionId), batchSize, logProvider, Neo4Net.io.pagecache.tracing.cursor.PageCursorTracerSupplier_Fields.NULL, Neo4Net.io.pagecache.tracing.cursor.context.EmptyVersionContextSupplier.EMPTY);
 			  ReplicatedTransactionStateMachine stateMachine = new ReplicatedTransactionStateMachine( _commandIndexTracker, LockState( currentLockSessionId ), _batchSize, _logProvider, Neo4Net.Io.pagecache.tracing.cursor.PageCursorTracerSupplier_Fields.Null, EmptyVersionContextSupplier.EMPTY );
 			  stateMachine.InstallCommitProcess( localCommitProcess, -1L );
 
@@ -175,7 +175,7 @@ namespace Neo4Net.causalclustering.core.state.machines.tx
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void raftIndexIsRecorded() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
+//ORIGINAL LINE: @Test public void raftIndexIsRecorded() throws Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void RaftIndexIsRecorded()
 		 {
@@ -210,7 +210,7 @@ namespace Neo4Net.causalclustering.core.state.machines.tx
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.kernel.impl.api.TransactionCommitProcess createFakeTransactionCommitProcess(long txId) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
+//ORIGINAL LINE: private Neo4Net.kernel.impl.api.TransactionCommitProcess createFakeTransactionCommitProcess(long txId) throws Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 private TransactionCommitProcess CreateFakeTransactionCommitProcess( long txId )
 		 {
 			  TransactionCommitProcess localCommitProcess = mock( typeof( TransactionCommitProcess ) );
@@ -236,7 +236,7 @@ namespace Neo4Net.causalclustering.core.state.machines.tx
 		 private ReplicatedLockTokenStateMachine LockState( int lockSessionId )
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") org.Neo4Net.causalclustering.core.state.machines.locks.ReplicatedLockTokenStateMachine lockState = mock(org.Neo4Net.causalclustering.core.state.machines.locks.ReplicatedLockTokenStateMachine.class);
+//ORIGINAL LINE: @SuppressWarnings("unchecked") Neo4Net.causalclustering.core.state.machines.locks.ReplicatedLockTokenStateMachine lockState = mock(Neo4Net.causalclustering.core.state.machines.locks.ReplicatedLockTokenStateMachine.class);
 			  ReplicatedLockTokenStateMachine lockState = mock( typeof( ReplicatedLockTokenStateMachine ) );
 			  when( lockState.CurrentToken() ).thenReturn(new ReplicatedLockTokenRequest(null, lockSessionId));
 			  return lockState;

@@ -22,13 +22,13 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.cache.idmapping.@string
 	using Group = Neo4Net.@unsafe.Impl.Batchimport.input.Group;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.Numbers.safeCastIntToUnsignedByte;
+//	import static Neo4Net.helpers.Numbers.safeCastIntToUnsignedByte;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.Numbers.safeCastIntToUnsignedShort;
+//	import static Neo4Net.helpers.Numbers.safeCastIntToUnsignedShort;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.Numbers.unsignedByteToInt;
+//	import static Neo4Net.helpers.Numbers.unsignedByteToInt;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.Numbers.unsignedShortToInt;
+//	import static Neo4Net.helpers.Numbers.unsignedShortToInt;
 
 	/// <summary>
 	/// Cache for keeping nodeId --> groupId mapping.
@@ -60,7 +60,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.cache.idmapping.@string
 	//	 };
 
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java static interface methods:
-//		 static GroupCache select(org.Neo4Net.@unsafe.impl.batchimport.cache.NumberArrayFactory factory, int chunkSize, int numberOfGroups)
+//		 static GroupCache select(Neo4Net.@unsafe.impl.batchimport.cache.NumberArrayFactory factory, int chunkSize, int numberOfGroups)
 	//	 {
 	//		  if (numberOfGroups == 0)
 	//		  {

@@ -34,7 +34,7 @@ namespace Neo4Net.Io.pagecache.impl.muninn
 	internal sealed class MuninnPagedFile : PageList, PagedFile, Flushable
 	{
 		 internal const int UNMAPPED_TTE = -1;
-		 private static readonly int _translationTableChunkSizePower = Integer.getInteger( "org.Neo4Net.io.pagecache.impl.muninn.MuninnPagedFile.translationTableChunkSizePower", 12 );
+		 private static readonly int _translationTableChunkSizePower = Integer.getInteger( "Neo4Net.io.pagecache.impl.muninn.MuninnPagedFile.translationTableChunkSizePower", 12 );
 		 private static readonly int _translationTableChunkSize = 1 << _translationTableChunkSizePower;
 		 private static readonly long _translationTableChunkSizeMask = _translationTableChunkSize - 1;
 		 private static readonly int _translationTableChunkArrayBase = UnsafeUtil.arrayBaseOffset( typeof( int[] ) );
@@ -107,7 +107,7 @@ namespace Neo4Net.Io.pagecache.impl.muninn
 		 /// setting it to a single channel per mapped file. </param>
 		 /// <exception cref="IOException"> If the <seealso cref="PageSwapper"/> could not be created. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: MuninnPagedFile(java.io.File file, MuninnPageCache pageCache, int filePageSize, org.Neo4Net.io.pagecache.PageSwapperFactory swapperFactory, org.Neo4Net.io.pagecache.tracing.PageCacheTracer pageCacheTracer, org.Neo4Net.io.pagecache.tracing.cursor.PageCursorTracerSupplier pageCursorTracerSupplier, org.Neo4Net.io.pagecache.tracing.cursor.context.VersionContextSupplier versionContextSupplier, boolean createIfNotExists, boolean truncateExisting, boolean noChannelStriping) throws java.io.IOException
+//ORIGINAL LINE: MuninnPagedFile(java.io.File file, MuninnPageCache pageCache, int filePageSize, Neo4Net.io.pagecache.PageSwapperFactory swapperFactory, Neo4Net.io.pagecache.tracing.PageCacheTracer pageCacheTracer, Neo4Net.io.pagecache.tracing.cursor.PageCursorTracerSupplier pageCursorTracerSupplier, Neo4Net.io.pagecache.tracing.cursor.context.VersionContextSupplier versionContextSupplier, boolean createIfNotExists, boolean truncateExisting, boolean noChannelStriping) throws java.io.IOException
 		 internal MuninnPagedFile( File file, MuninnPageCache pageCache, int filePageSize, PageSwapperFactory swapperFactory, PageCacheTracer pageCacheTracer, PageCursorTracerSupplier pageCursorTracerSupplier, VersionContextSupplier versionContextSupplier, bool createIfNotExists, bool truncateExisting, bool noChannelStriping ) : base( pageCache.Pages )
 		 {
 			  this.PageCache = pageCache;
@@ -196,7 +196,7 @@ namespace Neo4Net.Io.pagecache.impl.muninn
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public long fileSize() throws org.Neo4Net.io.pagecache.impl.FileIsNotMappedException
+//ORIGINAL LINE: public long fileSize() throws Neo4Net.io.pagecache.impl.FileIsNotMappedException
 		 public override long FileSize()
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -251,7 +251,7 @@ namespace Neo4Net.Io.pagecache.impl.muninn
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void flushAndForce(org.Neo4Net.io.pagecache.IOLimiter limiter) throws java.io.IOException
+//ORIGINAL LINE: public void flushAndForce(Neo4Net.io.pagecache.IOLimiter limiter) throws java.io.IOException
 		 public override void FlushAndForce( IOLimiter limiter )
 		 {
 			  if ( limiter == null )
@@ -335,7 +335,7 @@ namespace Neo4Net.Io.pagecache.impl.muninn
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void flushAndForceInternal(org.Neo4Net.io.pagecache.tracing.FlushEventOpportunity flushes, boolean forClosing, org.Neo4Net.io.pagecache.IOLimiter limiter) throws java.io.IOException
+//ORIGINAL LINE: void flushAndForceInternal(Neo4Net.io.pagecache.tracing.FlushEventOpportunity flushes, boolean forClosing, Neo4Net.io.pagecache.IOLimiter limiter) throws java.io.IOException
 		 internal void FlushAndForceInternal( FlushEventOpportunity flushes, bool forClosing, IOLimiter limiter )
 		 {
 			  try
@@ -350,7 +350,7 @@ namespace Neo4Net.Io.pagecache.impl.muninn
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void doFlushAndForceInternal(org.Neo4Net.io.pagecache.tracing.FlushEventOpportunity flushes, boolean forClosing, org.Neo4Net.io.pagecache.IOLimiter limiter) throws java.io.IOException
+//ORIGINAL LINE: private void doFlushAndForceInternal(Neo4Net.io.pagecache.tracing.FlushEventOpportunity flushes, boolean forClosing, Neo4Net.io.pagecache.IOLimiter limiter) throws java.io.IOException
 		 private void DoFlushAndForceInternal( FlushEventOpportunity flushes, bool forClosing, IOLimiter limiter )
 		 {
 			  // TODO it'd be awesome if, on Linux, we'd call sync_file_range(2) instead of fsync
@@ -435,7 +435,7 @@ namespace Neo4Net.Io.pagecache.impl.muninn
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void vectoredFlush(long[] pages, long[] bufferAddresses, long[] flushStamps, int pagesGrabbed, org.Neo4Net.io.pagecache.tracing.FlushEventOpportunity flushOpportunity, boolean forClosing) throws java.io.IOException
+//ORIGINAL LINE: private void vectoredFlush(long[] pages, long[] bufferAddresses, long[] flushStamps, int pagesGrabbed, Neo4Net.io.pagecache.tracing.FlushEventOpportunity flushOpportunity, boolean forClosing) throws java.io.IOException
 		 private void VectoredFlush( long[] pages, long[] bufferAddresses, long[] flushStamps, int pagesGrabbed, FlushEventOpportunity flushOpportunity, bool forClosing )
 		 {
 			  FlushEvent flush = null;
@@ -525,7 +525,7 @@ namespace Neo4Net.Io.pagecache.impl.muninn
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public long getLastPageId() throws org.Neo4Net.io.pagecache.impl.FileIsNotMappedException
+//ORIGINAL LINE: public long getLastPageId() throws Neo4Net.io.pagecache.impl.FileIsNotMappedException
 		 public long LastPageId
 		 {
 			 get
@@ -655,7 +655,7 @@ namespace Neo4Net.Io.pagecache.impl.muninn
 		 /// none are immediately available. </summary>
 		 /// <param name="faultEvent"> The trace event for the current page fault. </param>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: long grabFreeAndExclusivelyLockedPage(org.Neo4Net.io.pagecache.tracing.PageFaultEvent faultEvent) throws java.io.IOException
+//ORIGINAL LINE: long grabFreeAndExclusivelyLockedPage(Neo4Net.io.pagecache.tracing.PageFaultEvent faultEvent) throws java.io.IOException
 		 internal long GrabFreeAndExclusivelyLockedPage( PageFaultEvent faultEvent )
 		 {
 			  return PageCache.grabFreeAndExclusivelyLockedPage( faultEvent );

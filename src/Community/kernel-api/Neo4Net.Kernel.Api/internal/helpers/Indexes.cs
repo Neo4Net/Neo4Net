@@ -36,14 +36,14 @@ namespace Neo4Net.Kernel.Api.Internal.Helpers
       /// <param name="timeout"> timeout in seconds. If this limit is passed, a TimeoutException is thrown. </param>
       /// <exception cref="TimeoutException"> if all indexes are not resampled within the timeout. </exception>
       //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-      //ORIGINAL LINE: public static void awaitResampling(org.Neo4Net.Kernel.Api.Internal.SchemaRead schemaRead, long timeout) throws java.util.concurrent.TimeoutException
+      //ORIGINAL LINE: public static void awaitResampling(Neo4Net.Kernel.Api.Internal.SchemaRead schemaRead, long timeout) throws java.util.concurrent.TimeoutException
       public static void AwaitResampling(ISchemaRead schemaRead, long timeout)
       {
          //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-         //ORIGINAL LINE: final java.util.Iterator<org.Neo4Net.Kernel.Api.Internal.IndexReference> indexes = schemaRead.indexesGetAll();
+         //ORIGINAL LINE: final java.util.Iterator<Neo4Net.Kernel.Api.Internal.IndexReference> indexes = schemaRead.indexesGetAll();
          IEnumerator<IIndexReference> indexes = schemaRead.IndexesGetAll();
          //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-         //ORIGINAL LINE: final org.Neo4Net.register.Register_DoubleLongRegister register = org.Neo4Net.register.Registers.newDoubleLongRegister();
+         //ORIGINAL LINE: final Neo4Net.register.Register_DoubleLongRegister register = Neo4Net.register.Registers.newDoubleLongRegister();
          Neo4Net.Register.Register_DoubleLongRegister register = Registers.newDoubleLongRegister();
          //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
          //ORIGINAL LINE: final long t0 = System.currentTimeMillis();
@@ -55,7 +55,7 @@ namespace Neo4Net.Kernel.Api.Internal.Helpers
          while (indexes.MoveNext())
          {
             //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-            //ORIGINAL LINE: final org.Neo4Net.Kernel.Api.Internal.IndexReference index = indexes.Current;
+            //ORIGINAL LINE: final Neo4Net.Kernel.Api.Internal.IndexReference index = indexes.Current;
             IIndexReference index = indexes.Current;
             try
             {
@@ -89,7 +89,7 @@ namespace Neo4Net.Kernel.Api.Internal.Helpers
       }
 
       //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-      //ORIGINAL LINE: private static long readUpdates(org.Neo4Net.Kernel.Api.Internal.IndexReference index, org.Neo4Net.Kernel.Api.Internal.SchemaRead schemaRead, org.Neo4Net.register.Register_DoubleLongRegister register) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
+      //ORIGINAL LINE: private static long readUpdates(Neo4Net.Kernel.Api.Internal.IndexReference index, Neo4Net.Kernel.Api.Internal.SchemaRead schemaRead, Neo4Net.register.Register_DoubleLongRegister register) throws Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
       private static long ReadUpdates(IIndexReference index, SchemaRead schemaRead, Neo4Net.Register.Register_DoubleLongRegister register)
       {
          schemaRead.IndexUpdatesAndSize(index, register);

@@ -25,7 +25,7 @@ namespace Neo4Net.Bolt.v1.runtime
 	public interface Job
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void perform(org.Neo4Net.bolt.runtime.BoltStateMachine machine) throws org.Neo4Net.bolt.runtime.BoltConnectionFatality;
+//ORIGINAL LINE: void perform(Neo4Net.bolt.runtime.BoltStateMachine machine) throws Neo4Net.bolt.runtime.BoltConnectionFatality;
 		 void Perform( BoltStateMachine machine );
 	}
 

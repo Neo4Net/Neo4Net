@@ -37,7 +37,7 @@ namespace Neo4Net.causalclustering.core.state.storage
 	{
 		public abstract void Marshal( STATE state, Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel );
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public final STATE unmarshal(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException, org.Neo4Net.causalclustering.messaging.EndOfStreamException
+//ORIGINAL LINE: public final STATE unmarshal(Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException, Neo4Net.causalclustering.messaging.EndOfStreamException
 		 public override STATE Unmarshal( ReadableChannel channel )
 		 {
 			  try
@@ -60,7 +60,7 @@ namespace Neo4Net.causalclustering.core.state.storage
 		 /// <exception cref="IOException"> </exception>
 		 /// <exception cref="EndOfStreamException"> </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected abstract STATE unmarshal0(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException, org.Neo4Net.causalclustering.messaging.EndOfStreamException;
+//ORIGINAL LINE: protected abstract STATE unmarshal0(Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException, Neo4Net.causalclustering.messaging.EndOfStreamException;
 		 protected internal abstract STATE Unmarshal0( ReadableChannel channel );
 	}
 

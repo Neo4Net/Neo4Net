@@ -1015,7 +1015,7 @@ namespace Neo4Net.Server.helpers
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: protected T dispatchPointArrayProperty(final org.Neo4Net.GraphDb.Spatial.Point[] property, K param)
+//ORIGINAL LINE: protected T dispatchPointArrayProperty(final Neo4Net.GraphDb.Spatial.Point[] property, K param)
 		 protected internal virtual T DispatchPointArrayProperty( Point[] property, K param )
 		 {
 			  return dispatchPointArrayProperty(new BoxedArrayAnonymousInnerClass10(this, property)

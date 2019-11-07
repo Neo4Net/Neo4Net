@@ -107,7 +107,7 @@ namespace Neo4Net.Kernel.ha.cluster
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.withSettings;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.com.StoreIdTestFactory.newStoreIdForCurrentVersion;
+//	import static Neo4Net.com.StoreIdTestFactory.newStoreIdForCurrentVersion;
 
 	public class SwitchToSlaveBranchThenCopyTest
 	{
@@ -119,7 +119,7 @@ namespace Neo4Net.Kernel.ha.cluster
 		 private readonly StoreId _storeId = newStoreIdForCurrentVersion( 42, 42, 42, 42 );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.TestDirectory testDirectory = Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory TestDirectory = TestDirectory.testDirectory();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -156,7 +156,7 @@ namespace Neo4Net.Kernel.ha.cluster
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static org.Neo4Net.io.pagecache.PageCache mockPageCache() throws java.io.IOException
+//ORIGINAL LINE: private static Neo4Net.io.pagecache.PageCache mockPageCache() throws java.io.IOException
 		 private static PageCache MockPageCache()
 		 {
 			  PageCache pageCacheMock = mock( typeof( PageCache ) );
@@ -264,7 +264,7 @@ namespace Neo4Net.Kernel.ha.cluster
 			  LifeSupport communicationLife = mock( typeof( LifeSupport ) );
 			  URI localhost = LocalhostUri;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.ha.UpdatePullerScheduler pullerScheduler = new org.Neo4Net.kernel.ha.UpdatePullerScheduler(jobScheduler, org.Neo4Net.logging.NullLogProvider.getInstance(), updatePuller, 10L);
+//ORIGINAL LINE: final Neo4Net.kernel.ha.UpdatePullerScheduler pullerScheduler = new Neo4Net.kernel.ha.UpdatePullerScheduler(jobScheduler, Neo4Net.logging.NullLogProvider.getInstance(), updatePuller, 10L);
 			  UpdatePullerScheduler pullerScheduler = new UpdatePullerScheduler( jobScheduler, NullLogProvider.Instance, _updatePuller, 10L );
 
 			  when( _pullerFactory.createUpdatePullerScheduler( _updatePuller ) ).thenReturn( pullerScheduler );
@@ -309,7 +309,7 @@ namespace Neo4Net.Kernel.ha.cluster
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private SwitchToSlaveBranchThenCopy newSwitchToSlaveSpy(org.Neo4Net.io.pagecache.PageCache pageCacheMock, org.Neo4Net.com.storecopy.StoreCopyClient storeCopyClient)
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private SwitchToSlaveBranchThenCopy newSwitchToSlaveSpy(Neo4Net.io.pagecache.PageCache pageCacheMock, Neo4Net.com.storecopy.StoreCopyClient storeCopyClient)
 		 private SwitchToSlaveBranchThenCopy NewSwitchToSlaveSpy( PageCache pageCacheMock, StoreCopyClient storeCopyClient )
 		 {
 			  ClusterMembers clusterMembers = mock( typeof( ClusterMembers ) );

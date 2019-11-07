@@ -25,7 +25,7 @@ namespace Neo4Net.Server.rest.transactional
 	using Neo4NetError = Neo4Net.Server.rest.transactional.error.Neo4NetError;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.iterator;
+//	import static Neo4Net.helpers.collection.Iterators.iterator;
 
 	public class StubStatementDeserializer : StatementDeserializer
 	{

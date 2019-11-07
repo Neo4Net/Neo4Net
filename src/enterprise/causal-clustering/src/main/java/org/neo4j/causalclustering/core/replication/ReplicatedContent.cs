@@ -37,7 +37,7 @@ namespace Neo4Net.causalclustering.core.replication
 	//	 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void handle(org.Neo4Net.causalclustering.messaging.marshalling.ReplicatedContentHandler contentHandler) throws java.io.IOException;
+//ORIGINAL LINE: void handle(Neo4Net.causalclustering.messaging.marshalling.ReplicatedContentHandler contentHandler) throws java.io.IOException;
 		 void Handle( ReplicatedContentHandler contentHandler );
 	}
 

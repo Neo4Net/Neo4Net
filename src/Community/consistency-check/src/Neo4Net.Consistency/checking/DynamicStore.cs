@@ -28,19 +28,19 @@ namespace Neo4Net.Consistency.checking
 	public abstract class DynamicStore
 	{
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//       SCHEMA(org.Neo4Net.consistency.RecordType.SCHEMA) { RecordReference<org.Neo4Net.kernel.impl.store.record.DynamicRecord> lookup(org.Neo4Net.consistency.store.RecordAccess records, long block) { return records.schema(block); } },
+//       SCHEMA(Neo4Net.consistency.RecordType.SCHEMA) { RecordReference<Neo4Net.kernel.impl.store.record.DynamicRecord> lookup(Neo4Net.consistency.store.RecordAccess records, long block) { return records.schema(block); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//       STRING(org.Neo4Net.consistency.RecordType.STRING_PROPERTY) { RecordReference<org.Neo4Net.kernel.impl.store.record.DynamicRecord> lookup(org.Neo4Net.consistency.store.RecordAccess records, long block) { return records.string(block); } },
+//       STRING(Neo4Net.consistency.RecordType.STRING_PROPERTY) { RecordReference<Neo4Net.kernel.impl.store.record.DynamicRecord> lookup(Neo4Net.consistency.store.RecordAccess records, long block) { return records.string(block); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//       ARRAY(org.Neo4Net.consistency.RecordType.ARRAY_PROPERTY) { RecordReference<org.Neo4Net.kernel.impl.store.record.DynamicRecord> lookup(org.Neo4Net.consistency.store.RecordAccess records, long block) { return records.array(block); } },
+//       ARRAY(Neo4Net.consistency.RecordType.ARRAY_PROPERTY) { RecordReference<Neo4Net.kernel.impl.store.record.DynamicRecord> lookup(Neo4Net.consistency.store.RecordAccess records, long block) { return records.array(block); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//       PROPERTY_KEY(org.Neo4Net.consistency.RecordType.PROPERTY_KEY_NAME) { RecordReference<org.Neo4Net.kernel.impl.store.record.DynamicRecord> lookup(org.Neo4Net.consistency.store.RecordAccess records, long block) { return records.propertyKeyName((int) block); } },
+//       PROPERTY_KEY(Neo4Net.consistency.RecordType.PROPERTY_KEY_NAME) { RecordReference<Neo4Net.kernel.impl.store.record.DynamicRecord> lookup(Neo4Net.consistency.store.RecordAccess records, long block) { return records.propertyKeyName((int) block); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//       RELATIONSHIP_TYPE(org.Neo4Net.consistency.RecordType.RELATIONSHIP_TYPE_NAME) { RecordReference<org.Neo4Net.kernel.impl.store.record.DynamicRecord> lookup(org.Neo4Net.consistency.store.RecordAccess records, long block) { return records.relationshipTypeName((int) block); } },
+//       RELATIONSHIP_TYPE(Neo4Net.consistency.RecordType.RELATIONSHIP_TYPE_NAME) { RecordReference<Neo4Net.kernel.impl.store.record.DynamicRecord> lookup(Neo4Net.consistency.store.RecordAccess records, long block) { return records.relationshipTypeName((int) block); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//       LABEL(org.Neo4Net.consistency.RecordType.LABEL_NAME) { RecordReference<org.Neo4Net.kernel.impl.store.record.DynamicRecord> lookup(org.Neo4Net.consistency.store.RecordAccess records, long block) { return records.labelName((int) block); } },
+//       LABEL(Neo4Net.consistency.RecordType.LABEL_NAME) { RecordReference<Neo4Net.kernel.impl.store.record.DynamicRecord> lookup(Neo4Net.consistency.store.RecordAccess records, long block) { return records.labelName((int) block); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//       NODE_LABEL(org.Neo4Net.consistency.RecordType.NODE_DYNAMIC_LABEL) { RecordReference<org.Neo4Net.kernel.impl.store.record.DynamicRecord> lookup(org.Neo4Net.consistency.store.RecordAccess records, long block) { return records.nodeLabels(block); } };
+//       NODE_LABEL(Neo4Net.consistency.RecordType.NODE_DYNAMIC_LABEL) { RecordReference<Neo4Net.kernel.impl.store.record.DynamicRecord> lookup(Neo4Net.consistency.store.RecordAccess records, long block) { return records.nodeLabels(block); } };
 
 		 private static readonly IList<DynamicStore> valueList = new List<DynamicStore>();
 

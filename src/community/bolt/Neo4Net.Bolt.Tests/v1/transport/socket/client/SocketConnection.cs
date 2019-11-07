@@ -47,7 +47,7 @@ namespace Neo4Net.Bolt.v1.transport.socket.client
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public TransportConnection connect(org.Neo4Net.helpers.HostnamePort address) throws java.io.IOException
+//ORIGINAL LINE: public TransportConnection connect(Neo4Net.helpers.HostnamePort address) throws java.io.IOException
 		 public override TransportConnection Connect( HostnamePort address )
 		 {
 			  _socket.SoTimeout = 30000 * 1000; // TOOD

@@ -52,18 +52,18 @@ namespace Neo4Net.Server.rest.transactional
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.iterator;
+//	import static Neo4Net.helpers.collection.Iterators.iterator;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.domain.JsonHelper.jsonToMap;
+//	import static Neo4Net.server.rest.domain.JsonHelper.jsonToMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.server.HTTP.GET;
+//	import static Neo4Net.test.server.HTTP.GET;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.server.HTTP.POST;
+//	import static Neo4Net.test.server.HTTP.POST;
 
 	public class TransactionTestIT : AbstractRestFunctionalTestBase
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test @Documented("Begin a transaction\n" + "\n" + "You begin a new transaction by posting zero or more Cypher statements\n" + "to the transaction endpoint. The server will respond with the result of\n" + "your statements, as well as the location of your open transaction.") public void begin_a_transaction() throws org.Neo4Net.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @Test @Documented("Begin a transaction\n" + "\n" + "You begin a new transaction by posting zero or more Cypher statements\n" + "to the transaction endpoint. The server will respond with the result of\n" + "your statements, as well as the location of your open transaction.") public void begin_a_transaction() throws Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Documented("Begin a transaction\n" + "\n" + "You begin a new transaction by posting zero or more Cypher statements\n" + "to the transaction endpoint. The server will respond with the result of\n" + "your statements, as well as the location of your open transaction.")]
 		 public virtual void BeginATransaction()
@@ -79,7 +79,7 @@ namespace Neo4Net.Server.rest.transactional
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test @Documented("Execute statements in an open transaction\n" + "\n" + "Given that you have an open transaction, you can make a number of requests, each of which executes additional\n" + "statements, and keeps the transaction open by resetting the transaction timeout.") public void execute_statements_in_an_open_transaction() throws org.Neo4Net.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @Test @Documented("Execute statements in an open transaction\n" + "\n" + "Given that you have an open transaction, you can make a number of requests, each of which executes additional\n" + "statements, and keeps the transaction open by resetting the transaction timeout.") public void execute_statements_in_an_open_transaction() throws Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Documented("Execute statements in an open transaction\n" + "\n" + "Given that you have an open transaction, you can make a number of requests, each of which executes additional\n" + "statements, and keeps the transaction open by resetting the transaction timeout.")]
 		 public virtual void ExecuteStatementsInAnOpenTransaction()
@@ -97,7 +97,7 @@ namespace Neo4Net.Server.rest.transactional
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test @Documented("Execute statements in an open transaction in REST format for the return.\n" + "\n" + "Given that you have an open transaction, you can make a number of requests, each of which executes additional\n" + "statements, and keeps the transaction open by resetting the transaction timeout. Specifying the `REST` format will\n" + "give back full Neo4Net Rest API representations of the Neo4Net Nodes, Relationships and Paths, if returned.") public void execute_statements_in_an_open_transaction_using_REST() throws org.Neo4Net.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @Test @Documented("Execute statements in an open transaction in REST format for the return.\n" + "\n" + "Given that you have an open transaction, you can make a number of requests, each of which executes additional\n" + "statements, and keeps the transaction open by resetting the transaction timeout. Specifying the `REST` format will\n" + "give back full Neo4Net Rest API representations of the Neo4Net Nodes, Relationships and Paths, if returned.") public void execute_statements_in_an_open_transaction_using_REST() throws Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Documented("Execute statements in an open transaction in REST format for the return.\n" + "\n" + "Given that you have an open transaction, you can make a number of requests, each of which executes additional\n" + "statements, and keeps the transaction open by resetting the transaction timeout. Specifying the `REST` format will\n" + "give back full Neo4Net Rest API representations of the Neo4Net Nodes, Relationships and Paths, if returned.")]
 		 public virtual void ExecuteStatementsInAnOpenTransactionUsingREST()
@@ -117,7 +117,7 @@ namespace Neo4Net.Server.rest.transactional
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test @Documented("Reset transaction timeout of an open transaction\n" + "\n" + "Every orphaned transaction is automatically expired after a period of inactivity.  This may be prevented\n" + "by resetting the transaction timeout.\n" + "\n" + "The timeout may be reset by sending a keep-alive request to the server that executes an empty list of statements.\n" + "This request will reset the transaction timeout and return the new time at which the transaction will\n" + "expire as an RFC1123 formatted timestamp value in the ``transaction'' section of the response.") public void reset_transaction_timeout_of_an_open_transaction() throws org.Neo4Net.server.rest.domain.JsonParseException, java.text.ParseException, InterruptedException
+//ORIGINAL LINE: @Test @Documented("Reset transaction timeout of an open transaction\n" + "\n" + "Every orphaned transaction is automatically expired after a period of inactivity.  This may be prevented\n" + "by resetting the transaction timeout.\n" + "\n" + "The timeout may be reset by sending a keep-alive request to the server that executes an empty list of statements.\n" + "This request will reset the transaction timeout and return the new time at which the transaction will\n" + "expire as an RFC1123 formatted timestamp value in the ``transaction'' section of the response.") public void reset_transaction_timeout_of_an_open_transaction() throws Neo4Net.server.rest.domain.JsonParseException, java.text.ParseException, InterruptedException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Documented("Reset transaction timeout of an open transaction\n" + "\n" + "Every orphaned transaction is automatically expired after a period of inactivity.  This may be prevented\n" + "by resetting the transaction timeout.\n" + "\n" + "The timeout may be reset by sending a keep-alive request to the server that executes an empty list of statements.\n" + "This request will reset the transaction timeout and return the new time at which the transaction will\n" + "expire as an RFC1123 formatted timestamp value in the ``transaction'' section of the response.")]
 		 public virtual void ResetTransactionTimeoutOfAnOpenTransaction()
@@ -145,7 +145,7 @@ namespace Neo4Net.Server.rest.transactional
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test @Documented("Commit an open transaction\n" + "\n" + "Given you have an open transaction, you can send a commit request. Optionally, you submit additional statements\n" + "along with the request that will be executed before committing the transaction.") public void commit_an_open_transaction() throws org.Neo4Net.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @Test @Documented("Commit an open transaction\n" + "\n" + "Given you have an open transaction, you can send a commit request. Optionally, you submit additional statements\n" + "along with the request that will be executed before committing the transaction.") public void commit_an_open_transaction() throws Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Documented("Commit an open transaction\n" + "\n" + "Given you have an open transaction, you can send a commit request. Optionally, you submit additional statements\n" + "along with the request that will be executed before committing the transaction.")]
 		 public virtual void CommitAnOpenTransaction()
@@ -165,7 +165,7 @@ namespace Neo4Net.Server.rest.transactional
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test @Documented("Begin and commit a transaction in one request\n" + "\n" + "If there is no need to keep a transaction open across multiple HTTP requests, you can begin a transaction,\n" + "execute statements, and commit with just a single HTTP request.") public void begin_and_commit_a_transaction_in_one_request() throws org.Neo4Net.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @Test @Documented("Begin and commit a transaction in one request\n" + "\n" + "If there is no need to keep a transaction open across multiple HTTP requests, you can begin a transaction,\n" + "execute statements, and commit with just a single HTTP request.") public void begin_and_commit_a_transaction_in_one_request() throws Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Documented("Begin and commit a transaction in one request\n" + "\n" + "If there is no need to keep a transaction open across multiple HTTP requests, you can begin a transaction,\n" + "execute statements, and commit with just a single HTTP request.")]
 		 public virtual void BeginAndCommitATransactionInOneRequest()
@@ -182,7 +182,7 @@ namespace Neo4Net.Server.rest.transactional
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test @Documented("Execute multiple statements\n" + "\n" + "You can send multiple Cypher statements in the same request.\n" + "The response will contain the result of each statement.") public void execute_multiple_statements() throws org.Neo4Net.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @Test @Documented("Execute multiple statements\n" + "\n" + "You can send multiple Cypher statements in the same request.\n" + "The response will contain the result of each statement.") public void execute_multiple_statements() throws Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Documented("Execute multiple statements\n" + "\n" + "You can send multiple Cypher statements in the same request.\n" + "The response will contain the result of each statement.")]
 		 public virtual void ExecuteMultipleStatements()
@@ -199,7 +199,7 @@ namespace Neo4Net.Server.rest.transactional
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test @Documented("Return results in graph format\n" + "\n" + "If you want to understand the graph structure of nodes and relationships returned by your query,\n" + "you can specify the \"graph\" results data format. For example, this is useful when you want to visualise the\n" + "graph structure. The format collates all the nodes and relationships from all columns of the result,\n" + "and also flattens collections of nodes and relationships, including paths.") public void return_results_in_graph_format() throws org.Neo4Net.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @Test @Documented("Return results in graph format\n" + "\n" + "If you want to understand the graph structure of nodes and relationships returned by your query,\n" + "you can specify the \"graph\" results data format. For example, this is useful when you want to visualise the\n" + "graph structure. The format collates all the nodes and relationships from all columns of the result,\n" + "and also flattens collections of nodes and relationships, including paths.") public void return_results_in_graph_format() throws Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Documented("Return results in graph format\n" + "\n" + "If you want to understand the graph structure of nodes and relationships returned by your query,\n" + "you can specify the \"graph\" results data format. For example, this is useful when you want to visualise the\n" + "graph structure. The format collates all the nodes and relationships from all columns of the result,\n" + "and also flattens collections of nodes and relationships, including paths.")]
 		 public virtual void ReturnResultsInGraphFormat()
@@ -217,7 +217,7 @@ namespace Neo4Net.Server.rest.transactional
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test @Documented("Rollback an open transaction\n" + "\n" + "Given that you have an open transaction, you can send a rollback request. The server will rollback the\n" + "transaction. Any further statements trying to run in this transaction will fail immediately.") public void rollback_an_open_transaction() throws org.Neo4Net.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @Test @Documented("Rollback an open transaction\n" + "\n" + "Given that you have an open transaction, you can send a rollback request. The server will rollback the\n" + "transaction. Any further statements trying to run in this transaction will fail immediately.") public void rollback_an_open_transaction() throws Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Documented("Rollback an open transaction\n" + "\n" + "Given that you have an open transaction, you can send a rollback request. The server will rollback the\n" + "transaction. Any further statements trying to run in this transaction will fail immediately.")]
 		 public virtual void RollbackAnOpenTransaction()
@@ -238,7 +238,7 @@ namespace Neo4Net.Server.rest.transactional
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test @Documented("Handling errors\n" + "\n" + "The result of any request against the transaction endpoint is streamed back to the client.\n" + "Therefore the server does not know whether the request will be successful or not when it sends the HTTP status\n" + "code.\n" + "\n" + "Because of this, all requests against the transactional endpoint will return 200 or 201 status code, regardless\n" + "of whether statements were successfully executed. At the end of the response payload, the server includes a list\n" + "of errors that occurred while executing statements. If this list is empty, the request completed successfully.\n" + "\n" + "If any errors occur while executing statements, the server will roll back the transaction.\n" + "\n" + "In this example, we send the server an invalid statement to demonstrate error handling.\n" + " \n" + "For more information on the status codes, see <<status-codes>>.") public void handling_errors() throws org.Neo4Net.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @Test @Documented("Handling errors\n" + "\n" + "The result of any request against the transaction endpoint is streamed back to the client.\n" + "Therefore the server does not know whether the request will be successful or not when it sends the HTTP status\n" + "code.\n" + "\n" + "Because of this, all requests against the transactional endpoint will return 200 or 201 status code, regardless\n" + "of whether statements were successfully executed. At the end of the response payload, the server includes a list\n" + "of errors that occurred while executing statements. If this list is empty, the request completed successfully.\n" + "\n" + "If any errors occur while executing statements, the server will roll back the transaction.\n" + "\n" + "In this example, we send the server an invalid statement to demonstrate error handling.\n" + " \n" + "For more information on the status codes, see <<status-codes>>.") public void handling_errors() throws Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Documented("Handling errors\n" + "\n" + "The result of any request against the transaction endpoint is streamed back to the client.\n" + "Therefore the server does not know whether the request will be successful or not when it sends the HTTP status\n" + "code.\n" + "\n" + "Because of this, all requests against the transactional endpoint will return 200 or 201 status code, regardless\n" + "of whether statements were successfully executed. At the end of the response payload, the server includes a list\n" + "of errors that occurred while executing statements. If this list is empty, the request completed successfully.\n" + "\n" + "If any errors occur while executing statements, the server will roll back the transaction.\n" + "\n" + "In this example, we send the server an invalid statement to demonstrate error handling.\n" + " \n" + "For more information on the status codes, see <<status-codes>>.")]
 		 public virtual void HandlingErrors()
@@ -255,7 +255,7 @@ namespace Neo4Net.Server.rest.transactional
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test @Documented("Handling errors in an open transaction\n" + "\n" + "Whenever there is an error in a request the server will rollback the transaction.\n" + "By inspecting the response for the presence/absence of the `transaction` key you can tell if the " + "transaction is still open") public void errors_in_open_transaction() throws org.Neo4Net.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @Test @Documented("Handling errors in an open transaction\n" + "\n" + "Whenever there is an error in a request the server will rollback the transaction.\n" + "By inspecting the response for the presence/absence of the `transaction` key you can tell if the " + "transaction is still open") public void errors_in_open_transaction() throws Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Documented("Handling errors in an open transaction\n" + "\n" + "Whenever there is an error in a request the server will rollback the transaction.\n" + "By inspecting the response for the presence/absence of the `transaction` key you can tell if the " + "transaction is still open")]
 		 public virtual void ErrorsInOpenTransaction()
@@ -272,7 +272,7 @@ namespace Neo4Net.Server.rest.transactional
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test @Documented("Include query statistics\n" + "\n" + "By setting `includeStats` to `true` for a statement, query statistics will be returned for it.") public void include_query_statistics() throws org.Neo4Net.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @Test @Documented("Include query statistics\n" + "\n" + "By setting `includeStats` to `true` for a statement, query statistics will be returned for it.") public void include_query_statistics() throws Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Documented("Include query statistics\n" + "\n" + "By setting `includeStats` to `true` for a statement, query statistics will be returned for it.")]
 		 public virtual void IncludeQueryStatistics()

@@ -35,7 +35,7 @@ namespace Neo4Net.Server.rest.causalclustering
 	using OutputFormat = Neo4Net.Server.rest.repr.OutputFormat;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.causalclustering.CausalClusteringService.BASE_PATH;
+//	import static Neo4Net.server.rest.causalclustering.CausalClusteringService.BASE_PATH;
 
 	internal class ReadReplicaStatus : BaseStatus
 	{

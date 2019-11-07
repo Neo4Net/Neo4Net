@@ -26,7 +26,7 @@ namespace Neo4Net.cluster
 {
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.Uris.parameter;
+//	import static Neo4Net.helpers.Uris.parameter;
 
 	/// <summary>
 	/// Represents the concept of the cluster wide unique id of an instance. The

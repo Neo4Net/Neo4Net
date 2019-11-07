@@ -52,7 +52,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.config
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static SpaceFillingCurveSettings fromGBPTree(java.io.File indexFile, org.Neo4Net.io.pagecache.PageCache pageCache, System.Func<ByteBuffer,String> onError) throws java.io.IOException
+//ORIGINAL LINE: public static SpaceFillingCurveSettings fromGBPTree(java.io.File indexFile, Neo4Net.io.pagecache.PageCache pageCache, System.Func<ByteBuffer,String> onError) throws java.io.IOException
 		 public static SpaceFillingCurveSettings FromGBPTree( File indexFile, PageCache pageCache, System.Func<ByteBuffer, string> onError )
 		 {
 			  SpaceFillingCurveSettings.SettingsFromIndexHeader settings = new SpaceFillingCurveSettings.SettingsFromIndexHeader();

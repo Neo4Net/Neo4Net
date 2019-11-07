@@ -21,7 +21,7 @@ namespace Neo4Net.Kernel.Impl.Api
 {
 	using Test = org.junit.Test;
 
-	using StatementConstants = Neo4Net.Kernel.api.StatementConstants;
+	using StatementConstants = Neo4Net.Kernel.Api.StatementConstants;
 	using CountsTracker = Neo4Net.Kernel.impl.store.counts.CountsTracker;
 	using Command = Neo4Net.Kernel.impl.transaction.command.Command;
 	using TransactionApplicationMode = Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode;
@@ -46,14 +46,14 @@ namespace Neo4Net.Kernel.Impl.Api
 		 {
 			  // GIVEN
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.counts.CountsTracker tracker = mock(org.Neo4Net.kernel.impl.store.counts.CountsTracker.class);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.store.counts.CountsTracker tracker = mock(Neo4Net.kernel.impl.store.counts.CountsTracker.class);
 			  CountsTracker tracker = mock( typeof( CountsTracker ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final CountsAccessor_Updater updater = mock(CountsAccessor_Updater.class);
 			  CountsAccessor_Updater updater = mock( typeof( CountsAccessor_Updater ) );
 			  when( tracker.Apply( anyLong() ) ).thenReturn(updater);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final CountsStoreBatchTransactionApplier applier = new CountsStoreBatchTransactionApplier(tracker, org.Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode.INTERNAL);
+//ORIGINAL LINE: final CountsStoreBatchTransactionApplier applier = new CountsStoreBatchTransactionApplier(tracker, Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode.INTERNAL);
 			  CountsStoreBatchTransactionApplier applier = new CountsStoreBatchTransactionApplier( tracker, TransactionApplicationMode.INTERNAL );
 
 			  // WHEN

@@ -60,8 +60,8 @@ namespace Neo4Net.Test.rule
 
 		 /// <summary>
 		 /// Retries on <seealso cref="TransientFailureException"/> and any <seealso cref="System.Exception"/> implementing
-		 /// <seealso cref="org.Neo4Net.kernel.api.exceptions.Status.HasStatus"/> with
-		 /// <seealso cref="org.Neo4Net.kernel.api.exceptions.Status.Classification.TransientError"/> classification.
+		 /// <seealso cref="Neo4Net.kernel.api.exceptions.Status.HasStatus"/> with
+		 /// <seealso cref="Neo4Net.kernel.api.exceptions.Status.Classification.TransientError"/> classification.
 		 /// a configurable number of times and with a configurable delay between retries.
 		 /// </summary>
 		 public static readonly System.Predicate<Exception> TransientErrors = t =>

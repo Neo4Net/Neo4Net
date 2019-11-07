@@ -36,16 +36,16 @@ namespace Neo4Net.Kernel.impl.store.format.standard
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.NoStoreHeader.NO_STORE_HEADER;
+//	import static Neo4Net.kernel.impl.store.NoStoreHeader.NO_STORE_HEADER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.record.RecordLoad.NORMAL;
+//	import static Neo4Net.kernel.impl.store.record.RecordLoad.NORMAL;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class RelationshipGroupRecordFormatTest
 	public class RelationshipGroupRecordFormatTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Parameters public static java.util.Collection<org.Neo4Net.kernel.impl.store.format.RecordFormats> formats()
+//ORIGINAL LINE: @Parameters public static java.util.Collection<Neo4Net.kernel.impl.store.format.RecordFormats> formats()
 		 public static ICollection<RecordFormats> Formats()
 		 {
 			  return asList( StandardV2_3.RecordFormats, StandardV3_0.RecordFormats );

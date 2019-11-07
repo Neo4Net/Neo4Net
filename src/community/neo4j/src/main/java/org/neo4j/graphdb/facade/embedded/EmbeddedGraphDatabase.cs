@@ -29,16 +29,16 @@ namespace Neo4Net.GraphDb.facade.embedded
 	using GraphDatabaseFacade = Neo4Net.Kernel.impl.factory.GraphDatabaseFacade;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.facade.GraphDatabaseDependencies.newDependencies;
+//	import static Neo4Net.graphdb.facade.GraphDatabaseDependencies.newDependencies;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.append;
+//	import static Neo4Net.helpers.collection.Iterables.append;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.asList;
+//	import static Neo4Net.helpers.collection.Iterables.asList;
 
 	/// <summary>
 	/// An implementation of <seealso cref="GraphDatabaseService"/> that is used to embed Neo4Net
 	/// in an application. You typically instantiate it by using
-	/// <seealso cref="org.Neo4Net.graphdb.factory.GraphDatabaseFactory"/> like so:
+	/// <seealso cref="Neo4Net.graphdb.factory.GraphDatabaseFactory"/> like so:
 	/// <para>
 	/// 
 	/// <pre>
@@ -56,7 +56,7 @@ namespace Neo4Net.GraphDb.facade.embedded
 	public class EmbeddedGraphDatabase : GraphDatabaseFacade
 	{
 		 /// <summary>
-		 /// Internal constructor used by <seealso cref="org.Neo4Net.graphdb.factory.GraphDatabaseFactory"/>
+		 /// Internal constructor used by <seealso cref="Neo4Net.graphdb.factory.GraphDatabaseFactory"/>
 		 /// </summary>
 		 public EmbeddedGraphDatabase( File storeDir, IDictionary<string, string> @params, GraphDatabaseFacadeFactory.Dependencies dependencies )
 		 {

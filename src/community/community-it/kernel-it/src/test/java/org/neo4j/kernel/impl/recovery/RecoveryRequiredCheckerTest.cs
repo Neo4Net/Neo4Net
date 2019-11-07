@@ -45,7 +45,7 @@ namespace Neo4Net.Kernel.impl.recovery
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.logical_logs_location;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.logical_logs_location;
 
 	public class RecoveryRequiredCheckerTest
 	{
@@ -177,7 +177,7 @@ namespace Neo4Net.Kernel.impl.recovery
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void recoverBrokenStoreWithConfig(org.Neo4Net.kernel.configuration.Config config) throws java.io.IOException
+//ORIGINAL LINE: private void recoverBrokenStoreWithConfig(Neo4Net.kernel.configuration.Config config) throws java.io.IOException
 		 private void RecoverBrokenStoreWithConfig( Config config )
 		 {
 			  using ( FileSystemAbstraction fileSystemAbstraction = CreateSomeDataAndCrash( _storeDir, _fileSystem, config ) )
@@ -212,7 +212,7 @@ namespace Neo4Net.Kernel.impl.recovery
 		 private static FileSystemAbstraction CreateSomeDataAndCrash( File store, EphemeralFileSystemAbstraction fileSystem, Config config )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.graphdb.GraphDatabaseService db = new org.Neo4Net.test.TestGraphDatabaseFactory().setFileSystem(fileSystem).newImpermanentDatabaseBuilder(store).setConfig(config.getRaw()).newGraphDatabase();
+//ORIGINAL LINE: final Neo4Net.graphdb.GraphDatabaseService db = new Neo4Net.test.TestGraphDatabaseFactory().setFileSystem(fileSystem).newImpermanentDatabaseBuilder(store).setConfig(config.getRaw()).newGraphDatabase();
 			  IGraphDatabaseService db = ( new TestGraphDatabaseFactory() ).setFileSystem(fileSystem).newImpermanentDatabaseBuilder(store).setConfig(config.Raw).newGraphDatabase();
 
 			  using ( Transaction tx = Db.beginTx() )

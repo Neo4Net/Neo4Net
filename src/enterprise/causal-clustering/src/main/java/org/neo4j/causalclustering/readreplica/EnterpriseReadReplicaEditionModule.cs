@@ -91,7 +91,7 @@ namespace Neo4Net.causalclustering.readreplica
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
-	using NetworkConnectionTracker = Neo4Net.Kernel.api.net.NetworkConnectionTracker;
+	using NetworkConnectionTracker = Neo4Net.Kernel.Api.net.NetworkConnectionTracker;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using SslPolicyLoader = Neo4Net.Kernel.configuration.ssl.SslPolicyLoader;
 	using EnterpriseBuiltInDbmsProcedures = Neo4Net.Kernel.enterprise.builtinprocs.EnterpriseBuiltInDbmsProcedures;
@@ -135,9 +135,9 @@ namespace Neo4Net.causalclustering.readreplica
 	using UsageData = Neo4Net.Udc.UsageData;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.CausalClusteringSettings.transaction_listen_address;
+//	import static Neo4Net.causalclustering.core.CausalClusteringSettings.transaction_listen_address;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.discovery.ResolutionResolverFactory.chooseResolver;
+//	import static Neo4Net.causalclustering.discovery.ResolutionResolverFactory.chooseResolver;
 
 	/// <summary>
 	/// This implementation of <seealso cref="AbstractEditionModule"/> creates the implementations of services
@@ -149,7 +149,7 @@ namespace Neo4Net.causalclustering.readreplica
 		 private readonly LogProvider _logProvider;
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public EnterpriseReadReplicaEditionModule(final org.Neo4Net.graphdb.factory.module.PlatformModule platformModule, final org.Neo4Net.causalclustering.discovery.DiscoveryServiceFactory discoveryServiceFactory, org.Neo4Net.causalclustering.identity.MemberId myself)
+//ORIGINAL LINE: public EnterpriseReadReplicaEditionModule(final Neo4Net.graphdb.factory.module.PlatformModule platformModule, final Neo4Net.causalclustering.discovery.DiscoveryServiceFactory discoveryServiceFactory, Neo4Net.causalclustering.identity.MemberId myself)
 		 public EnterpriseReadReplicaEditionModule( PlatformModule platformModule, DiscoveryServiceFactory discoveryServiceFactory, MemberId myself )
 		 {
 			  LogService logging = platformModule.Logging;
@@ -162,7 +162,7 @@ namespace Neo4Net.causalclustering.readreplica
 			  FileSystemAbstraction fileSystem = platformModule.FileSystem;
 			  PageCache pageCache = platformModule.PageCache;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.io.layout.DatabaseLayout databaseLayout = platformModule.storeLayout.databaseLayout(config.get(org.Neo4Net.graphdb.factory.GraphDatabaseSettings.active_database));
+//ORIGINAL LINE: final Neo4Net.io.layout.DatabaseLayout databaseLayout = platformModule.storeLayout.databaseLayout(config.get(Neo4Net.graphdb.factory.GraphDatabaseSettings.active_database));
 			  DatabaseLayout databaseLayout = platformModule.StoreLayout.databaseLayout( config.Get( GraphDatabaseSettings.active_database ) );
 
 			  LifeSupport life = platformModule.Life;
@@ -243,7 +243,7 @@ namespace Neo4Net.causalclustering.readreplica
 			  CatchUpClient catchUpClient = life.Add( new CatchUpClient( _logProvider, Clocks.systemClock(), inactivityTimeoutMs, channelInitializer ) );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final System.Func<org.Neo4Net.kernel.internal.DatabaseHealth> databaseHealthSupplier = () -> platformModule.dataSourceManager.getDataSource().getDependencyResolver().resolveDependency(org.Neo4Net.kernel.internal.DatabaseHealth.class);
+//ORIGINAL LINE: final System.Func<Neo4Net.kernel.internal.DatabaseHealth> databaseHealthSupplier = () -> platformModule.dataSourceManager.getDataSource().getDependencyResolver().resolveDependency(Neo4Net.kernel.internal.DatabaseHealth.class);
 			  System.Func<DatabaseHealth> databaseHealthSupplier = () => platformModule.DataSourceManager.DataSource.DependencyResolver.resolveDependency(typeof(DatabaseHealth));
 
 			  StoreFiles storeFiles = new StoreFiles( fileSystem, pageCache );
@@ -335,7 +335,7 @@ namespace Neo4Net.causalclustering.readreplica
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void registerEditionSpecificProcedures(org.Neo4Net.kernel.impl.proc.Procedures procedures) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: public void registerEditionSpecificProcedures(Neo4Net.kernel.impl.proc.Procedures procedures) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 public override void RegisterEditionSpecificProcedures( Procedures procedures )
 		 {
 			  procedures.RegisterProcedure( typeof( EnterpriseBuiltInDbmsProcedures ), true );

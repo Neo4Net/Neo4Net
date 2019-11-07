@@ -40,7 +40,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	internal class SpatialVerifyDeferredConstraint
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static void verify(org.Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor nodePropertyAccessor, IndexLayout<SpatialIndexKey,NativeIndexValue> layout, org.Neo4Net.index.internal.gbptree.GBPTree<SpatialIndexKey,NativeIndexValue> tree, org.Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor descriptor) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: static void verify(Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor nodePropertyAccessor, IndexLayout<SpatialIndexKey,NativeIndexValue> layout, Neo4Net.index.internal.gbptree.GBPTree<SpatialIndexKey,NativeIndexValue> tree, Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor descriptor) throws Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 internal static void Verify( NodePropertyAccessor nodePropertyAccessor, IndexLayout<SpatialIndexKey, NativeIndexValue> layout, GBPTree<SpatialIndexKey, NativeIndexValue> tree, StoreIndexDescriptor descriptor )
 		 {
 			  SpatialIndexKey from = layout.newKey();
@@ -60,7 +60,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void scanAndVerifyDuplicates(org.Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor nodePropertyAccessor, org.Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor descriptor, org.Neo4Net.cursor.RawCursor<org.Neo4Net.index.internal.gbptree.Hit<SpatialIndexKey,NativeIndexValue>,java.io.IOException> seek) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: private static void scanAndVerifyDuplicates(Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor nodePropertyAccessor, Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor descriptor, Neo4Net.cursor.RawCursor<Neo4Net.index.internal.gbptree.Hit<SpatialIndexKey,NativeIndexValue>,java.io.IOException> seek) throws java.io.IOException, Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 private static void ScanAndVerifyDuplicates( NodePropertyAccessor nodePropertyAccessor, StoreIndexDescriptor descriptor, IRawCursor<Hit<SpatialIndexKey, NativeIndexValue>, IOException> seek )
 		 {
 			  LongArrayList nodesWithCollidingPoints = new LongArrayList();
@@ -100,7 +100,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void verifyConstraintOn(org.eclipse.collections.impl.list.mutable.primitive.LongArrayList nodeIds, org.Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor nodePropertyAccessor, org.Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor descriptor) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: private static void verifyConstraintOn(org.eclipse.collections.impl.list.mutable.primitive.LongArrayList nodeIds, Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor nodePropertyAccessor, Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor descriptor) throws Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 private static void VerifyConstraintOn( LongArrayList nodeIds, NodePropertyAccessor nodePropertyAccessor, StoreIndexDescriptor descriptor )
 		 {
 			  MutableMap<Value, long> points = Maps.mutable.empty();

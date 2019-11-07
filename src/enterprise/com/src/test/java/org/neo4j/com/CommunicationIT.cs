@@ -69,13 +69,13 @@ namespace Neo4Net.com
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verifyZeroInteractions;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.com.MadeUpServer.FRAME_LENGTH;
+//	import static Neo4Net.com.MadeUpServer.FRAME_LENGTH;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.com.StoreIdTestFactory.newStoreIdForCurrentVersion;
+//	import static Neo4Net.com.StoreIdTestFactory.newStoreIdForCurrentVersion;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.com.TxChecksumVerifier_Fields.ALWAYS_MATCH;
+//	import static Neo4Net.com.TxChecksumVerifier_Fields.ALWAYS_MATCH;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.com.storecopy.ResponseUnpacker_TxHandler_Fields.NO_OP_TX_HANDLER;
+//	import static Neo4Net.com.storecopy.ResponseUnpacker_TxHandler_Fields.NO_OP_TX_HANDLER;
 
 	public class CommunicationIT
 	{
@@ -133,7 +133,7 @@ namespace Neo4Net.com
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(expected = org.Neo4Net.kernel.impl.store.MismatchingStoreIdException.class) public void makeSureClientStoreIdsMustMatch()
+//ORIGINAL LINE: @Test(expected = Neo4Net.kernel.impl.store.MismatchingStoreIdException.class) public void makeSureClientStoreIdsMustMatch()
 		 public virtual void MakeSureClientStoreIdsMustMatch()
 		 {
 			  MadeUpServer server = _builder.server();
@@ -144,7 +144,7 @@ namespace Neo4Net.com
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(expected = org.Neo4Net.kernel.impl.store.MismatchingStoreIdException.class) public void makeSureServerStoreIdsMustMatch()
+//ORIGINAL LINE: @Test(expected = Neo4Net.kernel.impl.store.MismatchingStoreIdException.class) public void makeSureServerStoreIdsMustMatch()
 		 public virtual void MakeSureServerStoreIdsMustMatch()
 		 {
 			  MadeUpServer server = _builder.storeId( newStoreIdForCurrentVersion( 10, 10, 10, 10 ) ).server();

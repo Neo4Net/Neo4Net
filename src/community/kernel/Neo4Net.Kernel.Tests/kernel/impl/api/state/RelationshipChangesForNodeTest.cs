@@ -31,11 +31,11 @@ namespace Neo4Net.Kernel.Impl.Api.state
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.Matchers.equalTo;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.StorageEngine.RelationshipDirection.INCOMING;
+//	import static Neo4Net.Kernel.Api.StorageEngine.RelationshipDirection.INCOMING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.StorageEngine.RelationshipDirection.LOOP;
+//	import static Neo4Net.Kernel.Api.StorageEngine.RelationshipDirection.LOOP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.StorageEngine.RelationshipDirection.OUTGOING;
+//	import static Neo4Net.Kernel.Api.StorageEngine.RelationshipDirection.OUTGOING;
 
 	public class RelationshipChangesForNodeTest
 	{

@@ -24,8 +24,8 @@ namespace Neo4Net.Kernel.impl.query
 
 	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
 	using Kernel = Neo4Net.Kernel.Api.Internal.Kernel;
-	using Statement = Neo4Net.Kernel.api.Statement;
-	using ExecutingQuery = Neo4Net.Kernel.api.query.ExecutingQuery;
+	using Statement = Neo4Net.Kernel.Api.Statement;
+	using ExecutingQuery = Neo4Net.Kernel.Api.query.ExecutingQuery;
 	using ThreadToStatementContextBridge = Neo4Net.Kernel.impl.core.ThreadToStatementContextBridge;
 	using InternalTransaction = Neo4Net.Kernel.impl.coreapi.InternalTransaction;
 	using IPropertyContainerLocker = Neo4Net.Kernel.impl.coreapi.PropertyContainerLocker;
@@ -34,7 +34,7 @@ namespace Neo4Net.Kernel.impl.query
 	using MapValue = Neo4Net.Values.@virtual.MapValue;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.function.Suppliers.lazySingleton;
+//	import static Neo4Net.function.Suppliers.lazySingleton;
 
 	public class Neo4NetTransactionalContextFactory : TransactionalContextFactory
 	{

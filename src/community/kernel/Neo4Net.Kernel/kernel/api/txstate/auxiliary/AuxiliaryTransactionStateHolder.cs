@@ -19,7 +19,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Kernel.api.txstate.auxiliary
+namespace Neo4Net.Kernel.Api.txstate.auxiliary
 {
 
 	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
@@ -69,7 +69,7 @@ namespace Neo4Net.Kernel.api.txstate.auxiliary
 		 /// <param name="extractedCommands"> The collection to add the extracted commands to. </param>
 		 /// <exception cref="TransactionFailureException"> If the transaction state wanted to produce commands, but is somehow unable to do so. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void extractCommands(java.util.Collection<org.Neo4Net.Kernel.Api.StorageEngine.StorageCommand> extractedCommands) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
+//ORIGINAL LINE: void extractCommands(java.util.Collection<Neo4Net.Kernel.Api.StorageEngine.StorageCommand> extractedCommands) throws Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
 		 void ExtractCommands( ICollection<StorageCommand> extractedCommands );
 
 		 /// <summary>

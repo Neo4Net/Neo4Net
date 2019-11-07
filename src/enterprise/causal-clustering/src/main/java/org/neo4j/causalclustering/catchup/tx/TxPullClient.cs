@@ -40,7 +40,7 @@ namespace Neo4Net.causalclustering.catchup.tx
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.causalclustering.catchup.TxPullRequestResult pullTransactions(org.Neo4Net.helpers.AdvertisedSocketAddress fromAddress, org.Neo4Net.causalclustering.identity.StoreId storeId, long previousTxId, TxPullResponseListener txPullResponseListener) throws org.Neo4Net.causalclustering.catchup.CatchUpClientException
+//ORIGINAL LINE: public Neo4Net.causalclustering.catchup.TxPullRequestResult pullTransactions(Neo4Net.helpers.AdvertisedSocketAddress fromAddress, Neo4Net.causalclustering.identity.StoreId storeId, long previousTxId, TxPullResponseListener txPullResponseListener) throws Neo4Net.causalclustering.catchup.CatchUpClientException
 		 public virtual TxPullRequestResult PullTransactions( AdvertisedSocketAddress fromAddress, StoreId storeId, long previousTxId, TxPullResponseListener txPullResponseListener )
 		 {
 			  _pullRequestMonitor.txPullRequest( previousTxId );

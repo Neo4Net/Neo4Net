@@ -66,19 +66,19 @@ namespace Neo4Net.Kernel.impl.transaction.log
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.rotation.LogRotation.NO_ROTATION;
+//	import static Neo4Net.kernel.impl.transaction.log.rotation.LogRotation.NO_ROTATION;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.util.IdOrderingQueue.BYPASS;
+//	import static Neo4Net.kernel.impl.util.IdOrderingQueue.BYPASS;
 
 	public class PhysicalLogicalTransactionStoreTest
 	{
 		 private static readonly DatabaseHealth _databaseHealth = mock( typeof( DatabaseHealth ) );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.fs.DefaultFileSystemRule fileSystemRule = new org.Neo4Net.test.rule.fs.DefaultFileSystemRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.fs.DefaultFileSystemRule fileSystemRule = new Neo4Net.test.rule.fs.DefaultFileSystemRule();
 		 public readonly DefaultFileSystemRule FileSystemRule = new DefaultFileSystemRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory dir = org.Neo4Net.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.TestDirectory dir = Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory Dir = TestDirectory.testDirectory();
 		 private File _databaseDirectory;
 		 private Monitors _monitors = new Monitors();
@@ -107,7 +107,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 			  long timeCommitted = timeStarted + 10;
 			  LifeSupport life = new LifeSupport();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.transaction.log.files.LogFiles logFiles = org.Neo4Net.kernel.impl.transaction.log.files.LogFilesBuilder.builder(dir.databaseLayout(), fileSystemRule.get()).withTransactionIdStore(transactionIdStore).withLogVersionRepository(mock(LogVersionRepository.class)).build();
+//ORIGINAL LINE: final Neo4Net.kernel.impl.transaction.log.files.LogFiles logFiles = Neo4Net.kernel.impl.transaction.log.files.LogFilesBuilder.builder(dir.databaseLayout(), fileSystemRule.get()).withTransactionIdStore(transactionIdStore).withLogVersionRepository(mock(LogVersionRepository.class)).build();
 			  LogFiles logFiles = LogFilesBuilder.builder( Dir.databaseLayout(), FileSystemRule.get() ).withTransactionIdStore(transactionIdStore).withLogVersionRepository(mock(typeof(LogVersionRepository))).build();
 			  life.Add( logFiles );
 			  life.Start();
@@ -125,7 +125,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 			  positionCache.Clear();
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final LogicalTransactionStore store = new PhysicalLogicalTransactionStore(logFiles, positionCache, new org.Neo4Net.kernel.impl.transaction.log.entry.VersionAwareLogEntryReader<>(), monitors, true);
+//ORIGINAL LINE: final LogicalTransactionStore store = new PhysicalLogicalTransactionStore(logFiles, positionCache, new Neo4Net.kernel.impl.transaction.log.entry.VersionAwareLogEntryReader<>(), monitors, true);
 			  LogicalTransactionStore store = new PhysicalLogicalTransactionStore( logFiles, positionCache, new VersionAwareLogEntryReader<ReadableClosablePositionAwareChannel>(), _monitors, true );
 			  VerifyTransaction( transactionIdStore, positionCache, additionalHeader, masterId, authorId, timeStarted, latestCommittedTxWhenStarted, timeCommitted, store );
 		 }
@@ -141,7 +141,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 
 			  LifeSupport life = new LifeSupport();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.transaction.log.files.LogFiles logFiles = org.Neo4Net.kernel.impl.transaction.log.files.LogFilesBuilder.builder(dir.databaseLayout(), fileSystemRule.get()).withTransactionIdStore(transactionIdStore).withLogVersionRepository(mock(LogVersionRepository.class)).build();
+//ORIGINAL LINE: final Neo4Net.kernel.impl.transaction.log.files.LogFiles logFiles = Neo4Net.kernel.impl.transaction.log.files.LogFilesBuilder.builder(dir.databaseLayout(), fileSystemRule.get()).withTransactionIdStore(transactionIdStore).withLogVersionRepository(mock(LogVersionRepository.class)).build();
 			  LogFiles logFiles = LogFilesBuilder.builder( Dir.databaseLayout(), FileSystemRule.get() ).withTransactionIdStore(transactionIdStore).withLogVersionRepository(mock(typeof(LogVersionRepository))).build();
 			  life.Add( logFiles );
 
@@ -176,7 +176,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 			  long timeCommitted = timeStarted + 10;
 			  LifeSupport life = new LifeSupport();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.transaction.log.files.LogFiles logFiles = org.Neo4Net.kernel.impl.transaction.log.files.LogFilesBuilder.builder(dir.databaseLayout(), fileSystemRule.get()).withTransactionIdStore(transactionIdStore).withLogVersionRepository(mock(LogVersionRepository.class)).build();
+//ORIGINAL LINE: final Neo4Net.kernel.impl.transaction.log.files.LogFiles logFiles = Neo4Net.kernel.impl.transaction.log.files.LogFilesBuilder.builder(dir.databaseLayout(), fileSystemRule.get()).withTransactionIdStore(transactionIdStore).withLogVersionRepository(mock(LogVersionRepository.class)).build();
 			  LogFiles logFiles = LogFilesBuilder.builder( Dir.databaseLayout(), FileSystemRule.get() ).withTransactionIdStore(transactionIdStore).withLogVersionRepository(mock(typeof(LogVersionRepository))).build();
 
 			  life.Start();
@@ -290,7 +290,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 			  long timeCommitted = timeStarted + 10;
 			  LifeSupport life = new LifeSupport();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.transaction.log.files.LogFiles logFiles = org.Neo4Net.kernel.impl.transaction.log.files.LogFilesBuilder.builder(dir.databaseLayout(), fileSystemRule.get()).withTransactionIdStore(transactionIdStore).withLogVersionRepository(mock(LogVersionRepository.class)).build();
+//ORIGINAL LINE: final Neo4Net.kernel.impl.transaction.log.files.LogFiles logFiles = Neo4Net.kernel.impl.transaction.log.files.LogFilesBuilder.builder(dir.databaseLayout(), fileSystemRule.get()).withTransactionIdStore(transactionIdStore).withLogVersionRepository(mock(LogVersionRepository.class)).build();
 			  LogFiles logFiles = LogFilesBuilder.builder( Dir.databaseLayout(), FileSystemRule.get() ).withTransactionIdStore(transactionIdStore).withLogVersionRepository(mock(typeof(LogVersionRepository))).build();
 			  life.Start();
 			  life.Add( logFiles );
@@ -306,7 +306,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 			  life = new LifeSupport();
 			  life.Add( logFiles );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final LogicalTransactionStore store = new PhysicalLogicalTransactionStore(logFiles, positionCache, new org.Neo4Net.kernel.impl.transaction.log.entry.VersionAwareLogEntryReader<>(), monitors, true);
+//ORIGINAL LINE: final LogicalTransactionStore store = new PhysicalLogicalTransactionStore(logFiles, positionCache, new Neo4Net.kernel.impl.transaction.log.entry.VersionAwareLogEntryReader<>(), monitors, true);
 			  LogicalTransactionStore store = new PhysicalLogicalTransactionStore( logFiles, positionCache, new VersionAwareLogEntryReader<ReadableClosablePositionAwareChannel>(), _monitors, true );
 
 			  // WHEN
@@ -333,7 +333,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 			  LifeSupport life = new LifeSupport();
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final LogicalTransactionStore txStore = new PhysicalLogicalTransactionStore(logFiles, cache, new org.Neo4Net.kernel.impl.transaction.log.entry.VersionAwareLogEntryReader<>(), monitors, true);
+//ORIGINAL LINE: final LogicalTransactionStore txStore = new PhysicalLogicalTransactionStore(logFiles, cache, new Neo4Net.kernel.impl.transaction.log.entry.VersionAwareLogEntryReader<>(), monitors, true);
 			  LogicalTransactionStore txStore = new PhysicalLogicalTransactionStore( logFiles, cache, new VersionAwareLogEntryReader<ReadableClosablePositionAwareChannel>(), _monitors, true );
 
 			  try
@@ -373,7 +373,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 			  LifeSupport life = new LifeSupport();
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final LogicalTransactionStore txStore = new PhysicalLogicalTransactionStore(logFiles, cache, new org.Neo4Net.kernel.impl.transaction.log.entry.VersionAwareLogEntryReader<>(), monitors, true);
+//ORIGINAL LINE: final LogicalTransactionStore txStore = new PhysicalLogicalTransactionStore(logFiles, cache, new Neo4Net.kernel.impl.transaction.log.entry.VersionAwareLogEntryReader<>(), monitors, true);
 			  LogicalTransactionStore txStore = new PhysicalLogicalTransactionStore( logFiles, cache, new VersionAwareLogEntryReader<ReadableClosablePositionAwareChannel>(), _monitors, true );
 
 			  try
@@ -401,7 +401,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void addATransactionAndRewind(org.Neo4Net.kernel.lifecycle.LifeSupport life, org.Neo4Net.kernel.impl.transaction.log.files.LogFiles logFiles, TransactionMetadataCache positionCache, TransactionIdStore transactionIdStore, byte[] additionalHeader, int masterId, int authorId, long timeStarted, long latestCommittedTxWhenStarted, long timeCommitted) throws java.io.IOException
+//ORIGINAL LINE: private void addATransactionAndRewind(Neo4Net.kernel.lifecycle.LifeSupport life, Neo4Net.kernel.impl.transaction.log.files.LogFiles logFiles, TransactionMetadataCache positionCache, TransactionIdStore transactionIdStore, byte[] additionalHeader, int masterId, int authorId, long timeStarted, long latestCommittedTxWhenStarted, long timeCommitted) throws java.io.IOException
 		 private void AddATransactionAndRewind( LifeSupport life, LogFiles logFiles, TransactionMetadataCache positionCache, TransactionIdStore transactionIdStore, sbyte[] additionalHeader, int masterId, int authorId, long timeStarted, long latestCommittedTxWhenStarted, long timeCommitted )
 		 {
 			  TransactionAppender appender = life.Add( new BatchingTransactionAppender( logFiles, NO_ROTATION, positionCache, transactionIdStore, BYPASS, _databaseHealth ) );

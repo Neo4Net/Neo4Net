@@ -37,19 +37,19 @@ namespace Neo4Net.Kernel.Api.Internal
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.Direction.BOTH;
+//	import static Neo4Net.graphdb.Direction.BOTH;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.Direction.INCOMING;
+//	import static Neo4Net.graphdb.Direction.INCOMING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.Direction.OUTGOING;
+//	import static Neo4Net.graphdb.Direction.OUTGOING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.RelationshipType.withName;
+//	import static Neo4Net.graphdb.RelationshipType.withName;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.RelationshipTestSupport.assertCount;
+//	import static Neo4Net.Kernel.Api.Internal.RelationshipTestSupport.assertCount;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.RelationshipTestSupport.assertCounts;
+//	import static Neo4Net.Kernel.Api.Internal.RelationshipTestSupport.assertCounts;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.RelationshipTestSupport.count;
+//	import static Neo4Net.Kernel.Api.Internal.RelationshipTestSupport.count;
 
 	public abstract class RelationshipTraversalCursorTestBase<G> : KernelAPIReadTestBase<G> where G : KernelAPIReadTestSupport
 	{
@@ -309,7 +309,7 @@ namespace Neo4Net.Kernel.Api.Internal
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void traverseViaGroups(RelationshipTestSupport.StartNode start, boolean detached) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: private void traverseViaGroups(RelationshipTestSupport.StartNode start, boolean detached) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 private void TraverseViaGroups( RelationshipTestSupport.StartNode start, bool detached )
 		 {
 			  // given
@@ -371,7 +371,7 @@ namespace Neo4Net.Kernel.Api.Internal
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void traverseWithoutGroups(RelationshipTestSupport.StartNode start, boolean detached) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: private void traverseWithoutGroups(RelationshipTestSupport.StartNode start, boolean detached) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 private void TraverseWithoutGroups( RelationshipTestSupport.StartNode start, bool detached )
 		 {
 			  // given

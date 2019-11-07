@@ -34,7 +34,7 @@ namespace Neo4Net.causalclustering.core.state.machines.tx
 	using TransactionApplicationMode = Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.exceptions.Status_Cluster.ReplicationFailure;
+//	import static Neo4Net.kernel.api.exceptions.Status_Cluster.ReplicationFailure;
 
 	public class ReplicatedTransactionCommitProcess : TransactionCommitProcess
 	{
@@ -46,7 +46,7 @@ namespace Neo4Net.causalclustering.core.state.machines.tx
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public long commit(final org.Neo4Net.kernel.impl.api.TransactionToApply tx, final org.Neo4Net.kernel.impl.transaction.tracing.CommitEvent commitEvent, org.Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode mode) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
+//ORIGINAL LINE: public long commit(final Neo4Net.kernel.impl.api.TransactionToApply tx, final Neo4Net.kernel.impl.transaction.tracing.CommitEvent commitEvent, Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode mode) throws Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 		 public override long Commit( TransactionToApply tx, CommitEvent commitEvent, TransactionApplicationMode mode )
 		 {

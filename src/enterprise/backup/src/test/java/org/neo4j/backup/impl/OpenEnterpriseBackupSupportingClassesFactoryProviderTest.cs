@@ -27,7 +27,7 @@ namespace Neo4Net.backup.impl
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.backup.impl.OpenEnterpriseBackupSupportingClassesFactoryProvider.getProvidersByPriority;
+//	import static Neo4Net.backup.impl.OpenEnterpriseBackupSupportingClassesFactoryProvider.getProvidersByPriority;
 
 	// See: https://github.com/Neo4Net/Neo4Net/blob/3.4/enterprise/backup/src/test/java/org/Neo4Net/backup/impl/BackupSupportingClassesFactoryProviderTest.java
 	public class OpenEnterpriseBackupSupportingClassesFactoryProviderTest

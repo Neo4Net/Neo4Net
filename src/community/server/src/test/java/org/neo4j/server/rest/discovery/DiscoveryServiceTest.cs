@@ -56,7 +56,7 @@ namespace Neo4Net.Server.rest.discovery
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.discovery.CommunityDiscoverableURIs.communityDiscoverableURIs;
+//	import static Neo4Net.server.rest.discovery.CommunityDiscoverableURIs.communityDiscoverableURIs;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class DiscoveryServiceTest
@@ -120,7 +120,7 @@ namespace Neo4Net.Server.rest.discovery
 		 private string _expectedBoltUri;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public DiscoveryServiceTest(String description, String baseUri, System.Action<org.Neo4Net.kernel.configuration.ConnectorPortRegister> portRegistryOverrider, System.Action<org.Neo4Net.kernel.configuration.Config> configOverrider, String expectedBoltUri) throws Throwable
+//ORIGINAL LINE: public DiscoveryServiceTest(String description, String baseUri, System.Action<Neo4Net.kernel.configuration.ConnectorPortRegister> portRegistryOverrider, System.Action<Neo4Net.kernel.configuration.Config> configOverrider, String expectedBoltUri) throws Throwable
 		 public DiscoveryServiceTest( string description, string baseUri, System.Action<ConnectorPortRegister> portRegistryOverrider, System.Action<Config> configOverrider, string expectedBoltUri )
 		 {
 			  this._baseUri = new URI( baseUri );
@@ -283,7 +283,7 @@ namespace Neo4Net.Server.rest.discovery
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SafeVarargs private static System.Action<org.Neo4Net.kernel.configuration.Config> combineConfigOverriders(System.Action<org.Neo4Net.kernel.configuration.Config>... overriders)
+//ORIGINAL LINE: @SafeVarargs private static System.Action<Neo4Net.kernel.configuration.Config> combineConfigOverriders(System.Action<Neo4Net.kernel.configuration.Config>... overriders)
 		 private static System.Action<Config> CombineConfigOverriders( params System.Action<Config>[] overriders )
 		 {
 			  return config =>

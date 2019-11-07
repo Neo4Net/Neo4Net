@@ -28,14 +28,14 @@ namespace Neo4Net.Kernel.impl.core
 	public class ReadOnlyTokenCreator : TokenCreator
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public int createToken(String name) throws org.Neo4Net.kernel.api.exceptions.ReadOnlyDbException
+//ORIGINAL LINE: public int createToken(String name) throws Neo4Net.kernel.api.exceptions.ReadOnlyDbException
 		 public override int CreateToken( string name )
 		 {
 			  throw new ReadOnlyDbException();
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void createTokens(String[] names, int[] ids, System.Func<int, boolean> filter) throws org.Neo4Net.kernel.api.exceptions.ReadOnlyDbException
+//ORIGINAL LINE: public void createTokens(String[] names, int[] ids, System.Func<int, boolean> filter) throws Neo4Net.kernel.api.exceptions.ReadOnlyDbException
 		 public override void CreateTokens( string[] names, int[] ids, System.Func<int, bool> filter )
 		 {
 			  throw new ReadOnlyDbException();

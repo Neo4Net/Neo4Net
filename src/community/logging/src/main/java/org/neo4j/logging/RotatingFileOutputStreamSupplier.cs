@@ -28,7 +28,7 @@ namespace Neo4Net.Logging
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.file.Files.createOrOpenAsOutputStream;
+//	import static Neo4Net.io.file.Files.createOrOpenAsOutputStream;
 
 	/// <summary>
 	/// A <seealso cref="Supplier"/> of <seealso cref="System.IO.Stream_Output"/>s backed by on-disk files, which
@@ -85,7 +85,7 @@ namespace Neo4Net.Logging
 		 /// <param name="rotationExecutor"> An <seealso cref="Executor"/> for performing the rotation </param>
 		 /// <exception cref="IOException"> If the output file cannot be created </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public RotatingFileOutputStreamSupplier(org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, java.io.File outputFile, long rotationThresholdBytes, long rotationDelay, int maxArchives, java.util.concurrent.Executor rotationExecutor) throws java.io.IOException
+//ORIGINAL LINE: public RotatingFileOutputStreamSupplier(Neo4Net.io.fs.FileSystemAbstraction fileSystem, java.io.File outputFile, long rotationThresholdBytes, long rotationDelay, int maxArchives, java.util.concurrent.Executor rotationExecutor) throws java.io.IOException
 		 public RotatingFileOutputStreamSupplier( FileSystemAbstraction fileSystem, File outputFile, long rotationThresholdBytes, long rotationDelay, int maxArchives, Executor rotationExecutor ) : this( fileSystem, outputFile, rotationThresholdBytes, rotationDelay, maxArchives, rotationExecutor, new RotationListener() )
 		 {
 		 }
@@ -96,17 +96,17 @@ namespace Neo4Net.Logging
 		 /// <param name="rotationDelay"> The minimum time (ms) after last rotation before the file may be rotated again </param>
 		 /// <param name="maxArchives"> The maximum number of archived output files to keep </param>
 		 /// <param name="rotationExecutor"> An <seealso cref="Executor"/> for performing the rotation </param>
-		 /// <param name="rotationListener"> A <seealso cref="org.Neo4Net.logging.RotatingFileOutputStreamSupplier.RotationListener"/> that can
+		 /// <param name="rotationListener"> A <seealso cref="Neo4Net.logging.RotatingFileOutputStreamSupplier.RotationListener"/> that can
 		 /// observe the rotation process and be notified of errors </param>
 		 /// <exception cref="IOException"> If the output file cannot be created </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public RotatingFileOutputStreamSupplier(org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, java.io.File outputFile, long rotationThresholdBytes, long rotationDelay, int maxArchives, java.util.concurrent.Executor rotationExecutor, RotationListener rotationListener) throws java.io.IOException
+//ORIGINAL LINE: public RotatingFileOutputStreamSupplier(Neo4Net.io.fs.FileSystemAbstraction fileSystem, java.io.File outputFile, long rotationThresholdBytes, long rotationDelay, int maxArchives, java.util.concurrent.Executor rotationExecutor, RotationListener rotationListener) throws java.io.IOException
 		 public RotatingFileOutputStreamSupplier( FileSystemAbstraction fileSystem, File outputFile, long rotationThresholdBytes, long rotationDelay, int maxArchives, Executor rotationExecutor, RotationListener rotationListener ) : this( _defaultCurrentTimeSupplier, fileSystem, outputFile, rotationThresholdBytes, rotationDelay, maxArchives, rotationExecutor, rotationListener )
 		 {
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: RotatingFileOutputStreamSupplier(System.Func<long> currentTimeSupplier, org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, java.io.File outputFile, long rotationThresholdBytes, long rotationDelay, int maxArchives, java.util.concurrent.Executor rotationExecutor, RotationListener rotationListener) throws java.io.IOException
+//ORIGINAL LINE: RotatingFileOutputStreamSupplier(System.Func<long> currentTimeSupplier, Neo4Net.io.fs.FileSystemAbstraction fileSystem, java.io.File outputFile, long rotationThresholdBytes, long rotationDelay, int maxArchives, java.util.concurrent.Executor rotationExecutor, RotationListener rotationListener) throws java.io.IOException
 		 internal RotatingFileOutputStreamSupplier( System.Func<long> currentTimeSupplier, FileSystemAbstraction fileSystem, File outputFile, long rotationThresholdBytes, long rotationDelay, int maxArchives, Executor rotationExecutor, RotationListener rotationListener )
 		 {
 			  this._currentTimeSupplier = currentTimeSupplier;

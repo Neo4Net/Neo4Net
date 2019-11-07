@@ -32,17 +32,17 @@ namespace Neo4Net.Index.Internal.gbptree
 	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.config.Configuration.EMPTY;
+//	import static Neo4Net.graphdb.config.Configuration.EMPTY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Internal.gbptree.GBPTree.NO_HEADER_READER;
+//	import static Neo4Net.index.Internal.gbptree.GBPTree.NO_HEADER_READER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Internal.gbptree.GBPTree.NO_HEADER_WRITER;
+//	import static Neo4Net.index.Internal.gbptree.GBPTree.NO_HEADER_WRITER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Internal.gbptree.GBPTree.NO_MONITOR;
+//	import static Neo4Net.index.Internal.gbptree.GBPTree.NO_MONITOR;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Internal.gbptree.RecoveryCleanupWorkCollector.ignore;
+//	import static Neo4Net.index.Internal.gbptree.RecoveryCleanupWorkCollector.ignore;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.pagecache.tracing.PageCacheTracer.NULL;
+//	import static Neo4Net.io.pagecache.tracing.PageCacheTracer.NULL;
 
 	public class GBPTreeBootstrapper
 	{

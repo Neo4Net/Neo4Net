@@ -26,7 +26,7 @@ namespace Neo4Net.GraphAlgo.ShortestPath
     using Neo4Net.GraphAlgo;
     using Direction = Neo4Net.GraphDb.Direction;
     using Node = Neo4Net.GraphDb.Node;
-    using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
+    using IPropertyContainer = Neo4Net.GraphDb.IPropertyContainer;
     using Relationship = Neo4Net.GraphDb.Relationship;
     using RelationshipType = Neo4Net.GraphDb.RelationshipType;
     using Neo4Net.GraphDb;
@@ -292,7 +292,7 @@ namespace Neo4Net.GraphAlgo.ShortestPath
                     // Otherwise, follow all edges from this node
                     foreach (RelationshipType costRelationType in outerInstance.CostRelationTypes)
                     {
-                        ResourceIterable<Relationship> relationships = Iterables.asResourceIterable(currentNode.GetRelationships(costRelationType, Direction));
+                       IResourceIterable<Relationship> relationships = Iterables.asResourceIterable(currentNode.GetRelationships(costRelationType, Direction));
                         using (ResourceIterator<Relationship> iterator = relationships.GetEnumerator())
                         {
                             while (iterator.MoveNext())

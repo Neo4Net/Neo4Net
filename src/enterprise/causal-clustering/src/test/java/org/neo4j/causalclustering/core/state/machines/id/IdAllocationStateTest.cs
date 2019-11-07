@@ -64,7 +64,7 @@ namespace Neo4Net.causalclustering.core.state.machines.id
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldThrowExceptionForHalfWrittenEntries() throws java.io.IOException, org.Neo4Net.causalclustering.messaging.EndOfStreamException
+//ORIGINAL LINE: @Test public void shouldThrowExceptionForHalfWrittenEntries() throws java.io.IOException, Neo4Net.causalclustering.messaging.EndOfStreamException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldThrowExceptionForHalfWrittenEntries()
 		 {

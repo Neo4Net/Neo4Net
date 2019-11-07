@@ -38,9 +38,9 @@ namespace Neo4Net.Kernel.impl.traversal
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.Direction.OUTGOING;
+//	import static Neo4Net.graphdb.Direction.OUTGOING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.traversal.Evaluation.ofIncludes;
+//	import static Neo4Net.graphdb.traversal.Evaluation.ofIncludes;
 
 	public class TestBranchState : TraversalTestBase
 	{
@@ -115,7 +115,7 @@ namespace Neo4Net.Kernel.impl.traversal
 				 this.outerInstance = outerInstance;
 			 }
 
-			 public override Evaluation evaluate( Path path, BranchState<int> state )
+			 public override Evaluation Evaluate( Path path, BranchState<int> state )
 			 {
 				  return ofIncludes( path.EndNode().getProperty("name").Equals("c") && state.State == 3 );
 			 }

@@ -38,10 +38,10 @@ namespace Neo4Net.Kernel.Api.Internal.Schema
       Add new overloaded methods here when adding more concrete SchemaDescriptors.
        */
 
-      R ComputeSpecific(LabelSchemaDescriptor schema);
+      R ComputeSpecific(ILabelSchemaDescriptor schema);
 
-      R ComputeSpecific(RelationTypeSchemaDescriptor schema);
+      R ComputeSpecific(IRelationTypeSchemaDescriptor schema);
 
-      R ComputeSpecific(SchemaDescriptor schema);
+      R ComputeSpecific(ISchemaDescriptor schema);
    }
 }

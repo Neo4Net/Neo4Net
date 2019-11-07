@@ -77,17 +77,17 @@ namespace Schema
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.progress.ProgressMonitorFactory.NONE;
+//	import static Neo4Net.helpers.progress.ProgressMonitorFactory.NONE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.AdditionalInitialIds.EMPTY;
+//	import static Neo4Net.@unsafe.impl.batchimport.AdditionalInitialIds.EMPTY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.Configuration.DEFAULT;
+//	import static Neo4Net.@unsafe.impl.batchimport.Configuration.DEFAULT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.GeneratingInputIterator.EMPTY_ITERABLE;
+//	import static Neo4Net.@unsafe.impl.batchimport.GeneratingInputIterator.EMPTY_ITERABLE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.ImportLogic.NO_MONITOR;
+//	import static Neo4Net.@unsafe.impl.batchimport.ImportLogic.NO_MONITOR;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.input.Inputs.knownEstimates;
+//	import static Neo4Net.@unsafe.impl.batchimport.input.Inputs.knownEstimates;
 
 	/// <summary>
 	/// Idea is to test a <seealso cref="MultipleIndexPopulator"/> and <seealso cref="BatchingMultipleIndexPopulator"/> with a bunch of indexes,
@@ -209,7 +209,7 @@ namespace Schema
 		 private void PopulateDbAndIndexes( int nodeCount, bool multiThreaded )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.graphdb.GraphDatabaseService db = new org.Neo4Net.test.TestGraphDatabaseFactory().newEmbeddedDatabaseBuilder(directory.databaseDir()).setConfig(org.Neo4Net.graphdb.factory.GraphDatabaseSettings.multi_threaded_schema_index_population_enabled, multiThreaded + "").newGraphDatabase();
+//ORIGINAL LINE: final Neo4Net.graphdb.GraphDatabaseService db = new Neo4Net.test.TestGraphDatabaseFactory().newEmbeddedDatabaseBuilder(directory.databaseDir()).setConfig(Neo4Net.graphdb.factory.GraphDatabaseSettings.multi_threaded_schema_index_population_enabled, multiThreaded + "").newGraphDatabase();
 			  IGraphDatabaseService db = ( new TestGraphDatabaseFactory() ).newEmbeddedDatabaseBuilder(_directory.databaseDir()).setConfig(GraphDatabaseSettings.multi_threaded_schema_index_population_enabled, multiThreaded + "").newGraphDatabase();
 			  try
 			  {

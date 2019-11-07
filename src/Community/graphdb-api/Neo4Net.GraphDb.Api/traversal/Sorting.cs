@@ -26,7 +26,7 @@ namespace Neo4Net.GraphDb.Traversal
     using Neo4Net.GraphDb;
 
     //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-    //	import static org.Neo4Net.graphdb.traversal.Paths.singleNodePath;
+    //	import static Neo4Net.GraphDb.traversal.Paths.singleNodePath;
 
     /// <summary>
     /// Provides some common traversal sorting, used by
@@ -45,7 +45,7 @@ namespace Neo4Net.GraphDb.Traversal
         /// <param name="propertyKey"> the property key of the values to sort on. </param>
         /// <returns> a <seealso cref="System.Collections.IComparer"/> suitable for sorting traversal results. </returns>
         //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-        //ORIGINAL LINE: public static java.util.Comparator<? super org.Neo4Net.graphdb.Path> endNodeProperty(final String propertyKey)
+        //ORIGINAL LINE: public static java.util.Comparator<? super Neo4Net.GraphDb.Path> endNodeProperty(final String propertyKey)
         //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
         //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
         public static IComparer<object> EndNodeProperty(string propertyKey)
@@ -63,7 +63,7 @@ namespace Neo4Net.GraphDb.Traversal
             }
 
             //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-            //ORIGINAL LINE: @SuppressWarnings({ "rawtypes", "unchecked" }) @Override protected int compareNodes(org.Neo4Net.graphdb.Node endNode1, org.Neo4Net.graphdb.Node endNode2)
+            //ORIGINAL LINE: @SuppressWarnings({ "rawtypes", "unchecked" }) @Override protected int compareNodes(Neo4Net.GraphDb.Node endNode1, Neo4Net.GraphDb.Node endNode2)
             protected internal override int compareNodes(INode endNode1, INode endNode2)
             {
                 IComparable p1 = (IComparable)endNode1.GetProperty(_propertyKey);
@@ -95,7 +95,7 @@ namespace Neo4Net.GraphDb.Traversal
         /// off of each <seealso cref="IPath"/>'s end node. </param>
         /// <returns> a <seealso cref="System.Collections.IComparer"/> suitable for sorting traversal results. </returns>
         //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-        //ORIGINAL LINE: public static java.util.Comparator<? super org.Neo4Net.graphdb.Path> endNodeRelationshipCount(final org.Neo4Net.graphdb.PathExpander expander)
+        //ORIGINAL LINE: public static java.util.Comparator<? super Neo4Net.GraphDb.Path> endNodeRelationshipCount(final Neo4Net.GraphDb.PathExpander expander)
         //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
         //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
         public static IComparer<object> EndNodeRelationshipCount(IPathExpander expander)

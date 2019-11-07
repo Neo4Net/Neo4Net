@@ -33,17 +33,17 @@ namespace Neo4Net.Kernel.impl.transaction.log.entry
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertSame;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.entry.LogHeader.LOG_HEADER_SIZE;
+//	import static Neo4Net.kernel.impl.transaction.log.entry.LogHeader.LOG_HEADER_SIZE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.entry.LogHeaderReader.decodeLogFormatVersion;
+//	import static Neo4Net.kernel.impl.transaction.log.entry.LogHeaderReader.decodeLogFormatVersion;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.entry.LogHeaderReader.decodeLogVersion;
+//	import static Neo4Net.kernel.impl.transaction.log.entry.LogHeaderReader.decodeLogVersion;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.entry.LogHeaderWriter.encodeLogVersion;
+//	import static Neo4Net.kernel.impl.transaction.log.entry.LogHeaderWriter.encodeLogVersion;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.entry.LogHeaderWriter.writeLogHeader;
+//	import static Neo4Net.kernel.impl.transaction.log.entry.LogHeaderWriter.writeLogHeader;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.entry.LogVersions.CURRENT_LOG_VERSION;
+//	import static Neo4Net.kernel.impl.transaction.log.entry.LogVersions.CURRENT_LOG_VERSION;
 
 	public class LogHeaderWriterTest
 	{
@@ -51,10 +51,10 @@ namespace Neo4Net.Kernel.impl.transaction.log.entry
 		 private readonly long _expectedTxId = 42;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.fs.DefaultFileSystemRule fileSystemRule = new org.Neo4Net.test.rule.fs.DefaultFileSystemRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.fs.DefaultFileSystemRule fileSystemRule = new Neo4Net.test.rule.fs.DefaultFileSystemRule();
 		 public readonly DefaultFileSystemRule FileSystemRule = new DefaultFileSystemRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.TestDirectory testDirectory = Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory TestDirectory = TestDirectory.testDirectory();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -64,7 +64,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.entry
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.transaction.log.InMemoryClosableChannel channel = new org.Neo4Net.kernel.impl.transaction.log.InMemoryClosableChannel();
+//ORIGINAL LINE: final Neo4Net.kernel.impl.transaction.log.InMemoryClosableChannel channel = new Neo4Net.kernel.impl.transaction.log.InMemoryClosableChannel();
 			  InMemoryClosableChannel channel = new InMemoryClosableChannel();
 
 			  // when
@@ -163,7 +163,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.entry
 //ORIGINAL LINE: final java.io.File file = testDirectory.file("WriteLogHeader");
 			  File file = TestDirectory.file( "WriteLogHeader" );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.io.fs.StoreChannel channel = fileSystemRule.get().open(file, org.Neo4Net.io.fs.OpenMode.READ_WRITE);
+//ORIGINAL LINE: final Neo4Net.io.fs.StoreChannel channel = fileSystemRule.get().open(file, Neo4Net.io.fs.OpenMode.READ_WRITE);
 			  StoreChannel channel = FileSystemRule.get().open(file, OpenMode.READ_WRITE);
 
 			  // when

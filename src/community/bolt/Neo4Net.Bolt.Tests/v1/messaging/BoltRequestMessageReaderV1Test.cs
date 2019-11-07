@@ -46,13 +46,13 @@ namespace Neo4Net.Bolt.v1.messaging
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verify;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.messaging.util.MessageMatchers.serialize;
+//	import static Neo4Net.bolt.v1.messaging.util.MessageMatchers.serialize;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.map;
+//	import static Neo4Net.helpers.collection.MapUtil.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.stringValue;
+//	import static Neo4Net.values.storable.Values.stringValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.@virtual.VirtualValues.map;
+//	import static Neo4Net.values.@virtual.VirtualValues.map;
 
 	public class BoltRequestMessageReaderV1Test
 	{
@@ -105,7 +105,7 @@ namespace Neo4Net.Bolt.v1.messaging
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void testMessageDecoding(org.Neo4Net.bolt.messaging.RequestMessage message) throws Exception
+//ORIGINAL LINE: private static void testMessageDecoding(Neo4Net.bolt.messaging.RequestMessage message) throws Exception
 		 private static void TestMessageDecoding( RequestMessage message )
 		 {
 			  Neo4NetPack Neo4NetPack = new Neo4NetPackV1();

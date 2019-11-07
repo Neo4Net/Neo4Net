@@ -33,7 +33,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 	public class BoltAuthScenariosInteractionIT : AuthScenariosInteractionTestBase<BoltInteraction.BoltSubject>
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.fs.EphemeralFileSystemRule fileSystemRule = new org.Neo4Net.test.rule.fs.EphemeralFileSystemRule();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.fs.EphemeralFileSystemRule fileSystemRule = new Neo4Net.test.rule.fs.EphemeralFileSystemRule();
 		 public EphemeralFileSystemRule FileSystemRule = new EphemeralFileSystemRule();
 
 		 public BoltAuthScenariosInteractionIT() : base()

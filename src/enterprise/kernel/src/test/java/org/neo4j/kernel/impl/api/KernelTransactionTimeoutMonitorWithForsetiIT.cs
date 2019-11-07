@@ -26,7 +26,7 @@ namespace Neo4Net.Kernel.Impl.Api
 	using DatabaseRule = Neo4Net.Test.rule.DatabaseRule;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.lock_manager;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.lock_manager;
 
 	public class KernelTransactionTimeoutMonitorWithForsetiIT : KernelTransactionTimeoutMonitorIT
 	{

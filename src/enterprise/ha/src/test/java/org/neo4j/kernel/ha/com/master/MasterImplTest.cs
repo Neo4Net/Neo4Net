@@ -94,9 +94,9 @@ namespace Neo4Net.Kernel.ha.com.master
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.com.StoreIdTestFactory.newStoreIdForCurrentVersion;
+//	import static Neo4Net.com.StoreIdTestFactory.newStoreIdForCurrentVersion;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
+//	import static Neo4Net.helpers.collection.MapUtil.stringMap;
 
 	public class MasterImplTest
 	{
@@ -281,7 +281,7 @@ namespace Neo4Net.Kernel.ha.com.master
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private org.Neo4Net.kernel.impl.locking.Locks_Client newWaitingLocksClient(final java.util.concurrent.CountDownLatch latch)
+//ORIGINAL LINE: private Neo4Net.kernel.impl.locking.Locks_Client newWaitingLocksClient(final java.util.concurrent.CountDownLatch latch)
 		 private Locks_Client NewWaitingLocksClient( System.Threading.CountdownEvent latch )
 		 {
 			  Locks_Client client = mock( typeof( Locks_Client ) );
@@ -541,7 +541,7 @@ namespace Neo4Net.Kernel.ha.com.master
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.concurrent.OtherThreadRule<Void> otherThread = new org.Neo4Net.test.rule.concurrent.OtherThreadRule<>();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.concurrent.OtherThreadRule<Void> otherThread = new Neo4Net.test.rule.concurrent.OtherThreadRule<>();
 		 public readonly OtherThreadRule<Void> OtherThread = new OtherThreadRule<Void>();
 
 		 private Config Config()
@@ -560,7 +560,7 @@ namespace Neo4Net.Kernel.ha.com.master
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static org.Neo4Net.kernel.ha.com.master.MasterImpl.SPI mockedSpi(final org.Neo4Net.Kernel.Api.StorageEngine.StoreId storeId)
+//ORIGINAL LINE: public static Neo4Net.kernel.ha.com.master.MasterImpl.SPI mockedSpi(final Neo4Net.Kernel.Api.StorageEngine.StoreId storeId)
 		 public static SPI MockedSpi( StoreId storeId )
 		 {
 			  MasterImpl.SPI mock = mock( typeof( MasterImpl.SPI ) );

@@ -50,7 +50,7 @@ namespace Neo4Net.Metatest
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("serial") private static class TestingProcess extends org.Neo4Net.test.subprocess.SubProcess<java.util.concurrent.Callable<String>, String> implements java.util.concurrent.Callable<String>
+//ORIGINAL LINE: @SuppressWarnings("serial") private static class TestingProcess extends Neo4Net.test.subprocess.SubProcess<java.util.concurrent.Callable<String>, String> implements java.util.concurrent.Callable<String>
 		 [Serializable]
 		 private class TestingProcess : SubProcess<Callable<string>, string>, Callable<string>
 		 {

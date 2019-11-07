@@ -26,7 +26,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Internal.gbptree.GBPTree.NO_HEADER_WRITER;
+//	import static Neo4Net.index.Internal.gbptree.GBPTree.NO_HEADER_WRITER;
 
 	public class StringIndexPopulator : NativeIndexPopulator<StringIndexKey, NativeIndexValue>
 	{

@@ -47,17 +47,17 @@ namespace Neo4Net.ha
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertNotEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.ClusterHelper.createSomeData;
+//	import static Neo4Net.causalclustering.ClusterHelper.createSomeData;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.util.TestHelpers.runBackupToolFromOtherJvmToGetExitCode;
+//	import static Neo4Net.util.TestHelpers.runBackupToolFromOtherJvmToGetExitCode;
 
 	public class BackupHaIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.ha.ClusterRule clusterRule = new org.Neo4Net.test.ha.ClusterRule().withSharedSetting(org.Neo4Net.kernel.impl.enterprise.configuration.OnlineBackupSettings.online_backup_enabled, org.Neo4Net.kernel.configuration.Settings.TRUE).withInstanceSetting(org.Neo4Net.kernel.impl.enterprise.configuration.OnlineBackupSettings.online_backup_server, serverId -> ":" + org.Neo4Net.ports.allocation.PortAuthority.allocatePort());
+//ORIGINAL LINE: @Rule public Neo4Net.test.ha.ClusterRule clusterRule = new Neo4Net.test.ha.ClusterRule().withSharedSetting(Neo4Net.kernel.impl.enterprise.configuration.OnlineBackupSettings.online_backup_enabled, Neo4Net.kernel.configuration.Settings.TRUE).withInstanceSetting(Neo4Net.kernel.impl.enterprise.configuration.OnlineBackupSettings.online_backup_server, serverId -> ":" + Neo4Net.ports.allocation.PortAuthority.allocatePort());
 		 public ClusterRule ClusterRule = new ClusterRule().withSharedSetting(OnlineBackupSettings.online_backup_enabled, Settings.TRUE).withInstanceSetting(OnlineBackupSettings.online_backup_server, serverId => ":" + PortAuthority.allocatePort());
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.SuppressOutput suppressOutput = org.Neo4Net.test.rule.SuppressOutput.suppressAll();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.SuppressOutput suppressOutput = Neo4Net.test.rule.SuppressOutput.suppressAll();
 		 public readonly SuppressOutput SuppressOutput = SuppressOutput.suppressAll();
 
 		 private File _backupPath;

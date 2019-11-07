@@ -40,7 +40,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 	using Neo4Net.GraphDb;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Iterators = Neo4Net.Collections.Helpers.Iterators;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
 	using QueryId = Neo4Net.Kernel.enterprise.builtinprocs.QueryId;
 	using InternalTransaction = Neo4Net.Kernel.impl.coreapi.InternalTransaction;
 	using GraphDatabaseFacade = Neo4Net.Kernel.impl.factory.GraphDatabaseFacade;
@@ -73,23 +73,23 @@ namespace Neo4Net.Server.security.enterprise.auth
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.security.AuthorizationViolationException.PERMISSION_DENIED;
+//	import static Neo4Net.graphdb.security.AuthorizationViolationException.PERMISSION_DENIED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.single;
+//	import static Neo4Net.helpers.collection.Iterables.single;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.map;
+//	import static Neo4Net.helpers.collection.MapUtil.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
+//	import static Neo4Net.helpers.collection.MapUtil.stringMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.security.auth.BasicAuthManagerTest.password;
+//	import static Neo4Net.server.security.auth.BasicAuthManagerTest.password;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.security.enterprise.auth.plugin.api.PredefinedRoles.PUBLISHER;
+//	import static Neo4Net.server.security.enterprise.auth.plugin.api.PredefinedRoles.PUBLISHER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.assertion.Assert.assertEventually;
+//	import static Neo4Net.test.assertion.Assert.assertEventually;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.matchers.CommonMatchers.matchesOneToOneInAnyOrder;
+//	import static Neo4Net.test.matchers.CommonMatchers.matchesOneToOneInAnyOrder;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.util.concurrent.Runnables.EMPTY_RUNNABLE;
+//	import static Neo4Net.util.concurrent.Runnables.EMPTY_RUNNABLE;
 
 	public abstract class BuiltInProceduresInteractionTestBase<S> : ProcedureInteractionTestBase<S>
 	{
@@ -390,10 +390,10 @@ namespace Neo4Net.Server.security.enterprise.auth
 
 					// Given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.test.DoubleLatch latch = new org.Neo4Net.test.DoubleLatch(3, true);
+//ORIGINAL LINE: final Neo4Net.test.DoubleLatch latch = new Neo4Net.test.DoubleLatch(3, true);
 					DoubleLatch latch = new DoubleLatch( 3, true );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.test.Barrier_Control barrier = new org.Neo4Net.test.Barrier_Control();
+//ORIGINAL LINE: final Neo4Net.test.Barrier_Control barrier = new Neo4Net.test.Barrier_Control();
 					Neo4Net.Test.Barrier_Control barrier = new Neo4Net.Test.Barrier_Control();
 
 					// Serve CSV via local web server, let Jetty find a random port for us
@@ -647,10 +647,10 @@ namespace Neo4Net.Server.security.enterprise.auth
 
 					// Given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.test.DoubleLatch latch = new org.Neo4Net.test.DoubleLatch(3, true);
+//ORIGINAL LINE: final Neo4Net.test.DoubleLatch latch = new Neo4Net.test.DoubleLatch(3, true);
 					DoubleLatch latch = new DoubleLatch( 3, true );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.test.Barrier_Control barrier = new org.Neo4Net.test.Barrier_Control();
+//ORIGINAL LINE: final Neo4Net.test.Barrier_Control barrier = new Neo4Net.test.Barrier_Control();
 					Neo4Net.Test.Barrier_Control barrier = new Neo4Net.Test.Barrier_Control();
 
 					// Serve CSV via local web server, let Jetty find a random port for us
@@ -801,7 +801,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 public virtual void ShouldTerminateLongRunningProcedureThatChecksTheGuardRegularlyIfKilled()
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.test.DoubleLatch latch = new org.Neo4Net.test.DoubleLatch(2, true);
+//ORIGINAL LINE: final Neo4Net.test.DoubleLatch latch = new Neo4Net.test.DoubleLatch(2, true);
 			  DoubleLatch latch = new DoubleLatch( 2, true );
 			  ClassWithProcedures.VolatileLatch = latch;
 
@@ -1190,7 +1190,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 public virtual void ShouldTerminateRestrictedTransaction()
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.test.DoubleLatch doubleLatch = new org.Neo4Net.test.DoubleLatch(2);
+//ORIGINAL LINE: final Neo4Net.test.DoubleLatch doubleLatch = new Neo4Net.test.DoubleLatch(2);
 			  DoubleLatch doubleLatch = new DoubleLatch( 2 );
 
 			  ClassWithProcedures.TestLatch = new ClassWithProcedures.LatchedRunnables( doubleLatch, EMPTY_RUNNABLE, EMPTY_RUNNABLE );
@@ -1374,7 +1374,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 			  };
 		 }
 
-		 private IList<IDictionary<string, object>> CollectResults( ResourceIterator<IDictionary<string, object>> results )
+		 private IList<IDictionary<string, object>> CollectResults( IResourceIterator<IDictionary<string, object>> results )
 		 {
 			  IList<IDictionary<string, object>> maps = results.ToList();
 			  IList<IDictionary<string, object>> transformed = new List<IDictionary<string, object>>( maps.Count );

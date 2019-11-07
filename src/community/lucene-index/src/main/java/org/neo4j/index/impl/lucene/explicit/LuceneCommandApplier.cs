@@ -119,7 +119,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean visitIndexDeleteCommand(org.Neo4Net.kernel.impl.index.IndexCommand.DeleteCommand command) throws java.io.IOException
+//ORIGINAL LINE: public boolean visitIndexDeleteCommand(Neo4Net.kernel.impl.index.IndexCommand.DeleteCommand command) throws java.io.IOException
 		 public override bool VisitIndexDeleteCommand( IndexCommand.DeleteCommand command )
 		 {
 			  try
@@ -177,7 +177,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private CommitContext commitContext(org.Neo4Net.kernel.impl.index.IndexCommand command) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: private CommitContext commitContext(Neo4Net.kernel.impl.index.IndexCommand command) throws Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 private CommitContext CommitContext( IndexCommand command )
 		 {
 			  IDictionary<string, CommitContext> contextMap = CommitContextMap( command.EntityType );

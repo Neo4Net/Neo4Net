@@ -25,7 +25,7 @@ namespace Neo4Net.Tooling.procedure.visitors.examples
 	public class StaticContextMisuse
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Context public static org.Neo4Net.graphdb.GraphDatabaseService db;
+//ORIGINAL LINE: @Context public static Neo4Net.graphdb.GraphDatabaseService db;
 		 public static IGraphDatabaseService Db;
 
 		 private StaticContextMisuse()

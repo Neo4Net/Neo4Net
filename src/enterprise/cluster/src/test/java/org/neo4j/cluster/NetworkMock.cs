@@ -58,7 +58,7 @@ namespace Neo4Net.cluster
 		 private LogService _logService;
 		 protected internal readonly Log Log;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private final java.util.List<org.Neo4Net.helpers.collection.Pair<java.util.concurrent.Future<?>, Runnable>> futureWaiter;
+//ORIGINAL LINE: private final java.util.List<Neo4Net.helpers.collection.Pair<java.util.concurrent.Future<?>, Runnable>> futureWaiter;
 		 private readonly IList<Pair<Future<object>, ThreadStart>> _futureWaiter;
 
 		 public NetworkMock( LogService logService, Monitors monitors, long tickDuration, MultipleFailureLatencyStrategy strategy, MessageTimeoutStrategy timeoutStrategy )
@@ -175,12 +175,12 @@ namespace Neo4Net.cluster
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Iterator<org.Neo4Net.helpers.collection.Pair<java.util.concurrent.Future<?>, Runnable>> waiters = futureWaiter.iterator();
+//ORIGINAL LINE: java.util.Iterator<Neo4Net.helpers.collection.Pair<java.util.concurrent.Future<?>, Runnable>> waiters = futureWaiter.iterator();
 			  IEnumerator<Pair<Future<object>, ThreadStart>> waiters = _futureWaiter.GetEnumerator();
 			  while ( waiters.MoveNext() )
 			  {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.helpers.collection.Pair<java.util.concurrent.Future<?>, Runnable> next = waiters.Current;
+//ORIGINAL LINE: Neo4Net.helpers.collection.Pair<java.util.concurrent.Future<?>, Runnable> next = waiters.Current;
 					Pair<Future<object>, ThreadStart> next = waiters.Current;
 					if ( next.First().Done )
 					{
@@ -271,7 +271,7 @@ namespace Neo4Net.cluster
 			  internal long MessageDeliveryTimeConflict;
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.cluster.com.message.Message<? extends org.Neo4Net.cluster.com.message.MessageType> message;
+//ORIGINAL LINE: Neo4Net.cluster.com.message.Message<? extends Neo4Net.cluster.com.message.MessageType> message;
 			  internal Message<MessageType> MessageConflict;
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
 			  internal TestProtocolServer ServerConflict;
@@ -292,7 +292,7 @@ namespace Neo4Net.cluster
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: public org.Neo4Net.cluster.com.message.Message<? extends org.Neo4Net.cluster.com.message.MessageType> getMessage()
+//ORIGINAL LINE: public Neo4Net.cluster.com.message.Message<? extends Neo4Net.cluster.com.message.MessageType> getMessage()
 			  public virtual Message<MessageType> Message
 			  {
 				  get

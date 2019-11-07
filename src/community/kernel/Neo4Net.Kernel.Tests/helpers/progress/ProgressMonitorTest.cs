@@ -64,7 +64,7 @@ namespace Neo4Net.Helpers.progress
 //ORIGINAL LINE: @Rule public final org.junit.rules.TestName testName = new org.junit.rules.TestName();
 		 public readonly TestName TestName = new TestName();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.SuppressOutput suppressOutput = org.Neo4Net.test.rule.SuppressOutput.suppressAll();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.SuppressOutput suppressOutput = Neo4Net.test.rule.SuppressOutput.suppressAll();
 		 public SuppressOutput SuppressOutput = SuppressOutput.suppressAll();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Rule public final SingleIndicator factory = new SingleIndicator();
@@ -387,10 +387,10 @@ namespace Neo4Net.Helpers.progress
 				  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void evaluate() throws Throwable
-				  public override void evaluate()
+//ORIGINAL LINE: public void Evaluate() throws Throwable
+				  public override void Evaluate()
 				  {
-						@base.evaluate();
+						@base.Evaluate();
 						foreach ( KeyValuePair<ProgressMonitorFactory, bool> factoryMock in _outerInstance.factoryMocks.SetOfKeyValuePairs() )
 						{
 							 verify( factoryMock.Key, times( 1 ) ).newIndicator( any( typeof( string ) ) );

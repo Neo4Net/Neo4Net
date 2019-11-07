@@ -56,10 +56,10 @@ namespace Neo4Net.Index.backup
 		 private const int NUMBER_OF_INDEXES = 10;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.RandomRule randomRule = new org.Neo4Net.test.rule.RandomRule();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.RandomRule randomRule = new Neo4Net.test.rule.RandomRule();
 		 public RandomRule RandomRule = new RandomRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.EmbeddedDatabaseRule database = new org.Neo4Net.test.rule.EmbeddedDatabaseRule().startLazily();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.EmbeddedDatabaseRule database = new Neo4Net.test.rule.EmbeddedDatabaseRule().startLazily();
 		 public EmbeddedDatabaseRule Database = new EmbeddedDatabaseRule().startLazily();
 		 private CheckPointer _checkPointer;
 		 private IndexingService _indexingService;
@@ -75,20 +75,20 @@ namespace Neo4Net.Index.backup
 			  PrepareDatabase( label );
 
 			  ForceCheckpoint( _checkPointer );
-			  ResourceIterator<File> firstCheckpointSnapshot = _indexingService.snapshotIndexFiles();
+			  IResourceIterator<File> firstCheckpointSnapshot = _indexingService.snapshotIndexFiles();
 			  GenerateData( label );
 			  RemoveOldNodes( LongStream.range( 1, 20 ) );
 			  UpdateOldNodes( LongStream.range( 30, 40 ) );
 
 			  ForceCheckpoint( _checkPointer );
-			  ResourceIterator<File> secondCheckpointSnapshot = _indexingService.snapshotIndexFiles();
+			  IResourceIterator<File> secondCheckpointSnapshot = _indexingService.snapshotIndexFiles();
 
 			  GenerateData( label );
 			  RemoveOldNodes( LongStream.range( 50, 60 ) );
 			  UpdateOldNodes( LongStream.range( 70, 80 ) );
 
 			  ForceCheckpoint( _checkPointer );
-			  ResourceIterator<File> thirdCheckpointSnapshot = _indexingService.snapshotIndexFiles();
+			  IResourceIterator<File> thirdCheckpointSnapshot = _indexingService.snapshotIndexFiles();
 
 			  ISet<string> firstSnapshotFileNames = GetFileNames( firstCheckpointSnapshot );
 			  ISet<string> secondSnapshotFileNames = GetFileNames( secondCheckpointSnapshot );
@@ -111,11 +111,11 @@ namespace Neo4Net.Index.backup
 			  Label label = Label.label( "testLabel" );
 			  PrepareDatabase( label );
 
-			  ResourceIterator<File> firstCheckpointSnapshot = _indexingService.snapshotIndexFiles();
+			  IResourceIterator<File> firstCheckpointSnapshot = _indexingService.snapshotIndexFiles();
 			  GenerateData( label );
-			  ResourceIterator<File> secondCheckpointSnapshot = _indexingService.snapshotIndexFiles();
+			  IResourceIterator<File> secondCheckpointSnapshot = _indexingService.snapshotIndexFiles();
 			  GenerateData( label );
-			  ResourceIterator<File> thirdCheckpointSnapshot = _indexingService.snapshotIndexFiles();
+			  IResourceIterator<File> thirdCheckpointSnapshot = _indexingService.snapshotIndexFiles();
 
 			  ISet<string> firstSnapshotFileNames = GetFileNames( firstCheckpointSnapshot );
 			  ISet<string> secondSnapshotFileNames = GetFileNames( secondCheckpointSnapshot );
@@ -187,14 +187,14 @@ namespace Neo4Net.Index.backup
 						 "second snapshot files are: " + secondFileSet;
 		 }
 
-		 private ISet<string> GetFileNames( ResourceIterator<File> files )
+		 private ISet<string> GetFileNames( IResourceIterator<File> files )
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Most Java stream collectors are not converted by Java to C# Converter:
 			  return Files.Select( File.getAbsolutePath ).Where( this.segmentsFilePredicate ).collect( Collectors.toSet() );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void forceCheckpoint(org.Neo4Net.kernel.impl.transaction.log.checkpoint.CheckPointer checkPointer) throws java.io.IOException
+//ORIGINAL LINE: private void forceCheckpoint(Neo4Net.kernel.impl.transaction.log.checkpoint.CheckPointer checkPointer) throws java.io.IOException
 		 private void ForceCheckpoint( CheckPointer checkPointer )
 		 {
 			  checkPointer.ForceCheckPoint( new SimpleTriggerInfo( "testForcedCheckpoint" ) );

@@ -38,8 +38,8 @@ namespace Neo4Net.Kernel.impl.query
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using UncloseableDelegatingFileSystemAbstraction = Neo4Net.GraphDb.mockfs.UncloseableDelegatingFileSystemAbstraction;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
-	using AuthToken = Neo4Net.Kernel.api.security.AuthToken;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
+	using AuthToken = Neo4Net.Kernel.Api.security.AuthToken;
 	using Settings = Neo4Net.Kernel.configuration.Settings;
 	using EnterpriseAuthManager = Neo4Net.Kernel.enterprise.api.security.EnterpriseAuthManager;
 	using EnterpriseLoginContext = Neo4Net.Kernel.enterprise.api.security.EnterpriseLoginContext;
@@ -77,19 +77,19 @@ namespace Neo4Net.Kernel.impl.query
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.log_queries;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.log_queries;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.log_queries_max_archives;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.log_queries_max_archives;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.log_queries_rotation_threshold;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.log_queries_rotation_threshold;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.logs_directory;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.logs_directory;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
+//	import static Neo4Net.helpers.collection.MapUtil.stringMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.security.AuthSubject.AUTH_DISABLED;
+//	import static Neo4Net.Kernel.Api.Internal.security.AuthSubject.AUTH_DISABLED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.security.auth.BasicAuthManagerTest.password;
+//	import static Neo4Net.server.security.auth.BasicAuthManagerTest.password;
 
 	public class QueryLoggerIT
 	{
@@ -97,10 +97,10 @@ namespace Neo4Net.Kernel.impl.query
 		 // It is imperative that this test executes using a real filesystem; otherwise rotation failures will not be
 		 // detected on Windows.
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.fs.DefaultFileSystemRule fileSystem = new org.Neo4Net.test.rule.fs.DefaultFileSystemRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.fs.DefaultFileSystemRule fileSystem = new Neo4Net.test.rule.fs.DefaultFileSystemRule();
 		 public readonly DefaultFileSystemRule FileSystem = new DefaultFileSystemRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.TestDirectory testDirectory = Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory TestDirectory = TestDirectory.testDirectory();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Rule public final org.junit.rules.ExpectedException expectedException = org.junit.rules.ExpectedException.none();
@@ -145,7 +145,7 @@ namespace Neo4Net.Kernel.impl.query
 		 {
 			  // turn on query logging
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.Map<String, String> config = stringMap(logs_directory.name(), logsDirectory.getPath(), log_queries.name(), org.Neo4Net.kernel.configuration.Settings.TRUE);
+//ORIGINAL LINE: final java.util.Map<String, String> config = stringMap(logs_directory.name(), logsDirectory.getPath(), log_queries.name(), Neo4Net.kernel.configuration.Settings.TRUE);
 			  IDictionary<string, string> config = stringMap( logs_directory.name(), _logsDirectory.Path, log_queries.name(), Settings.TRUE );
 			  _db = new EmbeddedInteraction( _databaseBuilder, config );
 
@@ -518,7 +518,7 @@ namespace Neo4Net.Kernel.impl.query
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static java.util.List<String> readAllLines(org.Neo4Net.io.fs.FileSystemAbstraction fs, java.io.File logFilename) throws java.io.IOException
+//ORIGINAL LINE: static java.util.List<String> readAllLines(Neo4Net.io.fs.FileSystemAbstraction fs, java.io.File logFilename) throws java.io.IOException
 		 internal static IList<string> ReadAllLines( FileSystemAbstraction fs, File logFilename )
 		 {
 			  IList<string> logLines = new List<string>();

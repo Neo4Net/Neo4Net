@@ -25,8 +25,8 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 
 	using Write = Neo4Net.Kernel.Api.Internal.Write;
 	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
-	using Neo4Net.Kernel.api;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
+	using Neo4Net.Kernel.Api;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using StorageReader = Neo4Net.Kernel.Api.StorageEngine.StorageReader;
 	using ReadableTransactionState = Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState;
@@ -97,11 +97,11 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 			  }
 			  // Then
 			  verify( hook ).beforeCommit( any( typeof( ReadableTransactionState ) ), any( typeof( KernelTransaction ) ), any( typeof( StorageReader ) ) );
-			  verify( hook ).afterRollback( any( typeof( ReadableTransactionState ) ), any( typeof( KernelTransaction ) ), any( typeof( Neo4Net.Kernel.api.TransactionHook_Outcome ) ) );
+			  verify( hook ).afterRollback( any( typeof( ReadableTransactionState ) ), any( typeof( KernelTransaction ) ), any( typeof( Neo4Net.Kernel.Api.TransactionHook_Outcome ) ) );
 			  verifyNoMoreInteractions( hook );
 		 }
 
-		 private class TransactionHook_OutcomeAnonymousInnerClass : Neo4Net.Kernel.api.TransactionHook_Outcome
+		 private class TransactionHook_OutcomeAnonymousInnerClass : Neo4Net.Kernel.Api.TransactionHook_Outcome
 		 {
 			 private readonly TransactionHookIT _outerInstance;
 

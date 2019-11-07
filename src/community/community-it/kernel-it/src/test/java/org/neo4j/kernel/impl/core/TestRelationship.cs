@@ -47,13 +47,13 @@ namespace Neo4Net.Kernel.impl.core
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.RelationshipType.withName;
+//	import static Neo4Net.graphdb.RelationshipType.withName;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.MyRelTypes.TEST;
+//	import static Neo4Net.kernel.impl.MyRelTypes.TEST;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.MyRelTypes.TEST2;
+//	import static Neo4Net.kernel.impl.MyRelTypes.TEST2;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.MyRelTypes.TEST_TRAVERSAL;
+//	import static Neo4Net.kernel.impl.MyRelTypes.TEST_TRAVERSAL;
 
 	public class TestRelationship : AbstractNeo4NetTestCase
 	{
@@ -71,12 +71,12 @@ namespace Neo4Net.Kernel.impl.core
 			  node1.CreateRelationshipTo( node2, TEST );
 			  rel1.Delete();
 			  NewTransaction();
-			  AssertHasNext( ( ResourceIterable<Relationship> ) node1.Relationships );
-			  AssertHasNext( ( ResourceIterable<Relationship> ) node2.Relationships );
-			  AssertHasNext( ( ResourceIterable<Relationship> ) node1.GetRelationships( TEST ) );
-			  AssertHasNext( ( ResourceIterable<Relationship> ) node2.GetRelationships( TEST ) );
-			  AssertHasNext( ( ResourceIterable<Relationship> ) node1.GetRelationships( TEST, Direction.OUTGOING ) );
-			  AssertHasNext( ( ResourceIterable<Relationship> ) node2.GetRelationships( TEST, Direction.INCOMING ) );
+			  AssertHasNext( (IResourceIterable<Relationship> ) node1.Relationships );
+			  AssertHasNext( (IResourceIterable<Relationship> ) node2.Relationships );
+			  AssertHasNext( (IResourceIterable<Relationship> ) node1.GetRelationships( TEST ) );
+			  AssertHasNext( (IResourceIterable<Relationship> ) node2.GetRelationships( TEST ) );
+			  AssertHasNext( (IResourceIterable<Relationship> ) node1.GetRelationships( TEST, Direction.OUTGOING ) );
+			  AssertHasNext( (IResourceIterable<Relationship> ) node2.GetRelationships( TEST, Direction.INCOMING ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -96,9 +96,9 @@ namespace Neo4Net.Kernel.impl.core
 			  NewTransaction();
 			  AllGetRelationshipMethods( node1, Direction.OUTGOING );
 			  AllGetRelationshipMethods( node2, Direction.INCOMING );
-			  DeleteFirst( ( ResourceIterable<Relationship> ) node1.GetRelationships( TEST, Direction.OUTGOING ) );
-			  DeleteFirst( ( ResourceIterable<Relationship> ) node1.GetRelationships( TEST_TRAVERSAL, Direction.OUTGOING ) );
-			  DeleteFirst( ( ResourceIterable<Relationship> ) node1.GetRelationships( TEST2, Direction.OUTGOING ) );
+			  DeleteFirst( (IResourceIterable<Relationship> ) node1.GetRelationships( TEST, Direction.OUTGOING ) );
+			  DeleteFirst( (IResourceIterable<Relationship> ) node1.GetRelationships( TEST_TRAVERSAL, Direction.OUTGOING ) );
+			  DeleteFirst( (IResourceIterable<Relationship> ) node1.GetRelationships( TEST2, Direction.OUTGOING ) );
 			  node1.CreateRelationshipTo( node2, TEST );
 			  node1.CreateRelationshipTo( node2, TEST_TRAVERSAL );
 			  node1.CreateRelationshipTo( node2, TEST2 );
@@ -132,9 +132,9 @@ namespace Neo4Net.Kernel.impl.core
 			  NewTransaction();
 			  AllGetRelationshipMethods2( node1, Direction.OUTGOING );
 			  AllGetRelationshipMethods2( node2, Direction.INCOMING );
-			  DeleteFirst( ( ResourceIterable<Relationship> ) node1.GetRelationships( TEST, Direction.OUTGOING ) );
-			  DeleteFirst( ( ResourceIterable<Relationship> ) node1.GetRelationships( TEST_TRAVERSAL, Direction.OUTGOING ) );
-			  DeleteFirst( ( ResourceIterable<Relationship> ) node1.GetRelationships( TEST2, Direction.OUTGOING ) );
+			  DeleteFirst( (IResourceIterable<Relationship> ) node1.GetRelationships( TEST, Direction.OUTGOING ) );
+			  DeleteFirst( (IResourceIterable<Relationship> ) node1.GetRelationships( TEST_TRAVERSAL, Direction.OUTGOING ) );
+			  DeleteFirst( (IResourceIterable<Relationship> ) node1.GetRelationships( TEST2, Direction.OUTGOING ) );
 			  node1.CreateRelationshipTo( node2, TEST );
 			  node1.CreateRelationshipTo( node2, TEST_TRAVERSAL );
 			  node1.CreateRelationshipTo( node2, TEST2 );
@@ -168,7 +168,7 @@ namespace Neo4Net.Kernel.impl.core
 			  NewTransaction();
 			  AllGetRelationshipMethods3( node1, Direction.OUTGOING );
 			  AllGetRelationshipMethods3( node2, Direction.INCOMING );
-			  DeleteFirst( ( ResourceIterable<Relationship> ) node1.GetRelationships( TEST, Direction.OUTGOING ) );
+			  DeleteFirst( (IResourceIterable<Relationship> ) node1.GetRelationships( TEST, Direction.OUTGOING ) );
 			  int count = 0;
 			  foreach ( Relationship rel in node1.GetRelationships( TEST_TRAVERSAL, Direction.OUTGOING ) )
 			  {
@@ -178,7 +178,7 @@ namespace Neo4Net.Kernel.impl.core
 					}
 					count++;
 			  }
-			  DeleteFirst( ( ResourceIterable<Relationship> ) node1.GetRelationships( TEST2, Direction.OUTGOING ) );
+			  DeleteFirst( (IResourceIterable<Relationship> ) node1.GetRelationships( TEST2, Direction.OUTGOING ) );
 			  node1.CreateRelationshipTo( node2, TEST );
 			  node1.CreateRelationshipTo( node2, TEST_TRAVERSAL );
 			  node1.CreateRelationshipTo( node2, TEST2 );
@@ -253,9 +253,9 @@ namespace Neo4Net.Kernel.impl.core
 			  assertEquals( expectedCount, count );
 		 }
 
-		 private void DeleteFirst( ResourceIterable<Relationship> iterable )
+		 private void DeleteFirst(IResourceIterable<Relationship> iterable )
 		 {
-			  using ( ResourceIterator<Relationship> iterator = iterable.GetEnumerator() )
+			  using ( IResourceIterator<Relationship> iterator = iterable.GetEnumerator() )
 			  {
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
 					iterator.next().delete();
@@ -854,7 +854,7 @@ namespace Neo4Net.Kernel.impl.core
 
 			  count = 0;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: for (@SuppressWarnings("unused") org.Neo4Net.graphdb.Relationship r1 : hub.getRelationships())
+//ORIGINAL LINE: for (@SuppressWarnings("unused") Neo4Net.graphdb.Relationship r1 : hub.getRelationships())
 			  foreach ( Relationship r1 in hub.Relationships )
 			  {
 					count += ( int )Iterables.count( hub.Relationships );
@@ -979,7 +979,7 @@ namespace Neo4Net.Kernel.impl.core
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(expected = org.Neo4Net.graphdb.NotFoundException.class) public void deletionOfSameRelationshipTwiceInOneTransactionShouldNotRollbackIt()
+//ORIGINAL LINE: @Test(expected = Neo4Net.graphdb.NotFoundException.class) public void deletionOfSameRelationshipTwiceInOneTransactionShouldNotRollbackIt()
 		 public virtual void DeletionOfSameRelationshipTwiceInOneTransactionShouldNotRollbackIt()
 		 {
 			  // Given
@@ -1019,7 +1019,7 @@ namespace Neo4Net.Kernel.impl.core
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(expected = org.Neo4Net.graphdb.NotFoundException.class) public void deletionOfAlreadyDeletedRelationshipShouldThrow()
+//ORIGINAL LINE: @Test(expected = Neo4Net.graphdb.NotFoundException.class) public void deletionOfAlreadyDeletedRelationshipShouldThrow()
 		 public virtual void DeletionOfAlreadyDeletedRelationshipShouldThrow()
 		 {
 			  // Given
@@ -1045,9 +1045,9 @@ namespace Neo4Net.Kernel.impl.core
 			  }
 		 }
 
-		 private void AssertHasNext( ResourceIterable<Relationship> relationships )
+		 private void AssertHasNext(IResourceIterable<Relationship> relationships )
 		 {
-			  using ( ResourceIterator<Relationship> iterator = relationships.GetEnumerator() )
+			  using ( IResourceIterator<Relationship> iterator = relationships.GetEnumerator() )
 			  {
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
 					assertTrue( iterator.hasNext() );

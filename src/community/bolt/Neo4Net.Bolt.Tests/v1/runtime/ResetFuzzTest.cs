@@ -72,13 +72,13 @@ namespace Neo4Net.Bolt.v1.runtime
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.testing.NullResponseHandler.nullResponseHandler;
+//	import static Neo4Net.bolt.testing.NullResponseHandler.nullResponseHandler;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.messaging.BoltResponseMessage.SUCCESS;
+//	import static Neo4Net.bolt.v1.messaging.BoltResponseMessage.SUCCESS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.scheduler.JobSchedulerFactory.createScheduler;
+//	import static Neo4Net.kernel.impl.scheduler.JobSchedulerFactory.createScheduler;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.@virtual.VirtualValues.EMPTY_MAP;
+//	import static Neo4Net.values.@virtual.VirtualValues.EMPTY_MAP;
 
 	public class ResetFuzzTest
 	{
@@ -160,7 +160,7 @@ namespace Neo4Net.Bolt.v1.runtime
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertSchedulerWorks(org.Neo4Net.bolt.runtime.BoltConnection connection) throws InterruptedException
+//ORIGINAL LINE: private void assertSchedulerWorks(Neo4Net.bolt.runtime.BoltConnection connection) throws InterruptedException
 		 private void AssertSchedulerWorks( BoltConnection connection )
 		 {
 			  BoltResponseRecorder recorder = new BoltResponseRecorder();
@@ -176,7 +176,7 @@ namespace Neo4Net.Bolt.v1.runtime
 			  catch ( AssertionError e )
 			  {
 //JAVA TO C# CONVERTER TODO TASK: The following line has a Java format specifier which cannot be directly translated to .NET:
-//ORIGINAL LINE: throw new AssertionError(String.format("Expected session to return to good state after RESET, but " + "assertion failed: %s.%n" + "Seed: %s%n" + "Messages sent:%n" + "%s", e.getMessage(), seed, org.Neo4Net.helpers.collection.Iterables.toString(sent, "\n")), e);
+//ORIGINAL LINE: throw new AssertionError(String.format("Expected session to return to good state after RESET, but " + "assertion failed: %s.%n" + "Seed: %s%n" + "Messages sent:%n" + "%s", e.getMessage(), seed, Neo4Net.helpers.collection.Iterables.toString(sent, "\n")), e);
 					throw new AssertionError( string.Format( "Expected session to return to good state after RESET, but " + "assertion failed: %s.%n" + "Seed: %s%n" + "Messages sent:%n" + "%s", e.Message, _seed, Iterables.ToString( _sent, "\n" ) ), e );
 			  }
 		 }

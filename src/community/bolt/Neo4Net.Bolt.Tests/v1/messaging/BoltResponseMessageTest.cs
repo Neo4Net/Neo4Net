@@ -51,39 +51,39 @@ namespace Neo4Net.Bolt.v1.messaging
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.Matchers.equalTo;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.messaging.example.Paths.PATH_WITH_LENGTH_ONE;
+//	import static Neo4Net.bolt.v1.messaging.example.Paths.PATH_WITH_LENGTH_ONE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.messaging.example.Paths.PATH_WITH_LENGTH_TWO;
+//	import static Neo4Net.bolt.v1.messaging.example.Paths.PATH_WITH_LENGTH_TWO;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.messaging.example.Paths.PATH_WITH_LENGTH_ZERO;
+//	import static Neo4Net.bolt.v1.messaging.example.Paths.PATH_WITH_LENGTH_ZERO;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.messaging.example.Paths.PATH_WITH_LOOP;
+//	import static Neo4Net.bolt.v1.messaging.example.Paths.PATH_WITH_LOOP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.messaging.example.Paths.PATH_WITH_NODES_VISITED_MULTIPLE_TIMES;
+//	import static Neo4Net.bolt.v1.messaging.example.Paths.PATH_WITH_NODES_VISITED_MULTIPLE_TIMES;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.messaging.example.Paths.PATH_WITH_RELATIONSHIP_TRAVERSED_AGAINST_ITS_DIRECTION;
+//	import static Neo4Net.bolt.v1.messaging.example.Paths.PATH_WITH_RELATIONSHIP_TRAVERSED_AGAINST_ITS_DIRECTION;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.messaging.example.Paths.PATH_WITH_RELATIONSHIP_TRAVERSED_MULTIPLE_TIMES_IN_SAME_DIRECTION;
+//	import static Neo4Net.bolt.v1.messaging.example.Paths.PATH_WITH_RELATIONSHIP_TRAVERSED_MULTIPLE_TIMES_IN_SAME_DIRECTION;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.messaging.response.IgnoredMessage.IGNORED_MESSAGE;
+//	import static Neo4Net.bolt.v1.messaging.response.IgnoredMessage.IGNORED_MESSAGE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.messaging.util.MessageMatchers.serialize;
+//	import static Neo4Net.bolt.v1.messaging.util.MessageMatchers.serialize;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.runtime.spi.Records.record;
+//	import static Neo4Net.bolt.v1.runtime.spi.Records.record;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.map;
+//	import static Neo4Net.helpers.collection.MapUtil.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.intValue;
+//	import static Neo4Net.values.storable.Values.intValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.longValue;
+//	import static Neo4Net.values.storable.Values.longValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.stringArray;
+//	import static Neo4Net.values.storable.Values.stringArray;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.stringValue;
+//	import static Neo4Net.values.storable.Values.stringValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.@virtual.VirtualValues.nodeValue;
+//	import static Neo4Net.values.@virtual.VirtualValues.nodeValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.@virtual.VirtualValues.relationshipValue;
+//	import static Neo4Net.values.@virtual.VirtualValues.relationshipValue;
 
 	public class BoltResponseMessageTest
 	{
@@ -173,7 +173,7 @@ namespace Neo4Net.Bolt.v1.messaging
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private String serialized(org.Neo4Net.values.AnyValue object) throws java.io.IOException
+//ORIGINAL LINE: private String serialized(Neo4Net.values.AnyValue object) throws java.io.IOException
 		 private string Serialized( AnyValue @object )
 		 {
 			  RecordMessage message = new RecordMessage( record( @object ) );
@@ -181,14 +181,14 @@ namespace Neo4Net.Bolt.v1.messaging
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertSerializes(org.Neo4Net.bolt.messaging.ResponseMessage msg) throws java.io.IOException
+//ORIGINAL LINE: private void assertSerializes(Neo4Net.bolt.messaging.ResponseMessage msg) throws java.io.IOException
 		 private void AssertSerializes( ResponseMessage msg )
 		 {
 			  assertThat( SerializeAndDeserialize( msg ), equalTo( msg ) );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private <T extends org.Neo4Net.bolt.messaging.ResponseMessage> T serializeAndDeserialize(T msg) throws java.io.IOException
+//ORIGINAL LINE: private <T extends Neo4Net.bolt.messaging.ResponseMessage> T serializeAndDeserialize(T msg) throws java.io.IOException
 		 private T SerializeAndDeserialize<T>( T msg ) where T : Neo4Net.Bolt.messaging.ResponseMessage
 		 {
 			  RecordingByteChannel channel = new RecordingByteChannel();
@@ -204,7 +204,7 @@ namespace Neo4Net.Bolt.v1.messaging
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private <T extends org.Neo4Net.bolt.messaging.ResponseMessage> T unpack(BoltResponseMessageReader reader, RecordingByteChannel channel)
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private <T extends Neo4Net.bolt.messaging.ResponseMessage> T unpack(BoltResponseMessageReader reader, RecordingByteChannel channel)
 		 private T Unpack<T>( BoltResponseMessageReader reader, RecordingByteChannel channel ) where T : Neo4Net.Bolt.messaging.ResponseMessage
 		 {
 			  // Unpack

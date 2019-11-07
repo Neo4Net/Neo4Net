@@ -29,7 +29,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.populator
 	using IndexEntryConflictException = Neo4Net.Kernel.Api.Exceptions.index.IndexEntryConflictException;
 	using LuceneIndexWriter = Neo4Net.Kernel.Api.Impl.Schema.writer.LuceneIndexWriter;
 	using NodePropertyAccessor = Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor;
-	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
+	using SchemaDescriptorFactory = Neo4Net.Kernel.Api.schema.SchemaDescriptorFactory;
 	using UniqueIndexSampler = Neo4Net.Kernel.Impl.Api.index.sampling.UniqueIndexSampler;
 	using IndexSample = Neo4Net.Kernel.Api.StorageEngine.schema.IndexSample;
 	using Value = Neo4Net.Values.Storable.Value;
@@ -51,17 +51,17 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.populator
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verifyZeroInteractions;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.impl.LuceneTestUtil.documentRepresentingProperties;
+//	import static Neo4Net.kernel.api.impl.LuceneTestUtil.documentRepresentingProperties;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.impl.LuceneTestUtil.valueTupleList;
+//	import static Neo4Net.kernel.api.impl.LuceneTestUtil.valueTupleList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.impl.schema.LuceneDocumentStructure.newTermForChangeOrRemove;
+//	import static Neo4Net.kernel.api.impl.schema.LuceneDocumentStructure.newTermForChangeOrRemove;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.index.IndexQueryHelper.add;
+//	import static Neo4Net.kernel.api.index.IndexQueryHelper.add;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.index.IndexQueryHelper.change;
+//	import static Neo4Net.kernel.api.index.IndexQueryHelper.change;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.index.IndexQueryHelper.remove;
+//	import static Neo4Net.kernel.api.index.IndexQueryHelper.remove;
 
 	internal class UniqueDatabaseIndexPopulatingUpdaterTest
 	{
@@ -273,11 +273,11 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.populator
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void verifyVerifyUniqueness(org.Neo4Net.kernel.api.impl.schema.SchemaIndex index, org.Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor descriptor, Object... values) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: private void verifyVerifyUniqueness(Neo4Net.kernel.api.impl.schema.SchemaIndex index, Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor descriptor, Object... values) throws java.io.IOException, Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 private void VerifyVerifyUniqueness( SchemaIndex index, SchemaDescriptor descriptor, params object[] values )
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") org.mockito.ArgumentCaptor<java.util.List<org.Neo4Net.values.storable.Value[]>> captor = org.mockito.ArgumentCaptor.forClass(java.util.List.class);
+//ORIGINAL LINE: @SuppressWarnings("unchecked") org.mockito.ArgumentCaptor<java.util.List<Neo4Net.values.storable.Value[]>> captor = org.mockito.ArgumentCaptor.forClass(java.util.List.class);
 			  ArgumentCaptor<IList<Value[]>> captor = ArgumentCaptor.forClass( typeof( System.Collections.IList ) );
 			  verify( index ).verifyUniqueness( any(), eq(descriptor.PropertyIds), captor.capture() );
 

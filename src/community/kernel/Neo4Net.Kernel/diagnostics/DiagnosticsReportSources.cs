@@ -27,7 +27,7 @@ namespace Neo4Net.Diagnostics
 	using RotatingFileOutputStreamSupplier = Neo4Net.Logging.RotatingFileOutputStreamSupplier;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.logging.RotatingFileOutputStreamSupplier.getAllArchives;
+//	import static Neo4Net.logging.RotatingFileOutputStreamSupplier.getAllArchives;
 
 	/// <summary>
 	/// Contains helper methods to create create <seealso cref="DiagnosticsReportSource"/>.

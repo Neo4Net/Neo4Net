@@ -42,9 +42,9 @@ namespace Neo4Net.causalclustering.core.state.machines.tx
 	using TransactionApplicationMode = Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.state.machines.tx.LogIndexTxHeaderEncoding.encodeLogIndexAsTxHeader;
+//	import static Neo4Net.causalclustering.core.state.machines.tx.LogIndexTxHeaderEncoding.encodeLogIndexAsTxHeader;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.exceptions.Status_Transaction.LockSessionExpired;
+//	import static Neo4Net.kernel.api.exceptions.Status_Transaction.LockSessionExpired;
 
 	public class ReplicatedTransactionStateMachine : StateMachine<ReplicatedTransaction>
 	{

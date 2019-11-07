@@ -27,18 +27,18 @@ namespace Neo4Net.Collections.Helpers
 	using Neo4Net.GraphDb;
 	using ResourceUtils = Neo4Net.GraphDb.ResourceUtils;
 
-	public abstract class ResourceClosingIterator<T, V> : ResourceIterator<V>
+	public abstract class ResourceClosingIterator<T, V> : IResourceIterator<V>
 	{
-		public abstract ResourceIterator<R> Map( System.Func<T, R> map );
+		public abstract IResourceIterator<R> Map( System.Func<T, R> map );
 		public abstract java.util.stream.Stream<T> Stream();
 		 /// @deprecated use <seealso cref="newResourceIterator(System.Collections.IEnumerator, Resource...)"/> 
 		 [Obsolete("use <seealso cref=\"newResourceIterator(System.Collections.IEnumerator, Resource...)\"/>")]
-		 public static ResourceIterator<R> NewResourceIterator<R>( Resource resource, IEnumerator<R> iterator )
+		 public static IResourceIterator<R> NewResourceIterator<R>( Resource resource, IEnumerator<R> iterator )
 		 {
 			  return NewResourceIterator( iterator, resource );
 		 }
 
-		 public static ResourceIterator<R> NewResourceIterator<R>( IEnumerator<R> iterator, params Resource[] resources )
+		 public static IResourceIterator<R> NewResourceIterator<R>( IEnumerator<R> iterator, params Resource[] resources )
 		 {
 			  return new ResourceClosingIteratorAnonymousInnerClass( iterator, resources );
 		 }

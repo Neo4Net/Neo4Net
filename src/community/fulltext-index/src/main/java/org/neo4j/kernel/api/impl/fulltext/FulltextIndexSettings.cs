@@ -101,7 +101,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static void saveFulltextIndexSettings(FulltextIndexDescriptor descriptor, java.io.File indexFolder, org.Neo4Net.io.fs.FileSystemAbstraction fs) throws java.io.IOException
+//ORIGINAL LINE: static void saveFulltextIndexSettings(FulltextIndexDescriptor descriptor, java.io.File indexFolder, Neo4Net.io.fs.FileSystemAbstraction fs) throws java.io.IOException
 		 internal static void SaveFulltextIndexSettings( FulltextIndexDescriptor descriptor, File indexFolder, FileSystemAbstraction fs )
 		 {
 			  File indexConfigFile = new File( indexFolder, INDEX_CONFIG_FILE );

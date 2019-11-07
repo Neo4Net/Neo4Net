@@ -19,7 +19,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Kernel.api.query
+namespace Neo4Net.Kernel.Api.query
 {
 
 	public class CompilerInfo
@@ -28,8 +28,7 @@ namespace Neo4Net.Kernel.api.query
 		 private readonly string _runtime;
 		 private readonly IList<IndexUsage> _indexes;
 
-//JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: public CompilerInfo(@Nonnull String planner, @Nonnull String runtime, @Nonnull List<IndexUsage> indexes)
+
 		 public CompilerInfo( string planner, string runtime, IList<IndexUsage> indexes )
 		 {
 			  this._planner = planner;

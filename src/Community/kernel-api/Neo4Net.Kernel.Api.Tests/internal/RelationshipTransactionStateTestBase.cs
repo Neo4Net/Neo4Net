@@ -44,31 +44,31 @@ namespace Neo4Net.Kernel.Api.Internal
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.Direction.BOTH;
+//	import static Neo4Net.graphdb.Direction.BOTH;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.Direction.INCOMING;
+//	import static Neo4Net.graphdb.Direction.INCOMING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.Direction.OUTGOING;
+//	import static Neo4Net.graphdb.Direction.OUTGOING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.RelationshipTestSupport.assertCounts;
+//	import static Neo4Net.Kernel.Api.Internal.RelationshipTestSupport.assertCounts;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.RelationshipTestSupport.computeKey;
+//	import static Neo4Net.Kernel.Api.Internal.RelationshipTestSupport.computeKey;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.RelationshipTestSupport.count;
+//	import static Neo4Net.Kernel.Api.Internal.RelationshipTestSupport.count;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.RelationshipTestSupport.sparse;
+//	import static Neo4Net.Kernel.Api.Internal.RelationshipTestSupport.sparse;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.RelationshipTransactionStateTestBase.RelationshipDirection.IN;
+//	import static Neo4Net.Kernel.Api.Internal.RelationshipTransactionStateTestBase.RelationshipDirection.IN;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.RelationshipTransactionStateTestBase.RelationshipDirection.LOOP;
+//	import static Neo4Net.Kernel.Api.Internal.RelationshipTransactionStateTestBase.RelationshipDirection.LOOP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.RelationshipTransactionStateTestBase.RelationshipDirection.OUT;
+//	import static Neo4Net.Kernel.Api.Internal.RelationshipTransactionStateTestBase.RelationshipDirection.OUT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.NO_VALUE;
+//	import static Neo4Net.values.storable.Values.NO_VALUE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.longValue;
+//	import static Neo4Net.values.storable.Values.longValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.stringValue;
+//	import static Neo4Net.values.storable.Values.stringValue;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @SuppressWarnings("Duplicates") public abstract class RelationshipTransactionStateTestBase<G extends KernelAPIWriteTestSupport> extends KernelAPIWriteTestBase<G>
@@ -1261,7 +1261,7 @@ namespace Neo4Net.Kernel.Api.Internal
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.util.Map<String,int> modifyStartNodeRelationships(RelationshipTestSupport.StartNode start, Transaction tx) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: private java.util.Map<String,int> modifyStartNodeRelationships(RelationshipTestSupport.StartNode start, Transaction tx) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 private IDictionary<string, int> ModifyStartNodeRelationships( RelationshipTestSupport.StartNode start, Transaction tx )
 		 {
 			  IDictionary<string, int> expectedCounts = new Dictionary<string, int>();
@@ -1438,7 +1438,7 @@ namespace Neo4Net.Kernel.Api.Internal
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void relateNTimes(int nRelationshipsInStore, int type, long n1, long n2, Transaction tx) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: private void relateNTimes(int nRelationshipsInStore, int type, long n1, long n2, Transaction tx) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 private void RelateNTimes( int nRelationshipsInStore, int type, long n1, long n2, Transaction tx )
 		 {
 			  for ( int i = 0; i < nRelationshipsInStore; i++ )
@@ -1502,7 +1502,7 @@ namespace Neo4Net.Kernel.Api.Internal
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void createRelationship(RelationshipDirection direction, long start, int type, Write write) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.EntityNotFoundException
+//ORIGINAL LINE: private void createRelationship(RelationshipDirection direction, long start, int type, Write write) throws Neo4Net.Kernel.Api.Internal.Exceptions.EntityNotFoundException
 		 private void CreateRelationship( RelationshipDirection direction, long start, int type, Write write )
 		 {
 			  switch ( direction )

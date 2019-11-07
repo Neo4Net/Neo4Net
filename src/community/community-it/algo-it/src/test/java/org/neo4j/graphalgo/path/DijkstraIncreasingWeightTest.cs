@@ -279,7 +279,7 @@ namespace Neo4Net.GraphAlgo.path
 
 			  InitialBranchState<int> state = new Neo4Net.GraphDb.Traversal.InitialBranchState_State<int>( 0, 0 );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.Map<org.Neo4Net.graphdb.Node, int> encounteredState = new java.util.HashMap<>();
+//ORIGINAL LINE: final java.util.Map<Neo4Net.graphdb.Node, int> encounteredState = new java.util.HashMap<>();
 			  IDictionary<Node, int> encounteredState = new Dictionary<Node, int>();
 			  PathExpander<int> expander = new PathExpanderAnonymousInnerClass( this, state, encounteredState );
 
@@ -325,8 +325,8 @@ namespace Neo4Net.GraphAlgo.path
 		 {
 			  Node startNode = Graph.getNode( start );
 			  Node endNode = Graph.getNode( end );
-			  ResourceIterable<Relationship> relationships = Iterables.asResourceIterable( startNode.Relationships );
-			  using ( ResourceIterator<Relationship> resourceIterator = relationships.GetEnumerator() )
+			 IResourceIterable<Relationship> relationships = Iterables.asResourceIterable( startNode.Relationships );
+			  using ( IResourceIterator<Relationship> resourceIterator = relationships.GetEnumerator() )
 			  {
 					while ( resourceIterator.MoveNext() )
 					{

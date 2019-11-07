@@ -30,47 +30,47 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.storageengine.impl.recordstorage.RecordBuilders.filterType;
+//	import static Neo4Net.kernel.impl.storageengine.impl.recordstorage.RecordBuilders.filterType;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.storageengine.impl.recordstorage.RecordBuilders.firstIn;
+//	import static Neo4Net.kernel.impl.storageengine.impl.recordstorage.RecordBuilders.firstIn;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.storageengine.impl.recordstorage.RecordBuilders.firstOut;
+//	import static Neo4Net.kernel.impl.storageengine.impl.recordstorage.RecordBuilders.firstOut;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.storageengine.impl.recordstorage.RecordBuilders.from;
+//	import static Neo4Net.kernel.impl.storageengine.impl.recordstorage.RecordBuilders.from;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.storageengine.impl.recordstorage.RecordBuilders.group;
+//	import static Neo4Net.kernel.impl.storageengine.impl.recordstorage.RecordBuilders.group;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.storageengine.impl.recordstorage.RecordBuilders.firstLoop;
+//	import static Neo4Net.kernel.impl.storageengine.impl.recordstorage.RecordBuilders.firstLoop;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.storageengine.impl.recordstorage.RecordBuilders.newChangeSet;
+//	import static Neo4Net.kernel.impl.storageengine.impl.recordstorage.RecordBuilders.newChangeSet;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.storageengine.impl.recordstorage.RecordBuilders.newRelGroupGetter;
+//	import static Neo4Net.kernel.impl.storageengine.impl.recordstorage.RecordBuilders.newRelGroupGetter;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.storageengine.impl.recordstorage.RecordBuilders.nextRel;
+//	import static Neo4Net.kernel.impl.storageengine.impl.recordstorage.RecordBuilders.nextRel;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.storageengine.impl.recordstorage.RecordBuilders.node;
+//	import static Neo4Net.kernel.impl.storageengine.impl.recordstorage.RecordBuilders.node;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.storageengine.impl.recordstorage.RecordBuilders.owningNode;
+//	import static Neo4Net.kernel.impl.storageengine.impl.recordstorage.RecordBuilders.owningNode;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.storageengine.impl.recordstorage.RecordBuilders.rel;
+//	import static Neo4Net.kernel.impl.storageengine.impl.recordstorage.RecordBuilders.rel;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.storageengine.impl.recordstorage.RecordBuilders.relGroup;
+//	import static Neo4Net.kernel.impl.storageengine.impl.recordstorage.RecordBuilders.relGroup;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.storageengine.impl.recordstorage.RecordBuilders.sCount;
+//	import static Neo4Net.kernel.impl.storageengine.impl.recordstorage.RecordBuilders.sCount;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.storageengine.impl.recordstorage.RecordBuilders.sNext;
+//	import static Neo4Net.kernel.impl.storageengine.impl.recordstorage.RecordBuilders.sNext;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.storageengine.impl.recordstorage.RecordBuilders.sPrev;
+//	import static Neo4Net.kernel.impl.storageengine.impl.recordstorage.RecordBuilders.sPrev;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.storageengine.impl.recordstorage.RecordBuilders.tCount;
+//	import static Neo4Net.kernel.impl.storageengine.impl.recordstorage.RecordBuilders.tCount;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.storageengine.impl.recordstorage.RecordBuilders.tNext;
+//	import static Neo4Net.kernel.impl.storageengine.impl.recordstorage.RecordBuilders.tNext;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.storageengine.impl.recordstorage.RecordBuilders.tPrev;
+//	import static Neo4Net.kernel.impl.storageengine.impl.recordstorage.RecordBuilders.tPrev;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.storageengine.impl.recordstorage.RecordBuilders.to;
+//	import static Neo4Net.kernel.impl.storageengine.impl.recordstorage.RecordBuilders.to;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.storageengine.impl.recordstorage.RecordMatchers.containsChanges;
+//	import static Neo4Net.kernel.impl.storageengine.impl.recordstorage.RecordMatchers.containsChanges;
 
 	public class RelationshipCreatorTest
 	{

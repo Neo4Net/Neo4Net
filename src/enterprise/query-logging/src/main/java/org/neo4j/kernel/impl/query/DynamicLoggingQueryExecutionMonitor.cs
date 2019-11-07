@@ -28,7 +28,7 @@ namespace Neo4Net.Kernel.impl.query
 	using Neo4Net.GraphDb.config;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
-	using ExecutingQuery = Neo4Net.Kernel.api.query.ExecutingQuery;
+	using ExecutingQuery = Neo4Net.Kernel.Api.query.ExecutingQuery;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using LifecycleAdapter = Neo4Net.Kernel.Lifecycle.LifecycleAdapter;
 	using FormattedLog = Neo4Net.Logging.FormattedLog;
@@ -38,9 +38,9 @@ namespace Neo4Net.Kernel.impl.query
 	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.file.Files.createOrOpenAsOutputStream;
+//	import static Neo4Net.io.file.Files.createOrOpenAsOutputStream;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.query.QueryLogger.NO_LOG;
+//	import static Neo4Net.kernel.impl.query.QueryLogger.NO_LOG;
 
 	internal class DynamicLoggingQueryExecutionMonitor : LifecycleAdapter, QueryExecutionMonitor
 	{

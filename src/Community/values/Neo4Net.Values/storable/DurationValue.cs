@@ -39,17 +39,17 @@ namespace Neo4Net.Values.Storable
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Arrays.asList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.NumberType.NO_NUMBER;
+//	import static Neo4Net.values.storable.NumberType.NO_NUMBER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.NumberValue.safeCastFloatingPoint;
+//	import static Neo4Net.values.storable.NumberValue.safeCastFloatingPoint;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.utils.TemporalUtil.AVG_NANOS_PER_MONTH;
+//	import static Neo4Net.values.utils.TemporalUtil.AVG_NANOS_PER_MONTH;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.utils.TemporalUtil.AVG_SECONDS_PER_MONTH;
+//	import static Neo4Net.values.utils.TemporalUtil.AVG_SECONDS_PER_MONTH;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.utils.TemporalUtil.NANOS_PER_SECOND;
+//	import static Neo4Net.values.utils.TemporalUtil.NANOS_PER_SECOND;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.utils.TemporalUtil.SECONDS_PER_DAY;
+//	import static Neo4Net.values.utils.TemporalUtil.SECONDS_PER_DAY;
 
 	/// <summary>
 	/// We use our own implementation because neither <seealso cref="java.time.Duration"/> nor <seealso cref="java.time.Period"/> fits our needs.
@@ -92,7 +92,7 @@ namespace Neo4Net.Values.Storable
 		 {
 			  StructureBuilder<AnyValue, DurationValue> builder = builder();
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: for (java.util.Map.Entry<String,? extends org.Neo4Net.values.AnyValue> entry : input.entrySet())
+//ORIGINAL LINE: for (java.util.Map.Entry<String,? extends Neo4Net.values.AnyValue> entry : input.entrySet())
 			  foreach ( KeyValuePair<string, ? extends AnyValue> entry in input.SetOfKeyValuePairs() )
 			  {
 					builder.Add( entry.Key, entry.Value );

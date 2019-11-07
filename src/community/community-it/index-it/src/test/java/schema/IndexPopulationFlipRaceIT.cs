@@ -28,8 +28,8 @@ namespace Schema
 	using Neo4Net.Collections.Helpers;
 	using IndexReference = Neo4Net.Kernel.Api.Internal.IndexReference;
 	using Kernel = Neo4Net.Kernel.Api.Internal.Kernel;
-	using TestIndexDescriptorFactory = Neo4Net.Kernel.api.schema.index.TestIndexDescriptorFactory;
-	using AnonymousContext = Neo4Net.Kernel.api.security.AnonymousContext;
+	using TestIndexDescriptorFactory = Neo4Net.Kernel.Api.schema.index.TestIndexDescriptorFactory;
+	using AnonymousContext = Neo4Net.Kernel.Api.security.AnonymousContext;
 	using DatabaseRule = Neo4Net.Test.rule.DatabaseRule;
 	using EmbeddedDatabaseRule = Neo4Net.Test.rule.EmbeddedDatabaseRule;
 	using RandomRule = Neo4Net.Test.rule.RandomRule;
@@ -38,19 +38,19 @@ namespace Schema
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.Label.label;
+//	import static Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.Transaction_Type.@implicit;
+//	import static Neo4Net.Kernel.Api.Internal.Transaction_Type.@implicit;
 
 	public class IndexPopulationFlipRaceIT
 	{
 		 private const int NODES_PER_INDEX = 10;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.DatabaseRule db = new org.Neo4Net.test.rule.EmbeddedDatabaseRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.DatabaseRule db = new Neo4Net.test.rule.EmbeddedDatabaseRule();
 		 public readonly DatabaseRule Db = new EmbeddedDatabaseRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.RandomRule random = new org.Neo4Net.test.rule.RandomRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.RandomRule random = new Neo4Net.test.rule.RandomRule();
 		 public readonly RandomRule Random = new RandomRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -140,7 +140,7 @@ namespace Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void verifyThatThereAreExactlyOneIndexEntryPerNodeInTheIndexes(int i, org.Neo4Net.helpers.collection.Pair<long[],long[]> data) throws Exception
+//ORIGINAL LINE: private void verifyThatThereAreExactlyOneIndexEntryPerNodeInTheIndexes(int i, Neo4Net.helpers.collection.Pair<long[],long[]> data) throws Exception
 		 private void VerifyThatThereAreExactlyOneIndexEntryPerNodeInTheIndexes( int i, Pair<long[], long[]> data )
 		 {
 			  Kernel kernel = Db.DependencyResolver.resolveDependency( typeof( Kernel ) );

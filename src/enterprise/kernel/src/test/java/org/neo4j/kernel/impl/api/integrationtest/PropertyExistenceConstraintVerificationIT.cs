@@ -54,13 +54,13 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.runners.Suite.SuiteClasses;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.Label.label;
+//	import static Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.RelationshipType.withName;
+//	import static Neo4Net.graphdb.RelationshipType.withName;
 	using static Neo4Net.Kernel.Impl.Api.integrationtest.PropertyExistenceConstraintVerificationIT.NodePropertyExistenceExistenceConstrainVerificationIT;
 	using static Neo4Net.Kernel.Impl.Api.integrationtest.PropertyExistenceConstraintVerificationIT.RelationshipPropertyExistenceExistenceConstrainVerificationIT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.rule.concurrent.ThreadingRule.waitingWhileIn;
+//	import static Neo4Net.test.rule.concurrent.ThreadingRule.waitingWhileIn;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Suite.class) @SuiteClasses({ NodePropertyExistenceExistenceConstrainVerificationIT.class, RelationshipPropertyExistenceExistenceConstrainVerificationIT.class }) public class PropertyExistenceConstraintVerificationIT
@@ -143,10 +143,10 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 			  internal const string PROPERTY = "bar";
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.DatabaseRule db = new org.Neo4Net.test.rule.EnterpriseDatabaseRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.DatabaseRule db = new Neo4Net.test.rule.EnterpriseDatabaseRule();
 			  public readonly DatabaseRule Db = new EnterpriseDatabaseRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.concurrent.ThreadingRule thread = new org.Neo4Net.test.rule.concurrent.ThreadingRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.concurrent.ThreadingRule thread = new Neo4Net.test.rule.concurrent.ThreadingRule();
 			  public readonly ThreadingRule Thread = new ThreadingRule();
 
 			  internal abstract void CreateConstraint( DatabaseRule db, string key, string property );

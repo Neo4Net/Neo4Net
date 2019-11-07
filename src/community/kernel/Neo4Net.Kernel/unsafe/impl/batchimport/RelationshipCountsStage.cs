@@ -28,9 +28,9 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 	using Neo4Net.@unsafe.Impl.Batchimport.staging;
 	using Stage = Neo4Net.@unsafe.Impl.Batchimport.staging.Stage;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.RecordIdIterator.allIn;
+//	import static Neo4Net.@unsafe.impl.batchimport.RecordIdIterator.allIn;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.staging.Step_Fields.RECYCLE_BATCHES;
+//	import static Neo4Net.@unsafe.impl.batchimport.staging.Step_Fields.RECYCLE_BATCHES;
 
 	/// <summary>
 	/// Reads all records from <seealso cref="RelationshipStore"/> and process the counts in them. Uses a <seealso cref="NodeLabelsCache"/>
@@ -44,7 +44,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 		 {
 			  Add( new BatchFeedStep( Control(), config, allIn(relationshipStore, config), relationshipStore.RecordSize ) );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: add(new org.Neo4Net.unsafe.impl.batchimport.staging.ReadRecordsStep<>(control(), config, false, relationshipStore));
+//ORIGINAL LINE: add(new Neo4Net.unsafe.impl.batchimport.staging.ReadRecordsStep<>(control(), config, false, relationshipStore));
 			  Add( new ReadRecordsStep<object>( Control(), config, false, relationshipStore ) );
 			  Add( new ProcessRelationshipCountsDataStep( Control(), cache, config, highLabelId, highRelationshipTypeId, countsUpdater, cacheFactory, progressReporter ) );
 		 }

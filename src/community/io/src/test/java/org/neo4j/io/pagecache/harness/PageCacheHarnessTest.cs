@@ -43,36 +43,36 @@ namespace Neo4Net.Io.pagecache.harness
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertTimeout;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.pagecache.PagedFile_Fields.PF_SHARED_READ_LOCK;
+//	import static Neo4Net.io.pagecache.PagedFile_Fields.PF_SHARED_READ_LOCK;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.pagecache.PagedFile_Fields.PF_SHARED_WRITE_LOCK;
+//	import static Neo4Net.io.pagecache.PagedFile_Fields.PF_SHARED_WRITE_LOCK;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.pagecache.randomharness.Command.FlushCache;
+//	import static Neo4Net.io.pagecache.randomharness.Command.FlushCache;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.pagecache.randomharness.Command.FlushFile;
+//	import static Neo4Net.io.pagecache.randomharness.Command.FlushFile;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.pagecache.randomharness.Command.MapFile;
+//	import static Neo4Net.io.pagecache.randomharness.Command.MapFile;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.pagecache.randomharness.Command.ReadMulti;
+//	import static Neo4Net.io.pagecache.randomharness.Command.ReadMulti;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.pagecache.randomharness.Command.ReadRecord;
+//	import static Neo4Net.io.pagecache.randomharness.Command.ReadRecord;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.pagecache.randomharness.Command.UnmapFile;
+//	import static Neo4Net.io.pagecache.randomharness.Command.UnmapFile;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.pagecache.randomharness.Command.WriteMulti;
+//	import static Neo4Net.io.pagecache.randomharness.Command.WriteMulti;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.pagecache.randomharness.Command.WriteRecord;
+//	import static Neo4Net.io.pagecache.randomharness.Command.WriteRecord;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ExtendWith({TestDirectoryExtension.class, ProfilerExtension.class}) abstract class PageCacheHarnessTest<T extends org.Neo4Net.io.pagecache.PageCache> extends org.Neo4Net.io.pagecache.PageCacheTestSupport<T>
+//ORIGINAL LINE: @ExtendWith({TestDirectoryExtension.class, ProfilerExtension.class}) abstract class PageCacheHarnessTest<T extends Neo4Net.io.pagecache.PageCache> extends Neo4Net.io.pagecache.PageCacheTestSupport<T>
 	internal abstract class PageCacheHarnessTest<T> : PageCacheTestSupport<T> where T : Neo4Net.Io.pagecache.PageCache
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject public org.Neo4Net.test.rule.TestDirectory directory;
+//ORIGINAL LINE: @Inject public Neo4Net.test.rule.TestDirectory directory;
 		 public TestDirectory Directory;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject public org.Neo4Net.resources.Profiler profiler;
+//ORIGINAL LINE: @Inject public Neo4Net.resources.Profiler profiler;
 		 public Profiler Profiler;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -216,7 +216,7 @@ namespace Neo4Net.Io.pagecache.harness
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private org.Neo4Net.io.pagecache.randomharness.Phase filesAreCorrectlyWrittenVerification(final org.Neo4Net.io.pagecache.randomharness.RecordFormat recordFormat, final int filePageCount)
+//ORIGINAL LINE: private Neo4Net.io.pagecache.randomharness.Phase filesAreCorrectlyWrittenVerification(final Neo4Net.io.pagecache.randomharness.RecordFormat recordFormat, final int filePageCount)
 		 private Phase FilesAreCorrectlyWrittenVerification( RecordFormat recordFormat, int filePageCount )
 		 {
 			  return ( cache, fs1, filesTouched ) =>

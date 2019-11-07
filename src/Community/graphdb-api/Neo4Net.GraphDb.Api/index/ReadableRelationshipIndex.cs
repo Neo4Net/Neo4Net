@@ -39,7 +39,7 @@
 ////////////////////		 /// <summary>
 ////////////////////		 /// Returns exact matches from this index, given the key/value pair. Matches
 ////////////////////		 /// will be for key/value pairs just as they were added by the
-////////////////////		 /// <seealso cref="Index.add(org.Neo4Net.graphdb.PropertyContainer, string, object)"/> method.
+////////////////////		 /// <seealso cref="Index.add(Neo4Net.GraphDb.PropertyContainer, string, object)"/> method.
 ////////////////////		 /// </summary>
 ////////////////////		 /// <param name="key"> the key in the key/value pair to match. </param>
 ////////////////////		 /// <param name="valueOrNull"> the value in the key/value pair to match. </param>

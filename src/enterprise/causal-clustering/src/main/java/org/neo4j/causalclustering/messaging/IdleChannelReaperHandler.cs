@@ -46,7 +46,7 @@ namespace Neo4Net.causalclustering.messaging
 //ORIGINAL LINE: final java.net.InetSocketAddress socketAddress = (java.net.InetSocketAddress) ctx.channel().remoteAddress();
 					InetSocketAddress socketAddress = ( InetSocketAddress ) ctx.channel().remoteAddress();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.helpers.AdvertisedSocketAddress address = new org.Neo4Net.helpers.AdvertisedSocketAddress(socketAddress.getHostName(), socketAddress.getPort());
+//ORIGINAL LINE: final Neo4Net.helpers.AdvertisedSocketAddress address = new Neo4Net.helpers.AdvertisedSocketAddress(socketAddress.getHostName(), socketAddress.getPort());
 					AdvertisedSocketAddress address = new AdvertisedSocketAddress( socketAddress.HostName, socketAddress.Port );
 
 					_channels.remove( address );

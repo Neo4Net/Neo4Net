@@ -46,11 +46,11 @@ namespace Neo4Net.tools.dump
 	using TransactionLogEntryCursor = Neo4Net.tools.dump.log.TransactionLogEntryCursor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.LogVersionBridge_Fields.NO_MORE_CHANNELS;
+//	import static Neo4Net.kernel.impl.transaction.log.LogVersionBridge_Fields.NO_MORE_CHANNELS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.tools.util.TransactionLogUtils.openVersionedChannel;
+//	import static Neo4Net.tools.util.TransactionLogUtils.openVersionedChannel;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.entry.LogEntryByteCodes.CHECK_POINT;
+//	import static Neo4Net.kernel.impl.transaction.log.entry.LogEntryByteCodes.CHECK_POINT;
 
 	/// <summary>
 	/// Merely a utility which, given a store directory or log file, reads the transaction log(s) as a stream of transactions
@@ -79,7 +79,7 @@ namespace Neo4Net.tools.dump
 			  /// </summary>
 			  /// <param name="transactionEntries"> the log entries making up the transaction, including start/commit entries. </param>
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//			  default void transaction(org.Neo4Net.kernel.impl.transaction.log.entry.LogEntry[] transactionEntries)
+//			  default void transaction(Neo4Net.kernel.impl.transaction.log.entry.LogEntry[] transactionEntries)
 	//		  { // no-op by default
 	//		  }
 
@@ -89,7 +89,7 @@ namespace Neo4Net.tools.dump
 			  /// <param name="checkpoint"> the <seealso cref="CheckPoint"/> log entry. </param>
 			  /// <param name="checkpointEntryPosition"> <seealso cref="LogPosition"/> of the checkpoint entry itself. </param>
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//			  default void checkpoint(org.Neo4Net.kernel.impl.transaction.log.entry.CheckPoint checkpoint, org.Neo4Net.kernel.impl.transaction.log.LogPosition checkpointEntryPosition)
+//			  default void checkpoint(Neo4Net.kernel.impl.transaction.log.entry.CheckPoint checkpoint, Neo4Net.kernel.impl.transaction.log.LogPosition checkpointEntryPosition)
 	//		  { // no-op by default
 	//		  }
 		 }
@@ -112,7 +112,7 @@ namespace Neo4Net.tools.dump
 		 /// encountered during the analysis. </param>
 		 /// <exception cref="IOException"> on I/O error. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static void analyze(org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, java.io.File storeDirOrLogFile, org.Neo4Net.kernel.impl.transaction.log.entry.InvalidLogEntryHandler invalidLogEntryHandler, Monitor monitor) throws java.io.IOException
+//ORIGINAL LINE: public static void analyze(Neo4Net.io.fs.FileSystemAbstraction fileSystem, java.io.File storeDirOrLogFile, Neo4Net.kernel.impl.transaction.log.entry.InvalidLogEntryHandler invalidLogEntryHandler, Monitor monitor) throws java.io.IOException
 		 public static void Analyze( FileSystemAbstraction fileSystem, File storeDirOrLogFile, InvalidLogEntryHandler invalidLogEntryHandler, Monitor monitor )
 		 {
 			  File firstFile;
@@ -124,7 +124,7 @@ namespace Neo4Net.tools.dump
 			  {
 					// Use natural log version bridging if a directory is supplied
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.transaction.log.files.LogFiles logFiles = org.Neo4Net.kernel.impl.transaction.log.files.LogFilesBuilder.logFilesBasedOnlyBuilder(storeDirOrLogFile, fileSystem).build();
+//ORIGINAL LINE: final Neo4Net.kernel.impl.transaction.log.files.LogFiles logFiles = Neo4Net.kernel.impl.transaction.log.files.LogFilesBuilder.logFilesBasedOnlyBuilder(storeDirOrLogFile, fileSystem).build();
 					LogFiles logFiles = LogFilesBuilder.logFilesBasedOnlyBuilder( storeDirOrLogFile, fileSystem ).build();
 					bridge = new ReaderLogVersionBridgeAnonymousInnerClass( logFiles, monitor, channel );
 					long lowestLogVersion = logFiles.LowestLogVersion;
@@ -140,7 +140,7 @@ namespace Neo4Net.tools.dump
 					// Use no bridging, simply reading this single log file if a file is supplied
 					firstFile = storeDirOrLogFile;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.transaction.log.files.LogFiles logFiles = org.Neo4Net.kernel.impl.transaction.log.files.LogFilesBuilder.logFilesBasedOnlyBuilder(storeDirOrLogFile, fileSystem).build();
+//ORIGINAL LINE: final Neo4Net.kernel.impl.transaction.log.files.LogFiles logFiles = Neo4Net.kernel.impl.transaction.log.files.LogFilesBuilder.logFilesBasedOnlyBuilder(storeDirOrLogFile, fileSystem).build();
 					LogFiles logFiles = LogFilesBuilder.logFilesBasedOnlyBuilder( storeDirOrLogFile, fileSystem ).build();
 					monitor.LogFile( firstFile, logFiles.GetLogVersion( firstFile ) );
 					bridge = NO_MORE_CHANNELS;
@@ -181,7 +181,7 @@ namespace Neo4Net.tools.dump
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.kernel.impl.transaction.log.LogVersionedStoreChannel next(org.Neo4Net.kernel.impl.transaction.log.LogVersionedStoreChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public Neo4Net.kernel.impl.transaction.log.LogVersionedStoreChannel next(Neo4Net.kernel.impl.transaction.log.LogVersionedStoreChannel channel) throws java.io.IOException
 			 public override LogVersionedStoreChannel next( LogVersionedStoreChannel channel )
 			 {
 				  LogVersionedStoreChannel next = base.next( channel );

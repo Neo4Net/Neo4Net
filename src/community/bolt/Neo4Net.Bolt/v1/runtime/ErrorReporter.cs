@@ -26,7 +26,7 @@ namespace Neo4Net.Bolt.v1.runtime
 	using StoreLogService = Neo4Net.Logging.Internal.StoreLogService;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.exceptions.Status_Classification.DatabaseError;
+//	import static Neo4Net.kernel.api.exceptions.Status_Classification.DatabaseError;
 
 	/// <summary>
 	/// Report received exceptions into the appropriate log (console or debug) and delivery stacktraces to debug.log.

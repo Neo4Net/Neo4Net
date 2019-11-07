@@ -43,7 +43,7 @@ namespace Neo4Net.Server.rest.management.console
 //	import static Arrays.asList;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Path(ConsoleService.SERVICE_PATH) public class ConsoleService implements org.Neo4Net.server.rest.management.AdvertisableService
+//ORIGINAL LINE: @Path(ConsoleService.SERVICE_PATH) public class ConsoleService implements Neo4Net.server.rest.management.AdvertisableService
 	public class ConsoleService : AdvertisableService
 	{
 		 public const string SERVICE_PATH = "server/console";

@@ -29,13 +29,13 @@ namespace Neo4Net.Server.rest.discovery
 	using ConnectorPortRegister = Neo4Net.Kernel.configuration.ConnectorPortRegister;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.discovery.DiscoverableURIs.Precedence.HIGH;
+//	import static Neo4Net.server.rest.discovery.DiscoverableURIs.Precedence.HIGH;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.discovery.DiscoverableURIs.Precedence.HIGHEST;
+//	import static Neo4Net.server.rest.discovery.DiscoverableURIs.Precedence.HIGHEST;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.discovery.DiscoverableURIs.Precedence.LOW;
+//	import static Neo4Net.server.rest.discovery.DiscoverableURIs.Precedence.LOW;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.discovery.DiscoverableURIs.Precedence.LOWEST;
+//	import static Neo4Net.server.rest.discovery.DiscoverableURIs.Precedence.LOWEST;
 
 	/// <summary>
 	/// Repository of URIs that the REST API publicly advertises at the root endpoint.

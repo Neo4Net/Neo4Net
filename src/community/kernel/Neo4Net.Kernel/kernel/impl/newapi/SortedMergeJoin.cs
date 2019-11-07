@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 	using Values = Neo4Net.Values.Storable.Values;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.util.Preconditions.checkArgument;
+//	import static Neo4Net.util.Preconditions.checkArgument;
 
 	internal sealed class SortedMergeJoin
 	{

@@ -37,18 +37,18 @@ namespace Neo4Net.Kernel.Impl.Api
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.Label.label;
+//	import static Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.RelationshipType.withName;
+//	import static Neo4Net.graphdb.RelationshipType.withName;
 
 	public class DataAndSchemaTransactionSeparationIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.DatabaseRule db = new org.Neo4Net.test.rule.ImpermanentDatabaseRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.DatabaseRule db = new Neo4Net.test.rule.ImpermanentDatabaseRule();
 		 public readonly DatabaseRule Db = new ImpermanentDatabaseRule();
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private static System.Func<org.Neo4Net.graphdb.GraphDatabaseService, Void> expectFailureAfterSchemaOperation(final System.Func<org.Neo4Net.graphdb.GraphDatabaseService, ?> function)
+//ORIGINAL LINE: private static System.Func<Neo4Net.graphdb.GraphDatabaseService, Void> expectFailureAfterSchemaOperation(final System.Func<Neo4Net.graphdb.GraphDatabaseService, ?> function)
 		 private static System.Func<GraphDatabaseService, Void> ExpectFailureAfterSchemaOperation<T1>( System.Func<T1> function )
 		 {
 			  return graphDb =>
@@ -73,7 +73,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private static System.Func<org.Neo4Net.graphdb.GraphDatabaseService, Void> succeedAfterSchemaOperation(final System.Func<org.Neo4Net.graphdb.GraphDatabaseService, ?> function)
+//ORIGINAL LINE: private static System.Func<Neo4Net.graphdb.GraphDatabaseService, Void> succeedAfterSchemaOperation(final System.Func<Neo4Net.graphdb.GraphDatabaseService, ?> function)
 		 private static System.Func<GraphDatabaseService, Void> SucceedAfterSchemaOperation<T1>( System.Func<T1> function )
 		 {
 			  return graphDb =>
@@ -100,7 +100,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.helpers.collection.Pair<org.Neo4Net.graphdb.Node, org.Neo4Net.graphdb.Node> nodes = db.executeAndCommit(aPairOfNodes());
+//ORIGINAL LINE: final Neo4Net.helpers.collection.Pair<Neo4Net.graphdb.Node, Neo4Net.graphdb.Node> nodes = db.executeAndCommit(aPairOfNodes());
 			  Pair<Node, Node> nodes = Db.executeAndCommit( APairOfNodes() );
 			  // then
 			  Db.executeAndRollback( ExpectFailureAfterSchemaOperation( Relate( nodes ) ) );
@@ -115,7 +115,7 @@ namespace Neo4Net.Kernel.Impl.Api
 			  Relationship relationship = Db.executeAndCommit( Relate( nodes ) );
 			  // when
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: for (System.Func<org.Neo4Net.graphdb.GraphDatabaseService, ?> operation : new System.Func[]{ propertyWrite(org.Neo4Net.graphdb.Node.class, nodes.first(), "key1", "value1"), propertyWrite(org.Neo4Net.graphdb.Relationship.class, relationship, "key1", "value1")})
+//ORIGINAL LINE: for (System.Func<Neo4Net.graphdb.GraphDatabaseService, ?> operation : new System.Func[]{ propertyWrite(Neo4Net.graphdb.Node.class, nodes.first(), "key1", "value1"), propertyWrite(Neo4Net.graphdb.Relationship.class, relationship, "key1", "value1")})
 			  foreach ( System.Func<GraphDatabaseService, ?> operation in new System.Func[]{ PropertyWrite( typeof( Node ), nodes.First(), "key1", "value1" ), PropertyWrite(typeof(Relationship), relationship, "key1", "value1") } )
 			  {
 					// then
@@ -135,7 +135,7 @@ namespace Neo4Net.Kernel.Impl.Api
 
 			  // when
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: for (System.Func<org.Neo4Net.graphdb.GraphDatabaseService, ?> operation : new System.Func[]{ propertyRead(org.Neo4Net.graphdb.Node.class, nodes.first(), "key1"), propertyRead(org.Neo4Net.graphdb.Relationship.class, relationship, "key1")})
+//ORIGINAL LINE: for (System.Func<Neo4Net.graphdb.GraphDatabaseService, ?> operation : new System.Func[]{ propertyRead(Neo4Net.graphdb.Node.class, nodes.first(), "key1"), propertyRead(Neo4Net.graphdb.Relationship.class, relationship, "key1")})
 			  foreach ( System.Func<GraphDatabaseService, ?> operation in new System.Func[]{ PropertyRead( typeof( Node ), nodes.First(), "key1" ), PropertyRead(typeof(Relationship), relationship, "key1") } )
 			  {
 					// then
@@ -150,7 +150,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private static <T extends org.Neo4Net.graphdb.PropertyContainer> System.Func<org.Neo4Net.graphdb.GraphDatabaseService, Object> propertyRead(Class<T> type, final T IEntity, final String key)
+//ORIGINAL LINE: private static <T extends Neo4Net.graphdb.PropertyContainer> System.Func<Neo4Net.graphdb.GraphDatabaseService, Object> propertyRead(Class<T> type, final T IEntity, final String key)
 		 private static System.Func<GraphDatabaseService, object> PropertyRead<T>( Type type, T IEntity, string key ) where T : Neo4Net.GraphDb.PropertyContainer
 		 {
 				 type = typeof( T );
@@ -175,7 +175,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private static <T extends org.Neo4Net.graphdb.PropertyContainer> System.Func<org.Neo4Net.graphdb.GraphDatabaseService, Void> propertyWrite(Class<T> type, final T IEntity, final String key, final Object value)
+//ORIGINAL LINE: private static <T extends Neo4Net.graphdb.PropertyContainer> System.Func<Neo4Net.graphdb.GraphDatabaseService, Void> propertyWrite(Class<T> type, final T IEntity, final String key, final Object value)
 		 private static System.Func<GraphDatabaseService, Void> PropertyWrite<T>( Type type, T IEntity, string key, object value ) where T : Neo4Net.GraphDb.PropertyContainer
 		 {
 				 type = typeof( T );
@@ -208,7 +208,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private static System.Func<org.Neo4Net.graphdb.GraphDatabaseService, org.Neo4Net.graphdb.Relationship> relate(final org.Neo4Net.helpers.collection.Pair<org.Neo4Net.graphdb.Node, org.Neo4Net.graphdb.Node> nodes)
+//ORIGINAL LINE: private static System.Func<Neo4Net.graphdb.GraphDatabaseService, Neo4Net.graphdb.Relationship> relate(final Neo4Net.helpers.collection.Pair<Neo4Net.graphdb.Node, Neo4Net.graphdb.Node> nodes)
 		 private static System.Func<GraphDatabaseService, Relationship> Relate( Pair<Node, Node> nodes )
 		 {
 			  return graphDb => nodes.First().createRelationshipTo(nodes.Other(), withName("RELATED"));

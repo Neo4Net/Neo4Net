@@ -53,22 +53,22 @@ namespace Jmx
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.filter;
+//	import static Neo4Net.helpers.collection.Iterables.filter;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.firstOrNull;
+//	import static Neo4Net.helpers.collection.Iterables.firstOrNull;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.STRING;
+//	import static Neo4Net.kernel.configuration.Settings.STRING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.setting;
+//	import static Neo4Net.kernel.configuration.Settings.setting;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.ha.ClusterRule.intBase;
+//	import static Neo4Net.test.ha.ClusterRule.intBase;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.ha.ClusterRule.stringWithIntBase;
+//	import static Neo4Net.test.ha.ClusterRule.stringWithIntBase;
 
 	public class HaBeanIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.ha.ClusterRule clusterRule = new org.Neo4Net.test.ha.ClusterRule().withInstanceSetting(setting("jmx.port", STRING, org.Neo4Net.kernel.configuration.Settings.NO_DEFAULT), intBase(9912)).withInstanceSetting(org.Neo4Net.kernel.ha.HaSettings.ha_server, stringWithIntBase(":", 1136)).withInstanceSetting(org.Neo4Net.graphdb.factory.GraphDatabaseSettings.forced_kernel_id, stringWithIntBase("kernel", 0));
+//ORIGINAL LINE: @Rule public final Neo4Net.test.ha.ClusterRule clusterRule = new Neo4Net.test.ha.ClusterRule().withInstanceSetting(setting("jmx.port", STRING, Neo4Net.kernel.configuration.Settings.NO_DEFAULT), intBase(9912)).withInstanceSetting(Neo4Net.kernel.ha.HaSettings.ha_server, stringWithIntBase(":", 1136)).withInstanceSetting(Neo4Net.graphdb.factory.GraphDatabaseSettings.forced_kernel_id, stringWithIntBase("kernel", 0));
 		 public readonly ClusterRule ClusterRule = new ClusterRule().withInstanceSetting(setting("jmx.port", STRING, Settings.NO_DEFAULT), intBase(9912)).withInstanceSetting(HaSettings.ha_server, stringWithIntBase(":", 1136)).withInstanceSetting(GraphDatabaseSettings.forced_kernel_id, stringWithIntBase("kernel", 0));
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

@@ -22,8 +22,8 @@
 namespace Neo4Net.Kernel.impl.transaction.command
 {
 
-	using LabelScanWriter = Neo4Net.Kernel.api.labelscan.LabelScanWriter;
-	using NodeLabelUpdate = Neo4Net.Kernel.api.labelscan.NodeLabelUpdate;
+	using LabelScanWriter = Neo4Net.Kernel.Api.LabelScan.LabelScanWriter;
+	using NodeLabelUpdate = Neo4Net.Kernel.Api.LabelScan.NodeLabelUpdate;
 	using BatchTransactionApplier = Neo4Net.Kernel.Impl.Api.BatchTransactionApplier;
 	using TransactionApplier = Neo4Net.Kernel.Impl.Api.TransactionApplier;
 	using IndexingService = Neo4Net.Kernel.Impl.Api.index.IndexingService;
@@ -46,7 +46,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 	using Neo4Net.Utils.Concurrent;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.NodeLabelsField.parseLabelsField;
+//	import static Neo4Net.kernel.impl.store.NodeLabelsField.parseLabelsField;
 
 	/// <summary>
 	/// Gather node and property changes, converting them into logical updates to the indexes. <seealso cref="close()"/> will actually

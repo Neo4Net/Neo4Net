@@ -58,10 +58,10 @@ namespace Neo4Net.Kernel.ha.com.master
 	{
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Mock private org.Neo4Net.kernel.ha.cluster.ConversationSPI conversationSPI;
+//ORIGINAL LINE: @Mock private Neo4Net.kernel.ha.cluster.ConversationSPI conversationSPI;
 		 private ConversationSPI _conversationSPI;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Mock private org.Neo4Net.kernel.configuration.Config config;
+//ORIGINAL LINE: @Mock private Neo4Net.kernel.configuration.Config config;
 		 private Config _config;
 		 private ConversationManager _conversationManager;
 

@@ -27,13 +27,13 @@ namespace Neo4Net.Kernel.impl.transaction.log.entry
 	using ReadPastEndException = Neo4Net.Kernel.Api.StorageEngine.ReadPastEndException;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.Exceptions.throwIfInstanceOf;
+//	import static Neo4Net.helpers.Exceptions.throwIfInstanceOf;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.Exceptions.withMessage;
+//	import static Neo4Net.helpers.Exceptions.withMessage;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.entry.LogEntrySanity.logEntryMakesSense;
+//	import static Neo4Net.kernel.impl.transaction.log.entry.LogEntrySanity.logEntryMakesSense;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.entry.LogEntryVersion.byVersion;
+//	import static Neo4Net.kernel.impl.transaction.log.entry.LogEntryVersion.byVersion;
 
 	/// <summary>
 	/// Version aware implementation of LogEntryReader

@@ -53,17 +53,17 @@ namespace Neo4Net.com
 	using Clocks = Neo4Net.Time.Clocks;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.com.Protocol.addLengthFieldPipes;
+//	import static Neo4Net.com.Protocol.addLengthFieldPipes;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.com.Protocol.assertChunkSizeIsWithinFrameSize;
+//	import static Neo4Net.com.Protocol.assertChunkSizeIsWithinFrameSize;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.com.ResourcePool.DEFAULT_CHECK_INTERVAL;
+//	import static Neo4Net.com.ResourcePool.DEFAULT_CHECK_INTERVAL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.com.storecopy.ResponseUnpacker_TxHandler_Fields.NO_OP_TX_HANDLER;
+//	import static Neo4Net.com.storecopy.ResponseUnpacker_TxHandler_Fields.NO_OP_TX_HANDLER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.Exceptions.throwIfUnchecked;
+//	import static Neo4Net.helpers.Exceptions.throwIfUnchecked;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.NamedThreadFactory.daemon;
+//	import static Neo4Net.helpers.NamedThreadFactory.daemon;
 
 	/// <summary>
 	/// A means for a client to communicate with a <seealso cref="Server"/>. It

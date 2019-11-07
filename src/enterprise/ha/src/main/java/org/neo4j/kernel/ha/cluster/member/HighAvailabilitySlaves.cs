@@ -39,11 +39,11 @@ namespace Neo4Net.Kernel.ha.cluster.member
 	using Lifecycle = Neo4Net.Kernel.Lifecycle.Lifecycle;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.filter;
+//	import static Neo4Net.helpers.collection.Iterables.filter;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.map;
+//	import static Neo4Net.helpers.collection.Iterables.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.ha.cluster.member.ClusterMembers.inRole;
+//	import static Neo4Net.kernel.ha.cluster.member.ClusterMembers.inRole;
 
 	/// <summary>
 	/// Keeps active connections to <seealso cref="Slave slaves"/> for a master to communicate to

@@ -29,7 +29,7 @@ namespace Neo4Net.GraphAlgo.path
 	using PathExpanders = Neo4Net.GraphDb.PathExpanders;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphalgo.GraphAlgoFactory.allPaths;
+//	import static Neo4Net.graphalgo.GraphAlgoFactory.allPaths;
 
 	public class TestAllPaths : Neo4NetAlgoTestCase
 	{

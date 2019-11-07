@@ -52,24 +52,24 @@ namespace Neo4Net.Consistency.checking
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.progress.ProgressMonitorFactory.NONE;
+//	import static Neo4Net.helpers.progress.ProgressMonitorFactory.NONE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.fs.FileUtils.copyFile;
+//	import static Neo4Net.io.fs.FileUtils.copyFile;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.TestLabels.LABEL_ONE;
+//	import static Neo4Net.test.TestLabels.LABEL_ONE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.TestLabels.LABEL_THREE;
+//	import static Neo4Net.test.TestLabels.LABEL_THREE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.TestLabels.LABEL_TWO;
+//	import static Neo4Net.test.TestLabels.LABEL_TWO;
 
 	public class AllNodesInStoreExistInLabelIndexTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.EmbeddedDatabaseRule db = new org.Neo4Net.test.rule.EmbeddedDatabaseRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.EmbeddedDatabaseRule db = new Neo4Net.test.rule.EmbeddedDatabaseRule();
 		 public readonly EmbeddedDatabaseRule Db = new EmbeddedDatabaseRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.RandomRule random = new org.Neo4Net.test.rule.RandomRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.RandomRule random = new Neo4Net.test.rule.RandomRule();
 		 public readonly RandomRule Random = new RandomRule();
 
 		 private readonly AssertableLogProvider _log = new AssertableLogProvider();
@@ -96,7 +96,7 @@ namespace Neo4Net.Consistency.checking
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void reportNotCleanLabelIndex() throws java.io.IOException, org.Neo4Net.consistency.checking.full.ConsistencyCheckIncompleteException
+//ORIGINAL LINE: @Test public void reportNotCleanLabelIndex() throws java.io.IOException, Neo4Net.consistency.checking.full.ConsistencyCheckIncompleteException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ReportNotCleanLabelIndex()
 		 {
@@ -122,7 +122,7 @@ namespace Neo4Net.Consistency.checking
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void reportNotCleanLabelIndexWithCorrectData() throws java.io.IOException, org.Neo4Net.consistency.checking.full.ConsistencyCheckIncompleteException
+//ORIGINAL LINE: @Test public void reportNotCleanLabelIndexWithCorrectData() throws java.io.IOException, Neo4Net.consistency.checking.full.ConsistencyCheckIncompleteException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ReportNotCleanLabelIndexWithCorrectData()
 		 {
@@ -242,7 +242,7 @@ namespace Neo4Net.Consistency.checking
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.util.List<String> readReport(org.Neo4Net.consistency.ConsistencyCheckService.Result result) throws java.io.IOException
+//ORIGINAL LINE: private java.util.List<String> readReport(Neo4Net.consistency.ConsistencyCheckService.Result result) throws java.io.IOException
 		 private IList<string> ReadReport( ConsistencyCheckService.Result result )
 		 {
 			  return Files.readAllLines( result.ReportFile().toPath() );
@@ -388,7 +388,7 @@ namespace Neo4Net.Consistency.checking
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.consistency.ConsistencyCheckService.Result fullConsistencyCheck() throws org.Neo4Net.consistency.checking.full.ConsistencyCheckIncompleteException, java.io.IOException
+//ORIGINAL LINE: private Neo4Net.consistency.ConsistencyCheckService.Result fullConsistencyCheck() throws Neo4Net.consistency.checking.full.ConsistencyCheckIncompleteException, java.io.IOException
 		 private ConsistencyCheckService.Result FullConsistencyCheck()
 		 {
 			  using ( FileSystemAbstraction fsa = new DefaultFileSystemAbstraction() )

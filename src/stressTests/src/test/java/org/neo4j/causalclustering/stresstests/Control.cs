@@ -31,9 +31,9 @@ namespace Neo4Net.causalclustering.stresstests
 	using Futures = Neo4Net.Utils.Concurrent.Futures;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.function.Suppliers.untilTimeExpired;
+//	import static Neo4Net.function.Suppliers.untilTimeExpired;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.Exceptions.findCauseOrSuppressed;
+//	import static Neo4Net.helpers.Exceptions.findCauseOrSuppressed;
 
 	public class Control
 	{

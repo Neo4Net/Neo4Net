@@ -51,11 +51,11 @@ namespace Neo4Net.Adversaries.pagecache
 	/// </para>
 	/// <para>
 	/// Write operations will always throw an <seealso cref="System.InvalidOperationException"/> because this is a read cursor.
-	/// See <seealso cref="org.Neo4Net.io.pagecache.PagedFile.PF_SHARED_READ_LOCK"/> flag.
+	/// See <seealso cref="Neo4Net.io.pagecache.PagedFile.PF_SHARED_READ_LOCK"/> flag.
 	/// </para>
 	/// </summary>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") class AdversarialReadPageCursor extends org.Neo4Net.io.pagecache.impl.DelegatingPageCursor
+//ORIGINAL LINE: @SuppressWarnings("unchecked") class AdversarialReadPageCursor extends Neo4Net.io.pagecache.impl.DelegatingPageCursor
 	internal class AdversarialReadPageCursor : DelegatingPageCursor
 	{
 		 private static readonly bool _enableInconsistencyTracing = FeatureToggles.flag( typeof( AdversarialReadPageCursor ), "enableInconsistencyTracing", false );
@@ -428,7 +428,7 @@ namespace Neo4Net.Adversaries.pagecache
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void checkAndClearCursorException() throws org.Neo4Net.io.pagecache.CursorException
+//ORIGINAL LINE: public void checkAndClearCursorException() throws Neo4Net.io.pagecache.CursorException
 		 public override void CheckAndClearCursorException()
 		 {
 			  Delegate.checkAndClearCursorException();
@@ -453,7 +453,7 @@ namespace Neo4Net.Adversaries.pagecache
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.io.pagecache.PageCursor openLinkedCursor(long pageId) throws java.io.IOException
+//ORIGINAL LINE: public Neo4Net.io.pagecache.PageCursor openLinkedCursor(long pageId) throws java.io.IOException
 		 public override PageCursor OpenLinkedCursor( long pageId )
 		 {
 			  return _linkedCursor = new AdversarialReadPageCursor( Delegate.openLinkedCursor( pageId ), _state );

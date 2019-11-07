@@ -61,15 +61,15 @@ namespace Neo4Net.cluster.protocol.election
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.cluster.protocol.cluster.ClusterConfiguration.COORDINATOR;
+//	import static Neo4Net.cluster.protocol.cluster.ClusterConfiguration.COORDINATOR;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.cluster.protocol.election.ElectionMessage.demote;
+//	import static Neo4Net.cluster.protocol.election.ElectionMessage.demote;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.cluster.protocol.election.ElectionMessage.performRoleElections;
+//	import static Neo4Net.cluster.protocol.election.ElectionMessage.performRoleElections;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.cluster.protocol.election.ElectionMessage.voted;
+//	import static Neo4Net.cluster.protocol.election.ElectionMessage.voted;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.cluster.protocol.election.ElectionState.election;
+//	import static Neo4Net.cluster.protocol.election.ElectionState.election;
 
 	public class ElectionStateTest
 	{
@@ -135,7 +135,7 @@ namespace Neo4Net.cluster.protocol.election
 
 				 // Like it says on the box, we are the only instance
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.cluster.InstanceId myInstanceId = new org.Neo4Net.cluster.InstanceId(1);
+//ORIGINAL LINE: final Neo4Net.cluster.InstanceId myInstanceId = new Neo4Net.cluster.InstanceId(1);
 			  InstanceId myInstanceId = new InstanceId( 1 );
 			  IDictionary<InstanceId, URI> members = new Dictionary<InstanceId, URI>();
 			  members[myInstanceId] = URI.create( "ha://me" );
@@ -174,7 +174,7 @@ namespace Neo4Net.cluster.protocol.election
 
 			  const string role = "master";
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.cluster.InstanceId voter = new org.Neo4Net.cluster.InstanceId(2);
+//ORIGINAL LINE: final Neo4Net.cluster.InstanceId voter = new Neo4Net.cluster.InstanceId(2);
 			  InstanceId voter = new InstanceId( 2 );
 
 			  ElectionCredentials voteCredentialComparable = mock( typeof( ElectionCredentials ) );
@@ -246,7 +246,7 @@ namespace Neo4Net.cluster.protocol.election
 		 public virtual void VoteResponseShouldHaveSameVersionAsVoteRequest()
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.List<org.Neo4Net.cluster.com.message.Message<?>> messages = new java.util.ArrayList<>(1);
+//ORIGINAL LINE: final java.util.List<Neo4Net.cluster.com.message.Message<?>> messages = new java.util.ArrayList<>(1);
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 			  IList<Message<object>> messages = new List<Message<object>>( 1 );
 			  MessageHolder holder = messages.add;
@@ -262,7 +262,7 @@ namespace Neo4Net.cluster.protocol.election
 
 			  assertEquals( 1, messages.Count );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.cluster.com.message.Message<?> response = messages.get(0);
+//ORIGINAL LINE: Neo4Net.cluster.com.message.Message<?> response = messages.get(0);
 			  Message<object> response = messages[0];
 			  assertEquals( ElectionMessage.Voted, response.MessageType );
 			  ElectionMessage.VersionedVotedData payload = response.Payload;
@@ -279,7 +279,7 @@ namespace Neo4Net.cluster.protocol.election
 			  InstanceId winner = new InstanceId( 2 );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.List<org.Neo4Net.cluster.com.message.Message<?>> messages = new java.util.ArrayList<>(1);
+//ORIGINAL LINE: final java.util.List<Neo4Net.cluster.com.message.Message<?>> messages = new java.util.ArrayList<>(1);
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 			  IList<Message<object>> messages = new List<Message<object>>( 1 );
 			  MessageHolder holder = messages.add;
@@ -306,7 +306,7 @@ namespace Neo4Net.cluster.protocol.election
 			  // Then
 			  assertEquals( 1, messages.Count );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.cluster.com.message.Message<?> message = messages.get(0);
+//ORIGINAL LINE: Neo4Net.cluster.com.message.Message<?> message = messages.get(0);
 			  Message<object> message = messages[0];
 			  assertEquals( AtomicBroadcastMessage.broadcast, message.MessageType );
 		 }

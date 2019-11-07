@@ -51,10 +51,10 @@ namespace Neo4Net.backup
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verify;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
+//	import static Neo4Net.helpers.collection.MapUtil.stringMap;
 
 	/// <summary>
-	/// This test builds all valid combinations/permutations of args for <seealso cref="org.Neo4Net.backup.BackupTool"/> and asserts
+	/// This test builds all valid combinations/permutations of args for <seealso cref="Neo4Net.backup.BackupTool"/> and asserts
 	/// that it can handle those.
 	/// It tests legacy and modern sets of args in all possible forms: (-option, --option, -option value, -option=value).
 	/// Legacy is (-from, -to, -verify) and modern is (-host, -port, -to, -verify).

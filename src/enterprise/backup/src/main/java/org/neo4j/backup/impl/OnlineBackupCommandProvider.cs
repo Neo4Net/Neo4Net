@@ -33,7 +33,7 @@ namespace Neo4Net.backup.impl
 	using LogProvider = Neo4Net.Logging.LogProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.backup.impl.BackupSupportingClassesFactoryProvider.getProvidersByPriority;
+//	import static Neo4Net.backup.impl.BackupSupportingClassesFactoryProvider.getProvidersByPriority;
 
 	public class OnlineBackupCommandProvider : Neo4Net.CommandLine.Admin.AdminCommand_Provider
 	{
@@ -42,7 +42,7 @@ namespace Neo4Net.backup.impl
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Override @Nonnull public org.Neo4Net.commandline.arguments.Arguments allArguments()
+//ORIGINAL LINE: @Override @Nonnull public Neo4Net.commandline.arguments.Arguments allArguments()
 		 public override Arguments AllArguments()
 		 {
 			  return OnlineBackupContextFactory.Arguments();
@@ -63,14 +63,14 @@ namespace Neo4Net.backup.impl
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Override @Nonnull public org.Neo4Net.commandline.admin.AdminCommandSection commandSection()
+//ORIGINAL LINE: @Override @Nonnull public Neo4Net.commandline.admin.AdminCommandSection commandSection()
 		 public override AdminCommandSection CommandSection()
 		 {
 			  return OnlineBackupCommandSection.instance();
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Override @Nonnull public org.Neo4Net.commandline.admin.AdminCommand create(java.nio.file.Path homeDir, java.nio.file.Path configDir, org.Neo4Net.commandline.admin.OutsideWorld outsideWorld)
+//ORIGINAL LINE: @Override @Nonnull public Neo4Net.commandline.admin.AdminCommand create(java.nio.file.Path homeDir, java.nio.file.Path configDir, Neo4Net.commandline.admin.OutsideWorld outsideWorld)
 		 public override AdminCommand Create( Path homeDir, Path configDir, OutsideWorld outsideWorld )
 		 {
 			  bool debug = System.getenv().get("Neo4Net_DEBUG") != null;

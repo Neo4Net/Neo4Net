@@ -33,11 +33,11 @@ namespace Neo4Net.Kernel.builtinprocs
 	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException;
 	using SchemaKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.SchemaKernelException;
 	using TooManyLabelsException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.TooManyLabelsException;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
-	using Statement = Neo4Net.Kernel.api.Statement;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
+	using Statement = Neo4Net.Kernel.Api.Statement;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
-	using LabelSchemaDescriptor = Neo4Net.Kernel.api.schema.LabelSchemaDescriptor;
-	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
+	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.schema.LabelSchemaDescriptor;
+	using SchemaDescriptorFactory = Neo4Net.Kernel.Api.schema.SchemaDescriptorFactory;
 	using IndexPopulationFailure = Neo4Net.Kernel.Impl.Api.index.IndexPopulationFailure;
 	using IndexingService = Neo4Net.Kernel.Impl.Api.index.IndexingService;
 	using IndexSamplingMode = Neo4Net.Kernel.Impl.Api.index.sampling.IndexSamplingMode;
@@ -56,7 +56,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void awaitIndexByPattern(String indexPattern, long timeout, java.util.concurrent.TimeUnit timeoutUnits) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
+//ORIGINAL LINE: public void awaitIndexByPattern(String indexPattern, long timeout, java.util.concurrent.TimeUnit timeoutUnits) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 		 public virtual void AwaitIndexByPattern( string indexPattern, long timeout, TimeUnit timeoutUnits )
 		 {
 			  IndexSpecifier specifier = IndexSpecifier.ByPattern( indexPattern );
@@ -64,7 +64,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void awaitIndexByName(String indexName, long timeout, java.util.concurrent.TimeUnit timeoutUnits) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
+//ORIGINAL LINE: public void awaitIndexByName(String indexName, long timeout, java.util.concurrent.TimeUnit timeoutUnits) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 		 public virtual void AwaitIndexByName( string indexName, long timeout, TimeUnit timeoutUnits )
 		 {
 			  IndexSpecifier specifier = IndexSpecifier.ByName( indexName );
@@ -72,7 +72,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void resampleIndex(String indexSpecification) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
+//ORIGINAL LINE: public void resampleIndex(String indexSpecification) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 		 public virtual void ResampleIndex( string indexSpecification )
 		 {
 			  IndexSpecifier specifier = IndexSpecifier.ByPattern( indexSpecification );
@@ -92,14 +92,14 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.util.stream.Stream<BuiltInProcedures.SchemaIndexInfo> createIndex(String indexSpecification, String providerName) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
+//ORIGINAL LINE: public java.util.stream.Stream<BuiltInProcedures.SchemaIndexInfo> createIndex(String indexSpecification, String providerName) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 		 public virtual Stream<BuiltInProcedures.SchemaIndexInfo> CreateIndex( string indexSpecification, string providerName )
 		 {
 			  return CreateIndex( indexSpecification, providerName, "index created", ( schemaWrite, descriptor, provider ) => schemaWrite.indexCreate( descriptor, provider, null ) );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.util.stream.Stream<BuiltInProcedures.SchemaIndexInfo> createUniquePropertyConstraint(String indexSpecification, String providerName) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
+//ORIGINAL LINE: public java.util.stream.Stream<BuiltInProcedures.SchemaIndexInfo> createUniquePropertyConstraint(String indexSpecification, String providerName) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 		 public virtual Stream<BuiltInProcedures.SchemaIndexInfo> CreateUniquePropertyConstraint( string indexSpecification, string providerName )
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Method reference arbitrary object instance method syntax is not converted by Java to C# Converter:
@@ -107,7 +107,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.util.stream.Stream<BuiltInProcedures.SchemaIndexInfo> createNodeKey(String indexSpecification, String providerName) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
+//ORIGINAL LINE: public java.util.stream.Stream<BuiltInProcedures.SchemaIndexInfo> createNodeKey(String indexSpecification, String providerName) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 		 public virtual Stream<BuiltInProcedures.SchemaIndexInfo> CreateNodeKey( string indexSpecification, string providerName )
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Method reference arbitrary object instance method syntax is not converted by Java to C# Converter:
@@ -115,7 +115,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.util.stream.Stream<BuiltInProcedures.SchemaIndexInfo> createIndex(String indexSpecification, String providerName, String statusMessage, IndexCreator indexCreator) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
+//ORIGINAL LINE: private java.util.stream.Stream<BuiltInProcedures.SchemaIndexInfo> createIndex(String indexSpecification, String providerName, String statusMessage, IndexCreator indexCreator) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 		 private Stream<BuiltInProcedures.SchemaIndexInfo> CreateIndex( string indexSpecification, string providerName, string statusMessage, IndexCreator indexCreator )
 		 {
 			  AssertProviderNameNotNull( providerName );
@@ -136,7 +136,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void assertProviderNameNotNull(String providerName) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
+//ORIGINAL LINE: private static void assertProviderNameNotNull(String providerName) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 		 private static void AssertProviderNameNotNull( string providerName )
 		 {
 			  if ( string.ReferenceEquals( providerName, null ) )
@@ -151,7 +151,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private int getLabelId(String labelName) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
+//ORIGINAL LINE: private int getLabelId(String labelName) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 		 private int GetLabelId( string labelName )
 		 {
 			  int labelId = _ktx.tokenRead().nodeLabel(labelName);
@@ -163,7 +163,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private int[] getPropertyIds(String[] propertyKeyNames) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
+//ORIGINAL LINE: private int[] getPropertyIds(String[] propertyKeyNames) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 		 private int[] GetPropertyIds( string[] propertyKeyNames )
 		 {
 			  int[] propertyKeyIds = new int[propertyKeyNames.Length];
@@ -181,7 +181,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private int getOrCreateLabelId(String labelName) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
+//ORIGINAL LINE: private int getOrCreateLabelId(String labelName) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 		 private int GetOrCreateLabelId( string labelName )
 		 {
 			  try
@@ -195,7 +195,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private int[] getOrCreatePropertyIds(String[] propertyKeyNames) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
+//ORIGINAL LINE: private int[] getOrCreatePropertyIds(String[] propertyKeyNames) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 		 private int[] GetOrCreatePropertyIds( string[] propertyKeyNames )
 		 {
 			  int[] propertyKeyIds = new int[propertyKeyNames.Length];
@@ -214,7 +214,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.Kernel.Api.Internal.IndexReference getIndex(IndexSpecifier specifier) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
+//ORIGINAL LINE: private Neo4Net.Kernel.Api.Internal.IndexReference getIndex(IndexSpecifier specifier) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 		 private IndexReference GetIndex( IndexSpecifier specifier )
 		 {
 			  if ( !string.ReferenceEquals( specifier.Name(), null ) )
@@ -244,7 +244,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void waitUntilOnline(org.Neo4Net.Kernel.Api.Internal.IndexReference index, IndexSpecifier indexDescription, long timeout, java.util.concurrent.TimeUnit timeoutUnits) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
+//ORIGINAL LINE: private void waitUntilOnline(Neo4Net.Kernel.Api.Internal.IndexReference index, IndexSpecifier indexDescription, long timeout, java.util.concurrent.TimeUnit timeoutUnits) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 		 private void WaitUntilOnline( IndexReference index, IndexSpecifier indexDescription, long timeout, TimeUnit timeoutUnits )
 		 {
 			  try
@@ -258,7 +258,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private boolean isOnline(IndexSpecifier specifier, org.Neo4Net.Kernel.Api.Internal.IndexReference index) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
+//ORIGINAL LINE: private boolean isOnline(IndexSpecifier specifier, Neo4Net.Kernel.Api.Internal.IndexReference index) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 		 private bool IsOnline( IndexSpecifier specifier, IndexReference index )
 		 {
 			  InternalIndexState state = GetState( specifier, index );
@@ -277,7 +277,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.Kernel.Api.Internal.InternalIndexState getState(IndexSpecifier specifier, org.Neo4Net.Kernel.Api.Internal.IndexReference index) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
+//ORIGINAL LINE: private Neo4Net.Kernel.Api.Internal.InternalIndexState getState(IndexSpecifier specifier, Neo4Net.Kernel.Api.Internal.IndexReference index) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 		 private InternalIndexState GetState( IndexSpecifier specifier, IndexReference index )
 		 {
 			  try
@@ -291,7 +291,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private String getFailure(IndexSpecifier indexDescription, org.Neo4Net.Kernel.Api.Internal.IndexReference index) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
+//ORIGINAL LINE: private String getFailure(IndexSpecifier indexDescription, Neo4Net.Kernel.Api.Internal.IndexReference index) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 		 private string GetFailure( IndexSpecifier indexDescription, IndexReference index )
 		 {
 			  try
@@ -305,7 +305,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void triggerSampling(org.Neo4Net.Kernel.Api.Internal.IndexReference index) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
+//ORIGINAL LINE: private void triggerSampling(Neo4Net.Kernel.Api.Internal.IndexReference index) throws Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
 		 private void TriggerSampling( IndexReference index )
 		 {
 			  _indexingService.triggerIndexSampling( index.Schema(), IndexSamplingMode.TRIGGER_REBUILD_ALL );

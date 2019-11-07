@@ -23,8 +23,8 @@ namespace Neo4Net.Kernel.Impl.Api
 
 	using NotInTransactionException = Neo4Net.GraphDb.NotInTransactionException;
 	using EmptyVersionContextSupplier = Neo4Net.Io.pagecache.tracing.cursor.context.EmptyVersionContextSupplier;
-	using ExecutingQuery = Neo4Net.Kernel.api.query.ExecutingQuery;
-	using TxStateHolder = Neo4Net.Kernel.api.txstate.TxStateHolder;
+	using ExecutingQuery = Neo4Net.Kernel.Api.query.ExecutingQuery;
+	using TxStateHolder = Neo4Net.Kernel.Api.txstate.TxStateHolder;
 	using CpuClock = Neo4Net.Resources.CpuClock;
 	using HeapAllocation = Neo4Net.Resources.HeapAllocation;
 	using StorageReader = Neo4Net.Kernel.Api.StorageEngine.StorageReader;
@@ -65,7 +65,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(expected = org.Neo4Net.graphdb.NotInTransactionException.class) public void assertStatementIsNotOpenWhileAcquireIsNotInvoked()
+//ORIGINAL LINE: @Test(expected = Neo4Net.graphdb.NotInTransactionException.class) public void assertStatementIsNotOpenWhileAcquireIsNotInvoked()
 		 public virtual void AssertStatementIsNotOpenWhileAcquireIsNotInvoked()
 		 {
 			  KernelTransactionImplementation transaction = mock( typeof( KernelTransactionImplementation ) );

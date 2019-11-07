@@ -68,8 +68,8 @@ namespace Neo4Net.Tooling.procedure
 
 			  CompileTester.UnsuccessfulCompilationClause unsuccessfulCompilationClause = assert_().about(javaSource()).that(function).processedWith(Processor()).failsToCompile().withErrorCount(2);
 
-			  unsuccessfulCompilationClause.withErrorContaining( "@UserAggregationUpdate usage error: expected aggregation type " + "<org.Neo4Net.tooling.procedure.procedures.invalid.aggregation.FunctionWithoutAggregationMethods.MyAggregation> " + "to define exactly 1 method with this annotation. Found none." ).@in( function ).onLine( 31 );
-			  unsuccessfulCompilationClause.withErrorContaining( "@UserAggregationResult usage error: expected aggregation type " + "<org.Neo4Net.tooling.procedure.procedures.invalid.aggregation.FunctionWithoutAggregationMethods.MyAggregation> " + "to define exactly 1 method with this annotation. Found none." ).@in( function ).onLine( 31 );
+			  unsuccessfulCompilationClause.withErrorContaining( "@UserAggregationUpdate usage error: expected aggregation type " + "<Neo4Net.tooling.procedure.procedures.invalid.aggregation.FunctionWithoutAggregationMethods.MyAggregation> " + "to define exactly 1 method with this annotation. Found none." ).@in( function ).onLine( 31 );
+			  unsuccessfulCompilationClause.withErrorContaining( "@UserAggregationResult usage error: expected aggregation type " + "<Neo4Net.tooling.procedure.procedures.invalid.aggregation.FunctionWithoutAggregationMethods.MyAggregation> " + "to define exactly 1 method with this annotation. Found none." ).@in( function ).onLine( 31 );
 		 }
 
 		 internal override Processor Processor()

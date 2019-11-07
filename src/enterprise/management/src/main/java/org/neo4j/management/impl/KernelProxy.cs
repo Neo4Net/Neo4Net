@@ -30,12 +30,12 @@ namespace Neo4Net.management.impl
 
 	/// <summary>
 	/// Does not have any public methods - since the public interface of
-	/// <seealso cref="org.Neo4Net.management.Neo4NetManager"/> should be defined completely in
+	/// <seealso cref="Neo4Net.management.Neo4NetManager"/> should be defined completely in
 	/// that class.
 	/// </summary>
 	public abstract class KernelProxy
 	{
-		 internal const string KERNEL_BEAN_TYPE = "org.Neo4Net.jmx.Kernel";
+		 internal const string KERNEL_BEAN_TYPE = "Neo4Net.jmx.Kernel";
 		 protected internal const string KERNEL_BEAN_NAME = "Kernel";
 		 internal const string MBEAN_QUERY = "MBeanQuery";
 		 protected internal readonly MBeanServerConnection Server;
@@ -166,14 +166,14 @@ namespace Neo4Net.management.impl
 		 {
 			  Dictionary<string, string> properties = new Dictionary<string, string>();
 			  properties["instance"] = "kernel#" + kernelIdentifier;
-			  return CreateObjectName( "org.Neo4Net", properties, beanName, false, extraNaming );
+			  return CreateObjectName( "Neo4Net", properties, beanName, false, extraNaming );
 		 }
 
 		 internal static ObjectName CreateObjectNameQuery( string kernelIdentifier, string beanName, params string[] extraNaming )
 		 {
 			  Dictionary<string, string> properties = new Dictionary<string, string>();
 			  properties["instance"] = "kernel#" + kernelIdentifier;
-			  return CreateObjectName( "org.Neo4Net", properties, beanName, true, extraNaming );
+			  return CreateObjectName( "Neo4Net", properties, beanName, true, extraNaming );
 		 }
 
 		 internal static ObjectName CreateObjectName( ObjectName query, Type beanInterface )

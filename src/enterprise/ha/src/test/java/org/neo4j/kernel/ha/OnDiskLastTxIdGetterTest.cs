@@ -44,10 +44,10 @@ namespace Neo4Net.Kernel.ha
 	public class OnDiskLastTxIdGetterTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.PageCacheRule pageCacheRule = new org.Neo4Net.test.rule.PageCacheRule();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.PageCacheRule pageCacheRule = new Neo4Net.test.rule.PageCacheRule();
 		 public PageCacheRule PageCacheRule = new PageCacheRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.fs.EphemeralFileSystemRule fs = new org.Neo4Net.test.rule.fs.EphemeralFileSystemRule();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.fs.EphemeralFileSystemRule fs = new Neo4Net.test.rule.fs.EphemeralFileSystemRule();
 		 public EphemeralFileSystemRule Fs = new EphemeralFileSystemRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -65,10 +65,10 @@ namespace Neo4Net.Kernel.ha
 		 public virtual void LastTransactionIdIsBaseTxIdWhileNeoStoresAreStopped()
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.StoreFactory storeFactory = new org.Neo4Net.kernel.impl.store.StoreFactory(org.Neo4Net.io.layout.DatabaseLayout.of(new java.io.File("store")), org.Neo4Net.kernel.configuration.Config.defaults(), new org.Neo4Net.kernel.impl.store.id.DefaultIdGeneratorFactory(fs.get()), pageCacheRule.getPageCache(fs.get()), fs.get(), org.Neo4Net.logging.NullLogProvider.getInstance(), org.Neo4Net.io.pagecache.tracing.cursor.context.EmptyVersionContextSupplier.EMPTY);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.store.StoreFactory storeFactory = new Neo4Net.kernel.impl.store.StoreFactory(Neo4Net.io.layout.DatabaseLayout.of(new java.io.File("store")), Neo4Net.kernel.configuration.Config.defaults(), new Neo4Net.kernel.impl.store.id.DefaultIdGeneratorFactory(fs.get()), pageCacheRule.getPageCache(fs.get()), fs.get(), Neo4Net.logging.NullLogProvider.getInstance(), Neo4Net.io.pagecache.tracing.cursor.context.EmptyVersionContextSupplier.EMPTY);
 			  StoreFactory storeFactory = new StoreFactory( DatabaseLayout.of( new File( "store" ) ), Config.defaults(), new DefaultIdGeneratorFactory(Fs.get()), PageCacheRule.getPageCache(Fs.get()), Fs.get(), NullLogProvider.Instance, EmptyVersionContextSupplier.EMPTY );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.NeoStores neoStores = storeFactory.openAllNeoStores(true);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.store.NeoStores neoStores = storeFactory.openAllNeoStores(true);
 			  NeoStores neoStores = storeFactory.OpenAllNeoStores( true );
 			  neoStores.Close();
 

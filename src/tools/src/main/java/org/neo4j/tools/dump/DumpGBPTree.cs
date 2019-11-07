@@ -26,11 +26,11 @@ namespace Neo4Net.tools.dump
 {
 
 	using Neo4Net.Index.Internal.gbptree;
-	// import org.Neo4Net.index.internal.gbptree.TreePrinter;
+	// import Neo4Net.index.internal.gbptree.TreePrinter;
 	using DefaultFileSystemAbstraction = Neo4Net.Io.fs.DefaultFileSystemAbstraction;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
+//	import static Neo4Net.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
 
 	/// <summary>
 	/// For now only dumps header, could be made more useful over time.

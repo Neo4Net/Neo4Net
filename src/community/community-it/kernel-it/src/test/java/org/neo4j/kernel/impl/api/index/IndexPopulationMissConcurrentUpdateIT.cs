@@ -72,21 +72,21 @@ namespace Neo4Net.Kernel.Impl.Api.index
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.mock;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.count;
+//	import static Neo4Net.helpers.collection.Iterables.count;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.filter;
+//	import static Neo4Net.helpers.collection.Iterables.filter;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.InternalIndexState.POPULATING;
+//	import static Neo4Net.Kernel.Api.Internal.InternalIndexState.POPULATING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.index.IndexDirectoryStructure.directoriesByProvider;
+//	import static Neo4Net.kernel.api.index.IndexDirectoryStructure.directoriesByProvider;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.api.index.MultipleIndexPopulator.BATCH_SIZE_NAME;
+//	import static Neo4Net.kernel.impl.api.index.MultipleIndexPopulator.BATCH_SIZE_NAME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.api.index.MultipleIndexPopulator.QUEUE_THRESHOLD_NAME;
+//	import static Neo4Net.kernel.impl.api.index.MultipleIndexPopulator.QUEUE_THRESHOLD_NAME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.storemigration.StoreMigrationParticipant_Fields.NOT_PARTICIPATING;
+//	import static Neo4Net.kernel.impl.storemigration.StoreMigrationParticipant_Fields.NOT_PARTICIPATING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.TestLabels.LABEL_ONE;
+//	import static Neo4Net.test.TestLabels.LABEL_ONE;
 
 	public class IndexPopulationMissConcurrentUpdateIT
 	{
@@ -97,7 +97,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 private readonly ControlledSchemaIndexProvider _index = new ControlledSchemaIndexProvider();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.DatabaseRule db = new org.Neo4Net.test.rule.ImpermanentDatabaseRule()
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.DatabaseRule db = new Neo4Net.test.rule.ImpermanentDatabaseRule()
 		 public final DatabaseRule db = new ImpermanentDatabaseRuleAnonymousInnerClass()
 		 .withSetting( GraphDatabaseSettings.multi_threaded_schema_index_population_enabled, Settings.FALSE ).withSetting( GraphDatabaseSettings.default_schema_provider, ControlledSchemaIndexProvider.IndexProvider.name() );
 		 // The single-threaded setting makes the test deterministic. The multi-threaded variant has the same problem tested below.

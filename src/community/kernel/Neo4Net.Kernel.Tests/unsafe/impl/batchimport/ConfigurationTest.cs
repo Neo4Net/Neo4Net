@@ -44,13 +44,13 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 //	import static org.junit.Assume.assumeTrue;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.pagecache_memory;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.pagecache_memory;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.os.OsBeanUtil.VALUE_UNAVAILABLE;
+//	import static Neo4Net.io.os.OsBeanUtil.VALUE_UNAVAILABLE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.parseLongWithUnit;
+//	import static Neo4Net.kernel.configuration.Settings.parseLongWithUnit;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.Configuration_Fields.MAX_PAGE_CACHE_MEMORY;
+//	import static Neo4Net.@unsafe.impl.batchimport.Configuration_Fields.MAX_PAGE_CACHE_MEMORY;
 
 	public class ConfigurationTest
 	{

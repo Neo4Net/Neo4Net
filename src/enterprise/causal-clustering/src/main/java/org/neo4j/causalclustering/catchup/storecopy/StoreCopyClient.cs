@@ -39,9 +39,9 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 	using LogProvider = Neo4Net.Logging.LogProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.catchup.storecopy.StoreCopyResponseAdaptors.filesCopyAdaptor;
+//	import static Neo4Net.causalclustering.catchup.storecopy.StoreCopyResponseAdaptors.filesCopyAdaptor;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.catchup.storecopy.StoreCopyResponseAdaptors.prepareStoreCopyAdaptor;
+//	import static Neo4Net.causalclustering.catchup.storecopy.StoreCopyResponseAdaptors.prepareStoreCopyAdaptor;
 
 	public class StoreCopyClient
 	{
@@ -59,7 +59,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: long copyStoreFiles(org.Neo4Net.causalclustering.catchup.CatchupAddressProvider catchupAddressProvider, org.Neo4Net.causalclustering.identity.StoreId expectedStoreId, StoreFileStreamProvider storeFileStreamProvider, System.Func<TerminationCondition> requestWiseTerminationCondition, java.io.File destDir) throws StoreCopyFailedException
+//ORIGINAL LINE: long copyStoreFiles(Neo4Net.causalclustering.catchup.CatchupAddressProvider catchupAddressProvider, Neo4Net.causalclustering.identity.StoreId expectedStoreId, StoreFileStreamProvider storeFileStreamProvider, System.Func<TerminationCondition> requestWiseTerminationCondition, java.io.File destDir) throws StoreCopyFailedException
 		 internal virtual long CopyStoreFiles( CatchupAddressProvider catchupAddressProvider, StoreId expectedStoreId, StoreFileStreamProvider storeFileStreamProvider, System.Func<TerminationCondition> requestWiseTerminationCondition, File destDir )
 		 {
 			  try
@@ -76,7 +76,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void copyFilesIndividually(PrepareStoreCopyResponse prepareStoreCopyResponse, org.Neo4Net.causalclustering.identity.StoreId expectedStoreId, org.Neo4Net.causalclustering.catchup.CatchupAddressProvider addressProvider, StoreFileStreamProvider storeFileStream, System.Func<TerminationCondition> terminationConditions, java.io.File destDir) throws StoreCopyFailedException
+//ORIGINAL LINE: private void copyFilesIndividually(PrepareStoreCopyResponse prepareStoreCopyResponse, Neo4Net.causalclustering.identity.StoreId expectedStoreId, Neo4Net.causalclustering.catchup.CatchupAddressProvider addressProvider, StoreFileStreamProvider storeFileStream, System.Func<TerminationCondition> terminationConditions, java.io.File destDir) throws StoreCopyFailedException
 		 private void CopyFilesIndividually( PrepareStoreCopyResponse prepareStoreCopyResponse, StoreId expectedStoreId, CatchupAddressProvider addressProvider, StoreFileStreamProvider storeFileStream, System.Func<TerminationCondition> terminationConditions, File destDir )
 		 {
 			  StoreCopyClientMonitor storeCopyClientMonitor = _monitors.newMonitor( typeof( StoreCopyClientMonitor ) );
@@ -92,7 +92,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void copyIndexSnapshotIndividually(PrepareStoreCopyResponse prepareStoreCopyResponse, org.Neo4Net.causalclustering.identity.StoreId expectedStoreId, org.Neo4Net.causalclustering.catchup.CatchupAddressProvider addressProvider, StoreFileStreamProvider storeFileStream, System.Func<TerminationCondition> terminationConditions) throws StoreCopyFailedException
+//ORIGINAL LINE: private void copyIndexSnapshotIndividually(PrepareStoreCopyResponse prepareStoreCopyResponse, Neo4Net.causalclustering.identity.StoreId expectedStoreId, Neo4Net.causalclustering.catchup.CatchupAddressProvider addressProvider, StoreFileStreamProvider storeFileStream, System.Func<TerminationCondition> terminationConditions) throws StoreCopyFailedException
 		 private void CopyIndexSnapshotIndividually( PrepareStoreCopyResponse prepareStoreCopyResponse, StoreId expectedStoreId, CatchupAddressProvider addressProvider, StoreFileStreamProvider storeFileStream, System.Func<TerminationCondition> terminationConditions )
 		 {
 			  StoreCopyClientMonitor storeCopyClientMonitor = _monitors.newMonitor( typeof( StoreCopyClientMonitor ) );
@@ -110,7 +110,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void persistentCallToSecondary(org.Neo4Net.causalclustering.messaging.CatchUpRequest request, org.Neo4Net.causalclustering.catchup.CatchUpResponseAdaptor<StoreCopyFinishedResponse> copyHandler, org.Neo4Net.causalclustering.catchup.CatchupAddressProvider addressProvider, TerminationCondition terminationCondition) throws StoreCopyFailedException
+//ORIGINAL LINE: private void persistentCallToSecondary(Neo4Net.causalclustering.messaging.CatchUpRequest request, Neo4Net.causalclustering.catchup.CatchUpResponseAdaptor<StoreCopyFinishedResponse> copyHandler, Neo4Net.causalclustering.catchup.CatchupAddressProvider addressProvider, TerminationCondition terminationCondition) throws StoreCopyFailedException
 		 private void PersistentCallToSecondary( CatchUpRequest request, CatchUpResponseAdaptor<StoreCopyFinishedResponse> copyHandler, CatchupAddressProvider addressProvider, TerminationCondition terminationCondition )
 		 {
 			  Neo4Net.causalclustering.helper.TimeoutStrategy_Timeout timeout = _backOffStrategy.newTimeout();
@@ -148,7 +148,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void awaitAndIncrementTimeout(org.Neo4Net.causalclustering.helper.TimeoutStrategy_Timeout timeout) throws StoreCopyFailedException
+//ORIGINAL LINE: private void awaitAndIncrementTimeout(Neo4Net.causalclustering.helper.TimeoutStrategy_Timeout timeout) throws StoreCopyFailedException
 		 private void AwaitAndIncrementTimeout( Neo4Net.causalclustering.helper.TimeoutStrategy_Timeout timeout )
 		 {
 			  try
@@ -163,7 +163,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private PrepareStoreCopyResponse prepareStoreCopy(org.Neo4Net.helpers.AdvertisedSocketAddress from, org.Neo4Net.causalclustering.identity.StoreId expectedStoreId, StoreFileStreamProvider storeFileStream) throws org.Neo4Net.causalclustering.catchup.CatchUpClientException, StoreCopyFailedException
+//ORIGINAL LINE: private PrepareStoreCopyResponse prepareStoreCopy(Neo4Net.helpers.AdvertisedSocketAddress from, Neo4Net.causalclustering.identity.StoreId expectedStoreId, StoreFileStreamProvider storeFileStream) throws Neo4Net.causalclustering.catchup.CatchUpClientException, StoreCopyFailedException
 		 private PrepareStoreCopyResponse PrepareStoreCopy( AdvertisedSocketAddress from, StoreId expectedStoreId, StoreFileStreamProvider storeFileStream )
 		 {
 			  _log.info( "Requesting store listing from: " + from );
@@ -176,7 +176,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.causalclustering.identity.StoreId fetchStoreId(org.Neo4Net.helpers.AdvertisedSocketAddress fromAddress) throws StoreIdDownloadFailedException
+//ORIGINAL LINE: public Neo4Net.causalclustering.identity.StoreId fetchStoreId(Neo4Net.helpers.AdvertisedSocketAddress fromAddress) throws StoreIdDownloadFailedException
 		 public virtual StoreId FetchStoreId( AdvertisedSocketAddress fromAddress )
 		 {
 			  try
@@ -206,7 +206,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private boolean successfulRequest(StoreCopyFinishedResponse response, org.Neo4Net.causalclustering.messaging.CatchUpRequest request) throws StoreCopyFailedException
+//ORIGINAL LINE: private boolean successfulRequest(StoreCopyFinishedResponse response, Neo4Net.causalclustering.messaging.CatchUpRequest request) throws StoreCopyFailedException
 		 private bool SuccessfulRequest( StoreCopyFinishedResponse response, CatchUpRequest request )
 		 {
 			  StoreCopyFinishedResponse.Status responseStatus = response.Status();

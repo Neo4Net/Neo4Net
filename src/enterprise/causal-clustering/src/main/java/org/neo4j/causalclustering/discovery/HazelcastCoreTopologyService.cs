@@ -69,17 +69,17 @@ namespace Neo4Net.causalclustering.discovery
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static com.hazelcast.spi.properties.GroupProperty.PREFER_IPv4_STACK;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.CausalClusteringSettings.disable_middleware_logging;
+//	import static Neo4Net.causalclustering.core.CausalClusteringSettings.disable_middleware_logging;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.CausalClusteringSettings.discovery_listen_address;
+//	import static Neo4Net.causalclustering.core.CausalClusteringSettings.discovery_listen_address;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.discovery.HazelcastClusterTopology.extractCatchupAddressesMap;
+//	import static Neo4Net.causalclustering.discovery.HazelcastClusterTopology.extractCatchupAddressesMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.discovery.HazelcastClusterTopology.getCoreTopology;
+//	import static Neo4Net.causalclustering.discovery.HazelcastClusterTopology.getCoreTopology;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.discovery.HazelcastClusterTopology.getReadReplicaTopology;
+//	import static Neo4Net.causalclustering.discovery.HazelcastClusterTopology.getReadReplicaTopology;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.discovery.HazelcastClusterTopology.refreshGroups;
+//	import static Neo4Net.causalclustering.discovery.HazelcastClusterTopology.refreshGroups;
 
 	public class HazelcastCoreTopologyService : AbstractCoreTopologyService
 	{
@@ -129,7 +129,7 @@ namespace Neo4Net.causalclustering.discovery
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean setClusterId(org.Neo4Net.causalclustering.identity.ClusterId clusterId, String dbName) throws InterruptedException
+//ORIGINAL LINE: public boolean setClusterId(Neo4Net.causalclustering.identity.ClusterId clusterId, String dbName) throws InterruptedException
 		 public override bool SetClusterId( ClusterId clusterId, string dbName )
 		 {
 			  WaitOnHazelcastInstanceCreation();

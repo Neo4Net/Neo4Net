@@ -29,15 +29,15 @@ namespace Neo4Net.Bolt.testing
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertNotNull;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.messaging.BoltResponseMessage.FAILURE;
+//	import static Neo4Net.bolt.v1.messaging.BoltResponseMessage.FAILURE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.messaging.BoltResponseMessage.IGNORED;
+//	import static Neo4Net.bolt.v1.messaging.BoltResponseMessage.IGNORED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.messaging.BoltResponseMessage.SUCCESS;
+//	import static Neo4Net.bolt.v1.messaging.BoltResponseMessage.SUCCESS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.stringOrNoValue;
+//	import static Neo4Net.values.storable.Values.stringOrNoValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.stringValue;
+//	import static Neo4Net.values.storable.Values.stringValue;
 
 	public class BoltResponseRecorder : BoltResponseHandler
 	{
@@ -56,7 +56,7 @@ namespace Neo4Net.Bolt.testing
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void onRecords(org.Neo4Net.bolt.runtime.BoltResult result, boolean pull) throws Exception
+//ORIGINAL LINE: public void onRecords(Neo4Net.bolt.runtime.BoltResult result, boolean pull) throws Exception
 		 public override void OnRecords( BoltResult result, bool pull )
 		 {
 			  result.Accept( new BoltResult_VisitorAnonymousInnerClass( this ) );

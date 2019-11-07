@@ -23,7 +23,7 @@ namespace Neo4Net.Kernel.Api.Internal.Exceptions.Schema
 
 	public class IndexNotApplicableKernelException : KernelException
 	{
-		 public IndexNotApplicableKernelException( string msg ) : base( org.Neo4Net.kernel.api.exceptions.Status_Schema.IndexNotApplicable, msg )
+		 public IndexNotApplicableKernelException( string msg ) : base( Neo4Net.kernel.api.exceptions.Status_Schema.IndexNotApplicable, msg )
 		 {
 		 }
 	}

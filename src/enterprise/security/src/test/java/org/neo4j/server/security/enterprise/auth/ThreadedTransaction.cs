@@ -28,7 +28,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 	using Result = Neo4Net.GraphDb.Result;
 	using TransactionTerminatedException = Neo4Net.GraphDb.TransactionTerminatedException;
 	using Exceptions = Neo4Net.Helpers.Exceptions;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
 	using InternalTransaction = Neo4Net.Kernel.impl.coreapi.InternalTransaction;
 	using DoubleLatch = Neo4Net.Test.DoubleLatch;
 	using Neo4Net.Test;

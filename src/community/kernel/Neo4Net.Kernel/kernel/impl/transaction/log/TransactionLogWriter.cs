@@ -32,7 +32,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void append(org.Neo4Net.kernel.impl.transaction.TransactionRepresentation transaction, long transactionId) throws java.io.IOException
+//ORIGINAL LINE: public void append(Neo4Net.kernel.impl.transaction.TransactionRepresentation transaction, long transactionId) throws java.io.IOException
 		 public virtual void Append( TransactionRepresentation transaction, long transactionId )
 		 {
 			  _writer.writeStartEntry( transaction.MasterId, transaction.AuthorId, transaction.TimeStarted, transaction.LatestCommittedTxWhenStarted, transaction.AdditionalHeader() );

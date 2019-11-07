@@ -66,13 +66,13 @@ namespace Neo4Net.Kernel.ha.id
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.id.IdRangeIterator.VALUE_REPRESENTING_NULL;
+//	import static Neo4Net.kernel.impl.store.id.IdRangeIterator.VALUE_REPRESENTING_NULL;
 
 
 	public class HaIdGeneratorFactoryTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.fs.EphemeralFileSystemRule fileSystemRule = new org.Neo4Net.test.rule.fs.EphemeralFileSystemRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.fs.EphemeralFileSystemRule fileSystemRule = new Neo4Net.test.rule.fs.EphemeralFileSystemRule();
 		 public readonly EphemeralFileSystemRule FileSystemRule = new EphemeralFileSystemRule();
 		 private Master _master;
 		 private DelegateInvocationHandler<Master> _masterDelegate;
@@ -241,7 +241,7 @@ namespace Neo4Net.Kernel.ha.id
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(expected = org.Neo4Net.graphdb.TransientTransactionFailureException.class) public void shouldTranslateComExceptionsIntoTransientTransactionFailures()
+//ORIGINAL LINE: @Test(expected = Neo4Net.graphdb.TransientTransactionFailureException.class) public void shouldTranslateComExceptionsIntoTransientTransactionFailures()
 		 public virtual void ShouldTranslateComExceptionsIntoTransientTransactionFailures()
 		 {
 			  when( _master.allocateIds( Null, any( typeof( IdType ) ) ) ).thenThrow( new ComException() );
@@ -284,7 +284,7 @@ namespace Neo4Net.Kernel.ha.id
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private org.Neo4Net.com.Response<IdAllocation> response(IdAllocation firstValue, IdAllocation... additionalValues)
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private Neo4Net.com.Response<IdAllocation> response(IdAllocation firstValue, IdAllocation... additionalValues)
 		 private Response<IdAllocation> Response( IdAllocation firstValue, params IdAllocation[] additionalValues )
 		 {
 			  Response<IdAllocation> response = mock( typeof( Response ) );

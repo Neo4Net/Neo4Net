@@ -22,8 +22,8 @@ namespace Neo4Net.Server.rest.transactional
 	using Test = org.junit.Test;
 
 	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
-	using AnonymousContext = Neo4Net.Kernel.api.security.AnonymousContext;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
+	using AnonymousContext = Neo4Net.Kernel.Api.security.AnonymousContext;
 	using ThreadToStatementContextBridge = Neo4Net.Kernel.impl.core.ThreadToStatementContextBridge;
 	using GraphDatabaseFacade = Neo4Net.Kernel.impl.factory.GraphDatabaseFacade;
 

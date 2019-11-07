@@ -35,9 +35,9 @@ namespace Neo4Net.Bolt.v1.transport.integration
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.MatcherAssert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.messaging.util.MessageMatchers.responseMessage;
+//	import static Neo4Net.bolt.v1.messaging.util.MessageMatchers.responseMessage;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.messaging.util.MessageMatchers.serialize;
+//	import static Neo4Net.bolt.v1.messaging.util.MessageMatchers.serialize;
 
 	public class TransportTestUtil
 	{
@@ -64,21 +64,21 @@ namespace Neo4Net.Bolt.v1.transport.integration
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public byte[] chunk(org.Neo4Net.bolt.messaging.RequestMessage... messages) throws java.io.IOException
+//ORIGINAL LINE: public byte[] chunk(Neo4Net.bolt.messaging.RequestMessage... messages) throws java.io.IOException
 		 public virtual sbyte[] Chunk( params RequestMessage[] messages )
 		 {
 			  return Chunk( 32, messages );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public byte[] chunk(org.Neo4Net.bolt.messaging.ResponseMessage... messages) throws java.io.IOException
+//ORIGINAL LINE: public byte[] chunk(Neo4Net.bolt.messaging.ResponseMessage... messages) throws java.io.IOException
 		 public virtual sbyte[] Chunk( params ResponseMessage[] messages )
 		 {
 			  return Chunk( 32, messages );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public byte[] chunk(int chunkSize, org.Neo4Net.bolt.messaging.RequestMessage... messages) throws java.io.IOException
+//ORIGINAL LINE: public byte[] chunk(int chunkSize, Neo4Net.bolt.messaging.RequestMessage... messages) throws java.io.IOException
 		 public virtual sbyte[] Chunk( int chunkSize, params RequestMessage[] messages )
 		 {
 			  sbyte[][] serializedMessages = new sbyte[messages.Length][];
@@ -90,7 +90,7 @@ namespace Neo4Net.Bolt.v1.transport.integration
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public byte[] chunk(int chunkSize, org.Neo4Net.bolt.messaging.ResponseMessage... messages) throws java.io.IOException
+//ORIGINAL LINE: public byte[] chunk(int chunkSize, Neo4Net.bolt.messaging.ResponseMessage... messages) throws java.io.IOException
 		 public virtual sbyte[] Chunk( int chunkSize, params ResponseMessage[] messages )
 		 {
 			  sbyte[][] serializedMessages = new sbyte[messages.Length][];
@@ -145,7 +145,7 @@ namespace Neo4Net.Bolt.v1.transport.integration
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SafeVarargs public final org.hamcrest.Matcher<org.Neo4Net.bolt.v1.transport.socket.client.TransportConnection> eventuallyReceives(final org.hamcrest.Matcher<org.Neo4Net.bolt.messaging.ResponseMessage>... messages)
+//ORIGINAL LINE: @SafeVarargs public final org.hamcrest.Matcher<Neo4Net.bolt.v1.transport.socket.client.TransportConnection> eventuallyReceives(final org.hamcrest.Matcher<Neo4Net.bolt.messaging.ResponseMessage>... messages)
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 		 public Matcher<TransportConnection> EventuallyReceives( params Matcher<ResponseMessage>[] messages )
 		 {
@@ -171,7 +171,7 @@ namespace Neo4Net.Bolt.v1.transport.integration
 						foreach ( Matcher<ResponseMessage> matchesMessage in _messages )
 						{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.bolt.messaging.ResponseMessage message = receiveOneResponseMessage(conn);
+//ORIGINAL LINE: final Neo4Net.bolt.messaging.ResponseMessage message = receiveOneResponseMessage(conn);
 							 ResponseMessage message = outerInstance.ReceiveOneResponseMessage( conn );
 							 assertThat( message, matchesMessage );
 						}
@@ -190,7 +190,7 @@ namespace Neo4Net.Bolt.v1.transport.integration
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.bolt.messaging.ResponseMessage receiveOneResponseMessage(org.Neo4Net.bolt.v1.transport.socket.client.TransportConnection conn) throws java.io.IOException, InterruptedException
+//ORIGINAL LINE: public Neo4Net.bolt.messaging.ResponseMessage receiveOneResponseMessage(Neo4Net.bolt.v1.transport.socket.client.TransportConnection conn) throws java.io.IOException, InterruptedException
 		 public virtual ResponseMessage ReceiveOneResponseMessage( TransportConnection conn )
 		 {
 			  MemoryStream bytes = new MemoryStream();
@@ -211,7 +211,7 @@ namespace Neo4Net.Bolt.v1.transport.integration
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public int receiveChunkHeader(org.Neo4Net.bolt.v1.transport.socket.client.TransportConnection conn) throws java.io.IOException, InterruptedException
+//ORIGINAL LINE: public int receiveChunkHeader(Neo4Net.bolt.v1.transport.socket.client.TransportConnection conn) throws java.io.IOException, InterruptedException
 		 public virtual int ReceiveChunkHeader( TransportConnection conn )
 		 {
 			  sbyte[] raw = conn.Recv( 2 );
@@ -224,7 +224,7 @@ namespace Neo4Net.Bolt.v1.transport.integration
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static org.hamcrest.Matcher<org.Neo4Net.bolt.v1.transport.socket.client.TransportConnection> eventuallyReceives(final byte[] expected)
+//ORIGINAL LINE: public static org.hamcrest.Matcher<Neo4Net.bolt.v1.transport.socket.client.TransportConnection> eventuallyReceives(final byte[] expected)
 		 public static Matcher<TransportConnection> EventuallyReceives( sbyte[] expected )
 		 {
 			  return new TypeSafeMatcherAnonymousInnerClass2( expected );
@@ -342,24 +342,24 @@ namespace Neo4Net.Bolt.v1.transport.integration
 		 public interface MessageEncoder
 		 {
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: byte[] encode(org.Neo4Net.bolt.messaging.Neo4NetPack Neo4NetPack, org.Neo4Net.bolt.messaging.RequestMessage... messages) throws java.io.IOException;
+//ORIGINAL LINE: byte[] encode(Neo4Net.bolt.messaging.Neo4NetPack Neo4NetPack, Neo4Net.bolt.messaging.RequestMessage... messages) throws java.io.IOException;
 			  sbyte[] Encode( Neo4NetPack Neo4NetPack, params RequestMessage[] messages );
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: byte[] encode(org.Neo4Net.bolt.messaging.Neo4NetPack Neo4NetPack, org.Neo4Net.bolt.messaging.ResponseMessage... messages) throws java.io.IOException;
+//ORIGINAL LINE: byte[] encode(Neo4Net.bolt.messaging.Neo4NetPack Neo4NetPack, Neo4Net.bolt.messaging.ResponseMessage... messages) throws java.io.IOException;
 			  sbyte[] Encode( Neo4NetPack Neo4NetPack, params ResponseMessage[] messages );
 		 }
 
 		 private class MessageEncoderV1 : MessageEncoder
 		 {
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public byte[] encode(org.Neo4Net.bolt.messaging.Neo4NetPack Neo4NetPack, org.Neo4Net.bolt.messaging.RequestMessage... messages) throws java.io.IOException
+//ORIGINAL LINE: public byte[] encode(Neo4Net.bolt.messaging.Neo4NetPack Neo4NetPack, Neo4Net.bolt.messaging.RequestMessage... messages) throws java.io.IOException
 			  public override sbyte[] Encode( Neo4NetPack Neo4NetPack, params RequestMessage[] messages )
 			  {
 					return serialize( Neo4NetPack, messages );
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public byte[] encode(org.Neo4Net.bolt.messaging.Neo4NetPack Neo4NetPack, org.Neo4Net.bolt.messaging.ResponseMessage... messages) throws java.io.IOException
+//ORIGINAL LINE: public byte[] encode(Neo4Net.bolt.messaging.Neo4NetPack Neo4NetPack, Neo4Net.bolt.messaging.ResponseMessage... messages) throws java.io.IOException
 			  public override sbyte[] Encode( Neo4NetPack Neo4NetPack, params ResponseMessage[] messages )
 			  {
 					return serialize( Neo4NetPack, messages );

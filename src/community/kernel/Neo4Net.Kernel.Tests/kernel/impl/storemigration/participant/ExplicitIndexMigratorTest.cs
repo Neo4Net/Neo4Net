@@ -205,7 +205,7 @@ namespace Neo4Net.Kernel.impl.storemigration.participant
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void upgradeIndexes() throws org.Neo4Net.upgrade.lucene.ExplicitIndexMigrationException
+//ORIGINAL LINE: public void upgradeIndexes() throws Neo4Net.upgrade.lucene.ExplicitIndexMigrationException
 			  public override void UpgradeIndexes()
 			  {
 					if ( !SuccessfulMigration )

@@ -37,7 +37,7 @@ namespace Neo4Net.Adversaries.pagecache
 	/// </para>
 	/// </summary>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") public class AdversarialPageCache implements org.Neo4Net.io.pagecache.PageCache
+//ORIGINAL LINE: @SuppressWarnings("unchecked") public class AdversarialPageCache implements Neo4Net.io.pagecache.PageCache
 	public class AdversarialPageCache : PageCache
 	{
 		 private readonly PageCache @delegate;
@@ -50,7 +50,7 @@ namespace Neo4Net.Adversaries.pagecache
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.io.pagecache.PagedFile map(java.io.File file, int pageSize, java.nio.file.OpenOption... openOptions) throws java.io.IOException
+//ORIGINAL LINE: public Neo4Net.io.pagecache.PagedFile map(java.io.File file, int pageSize, java.nio.file.OpenOption... openOptions) throws java.io.IOException
 		 public override PagedFile Map( File file, int pageSize, params OpenOption[] openOptions )
 		 {
 			  if ( ArrayUtils.contains( openOptions, StandardOpenOption.CREATE ) )
@@ -66,18 +66,18 @@ namespace Neo4Net.Adversaries.pagecache
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.util.Optional<org.Neo4Net.io.pagecache.PagedFile> getExistingMapping(java.io.File file) throws java.io.IOException
+//ORIGINAL LINE: public java.util.Optional<Neo4Net.io.pagecache.PagedFile> getExistingMapping(java.io.File file) throws java.io.IOException
 		 public override Optional<PagedFile> GetExistingMapping( File file )
 		 {
 			  _adversary.injectFailure( typeof( IOException ), typeof( SecurityException ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.Optional<org.Neo4Net.io.pagecache.PagedFile> optional = delegate.getExistingMapping(file);
+//ORIGINAL LINE: final java.util.Optional<Neo4Net.io.pagecache.PagedFile> optional = delegate.getExistingMapping(file);
 			  Optional<PagedFile> optional = @delegate.GetExistingMapping( file );
 			  return optional.map( pagedFile => new AdversarialPagedFile( pagedFile, _adversary ) );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.util.List<org.Neo4Net.io.pagecache.PagedFile> listExistingMappings() throws java.io.IOException
+//ORIGINAL LINE: public java.util.List<Neo4Net.io.pagecache.PagedFile> listExistingMappings() throws java.io.IOException
 		 public override IList<PagedFile> ListExistingMappings()
 		 {
 			  _adversary.injectFailure( typeof( IOException ), typeof( SecurityException ) );
@@ -98,7 +98,7 @@ namespace Neo4Net.Adversaries.pagecache
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void flushAndForce(org.Neo4Net.io.pagecache.IOLimiter limiter) throws java.io.IOException
+//ORIGINAL LINE: public void flushAndForce(Neo4Net.io.pagecache.IOLimiter limiter) throws java.io.IOException
 		 public override void FlushAndForce( IOLimiter limiter )
 		 {
 			  _adversary.injectFailure( typeof( FileNotFoundException ), typeof( IOException ), typeof( SecurityException ) );

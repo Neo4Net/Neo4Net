@@ -40,7 +40,7 @@ namespace Neo4Net.Io.fs.watcher
 		 /// <returns> closable resource that represent watched file </returns>
 		 /// <exception cref="IOException"> </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.Neo4Net.io.fs.watcher.resource.WatchedResource watch(java.io.File file) throws java.io.IOException;
+//ORIGINAL LINE: Neo4Net.io.fs.watcher.resource.WatchedResource watch(java.io.File file) throws java.io.IOException;
 		 WatchedResource Watch( File file );
 
 		 /// <summary>

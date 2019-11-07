@@ -29,11 +29,11 @@ namespace Neo4Net.Bolt.v1.runtime
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.runtime.RunMessageChecker.isBegin;
+//	import static Neo4Net.bolt.v1.runtime.RunMessageChecker.isBegin;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.runtime.RunMessageChecker.isCommit;
+//	import static Neo4Net.bolt.v1.runtime.RunMessageChecker.isCommit;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.runtime.RunMessageChecker.isRollback;
+//	import static Neo4Net.bolt.v1.runtime.RunMessageChecker.isRollback;
 
 	internal class RunMessageCheckerTest
 	{

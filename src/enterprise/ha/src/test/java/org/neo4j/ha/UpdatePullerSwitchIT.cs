@@ -50,20 +50,20 @@ namespace Neo4Net.ha
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.ha.HaSettings.tx_push_factor;
+//	import static Neo4Net.kernel.ha.HaSettings.tx_push_factor;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.ha.SlaveUpdatePuller.UPDATE_PULLER_THREAD_PREFIX;
+//	import static Neo4Net.kernel.ha.SlaveUpdatePuller.UPDATE_PULLER_THREAD_PREFIX;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.allSeesAllAsAvailable;
+//	import static Neo4Net.kernel.impl.ha.ClusterManager.allSeesAllAsAvailable;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.clusterOfSize;
+//	import static Neo4Net.kernel.impl.ha.ClusterManager.clusterOfSize;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.masterAvailable;
+//	import static Neo4Net.kernel.impl.ha.ClusterManager.masterAvailable;
 
 	public class UpdatePullerSwitchIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.ha.ClusterRule clusterRule = new org.Neo4Net.test.ha.ClusterRule().withCluster(clusterOfSize(2)).withSharedSetting(tx_push_factor, "0").withSharedSetting(org.Neo4Net.kernel.ha.HaSettings.pull_interval, "100s").withFirstInstanceId(6);
+//ORIGINAL LINE: @Rule public final Neo4Net.test.ha.ClusterRule clusterRule = new Neo4Net.test.ha.ClusterRule().withCluster(clusterOfSize(2)).withSharedSetting(tx_push_factor, "0").withSharedSetting(Neo4Net.kernel.ha.HaSettings.pull_interval, "100s").withFirstInstanceId(6);
 		 public readonly ClusterRule ClusterRule = new ClusterRule().withCluster(clusterOfSize(2)).withSharedSetting(tx_push_factor, "0").withSharedSetting(HaSettings.pull_interval, "100s").withFirstInstanceId(6);
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -129,7 +129,7 @@ namespace Neo4Net.ha
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void pullUpdatesOnSlave(org.Neo4Net.kernel.impl.ha.ClusterManager.ManagedCluster cluster) throws InterruptedException
+//ORIGINAL LINE: private void pullUpdatesOnSlave(Neo4Net.kernel.impl.ha.ClusterManager.ManagedCluster cluster) throws InterruptedException
 		 private void PullUpdatesOnSlave( ClusterManager.ManagedCluster cluster )
 		 {
 			  UpdatePuller updatePuller = cluster.AnySlave.DependencyResolver.resolveDependency( typeof( UpdatePuller ) );

@@ -103,7 +103,7 @@ namespace Neo4Net.Io.pagecache.impl.muninn
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected void pinCursorToPage(long pageRef, long filePageId, org.Neo4Net.io.pagecache.PageSwapper swapper) throws org.Neo4Net.io.pagecache.impl.FileIsNotMappedException
+//ORIGINAL LINE: protected void pinCursorToPage(long pageRef, long filePageId, Neo4Net.io.pagecache.PageSwapper swapper) throws Neo4Net.io.pagecache.impl.FileIsNotMappedException
 		 protected internal override void PinCursorToPage( long pageRef, long filePageId, PageSwapper swapper )
 		 {
 			  Reset( pageRef );

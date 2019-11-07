@@ -72,13 +72,13 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.first;
+//	import static Neo4Net.helpers.collection.Iterables.first;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.impl.fulltext.FulltextProceduresTest.NODE_CREATE;
+//	import static Neo4Net.kernel.api.impl.fulltext.FulltextProceduresTest.NODE_CREATE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.impl.fulltext.FulltextProceduresTest.RELATIONSHIP_CREATE;
+//	import static Neo4Net.kernel.api.impl.fulltext.FulltextProceduresTest.RELATIONSHIP_CREATE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.impl.fulltext.FulltextProceduresTest.array;
+//	import static Neo4Net.kernel.api.impl.fulltext.FulltextProceduresTest.array;
 
 	public class FulltextIndexConsistencyCheckIT
 	{
@@ -668,7 +668,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.consistency.ConsistencyCheckService.Result checkConsistency() throws org.Neo4Net.consistency.checking.full.ConsistencyCheckIncompleteException
+//ORIGINAL LINE: private Neo4Net.consistency.ConsistencyCheckService.Result checkConsistency() throws Neo4Net.consistency.checking.full.ConsistencyCheckIncompleteException
 		 private ConsistencyCheckService.Result CheckConsistency()
 		 {
 			  Config config = Config.defaults();
@@ -704,7 +704,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void assertIsConsistent(org.Neo4Net.consistency.ConsistencyCheckService.Result result) throws java.io.IOException
+//ORIGINAL LINE: private static void assertIsConsistent(Neo4Net.consistency.ConsistencyCheckService.Result result) throws java.io.IOException
 		 private static void AssertIsConsistent( ConsistencyCheckService.Result result )
 		 {
 			  if ( !result.Successful )
@@ -715,7 +715,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void printReport(org.Neo4Net.consistency.ConsistencyCheckService.Result result) throws java.io.IOException
+//ORIGINAL LINE: private static void printReport(Neo4Net.consistency.ConsistencyCheckService.Result result) throws java.io.IOException
 		 private static void PrintReport( ConsistencyCheckService.Result result )
 		 {
 			  Files.readAllLines( result.ReportFile().toPath() ).forEach(System.err.println);

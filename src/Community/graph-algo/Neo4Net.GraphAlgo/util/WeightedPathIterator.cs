@@ -27,22 +27,22 @@ namespace Neo4Net.GraphAlgo.Utils
 
 	public class WeightedPathIterator : PrefetchingResourceIterator<WeightedPath>
 	{
-		 private readonly ResourceIterator<Path> _paths;
+		 private readonly IResourceIterator<Path> _paths;
 		 private readonly CostEvaluator<double> _costEvaluator;
 		 private double? _foundWeight;
 		 private int _foundTotal;
 		 private readonly double _epsilon;
 		 private readonly PathInterest _interest;
 
-		 public WeightedPathIterator( ResourceIterator<Path> paths, CostEvaluator<double> costEvaluator, bool stopAfterLowestWeight ) : this( paths, costEvaluator, NoneStrictMath.EPSILON, stopAfterLowestWeight )
+		 public WeightedPathIterator( IResourceIterator<Path> paths, CostEvaluator<double> costEvaluator, bool stopAfterLowestWeight ) : this( paths, costEvaluator, NoneStrictMath.EPSILON, stopAfterLowestWeight )
 		 {
 		 }
 
-		 public WeightedPathIterator( ResourceIterator<Path> paths, CostEvaluator<double> costEvaluator, double epsilon, bool stopAfterLowestWeight ) : this( paths, costEvaluator, epsilon, stopAfterLowestWeight ? PathInterestFactory.AllShortest( epsilon ) : PathInterestFactory.All( epsilon ) )
+		 public WeightedPathIterator( IResourceIterator<Path> paths, CostEvaluator<double> costEvaluator, double epsilon, bool stopAfterLowestWeight ) : this( paths, costEvaluator, epsilon, stopAfterLowestWeight ? PathInterestFactory.AllShortest( epsilon ) : PathInterestFactory.All( epsilon ) )
 		 {
 		 }
 
-		 public WeightedPathIterator( ResourceIterator<Path> paths, CostEvaluator<double> costEvaluator, double epsilon, PathInterest interest )
+		 public WeightedPathIterator( IResourceIterator<Path> paths, CostEvaluator<double> costEvaluator, double epsilon, PathInterest interest )
 		 {
 			  this._paths = paths;
 			  this._costEvaluator = costEvaluator;

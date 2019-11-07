@@ -27,7 +27,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 	using Stat = Neo4Net.@unsafe.Impl.Batchimport.stats.Stat;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.Format.bytes;
+//	import static Neo4Net.helpers.Format.bytes;
 
 	/// <summary>
 	/// Provides <seealso cref="Stat statistics"/> about memory usage, as the key <seealso cref="Keys.memory_usage"/>

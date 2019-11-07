@@ -36,7 +36,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 	public class AllNodesCollector : SimpleCollector
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static java.util.List<long> getAllNodes(org.apache.lucene.store.Directory directory, org.Neo4Net.values.storable.Value propertyValue) throws java.io.IOException
+//ORIGINAL LINE: public static java.util.List<long> getAllNodes(org.apache.lucene.store.Directory directory, Neo4Net.values.storable.Value propertyValue) throws java.io.IOException
 		 public static IList<long> GetAllNodes( Directory directory, Value propertyValue )
 		 {
 			  using ( SearcherManager manager = new SearcherManager( directory, new SearcherFactory() ) )

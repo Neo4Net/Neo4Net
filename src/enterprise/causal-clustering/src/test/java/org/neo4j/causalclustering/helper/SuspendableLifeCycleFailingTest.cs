@@ -97,7 +97,7 @@ namespace Neo4Net.causalclustering.helper
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void runFailing(org.Neo4Net.function.ThrowingConsumer<SuspendableLifeCycle,Throwable> consumer) throws Throwable
+//ORIGINAL LINE: private void runFailing(Neo4Net.function.ThrowingConsumer<SuspendableLifeCycle,Throwable> consumer) throws Throwable
 		 private void RunFailing( ThrowingConsumer<SuspendableLifeCycle, Exception> consumer )
 		 {
 			  try

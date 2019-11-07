@@ -33,7 +33,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 	using StoreFileMetadata = Neo4Net.Kernel.Api.StorageEngine.StoreFileMetadata;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.fs.FileUtils.relativePath;
+//	import static Neo4Net.io.fs.FileUtils.relativePath;
 
 	public class PrepareStoreCopyFiles : IDisposable
 	{
@@ -61,8 +61,8 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 {
 			 get
 			 {
-				  ResourceIterator<StoreFileMetadata> neoStoreFilesIterator = _closeablesListener.add( _neoStoreDataSource.NeoStoreFileListing.builder().excludeAll().includeNeoStoreFiles().build() );
-				  ResourceIterator<StoreFileMetadata> indexIterator = _closeablesListener.add( _neoStoreDataSource.NeoStoreFileListing.builder().excludeAll().includeExplicitIndexStoreStoreFiles().includeAdditionalProviders().includeLabelScanStoreFiles().includeSchemaIndexStoreFiles().build() );
+				  IResourceIterator<StoreFileMetadata> neoStoreFilesIterator = _closeablesListener.add( _neoStoreDataSource.NeoStoreFileListing.builder().excludeAll().includeNeoStoreFiles().build() );
+				  IResourceIterator<StoreFileMetadata> indexIterator = _closeablesListener.add( _neoStoreDataSource.NeoStoreFileListing.builder().excludeAll().includeExplicitIndexStoreStoreFiles().includeAdditionalProviders().includeLabelScanStoreFiles().includeSchemaIndexStoreFiles().build() );
    
 	//JAVA TO C# CONVERTER TODO TASK: Method reference constructor syntax is not converted by Java to C# Converter:
 				  return Stream.concat( neoStoreFilesIterator.Where( IsCountFile( _neoStoreDataSource.DatabaseLayout ) ), indexIterator.Stream() ).map(MapToStoreResource()).toArray(StoreResource[]::new);
@@ -102,7 +102,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private StoreResource toStoreResource(org.Neo4Net.Kernel.Api.StorageEngine.StoreFileMetadata storeFileMetadata) throws java.io.IOException
+//ORIGINAL LINE: private StoreResource toStoreResource(Neo4Net.Kernel.Api.StorageEngine.StoreFileMetadata storeFileMetadata) throws java.io.IOException
 		 private StoreResource ToStoreResource( StoreFileMetadata storeFileMetadata )
 		 {
 			  File databaseDirectory = _neoStoreDataSource.DatabaseLayout.databaseDirectory();

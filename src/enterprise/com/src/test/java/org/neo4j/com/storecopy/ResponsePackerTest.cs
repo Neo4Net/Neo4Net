@@ -53,7 +53,7 @@ namespace Neo4Net.com.storecopy
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_COMMIT_TIMESTAMP;
+//	import static Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_COMMIT_TIMESTAMP;
 
 	public class ResponsePackerTest
 	{
@@ -69,7 +69,7 @@ namespace Neo4Net.com.storecopy
 			  when( transactionStore.getTransactions( anyLong() ) ).thenReturn(endlessCursor);
 			  const long targetTransactionId = 8L;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.transaction.log.TransactionIdStore transactionIdStore = new org.Neo4Net.kernel.impl.transaction.SimpleTransactionIdStore(targetTransactionId, 0, BASE_TX_COMMIT_TIMESTAMP, 0, 0);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.transaction.log.TransactionIdStore transactionIdStore = new Neo4Net.kernel.impl.transaction.SimpleTransactionIdStore(targetTransactionId, 0, BASE_TX_COMMIT_TIMESTAMP, 0, 0);
 			  TransactionIdStore transactionIdStore = new SimpleTransactionIdStore( targetTransactionId, 0, BASE_TX_COMMIT_TIMESTAMP, 0, 0 );
 			  ResponsePacker packer = new ResponsePacker( transactionStore, transactionIdStore, Suppliers.singleton( StoreIdTestFactory.newStoreIdForCurrentVersion() ) );
 

@@ -45,7 +45,7 @@ namespace Neo4Net.Kernel.Api.StorageEngine.schema
 		 /// <param name="labelIds"> label token ids. </param>
 		 /// <returns> node ids with any of the given label ids. </returns>
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//		 default org.Neo4Net.collection.PrimitiveLongResourceIterator nodesWithAnyOfLabels(int[] labelIds)
+//		 default Neo4Net.collection.PrimitiveLongResourceIterator nodesWithAnyOfLabels(int[] labelIds)
 	//	 {
 	//		  return nodesWithAnyOfLabels(NO_ID, labelIds);
 	//	 }

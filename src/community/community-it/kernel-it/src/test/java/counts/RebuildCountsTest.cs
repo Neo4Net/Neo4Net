@@ -50,16 +50,16 @@ namespace Counts
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.Label.label;
+//	import static Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.index_background_sampling_enabled;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.index_background_sampling_enabled;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.Transaction_Type.@explicit;
+//	import static Neo4Net.Kernel.Api.Internal.Transaction_Type.@explicit;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.security.LoginContext.AUTH_DISABLED;
+//	import static Neo4Net.Kernel.Api.Internal.security.LoginContext.AUTH_DISABLED;
 	using static Neo4Net.Logging.AssertableLogProvider.LogMatcherBuilder;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.logging.AssertableLogProvider.inLog;
+//	import static Neo4Net.logging.AssertableLogProvider.inLog;
 
 	public class RebuildCountsTest
 	{
@@ -69,10 +69,10 @@ namespace Counts
 		 private static readonly Label _human = label( "Human" );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.fs.EphemeralFileSystemRule fsRule = new org.Neo4Net.test.rule.fs.EphemeralFileSystemRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.fs.EphemeralFileSystemRule fsRule = new Neo4Net.test.rule.fs.EphemeralFileSystemRule();
 		 public readonly EphemeralFileSystemRule FsRule = new EphemeralFileSystemRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.TestDirectory testDirectory = Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory TestDirectory = TestDirectory.testDirectory();
 		 private readonly AssertableLogProvider _userLogProvider = new AssertableLogProvider();
 		 private readonly AssertableLogProvider _internalLogProvider = new AssertableLogProvider();
@@ -97,7 +97,7 @@ namespace Counts
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldRebuildMissingCountsStoreOnStart() throws java.io.IOException, org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
+//ORIGINAL LINE: @Test public void shouldRebuildMissingCountsStoreOnStart() throws java.io.IOException, Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldRebuildMissingCountsStoreOnStart()
 		 {
@@ -124,7 +124,7 @@ namespace Counts
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldRebuildMissingCountsStoreAfterRecovery() throws java.io.IOException, org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
+//ORIGINAL LINE: @Test public void shouldRebuildMissingCountsStoreAfterRecovery() throws java.io.IOException, Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldRebuildMissingCountsStoreAfterRecovery()
 		 {
@@ -172,7 +172,7 @@ namespace Counts
 		 {
 			  using ( Transaction tx = _db.beginTx() )
 			  {
-					using ( ResourceIterator<Node> humans = _db.findNodes( _human ) )
+					using ( IResourceIterator<Node> humans = _db.findNodes( _human ) )
 					{
 						 while ( humans.MoveNext() )
 						 {
@@ -220,7 +220,7 @@ namespace Counts
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void restart(org.Neo4Net.io.fs.FileSystemAbstraction fs) throws java.io.IOException
+//ORIGINAL LINE: private void restart(Neo4Net.io.fs.FileSystemAbstraction fs) throws java.io.IOException
 		 private void Restart( FileSystemAbstraction fs )
 		 {
 			  if ( _db != null )

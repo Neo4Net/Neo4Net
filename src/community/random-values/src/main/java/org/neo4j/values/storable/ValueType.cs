@@ -24,97 +24,97 @@ namespace Neo4Net.Values.Storable
 {
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_BOOLEAN;
+//	import static Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_BOOLEAN;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_BOOLEAN_ARRAY;
+//	import static Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_BOOLEAN_ARRAY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_BYTE;
+//	import static Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_BYTE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_BYTE_ARRAY;
+//	import static Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_BYTE_ARRAY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_CARTESIAN_POINT;
+//	import static Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_CARTESIAN_POINT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_CARTESIAN_POINT_3D;
+//	import static Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_CARTESIAN_POINT_3D;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_CARTESIAN_POINT_3D_ARRAY;
+//	import static Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_CARTESIAN_POINT_3D_ARRAY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_CARTESIAN_POINT_ARRAY;
+//	import static Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_CARTESIAN_POINT_ARRAY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_CHAR;
+//	import static Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_CHAR;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_CHAR_ARRAY;
+//	import static Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_CHAR_ARRAY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_DATE;
+//	import static Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_DATE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_DATE_ARRAY;
+//	import static Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_DATE_ARRAY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_DATE_TIME;
+//	import static Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_DATE_TIME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_DATE_TIME_ARRAY;
+//	import static Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_DATE_TIME_ARRAY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_DOUBLE;
+//	import static Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_DOUBLE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_DOUBLE_ARRAY;
+//	import static Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_DOUBLE_ARRAY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_DURATION;
+//	import static Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_DURATION;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_DURATION_ARRAY;
+//	import static Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_DURATION_ARRAY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_FLOAT;
+//	import static Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_FLOAT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_FLOAT_ARRAY;
+//	import static Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_FLOAT_ARRAY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_GEOGRAPHIC_POINT;
+//	import static Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_GEOGRAPHIC_POINT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_GEOGRAPHIC_POINT_3D;
+//	import static Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_GEOGRAPHIC_POINT_3D;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_GEOGRAPHIC_POINT_3D_ARRAY;
+//	import static Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_GEOGRAPHIC_POINT_3D_ARRAY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_GEOGRAPHIC_POINT_ARRAY;
+//	import static Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_GEOGRAPHIC_POINT_ARRAY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_INT;
+//	import static Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_INT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_INT_ARRAY;
+//	import static Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_INT_ARRAY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_LOCAL_DATE_TIME;
+//	import static Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_LOCAL_DATE_TIME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_LOCAL_DATE_TIME_ARRAY;
+//	import static Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_LOCAL_DATE_TIME_ARRAY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_LOCAL_TIME;
+//	import static Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_LOCAL_TIME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_LOCAL_TIME_ARRAY;
+//	import static Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_LOCAL_TIME_ARRAY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_LONG;
+//	import static Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_LONG;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_LONG_ARRAY;
+//	import static Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_LONG_ARRAY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_PERIOD;
+//	import static Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_PERIOD;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_PERIOD_ARRAY;
+//	import static Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_PERIOD_ARRAY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_SHORT;
+//	import static Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_SHORT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_SHORT_ARRAY;
+//	import static Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_SHORT_ARRAY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_STRING;
+//	import static Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_STRING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_STRING_ALPHANUMERIC;
+//	import static Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_STRING_ALPHANUMERIC;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_STRING_ALPHANUMERIC_ARRAY;
+//	import static Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_STRING_ALPHANUMERIC_ARRAY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_STRING_ARRAY;
+//	import static Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_STRING_ARRAY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_STRING_ASCII;
+//	import static Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_STRING_ASCII;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_STRING_ASCII_ARRAY;
+//	import static Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_STRING_ASCII_ARRAY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_STRING_BMP;
+//	import static Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_STRING_BMP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_STRING_BMP_ARRAY;
+//	import static Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_STRING_BMP_ARRAY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_TIME;
+//	import static Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_TIME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_TIME_ARRAY;
+//	import static Neo4Net.values.storable.ExtremeValuesLibrary.EXTREME_TIME_ARRAY;
 
 	public sealed class ValueType
 	{

@@ -41,11 +41,11 @@ namespace Neo4Net.Consistency.checking
 	using RelationshipTypeTokenRecord = Neo4Net.Kernel.Impl.Store.Records.RelationshipTypeTokenRecord;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.consistency.checking.DynamicStore.ARRAY;
+//	import static Neo4Net.consistency.checking.DynamicStore.ARRAY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.consistency.checking.DynamicStore.NODE_LABEL;
+//	import static Neo4Net.consistency.checking.DynamicStore.NODE_LABEL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.consistency.checking.DynamicStore.SCHEMA;
+//	import static Neo4Net.consistency.checking.DynamicStore.SCHEMA;
 
 	public abstract class AbstractStoreProcessor : Neo4Net.Kernel.impl.store.RecordStore_Processor<Exception>
 	{
@@ -188,7 +188,7 @@ namespace Neo4Net.Consistency.checking
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void processRelationshipGroup(org.Neo4Net.kernel.impl.store.RecordStore<org.Neo4Net.kernel.impl.store.record.RelationshipGroupRecord> store, org.Neo4Net.kernel.impl.store.record.RelationshipGroupRecord record) throws RuntimeException
+//ORIGINAL LINE: public void processRelationshipGroup(Neo4Net.kernel.impl.store.RecordStore<Neo4Net.kernel.impl.store.record.RelationshipGroupRecord> store, Neo4Net.kernel.impl.store.record.RelationshipGroupRecord record) throws RuntimeException
 		 public override void ProcessRelationshipGroup( RecordStore<RelationshipGroupRecord> store, RelationshipGroupRecord record )
 		 {
 			  CheckRelationshipGroup( store, record, _relationshipGroupChecker );

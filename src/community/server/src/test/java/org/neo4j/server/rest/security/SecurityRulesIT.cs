@@ -50,7 +50,7 @@ namespace Neo4Net.Server.rest.security
 		 private FunctionalTestHelper _functionalTestHelper;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.TestData<org.Neo4Net.server.rest.RESTRequestGenerator> gen = org.Neo4Net.test.TestData.producedThrough(org.Neo4Net.server.rest.RESTRequestGenerator.PRODUCER);
+//ORIGINAL LINE: @Rule public Neo4Net.test.TestData<Neo4Net.server.rest.RESTRequestGenerator> gen = Neo4Net.test.TestData.producedThrough(Neo4Net.server.rest.RESTRequestGenerator.PRODUCER);
 		 public TestData<RESTRequestGenerator> Gen = TestData.producedThrough( RESTRequestGenerator.PRODUCER );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

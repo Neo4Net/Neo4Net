@@ -55,7 +55,7 @@ namespace Neo4Net.Kernel.index
 	public class IndexOperationsIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.ha.ClusterRule clusterRule = new org.Neo4Net.test.ha.ClusterRule();
+//ORIGINAL LINE: @Rule public Neo4Net.test.ha.ClusterRule clusterRule = new Neo4Net.test.ha.ClusterRule();
 		 public ClusterRule ClusterRule = new ClusterRule();
 
 		 protected internal ClusterManager.ManagedCluster Cluster;

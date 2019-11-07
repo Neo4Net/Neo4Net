@@ -51,7 +51,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void replaceWithStoreFrom(org.Neo4Net.causalclustering.catchup.CatchupAddressProvider addressProvider, org.Neo4Net.causalclustering.identity.StoreId expectedStoreId) throws java.io.IOException, StoreCopyFailedException, DatabaseShutdownException
+//ORIGINAL LINE: public void replaceWithStoreFrom(Neo4Net.causalclustering.catchup.CatchupAddressProvider addressProvider, Neo4Net.causalclustering.identity.StoreId expectedStoreId) throws java.io.IOException, StoreCopyFailedException, DatabaseShutdownException
 		 public virtual void ReplaceWithStoreFrom( CatchupAddressProvider addressProvider, StoreId expectedStoreId )
 		 {
 			  using ( TemporaryStoreDirectory tempStore = new TemporaryStoreDirectory( _fs, _pageCache, _localDatabase.databaseLayout().databaseDirectory() ) )

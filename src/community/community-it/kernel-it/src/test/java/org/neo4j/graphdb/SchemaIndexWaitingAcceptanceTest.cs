@@ -39,16 +39,16 @@ namespace Neo4Net.GraphDb
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.default_schema_provider;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.default_schema_provider;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.api.index.SchemaIndexTestHelper.singleInstanceIndexProviderFactory;
+//	import static Neo4Net.kernel.impl.api.index.SchemaIndexTestHelper.singleInstanceIndexProviderFactory;
 
 	public class SchemaIndexWaitingAcceptanceTest
 	{
 		 private readonly ControlledPopulationIndexProvider _provider = new ControlledPopulationIndexProvider();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.DatabaseRule rule = new org.Neo4Net.test.rule.ImpermanentDatabaseRule()
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.DatabaseRule rule = new Neo4Net.test.rule.ImpermanentDatabaseRule()
 		 public final DatabaseRule rule = new ImpermanentDatabaseRuleAnonymousInnerClass()
 		 .withSetting( default_schema_provider, _provider.ProviderDescriptor.name() );
 

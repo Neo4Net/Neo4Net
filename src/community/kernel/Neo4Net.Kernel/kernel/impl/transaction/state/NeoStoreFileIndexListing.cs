@@ -28,7 +28,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 	using Neo4Net.GraphDb;
 	using Iterators = Neo4Net.Collections.Helpers.Iterators;
 	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException;
-	using LabelScanStore = Neo4Net.Kernel.api.labelscan.LabelScanStore;
+	using LabelScanStore = Neo4Net.Kernel.Api.LabelScan.LabelScanStore;
 	using ExplicitIndexProvider = Neo4Net.Kernel.Impl.Api.ExplicitIndexProvider;
 	using IndexingService = Neo4Net.Kernel.Impl.Api.index.IndexingService;
 	using Neo4Net.Kernel.impl.store.format;
@@ -37,7 +37,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 	using StoreFileMetadata = Neo4Net.Kernel.Api.StorageEngine.StoreFileMetadata;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.resourceIterator;
+//	import static Neo4Net.helpers.collection.Iterators.resourceIterator;
 
 	public class NeoStoreFileIndexListing
 	{
@@ -63,10 +63,10 @@ namespace Neo4Net.Kernel.impl.transaction.state
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.Neo4Net.graphdb.Resource gatherSchemaIndexFiles(java.util.Collection<org.Neo4Net.Kernel.Api.StorageEngine.StoreFileMetadata> targetFiles) throws java.io.IOException
+//ORIGINAL LINE: Neo4Net.graphdb.Resource gatherSchemaIndexFiles(java.util.Collection<Neo4Net.Kernel.Api.StorageEngine.StoreFileMetadata> targetFiles) throws java.io.IOException
 		 internal virtual Resource GatherSchemaIndexFiles( ICollection<StoreFileMetadata> targetFiles )
 		 {
-			  ResourceIterator<File> snapshot = _indexingService.snapshotIndexFiles();
+			  IResourceIterator<File> snapshot = _indexingService.snapshotIndexFiles();
 			  GetSnapshotFilesMetadata( snapshot, targetFiles );
 			  // Intentionally don't close the snapshot here, return it for closing by the consumer of
 			  // the targetFiles list.
@@ -75,7 +75,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 
 		 internal virtual Resource GatherLabelScanStoreFiles( ICollection<StoreFileMetadata> targetFiles )
 		 {
-			  ResourceIterator<File> snapshot = _labelScanStore.snapshotStoreFiles();
+			  IResourceIterator<File> snapshot = _labelScanStore.snapshotStoreFiles();
 			  GetSnapshotFilesMetadata( snapshot, targetFiles );
 			  // Intentionally don't close the snapshot here, return it for closing by the consumer of
 			  // the targetFiles list.
@@ -83,11 +83,11 @@ namespace Neo4Net.Kernel.impl.transaction.state
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.Neo4Net.graphdb.Resource gatherExplicitIndexFiles(java.util.Collection<org.Neo4Net.Kernel.Api.StorageEngine.StoreFileMetadata> files) throws java.io.IOException
+//ORIGINAL LINE: Neo4Net.graphdb.Resource gatherExplicitIndexFiles(java.util.Collection<Neo4Net.Kernel.Api.StorageEngine.StoreFileMetadata> files) throws java.io.IOException
 		 internal virtual Resource GatherExplicitIndexFiles( ICollection<StoreFileMetadata> files )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.Collection<org.Neo4Net.graphdb.ResourceIterator<java.io.File>> snapshots = new java.util.ArrayList<>();
+//ORIGINAL LINE: final java.util.Collection<Neo4Net.graphdb.ResourceIterator<java.io.File>> snapshots = new java.util.ArrayList<>();
 			  ICollection<ResourceIterator<File>> snapshots = new List<ResourceIterator<File>>();
 			  foreach ( IndexImplementation indexProvider in _explicitIndexProviders.allIndexProviders() )
 			  {
@@ -100,14 +100,14 @@ namespace Neo4Net.Kernel.impl.transaction.state
 			  return new MultiResource( snapshots );
 		 }
 
-		 private void GetSnapshotFilesMetadata( ResourceIterator<File> snapshot, ICollection<StoreFileMetadata> targetFiles )
+		 private void GetSnapshotFilesMetadata( IResourceIterator<File> snapshot, ICollection<StoreFileMetadata> targetFiles )
 		 {
 			  snapshot.Select( _toStoreFileMetatadata ).ForEach( targetFiles.add );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.graphdb.ResourceIterator<org.Neo4Net.Kernel.Api.StorageEngine.StoreFileMetadata> getSnapshot(long indexId) throws java.io.IOException
-		 public virtual ResourceIterator<StoreFileMetadata> GetSnapshot( long indexId )
+//ORIGINAL LINE: public Neo4Net.graphdb.ResourceIterator<Neo4Net.Kernel.Api.StorageEngine.StoreFileMetadata> getSnapshot(long indexId) throws java.io.IOException
+		 public virtual IResourceIterator<StoreFileMetadata> GetSnapshot( long indexId )
 		 {
 			  try
 			  {

@@ -25,8 +25,8 @@ namespace Neo4Net.Kernel.impl.transaction.state
 
 	using ConstraintValidationException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.ConstraintValidationException;
 	using UniquePropertyValueValidationException = Neo4Net.Kernel.Api.Exceptions.schema.UniquePropertyValueValidationException;
-	using ConstraintDescriptorFactory = Neo4Net.Kernel.api.schema.constraints.ConstraintDescriptorFactory;
-	using UniquenessConstraintDescriptor = Neo4Net.Kernel.api.schema.constraints.UniquenessConstraintDescriptor;
+	using ConstraintDescriptorFactory = Neo4Net.Kernel.Api.schema.constraints.ConstraintDescriptorFactory;
+	using UniquenessConstraintDescriptor = Neo4Net.Kernel.Api.schema.constraints.UniquenessConstraintDescriptor;
 	using IndexingService = Neo4Net.Kernel.Impl.Api.index.IndexingService;
 	using MetaDataStore = Neo4Net.Kernel.impl.store.MetaDataStore;
 	using NeoStores = Neo4Net.Kernel.impl.store.NeoStores;

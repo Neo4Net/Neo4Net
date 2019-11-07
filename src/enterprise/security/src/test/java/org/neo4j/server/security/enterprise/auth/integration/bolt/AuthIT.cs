@@ -83,7 +83,7 @@ namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 
 		 private readonly string _password;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private final java.util.Map<org.Neo4Net.graphdb.config.Setting<?>,String> configMap;
+//ORIGINAL LINE: private final java.util.Map<Neo4Net.graphdb.config.Setting<?>,String> configMap;
 		 private readonly IDictionary<Setting<object>, string> _configMap;
 		 private readonly bool _confidentialityRequired;
 
@@ -134,13 +134,13 @@ namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: protected java.util.Map<org.Neo4Net.graphdb.config.Setting<?>, String> getSettings()
+//ORIGINAL LINE: protected java.util.Map<Neo4Net.graphdb.config.Setting<?>, String> getSettings()
 		 protected internal override IDictionary<Setting<object>, string> Settings
 		 {
 			 get
 			 {
 	//JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-	//ORIGINAL LINE: java.util.Map<org.Neo4Net.graphdb.config.Setting<?>, String> settings = new java.util.HashMap<>();
+	//ORIGINAL LINE: java.util.Map<Neo4Net.graphdb.config.Setting<?>, String> settings = new java.util.HashMap<>();
 				  IDictionary<Setting<object>, string> settings = new Dictionary<Setting<object>, string>();
 				  settings[SecuritySettings.ldap_authentication_user_dn_template] = "cn={0},ou=users,dc=example,dc=com";
 				  settings[SecuritySettings.ldap_authentication_cache_enabled] = "true";

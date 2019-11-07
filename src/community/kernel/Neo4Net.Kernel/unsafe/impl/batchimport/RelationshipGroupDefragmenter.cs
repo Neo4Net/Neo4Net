@@ -30,9 +30,9 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 	using BatchingNeoStores = Neo4Net.@unsafe.Impl.Batchimport.store.BatchingNeoStores;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.Configuration.withBatchSize;
+//	import static Neo4Net.@unsafe.impl.batchimport.Configuration.withBatchSize;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.staging.ExecutionSupervisors.superviseExecution;
+//	import static Neo4Net.@unsafe.impl.batchimport.staging.ExecutionSupervisors.superviseExecution;
 
 	/// <summary>
 	/// Defragments <seealso cref="RelationshipGroupRecord"/> so that they end up sequential per node in the group store.

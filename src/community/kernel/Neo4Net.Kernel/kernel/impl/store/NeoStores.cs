@@ -56,15 +56,15 @@ namespace Neo4Net.Kernel.impl.store
 	using Logger = Neo4Net.Logging.Logger;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.iterator;
+//	import static Neo4Net.helpers.collection.Iterators.iterator;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.loop;
+//	import static Neo4Net.helpers.collection.Iterators.loop;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.MetaDataStore.Position.STORE_VERSION;
+//	import static Neo4Net.kernel.impl.store.MetaDataStore.Position.STORE_VERSION;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.MetaDataStore.getRecord;
+//	import static Neo4Net.kernel.impl.store.MetaDataStore.getRecord;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.MetaDataStore.versionLongToString;
+//	import static Neo4Net.kernel.impl.store.MetaDataStore.versionLongToString;
 
 	/// <summary>
 	/// This class contains the references to the "NodeStore,RelationshipStore,
@@ -118,7 +118,7 @@ namespace Neo4Net.Kernel.impl.store
 		 private readonly OpenOption[] _openOptions;
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: NeoStores(org.Neo4Net.io.layout.DatabaseLayout layout, org.Neo4Net.kernel.configuration.Config config, org.Neo4Net.kernel.impl.store.id.IdGeneratorFactory idGeneratorFactory, org.Neo4Net.io.pagecache.PageCache pageCache, final org.Neo4Net.logging.LogProvider logProvider, org.Neo4Net.io.fs.FileSystemAbstraction fileSystemAbstraction, org.Neo4Net.io.pagecache.tracing.cursor.context.VersionContextSupplier versionContextSupplier, org.Neo4Net.kernel.impl.store.format.RecordFormats recordFormats, boolean createIfNotExist, StoreType[] storeTypes, java.nio.file.OpenOption[] openOptions)
+//ORIGINAL LINE: NeoStores(Neo4Net.io.layout.DatabaseLayout layout, Neo4Net.kernel.configuration.Config config, Neo4Net.kernel.impl.store.id.IdGeneratorFactory idGeneratorFactory, Neo4Net.io.pagecache.PageCache pageCache, final Neo4Net.logging.LogProvider logProvider, Neo4Net.io.fs.FileSystemAbstraction fileSystemAbstraction, Neo4Net.io.pagecache.tracing.cursor.context.VersionContextSupplier versionContextSupplier, Neo4Net.kernel.impl.store.format.RecordFormats recordFormats, boolean createIfNotExist, StoreType[] storeTypes, java.nio.file.OpenOption[] openOptions)
 		 internal NeoStores( DatabaseLayout layout, Config config, IdGeneratorFactory idGeneratorFactory, PageCache pageCache, LogProvider logProvider, FileSystemAbstraction fileSystemAbstraction, VersionContextSupplier versionContextSupplier, RecordFormats recordFormats, bool createIfNotExist, StoreType[] storeTypes, OpenOption[] openOptions )
 		 {
 			  this._layout = layout;
@@ -709,7 +709,7 @@ namespace Neo4Net.Kernel.impl.store
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") public <RECORD extends org.Neo4Net.kernel.impl.store.record.AbstractBaseRecord> RecordStore<RECORD> getRecordStore(StoreType type)
+//ORIGINAL LINE: @SuppressWarnings("unchecked") public <RECORD extends Neo4Net.kernel.impl.store.record.AbstractBaseRecord> RecordStore<RECORD> getRecordStore(StoreType type)
 		 public virtual RecordStore<RECORD> GetRecordStore<RECORD>( StoreType type ) where RECORD : Neo4Net.Kernel.Impl.Store.Records.AbstractBaseRecord
 		 {
 			  Debug.Assert( type.RecordStore );

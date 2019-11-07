@@ -110,7 +110,7 @@ namespace Neo4Net.causalclustering.messaging
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void ensureBytes(int byteCount) throws org.Neo4Net.Kernel.Api.StorageEngine.ReadPastEndException
+//ORIGINAL LINE: private void ensureBytes(int byteCount) throws Neo4Net.Kernel.Api.StorageEngine.ReadPastEndException
 		 private void EnsureBytes( int byteCount )
 		 {
 			  if ( @delegate.readableBytes() < byteCount )

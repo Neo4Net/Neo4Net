@@ -72,7 +72,7 @@ namespace Neo4Net.Server.enterprise.modules
 //ORIGINAL LINE: private javax.management.ObjectName createObjectName() throws javax.management.MalformedObjectNameException
 		 private ObjectName CreateObjectName()
 		 {
-			  return new ObjectName( "org.Neo4Net.ServerManagement", "restartServer", "lifecycle" );
+			  return new ObjectName( "Neo4Net.ServerManagement", "restartServer", "lifecycle" );
 		 }
 	}
 

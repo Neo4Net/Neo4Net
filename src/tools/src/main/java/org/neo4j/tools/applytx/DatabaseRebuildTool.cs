@@ -45,13 +45,13 @@ namespace Neo4Net.tools.applytx
 	using ConsoleInput = Neo4Net.tools.console.input.ConsoleInput;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.lifecycle.LifecycleAdapter.onShutdown;
+//	import static Neo4Net.kernel.lifecycle.LifecycleAdapter.onShutdown;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.tools.console.input.ConsoleUtil.NO_PROMPT;
+//	import static Neo4Net.tools.console.input.ConsoleUtil.NO_PROMPT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.tools.console.input.ConsoleUtil.oneCommand;
+//	import static Neo4Net.tools.console.input.ConsoleUtil.oneCommand;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.tools.console.input.ConsoleUtil.staticPrompt;
+//	import static Neo4Net.tools.console.input.ConsoleUtil.staticPrompt;
 
 	/// <summary>
 	/// Tool for rebuilding database from transaction logs onto a new store. Transaction can be applied interactively,
@@ -128,7 +128,7 @@ namespace Neo4Net.tools.applytx
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.io.File getTo(org.Neo4Net.helpers.Args args) throws java.io.IOException
+//ORIGINAL LINE: private java.io.File getTo(Neo4Net.helpers.Args args) throws java.io.IOException
 		 private File GetTo( Args args )
 		 {
 			  string to = args.Get( "to" );
@@ -190,7 +190,7 @@ namespace Neo4Net.tools.applytx
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private org.Neo4Net.tools.console.input.ConsoleInput console(final java.io.File fromPath, final org.Neo4Net.graphdb.factory.GraphDatabaseBuilder dbBuilder, java.io.InputStream in, org.Neo4Net.kernel.impl.util.Listener<java.io.PrintStream> prompt, org.Neo4Net.kernel.lifecycle.LifeSupport life)
+//ORIGINAL LINE: private Neo4Net.tools.console.input.ConsoleInput console(final java.io.File fromPath, final Neo4Net.graphdb.factory.GraphDatabaseBuilder dbBuilder, java.io.InputStream in, Neo4Net.kernel.impl.util.Listener<java.io.PrintStream> prompt, Neo4Net.kernel.lifecycle.LifeSupport life)
 		 private ConsoleInput Console( File fromPath, GraphDatabaseBuilder dbBuilder, Stream @in, Listener<PrintStream> prompt, LifeSupport life )
 		 {
 			  // We must have this indirection here since in order to perform CC (one of the commands) we must shut down
@@ -200,10 +200,10 @@ namespace Neo4Net.tools.applytx
 //ORIGINAL LINE: final java.util.concurrent.atomic.AtomicReference<Store> store = new java.util.concurrent.atomic.AtomicReference<>(new Store(dbBuilder));
 			  AtomicReference<Store> store = new AtomicReference<Store>( new Store( dbBuilder ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final System.Func<org.Neo4Net.kernel.impl.store.StoreAccess> storeAccess = () -> store.get().access;
+//ORIGINAL LINE: final System.Func<Neo4Net.kernel.impl.store.StoreAccess> storeAccess = () -> store.get().access;
 			  System.Func<StoreAccess> storeAccess = () => store.get().access;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final System.Func<org.Neo4Net.kernel.internal.GraphDatabaseAPI> dbAccess = () -> store.get().db;
+//ORIGINAL LINE: final System.Func<Neo4Net.kernel.internal.GraphDatabaseAPI> dbAccess = () -> store.get().db;
 			  System.Func<GraphDatabaseAPI> dbAccess = () => store.get().db;
 
 			  ConsoleInput consoleInput = life.Add( new ConsoleInput( @in, @out, prompt ) );
@@ -229,7 +229,7 @@ namespace Neo4Net.tools.applytx
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void run(org.Neo4Net.helpers.Args action, java.io.PrintStream out) throws Exception
+//ORIGINAL LINE: public void run(Neo4Net.helpers.Args action, java.io.PrintStream out) throws Exception
 			 public override void run( Args action, PrintStream @out )
 			 {
 				  DatabaseLayout databaseLayout = _store.get().databaseLayout;

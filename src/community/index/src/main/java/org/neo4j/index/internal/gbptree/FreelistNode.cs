@@ -22,11 +22,11 @@ namespace Neo4Net.Index.Internal.gbptree
 	using PageCursor = Neo4Net.Io.pagecache.PageCursor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Internal.gbptree.PageCursorUtil.get6BLong;
+//	import static Neo4Net.index.Internal.gbptree.PageCursorUtil.get6BLong;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Internal.gbptree.PageCursorUtil.getUnsignedInt;
+//	import static Neo4Net.index.Internal.gbptree.PageCursorUtil.getUnsignedInt;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Internal.gbptree.PageCursorUtil.put6BLong;
+//	import static Neo4Net.index.Internal.gbptree.PageCursorUtil.put6BLong;
 
 	/// <summary>
 	/// Manages the physical format of a free-list node, i.e. how bytes about free-list pages
@@ -37,7 +37,7 @@ namespace Neo4Net.Index.Internal.gbptree
 	/// [NODE TYPE][NEXT][GENERATION,ID][GENERATION,ID][...............]
 	/// </pre>
 	/// 
-	/// A free-list node is a page in the same <seealso cref="org.Neo4Net.io.pagecache.PagedFile mapped page cache file"/>
+	/// A free-list node is a page in the same <seealso cref="Neo4Net.io.pagecache.PagedFile mapped page cache file"/>
 	/// as a <seealso cref="TreeNode"/>. They distinguish themselves from one another by a "node type" one-byte header.
 	/// </summary>
 	internal class FreelistNode

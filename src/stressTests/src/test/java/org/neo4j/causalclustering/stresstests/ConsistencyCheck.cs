@@ -31,7 +31,7 @@ namespace Neo4Net.causalclustering.stresstests
 	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.consistency.ConsistencyCheckTool.runConsistencyCheckTool;
+//	import static Neo4Net.consistency.ConsistencyCheckTool.runConsistencyCheckTool;
 
 	/// <summary>
 	/// Check the consistency of all the cluster members' stores.
@@ -39,7 +39,7 @@ namespace Neo4Net.causalclustering.stresstests
 	public class ConsistencyCheck : Validation
 	{
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private final org.Neo4Net.causalclustering.discovery.Cluster<?> cluster;
+//ORIGINAL LINE: private final Neo4Net.causalclustering.discovery.Cluster<?> cluster;
 		 private readonly Cluster<object> _cluster;
 
 		 internal ConsistencyCheck( Resources resources ) : base()

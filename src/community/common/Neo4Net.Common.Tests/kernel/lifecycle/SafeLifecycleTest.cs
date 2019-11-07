@@ -29,13 +29,13 @@ namespace Neo4Net.Kernel.Lifecycle
    //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
    //	import static org.junit.jupiter.api.Assertions.assertTrue;
    //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-   //	import static org.Neo4Net.kernel.lifecycle.SafeLifecycle.State.HALT;
+   //	import static Neo4Net.kernel.lifecycle.SafeLifecycle.State.HALT;
    //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-   //	import static org.Neo4Net.kernel.lifecycle.SafeLifecycle.State.IDLE;
+   //	import static Neo4Net.kernel.lifecycle.SafeLifecycle.State.IDLE;
    //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-   //	import static org.Neo4Net.kernel.lifecycle.SafeLifecycle.State.PRE;
+   //	import static Neo4Net.kernel.lifecycle.SafeLifecycle.State.PRE;
    //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-   //	import static org.Neo4Net.kernel.lifecycle.SafeLifecycle.State.RUN;
+   //	import static Neo4Net.kernel.lifecycle.SafeLifecycle.State.RUN;
 
    internal class SafeLifecycleTest
    {
@@ -65,7 +65,7 @@ namespace Neo4Net.Kernel.Lifecycle
       private ThrowingConsumer<ILifecycle, Exception> _shutdown;
 
       //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-      //ORIGINAL LINE: @SuppressWarnings("unchecked") private org.Neo4Net.function.ThrowingConsumer<Lifecycle,Throwable>[] ops = new org.Neo4Net.function.ThrowingConsumer[]{init, start, stop, shutdown};
+      //ORIGINAL LINE: @SuppressWarnings("unchecked") private Neo4Net.function.ThrowingConsumer<Lifecycle,Throwable>[] ops = new Neo4Net.function.ThrowingConsumer[]{init, start, stop, shutdown};
       private ThrowingConsumer<ILifecycle, Exception>[] _ops;
 
       private object[][] _onSuccess = new object[][]

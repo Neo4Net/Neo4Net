@@ -19,7 +19,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Kernel.api
+namespace Neo4Net.Kernel.Api
 {
 
 	using NotInTransactionException = Neo4Net.GraphDb.NotInTransactionException;
@@ -37,7 +37,7 @@ namespace Neo4Net.Kernel.api
 	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
 
 	/// <summary>
-	/// Extends the outwards-facing <seealso cref="org.Neo4Net.Kernel.Api.Internal.Transaction"/> with additional functionality
+	/// Extends the outwards-facing <seealso cref="Neo4Net.Kernel.Api.Internal.Transaction"/> with additional functionality
 	/// that is used inside the kernel (and in some other places, ahum). Please do not rely on this class unless you
 	/// have to.
 	/// </summary>
@@ -59,7 +59,7 @@ namespace Neo4Net.Kernel.api
 		 /// <param name="provider"> index provider identifier </param>
 		 /// <returns> IndexDescriptor for the index to be created. </returns>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor indexUniqueCreate(org.Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor schema, String provider) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.SchemaKernelException;
+//ORIGINAL LINE: Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor indexUniqueCreate(Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor schema, String provider) throws Neo4Net.Kernel.Api.Internal.Exceptions.Schema.SchemaKernelException;
 		 IndexDescriptor IndexUniqueCreate( SchemaDescriptor schema, string provider );
 
 		 /// <returns> the security context this transaction is currently executing in. </returns>
@@ -80,7 +80,7 @@ namespace Neo4Net.Kernel.api
 		 long StartTime();
 
 		 /// <returns> start time of this transaction, i.e. basically <seealso cref="System.nanoTime()"/> when user called
-		 /// <seealso cref="org.Neo4Net.Kernel.Api.Internal.Session.BeginTransaction(Type)"/>. </returns>
+		 /// <seealso cref="Neo4Net.Kernel.Api.Internal.Session.BeginTransaction(Type)"/>. </returns>
 		 long StartTimeNanos();
 
 		 /// <summary>
@@ -105,14 +105,14 @@ namespace Neo4Net.Kernel.api
 
 		 /// <summary>
 		 /// Return transaction id that assigned during transaction commit process. </summary>
-		 /// <seealso cref= org.Neo4Net.kernel.impl.api.TransactionCommitProcess </seealso>
+		 /// <seealso cref= Neo4Net.kernel.impl.api.TransactionCommitProcess </seealso>
 		 /// <returns> transaction id. </returns>
 		 /// <exception cref="IllegalStateException"> if transaction id is not assigned yet </exception>
 		 long TransactionId { get; }
 
 		 /// <summary>
 		 /// Return transaction commit time (in millis) that assigned during transaction commit process. </summary>
-		 /// <seealso cref= org.Neo4Net.kernel.impl.api.TransactionCommitProcess </seealso>
+		 /// <seealso cref= Neo4Net.kernel.impl.api.TransactionCommitProcess </seealso>
 		 /// <returns> transaction commit time </returns>
 		 /// <exception cref="IllegalStateException"> if commit time is not assigned yet </exception>
 		 long CommitTime { get; }

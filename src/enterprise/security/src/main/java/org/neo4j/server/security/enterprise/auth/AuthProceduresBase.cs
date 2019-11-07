@@ -26,11 +26,11 @@ using System.Collections.Generic;
 namespace Neo4Net.Server.security.enterprise.auth
 {
 
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
-	using KernelTransactionHandle = Neo4Net.Kernel.api.KernelTransactionHandle;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
+	using KernelTransactionHandle = Neo4Net.Kernel.Api.KernelTransactionHandle;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
-	using NetworkConnectionTracker = Neo4Net.Kernel.api.net.NetworkConnectionTracker;
-	using TrackedNetworkConnection = Neo4Net.Kernel.api.net.TrackedNetworkConnection;
+	using NetworkConnectionTracker = Neo4Net.Kernel.Api.net.NetworkConnectionTracker;
+	using TrackedNetworkConnection = Neo4Net.Kernel.Api.net.TrackedNetworkConnection;
 	using EnterpriseSecurityContext = Neo4Net.Kernel.enterprise.api.security.EnterpriseSecurityContext;
 	using KernelTransactions = Neo4Net.Kernel.Impl.Api.KernelTransactions;
 	using ThreadToStatementContextBridge = Neo4Net.Kernel.impl.core.ThreadToStatementContextBridge;
@@ -44,15 +44,15 @@ namespace Neo4Net.Server.security.enterprise.auth
 	public class AuthProceduresBase
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Context public org.Neo4Net.kernel.enterprise.api.security.EnterpriseSecurityContext securityContext;
+//ORIGINAL LINE: @Context public Neo4Net.kernel.enterprise.api.security.EnterpriseSecurityContext securityContext;
 		 public EnterpriseSecurityContext SecurityContext;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Context public org.Neo4Net.kernel.internal.GraphDatabaseAPI graph;
+//ORIGINAL LINE: @Context public Neo4Net.kernel.internal.GraphDatabaseAPI graph;
 		 public GraphDatabaseAPI Graph;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Context public org.Neo4Net.server.security.enterprise.log.SecurityLog securityLog;
+//ORIGINAL LINE: @Context public Neo4Net.server.security.enterprise.log.SecurityLog securityLog;
 		 public SecurityLog SecurityLog;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

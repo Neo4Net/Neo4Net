@@ -88,7 +88,7 @@ namespace Neo4Net.Server.rest.domain
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static Object assertSupportedPropertyValue(Object jsonObject) throws org.Neo4Net.server.rest.web.PropertyValueException
+//ORIGINAL LINE: public static Object assertSupportedPropertyValue(Object jsonObject) throws Neo4Net.server.rest.web.PropertyValueException
 		 public static object AssertSupportedPropertyValue( object jsonObject )
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:

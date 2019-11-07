@@ -37,7 +37,7 @@ namespace Neo4Net.causalclustering.core.consensus.election
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static org.Neo4Net.causalclustering.identity.MemberId waitForLeaderAgreement(Iterable<org.Neo4Net.causalclustering.core.consensus.RaftMachine> validRafts, long maxTimeMillis) throws InterruptedException, java.util.concurrent.TimeoutException
+//ORIGINAL LINE: public static Neo4Net.causalclustering.identity.MemberId waitForLeaderAgreement(Iterable<Neo4Net.causalclustering.core.consensus.RaftMachine> validRafts, long maxTimeMillis) throws InterruptedException, java.util.concurrent.TimeoutException
 		 public static MemberId WaitForLeaderAgreement( IEnumerable<RaftMachine> validRafts, long maxTimeMillis )
 		 {
 			  long viewCount = Iterables.count( validRafts );

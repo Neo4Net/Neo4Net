@@ -42,7 +42,7 @@ namespace Neo4Net.Kernel.impl.enterprise.configuration
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.enterprise.configuration.EnterpriseEditionSettings.idTypesToReuse;
+//	import static Neo4Net.kernel.impl.enterprise.configuration.EnterpriseEditionSettings.idTypesToReuse;
 
 	public class EnterpriseEditionSettingsTest
 	{

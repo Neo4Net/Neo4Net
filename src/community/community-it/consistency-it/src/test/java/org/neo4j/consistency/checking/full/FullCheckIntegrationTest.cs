@@ -54,17 +54,17 @@ namespace Neo4Net.Consistency.checking.full
 	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
 	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.Schema.IndexProviderDescriptor;
 	using IOLimiter = Neo4Net.Io.pagecache.IOLimiter;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
-	using Statement = Neo4Net.Kernel.api.Statement;
-	using DirectStoreAccess = Neo4Net.Kernel.api.direct.DirectStoreAccess;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
+	using Statement = Neo4Net.Kernel.Api.Statement;
+	using DirectStoreAccess = Neo4Net.Kernel.Api.direct.DirectStoreAccess;
 	using IndexAccessor = Neo4Net.Kernel.Api.Index.IndexAccessor;
 	using Neo4Net.Kernel.Api.Index;
 	using IndexPopulator = Neo4Net.Kernel.Api.Index.IndexPopulator;
 	using IndexUpdater = Neo4Net.Kernel.Api.Index.IndexUpdater;
-	using LabelScanStore = Neo4Net.Kernel.api.labelscan.LabelScanStore;
-	using LabelScanWriter = Neo4Net.Kernel.api.labelscan.LabelScanWriter;
-	using NodeLabelUpdate = Neo4Net.Kernel.api.labelscan.NodeLabelUpdate;
-	using ConstraintDescriptorFactory = Neo4Net.Kernel.api.schema.constraints.ConstraintDescriptorFactory;
+	using LabelScanStore = Neo4Net.Kernel.Api.LabelScan.LabelScanStore;
+	using LabelScanWriter = Neo4Net.Kernel.Api.LabelScan.LabelScanWriter;
+	using NodeLabelUpdate = Neo4Net.Kernel.Api.LabelScan.NodeLabelUpdate;
+	using ConstraintDescriptorFactory = Neo4Net.Kernel.Api.schema.constraints.ConstraintDescriptorFactory;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using Documented = Neo4Net.Kernel.Impl.Annotations.Documented;
 	using IEntityUpdates = Neo4Net.Kernel.Impl.Api.index.EntityUpdates;
@@ -112,73 +112,73 @@ namespace Neo4Net.Consistency.checking.full
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.consistency.ConsistencyCheckService.defaultConsistencyCheckThreadsNumber;
+//	import static Neo4Net.consistency.ConsistencyCheckService.defaultConsistencyCheckThreadsNumber;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.consistency.checking.RecordCheckTestBase.inUse;
+//	import static Neo4Net.consistency.checking.RecordCheckTestBase.inUse;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.consistency.checking.RecordCheckTestBase.notInUse;
+//	import static Neo4Net.consistency.checking.RecordCheckTestBase.notInUse;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.consistency.checking.SchemaRuleUtil.constraintIndexRule;
+//	import static Neo4Net.consistency.checking.SchemaRuleUtil.constraintIndexRule;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.consistency.checking.SchemaRuleUtil.indexRule;
+//	import static Neo4Net.consistency.checking.SchemaRuleUtil.indexRule;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.consistency.checking.SchemaRuleUtil.nodePropertyExistenceConstraintRule;
+//	import static Neo4Net.consistency.checking.SchemaRuleUtil.nodePropertyExistenceConstraintRule;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.consistency.checking.SchemaRuleUtil.relPropertyExistenceConstraintRule;
+//	import static Neo4Net.consistency.checking.SchemaRuleUtil.relPropertyExistenceConstraintRule;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.consistency.checking.SchemaRuleUtil.uniquenessConstraintRule;
+//	import static Neo4Net.consistency.checking.SchemaRuleUtil.uniquenessConstraintRule;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.consistency.checking.full.FullCheckIntegrationTest.ConsistencySummaryVerifier.on;
+//	import static Neo4Net.consistency.checking.full.FullCheckIntegrationTest.ConsistencySummaryVerifier.on;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.Label.label;
+//	import static Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.RelationshipType.withName;
+//	import static Neo4Net.graphdb.RelationshipType.withName;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.asIterable;
+//	import static Neo4Net.helpers.collection.Iterables.asIterable;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
+//	import static Neo4Net.helpers.collection.MapUtil.stringMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.StatementConstants.ANY_LABEL;
+//	import static Neo4Net.kernel.api.StatementConstants.ANY_LABEL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.StatementConstants.ANY_RELATIONSHIP_TYPE;
+//	import static Neo4Net.kernel.api.StatementConstants.ANY_RELATIONSHIP_TYPE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.labelscan.NodeLabelUpdate.labelChanges;
+//	import static Neo4Net.kernel.api.labelscan.NodeLabelUpdate.labelChanges;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel;
+//	import static Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.ByteBufferFactory.heapBufferFactory;
+//	import static Neo4Net.kernel.impl.index.schema.ByteBufferFactory.heapBufferFactory;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.AbstractDynamicStore.readFullByteArrayFromHeavyRecords;
+//	import static Neo4Net.kernel.impl.store.AbstractDynamicStore.readFullByteArrayFromHeavyRecords;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.DynamicArrayStore.allocateFromNumbers;
+//	import static Neo4Net.kernel.impl.store.DynamicArrayStore.allocateFromNumbers;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.DynamicArrayStore.getRightArray;
+//	import static Neo4Net.kernel.impl.store.DynamicArrayStore.getRightArray;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.DynamicNodeLabels.dynamicPointer;
+//	import static Neo4Net.kernel.impl.store.DynamicNodeLabels.dynamicPointer;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.LabelIdArray.prependNodeId;
+//	import static Neo4Net.kernel.impl.store.LabelIdArray.prependNodeId;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.PropertyType.ARRAY;
+//	import static Neo4Net.kernel.impl.store.PropertyType.ARRAY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.record.Record.NO_LABELS_FIELD;
+//	import static Neo4Net.kernel.impl.store.record.Record.NO_LABELS_FIELD;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.record.Record.NO_NEXT_PROPERTY;
+//	import static Neo4Net.kernel.impl.store.record.Record.NO_NEXT_PROPERTY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.record.Record.NO_NEXT_RELATIONSHIP;
+//	import static Neo4Net.kernel.impl.store.record.Record.NO_NEXT_RELATIONSHIP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.record.Record.NO_PREV_RELATIONSHIP;
+//	import static Neo4Net.kernel.impl.store.record.Record.NO_PREV_RELATIONSHIP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.record.RecordLoad.FORCE;
+//	import static Neo4Net.kernel.impl.store.record.RecordLoad.FORCE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.util.Bits.bits;
+//	import static Neo4Net.kernel.impl.util.Bits.bits;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptorFactory.forSchema;
+//	import static Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptorFactory.forSchema;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptorFactory.uniqueForSchema;
+//	import static Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptorFactory.uniqueForSchema;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.Property.property;
+//	import static Neo4Net.test.Property.property;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.Property.set;
+//	import static Neo4Net.test.Property.set;
 
 	public class FullCheckIntegrationTest
 	{
@@ -490,7 +490,7 @@ namespace Neo4Net.Consistency.checking.full
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void write(org.Neo4Net.kernel.api.labelscan.LabelScanStore labelScanStore, Iterable<org.Neo4Net.kernel.api.labelscan.NodeLabelUpdate> nodeLabelUpdates) throws java.io.IOException
+//ORIGINAL LINE: private void write(Neo4Net.kernel.api.labelscan.LabelScanStore labelScanStore, Iterable<Neo4Net.kernel.api.labelscan.NodeLabelUpdate> nodeLabelUpdates) throws java.io.IOException
 		 private void Write( LabelScanStore labelScanStore, IEnumerable<NodeLabelUpdate> nodeLabelUpdates )
 		 {
 			  using ( LabelScanWriter writer = labelScanStore.NewWriter() )
@@ -565,7 +565,7 @@ namespace Neo4Net.Consistency.checking.full
 
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.helpers.collection.Pair<java.util.List<org.Neo4Net.kernel.impl.store.record.DynamicRecord>, java.util.List<int>> pair = chainOfDynamicRecordsWithLabelsForANode(3);
+//ORIGINAL LINE: final Neo4Net.helpers.collection.Pair<java.util.List<Neo4Net.kernel.impl.store.record.DynamicRecord>, java.util.List<int>> pair = chainOfDynamicRecordsWithLabelsForANode(3);
 			  Pair<IList<DynamicRecord>, IList<int>> pair = ChainOfDynamicRecordsWithLabelsForANode( 3 );
 			  fixture.apply( new TransactionAnonymousInnerClass4( this, labels, pair ) );
 
@@ -673,7 +673,7 @@ namespace Neo4Net.Consistency.checking.full
 						 {
 							  IEntityUpdates updates = storeView.NodeAsUpdates( nodeId );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: for (org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> update : updates.forIndexKeys(asList(indexDescriptor)))
+//ORIGINAL LINE: for (Neo4Net.kernel.api.index.IndexEntryUpdate<?> update : updates.forIndexKeys(asList(indexDescriptor)))
 							  foreach ( IndexEntryUpdate<object> update in updates.ForIndexKeys( asList( indexDescriptor ) ) )
 							  {
 									updater.Process( IndexEntryUpdate.remove( nodeId, indexDescriptor, update.Values() ) );
@@ -846,7 +846,7 @@ namespace Neo4Net.Consistency.checking.full
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.List<org.Neo4Net.kernel.impl.store.record.DynamicRecord> chain = chainOfDynamicRecordsWithLabelsForANode(176).first();
+//ORIGINAL LINE: final java.util.List<Neo4Net.kernel.impl.store.record.DynamicRecord> chain = chainOfDynamicRecordsWithLabelsForANode(176).first();
 			  IList<DynamicRecord> chain = ChainOfDynamicRecordsWithLabelsForANode( 176 ).first();
 			  assertEquals( "number of records in chain", 3, chain.Count );
 			  assertEquals( "all records full", chain[0].Length, chain[2].Length );
@@ -888,7 +888,7 @@ namespace Neo4Net.Consistency.checking.full
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.helpers.collection.Pair<java.util.List<org.Neo4Net.kernel.impl.store.record.DynamicRecord>,java.util.List<int>> chainOfDynamicRecordsWithLabelsForANode(int labelCount) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
+//ORIGINAL LINE: private Neo4Net.helpers.collection.Pair<java.util.List<Neo4Net.kernel.impl.store.record.DynamicRecord>,java.util.List<int>> chainOfDynamicRecordsWithLabelsForANode(int labelCount) throws Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 private Pair<IList<DynamicRecord>, IList<int>> ChainOfDynamicRecordsWithLabelsForANode( int labelCount )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -908,7 +908,7 @@ namespace Neo4Net.Consistency.checking.full
 					}
 			  }
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.List<org.Neo4Net.kernel.impl.store.record.DynamicRecord> chain = new java.util.ArrayList<>();
+//ORIGINAL LINE: final java.util.List<Neo4Net.kernel.impl.store.record.DynamicRecord> chain = new java.util.ArrayList<>();
 			  IList<DynamicRecord> chain = new List<DynamicRecord>();
 			  fixture.apply( new TransactionAnonymousInnerClass10( this, labels, chain ) );
 			  return Pair.of( chain, createdLabels );
@@ -976,7 +976,7 @@ namespace Neo4Net.Consistency.checking.full
 			  int nodeId = 1000;
 			  ICollection<DynamicRecord> duplicatedLabel = new List<DynamicRecord>();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.helpers.collection.Pair<java.util.List<org.Neo4Net.kernel.impl.store.record.DynamicRecord>, java.util.List<int>> labels = chainOfDynamicRecordsWithLabelsForANode(1);
+//ORIGINAL LINE: final Neo4Net.helpers.collection.Pair<java.util.List<Neo4Net.kernel.impl.store.record.DynamicRecord>, java.util.List<int>> labels = chainOfDynamicRecordsWithLabelsForANode(1);
 			  Pair<IList<DynamicRecord>, IList<int>> labels = ChainOfDynamicRecordsWithLabelsForANode( 1 );
 
 			  // given
@@ -2590,7 +2590,7 @@ namespace Neo4Net.Consistency.checking.full
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void shouldReportBadCountsStore(org.Neo4Net.function.ThrowingFunction<java.io.File,bool,java.io.IOException> fileAction) throws Exception
+//ORIGINAL LINE: private void shouldReportBadCountsStore(Neo4Net.function.ThrowingFunction<java.io.File,bool,java.io.IOException> fileAction) throws Exception
 		 private void ShouldReportBadCountsStore( ThrowingFunction<File, bool, IOException> fileAction )
 		 {
 			  // given
@@ -2628,7 +2628,7 @@ namespace Neo4Net.Consistency.checking.full
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void shouldReportCircularPropertyRecordChain(org.Neo4Net.consistency.RecordType expectedInconsistentRecordType, IEntityCreator IEntityCreator) throws Exception
+//ORIGINAL LINE: private void shouldReportCircularPropertyRecordChain(Neo4Net.consistency.RecordType expectedInconsistentRecordType, IEntityCreator IEntityCreator) throws Exception
 		 private void ShouldReportCircularPropertyRecordChain( RecordType expectedInconsistentRecordType, IEntityCreator IEntityCreator )
 		 {
 			  // Given
@@ -2685,14 +2685,14 @@ namespace Neo4Net.Consistency.checking.full
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.consistency.report.ConsistencySummaryStatistics check() throws ConsistencyCheckIncompleteException
+//ORIGINAL LINE: private Neo4Net.consistency.report.ConsistencySummaryStatistics check() throws ConsistencyCheckIncompleteException
 		 private ConsistencySummaryStatistics Check()
 		 {
 			  return Check( fixture.readOnlyDirectStoreAccess() );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.consistency.report.ConsistencySummaryStatistics check(org.Neo4Net.kernel.api.direct.DirectStoreAccess stores) throws ConsistencyCheckIncompleteException
+//ORIGINAL LINE: private Neo4Net.consistency.report.ConsistencySummaryStatistics check(Neo4Net.kernel.api.direct.DirectStoreAccess stores) throws ConsistencyCheckIncompleteException
 		 private ConsistencySummaryStatistics Check( DirectStoreAccess stores )
 		 {
 			  Config config = config();

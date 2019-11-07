@@ -32,7 +32,7 @@ namespace Neo4Net.Tooling.procedure.procedures.invalid.bad_context_field
 	{
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Context public org.Neo4Net.kernel.internal.GraphDatabaseAPI notOfficiallySupported;
+//ORIGINAL LINE: @Context public Neo4Net.kernel.internal.GraphDatabaseAPI notOfficiallySupported;
 		 public GraphDatabaseAPI NotOfficiallySupported;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

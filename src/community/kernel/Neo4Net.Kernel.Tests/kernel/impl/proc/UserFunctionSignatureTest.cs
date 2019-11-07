@@ -30,7 +30,7 @@ namespace Neo4Net.Kernel.impl.proc
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.procs.UserFunctionSignature.functionSignature;
+//	import static Neo4Net.Kernel.Api.Internal.procs.UserFunctionSignature.functionSignature;
 
 	public class UserFunctionSignatureTest
 	{

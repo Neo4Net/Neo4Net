@@ -65,7 +65,7 @@ namespace Neo4Net.Internal.Diagnostics
 			 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public void dump(DiagnosticsPhase phase, final org.Neo4Net.logging.Logger logger)
+//ORIGINAL LINE: public void dump(DiagnosticsPhase phase, final Neo4Net.logging.Logger logger)
 			 public void dump( DiagnosticsPhase phase, Logger logger )
 			 {
 				  if ( phase.Initialization || phase.ExplicitlyRequested )
@@ -81,7 +81,7 @@ namespace Neo4Net.Internal.Diagnostics
 			 public void acceptDiagnosticsVisitor( object visitor )
 			 {
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-//ORIGINAL LINE: org.Neo4Net.helpers.collection.Visitor<? super DiagnosticsProvider, ? extends RuntimeException> target = org.Neo4Net.helpers.collection.Visitor_SafeGenerics.castOrNull(DiagnosticsProvider.class, RuntimeException.class, visitor);
+//ORIGINAL LINE: Neo4Net.helpers.collection.Visitor<? super DiagnosticsProvider, ? extends RuntimeException> target = Neo4Net.helpers.collection.Visitor_SafeGenerics.castOrNull(DiagnosticsProvider.class, RuntimeException.class, visitor);
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 				  Visitor<object, ? extends Exception> target = Neo4Net.Collections.Helpers.Visitor_SafeGenerics.CastOrNull( typeof( DiagnosticsProvider ), typeof( Exception ), visitor );
 				  if ( target != null )
@@ -261,7 +261,7 @@ namespace Neo4Net.Internal.Diagnostics
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public void extract(final String identifier, org.Neo4Net.logging.Log log)
+//ORIGINAL LINE: public void extract(final String identifier, Neo4Net.logging.Log log)
 		 public virtual void Extract( string identifier, Log log )
 		 {
 			  log.Bulk(bulkLog =>
@@ -278,7 +278,7 @@ namespace Neo4Net.Internal.Diagnostics
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private void dumpAll(final DiagnosticsPhase phase, org.Neo4Net.logging.Log log)
+//ORIGINAL LINE: private void dumpAll(final DiagnosticsPhase phase, Neo4Net.logging.Log log)
 		 private void DumpAll( DiagnosticsPhase phase, Log log )
 		 {
 			  log.Bulk(bulkLog =>

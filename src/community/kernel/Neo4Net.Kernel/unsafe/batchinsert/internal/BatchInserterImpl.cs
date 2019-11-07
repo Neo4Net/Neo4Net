@@ -55,10 +55,10 @@ namespace Neo4Net.@unsafe.Batchinsert.Internal
 	using EmptyVersionContextSupplier = Neo4Net.Io.pagecache.tracing.cursor.context.EmptyVersionContextSupplier;
 	using IndexPopulationFailedKernelException = Neo4Net.Kernel.Api.Exceptions.index.IndexPopulationFailedKernelException;
 	using IndexProvider = Neo4Net.Kernel.Api.Index.IndexProvider;
-	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
-	using ConstraintDescriptor = Neo4Net.Kernel.api.schema.constraints.ConstraintDescriptor;
-	using ConstraintDescriptorFactory = Neo4Net.Kernel.api.schema.constraints.ConstraintDescriptorFactory;
-	using IndexBackedConstraintDescriptor = Neo4Net.Kernel.api.schema.constraints.IndexBackedConstraintDescriptor;
+	using SchemaDescriptorFactory = Neo4Net.Kernel.Api.schema.SchemaDescriptorFactory;
+	using ConstraintDescriptor = Neo4Net.Kernel.Api.schema.constraints.ConstraintDescriptor;
+	using ConstraintDescriptorFactory = Neo4Net.Kernel.Api.schema.constraints.ConstraintDescriptorFactory;
+	using IndexBackedConstraintDescriptor = Neo4Net.Kernel.Api.schema.constraints.IndexBackedConstraintDescriptor;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using DatabaseKernelExtensions = Neo4Net.Kernel.extension.DatabaseKernelExtensions;
 	using Neo4Net.Kernel.extension;
@@ -158,27 +158,27 @@ namespace Neo4Net.@unsafe.Batchinsert.Internal
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static bool.Parse;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.collection.PrimitiveLongCollections.map;
+//	import static Neo4Net.collection.PrimitiveLongCollections.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.Label.label;
+//	import static Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.logs_directory;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.logs_directory;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.store_internal_log_path;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.store_internal_log_path;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.Numbers.safeCastLongToInt;
+//	import static Neo4Net.helpers.Numbers.safeCastLongToInt;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.TokenRead_Fields.NO_TOKEN;
+//	import static Neo4Net.Kernel.Api.Internal.TokenRead_Fields.NO_TOKEN;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.api.index.IndexingService.NO_MONITOR;
+//	import static Neo4Net.kernel.impl.api.index.IndexingService.NO_MONITOR;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.locking.LockService.NO_LOCK_SERVICE;
+//	import static Neo4Net.kernel.impl.locking.LockService.NO_LOCK_SERVICE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.NodeLabelsField.parseLabelsField;
+//	import static Neo4Net.kernel.impl.store.NodeLabelsField.parseLabelsField;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.PropertyStore.encodeString;
+//	import static Neo4Net.kernel.impl.store.PropertyStore.encodeString;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.util.Preconditions.checkState;
+//	import static Neo4Net.util.Preconditions.checkState;
 
 	public class BatchInserterImpl : BatchInserter, IndexConfigStoreProvider
 	{
@@ -236,7 +236,7 @@ namespace Neo4Net.@unsafe.Batchinsert.Internal
 		 private readonly long _maxNodeId;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public BatchInserterImpl(final java.io.File databaseDirectory, final org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, java.util.Map<String, String> stringParams, Iterable<org.Neo4Net.kernel.extension.KernelExtensionFactory<?>> kernelExtensions) throws java.io.IOException
+//ORIGINAL LINE: public BatchInserterImpl(final java.io.File databaseDirectory, final Neo4Net.io.fs.FileSystemAbstraction fileSystem, java.util.Map<String, String> stringParams, Iterable<Neo4Net.kernel.extension.KernelExtensionFactory<?>> kernelExtensions) throws java.io.IOException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 		 public BatchInserterImpl<T1>( File databaseDirectory, FileSystemAbstraction fileSystem, IDictionary<string, string> stringParams, IEnumerable<T1> kernelExtensions )
 		 {
@@ -771,7 +771,7 @@ namespace Neo4Net.@unsafe.Batchinsert.Internal
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public Iterable<org.Neo4Net.graphdb.Label> getNodeLabels(final long node)
+//ORIGINAL LINE: public Iterable<Neo4Net.graphdb.Label> getNodeLabels(final long node)
 		 public override IEnumerable<Label> GetNodeLabels( long node )
 		 {
 			  return () =>
@@ -963,7 +963,7 @@ namespace Neo4Net.@unsafe.Batchinsert.Internal
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.kernel.impl.index.labelscan.NativeLabelScanStore buildLabelIndex() throws java.io.IOException
+//ORIGINAL LINE: private Neo4Net.kernel.impl.index.labelscan.NativeLabelScanStore buildLabelIndex() throws java.io.IOException
 		 private NativeLabelScanStore BuildLabelIndex()
 		 {
 			  NativeLabelScanStore labelIndex = new NativeLabelScanStore( _pageCache, _databaseLayout, _fileSystem, new FullLabelStream( _storeIndexStoreView ), false, _monitors, RecoveryCleanupWorkCollector.immediate() );

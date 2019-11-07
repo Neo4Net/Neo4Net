@@ -62,7 +62,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  throw UnsupportedOperation( "Unexpected call for validating value while recovering." );
 		 }
 
-		 public override ResourceIterator<File> SnapshotFiles()
+		 public override IResourceIterator<File> SnapshotFiles()
 		 {
 			  throw UnsupportedOperation( "Cannot snapshot a recovering index." );
 		 }

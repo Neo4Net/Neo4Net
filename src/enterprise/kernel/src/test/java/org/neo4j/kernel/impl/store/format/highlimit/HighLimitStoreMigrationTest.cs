@@ -49,7 +49,7 @@ namespace Neo4Net.Kernel.impl.store.format.highlimit
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.mock;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.MetaDataStore.Position.STORE_VERSION;
+//	import static Neo4Net.kernel.impl.store.MetaDataStore.Position.STORE_VERSION;
 
 	public class HighLimitStoreMigrationTest
 	{
@@ -109,7 +109,7 @@ namespace Neo4Net.Kernel.impl.store.format.highlimit
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void prepareNeoStoreFile(org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, org.Neo4Net.io.layout.DatabaseLayout databaseLayout, String storeVersion, org.Neo4Net.io.pagecache.PageCache pageCache) throws java.io.IOException
+//ORIGINAL LINE: private static void prepareNeoStoreFile(Neo4Net.io.fs.FileSystemAbstraction fileSystem, Neo4Net.io.layout.DatabaseLayout databaseLayout, String storeVersion, Neo4Net.io.pagecache.PageCache pageCache) throws java.io.IOException
 		 private static void PrepareNeoStoreFile( FileSystemAbstraction fileSystem, DatabaseLayout databaseLayout, string storeVersion, PageCache pageCache )
 		 {
 			  File neoStoreFile = CreateNeoStoreFile( fileSystem, databaseLayout );
@@ -118,7 +118,7 @@ namespace Neo4Net.Kernel.impl.store.format.highlimit
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static java.io.File createNeoStoreFile(org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, org.Neo4Net.io.layout.DatabaseLayout databaseLayout) throws java.io.IOException
+//ORIGINAL LINE: private static java.io.File createNeoStoreFile(Neo4Net.io.fs.FileSystemAbstraction fileSystem, Neo4Net.io.layout.DatabaseLayout databaseLayout) throws java.io.IOException
 		 private static File CreateNeoStoreFile( FileSystemAbstraction fileSystem, DatabaseLayout databaseLayout )
 		 {
 			  File neoStoreFile = databaseLayout.MetadataStore();

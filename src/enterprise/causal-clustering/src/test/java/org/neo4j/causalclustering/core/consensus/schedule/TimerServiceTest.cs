@@ -45,15 +45,15 @@ namespace Neo4Net.causalclustering.core.consensus.schedule
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verify;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.schedule.TimeoutFactory.fixedTimeout;
+//	import static Neo4Net.causalclustering.core.consensus.schedule.TimeoutFactory.fixedTimeout;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.schedule.Timer.CancelMode.SYNC_WAIT;
+//	import static Neo4Net.causalclustering.core.consensus.schedule.Timer.CancelMode.SYNC_WAIT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.schedule.TimerServiceTest.Timers.TIMER_A;
+//	import static Neo4Net.causalclustering.core.consensus.schedule.TimerServiceTest.Timers.TIMER_A;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.schedule.TimerServiceTest.Timers.TIMER_B;
+//	import static Neo4Net.causalclustering.core.consensus.schedule.TimerServiceTest.Timers.TIMER_B;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
+//	import static Neo4Net.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
 
 	public class TimerServiceTest
 	{

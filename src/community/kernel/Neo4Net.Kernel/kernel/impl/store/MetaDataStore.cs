@@ -49,17 +49,17 @@ namespace Neo4Net.Kernel.impl.store
 	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.pagecache.PagedFile_Fields.PF_SHARED_READ_LOCK;
+//	import static Neo4Net.io.pagecache.PagedFile_Fields.PF_SHARED_READ_LOCK;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.pagecache.PagedFile_Fields.PF_SHARED_WRITE_LOCK;
+//	import static Neo4Net.io.pagecache.PagedFile_Fields.PF_SHARED_WRITE_LOCK;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.format.standard.MetaDataRecordFormat.FIELD_NOT_PRESENT;
+//	import static Neo4Net.kernel.impl.store.format.standard.MetaDataRecordFormat.FIELD_NOT_PRESENT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.format.standard.MetaDataRecordFormat.RECORD_SIZE;
+//	import static Neo4Net.kernel.impl.store.format.standard.MetaDataRecordFormat.RECORD_SIZE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.record.RecordLoad.FORCE;
+//	import static Neo4Net.kernel.impl.store.record.RecordLoad.FORCE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.record.RecordLoad.NORMAL;
+//	import static Neo4Net.kernel.impl.store.record.RecordLoad.NORMAL;
 
 	public class MetaDataStore : CommonAbstractStore<MetaDataRecord, NoStoreHeader>, TransactionIdStore, LogVersionRepository
 	{
@@ -229,7 +229,7 @@ namespace Neo4Net.Kernel.impl.store
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected void initialiseNewStoreFile(org.Neo4Net.io.pagecache.PagedFile file) throws java.io.IOException
+//ORIGINAL LINE: protected void initialiseNewStoreFile(Neo4Net.io.pagecache.PagedFile file) throws java.io.IOException
 		 protected internal override void InitializeNewStoreFile( PagedFile file )
 		 {
 			  base.InitializeNewStoreFile( file );
@@ -286,7 +286,7 @@ namespace Neo4Net.Kernel.impl.store
 		 /// <returns> the previous value before writing. </returns>
 		 /// <exception cref="IOException"> if any I/O related error occurs. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static long setRecord(org.Neo4Net.io.pagecache.PageCache pageCache, java.io.File neoStore, Position position, long value) throws java.io.IOException
+//ORIGINAL LINE: public static long setRecord(Neo4Net.io.pagecache.PageCache pageCache, java.io.File neoStore, Position position, long value) throws java.io.IOException
 		 public static long SetRecord( PageCache pageCache, File neoStore, Position position, long value )
 		 {
 			  long previousValue = FieldNotInitialized;
@@ -344,7 +344,7 @@ namespace Neo4Net.Kernel.impl.store
 		 /// <param name="position"> record <seealso cref="Position"/>. </param>
 		 /// <returns> the read record value specified by <seealso cref="Position"/>. </returns>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static long getRecord(org.Neo4Net.io.pagecache.PageCache pageCache, java.io.File neoStore, Position position) throws java.io.IOException
+//ORIGINAL LINE: public static long getRecord(Neo4Net.io.pagecache.PageCache pageCache, java.io.File neoStore, Position position) throws java.io.IOException
 		 public static long GetRecord( PageCache pageCache, File neoStore, Position position )
 		 {
 			  MetaDataRecordFormat format = new MetaDataRecordFormat();
@@ -398,7 +398,7 @@ namespace Neo4Net.Kernel.impl.store
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static org.Neo4Net.Kernel.Api.StorageEngine.StoreId getStoreId(org.Neo4Net.io.pagecache.PageCache pageCache, java.io.File neoStore) throws java.io.IOException
+//ORIGINAL LINE: public static Neo4Net.Kernel.Api.StorageEngine.StoreId getStoreId(Neo4Net.io.pagecache.PageCache pageCache, java.io.File neoStore) throws java.io.IOException
 		 public static StoreId getStoreId( PageCache pageCache, File neoStore )
 		 {
 			  return new StoreId( GetRecord( pageCache, neoStore, Position.Time ), GetRecord( pageCache, neoStore, Position.RandomNumber ), GetRecord( pageCache, neoStore, Position.StoreVersion ), GetRecord( pageCache, neoStore, Position.UpgradeTime ), GetRecord( pageCache, neoStore, Position.UpgradeTransactionId ) );
@@ -624,7 +624,7 @@ namespace Neo4Net.Kernel.impl.store
 
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void readAllFields(org.Neo4Net.io.pagecache.PageCursor cursor) throws java.io.IOException
+//ORIGINAL LINE: private void readAllFields(Neo4Net.io.pagecache.PageCursor cursor) throws java.io.IOException
 		 private void ReadAllFields( PageCursor cursor )
 		 {
 			  do
@@ -943,7 +943,7 @@ namespace Neo4Net.Kernel.impl.store
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public void logRecords(final org.Neo4Net.logging.Logger msgLog)
+//ORIGINAL LINE: public void logRecords(final Neo4Net.logging.Logger msgLog)
 		 public virtual void LogRecords( Logger msgLog )
 		 {
 			  ScanAllFields(PF_SHARED_READ_LOCK, cursor =>

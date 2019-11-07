@@ -32,7 +32,7 @@ namespace Neo4Net.Dbms.CommandLine
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Nonnull @Override public org.Neo4Net.commandline.arguments.Arguments allArguments()
+//ORIGINAL LINE: @Nonnull @Override public Neo4Net.commandline.arguments.Arguments allArguments()
 		 public override Arguments AllArguments()
 		 {
 			  return MemoryRecommendationsCommand.BuildArgs();
@@ -46,7 +46,7 @@ namespace Neo4Net.Dbms.CommandLine
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Nonnull @Override public org.Neo4Net.commandline.admin.AdminCommandSection commandSection()
+//ORIGINAL LINE: @Nonnull @Override public Neo4Net.commandline.admin.AdminCommandSection commandSection()
 		 public override AdminCommandSection CommandSection()
 		 {
 			  return AdminCommandSection.general();
@@ -60,7 +60,7 @@ namespace Neo4Net.Dbms.CommandLine
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Nonnull @Override public org.Neo4Net.commandline.admin.AdminCommand create(java.nio.file.Path homeDir, java.nio.file.Path configDir, org.Neo4Net.commandline.admin.OutsideWorld outsideWorld)
+//ORIGINAL LINE: @Nonnull @Override public Neo4Net.commandline.admin.AdminCommand create(java.nio.file.Path homeDir, java.nio.file.Path configDir, Neo4Net.commandline.admin.OutsideWorld outsideWorld)
 		 public override AdminCommand Create( Path homeDir, Path configDir, OutsideWorld outsideWorld )
 		 {
 			  return new MemoryRecommendationsCommand( homeDir, configDir, outsideWorld );

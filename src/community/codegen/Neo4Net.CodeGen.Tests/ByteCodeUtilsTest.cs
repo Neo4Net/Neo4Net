@@ -30,23 +30,23 @@ namespace Neo4Net.CodeGen
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertNull;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.codegen.ByteCodeUtils.desc;
+//	import static Neo4Net.codegen.ByteCodeUtils.desc;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.codegen.ByteCodeUtils.exceptions;
+//	import static Neo4Net.codegen.ByteCodeUtils.exceptions;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.codegen.ByteCodeUtils.signature;
+//	import static Neo4Net.codegen.ByteCodeUtils.signature;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.codegen.ByteCodeUtils.typeName;
+//	import static Neo4Net.codegen.ByteCodeUtils.typeName;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.codegen.MethodDeclaration.method;
+//	import static Neo4Net.codegen.MethodDeclaration.method;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.codegen.Parameter.param;
+//	import static Neo4Net.codegen.Parameter.param;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.codegen.TypeReference.extending;
+//	import static Neo4Net.codegen.TypeReference.extending;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.codegen.TypeReference.typeParameter;
+//	import static Neo4Net.codegen.TypeReference.typeParameter;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.codegen.TypeReference.typeReference;
+//	import static Neo4Net.codegen.TypeReference.typeReference;
 
 	public class ByteCodeUtilsTest
 	{

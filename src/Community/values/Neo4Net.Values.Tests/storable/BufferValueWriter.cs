@@ -28,11 +28,11 @@ namespace Neo4Net.Values.Storable
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.MatcherAssert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.BufferValueWriter.SpecialKind.BeginArray;
+//	import static Neo4Net.values.storable.BufferValueWriter.SpecialKind.BeginArray;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.BufferValueWriter.SpecialKind.EndArray;
+//	import static Neo4Net.values.storable.BufferValueWriter.SpecialKind.EndArray;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.BufferValueWriter.SpecialKind.WriteByteArray;
+//	import static Neo4Net.values.storable.BufferValueWriter.SpecialKind.WriteByteArray;
 
 	public class BufferValueWriter : ValueWriter<Exception>
 	{

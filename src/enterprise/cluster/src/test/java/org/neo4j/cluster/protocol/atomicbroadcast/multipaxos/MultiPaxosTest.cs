@@ -60,11 +60,11 @@ namespace Neo4Net.cluster.protocol.atomicbroadcast.multipaxos
 			  }
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.cluster.protocol.atomicbroadcast.AtomicBroadcast atomicBroadcast = nodes.get(0).newClient(org.Neo4Net.cluster.protocol.atomicbroadcast.AtomicBroadcast.class);
+//ORIGINAL LINE: final Neo4Net.cluster.protocol.atomicbroadcast.AtomicBroadcast atomicBroadcast = nodes.get(0).newClient(Neo4Net.cluster.protocol.atomicbroadcast.AtomicBroadcast.class);
 			  AtomicBroadcast atomicBroadcast = nodes[0].NewClient( typeof( AtomicBroadcast ) );
 			  ObjectStreamFactory objectStreamFactory = new ObjectStreamFactory();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.cluster.protocol.atomicbroadcast.AtomicBroadcastSerializer serializer = new org.Neo4Net.cluster.protocol.atomicbroadcast.AtomicBroadcastSerializer(objectStreamFactory, objectStreamFactory);
+//ORIGINAL LINE: final Neo4Net.cluster.protocol.atomicbroadcast.AtomicBroadcastSerializer serializer = new Neo4Net.cluster.protocol.atomicbroadcast.AtomicBroadcastSerializer(objectStreamFactory, objectStreamFactory);
 			  AtomicBroadcastSerializer serializer = new AtomicBroadcastSerializer( objectStreamFactory, objectStreamFactory );
 			  atomicBroadcast.Broadcast( serializer.Broadcast( new DaPayload() ) );
 

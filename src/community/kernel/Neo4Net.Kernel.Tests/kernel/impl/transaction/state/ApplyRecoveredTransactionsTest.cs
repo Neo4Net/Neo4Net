@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 	using Test = org.junit.Test;
 	using RuleChain = org.junit.rules.RuleChain;
 
-	using DatabaseManager = Neo4Net.Dbms.database.DatabaseManager;
+	using IDatabaseManager = Neo4Net.Dbms.database.DatabaseManager;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using EmptyVersionContextSupplier = Neo4Net.Io.pagecache.tracing.cursor.context.EmptyVersionContextSupplier;
 	using Config = Neo4Net.Kernel.configuration.Config;
@@ -132,7 +132,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void applyExternalTransaction(long transactionId, org.Neo4Net.kernel.impl.transaction.command.Command...commands) throws Exception
+//ORIGINAL LINE: private void applyExternalTransaction(long transactionId, Neo4Net.kernel.impl.transaction.command.Command...commands) throws Exception
 		 private void ApplyExternalTransaction( long transactionId, params Command[] commands )
 		 {
 			  LockService lockService = mock( typeof( LockService ) );

@@ -64,14 +64,14 @@ namespace Neo4Net.Io.fs
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory testdir = org.Neo4Net.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.TestDirectory testdir = Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory Testdir = TestDirectory.testDirectory();
 
 		 private FileSystemAbstraction _fs;
 		 private File _file;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: public FileSystemAbstractionInterruptionTest(@SuppressWarnings("UnusedParameters") String name, org.Neo4Net.function.Factory<FileSystemAbstraction> factory)
+//ORIGINAL LINE: public FileSystemAbstractionInterruptionTest(@SuppressWarnings("UnusedParameters") String name, Neo4Net.function.Factory<FileSystemAbstraction> factory)
 		 public FileSystemAbstractionInterruptionTest( string name, IFactory<FileSystemAbstraction> factory )
 		 {
 			  _fs = factory.NewInstance();

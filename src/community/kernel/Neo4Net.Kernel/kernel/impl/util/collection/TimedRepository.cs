@@ -30,7 +30,7 @@ namespace Neo4Net.Kernel.impl.util.collection
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static System.currentTimeMillis;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.Format.duration;
+//	import static Neo4Net.helpers.Format.duration;
 
 	/// <summary>
 	/// A concurrent repository that allows users to manage objects with a specified timeout on idleness.

@@ -36,7 +36,7 @@ namespace Neo4Net.Kernel.ha
 	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.com.ProtocolVersion.INTERNAL_PROTOCOL_VERSION;
+//	import static Neo4Net.com.ProtocolVersion.INTERNAL_PROTOCOL_VERSION;
 
 	public class MasterClient310 : MasterClient214
 	{

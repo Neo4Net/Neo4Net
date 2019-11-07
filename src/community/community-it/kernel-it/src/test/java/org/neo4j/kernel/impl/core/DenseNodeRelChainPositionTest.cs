@@ -40,7 +40,7 @@ namespace Neo4Net.Kernel.impl.core
 	public class DenseNodeRelChainPositionTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.DatabaseRule db = new org.Neo4Net.test.rule.ImpermanentDatabaseRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.DatabaseRule db = new Neo4Net.test.rule.ImpermanentDatabaseRule();
 		 public readonly DatabaseRule Db = new ImpermanentDatabaseRule();
 
 		 /*
@@ -54,7 +54,7 @@ namespace Neo4Net.Kernel.impl.core
 		 {
 			  // Given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int denseNodeThreshold = int.Parse(org.Neo4Net.graphdb.factory.GraphDatabaseSettings.dense_node_threshold.getDefaultValue()) + 1;
+//ORIGINAL LINE: final int denseNodeThreshold = int.Parse(Neo4Net.graphdb.factory.GraphDatabaseSettings.dense_node_threshold.getDefaultValue()) + 1;
 			  int denseNodeThreshold = int.Parse( GraphDatabaseSettings.dense_node_threshold.DefaultValue ) + 1;
 
 			  Node node1;

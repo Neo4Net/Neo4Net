@@ -30,7 +30,7 @@ namespace Neo4Net.causalclustering.core.consensus
 //	import static org.junit.Assert.assertTrue;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.MajorityIncludingSelfQuorum.isQuorum;
+//	import static Neo4Net.causalclustering.core.consensus.MajorityIncludingSelfQuorum.isQuorum;
 
 	public class QuorumStrategyTest
 	{

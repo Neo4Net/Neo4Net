@@ -43,7 +43,7 @@ namespace Neo4Net.Server.modules
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Arrays.asList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.configuration.ServerSettings.http_access_control_allow_origin;
+//	import static Neo4Net.server.configuration.ServerSettings.http_access_control_allow_origin;
 
 	/// <summary>
 	/// Mounts the database REST API.

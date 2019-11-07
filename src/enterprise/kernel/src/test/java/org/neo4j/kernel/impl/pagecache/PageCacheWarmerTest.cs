@@ -67,7 +67,7 @@ namespace Neo4Net.Kernel.impl.pagecache
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.scheduler.JobSchedulerFactory.createScheduler;
+//	import static Neo4Net.kernel.impl.scheduler.JobSchedulerFactory.createScheduler;
 
 	public class PageCacheWarmerTest
 	{

@@ -22,8 +22,8 @@
 namespace Neo4Net.Kernel.Api.StorageEngine.schema
 {
 	using MalformedSchemaRuleException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.MalformedSchemaRuleException;
-	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.LabelSchemaDescriptor;
-	using RelationTypeSchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.RelationTypeSchemaDescriptor;
+	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.ILabelSchemaDescriptor;
+	using RelationTypeSchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.IRelationTypeSchemaDescriptor;
 	using Neo4Net.Kernel.Api.Internal.Schema;
 	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
 	using SchemaDescriptorSupplier = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptorSupplier;
@@ -92,7 +92,7 @@ namespace Neo4Net.Kernel.Api.StorageEngine.schema
 
 		 /// <summary>
 		 /// This enum is used for the legacy schema store, and should not be extended. </summary>
-		 /// <seealso cref= org.Neo4Net.kernel.impl.store.record.SchemaRuleSerialization for the new (de)serialisation code instead. </seealso>
+		 /// <seealso cref= Neo4Net.kernel.impl.store.record.SchemaRuleSerialization for the new (de)serialisation code instead. </seealso>
 	}
 
 	 public sealed class SchemaRule_Kind
@@ -152,7 +152,7 @@ namespace Neo4Net.Kernel.Api.StorageEngine.schema
 		  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static SchemaRule_Kind forId(byte id) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.MalformedSchemaRuleException
+//ORIGINAL LINE: public static SchemaRule_Kind forId(byte id) throws Neo4Net.Kernel.Api.Internal.Exceptions.Schema.MalformedSchemaRuleException
 		  public static SchemaRule_Kind ForId( sbyte id )
 		  {
 				if ( id >= 1 && id <= All.Length )

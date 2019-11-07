@@ -52,9 +52,9 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.count;
+//	import static Neo4Net.helpers.collection.Iterables.count;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.TestLabels.LABEL_ONE;
+//	import static Neo4Net.test.TestLabels.LABEL_ONE;
 
 	/// <summary>
 	/// Issue came up when observing that recovering an INDEX DROP command didn't actually call <seealso cref="IndexProxy.drop()"/>,
@@ -87,10 +87,10 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 private const string KEY = "key";
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.fs.DefaultFileSystemRule fs = new org.Neo4Net.test.rule.fs.DefaultFileSystemRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.fs.DefaultFileSystemRule fs = new Neo4Net.test.rule.fs.DefaultFileSystemRule();
 		 public readonly DefaultFileSystemRule Fs = new DefaultFileSystemRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory directory = org.Neo4Net.test.rule.TestDirectory.testDirectory(fs);
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.TestDirectory directory = Neo4Net.test.rule.TestDirectory.testDirectory(fs);
 		 public TestDirectory Directory;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -140,7 +140,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void appendDropTransactionToTransactionLog(java.io.File databaseDirectory, org.Neo4Net.kernel.impl.transaction.CommittedTransactionRepresentation dropTransaction) throws java.io.IOException
+//ORIGINAL LINE: private void appendDropTransactionToTransactionLog(java.io.File databaseDirectory, Neo4Net.kernel.impl.transaction.CommittedTransactionRepresentation dropTransaction) throws java.io.IOException
 		 private void AppendDropTransactionToTransactionLog( File databaseDirectory, CommittedTransactionRepresentation dropTransaction )
 		 {
 			  LogFiles logFiles = LogFilesBuilder.logFilesBasedOnlyBuilder( databaseDirectory, Fs ).build();
@@ -154,7 +154,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.kernel.impl.transaction.CommittedTransactionRepresentation prepareDropTransaction() throws java.io.IOException
+//ORIGINAL LINE: private Neo4Net.kernel.impl.transaction.CommittedTransactionRepresentation prepareDropTransaction() throws java.io.IOException
 		 private CommittedTransactionRepresentation PrepareDropTransaction()
 		 {
 			  GraphDatabaseAPI db = ( GraphDatabaseAPI ) ( new TestGraphDatabaseFactory() ).newEmbeddedDatabase(Directory.directory("preparation"));
@@ -177,7 +177,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static org.Neo4Net.kernel.impl.transaction.CommittedTransactionRepresentation extractLastTransaction(org.Neo4Net.kernel.internal.GraphDatabaseAPI db) throws java.io.IOException
+//ORIGINAL LINE: private static Neo4Net.kernel.impl.transaction.CommittedTransactionRepresentation extractLastTransaction(Neo4Net.kernel.internal.GraphDatabaseAPI db) throws java.io.IOException
 		 private static CommittedTransactionRepresentation ExtractLastTransaction( GraphDatabaseAPI db )
 		 {
 			  LogicalTransactionStore txStore = Db.DependencyResolver.resolveDependency( typeof( LogicalTransactionStore ) );

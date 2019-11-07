@@ -32,7 +32,7 @@ namespace Neo4Net.Kernel.impl.locking
 	/// <seealso cref= GraphDatabaseSettings#lock_acquisition_timeout </seealso>
 	public class LockAcquisitionTimeoutException : TransactionTerminatedException
 	{
-		 public LockAcquisitionTimeoutException( ResourceType resourceType, long resourceId, long timeoutMillis ) : base( org.Neo4Net.kernel.api.exceptions.Status_Transaction.LockAcquisitionTimeout, string.Format( "Unable to acquire lock for resource: {0} with id: {1:D} within {2:D} millis.", resourceType, resourceId, timeoutMillis ) )
+		 public LockAcquisitionTimeoutException( ResourceType resourceType, long resourceId, long timeoutMillis ) : base( Neo4Net.kernel.api.exceptions.Status_Transaction.LockAcquisitionTimeout, string.Format( "Unable to acquire lock for resource: {0} with id: {1:D} within {2:D} millis.", resourceType, resourceId, timeoutMillis ) )
 		 {
 		 }
 	}

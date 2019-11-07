@@ -47,12 +47,12 @@ namespace Schema
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.logging.AssertableLogProvider.inLog;
+//	import static Neo4Net.logging.AssertableLogProvider.inLog;
 
 	public class IndexPopulationIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ClassRule public static final org.Neo4Net.test.rule.TestDirectory directory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @ClassRule public static final Neo4Net.test.rule.TestDirectory directory = Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public static readonly TestDirectory Directory = TestDirectory.testDirectory();
 
 		 private const int TEST_TIMEOUT = 120_000;
@@ -146,7 +146,7 @@ namespace Schema
 
 			  using ( Transaction transaction = _database.beginTx() )
 			  {
-					using ( ResourceIterator<Node> nodes = _database.findNodes( nodesLabel ) )
+					using ( IResourceIterator<Node> nodes = _database.findNodes( nodesLabel ) )
 					{
 						 assertEquals( 1, Iterators.count( nodes ) );
 					}
@@ -210,7 +210,7 @@ namespace Schema
 		 private void PrePopulateDatabase( IGraphDatabaseService database, Label testLabel, string propertyName )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.values.storable.RandomValues randomValues = org.Neo4Net.values.storable.RandomValues.create();
+//ORIGINAL LINE: final Neo4Net.values.storable.RandomValues randomValues = Neo4Net.values.storable.RandomValues.create();
 			  RandomValues randomValues = RandomValues.create();
 			  for ( int j = 0; j < 10_000; j++ )
 			  {

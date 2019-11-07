@@ -25,7 +25,7 @@ namespace Neo4Net.Tooling.procedure.visitors.examples
 	public class FinalContextMisuse
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Context public final org.Neo4Net.graphdb.GraphDatabaseService IGraphDatabaseService = null;
+//ORIGINAL LINE: @Context public final Neo4Net.graphdb.GraphDatabaseService IGraphDatabaseService = null;
 		 public readonly IGraphDatabaseService IGraphDatabaseService = null;
 	}
 

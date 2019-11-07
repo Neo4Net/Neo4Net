@@ -40,11 +40,11 @@ namespace Neo4Net.Kernel.impl.store
 	using TokenWrite = Neo4Net.Kernel.Api.Internal.TokenWrite;
 	using SchemaDescriptorPredicates = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptorPredicates;
 	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
 	using DuplicateSchemaRuleException = Neo4Net.Kernel.Api.Exceptions.schema.DuplicateSchemaRuleException;
 	using SchemaRuleNotFoundException = Neo4Net.Kernel.Api.Exceptions.schema.SchemaRuleNotFoundException;
-	using ConstraintDescriptorFactory = Neo4Net.Kernel.api.schema.constraints.ConstraintDescriptorFactory;
-	using TestIndexDescriptorFactory = Neo4Net.Kernel.api.schema.index.TestIndexDescriptorFactory;
+	using ConstraintDescriptorFactory = Neo4Net.Kernel.Api.schema.constraints.ConstraintDescriptorFactory;
+	using TestIndexDescriptorFactory = Neo4Net.Kernel.Api.schema.index.TestIndexDescriptorFactory;
 	using ThreadToStatementContextBridge = Neo4Net.Kernel.impl.core.ThreadToStatementContextBridge;
 	using RecordStorageEngine = Neo4Net.Kernel.impl.storageengine.impl.recordstorage.RecordStorageEngine;
 	using ConstraintRule = Neo4Net.Kernel.Impl.Store.Records.ConstraintRule;
@@ -70,15 +70,15 @@ namespace Neo4Net.Kernel.impl.store
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.mock;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.asSet;
+//	import static Neo4Net.helpers.collection.Iterators.asSet;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.index.IndexProvider.EMPTY;
+//	import static Neo4Net.kernel.api.index.IndexProvider.EMPTY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel;
+//	import static Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptorFactory.forSchema;
+//	import static Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptorFactory.forSchema;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptorFactory.uniqueForSchema;
+//	import static Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptorFactory.uniqueForSchema;
 
 	public class SchemaStorageTest
 	{
@@ -89,7 +89,7 @@ namespace Neo4Net.Kernel.impl.store
 		 private const string PROP2 = "prop2";
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ClassRule public static final org.Neo4Net.test.rule.DatabaseRule db = new org.Neo4Net.test.rule.ImpermanentDatabaseRule();
+//ORIGINAL LINE: @ClassRule public static final Neo4Net.test.rule.DatabaseRule db = new Neo4Net.test.rule.ImpermanentDatabaseRule();
 		 public static readonly DatabaseRule Db = new ImpermanentDatabaseRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Rule public org.junit.rules.ExpectedException expectedException = org.junit.rules.ExpectedException.none();
@@ -238,7 +238,7 @@ namespace Neo4Net.Kernel.impl.store
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldReturnCorrectUniquenessRuleForLabelAndProperty() throws org.Neo4Net.kernel.api.exceptions.schema.SchemaRuleNotFoundException, org.Neo4Net.kernel.api.exceptions.schema.DuplicateSchemaRuleException
+//ORIGINAL LINE: @Test public void shouldReturnCorrectUniquenessRuleForLabelAndProperty() throws Neo4Net.kernel.api.exceptions.schema.SchemaRuleNotFoundException, Neo4Net.kernel.api.exceptions.schema.DuplicateSchemaRuleException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldReturnCorrectUniquenessRuleForLabelAndProperty()
 		 {
@@ -254,7 +254,7 @@ namespace Neo4Net.Kernel.impl.store
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldThrowExceptionOnNodeRuleNotFound() throws org.Neo4Net.kernel.api.exceptions.schema.DuplicateSchemaRuleException, org.Neo4Net.kernel.api.exceptions.schema.SchemaRuleNotFoundException
+//ORIGINAL LINE: @Test public void shouldThrowExceptionOnNodeRuleNotFound() throws Neo4Net.kernel.api.exceptions.schema.DuplicateSchemaRuleException, Neo4Net.kernel.api.exceptions.schema.SchemaRuleNotFoundException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldThrowExceptionOnNodeRuleNotFound()
 		 {
@@ -270,7 +270,7 @@ namespace Neo4Net.Kernel.impl.store
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldThrowExceptionOnNodeDuplicateRuleFound() throws org.Neo4Net.kernel.api.exceptions.schema.DuplicateSchemaRuleException, org.Neo4Net.kernel.api.exceptions.schema.SchemaRuleNotFoundException
+//ORIGINAL LINE: @Test public void shouldThrowExceptionOnNodeDuplicateRuleFound() throws Neo4Net.kernel.api.exceptions.schema.DuplicateSchemaRuleException, Neo4Net.kernel.api.exceptions.schema.SchemaRuleNotFoundException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldThrowExceptionOnNodeDuplicateRuleFound()
 		 {
@@ -289,7 +289,7 @@ namespace Neo4Net.Kernel.impl.store
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldThrowExceptionOnRelationshipRuleNotFound() throws org.Neo4Net.kernel.api.exceptions.schema.DuplicateSchemaRuleException, org.Neo4Net.kernel.api.exceptions.schema.SchemaRuleNotFoundException
+//ORIGINAL LINE: @Test public void shouldThrowExceptionOnRelationshipRuleNotFound() throws Neo4Net.kernel.api.exceptions.schema.DuplicateSchemaRuleException, Neo4Net.kernel.api.exceptions.schema.SchemaRuleNotFoundException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldThrowExceptionOnRelationshipRuleNotFound()
 		 {
@@ -304,7 +304,7 @@ namespace Neo4Net.Kernel.impl.store
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldThrowExceptionOnRelationshipDuplicateRuleFound() throws org.Neo4Net.kernel.api.exceptions.schema.DuplicateSchemaRuleException, org.Neo4Net.kernel.api.exceptions.schema.SchemaRuleNotFoundException
+//ORIGINAL LINE: @Test public void shouldThrowExceptionOnRelationshipDuplicateRuleFound() throws Neo4Net.kernel.api.exceptions.schema.DuplicateSchemaRuleException, Neo4Net.kernel.api.exceptions.schema.SchemaRuleNotFoundException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldThrowExceptionOnRelationshipDuplicateRuleFound()
 		 {
@@ -427,7 +427,7 @@ namespace Neo4Net.Kernel.impl.store
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SafeVarargs private static void createSchema(System.Action<org.Neo4Net.graphdb.GraphDatabaseService>... creators)
+//ORIGINAL LINE: @SafeVarargs private static void createSchema(System.Action<Neo4Net.graphdb.GraphDatabaseService>... creators)
 		 private static void CreateSchema( params System.Action<GraphDatabaseService>[] creators )
 		 {
 			  using ( Transaction tx = Db.beginTx() )

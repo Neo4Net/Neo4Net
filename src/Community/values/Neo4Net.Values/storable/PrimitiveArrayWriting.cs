@@ -137,7 +137,7 @@ namespace Neo4Net.Values.Storable
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static <E extends Exception> void WriteTo(ValueWriter<E> writer, org.Neo4Net.GraphDb.Spatial.Point[] values) throws E
+//ORIGINAL LINE: public static <E extends Exception> void WriteTo(ValueWriter<E> writer, Neo4Net.GraphDb.Spatial.Point[] values) throws E
 		 public static void WriteTo<E>( ValueWriter<E> writer, Point[] values ) where E : Exception
 		 {
 			  writer.BeginArray( values.Length, ValueWriter_ArrayType.Point );

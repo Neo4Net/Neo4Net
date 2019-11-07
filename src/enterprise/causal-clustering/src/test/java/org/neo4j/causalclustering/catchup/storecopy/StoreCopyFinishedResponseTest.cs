@@ -27,15 +27,15 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertArrayEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.catchup.storecopy.StoreCopyFinishedResponse.Status.E_STORE_ID_MISMATCH;
+//	import static Neo4Net.causalclustering.catchup.storecopy.StoreCopyFinishedResponse.Status.E_STORE_ID_MISMATCH;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.catchup.storecopy.StoreCopyFinishedResponse.Status.E_TOO_FAR_BEHIND;
+//	import static Neo4Net.causalclustering.catchup.storecopy.StoreCopyFinishedResponse.Status.E_TOO_FAR_BEHIND;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.catchup.storecopy.StoreCopyFinishedResponse.Status.E_UNKNOWN;
+//	import static Neo4Net.causalclustering.catchup.storecopy.StoreCopyFinishedResponse.Status.E_UNKNOWN;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.catchup.storecopy.StoreCopyFinishedResponse.Status.SUCCESS;
+//	import static Neo4Net.causalclustering.catchup.storecopy.StoreCopyFinishedResponse.Status.SUCCESS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.catchup.storecopy.StoreCopyFinishedResponse.Status.values;
+//	import static Neo4Net.causalclustering.catchup.storecopy.StoreCopyFinishedResponse.Status.values;
 
 	public class StoreCopyFinishedResponseTest
 	{

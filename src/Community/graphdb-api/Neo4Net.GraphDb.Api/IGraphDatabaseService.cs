@@ -99,13 +99,13 @@ namespace Neo4Net.GraphDb
       /// Returns all nodes in the graph.
       /// </summary>
       /// <returns> all nodes in the graph. </returns>
-      ResourceIterable<INode> AllNodes { get; }
+     IResourceIterable<INode> AllNodes { get; }
 
       /// <summary>
       /// Returns all relationships in the graph.
       /// </summary>
       /// <returns> all relationships in the graph. </returns>
-      ResourceIterable<IRelationship> AllRelationships { get; }
+     IResourceIterable<IRelationship> AllRelationships { get; }
 
       /// <summary>
       /// Returns all nodes having the label, and the wanted property value.
@@ -135,7 +135,7 @@ namespace Neo4Net.GraphDb
       /// <param name="key">   required property key </param>
       /// <param name="value"> required property value </param>
       /// <returns> an iterator containing all matching nodes. See <seealso cref="ResourceIterator"/> for responsibilities. </returns>
-      ResourceIterator<INode> FindNodes(ILabel label, string key, object value);
+      IResourceIterator<INode> FindNodes(ILabel label, string key, object value);
 
       /// <summary>
       /// Returns all nodes having the label, and the wanted property values.
@@ -168,7 +168,7 @@ namespace Neo4Net.GraphDb
       /// <param name="value2"> required property value of key2 </param>
       /// <returns> an iterator containing all matching nodes. See <seealso cref="ResourceIterator"/> for responsibilities. </returns>
       //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-      //		 default ResourceIterator<Node> findNodes(Label label, String key1, Object value1, String key2, Object value2)
+      //		 default IResourceIterator<Node> findNodes(Label label, String key1, Object value1, String key2, Object value2)
       //	 {
       //		  throw new UnsupportedOperationException("findNodes by multiple property names and values is not supported.");
       //	 }
@@ -206,7 +206,7 @@ namespace Neo4Net.GraphDb
       /// <param name="value3"> required property value of key3 </param>
       /// <returns> an iterator containing all matching nodes. See <seealso cref="ResourceIterator"/> for responsibilities. </returns>
       //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-      //		 default ResourceIterator<Node> findNodes(Label label, String key1, Object value1, String key2, Object value2, String key3, Object value3)
+      //		 default IResourceIterator<Node> findNodes(Label label, String key1, Object value1, String key2, Object value2, String key3, Object value3)
       //	 {
       //		  throw new UnsupportedOperationException("findNodes by multiple property names and values is not supported.");
       //	 }
@@ -239,7 +239,7 @@ namespace Neo4Net.GraphDb
       /// <param name="propertyValues"> required property key-value combinations </param>
       /// <returns> an iterator containing all matching nodes. See <seealso cref="ResourceIterator"/> for responsibilities. </returns>
       //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-      //		 default ResourceIterator<Node> findNodes(Label label, java.util.Map<String, Object> propertyValues)
+      //		 default IResourceIterator<Node> findNodes(Label label, java.util.Map<String, Object> propertyValues)
       //	 {
       //		  throw new UnsupportedOperationException("findNodes by multiple property names and values is not supported.");
       //	 }
@@ -275,7 +275,7 @@ namespace Neo4Net.GraphDb
       /// <param name="searchMode"> required property value template </param>
       /// <returns> an iterator containing all matching nodes. See <seealso cref="ResourceIterator"/> for responsibilities. </returns>
       //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-      //		 default ResourceIterator<Node> findNodes(Label label, String key, String template, StringSearchMode searchMode)
+      //		 default IResourceIterator<Node> findNodes(Label label, String key, String template, StringSearchMode searchMode)
       //	 {
       //		  throw new UnsupportedOperationException("Specialized string queries are not supported");
       //	 }
@@ -299,7 +299,7 @@ namespace Neo4Net.GraphDb
       /// </summary>
       /// <param name="label"> the <seealso cref="ILabel"/> to return nodes for. </param>
       /// <returns> an iterator containing all nodes matching the label. See <seealso cref="ResourceIterator"/> for responsibilities. </returns>
-      ResourceIterator<INode> FindNodes(ILabel label);
+      IResourceIterator<INode> FindNodes(ILabel label);
 
       /// <summary>
       /// Returns all labels currently in the underlying store. Labels are added to the store the first time
@@ -309,7 +309,7 @@ namespace Neo4Net.GraphDb
       /// inside your transaction to avoid potential blocking of write operations.
       /// </summary>
       /// <returns> all labels in the underlying store. </returns>
-      ResourceIterable<ILabel> AllLabelsInUse { get; }
+     IResourceIterable<ILabel> AllLabelsInUse { get; }
 
       /// <summary>
       /// Returns all relationship types currently in the underlying store.
@@ -319,7 +319,7 @@ namespace Neo4Net.GraphDb
       /// return all relationship types currently in use.
       /// </summary>
       /// <returns> all relationship types in the underlying store </returns>
-      ResourceIterable<IRelationshipType> AllRelationshipTypesInUse { get; }
+     IResourceIterable<IRelationshipType> AllRelationshipTypesInUse { get; }
 
       /// <summary>
       /// Returns all labels currently in the underlying store. Labels are added to the store the first time
@@ -330,7 +330,7 @@ namespace Neo4Net.GraphDb
       /// inside your transaction to avoid potential blocking of write operations.
       /// </summary>
       /// <returns> all labels in the underlying store. </returns>
-      ResourceIterable<ILabel> AllLabels { get; }
+     IResourceIterable<ILabel> AllLabels { get; }
 
       /// <summary>
       /// Returns all relationship types currently in the underlying store.
@@ -343,7 +343,7 @@ namespace Neo4Net.GraphDb
       /// space).
       /// </summary>
       /// <returns> all relationship types in the underlying store </returns>
-      ResourceIterable<IRelationshipType> AllRelationshipTypes { get; }
+     IResourceIterable<IRelationshipType> AllRelationshipTypes { get; }
 
       /// <summary>
       /// Returns all property keys currently in the underlying store. This method guarantees that it will return all
@@ -354,7 +354,7 @@ namespace Neo4Net.GraphDb
       /// inside your transaction to avoid potential blocking of write operations.
       /// </summary>
       /// <returns> all property keys in the underlying store. </returns>
-      ResourceIterable<string> AllPropertyKeys { get; }
+     IResourceIterable<string> AllPropertyKeys { get; }
 
       /// <summary>
       /// Use this method to check if the database is currently in a usable state.
@@ -416,7 +416,7 @@ namespace Neo4Net.GraphDb
       /// This method is the same as <seealso cref="execute(string, System.Collections.IDictionary)"/> with an empty parameters-map.
       /// </summary>
       /// <param name="query"> The query to execute </param>
-      /// <returns> A <seealso cref="org.Neo4Net.graphdb.Result"/> that contains the result set. </returns>
+      /// <returns> A <seealso cref="Neo4Net.GraphDb.Result"/> that contains the result set. </returns>
       /// <exception cref="QueryExecutionException"> If the Query contains errors </exception>
       //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
       //ORIGINAL LINE: Result execute(String query) throws QueryExecutionException;
@@ -431,7 +431,7 @@ namespace Neo4Net.GraphDb
       /// <param name="query"> The query to execute </param>
       /// <param name="timeout"> The maximum time interval within which query should be completed. </param>
       /// <param name="unit"> time unit of timeout argument </param>
-      /// <returns> A <seealso cref="org.Neo4Net.graphdb.Result"/> that contains the result set. </returns>
+      /// <returns> A <seealso cref="Neo4Net.GraphDb.Result"/> that contains the result set. </returns>
       /// <exception cref="QueryExecutionException"> If the Query contains errors </exception>
       //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
       //ORIGINAL LINE: Result execute(String query, long timeout, java.util.concurrent.TimeUnit unit) throws QueryExecutionException;
@@ -442,7 +442,7 @@ namespace Neo4Net.GraphDb
       /// </summary>
       /// <param name="query">      The query to execute </param>
       /// <param name="parameters"> Parameters for the query </param>
-      /// <returns> A <seealso cref="org.Neo4Net.graphdb.Result"/> that contains the result set </returns>
+      /// <returns> A <seealso cref="Neo4Net.GraphDb.Result"/> that contains the result set </returns>
       /// <exception cref="QueryExecutionException"> If the Query contains errors </exception>
       //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
       //ORIGINAL LINE: Result execute(String query, java.util.Map<String,Object> parameters) throws QueryExecutionException;
@@ -456,7 +456,7 @@ namespace Neo4Net.GraphDb
       /// <param name="parameters"> Parameters for the query </param>
       /// <param name="timeout"> The maximum time interval within which query should be completed. </param>
       /// <param name="unit"> time unit of timeout argument </param>
-      /// <returns> A <seealso cref="org.Neo4Net.graphdb.Result"/> that contains the result set </returns>
+      /// <returns> A <seealso cref="Neo4Net.GraphDb.Result"/> that contains the result set </returns>
       /// <exception cref="QueryExecutionException"> If the Query contains errors </exception>
       //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
       //ORIGINAL LINE: Result execute(String query, java.util.Map<String,Object> parameters, long timeout, java.util.concurrent.TimeUnit unit) throws QueryExecutionException;

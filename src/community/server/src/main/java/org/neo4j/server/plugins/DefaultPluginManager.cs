@@ -107,7 +107,7 @@ namespace Neo4Net.Server.plugins
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.server.rest.repr.ExtensionPointRepresentation describe(String name, Class type, String method) throws PluginLookupException
+//ORIGINAL LINE: public Neo4Net.server.rest.repr.ExtensionPointRepresentation describe(String name, Class type, String method) throws PluginLookupException
 		 [Obsolete]
 		 public override ExtensionPointRepresentation Describe( string name, Type type, string method )
 		 {
@@ -122,7 +122,7 @@ namespace Neo4Net.Server.plugins
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.util.List<org.Neo4Net.server.rest.repr.ExtensionPointRepresentation> describeAll(String name) throws PluginLookupException
+//ORIGINAL LINE: public java.util.List<Neo4Net.server.rest.repr.ExtensionPointRepresentation> describeAll(String name) throws PluginLookupException
 		 [Obsolete]
 		 public override IList<ExtensionPointRepresentation> DescribeAll( string name )
 		 {
@@ -140,7 +140,7 @@ namespace Neo4Net.Server.plugins
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public <T> org.Neo4Net.server.rest.repr.Representation invoke(org.Neo4Net.kernel.internal.GraphDatabaseAPI graphDb, String name, Class<T> type, String method, T context, ParameterList params) throws PluginLookupException, org.Neo4Net.server.rest.repr.BadInputException, PluginInvocationFailureException, BadPluginInvocationException
+//ORIGINAL LINE: public <T> Neo4Net.server.rest.repr.Representation invoke(Neo4Net.kernel.internal.GraphDatabaseAPI graphDb, String name, Class<T> type, String method, T context, ParameterList params) throws PluginLookupException, Neo4Net.server.rest.repr.BadInputException, PluginInvocationFailureException, BadPluginInvocationException
 		 [Obsolete]
 		 public override Representation Invoke<T>( GraphDatabaseAPI graphDb, string name, Type type, string method, T context, ParameterList @params )
 		 {

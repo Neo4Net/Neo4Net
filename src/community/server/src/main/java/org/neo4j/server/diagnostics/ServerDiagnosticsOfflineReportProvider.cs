@@ -29,7 +29,7 @@ namespace Neo4Net.Server.diagnostics
 	using ServerSettings = Neo4Net.Server.configuration.ServerSettings;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.diagnostics.DiagnosticsReportSources.newDiagnosticsRotatingFile;
+//	import static Neo4Net.diagnostics.DiagnosticsReportSources.newDiagnosticsRotatingFile;
 
 	public class ServerDiagnosticsOfflineReportProvider : DiagnosticsOfflineReportProvider
 	{

@@ -76,8 +76,8 @@ namespace Neo4Net.Kernel.spi.explicitindex
 		 /// <returns> list of store files managed by this index provider </returns>
 		 /// <exception cref="IOException"> depends on the implementation </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.Neo4Net.graphdb.ResourceIterator<java.io.File> listStoreFiles() throws java.io.IOException;
-		 ResourceIterator<File> ListStoreFiles();
+//ORIGINAL LINE: Neo4Net.graphdb.ResourceIterator<java.io.File> listStoreFiles() throws java.io.IOException;
+		 IResourceIterator<File> ListStoreFiles();
 	}
 
 }

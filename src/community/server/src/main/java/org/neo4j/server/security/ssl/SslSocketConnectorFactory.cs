@@ -31,7 +31,7 @@ namespace Neo4Net.Server.security.ssl
 
 
 	using ListenSocketAddress = Neo4Net.Helpers.ListenSocketAddress;
-	using NetworkConnectionTracker = Neo4Net.Kernel.api.net.NetworkConnectionTracker;
+	using NetworkConnectionTracker = Neo4Net.Kernel.Api.net.NetworkConnectionTracker;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using HttpConnectorFactory = Neo4Net.Server.web.HttpConnectorFactory;
 	using JettyThreadCalculator = Neo4Net.Server.web.JettyThreadCalculator;

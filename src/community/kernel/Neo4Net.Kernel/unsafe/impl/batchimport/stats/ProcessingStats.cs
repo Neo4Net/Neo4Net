@@ -22,7 +22,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.stats
 	using Neo4Net.@unsafe.Impl.Batchimport.staging;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.stats.Stats.longStat;
+//	import static Neo4Net.@unsafe.impl.batchimport.stats.Stats.longStat;
 
 	/// <summary>
 	/// Provides common <seealso cref="Stat statistics"/> about a <seealso cref="Step"/>, stats like number of processed batches,

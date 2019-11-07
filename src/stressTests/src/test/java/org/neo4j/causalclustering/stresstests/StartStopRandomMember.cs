@@ -34,7 +34,7 @@ namespace Neo4Net.causalclustering.stresstests
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void doWorkOnMember(org.Neo4Net.causalclustering.discovery.ClusterMember member) throws Exception
+//ORIGINAL LINE: public void doWorkOnMember(Neo4Net.causalclustering.discovery.ClusterMember member) throws Exception
 		 public override void DoWorkOnMember( ClusterMember member )
 		 {
 			  _startStop.doWorkOnMember( member );

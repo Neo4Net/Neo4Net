@@ -51,36 +51,36 @@ namespace Neo4Net.metrics
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.CausalClusteringSettings.raft_advertised_address;
+//	import static Neo4Net.causalclustering.core.CausalClusteringSettings.raft_advertised_address;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.Label.label;
+//	import static Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.count;
+//	import static Neo4Net.helpers.collection.Iterables.count;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.metrics.MetricsSettings.csvPath;
+//	import static Neo4Net.metrics.MetricsSettings.csvPath;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.metrics.MetricsTestHelper.metricsCsv;
+//	import static Neo4Net.metrics.MetricsTestHelper.metricsCsv;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.metrics.MetricsTestHelper.readLongValue;
+//	import static Neo4Net.metrics.MetricsTestHelper.readLongValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.metrics.source.causalclustering.ReadReplicaMetrics.PULL_UPDATES;
+//	import static Neo4Net.metrics.source.causalclustering.ReadReplicaMetrics.PULL_UPDATES;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.metrics.source.causalclustering.ReadReplicaMetrics.PULL_UPDATE_HIGHEST_TX_ID_RECEIVED;
+//	import static Neo4Net.metrics.source.causalclustering.ReadReplicaMetrics.PULL_UPDATE_HIGHEST_TX_ID_RECEIVED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.metrics.source.causalclustering.ReadReplicaMetrics.PULL_UPDATE_HIGHEST_TX_ID_REQUESTED;
+//	import static Neo4Net.metrics.source.causalclustering.ReadReplicaMetrics.PULL_UPDATE_HIGHEST_TX_ID_REQUESTED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.assertion.Assert.assertEventually;
+//	import static Neo4Net.test.assertion.Assert.assertEventually;
 
 	public class CoreEdgeMetricsIT
 	{
 		 private const int TIMEOUT = 15;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.causalclustering.ClusterRule clusterRule = new org.Neo4Net.test.causalclustering.ClusterRule().withNumberOfCoreMembers(3).withNumberOfReadReplicas(1).withSharedCoreParam(MetricsSettings.metricsEnabled, org.Neo4Net.kernel.configuration.Settings.TRUE).withSharedReadReplicaParam(MetricsSettings.metricsEnabled, org.Neo4Net.kernel.configuration.Settings.TRUE).withSharedCoreParam(MetricsSettings.csvEnabled, org.Neo4Net.kernel.configuration.Settings.TRUE).withSharedReadReplicaParam(MetricsSettings.csvEnabled, org.Neo4Net.kernel.configuration.Settings.TRUE).withSharedCoreParam(MetricsSettings.csvInterval, "100ms").withSharedReadReplicaParam(MetricsSettings.csvInterval, "100ms");
+//ORIGINAL LINE: @Rule public final Neo4Net.test.causalclustering.ClusterRule clusterRule = new Neo4Net.test.causalclustering.ClusterRule().withNumberOfCoreMembers(3).withNumberOfReadReplicas(1).withSharedCoreParam(MetricsSettings.metricsEnabled, Neo4Net.kernel.configuration.Settings.TRUE).withSharedReadReplicaParam(MetricsSettings.metricsEnabled, Neo4Net.kernel.configuration.Settings.TRUE).withSharedCoreParam(MetricsSettings.csvEnabled, Neo4Net.kernel.configuration.Settings.TRUE).withSharedReadReplicaParam(MetricsSettings.csvEnabled, Neo4Net.kernel.configuration.Settings.TRUE).withSharedCoreParam(MetricsSettings.csvInterval, "100ms").withSharedReadReplicaParam(MetricsSettings.csvInterval, "100ms");
 		 public readonly ClusterRule ClusterRule = new ClusterRule().withNumberOfCoreMembers(3).withNumberOfReadReplicas(1).withSharedCoreParam(MetricsSettings.MetricsEnabled, Settings.TRUE).withSharedReadReplicaParam(MetricsSettings.MetricsEnabled, Settings.TRUE).withSharedCoreParam(MetricsSettings.CsvEnabled, Settings.TRUE).withSharedReadReplicaParam(MetricsSettings.CsvEnabled, Settings.TRUE).withSharedCoreParam(MetricsSettings.CsvInterval, "100ms").withSharedReadReplicaParam(MetricsSettings.CsvInterval, "100ms");
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private org.Neo4Net.causalclustering.discovery.Cluster<?> cluster;
+//ORIGINAL LINE: private Neo4Net.causalclustering.discovery.Cluster<?> cluster;
 		 private Cluster<object> _cluster;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -153,7 +153,7 @@ namespace Neo4Net.metrics
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertAllNodesVisible(org.Neo4Net.kernel.internal.GraphDatabaseAPI db) throws Exception
+//ORIGINAL LINE: private void assertAllNodesVisible(Neo4Net.kernel.internal.GraphDatabaseAPI db) throws Exception
 		 private void AssertAllNodesVisible( GraphDatabaseAPI db )
 		 {
 			  using ( Transaction tx = Db.beginTx() )

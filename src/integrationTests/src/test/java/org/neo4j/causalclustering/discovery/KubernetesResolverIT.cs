@@ -59,9 +59,9 @@ namespace Neo4Net.causalclustering.discovery
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.discovery.MultiRetryStrategyTest.testRetryStrategy;
+//	import static Neo4Net.causalclustering.discovery.MultiRetryStrategyTest.testRetryStrategy;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.ssl.SslResourceBuilder.selfSignedKeyId;
+//	import static Neo4Net.ssl.SslResourceBuilder.selfSignedKeyId;
 
 	public class KubernetesResolverIT
 	{
@@ -88,7 +88,7 @@ namespace Neo4Net.causalclustering.discovery
 		 public ExpectedException Expected = ExpectedException.none();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.TestDirectory testDir = org.Neo4Net.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.TestDirectory testDir = Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public TestDirectory TestDir = TestDirectory.testDirectory();
 
 		 private readonly int _port = PortAuthority.allocatePort();
@@ -230,7 +230,7 @@ namespace Neo4Net.causalclustering.discovery
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 		 private string ReadJsonFile( string fileName )
 		 {
-			  Path path = Paths.get( this.GetType().getResource("/org.Neo4Net.causalclustering.discovery/" + fileName).toURI() );
+			  Path path = Paths.get( this.GetType().getResource("/Neo4Net.causalclustering.discovery/" + fileName).toURI() );
 			  string fullFile = Files.lines( path ).collect( Collectors.joining( "\n" ) );
 			  return string.format( fullFile, _testServiceName, _testPortName, _testPortNumber );
 		 }

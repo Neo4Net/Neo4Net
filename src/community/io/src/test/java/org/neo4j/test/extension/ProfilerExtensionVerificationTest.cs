@@ -35,7 +35,7 @@ namespace Neo4Net.Test.extension
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.extension.ConditionEvaluationResult.disabled;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.extension.ExecutionSharedContext.CONTEXT;
+//	import static Neo4Net.test.extension.ExecutionSharedContext.CONTEXT;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @ExtendWith({TestDirectoryExtension.class, ProfilerExtension.class}) @ExtendWith(ProfilerExtensionVerificationTest.ConfigurationParameterCondition.class) class ProfilerExtensionVerificationTest

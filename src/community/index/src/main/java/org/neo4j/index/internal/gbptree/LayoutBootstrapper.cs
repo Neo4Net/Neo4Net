@@ -25,7 +25,7 @@ namespace Neo4Net.Index.Internal.gbptree
 	public interface LayoutBootstrapper
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: Layout<?,?> create(java.io.File indexFile, org.Neo4Net.io.pagecache.PageCache pageCache, Meta meta, String targetLayout) throws java.io.IOException;
+//ORIGINAL LINE: Layout<?,?> create(java.io.File indexFile, Neo4Net.io.pagecache.PageCache pageCache, Meta meta, String targetLayout) throws java.io.IOException;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		 Layout<object, ?> Create( File indexFile, PageCache pageCache, Meta meta, string targetLayout );
 	}

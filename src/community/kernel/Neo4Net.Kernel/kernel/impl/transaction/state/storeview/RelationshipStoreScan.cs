@@ -33,7 +33,7 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 		 private readonly int[] _relationshipTypeIds;
 		 private readonly Visitor<EntityUpdates, FAILURE> _propertyUpdatesVisitor;
 
-		 public RelationshipStoreScan( StorageReader storageReader, LockService locks, Visitor<EntityUpdates, FAILURE> propertyUpdatesVisitor, int[] relationshipTypeIds, System.Func<int, bool> propertyKeyIdFilter ) : base( storageReader, storageReader.RelationshipsGetCount(), propertyKeyIdFilter, id -> locks.AcquireRelationshipLock(id, org.Neo4Net.kernel.impl.locking.LockService_LockType.ReadLock) )
+		 public RelationshipStoreScan( StorageReader storageReader, LockService locks, Visitor<EntityUpdates, FAILURE> propertyUpdatesVisitor, int[] relationshipTypeIds, System.Func<int, bool> propertyKeyIdFilter ) : base( storageReader, storageReader.RelationshipsGetCount(), propertyKeyIdFilter, id -> locks.AcquireRelationshipLock(id, Neo4Net.kernel.impl.locking.LockService_LockType.ReadLock) )
 		 {
 			  this._relationshipTypeIds = relationshipTypeIds;
 			  this._propertyUpdatesVisitor = propertyUpdatesVisitor;
@@ -45,7 +45,7 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected boolean process(org.Neo4Net.Kernel.Api.StorageEngine.StorageRelationshipScanCursor cursor) throws FAILURE
+//ORIGINAL LINE: protected boolean process(Neo4Net.Kernel.Api.StorageEngine.StorageRelationshipScanCursor cursor) throws FAILURE
 		 protected internal override bool Process( StorageRelationshipScanCursor cursor )
 		 {
 			  int reltype = cursor.Type();

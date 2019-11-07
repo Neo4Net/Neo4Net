@@ -24,17 +24,17 @@ namespace Neo4Net.Gis.Spatial.Index.curves
 {
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.gis.spatial.index.curves.HilbertSpaceFillingCurve3D.Direction3D.BACK;
+//	import static Neo4Net.gis.spatial.index.curves.HilbertSpaceFillingCurve3D.Direction3D.BACK;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.gis.spatial.index.curves.HilbertSpaceFillingCurve3D.Direction3D.DOWN;
+//	import static Neo4Net.gis.spatial.index.curves.HilbertSpaceFillingCurve3D.Direction3D.DOWN;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.gis.spatial.index.curves.HilbertSpaceFillingCurve3D.Direction3D.FRONT;
+//	import static Neo4Net.gis.spatial.index.curves.HilbertSpaceFillingCurve3D.Direction3D.FRONT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.gis.spatial.index.curves.HilbertSpaceFillingCurve3D.Direction3D.LEFT;
+//	import static Neo4Net.gis.spatial.index.curves.HilbertSpaceFillingCurve3D.Direction3D.LEFT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.gis.spatial.index.curves.HilbertSpaceFillingCurve3D.Direction3D.RIGHT;
+//	import static Neo4Net.gis.spatial.index.curves.HilbertSpaceFillingCurve3D.Direction3D.RIGHT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.gis.spatial.index.curves.HilbertSpaceFillingCurve3D.Direction3D.UP;
+//	import static Neo4Net.gis.spatial.index.curves.HilbertSpaceFillingCurve3D.Direction3D.UP;
 
 	public class HilbertSpaceFillingCurve3D : SpaceFillingCurve
 	{

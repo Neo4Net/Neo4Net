@@ -32,7 +32,7 @@ namespace Neo4Net.causalclustering.core.consensus
 	public class LeaderAvailabilityHandler : LifecycleMessageHandler<RaftMessages_ReceivedInstantClusterIdAwareMessage<JavaToDotNetGenericWildcard>>
 	{
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private final org.Neo4Net.causalclustering.messaging.LifecycleMessageHandler<RaftMessages_ReceivedInstantClusterIdAwareMessage<?>> delegateHandler;
+//ORIGINAL LINE: private final Neo4Net.causalclustering.messaging.LifecycleMessageHandler<RaftMessages_ReceivedInstantClusterIdAwareMessage<?>> delegateHandler;
 		 private readonly LifecycleMessageHandler<RaftMessages_ReceivedInstantClusterIdAwareMessage<object>> _delegateHandler;
 		 private readonly LeaderAvailabilityTimers _leaderAvailabilityTimers;
 		 private readonly ShouldRenewElectionTimeout _shouldRenewElectionTimeout;
@@ -52,7 +52,7 @@ namespace Neo4Net.causalclustering.core.consensus
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public synchronized void start(org.Neo4Net.causalclustering.identity.ClusterId clusterId) throws Throwable
+//ORIGINAL LINE: public synchronized void start(Neo4Net.causalclustering.identity.ClusterId clusterId) throws Throwable
 		 public override void Start( ClusterId clusterId )
 		 {
 			 lock ( this )

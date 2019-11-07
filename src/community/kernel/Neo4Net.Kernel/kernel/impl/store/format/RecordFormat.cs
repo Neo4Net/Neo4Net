@@ -82,7 +82,7 @@ namespace Neo4Net.Kernel.impl.store.format
 		 /// know the record size in advance, but may be read from store header when opening the store. </param>
 		 /// <exception cref="IOException"> on error reading. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void read(RECORD record, org.Neo4Net.io.pagecache.PageCursor cursor, org.Neo4Net.kernel.impl.store.record.RecordLoad mode, int recordSize) throws java.io.IOException;
+//ORIGINAL LINE: void read(RECORD record, Neo4Net.io.pagecache.PageCursor cursor, Neo4Net.kernel.impl.store.record.RecordLoad mode, int recordSize) throws java.io.IOException;
 		 void Read( RECORD record, PageCursor cursor, RecordLoad mode, int recordSize );
 
 		 /// <summary>
@@ -109,7 +109,7 @@ namespace Neo4Net.Kernel.impl.store.format
 		 /// know the record size in advance, but may be read from store header when opening the store. </param>
 		 /// <exception cref="IOException"> on error writing. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void write(RECORD record, org.Neo4Net.io.pagecache.PageCursor cursor, int recordSize) throws java.io.IOException;
+//ORIGINAL LINE: void write(RECORD record, Neo4Net.io.pagecache.PageCursor cursor, int recordSize) throws java.io.IOException;
 		 void Write( RECORD record, PageCursor cursor, int recordSize );
 
 		 /// <param name="record"> to obtain "next" reference from. </param>

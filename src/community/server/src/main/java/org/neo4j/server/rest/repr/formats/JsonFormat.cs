@@ -27,9 +27,9 @@ namespace Neo4Net.Server.rest.repr.formats
 	using JsonParseException = Neo4Net.Server.rest.domain.JsonParseException;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.domain.JsonHelper.assertSupportedPropertyValue;
+//	import static Neo4Net.server.rest.domain.JsonHelper.assertSupportedPropertyValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.domain.JsonHelper.readJson;
+//	import static Neo4Net.server.rest.domain.JsonHelper.readJson;
 
 	public class JsonFormat : RepresentationFormat
 	{
@@ -68,7 +68,7 @@ namespace Neo4Net.Server.rest.repr.formats
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.util.Map<String, Object> readMap(String input, String... requiredKeys) throws org.Neo4Net.server.rest.repr.BadInputException
+//ORIGINAL LINE: public java.util.Map<String, Object> readMap(String input, String... requiredKeys) throws Neo4Net.server.rest.repr.BadInputException
 		 public override IDictionary<string, object> ReadMap( string input, params string[] requiredKeys )
 		 {
 			  if ( Empty( input ) )
@@ -86,7 +86,7 @@ namespace Neo4Net.Server.rest.repr.formats
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Override @SuppressWarnings("unchecked") public java.util.List<Object> readList(String input) throws org.Neo4Net.server.rest.repr.BadInputException
+//ORIGINAL LINE: @Override @SuppressWarnings("unchecked") public java.util.List<Object> readList(String input) throws Neo4Net.server.rest.repr.BadInputException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public override IList<object> ReadList( string input )
 		 {
@@ -101,7 +101,7 @@ namespace Neo4Net.Server.rest.repr.formats
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public Object readValue(String input) throws org.Neo4Net.server.rest.repr.BadInputException
+//ORIGINAL LINE: public Object readValue(String input) throws Neo4Net.server.rest.repr.BadInputException
 		 public override object ReadValue( string input )
 		 {
 			  if ( Empty( input ) )
@@ -119,7 +119,7 @@ namespace Neo4Net.Server.rest.repr.formats
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.net.URI readUri(String input) throws org.Neo4Net.server.rest.repr.BadInputException
+//ORIGINAL LINE: public java.net.URI readUri(String input) throws Neo4Net.server.rest.repr.BadInputException
 		 public override URI ReadUri( string input )
 		 {
 			  try

@@ -67,59 +67,59 @@ namespace Neo4Net.Tooling
 	using SpectrumExecutionMonitor = Neo4Net.@unsafe.Impl.Batchimport.staging.SpectrumExecutionMonitor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.store_internal_log_path;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.store_internal_log_path;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.Exceptions.throwIfUnchecked;
+//	import static Neo4Net.helpers.Exceptions.throwIfUnchecked;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.Format.bytes;
+//	import static Neo4Net.helpers.Format.bytes;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.Strings.TAB;
+//	import static Neo4Net.helpers.Strings.TAB;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.TextUtil.tokenizeStringWithQuotes;
+//	import static Neo4Net.helpers.TextUtil.tokenizeStringWithQuotes;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.ByteUnit.mebiBytes;
+//	import static Neo4Net.io.ByteUnit.mebiBytes;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.fs.FileUtils.readTextFile;
+//	import static Neo4Net.io.fs.FileUtils.readTextFile;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.parseLongWithUnit;
+//	import static Neo4Net.kernel.configuration.Settings.parseLongWithUnit;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.scheduler.JobSchedulerFactory.createScheduler;
+//	import static Neo4Net.kernel.impl.scheduler.JobSchedulerFactory.createScheduler;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.PropertyType.EMPTY_BYTE_ARRAY;
+//	import static Neo4Net.kernel.impl.store.PropertyType.EMPTY_BYTE_ARRAY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.util.Converters.withDefault;
+//	import static Neo4Net.kernel.impl.util.Converters.withDefault;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.AdditionalInitialIds.EMPTY;
+//	import static Neo4Net.@unsafe.impl.batchimport.AdditionalInitialIds.EMPTY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.Configuration_Fields.BAD_FILE_NAME;
+//	import static Neo4Net.@unsafe.impl.batchimport.Configuration_Fields.BAD_FILE_NAME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.Configuration.DEFAULT;
+//	import static Neo4Net.@unsafe.impl.batchimport.Configuration.DEFAULT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.Configuration_Fields.DEFAULT_MAX_MEMORY_PERCENT;
+//	import static Neo4Net.@unsafe.impl.batchimport.Configuration_Fields.DEFAULT_MAX_MEMORY_PERCENT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.Configuration.calculateMaxMemoryFromPercent;
+//	import static Neo4Net.@unsafe.impl.batchimport.Configuration.calculateMaxMemoryFromPercent;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.Configuration.canDetectFreeMemory;
+//	import static Neo4Net.@unsafe.impl.batchimport.Configuration.canDetectFreeMemory;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.input.Collectors.badCollector;
+//	import static Neo4Net.@unsafe.impl.batchimport.input.Collectors.badCollector;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.input.Collectors.collect;
+//	import static Neo4Net.@unsafe.impl.batchimport.input.Collectors.collect;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.input.Collectors.silentBadCollector;
+//	import static Neo4Net.@unsafe.impl.batchimport.input.Collectors.silentBadCollector;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.input.InputEntityDecorators.NO_DECORATOR;
+//	import static Neo4Net.@unsafe.impl.batchimport.input.InputEntityDecorators.NO_DECORATOR;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.input.InputEntityDecorators.additiveLabels;
+//	import static Neo4Net.@unsafe.impl.batchimport.input.InputEntityDecorators.additiveLabels;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.input.InputEntityDecorators.defaultRelationshipType;
+//	import static Neo4Net.@unsafe.impl.batchimport.input.InputEntityDecorators.defaultRelationshipType;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.input.csv.Configuration.COMMAS;
+//	import static Neo4Net.@unsafe.impl.batchimport.input.csv.Configuration.COMMAS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.input.csv.DataFactories.data;
+//	import static Neo4Net.@unsafe.impl.batchimport.input.csv.DataFactories.data;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.input.csv.DataFactories.defaultFormatNodeFileHeader;
+//	import static Neo4Net.@unsafe.impl.batchimport.input.csv.DataFactories.defaultFormatNodeFileHeader;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.input.csv.DataFactories.defaultFormatRelationshipFileHeader;
+//	import static Neo4Net.@unsafe.impl.batchimport.input.csv.DataFactories.defaultFormatRelationshipFileHeader;
 
 	/// <summary>
 	/// User-facing command line tool around a <seealso cref="BatchImporter"/>.
@@ -504,7 +504,7 @@ namespace Neo4Net.Tooling
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static org.Neo4Net.helpers.Args useArgumentsFromFileArgumentIfPresent(org.Neo4Net.helpers.Args args) throws java.io.IOException
+//ORIGINAL LINE: public static Neo4Net.helpers.Args useArgumentsFromFileArgumentIfPresent(Neo4Net.helpers.Args args) throws java.io.IOException
 		 public static Args UseArgumentsFromFileArgumentIfPresent( Args args )
 		 {
 			  string fileArgument = args.Get( Options.File.key(), null );
@@ -552,7 +552,7 @@ namespace Neo4Net.Tooling
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static void doImport(java.io.PrintStream out, java.io.PrintStream err, java.io.InputStream in, org.Neo4Net.io.layout.DatabaseLayout databaseLayout, java.io.File badFile, org.Neo4Net.io.fs.FileSystemAbstraction fs, java.util.Collection<org.Neo4Net.helpers.Args.Option<java.io.File[]>> nodesFiles, java.util.Collection<org.Neo4Net.helpers.Args.Option<java.io.File[]>> relationshipsFiles, boolean enableStacktrace, org.Neo4Net.unsafe.impl.batchimport.input.Input input, org.Neo4Net.kernel.configuration.Config dbConfig, java.io.OutputStream badOutput, org.Neo4Net.unsafe.impl.batchimport.Configuration configuration, boolean detailedProgress) throws java.io.IOException
+//ORIGINAL LINE: public static void doImport(java.io.PrintStream out, java.io.PrintStream err, java.io.InputStream in, Neo4Net.io.layout.DatabaseLayout databaseLayout, java.io.File badFile, Neo4Net.io.fs.FileSystemAbstraction fs, java.util.Collection<Neo4Net.helpers.Args.Option<java.io.File[]>> nodesFiles, java.util.Collection<Neo4Net.helpers.Args.Option<java.io.File[]>> relationshipsFiles, boolean enableStacktrace, Neo4Net.unsafe.impl.batchimport.input.Input input, Neo4Net.kernel.configuration.Config dbConfig, java.io.OutputStream badOutput, Neo4Net.unsafe.impl.batchimport.Configuration configuration, boolean detailedProgress) throws java.io.IOException
 		 public static void DoImport( PrintStream @out, PrintStream err, Stream @in, DatabaseLayout databaseLayout, File badFile, FileSystemAbstraction fs, ICollection<Args.Option<File[]>> nodesFiles, ICollection<Args.Option<File[]>> relationshipsFiles, bool enableStacktrace, Input input, Config dbConfig, Stream badOutput, Neo4Net.@unsafe.Impl.Batchimport.Configuration configuration, bool detailedProgress )
 		 {
 			  bool success;
@@ -561,7 +561,7 @@ namespace Neo4Net.Tooling
 			  File internalLogFile = dbConfig.Get( store_internal_log_path );
 			  LogService logService = life.Add( StoreLogService.withInternalLog( internalLogFile ).build( fs ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.scheduler.JobScheduler jobScheduler = life.add(createScheduler());
+//ORIGINAL LINE: final Neo4Net.scheduler.JobScheduler jobScheduler = life.add(createScheduler());
 			  IJobScheduler jobScheduler = life.Add( createScheduler() );
 
 			  life.Start();
@@ -827,7 +827,7 @@ namespace Neo4Net.Tooling
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static Iterable<org.Neo4Net.unsafe.impl.batchimport.input.csv.DataFactory> relationshipData(final java.nio.charset.Charset encoding, java.util.Collection<org.Neo4Net.helpers.Args.Option<java.io.File[]>> relationshipsFiles)
+//ORIGINAL LINE: public static Iterable<Neo4Net.unsafe.impl.batchimport.input.csv.DataFactory> relationshipData(final java.nio.charset.Charset encoding, java.util.Collection<Neo4Net.helpers.Args.Option<java.io.File[]>> relationshipsFiles)
 		 public static IEnumerable<DataFactory> RelationshipData( Charset encoding, ICollection<Args.Option<File[]>> relationshipsFiles )
 		 {
 			  return new IterableWrapperAnonymousInnerClass( relationshipsFiles, encoding );
@@ -849,7 +849,7 @@ namespace Neo4Net.Tooling
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static Iterable<org.Neo4Net.unsafe.impl.batchimport.input.csv.DataFactory> nodeData(final java.nio.charset.Charset encoding, java.util.Collection<org.Neo4Net.helpers.Args.Option<java.io.File[]>> nodesFiles)
+//ORIGINAL LINE: public static Iterable<Neo4Net.unsafe.impl.batchimport.input.csv.DataFactory> nodeData(final java.nio.charset.Charset encoding, java.util.Collection<Neo4Net.helpers.Args.Option<java.io.File[]>> nodesFiles)
 		 public static IEnumerable<DataFactory> NodeData( Charset encoding, ICollection<Args.Option<File[]>> nodesFiles )
 		 {
 			  return new IterableWrapperAnonymousInnerClass2( nodesFiles, encoding );
@@ -914,20 +914,20 @@ namespace Neo4Net.Tooling
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static org.Neo4Net.unsafe.impl.batchimport.input.csv.Configuration csvConfiguration(org.Neo4Net.helpers.Args args, final boolean defaultSettingsSuitableForTests)
+//ORIGINAL LINE: public static Neo4Net.unsafe.impl.batchimport.input.csv.Configuration csvConfiguration(Neo4Net.helpers.Args args, final boolean defaultSettingsSuitableForTests)
 		 public static Configuration CsvConfiguration( Args args, bool defaultSettingsSuitableForTests )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.unsafe.impl.batchimport.input.csv.Configuration defaultConfiguration = COMMAS;
+//ORIGINAL LINE: final Neo4Net.unsafe.impl.batchimport.input.csv.Configuration defaultConfiguration = COMMAS;
 			  Configuration defaultConfiguration = COMMAS;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final System.Nullable<char> specificDelimiter = args.interpretOption(Options.DELIMITER.key(), org.Neo4Net.kernel.impl.util.Converters.optional(), CHARACTER_CONVERTER);
+//ORIGINAL LINE: final System.Nullable<char> specificDelimiter = args.interpretOption(Options.DELIMITER.key(), Neo4Net.kernel.impl.util.Converters.optional(), CHARACTER_CONVERTER);
 			  char? specificDelimiter = args.InterpretOption( Options.Delimiter.key(), Converters.optional(), _characterConverter );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final System.Nullable<char> specificArrayDelimiter = args.interpretOption(Options.ARRAY_DELIMITER.key(), org.Neo4Net.kernel.impl.util.Converters.optional(), CHARACTER_CONVERTER);
+//ORIGINAL LINE: final System.Nullable<char> specificArrayDelimiter = args.interpretOption(Options.ARRAY_DELIMITER.key(), Neo4Net.kernel.impl.util.Converters.optional(), CHARACTER_CONVERTER);
 			  char? specificArrayDelimiter = args.InterpretOption( Options.ArrayDelimiter.key(), Converters.optional(), _characterConverter );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final System.Nullable<char> specificQuote = args.interpretOption(Options.QUOTE.key(), org.Neo4Net.kernel.impl.util.Converters.optional(), CHARACTER_CONVERTER);
+//ORIGINAL LINE: final System.Nullable<char> specificQuote = args.interpretOption(Options.QUOTE.key(), Neo4Net.kernel.impl.util.Converters.optional(), CHARACTER_CONVERTER);
 			  char? specificQuote = args.InterpretOption( Options.Quote.key(), Converters.optional(), _characterConverter );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final System.Nullable<bool> multiLineFields = args.getBoolean(Options.MULTILINE_FIELDS.key(), null);

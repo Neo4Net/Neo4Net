@@ -32,13 +32,13 @@ namespace Neo4Net.Kernel.Impl.Newapi
 	using RelationshipState = Neo4Net.Kernel.Api.StorageEngine.TxState.RelationshipState;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.newapi.RelationshipReferenceEncoding.encodeNoIncomingRels;
+//	import static Neo4Net.kernel.impl.newapi.RelationshipReferenceEncoding.encodeNoIncomingRels;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.newapi.RelationshipReferenceEncoding.encodeNoLoopRels;
+//	import static Neo4Net.kernel.impl.newapi.RelationshipReferenceEncoding.encodeNoLoopRels;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.newapi.RelationshipReferenceEncoding.encodeNoOutgoingRels;
+//	import static Neo4Net.kernel.impl.newapi.RelationshipReferenceEncoding.encodeNoOutgoingRels;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.record.AbstractBaseRecord.NO_ID;
+//	import static Neo4Net.kernel.impl.store.record.AbstractBaseRecord.NO_ID;
 
 	internal class DefaultRelationshipGroupCursor : RelationshipGroupCursor
 	{

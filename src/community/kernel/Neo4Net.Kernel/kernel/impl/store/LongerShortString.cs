@@ -330,7 +330,7 @@ namespace Neo4Net.Kernel.impl.store
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private static boolean tryEncode(int encodings, int keyId, org.Neo4Net.kernel.impl.store.record.PropertyBlock target, int payloadSize, byte[] data, final int length)
+//ORIGINAL LINE: private static boolean tryEncode(int encodings, int keyId, Neo4Net.kernel.impl.store.record.PropertyBlock target, int payloadSize, byte[] data, final int length)
 		 private static bool TryEncode( int encodings, int keyId, Neo4Net.Kernel.Impl.Store.Records.PropertyBlock target, int payloadSize, sbyte[] data, int length )
 		 {
 			  // find encoders in order that are still selected and try to encode the data
@@ -630,7 +630,7 @@ namespace Neo4Net.Kernel.impl.store
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private boolean doEncode(int keyId, byte[] data, org.Neo4Net.kernel.impl.store.record.PropertyBlock target, int payloadSize, final int length)
+//ORIGINAL LINE: private boolean doEncode(int keyId, byte[] data, Neo4Net.kernel.impl.store.record.PropertyBlock target, int payloadSize, final int length)
 		 private bool DoEncode( int keyId, sbyte[] data, Neo4Net.Kernel.Impl.Store.Records.PropertyBlock target, int payloadSize, int length )
 		 {
 			  if ( length > MaxLength( payloadSize ) )
@@ -648,7 +648,7 @@ namespace Neo4Net.Kernel.impl.store
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private void translateData(org.Neo4Net.kernel.impl.util.Bits bits, byte[] data, int length, final int step)
+//ORIGINAL LINE: private void translateData(Neo4Net.kernel.impl.util.Bits bits, byte[] data, int length, final int step)
 		 private void TranslateData( Neo4Net.Kernel.impl.util.Bits bits, sbyte[] data, int length, int step )
 		 {
 			  for ( int i = 0; i < length; i++ )

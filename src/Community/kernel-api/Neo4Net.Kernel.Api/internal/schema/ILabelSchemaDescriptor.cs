@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Kernel.Api.Internal.Schema
 {
-	public interface LabelSchemaDescriptor : SchemaDescriptor, LabelSchemaSupplier
+	public interface ILabelSchemaDescriptor : ISchemaDescriptor, ILabelSchemaSupplier
 	{
 		 int LabelId { get; }
 	}

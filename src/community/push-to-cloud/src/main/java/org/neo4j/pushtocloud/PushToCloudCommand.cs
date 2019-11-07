@@ -63,7 +63,7 @@ namespace Neo4Net.Pushtocloud
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void execute(String[] args) throws org.Neo4Net.commandline.admin.IncorrectUsage, org.Neo4Net.commandline.admin.CommandFailed
+//ORIGINAL LINE: public void execute(String[] args) throws Neo4Net.commandline.admin.IncorrectUsage, Neo4Net.commandline.admin.CommandFailed
 		 public override void Execute( string[] args )
 		 {
 			  Args arguments = Args.parse( args );
@@ -138,7 +138,7 @@ namespace Neo4Net.Pushtocloud
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private String buildConsoleURI(String boltURI) throws org.Neo4Net.commandline.admin.IncorrectUsage
+//ORIGINAL LINE: private String buildConsoleURI(String boltURI) throws Neo4Net.commandline.admin.IncorrectUsage
 		 private string BuildConsoleURI( string boltURI )
 		 {
 			  // A boltURI looks something like this:
@@ -170,7 +170,7 @@ namespace Neo4Net.Pushtocloud
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.nio.file.Path initiateSource(org.Neo4Net.helpers.Args arguments) throws org.Neo4Net.commandline.admin.IncorrectUsage, org.Neo4Net.commandline.admin.CommandFailed
+//ORIGINAL LINE: private java.nio.file.Path initiateSource(Neo4Net.helpers.Args arguments) throws Neo4Net.commandline.admin.IncorrectUsage, Neo4Net.commandline.admin.CommandFailed
 		 private Path InitiateSource( Args arguments )
 		 {
 			  // Either a dump or database name (of a stopped database) can be provided
@@ -221,7 +221,7 @@ namespace Neo4Net.Pushtocloud
 			  /// <returns> a bearer token to pass into <seealso cref="copy(bool, string, Path, string)"/> later on. </returns>
 			  /// <exception cref="CommandFailed"> on authentication failure or some other unexpected failure. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: String authenticate(boolean verbose, String consoleURL, String username, char[] password, boolean consentConfirmed) throws org.Neo4Net.commandline.admin.CommandFailed;
+//ORIGINAL LINE: String authenticate(boolean verbose, String consoleURL, String username, char[] password, boolean consentConfirmed) throws Neo4Net.commandline.admin.CommandFailed;
 			  string Authenticate( bool verbose, string consoleURL, string username, char[] password, bool consentConfirmed );
 
 			  /// <summary>
@@ -233,14 +233,14 @@ namespace Neo4Net.Pushtocloud
 			  /// <param name="bearerToken"> token from successful <seealso cref="authenticate(bool, string, string, char[])"/> call. </param>
 			  /// <exception cref="CommandFailed"> on copy failure or some other unexpected failure. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void copy(boolean verbose, String consoleURL, java.nio.file.Path source, String bearerToken) throws org.Neo4Net.commandline.admin.CommandFailed;
+//ORIGINAL LINE: void copy(boolean verbose, String consoleURL, java.nio.file.Path source, String bearerToken) throws Neo4Net.commandline.admin.CommandFailed;
 			  void Copy( bool verbose, string consoleURL, Path source, string bearerToken );
 		 }
 
 		 public interface DumpCreator
 		 {
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void dumpDatabase(String databaseName, java.nio.file.Path targetDumpFile) throws org.Neo4Net.commandline.admin.CommandFailed, org.Neo4Net.commandline.admin.IncorrectUsage;
+//ORIGINAL LINE: void dumpDatabase(String databaseName, java.nio.file.Path targetDumpFile) throws Neo4Net.commandline.admin.CommandFailed, Neo4Net.commandline.admin.IncorrectUsage;
 			  void DumpDatabase( string databaseName, Path targetDumpFile );
 		 }
 	}

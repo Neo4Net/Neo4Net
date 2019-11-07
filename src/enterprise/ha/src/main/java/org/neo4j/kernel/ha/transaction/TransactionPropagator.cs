@@ -76,7 +76,7 @@ namespace Neo4Net.Kernel.ha.transaction
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static Configuration from(final org.Neo4Net.kernel.configuration.Config config)
+//ORIGINAL LINE: public static Configuration from(final Neo4Net.kernel.configuration.Config config)
 		 public static Configuration From( Config config )
 		 {
 			  return new ConfigurationAnonymousInnerClass( config );
@@ -130,7 +130,7 @@ namespace Neo4Net.Kernel.ha.transaction
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static Configuration from(final org.Neo4Net.kernel.configuration.Config config, final org.Neo4Net.kernel.ha.com.master.SlavePriority slavePriority)
+//ORIGINAL LINE: public static Configuration from(final Neo4Net.kernel.configuration.Config config, final Neo4Net.kernel.ha.com.master.SlavePriority slavePriority)
 		 public static Configuration From( Config config, SlavePriority slavePriority )
 		 {
 			  return new ConfigurationAnonymousInnerClass2( config, slavePriority );
@@ -331,7 +331,7 @@ namespace Neo4Net.Kernel.ha.transaction
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private java.util.Iterator<org.Neo4Net.kernel.ha.com.master.Slave> filter(java.util.Iterator<org.Neo4Net.kernel.ha.com.master.Slave> slaves, final System.Nullable<int> externalAuthorServerId)
+//ORIGINAL LINE: private java.util.Iterator<Neo4Net.kernel.ha.com.master.Slave> filter(java.util.Iterator<Neo4Net.kernel.ha.com.master.Slave> slaves, final System.Nullable<int> externalAuthorServerId)
 		 private IEnumerator<Slave> Filter( IEnumerator<Slave> slaves, int? externalAuthorServerId )
 		 {
 			  return externalAuthorServerId == null ? slaves : new FilteringIterator<Slave>( slaves, item => item.ServerId != externalAuthorServerId );
@@ -406,7 +406,7 @@ namespace Neo4Net.Kernel.ha.transaction
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private java.util.concurrent.Callable<Void> slaveCommitter(final org.Neo4Net.kernel.ha.com.master.Slave slave, final long txId, final CompletionNotifier notifier)
+//ORIGINAL LINE: private java.util.concurrent.Callable<Void> slaveCommitter(final Neo4Net.kernel.ha.com.master.Slave slave, final long txId, final CompletionNotifier notifier)
 		 private Callable<Void> SlaveCommitter( Slave slave, long txId, CompletionNotifier notifier )
 		 {
 			  return () =>

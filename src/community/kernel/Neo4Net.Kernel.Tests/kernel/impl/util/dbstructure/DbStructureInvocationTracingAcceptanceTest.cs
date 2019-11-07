@@ -27,8 +27,8 @@ namespace Neo4Net.Kernel.impl.util.dbstructure
 
 
 	using Neo4Net.Collections.Helpers;
-	using ConstraintDescriptorFactory = Neo4Net.Kernel.api.schema.constraints.ConstraintDescriptorFactory;
-	using TestIndexDescriptorFactory = Neo4Net.Kernel.api.schema.index.TestIndexDescriptorFactory;
+	using ConstraintDescriptorFactory = Neo4Net.Kernel.Api.schema.constraints.ConstraintDescriptorFactory;
+	using TestIndexDescriptorFactory = Neo4Net.Kernel.Api.schema.index.TestIndexDescriptorFactory;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
@@ -57,7 +57,7 @@ namespace Neo4Net.Kernel.impl.util.dbstructure
 			_classNameWithPackage = _packageName + "." + _className;
 		}
 
-		 private readonly string _packageName = "org.Neo4Net.kernel.impl.util.data";
+		 private readonly string _packageName = "Neo4Net.kernel.impl.util.data";
 		 private readonly string _className = "XXYYZZData";
 		 private string _classNameWithPackage;
 
@@ -90,7 +90,7 @@ namespace Neo4Net.Kernel.impl.util.dbstructure
 			  ExerciseVisitor( from => tracer.NewProxy() );
 			  tracer.Close();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.helpers.collection.Visitable<DbStructureVisitor> visitable = compileVisitable(classNameWithPackage, output.toString());
+//ORIGINAL LINE: final Neo4Net.helpers.collection.Visitable<DbStructureVisitor> visitable = compileVisitable(classNameWithPackage, output.toString());
 			  Visitable<DbStructureVisitor> visitable = CompileVisitable( _classNameWithPackage, output.ToString() );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final DbStructureVisitor visitor = mock(DbStructureVisitor.class);
@@ -161,7 +161,7 @@ namespace Neo4Net.Kernel.impl.util.dbstructure
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private org.Neo4Net.helpers.collection.Visitable<DbStructureVisitor> compileVisitable(final String className, String inputSource)
+//ORIGINAL LINE: private Neo4Net.helpers.collection.Visitable<DbStructureVisitor> compileVisitable(final String className, String inputSource)
 		 private Visitable<DbStructureVisitor> CompileVisitable( string className, string inputSource )
 		 {
 			  return Compile(className, inputSource, (success, manager, diagnostics) =>

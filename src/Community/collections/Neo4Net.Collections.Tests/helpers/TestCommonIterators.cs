@@ -186,7 +186,7 @@ namespace Neo4Net.Collections.Helpers
 			  IList<object> list = new IList<object> { "a", "b", "c", "def" };
 
 			  Resource resource = mock( typeof( Resource ) );
-			  ResourceIterator<object> iterator = Iterators.ResourceIterator( list.GetEnumerator(), resource );
+			  IResourceIterator<object> iterator = Iterators.ResourceIterator( list.GetEnumerator(), resource );
 
 			  using ( Stream<object> stream = Iterators.Stream( iterator ) )
 			  {
@@ -230,7 +230,7 @@ namespace Neo4Net.Collections.Helpers
 			  IList<object> list = new IList<object> { "a", "b", "c", "def" };
 
 			  Resource resource = mock( typeof( Resource ) );
-			  ResourceIterable<object> iterable = () => Iterators.ResourceIterator(list.GetEnumerator(), resource);
+			 IResourceIterable<object> iterable = () => Iterators.ResourceIterator(list.GetEnumerator(), resource);
 
 			  using ( Stream<object> stream = Iterables.Stream( iterable ) )
 			  {

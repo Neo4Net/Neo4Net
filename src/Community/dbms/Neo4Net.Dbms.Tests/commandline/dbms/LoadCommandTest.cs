@@ -70,16 +70,16 @@ namespace Neo4Net.Dbms.CommandLine
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verify;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.data_directory;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.data_directory;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.logical_logs_location;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.logical_logs_location;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @ExtendWith(TestDirectoryExtension.class) class LoadCommandTest
 	internal class LoadCommandTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.Neo4Net.test.rule.TestDirectory testDirectory;
+//ORIGINAL LINE: @Inject private Neo4Net.test.rule.TestDirectory testDirectory;
 		 private TestDirectory _testDirectory;
 		 private Path _homeDir;
 		 private Path _configDir;
@@ -97,7 +97,7 @@ namespace Neo4Net.Dbms.CommandLine
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void shouldLoadTheDatabaseFromTheArchive() throws org.Neo4Net.commandline.admin.CommandFailed, org.Neo4Net.commandline.admin.IncorrectUsage, java.io.IOException, org.Neo4Net.dbms.archive.IncorrectFormat
+//ORIGINAL LINE: @Test void shouldLoadTheDatabaseFromTheArchive() throws Neo4Net.commandline.admin.CommandFailed, Neo4Net.commandline.admin.IncorrectUsage, java.io.IOException, Neo4Net.dbms.archive.IncorrectFormat
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void ShouldLoadTheDatabaseFromTheArchive()
 		 {
@@ -106,7 +106,7 @@ namespace Neo4Net.Dbms.CommandLine
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void shouldCalculateTheDatabaseDirectoryFromConfig() throws java.io.IOException, org.Neo4Net.commandline.admin.CommandFailed, org.Neo4Net.commandline.admin.IncorrectUsage, org.Neo4Net.dbms.archive.IncorrectFormat
+//ORIGINAL LINE: @Test void shouldCalculateTheDatabaseDirectoryFromConfig() throws java.io.IOException, Neo4Net.commandline.admin.CommandFailed, Neo4Net.commandline.admin.IncorrectUsage, Neo4Net.dbms.archive.IncorrectFormat
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void ShouldCalculateTheDatabaseDirectoryFromConfig()
 		 {
@@ -134,7 +134,7 @@ namespace Neo4Net.Dbms.CommandLine
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test @DisabledOnOs(org.junit.jupiter.api.condition.OS.WINDOWS) void shouldHandleSymlinkToDatabaseDir() throws java.io.IOException, org.Neo4Net.commandline.admin.CommandFailed, org.Neo4Net.commandline.admin.IncorrectUsage, org.Neo4Net.dbms.archive.IncorrectFormat
+//ORIGINAL LINE: @Test @DisabledOnOs(org.junit.jupiter.api.condition.OS.WINDOWS) void shouldHandleSymlinkToDatabaseDir() throws java.io.IOException, Neo4Net.commandline.admin.CommandFailed, Neo4Net.commandline.admin.IncorrectUsage, Neo4Net.dbms.archive.IncorrectFormat
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void ShouldHandleSymlinkToDatabaseDir()
 		 {
@@ -156,7 +156,7 @@ namespace Neo4Net.Dbms.CommandLine
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void shouldMakeFromCanonical() throws java.io.IOException, org.Neo4Net.commandline.admin.CommandFailed, org.Neo4Net.commandline.admin.IncorrectUsage, org.Neo4Net.dbms.archive.IncorrectFormat
+//ORIGINAL LINE: @Test void shouldMakeFromCanonical() throws java.io.IOException, Neo4Net.commandline.admin.CommandFailed, Neo4Net.commandline.admin.IncorrectUsage, Neo4Net.dbms.archive.IncorrectFormat
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void ShouldMakeFromCanonical()
 		 {
@@ -171,7 +171,7 @@ namespace Neo4Net.Dbms.CommandLine
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void shouldDeleteTheOldDatabaseIfForceArgumentIsProvided() throws org.Neo4Net.commandline.admin.CommandFailed, org.Neo4Net.commandline.admin.IncorrectUsage, java.io.IOException, org.Neo4Net.dbms.archive.IncorrectFormat
+//ORIGINAL LINE: @Test void shouldDeleteTheOldDatabaseIfForceArgumentIsProvided() throws Neo4Net.commandline.admin.CommandFailed, Neo4Net.commandline.admin.IncorrectUsage, java.io.IOException, Neo4Net.dbms.archive.IncorrectFormat
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void ShouldDeleteTheOldDatabaseIfForceArgumentIsProvided()
 		 {
@@ -188,7 +188,7 @@ namespace Neo4Net.Dbms.CommandLine
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void shouldNotDeleteTheOldDatabaseIfForceArgumentIsNotProvided() throws org.Neo4Net.commandline.admin.CommandFailed, org.Neo4Net.commandline.admin.IncorrectUsage, java.io.IOException, org.Neo4Net.dbms.archive.IncorrectFormat
+//ORIGINAL LINE: @Test void shouldNotDeleteTheOldDatabaseIfForceArgumentIsNotProvided() throws Neo4Net.commandline.admin.CommandFailed, Neo4Net.commandline.admin.IncorrectUsage, java.io.IOException, Neo4Net.dbms.archive.IncorrectFormat
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void ShouldNotDeleteTheOldDatabaseIfForceArgumentIsNotProvided()
 		 {
@@ -242,7 +242,7 @@ namespace Neo4Net.Dbms.CommandLine
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void shouldGiveAClearMessageIfTheArchiveDoesntExist() throws java.io.IOException, org.Neo4Net.dbms.archive.IncorrectFormat
+//ORIGINAL LINE: @Test void shouldGiveAClearMessageIfTheArchiveDoesntExist() throws java.io.IOException, Neo4Net.dbms.archive.IncorrectFormat
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void ShouldGiveAClearMessageIfTheArchiveDoesntExist()
 		 {
@@ -252,7 +252,7 @@ namespace Neo4Net.Dbms.CommandLine
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void shouldGiveAClearMessageIfTheDatabaseAlreadyExists() throws java.io.IOException, org.Neo4Net.dbms.archive.IncorrectFormat, org.Neo4Net.commandline.admin.IncorrectUsage
+//ORIGINAL LINE: @Test void shouldGiveAClearMessageIfTheDatabaseAlreadyExists() throws java.io.IOException, Neo4Net.dbms.archive.IncorrectFormat, Neo4Net.commandline.admin.IncorrectUsage
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void ShouldGiveAClearMessageIfTheDatabaseAlreadyExists()
 		 {
@@ -262,7 +262,7 @@ namespace Neo4Net.Dbms.CommandLine
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void shouldGiveAClearMessageIfTheDatabasesDirectoryIsNotWritable() throws java.io.IOException, org.Neo4Net.dbms.archive.IncorrectFormat
+//ORIGINAL LINE: @Test void shouldGiveAClearMessageIfTheDatabasesDirectoryIsNotWritable() throws java.io.IOException, Neo4Net.dbms.archive.IncorrectFormat
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void ShouldGiveAClearMessageIfTheDatabasesDirectoryIsNotWritable()
 		 {
@@ -272,7 +272,7 @@ namespace Neo4Net.Dbms.CommandLine
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void shouldWrapIOExceptionsCarefullyBecauseCriticalInformationIsOftenEncodedInTheirNameButMissingFromTheirMessage() throws java.io.IOException, org.Neo4Net.dbms.archive.IncorrectFormat
+//ORIGINAL LINE: @Test void shouldWrapIOExceptionsCarefullyBecauseCriticalInformationIsOftenEncodedInTheirNameButMissingFromTheirMessage() throws java.io.IOException, Neo4Net.dbms.archive.IncorrectFormat
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void ShouldWrapIOExceptionsCarefullyBecauseCriticalInformationIsOftenEncodedInTheirNameButMissingFromTheirMessage()
 		 {
@@ -282,7 +282,7 @@ namespace Neo4Net.Dbms.CommandLine
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void shouldThrowIfTheArchiveFormatIsInvalid() throws java.io.IOException, org.Neo4Net.dbms.archive.IncorrectFormat
+//ORIGINAL LINE: @Test void shouldThrowIfTheArchiveFormatIsInvalid() throws java.io.IOException, Neo4Net.dbms.archive.IncorrectFormat
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void ShouldThrowIfTheArchiveFormatIsInvalid()
 		 {
@@ -309,7 +309,7 @@ namespace Neo4Net.Dbms.CommandLine
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void execute(String database, String... otherArgs) throws org.Neo4Net.commandline.admin.IncorrectUsage, org.Neo4Net.commandline.admin.CommandFailed
+//ORIGINAL LINE: private void execute(String database, String... otherArgs) throws Neo4Net.commandline.admin.IncorrectUsage, Neo4Net.commandline.admin.CommandFailed
 		 private void Execute( string database, params string[] otherArgs )
 		 {
 			  ( new LoadCommand( _homeDir, _configDir, _loader ) ).execute( ArrayUtil.concat( new string[]{ "--database=" + database, "--from=" + _archive }, otherArgs ) );

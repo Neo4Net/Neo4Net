@@ -34,7 +34,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 	public class GetStoreIdResponseEncoder : MessageToByteEncoder<StoreId>
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected void encode(io.netty.channel.ChannelHandlerContext ctx, org.Neo4Net.causalclustering.identity.StoreId storeId, io.netty.buffer.ByteBuf out) throws Exception
+//ORIGINAL LINE: protected void encode(io.netty.channel.ChannelHandlerContext ctx, Neo4Net.causalclustering.identity.StoreId storeId, io.netty.buffer.ByteBuf out) throws Exception
 		 protected internal override void Encode( ChannelHandlerContext ctx, StoreId storeId, ByteBuf @out )
 		 {
 			  StoreIdMarshal.INSTANCE.marshal( storeId, new NetworkWritableChannel( @out ) );

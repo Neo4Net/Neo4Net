@@ -41,7 +41,7 @@ namespace Neo4Net.causalclustering.stresstests
 		 private static readonly Label _label = Label.label( "Label" );
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private final org.Neo4Net.causalclustering.discovery.Cluster<?> cluster;
+//ORIGINAL LINE: private final Neo4Net.causalclustering.discovery.Cluster<?> cluster;
 		 private readonly Cluster<object> _cluster;
 		 private readonly CappedLogger _txLogger;
 		 private readonly bool _enableIndexes;

@@ -30,7 +30,7 @@ namespace Neo4Net.Values
 		 Result Build();
 
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java static interface methods:
-//		 static <T> T build(final StructureBuilder<AnyValue, T> builder, org.Neo4Net.values.@virtual.MapValue map)
+//		 static <T> T build(final StructureBuilder<AnyValue, T> builder, Neo4Net.values.@virtual.MapValue map)
 	//	 {
 	//		  if (map.size() == 0)
 	//		  {

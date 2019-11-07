@@ -21,7 +21,7 @@ namespace Neo4Net.Io.pagecache.impl
 {
 
 	/// <summary>
-	/// Thrown when accessing a <seealso cref="org.Neo4Net.io.pagecache.PageCursor"/> of a <seealso cref="org.Neo4Net.io.pagecache.PagedFile"/> that
+	/// Thrown when accessing a <seealso cref="Neo4Net.io.pagecache.PageCursor"/> of a <seealso cref="Neo4Net.io.pagecache.PagedFile"/> that
 	/// has been closed.
 	/// </summary>
 	public class FileIsNotMappedException : IOException

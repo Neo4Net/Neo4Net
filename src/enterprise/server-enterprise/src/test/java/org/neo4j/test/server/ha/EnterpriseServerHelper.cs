@@ -33,14 +33,14 @@ namespace Neo4Net.Test.server.ha
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static org.Neo4Net.server.enterprise.OpenEnterpriseNeoServer createNonPersistentServer(java.io.File databaseDir) throws java.io.IOException
+//ORIGINAL LINE: public static Neo4Net.server.enterprise.OpenEnterpriseNeoServer createNonPersistentServer(java.io.File databaseDir) throws java.io.IOException
 		 public static OpenEnterpriseNeoServer CreateNonPersistentServer( File databaseDir )
 		 {
 			  return CreateServer( databaseDir, false );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static org.Neo4Net.server.enterprise.OpenEnterpriseNeoServer createServer(java.io.File databaseDir, boolean persistent) throws java.io.IOException
+//ORIGINAL LINE: private static Neo4Net.server.enterprise.OpenEnterpriseNeoServer createServer(java.io.File databaseDir, boolean persistent) throws java.io.IOException
 		 private static OpenEnterpriseNeoServer CreateServer( File databaseDir, bool persistent )
 		 {
 			  EnterpriseServerBuilder builder = EnterpriseServerBuilder.serverOnRandomPorts().usingDataDir(databaseDir.AbsolutePath);

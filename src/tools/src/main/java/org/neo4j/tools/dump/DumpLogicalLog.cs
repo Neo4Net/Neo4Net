@@ -45,7 +45,7 @@ namespace Neo4Net.tools.dump
 	using ReportInconsistencies = Neo4Net.tools.dump.inconsistency.ReportInconsistencies;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.Format.DEFAULT_TIME_ZONE;
+//	import static Neo4Net.helpers.Format.DEFAULT_TIME_ZONE;
 
 	/// <summary>
 	/// Tool to represent logical logs in readable format for further analysis.
@@ -65,7 +65,7 @@ namespace Neo4Net.tools.dump
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void dump(String filenameOrDirectory, java.io.PrintStream out, System.Predicate<org.Neo4Net.kernel.impl.transaction.log.entry.LogEntry[]> filter, System.Func<org.Neo4Net.kernel.impl.transaction.log.entry.LogEntry,String> serializer, org.Neo4Net.kernel.impl.transaction.log.entry.InvalidLogEntryHandler invalidLogEntryHandler) throws java.io.IOException
+//ORIGINAL LINE: public void dump(String filenameOrDirectory, java.io.PrintStream out, System.Predicate<Neo4Net.kernel.impl.transaction.log.entry.LogEntry[]> filter, System.Func<Neo4Net.kernel.impl.transaction.log.entry.LogEntry,String> serializer, Neo4Net.kernel.impl.transaction.log.entry.InvalidLogEntryHandler invalidLogEntryHandler) throws java.io.IOException
 		 public virtual void Dump( string filenameOrDirectory, PrintStream @out, System.Predicate<LogEntry[]> filter, System.Func<LogEntry, string> serializer, InvalidLogEntryHandler invalidLogEntryHandler )
 		 {
 			  TransactionLogAnalyzer.Analyze( _fileSystem, new File( filenameOrDirectory ), invalidLogEntryHandler, new MonitorAnonymousInnerClass( this, @out, filter, serializer ) );
@@ -261,7 +261,7 @@ namespace Neo4Net.tools.dump
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private static System.Func<org.Neo4Net.kernel.impl.transaction.log.entry.LogEntry,String> parseSerializer(System.Predicate<org.Neo4Net.kernel.impl.transaction.log.entry.LogEntry[]> filter, java.util.TimeZone timeZone)
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private static System.Func<Neo4Net.kernel.impl.transaction.log.entry.LogEntry,String> parseSerializer(System.Predicate<Neo4Net.kernel.impl.transaction.log.entry.LogEntry[]> filter, java.util.TimeZone timeZone)
 		 private static System.Func<LogEntry, string> ParseSerializer( System.Predicate<LogEntry[]> filter, TimeZone timeZone )
 		 {
 			  if ( filter is System.Func )
@@ -272,7 +272,7 @@ namespace Neo4Net.tools.dump
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static System.Predicate<org.Neo4Net.kernel.impl.transaction.log.entry.LogEntry[]> parseFilter(org.Neo4Net.helpers.Args arguments, java.util.TimeZone timeZone) throws java.io.IOException
+//ORIGINAL LINE: private static System.Predicate<Neo4Net.kernel.impl.transaction.log.entry.LogEntry[]> parseFilter(Neo4Net.helpers.Args arguments, java.util.TimeZone timeZone) throws java.io.IOException
 		 private static System.Predicate<LogEntry[]> ParseFilter( Args arguments, TimeZone timeZone )
 		 {
 			  string regex = arguments.Get( TX_FILTER );

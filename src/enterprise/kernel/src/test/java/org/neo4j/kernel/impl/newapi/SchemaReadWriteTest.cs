@@ -25,10 +25,10 @@ namespace Neo4Net.Kernel.Impl.Newapi
 	using Neo4Net.Kernel.Api.Internal;
 	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.LabelSchemaDescriptor;
 	using RelationTypeSchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.RelationTypeSchemaDescriptor;
-	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
+	using SchemaDescriptorFactory = Neo4Net.Kernel.Api.schema.SchemaDescriptorFactory;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forRelType;
+//	import static Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forRelType;
 
 	public class SchemaReadWriteTest : SchemaReadWriteTestBase<EnterpriseWriteTestSupport>
 	{

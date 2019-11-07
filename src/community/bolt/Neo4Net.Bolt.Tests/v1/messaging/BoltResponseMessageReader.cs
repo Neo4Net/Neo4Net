@@ -35,7 +35,7 @@ namespace Neo4Net.Bolt.v1.messaging
 	using MapValue = Neo4Net.Values.@virtual.MapValue;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.runtime.spi.Records.record;
+//	import static Neo4Net.bolt.v1.runtime.spi.Records.record;
 
 	public class BoltResponseMessageReader
 	{
@@ -47,7 +47,7 @@ namespace Neo4Net.Bolt.v1.messaging
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void read(org.Neo4Net.bolt.messaging.BoltResponseMessageWriter messageWriter) throws java.io.IOException
+//ORIGINAL LINE: public void read(Neo4Net.bolt.messaging.BoltResponseMessageWriter messageWriter) throws java.io.IOException
 		 public virtual void Read( BoltResponseMessageWriter messageWriter )
 		 {
 			  try
@@ -68,7 +68,7 @@ namespace Neo4Net.Bolt.v1.messaging
 						 case Neo4Net.Bolt.v1.messaging.BoltResponseMessage.InnerEnum.RECORD:
 							  long length = _unpacker.unpackListHeader();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.values.AnyValue[] fields = new org.Neo4Net.values.AnyValue[(int) length];
+//ORIGINAL LINE: final Neo4Net.values.AnyValue[] fields = new Neo4Net.values.AnyValue[(int) length];
 							  AnyValue[] fields = new AnyValue[( int ) length];
 							  for ( int i = 0; i < length; i++ )
 							  {

@@ -27,7 +27,7 @@ namespace Neo4Net.Index.lucene
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.apache.lucene.search.NumericRangeQuery.newLongRange;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.lucene.ValueContext.numeric;
+//	import static Neo4Net.index.lucene.ValueContext.numeric;
 
 	using Sort = org.apache.lucene.search.Sort;
 	using SortField = org.apache.lucene.search.SortField;

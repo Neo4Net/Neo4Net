@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.impl.util.collection
 	using IMemoryAllocationTracker = Neo4Net.Memory.IMemoryAllocationTracker;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.util.Preconditions.requirePositive;
+//	import static Neo4Net.util.Preconditions.requirePositive;
 
 	public class CapacityLimitingBlockAllocatorDecorator : OffHeapBlockAllocator
 	{

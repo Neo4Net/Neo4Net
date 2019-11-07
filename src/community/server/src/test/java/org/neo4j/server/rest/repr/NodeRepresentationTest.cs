@@ -31,15 +31,15 @@ namespace Neo4Net.Server.rest.repr
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.repr.RepresentationTestAccess.serialize;
+//	import static Neo4Net.server.rest.repr.RepresentationTestAccess.serialize;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.repr.RepresentationTestBase.assertUriMatches;
+//	import static Neo4Net.server.rest.repr.RepresentationTestBase.assertUriMatches;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.repr.RepresentationTestBase.uriPattern;
+//	import static Neo4Net.server.rest.repr.RepresentationTestBase.uriPattern;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.mockito.mock.GraphMock.node;
+//	import static Neo4Net.test.mockito.mock.GraphMock.node;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.mockito.mock.Properties.properties;
+//	import static Neo4Net.test.mockito.mock.Properties.properties;
 
 	public class NodeRepresentationTest
 	{

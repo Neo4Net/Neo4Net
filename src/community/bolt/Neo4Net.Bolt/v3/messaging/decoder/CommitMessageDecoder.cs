@@ -27,7 +27,7 @@ namespace Neo4Net.Bolt.v3.messaging.decoder
 	using CommitMessage = Neo4Net.Bolt.v3.messaging.request.CommitMessage;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v3.messaging.request.CommitMessage.COMMIT_MESSAGE;
+//	import static Neo4Net.bolt.v3.messaging.request.CommitMessage.COMMIT_MESSAGE;
 
 	public class CommitMessageDecoder : RequestMessageDecoder
 	{
@@ -49,7 +49,7 @@ namespace Neo4Net.Bolt.v3.messaging.decoder
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.bolt.messaging.RequestMessage decode(org.Neo4Net.bolt.messaging.Neo4NetPack_Unpacker unpacker) throws java.io.IOException
+//ORIGINAL LINE: public Neo4Net.bolt.messaging.RequestMessage decode(Neo4Net.bolt.messaging.Neo4NetPack_Unpacker unpacker) throws java.io.IOException
 		 public override RequestMessage Decode( Neo4Net.Bolt.messaging.Neo4NetPack_Unpacker unpacker )
 		 {
 			  return COMMIT_MESSAGE;

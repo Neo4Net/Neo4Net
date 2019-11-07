@@ -33,7 +33,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 // long2Array (zoneId)
 		 // long3Array (zoneOffsetSeconds)
 
-		 internal ZonedDateTimeArrayType( sbyte typeId ) : base( ValueGroup.ZONED_DATE_TIME_ARRAY, typeId, ( o1, o2, i ) -> ZonedDateTimeType.Compare( o1.long0Array[i], o1.long1Array[i], o1.long2Array[i], o1.long3Array[i], o2.long0Array[i], o2.long1Array[i], o2.long2Array[i], o2.long3Array[i] ), ( k, i ) -> ZonedDateTimeType.AsValueRaw( k.long0Array[i], k.long1Array[i], k.long2Array[i], k.long3Array[i] ), ( c, k, i ) -> ZonedDateTimeType.put( c, k.long0Array[i], k.long1Array[i], k.long2Array[i], k.long3Array[i] ), ZonedDateTimeType.read, ZonedDateTime[]::new, org.Neo4Net.values.storable.ValueWriter_ArrayType.ZonedDateTime )
+		 internal ZonedDateTimeArrayType( sbyte typeId ) : base( ValueGroup.ZONED_DATE_TIME_ARRAY, typeId, ( o1, o2, i ) -> ZonedDateTimeType.Compare( o1.long0Array[i], o1.long1Array[i], o1.long2Array[i], o1.long3Array[i], o2.long0Array[i], o2.long1Array[i], o2.long2Array[i], o2.long3Array[i] ), ( k, i ) -> ZonedDateTimeType.AsValueRaw( k.long0Array[i], k.long1Array[i], k.long2Array[i], k.long3Array[i] ), ( c, k, i ) -> ZonedDateTimeType.put( c, k.long0Array[i], k.long1Array[i], k.long2Array[i], k.long3Array[i] ), ZonedDateTimeType.read, ZonedDateTime[]::new, Neo4Net.values.storable.ValueWriter_ArrayType.ZonedDateTime )
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Method reference constructor syntax is not converted by Java to C# Converter:
 		 }

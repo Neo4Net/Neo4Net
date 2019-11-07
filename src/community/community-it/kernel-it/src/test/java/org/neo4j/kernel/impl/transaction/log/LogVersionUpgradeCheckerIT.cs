@@ -43,9 +43,9 @@ namespace Neo4Net.Kernel.impl.transaction.log
 	using DefaultFileSystemRule = Neo4Net.Test.rule.fs.DefaultFileSystemRule;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.Label.label;
+//	import static Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.entry.LogEntryByteCodes.CHECK_POINT;
+//	import static Neo4Net.kernel.impl.transaction.log.entry.LogEntryByteCodes.CHECK_POINT;
 
 	public class LogVersionUpgradeCheckerIT
 	{
@@ -85,7 +85,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 
 			  // Try to start with upgrading disabled
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.graphdb.GraphDatabaseService db = new org.Neo4Net.test.TestGraphDatabaseFactory().setFileSystem(fs.get()).newImpermanentDatabaseBuilder(storeDirectory.databaseDir()).setConfig(org.Neo4Net.graphdb.factory.GraphDatabaseSettings.allow_upgrade, "false").newGraphDatabase();
+//ORIGINAL LINE: final Neo4Net.graphdb.GraphDatabaseService db = new Neo4Net.test.TestGraphDatabaseFactory().setFileSystem(fs.get()).newImpermanentDatabaseBuilder(storeDirectory.databaseDir()).setConfig(Neo4Net.graphdb.factory.GraphDatabaseSettings.allow_upgrade, "false").newGraphDatabase();
 			  IGraphDatabaseService db = ( new TestGraphDatabaseFactory() ).setFileSystem(_fs.get()).newImpermanentDatabaseBuilder(_storeDirectory.databaseDir()).setConfig(GraphDatabaseSettings.allow_upgrade, "false").newGraphDatabase();
 			  Db.shutdown();
 		 }
@@ -101,7 +101,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 
 			  // Try to start with upgrading disabled
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.graphdb.GraphDatabaseService db = new org.Neo4Net.test.TestGraphDatabaseFactory().setFileSystem(fs.get()).newImpermanentDatabaseBuilder(storeDirectory.databaseDir()).setConfig(org.Neo4Net.graphdb.factory.GraphDatabaseSettings.allow_upgrade, "false").newGraphDatabase();
+//ORIGINAL LINE: final Neo4Net.graphdb.GraphDatabaseService db = new Neo4Net.test.TestGraphDatabaseFactory().setFileSystem(fs.get()).newImpermanentDatabaseBuilder(storeDirectory.databaseDir()).setConfig(Neo4Net.graphdb.factory.GraphDatabaseSettings.allow_upgrade, "false").newGraphDatabase();
 			  IGraphDatabaseService db = ( new TestGraphDatabaseFactory() ).setFileSystem(_fs.get()).newImpermanentDatabaseBuilder(_storeDirectory.databaseDir()).setConfig(GraphDatabaseSettings.allow_upgrade, "false").newGraphDatabase();
 			  Db.shutdown();
 		 }
@@ -115,7 +115,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 
 			  // Try to start with upgrading enabled
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.graphdb.GraphDatabaseService db = new org.Neo4Net.test.TestGraphDatabaseFactory().setFileSystem(fs.get()).newImpermanentDatabaseBuilder(storeDirectory.databaseDir()).setConfig(org.Neo4Net.graphdb.factory.GraphDatabaseSettings.allow_upgrade, "true").newGraphDatabase();
+//ORIGINAL LINE: final Neo4Net.graphdb.GraphDatabaseService db = new Neo4Net.test.TestGraphDatabaseFactory().setFileSystem(fs.get()).newImpermanentDatabaseBuilder(storeDirectory.databaseDir()).setConfig(Neo4Net.graphdb.factory.GraphDatabaseSettings.allow_upgrade, "true").newGraphDatabase();
 			  IGraphDatabaseService db = ( new TestGraphDatabaseFactory() ).setFileSystem(_fs.get()).newImpermanentDatabaseBuilder(_storeDirectory.databaseDir()).setConfig(GraphDatabaseSettings.allow_upgrade, "true").newGraphDatabase();
 			  Db.shutdown();
 		 }
@@ -123,7 +123,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 		 private void CreateGraphDbAndKillIt()
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.graphdb.GraphDatabaseService db = new org.Neo4Net.test.TestGraphDatabaseFactory().setFileSystem(fs).newImpermanentDatabaseBuilder(storeDirectory.databaseDir()).newGraphDatabase();
+//ORIGINAL LINE: final Neo4Net.graphdb.GraphDatabaseService db = new Neo4Net.test.TestGraphDatabaseFactory().setFileSystem(fs).newImpermanentDatabaseBuilder(storeDirectory.databaseDir()).newGraphDatabase();
 			  IGraphDatabaseService db = ( new TestGraphDatabaseFactory() ).setFileSystem(_fs).newImpermanentDatabaseBuilder(_storeDirectory.databaseDir()).newGraphDatabase();
 
 			  using ( Transaction tx = Db.beginTx() )
@@ -137,7 +137,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void createStoreWithLogEntryVersion(org.Neo4Net.kernel.impl.transaction.log.entry.LogEntryVersion logEntryVersion) throws Exception
+//ORIGINAL LINE: private void createStoreWithLogEntryVersion(Neo4Net.kernel.impl.transaction.log.entry.LogEntryVersion logEntryVersion) throws Exception
 		 private void CreateStoreWithLogEntryVersion( LogEntryVersion logEntryVersion )
 		 {
 			  CreateGraphDbAndKillIt();
@@ -145,7 +145,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void appendCheckpoint(org.Neo4Net.kernel.impl.transaction.log.entry.LogEntryVersion logVersion) throws java.io.IOException
+//ORIGINAL LINE: private void appendCheckpoint(Neo4Net.kernel.impl.transaction.log.entry.LogEntryVersion logVersion) throws java.io.IOException
 		 private void AppendCheckpoint( LogEntryVersion logVersion )
 		 {
 			  PageCache pageCache = _pageCacheRule.getPageCache( _fs );

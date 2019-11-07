@@ -37,9 +37,9 @@ namespace Neo4Net.causalclustering.catchup.tx
 	using StorageEngine = Neo4Net.Kernel.Api.StorageEngine.StorageEngine;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.tracing.CommitEvent.NULL;
+//	import static Neo4Net.kernel.impl.transaction.tracing.CommitEvent.NULL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode.EXTERNAL;
+//	import static Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode.EXTERNAL;
 
 	/// <summary>
 	/// Receives and unpacks <seealso cref="Response responses"/>.
@@ -62,7 +62,7 @@ namespace Neo4Net.causalclustering.catchup.tx
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void appendToLogAndApplyToStore(org.Neo4Net.kernel.impl.transaction.CommittedTransactionRepresentation tx) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
+//ORIGINAL LINE: public void appendToLogAndApplyToStore(Neo4Net.kernel.impl.transaction.CommittedTransactionRepresentation tx) throws Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 public virtual void AppendToLogAndApplyToStore( CommittedTransactionRepresentation tx )
 		 {
 			  _commitProcess.commit( new TransactionToApply( tx.TransactionRepresentation, tx.CommitEntry.TxId, _versionContextSupplier.VersionContext ), NULL, EXTERNAL );

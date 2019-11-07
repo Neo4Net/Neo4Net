@@ -35,13 +35,13 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 	using StorageRelationshipGroupCursor = Neo4Net.Kernel.Api.StorageEngine.StorageRelationshipGroupCursor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.newapi.References.clearEncoding;
+//	import static Neo4Net.kernel.impl.newapi.References.clearEncoding;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.newapi.RelationshipReferenceEncoding.encodeForFiltering;
+//	import static Neo4Net.kernel.impl.newapi.RelationshipReferenceEncoding.encodeForFiltering;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.newapi.RelationshipReferenceEncoding.encodeForTxStateFiltering;
+//	import static Neo4Net.kernel.impl.newapi.RelationshipReferenceEncoding.encodeForTxStateFiltering;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.storageengine.impl.recordstorage.GroupReferenceEncoding.isRelationship;
+//	import static Neo4Net.kernel.impl.storageengine.impl.recordstorage.GroupReferenceEncoding.isRelationship;
 
 	internal class RecordRelationshipGroupCursor : RelationshipGroupRecord, StorageRelationshipGroupCursor
 	{
@@ -424,7 +424,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 		 {
 			  // We need to load forcefully here since otherwise we cannot traverse over groups
 			  // records which have been concurrently deleted (flagged as inUse = false).
-			  // @see #org.Neo4Net.kernel.impl.store.RelationshipChainPointerChasingTest
+			  // @see #Neo4Net.kernel.impl.store.RelationshipChainPointerChasingTest
 			  _groupStore.getRecordByCursor( reference, record, RecordLoad.FORCE, page );
 		 }
 	}

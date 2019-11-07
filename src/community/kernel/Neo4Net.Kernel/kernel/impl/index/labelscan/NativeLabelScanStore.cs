@@ -39,18 +39,18 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 	using IOLimiter = Neo4Net.Io.pagecache.IOLimiter;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
 	using PageCursor = Neo4Net.Io.pagecache.PageCursor;
-	using AllEntriesLabelScanReader = Neo4Net.Kernel.api.labelscan.AllEntriesLabelScanReader;
-	using LabelScanStore = Neo4Net.Kernel.api.labelscan.LabelScanStore;
-	using LabelScanWriter = Neo4Net.Kernel.api.labelscan.LabelScanWriter;
+	using AllEntriesLabelScanReader = Neo4Net.Kernel.Api.LabelScan.AllEntriesLabelScanReader;
+	using LabelScanStore = Neo4Net.Kernel.Api.LabelScan.LabelScanStore;
+	using LabelScanWriter = Neo4Net.Kernel.Api.LabelScan.LabelScanWriter;
 	using ReporterFactory = Neo4Net.Kernel.Impl.Annotations.ReporterFactory;
 	using FullStoreChangeStream = Neo4Net.Kernel.Impl.Api.scan.FullStoreChangeStream;
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
 	using LabelScanReader = Neo4Net.Kernel.Api.StorageEngine.schema.LabelScanReader;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.asResourceIterator;
+//	import static Neo4Net.helpers.collection.Iterators.asResourceIterator;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.iterator;
+//	import static Neo4Net.helpers.collection.Iterators.iterator;
 
 	/// <summary>
 	/// <seealso cref="LabelScanStore"/> which is implemented using <seealso cref="GBPTree"/> atop a <seealso cref="PageCache"/>.
@@ -97,7 +97,7 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 		 /// <summary>
 		 /// Monitoring internal events.
 		 /// </summary>
-		 private readonly Neo4Net.Kernel.api.labelscan.LabelScanStore_Monitor _monitor;
+		 private readonly Neo4Net.Kernel.Api.LabelScan.LabelScanStore_Monitor _monitor;
 
 		 /// <summary>
 		 /// Monitors used to pass down monitor to underlying <seealso cref="GBPTree"/>
@@ -195,7 +195,7 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 			  this._storeFile = GetLabelScanStoreFile( directoryStructure );
 			  this._readOnly = readOnly;
 			  this._monitors = monitors;
-			  this._monitor = monitors.NewMonitor( typeof( Neo4Net.Kernel.api.labelscan.LabelScanStore_Monitor ) );
+			  this._monitor = monitors.NewMonitor( typeof( Neo4Net.Kernel.Api.LabelScan.LabelScanStore_Monitor ) );
 			  this._recoveryCleanupWorkCollector = recoveryCleanupWorkCollector;
 			  this._fileSystem = fs;
 		 }
@@ -288,7 +288,7 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 		 }
 
 		 /// <returns> store files, namely the single "neostore.labelscanstore.db" store file. </returns>
-		 public override ResourceIterator<File> SnapshotStoreFiles()
+		 public override IResourceIterator<File> SnapshotStoreFiles()
 		 {
 			  return asResourceIterator( iterator( _storeFile ) );
 		 }

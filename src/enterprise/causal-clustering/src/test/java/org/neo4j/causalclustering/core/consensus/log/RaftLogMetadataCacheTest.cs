@@ -63,7 +63,7 @@ namespace Neo4Net.causalclustering.core.consensus.log
 			  const long index = 12L;
 			  const long term = 12L;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.transaction.log.LogPosition position = new org.Neo4Net.kernel.impl.transaction.log.LogPosition(3, 4);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.transaction.log.LogPosition position = new Neo4Net.kernel.impl.transaction.log.LogPosition(3, 4);
 			  LogPosition position = new LogPosition( 3, 4 );
 
 			  // when
@@ -87,7 +87,7 @@ namespace Neo4Net.causalclustering.core.consensus.log
 			  const long index = 12L;
 			  const long term = 12L;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.transaction.log.LogPosition position = new org.Neo4Net.kernel.impl.transaction.log.LogPosition(3, 4);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.transaction.log.LogPosition position = new Neo4Net.kernel.impl.transaction.log.LogPosition(3, 4);
 			  LogPosition position = new LogPosition( 3, 4 );
 
 			  // when

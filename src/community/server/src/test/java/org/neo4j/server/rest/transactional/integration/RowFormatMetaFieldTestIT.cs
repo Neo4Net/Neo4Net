@@ -34,17 +34,17 @@ namespace Neo4Net.Server.rest.transactional.integration
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.transactional.integration.TransactionMatchers.containsNoErrors;
+//	import static Neo4Net.server.rest.transactional.integration.TransactionMatchers.containsNoErrors;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.transactional.integration.TransactionMatchers.matches;
+//	import static Neo4Net.server.rest.transactional.integration.TransactionMatchers.matches;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.transactional.integration.TransactionMatchers.rowContainsAMetaListAtIndex;
+//	import static Neo4Net.server.rest.transactional.integration.TransactionMatchers.rowContainsAMetaListAtIndex;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.transactional.integration.TransactionMatchers.rowContainsMetaNodesAtIndex;
+//	import static Neo4Net.server.rest.transactional.integration.TransactionMatchers.rowContainsMetaNodesAtIndex;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.transactional.integration.TransactionMatchers.rowContainsMetaRelsAtIndex;
+//	import static Neo4Net.server.rest.transactional.integration.TransactionMatchers.rowContainsMetaRelsAtIndex;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.server.HTTP.RawPayload.quotedJson;
+//	import static Neo4Net.test.server.HTTP.RawPayload.quotedJson;
 
 	public class RowFormatMetaFieldTestIT : AbstractRestFunctionalTestBase
 	{

@@ -35,9 +35,9 @@ namespace Neo4Net.Server.Security.Auth
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using EphemeralFileSystemAbstraction = Neo4Net.GraphDb.mockfs.EphemeralFileSystemAbstraction;
 	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
 	using InvalidArgumentsException = Neo4Net.Kernel.Api.Exceptions.InvalidArgumentsException;
-	using InvalidAuthTokenException = Neo4Net.Kernel.api.security.exception.InvalidAuthTokenException;
+	using InvalidAuthTokenException = Neo4Net.Kernel.Api.security.exception.InvalidAuthTokenException;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
 	using UTF8 = Neo4Net.Strings.UTF8;
 	using TestGraphDatabaseBuilder = Neo4Net.Test.TestGraphDatabaseBuilder;
@@ -58,11 +58,11 @@ namespace Neo4Net.Server.Security.Auth
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.map;
+//	import static Neo4Net.helpers.collection.MapUtil.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.security.AuthenticationResult.PASSWORD_CHANGE_REQUIRED;
+//	import static Neo4Net.Kernel.Api.Internal.security.AuthenticationResult.PASSWORD_CHANGE_REQUIRED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.security.AuthToken.newBasicAuthToken;
+//	import static Neo4Net.kernel.api.security.AuthToken.newBasicAuthToken;
 
 	public class AuthProceduresIT
 	{
@@ -74,7 +74,7 @@ namespace Neo4Net.Server.Security.Auth
 		 private LoginContext _admin;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Before public void setup() throws org.Neo4Net.kernel.api.security.exception.InvalidAuthTokenException, java.io.IOException
+//ORIGINAL LINE: @Before public void setup() throws Neo4Net.kernel.api.security.exception.InvalidAuthTokenException, java.io.IOException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void Setup()
 		 {
@@ -279,12 +279,12 @@ namespace Neo4Net.Server.Security.Auth
 		 //---------- utility -----------
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.graphdb.GraphDatabaseService createGraphDatabase(org.Neo4Net.graphdb.mockfs.EphemeralFileSystemAbstraction fs) throws java.io.IOException
+//ORIGINAL LINE: private Neo4Net.graphdb.GraphDatabaseService createGraphDatabase(Neo4Net.graphdb.mockfs.EphemeralFileSystemAbstraction fs) throws java.io.IOException
 		 private IGraphDatabaseService CreateGraphDatabase( EphemeralFileSystemAbstraction fs )
 		 {
 			  RemovePreviousAuthFile();
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Map<org.Neo4Net.graphdb.config.Setting<?>, String> settings = new java.util.HashMap<>();
+//ORIGINAL LINE: java.util.Map<Neo4Net.graphdb.config.Setting<?>, String> settings = new java.util.HashMap<>();
 			  IDictionary<Setting<object>, string> settings = new Dictionary<Setting<object>, string>();
 			  settings[GraphDatabaseSettings.auth_enabled] = "true";
 
@@ -305,7 +305,7 @@ namespace Neo4Net.Server.Security.Auth
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.Kernel.Api.Internal.security.LoginContext login(String username, String password) throws org.Neo4Net.kernel.api.security.exception.InvalidAuthTokenException
+//ORIGINAL LINE: private Neo4Net.Kernel.Api.Internal.security.LoginContext login(String username, String password) throws Neo4Net.kernel.api.security.exception.InvalidAuthTokenException
 		 private LoginContext Login( string username, string password )
 		 {
 			  return _authManager.login( newBasicAuthToken( username, password ) );
@@ -349,17 +349,17 @@ namespace Neo4Net.Server.Security.Auth
 			  }
 		 }
 
-		 private IList<object> GetObjectsAsList( ResourceIterator<IDictionary<string, object>> r, string key )
+		 private IList<object> GetObjectsAsList( IResourceIterator<IDictionary<string, object>> r, string key )
 		 {
 			  return r.Select( s => s.get( key ) ).ToList();
 		 }
 
-		 private void AssertKeyIs( ResourceIterator<IDictionary<string, object>> r, string key, params string[] items )
+		 private void AssertKeyIs( IResourceIterator<IDictionary<string, object>> r, string key, params string[] items )
 		 {
 			  AssertKeyIsArray( r, key, items );
 		 }
 
-		 private void AssertKeyIsArray( ResourceIterator<IDictionary<string, object>> r, string key, string[] items )
+		 private void AssertKeyIsArray( IResourceIterator<IDictionary<string, object>> r, string key, string[] items )
 		 {
 			  IList<object> results = GetObjectsAsList( r, key );
 			  assertEquals( Arrays.asList( items ).size(), results.Count );
@@ -378,8 +378,8 @@ namespace Neo4Net.Server.Security.Auth
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") public static void assertKeyIsMap(org.Neo4Net.graphdb.ResourceIterator<java.util.Map<String,Object>> r, String keyKey, String valueKey, java.util.Map<String,Object> expected)
-		 public static void AssertKeyIsMap( ResourceIterator<IDictionary<string, object>> r, string keyKey, string valueKey, IDictionary<string, object> expected )
+//ORIGINAL LINE: @SuppressWarnings("unchecked") public static void assertKeyIsMap(Neo4Net.graphdb.ResourceIterator<java.util.Map<String,Object>> r, String keyKey, String valueKey, java.util.Map<String,Object> expected)
+		 public static void AssertKeyIsMap( IResourceIterator<IDictionary<string, object>> r, string keyKey, string valueKey, IDictionary<string, object> expected )
 		 {
 			  IList<IDictionary<string, object>> result = r.ToList();
 

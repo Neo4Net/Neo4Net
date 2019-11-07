@@ -37,7 +37,7 @@ namespace Neo4Net.Kernel.impl.coreapi.schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static String[] getPropertyKeys(org.Neo4Net.Kernel.Api.Internal.TokenRead tokenRead, int...properties) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.PropertyKeyIdNotFoundKernelException
+//ORIGINAL LINE: public static String[] getPropertyKeys(Neo4Net.Kernel.Api.Internal.TokenRead tokenRead, int...properties) throws Neo4Net.Kernel.Api.Internal.Exceptions.PropertyKeyIdNotFoundKernelException
 		 public static string[] GetPropertyKeys( TokenRead tokenRead, params int[] properties )
 		 {
 			  string[] propertyKeys = new string[properties.Length];
@@ -70,7 +70,7 @@ namespace Neo4Net.Kernel.impl.coreapi.schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static int[] getOrCreatePropertyKeyIds(org.Neo4Net.Kernel.Api.Internal.TokenWrite tokenWrite, String... propertyKeys) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IllegalTokenNameException
+//ORIGINAL LINE: public static int[] getOrCreatePropertyKeyIds(Neo4Net.Kernel.Api.Internal.TokenWrite tokenWrite, String... propertyKeys) throws Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IllegalTokenNameException
 		 public static int[] GetOrCreatePropertyKeyIds( TokenWrite tokenWrite, params string[] propertyKeys )
 		 {
 			  int[] propertyKeyIds = new int[propertyKeys.Length];
@@ -79,7 +79,7 @@ namespace Neo4Net.Kernel.impl.coreapi.schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static int[] getOrCreatePropertyKeyIds(org.Neo4Net.Kernel.Api.Internal.TokenWrite tokenWrite, org.Neo4Net.GraphDb.Schema.IndexDefinition indexDefinition) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IllegalTokenNameException
+//ORIGINAL LINE: public static int[] getOrCreatePropertyKeyIds(Neo4Net.Kernel.Api.Internal.TokenWrite tokenWrite, Neo4Net.GraphDb.Schema.IndexDefinition indexDefinition) throws Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IllegalTokenNameException
 		 public static int[] GetOrCreatePropertyKeyIds( TokenWrite tokenWrite, IndexDefinition indexDefinition )
 		 {
 			  return GetOrCreatePropertyKeyIds( tokenWrite, GetPropertyKeysArrayOf( indexDefinition ) );

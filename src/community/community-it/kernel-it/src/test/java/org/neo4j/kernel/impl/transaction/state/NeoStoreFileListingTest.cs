@@ -31,7 +31,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Iterators = Neo4Net.Collections.Helpers.Iterators;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
-	using LabelScanStore = Neo4Net.Kernel.api.labelscan.LabelScanStore;
+	using LabelScanStore = Neo4Net.Kernel.Api.LabelScan.LabelScanStore;
 	using ExplicitIndexProvider = Neo4Net.Kernel.Impl.Api.ExplicitIndexProvider;
 	using IndexingService = Neo4Net.Kernel.Impl.Api.index.IndexingService;
 	using LogFiles = Neo4Net.Kernel.impl.transaction.log.files.LogFiles;
@@ -58,17 +58,17 @@ namespace Neo4Net.Kernel.impl.transaction.state
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.asResourceIterator;
+//	import static Neo4Net.helpers.collection.Iterators.asResourceIterator;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.IndexConfigStore.INDEX_DB_FILE_NAME;
+//	import static Neo4Net.kernel.impl.index.IndexConfigStore.INDEX_DB_FILE_NAME;
 
 	public class NeoStoreFileListingTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.EmbeddedDatabaseRule db = new org.Neo4Net.test.rule.EmbeddedDatabaseRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.EmbeddedDatabaseRule db = new Neo4Net.test.rule.EmbeddedDatabaseRule();
 		 public readonly EmbeddedDatabaseRule Db = new EmbeddedDatabaseRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.TestDirectory testDirectory = Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory TestDirectory = TestDirectory.testDirectory();
 
 		 private NeoStoreDataSource _neoStoreDataSource;
@@ -102,10 +102,10 @@ namespace Neo4Net.Kernel.impl.transaction.state
 			  StorageEngine storageEngine = mock( typeof( StorageEngine ) );
 			  NeoStoreFileListing fileListing = new NeoStoreFileListing( databaseLayout, logFiles, labelScanStore, indexingService, explicitIndexes, storageEngine );
 
-			  ResourceIterator<File> scanSnapshot = ScanStoreFilesAre( labelScanStore, new string[]{ "blah/scan.store", "scan.more" } );
-			  ResourceIterator<File> indexSnapshot = IndexFilesAre( indexingService, new string[]{ "schema/index/my.index" } );
+			  IResourceIterator<File> scanSnapshot = ScanStoreFilesAre( labelScanStore, new string[]{ "blah/scan.store", "scan.more" } );
+			  IResourceIterator<File> indexSnapshot = IndexFilesAre( indexingService, new string[]{ "schema/index/my.index" } );
 
-			  ResourceIterator<StoreFileMetadata> result = fileListing.Builder().excludeLogFiles().build();
+			  IResourceIterator<StoreFileMetadata> result = fileListing.Builder().excludeLogFiles().build();
 
 			  // When
 			  result.Close();
@@ -176,7 +176,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 			  ISet<File> expectedFiles = layout.StoreFiles();
 			  // there was no rotation
 			  expectedFiles.remove( layout.CountStoreB() );
-			  ResourceIterator<StoreFileMetadata> storeFiles = _neoStoreDataSource.listStoreFiles( false );
+			  IResourceIterator<StoreFileMetadata> storeFiles = _neoStoreDataSource.listStoreFiles( false );
 //JAVA TO C# CONVERTER TODO TASK: Method reference arbitrary object instance method syntax is not converted by Java to C# Converter:
 //JAVA TO C# CONVERTER TODO TASK: Most Java stream collectors are not converted by Java to C# Converter:
 			  ISet<File> listedStoreFiles = storeFiles.Select( StoreFileMetadata::file ).Where( file => !file.Name.Equals( INDEX_DB_FILE_NAME ) ).collect( Collectors.toSet() );
@@ -192,7 +192,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 			  MarkerFileProvider provider = new MarkerFileProvider();
 			  neoStoreFileListing.RegisterStoreFileProvider( provider );
 			  neoStoreFileListing.RegisterStoreFileProvider( provider );
-			  ResourceIterator<StoreFileMetadata> metadataResourceIterator = neoStoreFileListing.Builder().build();
+			  IResourceIterator<StoreFileMetadata> metadataResourceIterator = neoStoreFileListing.Builder().build();
 			  assertEquals( 1, metadataResourceIterator.Where( metadata => "marker".Equals( metadata.file().Name ) ).Count() );
 		 }
 
@@ -216,22 +216,22 @@ namespace Neo4Net.Kernel.impl.transaction.state
 			  when( databaseLayout.ListDatabaseFiles( any() ) ).thenReturn(Files.ToArray());
 		 }
 
-		 private static ResourceIterator<File> ScanStoreFilesAre( LabelScanStore labelScanStore, string[] fileNames )
+		 private static IResourceIterator<File> ScanStoreFilesAre( LabelScanStore labelScanStore, string[] fileNames )
 		 {
 			  List<File> files = new List<File>();
 			  MockFiles( fileNames, files, false );
-			  ResourceIterator<File> snapshot = spy( asResourceIterator( Files.GetEnumerator() ) );
+			  IResourceIterator<File> snapshot = spy( asResourceIterator( Files.GetEnumerator() ) );
 			  when( labelScanStore.SnapshotStoreFiles() ).thenReturn(snapshot);
 			  return snapshot;
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static org.Neo4Net.graphdb.ResourceIterator<java.io.File> indexFilesAre(org.Neo4Net.kernel.impl.api.index.IndexingService indexingService, String[] fileNames) throws java.io.IOException
-		 private static ResourceIterator<File> IndexFilesAre( IndexingService indexingService, string[] fileNames )
+//ORIGINAL LINE: private static Neo4Net.graphdb.ResourceIterator<java.io.File> indexFilesAre(Neo4Net.kernel.impl.api.index.IndexingService indexingService, String[] fileNames) throws java.io.IOException
+		 private static IResourceIterator<File> IndexFilesAre( IndexingService indexingService, string[] fileNames )
 		 {
 			  List<File> files = new List<File>();
 			  MockFiles( fileNames, files, false );
-			  ResourceIterator<File> snapshot = spy( asResourceIterator( Files.GetEnumerator() ) );
+			  IResourceIterator<File> snapshot = spy( asResourceIterator( Files.GetEnumerator() ) );
 			  when( indexingService.SnapshotIndexFiles() ).thenReturn(snapshot);
 			  return snapshot;
 		 }

@@ -85,8 +85,8 @@ namespace Neo4Net.Kernel.Api.Impl.Index.partition
 		 /// <returns> the iterator over index files. </returns>
 		 /// <exception cref="IOException"> if any IO operation fails. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.graphdb.ResourceIterator<java.io.File> snapshot() throws java.io.IOException
-		 public override ResourceIterator<File> Snapshot()
+//ORIGINAL LINE: public Neo4Net.graphdb.ResourceIterator<java.io.File> snapshot() throws java.io.IOException
+		 public override IResourceIterator<File> Snapshot()
 		 {
 			  return LuceneIndexSnapshots.forIndex( PartitionFolder, DirectoryConflict );
 		 }

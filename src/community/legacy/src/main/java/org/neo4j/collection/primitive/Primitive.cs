@@ -40,7 +40,7 @@ namespace Neo4Net.Collections.primitive
 	using IMemoryAllocationTracker = Neo4Net.Memory.IMemoryAllocationTracker;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.collection.primitive.hopscotch.HopScotchHashingAlgorithm.NO_MONITOR;
+//	import static Neo4Net.collection.primitive.hopscotch.HopScotchHashingAlgorithm.NO_MONITOR;
 
 	/// <summary>
 	/// Convenient factory for common primitive sets and maps.

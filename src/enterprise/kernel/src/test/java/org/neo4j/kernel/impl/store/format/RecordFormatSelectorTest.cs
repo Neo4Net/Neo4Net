@@ -74,21 +74,21 @@ namespace Neo4Net.Kernel.impl.store.format
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.MetaDataStore.Position.STORE_VERSION;
+//	import static Neo4Net.kernel.impl.store.MetaDataStore.Position.STORE_VERSION;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.format.RecordFormatSelector.defaultFormat;
+//	import static Neo4Net.kernel.impl.store.format.RecordFormatSelector.defaultFormat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.format.RecordFormatSelector.findSuccessor;
+//	import static Neo4Net.kernel.impl.store.format.RecordFormatSelector.findSuccessor;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.format.RecordFormatSelector.selectForConfig;
+//	import static Neo4Net.kernel.impl.store.format.RecordFormatSelector.selectForConfig;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.format.RecordFormatSelector.selectForStore;
+//	import static Neo4Net.kernel.impl.store.format.RecordFormatSelector.selectForStore;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.format.RecordFormatSelector.selectForStoreOrConfig;
+//	import static Neo4Net.kernel.impl.store.format.RecordFormatSelector.selectForStoreOrConfig;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.format.RecordFormatSelector.selectForVersion;
+//	import static Neo4Net.kernel.impl.store.format.RecordFormatSelector.selectForVersion;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.format.RecordFormatSelector.selectNewestFormat;
+//	import static Neo4Net.kernel.impl.store.format.RecordFormatSelector.selectNewestFormat;
 
 	public class RecordFormatSelectorTest
 	{
@@ -453,7 +453,7 @@ namespace Neo4Net.Kernel.impl.store.format
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void verifySelectForStore(org.Neo4Net.io.pagecache.PageCache pageCache, RecordFormats format) throws java.io.IOException
+//ORIGINAL LINE: private void verifySelectForStore(Neo4Net.io.pagecache.PageCache pageCache, RecordFormats format) throws java.io.IOException
 		 private void VerifySelectForStore( PageCache pageCache, RecordFormats format )
 		 {
 			  PrepareNeoStoreFile( format.StoreVersion(), pageCache );
@@ -461,7 +461,7 @@ namespace Neo4Net.Kernel.impl.store.format
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void prepareNeoStoreFile(String storeVersion, org.Neo4Net.io.pagecache.PageCache pageCache) throws java.io.IOException
+//ORIGINAL LINE: private void prepareNeoStoreFile(String storeVersion, Neo4Net.io.pagecache.PageCache pageCache) throws java.io.IOException
 		 private void PrepareNeoStoreFile( string storeVersion, PageCache pageCache )
 		 {
 			  File neoStoreFile = CreateNeoStoreFile();

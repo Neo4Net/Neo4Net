@@ -22,7 +22,7 @@ namespace Neo4Net.Kernel.Impl.Api
 	using Test = org.junit.Test;
 
 	using IndexOrder = Neo4Net.Kernel.Api.Internal.IndexOrder;
-	using TestIndexDescriptorFactory = Neo4Net.Kernel.api.schema.index.TestIndexDescriptorFactory;
+	using TestIndexDescriptorFactory = Neo4Net.Kernel.Api.schema.index.TestIndexDescriptorFactory;
 	using BridgingIndexProgressor = Neo4Net.Kernel.Impl.Api.schema.BridgingIndexProgressor;
 	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
 	using IndexProgressor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor;

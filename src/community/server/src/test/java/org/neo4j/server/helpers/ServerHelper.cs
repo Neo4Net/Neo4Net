@@ -42,7 +42,7 @@ namespace Neo4Net.Server.helpers
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static void cleanTheDatabase(final org.Neo4Net.server.NeoServer server)
+//ORIGINAL LINE: public static void cleanTheDatabase(final Neo4Net.server.NeoServer server)
 		 public static void CleanTheDatabase( NeoServer server )
 		 {
 			  if ( server == null )
@@ -77,14 +77,14 @@ namespace Neo4Net.Server.helpers
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static org.Neo4Net.server.NeoServer createNonPersistentServer() throws java.io.IOException
+//ORIGINAL LINE: public static Neo4Net.server.NeoServer createNonPersistentServer() throws java.io.IOException
 		 public static NeoServer CreateNonPersistentServer()
 		 {
 			  return CreateServer( CommunityServerBuilder.Server(), false, null );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static org.Neo4Net.server.NeoServer createReadOnlyServer(java.io.File path) throws java.io.IOException
+//ORIGINAL LINE: public static Neo4Net.server.NeoServer createReadOnlyServer(java.io.File path) throws java.io.IOException
 		 public static NeoServer CreateReadOnlyServer( File path )
 		 {
 			  // Start writable server to create all store files needed
@@ -97,21 +97,21 @@ namespace Neo4Net.Server.helpers
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static org.Neo4Net.server.NeoServer createNonPersistentServer(org.Neo4Net.logging.LogProvider logProvider) throws java.io.IOException
+//ORIGINAL LINE: public static Neo4Net.server.NeoServer createNonPersistentServer(Neo4Net.logging.LogProvider logProvider) throws java.io.IOException
 		 public static NeoServer CreateNonPersistentServer( LogProvider logProvider )
 		 {
 			  return CreateServer( CommunityServerBuilder.Server( logProvider ), false, null );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static org.Neo4Net.server.NeoServer createNonPersistentServer(CommunityServerBuilder builder) throws java.io.IOException
+//ORIGINAL LINE: public static Neo4Net.server.NeoServer createNonPersistentServer(CommunityServerBuilder builder) throws java.io.IOException
 		 public static NeoServer CreateNonPersistentServer( CommunityServerBuilder builder )
 		 {
 			  return CreateServer( builder, false, null );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static org.Neo4Net.server.NeoServer createServer(CommunityServerBuilder builder, boolean persistent, java.io.File path) throws java.io.IOException
+//ORIGINAL LINE: private static Neo4Net.server.NeoServer createServer(CommunityServerBuilder builder, boolean persistent, java.io.File path) throws java.io.IOException
 		 private static NeoServer CreateServer( CommunityServerBuilder builder, bool persistent, File path )
 		 {
 			  if ( persistent )

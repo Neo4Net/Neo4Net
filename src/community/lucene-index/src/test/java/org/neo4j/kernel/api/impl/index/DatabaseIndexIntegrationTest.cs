@@ -70,10 +70,10 @@ namespace Neo4Net.Kernel.Api.Impl.Index
 		 private static ExecutorService _workers;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.Neo4Net.test.rule.TestDirectory testDirectory;
+//ORIGINAL LINE: @Inject private Neo4Net.test.rule.TestDirectory testDirectory;
 		 private TestDirectory _testDirectory;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.Neo4Net.io.fs.DefaultFileSystemAbstraction fileSystem;
+//ORIGINAL LINE: @Inject private Neo4Net.io.fs.DefaultFileSystemAbstraction fileSystem;
 		 private DefaultFileSystemAbstraction _fileSystem;
 
 		 private readonly System.Threading.CountdownEvent _raceSignal = new System.Threading.CountdownEvent( 1 );
@@ -149,7 +149,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private WritableTestDatabaseIndex createTestLuceneIndex(org.Neo4Net.kernel.api.impl.index.storage.DirectoryFactory dirFactory, java.io.File folder) throws java.io.IOException
+//ORIGINAL LINE: private WritableTestDatabaseIndex createTestLuceneIndex(Neo4Net.kernel.api.impl.index.storage.DirectoryFactory dirFactory, java.io.File folder) throws java.io.IOException
 		 private WritableTestDatabaseIndex CreateTestLuceneIndex( DirectoryFactory dirFactory, File folder )
 		 {
 			  PartitionedIndexStorage indexStorage = new PartitionedIndexStorage( dirFactory, _fileSystem, folder );
@@ -265,14 +265,14 @@ namespace Neo4Net.Kernel.Api.Impl.Index
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected org.Neo4Net.Kernel.Api.StorageEngine.schema.AbstractIndexReader createSimpleReader(java.util.List<org.Neo4Net.kernel.api.impl.index.partition.AbstractIndexPartition> partitions) throws java.io.IOException
+//ORIGINAL LINE: protected Neo4Net.Kernel.Api.StorageEngine.schema.AbstractIndexReader createSimpleReader(java.util.List<Neo4Net.kernel.api.impl.index.partition.AbstractIndexPartition> partitions) throws java.io.IOException
 			  protected internal override AbstractIndexReader CreateSimpleReader( IList<AbstractIndexPartition> partitions )
 			  {
 					return null;
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected org.Neo4Net.Kernel.Api.StorageEngine.schema.AbstractIndexReader createPartitionedReader(java.util.List<org.Neo4Net.kernel.api.impl.index.partition.AbstractIndexPartition> partitions) throws java.io.IOException
+//ORIGINAL LINE: protected Neo4Net.Kernel.Api.StorageEngine.schema.AbstractIndexReader createPartitionedReader(java.util.List<Neo4Net.kernel.api.impl.index.partition.AbstractIndexPartition> partitions) throws java.io.IOException
 			  protected internal override AbstractIndexReader CreatePartitionedReader( IList<AbstractIndexPartition> partitions )
 			  {
 					return null;

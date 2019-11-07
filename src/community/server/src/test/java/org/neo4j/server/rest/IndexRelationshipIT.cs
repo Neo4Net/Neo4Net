@@ -47,7 +47,7 @@ namespace Neo4Net.Server.rest
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertNotNull;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.helpers.FunctionalTestHelper.CLIENT;
+//	import static Neo4Net.server.helpers.FunctionalTestHelper.CLIENT;
 
 	public class IndexRelationshipIT : AbstractRestFunctionalTestBase
 	{
@@ -70,15 +70,15 @@ namespace Neo4Net.Server.rest
 		 }
 
 		 /// <summary>
-		 /// POST ${org.Neo4Net.server.rest.web}/index/relationship {
+		 /// POST ${Neo4Net.server.rest.web}/index/relationship {
 		 /// "name":"index-name" "config":{ // optional map of index configuration
 		 /// params "key1":"value1", "key2":"value2" } }
 		 /// 
-		 /// POST ${org.Neo4Net.server.rest.web}/index/relationship/{indexName}/{key}/{
+		 /// POST ${Neo4Net.server.rest.web}/index/relationship/{indexName}/{key}/{
 		 /// value} "http://uri.for.node.to.index"
 		 /// </summary>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldCreateANamedRelationshipIndexAndAddToIt() throws org.Neo4Net.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @Test public void shouldCreateANamedRelationshipIndexAndAddToIt() throws Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldCreateANamedRelationshipIndexAndAddToIt()
 		 {
@@ -132,7 +132,7 @@ namespace Neo4Net.Server.rest
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldGet200AndArrayOfRelationshipRepsWhenGettingFromIndex() throws org.Neo4Net.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @Test public void shouldGet200AndArrayOfRelationshipRepsWhenGettingFromIndex() throws Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldGet200AndArrayOfRelationshipRepsWhenGettingFromIndex()
 		 {
@@ -167,7 +167,7 @@ namespace Neo4Net.Server.rest
 			  JaxRsResponse response = RestRequest.Req().get(_functionalTestHelper.indexRelationshipUri(indexName, key, value));
 			  assertEquals( 200, response.Status );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Collection<?> items = (java.util.Collection<?>) org.Neo4Net.server.rest.domain.JsonHelper.readJson(response.getEntity());
+//ORIGINAL LINE: java.util.Collection<?> items = (java.util.Collection<?>) Neo4Net.server.rest.domain.JsonHelper.readJson(response.getEntity());
 			  ICollection<object> items = ( ICollection<object> ) JsonHelper.readJson( response.Entity );
 			  int counter = 0;
 			  foreach ( object item in items )
@@ -279,7 +279,7 @@ namespace Neo4Net.Server.rest
 			  assertEquals( Status.OK.StatusCode, response.Status );
 			  string responseEntity = response.Entity;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Collection<?> hits = (java.util.Collection<?>) org.Neo4Net.server.rest.domain.JsonHelper.readJson(responseEntity);
+//ORIGINAL LINE: java.util.Collection<?> hits = (java.util.Collection<?>) Neo4Net.server.rest.domain.JsonHelper.readJson(responseEntity);
 			  ICollection<object> hits = ( ICollection<object> ) JsonHelper.readJson( responseEntity );
 			  assertEquals( 1, hits.Count );
 			  response.Close();
@@ -288,7 +288,7 @@ namespace Neo4Net.Server.rest
 			  assertEquals( 200, response.Status );
 			  responseEntity = response.Entity;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: hits = (java.util.Collection<?>) org.Neo4Net.server.rest.domain.JsonHelper.readJson(responseEntity);
+//ORIGINAL LINE: hits = (java.util.Collection<?>) Neo4Net.server.rest.domain.JsonHelper.readJson(responseEntity);
 			  hits = ( ICollection<object> ) JsonHelper.readJson( responseEntity );
 			  assertEquals( 0, hits.Count );
 			  response.Close();

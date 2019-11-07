@@ -21,7 +21,7 @@ namespace Neo4Net.Server.web
 {
 	using Connection = org.eclipse.jetty.io.Connection;
 
-	using NetworkConnectionTracker = Neo4Net.Kernel.api.net.NetworkConnectionTracker;
+	using NetworkConnectionTracker = Neo4Net.Kernel.Api.net.NetworkConnectionTracker;
 
 	/// <summary>
 	/// Connection listener that notifies <seealso cref="NetworkConnectionTracker"/> about open and closed <seealso cref="JettyHttpConnection"/>s.

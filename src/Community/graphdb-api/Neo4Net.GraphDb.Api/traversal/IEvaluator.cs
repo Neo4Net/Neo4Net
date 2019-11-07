@@ -36,14 +36,14 @@ namespace Neo4Net.GraphDb.Traversal
         /// <summary>
         /// Evaluates a <seealso cref="IPath"/> and returns an <seealso cref="Evaluation"/> containing
         /// information about whether or not to include it in the traversal result,
-        /// i.e return it from the <seealso cref="Traverser"/>. And also whether or not to
+        /// i.e return it from the <seealso cref="ITraverser"/>. And also whether or not to
         /// continue traversing down that {@code path} or if it instead should be
         /// pruned so that the traverser won't continue down that branch represented
         /// by {@code path}.
         /// </summary>
         /// <param name="path"> the <seealso cref="IPath"/> to evaluate. </param>
         /// <returns> an <seealso cref="Evaluation"/> containing information about whether or not
-        /// to return it from the <seealso cref="Traverser"/> and whether or not to continue
+        /// to return it from the <seealso cref="ITraverser"/> and whether or not to continue
         /// down that path. </returns>
         Evaluation Evaluate(IPath path);
 
@@ -63,12 +63,12 @@ namespace Neo4Net.GraphDb.Traversal
 
         public override Evaluation Evaluate(IPath path, IBranchState<STATE> state)
         {
-            return Evaluator.evaluate(path);
+            return Evaluator.Evaluate(path);
         }
 
         public override Evaluation Evaluate(IPath path)
         {
-            return Evaluator.evaluate(path);
+            return Evaluator.Evaluate(path);
         }
     }
 }

@@ -32,7 +32,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 	using RelationshipScanCursor = Neo4Net.Kernel.Api.Internal.RelationshipScanCursor;
 	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
 	using IOUtils = Neo4Net.Io.IOUtils;
-	using TransactionState = Neo4Net.Kernel.api.txstate.TransactionState;
+	using TransactionState = Neo4Net.Kernel.Api.txstate.TransactionState;
 	using KernelTransactionImplementation = Neo4Net.Kernel.Impl.Api.KernelTransactionImplementation;
 	using AllStoreHolder = Neo4Net.Kernel.Impl.Newapi.AllStoreHolder;
 	using Log = Neo4Net.Logging.Log;
@@ -100,7 +100,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void updateReader(org.Neo4Net.kernel.impl.api.KernelTransactionImplementation kti) throws Exception
+//ORIGINAL LINE: private void updateReader(Neo4Net.kernel.impl.api.KernelTransactionImplementation kti) throws Exception
 		 private void UpdateReader( KernelTransactionImplementation kti )
 		 {
 			  _modifiedEntityIdsInThisTransaction.clear(); // Clear this so we don't filter out entities who have had their changes reversed since last time.

@@ -42,13 +42,13 @@ namespace Neo4Net.Bolt
 	using ProtocolInitializer = Neo4Net.Bolt.transport.NettyServer.ProtocolInitializer;
 	using SocketTransport = Neo4Net.Bolt.transport.SocketTransport;
 	using TransportThrottleGroup = Neo4Net.Bolt.transport.TransportThrottleGroup;
-	using DatabaseManager = Neo4Net.Dbms.database.DatabaseManager;
+	using IDatabaseManager = Neo4Net.Dbms.database.DatabaseManager;
 	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using ListenSocketAddress = Neo4Net.Helpers.ListenSocketAddress;
-	using NetworkConnectionTracker = Neo4Net.Kernel.api.net.NetworkConnectionTracker;
-	using AuthManager = Neo4Net.Kernel.api.security.AuthManager;
-	using UserManagerSupplier = Neo4Net.Kernel.api.security.UserManagerSupplier;
+	using NetworkConnectionTracker = Neo4Net.Kernel.Api.net.NetworkConnectionTracker;
+	using AuthManager = Neo4Net.Kernel.Api.security.AuthManager;
+	using UserManagerSupplier = Neo4Net.Kernel.Api.security.UserManagerSupplier;
 	using BoltConnector = Neo4Net.Kernel.configuration.BoltConnector;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using ConnectorPortRegister = Neo4Net.Kernel.configuration.ConnectorPortRegister;
@@ -66,7 +66,7 @@ namespace Neo4Net.Bolt
 	public class BoltServer : LifecycleAdapter
 	{
 		 // platform dependencies
-		 private readonly DatabaseManager _databaseManager;
+		 private readonly IDatabaseManager _databaseManager;
 		 private readonly IJobScheduler _jobScheduler;
 		 private readonly ConnectorPortRegister _connectorPortRegister;
 		 private readonly NetworkConnectionTracker _connectionTracker;
@@ -81,7 +81,7 @@ namespace Neo4Net.Bolt
 
 		 private readonly LifeSupport _life = new LifeSupport();
 
-		 public BoltServer( DatabaseManager databaseManager, IJobScheduler jobScheduler, ConnectorPortRegister connectorPortRegister, NetworkConnectionTracker connectionTracker, UsageData usageData, Config config, Clock clock, Monitors monitors, LogService logService, DependencyResolver dependencyResolver )
+		 public BoltServer( IDatabaseManager databaseManager, IJobScheduler jobScheduler, ConnectorPortRegister connectorPortRegister, NetworkConnectionTracker connectionTracker, UsageData usageData, Config config, Clock clock, Monitors monitors, LogService logService, DependencyResolver dependencyResolver )
 		 {
 			  this._databaseManager = databaseManager;
 			  this._jobScheduler = jobScheduler;

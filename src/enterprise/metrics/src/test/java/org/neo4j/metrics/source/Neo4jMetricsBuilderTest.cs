@@ -54,14 +54,14 @@ namespace Neo4Net.metrics.source
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.mock;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.factory.DatabaseInfo.COMMUNITY;
+//	import static Neo4Net.kernel.impl.factory.DatabaseInfo.COMMUNITY;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @ExtendWith(TestDirectoryExtension.class) class Neo4NetMetricsBuilderTest
 	internal class Neo4NetMetricsBuilderTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.Neo4Net.test.rule.TestDirectory testDir;
+//ORIGINAL LINE: @Inject private Neo4Net.test.rule.TestDirectory testDir;
 		 private TestDirectory _testDir;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

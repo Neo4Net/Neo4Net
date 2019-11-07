@@ -38,7 +38,7 @@ namespace Neo4Net.Io.pagecache.randomharness
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public Record readRecord(org.Neo4Net.io.pagecache.PageCursor cursor) throws java.io.IOException
+//ORIGINAL LINE: public Record readRecord(Neo4Net.io.pagecache.PageCursor cursor) throws java.io.IOException
 		 public override Record ReadRecord( PageCursor cursor )
 		 {
 			  int offset = cursor.Offset;

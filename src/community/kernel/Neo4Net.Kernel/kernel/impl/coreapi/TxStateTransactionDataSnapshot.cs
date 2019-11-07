@@ -37,7 +37,7 @@ namespace Neo4Net.Kernel.impl.coreapi
 	using IEntityNotFoundException = Neo4Net.Kernel.Api.Internal.Exceptions.EntityNotFoundException;
 	using LabelNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.LabelNotFoundKernelException;
 	using PropertyKeyIdNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.PropertyKeyIdNotFoundKernelException;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
 	using KernelTransactionImplementation = Neo4Net.Kernel.Impl.Api.KernelTransactionImplementation;
 	using EmbeddedProxySPI = Neo4Net.Kernel.impl.core.EmbeddedProxySPI;
 	using NodeProxy = Neo4Net.Kernel.impl.core.NodeProxy;
@@ -58,7 +58,7 @@ namespace Neo4Net.Kernel.impl.coreapi
 //	import static Math.toIntExact;
 
 	/// <summary>
-	/// Transform for <seealso cref="org.Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState"/> to make it accessible as <seealso cref="TransactionData"/>.
+	/// Transform for <seealso cref="Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState"/> to make it accessible as <seealso cref="TransactionData"/>.
 	/// </summary>
 	public class TxStateTransactionDataSnapshot : TransactionData
 	{
@@ -262,7 +262,7 @@ namespace Neo4Net.Kernel.impl.coreapi
 							 });
       
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.Kernel.Api.StorageEngine.TxState.LongDiffSets labels = nodeState.labelDiffSets();
+//ORIGINAL LINE: final Neo4Net.Kernel.Api.StorageEngine.TxState.LongDiffSets labels = nodeState.labelDiffSets();
 							 LongDiffSets labels = nodeState.LabelDiffSets();
 							 AddLabelEntriesTo( nodeId, labels.Added, _assignedLabels );
 							 AddLabelEntriesTo( nodeId, labels.Removed, _removedLabels );

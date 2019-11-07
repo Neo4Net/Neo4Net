@@ -58,9 +58,9 @@ namespace Neo4Net.causalclustering.protocol.handshake
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 	using static Neo4Net.causalclustering.protocol.Protocol_ModifierProtocolCategory;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.protocol.handshake.TestProtocols_TestModifierProtocols.ROT13;
+//	import static Neo4Net.causalclustering.protocol.handshake.TestProtocols_TestModifierProtocols.ROT13;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.protocol.handshake.TestProtocols_TestModifierProtocols.SNAPPY;
+//	import static Neo4Net.causalclustering.protocol.handshake.TestProtocols_TestModifierProtocols.SNAPPY;
 
 	/// <seealso cref= HandshakeClientEnsureMagicTest </seealso>
 	public class HandshakeClientTest

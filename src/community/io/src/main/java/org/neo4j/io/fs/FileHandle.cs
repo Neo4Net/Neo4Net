@@ -113,7 +113,7 @@ namespace Neo4Net.Io.fs
 		 /// <param name="options"> Options to modify the behaviour of the move in possibly platform specific ways. In particular,
 		 /// <seealso cref="java.nio.file.StandardCopyOption.REPLACE_EXISTING"/> may be used to overwrite any existing file at the
 		 /// target path name, instead of throwing an exception. </param>
-		 /// <exception cref="org.Neo4Net.io.pagecache.impl.FileIsMappedException"> if either the file represented by this file handle is
+		 /// <exception cref="Neo4Net.io.pagecache.impl.FileIsMappedException"> if either the file represented by this file handle is
 		 /// mapped, or the target file is mapped. </exception>
 		 /// <exception cref="java.nio.file.FileAlreadyExistsException"> if the target file already exists, and the
 		 /// <seealso cref="java.nio.file.StandardCopyOption.REPLACE_EXISTING"/> open option was not specified. </exception>
@@ -125,7 +125,7 @@ namespace Neo4Net.Io.fs
 		 /// <summary>
 		 /// Delete the file that this file handle represents.
 		 /// </summary>
-		 /// <exception cref="org.Neo4Net.io.pagecache.impl.FileIsMappedException"> if this file is mapped by the page cache. </exception>
+		 /// <exception cref="Neo4Net.io.pagecache.impl.FileIsMappedException"> if this file is mapped by the page cache. </exception>
 		 /// <exception cref="java.nio.file.NoSuchFileException"> if the underlying file was deleted after this handle was created. </exception>
 		 /// <exception cref="IOException"> if an I/O error occurs. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:

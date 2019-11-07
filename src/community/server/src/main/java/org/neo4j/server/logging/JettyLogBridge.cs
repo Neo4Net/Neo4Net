@@ -30,7 +30,7 @@ namespace Neo4Net.Server.logging
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.logging.Internal.LogMessageUtil.slf4jToStringFormatPlaceholders;
+//	import static Neo4Net.logging.Internal.LogMessageUtil.slf4jToStringFormatPlaceholders;
 
 	public class JettyLogBridge : AbstractLogger
 	{

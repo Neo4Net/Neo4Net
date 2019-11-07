@@ -41,14 +41,14 @@ namespace Neo4Net.GraphDb
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.mock;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.containsOnly;
+//	import static Neo4Net.test.mockito.matcher.Neo4NetMatchers.containsOnly;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.getConstraints;
+//	import static Neo4Net.test.mockito.matcher.Neo4NetMatchers.getConstraints;
 
 	public class SchemaWithPECAcceptanceTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.EnterpriseDatabaseRule dbRule = new org.Neo4Net.test.rule.EnterpriseDatabaseRule();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.EnterpriseDatabaseRule dbRule = new Neo4Net.test.rule.EnterpriseDatabaseRule();
 		 public EnterpriseDatabaseRule DbRule = new EnterpriseDatabaseRule();
 
 		 private IGraphDatabaseService _db;

@@ -29,13 +29,13 @@ namespace Neo4Net.Kernel.Api.Internal.Exceptions.Schema
 		 private readonly ConstraintDescriptor _constraint;
 
 		 private readonly string _cause;
-		 public CreateConstraintFailureException( ConstraintDescriptor constraint, Exception cause ) : base( org.Neo4Net.kernel.api.exceptions.Status_Schema.ConstraintCreationFailed, cause, "Unable to create constraint %s: %s", constraint, cause.Message )
+		 public CreateConstraintFailureException( ConstraintDescriptor constraint, Exception cause ) : base( Neo4Net.kernel.api.exceptions.Status_Schema.ConstraintCreationFailed, cause, "Unable to create constraint %s: %s", constraint, cause.Message )
 		 {
 			  this._constraint = constraint;
 			  this._cause = null;
 		 }
 
-		 public CreateConstraintFailureException( ConstraintDescriptor constraint, string cause ) : base( org.Neo4Net.kernel.api.exceptions.Status_Schema.ConstraintCreationFailed, null, "Unable to create constraint %s: %s", constraint, cause )
+		 public CreateConstraintFailureException( ConstraintDescriptor constraint, string cause ) : base( Neo4Net.kernel.api.exceptions.Status_Schema.ConstraintCreationFailed, null, "Unable to create constraint %s: %s", constraint, cause )
 		 {
 			  this._constraint = constraint;
 			  this._cause = cause;

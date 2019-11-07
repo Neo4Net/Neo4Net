@@ -169,7 +169,7 @@ namespace Neo4Net.Helpers
 		 /// <exception cref="TransactionFailureException"> if an error occurs other than those specified in <seealso cref="retryOn(Predicate)"/>
 		 /// or if the retry count was exceeded. </exception>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public void execute(final System.Action<org.Neo4Net.graphdb.Transaction> txConsumer)
+//ORIGINAL LINE: public void execute(final System.Action<Neo4Net.graphdb.Transaction> txConsumer)
 		 public virtual void Execute( System.Action<Transaction> txConsumer )
 		 {
 			  Execute(transaction =>
@@ -188,7 +188,7 @@ namespace Neo4Net.Helpers
 		 /// <exception cref="TransactionFailureException"> if an error occurs other than those specified in <seealso cref="retryOn(Predicate)"/>
 		 /// or if the retry count was exceeded. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public <T> T execute(System.Func<org.Neo4Net.graphdb.Transaction, T> txFunction) throws org.Neo4Net.graphdb.TransactionFailureException
+//ORIGINAL LINE: public <T> T execute(System.Func<Neo4Net.graphdb.Transaction, T> txFunction) throws Neo4Net.graphdb.TransactionFailureException
 		 public virtual T Execute<T>( System.Func<Transaction, T> txFunction )
 		 {
 			  Exception txEx;

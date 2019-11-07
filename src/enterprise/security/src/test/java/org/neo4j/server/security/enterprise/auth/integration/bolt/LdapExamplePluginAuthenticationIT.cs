@@ -59,7 +59,7 @@ namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: protected java.util.Map<org.Neo4Net.graphdb.config.Setting<?>, String> getSettings()
+//ORIGINAL LINE: protected java.util.Map<Neo4Net.graphdb.config.Setting<?>, String> getSettings()
 		 protected internal override IDictionary<Setting<object>, string> Settings
 		 {
 			 get

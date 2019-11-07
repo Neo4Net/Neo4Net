@@ -31,7 +31,7 @@ namespace Neo4Net.causalclustering.upstream
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.empty;
+//	import static Neo4Net.helpers.collection.Iterables.empty;
 
 	public class UpstreamDatabaseStrategySelector
 	{
@@ -57,7 +57,7 @@ namespace Neo4Net.causalclustering.upstream
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.causalclustering.identity.MemberId bestUpstreamDatabase() throws UpstreamDatabaseSelectionException
+//ORIGINAL LINE: public Neo4Net.causalclustering.identity.MemberId bestUpstreamDatabase() throws UpstreamDatabaseSelectionException
 		 public virtual MemberId BestUpstreamDatabase()
 		 {
 			  MemberId result = null;

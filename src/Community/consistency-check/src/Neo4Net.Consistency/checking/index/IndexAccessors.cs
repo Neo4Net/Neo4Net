@@ -43,7 +43,7 @@ namespace Neo4Net.Consistency.checking.index
 		 private readonly IList<StoreIndexDescriptor> _notOnlineIndexRules = new List<StoreIndexDescriptor>();
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public IndexAccessors(org.Neo4Net.kernel.impl.api.index.IndexProviderMap providers, org.Neo4Net.kernel.impl.store.RecordStore<org.Neo4Net.kernel.impl.store.record.DynamicRecord> schemaStore, org.Neo4Net.kernel.impl.api.index.sampling.IndexSamplingConfig samplingConfig) throws java.io.IOException
+//ORIGINAL LINE: public IndexAccessors(Neo4Net.kernel.impl.api.index.IndexProviderMap providers, Neo4Net.kernel.impl.store.RecordStore<Neo4Net.kernel.impl.store.record.DynamicRecord> schemaStore, Neo4Net.kernel.impl.api.index.sampling.IndexSamplingConfig samplingConfig) throws java.io.IOException
 		 public IndexAccessors( IndexProviderMap providers, RecordStore<DynamicRecord> schemaStore, IndexSamplingConfig samplingConfig )
 		 {
 			  IEnumerator<StoreIndexDescriptor> indexes = ( new SchemaStorage( schemaStore ) ).indexesGetAll();

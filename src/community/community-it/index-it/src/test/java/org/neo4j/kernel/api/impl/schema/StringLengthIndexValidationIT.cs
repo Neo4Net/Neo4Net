@@ -46,12 +46,12 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.TestLabels.LABEL_ONE;
+//	import static Neo4Net.test.TestLabels.LABEL_ONE;
 
 	public class StringLengthIndexValidationIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.DatabaseRule db = new org.Neo4Net.test.rule.EmbeddedDatabaseRule().withSetting(org.Neo4Net.graphdb.factory.GraphDatabaseSettings.default_schema_provider, org.Neo4Net.graphdb.factory.GraphDatabaseSettings.SchemaIndex.NATIVE20.providerName());
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.DatabaseRule db = new Neo4Net.test.rule.EmbeddedDatabaseRule().withSetting(Neo4Net.graphdb.factory.GraphDatabaseSettings.default_schema_provider, Neo4Net.graphdb.factory.GraphDatabaseSettings.SchemaIndex.NATIVE20.providerName());
 		 public DatabaseRule Db = new EmbeddedDatabaseRule().withSetting(GraphDatabaseSettings.default_schema_provider, GraphDatabaseSettings.SchemaIndex.NATIVE20.providerName());
 
 		 private const string PROP_KEY = "largeString";

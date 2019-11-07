@@ -22,7 +22,7 @@
 namespace Neo4Net.Kernel.spi.explicitindex
 {
 
-	using ExplicitIndex = Neo4Net.Kernel.api.ExplicitIndex;
+	using ExplicitIndex = Neo4Net.Kernel.Api.ExplicitIndex;
 
 	/// <summary>
 	/// Provides access to <seealso cref="ExplicitIndex indexes"/>. Holds transaction state for a specific provider in a transaction.

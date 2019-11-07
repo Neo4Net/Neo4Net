@@ -88,7 +88,7 @@ namespace Neo4Net.causalclustering.core.replication
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.util.concurrent.Future<Object> replicate0(ReplicatedContent command, boolean trackResult, org.Neo4Net.causalclustering.identity.MemberId leader) throws ReplicationFailureException
+//ORIGINAL LINE: private java.util.concurrent.Future<Object> replicate0(ReplicatedContent command, boolean trackResult, Neo4Net.causalclustering.identity.MemberId leader) throws ReplicationFailureException
 		 private Future<object> Replicate0( ReplicatedContent command, bool trackResult, MemberId leader )
 		 {
 			  _replicationMonitor.startReplication();

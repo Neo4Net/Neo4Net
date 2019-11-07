@@ -51,7 +51,7 @@ namespace Neo4Net.Kernel.impl.locking
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.count;
+//	import static Neo4Net.helpers.collection.Iterables.count;
 
 	public class DeferringLocksIT
 	{
@@ -63,13 +63,13 @@ namespace Neo4Net.Kernel.impl.locking
 		 private const string VALUE_2 = "value2";
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.DatabaseRule dbRule = new org.Neo4Net.test.rule.EnterpriseDatabaseRule().startLazily();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.DatabaseRule dbRule = new Neo4Net.test.rule.EnterpriseDatabaseRule().startLazily();
 		 public readonly DatabaseRule DbRule = new EnterpriseDatabaseRule().startLazily();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.concurrent.OtherThreadRule<Void> t2 = new org.Neo4Net.test.rule.concurrent.OtherThreadRule<>();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.concurrent.OtherThreadRule<Void> t2 = new Neo4Net.test.rule.concurrent.OtherThreadRule<>();
 		 public readonly OtherThreadRule<Void> T2 = new OtherThreadRule<Void>();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.concurrent.OtherThreadRule<Void> t3 = new org.Neo4Net.test.rule.concurrent.OtherThreadRule<>();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.concurrent.OtherThreadRule<Void> t3 = new Neo4Net.test.rule.concurrent.OtherThreadRule<>();
 		 public readonly OtherThreadRule<Void> T3 = new OtherThreadRule<Void>();
 
 		 private IGraphDatabaseService _db;
@@ -89,10 +89,10 @@ namespace Neo4Net.Kernel.impl.locking
 		 {
 			  // GIVEN
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.test.Barrier_Control barrier = new org.Neo4Net.test.Barrier_Control();
+//ORIGINAL LINE: final Neo4Net.test.Barrier_Control barrier = new Neo4Net.test.Barrier_Control();
 			  Neo4Net.Test.Barrier_Control barrier = new Neo4Net.Test.Barrier_Control();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.graphdb.Node node;
+//ORIGINAL LINE: final Neo4Net.graphdb.Node node;
 			  Node node;
 			  using ( Transaction tx = _db.beginTx() )
 			  {
@@ -133,10 +133,10 @@ namespace Neo4Net.Kernel.impl.locking
 		 {
 			  // GIVEN
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.test.Barrier_Control barrier = new org.Neo4Net.test.Barrier_Control();
+//ORIGINAL LINE: final Neo4Net.test.Barrier_Control barrier = new Neo4Net.test.Barrier_Control();
 			  Neo4Net.Test.Barrier_Control barrier = new Neo4Net.Test.Barrier_Control();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.graphdb.Node node;
+//ORIGINAL LINE: final Neo4Net.graphdb.Node node;
 			  Node node;
 			  using ( Transaction tx = _db.beginTx() )
 			  {
@@ -179,7 +179,7 @@ namespace Neo4Net.Kernel.impl.locking
 		 {
 			  // GIVEN
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.test.Barrier_Control barrier = new org.Neo4Net.test.Barrier_Control();
+//ORIGINAL LINE: final Neo4Net.test.Barrier_Control barrier = new Neo4Net.test.Barrier_Control();
 			  Neo4Net.Test.Barrier_Control barrier = new Neo4Net.Test.Barrier_Control();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final long nodeId;
@@ -297,7 +297,7 @@ namespace Neo4Net.Kernel.impl.locking
 
 		 private void AssertNodeWith( Label label, string key, object value )
 		 {
-			  using ( ResourceIterator<Node> nodes = _db.findNodes( label, key, value ) )
+			  using ( IResourceIterator<Node> nodes = _db.findNodes( label, key, value ) )
 			  {
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
 					assertTrue( nodes.hasNext() );
@@ -316,7 +316,7 @@ namespace Neo4Net.Kernel.impl.locking
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private org.Neo4Net.test.OtherThreadExecutor.WorkerCommand<Void,Void> createAndAwaitIndex(final org.Neo4Net.graphdb.Label label, final String key)
+//ORIGINAL LINE: private Neo4Net.test.OtherThreadExecutor.WorkerCommand<Void,Void> createAndAwaitIndex(final Neo4Net.graphdb.Label label, final String key)
 		 private WorkerCommand<Void, Void> CreateAndAwaitIndex( Label label, string key )
 		 {
 			  return state =>

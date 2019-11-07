@@ -27,9 +27,9 @@ namespace Neo4Net.Server.rest.repr
 	using Schema = Neo4Net.GraphDb.Schema.Schema;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.map;
+//	import static Neo4Net.helpers.collection.Iterables.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.single;
+//	import static Neo4Net.helpers.collection.Iterables.single;
 
 	public class IndexDefinitionRepresentation : MappingRepresentation
 	{
@@ -37,7 +37,7 @@ namespace Neo4Net.Server.rest.repr
 		 private readonly IndexPopulationProgress _indexPopulationProgress;
 		 private readonly Neo4Net.GraphDb.Schema.Schema_IndexState _indexState;
 
-		 public IndexDefinitionRepresentation( IndexDefinition indexDefinition ) : this( indexDefinition, org.Neo4Net.GraphDb.Schema.Schema_IndexState.Online, IndexPopulationProgress.DONE )
+		 public IndexDefinitionRepresentation( IndexDefinition indexDefinition ) : this( indexDefinition, Neo4Net.GraphDb.Schema.Schema_IndexState.Online, IndexPopulationProgress.DONE )
 		 {
 			  // Online state will mean progress is ignored
 		 }

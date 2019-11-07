@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.Api.Internal.Exceptions.Schema
 
 	public class TooManyLabelsException : SchemaKernelException
 	{
-		 public TooManyLabelsException( Exception cause ) : base( org.Neo4Net.kernel.api.exceptions.Status_Schema.LabelLimitReached, "The maximum number of labels available has been reached. Cannot create more labels.", cause )
+		 public TooManyLabelsException( Exception cause ) : base( Neo4Net.kernel.api.exceptions.Status_Schema.LabelLimitReached, "The maximum number of labels available has been reached. Cannot create more labels.", cause )
 		 {
 		 }
 	}

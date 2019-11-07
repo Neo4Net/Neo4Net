@@ -49,7 +49,7 @@ namespace Neo4Net.Kernel.Internal
 	public class KernelDiagnosticsIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory directory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.TestDirectory directory = Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory Directory = TestDirectory.testDirectory();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -170,7 +170,7 @@ namespace Neo4Net.Kernel.Internal
 			  }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Override public void bulk(@Nonnull Consumer<org.Neo4Net.logging.Logger> consumer)
+//ORIGINAL LINE: @Override public void bulk(@Nonnull Consumer<Neo4Net.logging.Logger> consumer)
 			  public override void Bulk( Consumer<Logger> consumer )
 			  {
 					throw new System.NotSupportedException();

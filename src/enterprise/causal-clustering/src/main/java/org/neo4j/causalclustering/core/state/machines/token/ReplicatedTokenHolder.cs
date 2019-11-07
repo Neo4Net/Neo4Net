@@ -31,7 +31,7 @@ namespace Neo4Net.causalclustering.core.state.machines.token
 	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
 	using ConstraintValidationException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.ConstraintValidationException;
 	using CreateConstraintFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.CreateConstraintFailureException;
-	using TransactionState = Neo4Net.Kernel.api.txstate.TransactionState;
+	using TransactionState = Neo4Net.Kernel.Api.txstate.TransactionState;
 	using TxState = Neo4Net.Kernel.Impl.Api.state.TxState;
 	using AbstractTokenHolderBase = Neo4Net.Kernel.impl.core.AbstractTokenHolderBase;
 	using TokenRegistry = Neo4Net.Kernel.impl.core.TokenRegistry;
@@ -43,7 +43,7 @@ namespace Neo4Net.causalclustering.core.state.machines.token
 	using ResourceLocker = Neo4Net.Kernel.Api.StorageEngine.@lock.ResourceLocker;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.StorageEngine.TxState.TxStateVisitor_Fields.NO_DECORATION;
+//	import static Neo4Net.Kernel.Api.StorageEngine.TxState.TxStateVisitor_Fields.NO_DECORATION;
 
 	public class ReplicatedTokenHolder : AbstractTokenHolderBase
 	{

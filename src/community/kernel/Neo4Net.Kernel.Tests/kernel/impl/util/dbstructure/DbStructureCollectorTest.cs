@@ -23,8 +23,8 @@ namespace Neo4Net.Kernel.impl.util.dbstructure
 
 	using Iterators = Neo4Net.Collections.Helpers.Iterators;
 	using Neo4Net.Collections.Helpers;
-	using ConstraintDescriptorFactory = Neo4Net.Kernel.api.schema.constraints.ConstraintDescriptorFactory;
-	using TestIndexDescriptorFactory = Neo4Net.Kernel.api.schema.index.TestIndexDescriptorFactory;
+	using ConstraintDescriptorFactory = Neo4Net.Kernel.Api.schema.constraints.ConstraintDescriptorFactory;
+	using TestIndexDescriptorFactory = Neo4Net.Kernel.Api.schema.index.TestIndexDescriptorFactory;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Arrays.asList;
@@ -33,7 +33,7 @@ namespace Neo4Net.Kernel.impl.util.dbstructure
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Pair.of;
+//	import static Neo4Net.helpers.collection.Pair.of;
 
 	public class DbStructureCollectorTest
 	{

@@ -35,11 +35,11 @@ namespace Neo4Net.causalclustering.routing.load_balancing.plugins.server_policie
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.mock;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.CausalClusteringSettings.load_balancing_config;
+//	import static Neo4Net.causalclustering.core.CausalClusteringSettings.load_balancing_config;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.routing.load_balancing.plugins.server_policies.FilterBuilder.filter;
+//	import static Neo4Net.causalclustering.routing.load_balancing.plugins.server_policies.FilterBuilder.filter;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
+//	import static Neo4Net.helpers.collection.MapUtil.stringMap;
 
 	public class FilteringPolicyLoaderTest
 	{
@@ -76,7 +76,7 @@ namespace Neo4Net.causalclustering.routing.load_balancing.plugins.server_policie
 					string policyName = ( string ) row[0];
 					Policy loadedPolicy = policies.SelectFor( PolicyNameContext( policyName ) );
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") Policy expectedPolicy = new FilteringPolicy((org.Neo4Net.causalclustering.routing.load_balancing.filters.Filter<ServerInfo>) row[2]);
+//ORIGINAL LINE: @SuppressWarnings("unchecked") Policy expectedPolicy = new FilteringPolicy((Neo4Net.causalclustering.routing.load_balancing.filters.Filter<ServerInfo>) row[2]);
 					Policy expectedPolicy = new FilteringPolicy( ( Filter<ServerInfo> ) row[2] );
 					assertEquals( expectedPolicy, loadedPolicy );
 			  }

@@ -31,7 +31,7 @@ namespace Neo4Net.Kernel.impl.enterprise.@lock.forseti
 	using ResourceType = Neo4Net.Kernel.Api.StorageEngine.@lock.ResourceType;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Service.Implementation(DynamicLocksFactory.class) public class ForsetiLocksFactory extends org.Neo4Net.kernel.impl.locking.DynamicLocksFactory
+//ORIGINAL LINE: @Service.Implementation(DynamicLocksFactory.class) public class ForsetiLocksFactory extends Neo4Net.kernel.impl.locking.DynamicLocksFactory
 	public class ForsetiLocksFactory : DynamicLocksFactory
 	{
 		 public const string KEY = "forseti";

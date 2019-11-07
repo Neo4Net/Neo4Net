@@ -86,30 +86,30 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.RelationshipType.withName;
+//	import static Neo4Net.graphdb.RelationshipType.withName;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.asSet;
+//	import static Neo4Net.helpers.collection.Iterators.asSet;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.count;
+//	import static Neo4Net.helpers.collection.Iterators.count;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
+//	import static Neo4Net.helpers.collection.MapUtil.stringMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Neo4NetTestCase.assertContains;
+//	import static Neo4Net.index.Neo4NetTestCase.assertContains;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Neo4NetTestCase.assertContainsInOrder;
+//	import static Neo4Net.index.Neo4NetTestCase.assertContainsInOrder;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.impl.lucene.@explicit.LuceneIndexImplementation.EXACT_CONFIG;
+//	import static Neo4Net.index.impl.lucene.@explicit.LuceneIndexImplementation.EXACT_CONFIG;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.impl.lucene.@explicit.LuceneIndexImplementation.FULLTEXT_CONFIG;
+//	import static Neo4Net.index.impl.lucene.@explicit.LuceneIndexImplementation.FULLTEXT_CONFIG;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.lucene.QueryContext.numericRange;
+//	import static Neo4Net.index.lucene.QueryContext.numericRange;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.lucene.ValueContext.numeric;
+//	import static Neo4Net.index.lucene.ValueContext.numeric;
 
 	public class TestLuceneIndex : AbstractLuceneIndexTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private <T extends org.Neo4Net.graphdb.PropertyContainer> void makeSureAdditionsCanBeRead(org.Neo4Net.GraphDb.Index.Index<T> index, IEntityCreator<T> IEntityCreator)
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private <T extends Neo4Net.graphdb.PropertyContainer> void makeSureAdditionsCanBeRead(Neo4Net.GraphDb.Index.Index<T> index, IEntityCreator<T> IEntityCreator)
 		 private void MakeSureAdditionsCanBeRead<T>( Index<T> index, IEntityCreator<T> IEntityCreator ) where T : Neo4Net.GraphDb.PropertyContainer
 		 {
 			  string key = "name";
@@ -689,7 +689,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private <T extends org.Neo4Net.graphdb.PropertyContainer> void doSomeRandomUseCaseTestingWithExactIndex(org.Neo4Net.GraphDb.Index.Index<T> index, IEntityCreator<T> creator)
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private <T extends Neo4Net.graphdb.PropertyContainer> void doSomeRandomUseCaseTestingWithExactIndex(Neo4Net.GraphDb.Index.Index<T> index, IEntityCreator<T> creator)
 		 private void DoSomeRandomUseCaseTestingWithExactIndex<T>( Index<T> index, IEntityCreator<T> creator ) where T : Neo4Net.GraphDb.PropertyContainer
 		 {
 			  string name = "name";
@@ -777,7 +777,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private <T extends org.Neo4Net.graphdb.PropertyContainer> void doSomeRandomTestingWithFulltextIndex(org.Neo4Net.GraphDb.Index.Index<T> index, IEntityCreator<T> creator)
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private <T extends Neo4Net.graphdb.PropertyContainer> void doSomeRandomTestingWithFulltextIndex(Neo4Net.GraphDb.Index.Index<T> index, IEntityCreator<T> creator)
 		 private void DoSomeRandomTestingWithFulltextIndex<T>( Index<T> index, IEntityCreator<T> creator ) where T : Neo4Net.GraphDb.PropertyContainer
 		 {
 			  T IEntity1 = creator.Create();
@@ -1190,7 +1190,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private <T extends org.Neo4Net.graphdb.PropertyContainer> void testAbandonedIds(EntityCreator<T> creator, org.Neo4Net.GraphDb.Index.Index<T> index)
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private <T extends Neo4Net.graphdb.PropertyContainer> void testAbandonedIds(EntityCreator<T> creator, Neo4Net.GraphDb.Index.Index<T> index)
 		 private void TestAbandonedIds<T>( IEntityCreator<T> creator, Index<T> index ) where T : Neo4Net.GraphDb.PropertyContainer
 		 {
 			  // TODO This doesn't actually test that they are deleted, it just triggers it
@@ -1419,7 +1419,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private <T extends org.Neo4Net.graphdb.PropertyContainer> void testRemoveWithoutKey(EntityCreator<T> creator, org.Neo4Net.GraphDb.Index.Index<T> index)
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private <T extends Neo4Net.graphdb.PropertyContainer> void testRemoveWithoutKey(EntityCreator<T> creator, Neo4Net.GraphDb.Index.Index<T> index)
 		 private void TestRemoveWithoutKey<T>( IEntityCreator<T> creator, Index<T> index ) where T : Neo4Net.GraphDb.PropertyContainer
 		 {
 			  string key1 = "key1";
@@ -1463,7 +1463,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private <T extends org.Neo4Net.graphdb.PropertyContainer> void testRemoveWithoutKeyValue(EntityCreator<T> creator, org.Neo4Net.GraphDb.Index.Index<T> index)
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private <T extends Neo4Net.graphdb.PropertyContainer> void testRemoveWithoutKeyValue(EntityCreator<T> creator, Neo4Net.GraphDb.Index.Index<T> index)
 		 private void TestRemoveWithoutKeyValue<T>( IEntityCreator<T> creator, Index<T> index ) where T : Neo4Net.GraphDb.PropertyContainer
 		 {
 			  string key1 = "key1";
@@ -1509,7 +1509,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private <T extends org.Neo4Net.graphdb.PropertyContainer> void testRemoveWithoutKeyFulltext(EntityCreator<T> creator, org.Neo4Net.GraphDb.Index.Index<T> index)
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private <T extends Neo4Net.graphdb.PropertyContainer> void testRemoveWithoutKeyFulltext(EntityCreator<T> creator, Neo4Net.GraphDb.Index.Index<T> index)
 		 private void TestRemoveWithoutKeyFulltext<T>( IEntityCreator<T> creator, Index<T> index ) where T : Neo4Net.GraphDb.PropertyContainer
 		 {
 			  string key1 = "key1";
@@ -1557,7 +1557,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private <T extends org.Neo4Net.graphdb.PropertyContainer> void testRemoveWithoutKeyValueFulltext(EntityCreator<T> creator, org.Neo4Net.GraphDb.Index.Index<T> index)
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private <T extends Neo4Net.graphdb.PropertyContainer> void testRemoveWithoutKeyValueFulltext(EntityCreator<T> creator, Neo4Net.GraphDb.Index.Index<T> index)
 		 private void TestRemoveWithoutKeyValueFulltext<T>( IEntityCreator<T> creator, Index<T> index ) where T : Neo4Net.GraphDb.PropertyContainer
 		 {
 			  string value = "value";
@@ -1946,7 +1946,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 			  const string property = "counter";
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.GraphDb.Index.Index<org.Neo4Net.graphdb.Node> index = nodeIndex(LuceneIndexImplementation.EXACT_CONFIG);
+//ORIGINAL LINE: final Neo4Net.GraphDb.Index.Index<Neo4Net.graphdb.Node> index = nodeIndex(LuceneIndexImplementation.EXACT_CONFIG);
 			  Index<Node> index = NodeIndex( LuceneIndexImplementation.ExactConfig );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final java.util.concurrent.atomic.AtomicInteger counter = new java.util.concurrent.atomic.AtomicInteger();
@@ -1998,13 +1998,13 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 			  const string value = "Mattias";
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.graphdb.Node root = graphDb.createNode();
+//ORIGINAL LINE: final Neo4Net.graphdb.Node root = graphDb.createNode();
 			  Node root = GraphDb.createNode();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.GraphDb.Index.Index<org.Neo4Net.graphdb.Relationship> index = relationshipIndex(LuceneIndexImplementation.EXACT_CONFIG);
+//ORIGINAL LINE: final Neo4Net.GraphDb.Index.Index<Neo4Net.graphdb.Relationship> index = relationshipIndex(LuceneIndexImplementation.EXACT_CONFIG);
 			  Index<Relationship> index = RelationshipIndex( LuceneIndexImplementation.ExactConfig );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.graphdb.RelationshipType type = withName("SINGLE");
+//ORIGINAL LINE: final Neo4Net.graphdb.RelationshipType type = withName("SINGLE");
 			  RelationshipType type = withName( "SINGLE" );
 			  UniqueFactory<Relationship> factory = new UniqueRelationshipFactoryAnonymousInnerClass( this, index, key, value, root, type );
 

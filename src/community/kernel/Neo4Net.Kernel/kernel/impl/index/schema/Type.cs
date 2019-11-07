@@ -27,11 +27,11 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using ValueGroup = Neo4Net.Values.Storable.ValueGroup;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.GenericKey.TRUE;
+//	import static Neo4Net.kernel.impl.index.schema.GenericKey.TRUE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.NativeIndexKey.Inclusion.HIGH;
+//	import static Neo4Net.kernel.impl.index.schema.NativeIndexKey.Inclusion.HIGH;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.NativeIndexKey.Inclusion.LOW;
+//	import static Neo4Net.kernel.impl.index.schema.NativeIndexKey.Inclusion.LOW;
 
 	/// <summary>
 	/// All functionality for reading, writing, comparing, calculating size etc a specific value type in a native index.

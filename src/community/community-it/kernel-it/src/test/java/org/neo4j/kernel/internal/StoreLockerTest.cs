@@ -54,10 +54,10 @@ namespace Neo4Net.Kernel.Internal
 	public class StoreLockerTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory target = org.Neo4Net.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.TestDirectory target = Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory Target = TestDirectory.testDirectory();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.fs.DefaultFileSystemRule fileSystemRule = new org.Neo4Net.test.rule.fs.DefaultFileSystemRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.fs.DefaultFileSystemRule fileSystemRule = new Neo4Net.test.rule.fs.DefaultFileSystemRule();
 		 public readonly DefaultFileSystemRule FileSystemRule = new DefaultFileSystemRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -291,7 +291,7 @@ namespace Neo4Net.Kernel.Internal
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.io.fs.StoreChannel open(java.io.File fileName, org.Neo4Net.io.fs.OpenMode openMode) throws java.io.IOException
+//ORIGINAL LINE: public Neo4Net.io.fs.StoreChannel open(java.io.File fileName, Neo4Net.io.fs.OpenMode openMode) throws java.io.IOException
 			 public override StoreChannel open( File fileName, OpenMode openMode )
 			 {
 				  throw new IOException( "cannot open lock file" );
@@ -339,7 +339,7 @@ namespace Neo4Net.Kernel.Internal
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.io.fs.StoreChannel open(java.io.File fileName, org.Neo4Net.io.fs.OpenMode openMode) throws java.io.IOException
+//ORIGINAL LINE: public Neo4Net.io.fs.StoreChannel open(java.io.File fileName, Neo4Net.io.fs.OpenMode openMode) throws java.io.IOException
 			 public override StoreChannel open( File fileName, OpenMode openMode )
 			 {
 				  return new DelegatingStoreChannelAnonymousInnerClass( this, base.open( fileName, openMode ) );

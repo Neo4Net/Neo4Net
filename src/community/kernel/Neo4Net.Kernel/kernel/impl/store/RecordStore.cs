@@ -95,7 +95,7 @@ namespace Neo4Net.Kernel.impl.store
 		 /// <returns> the record that was passed in, for convenience. </returns>
 		 /// <exception cref="InvalidRecordException"> if record not in use and the {@code mode} allows for throwing. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: RECORD getRecord(long id, RECORD target, org.Neo4Net.kernel.impl.store.record.RecordLoad mode) throws InvalidRecordException;
+//ORIGINAL LINE: RECORD getRecord(long id, RECORD target, Neo4Net.kernel.impl.store.record.RecordLoad mode) throws InvalidRecordException;
 		 RECORD GetRecord( long id, RECORD target, RecordLoad mode );
 
 		 /// <summary>
@@ -122,7 +122,7 @@ namespace Neo4Net.Kernel.impl.store
 		 /// <param name="cursor"> the PageCursor to use for record loading. </param>
 		 /// <exception cref="InvalidRecordException"> if record not in use and the {@code mode} allows for throwing. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void getRecordByCursor(long id, RECORD target, org.Neo4Net.kernel.impl.store.record.RecordLoad mode, org.Neo4Net.io.pagecache.PageCursor cursor) throws InvalidRecordException;
+//ORIGINAL LINE: void getRecordByCursor(long id, RECORD target, Neo4Net.kernel.impl.store.record.RecordLoad mode, Neo4Net.io.pagecache.PageCursor cursor) throws InvalidRecordException;
 		 void GetRecordByCursor( long id, RECORD target, RecordLoad mode, PageCursor cursor );
 
 		 /// <summary>
@@ -140,7 +140,7 @@ namespace Neo4Net.Kernel.impl.store
 		 /// <param name="cursor"> the PageCursor to use for record loading. </param>
 		 /// <exception cref="InvalidRecordException"> if record not in use and the {@code mode} allows for throwing. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void nextRecordByCursor(RECORD target, org.Neo4Net.kernel.impl.store.record.RecordLoad mode, org.Neo4Net.io.pagecache.PageCursor cursor) throws InvalidRecordException;
+//ORIGINAL LINE: void nextRecordByCursor(RECORD target, Neo4Net.kernel.impl.store.record.RecordLoad mode, Neo4Net.io.pagecache.PageCursor cursor) throws InvalidRecordException;
 		 void NextRecordByCursor( RECORD target, RecordLoad mode, PageCursor cursor );
 
 		 /// <summary>
@@ -159,7 +159,7 @@ namespace Neo4Net.Kernel.impl.store
 		 /// <returns> <seealso cref="System.Collections.ICollection"/> of records in the loaded chain. </returns>
 		 /// <exception cref="InvalidRecordException"> if some record not in use and the {@code mode} is allows for throwing. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: java.util.List<RECORD> getRecords(long firstId, org.Neo4Net.kernel.impl.store.record.RecordLoad mode) throws InvalidRecordException;
+//ORIGINAL LINE: java.util.List<RECORD> getRecords(long firstId, Neo4Net.kernel.impl.store.record.RecordLoad mode) throws InvalidRecordException;
 		 IList<RECORD> GetRecords( long firstId, RecordLoad mode );
 
 		 /// <summary>
@@ -253,7 +253,7 @@ namespace Neo4Net.Kernel.impl.store
 		 /// <param name="visitor"> <seealso cref="Visitor"/> notified about all records. </param>
 		 /// <exception cref="Exception"> on error reading from store. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: <EXCEPTION extends Exception> void scanAllRecords(org.Neo4Net.helpers.collection.Visitor<RECORD,EXCEPTION> visitor) throws EXCEPTION;
+//ORIGINAL LINE: <EXCEPTION extends Exception> void scanAllRecords(Neo4Net.helpers.collection.Visitor<RECORD,EXCEPTION> visitor) throws EXCEPTION;
 		 void scanAllRecords<EXCEPTION>( Visitor<RECORD, EXCEPTION> visitor );
 
 		 void FreeId( long id );
@@ -264,7 +264,7 @@ namespace Neo4Net.Kernel.impl.store
 		 /// Also for mocking purposes it's less confusing and error prone having only a single method.
 		 /// </summary>
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java static interface methods:
-//		 static <R> R getRecord(RecordStore<R> store, long id, org.Neo4Net.kernel.impl.store.record.RecordLoad mode)
+//		 static <R> R getRecord(RecordStore<R> store, long id, Neo4Net.kernel.impl.store.record.RecordLoad mode)
 	//	 {
 	//		  R record = store.newRecord();
 	//		  store.getRecord(id, record, mode);
@@ -311,7 +311,7 @@ namespace Neo4Net.Kernel.impl.store
 		  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public R getRecord(long id, R target, org.Neo4Net.kernel.impl.store.record.RecordLoad mode) throws InvalidRecordException
+//ORIGINAL LINE: public R getRecord(long id, R target, Neo4Net.kernel.impl.store.record.RecordLoad mode) throws InvalidRecordException
 		  public override R GetRecord( long id, R target, RecordLoad mode )
 		  {
 				return Actual.getRecord( id, target, mode );
@@ -323,21 +323,21 @@ namespace Neo4Net.Kernel.impl.store
 		  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void getRecordByCursor(long id, R target, org.Neo4Net.kernel.impl.store.record.RecordLoad mode, org.Neo4Net.io.pagecache.PageCursor cursor) throws InvalidRecordException
+//ORIGINAL LINE: public void getRecordByCursor(long id, R target, Neo4Net.kernel.impl.store.record.RecordLoad mode, Neo4Net.io.pagecache.PageCursor cursor) throws InvalidRecordException
 		  public override void GetRecordByCursor( long id, R target, RecordLoad mode, PageCursor cursor )
 		  {
 				Actual.getRecordByCursor( id, target, mode, cursor );
 		  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void nextRecordByCursor(R target, org.Neo4Net.kernel.impl.store.record.RecordLoad mode, org.Neo4Net.io.pagecache.PageCursor cursor) throws InvalidRecordException
+//ORIGINAL LINE: public void nextRecordByCursor(R target, Neo4Net.kernel.impl.store.record.RecordLoad mode, Neo4Net.io.pagecache.PageCursor cursor) throws InvalidRecordException
 		  public override void NextRecordByCursor( R target, RecordLoad mode, PageCursor cursor )
 		  {
 				Actual.nextRecordByCursor( target, mode, cursor );
 		  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.util.List<R> getRecords(long firstId, org.Neo4Net.kernel.impl.store.record.RecordLoad mode) throws InvalidRecordException
+//ORIGINAL LINE: public java.util.List<R> getRecords(long firstId, Neo4Net.kernel.impl.store.record.RecordLoad mode) throws InvalidRecordException
 		  public override IList<R> GetRecords( long firstId, RecordLoad mode )
 		  {
 				return Actual.getRecords( firstId, mode );
@@ -458,7 +458,7 @@ namespace Neo4Net.Kernel.impl.store
 		  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public <EXCEPTION extends Exception> void scanAllRecords(org.Neo4Net.helpers.collection.Visitor<R,EXCEPTION> visitor) throws EXCEPTION
+//ORIGINAL LINE: public <EXCEPTION extends Exception> void scanAllRecords(Neo4Net.helpers.collection.Visitor<R,EXCEPTION> visitor) throws EXCEPTION
 		  public override void ScanAllRecords<EXCEPTION>( Visitor<R, EXCEPTION> visitor ) where EXCEPTION : Exception
 		  {
 				Actual.scanAllRecords( visitor );
@@ -481,47 +481,47 @@ namespace Neo4Net.Kernel.impl.store
 		  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public abstract void processSchema(RecordStore<org.Neo4Net.kernel.impl.store.record.DynamicRecord> store, org.Neo4Net.kernel.impl.store.record.DynamicRecord schema) throws FAILURE;
+//ORIGINAL LINE: public abstract void processSchema(RecordStore<Neo4Net.kernel.impl.store.record.DynamicRecord> store, Neo4Net.kernel.impl.store.record.DynamicRecord schema) throws FAILURE;
 		  public abstract void ProcessSchema( RecordStore<DynamicRecord> store, DynamicRecord schema );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public abstract void processNode(RecordStore<org.Neo4Net.kernel.impl.store.record.NodeRecord> store, org.Neo4Net.kernel.impl.store.record.NodeRecord node) throws FAILURE;
+//ORIGINAL LINE: public abstract void processNode(RecordStore<Neo4Net.kernel.impl.store.record.NodeRecord> store, Neo4Net.kernel.impl.store.record.NodeRecord node) throws FAILURE;
 		  public abstract void ProcessNode( RecordStore<NodeRecord> store, NodeRecord node );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public abstract void processRelationship(RecordStore<org.Neo4Net.kernel.impl.store.record.RelationshipRecord> store, org.Neo4Net.kernel.impl.store.record.RelationshipRecord rel) throws FAILURE;
+//ORIGINAL LINE: public abstract void processRelationship(RecordStore<Neo4Net.kernel.impl.store.record.RelationshipRecord> store, Neo4Net.kernel.impl.store.record.RelationshipRecord rel) throws FAILURE;
 		  public abstract void ProcessRelationship( RecordStore<RelationshipRecord> store, RelationshipRecord rel );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public abstract void processProperty(RecordStore<org.Neo4Net.kernel.impl.store.record.PropertyRecord> store, org.Neo4Net.kernel.impl.store.record.PropertyRecord property) throws FAILURE;
+//ORIGINAL LINE: public abstract void processProperty(RecordStore<Neo4Net.kernel.impl.store.record.PropertyRecord> store, Neo4Net.kernel.impl.store.record.PropertyRecord property) throws FAILURE;
 		  public abstract void ProcessProperty( RecordStore<PropertyRecord> store, PropertyRecord property );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public abstract void processString(RecordStore<org.Neo4Net.kernel.impl.store.record.DynamicRecord> store, org.Neo4Net.kernel.impl.store.record.DynamicRecord string, org.Neo4Net.kernel.impl.store.id.IdType idType) throws FAILURE;
+//ORIGINAL LINE: public abstract void processString(RecordStore<Neo4Net.kernel.impl.store.record.DynamicRecord> store, Neo4Net.kernel.impl.store.record.DynamicRecord string, Neo4Net.kernel.impl.store.id.IdType idType) throws FAILURE;
 		  public abstract void ProcessString( RecordStore<DynamicRecord> store, DynamicRecord @string, IdType idType );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public abstract void processArray(RecordStore<org.Neo4Net.kernel.impl.store.record.DynamicRecord> store, org.Neo4Net.kernel.impl.store.record.DynamicRecord array) throws FAILURE;
+//ORIGINAL LINE: public abstract void processArray(RecordStore<Neo4Net.kernel.impl.store.record.DynamicRecord> store, Neo4Net.kernel.impl.store.record.DynamicRecord array) throws FAILURE;
 		  public abstract void ProcessArray( RecordStore<DynamicRecord> store, DynamicRecord array );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public abstract void processLabelArrayWithOwner(RecordStore<org.Neo4Net.kernel.impl.store.record.DynamicRecord> store, org.Neo4Net.kernel.impl.store.record.DynamicRecord labelArray) throws FAILURE;
+//ORIGINAL LINE: public abstract void processLabelArrayWithOwner(RecordStore<Neo4Net.kernel.impl.store.record.DynamicRecord> store, Neo4Net.kernel.impl.store.record.DynamicRecord labelArray) throws FAILURE;
 		  public abstract void ProcessLabelArrayWithOwner( RecordStore<DynamicRecord> store, DynamicRecord labelArray );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public abstract void processRelationshipTypeToken(RecordStore<org.Neo4Net.kernel.impl.store.record.RelationshipTypeTokenRecord> store, org.Neo4Net.kernel.impl.store.record.RelationshipTypeTokenRecord record) throws FAILURE;
+//ORIGINAL LINE: public abstract void processRelationshipTypeToken(RecordStore<Neo4Net.kernel.impl.store.record.RelationshipTypeTokenRecord> store, Neo4Net.kernel.impl.store.record.RelationshipTypeTokenRecord record) throws FAILURE;
 		  public abstract void ProcessRelationshipTypeToken( RecordStore<RelationshipTypeTokenRecord> store, RelationshipTypeTokenRecord record );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public abstract void processPropertyKeyToken(RecordStore<org.Neo4Net.kernel.impl.store.record.PropertyKeyTokenRecord> store, org.Neo4Net.kernel.impl.store.record.PropertyKeyTokenRecord record) throws FAILURE;
+//ORIGINAL LINE: public abstract void processPropertyKeyToken(RecordStore<Neo4Net.kernel.impl.store.record.PropertyKeyTokenRecord> store, Neo4Net.kernel.impl.store.record.PropertyKeyTokenRecord record) throws FAILURE;
 		  public abstract void ProcessPropertyKeyToken( RecordStore<PropertyKeyTokenRecord> store, PropertyKeyTokenRecord record );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public abstract void processLabelToken(RecordStore<org.Neo4Net.kernel.impl.store.record.LabelTokenRecord> store, org.Neo4Net.kernel.impl.store.record.LabelTokenRecord record) throws FAILURE;
+//ORIGINAL LINE: public abstract void processLabelToken(RecordStore<Neo4Net.kernel.impl.store.record.LabelTokenRecord> store, Neo4Net.kernel.impl.store.record.LabelTokenRecord record) throws FAILURE;
 		  public abstract void ProcessLabelToken( RecordStore<LabelTokenRecord> store, LabelTokenRecord record );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public abstract void processRelationshipGroup(RecordStore<org.Neo4Net.kernel.impl.store.record.RelationshipGroupRecord> store, org.Neo4Net.kernel.impl.store.record.RelationshipGroupRecord record) throws FAILURE;
+//ORIGINAL LINE: public abstract void processRelationshipGroup(RecordStore<Neo4Net.kernel.impl.store.record.RelationshipGroupRecord> store, Neo4Net.kernel.impl.store.record.RelationshipGroupRecord record) throws FAILURE;
 		  public abstract void ProcessRelationshipGroup( RecordStore<RelationshipGroupRecord> store, RelationshipGroupRecord record );
 
 		  protected internal virtual R GetRecord<R>( RecordStore<R> store, long id, R into ) where R : Neo4Net.Kernel.Impl.Store.Records.AbstractBaseRecord
@@ -531,7 +531,7 @@ namespace Neo4Net.Kernel.impl.store
 		  }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-//ORIGINAL LINE: public <R extends org.Neo4Net.kernel.impl.store.record.AbstractBaseRecord> void applyFiltered(RecordStore<R> store, System.Predicate<? super R>... filters) throws FAILURE
+//ORIGINAL LINE: public <R extends Neo4Net.kernel.impl.store.record.AbstractBaseRecord> void applyFiltered(RecordStore<R> store, System.Predicate<? super R>... filters) throws FAILURE
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		  public virtual void ApplyFiltered<R>( RecordStore<R> store, params System.Predicate<object>[] filters ) where R : Neo4Net.Kernel.Impl.Store.Records.AbstractBaseRecord
@@ -540,7 +540,7 @@ namespace Neo4Net.Kernel.impl.store
 		  }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-//ORIGINAL LINE: public <R extends org.Neo4Net.kernel.impl.store.record.AbstractBaseRecord> void applyFiltered(RecordStore<R> store, org.Neo4Net.helpers.progress.ProgressListener progressListener, System.Predicate<? super R>... filters) throws FAILURE
+//ORIGINAL LINE: public <R extends Neo4Net.kernel.impl.store.record.AbstractBaseRecord> void applyFiltered(RecordStore<R> store, Neo4Net.helpers.progress.ProgressListener progressListener, System.Predicate<? super R>... filters) throws FAILURE
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		  public virtual void ApplyFiltered<R>( RecordStore<R> store, ProgressListener progressListener, params System.Predicate<object>[] filters ) where R : Neo4Net.Kernel.Impl.Store.Records.AbstractBaseRecord
@@ -549,13 +549,13 @@ namespace Neo4Net.Kernel.impl.store
 		  }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-//ORIGINAL LINE: <R extends org.Neo4Net.kernel.impl.store.record.AbstractBaseRecord> void apply(RecordStore<R> store, org.Neo4Net.helpers.progress.ProgressListener progressListener, System.Predicate<? super R>... filters) throws FAILURE
+//ORIGINAL LINE: <R extends Neo4Net.kernel.impl.store.record.AbstractBaseRecord> void apply(RecordStore<R> store, Neo4Net.helpers.progress.ProgressListener progressListener, System.Predicate<? super R>... filters) throws FAILURE
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		  internal virtual void Apply<R>( RecordStore<R> store, ProgressListener progressListener, params System.Predicate<object>[] filters ) where R : Neo4Net.Kernel.Impl.Store.Records.AbstractBaseRecord
 		  {
 				ResourceIterable<R> iterable = Scanner.Scan( store, true, filters );
-				using ( ResourceIterator<R> scan = iterable.GetEnumerator() )
+				using ( IResourceIterator<R> scan = iterable.GetEnumerator() )
 				{
 					 while ( scan.MoveNext() )
 					 {

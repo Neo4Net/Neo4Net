@@ -44,7 +44,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index.storage
 	internal class FailureStorageTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.Neo4Net.graphdb.mockfs.EphemeralFileSystemAbstraction fs;
+//ORIGINAL LINE: @Inject private Neo4Net.graphdb.mockfs.EphemeralFileSystemAbstraction fs;
 		 private EphemeralFileSystemAbstraction _fs;
 		 private IndexFolderLayout _indexFolderLayout;
 

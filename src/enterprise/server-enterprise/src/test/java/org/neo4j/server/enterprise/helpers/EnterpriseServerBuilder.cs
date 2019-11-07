@@ -62,7 +62,7 @@ namespace Neo4Net.Server.enterprise.helpers
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.server.enterprise.OpenEnterpriseNeoServer build() throws java.io.IOException
+//ORIGINAL LINE: public Neo4Net.server.enterprise.OpenEnterpriseNeoServer build() throws java.io.IOException
 		 public override OpenEnterpriseNeoServer Build()
 		 {
 			  return ( OpenEnterpriseNeoServer ) base.Build();

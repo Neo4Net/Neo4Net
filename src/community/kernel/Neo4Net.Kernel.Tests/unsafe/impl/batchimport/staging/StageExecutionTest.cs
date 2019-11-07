@@ -32,11 +32,11 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.staging
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertFalse;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.Configuration.DEFAULT;
+//	import static Neo4Net.@unsafe.impl.batchimport.Configuration.DEFAULT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.staging.ControlledStep.stepWithAverageOf;
+//	import static Neo4Net.@unsafe.impl.batchimport.staging.ControlledStep.stepWithAverageOf;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.staging.Step_Fields.ORDER_SEND_DOWNSTREAM;
+//	import static Neo4Net.@unsafe.impl.batchimport.staging.Step_Fields.ORDER_SEND_DOWNSTREAM;
 
 	public class StageExecutionTest
 	{
@@ -55,23 +55,23 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.staging
 
 			  // WHEN
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Iterator<org.Neo4Net.helpers.collection.Pair<Step<?>,float>> ordered = execution.stepsOrderedBy(org.Neo4Net.unsafe.impl.batchimport.stats.Keys.avg_processing_time, true).iterator();
+//ORIGINAL LINE: java.util.Iterator<Neo4Net.helpers.collection.Pair<Step<?>,float>> ordered = execution.stepsOrderedBy(Neo4Net.unsafe.impl.batchimport.stats.Keys.avg_processing_time, true).iterator();
 			  IEnumerator<Pair<Step<object>, float>> ordered = execution.StepsOrderedBy( Keys.avg_processing_time, true ).GetEnumerator();
 
 			  // THEN
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.helpers.collection.Pair<Step<?>,float> fastest = ordered.next();
+//ORIGINAL LINE: Neo4Net.helpers.collection.Pair<Step<?>,float> fastest = ordered.next();
 			  Pair<Step<object>, float> fastest = ordered.next();
 			  assertEquals( 1f / 2f, fastest.Other(), 0f );
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.helpers.collection.Pair<Step<?>,float> faster = ordered.next();
+//ORIGINAL LINE: Neo4Net.helpers.collection.Pair<Step<?>,float> faster = ordered.next();
 			  Pair<Step<object>, float> faster = ordered.next();
 			  assertEquals( 1f / 3f, faster.Other(), 0f );
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.helpers.collection.Pair<Step<?>,float> fast = ordered.next();
+//ORIGINAL LINE: Neo4Net.helpers.collection.Pair<Step<?>,float> fast = ordered.next();
 			  Pair<Step<object>, float> fast = ordered.next();
 			  assertEquals( 1f, fast.Other(), 0f );
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
@@ -94,28 +94,28 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.staging
 
 			  // WHEN
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Iterator<org.Neo4Net.helpers.collection.Pair<Step<?>,float>> ordered = execution.stepsOrderedBy(org.Neo4Net.unsafe.impl.batchimport.stats.Keys.avg_processing_time, false).iterator();
+//ORIGINAL LINE: java.util.Iterator<Neo4Net.helpers.collection.Pair<Step<?>,float>> ordered = execution.stepsOrderedBy(Neo4Net.unsafe.impl.batchimport.stats.Keys.avg_processing_time, false).iterator();
 			  IEnumerator<Pair<Step<object>, float>> ordered = execution.StepsOrderedBy( Keys.avg_processing_time, false ).GetEnumerator();
 
 			  // THEN
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.helpers.collection.Pair<Step<?>,float> slowest = ordered.next();
+//ORIGINAL LINE: Neo4Net.helpers.collection.Pair<Step<?>,float> slowest = ordered.next();
 			  Pair<Step<object>, float> slowest = ordered.next();
 			  assertEquals( 3f, slowest.Other(), 0f );
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.helpers.collection.Pair<Step<?>,float> slower = ordered.next();
+//ORIGINAL LINE: Neo4Net.helpers.collection.Pair<Step<?>,float> slower = ordered.next();
 			  Pair<Step<object>, float> slower = ordered.next();
 			  assertEquals( 2f, slower.Other(), 0f );
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.helpers.collection.Pair<Step<?>,float> slow = ordered.next();
+//ORIGINAL LINE: Neo4Net.helpers.collection.Pair<Step<?>,float> slow = ordered.next();
 			  Pair<Step<object>, float> slow = ordered.next();
 			  assertEquals( 1f, slow.Other(), 0f );
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.helpers.collection.Pair<Step<?>,float> alsoSlow = ordered.next();
+//ORIGINAL LINE: Neo4Net.helpers.collection.Pair<Step<?>,float> alsoSlow = ordered.next();
 			  Pair<Step<object>, float> alsoSlow = ordered.next();
 			  assertEquals( 1f, alsoSlow.Other(), 0f );
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:

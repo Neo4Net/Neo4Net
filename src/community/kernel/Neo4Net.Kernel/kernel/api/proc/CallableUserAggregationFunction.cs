@@ -17,7 +17,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Kernel.api.proc
+namespace Neo4Net.Kernel.Api.Procs
 {
 	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
 	using UserAggregator = Neo4Net.Kernel.Api.Internal.procs.UserAggregator;
@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.api.proc
 	{
 		 UserFunctionSignature Signature();
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.Neo4Net.Kernel.Api.Internal.procs.UserAggregator create(Context ctx) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
+//ORIGINAL LINE: Neo4Net.Kernel.Api.Internal.procs.UserAggregator create(Context ctx) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
 		 UserAggregator Create( Context ctx );
 	}
 
@@ -47,7 +47,7 @@ namespace Neo4Net.Kernel.api.proc
 		  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public abstract org.Neo4Net.Kernel.Api.Internal.procs.UserAggregator create(Context ctx) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
+//ORIGINAL LINE: public abstract Neo4Net.Kernel.Api.Internal.procs.UserAggregator create(Context ctx) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
 		  public override abstract UserAggregator Create( Context ctx );
 	 }
 

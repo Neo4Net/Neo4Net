@@ -40,13 +40,13 @@ namespace Neo4Net.causalclustering.core.consensus.roles
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertFalse;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.MessageUtils.messageFor;
+//	import static Neo4Net.causalclustering.core.consensus.MessageUtils.messageFor;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.TestMessageBuilders.preVoteRequest;
+//	import static Neo4Net.causalclustering.core.consensus.TestMessageBuilders.preVoteRequest;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.state.RaftStateBuilder.raftState;
+//	import static Neo4Net.causalclustering.core.consensus.state.RaftStateBuilder.raftState;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.identity.RaftTestMember.member;
+//	import static Neo4Net.causalclustering.identity.RaftTestMember.member;
 
 	/// <summary>
 	/// Most behaviour for handling vote requests is identical for all roles.
@@ -167,7 +167,7 @@ namespace Neo4Net.causalclustering.core.consensus.roles
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.causalclustering.core.consensus.state.RaftState newState() throws java.io.IOException
+//ORIGINAL LINE: public Neo4Net.causalclustering.core.consensus.state.RaftState newState() throws java.io.IOException
 		 public virtual RaftState NewState()
 		 {
 			  return raftState().myself(_myself).supportsPreVoting(true).build();

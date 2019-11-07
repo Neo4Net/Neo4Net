@@ -64,13 +64,13 @@ namespace Neo4Net.Kernel.impl.core
 			  }
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.graphdb.Node node1 = n1;
+//ORIGINAL LINE: final Neo4Net.graphdb.Node node1 = n1;
 			  Node node1 = n1;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.graphdb.Node node2 = n2;
+//ORIGINAL LINE: final Neo4Net.graphdb.Node node2 = n2;
 			  Node node2 = n2;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.graphdb.Relationship rel1 = r1;
+//ORIGINAL LINE: final Neo4Net.graphdb.Relationship rel1 = r1;
 			  Relationship rel1 = r1;
 
 			  using ( Transaction tx = GraphDb.beginTx() )

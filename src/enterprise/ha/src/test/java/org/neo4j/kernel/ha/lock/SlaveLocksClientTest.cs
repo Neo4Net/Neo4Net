@@ -89,17 +89,17 @@ namespace Neo4Net.Kernel.ha.@lock
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.com.ResourceReleaser_Fields.NO_OP;
+//	import static Neo4Net.com.ResourceReleaser_Fields.NO_OP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.DEFAULT_DATABASE_NAME;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.DEFAULT_DATABASE_NAME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.locking.ResourceTypes.NODE;
+//	import static Neo4Net.kernel.impl.locking.ResourceTypes.NODE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.logging.AssertableLogProvider.inLog;
+//	import static Neo4Net.logging.AssertableLogProvider.inLog;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.logging.NullLog.getInstance;
+//	import static Neo4Net.logging.NullLog.getInstance;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.StorageEngine.StoreId.DEFAULT;
+//	import static Neo4Net.Kernel.Api.StorageEngine.StoreId.DEFAULT;
 
 	public class SlaveLocksClientTest
 	{
@@ -352,7 +352,7 @@ namespace Neo4Net.Kernel.ha.@lock
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(expected = org.Neo4Net.graphdb.TransientDatabaseFailureException.class) public void mustThrowTransientTransactionFailureIfDatabaseUnavailable()
+//ORIGINAL LINE: @Test(expected = Neo4Net.graphdb.TransientDatabaseFailureException.class) public void mustThrowTransientTransactionFailureIfDatabaseUnavailable()
 		 public virtual void MustThrowTransientTransactionFailureIfDatabaseUnavailable()
 		 {
 			  _databaseAvailabilityGuard.shutdown();

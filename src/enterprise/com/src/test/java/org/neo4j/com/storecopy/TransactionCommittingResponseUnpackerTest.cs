@@ -64,16 +64,16 @@ namespace Neo4Net.com.storecopy
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.com.storecopy.ResponseUnpacker_TxHandler_Fields.NO_OP_TX_HANDLER;
+//	import static Neo4Net.com.storecopy.ResponseUnpacker_TxHandler_Fields.NO_OP_TX_HANDLER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.LogPosition.UNSPECIFIED;
+//	import static Neo4Net.kernel.impl.transaction.log.LogPosition.UNSPECIFIED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_ID;
+//	import static Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_ID;
 
 	public class TransactionCommittingResponseUnpackerTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.kernel.lifecycle.LifeRule life = new org.Neo4Net.kernel.lifecycle.LifeRule(true);
+//ORIGINAL LINE: @Rule public final Neo4Net.kernel.lifecycle.LifeRule life = new Neo4Net.kernel.lifecycle.LifeRule(true);
 		 public readonly LifeRule Life = new LifeRule( true );
 
 		 /*
@@ -155,7 +155,7 @@ namespace Neo4Net.com.storecopy
 
 		 private class DummyObligationResponse : TransactionObligationResponse<object>
 		 {
-			  internal DummyObligationResponse( long obligationTxId ) : base( new object(), StoreId.DEFAULT, obligationTxId, org.Neo4Net.com.ResourceReleaser_Fields.NoOp )
+			  internal DummyObligationResponse( long obligationTxId ) : base( new object(), StoreId.DEFAULT, obligationTxId, Neo4Net.com.ResourceReleaser_Fields.NoOp )
 			  {
 			  }
 		 }
@@ -172,7 +172,7 @@ namespace Neo4Net.com.storecopy
 			  {
 			  }
 
-			  internal DummyTransactionResponse( long startingAtTxId, int txCount, long batchLength ) : base( new object(), StoreId.DEFAULT, mock(typeof(TransactionStream)), org.Neo4Net.com.ResourceReleaser_Fields.NoOp )
+			  internal DummyTransactionResponse( long startingAtTxId, int txCount, long batchLength ) : base( new object(), StoreId.DEFAULT, mock(typeof(TransactionStream)), Neo4Net.com.ResourceReleaser_Fields.NoOp )
 			  {
 					this.StartingAtTxId = startingAtTxId;
 					this.TxCount = txCount;
@@ -197,7 +197,7 @@ namespace Neo4Net.com.storecopy
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void accept(org.Neo4Net.com.Response.Handler handler) throws Exception
+//ORIGINAL LINE: public void accept(Neo4Net.com.Response.Handler handler) throws Exception
 			  public override void Accept( Response.Handler handler )
 			  {
 					for ( int i = 0; i < TxCount; i++ )

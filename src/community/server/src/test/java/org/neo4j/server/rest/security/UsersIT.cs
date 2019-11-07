@@ -46,12 +46,12 @@ namespace Neo4Net.Server.rest.security
 	public class UsersIT : ExclusiveServerTestBase
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.TestData<org.Neo4Net.server.rest.RESTRequestGenerator> gen = org.Neo4Net.test.TestData.producedThrough(org.Neo4Net.server.rest.RESTRequestGenerator.PRODUCER);
+//ORIGINAL LINE: @Rule public Neo4Net.test.TestData<Neo4Net.server.rest.RESTRequestGenerator> gen = Neo4Net.test.TestData.producedThrough(Neo4Net.server.rest.RESTRequestGenerator.PRODUCER);
 		 public TestData<RESTRequestGenerator> Gen = TestData.producedThrough( RESTRequestGenerator.PRODUCER );
 		 private CommunityNeoServer _server;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test @Documented("User status\n" + "\n" + "Given that you know the current password, you can ask the server for the user status.") public void user_status() throws org.Neo4Net.server.rest.domain.JsonParseException, java.io.IOException
+//ORIGINAL LINE: @Test @Documented("User status\n" + "\n" + "Given that you know the current password, you can ask the server for the user status.") public void user_status() throws Neo4Net.server.rest.domain.JsonParseException, java.io.IOException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Documented("User status\n" + "\n" + "Given that you know the current password, you can ask the server for the user status.")]
 		 public virtual void UserStatus()
@@ -70,7 +70,7 @@ namespace Neo4Net.Server.rest.security
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test @Documented("User status on first access\n" + "\n" + "On first access, and using the default password, the user status will indicate " + "that the users password requires changing.") public void user_status_first_access() throws org.Neo4Net.server.rest.domain.JsonParseException, java.io.IOException
+//ORIGINAL LINE: @Test @Documented("User status on first access\n" + "\n" + "On first access, and using the default password, the user status will indicate " + "that the users password requires changing.") public void user_status_first_access() throws Neo4Net.server.rest.domain.JsonParseException, java.io.IOException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Documented("User status on first access\n" + "\n" + "On first access, and using the default password, the user status will indicate " + "that the users password requires changing.")]
 		 public virtual void UserStatusFirstAccess()

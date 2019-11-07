@@ -26,7 +26,7 @@ namespace Neo4Net.Udc
 	using Neo4Net.Utils.Concurrent;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.udc.UsageDataKey.key;
+//	import static Neo4Net.udc.UsageDataKey.key;
 
 	/// <summary>
 	/// Inventory of common keys. This list is not exhaustive, and all items listed may not be available.

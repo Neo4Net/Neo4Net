@@ -43,9 +43,9 @@ namespace Neo4Net.Test.causalclustering
 	using VerboseTimeout = Neo4Net.Test.rule.VerboseTimeout;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.discovery.IpFamily.IPV4;
+//	import static Neo4Net.causalclustering.discovery.IpFamily.IPV4;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
+//	import static Neo4Net.helpers.collection.MapUtil.stringMap;
 
 	/// <summary>
 	/// Includes a <seealso cref="VerboseTimeout"/> rule with a long default timeout. Use <seealso cref="withTimeout(long, TimeUnit)"/> to customise
@@ -56,7 +56,7 @@ namespace Neo4Net.Test.causalclustering
 		 private readonly TestDirectory _testDirectory = TestDirectory.testDirectory();
 		 private File _clusterDirectory;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private org.Neo4Net.causalclustering.discovery.Cluster<?> cluster;
+//ORIGINAL LINE: private Neo4Net.causalclustering.discovery.Cluster<?> cluster;
 		 private Cluster<object> _cluster;
 
 		 private int _noCoreMembers = 3;
@@ -112,14 +112,14 @@ namespace Neo4Net.Test.causalclustering
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void evaluate() throws Throwable
-			 public override void evaluate()
+//ORIGINAL LINE: public void Evaluate() throws Throwable
+			 public override void Evaluate()
 			 {
 				  // If this is used as class rule then getMethodName() returns null, so use
 				  // getClassName() instead.
 				  string name = _description.MethodName != null ? _description.MethodName : _description.ClassName;
 				  _outerInstance.clusterDirectory = _outerInstance.testDirectory.directory( name );
-				  _timeoutStatement.evaluate();
+				  _timeoutStatement.Evaluate();
 			 }
 		 }
 
@@ -136,7 +136,7 @@ namespace Neo4Net.Test.causalclustering
 		 /// cluster is up and all members report each other as available.
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.causalclustering.discovery.Cluster<?> startCluster() throws Exception
+//ORIGINAL LINE: public Neo4Net.causalclustering.discovery.Cluster<?> startCluster() throws Exception
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		 public virtual Cluster<object> StartCluster()
 		 {
@@ -150,7 +150,7 @@ namespace Neo4Net.Test.causalclustering
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: public org.Neo4Net.causalclustering.discovery.Cluster<?> createCluster()
+//ORIGINAL LINE: public Neo4Net.causalclustering.discovery.Cluster<?> createCluster()
 		 public virtual Cluster<object> CreateCluster()
 		 {
 			  if ( _cluster == null )

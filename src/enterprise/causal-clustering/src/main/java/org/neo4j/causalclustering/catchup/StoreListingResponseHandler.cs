@@ -39,7 +39,7 @@ namespace Neo4Net.causalclustering.catchup
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected void channelRead0(io.netty.channel.ChannelHandlerContext ctx, final org.Neo4Net.causalclustering.catchup.storecopy.PrepareStoreCopyResponse msg) throws Exception
+//ORIGINAL LINE: protected void channelRead0(io.netty.channel.ChannelHandlerContext ctx, final Neo4Net.causalclustering.catchup.storecopy.PrepareStoreCopyResponse msg) throws Exception
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 		 protected internal override void ChannelRead0( ChannelHandlerContext ctx, PrepareStoreCopyResponse msg )
 		 {

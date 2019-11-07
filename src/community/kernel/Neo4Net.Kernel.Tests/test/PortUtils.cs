@@ -39,7 +39,7 @@ namespace Neo4Net.Test
 		 public static HostnamePort GetConnectorAddress( GraphDatabaseAPI db, string connectorKey )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.configuration.ConnectorPortRegister portRegister = db.getDependencyResolver().resolveDependency(org.Neo4Net.kernel.configuration.ConnectorPortRegister.class);
+//ORIGINAL LINE: final Neo4Net.kernel.configuration.ConnectorPortRegister portRegister = db.getDependencyResolver().resolveDependency(Neo4Net.kernel.configuration.ConnectorPortRegister.class);
 			  ConnectorPortRegister portRegister = Db.DependencyResolver.resolveDependency( typeof( ConnectorPortRegister ) );
 			  return requireNonNull( portRegister.GetLocalAddress( connectorKey ), "Connector not found: " + connectorKey );
 		 }

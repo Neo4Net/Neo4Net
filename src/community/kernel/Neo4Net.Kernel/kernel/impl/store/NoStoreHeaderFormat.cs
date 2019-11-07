@@ -22,7 +22,7 @@ namespace Neo4Net.Kernel.impl.store
 	using PageCursor = Neo4Net.Io.pagecache.PageCursor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.NoStoreHeader.NO_STORE_HEADER;
+//	import static Neo4Net.kernel.impl.store.NoStoreHeader.NO_STORE_HEADER;
 
 	public class NoStoreHeaderFormat : StoreHeaderFormat<NoStoreHeader>
 	{

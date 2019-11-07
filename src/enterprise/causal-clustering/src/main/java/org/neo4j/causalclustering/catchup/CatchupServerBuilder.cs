@@ -43,9 +43,9 @@ namespace Neo4Net.causalclustering.catchup
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.handlers.VoidPipelineWrapperFactory.VOID_WRAPPER;
+//	import static Neo4Net.causalclustering.handlers.VoidPipelineWrapperFactory.VOID_WRAPPER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.protocol.Protocol_ApplicationProtocolCategory.CATCHUP;
+//	import static Neo4Net.causalclustering.protocol.Protocol_ApplicationProtocolCategory.CATCHUP;
 
 	public class CatchupServerBuilder
 	{

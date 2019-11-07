@@ -52,7 +52,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Parameterized.Parameter public org.Neo4Net.Kernel.Api.Internal.IndexOrder indexOrder;
+//ORIGINAL LINE: @Parameterized.Parameter public Neo4Net.Kernel.Api.Internal.IndexOrder indexOrder;
 		 public IndexOrder IndexOrder;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

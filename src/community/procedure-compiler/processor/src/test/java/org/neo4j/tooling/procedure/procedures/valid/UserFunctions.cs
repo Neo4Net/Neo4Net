@@ -88,21 +88,21 @@ namespace Neo4Net.Tooling.procedure.procedures.valid
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @UserFunction public String simpleInput08(@Name("foo") org.Neo4Net.graphdb.Node input)
+//ORIGINAL LINE: @UserFunction public String simpleInput08(@Name("foo") Neo4Net.graphdb.Node input)
 		 public virtual string SimpleInput08( Node input )
 		 {
 			  return "42";
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @UserFunction public String simpleInput09(@Name("foo") org.Neo4Net.graphdb.Path input)
+//ORIGINAL LINE: @UserFunction public String simpleInput09(@Name("foo") Neo4Net.graphdb.Path input)
 		 public virtual string SimpleInput09( Path input )
 		 {
 			  return "42";
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @UserFunction public String simpleInput10(@Name("foo") org.Neo4Net.graphdb.Relationship input)
+//ORIGINAL LINE: @UserFunction public String simpleInput10(@Name("foo") Neo4Net.graphdb.Relationship input)
 		 public virtual string SimpleInput10( Relationship input )
 		 {
 			  return "42";
@@ -116,14 +116,14 @@ namespace Neo4Net.Tooling.procedure.procedures.valid
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @UserFunction public String genericInput02(@Name("foo") java.util.List<java.util.List<org.Neo4Net.graphdb.Node>> input)
+//ORIGINAL LINE: @UserFunction public String genericInput02(@Name("foo") java.util.List<java.util.List<Neo4Net.graphdb.Node>> input)
 		 public virtual string GenericInput02( IList<IList<Node>> input )
 		 {
 			  return "42";
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @UserFunction public String genericInput03(@Name("foo") java.util.Map<String,java.util.List<org.Neo4Net.graphdb.Node>> input)
+//ORIGINAL LINE: @UserFunction public String genericInput03(@Name("foo") java.util.Map<String,java.util.List<Neo4Net.graphdb.Node>> input)
 		 public virtual string GenericInput03( IDictionary<string, IList<Node>> input )
 		 {
 			  return "42";
@@ -137,7 +137,7 @@ namespace Neo4Net.Tooling.procedure.procedures.valid
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @UserFunction public String genericInput05(@Name("foo") java.util.Map<String,java.util.List<java.util.List<java.util.Map<String,java.util.Map<String,java.util.List<org.Neo4Net.graphdb.Path>>>>>> input)
+//ORIGINAL LINE: @UserFunction public String genericInput05(@Name("foo") java.util.Map<String,java.util.List<java.util.List<java.util.Map<String,java.util.Map<String,java.util.List<Neo4Net.graphdb.Path>>>>>> input)
 		 public virtual string GenericInput05( IDictionary<string, IList<IList<IDictionary<string, IDictionary<string, IList<Path>>>>>> input )
 		 {
 			  return "42";

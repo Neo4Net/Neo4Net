@@ -51,7 +51,7 @@ namespace Neo4Net.Kernel.ha
 		 private readonly int _numberOfIndexes = 10;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.ha.ClusterRule clusterRule = new org.Neo4Net.test.ha.ClusterRule().withSharedSetting(HaSettings.tx_push_factor, "0");
+//ORIGINAL LINE: @Rule public final Neo4Net.test.ha.ClusterRule clusterRule = new Neo4Net.test.ha.ClusterRule().withSharedSetting(HaSettings.tx_push_factor, "0");
 		 public readonly ClusterRule ClusterRule = new ClusterRule().withSharedSetting(HaSettings.TxPushFactor, "0");
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -104,7 +104,7 @@ namespace Neo4Net.Kernel.ha
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private void startMeasuringTheGap(final java.util.concurrent.atomic.AtomicInteger good, final java.util.concurrent.atomic.AtomicInteger bad, final java.util.concurrent.atomic.AtomicInteger ugly, final java.util.concurrent.atomic.AtomicBoolean halter, final java.util.concurrent.atomic.AtomicLong[] highIdNodes, final org.Neo4Net.kernel.internal.GraphDatabaseAPI db)
+//ORIGINAL LINE: private void startMeasuringTheGap(final java.util.concurrent.atomic.AtomicInteger good, final java.util.concurrent.atomic.AtomicInteger bad, final java.util.concurrent.atomic.AtomicInteger ugly, final java.util.concurrent.atomic.AtomicBoolean halter, final java.util.concurrent.atomic.AtomicLong[] highIdNodes, final Neo4Net.kernel.internal.GraphDatabaseAPI db)
 		 private void StartMeasuringTheGap( AtomicInteger good, AtomicInteger bad, AtomicInteger ugly, AtomicBoolean halter, AtomicLong[] highIdNodes, GraphDatabaseAPI db )
 		 {
 			  (new Thread(() =>
@@ -182,7 +182,7 @@ namespace Neo4Net.Kernel.ha
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private void startCatchingUp(final org.Neo4Net.kernel.internal.GraphDatabaseAPI db, final java.util.concurrent.atomic.AtomicBoolean halter, final java.util.concurrent.CountDownLatch endLatch)
+//ORIGINAL LINE: private void startCatchingUp(final Neo4Net.kernel.internal.GraphDatabaseAPI db, final java.util.concurrent.atomic.AtomicBoolean halter, final java.util.concurrent.CountDownLatch endLatch)
 		 private void StartCatchingUp( GraphDatabaseAPI db, AtomicBoolean halter, System.Threading.CountdownEvent endLatch )
 		 {
 			  (new Thread(() =>
@@ -232,7 +232,7 @@ namespace Neo4Net.Kernel.ha
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private void startLoadOn(final org.Neo4Net.graphdb.GraphDatabaseService db, final java.util.concurrent.atomic.AtomicBoolean halter, final java.util.concurrent.atomic.AtomicLong[] highIdNodes, final java.util.concurrent.CountDownLatch endLatch)
+//ORIGINAL LINE: private void startLoadOn(final Neo4Net.graphdb.GraphDatabaseService db, final java.util.concurrent.atomic.AtomicBoolean halter, final java.util.concurrent.atomic.AtomicLong[] highIdNodes, final java.util.concurrent.CountDownLatch endLatch)
 		 private void StartLoadOn( IGraphDatabaseService db, AtomicBoolean halter, AtomicLong[] highIdNodes, System.Threading.CountdownEvent endLatch )
 		 {
 			  for ( int i = 0; i < _numberOfIndexes; i++ )

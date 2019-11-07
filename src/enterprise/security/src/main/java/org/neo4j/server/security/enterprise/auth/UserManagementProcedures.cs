@@ -34,7 +34,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 	using UTF8 = Neo4Net.Strings.UTF8;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.procedure.Mode.DBMS;
+//	import static Neo4Net.procedure.Mode.DBMS;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @SuppressWarnings({"unused", "WeakerAccess"}) public class UserManagementProcedures extends AuthProceduresBase
@@ -42,7 +42,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 	{
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Admin @Description("Create a new user.") @Procedure(name = "dbms.security.createUser", mode = DBMS) public void createUser(@Name("username") String username, @Name("password") String password, @Name(value = "requirePasswordChange", defaultValue = "true") boolean requirePasswordChange) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException, java.io.IOException
+//ORIGINAL LINE: @Admin @Description("Create a new user.") @Procedure(name = "dbms.security.createUser", mode = DBMS) public void createUser(@Name("username") String username, @Name("password") String password, @Name(value = "requirePasswordChange", defaultValue = "true") boolean requirePasswordChange) throws Neo4Net.kernel.api.exceptions.InvalidArgumentsException, java.io.IOException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Description("Create a new user."), Procedure(name : "dbms.security.createUser", mode : DBMS)]
 		 public virtual void CreateUser( string username, string password, bool requirePasswordChange )
@@ -52,7 +52,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Deprecated @Description("Change the current user's password. Deprecated by dbms.security.changePassword.") @Procedure(name = "dbms.changePassword", mode = DBMS, deprecatedBy = "dbms.security.changePassword") public void changePasswordDeprecated(@Name("password") String password) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException, java.io.IOException
+//ORIGINAL LINE: @Deprecated @Description("Change the current user's password. Deprecated by dbms.security.changePassword.") @Procedure(name = "dbms.changePassword", mode = DBMS, deprecatedBy = "dbms.security.changePassword") public void changePasswordDeprecated(@Name("password") String password) throws Neo4Net.kernel.api.exceptions.InvalidArgumentsException, java.io.IOException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Obsolete, Description("Change the current user's password. Deprecated by dbms.security.changePassword."), Procedure(name : "dbms.changePassword", mode : DBMS, deprecatedBy : "dbms.security.changePassword")]
 		 public virtual void ChangePasswordDeprecated( string password )
@@ -62,7 +62,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Change the current user's password.") @Procedure(name = "dbms.security.changePassword", mode = DBMS) public void changePassword(@Name("password") String password, @Name(value = "requirePasswordChange", defaultValue = "false") boolean requirePasswordChange) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException, java.io.IOException
+//ORIGINAL LINE: @Description("Change the current user's password.") @Procedure(name = "dbms.security.changePassword", mode = DBMS) public void changePassword(@Name("password") String password, @Name(value = "requirePasswordChange", defaultValue = "false") boolean requirePasswordChange) throws Neo4Net.kernel.api.exceptions.InvalidArgumentsException, java.io.IOException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Description("Change the current user's password."), Procedure(name : "dbms.security.changePassword", mode : DBMS)]
 		 public virtual void ChangePassword( string password, bool requirePasswordChange )
@@ -72,7 +72,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Change the given user's password.") @Procedure(name = "dbms.security.changeUserPassword", mode = DBMS) public void changeUserPassword(@Name("username") String username, @Name("newPassword") String newPassword, @Name(value = "requirePasswordChange", defaultValue = "true") boolean requirePasswordChange) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException, java.io.IOException
+//ORIGINAL LINE: @Description("Change the given user's password.") @Procedure(name = "dbms.security.changeUserPassword", mode = DBMS) public void changeUserPassword(@Name("username") String username, @Name("newPassword") String newPassword, @Name(value = "requirePasswordChange", defaultValue = "true") boolean requirePasswordChange) throws Neo4Net.kernel.api.exceptions.InvalidArgumentsException, java.io.IOException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Description("Change the given user's password."), Procedure(name : "dbms.security.changeUserPassword", mode : DBMS)]
 		 public virtual void ChangeUserPassword( string username, string newPassword, bool requirePasswordChange )
@@ -83,7 +83,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Admin @Description("Assign a role to the user.") @Procedure(name = "dbms.security.addRoleToUser", mode = DBMS) public void addRoleToUser(@Name("roleName") String roleName, @Name("username") String username) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: @Admin @Description("Assign a role to the user.") @Procedure(name = "dbms.security.addRoleToUser", mode = DBMS) public void addRoleToUser(@Name("roleName") String roleName, @Name("username") String username) throws java.io.IOException, Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Description("Assign a role to the user."), Procedure(name : "dbms.security.addRoleToUser", mode : DBMS)]
 		 public virtual void AddRoleToUser( string roleName, string username )
@@ -92,7 +92,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Admin @Description("Unassign a role from the user.") @Procedure(name = "dbms.security.removeRoleFromUser", mode = DBMS) public void removeRoleFromUser(@Name("roleName") String roleName, @Name("username") String username) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException, java.io.IOException
+//ORIGINAL LINE: @Admin @Description("Unassign a role from the user.") @Procedure(name = "dbms.security.removeRoleFromUser", mode = DBMS) public void removeRoleFromUser(@Name("roleName") String roleName, @Name("username") String username) throws Neo4Net.kernel.api.exceptions.InvalidArgumentsException, java.io.IOException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Description("Unassign a role from the user."), Procedure(name : "dbms.security.removeRoleFromUser", mode : DBMS)]
 		 public virtual void RemoveRoleFromUser( string roleName, string username )
@@ -101,7 +101,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Admin @Description("Delete the specified user.") @Procedure(name = "dbms.security.deleteUser", mode = DBMS) public void deleteUser(@Name("username") String username) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException, java.io.IOException
+//ORIGINAL LINE: @Admin @Description("Delete the specified user.") @Procedure(name = "dbms.security.deleteUser", mode = DBMS) public void deleteUser(@Name("username") String username) throws Neo4Net.kernel.api.exceptions.InvalidArgumentsException, java.io.IOException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Description("Delete the specified user."), Procedure(name : "dbms.security.deleteUser", mode : DBMS)]
 		 public virtual void DeleteUser( string username )
@@ -113,7 +113,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Admin @Description("Suspend the specified user.") @Procedure(name = "dbms.security.suspendUser", mode = DBMS) public void suspendUser(@Name("username") String username) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: @Admin @Description("Suspend the specified user.") @Procedure(name = "dbms.security.suspendUser", mode = DBMS) public void suspendUser(@Name("username") String username) throws java.io.IOException, Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Description("Suspend the specified user."), Procedure(name : "dbms.security.suspendUser", mode : DBMS)]
 		 public virtual void SuspendUser( string username )
@@ -123,7 +123,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Admin @Description("Activate a suspended user.") @Procedure(name = "dbms.security.activateUser", mode = DBMS) public void activateUser(@Name("username") String username, @Name(value = "requirePasswordChange", defaultValue = "true") boolean requirePasswordChange) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: @Admin @Description("Activate a suspended user.") @Procedure(name = "dbms.security.activateUser", mode = DBMS) public void activateUser(@Name("username") String username, @Name(value = "requirePasswordChange", defaultValue = "true") boolean requirePasswordChange) throws java.io.IOException, Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Description("Activate a suspended user."), Procedure(name : "dbms.security.activateUser", mode : DBMS)]
 		 public virtual void ActivateUser( string username, bool requirePasswordChange )
@@ -157,7 +157,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("List all roles assigned to the specified user.") @Procedure(name = "dbms.security.listRolesForUser", mode = DBMS) public java.util.stream.Stream<StringResult> listRolesForUser(@Name("username") String username) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: @Description("List all roles assigned to the specified user.") @Procedure(name = "dbms.security.listRolesForUser", mode = DBMS) public java.util.stream.Stream<StringResult> listRolesForUser(@Name("username") String username) throws Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Description("List all roles assigned to the specified user."), Procedure(name : "dbms.security.listRolesForUser", mode : DBMS)]
 		 public virtual Stream<StringResult> ListRolesForUser( string username )
@@ -168,7 +168,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Admin @Description("List all users currently assigned the specified role.") @Procedure(name = "dbms.security.listUsersForRole", mode = DBMS) public java.util.stream.Stream<StringResult> listUsersForRole(@Name("roleName") String roleName) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: @Admin @Description("List all users currently assigned the specified role.") @Procedure(name = "dbms.security.listUsersForRole", mode = DBMS) public java.util.stream.Stream<StringResult> listUsersForRole(@Name("roleName") String roleName) throws Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Description("List all users currently assigned the specified role."), Procedure(name : "dbms.security.listUsersForRole", mode : DBMS)]
 		 public virtual Stream<StringResult> ListUsersForRole( string roleName )
@@ -178,7 +178,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Admin @Description("Create a new role.") @Procedure(name = "dbms.security.createRole", mode = DBMS) public void createRole(@Name("roleName") String roleName) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException, java.io.IOException
+//ORIGINAL LINE: @Admin @Description("Create a new role.") @Procedure(name = "dbms.security.createRole", mode = DBMS) public void createRole(@Name("roleName") String roleName) throws Neo4Net.kernel.api.exceptions.InvalidArgumentsException, java.io.IOException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Description("Create a new role."), Procedure(name : "dbms.security.createRole", mode : DBMS)]
 		 public virtual void CreateRole( string roleName )
@@ -187,7 +187,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Admin @Description("Delete the specified role. Any role assignments will be removed.") @Procedure(name = "dbms.security.deleteRole", mode = DBMS) public void deleteRole(@Name("roleName") String roleName) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException, java.io.IOException
+//ORIGINAL LINE: @Admin @Description("Delete the specified role. Any role assignments will be removed.") @Procedure(name = "dbms.security.deleteRole", mode = DBMS) public void deleteRole(@Name("roleName") String roleName) throws Neo4Net.kernel.api.exceptions.InvalidArgumentsException, java.io.IOException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Description("Delete the specified role. Any role assignments will be removed."), Procedure(name : "dbms.security.deleteRole", mode : DBMS)]
 		 public virtual void DeleteRole( string roleName )
@@ -196,7 +196,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void setUserPassword(String username, String newPassword, boolean requirePasswordChange) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: private void setUserPassword(String username, String newPassword, boolean requirePasswordChange) throws java.io.IOException, Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 		 private void SetUserPassword( string username, string newPassword, bool requirePasswordChange )
 		 {
 			  UserManager.setUserPassword( username, !string.ReferenceEquals( newPassword, null ) ? UTF8.encode( newPassword ) : null, requirePasswordChange );

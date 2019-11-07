@@ -28,7 +28,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.config
 	using CoordinateReferenceSystem = Neo4Net.Values.Storable.CoordinateReferenceSystem;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.config.SpaceFillingCurveSettingsWriter.VERSION;
+//	import static Neo4Net.kernel.impl.index.schema.config.SpaceFillingCurveSettingsWriter.VERSION;
 
 	/// <summary>
 	/// <seealso cref="GBPTree"/> header reader for reading <seealso cref="SpaceFillingCurveSettings"/>.

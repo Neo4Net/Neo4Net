@@ -23,11 +23,11 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.cache
 {
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.cache.HeapByteArray.get3ByteIntFromByteBuffer;
+//	import static Neo4Net.@unsafe.impl.batchimport.cache.HeapByteArray.get3ByteIntFromByteBuffer;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.cache.HeapByteArray.get6BLongFromByteBuffer;
+//	import static Neo4Net.@unsafe.impl.batchimport.cache.HeapByteArray.get6BLongFromByteBuffer;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.cache.HeapByteArray.get5BLongFromByteBuffer;
+//	import static Neo4Net.@unsafe.impl.batchimport.cache.HeapByteArray.get5BLongFromByteBuffer;
 
 	public class DynamicByteArray : DynamicNumberArray<ByteArray>, ByteArray
 	{

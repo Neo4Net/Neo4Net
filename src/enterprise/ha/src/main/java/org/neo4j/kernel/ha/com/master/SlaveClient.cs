@@ -42,13 +42,13 @@ namespace Neo4Net.Kernel.ha.com.master
 	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.com.Protocol.VOID_SERIALIZER;
+//	import static Neo4Net.com.Protocol.VOID_SERIALIZER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.com.Protocol.readString;
+//	import static Neo4Net.com.Protocol.readString;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.com.Protocol.writeString;
+//	import static Neo4Net.com.Protocol.writeString;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.com.storecopy.ResponseUnpacker_Fields.NO_OP_RESPONSE_UNPACKER;
+//	import static Neo4Net.com.storecopy.ResponseUnpacker_Fields.NO_OP_RESPONSE_UNPACKER;
 
 	public class SlaveClient : Client<Slave>, Slave
 	{
@@ -60,7 +60,7 @@ namespace Neo4Net.Kernel.ha.com.master
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public org.Neo4Net.com.Response<Void> pullUpdates(final long upToAndIncludingTxId)
+//ORIGINAL LINE: public Neo4Net.com.Response<Void> pullUpdates(final long upToAndIncludingTxId)
 		 public override Response<Void> PullUpdates( long upToAndIncludingTxId )
 		 {
 			  return SendRequest(SlaveRequestType.PullUpdates, RequestContext.EMPTY, buffer =>
@@ -81,7 +81,7 @@ namespace Neo4Net.Kernel.ha.com.master
 		 public sealed class SlaveRequestType : RequestType
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           PULL_UPDATES((org.Neo4Net.com.TargetCaller<Slave, Void>)(master, context, input, target) ->{readString(input);
+//           PULL_UPDATES((Neo4Net.com.TargetCaller<Slave, Void>)(master, context, input, target) ->{readString(input);
 
 			  private static readonly IList<SlaveRequestType> valueList = new List<SlaveRequestType>();
 

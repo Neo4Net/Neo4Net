@@ -36,7 +36,7 @@ namespace Neo4Net.causalclustering.core.consensus.outcome
 		 void Dispatch( RaftLogCommand_Handler handler );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void applyTo(org.Neo4Net.causalclustering.core.consensus.log.RaftLog raftLog, org.Neo4Net.logging.Log log) throws java.io.IOException;
+//ORIGINAL LINE: void applyTo(Neo4Net.causalclustering.core.consensus.log.RaftLog raftLog, Neo4Net.logging.Log log) throws java.io.IOException;
 		 void ApplyTo( RaftLog raftLog, Log log );
 
 		 void ApplyTo( InFlightCache inFlightCache, Log log );
@@ -45,7 +45,7 @@ namespace Neo4Net.causalclustering.core.consensus.outcome
 	 public interface RaftLogCommand_Handler
 	 {
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void append(long baseIndex, org.Neo4Net.causalclustering.core.consensus.log.RaftLogEntry... entries) throws java.io.IOException;
+//ORIGINAL LINE: void append(long baseIndex, Neo4Net.causalclustering.core.consensus.log.RaftLogEntry... entries) throws java.io.IOException;
 		  void Append( long baseIndex, params RaftLogEntry[] entries );
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 //ORIGINAL LINE: void truncate(long fromIndex) throws java.io.IOException;

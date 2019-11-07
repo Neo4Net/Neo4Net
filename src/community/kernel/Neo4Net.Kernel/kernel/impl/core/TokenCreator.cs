@@ -35,7 +35,7 @@ namespace Neo4Net.Kernel.impl.core
 		 /// <returns> The id of the allocated token name. </returns>
 		 /// <exception cref="KernelException"> If the inner transaction used to allocate the token encountered a problem. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: int createToken(String name) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
+//ORIGINAL LINE: int createToken(String name) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 		 int CreateToken( string name );
 
 		 /// <summary>
@@ -47,7 +47,7 @@ namespace Neo4Net.Kernel.impl.core
 		 /// <param name="indexFilter"> A filter for the array indexes for which a token needs an id. </param>
 		 /// <exception cref="KernelException"> If the inner transaction used to allocate the tokens encountered a problem. </exception>
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//		 default void createTokens(String[] names, int[] ids, System.Func<int, boolean> indexFilter) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//		 default void createTokens(String[] names, int[] ids, System.Func<int, boolean> indexFilter) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 	//	 {
 	//		  for (int i = 0; i < ids.length; i++)
 	//		  {

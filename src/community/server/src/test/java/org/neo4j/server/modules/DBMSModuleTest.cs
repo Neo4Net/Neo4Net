@@ -53,7 +53,7 @@ namespace Neo4Net.Server.modules
 	public class DBMSModuleTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.SuppressOutput suppressOutput = org.Neo4Net.test.rule.SuppressOutput.suppress(org.Neo4Net.test.rule.SuppressOutput.System.err, org.Neo4Net.test.rule.SuppressOutput.System.out);
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.SuppressOutput suppressOutput = Neo4Net.test.rule.SuppressOutput.suppress(Neo4Net.test.rule.SuppressOutput.System.err, Neo4Net.test.rule.SuppressOutput.System.out);
 		 public SuppressOutput SuppressOutput = SuppressOutput.suppress( SuppressOutput.System.err, SuppressOutput.System.out );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

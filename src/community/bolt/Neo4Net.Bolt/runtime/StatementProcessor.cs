@@ -32,35 +32,35 @@ namespace Neo4Net.Bolt.runtime
 	public interface IStatementProcessor
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void BeginTransaction(org.Neo4Net.bolt.v1.runtime.bookmarking.Bookmark bookmark) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
+//ORIGINAL LINE: void BeginTransaction(Neo4Net.bolt.v1.runtime.bookmarking.Bookmark bookmark) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 		 void BeginTransaction( Bookmark bookmark );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void BeginTransaction(org.Neo4Net.bolt.v1.runtime.bookmarking.Bookmark bookmark, java.time.Duration txTimeout, java.util.Map<String,Object> txMetadata) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
+//ORIGINAL LINE: void BeginTransaction(Neo4Net.bolt.v1.runtime.bookmarking.Bookmark bookmark, java.time.Duration txTimeout, java.util.Map<String,Object> txMetadata) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 		 void BeginTransaction( Bookmark bookmark, Duration txTimeout, IDictionary<string, object> txMetadata );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: StatementMetadata run(String statement, org.Neo4Net.values.virtual.MapValue params) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
+//ORIGINAL LINE: StatementMetadata run(String statement, Neo4Net.values.virtual.MapValue params) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 		 StatementMetadata Run( string statement, MapValue @params );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: StatementMetadata run(String statement, org.Neo4Net.values.virtual.MapValue params, org.Neo4Net.bolt.v1.runtime.bookmarking.Bookmark bookmark, java.time.Duration txTimeout, java.util.Map<String,Object> txMetaData) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
+//ORIGINAL LINE: StatementMetadata run(String statement, Neo4Net.values.virtual.MapValue params, Neo4Net.bolt.v1.runtime.bookmarking.Bookmark bookmark, java.time.Duration txTimeout, java.util.Map<String,Object> txMetaData) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 		 StatementMetadata Run( string statement, MapValue @params, Bookmark bookmark, Duration txTimeout, IDictionary<string, object> txMetaData );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.Neo4Net.bolt.v1.runtime.bookmarking.Bookmark streamResult(org.Neo4Net.function.ThrowingConsumer<BoltResult,Exception> resultConsumer) throws Exception;
+//ORIGINAL LINE: Neo4Net.bolt.v1.runtime.bookmarking.Bookmark streamResult(Neo4Net.function.ThrowingConsumer<BoltResult,Exception> resultConsumer) throws Exception;
 		 Bookmark StreamResult( ThrowingConsumer<BoltResult, Exception> resultConsumer );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.Neo4Net.bolt.v1.runtime.bookmarking.Bookmark commitTransaction() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
+//ORIGINAL LINE: Neo4Net.bolt.v1.runtime.bookmarking.Bookmark commitTransaction() throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 		 Bookmark CommitTransaction();
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void rollbackTransaction() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
+//ORIGINAL LINE: void rollbackTransaction() throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 		 void RollbackTransaction();
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void reset() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
+//ORIGINAL LINE: void reset() throws Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
 		 void Reset();
 
 		 void MarkCurrentTransactionForTermination();
@@ -70,7 +70,7 @@ namespace Neo4Net.Bolt.runtime
 		 bool HasOpenStatement();
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void validateTransaction() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
+//ORIGINAL LINE: void validateTransaction() throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 		 void ValidateTransaction();
 
 	//JAVA TO C# CONVERTER TODO TASK: The following anonymous inner class could not be converted:

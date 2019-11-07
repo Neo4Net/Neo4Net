@@ -63,13 +63,13 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.asCollection;
+//	import static Neo4Net.helpers.collection.Iterators.asCollection;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.asSet;
+//	import static Neo4Net.helpers.collection.Iterators.asSet;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.single;
+//	import static Neo4Net.helpers.collection.Iterators.single;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.security.LoginContext.AUTH_DISABLED;
+//	import static Neo4Net.Kernel.Api.Internal.security.LoginContext.AUTH_DISABLED;
 
 	public abstract class AbstractConstraintCreationIT<Constraint, DESCRIPTOR> : KernelIntegrationTest where Constraint : Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor where DESCRIPTOR : Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor
 	{
@@ -81,11 +81,11 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 		 internal DESCRIPTOR Descriptor;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: abstract int initializeLabelOrRelType(org.Neo4Net.Kernel.Api.Internal.TokenWrite tokenWrite, String name) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
+//ORIGINAL LINE: abstract int initializeLabelOrRelType(Neo4Net.Kernel.Api.Internal.TokenWrite tokenWrite, String name) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 		 internal abstract int InitializeLabelOrRelType( TokenWrite tokenWrite, string name );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: abstract Constraint createConstraint(org.Neo4Net.Kernel.Api.Internal.SchemaWrite writeOps, DESCRIPTOR descriptor) throws Exception;
+//ORIGINAL LINE: abstract Constraint createConstraint(Neo4Net.Kernel.Api.Internal.SchemaWrite writeOps, DESCRIPTOR descriptor) throws Exception;
 		 internal abstract Constraint CreateConstraint( SchemaWrite writeOps, DESCRIPTOR descriptor );
 
 		 internal abstract void CreateConstraintInRunningTx( IGraphDatabaseService db, string type, string property );
@@ -93,7 +93,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 		 internal abstract Constraint NewConstraintObject( DESCRIPTOR descriptor );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: abstract void dropConstraint(org.Neo4Net.Kernel.Api.Internal.SchemaWrite writeOps, Constraint constraint) throws Exception;
+//ORIGINAL LINE: abstract void dropConstraint(Neo4Net.Kernel.Api.Internal.SchemaWrite writeOps, Constraint constraint) throws Exception;
 		 internal abstract void DropConstraint( SchemaWrite writeOps, Constraint constraint );
 
 		 internal abstract void CreateOffendingDataInRunningTx( IGraphDatabaseService db );
@@ -544,7 +544,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public SchemaStateCheck setUp() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
+//ORIGINAL LINE: public SchemaStateCheck setUp() throws Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 			  public virtual SchemaStateCheck SetUp()
 			  {
 					Transaction transaction = newTransaction();

@@ -28,7 +28,7 @@ namespace Neo4Net.Kernel
 	using TransientFailureException = Neo4Net.GraphDb.TransientFailureException;
 	using TransientTransactionFailureException = Neo4Net.GraphDb.TransientTransactionFailureException;
 	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using TopLevelTransaction = Neo4Net.Kernel.impl.coreapi.TopLevelTransaction;
 

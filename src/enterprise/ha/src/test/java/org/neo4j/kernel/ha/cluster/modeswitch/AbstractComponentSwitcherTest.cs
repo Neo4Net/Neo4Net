@@ -73,7 +73,7 @@ namespace Neo4Net.Kernel.ha.cluster.modeswitch
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static Class delegateClass(org.Neo4Net.kernel.ha.DelegateInvocationHandler<?> invocationHandler) throws Throwable
+//ORIGINAL LINE: private static Class delegateClass(Neo4Net.kernel.ha.DelegateInvocationHandler<?> invocationHandler) throws Throwable
 		 private static Type DelegateClass<T1>( DelegateInvocationHandler<T1> invocationHandler )
 		 {
 			  return ( Type ) invocationHandler.Invoke( new object(), typeof(object).GetMethod("getClass"), new object[0] );

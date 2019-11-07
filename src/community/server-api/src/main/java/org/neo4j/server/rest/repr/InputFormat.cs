@@ -43,7 +43,7 @@ namespace Neo4Net.Server.rest.repr
 		 URI ReadUri( string input );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.Neo4Net.server.plugins.ParameterList readParameterList(String input) throws BadInputException;
+//ORIGINAL LINE: Neo4Net.server.plugins.ParameterList readParameterList(String input) throws BadInputException;
 		 ParameterList ReadParameterList( string input );
 	}
 

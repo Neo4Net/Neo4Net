@@ -54,9 +54,9 @@ namespace Recovery
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.Label.label;
+//	import static Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.Transaction_Type.@explicit;
+//	import static Neo4Net.Kernel.Api.Internal.Transaction_Type.@explicit;
 
 	/// <summary>
 	/// Arbitrary recovery scenarios boiled down to as small tests as possible
@@ -73,7 +73,7 @@ namespace Recovery
 		}
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.fs.EphemeralFileSystemRule fsRule = new org.Neo4Net.test.rule.fs.EphemeralFileSystemRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.fs.EphemeralFileSystemRule fsRule = new Neo4Net.test.rule.fs.EphemeralFileSystemRule();
 		 public readonly EphemeralFileSystemRule FsRule = new EphemeralFileSystemRule();
 		 private Label _label;
 		 private GraphDatabaseAPI _db;
@@ -216,7 +216,7 @@ namespace Recovery
 			  {
 					assertEquals( 0, tx.DataRead().countsForNode(-1) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.core.TokenHolder holder = db.getDependencyResolver().resolveDependency(org.Neo4Net.kernel.impl.core.TokenHolders.class).labelTokens();
+//ORIGINAL LINE: final Neo4Net.kernel.impl.core.TokenHolder holder = db.getDependencyResolver().resolveDependency(Neo4Net.kernel.impl.core.TokenHolders.class).labelTokens();
 					TokenHolder holder = _db.DependencyResolver.resolveDependency( typeof( TokenHolders ) ).labelTokens();
 					int labelId = holder.GetIdByName( _label.name() );
 					assertEquals( 0, tx.DataRead().countsForNode(labelId) );
@@ -306,9 +306,9 @@ namespace Recovery
 		 public abstract class FlushStrategy
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           FORCE_EVERYTHING { void flush(org.Neo4Net.kernel.internal.GraphDatabaseAPI db) { org.Neo4Net.io.pagecache.IOLimiter limiter = org.Neo4Net.io.pagecache.IOLimiter_Fields.UNLIMITED; db.getDependencyResolver().resolveDependency(org.Neo4Net.Kernel.Api.StorageEngine.StorageEngine.class).flushAndForce(limiter); } },
+//           FORCE_EVERYTHING { void flush(Neo4Net.kernel.internal.GraphDatabaseAPI db) { Neo4Net.io.pagecache.IOLimiter limiter = Neo4Net.io.pagecache.IOLimiter_Fields.UNLIMITED; db.getDependencyResolver().resolveDependency(Neo4Net.Kernel.Api.StorageEngine.StorageEngine.class).flushAndForce(limiter); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           FLUSH_PAGE_CACHE { void flush(org.Neo4Net.kernel.internal.GraphDatabaseAPI db) throws java.io.IOException { db.getDependencyResolver().resolveDependency(org.Neo4Net.io.pagecache.PageCache.class).flushAndForce(); } };
+//           FLUSH_PAGE_CACHE { void flush(Neo4Net.kernel.internal.GraphDatabaseAPI db) throws java.io.IOException { db.getDependencyResolver().resolveDependency(Neo4Net.io.pagecache.PageCache.class).flushAndForce(); } };
 
 			  private static readonly IList<FlushStrategy> valueList = new List<FlushStrategy>();
 
@@ -338,7 +338,7 @@ namespace Recovery
 			  internal object[] parameters = new object[]{ this };
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: abstract void flush(org.Neo4Net.kernel.internal.GraphDatabaseAPI db) throws java.io.IOException;
+//ORIGINAL LINE: abstract void flush(Neo4Net.kernel.internal.GraphDatabaseAPI db) throws java.io.IOException;
 			  internal abstract void flush( Neo4Net.Kernel.Internal.GraphDatabaseAPI db );
 
 			 public static IList<FlushStrategy> values()
@@ -406,7 +406,7 @@ namespace Recovery
 		 private void CrashAndRestart()
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.graphdb.GraphDatabaseService db1 = db;
+//ORIGINAL LINE: final Neo4Net.graphdb.GraphDatabaseService db1 = db;
 			  IGraphDatabaseService db1 = _db;
 			  FileSystemAbstraction uncleanFs = FsRule.snapshot( db1.shutdown );
 			  _db = ( GraphDatabaseAPI ) DatabaseFactory( uncleanFs ).newImpermanentDatabase();

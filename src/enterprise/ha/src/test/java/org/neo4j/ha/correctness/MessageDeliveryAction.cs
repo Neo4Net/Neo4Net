@@ -50,7 +50,7 @@ namespace Neo4Net.ha.correctness
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.cluster.com.message.Message<? extends org.Neo4Net.cluster.com.message.MessageType> messageCopy() throws java.net.URISyntaxException
+//ORIGINAL LINE: private Neo4Net.cluster.com.message.Message<? extends Neo4Net.cluster.com.message.MessageType> messageCopy() throws java.net.URISyntaxException
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		 private Message<MessageType> MessageCopy()
 		 {

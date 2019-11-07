@@ -41,7 +41,7 @@ namespace Neo4Net.Kernel.impl.traversal
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertFalse;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.traversal.Evaluators.atDepth;
+//	import static Neo4Net.graphdb.traversal.Evaluators.atDepth;
 
 	public class TestPath : TraversalTestBase
 	{
@@ -79,7 +79,7 @@ namespace Neo4Net.Kernel.impl.traversal
 		 public virtual void TestPathIterator()
 		 {
 			  Traverser traverse = GraphDb.traversalDescription().evaluator(atDepth(4)).traverse(Node("A"));
-			  using ( ResourceIterator<Path> resourceIterator = traverse.GetEnumerator() )
+			  using ( IResourceIterator<Path> resourceIterator = traverse.GetEnumerator() )
 			  {
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
 					Path path = resourceIterator.next();
@@ -157,7 +157,7 @@ namespace Neo4Net.Kernel.impl.traversal
 
 		 private Path GetFirstPath( Traverser traverse )
 		 {
-			  using ( ResourceIterator<Path> iterator = traverse.GetEnumerator() )
+			  using ( IResourceIterator<Path> iterator = traverse.GetEnumerator() )
 			  {
 					return Iterators.first( iterator );
 			  }
@@ -188,8 +188,8 @@ namespace Neo4Net.Kernel.impl.traversal
 
 		 private Relationship GetFistRelationship( Node node )
 		 {
-			  ResourceIterable<Relationship> relationships = ( ResourceIterable<Relationship> ) node.GetRelationships( Direction.OUTGOING );
-			  using ( ResourceIterator<Relationship> iterator = relationships.GetEnumerator() )
+			 IResourceIterable<Relationship> relationships = (IResourceIterable<Relationship> ) node.GetRelationships( Direction.OUTGOING );
+			  using ( IResourceIterator<Relationship> iterator = relationships.GetEnumerator() )
 			  {
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
 					return iterator.next();

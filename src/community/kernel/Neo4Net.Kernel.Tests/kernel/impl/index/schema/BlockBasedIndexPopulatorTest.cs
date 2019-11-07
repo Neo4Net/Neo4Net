@@ -33,7 +33,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using IndexDirectoryStructure = Neo4Net.Kernel.Api.Index.IndexDirectoryStructure;
 	using Neo4Net.Kernel.Api.Index;
 	using IndexUpdater = Neo4Net.Kernel.Api.Index.IndexUpdater;
-	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
+	using SchemaDescriptorFactory = Neo4Net.Kernel.Api.schema.SchemaDescriptorFactory;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using ConfiguredSpaceFillingCurveSettingsCache = Neo4Net.Kernel.Impl.Index.Schema.config.ConfiguredSpaceFillingCurveSettingsCache;
 	using IndexSpecificSpaceFillingCurveSettingsCache = Neo4Net.Kernel.Impl.Index.Schema.config.IndexSpecificSpaceFillingCurveSettingsCache;
@@ -54,36 +54,36 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.index.IndexDirectoryStructure.directoriesByProvider;
+//	import static Neo4Net.kernel.api.index.IndexDirectoryStructure.directoriesByProvider;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.index.IndexProvider.Monitor_Fields.EMPTY;
+//	import static Neo4Net.kernel.api.index.IndexProvider.Monitor_Fields.EMPTY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.api.index.PhaseTracker_Fields.nullInstance;
+//	import static Neo4Net.kernel.impl.api.index.PhaseTracker_Fields.nullInstance;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.BlockStorage.Monitor_Fields.NO_MONITOR;
+//	import static Neo4Net.kernel.impl.index.schema.BlockStorage.Monitor_Fields.NO_MONITOR;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.ByteBufferFactory.heapBufferFactory;
+//	import static Neo4Net.kernel.impl.index.schema.ByteBufferFactory.heapBufferFactory;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.OtherThreadExecutor.command;
+//	import static Neo4Net.test.OtherThreadExecutor.command;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.Race.throwing;
+//	import static Neo4Net.test.Race.throwing;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.stringValue;
+//	import static Neo4Net.values.storable.Values.stringValue;
 
 	public class BlockBasedIndexPopulatorTest
 	{
 		 private static readonly StoreIndexDescriptor _indexDescriptor = IndexDescriptorFactory.forSchema( SchemaDescriptorFactory.forLabel( 1, 1 ) ).withId( 1 );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.PageCacheAndDependenciesRule storage = new org.Neo4Net.test.rule.PageCacheAndDependenciesRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.PageCacheAndDependenciesRule storage = new Neo4Net.test.rule.PageCacheAndDependenciesRule();
 		 public readonly PageCacheAndDependenciesRule Storage = new PageCacheAndDependenciesRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.concurrent.OtherThreadRule<Void> t2 = new org.Neo4Net.test.rule.concurrent.OtherThreadRule<>("MERGER");
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.concurrent.OtherThreadRule<Void> t2 = new Neo4Net.test.rule.concurrent.OtherThreadRule<>("MERGER");
 		 public readonly OtherThreadRule<Void> T2 = new OtherThreadRule<Void>( "MERGER" );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.concurrent.OtherThreadRule<Void> t3 = new org.Neo4Net.test.rule.concurrent.OtherThreadRule<>("CLOSER");
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.concurrent.OtherThreadRule<Void> t3 = new Neo4Net.test.rule.concurrent.OtherThreadRule<>("CLOSER");
 		 public readonly OtherThreadRule<Void> T3 = new OtherThreadRule<Void>( "CLOSER" );
 
 		 private IndexDirectoryStructure _directoryStructure;
@@ -283,7 +283,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldDeallocateAllAllocatedMemoryOnClose() throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: @Test public void shouldDeallocateAllAllocatedMemoryOnClose() throws Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldDeallocateAllAllocatedMemoryOnClose()
 		 {
@@ -296,7 +296,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 			  {
 					// when
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Collection<org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>> updates = batchOfUpdates();
+//ORIGINAL LINE: java.util.Collection<Neo4Net.kernel.api.index.IndexEntryUpdate<?>> updates = batchOfUpdates();
 					ICollection<IndexEntryUpdate<object>> updates = BatchOfUpdates();
 					populator.Add( updates );
 					int nextId = updates.Count;
@@ -325,7 +325,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldDeallocateAllAllocatedMemoryOnDrop() throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: @Test public void shouldDeallocateAllAllocatedMemoryOnDrop() throws Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldDeallocateAllAllocatedMemoryOnDrop()
 		 {
@@ -338,7 +338,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 			  {
 					// when
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Collection<org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>> updates = batchOfUpdates();
+//ORIGINAL LINE: java.util.Collection<Neo4Net.kernel.api.index.IndexEntryUpdate<?>> updates = batchOfUpdates();
 					ICollection<IndexEntryUpdate<object>> updates = BatchOfUpdates();
 					populator.Add( updates );
 					int nextId = updates.Count;
@@ -367,7 +367,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void externalUpdates(BlockBasedIndexPopulator<GenericKey,NativeIndexValue> populator, int firstId, int lastId) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: private void externalUpdates(BlockBasedIndexPopulator<GenericKey,NativeIndexValue> populator, int firstId, int lastId) throws Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 private void ExternalUpdates( BlockBasedIndexPopulator<GenericKey, NativeIndexValue> populator, int firstId, int lastId )
 		 {
 			  using ( IndexUpdater updater = populator.NewPopulatingUpdater() )
@@ -411,11 +411,11 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private static java.util.Collection<org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>> batchOfUpdates()
+//ORIGINAL LINE: private static java.util.Collection<Neo4Net.kernel.api.index.IndexEntryUpdate<?>> batchOfUpdates()
 		 private static ICollection<IndexEntryUpdate<object>> BatchOfUpdates()
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.List<org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>> updates = new java.util.ArrayList<>();
+//ORIGINAL LINE: java.util.List<Neo4Net.kernel.api.index.IndexEntryUpdate<?>> updates = new java.util.ArrayList<>();
 			  IList<IndexEntryUpdate<object>> updates = new List<IndexEntryUpdate<object>>();
 			  for ( int i = 0; i < 50; i++ )
 			  {

@@ -39,11 +39,11 @@ namespace Neo4Net.Kernel.impl.transaction.command
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertNotNull;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.singleOrNull;
+//	import static Neo4Net.helpers.collection.Iterators.singleOrNull;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.tracing.CommitEvent.NULL;
+//	import static Neo4Net.kernel.impl.transaction.tracing.CommitEvent.NULL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode.EXTERNAL;
+//	import static Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode.EXTERNAL;
 
 	/// <summary>
 	/// This test is for an issue with transaction batching where there would be a batch of transactions
@@ -129,7 +129,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static int findCutoffIndex(java.util.Collection<org.Neo4Net.kernel.impl.transaction.TransactionRepresentation> transactions) throws java.io.IOException
+//ORIGINAL LINE: private static int findCutoffIndex(java.util.Collection<Neo4Net.kernel.impl.transaction.TransactionRepresentation> transactions) throws java.io.IOException
 		 private static int FindCutoffIndex( ICollection<TransactionRepresentation> transactions )
 		 {
 			  IEnumerator<TransactionRepresentation> iterator = transactions.GetEnumerator();
@@ -169,7 +169,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static java.util.List<org.Neo4Net.kernel.impl.transaction.TransactionRepresentation> extractTransactions(org.Neo4Net.kernel.internal.GraphDatabaseAPI db) throws java.io.IOException
+//ORIGINAL LINE: private static java.util.List<Neo4Net.kernel.impl.transaction.TransactionRepresentation> extractTransactions(Neo4Net.kernel.internal.GraphDatabaseAPI db) throws java.io.IOException
 		 private static IList<TransactionRepresentation> ExtractTransactions( GraphDatabaseAPI db )
 		 {
 			  LogicalTransactionStore txStore = Db.DependencyResolver.resolveDependency( typeof( LogicalTransactionStore ) );

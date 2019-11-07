@@ -29,11 +29,11 @@ namespace Neo4Net.Kernel.impl.core
 	{
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void setInitialTokens(java.util.List<org.Neo4Net.Kernel.Api.Internal.NamedToken> tokens) throws NonUniqueTokenException;
+//ORIGINAL LINE: void setInitialTokens(java.util.List<Neo4Net.Kernel.Api.Internal.NamedToken> tokens) throws NonUniqueTokenException;
 		 IList<NamedToken> InitialTokens { set; }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void addToken(org.Neo4Net.Kernel.Api.Internal.NamedToken token) throws NonUniqueTokenException;
+//ORIGINAL LINE: void addToken(Neo4Net.Kernel.Api.Internal.NamedToken token) throws NonUniqueTokenException;
 		 void AddToken( NamedToken token );
 
 		 /// <summary>
@@ -57,7 +57,7 @@ namespace Neo4Net.Kernel.impl.core
 		 void GetOrCreateIds( string[] names, int[] ids );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.Neo4Net.Kernel.Api.Internal.NamedToken getTokenById(int id) throws TokenNotFoundException;
+//ORIGINAL LINE: Neo4Net.Kernel.Api.Internal.NamedToken getTokenById(int id) throws TokenNotFoundException;
 		 NamedToken GetTokenById( int id );
 
 		 /// <summary>

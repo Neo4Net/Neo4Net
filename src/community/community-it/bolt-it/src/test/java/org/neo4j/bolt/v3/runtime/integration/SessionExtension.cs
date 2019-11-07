@@ -31,13 +31,13 @@ namespace Neo4Net.Bolt.v3.runtime.integration
 	using BoltStateMachineFactoryImpl = Neo4Net.Bolt.runtime.BoltStateMachineFactoryImpl;
 	using Authentication = Neo4Net.Bolt.security.auth.Authentication;
 	using BasicAuthentication = Neo4Net.Bolt.security.auth.BasicAuthentication;
-	using DatabaseManager = Neo4Net.Dbms.database.DatabaseManager;
+	using IDatabaseManager = Neo4Net.Dbms.database.DatabaseManager;
 	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
 	using Neo4Net.GraphDb.config;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using IOUtils = Neo4Net.Io.IOUtils;
-	using AuthManager = Neo4Net.Kernel.api.security.AuthManager;
-	using UserManagerSupplier = Neo4Net.Kernel.api.security.UserManagerSupplier;
+	using AuthManager = Neo4Net.Kernel.Api.security.AuthManager;
+	using UserManagerSupplier = Neo4Net.Kernel.Api.security.UserManagerSupplier;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
 	using NullLogService = Neo4Net.Logging.Internal.NullLogService;
@@ -70,13 +70,13 @@ namespace Neo4Net.Bolt.v3.runtime.integration
 		 public override void BeforeEach( ExtensionContext extensionContext )
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Map<org.Neo4Net.graphdb.config.Setting<?>,String> config = new java.util.HashMap<>();
+//ORIGINAL LINE: java.util.Map<Neo4Net.graphdb.config.Setting<?>,String> config = new java.util.HashMap<>();
 			  IDictionary<Setting<object>, string> config = new Dictionary<Setting<object>, string>();
 			  config[GraphDatabaseSettings.auth_enabled] = Convert.ToString( _authEnabled );
 			  _gdb = ( GraphDatabaseAPI ) ( new TestGraphDatabaseFactory() ).newImpermanentDatabase(config);
 			  DependencyResolver resolver = _gdb.DependencyResolver;
 			  Authentication authentication = authentication( resolver.ResolveDependency( typeof( AuthManager ) ), resolver.ResolveDependency( typeof( UserManagerSupplier ) ) );
-			  _boltFactory = new BoltStateMachineFactoryImpl( resolver.ResolveDependency( typeof( DatabaseManager ) ), new UsageData( null ), authentication, Clock.systemUTC(), Config.defaults(), NullLogService.Instance );
+			  _boltFactory = new BoltStateMachineFactoryImpl( resolver.ResolveDependency( typeof( IDatabaseManager ) ), new UsageData( null ), authentication, Clock.systemUTC(), Config.defaults(), NullLogService.Instance );
 		 }
 
 		 public override void AfterEach( ExtensionContext extensionContext )

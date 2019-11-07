@@ -21,7 +21,7 @@ namespace Neo4Net.Kernel.Api.Internal.security
 {
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.security.AuthorizationViolationException.PERMISSION_DENIED;
+//	import static Neo4Net.graphdb.security.AuthorizationViolationException.PERMISSION_DENIED;
 
 	/// <summary>
 	/// Controls the capabilities of a KernelTransaction, including the authenticated user and authorization data.

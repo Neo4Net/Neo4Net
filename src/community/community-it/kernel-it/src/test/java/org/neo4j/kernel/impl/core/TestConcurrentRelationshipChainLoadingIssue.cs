@@ -33,9 +33,9 @@ namespace Neo4Net.Kernel.impl.core
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.dense_node_threshold;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.dense_node_threshold;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.count;
+//	import static Neo4Net.helpers.collection.Iterables.count;
 
 	/// <summary>
 	/// This isn't a deterministic test, but instead tries to trigger a race condition
@@ -97,7 +97,7 @@ namespace Neo4Net.Kernel.impl.core
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void tryOnce(final org.Neo4Net.kernel.internal.GraphDatabaseAPI db, final org.Neo4Net.graphdb.Node node) throws Throwable
+//ORIGINAL LINE: private void tryOnce(final Neo4Net.kernel.internal.GraphDatabaseAPI db, final Neo4Net.graphdb.Node node) throws Throwable
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 		 private void TryOnce( GraphDatabaseAPI db, Node node )
 		 {

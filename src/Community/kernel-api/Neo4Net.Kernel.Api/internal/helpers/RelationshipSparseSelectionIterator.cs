@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.Api.Internal.Helpers
 	/// <summary>
 	/// Helper iterator for traversing specific types and directions of a sparse node.
 	/// </summary>
-	public sealed class RelationshipSparseSelectionIterator<R> : RelationshipSparseSelection, ResourceIterator<R>
+	public sealed class RelationshipSparseSelectionIterator<R> : RelationshipSparseSelection, IResourceIterator<R>
 	{
 
 		 private readonly RelationshipFactory<R> _factory;

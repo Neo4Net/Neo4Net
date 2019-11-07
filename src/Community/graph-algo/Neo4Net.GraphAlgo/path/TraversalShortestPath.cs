@@ -26,11 +26,11 @@ namespace Neo4Net.GraphAlgo.Path
 	using Traverser = Neo4Net.GraphDb.Traversal.Traverser;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.traversal.Evaluators.toDepth;
+//	import static Neo4Net.graphdb.traversal.Evaluators.toDepth;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.traversal.SideSelectorPolicies.LEVEL_STOP_DESCENT_ON_RESULT;
+//	import static Neo4Net.graphdb.traversal.SideSelectorPolicies.LEVEL_STOP_DESCENT_ON_RESULT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.traversal.Uniqueness.NODE_PATH;
+//	import static Neo4Net.graphdb.traversal.Uniqueness.NODE_PATH;
 
 	/// <summary>
 	/// Implements shortest path algorithm, see <seealso cref="ShortestPath"/>, but using

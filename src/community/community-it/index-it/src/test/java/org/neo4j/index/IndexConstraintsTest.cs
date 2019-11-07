@@ -42,9 +42,9 @@ namespace Neo4Net.Index
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertNull;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.firstOrNull;
+//	import static Neo4Net.helpers.collection.Iterables.firstOrNull;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.single;
+//	import static Neo4Net.helpers.collection.Iterables.single;
 
 	public class IndexConstraintsTest
 	{
@@ -78,7 +78,7 @@ namespace Neo4Net.Index
 			  string uuid = System.Guid.randomUUID().ToString();
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.graphdb.Node commonNode;
+//ORIGINAL LINE: final Neo4Net.graphdb.Node commonNode;
 			  Node commonNode;
 			  using ( Transaction tx = _graphDb.beginTx() )
 			  {

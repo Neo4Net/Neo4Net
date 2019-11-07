@@ -59,17 +59,17 @@ namespace Neo4Net.cluster.protocol.atomicbroadcast.multipaxos
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.cluster.com.message.Message.to;
+//	import static Neo4Net.cluster.com.message.Message.to;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.cluster.protocol.atomicbroadcast.multipaxos.InstanceId.INSTANCE;
+//	import static Neo4Net.cluster.protocol.atomicbroadcast.multipaxos.InstanceId.INSTANCE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.cluster.protocol.atomicbroadcast.multipaxos.ProposerMessage.phase1Timeout;
+//	import static Neo4Net.cluster.protocol.atomicbroadcast.multipaxos.ProposerMessage.phase1Timeout;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.cluster.protocol.atomicbroadcast.multipaxos.ProposerMessage.promise;
+//	import static Neo4Net.cluster.protocol.atomicbroadcast.multipaxos.ProposerMessage.promise;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.cluster.protocol.atomicbroadcast.multipaxos.ProposerMessage.propose;
+//	import static Neo4Net.cluster.protocol.atomicbroadcast.multipaxos.ProposerMessage.propose;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.cluster.protocol.atomicbroadcast.multipaxos.ProposerMessage.rejectAccept;
+//	import static Neo4Net.cluster.protocol.atomicbroadcast.multipaxos.ProposerMessage.rejectAccept;
 
 	public class ProposerStateTest
 	{
@@ -102,7 +102,7 @@ namespace Neo4Net.cluster.protocol.atomicbroadcast.multipaxos
 
 			  // Verify it was resent as a propose with the same value
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: verify(mockHolder, times(1)).offer(org.mockito.ArgumentMatchers.argThat<org.Neo4Net.cluster.com.message.Message<? extends org.Neo4Net.cluster.com.message.MessageType>>(new org.Neo4Net.cluster.protocol.MessageArgumentMatcher().onMessageType(ProposerMessage.propose).withPayload(theTimedoutPayload)));
+//ORIGINAL LINE: verify(mockHolder, times(1)).offer(org.mockito.ArgumentMatchers.argThat<Neo4Net.cluster.com.message.Message<? extends Neo4Net.cluster.com.message.MessageType>>(new Neo4Net.cluster.protocol.MessageArgumentMatcher().onMessageType(ProposerMessage.propose).withPayload(theTimedoutPayload)));
 			  verify( mockHolder, times( 1 ) ).offer( ArgumentMatchers.argThat<Message<MessageType>>( ( new MessageArgumentMatcher() ).onMessageType(ProposerMessage.Propose).withPayload(theTimedoutPayload) ) );
 			  verify( context, times( 1 ) ).unbookInstance( instanceId );
 		 }

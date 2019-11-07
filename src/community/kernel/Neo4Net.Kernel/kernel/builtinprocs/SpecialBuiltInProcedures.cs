@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.builtinprocs
 	using Procedures = Neo4Net.Kernel.impl.proc.Procedures;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.procs.ProcedureSignature.procedureName;
+//	import static Neo4Net.Kernel.Api.Internal.procs.ProcedureSignature.procedureName;
 
 	/// <summary>
 	/// This class houses built-in procedures which use a backdoor to inject dependencies.
@@ -45,7 +45,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void accept(org.Neo4Net.kernel.impl.proc.Procedures procs) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
+//ORIGINAL LINE: public void accept(Neo4Net.kernel.impl.proc.Procedures procs) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 		 public override void Accept( Procedures procs )
 		 {
 			  procs.Register( new ListComponentsProcedure( procedureName( "dbms", "components" ), _Neo4NetVersion, _Neo4NetEdition ) );

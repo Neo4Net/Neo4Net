@@ -27,7 +27,7 @@ namespace Neo4Net.Io.mem
 	public interface MemoryAllocator
 	{
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java static interface methods:
-//		 static MemoryAllocator createAllocator(String expectedMemory, org.Neo4Net.memory.IMemoryAllocationTracker memoryTracker)
+//		 static MemoryAllocator createAllocator(String expectedMemory, Neo4Net.memory.IMemoryAllocationTracker memoryTracker)
 	//	 {
 	//		  return new GrabAllocator(ByteUnit.parse(expectedMemory), memoryTracker);
 	//	 }

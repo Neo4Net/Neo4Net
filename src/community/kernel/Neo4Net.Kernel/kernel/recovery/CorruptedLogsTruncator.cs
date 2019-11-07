@@ -59,7 +59,7 @@ namespace Neo4Net.Kernel.recovery
 		 /// <param name="positionAfterLastRecoveredTransaction"> position after last recovered transaction </param>
 		 /// <exception cref="IOException"> </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void truncate(org.Neo4Net.kernel.impl.transaction.log.LogPosition positionAfterLastRecoveredTransaction) throws java.io.IOException
+//ORIGINAL LINE: public void truncate(Neo4Net.kernel.impl.transaction.log.LogPosition positionAfterLastRecoveredTransaction) throws java.io.IOException
 		 public virtual void Truncate( LogPosition positionAfterLastRecoveredTransaction )
 		 {
 			  long recoveredTransactionLogVersion = positionAfterLastRecoveredTransaction.LogVersion;

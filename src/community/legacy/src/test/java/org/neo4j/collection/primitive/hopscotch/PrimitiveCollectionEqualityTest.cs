@@ -84,7 +84,7 @@ namespace Neo4Net.Collections.primitive.hopscotch
 		 // ==== Test Value Producers ====
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @DataPoint public static ValueProducer<org.Neo4Net.collection.primitive.PrimitiveIntSet> intV = new ValueProducer<org.Neo4Net.collection.primitive.PrimitiveIntSet>(org.Neo4Net.collection.primitive.PrimitiveIntSet.class)
+//ORIGINAL LINE: @DataPoint public static ValueProducer<Neo4Net.collection.primitive.PrimitiveIntSet> intV = new ValueProducer<Neo4Net.collection.primitive.PrimitiveIntSet>(Neo4Net.collection.primitive.PrimitiveIntSet.class)
 		 public static ValueProducer<PrimitiveIntSet> intV = new ValueProducerAnonymousInnerClass( typeof( PrimitiveIntSet ) );
 
 		 private class ValueProducerAnonymousInnerClass : ValueProducer<PrimitiveIntSet>
@@ -113,109 +113,109 @@ namespace Neo4Net.Collections.primitive.hopscotch
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @DataPoint public static ValueProducer<org.Neo4Net.collection.primitive.PrimitiveLongSet> longV = new ValueProducer<org.Neo4Net.collection.primitive.PrimitiveLongSet>(org.Neo4Net.collection.primitive.PrimitiveLongSet.class)
+//ORIGINAL LINE: @DataPoint public static ValueProducer<Neo4Net.collection.primitive.PrimitiveLongSet> longV = new ValueProducer<Neo4Net.collection.primitive.PrimitiveLongSet>(Neo4Net.collection.primitive.PrimitiveLongSet.class)
 		 public static ValueProducer<PrimitiveLongSet> longV = new ValueProducerAnonymousInnerClass( this, typeof( PrimitiveLongSet ) );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @DataPoint public static ValueProducer<org.Neo4Net.collection.primitive.PrimitiveIntLongMap> intLongV = new ValueProducer<org.Neo4Net.collection.primitive.PrimitiveIntLongMap>(org.Neo4Net.collection.primitive.PrimitiveIntLongMap.class)
+//ORIGINAL LINE: @DataPoint public static ValueProducer<Neo4Net.collection.primitive.PrimitiveIntLongMap> intLongV = new ValueProducer<Neo4Net.collection.primitive.PrimitiveIntLongMap>(Neo4Net.collection.primitive.PrimitiveIntLongMap.class)
 		 public static ValueProducer<PrimitiveIntLongMap> intLongV = new ValueProducerAnonymousInnerClass2( this, typeof( PrimitiveIntLongMap ) );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @DataPoint public static ValueProducer<org.Neo4Net.collection.primitive.PrimitiveLongIntMap> longIntV = new ValueProducer<org.Neo4Net.collection.primitive.PrimitiveLongIntMap>(org.Neo4Net.collection.primitive.PrimitiveLongIntMap.class)
+//ORIGINAL LINE: @DataPoint public static ValueProducer<Neo4Net.collection.primitive.PrimitiveLongIntMap> longIntV = new ValueProducer<Neo4Net.collection.primitive.PrimitiveLongIntMap>(Neo4Net.collection.primitive.PrimitiveLongIntMap.class)
 		 public static ValueProducer<PrimitiveLongIntMap> longIntV = new ValueProducerAnonymousInnerClass3( this, typeof( PrimitiveLongIntMap ) );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @DataPoint public static ValueProducer<org.Neo4Net.collection.primitive.PrimitiveLongLongMap> longLongV = new ValueProducer<org.Neo4Net.collection.primitive.PrimitiveLongLongMap>(org.Neo4Net.collection.primitive.PrimitiveLongLongMap.class)
+//ORIGINAL LINE: @DataPoint public static ValueProducer<Neo4Net.collection.primitive.PrimitiveLongLongMap> longLongV = new ValueProducer<Neo4Net.collection.primitive.PrimitiveLongLongMap>(Neo4Net.collection.primitive.PrimitiveLongLongMap.class)
 		 public static ValueProducer<PrimitiveLongLongMap> longLongV = new ValueProducerAnonymousInnerClass4( this, typeof( PrimitiveLongLongMap ) );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @DataPoint public static ValueProducer<org.Neo4Net.collection.primitive.PrimitiveIntObjectMap> intObjV = new ValueProducer<org.Neo4Net.collection.primitive.PrimitiveIntObjectMap>(org.Neo4Net.collection.primitive.PrimitiveIntObjectMap.class)
+//ORIGINAL LINE: @DataPoint public static ValueProducer<Neo4Net.collection.primitive.PrimitiveIntObjectMap> intObjV = new ValueProducer<Neo4Net.collection.primitive.PrimitiveIntObjectMap>(Neo4Net.collection.primitive.PrimitiveIntObjectMap.class)
 		 public static ValueProducer<PrimitiveIntObjectMap> intObjV = new ValueProducerAnonymousInnerClass5( this, typeof( PrimitiveIntObjectMap ) );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @DataPoint public static ValueProducer<org.Neo4Net.collection.primitive.PrimitiveLongObjectMap> longObjV = new ValueProducer<org.Neo4Net.collection.primitive.PrimitiveLongObjectMap>(org.Neo4Net.collection.primitive.PrimitiveLongObjectMap.class)
+//ORIGINAL LINE: @DataPoint public static ValueProducer<Neo4Net.collection.primitive.PrimitiveLongObjectMap> longObjV = new ValueProducer<Neo4Net.collection.primitive.PrimitiveLongObjectMap>(Neo4Net.collection.primitive.PrimitiveLongObjectMap.class)
 		 public static ValueProducer<PrimitiveLongObjectMap> longObjV = new ValueProducerAnonymousInnerClass6( this, typeof( PrimitiveLongObjectMap ) );
 
 		 // ==== Primitive Collection Implementations ====
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @DataPoint public static org.Neo4Net.function.Factory<org.Neo4Net.collection.primitive.PrimitiveIntSet> intSet = org.Neo4Net.collection.primitive.Primitive::intSet;
+//ORIGINAL LINE: @DataPoint public static Neo4Net.function.Factory<Neo4Net.collection.primitive.PrimitiveIntSet> intSet = Neo4Net.collection.primitive.Primitive::intSet;
 		 public static IFactory<PrimitiveIntSet> IntSet = Primitive.intSet;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @DataPoint public static org.Neo4Net.function.Factory<org.Neo4Net.collection.primitive.PrimitiveIntSet> intSetWithCapacity = () -> org.Neo4Net.collection.primitive.Primitive.intSet(randomCapacity());
+//ORIGINAL LINE: @DataPoint public static Neo4Net.function.Factory<Neo4Net.collection.primitive.PrimitiveIntSet> intSetWithCapacity = () -> Neo4Net.collection.primitive.Primitive.intSet(randomCapacity());
 		 public static IFactory<PrimitiveIntSet> IntSetWithCapacity = () => Primitive.intSet(RandomCapacity());
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @DataPoint public static org.Neo4Net.function.Factory<org.Neo4Net.collection.primitive.PrimitiveIntSet> offheapIntSet = () -> org.Neo4Net.collection.primitive.Primitive.offHeapIntSet(org.Neo4Net.memory.GlobalMemoryTracker.INSTANCE);
+//ORIGINAL LINE: @DataPoint public static Neo4Net.function.Factory<Neo4Net.collection.primitive.PrimitiveIntSet> offheapIntSet = () -> Neo4Net.collection.primitive.Primitive.offHeapIntSet(Neo4Net.memory.GlobalMemoryTracker.INSTANCE);
 		 public static IFactory<PrimitiveIntSet> OffheapIntSet = () => Primitive.offHeapIntSet(GlobalMemoryTracker.INSTANCE);
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @DataPoint public static org.Neo4Net.function.Factory<org.Neo4Net.collection.primitive.PrimitiveIntSet> offheapIntSetWithCapacity = () -> org.Neo4Net.collection.primitive.Primitive.offHeapIntSet(randomCapacity(), org.Neo4Net.memory.GlobalMemoryTracker.INSTANCE);
+//ORIGINAL LINE: @DataPoint public static Neo4Net.function.Factory<Neo4Net.collection.primitive.PrimitiveIntSet> offheapIntSetWithCapacity = () -> Neo4Net.collection.primitive.Primitive.offHeapIntSet(randomCapacity(), Neo4Net.memory.GlobalMemoryTracker.INSTANCE);
 		 public static IFactory<PrimitiveIntSet> OffheapIntSetWithCapacity = () => Primitive.offHeapIntSet(RandomCapacity(), GlobalMemoryTracker.INSTANCE);
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @DataPoint public static org.Neo4Net.function.Factory<org.Neo4Net.collection.primitive.PrimitiveLongSet> longSet = org.Neo4Net.collection.primitive.Primitive::longSet;
+//ORIGINAL LINE: @DataPoint public static Neo4Net.function.Factory<Neo4Net.collection.primitive.PrimitiveLongSet> longSet = Neo4Net.collection.primitive.Primitive::longSet;
 		 public static IFactory<PrimitiveLongSet> LongSet = Primitive.longSet;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @DataPoint public static org.Neo4Net.function.Factory<org.Neo4Net.collection.primitive.PrimitiveLongSet> longSetWithCapacity = () -> org.Neo4Net.collection.primitive.Primitive.longSet(randomCapacity());
+//ORIGINAL LINE: @DataPoint public static Neo4Net.function.Factory<Neo4Net.collection.primitive.PrimitiveLongSet> longSetWithCapacity = () -> Neo4Net.collection.primitive.Primitive.longSet(randomCapacity());
 		 public static IFactory<PrimitiveLongSet> LongSetWithCapacity = () => Primitive.longSet(RandomCapacity());
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @DataPoint public static org.Neo4Net.function.Factory<org.Neo4Net.collection.primitive.PrimitiveLongSet> offheapLongSet = () -> org.Neo4Net.collection.primitive.Primitive.offHeapLongSet(org.Neo4Net.memory.GlobalMemoryTracker.INSTANCE);
+//ORIGINAL LINE: @DataPoint public static Neo4Net.function.Factory<Neo4Net.collection.primitive.PrimitiveLongSet> offheapLongSet = () -> Neo4Net.collection.primitive.Primitive.offHeapLongSet(Neo4Net.memory.GlobalMemoryTracker.INSTANCE);
 		 public static IFactory<PrimitiveLongSet> OffheapLongSet = () => Primitive.offHeapLongSet(GlobalMemoryTracker.INSTANCE);
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @DataPoint public static org.Neo4Net.function.Factory<org.Neo4Net.collection.primitive.PrimitiveLongSet> offheapLongSetWithCapacity = () -> org.Neo4Net.collection.primitive.Primitive.offHeapLongSet(randomCapacity(), org.Neo4Net.memory.GlobalMemoryTracker.INSTANCE);
+//ORIGINAL LINE: @DataPoint public static Neo4Net.function.Factory<Neo4Net.collection.primitive.PrimitiveLongSet> offheapLongSetWithCapacity = () -> Neo4Net.collection.primitive.Primitive.offHeapLongSet(randomCapacity(), Neo4Net.memory.GlobalMemoryTracker.INSTANCE);
 		 public static IFactory<PrimitiveLongSet> OffheapLongSetWithCapacity = () => Primitive.offHeapLongSet(RandomCapacity(), GlobalMemoryTracker.INSTANCE);
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @DataPoint public static org.Neo4Net.function.Factory<org.Neo4Net.collection.primitive.PrimitiveIntLongMap> intLongMap = org.Neo4Net.collection.primitive.Primitive::intLongMap;
+//ORIGINAL LINE: @DataPoint public static Neo4Net.function.Factory<Neo4Net.collection.primitive.PrimitiveIntLongMap> intLongMap = Neo4Net.collection.primitive.Primitive::intLongMap;
 		 public static IFactory<PrimitiveIntLongMap> IntLongMap = Primitive.intLongMap;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @DataPoint public static org.Neo4Net.function.Factory<org.Neo4Net.collection.primitive.PrimitiveIntLongMap> intLongMapWithCapacity = () -> org.Neo4Net.collection.primitive.Primitive.intLongMap(randomCapacity());
+//ORIGINAL LINE: @DataPoint public static Neo4Net.function.Factory<Neo4Net.collection.primitive.PrimitiveIntLongMap> intLongMapWithCapacity = () -> Neo4Net.collection.primitive.Primitive.intLongMap(randomCapacity());
 		 public static IFactory<PrimitiveIntLongMap> IntLongMapWithCapacity = () => Primitive.intLongMap(RandomCapacity());
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @DataPoint public static org.Neo4Net.function.Factory<org.Neo4Net.collection.primitive.PrimitiveLongIntMap> longIntMap = org.Neo4Net.collection.primitive.Primitive::longIntMap;
+//ORIGINAL LINE: @DataPoint public static Neo4Net.function.Factory<Neo4Net.collection.primitive.PrimitiveLongIntMap> longIntMap = Neo4Net.collection.primitive.Primitive::longIntMap;
 		 public static IFactory<PrimitiveLongIntMap> LongIntMap = Primitive.longIntMap;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @DataPoint public static org.Neo4Net.function.Factory<org.Neo4Net.collection.primitive.PrimitiveLongIntMap> longIntMapWithCapacity = () -> org.Neo4Net.collection.primitive.Primitive.longIntMap(randomCapacity());
+//ORIGINAL LINE: @DataPoint public static Neo4Net.function.Factory<Neo4Net.collection.primitive.PrimitiveLongIntMap> longIntMapWithCapacity = () -> Neo4Net.collection.primitive.Primitive.longIntMap(randomCapacity());
 		 public static IFactory<PrimitiveLongIntMap> LongIntMapWithCapacity = () => Primitive.longIntMap(RandomCapacity());
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @DataPoint public static org.Neo4Net.function.Factory<org.Neo4Net.collection.primitive.PrimitiveLongLongMap> longLongMap = org.Neo4Net.collection.primitive.Primitive::longLongMap;
+//ORIGINAL LINE: @DataPoint public static Neo4Net.function.Factory<Neo4Net.collection.primitive.PrimitiveLongLongMap> longLongMap = Neo4Net.collection.primitive.Primitive::longLongMap;
 		 public static IFactory<PrimitiveLongLongMap> LongLongMap = Primitive.longLongMap;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @DataPoint public static org.Neo4Net.function.Factory<org.Neo4Net.collection.primitive.PrimitiveLongLongMap> longLongMapWithCapacity = () -> org.Neo4Net.collection.primitive.Primitive.longLongMap(randomCapacity());
+//ORIGINAL LINE: @DataPoint public static Neo4Net.function.Factory<Neo4Net.collection.primitive.PrimitiveLongLongMap> longLongMapWithCapacity = () -> Neo4Net.collection.primitive.Primitive.longLongMap(randomCapacity());
 		 public static IFactory<PrimitiveLongLongMap> LongLongMapWithCapacity = () => Primitive.longLongMap(RandomCapacity());
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @DataPoint public static org.Neo4Net.function.Factory<org.Neo4Net.collection.primitive.PrimitiveLongLongMap> offheapLongLongMap = () -> org.Neo4Net.collection.primitive.Primitive.offHeapLongLongMap(org.Neo4Net.memory.GlobalMemoryTracker.INSTANCE);
+//ORIGINAL LINE: @DataPoint public static Neo4Net.function.Factory<Neo4Net.collection.primitive.PrimitiveLongLongMap> offheapLongLongMap = () -> Neo4Net.collection.primitive.Primitive.offHeapLongLongMap(Neo4Net.memory.GlobalMemoryTracker.INSTANCE);
 		 public static IFactory<PrimitiveLongLongMap> OffheapLongLongMap = () => Primitive.offHeapLongLongMap(GlobalMemoryTracker.INSTANCE);
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @DataPoint public static org.Neo4Net.function.Factory<org.Neo4Net.collection.primitive.PrimitiveLongLongMap> offheapLongLongMapWithCapacity = () -> org.Neo4Net.collection.primitive.Primitive.offHeapLongLongMap(randomCapacity(), org.Neo4Net.memory.GlobalMemoryTracker.INSTANCE);
+//ORIGINAL LINE: @DataPoint public static Neo4Net.function.Factory<Neo4Net.collection.primitive.PrimitiveLongLongMap> offheapLongLongMapWithCapacity = () -> Neo4Net.collection.primitive.Primitive.offHeapLongLongMap(randomCapacity(), Neo4Net.memory.GlobalMemoryTracker.INSTANCE);
 		 public static IFactory<PrimitiveLongLongMap> OffheapLongLongMapWithCapacity = () => Primitive.offHeapLongLongMap(RandomCapacity(), GlobalMemoryTracker.INSTANCE);
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @DataPoint public static org.Neo4Net.function.Factory<org.Neo4Net.collection.primitive.PrimitiveIntObjectMap> intObjMap = org.Neo4Net.collection.primitive.Primitive::intObjectMap;
+//ORIGINAL LINE: @DataPoint public static Neo4Net.function.Factory<Neo4Net.collection.primitive.PrimitiveIntObjectMap> intObjMap = Neo4Net.collection.primitive.Primitive::intObjectMap;
 		 public static IFactory<PrimitiveIntObjectMap> IntObjMap = Primitive.intObjectMap;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @DataPoint public static org.Neo4Net.function.Factory<org.Neo4Net.collection.primitive.PrimitiveIntObjectMap> intObjMapWithCapacity = () -> org.Neo4Net.collection.primitive.Primitive.intObjectMap(randomCapacity());
+//ORIGINAL LINE: @DataPoint public static Neo4Net.function.Factory<Neo4Net.collection.primitive.PrimitiveIntObjectMap> intObjMapWithCapacity = () -> Neo4Net.collection.primitive.Primitive.intObjectMap(randomCapacity());
 		 public static IFactory<PrimitiveIntObjectMap> IntObjMapWithCapacity = () => Primitive.intObjectMap(RandomCapacity());
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @DataPoint public static org.Neo4Net.function.Factory<org.Neo4Net.collection.primitive.PrimitiveLongObjectMap> longObjectMap = org.Neo4Net.collection.primitive.Primitive::longObjectMap;
+//ORIGINAL LINE: @DataPoint public static Neo4Net.function.Factory<Neo4Net.collection.primitive.PrimitiveLongObjectMap> longObjectMap = Neo4Net.collection.primitive.Primitive::longObjectMap;
 		 public static IFactory<PrimitiveLongObjectMap> LongObjectMap = Primitive.longObjectMap;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @DataPoint public static org.Neo4Net.function.Factory<org.Neo4Net.collection.primitive.PrimitiveLongObjectMap> longObjectMapWithCapacity = () -> org.Neo4Net.collection.primitive.Primitive.longObjectMap(randomCapacity());
+//ORIGINAL LINE: @DataPoint public static Neo4Net.function.Factory<Neo4Net.collection.primitive.PrimitiveLongObjectMap> longObjectMapWithCapacity = () -> Neo4Net.collection.primitive.Primitive.longObjectMap(randomCapacity());
 		 public static IFactory<PrimitiveLongObjectMap> LongObjectMapWithCapacity = () => Primitive.longObjectMap(RandomCapacity());
 
 		 private static final PrimitiveIntSet _observedRandomInts = Primitive.intSet();
@@ -260,7 +260,7 @@ namespace Neo4Net.Collections.primitive.hopscotch
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Theory public void collectionsAreNotEqualToObjectsOfOtherTypes(org.Neo4Net.function.Factory<org.Neo4Net.collection.primitive.PrimitiveCollection> factory)
+//ORIGINAL LINE: @Theory public void collectionsAreNotEqualToObjectsOfOtherTypes(Neo4Net.function.Factory<Neo4Net.collection.primitive.PrimitiveCollection> factory)
 		 public void collectionsAreNotEqualToObjectsOfOtherTypes( IFactory<PrimitiveCollection> factory )
 		 {
 			  using ( PrimitiveCollection coll = factory.newInstance() )
@@ -270,7 +270,7 @@ namespace Neo4Net.Collections.primitive.hopscotch
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Theory public void emptyCollectionsAreEqual(ValueProducer values, org.Neo4Net.function.Factory<org.Neo4Net.collection.primitive.PrimitiveCollection> factoryA, org.Neo4Net.function.Factory<org.Neo4Net.collection.primitive.PrimitiveCollection> factoryB)
+//ORIGINAL LINE: @Theory public void emptyCollectionsAreEqual(ValueProducer values, Neo4Net.function.Factory<Neo4Net.collection.primitive.PrimitiveCollection> factoryA, Neo4Net.function.Factory<Neo4Net.collection.primitive.PrimitiveCollection> factoryB)
 		 public void emptyCollectionsAreEqual( ValueProducer values, IFactory<PrimitiveCollection> factoryA, IFactory<PrimitiveCollection> factoryB )
 		 {
 			  assumeTrue( values.isApplicable( factoryA ) );
@@ -282,7 +282,7 @@ namespace Neo4Net.Collections.primitive.hopscotch
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Theory public void addingTheSameValuesMustProduceEqualCollections(ValueProducer values, org.Neo4Net.function.Factory<org.Neo4Net.collection.primitive.PrimitiveCollection> factoryA, org.Neo4Net.function.Factory<org.Neo4Net.collection.primitive.PrimitiveCollection> factoryB)
+//ORIGINAL LINE: @Theory public void addingTheSameValuesMustProduceEqualCollections(ValueProducer values, Neo4Net.function.Factory<Neo4Net.collection.primitive.PrimitiveCollection> factoryA, Neo4Net.function.Factory<Neo4Net.collection.primitive.PrimitiveCollection> factoryB)
 		 public void addingTheSameValuesMustProduceEqualCollections( ValueProducer values, IFactory<PrimitiveCollection> factoryA, IFactory<PrimitiveCollection> factoryB )
 		 {
 			  assumeTrue( values.isApplicable( factoryA ) );
@@ -297,7 +297,7 @@ namespace Neo4Net.Collections.primitive.hopscotch
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Theory public void addingDifferentValuesMustProduceUnequalCollections(ValueProducer values, org.Neo4Net.function.Factory<org.Neo4Net.collection.primitive.PrimitiveCollection> factoryA, org.Neo4Net.function.Factory<org.Neo4Net.collection.primitive.PrimitiveCollection> factoryB)
+//ORIGINAL LINE: @Theory public void addingDifferentValuesMustProduceUnequalCollections(ValueProducer values, Neo4Net.function.Factory<Neo4Net.collection.primitive.PrimitiveCollection> factoryA, Neo4Net.function.Factory<Neo4Net.collection.primitive.PrimitiveCollection> factoryB)
 		 public void addingDifferentValuesMustProduceUnequalCollections( ValueProducer values, IFactory<PrimitiveCollection> factoryA, IFactory<PrimitiveCollection> factoryB )
 		 {
 			  assumeTrue( values.isApplicable( factoryA ) );
@@ -311,7 +311,7 @@ namespace Neo4Net.Collections.primitive.hopscotch
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Theory public void differentButEquivalentMutationsShouldProduceEqualCollections(ValueProducer values, org.Neo4Net.function.Factory<org.Neo4Net.collection.primitive.PrimitiveCollection> factoryA, org.Neo4Net.function.Factory<org.Neo4Net.collection.primitive.PrimitiveCollection> factoryB)
+//ORIGINAL LINE: @Theory public void differentButEquivalentMutationsShouldProduceEqualCollections(ValueProducer values, Neo4Net.function.Factory<Neo4Net.collection.primitive.PrimitiveCollection> factoryA, Neo4Net.function.Factory<Neo4Net.collection.primitive.PrimitiveCollection> factoryB)
 		 public void differentButEquivalentMutationsShouldProduceEqualCollections( ValueProducer values, IFactory<PrimitiveCollection> factoryA, IFactory<PrimitiveCollection> factoryB )
 		 {
 			  // Note that this test, cute as it is, also verifies that the hashCode implementation is order-invariant :)
@@ -336,7 +336,7 @@ namespace Neo4Net.Collections.primitive.hopscotch
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Theory public void capacityDifferencesMustNotInfluenceEquality(ValueProducer values, org.Neo4Net.function.Factory<org.Neo4Net.collection.primitive.PrimitiveCollection> factoryA, org.Neo4Net.function.Factory<org.Neo4Net.collection.primitive.PrimitiveCollection> factoryB)
+//ORIGINAL LINE: @Theory public void capacityDifferencesMustNotInfluenceEquality(ValueProducer values, Neo4Net.function.Factory<Neo4Net.collection.primitive.PrimitiveCollection> factoryA, Neo4Net.function.Factory<Neo4Net.collection.primitive.PrimitiveCollection> factoryB)
 		 public void capacityDifferencesMustNotInfluenceEquality( ValueProducer values, IFactory<PrimitiveCollection> factoryA, IFactory<PrimitiveCollection> factoryB )
 		 {
 			  assumeTrue( values.isApplicable( factoryA ) );
@@ -373,7 +373,7 @@ namespace Neo4Net.Collections.primitive.hopscotch
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Theory public void hashCodeMustFollowValues(ValueProducer values, org.Neo4Net.function.Factory<org.Neo4Net.collection.primitive.PrimitiveCollection> factory)
+//ORIGINAL LINE: @Theory public void hashCodeMustFollowValues(ValueProducer values, Neo4Net.function.Factory<Neo4Net.collection.primitive.PrimitiveCollection> factory)
 		 public void hashCodeMustFollowValues( ValueProducer values, IFactory<PrimitiveCollection> factory )
 		 {
 			  assumeTrue( values.isApplicable( factory ) );

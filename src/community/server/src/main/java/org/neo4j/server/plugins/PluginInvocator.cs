@@ -33,7 +33,7 @@ namespace Neo4Net.Server.plugins
 	public interface PluginInvocator
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: <T> org.Neo4Net.server.rest.repr.Representation invoke(org.Neo4Net.kernel.internal.GraphDatabaseAPI graphDb, String name, Class<T> type, String method, T context, ParameterList params) throws PluginLookupException, org.Neo4Net.server.rest.repr.BadInputException, PluginInvocationFailureException, BadPluginInvocationException;
+//ORIGINAL LINE: <T> Neo4Net.server.rest.repr.Representation invoke(Neo4Net.kernel.internal.GraphDatabaseAPI graphDb, String name, Class<T> type, String method, T context, ParameterList params) throws PluginLookupException, Neo4Net.server.rest.repr.BadInputException, PluginInvocationFailureException, BadPluginInvocationException;
 		 [Obsolete]
 		 Representation invoke<T>( GraphDatabaseAPI graphDb, string name, Type type, string method, T context, ParameterList @params );
 
@@ -43,7 +43,7 @@ namespace Neo4Net.Server.plugins
 		 ExtensionPointRepresentation Describe( string name, Type type, string method );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: List<org.Neo4Net.server.rest.repr.ExtensionPointRepresentation> describeAll(String extensionName) throws PluginLookupException;
+//ORIGINAL LINE: List<Neo4Net.server.rest.repr.ExtensionPointRepresentation> describeAll(String extensionName) throws PluginLookupException;
 		 [Obsolete]
 		 IList<ExtensionPointRepresentation> DescribeAll( string extensionName );
 

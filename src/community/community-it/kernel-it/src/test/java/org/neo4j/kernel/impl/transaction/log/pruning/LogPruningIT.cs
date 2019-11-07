@@ -40,12 +40,12 @@ namespace Neo4Net.Kernel.impl.transaction.log.pruning
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.keep_logical_logs;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.keep_logical_logs;
 
 	public class LogPruningIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.DatabaseRule db = new org.Neo4Net.test.rule.EmbeddedDatabaseRule().withSetting(keep_logical_logs, "true");
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.DatabaseRule db = new Neo4Net.test.rule.EmbeddedDatabaseRule().withSetting(keep_logical_logs, "true");
 		 public readonly DatabaseRule Db = new EmbeddedDatabaseRule().withSetting(keep_logical_logs, "true");
 
 		 private static readonly SimpleTriggerInfo _triggerInfo = new SimpleTriggerInfo( "forced trigger" );

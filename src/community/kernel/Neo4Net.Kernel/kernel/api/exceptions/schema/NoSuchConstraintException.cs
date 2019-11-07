@@ -28,7 +28,7 @@ namespace Neo4Net.Kernel.Api.Exceptions.schema
 		 private readonly ConstraintDescriptor _constraint;
 		 private const string MESSAGE = "No such constraint %s.";
 
-		 public NoSuchConstraintException( ConstraintDescriptor constraint ) : base( org.Neo4Net.kernel.api.exceptions.Status_Schema.ConstraintNotFound, format( MESSAGE, constraint ) )
+		 public NoSuchConstraintException( ConstraintDescriptor constraint ) : base( Neo4Net.kernel.api.exceptions.Status_Schema.ConstraintNotFound, format( MESSAGE, constraint ) )
 		 {
 			  this._constraint = constraint;
 		 }

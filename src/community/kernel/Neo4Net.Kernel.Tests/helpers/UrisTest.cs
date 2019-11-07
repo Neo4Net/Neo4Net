@@ -28,7 +28,7 @@ namespace Neo4Net.Helpers
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.MatcherAssert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.Uris.parameter;
+//	import static Neo4Net.helpers.Uris.parameter;
 
 	internal class UrisTest
 	{

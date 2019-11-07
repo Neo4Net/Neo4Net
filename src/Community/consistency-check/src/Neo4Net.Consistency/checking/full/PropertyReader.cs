@@ -39,7 +39,7 @@ namespace Neo4Net.Consistency.checking.full
 	using Values = Neo4Net.Values.Storable.Values;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.record.RecordLoad.FORCE;
+//	import static Neo4Net.kernel.impl.store.record.RecordLoad.FORCE;
 
 	internal class PropertyReader : NodePropertyAccessor
 	{
@@ -53,7 +53,7 @@ namespace Neo4Net.Consistency.checking.full
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: java.util.Collection<org.Neo4Net.kernel.impl.store.record.PropertyRecord> getPropertyRecordChain(long firstPropertyRecordId) throws CircularPropertyRecordChainException
+//ORIGINAL LINE: java.util.Collection<Neo4Net.kernel.impl.store.record.PropertyRecord> getPropertyRecordChain(long firstPropertyRecordId) throws CircularPropertyRecordChainException
 		 internal virtual ICollection<PropertyRecord> GetPropertyRecordChain( long firstPropertyRecordId )
 		 {
 			  IList<PropertyRecord> records = new List<PropertyRecord>();
@@ -79,7 +79,7 @@ namespace Neo4Net.Consistency.checking.full
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private boolean visitPropertyRecordChain(long firstPropertyRecordId, org.Neo4Net.helpers.collection.Visitor<org.Neo4Net.kernel.impl.store.record.PropertyRecord,RuntimeException> visitor) throws CircularPropertyRecordChainException
+//ORIGINAL LINE: private boolean visitPropertyRecordChain(long firstPropertyRecordId, Neo4Net.helpers.collection.Visitor<Neo4Net.kernel.impl.store.record.PropertyRecord,RuntimeException> visitor) throws CircularPropertyRecordChainException
 		 private bool VisitPropertyRecordChain( long firstPropertyRecordId, Visitor<PropertyRecord, Exception> visitor )
 		 {
 			  if ( Record.NO_NEXT_PROPERTY.@is( firstPropertyRecordId ) )
@@ -148,7 +148,7 @@ namespace Neo4Net.Consistency.checking.full
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean visit(org.Neo4Net.kernel.impl.store.record.PropertyRecord element) throws RuntimeException
+//ORIGINAL LINE: public boolean visit(Neo4Net.kernel.impl.store.record.PropertyRecord element) throws RuntimeException
 			  public override bool Visit( PropertyRecord element )
 			  {
 					foreach ( PropertyBlock block in element )

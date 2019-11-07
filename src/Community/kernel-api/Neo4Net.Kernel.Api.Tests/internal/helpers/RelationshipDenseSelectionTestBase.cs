@@ -219,22 +219,22 @@ namespace Neo4Net.Kernel.Api.Internal.Helpers
 
 			  internal override void AssertOutgoing( RelationshipDenseSelectionIterator<R> iterator, int targetNode, int type )
 			  {
-					AssertOutgoing( ( ResourceIterator<R> ) iterator, targetNode, type );
+					AssertOutgoing( ( IResourceIterator<R> ) iterator, targetNode, type );
 			  }
 
 			  internal override void AssertIncoming( RelationshipDenseSelectionIterator<R> iterator, int sourceNode, int type )
 			  {
-					AssertIncoming( ( ResourceIterator<R> ) iterator, sourceNode, type );
+					AssertIncoming( ( IResourceIterator<R> ) iterator, sourceNode, type );
 			  }
 
 			  internal override void AssertLoop( RelationshipDenseSelectionIterator<R> iterator, int type )
 			  {
-					AssertLoop( ( ResourceIterator<R> ) iterator, type );
+					AssertLoop( ( IResourceIterator<R> ) iterator, type );
 			  }
 
 			  internal override void AssertEmpty( RelationshipDenseSelectionIterator<R> iterator )
 			  {
-					AssertEmpty( ( ResourceIterator<R> ) iterator );
+					AssertEmpty( ( IResourceIterator<R> ) iterator );
 			  }
 		 }
 

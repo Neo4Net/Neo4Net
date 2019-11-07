@@ -38,18 +38,18 @@ namespace Neo4Net.Harness.junit
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.core.IsEqual.equalTo;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.ServerTestUtils.getRelativePath;
+//	import static Neo4Net.server.ServerTestUtils.getRelativePath;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.ServerTestUtils.getSharedTestTemporaryFolder;
+//	import static Neo4Net.server.ServerTestUtils.getSharedTestTemporaryFolder;
 
 	public class EnterpriseNeo4NetRuleTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public Neo4NetRule Neo4Net = new EnterpriseNeo4NetRule().withConfig(org.Neo4Net.kernel.configuration.ssl.LegacySslPolicyConfig.certificates_directory.name(), getRelativePath(getSharedTestTemporaryFolder(), org.Neo4Net.kernel.configuration.ssl.LegacySslPolicyConfig.certificates_directory)).withExtension("/test", org.Neo4Net.harness.extensionpackage.MyEnterpriseUnmanagedExtension.class).withConfig(org.Neo4Net.kernel.impl.enterprise.configuration.OnlineBackupSettings.online_backup_enabled, org.Neo4Net.kernel.configuration.Settings.FALSE);
+//ORIGINAL LINE: @Rule public Neo4NetRule Neo4Net = new EnterpriseNeo4NetRule().withConfig(Neo4Net.kernel.configuration.ssl.LegacySslPolicyConfig.certificates_directory.name(), getRelativePath(getSharedTestTemporaryFolder(), Neo4Net.kernel.configuration.ssl.LegacySslPolicyConfig.certificates_directory)).withExtension("/test", Neo4Net.harness.extensionpackage.MyEnterpriseUnmanagedExtension.class).withConfig(Neo4Net.kernel.impl.enterprise.configuration.OnlineBackupSettings.online_backup_enabled, Neo4Net.kernel.configuration.Settings.FALSE);
 		 public Neo4NetRule Neo4Net = new EnterpriseNeo4NetRule().withConfig(LegacySslPolicyConfig.certificates_directory.name(), getRelativePath(SharedTestTemporaryFolder, LegacySslPolicyConfig.certificates_directory)).withExtension("/test", typeof(MyEnterpriseUnmanagedExtension)).withConfig(OnlineBackupSettings.online_backup_enabled, Settings.FALSE);
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.SuppressOutput suppressOutput = org.Neo4Net.test.rule.SuppressOutput.suppressAll();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.SuppressOutput suppressOutput = Neo4Net.test.rule.SuppressOutput.suppressAll();
 		 public SuppressOutput SuppressOutput = SuppressOutput.suppressAll();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

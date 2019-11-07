@@ -33,17 +33,17 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.schema.index.TestIndexDescriptorFactory.forLabel;
+//	import static Neo4Net.kernel.api.schema.index.TestIndexDescriptorFactory.forLabel;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.NativeIndexKey.Inclusion.NEUTRAL;
+//	import static Neo4Net.kernel.impl.index.schema.NativeIndexKey.Inclusion.NEUTRAL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.ValueCreatorUtil.FRACTION_DUPLICATE_NON_UNIQUE;
+//	import static Neo4Net.kernel.impl.index.schema.ValueCreatorUtil.FRACTION_DUPLICATE_NON_UNIQUE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.ValueCreatorUtil.countUniqueValues;
+//	import static Neo4Net.kernel.impl.index.schema.ValueCreatorUtil.countUniqueValues;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.RandomValues.typesOfGroup;
+//	import static Neo4Net.values.storable.RandomValues.typesOfGroup;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.ValueGroup.NUMBER;
+//	import static Neo4Net.values.storable.ValueGroup.NUMBER;
 
 	public class NumberFullScanNonUniqueIndexSamplerTest : NativeIndexTestUtil<NumberIndexKey, NativeIndexValue>
 	{
@@ -83,7 +83,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void buildTree(org.Neo4Net.values.storable.Value[] values) throws java.io.IOException
+//ORIGINAL LINE: private void buildTree(Neo4Net.values.storable.Value[] values) throws java.io.IOException
 		 private void BuildTree( Value[] values )
 		 {
 			  using ( GBPTree<NumberIndexKey, NativeIndexValue> gbpTree = Tree )

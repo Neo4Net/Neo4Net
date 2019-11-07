@@ -36,7 +36,7 @@ namespace Neo4Net.cluster.protocol.cluster
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.mockito.matcher.IterableMatcher.matchesIterable;
+//	import static Neo4Net.test.mockito.matcher.IterableMatcher.matchesIterable;
 
 	public class ClusterConfigurationTest
 	{

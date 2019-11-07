@@ -65,7 +65,7 @@ namespace Neo4Net.Server.rest.repr
 		 internal static Representation GetIteratorRepresentation( System.Collections.IEnumerator data )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.helpers.collection.FirstItemIterable<Representation> results = new org.Neo4Net.helpers.collection.FirstItemIterable<>(new org.Neo4Net.helpers.collection.IteratorWrapper<Representation,Object>(data)
+//ORIGINAL LINE: final Neo4Net.helpers.collection.FirstItemIterable<Representation> results = new Neo4Net.helpers.collection.FirstItemIterable<>(new Neo4Net.helpers.collection.IteratorWrapper<Representation,Object>(data)
 			  FirstItemIterable<Representation> results = new FirstItemIterable<Representation>( new IteratorWrapperAnonymousInnerClass( data ) );
 			  return new ListRepresentation( GetType( results ), results );
 		 }
@@ -93,13 +93,13 @@ namespace Neo4Net.Server.rest.repr
 		 public static ListRepresentation GetListRepresentation( System.Collections.IEnumerable data )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.helpers.collection.FirstItemIterable<Representation> results = convertValuesToRepresentations(data);
+//ORIGINAL LINE: final Neo4Net.helpers.collection.FirstItemIterable<Representation> results = convertValuesToRepresentations(data);
 			  FirstItemIterable<Representation> results = ConvertValuesToRepresentations( data );
 			  return new ServerListRepresentation( GetType( results ), results );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") static org.Neo4Net.helpers.collection.FirstItemIterable<Representation> convertValuesToRepresentations(Iterable data)
+//ORIGINAL LINE: @SuppressWarnings("unchecked") static Neo4Net.helpers.collection.FirstItemIterable<Representation> convertValuesToRepresentations(Iterable data)
 		 internal static FirstItemIterable<Representation> ConvertValuesToRepresentations( System.Collections.IEnumerable data )
 		 {
 			  return new FirstItemIterable<Representation>( new IterableWrapperAnonymousInnerClass( data ) );

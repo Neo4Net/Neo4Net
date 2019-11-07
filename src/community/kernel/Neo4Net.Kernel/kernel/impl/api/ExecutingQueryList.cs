@@ -22,7 +22,7 @@
 namespace Neo4Net.Kernel.Impl.Api
 {
 
-	using ExecutingQuery = Neo4Net.Kernel.api.query.ExecutingQuery;
+	using ExecutingQuery = Neo4Net.Kernel.Api.query.ExecutingQuery;
 
 	internal abstract class ExecutingQueryList
 	{

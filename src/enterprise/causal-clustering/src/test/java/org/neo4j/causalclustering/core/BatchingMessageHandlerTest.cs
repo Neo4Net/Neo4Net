@@ -63,7 +63,7 @@ namespace Neo4Net.causalclustering.core
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 	using static Neo4Net.causalclustering.core.consensus.RaftMessages_RaftMessage;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.ArrayUtil.lastOf;
+//	import static Neo4Net.helpers.ArrayUtil.lastOf;
 
 	public class BatchingMessageHandlerTest
 	{
@@ -87,7 +87,7 @@ namespace Neo4Net.causalclustering.core
 		 private static readonly BatchingMessageHandler.Config _batchConfig = new BatchingMessageHandler.Config( 16, 256 );
 		 private readonly Instant _now = Instant.now();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private org.Neo4Net.causalclustering.messaging.LifecycleMessageHandler<org.Neo4Net.causalclustering.core.consensus.RaftMessages_ReceivedInstantClusterIdAwareMessage<?>> downstreamHandler = mock(org.Neo4Net.causalclustering.messaging.LifecycleMessageHandler.class);
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private Neo4Net.causalclustering.messaging.LifecycleMessageHandler<Neo4Net.causalclustering.core.consensus.RaftMessages_ReceivedInstantClusterIdAwareMessage<?>> downstreamHandler = mock(Neo4Net.causalclustering.messaging.LifecycleMessageHandler.class);
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		 private LifecycleMessageHandler<RaftMessages_ReceivedInstantClusterIdAwareMessage<object>> _downstreamHandler = mock( typeof( LifecycleMessageHandler ) );
 		 private ClusterId _localClusterId = new ClusterId( System.Guid.randomUUID() );
@@ -501,7 +501,7 @@ namespace Neo4Net.causalclustering.core
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private org.Neo4Net.causalclustering.core.consensus.RaftMessages_ReceivedInstantClusterIdAwareMessage<?> wrap(java.time.Instant instant, RaftMessage message)
+//ORIGINAL LINE: private Neo4Net.causalclustering.core.consensus.RaftMessages_ReceivedInstantClusterIdAwareMessage<?> wrap(java.time.Instant instant, RaftMessage message)
 		 private RaftMessages_ReceivedInstantClusterIdAwareMessage<object> Wrap( Instant instant, RaftMessage message )
 		 {
 			  return RaftMessages_ReceivedInstantClusterIdAwareMessage.of( instant, _localClusterId, message );

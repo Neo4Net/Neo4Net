@@ -33,7 +33,7 @@ namespace Neo4Net.Jmx.impl
 		 private readonly IDictionary<string, ConfigValue> _config;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: ConfigurationBean(org.Neo4Net.kernel.internal.KernelData kernel, ManagementSupport support) throws javax.management.NotCompliantMBeanException
+//ORIGINAL LINE: ConfigurationBean(Neo4Net.kernel.internal.KernelData kernel, ManagementSupport support) throws javax.management.NotCompliantMBeanException
 		 internal ConfigurationBean( KernelData kernel, ManagementSupport support ) : base( CONFIGURATION_MBEAN_NAME, kernel, support )
 		 {
 			  this._config = kernel.Config.ConfigValues;

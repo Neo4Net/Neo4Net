@@ -32,7 +32,7 @@ namespace Neo4Net.Kernel.impl.locking
 		 long ResourceId();
 
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java static interface methods:
-//		 static ActiveLock exclusiveLock(org.Neo4Net.Kernel.Api.StorageEngine.@lock.ResourceType resourceType, long resourceId)
+//		 static ActiveLock exclusiveLock(Neo4Net.Kernel.Api.StorageEngine.@lock.ResourceType resourceType, long resourceId)
 	//	 {
 	//		  return new Implementation(resourceType, resourceId)
 	//		  {
@@ -44,7 +44,7 @@ namespace Neo4Net.Kernel.impl.locking
 	//	 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java static interface methods:
-//		 static ActiveLock sharedLock(org.Neo4Net.Kernel.Api.StorageEngine.@lock.ResourceType resourceType, long resourceId)
+//		 static ActiveLock sharedLock(Neo4Net.Kernel.Api.StorageEngine.@lock.ResourceType resourceType, long resourceId)
 	//	 {
 	//		  return new Implementation(resourceType, resourceId)
 	//		  {

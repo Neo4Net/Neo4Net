@@ -22,7 +22,7 @@ namespace Neo4Net.Server.web
 	using Connection = org.eclipse.jetty.io.Connection;
 	using Test = org.junit.jupiter.api.Test;
 
-	using NetworkConnectionTracker = Neo4Net.Kernel.api.net.NetworkConnectionTracker;
+	using NetworkConnectionTracker = Neo4Net.Kernel.Api.net.NetworkConnectionTracker;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.ArgumentMatchers.any;

@@ -144,7 +144,7 @@ namespace Neo4Net.Values.utils
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void writePoint(org.Neo4Net.values.storable.CoordinateReferenceSystem crs, double[] coordinate) throws RuntimeException
+//ORIGINAL LINE: public void writePoint(Neo4Net.values.storable.CoordinateReferenceSystem crs, double[] coordinate) throws RuntimeException
 		 public override void WritePoint( CoordinateReferenceSystem crs, double[] coordinate )
 		 {
 			  Append( "{geometry: {type: \"Point\", coordinates: " );

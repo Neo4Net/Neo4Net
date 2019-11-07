@@ -32,8 +32,8 @@ namespace Neo4Net.Kernel.Impl.Api.index
 
 	using Iterators = Neo4Net.Collections.Helpers.Iterators;
 	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
-	using MultiTokenSchemaDescriptor = Neo4Net.Kernel.api.schema.MultiTokenSchemaDescriptor;
-	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
+	using MultiTokenSchemaDescriptor = Neo4Net.Kernel.Api.schema.MultiTokenSchemaDescriptor;
+	using SchemaDescriptorFactory = Neo4Net.Kernel.Api.schema.SchemaDescriptorFactory;
 	using EntityType = Neo4Net.Kernel.Api.StorageEngine.EntityType;
 	using Inject = Neo4Net.Test.extension.Inject;
 	using RandomExtension = Neo4Net.Test.extension.RandomExtension;
@@ -44,16 +44,16 @@ namespace Neo4Net.Kernel.Impl.Api.index
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.asSet;
+//	import static Neo4Net.helpers.collection.Iterators.asSet;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor_PropertySchemaType.COMPLETE_ALL_TOKENS;
+//	import static Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor_PropertySchemaType.COMPLETE_ALL_TOKENS;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @ExtendWith(RandomExtension.class) class SchemaDescriptorLookupSetTest
 	internal class SchemaDescriptorLookupSetTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.Neo4Net.test.rule.RandomRule random;
+//ORIGINAL LINE: @Inject private Neo4Net.test.rule.RandomRule random;
 		 private RandomRule _random;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -139,7 +139,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ParameterizedTest @MethodSource("nodeAndRelationshipEntityTypes") void shouldMatchOnAnyEntityAndPropertyTokenForPartialPropertySchemaType(org.Neo4Net.Kernel.Api.StorageEngine.EntityType EntityType)
+//ORIGINAL LINE: @ParameterizedTest @MethodSource("nodeAndRelationshipEntityTypes") void shouldMatchOnAnyEntityAndPropertyTokenForPartialPropertySchemaType(Neo4Net.Kernel.Api.StorageEngine.EntityType EntityType)
 		 internal virtual void ShouldMatchOnAnyEntityAndPropertyTokenForPartialPropertySchemaType( EntityType EntityType )
 		 {
 			  // given
@@ -351,9 +351,9 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 internal abstract class DescriptorFactory
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           NODE { SchemaDescriptor descriptor(int labelId, int... propertyKeyIds) { return org.Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel(labelId, propertyKeyIds); } },
+//           NODE { SchemaDescriptor descriptor(int labelId, int... propertyKeyIds) { return Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel(labelId, propertyKeyIds); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           RELATIONSHIP { SchemaDescriptor descriptor(int relTypeId, int... propertyKeyIds) { return org.Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forRelType(relTypeId, propertyKeyIds); } };
+//           RELATIONSHIP { SchemaDescriptor descriptor(int relTypeId, int... propertyKeyIds) { return Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forRelType(relTypeId, propertyKeyIds); } };
 
 			  private static readonly IList<DescriptorFactory> valueList = new List<DescriptorFactory>();
 

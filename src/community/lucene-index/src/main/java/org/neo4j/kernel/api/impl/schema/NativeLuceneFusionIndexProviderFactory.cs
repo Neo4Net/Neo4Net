@@ -28,9 +28,9 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 	using FusionIndexProvider = Neo4Net.Kernel.Impl.Index.Schema.fusion.FusionIndexProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.index.IndexDirectoryStructure.directoriesByProvider;
+//	import static Neo4Net.kernel.api.index.IndexDirectoryStructure.directoriesByProvider;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.index.IndexDirectoryStructure.directoriesBySubProvider;
+//	import static Neo4Net.kernel.api.index.IndexDirectoryStructure.directoriesBySubProvider;
 
 	public abstract class NativeLuceneFusionIndexProviderFactory<DEPENDENCIES> : AbstractIndexProviderFactory<DEPENDENCIES> where DEPENDENCIES : Neo4Net.Kernel.Impl.Index.Schema.AbstractIndexProviderFactory.Dependencies
 	{

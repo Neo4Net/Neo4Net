@@ -46,21 +46,21 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.impl.LuceneTestUtil.documentRepresentingProperties;
+//	import static Neo4Net.kernel.api.impl.LuceneTestUtil.documentRepresentingProperties;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.impl.LuceneTestUtil.newSeekQuery;
+//	import static Neo4Net.kernel.api.impl.LuceneTestUtil.newSeekQuery;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.impl.schema.LuceneDocumentStructure.NODE_ID_KEY;
+//	import static Neo4Net.kernel.api.impl.schema.LuceneDocumentStructure.NODE_ID_KEY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.impl.schema.LuceneDocumentStructure.useFieldForUniquenessVerification;
+//	import static Neo4Net.kernel.api.impl.schema.LuceneDocumentStructure.useFieldForUniquenessVerification;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.impl.schema.ValueEncoding.Array;
+//	import static Neo4Net.kernel.api.impl.schema.ValueEncoding.Array;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.impl.schema.ValueEncoding.Bool;
+//	import static Neo4Net.kernel.api.impl.schema.ValueEncoding.Bool;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.impl.schema.ValueEncoding.Number;
+//	import static Neo4Net.kernel.api.impl.schema.ValueEncoding.Number;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.impl.schema.ValueEncoding.String;
+//	import static Neo4Net.kernel.api.impl.schema.ValueEncoding.String;
 
 	internal class LuceneDocumentStructureTest
 	{

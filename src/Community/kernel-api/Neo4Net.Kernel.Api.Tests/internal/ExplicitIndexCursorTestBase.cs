@@ -28,11 +28,11 @@ namespace Neo4Net.Kernel.Api.Internal
 	using Transaction = Neo4Net.GraphDb.Transaction;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.RelationshipType.withName;
+//	import static Neo4Net.graphdb.RelationshipType.withName;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.IndexReadAsserts.assertFoundRelationships;
+//	import static Neo4Net.Kernel.Api.Internal.IndexReadAsserts.assertFoundRelationships;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.IndexReadAsserts.assertNodeCount;
+//	import static Neo4Net.Kernel.Api.Internal.IndexReadAsserts.assertNodeCount;
 
 	public abstract class ExplicitIndexCursorTestBase<G> : KernelAPIReadTestBase<G> where G : KernelAPIReadTestSupport
 	{

@@ -96,60 +96,60 @@ namespace Neo4Net.GraphDb
 	/// </summary>
 	public interface IRelationshipType
 	{
-		 /// <summary>
-		 /// Returns the name of the relationship type. The name uniquely identifies a
-		 /// relationship type, i.e. two different RelationshipType instances with
-		 /// different object identifiers (and possibly even different classes) are
-		 /// semantically equivalent if they have <seealso cref="String.equals(object) equal"/>
-		 /// names.
-		 /// </summary>
-		 /// <returns> the name of the relationship type </returns>
-		 string Name();
+      /// <summary>
+      /// Returns the name of the relationship type. The name uniquely identifies a
+      /// relationship type, i.e. two different RelationshipType instances with
+      /// different object identifiers (and possibly even different classes) are
+      /// semantically equivalent if they have <seealso cref="String.equals(object) equal"/>
+      /// names.
+      /// </summary>
+      /// <returns> the name of the relationship type </returns>
+      string Name { get; }
 
-		 /// <summary>
-		 /// Instantiates a new <seealso cref="IRelationshipType"/> with the given name.
-		 /// </summary>
-		 /// <param name="name"> the name of the dynamic relationship type </param>
-		 /// <returns> a <seealso cref="IRelationshipType"/> with the given name </returns>
-		 /// <exception cref="IllegalArgumentException"> if name is {@code null} </exception>
-//JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java static interface methods:
-//		 static RelationshipType withName(String name)
-	//	 {
-	//		  if (name == null)
-	//		  {
-	//				throw new IllegalArgumentException("A relationship type cannot have a null name");
-	//		  }
-	//		  return new RelationshipType()
-	//		  {
-	//				@@Override public String name()
-	//				{
-	//					 return name;
-	//				}
-	//
-	//				@@Override public String toString()
-	//				{
-	//					 return name;
-	//				}
-	//
-	//				@@Override public boolean equals(Object that)
-	//				{
-	//					 if (this == that)
-	//					 {
-	//						  return true;
-	//					 }
-	//					 if (that == null || that.getClass() != getClass())
-	//					 {
-	//						  return false;
-	//					 }
-	//					 return name.equals(((RelationshipType) that).name());
-	//				}
-	//
-	//				@@Override public int hashCode()
-	//				{
-	//					 return name.hashCode();
-	//				}
-	//		  };
-	//	 }
-	}
+      /// <summary>
+      /// Instantiates a new <seealso cref="IRelationshipType"/> with the given name.
+      /// </summary>
+      /// <param name="name"> the name of the dynamic relationship type </param>
+      /// <returns> a <seealso cref="IRelationshipType"/> with the given name </returns>
+      /// <exception cref="IllegalArgumentException"> if name is {@code null} </exception>
+      //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java static interface methods:
+      //		 static RelationshipType withName(String name)
+      //	 {
+      //		  if (name == null)
+      //		  {
+      //				throw new IllegalArgumentException("A relationship type cannot have a null name");
+      //		  }
+      //		  return new RelationshipType()
+      //		  {
+      //				@@Override public String name()
+      //				{
+      //					 return name;
+      //				}
+      //
+      //				@@Override public String toString()
+      //				{
+      //					 return name;
+      //				}
+      //
+      //				@@Override public boolean equals(Object that)
+      //				{
+      //					 if (this == that)
+      //					 {
+      //						  return true;
+      //					 }
+      //					 if (that == null || that.getClass() != getClass())
+      //					 {
+      //						  return false;
+      //					 }
+      //					 return name.equals(((RelationshipType) that).name());
+      //				}
+      //
+      //				@@Override public int hashCode()
+      //				{
+      //					 return name.hashCode();
+      //				}
+      //		  };
+      //	 }
+   }
 
 }

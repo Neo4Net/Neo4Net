@@ -40,7 +40,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 		 private CommittedTransactionRepresentation _current;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public PhysicalTransactionCursor(T channel, org.Neo4Net.kernel.impl.transaction.log.entry.LogEntryReader<T> entryReader) throws java.io.IOException
+//ORIGINAL LINE: public PhysicalTransactionCursor(T channel, Neo4Net.kernel.impl.transaction.log.entry.LogEntryReader<T> entryReader) throws java.io.IOException
 		 public PhysicalTransactionCursor( T channel, LogEntryReader<T> entryReader )
 		 {
 			  this._channel = channel;

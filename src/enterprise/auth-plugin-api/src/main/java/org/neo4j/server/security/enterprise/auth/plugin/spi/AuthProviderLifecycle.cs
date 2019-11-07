@@ -27,7 +27,7 @@ namespace Neo4Net.Server.security.enterprise.auth.plugin.spi
 	public interface AuthProviderLifecycle
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void initialize(org.Neo4Net.server.security.enterprise.auth.plugin.api.AuthProviderOperations authProviderOperations) throws Throwable;
+//ORIGINAL LINE: void initialize(Neo4Net.server.security.enterprise.auth.plugin.api.AuthProviderOperations authProviderOperations) throws Throwable;
 		 void Initialize( AuthProviderOperations authProviderOperations );
 		 void Start();
 		 void Stop();
@@ -37,7 +37,7 @@ namespace Neo4Net.Server.security.enterprise.auth.plugin.spi
 	 public class AuthProviderLifecycle_Adapter : AuthProviderLifecycle
 	 {
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void initialize(org.Neo4Net.server.security.enterprise.auth.plugin.api.AuthProviderOperations authProviderOperations) throws Throwable
+//ORIGINAL LINE: public void initialize(Neo4Net.server.security.enterprise.auth.plugin.api.AuthProviderOperations authProviderOperations) throws Throwable
 		  public override void Initialize( AuthProviderOperations authProviderOperations )
 		  {
 		  }

@@ -41,8 +41,8 @@ namespace Neo4Net.Server.security.enterprise.auth
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using AuthenticationResult = Neo4Net.Kernel.Api.Internal.security.AuthenticationResult;
 	using InvalidArgumentsException = Neo4Net.Kernel.Api.Exceptions.InvalidArgumentsException;
-	using PasswordPolicy = Neo4Net.Kernel.api.security.PasswordPolicy;
-	using InvalidAuthTokenException = Neo4Net.Kernel.api.security.exception.InvalidAuthTokenException;
+	using PasswordPolicy = Neo4Net.Kernel.Api.security.PasswordPolicy;
+	using InvalidAuthTokenException = Neo4Net.Kernel.Api.security.exception.InvalidAuthTokenException;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using EnterpriseLoginContext = Neo4Net.Kernel.enterprise.api.security.EnterpriseLoginContext;
 	using User = Neo4Net.Kernel.impl.security.User;
@@ -80,11 +80,11 @@ namespace Neo4Net.Server.security.enterprise.auth
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.security.auth.BasicAuthManagerTest.password;
+//	import static Neo4Net.server.security.auth.BasicAuthManagerTest.password;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.security.auth.SecurityTestUtils.authToken;
+//	import static Neo4Net.server.security.auth.SecurityTestUtils.authToken;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.security.enterprise.auth.AuthTestUtil.listOf;
+//	import static Neo4Net.server.security.enterprise.auth.AuthTestUtil.listOf;
 
 	public class InternalFlatFileRealmTest
 	{
@@ -115,7 +115,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldNotCacheAuthenticationInfo() throws org.Neo4Net.kernel.api.security.exception.InvalidAuthTokenException
+//ORIGINAL LINE: @Test public void shouldNotCacheAuthenticationInfo() throws Neo4Net.kernel.api.security.exception.InvalidAuthTokenException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldNotCacheAuthenticationInfo()
 		 {
@@ -133,7 +133,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldNotCacheAuthorizationInfo() throws org.Neo4Net.kernel.api.security.exception.InvalidAuthTokenException
+//ORIGINAL LINE: @Test public void shouldNotCacheAuthorizationInfo() throws Neo4Net.kernel.api.security.exception.InvalidAuthTokenException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldNotCacheAuthorizationInfo()
 		 {
@@ -324,19 +324,19 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 private void AssertSetUsersAndRolesNTimes( bool usersChanged, bool rolesChanged, int nSetUsers, int nSetRoles )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.server.security.auth.UserRepository userRepository = mock(org.Neo4Net.server.security.auth.UserRepository.class);
+//ORIGINAL LINE: final Neo4Net.server.security.auth.UserRepository userRepository = mock(Neo4Net.server.security.auth.UserRepository.class);
 			  UserRepository userRepository = mock( typeof( UserRepository ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final RoleRepository roleRepository = mock(RoleRepository.class);
 			  RoleRepository roleRepository = mock( typeof( RoleRepository ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.server.security.auth.UserRepository initialUserRepository = mock(org.Neo4Net.server.security.auth.UserRepository.class);
+//ORIGINAL LINE: final Neo4Net.server.security.auth.UserRepository initialUserRepository = mock(Neo4Net.server.security.auth.UserRepository.class);
 			  UserRepository initialUserRepository = mock( typeof( UserRepository ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.server.security.auth.UserRepository defaultAdminRepository = mock(org.Neo4Net.server.security.auth.UserRepository.class);
+//ORIGINAL LINE: final Neo4Net.server.security.auth.UserRepository defaultAdminRepository = mock(Neo4Net.server.security.auth.UserRepository.class);
 			  UserRepository defaultAdminRepository = mock( typeof( UserRepository ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.api.security.PasswordPolicy passwordPolicy = new org.Neo4Net.server.security.auth.BasicPasswordPolicy();
+//ORIGINAL LINE: final Neo4Net.kernel.api.security.PasswordPolicy passwordPolicy = new Neo4Net.server.security.auth.BasicPasswordPolicy();
 			  PasswordPolicy passwordPolicy = new BasicPasswordPolicy();
 			  AuthenticationStrategy authenticationStrategy = NewRateLimitedAuthStrategy();
 			  InternalFlatFileRealmIT.TestJobScheduler jobScheduler = new InternalFlatFileRealmIT.TestJobScheduler();

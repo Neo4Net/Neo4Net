@@ -52,16 +52,16 @@ namespace Neo4Net.Kernel.impl.transaction
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.entry.LogHeader.LOG_HEADER_SIZE;
+//	import static Neo4Net.kernel.impl.transaction.log.entry.LogHeader.LOG_HEADER_SIZE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.entry.LogHeaderWriter.encodeLogVersion;
+//	import static Neo4Net.kernel.impl.transaction.log.entry.LogHeaderWriter.encodeLogVersion;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.entry.LogVersions.CURRENT_LOG_VERSION;
+//	import static Neo4Net.kernel.impl.transaction.log.entry.LogVersions.CURRENT_LOG_VERSION;
 
 	public class ReaderLogVersionBridgeTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.TestDirectory testDirectory = Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory TestDirectory = TestDirectory.testDirectory();
 		 private readonly FileSystemAbstraction _fs = mock( typeof( FileSystemAbstraction ) );
 		 private readonly LogVersionedStoreChannel _channel = mock( typeof( LogVersionedStoreChannel ) );
@@ -84,10 +84,10 @@ namespace Neo4Net.Kernel.impl.transaction
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.io.fs.StoreChannel newStoreChannel = mock(org.Neo4Net.io.fs.StoreChannel.class);
+//ORIGINAL LINE: final Neo4Net.io.fs.StoreChannel newStoreChannel = mock(Neo4Net.io.fs.StoreChannel.class);
 			  StoreChannel newStoreChannel = mock( typeof( StoreChannel ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.transaction.log.ReaderLogVersionBridge bridge = new org.Neo4Net.kernel.impl.transaction.log.ReaderLogVersionBridge(logFiles);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.transaction.log.ReaderLogVersionBridge bridge = new Neo4Net.kernel.impl.transaction.log.ReaderLogVersionBridge(logFiles);
 			  ReaderLogVersionBridge bridge = new ReaderLogVersionBridge( _logFiles );
 
 			  when( _channel.Version ).thenReturn( _version );
@@ -104,7 +104,7 @@ namespace Neo4Net.Kernel.impl.transaction
 
 			  // when
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.transaction.log.LogVersionedStoreChannel result = bridge.next(channel);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.transaction.log.LogVersionedStoreChannel result = bridge.next(channel);
 			  LogVersionedStoreChannel result = bridge.Next( _channel );
 
 			  // then
@@ -120,7 +120,7 @@ namespace Neo4Net.Kernel.impl.transaction
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.transaction.log.ReaderLogVersionBridge bridge = new org.Neo4Net.kernel.impl.transaction.log.ReaderLogVersionBridge(logFiles);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.transaction.log.ReaderLogVersionBridge bridge = new Neo4Net.kernel.impl.transaction.log.ReaderLogVersionBridge(logFiles);
 			  ReaderLogVersionBridge bridge = new ReaderLogVersionBridge( _logFiles );
 
 			  when( _channel.Version ).thenReturn( _version );
@@ -128,7 +128,7 @@ namespace Neo4Net.Kernel.impl.transaction
 
 			  // when
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.transaction.log.LogVersionedStoreChannel result = bridge.next(channel);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.transaction.log.LogVersionedStoreChannel result = bridge.next(channel);
 			  LogVersionedStoreChannel result = bridge.Next( _channel );
 
 			  // then
@@ -143,10 +143,10 @@ namespace Neo4Net.Kernel.impl.transaction
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.transaction.log.ReaderLogVersionBridge bridge = new org.Neo4Net.kernel.impl.transaction.log.ReaderLogVersionBridge(logFiles);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.transaction.log.ReaderLogVersionBridge bridge = new Neo4Net.kernel.impl.transaction.log.ReaderLogVersionBridge(logFiles);
 			  ReaderLogVersionBridge bridge = new ReaderLogVersionBridge( _logFiles );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.io.fs.StoreChannel nextVersionWithIncompleteHeader = mock(org.Neo4Net.io.fs.StoreChannel.class);
+//ORIGINAL LINE: final Neo4Net.io.fs.StoreChannel nextVersionWithIncompleteHeader = mock(Neo4Net.io.fs.StoreChannel.class);
 			  StoreChannel nextVersionWithIncompleteHeader = mock( typeof( StoreChannel ) );
 			  when( nextVersionWithIncompleteHeader.read( any( typeof( ByteBuffer ) ) ) ).thenReturn( LOG_HEADER_SIZE / 2 );
 
@@ -156,7 +156,7 @@ namespace Neo4Net.Kernel.impl.transaction
 
 			  // when
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.transaction.log.LogVersionedStoreChannel result = bridge.next(channel);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.transaction.log.LogVersionedStoreChannel result = bridge.next(channel);
 			  LogVersionedStoreChannel result = bridge.Next( _channel );
 
 			  // then
@@ -165,7 +165,7 @@ namespace Neo4Net.Kernel.impl.transaction
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.kernel.impl.transaction.log.files.LogFiles prepareLogFiles() throws java.io.IOException
+//ORIGINAL LINE: private Neo4Net.kernel.impl.transaction.log.files.LogFiles prepareLogFiles() throws java.io.IOException
 		 private LogFiles PrepareLogFiles()
 		 {
 			  return LogFilesBuilder.logFilesBasedOnlyBuilder( TestDirectory.directory(), _fs ).build();

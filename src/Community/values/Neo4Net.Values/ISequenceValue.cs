@@ -23,7 +23,7 @@ namespace Neo4Net.Values
 {
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.SequenceValue_IterationPreference.RANDOM_ACCESS;
+//	import static Neo4Net.values.SequenceValue_IterationPreference.RANDOM_ACCESS;
 
 	/// <summary>
 	/// Values that represent sequences of values (such as Lists or Arrays) need to implement this interface.

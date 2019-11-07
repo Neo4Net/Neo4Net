@@ -22,7 +22,7 @@ namespace Neo4Net.Consistency.checking.labelscan
 	using Neo4Net.Consistency.checking.full;
 	using ConsistencyReporter = Neo4Net.Consistency.report.ConsistencyReporter;
 	using LabelScanDocument = Neo4Net.Consistency.Store.Synthetic.LabelScanDocument;
-	using NodeLabelRange = Neo4Net.Kernel.api.labelscan.NodeLabelRange;
+	using NodeLabelRange = Neo4Net.Kernel.Api.LabelScan.NodeLabelRange;
 
 	public class LabelScanDocumentProcessor : Neo4Net.Consistency.checking.full.RecordProcessor_Adapter<NodeLabelRange>
 	{

@@ -30,7 +30,7 @@ namespace Neo4Net.Server.modules
 	using WebServer = Neo4Net.Server.web.WebServer;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.plugins.Injectable.injectable;
+//	import static Neo4Net.server.plugins.Injectable.injectable;
 
 	/// <summary>
 	/// Mounts the DBMS REST API.

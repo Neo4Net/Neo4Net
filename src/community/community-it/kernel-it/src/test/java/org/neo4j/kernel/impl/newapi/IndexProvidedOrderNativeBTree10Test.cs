@@ -44,19 +44,19 @@ namespace Neo4Net.Kernel.Impl.Newapi
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.Label.label;
+//	import static Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.ValueTuple.COMPARATOR;
+//	import static Neo4Net.values.storable.ValueTuple.COMPARATOR;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("FieldCanBeLocal") public class IndexProvidedOrderNativeBTree10Test extends org.Neo4Net.Kernel.Api.Internal.KernelAPIReadTestBase<ReadTestSupport>
+//ORIGINAL LINE: @SuppressWarnings("FieldCanBeLocal") public class IndexProvidedOrderNativeBTree10Test extends Neo4Net.Kernel.Api.Internal.KernelAPIReadTestBase<ReadTestSupport>
 	public class IndexProvidedOrderNativeBTree10Test : KernelAPIReadTestBase<ReadTestSupport>
 	{
 		 private static int _nNodes = 10000;
 		 private static int _nIterations = 100;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.RandomRule randomRule = new org.Neo4Net.test.rule.RandomRule();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.RandomRule randomRule = new Neo4Net.test.rule.RandomRule();
 		 public RandomRule RandomRule = new RandomRule();
 
 		 private SortedSet<NodeValueTuple> _singlePropValues = new SortedSet<NodeValueTuple>( COMPARATOR );
@@ -116,7 +116,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldProvideResultInOrderIfCapable() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: @Test public void shouldProvideResultInOrderIfCapable() throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldProvideResultInOrderIfCapable()
 		 {
@@ -146,7 +146,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 						 bool fromInclusive = randomValues.NextBoolean();
 						 bool toInclusive = randomValues.NextBoolean();
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.Kernel.Api.Internal.IndexQuery.RangePredicate<?> range = org.Neo4Net.Kernel.Api.Internal.IndexQuery.range(prop, from.getOnlyValue(), fromInclusive, to.getOnlyValue(), toInclusive);
+//ORIGINAL LINE: Neo4Net.Kernel.Api.Internal.IndexQuery.RangePredicate<?> range = Neo4Net.Kernel.Api.Internal.IndexQuery.range(prop, from.getOnlyValue(), fromInclusive, to.getOnlyValue(), toInclusive);
 						 IndexQuery.RangePredicate<object> range = IndexQuery.range( prop, from.OnlyValue, fromInclusive, to.OnlyValue, toInclusive );
 
 						 using ( NodeValueIndexCursor node = Cursors.allocateNodeValueIndexCursor() )

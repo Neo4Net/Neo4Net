@@ -38,16 +38,16 @@ namespace Neo4Net.Server.rest.transactional.integration
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.exceptions.Status_Transaction.DeadlockDetected;
+//	import static Neo4Net.kernel.api.exceptions.Status_Transaction.DeadlockDetected;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.server.HTTP.RawPayload.quotedJson;
+//	import static Neo4Net.test.server.HTTP.RawPayload.quotedJson;
 
 	public class DeadlockIT : AbstractRestFunctionalTestBase
 	{
 		 private readonly HTTP.Builder _http = HTTP.withBaseUri( Server().baseUri() );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.concurrent.OtherThreadRule<Object> otherThread = new org.Neo4Net.test.rule.concurrent.OtherThreadRule<>();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.concurrent.OtherThreadRule<Object> otherThread = new Neo4Net.test.rule.concurrent.OtherThreadRule<>();
 		 public OtherThreadRule<object> OtherThread = new OtherThreadRule<object>();
 
 		 private readonly System.Threading.CountdownEvent _secondNodeLocked = new System.Threading.CountdownEvent( 1 );

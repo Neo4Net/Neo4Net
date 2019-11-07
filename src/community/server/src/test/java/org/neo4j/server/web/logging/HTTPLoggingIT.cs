@@ -45,11 +45,11 @@ namespace Neo4Net.Server.web.logging
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.fs.FileUtils.readTextFile;
+//	import static Neo4Net.io.fs.FileUtils.readTextFile;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.helpers.CommunityServerBuilder.serverOnRandomPorts;
+//	import static Neo4Net.server.helpers.CommunityServerBuilder.serverOnRandomPorts;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.assertion.Assert.assertEventually;
+//	import static Neo4Net.test.assertion.Assert.assertEventually;
 
 	public class HTTPLoggingIT : ExclusiveServerTestBase
 	{
@@ -145,7 +145,7 @@ namespace Neo4Net.Server.web.logging
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private org.Neo4Net.function.ThrowingSupplier<String, java.io.IOException> fileContentSupplier(final java.io.File file)
+//ORIGINAL LINE: private Neo4Net.function.ThrowingSupplier<String, java.io.IOException> fileContentSupplier(final java.io.File file)
 		 private ThrowingSupplier<string, IOException> FileContentSupplier( File file )
 		 {
 			  return () => readTextFile(file, StandardCharsets.UTF_8);

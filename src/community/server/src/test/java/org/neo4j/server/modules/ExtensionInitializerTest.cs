@@ -51,8 +51,8 @@ namespace Neo4Net.Server.modules
 			  ExtensionInitializer extensionInitializer = new ExtensionInitializer( neoServer );
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Collection<org.Neo4Net.server.plugins.Injectable<?>> injectableProperties = extensionInitializer.initializePackages(java.util.Collections.singletonList("org.Neo4Net.server.modules"));
-			  ICollection<Injectable<object>> injectableProperties = extensionInitializer.InitializePackages( Collections.singletonList( "org.Neo4Net.server.modules" ) );
+//ORIGINAL LINE: java.util.Collection<Neo4Net.server.plugins.Injectable<?>> injectableProperties = extensionInitializer.initializePackages(java.util.Collections.singletonList("Neo4Net.server.modules"));
+			  ICollection<Injectable<object>> injectableProperties = extensionInitializer.InitializePackages( Collections.singletonList( "Neo4Net.server.modules" ) );
 
 			  assertTrue( injectableProperties.Any( i => ServerSettings.transaction_idle_timeout.name().Equals(i.Value) ) );
 		 }
@@ -83,7 +83,7 @@ namespace Neo4Net.Server.modules
 		 {
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: public java.util.Collection<org.Neo4Net.server.plugins.Injectable<?>> start(org.Neo4Net.graphdb.GraphDatabaseService IGraphDatabaseService, org.apache.commons.configuration.Configuration config)
+//ORIGINAL LINE: public java.util.Collection<Neo4Net.server.plugins.Injectable<?>> start(Neo4Net.graphdb.GraphDatabaseService IGraphDatabaseService, org.apache.commons.configuration.Configuration config)
 			  public override ICollection<Injectable<object>> Start( IGraphDatabaseService IGraphDatabaseService, Configuration config )
 			  {
 					return Iterators.asList( Iterators.map( new StringToInjectableFunction( this ), config.Keys ) );
@@ -105,7 +105,7 @@ namespace Neo4Net.Server.modules
 
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public org.Neo4Net.server.plugins.Injectable<String> apply(final String value)
+//ORIGINAL LINE: public Neo4Net.server.plugins.Injectable<String> apply(final String value)
 					public override Injectable<string> Apply( string value )
 					{
 						 return new InjectableAnonymousInnerClass( this, value );

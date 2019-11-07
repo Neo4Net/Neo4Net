@@ -74,7 +74,7 @@ namespace Neo4Net.GraphAlgo.Utils
 
 			  Traverser traverser = ( new MonoDirectionalTraversalDescription() ).expand(_expander).order(_factory).uniqueness(_uniqueness).traverse(a);
 
-			  ResourceIterator<Path> iterator = traverser.GetEnumerator();
+			  IResourceIterator<Path> iterator = traverser.GetEnumerator();
 
 			  int i = 0;
 			  while ( iterator.MoveNext() )

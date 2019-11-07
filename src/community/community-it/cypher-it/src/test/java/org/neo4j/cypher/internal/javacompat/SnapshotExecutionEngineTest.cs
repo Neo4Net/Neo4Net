@@ -54,7 +54,7 @@ namespace Neo4Net.Cypher.Internal.javacompat
 	public class SnapshotExecutionEngineTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.DatabaseRule database = new org.Neo4Net.test.rule.ImpermanentDatabaseRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.DatabaseRule database = new Neo4Net.test.rule.ImpermanentDatabaseRule();
 		 public readonly DatabaseRule Database = new ImpermanentDatabaseRule();
 
 		 private CompilerFactory _compilerFactory;
@@ -87,7 +87,7 @@ namespace Neo4Net.Cypher.Internal.javacompat
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void executeQueryWithoutRetries() throws org.Neo4Net.kernel.impl.query.QueryExecutionKernelException
+//ORIGINAL LINE: @Test public void executeQueryWithoutRetries() throws Neo4Net.kernel.impl.query.QueryExecutionKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ExecuteQueryWithoutRetries()
 		 {
@@ -98,7 +98,7 @@ namespace Neo4Net.Cypher.Internal.javacompat
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void executeQueryAfterSeveralRetries() throws org.Neo4Net.kernel.impl.query.QueryExecutionKernelException
+//ORIGINAL LINE: @Test public void executeQueryAfterSeveralRetries() throws Neo4Net.kernel.impl.query.QueryExecutionKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ExecuteQueryAfterSeveralRetries()
 		 {
@@ -111,7 +111,7 @@ namespace Neo4Net.Cypher.Internal.javacompat
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void failQueryAfterMaxRetriesReached() throws org.Neo4Net.kernel.impl.query.QueryExecutionKernelException
+//ORIGINAL LINE: @Test public void failQueryAfterMaxRetriesReached() throws Neo4Net.kernel.impl.query.QueryExecutionKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void FailQueryAfterMaxRetriesReached()
 		 {
@@ -141,7 +141,7 @@ namespace Neo4Net.Cypher.Internal.javacompat
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public <T> org.Neo4Net.graphdb.Result executeWithRetries(String query, T parameters, org.Neo4Net.kernel.impl.query.TransactionalContext context, ParametrizedQueryExecutor<T> executor) throws org.Neo4Net.kernel.impl.query.QueryExecutionKernelException
+//ORIGINAL LINE: public <T> Neo4Net.graphdb.Result executeWithRetries(String query, T parameters, Neo4Net.kernel.impl.query.TransactionalContext context, ParametrizedQueryExecutor<T> executor) throws Neo4Net.kernel.impl.query.QueryExecutionKernelException
 			  public override Result ExecuteWithRetries<T>( string query, T parameters, TransactionalContext context, ParametrizedQueryExecutor<T> executor )
 			  {
 					return base.ExecuteWithRetries( query, parameters, context, executor );

@@ -32,7 +32,7 @@ namespace Neo4Net.Kernel.impl.core
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected int createKey(org.Neo4Net.Kernel.Api.Internal.Transaction transaction, String name) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IllegalTokenNameException, org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.TooManyLabelsException
+//ORIGINAL LINE: protected int createKey(Neo4Net.Kernel.Api.Internal.Transaction transaction, String name) throws Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IllegalTokenNameException, Neo4Net.Kernel.Api.Internal.Exceptions.Schema.TooManyLabelsException
 		 protected internal override int CreateKey( Transaction transaction, string name )
 		 {
 			  return transaction.TokenWrite().labelCreateForName(name);

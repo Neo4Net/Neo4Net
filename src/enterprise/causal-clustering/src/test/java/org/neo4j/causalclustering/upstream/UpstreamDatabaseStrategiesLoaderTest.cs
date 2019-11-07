@@ -37,9 +37,9 @@ namespace Neo4Net.causalclustering.upstream
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.mock;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.CausalClusteringSettings.upstream_selection_strategy;
+//	import static Neo4Net.causalclustering.core.CausalClusteringSettings.upstream_selection_strategy;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.asSet;
+//	import static Neo4Net.helpers.collection.Iterators.asSet;
 
 	public class UpstreamDatabaseStrategiesLoaderTest
 	{

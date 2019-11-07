@@ -109,7 +109,7 @@ namespace Neo4Net.Dbms.CommandLine
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.io.File createClusterStateDir(org.Neo4Net.io.fs.FileSystemAbstraction fs) throws org.Neo4Net.causalclustering.core.state.ClusterStateException
+//ORIGINAL LINE: private java.io.File createClusterStateDir(Neo4Net.io.fs.FileSystemAbstraction fs) throws Neo4Net.causalclustering.core.state.ClusterStateException
 		 private File CreateClusterStateDir( FileSystemAbstraction fs )
 		 {
 			  File dataDir = new File( _homeDir.toFile(), "data" );

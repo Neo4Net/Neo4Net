@@ -46,7 +46,7 @@ namespace Neo4Net.Consistency.report
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Arrays.asList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.Exceptions.stringify;
+//	import static Neo4Net.helpers.Exceptions.stringify;
 
 	public class ConsistencyReporter : ConsistencyReport_Reporter
 	{
@@ -253,7 +253,7 @@ namespace Neo4Net.Consistency.report
 			  internal abstract long RecordId();
 
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-//ORIGINAL LINE: public <REFERRED extends org.Neo4Net.kernel.impl.store.record.AbstractBaseRecord> void comparativeCheck(org.Neo4Net.consistency.store.RecordReference<REFERRED> reference, org.Neo4Net.consistency.checking.ComparativeRecordChecker<RECORD, ? super REFERRED, REPORT> checker)
+//ORIGINAL LINE: public <REFERRED extends Neo4Net.kernel.impl.store.record.AbstractBaseRecord> void comparativeCheck(Neo4Net.consistency.store.RecordReference<REFERRED> reference, Neo4Net.consistency.checking.ComparativeRecordChecker<RECORD, ? super REFERRED, REPORT> checker)
 			  public override void ComparativeCheck<REFERRED, T1>( RecordReference<REFERRED> reference, ComparativeRecordChecker<T1> checker ) where REFERRED : Neo4Net.Kernel.Impl.Store.Records.AbstractBaseRecord
 			  {
 					References++;
@@ -354,14 +354,14 @@ namespace Neo4Net.Consistency.report
 			  }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Override @SuppressWarnings("unchecked") void checkReference(org.Neo4Net.consistency.checking.CheckerEngine engine, org.Neo4Net.consistency.checking.ComparativeRecordChecker checker, org.Neo4Net.kernel.impl.store.record.AbstractBaseRecord referenced, org.Neo4Net.consistency.store.RecordAccess records)
+//ORIGINAL LINE: @Override @SuppressWarnings("unchecked") void checkReference(Neo4Net.consistency.checking.CheckerEngine engine, Neo4Net.consistency.checking.ComparativeRecordChecker checker, Neo4Net.kernel.impl.store.record.AbstractBaseRecord referenced, Neo4Net.consistency.store.RecordAccess records)
 			  internal override void CheckReference( CheckerEngine engine, ComparativeRecordChecker checker, AbstractBaseRecord referenced, RecordAccess records )
 			  {
 					checker.checkReference( Record, referenced, this, records );
 			  }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Override @SuppressWarnings("unchecked") void checkDiffReference(org.Neo4Net.consistency.checking.CheckerEngine engine, org.Neo4Net.consistency.checking.ComparativeRecordChecker checker, org.Neo4Net.kernel.impl.store.record.AbstractBaseRecord oldReferenced, org.Neo4Net.kernel.impl.store.record.AbstractBaseRecord newReferenced, org.Neo4Net.consistency.store.RecordAccess records)
+//ORIGINAL LINE: @Override @SuppressWarnings("unchecked") void checkDiffReference(Neo4Net.consistency.checking.CheckerEngine engine, Neo4Net.consistency.checking.ComparativeRecordChecker checker, Neo4Net.kernel.impl.store.record.AbstractBaseRecord oldReferenced, Neo4Net.kernel.impl.store.record.AbstractBaseRecord newReferenced, Neo4Net.consistency.store.RecordAccess records)
 			  internal override void CheckDiffReference( CheckerEngine engine, ComparativeRecordChecker checker, AbstractBaseRecord oldReferenced, AbstractBaseRecord newReferenced, RecordAccess records )
 			  {
 					checker.checkReference( Record, newReferenced, this, records );

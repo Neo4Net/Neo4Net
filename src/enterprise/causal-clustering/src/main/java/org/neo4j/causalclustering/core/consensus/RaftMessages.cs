@@ -34,9 +34,9 @@ namespace Neo4Net.causalclustering.core.consensus
 	using Message = Neo4Net.causalclustering.messaging.Message;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.RaftMessages_Type.HEARTBEAT_RESPONSE;
+//	import static Neo4Net.causalclustering.core.consensus.RaftMessages_Type.HEARTBEAT_RESPONSE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.RaftMessages_Type.PRUNE_REQUEST;
+//	import static Neo4Net.causalclustering.core.consensus.RaftMessages_Type.PRUNE_REQUEST;
 
 	public interface RaftMessages
 	{
@@ -1044,7 +1044,7 @@ namespace Neo4Net.causalclustering.core.consensus
 		  RM Message();
 
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//		  default org.Neo4Net.causalclustering.identity.MemberId from()
+//		  default Neo4Net.causalclustering.identity.MemberId from()
 	//	  {
 	//			return message().from();
 	//	  }
@@ -1067,7 +1067,7 @@ namespace Neo4Net.causalclustering.core.consensus
 		  ClusterId ClusterId();
 
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java static interface methods:
-//		  static <RM> RaftMessages_ClusterIdAwareMessage<RM> of(org.Neo4Net.causalclustering.identity.ClusterId clusterId, RM message)
+//		  static <RM> RaftMessages_ClusterIdAwareMessage<RM> of(Neo4Net.causalclustering.identity.ClusterId clusterId, RM message)
 	//	  {
 	//			return new RaftMessages.ClusterIdAwareMessageImpl<>(clusterId, message);
 	//	  }
@@ -1087,7 +1087,7 @@ namespace Neo4Net.causalclustering.core.consensus
 	 public interface RaftMessages_ReceivedInstantClusterIdAwareMessage<RM> : RaftMessages_ReceivedInstantAwareMessage<RM>, RaftMessages_ClusterIdAwareMessage<RM> where RM : RaftMessages_RaftMessage
 	 {
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java static interface methods:
-//		  static <RM> RaftMessages_ReceivedInstantClusterIdAwareMessage<RM> of(java.time.Instant receivedAt, org.Neo4Net.causalclustering.identity.ClusterId clusterId, RM message)
+//		  static <RM> RaftMessages_ReceivedInstantClusterIdAwareMessage<RM> of(java.time.Instant receivedAt, Neo4Net.causalclustering.identity.ClusterId clusterId, RM message)
 	//	  {
 	//			return new RaftMessages.ReceivedInstantClusterIdAwareMessageImpl<>(receivedAt, clusterId, message);
 	//	  }

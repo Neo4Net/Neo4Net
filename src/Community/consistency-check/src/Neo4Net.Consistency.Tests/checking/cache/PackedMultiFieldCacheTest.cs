@@ -26,7 +26,7 @@ namespace Neo4Net.Consistency.checking.cache
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertThrows;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.consistency.checking.cache.CacheSlots_Fields.ID_SLOT_SIZE;
+//	import static Neo4Net.consistency.checking.cache.CacheSlots_Fields.ID_SLOT_SIZE;
 
 	internal class PackedMultiFieldCacheTest
 	{

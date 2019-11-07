@@ -48,9 +48,9 @@ namespace Neo4Net.tools.txlog
 	using CheckTypes = Neo4Net.tools.txlog.checktypes.CheckTypes;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_ID;
+//	import static Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_ID;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.tools.util.TransactionLogUtils.openLogs;
+//	import static Neo4Net.tools.util.TransactionLogUtils.openLogs;
 
 	/// <summary>
 	/// Tool that verifies consistency of transaction logs.
@@ -91,7 +91,7 @@ namespace Neo4Net.tools.txlog
 
 			  bool validateCheckPoints = arguments.GetBoolean( VALIDATE_CHECKPOINTS_FLAG );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.tools.txlog.checktypes.CheckType<?,?>[] checkTypes = parseChecks(arguments);
+//ORIGINAL LINE: Neo4Net.tools.txlog.checktypes.CheckType<?,?>[] checkTypes = parseChecks(arguments);
 			  CheckType<object, ?>[] checkTypes = ParseChecks( arguments );
 			  File dir = ParseDir( @out, arguments );
 
@@ -131,7 +131,7 @@ namespace Neo4Net.tools.txlog
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: boolean validateCheckPoints(org.Neo4Net.kernel.impl.transaction.log.files.LogFiles logFiles, InconsistenciesHandler handler) throws java.io.IOException
+//ORIGINAL LINE: boolean validateCheckPoints(Neo4Net.kernel.impl.transaction.log.files.LogFiles logFiles, InconsistenciesHandler handler) throws java.io.IOException
 		 internal virtual bool ValidateCheckPoints( LogFiles logFiles, InconsistenciesHandler handler )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -176,21 +176,21 @@ namespace Neo4Net.tools.txlog
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.Neo4Net.kernel.impl.transaction.log.LogEntryCursor openLogEntryCursor(org.Neo4Net.kernel.impl.transaction.log.files.LogFiles logFiles) throws java.io.IOException
+//ORIGINAL LINE: Neo4Net.kernel.impl.transaction.log.LogEntryCursor openLogEntryCursor(Neo4Net.kernel.impl.transaction.log.files.LogFiles logFiles) throws java.io.IOException
 		 internal virtual LogEntryCursor OpenLogEntryCursor( LogFiles logFiles )
 		 {
 			  return openLogs( _fs, logFiles );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: boolean scan(org.Neo4Net.kernel.impl.transaction.log.files.LogFiles logFiles, InconsistenciesHandler handler, org.Neo4Net.tools.txlog.checktypes.CheckType<?,?>... checkTypes) throws java.io.IOException
+//ORIGINAL LINE: boolean scan(Neo4Net.kernel.impl.transaction.log.files.LogFiles logFiles, InconsistenciesHandler handler, Neo4Net.tools.txlog.checktypes.CheckType<?,?>... checkTypes) throws java.io.IOException
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		 internal virtual bool Scan( LogFiles logFiles, InconsistenciesHandler handler, params CheckType<object, ?>[] checkTypes )
 		 {
 			  bool success = true;
 			  bool checkTxIds = true;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: for (org.Neo4Net.tools.txlog.checktypes.CheckType<?,?> checkType : checkTypes)
+//ORIGINAL LINE: for (Neo4Net.tools.txlog.checktypes.CheckType<?,?> checkType : checkTypes)
 			  foreach ( CheckType<object, ?> checkType in checkTypes )
 			  {
 					success &= Scan( logFiles, handler, checkType, checkTxIds );
@@ -215,7 +215,7 @@ namespace Neo4Net.tools.txlog
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private <C extends org.Neo4Net.kernel.impl.transaction.command.Command, R extends org.Neo4Net.kernel.impl.store.record.AbstractBaseRecord> boolean scan(org.Neo4Net.kernel.impl.transaction.log.files.LogFiles logFiles, InconsistenciesHandler handler, org.Neo4Net.tools.txlog.checktypes.CheckType<C,R> check, boolean checkTxIds) throws java.io.IOException
+//ORIGINAL LINE: private <C extends Neo4Net.kernel.impl.transaction.command.Command, R extends Neo4Net.kernel.impl.store.record.AbstractBaseRecord> boolean scan(Neo4Net.kernel.impl.transaction.log.files.LogFiles logFiles, InconsistenciesHandler handler, Neo4Net.tools.txlog.checktypes.CheckType<C,R> check, boolean checkTxIds) throws java.io.IOException
 		 private bool Scan<C, R>( LogFiles logFiles, InconsistenciesHandler handler, CheckType<C, R> check, bool checkTxIds ) where C : Neo4Net.Kernel.impl.transaction.command.Command where R : Neo4Net.Kernel.Impl.Store.Records.AbstractBaseRecord
 		 {
 			  @out.println( "Checking logs for " + check.Name() + " inconsistencies" );
@@ -307,7 +307,7 @@ namespace Neo4Net.tools.txlog
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private static org.Neo4Net.tools.txlog.checktypes.CheckType<?,?>[] parseChecks(org.Neo4Net.helpers.Args arguments)
+//ORIGINAL LINE: private static Neo4Net.tools.txlog.checktypes.CheckType<?,?>[] parseChecks(Neo4Net.helpers.Args arguments)
 		 private static CheckType<object, ?>[] ParseChecks( Args arguments )
 		 {
 			  string checks = arguments.Get( CHECKS );
@@ -344,7 +344,7 @@ namespace Neo4Net.tools.txlog
 			  @out.println( "\t--help\t\tprints this description" );
 //JAVA TO C# CONVERTER TODO TASK: Method reference arbitrary object instance method syntax is not converted by Java to C# Converter:
 //JAVA TO C# CONVERTER TODO TASK: Most Java stream collectors are not converted by Java to C# Converter:
-			  @out.println( "\t--checks='checkname[,...]'\t\tthe list of checks to perform. Checks available: " + java.util.org.Neo4Net.tools.txlog.checktypes.CheckTypes.CHECK_TYPES.Select( CheckType::name ).collect( Collectors.joining( SEPARATOR ) ) );
+			  @out.println( "\t--checks='checkname[,...]'\t\tthe list of checks to perform. Checks available: " + java.util.Neo4Net.tools.txlog.checktypes.CheckTypes.CHECK_TYPES.Select( CheckType::name ).collect( Collectors.joining( SEPARATOR ) ) );
 			  Environment.Exit( 1 );
 		 }
 	}

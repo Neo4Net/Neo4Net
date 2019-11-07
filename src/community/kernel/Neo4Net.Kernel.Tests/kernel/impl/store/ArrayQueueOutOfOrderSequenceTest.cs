@@ -150,10 +150,10 @@ namespace Neo4Net.Kernel.impl.store
 //ORIGINAL LINE: final java.util.concurrent.atomic.AtomicLong numberSource = new java.util.concurrent.atomic.AtomicLong();
 			  AtomicLong numberSource = new AtomicLong();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.util.OutOfOrderSequence sequence = new org.Neo4Net.kernel.impl.util.ArrayQueueOutOfOrderSequence(numberSource.get(), 5, metaFunction.apply(numberSource.get()));
+//ORIGINAL LINE: final Neo4Net.kernel.impl.util.OutOfOrderSequence sequence = new Neo4Net.kernel.impl.util.ArrayQueueOutOfOrderSequence(numberSource.get(), 5, metaFunction.apply(numberSource.get()));
 			  OutOfOrderSequence sequence = new ArrayQueueOutOfOrderSequence( numberSource.get(), 5, metaFunction(numberSource.get()) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.test.Race race = new org.Neo4Net.test.Race().withEndCondition(() -> numberSource.get() > 10_000_000);
+//ORIGINAL LINE: final Neo4Net.test.Race race = new Neo4Net.test.Race().withEndCondition(() -> numberSource.get() > 10_000_000);
 			  Race race = ( new Race() ).withEndCondition(() => numberSource.get() > 10_000_000);
 			  int offerThreads = max( 2, Runtime.Runtime.availableProcessors() - 1 );
 			  race.AddContestants(offerThreads, () =>
@@ -179,7 +179,7 @@ namespace Neo4Net.Kernel.impl.store
 		 public virtual void HighestEverSeenTest()
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.util.OutOfOrderSequence sequence = new org.Neo4Net.kernel.impl.util.ArrayQueueOutOfOrderSequence(0, 5, EMPTY_META);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.util.OutOfOrderSequence sequence = new Neo4Net.kernel.impl.util.ArrayQueueOutOfOrderSequence(0, 5, EMPTY_META);
 			  OutOfOrderSequence sequence = new ArrayQueueOutOfOrderSequence( 0, 5, _emptyMeta );
 			  assertEquals( 0L, sequence.HighestEverSeen() );
 
@@ -198,7 +198,7 @@ namespace Neo4Net.Kernel.impl.store
 			  // given
 			  long timeout = 10;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.util.OutOfOrderSequence sequence = new org.Neo4Net.kernel.impl.util.ArrayQueueOutOfOrderSequence(3, 5, EMPTY_META);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.util.OutOfOrderSequence sequence = new Neo4Net.kernel.impl.util.ArrayQueueOutOfOrderSequence(3, 5, EMPTY_META);
 			  OutOfOrderSequence sequence = new ArrayQueueOutOfOrderSequence( 3, 5, _emptyMeta );
 
 			  long startTime = DateTimeHelper.CurrentUnixTimeMillis();
@@ -224,7 +224,7 @@ namespace Neo4Net.Kernel.impl.store
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.util.OutOfOrderSequence sequence = new org.Neo4Net.kernel.impl.util.ArrayQueueOutOfOrderSequence(4, 5, EMPTY_META);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.util.OutOfOrderSequence sequence = new Neo4Net.kernel.impl.util.ArrayQueueOutOfOrderSequence(4, 5, EMPTY_META);
 			  OutOfOrderSequence sequence = new ArrayQueueOutOfOrderSequence( 4, 5, _emptyMeta );
 
 			  // when
@@ -243,7 +243,7 @@ namespace Neo4Net.Kernel.impl.store
 //ORIGINAL LINE: final java.util.concurrent.Semaphore done = new java.util.concurrent.Semaphore(0);
 			  Semaphore done = new Semaphore( 0 );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.util.OutOfOrderSequence sequence = new org.Neo4Net.kernel.impl.util.ArrayQueueOutOfOrderSequence(3, 5, EMPTY_META);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.util.OutOfOrderSequence sequence = new Neo4Net.kernel.impl.util.ArrayQueueOutOfOrderSequence(3, 5, EMPTY_META);
 			  OutOfOrderSequence sequence = new ArrayQueueOutOfOrderSequence( 3, 5, _emptyMeta );
 
 			  Thread numberWaiter = new Thread(() =>

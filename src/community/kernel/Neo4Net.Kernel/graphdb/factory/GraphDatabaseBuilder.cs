@@ -27,7 +27,7 @@ namespace Neo4Net.GraphDb.factory
 	using Config = Neo4Net.Kernel.configuration.Config;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
+//	import static Neo4Net.helpers.collection.MapUtil.stringMap;
 
 	/// <summary>
 	/// Builder for <seealso cref="GraphDatabaseService"/>s that allows for setting and loading
@@ -44,7 +44,7 @@ namespace Neo4Net.GraphDb.factory
 			  /// @deprecated this method will go away in 4.0. See <seealso cref="newDatabase(Config)"/> instead. 
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
 [Obsolete("this method will go away in 4.0. See <seealso cref=\"newDatabase(Config)\"/> instead.")]
-//			  default org.Neo4Net.graphdb.GraphDatabaseService newDatabase(java.util.Map<String, String> config)
+//			  default Neo4Net.graphdb.GraphDatabaseService newDatabase(java.util.Map<String, String> config)
 	//		  {
 	//				return newDatabase(Config.defaults(config));
 	//		  }
@@ -52,9 +52,9 @@ namespace Neo4Net.GraphDb.factory
 			  /// <param name="config"> initial configuration for the database. </param>
 			  /// <returns> an instance of <seealso cref="GraphDatabaseService"/>. </returns>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: default org.Neo4Net.graphdb.GraphDatabaseService newDatabase(@Nonnull Config config)
+//ORIGINAL LINE: default Neo4Net.graphdb.GraphDatabaseService newDatabase(@Nonnull Config config)
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//			  default org.Neo4Net.graphdb.GraphDatabaseService newDatabase( Config config)
+//			  default Neo4Net.graphdb.GraphDatabaseService newDatabase( Config config)
 	//		  {
 	//				return newDatabase(config.getRaw());
 	//		  }

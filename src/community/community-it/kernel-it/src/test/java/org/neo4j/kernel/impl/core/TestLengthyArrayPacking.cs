@@ -30,7 +30,7 @@ namespace Neo4Net.Kernel.impl.core
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.format.standard.PropertyRecordFormat.DEFAULT_DATA_BLOCK_SIZE;
+//	import static Neo4Net.kernel.impl.store.format.standard.PropertyRecordFormat.DEFAULT_DATA_BLOCK_SIZE;
 
 	public class TestLengthyArrayPacking : AbstractNeo4NetTestCase
 	{

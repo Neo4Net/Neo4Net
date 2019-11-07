@@ -66,7 +66,7 @@ namespace Neo4Net.causalclustering.discovery
 		 int ServerId();
 
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//		 default void updateConfig(org.Neo4Net.graphdb.config.Setting<JavaToDotNetGenericWildcard> setting, String value)
+//		 default void updateConfig(Neo4Net.graphdb.config.Setting<JavaToDotNetGenericWildcard> setting, String value)
 	//	 {
 	//		  config().augment(setting, value);
 	//	 }

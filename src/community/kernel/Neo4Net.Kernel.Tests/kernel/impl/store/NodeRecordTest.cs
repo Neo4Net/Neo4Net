@@ -43,13 +43,13 @@ namespace Neo4Net.Kernel.impl.store
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.asList;
+//	import static Neo4Net.helpers.collection.Iterables.asList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.DynamicNodeLabels.allocateRecordsForDynamicLabels;
+//	import static Neo4Net.kernel.impl.store.DynamicNodeLabels.allocateRecordsForDynamicLabels;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.DynamicNodeLabels.dynamicPointer;
+//	import static Neo4Net.kernel.impl.store.DynamicNodeLabels.dynamicPointer;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.record.DynamicRecord.dynamicRecord;
+//	import static Neo4Net.kernel.impl.store.record.DynamicRecord.dynamicRecord;
 
 	public class NodeRecordTest
 	{

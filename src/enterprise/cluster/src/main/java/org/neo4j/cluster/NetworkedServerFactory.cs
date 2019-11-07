@@ -68,16 +68,16 @@ namespace Neo4Net.cluster
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public ProtocolServer newNetworkedServer(final org.Neo4Net.kernel.configuration.Config config, org.Neo4Net.cluster.protocol.atomicbroadcast.multipaxos.AcceptorInstanceStore acceptorInstanceStore, org.Neo4Net.cluster.protocol.election.ElectionCredentialsProvider electionCredentialsProvider)
+//ORIGINAL LINE: public ProtocolServer newNetworkedServer(final Neo4Net.kernel.configuration.Config config, Neo4Net.cluster.protocol.atomicbroadcast.multipaxos.AcceptorInstanceStore acceptorInstanceStore, Neo4Net.cluster.protocol.election.ElectionCredentialsProvider electionCredentialsProvider)
 		 public virtual ProtocolServer NewNetworkedServer( Config config, AcceptorInstanceStore acceptorInstanceStore, ElectionCredentialsProvider electionCredentialsProvider )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.cluster.com.NetworkReceiver receiver = new org.Neo4Net.cluster.com.NetworkReceiver(networkReceiverMonitor, new org.Neo4Net.cluster.com.NetworkReceiver.Configuration()
+//ORIGINAL LINE: final Neo4Net.cluster.com.NetworkReceiver receiver = new Neo4Net.cluster.com.NetworkReceiver(networkReceiverMonitor, new Neo4Net.cluster.com.NetworkReceiver.Configuration()
 			  NetworkReceiver receiver = new NetworkReceiver(_networkReceiverMonitor, new ConfigurationAnonymousInnerClass(this, config)
 			 , _logProvider);
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.cluster.com.NetworkSender sender = new org.Neo4Net.cluster.com.NetworkSender(networkSenderMonitor, new org.Neo4Net.cluster.com.NetworkSender.Configuration()
+//ORIGINAL LINE: final Neo4Net.cluster.com.NetworkSender sender = new Neo4Net.cluster.com.NetworkSender(networkSenderMonitor, new Neo4Net.cluster.com.NetworkSender.Configuration()
 			  NetworkSender sender = new NetworkSender(_networkSenderMonitor, new ConfigurationAnonymousInnerClass(this, config)
 			 , receiver, _logProvider);
 

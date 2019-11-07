@@ -48,7 +48,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.eclipse.collections.impl.utility.ArrayIterate.contains;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.api.index.IndexPopulationFailure.failure;
+//	import static Neo4Net.kernel.impl.api.index.IndexPopulationFailure.failure;
 
 	/// <summary>
 	/// <seealso cref="IndexPopulator"/> that allow population of multiple indexes during one iteration.
@@ -87,7 +87,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 // Concurrency queue since multiple concurrent threads may enqueue updates into it. It is important for this queue
 		 // to have fast #size() method since it might be drained in batches
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: final java.util.Queue<org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>> updatesQueue = new java.util.concurrent.LinkedBlockingQueue<>();
+//ORIGINAL LINE: final java.util.Queue<Neo4Net.kernel.api.index.IndexEntryUpdate<?>> updatesQueue = new java.util.concurrent.LinkedBlockingQueue<>();
 		 internal readonly LinkedList<IndexEntryUpdate<object>> UpdatesQueue = new LinkedBlockingQueue<IndexEntryUpdate<object>>();
 
 		 // Populators are added into this list. The same thread adding populators will later call #indexAllEntities.
@@ -177,7 +177,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void run() throws org.Neo4Net.kernel.api.exceptions.index.IndexPopulationFailedKernelException
+//ORIGINAL LINE: public void run() throws Neo4Net.kernel.api.exceptions.index.IndexPopulationFailedKernelException
 			 public override void run()
 			 {
 				  base.run();
@@ -400,7 +400,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 						 {
 							  // no need to check for null as nobody else is emptying this queue
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> update = updatesQueue.poll();
+//ORIGINAL LINE: Neo4Net.kernel.api.index.IndexEntryUpdate<?> update = updatesQueue.poll();
 							  IndexEntryUpdate<object> update = UpdatesQueue.RemoveFirst();
 							  _storeScan.acceptUpdate( updater, update, currentlyIndexedNodeId );
 							  if ( PrintDebug )
@@ -510,7 +510,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  internal readonly ReentrantLock PopulatorLock = new ReentrantLock();
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.List<org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>> batchedUpdates;
+//ORIGINAL LINE: java.util.List<Neo4Net.kernel.api.index.IndexEntryUpdate<?>> batchedUpdates;
 			  internal IList<IndexEntryUpdate<object>> BatchedUpdates;
 
 			  internal IndexPopulation( MultipleIndexPopulator outerInstance, IndexPopulator populator, CapableIndexDescriptor capableIndexDescriptor, FlippableIndexProxy flipper, FailedIndexProxyFactory failedIndexProxyFactory, string indexUserDescription )
@@ -593,7 +593,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void flip(boolean verifyBeforeFlipping) throws org.Neo4Net.kernel.api.exceptions.index.FlipFailedKernelException
+//ORIGINAL LINE: void flip(boolean verifyBeforeFlipping) throws Neo4Net.kernel.api.exceptions.index.FlipFailedKernelException
 			  internal virtual void Flip( bool verifyBeforeFlipping )
 			  {
 					outerInstance.phaseTracker.EnterPhase( PhaseTracker_Phase.Flip );
@@ -655,7 +655,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.List<org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>> takeCurrentBatch()
+//ORIGINAL LINE: java.util.List<Neo4Net.kernel.api.index.IndexEntryUpdate<?>> takeCurrentBatch()
 			  internal virtual IList<IndexEntryUpdate<object>> TakeCurrentBatch()
 			  {
 					if ( BatchedUpdates.Count == 0 )
@@ -663,7 +663,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 						 return Collections.emptyList();
 					}
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.List<org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>> batch = batchedUpdates;
+//ORIGINAL LINE: java.util.List<Neo4Net.kernel.api.index.IndexEntryUpdate<?>> batch = batchedUpdates;
 					IList<IndexEntryUpdate<object>> batch = BatchedUpdates;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 //ORIGINAL LINE: batchedUpdates = new java.util.ArrayList<>(BATCH_SIZE);
@@ -672,7 +672,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void scanCompleted() throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: void scanCompleted() throws Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 			  internal virtual void ScanCompleted()
 			  {
 					Populator.scanCompleted( outerInstance.phaseTracker );

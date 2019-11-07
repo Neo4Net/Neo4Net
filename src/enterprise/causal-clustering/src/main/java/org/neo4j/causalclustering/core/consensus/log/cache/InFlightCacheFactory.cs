@@ -28,9 +28,9 @@ namespace Neo4Net.causalclustering.core.consensus.log.cache
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.CausalClusteringSettings.in_flight_cache_max_bytes;
+//	import static Neo4Net.causalclustering.core.CausalClusteringSettings.in_flight_cache_max_bytes;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.CausalClusteringSettings.in_flight_cache_max_entries;
+//	import static Neo4Net.causalclustering.core.CausalClusteringSettings.in_flight_cache_max_entries;
 
 	public class InFlightCacheFactory
 	{
@@ -42,11 +42,11 @@ namespace Neo4Net.causalclustering.core.consensus.log.cache
 		 public abstract class Type
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           NONE { InFlightCache create(org.Neo4Net.kernel.configuration.Config config, org.Neo4Net.kernel.monitoring.Monitors monitors) { return new VoidInFlightCache(); } },
+//           NONE { InFlightCache create(Neo4Net.kernel.configuration.Config config, Neo4Net.kernel.monitoring.Monitors monitors) { return new VoidInFlightCache(); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           CONSECUTIVE { InFlightCache create(org.Neo4Net.kernel.configuration.Config config, org.Neo4Net.kernel.monitoring.Monitors monitors) { return new ConsecutiveInFlightCache(config.get(in_flight_cache_max_entries), config.get(in_flight_cache_max_bytes), monitors.newMonitor(InFlightCacheMonitor.class), false); } },
+//           CONSECUTIVE { InFlightCache create(Neo4Net.kernel.configuration.Config config, Neo4Net.kernel.monitoring.Monitors monitors) { return new ConsecutiveInFlightCache(config.get(in_flight_cache_max_entries), config.get(in_flight_cache_max_bytes), monitors.newMonitor(InFlightCacheMonitor.class), false); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           UNBOUNDED { InFlightCache create(org.Neo4Net.kernel.configuration.Config config, org.Neo4Net.kernel.monitoring.Monitors monitors) { return new UnboundedInFlightCache(); } };
+//           UNBOUNDED { InFlightCache create(Neo4Net.kernel.configuration.Config config, Neo4Net.kernel.monitoring.Monitors monitors) { return new UnboundedInFlightCache(); } };
 
 			  private static readonly IList<Type> valueList = new List<Type>();
 

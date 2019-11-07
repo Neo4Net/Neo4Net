@@ -30,7 +30,7 @@ namespace Neo4Net.Kernel.Impl.Api.index.sampling
 	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.register.Registers.newDoubleLongRegister;
+//	import static Neo4Net.register.Registers.newDoubleLongRegister;
 
 	public class IndexSamplingControllerFactory
 	{
@@ -87,7 +87,7 @@ namespace Neo4Net.Kernel.Impl.Api.index.sampling
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private IndexSamplingController.RecoveryCondition createIndexRecoveryCondition(final org.Neo4Net.logging.LogProvider logProvider, final org.Neo4Net.Kernel.Api.Internal.TokenNameLookup tokenNameLookup)
+//ORIGINAL LINE: private IndexSamplingController.RecoveryCondition createIndexRecoveryCondition(final Neo4Net.logging.LogProvider logProvider, final Neo4Net.Kernel.Api.Internal.TokenNameLookup tokenNameLookup)
 		 private IndexSamplingController.RecoveryCondition CreateIndexRecoveryCondition( LogProvider logProvider, TokenNameLookup tokenNameLookup )
 		 {
 			  return new RecoveryConditionAnonymousInnerClass( this, logProvider, tokenNameLookup );

@@ -24,7 +24,7 @@ namespace Neo4Net.Helpers
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertFalse;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.MathUtil.numbersEqual;
+//	import static Neo4Net.helpers.MathUtil.numbersEqual;
 
 	internal class MathUtilTest
 	{

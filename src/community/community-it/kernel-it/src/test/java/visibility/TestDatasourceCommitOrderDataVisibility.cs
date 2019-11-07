@@ -126,7 +126,7 @@ namespace Visibility
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertNodeIsUnchangedOutsideThisTransaction(final org.Neo4Net.graphdb.Node commonNode) throws Exception
+//ORIGINAL LINE: private void assertNodeIsUnchangedOutsideThisTransaction(final Neo4Net.graphdb.Node commonNode) throws Exception
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 		 private void AssertNodeIsUnchangedOutsideThisTransaction( Node commonNode )
 		 {
@@ -158,7 +158,7 @@ namespace Visibility
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertNodeIsIndexed(final org.Neo4Net.graphdb.Node commonNode) throws Exception
+//ORIGINAL LINE: private void assertNodeIsIndexed(final Neo4Net.graphdb.Node commonNode) throws Exception
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 		 private void AssertNodeIsIndexed( Node commonNode )
 		 {
@@ -191,7 +191,7 @@ namespace Visibility
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertNodeHasBeenUpdated(final org.Neo4Net.graphdb.Node commonNode) throws Exception
+//ORIGINAL LINE: private void assertNodeHasBeenUpdated(final Neo4Net.graphdb.Node commonNode) throws Exception
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 		 private void AssertNodeHasBeenUpdated( Node commonNode )
 		 {

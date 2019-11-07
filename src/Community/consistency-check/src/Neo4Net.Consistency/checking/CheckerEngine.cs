@@ -26,7 +26,7 @@ namespace Neo4Net.Consistency.checking
 	public interface ICheckerEngine<RECORD, REPORT> where RECORD : Neo4Net.Kernel.Impl.Store.Records.AbstractBaseRecord where REPORT : Neo4Net.Consistency.report.ConsistencyReport
 	{
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-//ORIGINAL LINE: <REFERRED extends org.Neo4Net.kernel.impl.store.record.AbstractBaseRecord> void comparativeCheck(org.Neo4Net.consistency.store.RecordReference<REFERRED> other, ComparativeRecordChecker<RECORD, ? super REFERRED, REPORT> checker);
+//ORIGINAL LINE: <REFERRED extends Neo4Net.kernel.impl.store.record.AbstractBaseRecord> void comparativeCheck(Neo4Net.consistency.store.RecordReference<REFERRED> other, ComparativeRecordChecker<RECORD, ? super REFERRED, REPORT> checker);
 		 void comparativeCheck<REFERRED, T1>( RecordReference<REFERRED> other, ComparativeRecordChecker<T1> checker );
 
 		 REPORT Report();

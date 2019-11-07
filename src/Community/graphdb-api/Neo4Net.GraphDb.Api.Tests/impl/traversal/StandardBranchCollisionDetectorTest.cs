@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Xunit;
 
 /*
  * Copyright © 2018-2020 "Neo4Net,"
@@ -37,21 +38,17 @@ namespace Neo4Net.GraphDb.Impl.Traversal
     //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
     //	import static org.mockito.Mockito.when;
 
-    internal class StandardBranchCollisionDetectorTest
+    public class StandardBranchCollisionDetectorTest
     {
-        //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-        //ORIGINAL LINE: @Test void testFilteredPathEvaluation()
-        internal virtual void TestFilteredPathEvaluation()
+
+        [Fact]
+        public  void TestFilteredPathEvaluation()
         {
-            //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-            //ORIGINAL LINE: final org.Neo4Net.graphdb.PropertyContainer endNode = mock(org.Neo4Net.graphdb.Node.class);
-            IPropertyContainer endNode = mock(typeof(Node));
-            //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-            //ORIGINAL LINE: final org.Neo4Net.graphdb.PropertyContainer alternativeEndNode = mock(org.Neo4Net.graphdb.Node.class);
-            IPropertyContainer alternativeEndNode = mock(typeof(Node));
-            //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-            //ORIGINAL LINE: final org.Neo4Net.graphdb.Node startNode = mock(org.Neo4Net.graphdb.Node.class);
-            Node startNode = mock(typeof(Node));
+            
+            IPropertyContainer endNode = mock(typeof(INode));
+            IPropertyContainer alternativeEndNode = mock(typeof(INode));
+            
+            INode startNode = mock(typeof(INode));
             IEvaluator evaluator = mock(typeof(IEvaluator));
             ITraversalBranch branch = mock(typeof(ITraversalBranch));
             ITraversalBranch alternativeBranch = mock(typeof(ITraversalBranch));
@@ -59,18 +56,18 @@ namespace Neo4Net.GraphDb.Impl.Traversal
             when(branch.GetEnumerator()).thenAnswer(new IteratorAnswer(endNode));
             when(alternativeBranch.GetEnumerator()).thenAnswer(new IteratorAnswer(alternativeEndNode));
             when(alternativeBranch.StartNode).thenReturn(startNode);
-            when(evaluator.Evaluate(Mockito.any(typeof(Path)))).thenReturn(Evaluation.INCLUDE_AND_CONTINUE);
+            when(evaluator.Evaluate(Mockito.any(typeof(Path)))).thenReturn(Evaluation.IncludeAndContinue);
             StandardBranchCollisionDetector collisionDetector = new StandardBranchCollisionDetector(evaluator, path => alternativeEndNode.Equals(path.endNode()) && startNode.Equals(path.startNode()));
 
-            ICollection<Path> incoming = collisionDetector.Evaluate(branch, Direction.INCOMING);
-            ICollection<Path> outgoing = collisionDetector.Evaluate(branch, Direction.OUTGOING);
-            ICollection<Path> alternativeIncoming = collisionDetector.Evaluate(alternativeBranch, Direction.INCOMING);
-            ICollection<Path> alternativeOutgoing = collisionDetector.Evaluate(alternativeBranch, Direction.OUTGOING);
+            ICollection<IPath> incoming = collisionDetector.Evaluate(branch, Direction.INCOMING);
+            ICollection<IPath> outgoing = collisionDetector.Evaluate(branch, Direction.OUTGOING);
+            ICollection<IPath> alternativeIncoming = collisionDetector.Evaluate(alternativeBranch, Direction.INCOMING);
+            ICollection<IPath> alternativeOutgoing = collisionDetector.Evaluate(alternativeBranch, Direction.OUTGOING);
 
-            assertNull(incoming);
-            assertNull(outgoing);
-            assertNull(alternativeIncoming);
-            assertEquals(1, alternativeOutgoing.Count);
+            Assert.Null(incoming);
+            Assert.Null(outgoing);
+            Assert.Null(alternativeIncoming);
+            Assert.Equal(1, alternativeOutgoing.Count);
         }
 
         private class IteratorAnswer : Answer<object>

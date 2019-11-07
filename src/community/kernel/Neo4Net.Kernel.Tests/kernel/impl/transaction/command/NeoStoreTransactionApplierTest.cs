@@ -31,8 +31,8 @@ namespace Neo4Net.Kernel.impl.transaction.command
 	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.Schema.IndexProviderDescriptor;
 	using IndexActivationFailedKernelException = Neo4Net.Kernel.Api.Exceptions.index.IndexActivationFailedKernelException;
 	using IndexPopulationFailedKernelException = Neo4Net.Kernel.Api.Exceptions.index.IndexPopulationFailedKernelException;
-	using LabelScanWriter = Neo4Net.Kernel.api.labelscan.LabelScanWriter;
-	using ConstraintDescriptorFactory = Neo4Net.Kernel.api.schema.constraints.ConstraintDescriptorFactory;
+	using LabelScanWriter = Neo4Net.Kernel.Api.LabelScan.LabelScanWriter;
+	using ConstraintDescriptorFactory = Neo4Net.Kernel.Api.schema.constraints.ConstraintDescriptorFactory;
 	using BatchTransactionApplier = Neo4Net.Kernel.Impl.Api.BatchTransactionApplier;
 	using BatchTransactionApplierFacade = Neo4Net.Kernel.Impl.Api.BatchTransactionApplierFacade;
 	using TransactionToApply = Neo4Net.Kernel.Impl.Api.TransactionToApply;
@@ -94,7 +94,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel;
+//	import static Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel;
 
 	public class NeoStoreTransactionApplierTest
 	{
@@ -119,7 +119,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 private readonly NeoStores _neoStores = mock( typeof( NeoStores ) );
 		 private readonly IndexingService _indexingService = mock( typeof( IndexingService ) );
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private final System.Func<org.Neo4Net.kernel.api.labelscan.LabelScanWriter> labelScanStore = mock(System.Func.class);
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private final System.Func<Neo4Net.kernel.api.labelscan.LabelScanWriter> labelScanStore = mock(System.Func.class);
 		 private readonly System.Func<LabelScanWriter> _labelScanStore = mock( typeof( System.Func ) );
 		 private readonly CacheAccessBackDoor _cacheAccess = mock( typeof( CacheAccessBackDoor ) );
 		 private readonly LockService _lockService = mock( typeof( LockService ) );
@@ -172,14 +172,14 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.api.BatchTransactionApplier applier = newApplier(false);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.api.BatchTransactionApplier applier = newApplier(false);
 			  BatchTransactionApplier applier = NewApplier( false );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.record.NodeRecord before = new org.Neo4Net.kernel.impl.store.record.NodeRecord(11);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.store.record.NodeRecord before = new Neo4Net.kernel.impl.store.record.NodeRecord(11);
 			  NodeRecord before = new NodeRecord( 11 );
 			  before.SetLabelField( 42, asList( _one, _two ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.record.NodeRecord after = new org.Neo4Net.kernel.impl.store.record.NodeRecord(12);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.store.record.NodeRecord after = new Neo4Net.kernel.impl.store.record.NodeRecord(12);
 			  NodeRecord after = new NodeRecord( 12 );
 			  after.InUse = true;
 			  after.SetLabelField( 42, asList( _one, _two, _three ) );
@@ -204,14 +204,14 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.api.BatchTransactionApplier applier = newApplier(false);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.api.BatchTransactionApplier applier = newApplier(false);
 			  BatchTransactionApplier applier = NewApplier( false );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.record.NodeRecord before = new org.Neo4Net.kernel.impl.store.record.NodeRecord(11);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.store.record.NodeRecord before = new Neo4Net.kernel.impl.store.record.NodeRecord(11);
 			  NodeRecord before = new NodeRecord( 11 );
 			  before.SetLabelField( 42, asList( _one, _two ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.record.NodeRecord after = new org.Neo4Net.kernel.impl.store.record.NodeRecord(12);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.store.record.NodeRecord after = new Neo4Net.kernel.impl.store.record.NodeRecord(12);
 			  NodeRecord after = new NodeRecord( 12 );
 			  after.InUse = false;
 			  after.SetLabelField( 42, asList( _one, _two, _three ) );
@@ -236,14 +236,14 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.api.BatchTransactionApplier applier = newApplier(true);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.api.BatchTransactionApplier applier = newApplier(true);
 			  BatchTransactionApplier applier = NewApplier( true );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.record.NodeRecord before = new org.Neo4Net.kernel.impl.store.record.NodeRecord(11);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.store.record.NodeRecord before = new Neo4Net.kernel.impl.store.record.NodeRecord(11);
 			  NodeRecord before = new NodeRecord( 11 );
 			  before.SetLabelField( 42, asList( _one, _two ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.record.NodeRecord after = new org.Neo4Net.kernel.impl.store.record.NodeRecord(12);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.store.record.NodeRecord after = new Neo4Net.kernel.impl.store.record.NodeRecord(12);
 			  NodeRecord after = new NodeRecord( 12 );
 			  after.InUse = true;
 			  after.SetLabelField( 42, asList( _one, _two, _three ) );
@@ -270,16 +270,16 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.api.BatchTransactionApplier applier = newApplier(false);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.api.BatchTransactionApplier applier = newApplier(false);
 			  BatchTransactionApplier applier = NewApplier( false );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.record.NodeRecord before = new org.Neo4Net.kernel.impl.store.record.NodeRecord(11);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.store.record.NodeRecord before = new Neo4Net.kernel.impl.store.record.NodeRecord(11);
 			  NodeRecord before = new NodeRecord( 11 );
 			  before.SetLabelField( 42, singletonList( _one ) );
 			  before.InUse = true;
 			  before.Dense = false;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.record.NodeRecord after = new org.Neo4Net.kernel.impl.store.record.NodeRecord(12);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.store.record.NodeRecord after = new Neo4Net.kernel.impl.store.record.NodeRecord(12);
 			  NodeRecord after = new NodeRecord( 12 );
 			  after.InUse = true;
 			  after.Dense = true;
@@ -307,13 +307,13 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.api.BatchTransactionApplier applier = newApplier(false);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.api.BatchTransactionApplier applier = newApplier(false);
 			  BatchTransactionApplier applier = NewApplier( false );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.record.RelationshipRecord before = new org.Neo4Net.kernel.impl.store.record.RelationshipRecord(12);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.store.record.RelationshipRecord before = new Neo4Net.kernel.impl.store.record.RelationshipRecord(12);
 			  RelationshipRecord before = new RelationshipRecord( 12 );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.record.RelationshipRecord record = new org.Neo4Net.kernel.impl.store.record.RelationshipRecord(12, 3, 4, 5);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.store.record.RelationshipRecord record = new Neo4Net.kernel.impl.store.record.RelationshipRecord(12, 3, 4, 5);
 			  RelationshipRecord record = new RelationshipRecord( 12, 3, 4, 5 );
 			  record.InUse = true;
 
@@ -336,13 +336,13 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.api.BatchTransactionApplier applier = newApplier(false);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.api.BatchTransactionApplier applier = newApplier(false);
 			  BatchTransactionApplier applier = NewApplier( false );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.record.RelationshipRecord before = new org.Neo4Net.kernel.impl.store.record.RelationshipRecord(12);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.store.record.RelationshipRecord before = new Neo4Net.kernel.impl.store.record.RelationshipRecord(12);
 			  RelationshipRecord before = new RelationshipRecord( 12 );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.record.RelationshipRecord record = new org.Neo4Net.kernel.impl.store.record.RelationshipRecord(12, 3, 4, 5);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.store.record.RelationshipRecord record = new Neo4Net.kernel.impl.store.record.RelationshipRecord(12, 3, 4, 5);
 			  RelationshipRecord record = new RelationshipRecord( 12, 3, 4, 5 );
 			  record.InUse = false;
 
@@ -366,13 +366,13 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.api.BatchTransactionApplier applier = newApplier(true);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.api.BatchTransactionApplier applier = newApplier(true);
 			  BatchTransactionApplier applier = NewApplier( true );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.record.RelationshipRecord before = new org.Neo4Net.kernel.impl.store.record.RelationshipRecord(12);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.store.record.RelationshipRecord before = new Neo4Net.kernel.impl.store.record.RelationshipRecord(12);
 			  RelationshipRecord before = new RelationshipRecord( 12 );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.record.RelationshipRecord record = new org.Neo4Net.kernel.impl.store.record.RelationshipRecord(12, 3, 4, 5);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.store.record.RelationshipRecord record = new Neo4Net.kernel.impl.store.record.RelationshipRecord(12, 3, 4, 5);
 			  RelationshipRecord record = new RelationshipRecord( 12, 3, 4, 5 );
 			  record.InUse = true;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -398,13 +398,13 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.api.BatchTransactionApplier applier = newApplier(false);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.api.BatchTransactionApplier applier = newApplier(false);
 			  BatchTransactionApplier applier = NewApplier( false );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.record.PropertyRecord before = new org.Neo4Net.kernel.impl.store.record.PropertyRecord(11);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.store.record.PropertyRecord before = new Neo4Net.kernel.impl.store.record.PropertyRecord(11);
 			  PropertyRecord before = new PropertyRecord( 11 );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.record.PropertyRecord after = new org.Neo4Net.kernel.impl.store.record.PropertyRecord(12);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.store.record.PropertyRecord after = new Neo4Net.kernel.impl.store.record.PropertyRecord(12);
 			  PropertyRecord after = new PropertyRecord( 12 );
 			  after.NodeId = 42;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -428,13 +428,13 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.api.BatchTransactionApplier applier = newApplier(true);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.api.BatchTransactionApplier applier = newApplier(true);
 			  BatchTransactionApplier applier = NewApplier( true );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.record.PropertyRecord before = new org.Neo4Net.kernel.impl.store.record.PropertyRecord(11);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.store.record.PropertyRecord before = new Neo4Net.kernel.impl.store.record.PropertyRecord(11);
 			  PropertyRecord before = new PropertyRecord( 11 );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.record.PropertyRecord after = new org.Neo4Net.kernel.impl.store.record.PropertyRecord(12);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.store.record.PropertyRecord after = new Neo4Net.kernel.impl.store.record.PropertyRecord(12);
 			  PropertyRecord after = new PropertyRecord( 12 );
 			  after.NodeId = 42;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -459,13 +459,13 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.api.BatchTransactionApplier applier = newApplier(false);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.api.BatchTransactionApplier applier = newApplier(false);
 			  BatchTransactionApplier applier = NewApplier( false );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.record.PropertyRecord before = new org.Neo4Net.kernel.impl.store.record.PropertyRecord(11);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.store.record.PropertyRecord before = new Neo4Net.kernel.impl.store.record.PropertyRecord(11);
 			  PropertyRecord before = new PropertyRecord( 11 );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.record.PropertyRecord after = new org.Neo4Net.kernel.impl.store.record.PropertyRecord(12);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.store.record.PropertyRecord after = new Neo4Net.kernel.impl.store.record.PropertyRecord(12);
 			  PropertyRecord after = new PropertyRecord( 12 );
 			  after.RelId = 42;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -488,13 +488,13 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.api.BatchTransactionApplier applier = newApplier(true);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.api.BatchTransactionApplier applier = newApplier(true);
 			  BatchTransactionApplier applier = NewApplier( true );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.record.PropertyRecord before = new org.Neo4Net.kernel.impl.store.record.PropertyRecord(11);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.store.record.PropertyRecord before = new Neo4Net.kernel.impl.store.record.PropertyRecord(11);
 			  PropertyRecord before = new PropertyRecord( 11 );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.record.PropertyRecord after = new org.Neo4Net.kernel.impl.store.record.PropertyRecord(12);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.store.record.PropertyRecord after = new Neo4Net.kernel.impl.store.record.PropertyRecord(12);
 			  PropertyRecord after = new PropertyRecord( 12 );
 			  after.RelId = 42;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -520,14 +520,14 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.api.BatchTransactionApplier applier = newApplier(false);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.api.BatchTransactionApplier applier = newApplier(false);
 			  BatchTransactionApplier applier = NewApplier( false );
 			  // when
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.record.RelationshipGroupRecord before = new org.Neo4Net.kernel.impl.store.record.RelationshipGroupRecord(42, 1);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.store.record.RelationshipGroupRecord before = new Neo4Net.kernel.impl.store.record.RelationshipGroupRecord(42, 1);
 			  RelationshipGroupRecord before = new RelationshipGroupRecord( 42, 1 );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.record.RelationshipGroupRecord after = new org.Neo4Net.kernel.impl.store.record.RelationshipGroupRecord(42, 1, 2, 3, 4, 5, 6, true);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.store.record.RelationshipGroupRecord after = new Neo4Net.kernel.impl.store.record.RelationshipGroupRecord(42, 1, 2, 3, 4, 5, 6, true);
 			  RelationshipGroupRecord after = new RelationshipGroupRecord( 42, 1, 2, 3, 4, 5, 6, true );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final Command command = new Command.RelationshipGroupCommand(before, after);
@@ -549,14 +549,14 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.api.BatchTransactionApplier applier = newApplier(true);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.api.BatchTransactionApplier applier = newApplier(true);
 			  BatchTransactionApplier applier = NewApplier( true );
 			  // when
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.record.RelationshipGroupRecord before = new org.Neo4Net.kernel.impl.store.record.RelationshipGroupRecord(42, 1);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.store.record.RelationshipGroupRecord before = new Neo4Net.kernel.impl.store.record.RelationshipGroupRecord(42, 1);
 			  RelationshipGroupRecord before = new RelationshipGroupRecord( 42, 1 );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.record.RelationshipGroupRecord after = new org.Neo4Net.kernel.impl.store.record.RelationshipGroupRecord(42, 1, 2, 3, 4, 5, 6, true);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.store.record.RelationshipGroupRecord after = new Neo4Net.kernel.impl.store.record.RelationshipGroupRecord(42, 1, 2, 3, 4, 5, 6, true);
 			  RelationshipGroupRecord after = new RelationshipGroupRecord( 42, 1, 2, 3, 4, 5, 6, true );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final Command command = new Command.RelationshipGroupCommand(before, after);
@@ -580,18 +580,18 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.api.BatchTransactionApplier applier = newApplier(false);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.api.BatchTransactionApplier applier = newApplier(false);
 			  BatchTransactionApplier applier = NewApplier( false );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.record.RelationshipTypeTokenRecord before = new org.Neo4Net.kernel.impl.store.record.RelationshipTypeTokenRecord(42);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.store.record.RelationshipTypeTokenRecord before = new Neo4Net.kernel.impl.store.record.RelationshipTypeTokenRecord(42);
 			  RelationshipTypeTokenRecord before = new RelationshipTypeTokenRecord( 42 );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.record.RelationshipTypeTokenRecord after = new org.Neo4Net.kernel.impl.store.record.RelationshipTypeTokenRecord(42);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.store.record.RelationshipTypeTokenRecord after = new Neo4Net.kernel.impl.store.record.RelationshipTypeTokenRecord(42);
 			  RelationshipTypeTokenRecord after = new RelationshipTypeTokenRecord( 42 );
 			  after.InUse = true;
 			  after.NameId = 323;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final Command command = new org.Neo4Net.kernel.impl.transaction.command.Command.RelationshipTypeTokenCommand(before, after);
+//ORIGINAL LINE: final Command command = new Neo4Net.kernel.impl.transaction.command.Command.RelationshipTypeTokenCommand(before, after);
 			  Command command = new RelationshipTypeTokenCommand( before, after );
 
 			  // when
@@ -610,14 +610,14 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.api.BatchTransactionApplier applier = newApplier(true);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.api.BatchTransactionApplier applier = newApplier(true);
 			  BatchTransactionApplier applier = NewApplier( true );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.record.RelationshipTypeTokenRecord before = new org.Neo4Net.kernel.impl.store.record.RelationshipTypeTokenRecord(42);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.store.record.RelationshipTypeTokenRecord before = new Neo4Net.kernel.impl.store.record.RelationshipTypeTokenRecord(42);
 			  RelationshipTypeTokenRecord before = new RelationshipTypeTokenRecord( 42 );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.record.RelationshipTypeTokenRecord after = new org.Neo4Net.kernel.impl.store.record.RelationshipTypeTokenRecord(42);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.store.record.RelationshipTypeTokenRecord after = new Neo4Net.kernel.impl.store.record.RelationshipTypeTokenRecord(42);
 			  RelationshipTypeTokenRecord after = new RelationshipTypeTokenRecord( 42 );
 			  after.InUse = true;
 			  after.NameId = 323;
@@ -625,7 +625,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 //ORIGINAL LINE: final Command.RelationshipTypeTokenCommand command = new Command.RelationshipTypeTokenCommand(before, after);
 			  Command.RelationshipTypeTokenCommand command = new Command.RelationshipTypeTokenCommand( before, after );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.Kernel.Api.Internal.NamedToken token = new org.Neo4Net.Kernel.Api.Internal.NamedToken("token", 21);
+//ORIGINAL LINE: final Neo4Net.Kernel.Api.Internal.NamedToken token = new Neo4Net.Kernel.Api.Internal.NamedToken("token", 21);
 			  NamedToken token = new NamedToken( "token", 21 );
 			  when( _relationshipTypeTokenStore.getToken( ( int ) command.Key ) ).thenReturn( token );
 
@@ -649,18 +649,18 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.api.BatchTransactionApplier applier = newApplier(false);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.api.BatchTransactionApplier applier = newApplier(false);
 			  BatchTransactionApplier applier = NewApplier( false );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.record.LabelTokenRecord before = new org.Neo4Net.kernel.impl.store.record.LabelTokenRecord(42);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.store.record.LabelTokenRecord before = new Neo4Net.kernel.impl.store.record.LabelTokenRecord(42);
 			  LabelTokenRecord before = new LabelTokenRecord( 42 );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.record.LabelTokenRecord after = new org.Neo4Net.kernel.impl.store.record.LabelTokenRecord(42);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.store.record.LabelTokenRecord after = new Neo4Net.kernel.impl.store.record.LabelTokenRecord(42);
 			  LabelTokenRecord after = new LabelTokenRecord( 42 );
 			  after.InUse = true;
 			  after.NameId = 323;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final Command command = new org.Neo4Net.kernel.impl.transaction.command.Command.LabelTokenCommand(before, after);
+//ORIGINAL LINE: final Command command = new Neo4Net.kernel.impl.transaction.command.Command.LabelTokenCommand(before, after);
 			  Command command = new LabelTokenCommand( before, after );
 
 			  // when
@@ -679,13 +679,13 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.api.BatchTransactionApplier applier = newApplier(true);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.api.BatchTransactionApplier applier = newApplier(true);
 			  BatchTransactionApplier applier = NewApplier( true );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.record.LabelTokenRecord before = new org.Neo4Net.kernel.impl.store.record.LabelTokenRecord(42);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.store.record.LabelTokenRecord before = new Neo4Net.kernel.impl.store.record.LabelTokenRecord(42);
 			  LabelTokenRecord before = new LabelTokenRecord( 42 );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.record.LabelTokenRecord after = new org.Neo4Net.kernel.impl.store.record.LabelTokenRecord(42);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.store.record.LabelTokenRecord after = new Neo4Net.kernel.impl.store.record.LabelTokenRecord(42);
 			  LabelTokenRecord after = new LabelTokenRecord( 42 );
 			  after.InUse = true;
 			  after.NameId = 323;
@@ -693,7 +693,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 //ORIGINAL LINE: final Command.LabelTokenCommand command = new Command.LabelTokenCommand(before, after);
 			  Command.LabelTokenCommand command = new Command.LabelTokenCommand( before, after );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.Kernel.Api.Internal.NamedToken token = new org.Neo4Net.Kernel.Api.Internal.NamedToken("token", 21);
+//ORIGINAL LINE: final Neo4Net.Kernel.Api.Internal.NamedToken token = new Neo4Net.Kernel.Api.Internal.NamedToken("token", 21);
 			  NamedToken token = new NamedToken( "token", 21 );
 			  when( _labelTokenStore.getToken( ( int ) command.Key ) ).thenReturn( token );
 
@@ -717,18 +717,18 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.api.BatchTransactionApplier applier = newApplier(false);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.api.BatchTransactionApplier applier = newApplier(false);
 			  BatchTransactionApplier applier = NewApplier( false );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.record.PropertyKeyTokenRecord before = new org.Neo4Net.kernel.impl.store.record.PropertyKeyTokenRecord(42);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.store.record.PropertyKeyTokenRecord before = new Neo4Net.kernel.impl.store.record.PropertyKeyTokenRecord(42);
 			  PropertyKeyTokenRecord before = new PropertyKeyTokenRecord( 42 );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.record.PropertyKeyTokenRecord after = new org.Neo4Net.kernel.impl.store.record.PropertyKeyTokenRecord(42);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.store.record.PropertyKeyTokenRecord after = new Neo4Net.kernel.impl.store.record.PropertyKeyTokenRecord(42);
 			  PropertyKeyTokenRecord after = new PropertyKeyTokenRecord( 42 );
 			  after.InUse = true;
 			  after.NameId = 323;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final Command command = new org.Neo4Net.kernel.impl.transaction.command.Command.PropertyKeyTokenCommand(before, after);
+//ORIGINAL LINE: final Command command = new Neo4Net.kernel.impl.transaction.command.Command.PropertyKeyTokenCommand(before, after);
 			  Command command = new PropertyKeyTokenCommand( before, after );
 
 			  // when
@@ -747,14 +747,14 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.api.BatchTransactionApplier applier = newApplier(true);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.api.BatchTransactionApplier applier = newApplier(true);
 			  BatchTransactionApplier applier = NewApplier( true );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.record.PropertyKeyTokenRecord before = new org.Neo4Net.kernel.impl.store.record.PropertyKeyTokenRecord(42);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.store.record.PropertyKeyTokenRecord before = new Neo4Net.kernel.impl.store.record.PropertyKeyTokenRecord(42);
 			  PropertyKeyTokenRecord before = new PropertyKeyTokenRecord( 42 );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.record.PropertyKeyTokenRecord after = new org.Neo4Net.kernel.impl.store.record.PropertyKeyTokenRecord(42);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.store.record.PropertyKeyTokenRecord after = new Neo4Net.kernel.impl.store.record.PropertyKeyTokenRecord(42);
 			  PropertyKeyTokenRecord after = new PropertyKeyTokenRecord( 42 );
 			  after.InUse = true;
 			  after.NameId = 323;
@@ -762,7 +762,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 //ORIGINAL LINE: final Command.PropertyKeyTokenCommand command = new Command.PropertyKeyTokenCommand(before, after);
 			  Command.PropertyKeyTokenCommand command = new Command.PropertyKeyTokenCommand( before, after );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.Kernel.Api.Internal.NamedToken token = new org.Neo4Net.Kernel.Api.Internal.NamedToken("token", 21);
+//ORIGINAL LINE: final Neo4Net.Kernel.Api.Internal.NamedToken token = new Neo4Net.Kernel.Api.Internal.NamedToken("token", 21);
 			  NamedToken token = new NamedToken( "token", 21 );
 			  when( _propertyKeyTokenStore.getToken( ( int ) command.Key ) ).thenReturn( token );
 
@@ -784,17 +784,17 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.api.BatchTransactionApplier applier = newApplierFacade(newApplier(false), newIndexApplier());
+//ORIGINAL LINE: final Neo4Net.kernel.impl.api.BatchTransactionApplier applier = newApplierFacade(newApplier(false), newIndexApplier());
 			  BatchTransactionApplier applier = NewApplierFacade( NewApplier( false ), NewIndexApplier() );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.record.DynamicRecord record = org.Neo4Net.kernel.impl.store.record.DynamicRecord.dynamicRecord(21, true);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.store.record.DynamicRecord record = Neo4Net.kernel.impl.store.record.DynamicRecord.dynamicRecord(21, true);
 			  DynamicRecord record = DynamicRecord.dynamicRecord( 21, true );
 			  record.SetCreated();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.Collection<org.Neo4Net.kernel.impl.store.record.DynamicRecord> recordsAfter = singletonList(record);
+//ORIGINAL LINE: final java.util.Collection<Neo4Net.kernel.impl.store.record.DynamicRecord> recordsAfter = singletonList(record);
 			  ICollection<DynamicRecord> recordsAfter = singletonList( record );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor rule = indexRule(0, 1, 2, new org.Neo4Net.Kernel.Api.Internal.Schema.IndexProviderDescriptor("K", "X.Y"));
+//ORIGINAL LINE: final Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor rule = indexRule(0, 1, 2, new Neo4Net.Kernel.Api.Internal.Schema.IndexProviderDescriptor("K", "X.Y"));
 			  StoreIndexDescriptor rule = IndexRule( 0, 1, 2, new IndexProviderDescriptor( "K", "X.Y" ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final Command.SchemaRuleCommand command = new Command.SchemaRuleCommand(java.util.Collections.emptyList(), recordsAfter, rule);
@@ -818,17 +818,17 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.api.BatchTransactionApplier applier = newApplierFacade(newIndexApplier(), newApplier(true));
+//ORIGINAL LINE: final Neo4Net.kernel.impl.api.BatchTransactionApplier applier = newApplierFacade(newIndexApplier(), newApplier(true));
 			  BatchTransactionApplier applier = NewApplierFacade( NewIndexApplier(), NewApplier(true) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.record.DynamicRecord record = org.Neo4Net.kernel.impl.store.record.DynamicRecord.dynamicRecord(21, true);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.store.record.DynamicRecord record = Neo4Net.kernel.impl.store.record.DynamicRecord.dynamicRecord(21, true);
 			  DynamicRecord record = DynamicRecord.dynamicRecord( 21, true );
 			  record.SetCreated();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.Collection<org.Neo4Net.kernel.impl.store.record.DynamicRecord> recordsAfter = singletonList(record);
+//ORIGINAL LINE: final java.util.Collection<Neo4Net.kernel.impl.store.record.DynamicRecord> recordsAfter = singletonList(record);
 			  ICollection<DynamicRecord> recordsAfter = singletonList( record );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor rule = indexRule(0, 1, 2, new org.Neo4Net.Kernel.Api.Internal.Schema.IndexProviderDescriptor("K", "X.Y"));
+//ORIGINAL LINE: final Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor rule = indexRule(0, 1, 2, new Neo4Net.Kernel.Api.Internal.Schema.IndexProviderDescriptor("K", "X.Y"));
 			  StoreIndexDescriptor rule = IndexRule( 0, 1, 2, new IndexProviderDescriptor( "K", "X.Y" ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final Command.SchemaRuleCommand command = new Command.SchemaRuleCommand(java.util.Collections.emptyList(), recordsAfter, rule);
@@ -853,16 +853,16 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.api.BatchTransactionApplier applier = newApplierFacade(newIndexApplier(), newApplier(false));
+//ORIGINAL LINE: final Neo4Net.kernel.impl.api.BatchTransactionApplier applier = newApplierFacade(newIndexApplier(), newApplier(false));
 			  BatchTransactionApplier applier = NewApplierFacade( NewIndexApplier(), NewApplier(false) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.record.DynamicRecord record = org.Neo4Net.kernel.impl.store.record.DynamicRecord.dynamicRecord(21, true);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.store.record.DynamicRecord record = Neo4Net.kernel.impl.store.record.DynamicRecord.dynamicRecord(21, true);
 			  DynamicRecord record = DynamicRecord.dynamicRecord( 21, true );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.Collection<org.Neo4Net.kernel.impl.store.record.DynamicRecord> recordsAfter = singletonList(record);
+//ORIGINAL LINE: final java.util.Collection<Neo4Net.kernel.impl.store.record.DynamicRecord> recordsAfter = singletonList(record);
 			  ICollection<DynamicRecord> recordsAfter = singletonList( record );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor rule = constraintIndexRule(0, 1, 2, new org.Neo4Net.Kernel.Api.Internal.Schema.IndexProviderDescriptor("K", "X.Y"), 42L);
+//ORIGINAL LINE: final Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor rule = constraintIndexRule(0, 1, 2, new Neo4Net.Kernel.Api.Internal.Schema.IndexProviderDescriptor("K", "X.Y"), 42L);
 			  StoreIndexDescriptor rule = ConstraintIndexRule( 0, 1, 2, new IndexProviderDescriptor( "K", "X.Y" ), 42L );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final Command.SchemaRuleCommand command = new Command.SchemaRuleCommand(java.util.Collections.emptyList(), recordsAfter, rule);
@@ -886,16 +886,16 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.api.BatchTransactionApplier applier = newApplierFacade(newIndexApplier(), newApplier(true));
+//ORIGINAL LINE: final Neo4Net.kernel.impl.api.BatchTransactionApplier applier = newApplierFacade(newIndexApplier(), newApplier(true));
 			  BatchTransactionApplier applier = NewApplierFacade( NewIndexApplier(), NewApplier(true) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.record.DynamicRecord record = org.Neo4Net.kernel.impl.store.record.DynamicRecord.dynamicRecord(21, true);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.store.record.DynamicRecord record = Neo4Net.kernel.impl.store.record.DynamicRecord.dynamicRecord(21, true);
 			  DynamicRecord record = DynamicRecord.dynamicRecord( 21, true );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.Collection<org.Neo4Net.kernel.impl.store.record.DynamicRecord> recordsAfter = singletonList(record);
+//ORIGINAL LINE: final java.util.Collection<Neo4Net.kernel.impl.store.record.DynamicRecord> recordsAfter = singletonList(record);
 			  ICollection<DynamicRecord> recordsAfter = singletonList( record );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor rule = constraintIndexRule(0, 1, 2, new org.Neo4Net.Kernel.Api.Internal.Schema.IndexProviderDescriptor("K", "X.Y"), 42L);
+//ORIGINAL LINE: final Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor rule = constraintIndexRule(0, 1, 2, new Neo4Net.Kernel.Api.Internal.Schema.IndexProviderDescriptor("K", "X.Y"), 42L);
 			  StoreIndexDescriptor rule = ConstraintIndexRule( 0, 1, 2, new IndexProviderDescriptor( "K", "X.Y" ), 42L );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final Command.SchemaRuleCommand command = new Command.SchemaRuleCommand(java.util.Collections.emptyList(), recordsAfter, rule);
@@ -914,24 +914,24 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldApplyUpdateIndexRuleSchemaRuleCommandToTheStoreThrowingIndexProblem() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException, org.Neo4Net.kernel.api.exceptions.index.IndexPopulationFailedKernelException, org.Neo4Net.kernel.api.exceptions.index.IndexActivationFailedKernelException
+//ORIGINAL LINE: @Test public void shouldApplyUpdateIndexRuleSchemaRuleCommandToTheStoreThrowingIndexProblem() throws Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException, Neo4Net.kernel.api.exceptions.index.IndexPopulationFailedKernelException, Neo4Net.kernel.api.exceptions.index.IndexActivationFailedKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldApplyUpdateIndexRuleSchemaRuleCommandToTheStoreThrowingIndexProblem()
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.api.BatchTransactionApplier applier = newIndexApplier();
+//ORIGINAL LINE: final Neo4Net.kernel.impl.api.BatchTransactionApplier applier = newIndexApplier();
 			  BatchTransactionApplier applier = NewIndexApplier();
 			  doThrow( new IndexNotFoundKernelException( "" ) ).when( _indexingService ).activateIndex( anyLong() );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.record.DynamicRecord record = org.Neo4Net.kernel.impl.store.record.DynamicRecord.dynamicRecord(21, true);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.store.record.DynamicRecord record = Neo4Net.kernel.impl.store.record.DynamicRecord.dynamicRecord(21, true);
 			  DynamicRecord record = DynamicRecord.dynamicRecord( 21, true );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.Collection<org.Neo4Net.kernel.impl.store.record.DynamicRecord> recordsAfter = singletonList(record);
+//ORIGINAL LINE: final java.util.Collection<Neo4Net.kernel.impl.store.record.DynamicRecord> recordsAfter = singletonList(record);
 			  ICollection<DynamicRecord> recordsAfter = singletonList( record );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor rule = constraintIndexRule(0, 1, 2, new org.Neo4Net.Kernel.Api.Internal.Schema.IndexProviderDescriptor("K", "X.Y"), 42L);
+//ORIGINAL LINE: final Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor rule = constraintIndexRule(0, 1, 2, new Neo4Net.Kernel.Api.Internal.Schema.IndexProviderDescriptor("K", "X.Y"), 42L);
 			  StoreIndexDescriptor rule = ConstraintIndexRule( 0, 1, 2, new IndexProviderDescriptor( "K", "X.Y" ), 42L );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final Command.SchemaRuleCommand command = new Command.SchemaRuleCommand(java.util.Collections.emptyList(), recordsAfter, rule);
@@ -957,23 +957,23 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.api.BatchTransactionApplier super = newApplier(false);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.api.BatchTransactionApplier super = newApplier(false);
 			  BatchTransactionApplier @base = NewApplier( false );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.api.BatchTransactionApplier indexApplier = newIndexApplier();
+//ORIGINAL LINE: final Neo4Net.kernel.impl.api.BatchTransactionApplier indexApplier = newIndexApplier();
 			  BatchTransactionApplier indexApplier = NewIndexApplier();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.api.BatchTransactionApplierFacade applier = new org.Neo4Net.kernel.impl.api.BatchTransactionApplierFacade(super, indexApplier);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.api.BatchTransactionApplierFacade applier = new Neo4Net.kernel.impl.api.BatchTransactionApplierFacade(super, indexApplier);
 			  BatchTransactionApplierFacade applier = new BatchTransactionApplierFacade( @base, indexApplier );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.record.DynamicRecord record = org.Neo4Net.kernel.impl.store.record.DynamicRecord.dynamicRecord(21, true);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.store.record.DynamicRecord record = Neo4Net.kernel.impl.store.record.DynamicRecord.dynamicRecord(21, true);
 			  DynamicRecord record = DynamicRecord.dynamicRecord( 21, true );
 			  record.InUse = false;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.Collection<org.Neo4Net.kernel.impl.store.record.DynamicRecord> recordsAfter = singletonList(record);
+//ORIGINAL LINE: final java.util.Collection<Neo4Net.kernel.impl.store.record.DynamicRecord> recordsAfter = singletonList(record);
 			  ICollection<DynamicRecord> recordsAfter = singletonList( record );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor rule = indexRule(0, 1, 2, new org.Neo4Net.Kernel.Api.Internal.Schema.IndexProviderDescriptor("K", "X.Y"));
+//ORIGINAL LINE: final Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor rule = indexRule(0, 1, 2, new Neo4Net.Kernel.Api.Internal.Schema.IndexProviderDescriptor("K", "X.Y"));
 			  StoreIndexDescriptor rule = IndexRule( 0, 1, 2, new IndexProviderDescriptor( "K", "X.Y" ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final Command.SchemaRuleCommand command = new Command.SchemaRuleCommand(java.util.Collections.emptyList(), recordsAfter, rule);
@@ -997,17 +997,17 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.api.BatchTransactionApplier applier = newApplierFacade(newIndexApplier(), newApplier(true));
+//ORIGINAL LINE: final Neo4Net.kernel.impl.api.BatchTransactionApplier applier = newApplierFacade(newIndexApplier(), newApplier(true));
 			  BatchTransactionApplier applier = NewApplierFacade( NewIndexApplier(), NewApplier(true) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.record.DynamicRecord record = org.Neo4Net.kernel.impl.store.record.DynamicRecord.dynamicRecord(21, true);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.store.record.DynamicRecord record = Neo4Net.kernel.impl.store.record.DynamicRecord.dynamicRecord(21, true);
 			  DynamicRecord record = DynamicRecord.dynamicRecord( 21, true );
 			  record.InUse = false;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.Collection<org.Neo4Net.kernel.impl.store.record.DynamicRecord> recordsAfter = singletonList(record);
+//ORIGINAL LINE: final java.util.Collection<Neo4Net.kernel.impl.store.record.DynamicRecord> recordsAfter = singletonList(record);
 			  ICollection<DynamicRecord> recordsAfter = singletonList( record );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor rule = indexRule(0, 1, 2, new org.Neo4Net.Kernel.Api.Internal.Schema.IndexProviderDescriptor("K", "X.Y"));
+//ORIGINAL LINE: final Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor rule = indexRule(0, 1, 2, new Neo4Net.Kernel.Api.Internal.Schema.IndexProviderDescriptor("K", "X.Y"));
 			  StoreIndexDescriptor rule = IndexRule( 0, 1, 2, new IndexProviderDescriptor( "K", "X.Y" ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final Command.SchemaRuleCommand command = new Command.SchemaRuleCommand(java.util.Collections.emptyList(), recordsAfter, rule);
@@ -1032,17 +1032,17 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.api.BatchTransactionApplier applier = newApplier(false);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.api.BatchTransactionApplier applier = newApplier(false);
 			  BatchTransactionApplier applier = NewApplier( false );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.record.DynamicRecord record = org.Neo4Net.kernel.impl.store.record.DynamicRecord.dynamicRecord(21, true);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.store.record.DynamicRecord record = Neo4Net.kernel.impl.store.record.DynamicRecord.dynamicRecord(21, true);
 			  DynamicRecord record = DynamicRecord.dynamicRecord( 21, true );
 			  record.SetCreated();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.Collection<org.Neo4Net.kernel.impl.store.record.DynamicRecord> recordsAfter = singletonList(record);
+//ORIGINAL LINE: final java.util.Collection<Neo4Net.kernel.impl.store.record.DynamicRecord> recordsAfter = singletonList(record);
 			  ICollection<DynamicRecord> recordsAfter = singletonList( record );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.record.ConstraintRule rule = uniquenessConstraintRule(0L, 1, 2, 3L);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.store.record.ConstraintRule rule = uniquenessConstraintRule(0L, 1, 2, 3L);
 			  ConstraintRule rule = UniquenessConstraintRule( 0L, 1, 2, 3L );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final Command.SchemaRuleCommand command = new Command.SchemaRuleCommand(java.util.Collections.emptyList(), recordsAfter, rule);
@@ -1066,17 +1066,17 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.api.BatchTransactionApplier applier = newApplier(true);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.api.BatchTransactionApplier applier = newApplier(true);
 			  BatchTransactionApplier applier = NewApplier( true );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.record.DynamicRecord record = org.Neo4Net.kernel.impl.store.record.DynamicRecord.dynamicRecord(21, true);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.store.record.DynamicRecord record = Neo4Net.kernel.impl.store.record.DynamicRecord.dynamicRecord(21, true);
 			  DynamicRecord record = DynamicRecord.dynamicRecord( 21, true );
 			  record.SetCreated();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.Collection<org.Neo4Net.kernel.impl.store.record.DynamicRecord> recordsAfter = singletonList(record);
+//ORIGINAL LINE: final java.util.Collection<Neo4Net.kernel.impl.store.record.DynamicRecord> recordsAfter = singletonList(record);
 			  ICollection<DynamicRecord> recordsAfter = singletonList( record );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.record.ConstraintRule rule = uniquenessConstraintRule(0L, 1, 2, 3L);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.store.record.ConstraintRule rule = uniquenessConstraintRule(0L, 1, 2, 3L);
 			  ConstraintRule rule = UniquenessConstraintRule( 0L, 1, 2, 3L );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final Command.SchemaRuleCommand command = new Command.SchemaRuleCommand(java.util.Collections.emptyList(), recordsAfter, rule);
@@ -1101,16 +1101,16 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.api.BatchTransactionApplier applier = newApplier(false);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.api.BatchTransactionApplier applier = newApplier(false);
 			  BatchTransactionApplier applier = NewApplier( false );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.record.DynamicRecord record = org.Neo4Net.kernel.impl.store.record.DynamicRecord.dynamicRecord(21, true);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.store.record.DynamicRecord record = Neo4Net.kernel.impl.store.record.DynamicRecord.dynamicRecord(21, true);
 			  DynamicRecord record = DynamicRecord.dynamicRecord( 21, true );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.Collection<org.Neo4Net.kernel.impl.store.record.DynamicRecord> recordsAfter = singletonList(record);
+//ORIGINAL LINE: final java.util.Collection<Neo4Net.kernel.impl.store.record.DynamicRecord> recordsAfter = singletonList(record);
 			  ICollection<DynamicRecord> recordsAfter = singletonList( record );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.record.ConstraintRule rule = uniquenessConstraintRule(0L, 1, 2, 3L);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.store.record.ConstraintRule rule = uniquenessConstraintRule(0L, 1, 2, 3L);
 			  ConstraintRule rule = UniquenessConstraintRule( 0L, 1, 2, 3L );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final Command.SchemaRuleCommand command = new Command.SchemaRuleCommand(java.util.Collections.emptyList(), recordsAfter, rule);
@@ -1134,16 +1134,16 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.api.BatchTransactionApplier applier = newApplier(true);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.api.BatchTransactionApplier applier = newApplier(true);
 			  BatchTransactionApplier applier = NewApplier( true );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.record.DynamicRecord record = org.Neo4Net.kernel.impl.store.record.DynamicRecord.dynamicRecord(21, true);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.store.record.DynamicRecord record = Neo4Net.kernel.impl.store.record.DynamicRecord.dynamicRecord(21, true);
 			  DynamicRecord record = DynamicRecord.dynamicRecord( 21, true );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.Collection<org.Neo4Net.kernel.impl.store.record.DynamicRecord> recordsAfter = singletonList(record);
+//ORIGINAL LINE: final java.util.Collection<Neo4Net.kernel.impl.store.record.DynamicRecord> recordsAfter = singletonList(record);
 			  ICollection<DynamicRecord> recordsAfter = singletonList( record );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.record.ConstraintRule rule = uniquenessConstraintRule(0L, 1, 2, 3L);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.store.record.ConstraintRule rule = uniquenessConstraintRule(0L, 1, 2, 3L);
 			  ConstraintRule rule = UniquenessConstraintRule( 0L, 1, 2, 3L );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final Command.SchemaRuleCommand command = new Command.SchemaRuleCommand(java.util.Collections.emptyList(), recordsAfter, rule);
@@ -1168,17 +1168,17 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.api.BatchTransactionApplier applier = newApplier(false);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.api.BatchTransactionApplier applier = newApplier(false);
 			  BatchTransactionApplier applier = NewApplier( false );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.record.DynamicRecord record = org.Neo4Net.kernel.impl.store.record.DynamicRecord.dynamicRecord(21, true);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.store.record.DynamicRecord record = Neo4Net.kernel.impl.store.record.DynamicRecord.dynamicRecord(21, true);
 			  DynamicRecord record = DynamicRecord.dynamicRecord( 21, true );
 			  record.InUse = false;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.Collection<org.Neo4Net.kernel.impl.store.record.DynamicRecord> recordsAfter = singletonList(record);
+//ORIGINAL LINE: final java.util.Collection<Neo4Net.kernel.impl.store.record.DynamicRecord> recordsAfter = singletonList(record);
 			  ICollection<DynamicRecord> recordsAfter = singletonList( record );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.record.ConstraintRule rule = uniquenessConstraintRule(0L, 1, 2, 3L);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.store.record.ConstraintRule rule = uniquenessConstraintRule(0L, 1, 2, 3L);
 			  ConstraintRule rule = UniquenessConstraintRule( 0L, 1, 2, 3L );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final Command.SchemaRuleCommand command = new Command.SchemaRuleCommand(java.util.Collections.emptyList(), recordsAfter, rule);
@@ -1202,17 +1202,17 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.api.BatchTransactionApplier applier = newApplier(true);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.api.BatchTransactionApplier applier = newApplier(true);
 			  BatchTransactionApplier applier = NewApplier( true );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.record.DynamicRecord record = org.Neo4Net.kernel.impl.store.record.DynamicRecord.dynamicRecord(21, true);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.store.record.DynamicRecord record = Neo4Net.kernel.impl.store.record.DynamicRecord.dynamicRecord(21, true);
 			  DynamicRecord record = DynamicRecord.dynamicRecord( 21, true );
 			  record.InUse = false;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.Collection<org.Neo4Net.kernel.impl.store.record.DynamicRecord> recordsAfter = singletonList(record);
+//ORIGINAL LINE: final java.util.Collection<Neo4Net.kernel.impl.store.record.DynamicRecord> recordsAfter = singletonList(record);
 			  ICollection<DynamicRecord> recordsAfter = singletonList( record );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.record.ConstraintRule rule = uniquenessConstraintRule(0L, 1, 2, 3L);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.store.record.ConstraintRule rule = uniquenessConstraintRule(0L, 1, 2, 3L);
 			  ConstraintRule rule = UniquenessConstraintRule( 0L, 1, 2, 3L );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final Command.SchemaRuleCommand command = new Command.SchemaRuleCommand(java.util.Collections.emptyList(), recordsAfter, rule);
@@ -1239,13 +1239,13 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.api.BatchTransactionApplier applier = newApplier(false);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.api.BatchTransactionApplier applier = newApplier(false);
 			  BatchTransactionApplier applier = NewApplier( false );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.record.NeoStoreRecord before = new org.Neo4Net.kernel.impl.store.record.NeoStoreRecord();
+//ORIGINAL LINE: final Neo4Net.kernel.impl.store.record.NeoStoreRecord before = new Neo4Net.kernel.impl.store.record.NeoStoreRecord();
 			  NeoStoreRecord before = new NeoStoreRecord();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.record.NeoStoreRecord after = new org.Neo4Net.kernel.impl.store.record.NeoStoreRecord();
+//ORIGINAL LINE: final Neo4Net.kernel.impl.store.record.NeoStoreRecord after = new Neo4Net.kernel.impl.store.record.NeoStoreRecord();
 			  NeoStoreRecord after = new NeoStoreRecord();
 			  after.NextProp = 42;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -1268,13 +1268,13 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.api.BatchTransactionApplier applier = newApplier(true);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.api.BatchTransactionApplier applier = newApplier(true);
 			  BatchTransactionApplier applier = NewApplier( true );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.record.NeoStoreRecord before = new org.Neo4Net.kernel.impl.store.record.NeoStoreRecord();
+//ORIGINAL LINE: final Neo4Net.kernel.impl.store.record.NeoStoreRecord before = new Neo4Net.kernel.impl.store.record.NeoStoreRecord();
 			  NeoStoreRecord before = new NeoStoreRecord();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.record.NeoStoreRecord after = new org.Neo4Net.kernel.impl.store.record.NeoStoreRecord();
+//ORIGINAL LINE: final Neo4Net.kernel.impl.store.record.NeoStoreRecord after = new Neo4Net.kernel.impl.store.record.NeoStoreRecord();
 			  NeoStoreRecord after = new NeoStoreRecord();
 			  after.NextProp = 42;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -1311,7 +1311,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private boolean apply(org.Neo4Net.kernel.impl.api.BatchTransactionApplier applier, org.Neo4Net.kernel.impl.transaction.command.CommandHandlerContract.ApplyFunction function, org.Neo4Net.kernel.impl.api.TransactionToApply transactionToApply) throws Exception
+//ORIGINAL LINE: private boolean apply(Neo4Net.kernel.impl.api.BatchTransactionApplier applier, Neo4Net.kernel.impl.transaction.command.CommandHandlerContract.ApplyFunction function, Neo4Net.kernel.impl.api.TransactionToApply transactionToApply) throws Exception
 		 private bool Apply( BatchTransactionApplier applier, ApplyFunction function, TransactionToApply transactionToApply )
 		 {
 			  try

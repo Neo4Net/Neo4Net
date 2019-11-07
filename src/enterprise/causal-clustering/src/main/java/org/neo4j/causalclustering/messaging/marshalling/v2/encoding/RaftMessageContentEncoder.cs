@@ -36,7 +36,7 @@ namespace Neo4Net.causalclustering.messaging.marshalling.v2.encoding
 	using Neo4Net.causalclustering.messaging.marshalling;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.messaging.marshalling.v2.encoding.RaftLogEntryTermsSerializer.serializeTerms;
+//	import static Neo4Net.causalclustering.messaging.marshalling.v2.encoding.RaftLogEntryTermsSerializer.serializeTerms;
 
 	/// <summary>
 	/// Serializes a raft messages content in the order Message, RaftLogTerms, ReplicatedContent.
@@ -52,7 +52,7 @@ namespace Neo4Net.causalclustering.messaging.marshalling.v2.encoding
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected void encode(io.netty.channel.ChannelHandlerContext ctx, org.Neo4Net.causalclustering.core.consensus.RaftMessages_ClusterIdAwareMessage msg, java.util.List<Object> out) throws Exception
+//ORIGINAL LINE: protected void encode(io.netty.channel.ChannelHandlerContext ctx, Neo4Net.causalclustering.core.consensus.RaftMessages_ClusterIdAwareMessage msg, java.util.List<Object> out) throws Exception
 		 protected internal override void Encode( ChannelHandlerContext ctx, Neo4Net.causalclustering.core.consensus.RaftMessages_ClusterIdAwareMessage msg, IList<object> @out )
 		 {
 			  @out.Add( msg );
@@ -75,35 +75,35 @@ namespace Neo4Net.causalclustering.messaging.marshalling.v2.encoding
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public Void handle(org.Neo4Net.causalclustering.core.consensus.RaftMessages_Vote_Request request) throws Exception
+//ORIGINAL LINE: public Void handle(Neo4Net.causalclustering.core.consensus.RaftMessages_Vote_Request request) throws Exception
 			  public override Void Handle( Neo4Net.causalclustering.core.consensus.RaftMessages_Vote_Request request )
 			  {
 					return null;
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public Void handle(org.Neo4Net.causalclustering.core.consensus.RaftMessages_Vote_Response response) throws Exception
+//ORIGINAL LINE: public Void handle(Neo4Net.causalclustering.core.consensus.RaftMessages_Vote_Response response) throws Exception
 			  public override Void Handle( Neo4Net.causalclustering.core.consensus.RaftMessages_Vote_Response response )
 			  {
 					return null;
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public Void handle(org.Neo4Net.causalclustering.core.consensus.RaftMessages_PreVote_Request request) throws Exception
+//ORIGINAL LINE: public Void handle(Neo4Net.causalclustering.core.consensus.RaftMessages_PreVote_Request request) throws Exception
 			  public override Void Handle( Neo4Net.causalclustering.core.consensus.RaftMessages_PreVote_Request request )
 			  {
 					return null;
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public Void handle(org.Neo4Net.causalclustering.core.consensus.RaftMessages_PreVote_Response response) throws Exception
+//ORIGINAL LINE: public Void handle(Neo4Net.causalclustering.core.consensus.RaftMessages_PreVote_Response response) throws Exception
 			  public override Void Handle( Neo4Net.causalclustering.core.consensus.RaftMessages_PreVote_Response response )
 			  {
 					return null;
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public Void handle(org.Neo4Net.causalclustering.core.consensus.RaftMessages_AppendEntries_Request request) throws Exception
+//ORIGINAL LINE: public Void handle(Neo4Net.causalclustering.core.consensus.RaftMessages_AppendEntries_Request request) throws Exception
 			  public override Void Handle( Neo4Net.causalclustering.core.consensus.RaftMessages_AppendEntries_Request request )
 			  {
 					Out.Add( serializeTerms( request.Entries(), Alloc ) );
@@ -115,35 +115,35 @@ namespace Neo4Net.causalclustering.messaging.marshalling.v2.encoding
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public Void handle(org.Neo4Net.causalclustering.core.consensus.RaftMessages_AppendEntries_Response response) throws Exception
+//ORIGINAL LINE: public Void handle(Neo4Net.causalclustering.core.consensus.RaftMessages_AppendEntries_Response response) throws Exception
 			  public override Void Handle( Neo4Net.causalclustering.core.consensus.RaftMessages_AppendEntries_Response response )
 			  {
 					return null;
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public Void handle(org.Neo4Net.causalclustering.core.consensus.RaftMessages_Heartbeat heartbeat) throws Exception
+//ORIGINAL LINE: public Void handle(Neo4Net.causalclustering.core.consensus.RaftMessages_Heartbeat heartbeat) throws Exception
 			  public override Void Handle( Neo4Net.causalclustering.core.consensus.RaftMessages_Heartbeat heartbeat )
 			  {
 					return null;
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public Void handle(org.Neo4Net.causalclustering.core.consensus.RaftMessages_LogCompactionInfo logCompactionInfo) throws Exception
+//ORIGINAL LINE: public Void handle(Neo4Net.causalclustering.core.consensus.RaftMessages_LogCompactionInfo logCompactionInfo) throws Exception
 			  public override Void Handle( Neo4Net.causalclustering.core.consensus.RaftMessages_LogCompactionInfo logCompactionInfo )
 			  {
 					return null;
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public Void handle(org.Neo4Net.causalclustering.core.consensus.RaftMessages_HeartbeatResponse heartbeatResponse) throws Exception
+//ORIGINAL LINE: public Void handle(Neo4Net.causalclustering.core.consensus.RaftMessages_HeartbeatResponse heartbeatResponse) throws Exception
 			  public override Void Handle( Neo4Net.causalclustering.core.consensus.RaftMessages_HeartbeatResponse heartbeatResponse )
 			  {
 					return null;
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public Void handle(org.Neo4Net.causalclustering.core.consensus.RaftMessages_NewEntry_Request request) throws Exception
+//ORIGINAL LINE: public Void handle(Neo4Net.causalclustering.core.consensus.RaftMessages_NewEntry_Request request) throws Exception
 			  public override Void Handle( Neo4Net.causalclustering.core.consensus.RaftMessages_NewEntry_Request request )
 			  {
 					SerializableContents( request.Content(), Out );
@@ -151,28 +151,28 @@ namespace Neo4Net.causalclustering.messaging.marshalling.v2.encoding
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public Void handle(org.Neo4Net.causalclustering.core.consensus.RaftMessages_Timeout_Election election) throws Exception
+//ORIGINAL LINE: public Void handle(Neo4Net.causalclustering.core.consensus.RaftMessages_Timeout_Election election) throws Exception
 			  public override Void Handle( Neo4Net.causalclustering.core.consensus.RaftMessages_Timeout_Election election )
 			  {
 					return IllegalOutbound( election );
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public Void handle(org.Neo4Net.causalclustering.core.consensus.RaftMessages_Timeout_Heartbeat heartbeat) throws Exception
+//ORIGINAL LINE: public Void handle(Neo4Net.causalclustering.core.consensus.RaftMessages_Timeout_Heartbeat heartbeat) throws Exception
 			  public override Void Handle( Neo4Net.causalclustering.core.consensus.RaftMessages_Timeout_Heartbeat heartbeat )
 			  {
 					return IllegalOutbound( heartbeat );
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public Void handle(org.Neo4Net.causalclustering.core.consensus.RaftMessages_NewEntry_BatchRequest batchRequest) throws Exception
+//ORIGINAL LINE: public Void handle(Neo4Net.causalclustering.core.consensus.RaftMessages_NewEntry_BatchRequest batchRequest) throws Exception
 			  public override Void Handle( Neo4Net.causalclustering.core.consensus.RaftMessages_NewEntry_BatchRequest batchRequest )
 			  {
 					return IllegalOutbound( batchRequest );
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public Void handle(org.Neo4Net.causalclustering.core.consensus.RaftMessages_PruneRequest pruneRequest) throws Exception
+//ORIGINAL LINE: public Void handle(Neo4Net.causalclustering.core.consensus.RaftMessages_PruneRequest pruneRequest) throws Exception
 			  public override Void Handle( Neo4Net.causalclustering.core.consensus.RaftMessages_PruneRequest pruneRequest )
 			  {
 					return IllegalOutbound( pruneRequest );
@@ -185,7 +185,7 @@ namespace Neo4Net.causalclustering.messaging.marshalling.v2.encoding
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void serializableContents(org.Neo4Net.causalclustering.core.replication.ReplicatedContent content, java.util.List<Object> out) throws java.io.IOException
+//ORIGINAL LINE: private void serializableContents(Neo4Net.causalclustering.core.replication.ReplicatedContent content, java.util.List<Object> out) throws java.io.IOException
 			  internal virtual void SerializableContents( ReplicatedContent content, IList<object> @out )
 			  {
 					@out.Add( ContentType.ReplicatedContent );

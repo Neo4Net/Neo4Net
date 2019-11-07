@@ -211,7 +211,7 @@ namespace Neo4Net.cluster.protocol.cluster
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public Iterable<String> getRolesOf(final org.Neo4Net.cluster.InstanceId node)
+//ORIGINAL LINE: public Iterable<String> getRolesOf(final Neo4Net.cluster.InstanceId node)
 		 public virtual IEnumerable<string> GetRolesOf( InstanceId node )
 		 {
 			  return Iterables.map( DictionaryEntry.getKey, Iterables.filter( item => item.Value.Equals( node ), _roles.SetOfKeyValuePairs() ) );

@@ -40,23 +40,23 @@ namespace Neo4Net.Server.enterprise
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.MasterInfoService.BASE_PATH;
+//	import static Neo4Net.server.rest.MasterInfoService.BASE_PATH;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.MasterInfoService.IS_MASTER_PATH;
+//	import static Neo4Net.server.rest.MasterInfoService.IS_MASTER_PATH;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.MasterInfoService.IS_SLAVE_PATH;
+//	import static Neo4Net.server.rest.MasterInfoService.IS_SLAVE_PATH;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.server.ha.EnterpriseServerHelper.createNonPersistentServer;
+//	import static Neo4Net.test.server.ha.EnterpriseServerHelper.createNonPersistentServer;
 
 	public class StandaloneHaInfoFunctionalTest
 	{
 		 private static OpenEnterpriseNeoServer _server;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory target = org.Neo4Net.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.TestDirectory target = Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory Target = TestDirectory.testDirectory();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.SuppressOutput suppressOutput = org.Neo4Net.test.rule.SuppressOutput.suppressAll();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.SuppressOutput suppressOutput = Neo4Net.test.rule.SuppressOutput.suppressAll();
 		 public readonly SuppressOutput SuppressOutput = SuppressOutput.suppressAll();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

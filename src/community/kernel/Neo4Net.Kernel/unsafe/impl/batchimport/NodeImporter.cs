@@ -44,7 +44,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 //	import static Arrays.copyOf;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.record.Record.NULL_REFERENCE;
+//	import static Neo4Net.kernel.impl.store.record.Record.NULL_REFERENCE;
 
 	/// <summary>
 	/// Imports nodes using data from <seealso cref="InputChunk"/>.

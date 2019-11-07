@@ -21,7 +21,7 @@ namespace Neo4Net.Kernel.configuration
 {
 
 	/// <summary>
-	/// Used to add a short description title for settings in <seealso cref="org.Neo4Net.graphdb.factory.GraphDatabaseSettings"/>.
+	/// Used to add a short description title for settings in <seealso cref="Neo4Net.graphdb.factory.GraphDatabaseSettings"/>.
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Field, AllowMultiple = false, Inherited = false)]
 	public class Title : System.Attribute

@@ -47,14 +47,14 @@ namespace Neo4Net.ha
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.Exceptions.contains;
+//	import static Neo4Net.helpers.Exceptions.contains;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.clusterOfSize;
+//	import static Neo4Net.kernel.impl.ha.ClusterManager.clusterOfSize;
 
 	public class ClusterTransactionIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.ha.ClusterRule clusterRule = new org.Neo4Net.test.ha.ClusterRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.ha.ClusterRule clusterRule = new Neo4Net.test.ha.ClusterRule();
 		 public readonly ClusterRule ClusterRule = new ClusterRule();
 
 		 private ClusterManager.ManagedCluster _cluster;
@@ -74,10 +74,10 @@ namespace Neo4Net.ha
 		 public virtual void GivenClusterWhenShutdownMasterThenCannotStartTransactionOnSlave()
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.ha.HighlyAvailableGraphDatabase master = cluster.getMaster();
+//ORIGINAL LINE: final Neo4Net.kernel.ha.HighlyAvailableGraphDatabase master = cluster.getMaster();
 			  HighlyAvailableGraphDatabase master = _cluster.Master;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.ha.HighlyAvailableGraphDatabase slave = cluster.getAnySlave();
+//ORIGINAL LINE: final Neo4Net.kernel.ha.HighlyAvailableGraphDatabase slave = cluster.getAnySlave();
 			  HighlyAvailableGraphDatabase slave = _cluster.AnySlave;
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -126,7 +126,7 @@ namespace Neo4Net.ha
 		 public virtual void SlaveMustConnectLockManagerToNewMasterAfterTwoOtherClusterMembersRoleSwitch()
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.ha.HighlyAvailableGraphDatabase initialMaster = cluster.getMaster();
+//ORIGINAL LINE: final Neo4Net.kernel.ha.HighlyAvailableGraphDatabase initialMaster = cluster.getMaster();
 			  HighlyAvailableGraphDatabase initialMaster = _cluster.Master;
 			  HighlyAvailableGraphDatabase firstSlave = _cluster.AnySlave;
 			  HighlyAvailableGraphDatabase secondSlave = _cluster.getAnySlave( firstSlave );

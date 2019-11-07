@@ -55,7 +55,7 @@ namespace Neo4Net.GraphDb.store.id
 	public class RelationshipIdReuseStressIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.DatabaseRule embeddedDatabase = new org.Neo4Net.test.rule.EnterpriseDatabaseRule().withSetting(org.Neo4Net.kernel.impl.enterprise.configuration.EnterpriseEditionSettings.idTypesToReuse, org.Neo4Net.kernel.impl.store.id.IdType.RELATIONSHIP.name());
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.DatabaseRule embeddedDatabase = new Neo4Net.test.rule.EnterpriseDatabaseRule().withSetting(Neo4Net.kernel.impl.enterprise.configuration.EnterpriseEditionSettings.idTypesToReuse, Neo4Net.kernel.impl.store.id.IdType.RELATIONSHIP.name());
 		 public DatabaseRule EmbeddedDatabase = new EnterpriseDatabaseRule().withSetting(EnterpriseEditionSettings.idTypesToReuse, IdType.RELATIONSHIP.name());
 
 		 private readonly ExecutorService _executorService = Executors.newCachedThreadPool();
@@ -78,7 +78,7 @@ namespace Neo4Net.GraphDb.store.id
 		 {
 			  Label cityLabel = Label.label( "city" );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.graphdb.Label bandLabel = org.Neo4Net.graphdb.Label.label("band");
+//ORIGINAL LINE: final Neo4Net.graphdb.Label bandLabel = Neo4Net.graphdb.Label.label("band");
 			  Label bandLabel = Label.label( "band" );
 			  CreateBands( bandLabel );
 			  CreateCities( cityLabel );
@@ -164,7 +164,7 @@ namespace Neo4Net.GraphDb.store.id
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private java.util.concurrent.Future<?> startRelationshipCalculator(final org.Neo4Net.graphdb.Label bandLabel, final java.util.concurrent.atomic.AtomicBoolean stopFlag)
+//ORIGINAL LINE: private java.util.concurrent.Future<?> startRelationshipCalculator(final Neo4Net.graphdb.Label bandLabel, final java.util.concurrent.atomic.AtomicBoolean stopFlag)
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		 private Future<object> StartRelationshipCalculator( Label bandLabel, AtomicBoolean stopFlag )
 		 {
@@ -172,7 +172,7 @@ namespace Neo4Net.GraphDb.store.id
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private java.util.concurrent.Future<?> startRelationshipTypesCalculator(final org.Neo4Net.graphdb.Label bandLabel, final java.util.concurrent.atomic.AtomicBoolean stopFlag)
+//ORIGINAL LINE: private java.util.concurrent.Future<?> startRelationshipTypesCalculator(final Neo4Net.graphdb.Label bandLabel, final java.util.concurrent.atomic.AtomicBoolean stopFlag)
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		 private Future<object> StartRelationshipTypesCalculator( Label bandLabel, AtomicBoolean stopFlag )
 		 {
@@ -454,7 +454,7 @@ namespace Neo4Net.GraphDb.store.id
 
 			  internal virtual void DeleteRelationshipOnRandomNode()
 			  {
-					using ( ResourceIterator<Node> nodeResourceIterator = outerInstance.EmbeddedDatabase.findNodes( CityLabel ) )
+					using ( IResourceIterator<Node> nodeResourceIterator = outerInstance.EmbeddedDatabase.findNodes( CityLabel ) )
 					{
 						 IList<Node> nodes = Iterators.asList( nodeResourceIterator );
 						 int index = ThreadLocalRandom.current().Next(nodes.Count);

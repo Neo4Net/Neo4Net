@@ -375,7 +375,7 @@ namespace Neo4Net.Collections.Helpers
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static <T, EX extends Exception> java.util.List<T> asList(org.Neo4Net.collection.RawIterator<T, EX> iterator) throws EX
+//ORIGINAL LINE: public static <T, EX extends Exception> java.util.List<T> asList(Neo4Net.collection.RawIterator<T, EX> iterator) throws EX
 		 public static IList<T> AsList<T, EX>( RawIterator<T, EX> iterator ) where EX : Exception
 		 {
 			  IList<T> @out = new List<T>();
@@ -700,10 +700,10 @@ namespace Neo4Net.Collections.Helpers
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") public static <T> org.Neo4Net.graphdb.ResourceIterator<T> emptyResourceIterator()
-		 public static ResourceIterator<T> EmptyResourceIterator<T>()
+//ORIGINAL LINE: @SuppressWarnings("unchecked") public static <T> Neo4Net.graphdb.ResourceIterator<T> emptyResourceIterator()
+		 public static IResourceIterator<T> EmptyResourceIterator<T>()
 		 {
-			  return ( ResourceIterator<T> ) EmptyResourceIterator.EmptyResourceIteratorConflict;
+			  return ( IResourceIterator<T> ) EmptyResourceIterator.EmptyResourceIteratorConflict;
 		 }
 
 		 public static bool Contains<T>( IEnumerator<T> iterator, T item )
@@ -722,32 +722,32 @@ namespace Neo4Net.Collections.Helpers
 			  finally
 			  {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: if (iterator instanceof org.Neo4Net.graphdb.ResourceIterator<?>)
-					if ( iterator is ResourceIterator<object> )
+//ORIGINAL LINE: if (iterator instanceof Neo4Net.graphdb.ResourceIterator<?>)
+					if ( iterator is IResourceIterator<object> )
 					{
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: ((org.Neo4Net.graphdb.ResourceIterator<?>) iterator).close();
-						 ( ( ResourceIterator<object> ) iterator ).close();
+//ORIGINAL LINE: ((Neo4Net.graphdb.ResourceIterator<?>) iterator).close();
+						 ( ( IResourceIterator<object> ) iterator ).close();
 					}
 			  }
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static <T> org.Neo4Net.graphdb.ResourceIterator<T> asResourceIterator(final java.util.Iterator<T> iterator)
-		 public static ResourceIterator<T> AsResourceIterator<T>( IEnumerator<T> iterator )
+//ORIGINAL LINE: public static <T> Neo4Net.graphdb.ResourceIterator<T> asResourceIterator(final java.util.Iterator<T> iterator)
+		 public static IResourceIterator<T> AsResourceIterator<T>( IEnumerator<T> iterator )
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: if (iterator instanceof org.Neo4Net.graphdb.ResourceIterator<?>)
-			  if ( iterator is ResourceIterator<object> )
+//ORIGINAL LINE: if (iterator instanceof Neo4Net.graphdb.ResourceIterator<?>)
+			  if ( iterator is IResourceIterator<object> )
 			  {
-					return ( ResourceIterator<T> ) iterator;
+					return ( IResourceIterator<T> ) iterator;
 			  }
 			  return new WrappingResourceIterator<T>( iterator );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static <T> org.Neo4Net.graphdb.ResourceIterator<T> resourceIterator(final java.util.Iterator<T> iterator, final org.Neo4Net.graphdb.Resource resource)
-		 public static ResourceIterator<T> ResourceIterator<T>( IEnumerator<T> iterator, Resource resource )
+//ORIGINAL LINE: public static <T> Neo4Net.graphdb.ResourceIterator<T> resourceIterator(final java.util.Iterator<T> iterator, final Neo4Net.graphdb.Resource resource)
+		 public static IResourceIterator<T> IResourceIterator<T>( IEnumerator<T> iterator, Resource resource )
 		 {
 			  return new PrefetchingResourceIteratorAnonymousInnerClass( iterator, resource );
 		 }
@@ -797,7 +797,7 @@ namespace Neo4Net.Collections.Helpers
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-//ORIGINAL LINE: public static <FROM, TO, EX extends Exception> org.Neo4Net.collection.RawIterator<TO, EX> map(org.Neo4Net.function.ThrowingFunction<? super FROM, ? extends TO, EX> function, org.Neo4Net.collection.RawIterator<FROM, EX> from)
+//ORIGINAL LINE: public static <FROM, TO, EX extends Exception> Neo4Net.collection.RawIterator<TO, EX> map(Neo4Net.function.ThrowingFunction<? super FROM, ? extends TO, EX> function, Neo4Net.collection.RawIterator<FROM, EX> from)
 		 public static RawIterator<TO, EX> Map<FROM, TO, EX, T1>( ThrowingFunction<T1> function, RawIterator<FROM, EX> from ) where EX : Exception where T1 : TO
 		 {
 			  return new RawMapIterator<TO, EX>( from, function );
@@ -850,7 +850,7 @@ namespace Neo4Net.Collections.Helpers
 			  return Concat( Arrays.asList( ( IEnumerator<T>[] ) iterators ).GetEnumerator() );
 		 }
 
-		 public static ResourceIterator<T> ConcatResourceIterators<T>( IEnumerator<ResourceIterator<T>> iterators )
+		 public static IResourceIterator<T> ConcatResourceIterators<T>( IEnumerator<ResourceIterator<T>> iterators )
 		 {
 			  return new CombiningResourceIterator<T>( iterators );
 		 }
@@ -861,8 +861,8 @@ namespace Neo4Net.Collections.Helpers
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static <T> org.Neo4Net.graphdb.ResourceIterable<T> asResourceIterable(final org.Neo4Net.graphdb.ResourceIterator<T> it)
-		 public static ResourceIterable<T> AsResourceIterable<T>( ResourceIterator<T> it )
+//ORIGINAL LINE: public static <T> Neo4Net.graphdb.ResourceIterable<T> asResourceIterable(final Neo4Net.graphdb.ResourceIterator<T> it)
+		 public staticIResourceIterable<T> AsResourceIterable<T>( IResourceIterator<T> it )
 		 {
 			  return () => it;
 		 }
@@ -945,10 +945,10 @@ namespace Neo4Net.Collections.Helpers
 			  return stream;
 		 }
 
-		 private class EmptyResourceIterator<E> : ResourceIterator<E>
+		 private class EmptyResourceIterator<E> : IResourceIterator<E>
 		 {
 //JAVA TO C# CONVERTER NOTE: Members cannot have the same name as their enclosing type:
-			  internal static readonly ResourceIterator<object> EmptyResourceIteratorConflict = new Iterators.EmptyResourceIterator<object>();
+			  internal static readonly IResourceIterator<object> EmptyResourceIteratorConflict = new Iterators.EmptyResourceIterator<object>();
 
 			  public override void Close()
 			  {

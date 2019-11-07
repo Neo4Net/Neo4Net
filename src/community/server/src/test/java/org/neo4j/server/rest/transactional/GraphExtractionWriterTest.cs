@@ -30,7 +30,7 @@ namespace Neo4Net.Server.rest.transactional
 	using MapRow = Neo4Net.Cypher.Internal.javacompat.MapRow;
 	using Node = Neo4Net.GraphDb.Node;
 	using Relationship = Neo4Net.GraphDb.Relationship;
-	using Statement = Neo4Net.Kernel.api.Statement;
+	using Statement = Neo4Net.Kernel.Api.Statement;
 	using JsonHelper = Neo4Net.Server.rest.domain.JsonHelper;
 	using JsonParseException = Neo4Net.Server.rest.domain.JsonParseException;
 	using Property = Neo4Net.Test.Property;
@@ -44,17 +44,17 @@ namespace Neo4Net.Server.rest.transactional
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.mock;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.Property.property;
+//	import static Neo4Net.test.Property.property;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.mockito.mock.GraphMock.node;
+//	import static Neo4Net.test.mockito.mock.GraphMock.node;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.mockito.mock.GraphMock.path;
+//	import static Neo4Net.test.mockito.mock.GraphMock.path;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.mockito.mock.GraphMock.relationship;
+//	import static Neo4Net.test.mockito.mock.GraphMock.relationship;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.mockito.mock.Link.link;
+//	import static Neo4Net.test.mockito.mock.Link.link;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.mockito.mock.Properties.properties;
+//	import static Neo4Net.test.mockito.mock.Properties.properties;
 
 	public class GraphExtractionWriterTest
 	{
@@ -227,7 +227,7 @@ namespace Neo4Net.Server.rest.transactional
 		 private JsonFactory _jsonFactory = new JsonFactory();
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.codehaus.jackson.JsonNode write(java.util.Map<String, Object> row) throws java.io.IOException, org.Neo4Net.server.rest.domain.JsonParseException
+//ORIGINAL LINE: private org.codehaus.jackson.JsonNode write(java.util.Map<String, Object> row) throws java.io.IOException, Neo4Net.server.rest.domain.JsonParseException
 		 private JsonNode Write( IDictionary<string, object> row )
 		 {
 			  MemoryStream @out = new MemoryStream();

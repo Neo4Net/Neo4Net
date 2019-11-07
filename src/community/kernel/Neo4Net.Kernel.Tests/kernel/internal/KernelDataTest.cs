@@ -46,7 +46,7 @@ namespace Neo4Net.Kernel.Internal
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.mock;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.forced_kernel_id;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.forced_kernel_id;
 
 	public class KernelDataTest
 	{

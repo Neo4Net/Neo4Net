@@ -47,14 +47,14 @@ namespace Neo4Net.causalclustering.core.consensus.membership
 			  MemberId.Marshal marshal = new MemberId.Marshal();
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.causalclustering.identity.MemberId member = new org.Neo4Net.causalclustering.identity.MemberId(java.util.UUID.randomUUID());
+//ORIGINAL LINE: final Neo4Net.causalclustering.identity.MemberId member = new Neo4Net.causalclustering.identity.MemberId(java.util.UUID.randomUUID());
 			  MemberId member = new MemberId( System.Guid.randomUUID() );
 
 			  // when
 			  ByteBuf buffer = Unpooled.buffer( 1_000 );
 			  marshal.MarshalConflict( member, new BoundedNetworkWritableChannel( buffer ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.causalclustering.identity.MemberId recovered = marshal.unmarshal(new org.Neo4Net.causalclustering.messaging.NetworkReadableClosableChannelNetty4(buffer));
+//ORIGINAL LINE: final Neo4Net.causalclustering.identity.MemberId recovered = marshal.unmarshal(new Neo4Net.causalclustering.messaging.NetworkReadableClosableChannelNetty4(buffer));
 			  MemberId recovered = marshal.Unmarshal( new NetworkReadableClosableChannelNetty4( buffer ) );
 
 			  // then
@@ -70,7 +70,7 @@ namespace Neo4Net.causalclustering.core.consensus.membership
 			  // a CoreMember and a ByteBuffer to write it to
 			  MemberId.Marshal marshal = new MemberId.Marshal();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.causalclustering.identity.MemberId aRealMember = new org.Neo4Net.causalclustering.identity.MemberId(java.util.UUID.randomUUID());
+//ORIGINAL LINE: final Neo4Net.causalclustering.identity.MemberId aRealMember = new Neo4Net.causalclustering.identity.MemberId(java.util.UUID.randomUUID());
 			  MemberId aRealMember = new MemberId( System.Guid.randomUUID() );
 
 			  ByteBuf buffer = Unpooled.buffer( 1000 );

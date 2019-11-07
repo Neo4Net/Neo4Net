@@ -33,13 +33,13 @@ namespace Neo4Net.Server.rest.transactional
 		 long Release( long id, TransactionHandle transactionHandle );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: TransactionHandle acquire(long id) throws org.Neo4Net.server.rest.transactional.error.TransactionLifecycleException;
+//ORIGINAL LINE: TransactionHandle acquire(long id) throws Neo4Net.server.rest.transactional.error.TransactionLifecycleException;
 		 TransactionHandle Acquire( long id );
 
 		 void Forget( long id );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: TransactionHandle terminate(long id) throws org.Neo4Net.server.rest.transactional.error.TransactionLifecycleException;
+//ORIGINAL LINE: TransactionHandle terminate(long id) throws Neo4Net.server.rest.transactional.error.TransactionLifecycleException;
 		 TransactionHandle Terminate( long id );
 
 		 void RollbackAllSuspendedTransactions();

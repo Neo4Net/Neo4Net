@@ -28,13 +28,13 @@ namespace Neo4Net.causalclustering.routing.load_balancing.procedure
 	using SocketAddress = Neo4Net.Helpers.SocketAddress;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.routing.Role.READ;
+//	import static Neo4Net.causalclustering.routing.Role.READ;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.routing.Role.ROUTE;
+//	import static Neo4Net.causalclustering.routing.Role.ROUTE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.routing.Role.WRITE;
+//	import static Neo4Net.causalclustering.routing.Role.WRITE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.routing.procedure.RoutingResultFormatHelper.parseEndpoints;
+//	import static Neo4Net.causalclustering.routing.procedure.RoutingResultFormatHelper.parseEndpoints;
 
 	/// <summary>
 	/// The result format of GetServersV1 and GetServersV2 procedures.

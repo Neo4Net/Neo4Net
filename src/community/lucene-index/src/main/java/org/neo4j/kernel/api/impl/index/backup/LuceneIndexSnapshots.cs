@@ -34,7 +34,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index.backup
 	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.emptyResourceIterator;
+//	import static Neo4Net.helpers.collection.Iterators.emptyResourceIterator;
 
 	/// <summary>
 	/// Create iterators over Lucene index files for a particular <seealso cref="IndexCommit index commit"/>.
@@ -53,8 +53,8 @@ namespace Neo4Net.Kernel.Api.Impl.Index.backup
 		 /// <returns> index file name iterator </returns>
 		 /// <exception cref="IOException"> </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static org.Neo4Net.graphdb.ResourceIterator<java.io.File> forIndex(java.io.File indexFolder, org.apache.lucene.index.IndexWriter indexWriter) throws java.io.IOException
-		 public static ResourceIterator<File> ForIndex( File indexFolder, IndexWriter indexWriter )
+//ORIGINAL LINE: public static Neo4Net.graphdb.ResourceIterator<java.io.File> forIndex(java.io.File indexFolder, org.apache.lucene.index.IndexWriter indexWriter) throws java.io.IOException
+		 public static IResourceIterator<File> ForIndex( File indexFolder, IndexWriter indexWriter )
 		 {
 			  IndexDeletionPolicy deletionPolicy = indexWriter.Config.IndexDeletionPolicy;
 			  if ( deletionPolicy is SnapshotDeletionPolicy )
@@ -76,8 +76,8 @@ namespace Neo4Net.Kernel.Api.Impl.Index.backup
 		 /// <returns> index file name resource iterator </returns>
 		 /// <exception cref="IOException"> </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static org.Neo4Net.graphdb.ResourceIterator<java.io.File> forIndex(java.io.File indexFolder, org.apache.lucene.store.Directory directory) throws java.io.IOException
-		 public static ResourceIterator<File> ForIndex( File indexFolder, Directory directory )
+//ORIGINAL LINE: public static Neo4Net.graphdb.ResourceIterator<java.io.File> forIndex(java.io.File indexFolder, org.apache.lucene.store.Directory directory) throws java.io.IOException
+		 public static IResourceIterator<File> ForIndex( File indexFolder, Directory directory )
 		 {
 			  if ( !HasCommits( directory ) )
 			  {

@@ -130,7 +130,7 @@ namespace Neo4Net.Kernel.Api.Internal
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void createNodeWithProperty(Transaction tx, int propId1) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: private void createNodeWithProperty(Transaction tx, int propId1) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 private void CreateNodeWithProperty( Transaction tx, int propId1 )
 		 {
 			  long node = tx.DataWrite().nodeCreate();

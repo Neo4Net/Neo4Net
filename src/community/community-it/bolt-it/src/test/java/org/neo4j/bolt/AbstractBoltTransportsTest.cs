@@ -101,7 +101,7 @@ namespace Neo4Net.Bolt
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected org.Neo4Net.bolt.v1.transport.socket.client.TransportConnection newConnection() throws Exception
+//ORIGINAL LINE: protected Neo4Net.bolt.v1.transport.socket.client.TransportConnection newConnection() throws Exception
 		 protected internal virtual TransportConnection NewConnection()
 		 {
 			  return System.Activator.CreateInstance( ConnectionClass );

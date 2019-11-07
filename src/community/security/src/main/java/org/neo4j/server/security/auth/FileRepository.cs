@@ -36,7 +36,7 @@ namespace Neo4Net.Server.Security.Auth
 	//	 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java static interface methods:
-//		 static void assertNotMigrated(java.io.File file, org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, org.Neo4Net.logging.Log log)
+//		 static void assertNotMigrated(java.io.File file, Neo4Net.io.fs.FileSystemAbstraction fileSystem, Neo4Net.logging.Log log)
 	//	 {
 	//		  File migratedFile = getMigratedFile(file);
 	//		  if (fileSystem.fileExists(migratedFile))

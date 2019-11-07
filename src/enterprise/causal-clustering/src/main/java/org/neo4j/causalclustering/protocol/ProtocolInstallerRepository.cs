@@ -30,14 +30,14 @@ namespace Neo4Net.causalclustering.protocol
 	public class ProtocolInstallerRepository<O> where O : ProtocolInstaller_Orientation
 	{
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private final java.util.Map<org.Neo4Net.causalclustering.protocol.Protocol_ApplicationProtocol,ProtocolInstaller_Factory<O,?>> installers;
+//ORIGINAL LINE: private final java.util.Map<Neo4Net.causalclustering.protocol.Protocol_ApplicationProtocol,ProtocolInstaller_Factory<O,?>> installers;
 		 private readonly IDictionary<Protocol_ApplicationProtocol, ProtocolInstaller_Factory<O, ?>> _installers;
 		 private readonly IDictionary<Protocol_ModifierProtocol, ModifierProtocolInstaller<O>> _modifiers;
 
 		 public ProtocolInstallerRepository<T1>( ICollection<T1> installers, ICollection<ModifierProtocolInstaller<O>> modifiers )
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Map<org.Neo4Net.causalclustering.protocol.Protocol_ApplicationProtocol,ProtocolInstaller_Factory<O,?>> tempInstallers = new java.util.HashMap<>();
+//ORIGINAL LINE: java.util.Map<Neo4Net.causalclustering.protocol.Protocol_ApplicationProtocol,ProtocolInstaller_Factory<O,?>> tempInstallers = new java.util.HashMap<>();
 			  IDictionary<Protocol_ApplicationProtocol, ProtocolInstaller_Factory<O, ?>> tempInstallers = new Dictionary<Protocol_ApplicationProtocol, ProtocolInstaller_Factory<O, ?>>();
 			  installers.forEach( installer => addTo( tempInstallers, installer, installer.applicationProtocol() ) );
 			  this._installers = unmodifiableMap( tempInstallers );

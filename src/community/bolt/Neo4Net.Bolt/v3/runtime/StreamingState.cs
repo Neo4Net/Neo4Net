@@ -34,7 +34,7 @@ namespace Neo4Net.Bolt.v3.runtime
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected org.Neo4Net.bolt.runtime.BoltStateMachineState processStreamResultMessage(boolean pull, org.Neo4Net.bolt.runtime.StateMachineContext context) throws Throwable
+//ORIGINAL LINE: protected Neo4Net.bolt.runtime.BoltStateMachineState processStreamResultMessage(boolean pull, Neo4Net.bolt.runtime.StateMachineContext context) throws Throwable
 		 protected internal override BoltStateMachineState ProcessStreamResultMessage( bool pull, StateMachineContext context )
 		 {
 			  Bookmark bookmark = context.ConnectionState().StatementProcessor.streamResult(recordStream => context.ConnectionState().ResponseHandler.onRecords(recordStream, pull));

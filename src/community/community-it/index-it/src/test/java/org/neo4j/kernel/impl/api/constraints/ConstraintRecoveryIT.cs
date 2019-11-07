@@ -43,11 +43,11 @@ namespace Neo4Net.Kernel.Impl.Api.constraints
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.SchemaIndex.NATIVE20;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.SchemaIndex.NATIVE20;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.default_schema_provider;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.default_schema_provider;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.single;
+//	import static Neo4Net.helpers.collection.Iterables.single;
 
 	public class ConstraintRecoveryIT
 	{
@@ -55,7 +55,7 @@ namespace Neo4Net.Kernel.Impl.Api.constraints
 		 private static readonly Label _label = Label.label( "label1" );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.fs.EphemeralFileSystemRule fileSystemRule = new org.Neo4Net.test.rule.fs.EphemeralFileSystemRule();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.fs.EphemeralFileSystemRule fileSystemRule = new Neo4Net.test.rule.fs.EphemeralFileSystemRule();
 		 public EphemeralFileSystemRule FileSystemRule = new EphemeralFileSystemRule();
 
 		 private GraphDatabaseAPI _db;
@@ -66,7 +66,7 @@ namespace Neo4Net.Kernel.Impl.Api.constraints
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.graphdb.mockfs.EphemeralFileSystemAbstraction fs = fileSystemRule.get();
+//ORIGINAL LINE: final Neo4Net.graphdb.mockfs.EphemeralFileSystemAbstraction fs = fileSystemRule.get();
 			  EphemeralFileSystemAbstraction fs = FileSystemRule.get();
 			  fs.Mkdir( new File( "/tmp" ) );
 			  File pathToDb = new File( "/tmp/bar2" );
@@ -75,7 +75,7 @@ namespace Neo4Net.Kernel.Impl.Api.constraints
 			  dbFactory.FileSystem = fs;
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.graphdb.mockfs.EphemeralFileSystemAbstraction[] storeInNeedOfRecovery = new org.Neo4Net.graphdb.mockfs.EphemeralFileSystemAbstraction[1];
+//ORIGINAL LINE: final Neo4Net.graphdb.mockfs.EphemeralFileSystemAbstraction[] storeInNeedOfRecovery = new Neo4Net.graphdb.mockfs.EphemeralFileSystemAbstraction[1];
 			  EphemeralFileSystemAbstraction[] storeInNeedOfRecovery = new EphemeralFileSystemAbstraction[1];
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final java.util.concurrent.atomic.AtomicBoolean monitorCalled = new java.util.concurrent.atomic.AtomicBoolean(false);

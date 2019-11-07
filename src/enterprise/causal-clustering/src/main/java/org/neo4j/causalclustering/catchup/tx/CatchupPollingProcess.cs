@@ -50,19 +50,19 @@ namespace Neo4Net.causalclustering.catchup.tx
 	using Group = Neo4Net.Scheduler.Group;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.catchup.tx.CatchupPollingProcess.State.CANCELLED;
+//	import static Neo4Net.causalclustering.catchup.tx.CatchupPollingProcess.State.CANCELLED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.catchup.tx.CatchupPollingProcess.State.PANIC;
+//	import static Neo4Net.causalclustering.catchup.tx.CatchupPollingProcess.State.PANIC;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.catchup.tx.CatchupPollingProcess.State.STORE_COPYING;
+//	import static Neo4Net.causalclustering.catchup.tx.CatchupPollingProcess.State.STORE_COPYING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.catchup.tx.CatchupPollingProcess.State.TX_PULLING;
+//	import static Neo4Net.causalclustering.catchup.tx.CatchupPollingProcess.State.TX_PULLING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.catchup.tx.CatchupPollingProcess.Timers.TX_PULLER_TIMER;
+//	import static Neo4Net.causalclustering.catchup.tx.CatchupPollingProcess.Timers.TX_PULLER_TIMER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.schedule.TimeoutFactory.fixedTimeout;
+//	import static Neo4Net.causalclustering.core.consensus.schedule.TimeoutFactory.fixedTimeout;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.schedule.Timer.CancelMode.SYNC_WAIT;
+//	import static Neo4Net.causalclustering.core.consensus.schedule.Timer.CancelMode.SYNC_WAIT;
 
 	/// <summary>
 	/// This class is responsible for pulling transactions from a core server and queuing

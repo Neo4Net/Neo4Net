@@ -49,7 +49,7 @@ namespace Neo4Net.backup
 
 	/// @deprecated This will be moved to an internal package in the future. 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Deprecated("This will be moved to an internal package in the future.") @Service.Implementation(KernelExtensionFactory.class) public class OnlineBackupExtensionFactory extends org.Neo4Net.kernel.extension.KernelExtensionFactory<OnlineBackupExtensionFactory.Dependencies>
+//ORIGINAL LINE: @Deprecated("This will be moved to an internal package in the future.") @Service.Implementation(KernelExtensionFactory.class) public class OnlineBackupExtensionFactory extends Neo4Net.kernel.extension.KernelExtensionFactory<OnlineBackupExtensionFactory.Dependencies>
 	[Obsolete("This will be moved to an internal package in the future.")]
 	public class OnlineBackupExtensionFactory : KernelExtensionFactory<OnlineBackupExtensionFactory.Dependencies>
 	{

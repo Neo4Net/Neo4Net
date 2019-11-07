@@ -97,7 +97,7 @@ namespace Neo4Net.Consistency.Store
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private static <T extends org.Neo4Net.kernel.impl.store.record.AbstractBaseRecord> org.hamcrest.Matcher<RecordReference<T>> isDirectReferenceTo(T record)
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private static <T extends Neo4Net.kernel.impl.store.record.AbstractBaseRecord> org.hamcrest.Matcher<RecordReference<T>> isDirectReferenceTo(T record)
 		 private static Matcher<RecordReference<T>> IsDirectReferenceTo<T>( T record ) where T : Neo4Net.Kernel.Impl.Store.Records.AbstractBaseRecord
 		 {
 			  return ( Matcher ) new DirectReferenceMatcher<RecordReference<T>>( record );

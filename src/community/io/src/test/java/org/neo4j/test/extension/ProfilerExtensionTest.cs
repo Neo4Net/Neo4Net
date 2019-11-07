@@ -34,11 +34,11 @@ namespace Neo4Net.Test.extension
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.platform.engine.discovery.DiscoverySelectors.selectMethod;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.extension.DirectoryExtensionLifecycleVerificationTest.ConfigurationParameterCondition.TEST_TOGGLE;
+//	import static Neo4Net.test.extension.DirectoryExtensionLifecycleVerificationTest.ConfigurationParameterCondition.TEST_TOGGLE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.extension.ExecutionSharedContext.CONTEXT;
+//	import static Neo4Net.test.extension.ExecutionSharedContext.CONTEXT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.extension.ProfilerExtensionVerificationTest.TEST_DIR;
+//	import static Neo4Net.test.extension.ProfilerExtensionVerificationTest.TEST_DIR;
 
 	internal class ProfilerExtensionTest
 	{

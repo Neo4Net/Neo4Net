@@ -71,7 +71,7 @@ namespace Neo4Net.cluster.protocol.atomicbroadcast.multipaxos
 		 {
 			  _broadcastSerializer = new AtomicBroadcastSerializer( new ObjectStreamFactory(), new ObjectStreamFactory() );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.lifecycle.LifeSupport life = new org.Neo4Net.kernel.lifecycle.LifeSupport();
+//ORIGINAL LINE: final Neo4Net.kernel.lifecycle.LifeSupport life = new Neo4Net.kernel.lifecycle.LifeSupport();
 			  LifeSupport life = new LifeSupport();
 			  try
 			  {

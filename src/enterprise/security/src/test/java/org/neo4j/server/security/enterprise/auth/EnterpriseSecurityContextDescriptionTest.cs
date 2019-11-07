@@ -29,7 +29,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using AccessMode = Neo4Net.Kernel.Api.Internal.security.AccessMode;
-	using InvalidAuthTokenException = Neo4Net.Kernel.api.security.exception.InvalidAuthTokenException;
+	using InvalidAuthTokenException = Neo4Net.Kernel.Api.security.exception.InvalidAuthTokenException;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using EnterpriseSecurityContext = Neo4Net.Kernel.enterprise.api.security.EnterpriseSecurityContext;
 	using OverriddenAccessMode = Neo4Net.Kernel.Impl.Api.security.OverriddenAccessMode;
@@ -42,16 +42,16 @@ namespace Neo4Net.Server.security.enterprise.auth
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.security.auth.BasicAuthManagerTest.password;
+//	import static Neo4Net.server.security.auth.BasicAuthManagerTest.password;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.security.auth.SecurityTestUtils.authToken;
+//	import static Neo4Net.server.security.auth.SecurityTestUtils.authToken;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.security.enterprise.auth.plugin.api.PredefinedRoles.PUBLISHER;
+//	import static Neo4Net.server.security.enterprise.auth.plugin.api.PredefinedRoles.PUBLISHER;
 
 	public class EnterpriseSecurityContextDescriptionTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public MultiRealmAuthManagerRule authManagerRule = new MultiRealmAuthManagerRule(new org.Neo4Net.server.security.auth.InMemoryUserRepository(), new org.Neo4Net.server.security.auth.RateLimitedAuthenticationStrategy(java.time.Clock.systemUTC(), org.Neo4Net.kernel.configuration.Config.defaults()));
+//ORIGINAL LINE: @Rule public MultiRealmAuthManagerRule authManagerRule = new MultiRealmAuthManagerRule(new Neo4Net.server.security.auth.InMemoryUserRepository(), new Neo4Net.server.security.auth.RateLimitedAuthenticationStrategy(java.time.Clock.systemUTC(), Neo4Net.kernel.configuration.Config.defaults()));
 		 public MultiRealmAuthManagerRule AuthManagerRule = new MultiRealmAuthManagerRule( new InMemoryUserRepository(), new RateLimitedAuthenticationStrategy(Clock.systemUTC(), Config.defaults()) );
 
 		 private EnterpriseUserManager _manager;
@@ -142,7 +142,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.kernel.enterprise.api.security.EnterpriseSecurityContext context() throws org.Neo4Net.kernel.api.security.exception.InvalidAuthTokenException
+//ORIGINAL LINE: private Neo4Net.kernel.enterprise.api.security.EnterpriseSecurityContext context() throws Neo4Net.kernel.api.security.exception.InvalidAuthTokenException
 		 private EnterpriseSecurityContext Context()
 		 {
 			  return AuthManagerRule.Manager.login( authToken( "mats", "foo" ) ).authorize( _token, GraphDatabaseSettings.DEFAULT_DATABASE_NAME );

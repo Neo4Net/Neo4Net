@@ -49,8 +49,8 @@ namespace Neo4Net.Consistency.report
 	using LabelScanDocument = Neo4Net.Consistency.Store.Synthetic.LabelScanDocument;
 	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.Schema.IndexProviderDescriptor;
 	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
-	using NodeLabelRange = Neo4Net.Kernel.api.labelscan.NodeLabelRange;
-	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
+	using NodeLabelRange = Neo4Net.Kernel.Api.LabelScan.NodeLabelRange;
+	using SchemaDescriptorFactory = Neo4Net.Kernel.Api.schema.SchemaDescriptorFactory;
 	using AbstractBaseRecord = Neo4Net.Kernel.Impl.Store.Records.AbstractBaseRecord;
 	using DynamicRecord = Neo4Net.Kernel.Impl.Store.Records.DynamicRecord;
 	using LabelTokenRecord = Neo4Net.Kernel.Impl.Store.Records.LabelTokenRecord;
@@ -91,13 +91,13 @@ namespace Neo4Net.Consistency.report
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.hamcrest.MockitoHamcrest.argThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.consistency.report.ConsistencyReporter.NO_MONITOR;
+//	import static Neo4Net.consistency.report.ConsistencyReporter.NO_MONITOR;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.Schema.SchemaUtil.idTokenNameLookup;
+//	import static Neo4Net.Kernel.Api.Internal.Schema.SchemaUtil.idTokenNameLookup;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel;
+//	import static Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.counts.keys.CountsKeyFactory.nodeKey;
+//	import static Neo4Net.kernel.impl.store.counts.keys.CountsKeyFactory.nodeKey;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Suite.class) @Suite.SuiteClasses({ConsistencyReporterTest.TestAllReportMessages.class, ConsistencyReporterTest.TestReportLifecycle.class}) public class ConsistencyReporterTest
@@ -116,7 +116,7 @@ namespace Neo4Net.Consistency.report
 					// given
 					ConsistencySummaryStatistics summary = mock( typeof( ConsistencySummaryStatistics ) );
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") org.Neo4Net.consistency.store.RecordAccess records = mock(org.Neo4Net.consistency.store.RecordAccess.class);
+//ORIGINAL LINE: @SuppressWarnings("unchecked") Neo4Net.consistency.store.RecordAccess records = mock(Neo4Net.consistency.store.RecordAccess.class);
 					RecordAccess records = mock( typeof( RecordAccess ) );
 					ConsistencyReporter.ReportHandler handler = new ConsistencyReporter.ReportHandler( new InconsistencyReport( mock( typeof( InconsistencyLogger ) ), summary ), mock( typeof( ConsistencyReporter.ProxyFactory ) ), RecordType.PROPERTY, records, new PropertyRecord( 0 ), NO_MONITOR );
 
@@ -303,12 +303,12 @@ namespace Neo4Net.Consistency.report
 			  private class StatementAnonymousInnerClass : Statement
 			  {
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void evaluate() throws Throwable
-				  public override void evaluate()
+//ORIGINAL LINE: public void Evaluate() throws Throwable
+				  public override void Evaluate()
 				  {
 						try
 						{
-							 @base.evaluate();
+							 @base.Evaluate();
 						}
 						catch ( Exception failure )
 						{
@@ -462,7 +462,7 @@ namespace Neo4Net.Consistency.report
 			  }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private org.Neo4Net.consistency.checking.RecordCheck mockChecker()
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private Neo4Net.consistency.checking.RecordCheck mockChecker()
 			  internal virtual RecordCheck MockChecker()
 			  {
 					RecordCheck checker = mock( typeof( RecordCheck ) );

@@ -33,19 +33,19 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using Values = Neo4Net.Values.Storable.Values;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.collection.PrimitiveLongCollections.EMPTY_LONG_ARRAY;
+//	import static Neo4Net.collection.PrimitiveLongCollections.EMPTY_LONG_ARRAY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.GeometryType.assertHasCoordinates;
+//	import static Neo4Net.kernel.impl.index.schema.GeometryType.assertHasCoordinates;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.GeometryType.dimensions;
+//	import static Neo4Net.kernel.impl.index.schema.GeometryType.dimensions;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.GeometryType.hasCoordinates;
+//	import static Neo4Net.kernel.impl.index.schema.GeometryType.hasCoordinates;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.GeometryType.putCrs;
+//	import static Neo4Net.kernel.impl.index.schema.GeometryType.putCrs;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.GeometryType.putPoint;
+//	import static Neo4Net.kernel.impl.index.schema.GeometryType.putPoint;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.GeometryType.readCrs;
+//	import static Neo4Net.kernel.impl.index.schema.GeometryType.readCrs;
 
 	/// <summary>
 	/// Handles <seealso cref="PointValue[]"/>.

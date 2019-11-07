@@ -42,11 +42,11 @@ namespace Neo4Net.Consistency.checking
 	using SchemaRule = Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.TokenStore.NAME_STORE_BLOCK_SIZE;
+//	import static Neo4Net.kernel.impl.store.TokenStore.NAME_STORE_BLOCK_SIZE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.record.Record.NO_NEXT_PROPERTY;
+//	import static Neo4Net.kernel.impl.store.record.Record.NO_NEXT_PROPERTY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.record.Record.NO_PREV_RELATIONSHIP;
+//	import static Neo4Net.kernel.impl.store.record.Record.NO_PREV_RELATIONSHIP;
 
 	public class TransactionWriter
 	{

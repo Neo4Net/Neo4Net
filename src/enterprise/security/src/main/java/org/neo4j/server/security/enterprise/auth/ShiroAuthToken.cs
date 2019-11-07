@@ -27,8 +27,8 @@ namespace Neo4Net.Server.security.enterprise.auth
 	using AuthenticationToken = org.apache.shiro.authc.AuthenticationToken;
 
 
-	using AuthToken = Neo4Net.Kernel.api.security.AuthToken;
-	using InvalidAuthTokenException = Neo4Net.Kernel.api.security.exception.InvalidAuthTokenException;
+	using AuthToken = Neo4Net.Kernel.Api.security.AuthToken;
+	using InvalidAuthTokenException = Neo4Net.Kernel.Api.security.exception.InvalidAuthTokenException;
 
 	public class ShiroAuthToken : AuthenticationToken
 	{
@@ -47,7 +47,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 {
 			 get
 			 {
-				  return _authToken[Neo4Net.Kernel.api.security.AuthToken_Fields.PRINCIPAL];
+				  return _authToken[Neo4Net.Kernel.Api.security.AuthToken_Fields.PRINCIPAL];
 			 }
 		 }
 
@@ -55,17 +55,17 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 {
 			 get
 			 {
-				  return _authToken[Neo4Net.Kernel.api.security.AuthToken_Fields.CREDENTIALS];
+				  return _authToken[Neo4Net.Kernel.Api.security.AuthToken_Fields.CREDENTIALS];
 			 }
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public String getScheme() throws org.Neo4Net.kernel.api.security.exception.InvalidAuthTokenException
+//ORIGINAL LINE: public String getScheme() throws Neo4Net.kernel.api.security.exception.InvalidAuthTokenException
 		 public virtual string Scheme
 		 {
 			 get
 			 {
-				  return AuthToken.safeCast( Neo4Net.Kernel.api.security.AuthToken_Fields.SCHEME_KEY, _authToken );
+				  return AuthToken.safeCast( Neo4Net.Kernel.Api.security.AuthToken_Fields.SCHEME_KEY, _authToken );
 			 }
 		 }
 
@@ -73,7 +73,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 {
 			 get
 			 {
-				  object scheme = _authToken[Neo4Net.Kernel.api.security.AuthToken_Fields.SCHEME_KEY];
+				  object scheme = _authToken[Neo4Net.Kernel.Api.security.AuthToken_Fields.SCHEME_KEY];
 				  return scheme == null ? null : scheme.ToString();
 			 }
 		 }
@@ -90,7 +90,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 /// returns true if token map does not specify a realm, or if it specifies the requested realm </summary>
 		 public virtual bool SupportsRealm( string realm )
 		 {
-			  object providedRealm = _authToken[Neo4Net.Kernel.api.security.AuthToken_Fields.REALM_KEY];
+			  object providedRealm = _authToken[Neo4Net.Kernel.Api.security.AuthToken_Fields.REALM_KEY];
 
 			  return providedRealm == null || providedRealm.Equals( "*" ) || providedRealm.Equals( realm ) || providedRealm.ToString().Length == 0;
 		 }
@@ -103,11 +103,11 @@ namespace Neo4Net.Server.security.enterprise.auth
 			  }
 
 			  IList<string> keys = new List<string>( _authToken.Keys );
-			  int schemeIndex = keys.IndexOf( Neo4Net.Kernel.api.security.AuthToken_Fields.SCHEME_KEY );
+			  int schemeIndex = keys.IndexOf( Neo4Net.Kernel.Api.security.AuthToken_Fields.SCHEME_KEY );
 			  if ( schemeIndex > 0 )
 			  {
 					keys[schemeIndex] = keys[0];
-					keys[0] = Neo4Net.Kernel.api.security.AuthToken_Fields.SCHEME_KEY;
+					keys[0] = Neo4Net.Kernel.Api.security.AuthToken_Fields.SCHEME_KEY;
 			  }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java stream collectors are not converted by Java to C# Converter:
@@ -116,7 +116,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 
 		 private string KeyValueString( string key )
 		 {
-			  string valueString = key.Equals( Neo4Net.Kernel.api.security.AuthToken_Fields.CREDENTIALS ) ? "******" : _authToken[key].ToString();
+			  string valueString = key.Equals( Neo4Net.Kernel.Api.security.AuthToken_Fields.CREDENTIALS ) ? "******" : _authToken[key].ToString();
 			  return key + KEY_VALUE_DELIMITER + VALUE_DELIMITER + valueString + VALUE_DELIMITER;
 		 }
 	}

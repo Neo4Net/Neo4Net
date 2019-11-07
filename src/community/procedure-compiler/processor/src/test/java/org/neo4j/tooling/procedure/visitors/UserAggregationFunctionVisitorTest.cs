@@ -54,7 +54,7 @@ namespace Neo4Net.Tooling.procedure.visitors
 
 			  _elementTestUtils = new ElementTestUtils( CompilationRule );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.tooling.procedure.compilerutils.TypeMirrorUtils typeMirrorUtils = new org.Neo4Net.tooling.procedure.compilerutils.TypeMirrorUtils(types, elements);
+//ORIGINAL LINE: final Neo4Net.tooling.procedure.compilerutils.TypeMirrorUtils typeMirrorUtils = new Neo4Net.tooling.procedure.compilerutils.TypeMirrorUtils(types, elements);
 			  TypeMirrorUtils typeMirrorUtils = new TypeMirrorUtils( types, elements );
 			  _visitor = new UserAggregationFunctionVisitor( new FunctionVisitor<UserAggregationFunction>( typeof( UserAggregationFunction ), types, elements, typeMirrorUtils, function => CustomNameExtractor.getName( function.name, function.value ), false ), types );
 		 }
@@ -139,7 +139,7 @@ namespace Neo4Net.Tooling.procedure.visitors
 			  Stream<CompilationMessage> errors = _visitor.visit( function );
 
 //JAVA TO C# CONVERTER TODO TASK: Method reference arbitrary object instance method syntax is not converted by Java to C# Converter:
-			  assertThat( errors ).hasSize( 1 ).extracting( CompilationMessage::getCategory, CompilationMessage::getContents ).contains( tuple( Diagnostic.Kind.ERROR, "@org.Neo4Net.procedure.Name usage error: missing on parameter <foo>" ) );
+			  assertThat( errors ).hasSize( 1 ).extracting( CompilationMessage::getCategory, CompilationMessage::getContents ).contains( tuple( Diagnostic.Kind.ERROR, "@Neo4Net.procedure.Name usage error: missing on parameter <foo>" ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -151,7 +151,7 @@ namespace Neo4Net.Tooling.procedure.visitors
 			  Stream<CompilationMessage> errors = _visitor.visit( function );
 
 //JAVA TO C# CONVERTER TODO TASK: Method reference arbitrary object instance method syntax is not converted by Java to C# Converter:
-			  assertThat( errors ).hasSize( 1 ).extracting( CompilationMessage::getCategory, CompilationMessage::getContents ).contains( tuple( Diagnostic.Kind.ERROR, "Unsupported return type <java.lang.Thread> of function defined in " + "<org.Neo4Net.tooling.procedure.visitors.examples.UserAggregationFunctionsExamples." + "StringAggregatorWithWrongResultReturnType#result>." ) );
+			  assertThat( errors ).hasSize( 1 ).extracting( CompilationMessage::getCategory, CompilationMessage::getContents ).contains( tuple( Diagnostic.Kind.ERROR, "Unsupported return type <java.lang.Thread> of function defined in " + "<Neo4Net.tooling.procedure.visitors.examples.UserAggregationFunctionsExamples." + "StringAggregatorWithWrongResultReturnType#result>." ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

@@ -52,15 +52,15 @@ namespace Neo4Net.Server.security.enterprise.auth
 	using AuthProviderTimeoutException = Neo4Net.GraphDb.security.AuthProviderTimeoutException;
 	using AuthSubject = Neo4Net.Kernel.Api.Internal.security.AuthSubject;
 	using AuthenticationResult = Neo4Net.Kernel.Api.Internal.security.AuthenticationResult;
-	using AuthToken = Neo4Net.Kernel.api.security.AuthToken;
-	using InvalidAuthTokenException = Neo4Net.Kernel.api.security.exception.InvalidAuthTokenException;
+	using AuthToken = Neo4Net.Kernel.Api.security.AuthToken;
+	using InvalidAuthTokenException = Neo4Net.Kernel.Api.security.exception.InvalidAuthTokenException;
 	using EnterpriseLoginContext = Neo4Net.Kernel.enterprise.api.security.EnterpriseLoginContext;
 	using SecurityLog = Neo4Net.Server.security.enterprise.log.SecurityLog;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.Strings.escape;
+//	import static Neo4Net.helpers.Strings.escape;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.security.AuthToken.invalidToken;
+//	import static Neo4Net.kernel.api.security.AuthToken.invalidToken;
 
 	internal class MultiRealmAuthManager : EnterpriseAuthAndUserManager
 	{
@@ -100,7 +100,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.kernel.enterprise.api.security.EnterpriseLoginContext login(java.util.Map<String,Object> authToken) throws org.Neo4Net.kernel.api.security.exception.InvalidAuthTokenException
+//ORIGINAL LINE: public Neo4Net.kernel.enterprise.api.security.EnterpriseLoginContext login(java.util.Map<String,Object> authToken) throws Neo4Net.kernel.api.security.exception.InvalidAuthTokenException
 		 public override EnterpriseLoginContext Login( IDictionary<string, object> authToken )
 		 {
 			  try
@@ -179,7 +179,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertValidScheme(ShiroAuthToken token) throws org.Neo4Net.kernel.api.security.exception.InvalidAuthTokenException
+//ORIGINAL LINE: private void assertValidScheme(ShiroAuthToken token) throws Neo4Net.kernel.api.security.exception.InvalidAuthTokenException
 		 private void AssertValidScheme( ShiroAuthToken token )
 		 {
 			  string scheme = token.SchemeSilently;

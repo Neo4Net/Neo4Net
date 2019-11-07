@@ -58,7 +58,7 @@ namespace Neo4Net.Test.causalclustering
 		 public virtual void ShouldAssignPortsToMembersAutomatically()
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.causalclustering.discovery.Cluster<?> cluster = clusterRule.withNumberOfCoreMembers(3).withNumberOfReadReplicas(5).startCluster();
+//ORIGINAL LINE: Neo4Net.causalclustering.discovery.Cluster<?> cluster = clusterRule.withNumberOfCoreMembers(3).withNumberOfReadReplicas(5).startCluster();
 			  Cluster<object> cluster = ClusterRule.withNumberOfCoreMembers( 3 ).withNumberOfReadReplicas( 5 ).startCluster();
 
 			  int numberOfCoreMembers = cluster.CoreMembers().Count;

@@ -124,7 +124,7 @@ namespace Neo4Net.Kernel.ha
 	/// 
 	/// </para>
 	/// </summary>
-	/// <seealso cref= org.Neo4Net.kernel.ha.UpdatePuller </seealso>
+	/// <seealso cref= Neo4Net.kernel.ha.UpdatePuller </seealso>
 	public class SlaveUpdatePuller : ThreadStart, UpdatePuller, CancelListener
 	{
 		 public interface Monitor
@@ -132,9 +132,9 @@ namespace Neo4Net.Kernel.ha
 			  void PulledUpdates( long lastAppliedTxId );
 		 }
 
-		 public static readonly int LogCap = Integer.getInteger( "org.Neo4Net.kernel.ha.SlaveUpdatePuller.LOG_CAP", 10 );
-		 public static readonly long ParkNanos = TimeUnit.MILLISECONDS.toNanos( Integer.getInteger( "org.Neo4Net.kernel.ha.SlaveUpdatePuller.PARK_MILLIS", 100 ) );
-		 public static readonly int AvailabilityAwaitMillis = Integer.getInteger( "org.Neo4Net.kernel.ha.SlaveUpdatePuller.AVAILABILITY_AWAIT_MILLIS", 5000 );
+		 public static readonly int LogCap = Integer.getInteger( "Neo4Net.kernel.ha.SlaveUpdatePuller.LOG_CAP", 10 );
+		 public static readonly long ParkNanos = TimeUnit.MILLISECONDS.toNanos( Integer.getInteger( "Neo4Net.kernel.ha.SlaveUpdatePuller.PARK_MILLIS", 100 ) );
+		 public static readonly int AvailabilityAwaitMillis = Integer.getInteger( "Neo4Net.kernel.ha.SlaveUpdatePuller.AVAILABILITY_AWAIT_MILLIS", 5000 );
 		 public const string UPDATE_PULLER_THREAD_PREFIX = "UpdatePuller@";
 
 		 private static readonly UpdatePuller_Condition _nextTicket = ( _currentTicket, _targetTicket ) => _currentTicket >= _targetTicket;

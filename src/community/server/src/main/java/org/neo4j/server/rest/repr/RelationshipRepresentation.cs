@@ -27,7 +27,7 @@ namespace Neo4Net.Server.rest.repr
 	using TransactionStateChecker = Neo4Net.Server.rest.transactional.TransactionStateChecker;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.map;
+//	import static Neo4Net.helpers.collection.MapUtil.map;
 
 	public sealed class RelationshipRepresentation : ObjectRepresentation, ExtensibleRepresentation, IEntityRepresentation
 	{

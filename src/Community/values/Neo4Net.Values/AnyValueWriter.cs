@@ -38,7 +38,7 @@ namespace Neo4Net.Values
 		 void WriteNodeReference( long nodeId );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void writeNode(long nodeId, org.Neo4Net.values.storable.TextArray labels, org.Neo4Net.values.virtual.MapValue properties) throws E;
+//ORIGINAL LINE: void writeNode(long nodeId, Neo4Net.values.storable.TextArray labels, Neo4Net.values.virtual.MapValue properties) throws E;
 		 void WriteNode( long nodeId, TextArray labels, MapValue properties );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
@@ -46,7 +46,7 @@ namespace Neo4Net.Values
 		 void WriteRelationshipReference( long relId );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void writeRelationship(long relId, long startNodeId, long endNodeId, org.Neo4Net.values.storable.TextValue type, org.Neo4Net.values.virtual.MapValue properties) throws E;
+//ORIGINAL LINE: void writeRelationship(long relId, long startNodeId, long endNodeId, Neo4Net.values.storable.TextValue type, Neo4Net.values.virtual.MapValue properties) throws E;
 		 void WriteRelationship( long relId, long startNodeId, long endNodeId, TextValue type, MapValue properties );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
@@ -66,7 +66,7 @@ namespace Neo4Net.Values
 		 void EndList();
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void writePath(org.Neo4Net.values.virtual.NodeValue[] nodes, org.Neo4Net.values.virtual.RelationshipValue[] relationships) throws E;
+//ORIGINAL LINE: void writePath(Neo4Net.values.virtual.NodeValue[] nodes, Neo4Net.values.virtual.RelationshipValue[] relationships) throws E;
 		 void WritePath( NodeValue[] nodes, RelationshipValue[] relationships );
 
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:

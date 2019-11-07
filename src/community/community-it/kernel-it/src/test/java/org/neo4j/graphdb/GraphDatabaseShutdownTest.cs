@@ -47,19 +47,19 @@ namespace Neo4Net.GraphDb
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.Label.label;
+//	import static Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.Exceptions.rootCause;
+//	import static Neo4Net.helpers.Exceptions.rootCause;
 
 	public class GraphDatabaseShutdownTest
 	{
 		 private GraphDatabaseAPI _db;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.concurrent.OtherThreadRule<Void> t2 = new org.Neo4Net.test.rule.concurrent.OtherThreadRule<>("T2");
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.concurrent.OtherThreadRule<Void> t2 = new Neo4Net.test.rule.concurrent.OtherThreadRule<>("T2");
 		 public readonly OtherThreadRule<Void> T2 = new OtherThreadRule<Void>( "T2" );
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.concurrent.OtherThreadRule<Void> t3 = new org.Neo4Net.test.rule.concurrent.OtherThreadRule<>("T3");
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.concurrent.OtherThreadRule<Void> t3 = new Neo4Net.test.rule.concurrent.OtherThreadRule<>("T3");
 		 public readonly OtherThreadRule<Void> T3 = new OtherThreadRule<Void>( "T3" );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -82,7 +82,7 @@ namespace Neo4Net.GraphDb
 		 {
 			  // GIVEN
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.locking.Locks locks = db.getDependencyResolver().resolveDependency(org.Neo4Net.kernel.impl.locking.Locks.class);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.locking.Locks locks = db.getDependencyResolver().resolveDependency(Neo4Net.kernel.impl.locking.Locks.class);
 			  Locks locks = _db.DependencyResolver.resolveDependency( typeof( Locks ) );
 			  assertEquals( 0, LockCount( locks ) );
 			  Exception exceptionThrownByTxClose = null;

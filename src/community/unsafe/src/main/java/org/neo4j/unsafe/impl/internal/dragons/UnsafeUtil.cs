@@ -34,7 +34,7 @@ namespace Neo4Net.@unsafe.Impl.Internal.Dragons
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Long.compareUnsigned;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.util.FeatureToggles.flag;
+//	import static Neo4Net.util.FeatureToggles.flag;
 
 	/// <summary>
 	/// Always check that the Unsafe utilities are available with the <seealso cref="UnsafeUtil.assertHasUnsafe"/> method, before
@@ -62,7 +62,7 @@ namespace Neo4Net.@unsafe.Impl.Internal.Dragons
 
 		 private static readonly Unsafe @unsafe;
 		 private static readonly MethodHandle _sharedStringConstructor;
-		 private const string ALLOW_UNALIGNED_MEMORY_ACCESS_PROPERTY = "org.Neo4Net.unsafe.impl.internal.dragons.UnsafeUtil.allowUnalignedMemoryAccess";
+		 private const string ALLOW_UNALIGNED_MEMORY_ACCESS_PROPERTY = "Neo4Net.unsafe.impl.internal.dragons.UnsafeUtil.allowUnalignedMemoryAccess";
 
 		 private static readonly ConcurrentSkipListMap<long, Allocation> _allocations = new ConcurrentSkipListMap<long, Allocation>();
 		 private static readonly ThreadLocal<Allocation> _lastUsedAllocation = new ThreadLocal<Allocation>();
@@ -414,7 +414,7 @@ namespace Neo4Net.@unsafe.Impl.Internal.Dragons
 		 /// </summary>
 		 /// <returns> a pointer to the allocated memory </returns>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static long allocateMemory(long bytes, org.Neo4Net.memory.IMemoryAllocationTracker allocationTracker) throws NativeMemoryAllocationRefusedError
+//ORIGINAL LINE: public static long allocateMemory(long bytes, Neo4Net.memory.IMemoryAllocationTracker allocationTracker) throws NativeMemoryAllocationRefusedError
 		 public static long AllocateMemory( long bytes, IMemoryAllocationTracker allocationTracker )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':

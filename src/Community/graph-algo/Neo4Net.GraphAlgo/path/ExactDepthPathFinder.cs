@@ -28,9 +28,9 @@ namespace Neo4Net.GraphAlgo.Path
 	using Uniqueness = Neo4Net.GraphDb.Traversal.Uniqueness;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.traversal.Evaluators.atDepth;
+//	import static Neo4Net.graphdb.traversal.Evaluators.atDepth;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.traversal.Evaluators.toDepth;
+//	import static Neo4Net.graphdb.traversal.Evaluators.toDepth;
 
 	/// <summary>
 	/// Tries to find paths in a graph from a start node to an end node where the

@@ -43,10 +43,10 @@ namespace Neo4Net.Bolt.v1.transport.integration
 	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
 	using Neo4NetTypes = Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes;
 	using ProcedureSignature = Neo4Net.Kernel.Api.Internal.procs.ProcedureSignature;
-	using ResourceTracker = Neo4Net.Kernel.api.ResourceTracker;
+	using ResourceTracker = Neo4Net.Kernel.Api.ResourceTracker;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
-	using CallableProcedure = Neo4Net.Kernel.api.proc.CallableProcedure;
-	using Context = Neo4Net.Kernel.api.proc.Context;
+	using CallableProcedure = Neo4Net.Kernel.Api.Procs.CallableProcedure;
+	using Context = Neo4Net.Kernel.Api.Procs.Context;
 	using Procedures = Neo4Net.Kernel.impl.proc.Procedures;
 	using ValueUtils = Neo4Net.Kernel.impl.util.ValueUtils;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
@@ -61,9 +61,9 @@ namespace Neo4Net.Bolt.v1.transport.integration
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.MatcherAssert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.messaging.util.MessageMatchers.msgSuccess;
+//	import static Neo4Net.bolt.v1.messaging.util.MessageMatchers.msgSuccess;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.procs.ProcedureSignature.procedureSignature;
+//	import static Neo4Net.Kernel.Api.Internal.procs.ProcedureSignature.procedureSignature;
 
 	public class BoltChannelAutoReadLimiterIT
 	{
@@ -161,7 +161,7 @@ namespace Neo4Net.Bolt.v1.transport.integration
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void installSleepProcedure(org.Neo4Net.graphdb.GraphDatabaseService db) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
+//ORIGINAL LINE: private static void installSleepProcedure(Neo4Net.graphdb.GraphDatabaseService db) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 		 private static void InstallSleepProcedure( IGraphDatabaseService db )
 		 {
 			  GraphDatabaseAPI dbApi = ( GraphDatabaseAPI ) db;
@@ -169,14 +169,14 @@ namespace Neo4Net.Bolt.v1.transport.integration
 			  dbApi.DependencyResolver.resolveDependency( typeof( Procedures ) ).register( new CallableProcedure_BasicProcedureAnonymousInnerClass() );
 		 }
 
-		 private class CallableProcedure_BasicProcedureAnonymousInnerClass : Neo4Net.Kernel.api.proc.CallableProcedure_BasicProcedure
+		 private class CallableProcedure_BasicProcedureAnonymousInnerClass : Neo4Net.Kernel.Api.Procs.CallableProcedure_BasicProcedure
 		 {
 			 public CallableProcedure_BasicProcedureAnonymousInnerClass() : base(procedureSignature("boltissue", "sleep").@in("data", Neo4NetTypes.NTString).@out(ProcedureSignature.VOID).build())
 			 {
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.collection.RawIterator<Object[],org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException> apply(org.Neo4Net.kernel.api.proc.Context context, Object[] objects, org.Neo4Net.kernel.api.ResourceTracker resourceTracker) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
+//ORIGINAL LINE: public Neo4Net.collection.RawIterator<Object[],Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException> apply(Neo4Net.kernel.api.proc.Context context, Object[] objects, Neo4Net.kernel.api.ResourceTracker resourceTracker) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 			 public override RawIterator<object[], ProcedureException> apply( Context context, object[] objects, ResourceTracker resourceTracker )
 			 {
 				  try

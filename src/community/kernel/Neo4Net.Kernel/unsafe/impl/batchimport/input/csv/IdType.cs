@@ -37,21 +37,21 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input.csv
 		 /// Used when node ids int input data are any string identifier.
 		 /// </summary>
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//       STRING { public org.Neo4Net.csv.reader.Extractor<JavaToDotNetGenericWildcard> extractor(org.Neo4Net.csv.reader.Extractors extractors) { return extractors.string(); } public org.Neo4Net.unsafe.impl.batchimport.cache.idmapping.IdMapper idMapper(org.Neo4Net.unsafe.impl.batchimport.cache.NumberArrayFactory numberArrayFactory, org.Neo4Net.unsafe.impl.batchimport.input.Groups groups) { return org.Neo4Net.unsafe.impl.batchimport.cache.idmapping.IdMappers.strings(numberArrayFactory, groups); } },
+//       STRING { public Neo4Net.csv.reader.Extractor<JavaToDotNetGenericWildcard> extractor(Neo4Net.csv.reader.Extractors extractors) { return extractors.string(); } public Neo4Net.unsafe.impl.batchimport.cache.idmapping.IdMapper idMapper(Neo4Net.unsafe.impl.batchimport.cache.NumberArrayFactory numberArrayFactory, Neo4Net.unsafe.impl.batchimport.input.Groups groups) { return Neo4Net.unsafe.impl.batchimport.cache.idmapping.IdMappers.strings(numberArrayFactory, groups); } },
 
 		 /// <summary>
 		 /// Used when node ids int input data are any integer identifier. It uses 8b longs for storage,
 		 /// but as a user facing enum a better name is integer
 		 /// </summary>
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//       INTEGER { public org.Neo4Net.csv.reader.Extractor<JavaToDotNetGenericWildcard> extractor(org.Neo4Net.csv.reader.Extractors extractors) { return extractors.long_(); } public org.Neo4Net.unsafe.impl.batchimport.cache.idmapping.IdMapper idMapper(org.Neo4Net.unsafe.impl.batchimport.cache.NumberArrayFactory numberArrayFactory, org.Neo4Net.unsafe.impl.batchimport.input.Groups groups) { return org.Neo4Net.unsafe.impl.batchimport.cache.idmapping.IdMappers.longs(numberArrayFactory, groups); } },
+//       INTEGER { public Neo4Net.csv.reader.Extractor<JavaToDotNetGenericWildcard> extractor(Neo4Net.csv.reader.Extractors extractors) { return extractors.long_(); } public Neo4Net.unsafe.impl.batchimport.cache.idmapping.IdMapper idMapper(Neo4Net.unsafe.impl.batchimport.cache.NumberArrayFactory numberArrayFactory, Neo4Net.unsafe.impl.batchimport.input.Groups groups) { return Neo4Net.unsafe.impl.batchimport.cache.idmapping.IdMappers.longs(numberArrayFactory, groups); } },
 
 		 /// <summary>
 		 /// Used when node ids int input data are specified as long values and points to actual record ids.
 		 /// ADVANCED usage. Performance advantage, but requires carefully planned input data.
 		 /// </summary>
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//       ACTUAL { public org.Neo4Net.csv.reader.Extractor<JavaToDotNetGenericWildcard> extractor(org.Neo4Net.csv.reader.Extractors extractors) { return extractors.long_(); } public org.Neo4Net.unsafe.impl.batchimport.cache.idmapping.IdMapper idMapper(org.Neo4Net.unsafe.impl.batchimport.cache.NumberArrayFactory numberArrayFactory, org.Neo4Net.unsafe.impl.batchimport.input.Groups groups) { return org.Neo4Net.unsafe.impl.batchimport.cache.idmapping.IdMappers.actual(); } };
+//       ACTUAL { public Neo4Net.csv.reader.Extractor<JavaToDotNetGenericWildcard> extractor(Neo4Net.csv.reader.Extractors extractors) { return extractors.long_(); } public Neo4Net.unsafe.impl.batchimport.cache.idmapping.IdMapper idMapper(Neo4Net.unsafe.impl.batchimport.cache.NumberArrayFactory numberArrayFactory, Neo4Net.unsafe.impl.batchimport.input.Groups groups) { return Neo4Net.unsafe.impl.batchimport.cache.idmapping.IdMappers.actual(); } };
 
 		 private static readonly IList<IdType> valueList = new List<IdType>();
 

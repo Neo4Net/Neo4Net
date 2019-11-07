@@ -34,15 +34,15 @@ namespace Neo4Net.Dbms.CommandLine
 	using Config = Neo4Net.Kernel.configuration.Config;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.commandline.arguments.common.Database.ARG_DATABASE;
+//	import static Neo4Net.commandline.arguments.common.Database.ARG_DATABASE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.csv.reader.Configuration_Fields.DEFAULT;
+//	import static Neo4Net.csv.reader.Configuration_Fields.DEFAULT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.tooling.ImportTool.parseFileArgumentList;
+//	import static Neo4Net.tooling.ImportTool.parseFileArgumentList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.Configuration_Fields.DEFAULT_MAX_MEMORY_PERCENT;
+//	import static Neo4Net.@unsafe.impl.batchimport.Configuration_Fields.DEFAULT_MAX_MEMORY_PERCENT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.input.csv.Configuration.COMMAS;
+//	import static Neo4Net.@unsafe.impl.batchimport.input.csv.Configuration.COMMAS;
 
 	public class ImportCommand : AdminCommand
 	{

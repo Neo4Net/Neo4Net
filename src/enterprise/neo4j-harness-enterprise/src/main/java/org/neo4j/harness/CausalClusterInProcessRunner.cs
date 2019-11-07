@@ -26,7 +26,7 @@ namespace Neo4Net.Harness
 {
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.logging.FormattedLogProvider.toOutputStream;
+//	import static Neo4Net.logging.FormattedLogProvider.toOutputStream;
 
 	/// <summary>
 	/// Simple main class for manual testing of the complete causal cluster stack, including server etc.

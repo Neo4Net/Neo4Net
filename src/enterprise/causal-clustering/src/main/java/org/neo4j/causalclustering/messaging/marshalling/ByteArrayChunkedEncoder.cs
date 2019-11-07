@@ -30,9 +30,9 @@ namespace Neo4Net.causalclustering.messaging.marshalling
 	using ChunkedInput = io.netty.handler.stream.ChunkedInput;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.util.Preconditions.requireNonNegative;
+//	import static Neo4Net.util.Preconditions.requireNonNegative;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.util.Preconditions.requirePositive;
+//	import static Neo4Net.util.Preconditions.requirePositive;
 
 	public class ByteArrayChunkedEncoder : ChunkedInput<ByteBuf>
 	{

@@ -35,7 +35,7 @@ namespace Neo4Net.Server.rest.transactional.integration
 	using Node = Neo4Net.GraphDb.Node;
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using Iterables = Neo4Net.Collections.Helpers.Iterables;
-	using KernelTransactionHandle = Neo4Net.Kernel.api.KernelTransactionHandle;
+	using KernelTransactionHandle = Neo4Net.Kernel.Api.KernelTransactionHandle;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using KernelTransactions = Neo4Net.Kernel.Impl.Api.KernelTransactions;
 	using TransactionIdStore = Neo4Net.Kernel.impl.transaction.log.TransactionIdStore;
@@ -63,21 +63,21 @@ namespace Neo4Net.Server.rest.transactional.integration
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.asSet;
+//	import static Neo4Net.helpers.collection.Iterators.asSet;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.domain.JsonHelper.jsonNode;
+//	import static Neo4Net.server.rest.domain.JsonHelper.jsonNode;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.transactional.integration.TransactionMatchers.containsNoErrors;
+//	import static Neo4Net.server.rest.transactional.integration.TransactionMatchers.containsNoErrors;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.transactional.integration.TransactionMatchers.hasErrors;
+//	import static Neo4Net.server.rest.transactional.integration.TransactionMatchers.hasErrors;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.transactional.integration.TransactionMatchers.isValidRFCTimestamp;
+//	import static Neo4Net.server.rest.transactional.integration.TransactionMatchers.isValidRFCTimestamp;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.transactional.integration.TransactionMatchers.matches;
+//	import static Neo4Net.server.rest.transactional.integration.TransactionMatchers.matches;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.server.HTTP.RawPayload.quotedJson;
+//	import static Neo4Net.test.server.HTTP.RawPayload.quotedJson;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.server.HTTP.RawPayload.rawPayload;
+//	import static Neo4Net.test.server.HTTP.RawPayload.rawPayload;
 
 	public class TransactionIT : AbstractRestFunctionalTestBase
 	{
@@ -583,7 +583,7 @@ namespace Neo4Net.Server.rest.transactional.integration
 		 {
 			  // begin
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.test.server.HTTP.Response begin = http.POST("db/data/transaction");
+//ORIGINAL LINE: final Neo4Net.test.server.HTTP.Response begin = http.POST("db/data/transaction");
 			  HTTP.Response begin = _http.POST( "db/data/transaction" );
 			  assertThat( begin.Status(), equalTo(201) );
 			  AssertHasTxLocation( begin );
@@ -608,7 +608,7 @@ namespace Neo4Net.Server.rest.transactional.integration
 			  string statement = "MATCH (n:" + sharedLockLabel + ") DELETE n RETURN count(n)";
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.concurrent.Future<org.Neo4Net.test.server.HTTP.Response> executeFuture = executors.submit(() ->
+//ORIGINAL LINE: final java.util.concurrent.Future<Neo4Net.test.server.HTTP.Response> executeFuture = executors.submit(() ->
 			  Future<HTTP.Response> executeFuture = _executors.submit(() =>
 			  {
 				HTTP.Builder requestBuilder = HTTP.withBaseUri( Server().baseUri() );
@@ -619,7 +619,7 @@ namespace Neo4Net.Server.rest.transactional.integration
 
 			  // terminate
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.concurrent.Future<org.Neo4Net.test.server.HTTP.Response> interruptFuture = executors.submit(() ->
+//ORIGINAL LINE: final java.util.concurrent.Future<Neo4Net.test.server.HTTP.Response> interruptFuture = executors.submit(() ->
 			  Future<HTTP.Response> interruptFuture = _executors.submit(() =>
 			  {
 				WaitForStatementExecution( statement );
@@ -924,7 +924,7 @@ namespace Neo4Net.Server.rest.transactional.integration
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldWorkWhenHittingTheASTCacheInCypher() throws org.Neo4Net.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @Test public void shouldWorkWhenHittingTheASTCacheInCypher() throws Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldWorkWhenHittingTheASTCacheInCypher()
 		 {

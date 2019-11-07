@@ -39,13 +39,13 @@ namespace Neo4Net.Kernel.impl.store
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.asArray;
+//	import static Neo4Net.helpers.collection.Iterables.asArray;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.MyRelTypes.TEST;
+//	import static Neo4Net.kernel.impl.MyRelTypes.TEST;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.MyRelTypes.TEST2;
+//	import static Neo4Net.kernel.impl.MyRelTypes.TEST2;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.MyRelTypes.TEST_TRAVERSAL;
+//	import static Neo4Net.kernel.impl.MyRelTypes.TEST_TRAVERSAL;
 
 	/// <summary>
 	/// Traversing a relationship chain has no consistency guarantees that there will be no change between
@@ -62,7 +62,7 @@ namespace Neo4Net.Kernel.impl.store
 		 private const int THRESHOLD = 10;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.DatabaseRule db = new org.Neo4Net.test.rule.ImpermanentDatabaseRule().withSetting(org.Neo4Net.graphdb.factory.GraphDatabaseSettings.dense_node_threshold, String.ValueOf(THRESHOLD));
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.DatabaseRule db = new Neo4Net.test.rule.ImpermanentDatabaseRule().withSetting(Neo4Net.graphdb.factory.GraphDatabaseSettings.dense_node_threshold, String.ValueOf(THRESHOLD));
 		 public readonly DatabaseRule Db = new ImpermanentDatabaseRule().withSetting(GraphDatabaseSettings.dense_node_threshold, THRESHOLD.ToString());
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -173,7 +173,7 @@ namespace Neo4Net.Kernel.impl.store
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void deleteRelationshipsInSeparateThread(final org.Neo4Net.graphdb.Relationship... relationships) throws InterruptedException
+//ORIGINAL LINE: private void deleteRelationshipsInSeparateThread(final Neo4Net.graphdb.Relationship... relationships) throws InterruptedException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 		 private void DeleteRelationshipsInSeparateThread( params Relationship[] relationships )
 		 {

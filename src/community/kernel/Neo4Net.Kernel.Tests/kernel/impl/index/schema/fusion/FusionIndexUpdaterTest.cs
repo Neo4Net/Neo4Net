@@ -52,31 +52,31 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verifyNoMoreInteractions;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.ArrayUtil.without;
+//	import static Neo4Net.helpers.ArrayUtil.without;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.fusion.FusionIndexTestHelp.add;
+//	import static Neo4Net.kernel.impl.index.schema.fusion.FusionIndexTestHelp.add;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.fusion.FusionIndexTestHelp.change;
+//	import static Neo4Net.kernel.impl.index.schema.fusion.FusionIndexTestHelp.change;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.fusion.FusionIndexTestHelp.fill;
+//	import static Neo4Net.kernel.impl.index.schema.fusion.FusionIndexTestHelp.fill;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.fusion.FusionIndexTestHelp.remove;
+//	import static Neo4Net.kernel.impl.index.schema.fusion.FusionIndexTestHelp.remove;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.fusion.FusionVersion.v00;
+//	import static Neo4Net.kernel.impl.index.schema.fusion.FusionVersion.v00;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.fusion.FusionVersion.v10;
+//	import static Neo4Net.kernel.impl.index.schema.fusion.FusionVersion.v10;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.fusion.FusionVersion.v20;
+//	import static Neo4Net.kernel.impl.index.schema.fusion.FusionVersion.v20;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.fusion.IndexSlot.LUCENE;
+//	import static Neo4Net.kernel.impl.index.schema.fusion.IndexSlot.LUCENE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.fusion.IndexSlot.NUMBER;
+//	import static Neo4Net.kernel.impl.index.schema.fusion.IndexSlot.NUMBER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.fusion.IndexSlot.SPATIAL;
+//	import static Neo4Net.kernel.impl.index.schema.fusion.IndexSlot.SPATIAL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.fusion.IndexSlot.STRING;
+//	import static Neo4Net.kernel.impl.index.schema.fusion.IndexSlot.STRING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.fusion.IndexSlot.TEMPORAL;
+//	import static Neo4Net.kernel.impl.index.schema.fusion.IndexSlot.TEMPORAL;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class FusionIndexUpdaterTest
@@ -87,7 +87,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 		 private FusionIndexUpdater _fusionIndexUpdater;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.RandomRule random = new org.Neo4Net.test.rule.RandomRule();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.RandomRule random = new Neo4Net.test.rule.RandomRule();
 		 public RandomRule Random = new RandomRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Parameterized.Parameters(name = "{0}") public static FusionVersion[] versions()
@@ -267,7 +267,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void verifyAddWithCorrectUpdater(org.Neo4Net.kernel.api.index.IndexUpdater correctPopulator, org.Neo4Net.values.storable.Value... numberValues) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException, java.io.IOException
+//ORIGINAL LINE: private void verifyAddWithCorrectUpdater(Neo4Net.kernel.api.index.IndexUpdater correctPopulator, Neo4Net.values.storable.Value... numberValues) throws Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException, java.io.IOException
 		 private void VerifyAddWithCorrectUpdater( IndexUpdater correctPopulator, params Value[] numberValues )
 		 {
 			  IndexEntryUpdate<LabelSchemaDescriptor> update = add( numberValues );
@@ -283,7 +283,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void verifyRemoveWithCorrectUpdater(org.Neo4Net.kernel.api.index.IndexUpdater correctPopulator, org.Neo4Net.values.storable.Value... numberValues) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException, java.io.IOException
+//ORIGINAL LINE: private void verifyRemoveWithCorrectUpdater(Neo4Net.kernel.api.index.IndexUpdater correctPopulator, Neo4Net.values.storable.Value... numberValues) throws Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException, java.io.IOException
 		 private void VerifyRemoveWithCorrectUpdater( IndexUpdater correctPopulator, params Value[] numberValues )
 		 {
 			  IndexEntryUpdate<LabelSchemaDescriptor> update = FusionIndexTestHelp.Remove( numberValues );
@@ -299,7 +299,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void verifyChangeWithCorrectUpdaterNotMixed(org.Neo4Net.kernel.api.index.IndexUpdater correctPopulator, org.Neo4Net.values.storable.Value before, org.Neo4Net.values.storable.Value after) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException, java.io.IOException
+//ORIGINAL LINE: private void verifyChangeWithCorrectUpdaterNotMixed(Neo4Net.kernel.api.index.IndexUpdater correctPopulator, Neo4Net.values.storable.Value before, Neo4Net.values.storable.Value after) throws Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException, java.io.IOException
 		 private void VerifyChangeWithCorrectUpdaterNotMixed( IndexUpdater correctPopulator, Value before, Value after )
 		 {
 			  IndexEntryUpdate<LabelSchemaDescriptor> update = FusionIndexTestHelp.Change( before, after );
@@ -315,7 +315,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void verifyChangeWithCorrectUpdaterNotMixed(org.Neo4Net.kernel.api.index.IndexUpdater updater, org.Neo4Net.values.storable.Value[] supportedValues) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException, java.io.IOException
+//ORIGINAL LINE: private void verifyChangeWithCorrectUpdaterNotMixed(Neo4Net.kernel.api.index.IndexUpdater updater, Neo4Net.values.storable.Value[] supportedValues) throws Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException, java.io.IOException
 		 private void VerifyChangeWithCorrectUpdaterNotMixed( IndexUpdater updater, Value[] supportedValues )
 		 {
 			  foreach ( Value before in supportedValues )
@@ -328,7 +328,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void verifyChangeWithCorrectUpdaterMixed(org.Neo4Net.kernel.api.index.IndexUpdater expectRemoveFrom, org.Neo4Net.kernel.api.index.IndexUpdater expectAddTo, org.Neo4Net.values.storable.Value[] beforeValues, org.Neo4Net.values.storable.Value[] afterValues) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: private void verifyChangeWithCorrectUpdaterMixed(Neo4Net.kernel.api.index.IndexUpdater expectRemoveFrom, Neo4Net.kernel.api.index.IndexUpdater expectAddTo, Neo4Net.values.storable.Value[] beforeValues, Neo4Net.values.storable.Value[] afterValues) throws java.io.IOException, Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 private void VerifyChangeWithCorrectUpdaterMixed( IndexUpdater expectRemoveFrom, IndexUpdater expectAddTo, Value[] beforeValues, Value[] afterValues )
 		 {
 			  for ( int beforeIndex = 0; beforeIndex < beforeValues.Length; beforeIndex++ )
@@ -405,7 +405,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldInstantiatePartLazilyForSpecificValueGroupUpdates() throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: @Test public void shouldInstantiatePartLazilyForSpecificValueGroupUpdates() throws java.io.IOException, Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldInstantiatePartLazilyForSpecificValueGroupUpdates()
 		 {

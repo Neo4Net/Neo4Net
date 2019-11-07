@@ -57,7 +57,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.fs.FileUtils.relativePath;
+//	import static Neo4Net.io.fs.FileUtils.relativePath;
 
 	public class PrepareStoreCopyFilesTest
 	{
@@ -80,7 +80,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 private readonly FileSystemAbstraction _fileSystemAbstraction = new DefaultFileSystemAbstraction();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory(fileSystemAbstraction);
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.TestDirectory testDirectory = Neo4Net.test.rule.TestDirectory.testDirectory(fileSystemAbstraction);
 		 public TestDirectory TestDirectory;
 		 private PrepareStoreCopyFiles _prepareStoreCopyFiles;
 		 private NeoStoreFileIndexListing _indexListingMock;
@@ -117,7 +117,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void setExpectedFiles(org.Neo4Net.Kernel.Api.StorageEngine.StoreFileMetadata[] expectedFiles) throws java.io.IOException
+//ORIGINAL LINE: private void setExpectedFiles(Neo4Net.Kernel.Api.StorageEngine.StoreFileMetadata[] expectedFiles) throws java.io.IOException
 		 private StoreFileMetadata[] ExpectedFiles
 		 {
 			 set

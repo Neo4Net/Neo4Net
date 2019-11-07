@@ -48,7 +48,7 @@ namespace Neo4Net.Kernel.Impl.Api
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
+//	import static Neo4Net.helpers.collection.MapUtil.stringMap;
 
 	public class TransactionRepresentationCommitProcessIT
 	{
@@ -56,7 +56,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 private const int TOTAL_ACTIVE_THREADS = 6;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.DatabaseRule db = new org.Neo4Net.test.rule.ImpermanentDatabaseRule().withSetting(org.Neo4Net.graphdb.factory.GraphDatabaseSettings.check_point_interval_time, "10ms");
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.DatabaseRule db = new Neo4Net.test.rule.ImpermanentDatabaseRule().withSetting(Neo4Net.graphdb.factory.GraphDatabaseSettings.check_point_interval_time, "10ms");
 		 public readonly DatabaseRule Db = new ImpermanentDatabaseRule().withSetting(GraphDatabaseSettings.check_point_interval_time, "10ms");
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -65,7 +65,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 public virtual void CommitDuringContinuousCheckpointing()
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.GraphDb.Index.Index<org.Neo4Net.graphdb.Node> index;
+//ORIGINAL LINE: final Neo4Net.GraphDb.Index.Index<Neo4Net.graphdb.Node> index;
 			  Index<Node> index;
 			  using ( Transaction tx = Db.beginTx() )
 			  {

@@ -30,9 +30,9 @@ namespace Neo4Net.Kernel.impl.index
 	using WritableChannel = Neo4Net.Kernel.Api.StorageEngine.WritableChannel;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.util.IoPrimitiveUtils.write2bLengthAndString;
+//	import static Neo4Net.kernel.impl.util.IoPrimitiveUtils.write2bLengthAndString;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.util.IoPrimitiveUtils.write3bLengthAndString;
+//	import static Neo4Net.kernel.impl.util.IoPrimitiveUtils.write3bLengthAndString;
 
 	/// <summary>
 	/// Created from <seealso cref="IndexDefineCommand"/> or read from a logical log.
@@ -162,7 +162,7 @@ namespace Neo4Net.Kernel.impl.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected void WriteToFile(org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: protected void WriteToFile(Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
 		 protected internal virtual void WriteToFile( WritableChannel channel )
 		 {
 			  /* c: commandType
@@ -215,14 +215,14 @@ namespace Neo4Net.Kernel.impl.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected void writeIndexCommandHeader(org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: protected void writeIndexCommandHeader(Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
 		 protected internal virtual void WriteIndexCommandHeader( WritableChannel channel )
 		 {
 			  WriteIndexCommandHeader( channel, ValueType, EntityType, NeedsLong( IEntityId ), StartNodeNeedsLong(), EndNodeNeedsLong(), IndexNameId, KeyId );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected static void writeIndexCommandHeader(org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel, byte valueType, byte EntityType, byte IEntityIdNeedsLong, byte startNodeNeedsLong, byte endNodeNeedsLong, int indexNameId, int keyId) throws java.io.IOException
+//ORIGINAL LINE: protected static void writeIndexCommandHeader(Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel, byte valueType, byte EntityType, byte IEntityIdNeedsLong, byte startNodeNeedsLong, byte endNodeNeedsLong, int indexNameId, int keyId) throws java.io.IOException
 		 protected internal static void WriteIndexCommandHeader( WritableChannel channel, sbyte valueType, sbyte EntityType, sbyte IEntityIdNeedsLong, sbyte startNodeNeedsLong, sbyte endNodeNeedsLong, int indexNameId, int keyId )
 		 {
 			  channel.Put( ( sbyte )( ( valueType << 2 ) | ( EntityType << 1 ) | IEntityIdNeedsLong ) );
@@ -232,7 +232,7 @@ namespace Neo4Net.Kernel.impl.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected void putIntOrLong(org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel, long id) throws java.io.IOException
+//ORIGINAL LINE: protected void putIntOrLong(Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel, long id) throws java.io.IOException
 		 protected internal virtual void PutIntOrLong( WritableChannel channel, long id )
 		 {
 			  if ( NeedsLong( id ) == 1 )
@@ -253,7 +253,7 @@ namespace Neo4Net.Kernel.impl.index
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean handle(org.Neo4Net.kernel.impl.api.CommandVisitor visitor) throws java.io.IOException
+//ORIGINAL LINE: public boolean handle(Neo4Net.kernel.impl.api.CommandVisitor visitor) throws java.io.IOException
 			  public override bool Handle( CommandVisitor visitor )
 			  {
 					return visitor.VisitIndexAddNodeCommand( this );
@@ -265,7 +265,7 @@ namespace Neo4Net.Kernel.impl.index
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void serialize(org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public void serialize(Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
 			  public override void Serialize( WritableChannel channel )
 			  {
 					channel.Put( Neo4Net.Kernel.impl.transaction.command.NeoCommandType_Fields.IndexAddCommand );
@@ -342,7 +342,7 @@ namespace Neo4Net.Kernel.impl.index
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean handle(org.Neo4Net.kernel.impl.api.CommandVisitor visitor) throws java.io.IOException
+//ORIGINAL LINE: public boolean handle(Neo4Net.kernel.impl.api.CommandVisitor visitor) throws java.io.IOException
 			  public override bool Handle( CommandVisitor visitor )
 			  {
 					return visitor.VisitIndexAddRelationshipCommand( this );
@@ -358,7 +358,7 @@ namespace Neo4Net.Kernel.impl.index
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void serialize(org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public void serialize(Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
 			  public override void Serialize( WritableChannel channel )
 			  {
 					channel.Put( Neo4Net.Kernel.impl.transaction.command.NeoCommandType_Fields.IndexAddRelationshipCommand );
@@ -376,7 +376,7 @@ namespace Neo4Net.Kernel.impl.index
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean handle(org.Neo4Net.kernel.impl.api.CommandVisitor visitor) throws java.io.IOException
+//ORIGINAL LINE: public boolean handle(Neo4Net.kernel.impl.api.CommandVisitor visitor) throws java.io.IOException
 			  public override bool Handle( CommandVisitor visitor )
 			  {
 					return visitor.VisitIndexRemoveCommand( this );
@@ -388,7 +388,7 @@ namespace Neo4Net.Kernel.impl.index
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void serialize(org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public void serialize(Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
 			  public override void Serialize( WritableChannel channel )
 			  {
 					channel.Put( Neo4Net.Kernel.impl.transaction.command.NeoCommandType_Fields.IndexRemoveCommand );
@@ -404,7 +404,7 @@ namespace Neo4Net.Kernel.impl.index
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean handle(org.Neo4Net.kernel.impl.api.CommandVisitor visitor) throws java.io.IOException
+//ORIGINAL LINE: public boolean handle(Neo4Net.kernel.impl.api.CommandVisitor visitor) throws java.io.IOException
 			  public override bool Handle( CommandVisitor visitor )
 			  {
 					return visitor.VisitIndexDeleteCommand( this );
@@ -416,7 +416,7 @@ namespace Neo4Net.Kernel.impl.index
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void serialize(org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public void serialize(Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
 			  public override void Serialize( WritableChannel channel )
 			  {
 					channel.Put( Neo4Net.Kernel.impl.transaction.command.NeoCommandType_Fields.IndexDeleteCommand );
@@ -467,7 +467,7 @@ namespace Neo4Net.Kernel.impl.index
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean handle(org.Neo4Net.kernel.impl.api.CommandVisitor visitor) throws java.io.IOException
+//ORIGINAL LINE: public boolean handle(Neo4Net.kernel.impl.api.CommandVisitor visitor) throws java.io.IOException
 			  public override bool Handle( CommandVisitor visitor )
 			  {
 					return visitor.VisitIndexCreateCommand( this );
@@ -479,7 +479,7 @@ namespace Neo4Net.Kernel.impl.index
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void serialize(org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public void serialize(Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
 			  public override void Serialize( WritableChannel channel )
 			  {
 					channel.Put( Neo4Net.Kernel.impl.transaction.command.NeoCommandType_Fields.IndexCreateCommand );

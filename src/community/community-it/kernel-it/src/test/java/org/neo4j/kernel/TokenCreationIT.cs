@@ -40,7 +40,7 @@ namespace Neo4Net.Kernel
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.asSet;
+//	import static Neo4Net.helpers.collection.Iterables.asSet;
 
 	/// <summary>
 	/// Token creation should be able to handle cases of concurrent token creation
@@ -54,7 +54,7 @@ namespace Neo4Net.Kernel
 	public class TokenCreationIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.EmbeddedDatabaseRule databaseRule = new org.Neo4Net.test.rule.EmbeddedDatabaseRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.EmbeddedDatabaseRule databaseRule = new Neo4Net.test.rule.EmbeddedDatabaseRule();
 		 public readonly EmbeddedDatabaseRule DatabaseRule = new EmbeddedDatabaseRule();
 
 		 private volatile bool _stop;

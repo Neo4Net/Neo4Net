@@ -82,7 +82,7 @@ namespace Neo4Net.cluster.timeout
 		 /// </summary>
 		 /// <param name="key"> </param>
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: public org.Neo4Net.cluster.com.message.Message<? extends org.Neo4Net.cluster.com.message.MessageType> cancelTimeout(Object key)
+//ORIGINAL LINE: public Neo4Net.cluster.com.message.Message<? extends Neo4Net.cluster.com.message.MessageType> cancelTimeout(Object key)
 		 public virtual Message<MessageType> CancelTimeout( object key )
 		 {
 			  Timeout timeout = _timeouts.Remove( key );
@@ -112,7 +112,7 @@ namespace Neo4Net.cluster.timeout
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: public org.Neo4Net.cluster.com.message.Message<? extends org.Neo4Net.cluster.com.message.MessageType> getTimeoutMessage(String timeoutName)
+//ORIGINAL LINE: public Neo4Net.cluster.com.message.Message<? extends Neo4Net.cluster.com.message.MessageType> getTimeoutMessage(String timeoutName)
 		 public virtual Message<MessageType> GetTimeoutMessage( string timeoutName )
 		 {
 			  Timeout timeout = _timeouts[timeoutName];
@@ -169,7 +169,7 @@ namespace Neo4Net.cluster.timeout
 			  internal long TimeoutConflict;
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private org.Neo4Net.cluster.com.message.Message<? extends org.Neo4Net.cluster.com.message.MessageType> timeoutMessage;
+//ORIGINAL LINE: private Neo4Net.cluster.com.message.Message<? extends Neo4Net.cluster.com.message.MessageType> timeoutMessage;
 			  internal Message<MessageType> TimeoutMessageConflict;
 
 			  public Timeout<T1>( Timeouts outerInstance, long timeout, Message<T1> timeoutMessage ) where T1 : Neo4Net.cluster.com.message.MessageType
@@ -180,7 +180,7 @@ namespace Neo4Net.cluster.timeout
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: public org.Neo4Net.cluster.com.message.Message<? extends org.Neo4Net.cluster.com.message.MessageType> getTimeoutMessage()
+//ORIGINAL LINE: public Neo4Net.cluster.com.message.Message<? extends Neo4Net.cluster.com.message.MessageType> getTimeoutMessage()
 			  public virtual Message<MessageType> TimeoutMessage
 			  {
 				  get

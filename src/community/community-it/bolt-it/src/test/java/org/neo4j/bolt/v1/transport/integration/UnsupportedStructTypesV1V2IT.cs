@@ -36,19 +36,19 @@ namespace Neo4Net.Bolt.v1.transport.integration
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.MatcherAssert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.messaging.example.Edges.ALICE_KNOWS_BOB;
+//	import static Neo4Net.bolt.v1.messaging.example.Edges.ALICE_KNOWS_BOB;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.messaging.example.Nodes.ALICE;
+//	import static Neo4Net.bolt.v1.messaging.example.Nodes.ALICE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.messaging.example.Paths.ALL_PATHS;
+//	import static Neo4Net.bolt.v1.messaging.example.Paths.ALL_PATHS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.messaging.util.MessageMatchers.msgFailure;
+//	import static Neo4Net.bolt.v1.messaging.util.MessageMatchers.msgFailure;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.messaging.util.MessageMatchers.msgSuccess;
+//	import static Neo4Net.bolt.v1.messaging.util.MessageMatchers.msgSuccess;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.transport.integration.TransportTestUtil.eventuallyDisconnects;
+//	import static Neo4Net.bolt.v1.transport.integration.TransportTestUtil.eventuallyDisconnects;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.auth_enabled;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.auth_enabled;
 
 	public class UnsupportedStructTypesV1V2IT : AbstractBoltTransportsTest
 	{
@@ -191,7 +191,7 @@ namespace Neo4Net.Bolt.v1.transport.integration
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void testFailureWithV1Value(org.Neo4Net.values.AnyValue value, String description) throws Exception
+//ORIGINAL LINE: private void testFailureWithV1Value(Neo4Net.values.AnyValue value, String description) throws Exception
 		 private void TestFailureWithV1Value( AnyValue value, string description )
 		 {
 			  Connection.connect( Address ).send( Util.defaultAcceptedVersions() );
@@ -206,7 +206,7 @@ namespace Neo4Net.Bolt.v1.transport.integration
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private byte[] createRunWithV1Value(org.Neo4Net.values.AnyValue value) throws java.io.IOException
+//ORIGINAL LINE: private byte[] createRunWithV1Value(Neo4Net.values.AnyValue value) throws java.io.IOException
 		 private sbyte[] CreateRunWithV1Value( AnyValue value )
 		 {
 			  PackedOutputArray @out = new PackedOutputArray();
@@ -278,7 +278,7 @@ namespace Neo4Net.Bolt.v1.transport.integration
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void packMapWithNullKey(org.Neo4Net.bolt.messaging.Neo4NetPack_Packer packer) throws java.io.IOException
+//ORIGINAL LINE: private static void packMapWithNullKey(Neo4Net.bolt.messaging.Neo4NetPack_Packer packer) throws java.io.IOException
 		 private static void PackMapWithNullKey( Neo4Net.Bolt.messaging.Neo4NetPack_Packer packer )
 		 {
 			  packer.PackMapHeader( 2 );
@@ -289,7 +289,7 @@ namespace Neo4Net.Bolt.v1.transport.integration
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void packMapWithDuplicateKey(org.Neo4Net.bolt.messaging.Neo4NetPack_Packer packer) throws java.io.IOException
+//ORIGINAL LINE: private static void packMapWithDuplicateKey(Neo4Net.bolt.messaging.Neo4NetPack_Packer packer) throws java.io.IOException
 		 private static void PackMapWithDuplicateKey( Neo4Net.Bolt.messaging.Neo4NetPack_Packer packer )
 		 {
 			  packer.PackMapHeader( 2 );

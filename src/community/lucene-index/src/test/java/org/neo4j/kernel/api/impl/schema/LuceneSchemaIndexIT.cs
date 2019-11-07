@@ -37,7 +37,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 	using LuceneAllDocumentsReader = Neo4Net.Kernel.Api.Impl.Index.LuceneAllDocumentsReader;
 	using Neo4Net.Kernel.Api.Index;
 	using IndexUpdater = Neo4Net.Kernel.Api.Index.IndexUpdater;
-	using TestIndexDescriptorFactory = Neo4Net.Kernel.api.schema.index.TestIndexDescriptorFactory;
+	using TestIndexDescriptorFactory = Neo4Net.Kernel.Api.schema.index.TestIndexDescriptorFactory;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using IndexUpdateMode = Neo4Net.Kernel.Impl.Api.index.IndexUpdateMode;
 	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
@@ -58,7 +58,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.asList;
+//	import static Neo4Net.helpers.collection.Iterators.asList;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @ExtendWith({DefaultFileSystemExtension.class, TestDirectoryExtension.class}) class LuceneSchemaIndexIT
@@ -66,10 +66,10 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 	{
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.Neo4Net.test.rule.TestDirectory testDir;
+//ORIGINAL LINE: @Inject private Neo4Net.test.rule.TestDirectory testDir;
 		 private TestDirectory _testDir;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.Neo4Net.io.fs.DefaultFileSystemAbstraction fileSystem;
+//ORIGINAL LINE: @Inject private Neo4Net.io.fs.DefaultFileSystemAbstraction fileSystem;
 		 private DefaultFileSystemAbstraction _fileSystem;
 
 		 private readonly IndexDescriptor _descriptor = TestIndexDescriptorFactory.forLabel( 0, 0 );
@@ -102,7 +102,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 
 					// When & Then
 					IList<string> singlePartitionFileTemplates = Arrays.asList( ".cfe", ".cfs", ".si", "segments_1" );
-					using ( ResourceIterator<File> snapshotIterator = indexAccessor.SnapshotFiles() )
+					using ( IResourceIterator<File> snapshotIterator = indexAccessor.SnapshotFiles() )
 					{
 						 IList<string> indexFileNames = AsFileInsidePartitionNames( snapshotIterator );
 
@@ -125,7 +125,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 		 {
 			  // Given
 			  // A completely un-used index
-			  using ( LuceneIndexAccessor indexAccessor = CreateDefaultIndexAccessor(), ResourceIterator<File> snapshotIterator = indexAccessor.SnapshotFiles() )
+			  using ( LuceneIndexAccessor indexAccessor = CreateDefaultIndexAccessor(), IResourceIterator<File> snapshotIterator = indexAccessor.SnapshotFiles() )
 			  {
 					assertThat( AsUniqueSetOfNames( snapshotIterator ), equalTo( emptySet() ) );
 			  }
@@ -260,14 +260,14 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 			  return new LuceneIndexAccessor( index, _descriptor );
 		 }
 
-		 private IList<string> AsFileInsidePartitionNames( ResourceIterator<File> resources )
+		 private IList<string> AsFileInsidePartitionNames( IResourceIterator<File> resources )
 		 {
 			  int testDirectoryPathLength = _testDir.directory().AbsolutePath.length();
 			  return new IList<string> { resources };
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void generateUpdates(LuceneIndexAccessor indexAccessor, int nodesToUpdate) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: private void generateUpdates(LuceneIndexAccessor indexAccessor, int nodesToUpdate) throws java.io.IOException, Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 private void GenerateUpdates( LuceneIndexAccessor indexAccessor, int nodesToUpdate )
 		 {
 			  using ( IndexUpdater updater = indexAccessor.NewUpdater( IndexUpdateMode.ONLINE ) )
@@ -280,7 +280,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> add(long nodeId, Object value)
+//ORIGINAL LINE: private Neo4Net.kernel.api.index.IndexEntryUpdate<?> add(long nodeId, Object value)
 		 private IndexEntryUpdate<object> Add( long nodeId, object value )
 		 {
 			  return IndexEntryUpdate.add( nodeId, _descriptor.schema(), Values.of(value) );
@@ -302,7 +302,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 			  return templateMatches;
 		 }
 
-		 private static ISet<string> AsUniqueSetOfNames( ResourceIterator<File> files )
+		 private static ISet<string> AsUniqueSetOfNames( IResourceIterator<File> files )
 		 {
 			  List<string> @out = new List<string>();
 			  while ( Files.MoveNext() )

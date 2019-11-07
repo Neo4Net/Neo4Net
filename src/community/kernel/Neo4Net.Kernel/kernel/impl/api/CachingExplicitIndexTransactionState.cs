@@ -23,9 +23,9 @@ namespace Neo4Net.Kernel.Impl.Api
 {
 
 	using ExplicitIndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
-	using ExplicitIndex = Neo4Net.Kernel.api.ExplicitIndex;
+	using ExplicitIndex = Neo4Net.Kernel.Api.ExplicitIndex;
 	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
-	using ExplicitIndexTransactionState = Neo4Net.Kernel.api.txstate.ExplicitIndexTransactionState;
+	using ExplicitIndexTransactionState = Neo4Net.Kernel.Api.txstate.ExplicitIndexTransactionState;
 	using IndexEntityType = Neo4Net.Kernel.impl.index.IndexEntityType;
 	using StorageCommand = Neo4Net.Kernel.Api.StorageEngine.StorageCommand;
 
@@ -41,7 +41,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.kernel.api.ExplicitIndex nodeChanges(String indexName) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: public Neo4Net.kernel.api.ExplicitIndex nodeChanges(String indexName) throws Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 public override ExplicitIndex NodeChanges( string indexName )
 		 {
 			  if ( _nodeExplicitIndexChanges == null )
@@ -57,7 +57,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.kernel.api.ExplicitIndex relationshipChanges(String indexName) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: public Neo4Net.kernel.api.ExplicitIndex relationshipChanges(String indexName) throws Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 public override ExplicitIndex RelationshipChanges( string indexName )
 		 {
 			  if ( _relationshipExplicitIndexChanges == null )
@@ -88,7 +88,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void extractCommands(java.util.Collection<org.Neo4Net.Kernel.Api.StorageEngine.StorageCommand> target) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
+//ORIGINAL LINE: public void extractCommands(java.util.Collection<Neo4Net.Kernel.Api.StorageEngine.StorageCommand> target) throws Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 public override void ExtractCommands( ICollection<StorageCommand> target )
 		 {
 			  _txState.extractCommands( target );

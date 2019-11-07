@@ -49,28 +49,28 @@ namespace Neo4Net.Kernel.impl.core
 	using TooManyLabelsException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.TooManyLabelsException;
 	using Nodes = Neo4Net.Kernel.Api.Internal.Helpers.Nodes;
 	using Neo4Net.Kernel.Api.Internal.Helpers;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
-	using SilentTokenNameLookup = Neo4Net.Kernel.api.SilentTokenNameLookup;
-	using Statement = Neo4Net.Kernel.api.Statement;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
+	using SilentTokenNameLookup = Neo4Net.Kernel.Api.SilentTokenNameLookup;
+	using Statement = Neo4Net.Kernel.Api.Statement;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using EntityType = Neo4Net.Kernel.Api.StorageEngine.EntityType;
 	using Value = Neo4Net.Values.Storable.Value;
 	using Values = Neo4Net.Values.Storable.Values;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.Label.label;
+//	import static Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.TokenRead_Fields.NO_TOKEN;
+//	import static Neo4Net.Kernel.Api.Internal.TokenRead_Fields.NO_TOKEN;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.Helpers.RelationshipSelections.allIterator;
+//	import static Neo4Net.Kernel.Api.Internal.Helpers.RelationshipSelections.allIterator;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.Helpers.RelationshipSelections.incomingIterator;
+//	import static Neo4Net.Kernel.Api.Internal.Helpers.RelationshipSelections.incomingIterator;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.Helpers.RelationshipSelections.outgoingIterator;
+//	import static Neo4Net.Kernel.Api.Internal.Helpers.RelationshipSelections.outgoingIterator;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.StatementConstants.NO_SUCH_LABEL;
+//	import static Neo4Net.kernel.api.StatementConstants.NO_SUCH_LABEL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.StatementConstants.NO_SUCH_RELATIONSHIP_TYPE;
+//	import static Neo4Net.kernel.api.StatementConstants.NO_SUCH_RELATIONSHIP_TYPE;
 
 	public class NodeProxy : Node, RelationshipFactory<Relationship>
 	{
@@ -134,7 +134,7 @@ namespace Neo4Net.Kernel.impl.core
 			  }
 		 }
 
-		 public virtual ResourceIterable<Relationship> Relationships
+		 public virtualIResourceIterable<Relationship> Relationships
 		 {
 			 get
 			 {
@@ -143,26 +143,26 @@ namespace Neo4Net.Kernel.impl.core
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public org.Neo4Net.graphdb.ResourceIterable<org.Neo4Net.graphdb.Relationship> getRelationships(final org.Neo4Net.graphdb.Direction direction)
-		 public virtual ResourceIterable<Relationship> getRelationships( Direction direction )
+//ORIGINAL LINE: public Neo4Net.graphdb.ResourceIterable<Neo4Net.graphdb.Relationship> getRelationships(final Neo4Net.graphdb.Direction direction)
+		 public virtualIResourceIterable<Relationship> getRelationships( Direction direction )
 		 {
 			  KernelTransaction transaction = SafeAcquireTransaction();
 			  return InnerGetRelationships( transaction, direction, null );
 		 }
 
-		 public virtual ResourceIterable<Relationship> getRelationships( params RelationshipType[] types )
+		 public virtualIResourceIterable<Relationship> getRelationships( params RelationshipType[] types )
 		 {
 			  return GetRelationships( Direction.BOTH, types );
 		 }
 
-		 public virtual ResourceIterable<Relationship> getRelationships( RelationshipType type, Direction dir )
+		 public virtualIResourceIterable<Relationship> getRelationships( RelationshipType type, Direction dir )
 		 {
 			  return GetRelationships( dir, type );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public org.Neo4Net.graphdb.ResourceIterable<org.Neo4Net.graphdb.Relationship> getRelationships(final org.Neo4Net.graphdb.Direction direction, org.Neo4Net.graphdb.RelationshipType... types)
-		 public virtual ResourceIterable<Relationship> getRelationships( Direction direction, params RelationshipType[] types )
+//ORIGINAL LINE: public Neo4Net.graphdb.ResourceIterable<Neo4Net.graphdb.Relationship> getRelationships(final Neo4Net.graphdb.Direction direction, Neo4Net.graphdb.RelationshipType... types)
+		 public virtualIResourceIterable<Relationship> getRelationships( Direction direction, params RelationshipType[] types )
 		 {
 			  KernelTransaction transaction = SafeAcquireTransaction();
 			  int[] typeIds = RelTypeIds( types, transaction.TokenRead() );
@@ -170,8 +170,8 @@ namespace Neo4Net.Kernel.impl.core
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private org.Neo4Net.graphdb.ResourceIterable<org.Neo4Net.graphdb.Relationship> innerGetRelationships(org.Neo4Net.kernel.api.KernelTransaction transaction, final org.Neo4Net.graphdb.Direction direction, int[] typeIds)
-		 private ResourceIterable<Relationship> InnerGetRelationships( KernelTransaction transaction, Direction direction, int[] typeIds )
+//ORIGINAL LINE: private Neo4Net.graphdb.ResourceIterable<Neo4Net.graphdb.Relationship> innerGetRelationships(Neo4Net.kernel.api.KernelTransaction transaction, final Neo4Net.graphdb.Direction direction, int[] typeIds)
+		 privateIResourceIterable<Relationship> InnerGetRelationships( KernelTransaction transaction, Direction direction, int[] typeIds )
 		 {
 			  return () => GetRelationshipSelectionIterator(transaction, direction, typeIds);
 		 }
@@ -205,10 +205,10 @@ namespace Neo4Net.Kernel.impl.core
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private boolean innerHasRelationships(final org.Neo4Net.kernel.api.KernelTransaction transaction, final org.Neo4Net.graphdb.Direction direction, int[] typeIds)
+//ORIGINAL LINE: private boolean innerHasRelationships(final Neo4Net.kernel.api.KernelTransaction transaction, final Neo4Net.graphdb.Direction direction, int[] typeIds)
 		 private bool InnerHasRelationships( KernelTransaction transaction, Direction direction, int[] typeIds )
 		 {
-			  using ( ResourceIterator<Relationship> iterator = GetRelationshipSelectionIterator( transaction, direction, typeIds ) )
+			  using ( IResourceIterator<Relationship> iterator = GetRelationshipSelectionIterator( transaction, direction, typeIds ) )
 			  {
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
 					return iterator.hasNext();
@@ -217,7 +217,7 @@ namespace Neo4Net.Kernel.impl.core
 
 		 public override Relationship GetSingleRelationship( RelationshipType type, Direction dir )
 		 {
-			  using ( ResourceIterator<Relationship> rels = GetRelationships( dir, type ).GetEnumerator() )
+			  using ( IResourceIterator<Relationship> rels = GetRelationships( dir, type ).GetEnumerator() )
 			  {
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
 					if ( !rels.hasNext() )
@@ -288,7 +288,7 @@ namespace Neo4Net.Kernel.impl.core
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public Object removeProperty(String key) throws org.Neo4Net.graphdb.NotFoundException
+//ORIGINAL LINE: public Object removeProperty(String key) throws Neo4Net.graphdb.NotFoundException
 		 public override object RemoveProperty( string key )
 		 {
 			  KernelTransaction transaction = _spi.kernelTransaction();
@@ -449,7 +449,7 @@ namespace Neo4Net.Kernel.impl.core
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public Object getProperty(String key) throws org.Neo4Net.graphdb.NotFoundException
+//ORIGINAL LINE: public Object getProperty(String key) throws Neo4Net.graphdb.NotFoundException
 		 public override object GetProperty( string key )
 		 {
 			  if ( null == key )
@@ -795,7 +795,7 @@ namespace Neo4Net.Kernel.impl.core
 			 }
 		 }
 
-		 private ResourceIterator<Relationship> GetRelationshipSelectionIterator( KernelTransaction transaction, Direction direction, int[] typeIds )
+		 private IResourceIterator<Relationship> GetRelationshipSelectionIterator( KernelTransaction transaction, Direction direction, int[] typeIds )
 		 {
 			  NodeCursor node = transaction.AmbientNodeCursor();
 			  transaction.DataRead().singleNode(Id, node);

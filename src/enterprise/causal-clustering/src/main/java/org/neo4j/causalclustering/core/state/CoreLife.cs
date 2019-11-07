@@ -43,7 +43,7 @@ namespace Neo4Net.causalclustering.core.state
 		 private readonly CommandApplicationProcess _applicationProcess;
 		 private readonly CoreStateMachines _coreStateMachines;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private final org.Neo4Net.causalclustering.messaging.LifecycleMessageHandler<?> raftMessageHandler;
+//ORIGINAL LINE: private final Neo4Net.causalclustering.messaging.LifecycleMessageHandler<?> raftMessageHandler;
 		 private readonly LifecycleMessageHandler<object> _raftMessageHandler;
 		 private readonly CoreSnapshotService _snapshotService;
 		 private readonly CoreStateDownloaderService _downloadService;

@@ -46,10 +46,10 @@ namespace Neo4Net.Kernel.ha.cluster
 	{
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Mock(answer = org.mockito.Answers.RETURNS_MOCKS) private org.Neo4Net.kernel.impl.locking.Locks locks;
+//ORIGINAL LINE: @Mock(answer = org.mockito.Answers.RETURNS_MOCKS) private Neo4Net.kernel.impl.locking.Locks locks;
 		 private Locks _locks;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Mock private org.Neo4Net.scheduler.JobScheduler jobScheduler;
+//ORIGINAL LINE: @Mock private Neo4Net.scheduler.JobScheduler jobScheduler;
 		 private IJobScheduler _jobScheduler;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @InjectMocks private DefaultConversationSPI conversationSpi;

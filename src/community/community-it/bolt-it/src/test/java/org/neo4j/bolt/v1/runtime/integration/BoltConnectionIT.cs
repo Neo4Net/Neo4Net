@@ -65,21 +65,21 @@ namespace Neo4Net.Bolt.v1.runtime.integration
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.testing.BoltMatchers.failedWithStatus;
+//	import static Neo4Net.bolt.testing.BoltMatchers.failedWithStatus;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.testing.BoltMatchers.succeeded;
+//	import static Neo4Net.bolt.testing.BoltMatchers.succeeded;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.testing.BoltMatchers.verifyKillsConnection;
+//	import static Neo4Net.bolt.testing.BoltMatchers.verifyKillsConnection;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.testing.NullResponseHandler.nullResponseHandler;
+//	import static Neo4Net.bolt.testing.NullResponseHandler.nullResponseHandler;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.messaging.BoltResponseMessage.IGNORED;
+//	import static Neo4Net.bolt.v1.messaging.BoltResponseMessage.IGNORED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.messaging.BoltResponseMessage.SUCCESS;
+//	import static Neo4Net.bolt.v1.messaging.BoltResponseMessage.SUCCESS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.longValue;
+//	import static Neo4Net.values.storable.Values.longValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.stringValue;
+//	import static Neo4Net.values.storable.Values.stringValue;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @SuppressWarnings("unchecked") public class BoltConnectionIT
@@ -477,7 +477,7 @@ namespace Neo4Net.Bolt.v1.runtime.integration
 //ORIGINAL LINE: final java.util.concurrent.CountDownLatch pullAllCallbackCalled = new java.util.concurrent.CountDownLatch(1);
 			  System.Threading.CountdownEvent pullAllCallbackCalled = new System.Threading.CountdownEvent( 1 );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.concurrent.atomic.AtomicReference<org.Neo4Net.bolt.runtime.Neo4NetError> error = new java.util.concurrent.atomic.AtomicReference<>();
+//ORIGINAL LINE: final java.util.concurrent.atomic.AtomicReference<Neo4Net.bolt.runtime.Neo4NetError> error = new java.util.concurrent.atomic.AtomicReference<>();
 			  AtomicReference<Neo4NetError> error = new AtomicReference<Neo4NetError>();
 
 			  // When something fails while publishing the result stream
@@ -487,7 +487,7 @@ namespace Neo4Net.Bolt.v1.runtime.integration
 			  // Then
 			  assertTrue( pullAllCallbackCalled.await( 30, TimeUnit.SECONDS ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.bolt.runtime.Neo4NetError err = error.get();
+//ORIGINAL LINE: final Neo4Net.bolt.runtime.Neo4NetError err = error.get();
 			  Neo4NetError err = error.get();
 			  assertThat( err.Status(), equalTo(Neo4Net.Kernel.Api.Exceptions.Status_General.UnknownError) );
 			  assertThat( err.Message(), CoreMatchers.containsString("Ooopsies!") );
@@ -710,7 +710,7 @@ namespace Neo4Net.Bolt.v1.runtime.integration
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private String createLocalIrisData(org.Neo4Net.bolt.runtime.BoltStateMachine machine) throws Exception
+//ORIGINAL LINE: private String createLocalIrisData(Neo4Net.bolt.runtime.BoltStateMachine machine) throws Exception
 		 private string CreateLocalIrisData( BoltStateMachine machine )
 		 {
 			  foreach ( string className in _irisClassNames )
@@ -723,21 +723,21 @@ namespace Neo4Net.Bolt.v1.runtime.integration
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private Object[] runAndPull(org.Neo4Net.bolt.runtime.BoltStateMachine machine, String statement) throws Exception
+//ORIGINAL LINE: private Object[] runAndPull(Neo4Net.bolt.runtime.BoltStateMachine machine, String statement) throws Exception
 		 private object[] RunAndPull( BoltStateMachine machine, string statement )
 		 {
 			  return RunAndPull( machine, statement, _emptyParams, SUCCESS );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.cypher.result.QueryResult_Record[] runAndPull(org.Neo4Net.bolt.runtime.BoltStateMachine machine, String statement, org.Neo4Net.values.virtual.MapValue params) throws Exception
+//ORIGINAL LINE: private Neo4Net.cypher.result.QueryResult_Record[] runAndPull(Neo4Net.bolt.runtime.BoltStateMachine machine, String statement, Neo4Net.values.virtual.MapValue params) throws Exception
 		 private QueryResult_Record[] RunAndPull( BoltStateMachine machine, string statement, MapValue @params )
 		 {
 			  return RunAndPull( machine, statement, @params, SUCCESS );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.cypher.result.QueryResult_Record[] runAndPull(org.Neo4Net.bolt.runtime.BoltStateMachine machine, String statement, org.Neo4Net.values.virtual.MapValue params, org.Neo4Net.bolt.v1.messaging.BoltResponseMessage expectedResponse) throws Exception
+//ORIGINAL LINE: private Neo4Net.cypher.result.QueryResult_Record[] runAndPull(Neo4Net.bolt.runtime.BoltStateMachine machine, String statement, Neo4Net.values.virtual.MapValue params, Neo4Net.bolt.v1.messaging.BoltResponseMessage expectedResponse) throws Exception
 		 private QueryResult_Record[] RunAndPull( BoltStateMachine machine, string statement, MapValue @params, BoltResponseMessage expectedResponse )
 		 {
 			  BoltResponseRecorder recorder = new BoltResponseRecorder();

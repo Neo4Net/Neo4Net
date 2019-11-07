@@ -20,12 +20,12 @@
 namespace Neo4Net.Server.Security.Auth
 {
 	using InvalidArgumentsException = Neo4Net.Kernel.Api.Exceptions.InvalidArgumentsException;
-	using PasswordPolicy = Neo4Net.Kernel.api.security.PasswordPolicy;
+	using PasswordPolicy = Neo4Net.Kernel.Api.security.PasswordPolicy;
 
 	public class BasicPasswordPolicy : PasswordPolicy
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void validatePassword(byte[] password) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: public void validatePassword(byte[] password) throws Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 		 public override void ValidatePassword( sbyte[] password )
 		 {
 			  if ( password == null || password.Length == 0 )

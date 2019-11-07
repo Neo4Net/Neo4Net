@@ -50,10 +50,10 @@ namespace Neo4Net.Kernel.impl.store.id
 	public class IdContainerTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.TestDirectory testDirectory = Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory TestDirectory = TestDirectory.testDirectory();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.fs.FileSystemRule fileSystemRule = new org.Neo4Net.test.rule.fs.DefaultFileSystemRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.fs.FileSystemRule fileSystemRule = new Neo4Net.test.rule.fs.DefaultFileSystemRule();
 		 public readonly FileSystemRule FileSystemRule = new DefaultFileSystemRule();
 		 private FileSystemAbstraction _fs;
 		 private File _file;
@@ -236,7 +236,7 @@ namespace Neo4Net.Kernel.impl.store.id
 		 private class SingleByteFileSystemAbstraction : DefaultFileSystemAbstraction
 		 {
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.io.fs.StoreFileChannel open(java.io.File fileName, org.Neo4Net.io.fs.OpenMode mode) throws java.io.IOException
+//ORIGINAL LINE: public Neo4Net.io.fs.StoreFileChannel open(java.io.File fileName, Neo4Net.io.fs.OpenMode mode) throws java.io.IOException
 			  public override StoreFileChannel Open( File fileName, OpenMode mode )
 			  {
 					return new SingleByteBufferChannel( base.Open( fileName, mode ) );

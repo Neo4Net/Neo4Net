@@ -32,8 +32,8 @@ namespace Neo4Net.Kernel.counts
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using Read = Neo4Net.Kernel.Api.Internal.Read;
 	using TokenRead = Neo4Net.Kernel.Api.Internal.TokenRead;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
-	using Statement = Neo4Net.Kernel.api.Statement;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
+	using Statement = Neo4Net.Kernel.Api.Statement;
 	using ThreadToStatementContextBridge = Neo4Net.Kernel.impl.core.ThreadToStatementContextBridge;
 	using Barrier = Neo4Net.Test.Barrier;
 	using Neo4Net.Test;
@@ -44,17 +44,17 @@ namespace Neo4Net.Kernel.counts
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.Label.label;
+//	import static Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.RelationshipType.withName;
+//	import static Neo4Net.graphdb.RelationshipType.withName;
 
 	public class RelationshipCountsTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.DatabaseRule db = new org.Neo4Net.test.rule.ImpermanentDatabaseRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.DatabaseRule db = new Neo4Net.test.rule.ImpermanentDatabaseRule();
 		 public readonly DatabaseRule Db = new ImpermanentDatabaseRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.concurrent.ThreadingRule threading = new org.Neo4Net.test.rule.concurrent.ThreadingRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.concurrent.ThreadingRule threading = new Neo4Net.test.rule.concurrent.ThreadingRule();
 		 public readonly ThreadingRule Threading = new ThreadingRule();
 		 private System.Func<KernelTransaction> _ktxSupplier;
 
@@ -144,7 +144,7 @@ namespace Neo4Net.Kernel.counts
 			  // given
 			  IGraphDatabaseService graphDb = Db.GraphDatabaseAPI;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.test.Barrier_Control barrier = new org.Neo4Net.test.Barrier_Control();
+//ORIGINAL LINE: final Neo4Net.test.Barrier_Control barrier = new Neo4Net.test.Barrier_Control();
 			  Neo4Net.Test.Barrier_Control barrier = new Neo4Net.Test.Barrier_Control();
 			  long before = NumberOfRelationships();
 			  Future<long> tx = Threading.execute(new NamedFunctionAnonymousInnerClass(this, graphDb, barrier)
@@ -201,7 +201,7 @@ namespace Neo4Net.Kernel.counts
 			  // given
 			  IGraphDatabaseService graphDb = Db.GraphDatabaseAPI;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.graphdb.Relationship rel;
+//ORIGINAL LINE: final Neo4Net.graphdb.Relationship rel;
 			  Relationship rel;
 			  using ( Transaction tx = graphDb.BeginTx() )
 			  {
@@ -212,7 +212,7 @@ namespace Neo4Net.Kernel.counts
 					tx.Success();
 			  }
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.test.Barrier_Control barrier = new org.Neo4Net.test.Barrier_Control();
+//ORIGINAL LINE: final Neo4Net.test.Barrier_Control barrier = new Neo4Net.test.Barrier_Control();
 			  Neo4Net.Test.Barrier_Control barrier = new Neo4Net.Test.Barrier_Control();
 			  long before = NumberOfRelationships();
 			  Future<long> tx = Threading.execute(new NamedFunctionAnonymousInnerClass2(this, graphDb, rel, tx, barrier)
@@ -269,7 +269,7 @@ namespace Neo4Net.Kernel.counts
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.graphdb.GraphDatabaseService graphDb = db.getGraphDatabaseAPI();
+//ORIGINAL LINE: final Neo4Net.graphdb.GraphDatabaseService graphDb = db.getGraphDatabaseAPI();
 			  IGraphDatabaseService graphDb = Db.GraphDatabaseAPI;
 			  using ( Transaction tx = graphDb.BeginTx() )
 			  {

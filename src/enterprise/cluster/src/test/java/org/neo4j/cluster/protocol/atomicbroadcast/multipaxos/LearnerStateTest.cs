@@ -119,7 +119,7 @@ namespace Neo4Net.cluster.protocol.atomicbroadcast.multipaxos
 			  verify( ctx, never() ).notifyLearnMiss(paxosInstanceIdIDontHave);
 			  // but the learn failed went out anyway
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: verify(outgoing, times(1)).offer(org.mockito.ArgumentMatchers.argThat<org.Neo4Net.cluster.com.message.Message<? extends org.Neo4Net.cluster.com.message.MessageType>>(new org.Neo4Net.cluster.protocol.MessageArgumentMatcher()
+//ORIGINAL LINE: verify(outgoing, times(1)).offer(org.mockito.ArgumentMatchers.argThat<Neo4Net.cluster.com.message.Message<? extends Neo4Net.cluster.com.message.MessageType>>(new Neo4Net.cluster.protocol.MessageArgumentMatcher()
 			  verify( outgoing, times( 1 ) ).offer(ArgumentMatchers.argThat<Message<MessageType>>(new MessageArgumentMatcher()
 									.onMessageType( LearnerMessage.LearnFailed ).to( URI.create( "c:/2" ) )));
 		 }
@@ -189,11 +189,11 @@ namespace Neo4Net.cluster.protocol.atomicbroadcast.multipaxos
 
 			  // Then
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: verify(outgoing, times(1)).offer(org.mockito.ArgumentMatchers.argThat<org.Neo4Net.cluster.com.message.Message<? extends org.Neo4Net.cluster.com.message.MessageType>>(new org.Neo4Net.cluster.protocol.MessageArgumentMatcher()
+//ORIGINAL LINE: verify(outgoing, times(1)).offer(org.mockito.ArgumentMatchers.argThat<Neo4Net.cluster.com.message.Message<? extends Neo4Net.cluster.com.message.MessageType>>(new Neo4Net.cluster.protocol.MessageArgumentMatcher()
 			  verify( outgoing, times( 1 ) ).offer(ArgumentMatchers.argThat<Message<MessageType>>(new MessageArgumentMatcher()
 									.onMessageType( LearnerMessage.LearnRequest ).to( instance2 )));
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: verify(outgoing, times(1)).offer(org.mockito.ArgumentMatchers.argThat<org.Neo4Net.cluster.com.message.Message<? extends org.Neo4Net.cluster.com.message.MessageType>>(new org.Neo4Net.cluster.protocol.MessageArgumentMatcher()
+//ORIGINAL LINE: verify(outgoing, times(1)).offer(org.mockito.ArgumentMatchers.argThat<Neo4Net.cluster.com.message.Message<? extends Neo4Net.cluster.com.message.MessageType>>(new Neo4Net.cluster.protocol.MessageArgumentMatcher()
 			  verify( outgoing, times( 1 ) ).offer(ArgumentMatchers.argThat<Message<MessageType>>(new MessageArgumentMatcher()
 									.onMessageType( LearnerMessage.LearnRequest ).to( instance4 )));
 			  verifyNoMoreInteractions( outgoing );
@@ -215,7 +215,7 @@ namespace Neo4Net.cluster.protocol.atomicbroadcast.multipaxos
 			  when( context.LastLearnedInstanceId ).thenReturn( payload );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") org.Neo4Net.cluster.com.message.Message<LearnerMessage> message = mock(org.Neo4Net.cluster.com.message.Message.class);
+//ORIGINAL LINE: @SuppressWarnings("unchecked") Neo4Net.cluster.com.message.Message<LearnerMessage> message = mock(Neo4Net.cluster.com.message.Message.class);
 			  Message<LearnerMessage> message = mock( typeof( Message ) );
 			  when( message.MessageType ).thenReturn( LearnerMessage.CatchUp );
 			  when( message.HasHeader( Message.HEADER_INSTANCE_ID ) ).thenReturn( false );
@@ -224,7 +224,7 @@ namespace Neo4Net.cluster.protocol.atomicbroadcast.multipaxos
 
 			  // When
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.cluster.statemachine.State<?,?> state = learner.handle(context, message, mock(org.Neo4Net.cluster.com.message.MessageHolder.class));
+//ORIGINAL LINE: Neo4Net.cluster.statemachine.State<?,?> state = learner.handle(context, message, mock(Neo4Net.cluster.com.message.MessageHolder.class));
 			  State<object, ?> state = learner.handle( context, message, mock( typeof( MessageHolder ) ) );
 
 			  // Then

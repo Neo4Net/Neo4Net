@@ -54,7 +54,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 					return false;
 			  }
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") org.Neo4Net.index.internal.gbptree.Hit<KEY,VALUE> simpleHit = (org.Neo4Net.index.internal.gbptree.Hit<KEY,VALUE>) o;
+//ORIGINAL LINE: @SuppressWarnings("unchecked") Neo4Net.index.internal.gbptree.Hit<KEY,VALUE> simpleHit = (Neo4Net.index.internal.gbptree.Hit<KEY,VALUE>) o;
 			  Hit<KEY, VALUE> simpleHit = ( Hit<KEY, VALUE> ) o;
 			  return Objects.Equals( Key(), simpleHit.Key() ) && Objects.Equals(_value, simpleHit.Value());
 		 }

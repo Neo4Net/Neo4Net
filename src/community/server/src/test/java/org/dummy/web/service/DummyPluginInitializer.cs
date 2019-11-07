@@ -35,7 +35,7 @@ namespace Org.Dummy.Web.Service
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: public java.util.Collection<org.Neo4Net.server.plugins.Injectable<?>> start(org.Neo4Net.graphdb.GraphDatabaseService IGraphDatabaseService, org.apache.commons.configuration.Configuration config)
+//ORIGINAL LINE: public java.util.Collection<Neo4Net.server.plugins.Injectable<?>> start(Neo4Net.graphdb.GraphDatabaseService IGraphDatabaseService, org.apache.commons.configuration.Configuration config)
 		 public override ICollection<Injectable<object>> Start( IGraphDatabaseService IGraphDatabaseService, Configuration config )
 		 {
 			  return Collections.singleton( new InjectableAnonymousInnerClass( this ) );

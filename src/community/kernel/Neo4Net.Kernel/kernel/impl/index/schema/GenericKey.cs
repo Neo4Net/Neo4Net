@@ -34,23 +34,23 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using ValueGroup = Neo4Net.Values.Storable.ValueGroup;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.pagecache.PageCache_Fields.PAGE_SIZE;
+//	import static Neo4Net.io.pagecache.PageCache_Fields.PAGE_SIZE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.DurationIndexKey.AVG_DAY_SECONDS;
+//	import static Neo4Net.kernel.impl.index.schema.DurationIndexKey.AVG_DAY_SECONDS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.DurationIndexKey.AVG_MONTH_SECONDS;
+//	import static Neo4Net.kernel.impl.index.schema.DurationIndexKey.AVG_MONTH_SECONDS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.NativeIndexKey.Inclusion.HIGH;
+//	import static Neo4Net.kernel.impl.index.schema.NativeIndexKey.Inclusion.HIGH;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.NativeIndexKey.Inclusion.LOW;
+//	import static Neo4Net.kernel.impl.index.schema.NativeIndexKey.Inclusion.LOW;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.NativeIndexKey.Inclusion.NEUTRAL;
+//	import static Neo4Net.kernel.impl.index.schema.NativeIndexKey.Inclusion.NEUTRAL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.Type.booleanOf;
+//	import static Neo4Net.kernel.impl.index.schema.Type.booleanOf;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.Types.HIGHEST_BY_VALUE_GROUP;
+//	import static Neo4Net.kernel.impl.index.schema.Types.HIGHEST_BY_VALUE_GROUP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.Types.LOWEST_BY_VALUE_GROUP;
+//	import static Neo4Net.kernel.impl.index.schema.Types.LOWEST_BY_VALUE_GROUP;
 
 	/// <summary>
 	/// A key instance which can handle all types of single values, i.e. not composite keys, but all value types.

@@ -31,11 +31,11 @@ namespace Neo4Net.Kernel.impl.storemigration
 	public abstract class FileOperation
 	{
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//       COPY { public void perform(org.Neo4Net.io.fs.FileSystemAbstraction fs, String fileName, java.io.File fromDirectory, boolean skipNonExistentFromFile, java.io.File toDirectory, ExistingTargetStrategy existingTargetStrategy) throws java.io.IOException { java.io.File fromFile = fromFile(fs, fromDirectory, fileName, skipNonExistentFromFile); if(fromFile != null) { java.io.File toFile = toFile(fs, toDirectory, fileName, existingTargetStrategy); if(toFile != null) { fs.copyFile(fromFile, toFile); } } } },
+//       COPY { public void perform(Neo4Net.io.fs.FileSystemAbstraction fs, String fileName, java.io.File fromDirectory, boolean skipNonExistentFromFile, java.io.File toDirectory, ExistingTargetStrategy existingTargetStrategy) throws java.io.IOException { java.io.File fromFile = fromFile(fs, fromDirectory, fileName, skipNonExistentFromFile); if(fromFile != null) { java.io.File toFile = toFile(fs, toDirectory, fileName, existingTargetStrategy); if(toFile != null) { fs.copyFile(fromFile, toFile); } } } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//       MOVE { public void perform(org.Neo4Net.io.fs.FileSystemAbstraction fs, String fileName, java.io.File fromDirectory, boolean skipNonExistentFromFile, java.io.File toDirectory, ExistingTargetStrategy existingTargetStrategy) throws java.io.IOException { java.io.File fromFile = fromFile(fs, fromDirectory, fileName, skipNonExistentFromFile); if(fromFile != null) { if(toFile(fs, toDirectory, fileName, existingTargetStrategy) != null) { fs.moveToDirectory(fromFile, toDirectory); } } } },
+//       MOVE { public void perform(Neo4Net.io.fs.FileSystemAbstraction fs, String fileName, java.io.File fromDirectory, boolean skipNonExistentFromFile, java.io.File toDirectory, ExistingTargetStrategy existingTargetStrategy) throws java.io.IOException { java.io.File fromFile = fromFile(fs, fromDirectory, fileName, skipNonExistentFromFile); if(fromFile != null) { if(toFile(fs, toDirectory, fileName, existingTargetStrategy) != null) { fs.moveToDirectory(fromFile, toDirectory); } } } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//       DELETE { public void perform(org.Neo4Net.io.fs.FileSystemAbstraction fs, String fileName, java.io.File directory, boolean skipNonExistentFromFile, java.io.File unusedFile, ExistingTargetStrategy unused) { java.io.File file = fromFile(fs, directory, fileName, skipNonExistentFromFile); if(file != null) { fs.deleteFile(file); } } };
+//       DELETE { public void perform(Neo4Net.io.fs.FileSystemAbstraction fs, String fileName, java.io.File directory, boolean skipNonExistentFromFile, java.io.File unusedFile, ExistingTargetStrategy unused) { java.io.File file = fromFile(fs, directory, fileName, skipNonExistentFromFile); if(file != null) { fs.deleteFile(file); } } };
 
 		 private static readonly IList<FileOperation> valueList = new List<FileOperation>();
 
@@ -66,7 +66,7 @@ namespace Neo4Net.Kernel.impl.storemigration
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public abstract void perform(org.Neo4Net.io.fs.FileSystemAbstraction fs, String fileName, java.io.File fromDirectory, boolean skipNonExistentFromFile, java.io.File toDirectory, ExistingTargetStrategy existingTargetStrategy) throws java.io.IOException;
+//ORIGINAL LINE: public abstract void perform(Neo4Net.io.fs.FileSystemAbstraction fs, String fileName, java.io.File fromDirectory, boolean skipNonExistentFromFile, java.io.File toDirectory, ExistingTargetStrategy existingTargetStrategy) throws java.io.IOException;
 		 public abstract void perform( Neo4Net.Io.fs.FileSystemAbstraction fs, string fileName, java.io.File fromDirectory, bool skipNonExistentFromFile, java.io.File toDirectory, ExistingTargetStrategy existingTargetStrategy );
 
 		 public static readonly FileOperation private static java.io.File fromFile( Neo4Net.Io.fs.FileSystemAbstraction fs, java.io.File directory, String name, boolean skipNonExistent )
@@ -81,7 +81,7 @@ namespace Neo4Net.Kernel.impl.storemigration
 			 }
 			 return file;
 		 }
-		 = new FileOperation("private static java.io.File fromFile(org.Neo4Net.io.fs.FileSystemAbstraction fs, java.io.File directory, String name, boolean skipNonExistent) { java.io.File fromFile = new java.io.File(directory, name); if(skipNonExistent && !fs.fileExists(fromFile)) { return null; } return fromFile; } private static java.io.File toFile(org.Neo4Net.io.fs.FileSystemAbstraction fs, java.io.File directory, String name, ExistingTargetStrategy existingTargetStrategy) { java.io.File file = new java.io.File(directory, name); if(fs.fileExists(file)) { switch(existingTargetStrategy) { case FAIL: case OVERWRITE: fs.deleteFile(file); return file; case SKIP: return null; default: throw new IllegalStateException(existingTargetStrategy.name()); } } return file; }", InnerEnum.private static java.io.File fromFile(Neo4Net.Io.fs.FileSystemAbstraction fs, java.io.File directory, String name, boolean skipNonExistent)
+		 = new FileOperation("private static java.io.File fromFile(Neo4Net.io.fs.FileSystemAbstraction fs, java.io.File directory, String name, boolean skipNonExistent) { java.io.File fromFile = new java.io.File(directory, name); if(skipNonExistent && !fs.fileExists(fromFile)) { return null; } return fromFile; } private static java.io.File toFile(Neo4Net.io.fs.FileSystemAbstraction fs, java.io.File directory, String name, ExistingTargetStrategy existingTargetStrategy) { java.io.File file = new java.io.File(directory, name); if(fs.fileExists(file)) { switch(existingTargetStrategy) { case FAIL: case OVERWRITE: fs.deleteFile(file); return file; case SKIP: return null; default: throw new IllegalStateException(existingTargetStrategy.name()); } } return file; }", InnerEnum.private static java.io.File fromFile(Neo4Net.Io.fs.FileSystemAbstraction fs, java.io.File directory, String name, boolean skipNonExistent)
 		 {
 			 java.io.File fromFile = new java.io.File( directory, name ); if ( skipNonExistent && !fs.fileExists( fromFile ) ) { return null; } return fromFile;
 		 }

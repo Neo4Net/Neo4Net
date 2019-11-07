@@ -33,15 +33,15 @@ namespace Neo4Net.causalclustering.stresstests
 	using Log = Neo4Net.Logging.Log;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.backup.impl.SelectedBackupProtocol.CATCHUP;
+//	import static Neo4Net.backup.impl.SelectedBackupProtocol.CATCHUP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.CausalClusteringSettings.transaction_advertised_address;
+//	import static Neo4Net.causalclustering.core.CausalClusteringSettings.transaction_advertised_address;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.Exceptions.findCauseOrSuppressed;
+//	import static Neo4Net.helpers.Exceptions.findCauseOrSuppressed;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.asSet;
+//	import static Neo4Net.helpers.collection.Iterators.asSet;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.NullOutputStream.NULL_OUTPUT_STREAM;
+//	import static Neo4Net.io.NullOutputStream.NULL_OUTPUT_STREAM;
 
 	internal class BackupHelper
 	{
@@ -66,7 +66,7 @@ namespace Neo4Net.causalclustering.stresstests
 		 /// <returns> The optional backup. </returns>
 		 /// <exception cref="Exception"> If any unexpected exceptions happen. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: java.util.Optional<java.io.File> backup(org.Neo4Net.causalclustering.discovery.ClusterMember member) throws Exception
+//ORIGINAL LINE: java.util.Optional<java.io.File> backup(Neo4Net.causalclustering.discovery.ClusterMember member) throws Exception
 		 internal virtual Optional<File> Backup( ClusterMember member )
 		 {
 			  AdvertisedSocketAddress address = member.config().Get(transaction_advertised_address);

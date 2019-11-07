@@ -74,7 +74,7 @@ namespace Neo4Net.causalclustering.core.consensus.log.segmented
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static SegmentFile create(org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, java.io.File file, ReaderPool readerPool, long version, org.Neo4Net.causalclustering.messaging.marshalling.ChannelMarshal<org.Neo4Net.causalclustering.core.replication.ReplicatedContent> contentMarshal, org.Neo4Net.logging.LogProvider logProvider, SegmentHeader header) throws java.io.IOException
+//ORIGINAL LINE: static SegmentFile create(Neo4Net.io.fs.FileSystemAbstraction fileSystem, java.io.File file, ReaderPool readerPool, long version, Neo4Net.causalclustering.messaging.marshalling.ChannelMarshal<Neo4Net.causalclustering.core.replication.ReplicatedContent> contentMarshal, Neo4Net.logging.LogProvider logProvider, SegmentHeader header) throws java.io.IOException
 		 internal static SegmentFile Create( FileSystemAbstraction fileSystem, File file, ReaderPool readerPool, long version, ChannelMarshal<ReplicatedContent> contentMarshal, LogProvider logProvider, SegmentHeader header )
 		 {
 			  if ( fileSystem.FileExists( file ) )
@@ -93,7 +93,7 @@ namespace Neo4Net.causalclustering.core.consensus.log.segmented
 		 /// Channels must be closed when no longer used, so that they are released back to the pool of readers.
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.Neo4Net.cursor.IOCursor<org.Neo4Net.causalclustering.core.consensus.log.EntryRecord> getCursor(long logIndex) throws java.io.IOException, DisposedException
+//ORIGINAL LINE: Neo4Net.cursor.IOCursor<Neo4Net.causalclustering.core.consensus.log.EntryRecord> getCursor(long logIndex) throws java.io.IOException, DisposedException
 		 internal virtual IOCursor<EntryRecord> GetCursor( long logIndex )
 		 {
 			  Debug.Assert( logIndex > _header.prevIndex() );
@@ -129,7 +129,7 @@ namespace Neo4Net.causalclustering.core.consensus.log.segmented
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private synchronized org.Neo4Net.kernel.impl.transaction.log.PhysicalFlushableChannel getOrCreateWriter() throws java.io.IOException
+//ORIGINAL LINE: private synchronized Neo4Net.kernel.impl.transaction.log.PhysicalFlushableChannel getOrCreateWriter() throws java.io.IOException
 		 private PhysicalFlushableChannel OrCreateWriter
 		 {
 			 get
@@ -188,7 +188,7 @@ namespace Neo4Net.causalclustering.core.consensus.log.segmented
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public synchronized void write(long logIndex, org.Neo4Net.causalclustering.core.consensus.log.RaftLogEntry entry) throws java.io.IOException
+//ORIGINAL LINE: public synchronized void write(long logIndex, Neo4Net.causalclustering.core.consensus.log.RaftLogEntry entry) throws java.io.IOException
 		 public virtual void Write( long logIndex, RaftLogEntry entry )
 		 {
 			 lock ( this )

@@ -71,11 +71,11 @@ namespace Neo4Net.Kernel.impl.factory
 	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using IOUtils = Neo4Net.Io.IOUtils;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
-	using SilentTokenNameLookup = Neo4Net.Kernel.api.SilentTokenNameLookup;
-	using Statement = Neo4Net.Kernel.api.Statement;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
+	using SilentTokenNameLookup = Neo4Net.Kernel.Api.SilentTokenNameLookup;
+	using Statement = Neo4Net.Kernel.Api.Statement;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
-	using AutoIndexing = Neo4Net.Kernel.api.explicitindex.AutoIndexing;
+	using AutoIndexing = Neo4Net.Kernel.Api.explicitindex.AutoIndexing;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using Neo4Net.Kernel.Impl.Api;
 	using EmbeddedProxySPI = Neo4Net.Kernel.impl.core.EmbeddedProxySPI;
@@ -110,17 +110,17 @@ namespace Neo4Net.Kernel.impl.factory
 	using MapValue = Neo4Net.Values.@virtual.MapValue;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.transaction_timeout;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.transaction_timeout;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.emptyResourceIterator;
+//	import static Neo4Net.helpers.collection.Iterators.emptyResourceIterator;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.security.LoginContext.AUTH_DISABLED;
+//	import static Neo4Net.Kernel.Api.Internal.security.LoginContext.AUTH_DISABLED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.api.explicitindex.InternalAutoIndexing.NODE_AUTO_INDEX;
+//	import static Neo4Net.kernel.impl.api.explicitindex.InternalAutoIndexing.NODE_AUTO_INDEX;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.api.explicitindex.InternalAutoIndexing.RELATIONSHIP_AUTO_INDEX;
+//	import static Neo4Net.kernel.impl.api.explicitindex.InternalAutoIndexing.RELATIONSHIP_AUTO_INDEX;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.utf8Value;
+//	import static Neo4Net.values.storable.Values.utf8Value;
 
 	/// <summary>
 	/// Implementation of the IGraphDatabaseService/GraphDatabaseService interfaces - the "Core API". Given an <seealso cref="SPI"/>
@@ -142,7 +142,7 @@ namespace Neo4Net.Kernel.impl.factory
 		 /// <summary>
 		 /// This is what you need to implement to get your very own <seealso cref="GraphDatabaseFacade"/>. This SPI exists as a thin
 		 /// layer to make it easy to provide
-		 /// alternate <seealso cref="org.Neo4Net.graphdb.GraphDatabaseService"/> instances without having to re-implement this whole API
+		 /// alternate <seealso cref="Neo4Net.graphdb.GraphDatabaseService"/> instances without having to re-implement this whole API
 		 /// implementation.
 		 /// </summary>
 		 public interface ISPI
@@ -168,7 +168,7 @@ namespace Neo4Net.Kernel.impl.factory
 			  /// <summary>
 			  /// Begin a new kernel transaction with specified timeout in milliseconds.
 			  /// </summary>
-			  /// <exception cref="org.Neo4Net.graphdb.TransactionFailureException"> if unable to begin, or a transaction already exists. </exception>
+			  /// <exception cref="Neo4Net.graphdb.TransactionFailureException"> if unable to begin, or a transaction already exists. </exception>
 			  /// <seealso cref= GraphDatabaseAPI#BeginTransaction(KernelTransaction.Type, LoginContext) </seealso>
 			  KernelTransaction BeginTransaction( KernelTransaction.Type type, LoginContext loginContext, long timeout );
 
@@ -187,7 +187,7 @@ namespace Neo4Net.Kernel.impl.factory
 			  void unregisterTransactionEventHandler<T>( TransactionEventHandler<T> handler );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: java.net.URL validateURLAccess(java.net.URL url) throws org.Neo4Net.graphdb.security.URLAccessValidationError;
+//ORIGINAL LINE: java.net.URL validateURLAccess(java.net.URL url) throws Neo4Net.graphdb.security.URLAccessValidationError;
 			  URL ValidateURLAccess( URL url );
 
 			  GraphDatabaseQueryService QueryService();
@@ -369,21 +369,21 @@ namespace Neo4Net.Kernel.impl.factory
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.graphdb.Result execute(String query) throws org.Neo4Net.graphdb.QueryExecutionException
+//ORIGINAL LINE: public Neo4Net.graphdb.Result execute(String query) throws Neo4Net.graphdb.QueryExecutionException
 		 public override Result Execute( string query )
 		 {
 			  return Execute( query, Collections.emptyMap() );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.graphdb.Result execute(String query, long timeout, java.util.concurrent.TimeUnit unit) throws org.Neo4Net.graphdb.QueryExecutionException
+//ORIGINAL LINE: public Neo4Net.graphdb.Result execute(String query, long timeout, java.util.concurrent.TimeUnit unit) throws Neo4Net.graphdb.QueryExecutionException
 		 public override Result Execute( string query, long timeout, TimeUnit unit )
 		 {
 			  return Execute( query, Collections.emptyMap(), timeout, unit );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.graphdb.Result execute(String query, java.util.Map<String,Object> parameters) throws org.Neo4Net.graphdb.QueryExecutionException
+//ORIGINAL LINE: public Neo4Net.graphdb.Result execute(String query, java.util.Map<String,Object> parameters) throws Neo4Net.graphdb.QueryExecutionException
 		 public override Result Execute( string query, IDictionary<string, object> parameters )
 		 {
 			  // ensure we have a tx and create a context (the tx is gonna get closed by the Cypher result)
@@ -393,7 +393,7 @@ namespace Neo4Net.Kernel.impl.factory
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.graphdb.Result execute(String query, java.util.Map<String,Object> parameters, long timeout, java.util.concurrent.TimeUnit unit) throws org.Neo4Net.graphdb.QueryExecutionException
+//ORIGINAL LINE: public Neo4Net.graphdb.Result execute(String query, java.util.Map<String,Object> parameters, long timeout, java.util.concurrent.TimeUnit unit) throws Neo4Net.graphdb.QueryExecutionException
 		 public override Result Execute( string query, IDictionary<string, object> parameters, long timeout, TimeUnit unit )
 		 {
 			  InternalTransaction transaction = BeginTransaction( KernelTransaction.Type.@implicit, AUTH_DISABLED, timeout, unit );
@@ -401,14 +401,14 @@ namespace Neo4Net.Kernel.impl.factory
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.graphdb.Result execute(org.Neo4Net.kernel.impl.coreapi.InternalTransaction transaction, String query, org.Neo4Net.values.virtual.MapValue parameters) throws org.Neo4Net.graphdb.QueryExecutionException
+//ORIGINAL LINE: public Neo4Net.graphdb.Result execute(Neo4Net.kernel.impl.coreapi.InternalTransaction transaction, String query, Neo4Net.values.virtual.MapValue parameters) throws Neo4Net.graphdb.QueryExecutionException
 		 public virtual Result Execute( InternalTransaction transaction, string query, MapValue parameters )
 		 {
 			  TransactionalContext context = _contextFactory.newContext( ClientConnectionInfo.EMBEDDED_CONNECTION, transaction, query, parameters );
 			  return _spi.executeQuery( query, parameters, context );
 		 }
 
-		 public virtual ResourceIterable<Node> AllNodes
+		 public virtualIResourceIterable<Node> AllNodes
 		 {
 			 get
 			 {
@@ -458,7 +458,7 @@ namespace Neo4Net.Kernel.impl.factory
 			 }
 		 }
 
-		 public virtual ResourceIterable<Relationship> AllRelationships
+		 public virtualIResourceIterable<Relationship> AllRelationships
 		 {
 			 get
 			 {
@@ -508,7 +508,7 @@ namespace Neo4Net.Kernel.impl.factory
 			 }
 		 }
 
-		 public virtual ResourceIterable<Label> AllLabelsInUse
+		 public virtualIResourceIterable<Label> AllLabelsInUse
 		 {
 			 get
 			 {
@@ -516,7 +516,7 @@ namespace Neo4Net.Kernel.impl.factory
 			 }
 		 }
 
-		 public virtual ResourceIterable<RelationshipType> AllRelationshipTypesInUse
+		 public virtualIResourceIterable<RelationshipType> AllRelationshipTypesInUse
 		 {
 			 get
 			 {
@@ -525,14 +525,14 @@ namespace Neo4Net.Kernel.impl.factory
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private <T> org.Neo4Net.graphdb.ResourceIterable<T> allInUse(final org.Neo4Net.kernel.impl.api.TokenAccess<T> tokens)
-		 private ResourceIterable<T> AllInUse<T>( TokenAccess<T> tokens )
+//ORIGINAL LINE: private <T> Neo4Net.graphdb.ResourceIterable<T> allInUse(final Neo4Net.kernel.impl.api.TokenAccess<T> tokens)
+		 privateIResourceIterable<T> AllInUse<T>( TokenAccess<T> tokens )
 		 {
 			  AssertTransactionOpen();
 			  return () => tokens.InUse(_statementContext.getKernelTransactionBoundToThisThread(true));
 		 }
 
-		 public virtual ResourceIterable<Label> AllLabels
+		 public virtualIResourceIterable<Label> AllLabels
 		 {
 			 get
 			 {
@@ -540,7 +540,7 @@ namespace Neo4Net.Kernel.impl.factory
 			 }
 		 }
 
-		 public virtual ResourceIterable<RelationshipType> AllRelationshipTypes
+		 public virtualIResourceIterable<RelationshipType> AllRelationshipTypes
 		 {
 			 get
 			 {
@@ -548,7 +548,7 @@ namespace Neo4Net.Kernel.impl.factory
 			 }
 		 }
 
-		 public virtual ResourceIterable<string> AllPropertyKeys
+		 public virtualIResourceIterable<string> AllPropertyKeys
 		 {
 			 get
 			 {
@@ -557,8 +557,8 @@ namespace Neo4Net.Kernel.impl.factory
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private <T> org.Neo4Net.graphdb.ResourceIterable<T> all(final org.Neo4Net.kernel.impl.api.TokenAccess<T> tokens)
-		 private ResourceIterable<T> All<T>( TokenAccess<T> tokens )
+//ORIGINAL LINE: private <T> Neo4Net.graphdb.ResourceIterable<T> all(final Neo4Net.kernel.impl.api.TokenAccess<T> tokens)
+		 privateIResourceIterable<T> All<T>( TokenAccess<T> tokens )
 		 {
 			  AssertTransactionOpen();
 			  return () =>
@@ -593,8 +593,8 @@ namespace Neo4Net.Kernel.impl.factory
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public org.Neo4Net.graphdb.ResourceIterator<org.Neo4Net.graphdb.Node> findNodes(final org.Neo4Net.graphdb.Label myLabel, final String key, final Object value)
-		 public override ResourceIterator<Node> FindNodes( Label myLabel, string key, object value )
+//ORIGINAL LINE: public Neo4Net.graphdb.ResourceIterator<Neo4Net.graphdb.Node> findNodes(final Neo4Net.graphdb.Label myLabel, final String key, final Object value)
+		 public override IResourceIterator<Node> FindNodes( Label myLabel, string key, object value )
 		 {
 			  KernelTransaction transaction = _statementContext.getKernelTransactionBoundToThisThread( true );
 			  TokenRead tokenRead = transaction.TokenRead();
@@ -603,7 +603,7 @@ namespace Neo4Net.Kernel.impl.factory
 			  return NodesByLabelAndProperty( transaction, labelId, IndexQuery.exact( propertyId, Values.of( value ) ) );
 		 }
 
-		 public override ResourceIterator<Node> FindNodes( Label label, string key1, object value1, string key2, object value2 )
+		 public override IResourceIterator<Node> FindNodes( Label label, string key1, object value1, string key2, object value2 )
 		 {
 			  KernelTransaction transaction = _statementContext.getKernelTransactionBoundToThisThread( true );
 			  TokenRead tokenRead = transaction.TokenRead();
@@ -611,7 +611,7 @@ namespace Neo4Net.Kernel.impl.factory
 			  return NodesByLabelAndProperties( transaction, labelId, IndexQuery.exact( tokenRead.PropertyKey( key1 ), Values.of( value1 ) ), IndexQuery.exact( tokenRead.PropertyKey( key2 ), Values.of( value2 ) ) );
 		 }
 
-		 public override ResourceIterator<Node> FindNodes( Label label, string key1, object value1, string key2, object value2, string key3, object value3 )
+		 public override IResourceIterator<Node> FindNodes( Label label, string key1, object value1, string key2, object value2, string key3, object value3 )
 		 {
 			  KernelTransaction transaction = _statementContext.getKernelTransactionBoundToThisThread( true );
 			  TokenRead tokenRead = transaction.TokenRead();
@@ -619,7 +619,7 @@ namespace Neo4Net.Kernel.impl.factory
 			  return NodesByLabelAndProperties( transaction, labelId, IndexQuery.exact( tokenRead.PropertyKey( key1 ), Values.of( value1 ) ), IndexQuery.exact( tokenRead.PropertyKey( key2 ), Values.of( value2 ) ), IndexQuery.exact( tokenRead.PropertyKey( key3 ), Values.of( value3 ) ) );
 		 }
 
-		 public override ResourceIterator<Node> FindNodes( Label label, IDictionary<string, object> propertyValues )
+		 public override IResourceIterator<Node> FindNodes( Label label, IDictionary<string, object> propertyValues )
 		 {
 			  KernelTransaction transaction = _statementContext.getKernelTransactionBoundToThisThread( true );
 			  TokenRead tokenRead = transaction.TokenRead();
@@ -634,8 +634,8 @@ namespace Neo4Net.Kernel.impl.factory
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public org.Neo4Net.graphdb.ResourceIterator<org.Neo4Net.graphdb.Node> findNodes(final org.Neo4Net.graphdb.Label myLabel, final String key, final String value, final org.Neo4Net.graphdb.StringSearchMode searchMode)
-		 public override ResourceIterator<Node> FindNodes( Label myLabel, string key, string value, StringSearchMode searchMode )
+//ORIGINAL LINE: public Neo4Net.graphdb.ResourceIterator<Neo4Net.graphdb.Node> findNodes(final Neo4Net.graphdb.Label myLabel, final String key, final String value, final Neo4Net.graphdb.StringSearchMode searchMode)
+		 public override IResourceIterator<Node> FindNodes( Label myLabel, string key, string value, StringSearchMode searchMode )
 		 {
 			  KernelTransaction transaction = _statementContext.getKernelTransactionBoundToThisThread( true );
 			  TokenRead tokenRead = transaction.TokenRead();
@@ -663,10 +663,10 @@ namespace Neo4Net.Kernel.impl.factory
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public org.Neo4Net.graphdb.Node findNode(final org.Neo4Net.graphdb.Label myLabel, final String key, final Object value)
+//ORIGINAL LINE: public Neo4Net.graphdb.Node findNode(final Neo4Net.graphdb.Label myLabel, final String key, final Object value)
 		 public override Node FindNode( Label myLabel, string key, object value )
 		 {
-			  using ( ResourceIterator<Node> iterator = FindNodes( myLabel, key, value ) )
+			  using ( IResourceIterator<Node> iterator = FindNodes( myLabel, key, value ) )
 			  {
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
 					if ( !iterator.hasNext() )
@@ -685,8 +685,8 @@ namespace Neo4Net.Kernel.impl.factory
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public org.Neo4Net.graphdb.ResourceIterator<org.Neo4Net.graphdb.Node> findNodes(final org.Neo4Net.graphdb.Label myLabel)
-		 public override ResourceIterator<Node> FindNodes( Label myLabel )
+//ORIGINAL LINE: public Neo4Net.graphdb.ResourceIterator<Neo4Net.graphdb.Node> findNodes(final Neo4Net.graphdb.Label myLabel)
+		 public override IResourceIterator<Node> FindNodes( Label myLabel )
 		 {
 			  return AllNodesWithLabel( myLabel );
 		 }
@@ -701,7 +701,7 @@ namespace Neo4Net.Kernel.impl.factory
 			  return new TopLevelTransaction( _spi.BeginTransaction( type, loginContext, timeoutMillis ) );
 		 }
 
-		 private ResourceIterator<Node> NodesByLabelAndProperty( KernelTransaction transaction, int labelId, IndexQuery query )
+		 private IResourceIterator<Node> NodesByLabelAndProperty( KernelTransaction transaction, int labelId, IndexQuery query )
 		 {
 			  Statement statement = transaction.AcquireStatement();
 			  Read read = transaction.DataRead();
@@ -731,7 +731,7 @@ namespace Neo4Net.Kernel.impl.factory
 			  return GetNodesByLabelAndPropertyWithoutIndex( statement, labelId, query );
 		 }
 
-		 private ResourceIterator<Node> NodesByLabelAndProperties( KernelTransaction transaction, int labelId, params IndexQuery.ExactPredicate[] queries )
+		 private IResourceIterator<Node> NodesByLabelAndProperties( KernelTransaction transaction, int labelId, params IndexQuery.ExactPredicate[] queries )
 		 {
 			  Statement statement = transaction.AcquireStatement();
 			  Read read = transaction.DataRead();
@@ -857,7 +857,7 @@ namespace Neo4Net.Kernel.impl.factory
 			  }
 		 }
 
-		 private ResourceIterator<Node> GetNodesByLabelAndPropertyWithoutIndex( Statement statement, int labelId, params IndexQuery[] queries )
+		 private IResourceIterator<Node> GetNodesByLabelAndPropertyWithoutIndex( Statement statement, int labelId, params IndexQuery[] queries )
 		 {
 			  KernelTransaction transaction = _statementContext.getKernelTransactionBoundToThisThread( true );
 
@@ -871,8 +871,8 @@ namespace Neo4Net.Kernel.impl.factory
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private org.Neo4Net.graphdb.ResourceIterator<org.Neo4Net.graphdb.Node> allNodesWithLabel(final org.Neo4Net.graphdb.Label myLabel)
-		 private ResourceIterator<Node> AllNodesWithLabel( Label myLabel )
+//ORIGINAL LINE: private Neo4Net.graphdb.ResourceIterator<Neo4Net.graphdb.Node> allNodesWithLabel(final Neo4Net.graphdb.Label myLabel)
+		 private IResourceIterator<Node> AllNodesWithLabel( Label myLabel )
 		 {
 			  KernelTransaction ktx = _statementContext.getKernelTransactionBoundToThisThread( true );
 			  Statement statement = ktx.AcquireStatement();
@@ -914,7 +914,7 @@ namespace Neo4Net.Kernel.impl.factory
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.net.URL validateURLAccess(java.net.URL url) throws org.Neo4Net.graphdb.security.URLAccessValidationError
+//ORIGINAL LINE: public java.net.URL validateURLAccess(java.net.URL url) throws Neo4Net.graphdb.security.URLAccessValidationError
 		 public override URL ValidateURLAccess( URL url )
 		 {
 			  return _spi.validateURLAccess( url );
@@ -1108,9 +1108,9 @@ namespace Neo4Net.Kernel.impl.factory
 			  }
 		 }
 
-		 private abstract class PrefetchingNodeResourceIterator : ResourceIterator<Node>
+		 private abstract class PrefetchingNodeResourceIterator : IResourceIterator<Node>
 		 {
-			 public abstract ResourceIterator<R> Map( System.Func<T, R> map );
+			 public abstract IResourceIterator<R> Map( System.Func<T, R> map );
 			 public abstract java.util.stream.Stream<T> Stream();
 			  internal readonly Statement Statement;
 			  internal readonly NodeFactory NodeFactory;

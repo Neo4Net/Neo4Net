@@ -42,7 +42,7 @@ namespace Neo4Net.ha.correctness
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void export(org.Neo4Net.graphdb.GraphDatabaseService db) throws java.io.IOException
+//ORIGINAL LINE: public void export(Neo4Net.graphdb.GraphDatabaseService db) throws java.io.IOException
 		 public virtual void Export( IGraphDatabaseService db )
 		 {
 			  FileStream stream = new FileStream( _target, FileMode.Create, FileAccess.Write );

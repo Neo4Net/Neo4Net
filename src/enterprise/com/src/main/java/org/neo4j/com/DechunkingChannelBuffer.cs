@@ -32,7 +32,7 @@ namespace Neo4Net.com
 
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.util.Bits.numbersToBitString;
+//	import static Neo4Net.kernel.impl.util.Bits.numbersToBitString;
 
 	internal class DechunkingChannelBuffer : ChannelBuffer
 	{

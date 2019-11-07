@@ -19,7 +19,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Kernel.api.proc
+namespace Neo4Net.Kernel.Api.Procs
 {
 
 	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
@@ -40,7 +40,7 @@ namespace Neo4Net.Kernel.api.proc
 	{
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: <T> T get(Key<T> key) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
+//ORIGINAL LINE: <T> T get(Key<T> key) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
 		 T get<T>( Key<T> key );
 		 T getOrElse<T>( Key<T> key, T orElse );
 	}

@@ -32,14 +32,14 @@ namespace Neo4Net.Kernel.enterprise.builtinprocs
 		 private readonly long _kernelQueryId;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static QueryId ofInternalId(long queryId) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: public static QueryId ofInternalId(long queryId) throws Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 		 public static QueryId OfInternalId( long queryId )
 		 {
 			  return new QueryId( queryId );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static QueryId fromExternalString(String queryIdText) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: public static QueryId fromExternalString(String queryIdText) throws Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 		 public static QueryId FromExternalString( string queryIdText )
 		 {
 			  try
@@ -58,7 +58,7 @@ namespace Neo4Net.Kernel.enterprise.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private QueryId(long kernelQueryId) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: private QueryId(long kernelQueryId) throws Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 		 private QueryId( long kernelQueryId )
 		 {
 			  if ( kernelQueryId <= 0 )

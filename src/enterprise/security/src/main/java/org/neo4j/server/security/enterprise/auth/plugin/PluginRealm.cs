@@ -35,7 +35,7 @@ namespace Neo4Net.Server.security.enterprise.auth.plugin
 
 
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using InvalidAuthTokenException = Neo4Net.Kernel.api.security.exception.InvalidAuthTokenException;
+	using InvalidAuthTokenException = Neo4Net.Kernel.Api.security.exception.InvalidAuthTokenException;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using Version = Neo4Net.Kernel.Internal.Version;
 	using Log = Neo4Net.Logging.Log;
@@ -50,7 +50,7 @@ namespace Neo4Net.Server.security.enterprise.auth.plugin
 	using SecurityLog = Neo4Net.Server.security.enterprise.log.SecurityLog;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.security.enterprise.configuration.SecuritySettings.PLUGIN_REALM_NAME_PREFIX;
+//	import static Neo4Net.server.security.enterprise.configuration.SecuritySettings.PLUGIN_REALM_NAME_PREFIX;
 
 	public class PluginRealm : AuthorizingRealm, RealmLifecycle, ShiroAuthorizationInfoProvider
 	{

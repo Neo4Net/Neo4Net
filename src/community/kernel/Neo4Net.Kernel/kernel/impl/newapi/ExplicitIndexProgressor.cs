@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Kernel.Impl.Newapi
 {
-	using ExplicitIndexHits = Neo4Net.Kernel.api.ExplicitIndexHits;
+	using ExplicitIndexHits = Neo4Net.Kernel.Api.ExplicitIndexHits;
 	using IndexProgressor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor;
 
 	public class ExplicitIndexProgressor : IndexProgressor

@@ -92,14 +92,14 @@ namespace Neo4Net.GraphDb
          {
             switch (this)
             {
-               case OUTGOING:
-                  return INCOMING;
+               case Outgoing:
+                  return Incoming;
 
-               case INCOMING:
-                  return OUTGOING;
+               case Incoming:
+                  return Outgoing;
 
-               case BOTH:
-                  return BOTH;
+               case Both:
+                  return Both;
 
                default:
                   throw new System.InvalidOperationException("Unknown Direction " + "enum: " + this);
@@ -107,7 +107,7 @@ namespace Neo4Net.GraphDb
          }
       }
 
-      public static IList<Direction> values()
+      public static IList<Direction> Values()
       {
          return valueList;
       }

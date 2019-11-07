@@ -33,7 +33,7 @@ namespace Neo4Net.CommandLine.Admin
 	public class RealOutsideWorldTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.system.SystemExitRule systemExitRule = org.Neo4Net.test.rule.system.SystemExitRule.none();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.system.SystemExitRule systemExitRule = Neo4Net.test.rule.system.SystemExitRule.none();
 		 public SystemExitRule SystemExitRule = SystemExitRule.none();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

@@ -46,7 +46,7 @@ namespace Neo4Net.causalclustering.core.consensus
 	using FakeClock = Neo4Net.Time.FakeClock;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.asSet;
+//	import static Neo4Net.helpers.collection.Iterators.asSet;
 
 	public class RaftTestFixture
 	{
@@ -82,7 +82,7 @@ namespace Neo4Net.causalclustering.core.consensus
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void bootstrap(org.Neo4Net.causalclustering.identity.MemberId[] members) throws java.io.IOException
+//ORIGINAL LINE: public void bootstrap(Neo4Net.causalclustering.identity.MemberId[] members) throws java.io.IOException
 		 public virtual void Bootstrap( MemberId[] members )
 		 {
 			  foreach ( MemberFixture member in members() )

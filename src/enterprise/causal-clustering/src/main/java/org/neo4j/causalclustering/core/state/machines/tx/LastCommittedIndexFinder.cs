@@ -32,7 +32,7 @@ namespace Neo4Net.causalclustering.core.state.machines.tx
 	using LogProvider = Neo4Net.Logging.LogProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.state.machines.tx.LogIndexTxHeaderEncoding.decodeLogIndexFromTxHeader;
+//	import static Neo4Net.causalclustering.core.state.machines.tx.LogIndexTxHeaderEncoding.decodeLogIndexFromTxHeader;
 
 	/// <summary>
 	/// Finds the last committed transaction in the transaction log, then decodes the header as a raft index.

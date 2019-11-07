@@ -30,7 +30,7 @@ namespace Neo4Net.Kernel.impl.locking
 	using Settings = Neo4Net.Kernel.configuration.Settings;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.setting;
+//	import static Neo4Net.kernel.configuration.Settings.setting;
 
 	/// <summary>
 	/// A <seealso cref="StatementLocksFactory"/> that created <seealso cref="DeferringStatementLocks"/> based on the given
@@ -39,7 +39,7 @@ namespace Neo4Net.Kernel.impl.locking
 	public class DeferringStatementLocksFactory : StatementLocksFactory, LoadableConfig
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Internal @Description("Enable deferring of locks to commit time. This feature weakens the isolation level. " + "It can result in both domain and storage level inconsistencies.") public static final org.Neo4Net.graphdb.config.Setting<bool> deferred_locks_enabled = setting("unsupported.dbms.deferred_locks.enabled", org.Neo4Net.kernel.configuration.Settings.BOOLEAN, org.Neo4Net.kernel.configuration.Settings.FALSE);
+//ORIGINAL LINE: @Internal @Description("Enable deferring of locks to commit time. This feature weakens the isolation level. " + "It can result in both domain and storage level inconsistencies.") public static final Neo4Net.graphdb.config.Setting<bool> deferred_locks_enabled = setting("unsupported.dbms.deferred_locks.enabled", Neo4Net.kernel.configuration.Settings.BOOLEAN, Neo4Net.kernel.configuration.Settings.FALSE);
 		 [Description("Enable deferring of locks to commit time. This feature weakens the isolation level. " + "It can result in both domain and storage level inconsistencies.")]
 		 public static readonly Setting<bool> DeferredLocksEnabled = setting( "unsupported.dbms.deferred_locks.enabled", Settings.BOOLEAN, Settings.FALSE );
 

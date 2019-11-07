@@ -153,7 +153,7 @@ namespace Neo4Net.GraphDb.impl
             }
         }
 
-        public override int Length => _start.length() + 1;
+        public int Length => _start.Length + 1;
 
         public override IEnumerator<PropertyContainer> Iterator()
         {

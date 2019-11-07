@@ -53,7 +53,7 @@ namespace Neo4Net.Kernel.configuration
 		 /// <exception cref="InvalidSettingException"> if an answer can not be determined, for example in case of a missing second
 		 /// mandatory setting. </exception>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: public boolean owns(@Nonnull String key, @Nonnull Map<String,String> rawConfig) throws org.Neo4Net.graphdb.config.InvalidSettingException
+//ORIGINAL LINE: public boolean owns(@Nonnull String key, @Nonnull Map<String,String> rawConfig) throws Neo4Net.graphdb.config.InvalidSettingException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual bool Owns( string key, IDictionary<string, string> rawConfig )
 		 {
@@ -111,7 +111,7 @@ namespace Neo4Net.Kernel.configuration
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Nonnull public java.util.stream.Stream<java.util.Map.Entry<String,String>> ownedEntries(@Nonnull Map<String,String> params) throws org.Neo4Net.graphdb.config.InvalidSettingException
+//ORIGINAL LINE: @Nonnull public java.util.stream.Stream<java.util.Map.Entry<String,String>> ownedEntries(@Nonnull Map<String,String> params) throws Neo4Net.graphdb.config.InvalidSettingException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual Stream<KeyValuePair<string, string>> OwnedEntries( IDictionary<string, string> @params )
 		 {
@@ -119,7 +119,7 @@ namespace Neo4Net.Kernel.configuration
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Override @Nonnull public java.util.Map<String,String> validate(@Nonnull Map<String,String> rawConfig, @Nonnull Consumer<String> warningConsumer) throws org.Neo4Net.graphdb.config.InvalidSettingException
+//ORIGINAL LINE: @Override @Nonnull public java.util.Map<String,String> validate(@Nonnull Map<String,String> rawConfig, @Nonnull Consumer<String> warningConsumer) throws Neo4Net.graphdb.config.InvalidSettingException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public override IDictionary<string, string> Validate( IDictionary<string, string> rawConfig, Consumer<string> warningConsumer )
 		 {
@@ -177,11 +177,11 @@ namespace Neo4Net.Kernel.configuration
 		 /// 
 		 /// <returns> a setting which is not necessarily literally defined in the map provided </returns>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Nonnull protected abstract java.util.Optional<org.Neo4Net.graphdb.config.Setting<Object>> getSettingFor(@Nonnull String settingName, @Nonnull Map<String,String> params);
+//ORIGINAL LINE: @Nonnull protected abstract java.util.Optional<Neo4Net.graphdb.config.Setting<Object>> getSettingFor(@Nonnull String settingName, @Nonnull Map<String,String> params);
 		 protected internal abstract Optional<Setting<object>> GetSettingFor( string settingName, IDictionary<string, string> @params );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Override public java.util.List<org.Neo4Net.graphdb.config.Setting<Object>> settings(@Nonnull Map<String,String> params)
+//ORIGINAL LINE: @Override public java.util.List<Neo4Net.graphdb.config.Setting<Object>> settings(@Nonnull Map<String,String> params)
 		 public override IList<Setting<object>> Settings( IDictionary<string, string> @params )
 		 {
 			  return OwnedEntries( @params ).map( e => GetSettingFor( e.Key, @params ) ).filter( Optional.isPresent ).map( Optional.get ).collect( toList() );

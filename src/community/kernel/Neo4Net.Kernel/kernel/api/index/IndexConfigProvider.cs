@@ -32,7 +32,7 @@ namespace Neo4Net.Kernel.Api.Index
 		 /// </summary>
 		 /// <returns> <seealso cref="System.Collections.IDictionary"/> describing index configurations for this index. </returns>
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//		 default java.util.Map<String, org.Neo4Net.values.storable.Value> indexConfig()
+//		 default java.util.Map<String, Neo4Net.values.storable.Value> indexConfig()
 	//	 {
 	//		  return Collections.emptyMap();
 	//	 }
@@ -42,7 +42,7 @@ namespace Neo4Net.Kernel.Api.Index
 		 /// <param name="target"> <seealso cref="System.Collections.IDictionary"/> to which entries are added. </param>
 		 /// <param name="source"> <seealso cref="System.Collections.IDictionary"/> from which entries are taken, will not be modified. </param>
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java static interface methods:
-//		 static void putAllNoOverwrite(java.util.Map<String, org.Neo4Net.values.storable.Value> target, java.util.Map<String, org.Neo4Net.values.storable.Value> source)
+//		 static void putAllNoOverwrite(java.util.Map<String, Neo4Net.values.storable.Value> target, java.util.Map<String, Neo4Net.values.storable.Value> source)
 	//	 {
 	//		  for (Map.Entry<String,Value> partEntry : source.entrySet())
 	//		  {

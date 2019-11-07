@@ -46,12 +46,12 @@ namespace Neo4Net.causalclustering.scenarios
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.files.LogFilesBuilder.logFilesBasedOnlyBuilder;
+//	import static Neo4Net.kernel.impl.transaction.log.files.LogFilesBuilder.logFilesBasedOnlyBuilder;
 
 	public class ClusterCustomLogLocationIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.causalclustering.ClusterRule clusterRule = new org.Neo4Net.test.causalclustering.ClusterRule().withNumberOfCoreMembers(3).withNumberOfReadReplicas(2);
+//ORIGINAL LINE: @Rule public final Neo4Net.test.causalclustering.ClusterRule clusterRule = new Neo4Net.test.causalclustering.ClusterRule().withNumberOfCoreMembers(3).withNumberOfReadReplicas(2);
 		 public readonly ClusterRule ClusterRule = new ClusterRule().withNumberOfCoreMembers(3).withNumberOfReadReplicas(2);
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -60,7 +60,7 @@ namespace Neo4Net.causalclustering.scenarios
 		 public virtual void ClusterWithCustomTransactionLogLocation()
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.causalclustering.discovery.Cluster<?> cluster = clusterRule.startCluster();
+//ORIGINAL LINE: Neo4Net.causalclustering.discovery.Cluster<?> cluster = clusterRule.startCluster();
 			  Cluster<object> cluster = ClusterRule.startCluster();
 
 			  for ( int i = 0; i < 10; i++ )
@@ -101,7 +101,7 @@ namespace Neo4Net.causalclustering.scenarios
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void logFileInStoreDirectoryDoesNotExist(java.io.File storeDir, org.Neo4Net.graphdb.DependencyResolver dependencyResolver) throws java.io.IOException
+//ORIGINAL LINE: private static void logFileInStoreDirectoryDoesNotExist(java.io.File storeDir, Neo4Net.graphdb.DependencyResolver dependencyResolver) throws java.io.IOException
 		 private static void LogFileInStoreDirectoryDoesNotExist( File storeDir, DependencyResolver dependencyResolver )
 		 {
 			  FileSystemAbstraction fileSystem = dependencyResolver.ResolveDependency( typeof( FileSystemAbstraction ) );

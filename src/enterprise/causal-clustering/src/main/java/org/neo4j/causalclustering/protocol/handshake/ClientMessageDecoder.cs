@@ -89,7 +89,7 @@ namespace Neo4Net.causalclustering.protocol.handshake
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private <U extends Comparable<U>,T extends BaseProtocolResponse<U>> T decodeProtocolResponse(org.Neo4Net.function.TriFunction<StatusCode,String,U,T> constructor, System.Func<io.netty.buffer.ByteBuf,U> reader, io.netty.buffer.ByteBuf in) throws ClientHandshakeException
+//ORIGINAL LINE: private <U extends Comparable<U>,T extends BaseProtocolResponse<U>> T decodeProtocolResponse(Neo4Net.function.TriFunction<StatusCode,String,U,T> constructor, System.Func<io.netty.buffer.ByteBuf,U> reader, io.netty.buffer.ByteBuf in) throws ClientHandshakeException
 		 private T DecodeProtocolResponse<U, T>( TriFunction<StatusCode, string, U, T> constructor, System.Func<ByteBuf, U> reader, ByteBuf @in ) where U : IComparable<U> where T : BaseProtocolResponse<U>
 		 {
 			  int statusCodeValue = @in.readInt();

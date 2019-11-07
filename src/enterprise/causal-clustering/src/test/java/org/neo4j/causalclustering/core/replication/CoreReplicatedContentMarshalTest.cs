@@ -55,7 +55,7 @@ namespace Neo4Net.causalclustering.core.replication
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.MatcherAssert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.asSet;
+//	import static Neo4Net.helpers.collection.Iterators.asSet;
 
 	public class CoreReplicatedContentMarshalTest
 	{
@@ -131,7 +131,7 @@ namespace Neo4Net.causalclustering.core.replication
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertMarshalingEquality(io.netty.buffer.ByteBuf buffer, ReplicatedContent replicatedTx) throws java.io.IOException, org.Neo4Net.causalclustering.messaging.EndOfStreamException
+//ORIGINAL LINE: private void assertMarshalingEquality(io.netty.buffer.ByteBuf buffer, ReplicatedContent replicatedTx) throws java.io.IOException, Neo4Net.causalclustering.messaging.EndOfStreamException
 		 private void AssertMarshalingEquality( ByteBuf buffer, ReplicatedContent replicatedTx )
 		 {
 			  _marshal.marshal( replicatedTx, new NetworkWritableChannel( buffer ) );
@@ -140,7 +140,7 @@ namespace Neo4Net.causalclustering.core.replication
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertMarshalingEquality(io.netty.buffer.ByteBuf buffer, org.Neo4Net.causalclustering.core.state.machines.tx.TransactionRepresentationReplicatedTransaction replicatedTx) throws java.io.IOException, org.Neo4Net.causalclustering.messaging.EndOfStreamException
+//ORIGINAL LINE: private void assertMarshalingEquality(io.netty.buffer.ByteBuf buffer, Neo4Net.causalclustering.core.state.machines.tx.TransactionRepresentationReplicatedTransaction replicatedTx) throws java.io.IOException, Neo4Net.causalclustering.messaging.EndOfStreamException
 		 private void AssertMarshalingEquality( ByteBuf buffer, TransactionRepresentationReplicatedTransaction replicatedTx )
 		 {
 			  _marshal.marshal( replicatedTx, new NetworkWritableChannel( buffer ) );

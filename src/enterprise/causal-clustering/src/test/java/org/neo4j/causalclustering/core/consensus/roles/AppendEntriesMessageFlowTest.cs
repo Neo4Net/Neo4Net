@@ -48,11 +48,11 @@ namespace Neo4Net.causalclustering.core.consensus.roles
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verify;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.TestMessageBuilders.appendEntriesRequest;
+//	import static Neo4Net.causalclustering.core.consensus.TestMessageBuilders.appendEntriesRequest;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.TestMessageBuilders.appendEntriesResponse;
+//	import static Neo4Net.causalclustering.core.consensus.TestMessageBuilders.appendEntriesResponse;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.identity.RaftTestMember.member;
+//	import static Neo4Net.causalclustering.identity.RaftTestMember.member;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(MockitoJUnitRunner.class) public class AppendEntriesMessageFlowTest
@@ -64,7 +64,7 @@ namespace Neo4Net.causalclustering.core.consensus.roles
 		 private ReplicatedInteger _data = ReplicatedInteger.ValueOf( 1 );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Mock private org.Neo4Net.causalclustering.messaging.Outbound<org.Neo4Net.causalclustering.identity.MemberId, org.Neo4Net.causalclustering.core.consensus.RaftMessages_RaftMessage> outbound;
+//ORIGINAL LINE: @Mock private Neo4Net.causalclustering.messaging.Outbound<Neo4Net.causalclustering.identity.MemberId, Neo4Net.causalclustering.core.consensus.RaftMessages_RaftMessage> outbound;
 		 private Outbound<MemberId, Neo4Net.causalclustering.core.consensus.RaftMessages_RaftMessage> _outbound;
 
 		 internal virtual ReplicatedInteger Data( int value )

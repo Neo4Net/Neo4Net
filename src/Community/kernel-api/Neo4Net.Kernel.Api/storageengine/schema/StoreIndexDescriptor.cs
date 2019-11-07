@@ -23,7 +23,7 @@ namespace Neo4Net.Kernel.Api.StorageEngine.schema
 	using ITokenNameLookup = Neo4Net.Kernel.Api.Internal.ITokenNameLookup;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.Schema.SchemaUtil.idTokenNameLookup;
+//	import static Neo4Net.Kernel.Api.Internal.Schema.SchemaUtil.idTokenNameLookup;
 
 	/// <summary>
 	/// Describes an index which is committed to the database.

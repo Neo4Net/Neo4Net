@@ -44,7 +44,7 @@ namespace Neo4Net.Cypher.Internal.evaluator
 
 			  // When
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.List<?> list = evaluator.evaluate("[1, 2, 3]", java.util.List.class);
+//ORIGINAL LINE: java.util.List<?> list = evaluator.Evaluate("[1, 2, 3]", java.util.List.class);
 			  IList<object> list = evaluator.Evaluate( "[1, 2, 3]", typeof( System.Collections.IList ) );
 
 			  // Then

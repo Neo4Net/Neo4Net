@@ -51,7 +51,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 /// <param name="role"> the new role object </param>
 		 /// <exception cref="InvalidArgumentsException"> if the role name is not valid or the role name already exists </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void create(RoleRecord role) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException, java.io.IOException;
+//ORIGINAL LINE: void create(RoleRecord role) throws Neo4Net.kernel.api.exceptions.InvalidArgumentsException, java.io.IOException;
 		 void Create( RoleRecord role );
 
 		 /// <summary>
@@ -60,7 +60,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 /// <exception cref="InvalidArgumentsException"> if any role name is not valid </exception>
 		 /// <exception cref="IOException"> if the underlying storage for roles fails </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void setRoles(org.Neo4Net.server.security.auth.ListSnapshot<RoleRecord> roles) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException;
+//ORIGINAL LINE: void setRoles(Neo4Net.server.security.auth.ListSnapshot<RoleRecord> roles) throws Neo4Net.kernel.api.exceptions.InvalidArgumentsException;
 		 ListSnapshot<RoleRecord> Roles { set; }
 
 		 /// <summary>
@@ -70,7 +70,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 /// <param name="updatedRole"> the updated role object </param>
 		 /// <exception cref="ConcurrentModificationException"> if the existingRole does not match the current state in the repository </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void update(RoleRecord existingRole, RoleRecord updatedRole) throws org.Neo4Net.server.security.auth.exception.ConcurrentModificationException, java.io.IOException;
+//ORIGINAL LINE: void update(RoleRecord existingRole, RoleRecord updatedRole) throws Neo4Net.server.security.auth.exception.ConcurrentModificationException, java.io.IOException;
 		 void Update( RoleRecord existingRole, RoleRecord updatedRole );
 
 		 /// <summary>
@@ -90,11 +90,11 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 /// <param name="roleName"> the role name to be tested. </param>
 		 /// <exception cref="InvalidArgumentsException"> if the role name was invalid. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void assertValidRoleName(String roleName) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException;
+//ORIGINAL LINE: void assertValidRoleName(String roleName) throws Neo4Net.kernel.api.exceptions.InvalidArgumentsException;
 		 void AssertValidRoleName( string roleName );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void removeUserFromAllRoles(String username) throws org.Neo4Net.server.security.auth.exception.ConcurrentModificationException, java.io.IOException;
+//ORIGINAL LINE: void removeUserFromAllRoles(String username) throws Neo4Net.server.security.auth.exception.ConcurrentModificationException, java.io.IOException;
 		 void RemoveUserFromAllRoles( string username );
 
 		 ISet<string> AllRoleNames { get; }
@@ -104,7 +104,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 /// <returns> a snapshot of the current persisted role repository </returns>
 		 /// <exception cref="IOException"> </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.Neo4Net.server.security.auth.ListSnapshot<RoleRecord> getPersistedSnapshot() throws java.io.IOException;
+//ORIGINAL LINE: Neo4Net.server.security.auth.ListSnapshot<RoleRecord> getPersistedSnapshot() throws java.io.IOException;
 		 ListSnapshot<RoleRecord> PersistedSnapshot { get; }
 
 		 /// <summary>
@@ -122,7 +122,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 void MarkAsMigrated();
 
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java static interface methods:
-//		 static boolean validate(java.util.List<org.Neo4Net.kernel.impl.security.User> users, java.util.List<RoleRecord> roles)
+//		 static boolean validate(java.util.List<Neo4Net.kernel.impl.security.User> users, java.util.List<RoleRecord> roles)
 	//	 {
 	//		  Set<String> usernamesInRoles = roles.stream().flatMap(rr -> rr.users().stream()).collect(Collectors.toSet());
 	//		  Set<String> usernameInUsers = users.stream().map(User::name).collect(Collectors.toSet());

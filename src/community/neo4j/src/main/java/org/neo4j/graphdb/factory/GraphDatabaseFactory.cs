@@ -34,7 +34,7 @@ namespace Neo4Net.GraphDb.factory
 	using LogProvider = Neo4Net.Logging.LogProvider;
 
 	/// <summary>
-	/// Creates a <seealso cref="org.Neo4Net.graphdb.GraphDatabaseService"/> with Community Edition features.
+	/// Creates a <seealso cref="Neo4Net.graphdb.GraphDatabaseService"/> with Community Edition features.
 	/// <para>
 	/// Use <seealso cref="newEmbeddedDatabase(File)"/> or
 	/// <seealso cref="newEmbeddedDatabaseBuilder(File)"/> to create a database instance.
@@ -186,7 +186,7 @@ namespace Neo4Net.GraphDb.factory
 			  }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Override public org.Neo4Net.graphdb.GraphDatabaseService newDatabase(@Nonnull Config config)
+//ORIGINAL LINE: @Override public Neo4Net.graphdb.GraphDatabaseService newDatabase(@Nonnull Config config)
 			  public override IGraphDatabaseService NewDatabase( Config config )
 			  {
 					return outerInstance.NewEmbeddedDatabase( StoreDir, config, State.databaseDependencies() );

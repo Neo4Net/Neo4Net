@@ -126,7 +126,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 public class StoreListingMarshal : SafeChannelMarshal<PrepareStoreCopyResponse>
 		 {
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void marshal(PrepareStoreCopyResponse prepareStoreCopyResponse, org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel buffer) throws java.io.IOException
+//ORIGINAL LINE: public void marshal(PrepareStoreCopyResponse prepareStoreCopyResponse, Neo4Net.Kernel.Api.StorageEngine.WritableChannel buffer) throws java.io.IOException
 			  public override void Marshal( PrepareStoreCopyResponse prepareStoreCopyResponse, WritableChannel buffer )
 			  {
 					buffer.PutInt( ( int )prepareStoreCopyResponse._status );
@@ -136,7 +136,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected PrepareStoreCopyResponse unmarshal0(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: protected PrepareStoreCopyResponse unmarshal0(Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
 			  protected internal override PrepareStoreCopyResponse Unmarshal0( ReadableChannel channel )
 			  {
 					int ordinal = channel.Int;
@@ -148,7 +148,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void marshalFiles(org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel buffer, java.io.File[] files) throws java.io.IOException
+//ORIGINAL LINE: private static void marshalFiles(Neo4Net.Kernel.Api.StorageEngine.WritableChannel buffer, java.io.File[] files) throws java.io.IOException
 			  internal static void MarshalFiles( WritableChannel buffer, File[] files )
 			  {
 					buffer.PutInt( Files.Length );
@@ -159,7 +159,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void marshalIndexIds(org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel buffer, org.eclipse.collections.api.set.primitive.LongSet indexIds) throws java.io.IOException
+//ORIGINAL LINE: private void marshalIndexIds(Neo4Net.Kernel.Api.StorageEngine.WritableChannel buffer, org.eclipse.collections.api.set.primitive.LongSet indexIds) throws java.io.IOException
 			  internal virtual void MarshalIndexIds( WritableChannel buffer, LongSet indexIds )
 			  {
 					buffer.PutInt( indexIds.size() );
@@ -172,7 +172,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static java.io.File[] unmarshalFiles(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: private static java.io.File[] unmarshalFiles(Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
 			  internal static File[] UnmarshalFiles( ReadableChannel channel )
 			  {
 					int numberOfFiles = channel.Int;
@@ -185,7 +185,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static java.io.File unmarshalFile(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: private static java.io.File unmarshalFile(Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
 			  internal static File UnmarshalFile( ReadableChannel channel )
 			  {
 					sbyte[] name = ReadBytes( channel );
@@ -193,7 +193,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.eclipse.collections.api.set.primitive.LongSet unmarshalIndexIds(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: private org.eclipse.collections.api.set.primitive.LongSet unmarshalIndexIds(Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
 			  internal virtual LongSet UnmarshalIndexIds( ReadableChannel channel )
 			  {
 					int numberOfIndexIds = channel.Int;
@@ -206,7 +206,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void putBytes(org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel buffer, String value) throws java.io.IOException
+//ORIGINAL LINE: private static void putBytes(Neo4Net.Kernel.Api.StorageEngine.WritableChannel buffer, String value) throws java.io.IOException
 			  internal static void PutBytes( WritableChannel buffer, string value )
 			  {
 					sbyte[] bytes = UTF8.encode( value );
@@ -215,7 +215,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static byte[] readBytes(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: private static byte[] readBytes(Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
 			  internal static sbyte[] ReadBytes( ReadableChannel channel )
 			  {
 					int bytesLength = channel.Int;

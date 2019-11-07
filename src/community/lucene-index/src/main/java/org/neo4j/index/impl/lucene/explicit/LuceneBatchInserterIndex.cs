@@ -41,7 +41,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 	using Neo4Net.Collections.Helpers;
 	using ValueContext = Neo4Net.Index.lucene.ValueContext;
 	using IOUtils = Neo4Net.Io.IOUtils;
-	using ExplicitIndexHits = Neo4Net.Kernel.api.ExplicitIndexHits;
+	using ExplicitIndexHits = Neo4Net.Kernel.Api.ExplicitIndexHits;
 	using DocValuesCollector = Neo4Net.Kernel.Api.Impl.Index.collector.DocValuesCollector;
 	using IndexEntityType = Neo4Net.Kernel.impl.index.IndexEntityType;
 	using IoPrimitiveUtils = Neo4Net.Kernel.impl.util.IoPrimitiveUtils;
@@ -317,7 +317,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private org.Neo4Net.GraphDb.Index.IndexHits<long> query(org.apache.lucene.search.Query query, final String key, final Object value)
+//ORIGINAL LINE: private Neo4Net.GraphDb.Index.IndexHits<long> query(org.apache.lucene.search.Query query, final String key, final Object value)
 		 private IndexHits<long> Query( Query query, string key, object value )
 		 {
 			  IndexSearcher searcher;
@@ -391,7 +391,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private org.Neo4Net.GraphDb.Index.IndexHits<long> wrapIndexHits(final org.Neo4Net.kernel.api.ExplicitIndexHits ids)
+//ORIGINAL LINE: private Neo4Net.GraphDb.Index.IndexHits<long> wrapIndexHits(final Neo4Net.kernel.api.ExplicitIndexHits ids)
 		 private IndexHits<long> WrapIndexHits( ExplicitIndexHits ids )
 		 {
 			  return new IndexHitsAnonymousInnerClass( this, ids );
@@ -424,7 +424,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 				  throw new System.NotSupportedException();
 			 }
 
-			 public ResourceIterator<long> iterator()
+			 public IResourceIterator<long> iterator()
 			 {
 				  return this;
 			 }

@@ -19,7 +19,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Kernel.api.properties
+namespace Neo4Net.Kernel.Api.properties
 {
 	using IntIterator = org.eclipse.collections.api.iterator.IntIterator;
 
@@ -28,7 +28,7 @@ namespace Neo4Net.Kernel.api.properties
 	public class PropertyKeyIdIterator : IntIterator
 	{
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private final java.util.Iterator<? extends org.Neo4Net.Kernel.Api.StorageEngine.StorageProperty> properties;
+//ORIGINAL LINE: private final java.util.Iterator<? extends Neo4Net.Kernel.Api.StorageEngine.StorageProperty> properties;
 		 private readonly IEnumerator<StorageProperty> _properties;
 
 		 public PropertyKeyIdIterator<T1>( IEnumerator<T1> properties ) where T1 : Neo4Net.Kernel.Api.StorageEngine.StorageProperty

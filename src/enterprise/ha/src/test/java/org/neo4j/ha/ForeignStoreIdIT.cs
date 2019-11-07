@@ -43,20 +43,20 @@ namespace Neo4Net.ha
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.cluster.ClusterSettings.cluster_server;
+//	import static Neo4Net.cluster.ClusterSettings.cluster_server;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.cluster.ClusterSettings.initial_hosts;
+//	import static Neo4Net.cluster.ClusterSettings.initial_hosts;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.cluster.ClusterSettings.server_id;
+//	import static Neo4Net.cluster.ClusterSettings.server_id;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.ha.HaSettings.ha_server;
+//	import static Neo4Net.kernel.ha.HaSettings.ha_server;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.ha.HaSettings.state_switch_timeout;
+//	import static Neo4Net.kernel.ha.HaSettings.state_switch_timeout;
 
 	public class ForeignStoreIdIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.TestDirectory testDirectory = Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory TestDirectory = TestDirectory.testDirectory();
 		 private IGraphDatabaseService _firstInstance;
 		 private IGraphDatabaseService _foreignInstance;

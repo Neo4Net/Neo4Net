@@ -45,9 +45,9 @@ namespace Slavetest
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.keep_logical_logs;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.keep_logical_logs;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
+//	import static Neo4Net.helpers.collection.MapUtil.stringMap;
 
 	/*
 	 * This test case ensures that instances with the same store id but very old txids
@@ -56,7 +56,7 @@ namespace Slavetest
 	public class InstanceJoinIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.TestDirectory testDirectory = Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory TestDirectory = TestDirectory.testDirectory();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -135,14 +135,14 @@ namespace Slavetest
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void rotateLog(org.Neo4Net.kernel.ha.HighlyAvailableGraphDatabase db) throws java.io.IOException
+//ORIGINAL LINE: private static void rotateLog(Neo4Net.kernel.ha.HighlyAvailableGraphDatabase db) throws java.io.IOException
 		 private static void RotateLog( HighlyAvailableGraphDatabase db )
 		 {
 			  Db.DependencyResolver.resolveDependency( typeof( LogRotation ) ).rotateLogFile();
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void checkPoint(org.Neo4Net.kernel.ha.HighlyAvailableGraphDatabase db) throws java.io.IOException
+//ORIGINAL LINE: private static void checkPoint(Neo4Net.kernel.ha.HighlyAvailableGraphDatabase db) throws java.io.IOException
 		 private static void CheckPoint( HighlyAvailableGraphDatabase db )
 		 {
 			  Db.DependencyResolver.resolveDependency( typeof( CheckPointer ) ).forceCheckPoint(new SimpleTriggerInfo("test")

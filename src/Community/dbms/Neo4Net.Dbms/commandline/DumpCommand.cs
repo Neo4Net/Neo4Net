@@ -43,15 +43,15 @@ namespace Neo4Net.Dbms.CommandLine
 	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.commandline.Util.canonicalPath;
+//	import static Neo4Net.commandline.Util.canonicalPath;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.commandline.arguments.common.Database.ARG_DATABASE;
+//	import static Neo4Net.commandline.arguments.common.Database.ARG_DATABASE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.database_path;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.database_path;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.logical_logs_location;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.logical_logs_location;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
+//	import static Neo4Net.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
 
 	public class DumpCommand : AdminCommand
 	{
@@ -69,7 +69,7 @@ namespace Neo4Net.Dbms.CommandLine
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void execute(String[] args) throws org.Neo4Net.commandline.admin.IncorrectUsage, org.Neo4Net.commandline.admin.CommandFailed
+//ORIGINAL LINE: public void execute(String[] args) throws Neo4Net.commandline.admin.IncorrectUsage, Neo4Net.commandline.admin.CommandFailed
 		 public override void Execute( string[] args )
 		 {
 			  string database = _arguments.parse( args ).get( ARG_DATABASE );
@@ -132,7 +132,7 @@ namespace Neo4Net.Dbms.CommandLine
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void dump(String database, org.Neo4Net.io.layout.DatabaseLayout databaseLayout, java.nio.file.Path transactionalLogsDirectory, java.nio.file.Path archive) throws org.Neo4Net.commandline.admin.CommandFailed
+//ORIGINAL LINE: private void dump(String database, Neo4Net.io.layout.DatabaseLayout databaseLayout, java.nio.file.Path transactionalLogsDirectory, java.nio.file.Path archive) throws Neo4Net.commandline.admin.CommandFailed
 		 private void Dump( string database, DatabaseLayout databaseLayout, Path transactionalLogsDirectory, Path archive )
 		 {
 			  Path databasePath = databaseLayout.DatabaseDirectory().toPath();
@@ -161,7 +161,7 @@ namespace Neo4Net.Dbms.CommandLine
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void checkDbState(org.Neo4Net.io.layout.DatabaseLayout databaseLayout, org.Neo4Net.kernel.configuration.Config additionalConfiguration) throws org.Neo4Net.commandline.admin.CommandFailed
+//ORIGINAL LINE: private static void checkDbState(Neo4Net.io.layout.DatabaseLayout databaseLayout, Neo4Net.kernel.configuration.Config additionalConfiguration) throws Neo4Net.commandline.admin.CommandFailed
 		 private static void CheckDbState( DatabaseLayout databaseLayout, Config additionalConfiguration )
 		 {
 			  try
@@ -182,7 +182,7 @@ namespace Neo4Net.Dbms.CommandLine
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void wrapIOException(java.io.IOException e) throws org.Neo4Net.commandline.admin.CommandFailed
+//ORIGINAL LINE: private static void wrapIOException(java.io.IOException e) throws Neo4Net.commandline.admin.CommandFailed
 		 private static void WrapIOException( IOException e )
 		 {
 			  throw new CommandFailed( format( "unable to dump database: %s: %s", e.GetType().Name, e.Message ), e );

@@ -39,13 +39,13 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using Value = Neo4Net.Values.Storable.Value;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor_PropertySchemaType.COMPLETE_ALL_TOKENS;
+//	import static Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor_PropertySchemaType.COMPLETE_ALL_TOKENS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.api.index.EntityUpdates.PropertyValueType.Changed;
+//	import static Neo4Net.kernel.impl.api.index.EntityUpdates.PropertyValueType.Changed;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.api.index.EntityUpdates.PropertyValueType.NoValue;
+//	import static Neo4Net.kernel.impl.api.index.EntityUpdates.PropertyValueType.NoValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.api.index.EntityUpdates.PropertyValueType.UnChanged;
+//	import static Neo4Net.kernel.impl.api.index.EntityUpdates.PropertyValueType.UnChanged;
 
 	/// <summary>
 	/// Subclasses of this represent events related to property changes due to IEntity addition, deletion or update.
@@ -241,7 +241,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("ConstantConditions") private <INDEX_KEY extends org.Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptorSupplier> Iterable<org.Neo4Net.kernel.api.index.IndexEntryUpdate<INDEX_KEY>> gatherUpdatesForPotentials(Iterable<INDEX_KEY> potentiallyRelevant)
+//ORIGINAL LINE: @SuppressWarnings("ConstantConditions") private <INDEX_KEY extends Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptorSupplier> Iterable<Neo4Net.kernel.api.index.IndexEntryUpdate<INDEX_KEY>> gatherUpdatesForPotentials(Iterable<INDEX_KEY> potentiallyRelevant)
 		 private IEnumerable<IndexEntryUpdate<INDEX_KEY>> GatherUpdatesForPotentials<INDEX_KEY>( IEnumerable<INDEX_KEY> potentiallyRelevant ) where INDEX_KEY : Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptorSupplier
 		 {
 			  IList<IndexEntryUpdate<INDEX_KEY>> indexUpdates = new List<IndexEntryUpdate<INDEX_KEY>>();

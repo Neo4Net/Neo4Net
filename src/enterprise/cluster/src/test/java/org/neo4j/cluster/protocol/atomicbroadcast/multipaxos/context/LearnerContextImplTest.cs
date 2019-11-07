@@ -32,7 +32,7 @@ namespace Neo4Net.cluster.protocol.atomicbroadcast.multipaxos.context
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.mock;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.logging.AssertableLogProvider.inLog;
+//	import static Neo4Net.logging.AssertableLogProvider.inLog;
 
 	public class LearnerContextImplTest
 	{
@@ -42,7 +42,7 @@ namespace Neo4Net.cluster.protocol.atomicbroadcast.multipaxos.context
 		 {
 			  // Given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.logging.AssertableLogProvider logProvider = new org.Neo4Net.logging.AssertableLogProvider();
+//ORIGINAL LINE: final Neo4Net.logging.AssertableLogProvider logProvider = new Neo4Net.logging.AssertableLogProvider();
 			  AssertableLogProvider logProvider = new AssertableLogProvider();
 			  LearnerContextImpl ctx = new LearnerContextImpl( new InstanceId( 1 ), mock( typeof( CommonContextState ) ), logProvider, mock( typeof( Timeouts ) ), mock( typeof( PaxosInstanceStore ) ), mock( typeof( AcceptorInstanceStore ) ), mock( typeof( ObjectInputStreamFactory ) ), mock( typeof( ObjectOutputStreamFactory ) ), mock( typeof( HeartbeatContextImpl ) ) );
 

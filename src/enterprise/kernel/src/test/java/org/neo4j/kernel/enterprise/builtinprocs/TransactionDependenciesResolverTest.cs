@@ -29,10 +29,10 @@ namespace Neo4Net.Kernel.enterprise.builtinprocs
 
 
 	using PageCursorTracer = Neo4Net.Io.pagecache.tracing.cursor.PageCursorTracer;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
-	using KernelTransactionHandle = Neo4Net.Kernel.api.KernelTransactionHandle;
-	using ExecutingQuery = Neo4Net.Kernel.api.query.ExecutingQuery;
-	using QuerySnapshot = Neo4Net.Kernel.api.query.QuerySnapshot;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
+	using KernelTransactionHandle = Neo4Net.Kernel.Api.KernelTransactionHandle;
+	using ExecutingQuery = Neo4Net.Kernel.Api.query.ExecutingQuery;
+	using QuerySnapshot = Neo4Net.Kernel.Api.query.QuerySnapshot;
 	using TestKernelTransactionHandle = Neo4Net.Kernel.Impl.Api.TestKernelTransactionHandle;
 	using ActiveLock = Neo4Net.Kernel.impl.locking.ActiveLock;
 	using ResourceTypes = Neo4Net.Kernel.impl.locking.ResourceTypes;

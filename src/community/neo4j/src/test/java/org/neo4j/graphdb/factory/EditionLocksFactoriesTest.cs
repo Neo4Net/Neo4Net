@@ -43,9 +43,9 @@ namespace Neo4Net.GraphDb.factory
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verify;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.EditionLocksFactories.createLockFactory;
+//	import static Neo4Net.graphdb.factory.EditionLocksFactories.createLockFactory;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.EditionLocksFactories.createLockManager;
+//	import static Neo4Net.graphdb.factory.EditionLocksFactories.createLockManager;
 
 	internal class EditionLocksFactoriesTest
 	{

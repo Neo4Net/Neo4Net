@@ -41,15 +41,15 @@ namespace Neo4Net.Server.rest.web
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.web.CorsFilter.ACCESS_CONTROL_ALLOW_HEADERS;
+//	import static Neo4Net.server.rest.web.CorsFilter.ACCESS_CONTROL_ALLOW_HEADERS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.web.CorsFilter.ACCESS_CONTROL_ALLOW_METHODS;
+//	import static Neo4Net.server.rest.web.CorsFilter.ACCESS_CONTROL_ALLOW_METHODS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.web.CorsFilter.ACCESS_CONTROL_ALLOW_ORIGIN;
+//	import static Neo4Net.server.rest.web.CorsFilter.ACCESS_CONTROL_ALLOW_ORIGIN;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.web.CorsFilter.ACCESS_CONTROL_REQUEST_HEADERS;
+//	import static Neo4Net.server.rest.web.CorsFilter.ACCESS_CONTROL_REQUEST_HEADERS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.web.CorsFilter.ACCESS_CONTROL_REQUEST_METHOD;
+//	import static Neo4Net.server.rest.web.CorsFilter.ACCESS_CONTROL_REQUEST_METHOD;
 
 	public class CorsFilterTest
 	{

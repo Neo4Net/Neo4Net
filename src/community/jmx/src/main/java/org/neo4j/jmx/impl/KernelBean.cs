@@ -43,7 +43,7 @@ namespace Neo4Net.Jmx.impl
 		 private long _storeLogVersion;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: KernelBean(org.Neo4Net.kernel.internal.KernelData kernel, org.Neo4Net.kernel.impl.transaction.state.DataSourceManager dataSourceManager, ManagementSupport support) throws javax.management.NotCompliantMBeanException
+//ORIGINAL LINE: KernelBean(Neo4Net.kernel.internal.KernelData kernel, Neo4Net.kernel.impl.transaction.state.DataSourceManager dataSourceManager, ManagementSupport support) throws javax.management.NotCompliantMBeanException
 		 internal KernelBean( KernelData kernel, DataSourceManager dataSourceManager, ManagementSupport support ) : base( typeof( Kernel ), kernel, support )
 		 {
 			  dataSourceManager.AddListener( new DataSourceInfo( this ) );

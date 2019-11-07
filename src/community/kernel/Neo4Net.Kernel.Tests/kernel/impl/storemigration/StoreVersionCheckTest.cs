@@ -146,7 +146,7 @@ namespace Neo4Net.Kernel.impl.storemigration
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.io.File emptyFile(org.Neo4Net.io.fs.FileSystemAbstraction fs) throws java.io.IOException
+//ORIGINAL LINE: private java.io.File emptyFile(Neo4Net.io.fs.FileSystemAbstraction fs) throws java.io.IOException
 		 private File EmptyFile( FileSystemAbstraction fs )
 		 {
 			  File shortFile = _directory.file( "empty" );
@@ -156,7 +156,7 @@ namespace Neo4Net.Kernel.impl.storemigration
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.io.File fileContaining(org.Neo4Net.io.fs.FileSystemAbstraction fs, String content) throws java.io.IOException
+//ORIGINAL LINE: private java.io.File fileContaining(Neo4Net.io.fs.FileSystemAbstraction fs, String content) throws java.io.IOException
 		 private File FileContaining( FileSystemAbstraction fs, string content )
 		 {
 			  File shortFile = _directory.file( "file" );

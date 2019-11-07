@@ -29,8 +29,8 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 
 	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
-	using LabelScanStore = Neo4Net.Kernel.api.labelscan.LabelScanStore;
-	using NodeLabelUpdate = Neo4Net.Kernel.api.labelscan.NodeLabelUpdate;
+	using LabelScanStore = Neo4Net.Kernel.Api.LabelScan.LabelScanStore;
+	using NodeLabelUpdate = Neo4Net.Kernel.Api.LabelScan.NodeLabelUpdate;
 	using FullStoreChangeStream = Neo4Net.Kernel.Impl.Api.scan.FullStoreChangeStream;
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
 	using PageCacheRule = Neo4Net.Test.rule.PageCacheRule;
@@ -47,13 +47,13 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Internal.gbptree.RecoveryCleanupWorkCollector.ignore;
+//	import static Neo4Net.index.Internal.gbptree.RecoveryCleanupWorkCollector.ignore;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Internal.gbptree.RecoveryCleanupWorkCollector.immediate;
+//	import static Neo4Net.index.Internal.gbptree.RecoveryCleanupWorkCollector.immediate;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.api.scan.FullStoreChangeStream_Fields.EMPTY;
+//	import static Neo4Net.kernel.impl.api.scan.FullStoreChangeStream_Fields.EMPTY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.api.scan.FullStoreChangeStream.asStream;
+//	import static Neo4Net.kernel.impl.api.scan.FullStoreChangeStream.asStream;
 
 	public class NativeLabelScanStoreRebuildTest
 	{
@@ -189,7 +189,7 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void createDirtyIndex(org.Neo4Net.io.pagecache.PageCache pageCache) throws java.io.IOException
+//ORIGINAL LINE: private void createDirtyIndex(Neo4Net.io.pagecache.PageCache pageCache) throws java.io.IOException
 		 private void CreateDirtyIndex( PageCache pageCache )
 		 {
 			  NativeLabelScanStore nativeLabelScanStore = null;
@@ -209,7 +209,7 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 			  }
 		 }
 
-		 private class RecordingMonitor : Neo4Net.Kernel.api.labelscan.LabelScanStore_Monitor_Adaptor
+		 private class RecordingMonitor : Neo4Net.Kernel.Api.LabelScan.LabelScanStore_Monitor_Adaptor
 		 {
 			  internal bool NotValid;
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:

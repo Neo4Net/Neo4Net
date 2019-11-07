@@ -28,8 +28,8 @@ namespace Neo4Net.Kernel.impl.coreapi
 	using Neo4Net.GraphDb.Index;
 	using RelationshipIndex = Neo4Net.GraphDb.Index.RelationshipIndex;
 	using InvalidTransactionTypeKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.InvalidTransactionTypeKernelException;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
-	using Statement = Neo4Net.Kernel.api.Statement;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
+	using Statement = Neo4Net.Kernel.Api.Statement;
 
 	public class IndexProviderImpl : IndexProvider
 	{

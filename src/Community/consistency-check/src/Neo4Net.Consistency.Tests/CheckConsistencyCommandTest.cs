@@ -65,7 +65,7 @@ namespace Neo4Net.Consistency
 	internal class CheckConsistencyCommandTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.Neo4Net.test.rule.TestDirectory testDir;
+//ORIGINAL LINE: @Inject private Neo4Net.test.rule.TestDirectory testDir;
 		 private TestDirectory _testDir;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -127,7 +127,7 @@ namespace Neo4Net.Consistency
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void shouldWriteReportFileToCurrentDirectoryByDefault() throws java.io.IOException, org.Neo4Net.consistency.checking.full.ConsistencyCheckIncompleteException, org.Neo4Net.commandline.admin.CommandFailed, org.Neo4Net.commandline.admin.IncorrectUsage
+//ORIGINAL LINE: @Test void shouldWriteReportFileToCurrentDirectoryByDefault() throws java.io.IOException, Neo4Net.consistency.checking.full.ConsistencyCheckIncompleteException, Neo4Net.commandline.admin.CommandFailed, Neo4Net.commandline.admin.IncorrectUsage
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void ShouldWriteReportFileToCurrentDirectoryByDefault()
 
@@ -145,7 +145,7 @@ namespace Neo4Net.Consistency
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void shouldWriteReportFileToSpecifiedDirectory() throws java.io.IOException, org.Neo4Net.consistency.checking.full.ConsistencyCheckIncompleteException, org.Neo4Net.commandline.admin.CommandFailed, org.Neo4Net.commandline.admin.IncorrectUsage
+//ORIGINAL LINE: @Test void shouldWriteReportFileToSpecifiedDirectory() throws java.io.IOException, Neo4Net.consistency.checking.full.ConsistencyCheckIncompleteException, Neo4Net.commandline.admin.CommandFailed, Neo4Net.commandline.admin.IncorrectUsage
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void ShouldWriteReportFileToSpecifiedDirectory()
 
@@ -163,7 +163,7 @@ namespace Neo4Net.Consistency
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void shouldCanonicalizeReportDirectory() throws java.io.IOException, org.Neo4Net.consistency.checking.full.ConsistencyCheckIncompleteException, org.Neo4Net.commandline.admin.CommandFailed, org.Neo4Net.commandline.admin.IncorrectUsage
+//ORIGINAL LINE: @Test void shouldCanonicalizeReportDirectory() throws java.io.IOException, Neo4Net.consistency.checking.full.ConsistencyCheckIncompleteException, Neo4Net.commandline.admin.CommandFailed, Neo4Net.commandline.admin.IncorrectUsage
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void ShouldCanonicalizeReportDirectory()
 		 {

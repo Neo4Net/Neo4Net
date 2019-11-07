@@ -297,8 +297,8 @@ namespace Neo4Net.Kernel.Api.Impl.Index
 		 /// <exception cref="IOException"> </exception>
 		 /// <seealso cref= WritableIndexSnapshotFileIterator </seealso>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.graphdb.ResourceIterator<java.io.File> snapshot() throws java.io.IOException
-		 public virtual ResourceIterator<File> Snapshot()
+//ORIGINAL LINE: public Neo4Net.graphdb.ResourceIterator<java.io.File> snapshot() throws java.io.IOException
+		 public virtual IResourceIterator<File> Snapshot()
 		 {
 			  EnsureOpen();
 			  IList<ResourceIterator<File>> snapshotIterators = null;
@@ -384,7 +384,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index
 		 /// <returns> newly created partition </returns>
 		 /// <exception cref="IOException"> </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.Neo4Net.kernel.api.impl.index.partition.AbstractIndexPartition addNewPartition() throws java.io.IOException
+//ORIGINAL LINE: Neo4Net.kernel.api.impl.index.partition.AbstractIndexPartition addNewPartition() throws java.io.IOException
 		 internal virtual AbstractIndexPartition AddNewPartition()
 		 {
 			  EnsureOpen();
@@ -412,7 +412,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected static java.util.List<org.Neo4Net.kernel.api.impl.index.partition.PartitionSearcher> acquireSearchers(java.util.List<org.Neo4Net.kernel.api.impl.index.partition.AbstractIndexPartition> partitions) throws java.io.IOException
+//ORIGINAL LINE: protected static java.util.List<Neo4Net.kernel.api.impl.index.partition.PartitionSearcher> acquireSearchers(java.util.List<Neo4Net.kernel.api.impl.index.partition.AbstractIndexPartition> partitions) throws java.io.IOException
 		 protected internal static IList<PartitionSearcher> AcquireSearchers( IList<AbstractIndexPartition> partitions )
 		 {
 			  IList<PartitionSearcher> searchers = new List<PartitionSearcher>( partitions.Count );
@@ -500,11 +500,11 @@ namespace Neo4Net.Kernel.Api.Impl.Index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected abstract READER createSimpleReader(java.util.List<org.Neo4Net.kernel.api.impl.index.partition.AbstractIndexPartition> partitions) throws java.io.IOException;
+//ORIGINAL LINE: protected abstract READER createSimpleReader(java.util.List<Neo4Net.kernel.api.impl.index.partition.AbstractIndexPartition> partitions) throws java.io.IOException;
 		 protected internal abstract READER CreateSimpleReader( IList<AbstractIndexPartition> partitions );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected abstract READER createPartitionedReader(java.util.List<org.Neo4Net.kernel.api.impl.index.partition.AbstractIndexPartition> partitions) throws java.io.IOException;
+//ORIGINAL LINE: protected abstract READER createPartitionedReader(java.util.List<Neo4Net.kernel.api.impl.index.partition.AbstractIndexPartition> partitions) throws java.io.IOException;
 		 protected internal abstract READER CreatePartitionedReader( IList<AbstractIndexPartition> partitions );
 	}
 

@@ -30,7 +30,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.staging
 	using StatsProvider = Neo4Net.@unsafe.Impl.Batchimport.stats.StatsProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.Exceptions.SILENT_UNCAUGHT_EXCEPTION_HANDLER;
+//	import static Neo4Net.helpers.Exceptions.SILENT_UNCAUGHT_EXCEPTION_HANDLER;
 
 	/// <summary>
 	/// Step that generally sits first in a <seealso cref="Stage"/> and produces batches that will flow downstream

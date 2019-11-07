@@ -3,14 +3,14 @@
     "",
     "\\src",
     "\\src\\Community",
-    "\\src\\Community\\graph-algo",
+    "\\src\\Community\\annotation-processors",
+    "\\src\\Community\\annotation-processors\\Neo4Net.Kernel.Impl.Annotations",
+    "\\src\\Community\\annotation-processors\\Neo4Net.Kernel.Impl.Annotations\\Kernel",
+    "\\src\\Community\\annotation-processors\\Neo4Net.Kernel.Impl.Annotations\\Kernel\\Impl",
+    "\\src\\Community\\graphdb-api",
     "\\src\\Community\\graphdb-api\\Neo4Net.GraphDb.Api",
-    "\\src\\Community\\graphdb-api\\Neo4Net.GraphDb.Api\\bin",
-    "\\src\\Community\\graphdb-api\\Neo4Net.GraphDb.Api\\bin\\Debug\\netstandard2.0",
-    "\\src\\Community\\kernel",
-    "\\src\\Community\\kernel\\Neo4Net.Kernel",
-    "\\src\\Community\\kernel\\Neo4Net.Kernel.Tests"
+    "\\src\\Community\\graphdb-api\\Neo4Net.GraphDb.Api\\traversal"
   ],
-  "SelectedNode": "\\community",
+  "SelectedNode": "\\src\\Community\\graphdb-api\\Neo4Net.GraphDb.Api\\traversal\\GloballyUnique.cs",
   "PreviewInSolutionExplorer": false
 }

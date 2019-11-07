@@ -30,7 +30,7 @@ namespace Neo4Net.Bolt.runtime
 	using BoltStateMachineV1 = Neo4Net.Bolt.v1.runtime.BoltStateMachineV1;
 	using BoltProtocolV2 = Neo4Net.Bolt.v2.BoltProtocolV2;
 	using BoltStateMachineV3 = Neo4Net.Bolt.v3.BoltStateMachineV3;
-	using DatabaseManager = Neo4Net.Dbms.database.DatabaseManager;
+	using IDatabaseManager = Neo4Net.Dbms.database.DatabaseManager;
 	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using GraphDatabaseQueryService = Neo4Net.Kernel.GraphDatabaseQueryService;
@@ -62,7 +62,7 @@ namespace Neo4Net.Bolt.runtime
 		 private static readonly BoltChannel _channel = BoltTestUtil.newTestBoltChannel();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ParameterizedTest(name = "V{0}") @ValueSource(longs = {org.Neo4Net.bolt.v1.BoltProtocolV1.VERSION, org.Neo4Net.bolt.v2.BoltProtocolV2.VERSION}) void shouldCreateBoltStateMachinesV1(long protocolVersion)
+//ORIGINAL LINE: @ParameterizedTest(name = "V{0}") @ValueSource(longs = {Neo4Net.bolt.v1.BoltProtocolV1.VERSION, Neo4Net.bolt.v2.BoltProtocolV2.VERSION}) void shouldCreateBoltStateMachinesV1(long protocolVersion)
 		 internal virtual void ShouldCreateBoltStateMachinesV1( long protocolVersion )
 		 {
 			  BoltStateMachineFactoryImpl factory = NewBoltFactory();
@@ -100,13 +100,13 @@ namespace Neo4Net.Bolt.runtime
 			  return NewBoltFactory( NewDbMock() );
 		 }
 
-		 private static BoltStateMachineFactoryImpl NewBoltFactory( DatabaseManager databaseManager )
+		 private static BoltStateMachineFactoryImpl NewBoltFactory( IDatabaseManager databaseManager )
 		 {
 			  Config config = Config.defaults( GraphDatabaseSettings.active_database, CUSTOM_DB_NAME );
 			  return new BoltStateMachineFactoryImpl( databaseManager, new UsageData( new OnDemandJobScheduler() ), mock(typeof(Authentication)), _clock, config, NullLogService.Instance );
 		 }
 
-		 private static DatabaseManager NewDbMock()
+		 private static IDatabaseManager NewDbMock()
 		 {
 			  GraphDatabaseFacade db = mock( typeof( GraphDatabaseFacade ) );
 			  DependencyResolver dependencyResolver = mock( typeof( DependencyResolver ) );
@@ -114,7 +114,7 @@ namespace Neo4Net.Bolt.runtime
 			  GraphDatabaseQueryService queryService = mock( typeof( GraphDatabaseQueryService ) );
 			  when( queryService.DependencyResolver ).thenReturn( dependencyResolver );
 			  when( dependencyResolver.ResolveDependency( typeof( GraphDatabaseQueryService ) ) ).thenReturn( queryService );
-			  DatabaseManager databaseManager = mock( typeof( DatabaseManager ) );
+			  IDatabaseManager databaseManager = mock( typeof( IDatabaseManager ) );
 			  when( databaseManager.GetDatabaseFacade( CUSTOM_DB_NAME ) ).thenReturn( db );
 			  return databaseManager;
 		 }

@@ -31,9 +31,9 @@ namespace Neo4Net.causalclustering.core.consensus.schedule
 	using BinaryLatch = Neo4Net.Utils.Concurrent.BinaryLatch;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.scheduler.JobSchedulerFactory.createScheduler;
+//	import static Neo4Net.kernel.impl.scheduler.JobSchedulerFactory.createScheduler;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.logging.NullLog.getInstance;
+//	import static Neo4Net.logging.NullLog.getInstance;
 
 	/// <summary>
 	/// Most aspects of the Timer are tested through the <seealso cref="TimerServiceTest"/>.
@@ -41,7 +41,7 @@ namespace Neo4Net.causalclustering.core.consensus.schedule
 	public class TimerTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.kernel.lifecycle.LifeRule lifeRule = new org.Neo4Net.kernel.lifecycle.LifeRule(true);
+//ORIGINAL LINE: @Rule public Neo4Net.kernel.lifecycle.LifeRule lifeRule = new Neo4Net.kernel.lifecycle.LifeRule(true);
 		 public LifeRule LifeRule = new LifeRule( true );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

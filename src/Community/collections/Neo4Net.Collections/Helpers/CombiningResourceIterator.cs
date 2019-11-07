@@ -24,11 +24,11 @@ namespace Neo4Net.Collections.Helpers
 
 	using Neo4Net.GraphDb;
 
-	public class CombiningResourceIterator<T> : CombiningIterator<T>, ResourceIterator<T>
+	public class CombiningResourceIterator<T> : CombiningIterator<T>, IResourceIterator<T>
 	{
 		 private readonly IEnumerator<ResourceIterator<T>> _iterators;
 		 private readonly ICollection<ResourceIterator<T>> _seenIterators = new List<ResourceIterator<T>>();
-		 private ResourceIterator<T> _currentIterator;
+		 private IResourceIterator<T> _currentIterator;
 
 		 public CombiningResourceIterator( IEnumerator<ResourceIterator<T>> iterators ) : base( iterators )
 		 {
@@ -50,7 +50,7 @@ namespace Neo4Net.Collections.Helpers
 
 		 public override void Close()
 		 {
-			  foreach ( ResourceIterator<T> seenIterator in _seenIterators )
+			  foreach ( IResourceIterator<T> seenIterator in _seenIterators )
 			  {
 					seenIterator.Close();
 			  }

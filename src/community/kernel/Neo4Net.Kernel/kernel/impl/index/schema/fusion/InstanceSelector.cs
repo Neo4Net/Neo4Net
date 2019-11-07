@@ -84,7 +84,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 		 /// <returns> A new <seealso cref="System.Collections.Hashtable"/> containing the mapped values. </returns>
 		 /// <exception cref="E"> exception from converter. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: <R,E extends Exception> java.util.EnumMap<IndexSlot,R> map(org.Neo4Net.function.ThrowingFunction<T,R,E> converter) throws E
+//ORIGINAL LINE: <R,E extends Exception> java.util.EnumMap<IndexSlot,R> map(Neo4Net.function.ThrowingFunction<T,R,E> converter) throws E
 		 internal virtual Dictionary<IndexSlot, R> Map<R, E>( ThrowingFunction<T, R, E> converter ) where E : Exception
 		 {
 			  Dictionary<IndexSlot, R> result = new Dictionary<IndexSlot, R>( typeof( IndexSlot ) );
@@ -106,7 +106,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 		 /// <returns> A new <seealso cref="System.Collections.Hashtable"/> containing the mapped values. </returns>
 		 /// <exception cref="E"> exception from converter. </exception>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") <R,E extends Exception> Iterable<R> transform(org.Neo4Net.function.ThrowingFunction<T,R,E> converter) throws E
+//ORIGINAL LINE: @SuppressWarnings("unchecked") <R,E extends Exception> Iterable<R> transform(Neo4Net.function.ThrowingFunction<T,R,E> converter) throws E
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual IEnumerable<R> Transform<R, E>( ThrowingFunction<T, R, E> converter ) where E : Exception
 		 {

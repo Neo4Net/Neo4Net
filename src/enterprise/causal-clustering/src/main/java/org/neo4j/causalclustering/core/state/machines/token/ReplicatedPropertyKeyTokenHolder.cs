@@ -24,7 +24,7 @@ namespace Neo4Net.causalclustering.core.state.machines.token
 {
 
 	using RaftReplicator = Neo4Net.causalclustering.core.replication.RaftReplicator;
-	using TransactionState = Neo4Net.Kernel.api.txstate.TransactionState;
+	using TransactionState = Neo4Net.Kernel.Api.txstate.TransactionState;
 	using TokenRegistry = Neo4Net.Kernel.impl.core.TokenRegistry;
 	using IdGeneratorFactory = Neo4Net.Kernel.impl.store.id.IdGeneratorFactory;
 	using IdType = Neo4Net.Kernel.impl.store.id.IdType;

@@ -44,7 +44,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException;
 	using SchemaKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.SchemaKernelException;
 	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
-	using MultiTokenSchemaDescriptor = Neo4Net.Kernel.api.schema.MultiTokenSchemaDescriptor;
+	using MultiTokenSchemaDescriptor = Neo4Net.Kernel.Api.schema.MultiTokenSchemaDescriptor;
 	using KernelImpl = Neo4Net.Kernel.Impl.Api.KernelImpl;
 	using KernelTransactionImplementation = Neo4Net.Kernel.Impl.Api.KernelTransactionImplementation;
 	using IndexProviderMap = Neo4Net.Kernel.Impl.Api.index.IndexProviderMap;
@@ -67,30 +67,30 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.Label.label;
+//	import static Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.impl.fulltext.FulltextIndexProviderFactory.DESCRIPTOR;
+//	import static Neo4Net.kernel.api.impl.fulltext.FulltextIndexProviderFactory.DESCRIPTOR;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.impl.fulltext.FulltextProceduresTest.NODE_CREATE;
+//	import static Neo4Net.kernel.api.impl.fulltext.FulltextProceduresTest.NODE_CREATE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.impl.fulltext.FulltextProceduresTest.RELATIONSHIP_CREATE;
+//	import static Neo4Net.kernel.api.impl.fulltext.FulltextProceduresTest.RELATIONSHIP_CREATE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.impl.fulltext.FulltextProceduresTest.array;
+//	import static Neo4Net.kernel.api.impl.fulltext.FulltextProceduresTest.array;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.impl.fulltext.FulltextProceduresTest.assertQueryFindsIds;
+//	import static Neo4Net.kernel.api.impl.fulltext.FulltextProceduresTest.assertQueryFindsIds;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.schema.SchemaDescriptorFactory.multiToken;
+//	import static Neo4Net.kernel.api.schema.SchemaDescriptorFactory.multiToken;
 
 	public class FulltextIndexProviderTest
 	{
 		 private const string NAME = "fulltext";
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.junit.rules.Timeout timeout = org.Neo4Net.test.rule.VerboseTimeout.builder().withTimeout(1, java.util.concurrent.TimeUnit.MINUTES).build();
+//ORIGINAL LINE: @Rule public org.junit.rules.Timeout timeout = Neo4Net.test.rule.VerboseTimeout.builder().withTimeout(1, java.util.concurrent.TimeUnit.MINUTES).build();
 		 public Timeout Timeout = VerboseTimeout.builder().withTimeout(1, TimeUnit.MINUTES).build();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.DatabaseRule db = new org.Neo4Net.test.rule.EmbeddedDatabaseRule();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.DatabaseRule db = new Neo4Net.test.rule.EmbeddedDatabaseRule();
 		 public DatabaseRule Db = new EmbeddedDatabaseRule();
 
 		 private Node _node1;
@@ -387,7 +387,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.Kernel.Api.Internal.IndexReference createIndex(int[] IEntityTokens, int[] propertyIds) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException, org.Neo4Net.Kernel.Api.Internal.Exceptions.InvalidTransactionTypeKernelException, org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.SchemaKernelException
+//ORIGINAL LINE: private Neo4Net.Kernel.Api.Internal.IndexReference createIndex(int[] IEntityTokens, int[] propertyIds) throws Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException, Neo4Net.Kernel.Api.Internal.Exceptions.InvalidTransactionTypeKernelException, Neo4Net.Kernel.Api.Internal.Exceptions.Schema.SchemaKernelException
 		 private IndexReference CreateIndex( int[] IEntityTokens, int[] propertyIds )
 
 		 {
@@ -403,7 +403,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void verifyThatFulltextIndexIsPresent(org.Neo4Net.Kernel.Api.Internal.IndexReference fulltextIndexDescriptor) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
+//ORIGINAL LINE: private void verifyThatFulltextIndexIsPresent(Neo4Net.Kernel.Api.Internal.IndexReference fulltextIndexDescriptor) throws Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 private void VerifyThatFulltextIndexIsPresent( IndexReference fulltextIndexDescriptor )
 		 {
 			  using ( KernelTransactionImplementation transaction = KernelTransaction )
@@ -509,7 +509,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void await(org.Neo4Net.Kernel.Api.Internal.IndexReference descriptor) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
+//ORIGINAL LINE: private void await(Neo4Net.Kernel.Api.Internal.IndexReference descriptor) throws Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
 		 private void Await( IndexReference descriptor )
 		 {
 			  try

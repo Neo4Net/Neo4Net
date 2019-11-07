@@ -22,9 +22,9 @@ namespace Neo4Net.Kernel.impl.transaction.log.entry
 	using StorageCommand = Neo4Net.Kernel.Api.StorageEngine.StorageCommand;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.entry.LogEntryByteCodes.COMMAND;
+//	import static Neo4Net.kernel.impl.transaction.log.entry.LogEntryByteCodes.COMMAND;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.entry.LogEntryVersion.CURRENT;
+//	import static Neo4Net.kernel.impl.transaction.log.entry.LogEntryVersion.CURRENT;
 
 	public class LogEntryCommand : AbstractLogEntry
 	{

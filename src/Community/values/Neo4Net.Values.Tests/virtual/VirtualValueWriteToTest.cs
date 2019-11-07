@@ -28,45 +28,45 @@ namespace Neo4Net.Values.@virtual
 	using Specials = Neo4Net.Values.Storable.BufferValueWriter.Specials;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.BufferAnyValueWriter.Specials.beginList;
+//	import static Neo4Net.values.BufferAnyValueWriter.Specials.beginList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.BufferAnyValueWriter.Specials.beginMap;
+//	import static Neo4Net.values.BufferAnyValueWriter.Specials.beginMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.BufferAnyValueWriter.Specials.endList;
+//	import static Neo4Net.values.BufferAnyValueWriter.Specials.endList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.BufferAnyValueWriter.Specials.endMap;
+//	import static Neo4Net.values.BufferAnyValueWriter.Specials.endMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.BufferAnyValueWriter.Specials.writeRelationship;
+//	import static Neo4Net.values.BufferAnyValueWriter.Specials.writeRelationship;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.BufferAnyValueWriter.Specials.writeRelationshipReference;
+//	import static Neo4Net.values.BufferAnyValueWriter.Specials.writeRelationshipReference;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.BufferAnyValueWriter.Specials.writeNode;
+//	import static Neo4Net.values.BufferAnyValueWriter.Specials.writeNode;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.BufferAnyValueWriter.Specials.writeNodeReference;
+//	import static Neo4Net.values.BufferAnyValueWriter.Specials.writeNodeReference;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.BufferAnyValueWriter.Specials.writePath;
+//	import static Neo4Net.values.BufferAnyValueWriter.Specials.writePath;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.booleanValue;
+//	import static Neo4Net.values.storable.Values.booleanValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.byteArray;
+//	import static Neo4Net.values.storable.Values.byteArray;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.charValue;
+//	import static Neo4Net.values.storable.Values.charValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.intValue;
+//	import static Neo4Net.values.storable.Values.intValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.stringArray;
+//	import static Neo4Net.values.storable.Values.stringArray;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.stringValue;
+//	import static Neo4Net.values.storable.Values.stringValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.@virtual.VirtualValues.relationship;
+//	import static Neo4Net.values.@virtual.VirtualValues.relationship;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.@virtual.VirtualValues.relationshipValue;
+//	import static Neo4Net.values.@virtual.VirtualValues.relationshipValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.@virtual.VirtualValues.emptyMap;
+//	import static Neo4Net.values.@virtual.VirtualValues.emptyMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.@virtual.VirtualValues.map;
+//	import static Neo4Net.values.@virtual.VirtualValues.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.@virtual.VirtualValues.nodeValue;
+//	import static Neo4Net.values.@virtual.VirtualValues.nodeValue;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(value = Parameterized.class) public class VirtualValueWriteToTest

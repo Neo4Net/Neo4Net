@@ -52,7 +52,7 @@ namespace Neo4Net.Server.plugins
 //	import static org.junit.Assert.assertThat;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") public class PluginFunctionalTestIT extends org.Neo4Net.test.server.SharedServerTestBase
+//ORIGINAL LINE: @SuppressWarnings("unchecked") public class PluginFunctionalTestIT extends Neo4Net.test.server.SharedServerTestBase
 	public class PluginFunctionalTestIT : SharedServerTestBase
 	{
 		 private static FunctionalTestHelper _functionalTestHelper;
@@ -193,7 +193,7 @@ namespace Neo4Net.Server.plugins
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private String getPluginMethodUri(String startUrl, String methodName) throws org.Neo4Net.server.rest.domain.JsonParseException
+//ORIGINAL LINE: private String getPluginMethodUri(String startUrl, String methodName) throws Neo4Net.server.rest.domain.JsonParseException
 		 private string GetPluginMethodUri( string startUrl, string methodName )
 		 {
 			  IDictionary<string, object> map = PluginFunctionalTestHelper.MakeGet( startUrl );

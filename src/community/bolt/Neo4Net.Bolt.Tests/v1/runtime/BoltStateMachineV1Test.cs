@@ -81,37 +81,37 @@ namespace Neo4Net.Bolt.v1.runtime
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.testing.BoltMatchers.canReset;
+//	import static Neo4Net.bolt.testing.BoltMatchers.canReset;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.testing.BoltMatchers.failedWithStatus;
+//	import static Neo4Net.bolt.testing.BoltMatchers.failedWithStatus;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.testing.BoltMatchers.hasNoTransaction;
+//	import static Neo4Net.bolt.testing.BoltMatchers.hasNoTransaction;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.testing.BoltMatchers.hasTransaction;
+//	import static Neo4Net.bolt.testing.BoltMatchers.hasTransaction;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.testing.BoltMatchers.inState;
+//	import static Neo4Net.bolt.testing.BoltMatchers.inState;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.testing.BoltMatchers.isClosed;
+//	import static Neo4Net.bolt.testing.BoltMatchers.isClosed;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.testing.BoltMatchers.succeeded;
+//	import static Neo4Net.bolt.testing.BoltMatchers.succeeded;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.testing.BoltMatchers.verifyOneResponse;
+//	import static Neo4Net.bolt.testing.BoltMatchers.verifyOneResponse;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.testing.BoltMatchers.wasIgnored;
+//	import static Neo4Net.bolt.testing.BoltMatchers.wasIgnored;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.testing.NullResponseHandler.nullResponseHandler;
+//	import static Neo4Net.bolt.testing.NullResponseHandler.nullResponseHandler;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.runtime.MachineRoom.EMPTY_PARAMS;
+//	import static Neo4Net.bolt.v1.runtime.MachineRoom.EMPTY_PARAMS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.runtime.MachineRoom.USER_AGENT;
+//	import static Neo4Net.bolt.v1.runtime.MachineRoom.USER_AGENT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.runtime.MachineRoom.init;
+//	import static Neo4Net.bolt.v1.runtime.MachineRoom.init;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.runtime.MachineRoom.newMachine;
+//	import static Neo4Net.bolt.v1.runtime.MachineRoom.newMachine;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.runtime.MachineRoom.newMachineWithTransaction;
+//	import static Neo4Net.bolt.v1.runtime.MachineRoom.newMachineWithTransaction;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.runtime.MachineRoom.newMachineWithTransactionSPI;
+//	import static Neo4Net.bolt.v1.runtime.MachineRoom.newMachineWithTransactionSPI;
 
 	public class BoltStateMachineV1Test
 	{
@@ -142,7 +142,7 @@ namespace Neo4Net.Bolt.v1.runtime
 		 {
 			  // Given a FAILED machine with an open transaction
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.bolt.runtime.BoltStateMachine machine = newMachineWithTransaction();
+//ORIGINAL LINE: final Neo4Net.bolt.runtime.BoltStateMachine machine = newMachineWithTransaction();
 			  BoltStateMachine machine = newMachineWithTransaction();
 			  machine.MarkFailed( Neo4NetError.from( new Exception() ) );
 
@@ -163,7 +163,7 @@ namespace Neo4Net.Bolt.v1.runtime
 		 {
 			  // Given a ready machine with an open transaction
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.bolt.runtime.BoltStateMachine machine = newMachineWithTransaction();
+//ORIGINAL LINE: final Neo4Net.bolt.runtime.BoltStateMachine machine = newMachineWithTransaction();
 			  BoltStateMachine machine = newMachineWithTransaction();
 
 			  // When the machine is shut down
@@ -198,7 +198,7 @@ namespace Neo4Net.Bolt.v1.runtime
 		 {
 			  // Given a ready machine with an open transaction...
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.bolt.runtime.BoltStateMachine machine = newMachineWithTransaction();
+//ORIGINAL LINE: final Neo4Net.bolt.runtime.BoltStateMachine machine = newMachineWithTransaction();
 			  BoltStateMachine machine = newMachineWithTransaction();
 
 			  // ...and an open result
@@ -215,7 +215,7 @@ namespace Neo4Net.Bolt.v1.runtime
 		 {
 			  // Given a ready machine...
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.bolt.runtime.BoltStateMachine machine = init(newMachine());
+//ORIGINAL LINE: final Neo4Net.bolt.runtime.BoltStateMachine machine = init(newMachine());
 			  BoltStateMachine machine = init( newMachine() );
 
 			  // ...and an open result
@@ -232,7 +232,7 @@ namespace Neo4Net.Bolt.v1.runtime
 		 {
 			  // Given a failed machine
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.bolt.runtime.BoltStateMachine machine = newMachine();
+//ORIGINAL LINE: final Neo4Net.bolt.runtime.BoltStateMachine machine = newMachine();
 			  BoltStateMachine machine = newMachine();
 			  machine.MarkFailed( Neo4NetError.from( new Exception() ) );
 
@@ -250,7 +250,7 @@ namespace Neo4Net.Bolt.v1.runtime
 		 {
 			  // Given a failed machine
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.bolt.runtime.BoltStateMachine machine = newMachine();
+//ORIGINAL LINE: final Neo4Net.bolt.runtime.BoltStateMachine machine = newMachine();
 			  BoltStateMachine machine = newMachine();
 			  machine.MarkFailed( Neo4NetError.from( new Exception() ) );
 
@@ -268,7 +268,7 @@ namespace Neo4Net.Bolt.v1.runtime
 		 {
 			  // Given a ready machine with an open transaction
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.bolt.runtime.BoltStateMachine machine = newMachineWithTransaction();
+//ORIGINAL LINE: final Neo4Net.bolt.runtime.BoltStateMachine machine = newMachineWithTransaction();
 			  BoltStateMachine machine = newMachineWithTransaction();
 
 			  // ...and (for some reason) a FAILED state
@@ -288,7 +288,7 @@ namespace Neo4Net.Bolt.v1.runtime
 		 {
 			  // Given a ready machine
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.bolt.runtime.BoltStateMachine machine = init(newMachine());
+//ORIGINAL LINE: final Neo4Net.bolt.runtime.BoltStateMachine machine = init(newMachine());
 			  BoltStateMachine machine = init( newMachine() );
 
 			  // ...which is subsequently closed
@@ -310,7 +310,7 @@ namespace Neo4Net.Bolt.v1.runtime
 		 {
 			  // Given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.bolt.runtime.BoltStateMachine machine = init(newMachine());
+//ORIGINAL LINE: final Neo4Net.bolt.runtime.BoltStateMachine machine = init(newMachine());
 			  BoltStateMachine machine = init( newMachine() );
 
 			  // When
@@ -335,7 +335,7 @@ namespace Neo4Net.Bolt.v1.runtime
 		 {
 			  // Given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.bolt.runtime.BoltStateMachine machine = init(newMachine());
+//ORIGINAL LINE: final Neo4Net.bolt.runtime.BoltStateMachine machine = init(newMachine());
 			  BoltStateMachine machine = init( newMachine() );
 
 			  // When
@@ -856,7 +856,7 @@ namespace Neo4Net.Bolt.v1.runtime
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void testMarkFailedOnNextMessage(org.Neo4Net.function.ThrowingBiConsumer<org.Neo4Net.bolt.runtime.BoltStateMachine,org.Neo4Net.bolt.runtime.BoltResponseHandler,org.Neo4Net.bolt.runtime.BoltConnectionFatality> action) throws Exception
+//ORIGINAL LINE: private static void testMarkFailedOnNextMessage(Neo4Net.function.ThrowingBiConsumer<Neo4Net.bolt.runtime.BoltStateMachine,Neo4Net.bolt.runtime.BoltResponseHandler,Neo4Net.bolt.runtime.BoltConnectionFatality> action) throws Exception
 		 private static void TestMarkFailedOnNextMessage( ThrowingBiConsumer<BoltStateMachine, BoltResponseHandler, BoltConnectionFatality> action )
 		 {
 			  // Given
@@ -877,7 +877,7 @@ namespace Neo4Net.Bolt.v1.runtime
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void testReadyStateAfterMarkFailedOnNextMessage(org.Neo4Net.function.ThrowingBiConsumer<org.Neo4Net.bolt.runtime.BoltStateMachine,org.Neo4Net.bolt.runtime.BoltResponseHandler,org.Neo4Net.bolt.runtime.BoltConnectionFatality> action) throws Exception
+//ORIGINAL LINE: private static void testReadyStateAfterMarkFailedOnNextMessage(Neo4Net.function.ThrowingBiConsumer<Neo4Net.bolt.runtime.BoltStateMachine,Neo4Net.bolt.runtime.BoltResponseHandler,Neo4Net.bolt.runtime.BoltConnectionFatality> action) throws Exception
 		 private static void TestReadyStateAfterMarkFailedOnNextMessage( ThrowingBiConsumer<BoltStateMachine, BoltResponseHandler, BoltConnectionFatality> action )
 		 {
 			  // Given
@@ -899,7 +899,7 @@ namespace Neo4Net.Bolt.v1.runtime
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void testMarkFailedShouldYieldIgnoredIfAlreadyFailed(org.Neo4Net.function.ThrowingBiConsumer<org.Neo4Net.bolt.runtime.BoltStateMachine,org.Neo4Net.bolt.runtime.BoltResponseHandler,org.Neo4Net.bolt.runtime.BoltConnectionFatality> action) throws Exception
+//ORIGINAL LINE: private static void testMarkFailedShouldYieldIgnoredIfAlreadyFailed(Neo4Net.function.ThrowingBiConsumer<Neo4Net.bolt.runtime.BoltStateMachine,Neo4Net.bolt.runtime.BoltResponseHandler,Neo4Net.bolt.runtime.BoltConnectionFatality> action) throws Exception
 		 private static void TestMarkFailedShouldYieldIgnoredIfAlreadyFailed( ThrowingBiConsumer<BoltStateMachine, BoltResponseHandler, BoltConnectionFatality> action )
 		 {
 			  // Given
@@ -921,7 +921,7 @@ namespace Neo4Net.Bolt.v1.runtime
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void testMarkFailedShouldYieldSuccessIfAlreadyFailed(org.Neo4Net.function.ThrowingBiConsumer<org.Neo4Net.bolt.runtime.BoltStateMachine,org.Neo4Net.bolt.runtime.BoltResponseHandler,org.Neo4Net.bolt.runtime.BoltConnectionFatality> action) throws Exception
+//ORIGINAL LINE: private static void testMarkFailedShouldYieldSuccessIfAlreadyFailed(Neo4Net.function.ThrowingBiConsumer<Neo4Net.bolt.runtime.BoltStateMachine,Neo4Net.bolt.runtime.BoltResponseHandler,Neo4Net.bolt.runtime.BoltConnectionFatality> action) throws Exception
 		 private static void TestMarkFailedShouldYieldSuccessIfAlreadyFailed( ThrowingBiConsumer<BoltStateMachine, BoltResponseHandler, BoltConnectionFatality> action )
 		 {
 			  // Given

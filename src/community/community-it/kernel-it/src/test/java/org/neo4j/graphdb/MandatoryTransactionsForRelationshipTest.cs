@@ -22,7 +22,7 @@ namespace Neo4Net.GraphDb
 	using Test = org.junit.Test;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.RelationshipType.withName;
+//	import static Neo4Net.graphdb.RelationshipType.withName;
 
 	public class MandatoryTransactionsForRelationshipTest : AbstractMandatoryTransactionsTest<Relationship>
 	{

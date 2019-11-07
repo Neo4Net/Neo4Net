@@ -45,32 +45,32 @@ namespace Neo4Net.metrics
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.Matchers.greaterThanOrEqualTo;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.map;
+//	import static Neo4Net.helpers.collection.MapUtil.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.metrics.MetricsTestHelper.metricsCsv;
+//	import static Neo4Net.metrics.MetricsTestHelper.metricsCsv;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.metrics.MetricsTestHelper.readLongValue;
+//	import static Neo4Net.metrics.MetricsTestHelper.readLongValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.metrics.source.db.BoltMetrics.MESSAGES_DONE;
+//	import static Neo4Net.metrics.source.db.BoltMetrics.MESSAGES_DONE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.metrics.source.db.BoltMetrics.MESSAGES_RECEIVED;
+//	import static Neo4Net.metrics.source.db.BoltMetrics.MESSAGES_RECEIVED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.metrics.source.db.BoltMetrics.MESSAGES_STARTED;
+//	import static Neo4Net.metrics.source.db.BoltMetrics.MESSAGES_STARTED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.metrics.source.db.BoltMetrics.SESSIONS_STARTED;
+//	import static Neo4Net.metrics.source.db.BoltMetrics.SESSIONS_STARTED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.metrics.source.db.BoltMetrics.TOTAL_PROCESSING_TIME;
+//	import static Neo4Net.metrics.source.db.BoltMetrics.TOTAL_PROCESSING_TIME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.metrics.source.db.BoltMetrics.TOTAL_QUEUE_TIME;
+//	import static Neo4Net.metrics.source.db.BoltMetrics.TOTAL_QUEUE_TIME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.PortUtils.getBoltPort;
+//	import static Neo4Net.test.PortUtils.getBoltPort;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.assertion.Assert.assertEventually;
+//	import static Neo4Net.test.assertion.Assert.assertEventually;
 
 	public class BoltMetricsIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.TestDirectory testDirectory = Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public TestDirectory TestDirectory = TestDirectory.testDirectory();
 
 		 private GraphDatabaseAPI _db;

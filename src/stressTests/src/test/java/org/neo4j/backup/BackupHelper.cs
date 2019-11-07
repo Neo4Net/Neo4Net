@@ -39,7 +39,7 @@ namespace Neo4Net.backup
 	using Config = Neo4Net.Kernel.configuration.Config;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.backup.impl.BackupProtocolServiceFactory.backupProtocolService;
+//	import static Neo4Net.backup.impl.BackupProtocolServiceFactory.backupProtocolService;
 
 	public class BackupHelper
 	{

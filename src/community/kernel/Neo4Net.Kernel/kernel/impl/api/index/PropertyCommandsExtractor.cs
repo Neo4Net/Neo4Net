@@ -26,7 +26,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using CommandsToApply = Neo4Net.Kernel.Api.StorageEngine.CommandsToApply;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.NodeLabelsField.fieldPointsToDynamicRecordOfLabels;
+//	import static Neo4Net.kernel.impl.store.NodeLabelsField.fieldPointsToDynamicRecordOfLabels;
 
 	/// <summary>
 	/// Implements both BatchTransactionApplier and TransactionApplier in order to reduce garbage.

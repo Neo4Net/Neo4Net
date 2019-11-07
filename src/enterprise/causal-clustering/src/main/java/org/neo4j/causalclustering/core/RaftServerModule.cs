@@ -66,13 +66,13 @@ namespace Neo4Net.causalclustering.core
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Arrays.asList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.CausalClusteringSettings.raft_in_queue_max_batch;
+//	import static Neo4Net.causalclustering.core.CausalClusteringSettings.raft_in_queue_max_batch;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.CausalClusteringSettings.raft_in_queue_max_batch_bytes;
+//	import static Neo4Net.causalclustering.core.CausalClusteringSettings.raft_in_queue_max_batch_bytes;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.CausalClusteringSettings.raft_in_queue_max_bytes;
+//	import static Neo4Net.causalclustering.core.CausalClusteringSettings.raft_in_queue_max_bytes;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.CausalClusteringSettings.raft_in_queue_size;
+//	import static Neo4Net.causalclustering.core.CausalClusteringSettings.raft_in_queue_size;
 
 	internal class RaftServerModule
 	{
@@ -101,7 +101,7 @@ namespace Neo4Net.causalclustering.core
 			  this._supportedModifierProtocols = supportedModifierProtocols;
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.causalclustering.messaging.LifecycleMessageHandler<org.Neo4Net.causalclustering.core.consensus.RaftMessages_ReceivedInstantClusterIdAwareMessage<?>> messageHandlerChain = createMessageHandlerChain(coreServerModule);
+//ORIGINAL LINE: Neo4Net.causalclustering.messaging.LifecycleMessageHandler<Neo4Net.causalclustering.core.consensus.RaftMessages_ReceivedInstantClusterIdAwareMessage<?>> messageHandlerChain = createMessageHandlerChain(coreServerModule);
 			  LifecycleMessageHandler<RaftMessages_ReceivedInstantClusterIdAwareMessage<object>> messageHandlerChain = CreateMessageHandlerChain( coreServerModule );
 
 			  CreateRaftServer( coreServerModule, messageHandlerChain, installedProtocolsHandler );
@@ -128,7 +128,7 @@ namespace Neo4Net.causalclustering.core
 			  Server raftServer = new Server( handshakeServerInitializer, installedProtocolsHandler, _logProvider, _platformModule.logging.UserLogProvider, raftListenAddress, "raft-server" );
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.causalclustering.messaging.LoggingInbound<org.Neo4Net.causalclustering.core.consensus.RaftMessages_ReceivedInstantClusterIdAwareMessage<?>> loggingRaftInbound = new org.Neo4Net.causalclustering.messaging.LoggingInbound<>(nettyHandler, messageLogger, identityModule.myself());
+//ORIGINAL LINE: Neo4Net.causalclustering.messaging.LoggingInbound<Neo4Net.causalclustering.core.consensus.RaftMessages_ReceivedInstantClusterIdAwareMessage<?>> loggingRaftInbound = new Neo4Net.causalclustering.messaging.LoggingInbound<>(nettyHandler, messageLogger, identityModule.myself());
 			  LoggingInbound<RaftMessages_ReceivedInstantClusterIdAwareMessage<object>> loggingRaftInbound = new LoggingInbound<RaftMessages_ReceivedInstantClusterIdAwareMessage<object>>( nettyHandler, _messageLogger, _identityModule.myself() );
 			  loggingRaftInbound.RegisterHandler( messageHandlerChain );
 
@@ -140,7 +140,7 @@ namespace Neo4Net.causalclustering.core
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private org.Neo4Net.causalclustering.messaging.LifecycleMessageHandler<org.Neo4Net.causalclustering.core.consensus.RaftMessages_ReceivedInstantClusterIdAwareMessage<?>> createMessageHandlerChain(org.Neo4Net.causalclustering.core.server.CoreServerModule coreServerModule)
+//ORIGINAL LINE: private Neo4Net.causalclustering.messaging.LifecycleMessageHandler<Neo4Net.causalclustering.core.consensus.RaftMessages_ReceivedInstantClusterIdAwareMessage<?>> createMessageHandlerChain(Neo4Net.causalclustering.core.server.CoreServerModule coreServerModule)
 		 private LifecycleMessageHandler<RaftMessages_ReceivedInstantClusterIdAwareMessage<object>> CreateMessageHandlerChain( CoreServerModule coreServerModule )
 		 {
 			  RaftMessageApplier messageApplier = new RaftMessageApplier( _localDatabase, _logProvider, _consensusModule.raftMachine(), coreServerModule.DownloadService(), coreServerModule.CommandApplicationProcess(), _catchupAddressProvider );

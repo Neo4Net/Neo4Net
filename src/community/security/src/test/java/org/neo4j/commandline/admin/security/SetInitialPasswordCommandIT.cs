@@ -26,7 +26,7 @@ namespace Neo4Net.CommandLine.Admin.security
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using EphemeralFileSystemAbstraction = Neo4Net.GraphDb.mockfs.EphemeralFileSystemAbstraction;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
-	using UserManager = Neo4Net.Kernel.api.security.UserManager;
+	using UserManager = Neo4Net.Kernel.Api.security.UserManager;
 	using User = Neo4Net.Kernel.impl.security.User;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
 	using FileUserRepository = Neo4Net.Server.Security.Auth.FileUserRepository;
@@ -238,7 +238,7 @@ namespace Neo4Net.CommandLine.Admin.security
 		 {
 			  // Given
 			  // Create an `auth` file with the default Neo4Net user
-			  _tool.execute( _homeDir.toPath(), _confDir.toPath(), SET_PASSWORD, Neo4Net.Kernel.api.security.UserManager_Fields.INITIAL_PASSWORD );
+			  _tool.execute( _homeDir.toPath(), _confDir.toPath(), SET_PASSWORD, Neo4Net.Kernel.Api.security.UserManager_Fields.INITIAL_PASSWORD );
 			  File authFile = GetAuthFile( "auth" );
 			  _fileSystem.mkdirs( authFile.ParentFile );
 			  _fileSystem.renameFile( GetAuthFile( "auth.ini" ), authFile );
@@ -259,7 +259,7 @@ namespace Neo4Net.CommandLine.Admin.security
 			  assertTrue( _fileSystem.fileExists( authIniFile ) );
 			  FileUserRepository userRepository = new FileUserRepository( _fileSystem, authIniFile, NullLogProvider.Instance );
 			  userRepository.Start();
-			  User Neo4Net = userRepository.GetUserByName( Neo4Net.Kernel.api.security.UserManager_Fields.INITIAL_USER_NAME );
+			  User Neo4Net = userRepository.GetUserByName( Neo4Net.Kernel.Api.security.UserManager_Fields.INITIAL_USER_NAME );
 			  assertNotNull( Neo4Net );
 			  assertTrue( Neo4Net.Credentials().matchesPassword(password) );
 			  assertFalse( Neo4Net.HasFlag( User.PASSWORD_CHANGE_REQUIRED ) );

@@ -28,15 +28,15 @@ namespace Neo4Net.Kernel.impl.util.collection
 	using VisibleForTesting = Neo4Net.Utils.VisibleForTesting;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.Numbers.isPowerOfTwo;
+//	import static Neo4Net.helpers.Numbers.isPowerOfTwo;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.Numbers.log2floor;
+//	import static Neo4Net.helpers.Numbers.log2floor;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.util.Preconditions.checkState;
+//	import static Neo4Net.util.Preconditions.checkState;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.util.Preconditions.requirePositive;
+//	import static Neo4Net.util.Preconditions.requirePositive;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.util.Preconditions.requirePowerOfTwo;
+//	import static Neo4Net.util.Preconditions.requirePowerOfTwo;
 
 	/// <summary>
 	/// Block allocator that caches freed blocks matching following criteria:
@@ -147,24 +147,24 @@ namespace Neo4Net.Kernel.impl.util.collection
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @VisibleForTesting void doFree(OffHeapBlockAllocator_MemoryBlock block, org.Neo4Net.memory.IMemoryAllocationTracker tracker)
+//ORIGINAL LINE: @VisibleForTesting void doFree(OffHeapBlockAllocator_MemoryBlock block, Neo4Net.memory.IMemoryAllocationTracker tracker)
 		 internal virtual void DoFree( OffHeapBlockAllocator_MemoryBlock block, IMemoryAllocationTracker tracker )
 		 {
 			  UnsafeUtil.free( block.UnalignedAddr, block.UnalignedSize, tracker );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @VisibleForTesting MemoryBlock allocateNew(long size, org.Neo4Net.memory.IMemoryAllocationTracker tracker)
+//ORIGINAL LINE: @VisibleForTesting MemoryBlock allocateNew(long size, Neo4Net.memory.IMemoryAllocationTracker tracker)
 		 internal virtual MemoryBlock AllocateNew( long size, IMemoryAllocationTracker tracker )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final long unalignedSize = requirePositive(size) + Long.BYTES - 1;
 			  long unalignedSize = requirePositive( size ) + Long.BYTES - 1;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final long unalignedAddr = org.Neo4Net.unsafe.impl.internal.dragons.UnsafeUtil.allocateMemory(unalignedSize, tracker);
+//ORIGINAL LINE: final long unalignedAddr = Neo4Net.unsafe.impl.internal.dragons.UnsafeUtil.allocateMemory(unalignedSize, tracker);
 			  long unalignedAddr = UnsafeUtil.allocateMemory( unalignedSize, tracker );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final long addr = org.Neo4Net.unsafe.impl.internal.dragons.UnsafeUtil.alignedMemory(unalignedAddr, Long.BYTES);
+//ORIGINAL LINE: final long addr = Neo4Net.unsafe.impl.internal.dragons.UnsafeUtil.alignedMemory(unalignedAddr, Long.BYTES);
 			  long addr = UnsafeUtil.alignedMemory( unalignedAddr, Long.BYTES );
 			  return new OffHeapBlockAllocator_MemoryBlock( addr, size, unalignedAddr, unalignedSize );
 		 }

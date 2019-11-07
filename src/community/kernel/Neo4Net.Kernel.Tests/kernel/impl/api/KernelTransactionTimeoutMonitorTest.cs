@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.Impl.Api
 	using Test = org.junit.jupiter.api.Test;
 
 
-	using KernelTransactionHandle = Neo4Net.Kernel.api.KernelTransactionHandle;
+	using KernelTransactionHandle = Neo4Net.Kernel.Api.KernelTransactionHandle;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using KernelTransactionMonitor = Neo4Net.Kernel.Impl.Api.transaciton.monitor.KernelTransactionMonitor;
 	using AssertableLogProvider = Neo4Net.Logging.AssertableLogProvider;

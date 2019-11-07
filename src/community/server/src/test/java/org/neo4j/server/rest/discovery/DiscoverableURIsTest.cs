@@ -51,15 +51,15 @@ namespace Neo4Net.Server.rest.discovery
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verify;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.discovery.DiscoverableURIs.Precedence.HIGH;
+//	import static Neo4Net.server.rest.discovery.DiscoverableURIs.Precedence.HIGH;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.discovery.DiscoverableURIs.Precedence.HIGHEST;
+//	import static Neo4Net.server.rest.discovery.DiscoverableURIs.Precedence.HIGHEST;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.discovery.DiscoverableURIs.Precedence.LOW;
+//	import static Neo4Net.server.rest.discovery.DiscoverableURIs.Precedence.LOW;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.discovery.DiscoverableURIs.Precedence.LOWEST;
+//	import static Neo4Net.server.rest.discovery.DiscoverableURIs.Precedence.LOWEST;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.discovery.DiscoverableURIs.Precedence.NORMAL;
+//	import static Neo4Net.server.rest.discovery.DiscoverableURIs.Precedence.NORMAL;
 
 	public class DiscoverableURIsTest
 	{

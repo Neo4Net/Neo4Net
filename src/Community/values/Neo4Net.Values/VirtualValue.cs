@@ -25,7 +25,7 @@ namespace Neo4Net.Values
 	using VirtualValueGroup = Neo4Net.Values.@virtual.VirtualValueGroup;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.NO_VALUE;
+//	import static Neo4Net.values.storable.Values.NO_VALUE;
 
 	/// <summary>
 	/// Value that can exist transiently during computations, but that cannot be stored as a property value. A Virtual

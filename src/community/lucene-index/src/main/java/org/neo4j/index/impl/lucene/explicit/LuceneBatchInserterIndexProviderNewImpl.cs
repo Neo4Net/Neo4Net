@@ -51,7 +51,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 private LuceneBatchInserterIndex.RelationshipLookup _relationshipLookup;
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public LuceneBatchInserterIndexProviderNewImpl(final org.Neo4Net.unsafe.batchinsert.BatchInserter inserter)
+//ORIGINAL LINE: public LuceneBatchInserterIndexProviderNewImpl(final Neo4Net.unsafe.batchinsert.BatchInserter inserter)
 		 [Obsolete]
 		 public LuceneBatchInserterIndexProviderNewImpl( BatchInserter inserter )
 		 {

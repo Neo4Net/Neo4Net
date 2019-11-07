@@ -29,7 +29,7 @@ namespace Neo4Net.causalclustering.protocol.handshake
 	using Streams = Neo4Net.Stream.Streams;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.protocol.handshake.StatusCode.SUCCESS;
+//	import static Neo4Net.causalclustering.protocol.handshake.StatusCode.SUCCESS;
 
 	public class HandshakeServer : ServerMessageHandler
 	{

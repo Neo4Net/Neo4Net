@@ -48,21 +48,21 @@ namespace Neo4Net.Kernel.impl.store
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verify;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.record.RecordLoad.FORCE;
+//	import static Neo4Net.kernel.impl.store.record.RecordLoad.FORCE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.rule.PageCacheRule.config;
+//	import static Neo4Net.test.rule.PageCacheRule.config;
 
 	public class PropertyStoreTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ClassRule public static org.Neo4Net.test.rule.PageCacheRule pageCacheRule = new org.Neo4Net.test.rule.PageCacheRule(config().withInconsistentReads(false));
+//ORIGINAL LINE: @ClassRule public static Neo4Net.test.rule.PageCacheRule pageCacheRule = new Neo4Net.test.rule.PageCacheRule(config().withInconsistentReads(false));
 		 public static PageCacheRule PageCacheRule = new PageCacheRule( config().withInconsistentReads(false) );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.fs.EphemeralFileSystemRule fsRule = new org.Neo4Net.test.rule.fs.EphemeralFileSystemRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.fs.EphemeralFileSystemRule fsRule = new Neo4Net.test.rule.fs.EphemeralFileSystemRule();
 		 public readonly EphemeralFileSystemRule FsRule = new EphemeralFileSystemRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.TestDirectory testDirectory = Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory TestDirectory = TestDirectory.testDirectory();
 		 private EphemeralFileSystemAbstraction _fileSystemAbstraction;
 		 private File _storeFile;
@@ -90,7 +90,7 @@ namespace Neo4Net.Kernel.impl.store
 			  DynamicStringStore stringPropertyStore = mock( typeof( DynamicStringStore ) );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final PropertyStore store = new PropertyStore(storeFile, idFile, config, new org.Neo4Net.kernel.impl.core.JumpingIdGeneratorFactory(1), pageCache, org.Neo4Net.logging.NullLogProvider.getInstance(), stringPropertyStore, mock(PropertyKeyTokenStore.class), mock(DynamicArrayStore.class), org.Neo4Net.kernel.impl.store.format.RecordFormatSelector.defaultFormat());
+//ORIGINAL LINE: final PropertyStore store = new PropertyStore(storeFile, idFile, config, new Neo4Net.kernel.impl.core.JumpingIdGeneratorFactory(1), pageCache, Neo4Net.logging.NullLogProvider.getInstance(), stringPropertyStore, mock(PropertyKeyTokenStore.class), mock(DynamicArrayStore.class), Neo4Net.kernel.impl.store.format.RecordFormatSelector.defaultFormat());
 			  PropertyStore store = new PropertyStore( _storeFile, _idFile, config, new JumpingIdGeneratorFactory( 1 ), pageCache, NullLogProvider.Instance, stringPropertyStore, mock( typeof( PropertyKeyTokenStore ) ), mock( typeof( DynamicArrayStore ) ), RecordFormatSelector.defaultFormat() );
 			  store.Initialize( true );
 

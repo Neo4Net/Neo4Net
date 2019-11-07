@@ -44,7 +44,7 @@ namespace Neo4Net.Test.mockito.mock
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.reverse;
+//	import static Neo4Net.helpers.collection.Iterables.reverse;
 
 	public class GraphMock
 	{

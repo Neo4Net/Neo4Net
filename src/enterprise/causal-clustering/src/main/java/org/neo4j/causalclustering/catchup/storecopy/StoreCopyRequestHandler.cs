@@ -38,11 +38,11 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 	using StoreFileMetadata = Neo4Net.Kernel.Api.StorageEngine.StoreFileMetadata;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.catchup.storecopy.DataSourceChecks.hasSameStoreId;
+//	import static Neo4Net.causalclustering.catchup.storecopy.DataSourceChecks.hasSameStoreId;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.catchup.storecopy.DataSourceChecks.isTransactionWithinReach;
+//	import static Neo4Net.causalclustering.catchup.storecopy.DataSourceChecks.isTransactionWithinReach;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.fs.FileUtils.relativePath;
+//	import static Neo4Net.io.fs.FileUtils.relativePath;
 
 	public abstract class StoreCopyRequestHandler<T> : SimpleChannelInboundHandler<T> where T : Neo4Net.causalclustering.messaging.StoreCopyRequest
 	{
@@ -85,7 +85,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 					else
 					{
 						 File databaseDirectory = neoStoreDataSource.DatabaseLayout.databaseDirectory();
-						 using ( ResourceIterator<StoreFileMetadata> resourceIterator = Files( request, neoStoreDataSource ) )
+						 using ( IResourceIterator<StoreFileMetadata> resourceIterator = Files( request, neoStoreDataSource ) )
 						 {
 							  while ( resourceIterator.MoveNext() )
 							  {
@@ -105,8 +105,8 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: abstract org.Neo4Net.graphdb.ResourceIterator<org.Neo4Net.Kernel.Api.StorageEngine.StoreFileMetadata> files(T request, org.Neo4Net.kernel.NeoStoreDataSource neoStoreDataSource) throws java.io.IOException;
-		 internal abstract ResourceIterator<StoreFileMetadata> Files( T request, NeoStoreDataSource neoStoreDataSource );
+//ORIGINAL LINE: abstract Neo4Net.graphdb.ResourceIterator<Neo4Net.Kernel.Api.StorageEngine.StoreFileMetadata> files(T request, Neo4Net.kernel.NeoStoreDataSource neoStoreDataSource) throws java.io.IOException;
+		 internal abstract IResourceIterator<StoreFileMetadata> Files( T request, NeoStoreDataSource neoStoreDataSource );
 
 		 private static IEnumerator<StoreFileMetadata> OnlyOne( IList<StoreFileMetadata> files, string description )
 		 {
@@ -129,10 +129,10 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: ResourceIterator<org.Neo4Net.Kernel.Api.StorageEngine.StoreFileMetadata> files(GetStoreFileRequest request, org.Neo4Net.kernel.NeoStoreDataSource neoStoreDataSource) throws java.io.IOException
-			  internal override ResourceIterator<StoreFileMetadata> Files( GetStoreFileRequest request, NeoStoreDataSource neoStoreDataSource )
+//ORIGINAL LINE: IResourceIterator<Neo4Net.Kernel.Api.StorageEngine.StoreFileMetadata> files(GetStoreFileRequest request, Neo4Net.kernel.NeoStoreDataSource neoStoreDataSource) throws java.io.IOException
+			  internal override IResourceIterator<StoreFileMetadata> Files( GetStoreFileRequest request, NeoStoreDataSource neoStoreDataSource )
 			  {
-					using ( ResourceIterator<StoreFileMetadata> resourceIterator = neoStoreDataSource.ListStoreFiles( false ) )
+					using ( IResourceIterator<StoreFileMetadata> resourceIterator = neoStoreDataSource.ListStoreFiles( false ) )
 					{
 						 string fileName = request.File().Name;
 						 return Iterators.asResourceIterator( OnlyOne( resourceIterator.Where( MatchesRequested( fileName ) ).ToList(), fileName ) );
@@ -147,8 +147,8 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: ResourceIterator<org.Neo4Net.Kernel.Api.StorageEngine.StoreFileMetadata> files(GetIndexFilesRequest request, org.Neo4Net.kernel.NeoStoreDataSource neoStoreDataSource) throws java.io.IOException
-			  internal override ResourceIterator<StoreFileMetadata> Files( GetIndexFilesRequest request, NeoStoreDataSource neoStoreDataSource )
+//ORIGINAL LINE: IResourceIterator<Neo4Net.Kernel.Api.StorageEngine.StoreFileMetadata> files(GetIndexFilesRequest request, Neo4Net.kernel.NeoStoreDataSource neoStoreDataSource) throws java.io.IOException
+			  internal override IResourceIterator<StoreFileMetadata> Files( GetIndexFilesRequest request, NeoStoreDataSource neoStoreDataSource )
 			  {
 					return neoStoreDataSource.NeoStoreFileListing.NeoStoreFileIndexListing.getSnapshot( request.IndexId() );
 			  }

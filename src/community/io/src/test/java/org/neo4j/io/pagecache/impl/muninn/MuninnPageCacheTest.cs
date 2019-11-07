@@ -64,11 +64,11 @@ namespace Neo4Net.Io.pagecache.impl.muninn
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.pagecache.PagedFile_Fields.PF_NO_GROW;
+//	import static Neo4Net.io.pagecache.PagedFile_Fields.PF_NO_GROW;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.pagecache.PagedFile_Fields.PF_SHARED_READ_LOCK;
+//	import static Neo4Net.io.pagecache.PagedFile_Fields.PF_SHARED_READ_LOCK;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.pagecache.PagedFile_Fields.PF_SHARED_WRITE_LOCK;
+//	import static Neo4Net.io.pagecache.PagedFile_Fields.PF_SHARED_WRITE_LOCK;
 	using static Neo4Net.Io.pagecache.tracing.recording.RecordingPageCacheTracer.Evict;
 
 	public class MuninnPageCacheTest : PageCacheTest<MuninnPageCache>
@@ -610,7 +610,7 @@ namespace Neo4Net.Io.pagecache.impl.muninn
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.io.fs.StoreChannel open(java.io.File fileName, org.Neo4Net.io.fs.OpenMode openMode) throws java.io.IOException
+//ORIGINAL LINE: public Neo4Net.io.fs.StoreChannel open(java.io.File fileName, Neo4Net.io.fs.OpenMode openMode) throws java.io.IOException
 			 public override StoreChannel open( File fileName, OpenMode openMode )
 			 {
 				  return new DelegatingStoreChannelAnonymousInnerClass( this, base.open( fileName, openMode ) );
@@ -689,7 +689,7 @@ namespace Neo4Net.Io.pagecache.impl.muninn
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.io.fs.StoreChannel open(java.io.File fileName, org.Neo4Net.io.fs.OpenMode openMode) throws java.io.IOException
+//ORIGINAL LINE: public Neo4Net.io.fs.StoreChannel open(java.io.File fileName, Neo4Net.io.fs.OpenMode openMode) throws java.io.IOException
 			 public override StoreChannel open( File fileName, OpenMode openMode )
 			 {
 				  return new DelegatingStoreChannelAnonymousInnerClass2( this, base.open( fileName, openMode ) );

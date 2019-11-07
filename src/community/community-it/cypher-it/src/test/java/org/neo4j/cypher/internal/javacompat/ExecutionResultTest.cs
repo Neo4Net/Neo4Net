@@ -30,7 +30,7 @@ namespace Neo4Net.Cypher.Internal.javacompat
 	using Result = Neo4Net.GraphDb.Result;
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using Point = Neo4Net.GraphDb.Spatial.Point;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
 	using ThreadToStatementContextBridge = Neo4Net.Kernel.impl.core.ThreadToStatementContextBridge;
 	using TopLevelTransaction = Neo4Net.Kernel.impl.coreapi.TopLevelTransaction;
 	using QueryExecutionKernelException = Neo4Net.Kernel.impl.query.QueryExecutionKernelException;
@@ -51,12 +51,12 @@ namespace Neo4Net.Cypher.Internal.javacompat
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.core.IsNull.nullValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.map;
+//	import static Neo4Net.helpers.collection.MapUtil.map;
 
 	public class ExecutionResultTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.ImpermanentDatabaseRule db = new org.Neo4Net.test.rule.ImpermanentDatabaseRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.ImpermanentDatabaseRule db = new Neo4Net.test.rule.ImpermanentDatabaseRule();
 		 public readonly ImpermanentDatabaseRule Db = new ImpermanentDatabaseRule();
 
 		 //TODO this test is not valid for compiled runtime as the transaction will be closed when the iterator was created
@@ -88,7 +88,7 @@ namespace Neo4Net.Cypher.Internal.javacompat
 			  CreateNode();
 			  CreateNode();
 			  Result executionResult = Db.execute( "CYPHER runtime=interpreted MATCH (n) RETURN n" );
-			  ResourceIterator<Node> resultIterator = executionResult.ColumnAs( "n" );
+			  IResourceIterator<Node> resultIterator = executionResult.ColumnAs( "n" );
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
 			  resultIterator.next();
 			  assertThat( ActiveTransaction(), @is(notNullValue()) );
@@ -116,7 +116,7 @@ namespace Neo4Net.Cypher.Internal.javacompat
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(expected = org.Neo4Net.cypher.ArithmeticException.class) public void shouldThrowAppropriateExceptionAlsoWhenVisiting()
+//ORIGINAL LINE: @Test(expected = Neo4Net.cypher.ArithmeticException.class) public void shouldThrowAppropriateExceptionAlsoWhenVisiting()
 		 public virtual void ShouldThrowAppropriateExceptionAlsoWhenVisiting()
 		 {
 			  Db.execute( "RETURN rand()/0" ).accept( row => true );

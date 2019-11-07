@@ -271,7 +271,7 @@ namespace Neo4Net.Kernel.impl.store.id
 		 /// <returns> The high-id from the given file. </returns>
 		 /// <exception cref="IOException"> If anything goes wrong when accessing the file, for instance if the file does not exist. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static long readHighId(org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, java.io.File file) throws java.io.IOException
+//ORIGINAL LINE: public static long readHighId(Neo4Net.io.fs.FileSystemAbstraction fileSystem, java.io.File file) throws java.io.IOException
 		 public static long ReadHighId( FileSystemAbstraction fileSystem, File file )
 		 {
 			  return IdContainer.ReadHighId( fileSystem, file );
@@ -288,7 +288,7 @@ namespace Neo4Net.Kernel.impl.store.id
 		 /// <returns> The number of defragmented ids in the id-file. </returns>
 		 /// <exception cref="IOException"> If anything goes wrong when accessing the file, for instance if the file does not exist. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static long readDefragCount(org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, java.io.File file) throws java.io.IOException
+//ORIGINAL LINE: public static long readDefragCount(Neo4Net.io.fs.FileSystemAbstraction fileSystem, java.io.File file) throws java.io.IOException
 		 public static long ReadDefragCount( FileSystemAbstraction fileSystem, File file )
 		 {
 			  return IdContainer.ReadDefragCount( fileSystem, file );

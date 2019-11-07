@@ -37,10 +37,10 @@ namespace Neo4Net.causalclustering.management
 	using CausalClustering = Neo4Net.management.CausalClustering;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.log.RaftLog_Fields.RAFT_LOG_DIRECTORY_NAME;
+//	import static Neo4Net.causalclustering.core.consensus.log.RaftLog_Fields.RAFT_LOG_DIRECTORY_NAME;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Service.Implementation(ManagementBeanProvider.class) public class CausalClusteringBean extends org.Neo4Net.jmx.impl.ManagementBeanProvider
+//ORIGINAL LINE: @Service.Implementation(ManagementBeanProvider.class) public class CausalClusteringBean extends Neo4Net.jmx.impl.ManagementBeanProvider
 	public class CausalClusteringBean : ManagementBeanProvider
 	{
 		 private static readonly EnumSet<OperationalMode> _clusteringModes = EnumSet.of( OperationalMode.core, OperationalMode.read_replica );

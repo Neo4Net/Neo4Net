@@ -30,7 +30,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void doReportConflict(long existingNodeId, long addedNodeId, org.Neo4Net.values.storable.Value[] values) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: void doReportConflict(long existingNodeId, long addedNodeId, Neo4Net.values.storable.Value[] values) throws Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 internal override void DoReportConflict( long existingNodeId, long addedNodeId, Value[] values )
 		 {
 			  throw new IndexEntryConflictException( existingNodeId, addedNodeId, ValueTuple.of( values ) );

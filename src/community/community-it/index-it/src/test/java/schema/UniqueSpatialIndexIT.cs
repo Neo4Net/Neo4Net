@@ -60,7 +60,7 @@ namespace Schema
 		 private const TestLabels LABEL = TestLabels.LABEL_ONE;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.Neo4Net.test.rule.TestDirectory directory;
+//ORIGINAL LINE: @Inject private Neo4Net.test.rule.TestDirectory directory;
 		 private TestDirectory _directory;
 		 private IGraphDatabaseService _db;
 		 private PointValue _point1;
@@ -86,7 +86,7 @@ namespace Schema
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ParameterizedTest @MethodSource("providerSettings") void shouldPopulateIndexWithUniquePointsThatCollideOnSpaceFillingCurve(org.Neo4Net.graphdb.factory.GraphDatabaseSettings.SchemaIndex schemaIndex)
+//ORIGINAL LINE: @ParameterizedTest @MethodSource("providerSettings") void shouldPopulateIndexWithUniquePointsThatCollideOnSpaceFillingCurve(Neo4Net.graphdb.factory.GraphDatabaseSettings.SchemaIndex schemaIndex)
 		 internal virtual void ShouldPopulateIndexWithUniquePointsThatCollideOnSpaceFillingCurve( GraphDatabaseSettings.SchemaIndex schemaIndex )
 		 {
 			  // given
@@ -101,7 +101,7 @@ namespace Schema
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ParameterizedTest @MethodSource("providerSettings") void shouldAddPointsThatCollideOnSpaceFillingCurveToUniqueIndexInSameTx(org.Neo4Net.graphdb.factory.GraphDatabaseSettings.SchemaIndex schemaIndex)
+//ORIGINAL LINE: @ParameterizedTest @MethodSource("providerSettings") void shouldAddPointsThatCollideOnSpaceFillingCurveToUniqueIndexInSameTx(Neo4Net.graphdb.factory.GraphDatabaseSettings.SchemaIndex schemaIndex)
 		 internal virtual void ShouldAddPointsThatCollideOnSpaceFillingCurveToUniqueIndexInSameTx( GraphDatabaseSettings.SchemaIndex schemaIndex )
 		 {
 			  // given
@@ -116,7 +116,7 @@ namespace Schema
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ParameterizedTest @MethodSource("providerSettings") void shouldThrowWhenPopulatingWithNonUniquePoints(org.Neo4Net.graphdb.factory.GraphDatabaseSettings.SchemaIndex schemaIndex)
+//ORIGINAL LINE: @ParameterizedTest @MethodSource("providerSettings") void shouldThrowWhenPopulatingWithNonUniquePoints(Neo4Net.graphdb.factory.GraphDatabaseSettings.SchemaIndex schemaIndex)
 		 internal virtual void ShouldThrowWhenPopulatingWithNonUniquePoints( GraphDatabaseSettings.SchemaIndex schemaIndex )
 		 {
 			  // given
@@ -128,7 +128,7 @@ namespace Schema
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ParameterizedTest @MethodSource("providerSettings") void shouldThrowWhenAddingNonUniquePoints(org.Neo4Net.graphdb.factory.GraphDatabaseSettings.SchemaIndex schemaIndex)
+//ORIGINAL LINE: @ParameterizedTest @MethodSource("providerSettings") void shouldThrowWhenAddingNonUniquePoints(Neo4Net.graphdb.factory.GraphDatabaseSettings.SchemaIndex schemaIndex)
 		 internal virtual void ShouldThrowWhenAddingNonUniquePoints( GraphDatabaseSettings.SchemaIndex schemaIndex )
 		 {
 			  // given

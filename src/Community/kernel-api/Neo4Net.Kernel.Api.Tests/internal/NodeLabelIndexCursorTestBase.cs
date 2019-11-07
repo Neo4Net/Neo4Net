@@ -26,9 +26,9 @@ namespace Neo4Net.Kernel.Api.Internal
 	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.IndexReadAsserts.assertNodeCount;
+//	import static Neo4Net.Kernel.Api.Internal.IndexReadAsserts.assertNodeCount;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.IndexReadAsserts.assertNodes;
+//	import static Neo4Net.Kernel.Api.Internal.IndexReadAsserts.assertNodes;
 
 	public abstract class NodeLabelIndexCursorTestBase<G> : KernelAPIWriteTestBase<G> where G : KernelAPIWriteTestSupport
 	{
@@ -138,7 +138,7 @@ namespace Neo4Net.Kernel.Api.Internal
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private long createNode(Write write, int... labels) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: private long createNode(Write write, int... labels) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 private long CreateNode( Write write, params int[] labels )
 		 {
 			  long nodeId = write.NodeCreate();

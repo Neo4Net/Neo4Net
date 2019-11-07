@@ -34,7 +34,7 @@ namespace Neo4Net.causalclustering.core.consensus.roles
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static void beat(org.Neo4Net.causalclustering.core.consensus.state.ReadableRaftState state, org.Neo4Net.causalclustering.core.consensus.outcome.Outcome outcome, org.Neo4Net.causalclustering.core.consensus.RaftMessages_Heartbeat request, org.Neo4Net.logging.Log log) throws java.io.IOException
+//ORIGINAL LINE: static void beat(Neo4Net.causalclustering.core.consensus.state.ReadableRaftState state, Neo4Net.causalclustering.core.consensus.outcome.Outcome outcome, Neo4Net.causalclustering.core.consensus.RaftMessages_Heartbeat request, Neo4Net.logging.Log log) throws java.io.IOException
 		 internal static void Beat( ReadableRaftState state, Outcome outcome, Neo4Net.causalclustering.core.consensus.RaftMessages_Heartbeat request, Log log )
 		 {
 			  if ( request.LeaderTerm() < state.Term() )

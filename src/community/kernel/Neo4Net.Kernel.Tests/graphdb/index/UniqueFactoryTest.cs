@@ -54,13 +54,13 @@ namespace Neo4Net.GraphDb.Index
 			  // given
 			  IGraphDatabaseService graphdb = mock( typeof( IGraphDatabaseService ) );
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") Index<org.Neo4Net.graphdb.Node> index = mock(Index.class);
+//ORIGINAL LINE: @SuppressWarnings("unchecked") Index<Neo4Net.graphdb.Node> index = mock(Index.class);
 			  Index<Node> index = mock( typeof( Index ) );
 			  Transaction tx = mock( typeof( Transaction ) );
 			  when( graphdb.BeginTx() ).thenReturn(tx);
 			  when( index.GraphDatabase ).thenReturn( graphdb );
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") IndexHits<org.Neo4Net.graphdb.Node> getHits = mock(IndexHits.class);
+//ORIGINAL LINE: @SuppressWarnings("unchecked") IndexHits<Neo4Net.graphdb.Node> getHits = mock(IndexHits.class);
 			  IndexHits<Node> getHits = mock( typeof( IndexHits ) );
 			  when( index.get( "key1", "value1" ) ).thenReturn( getHits );
 			  Node createdNode = mock( typeof( Node ) );
@@ -103,13 +103,13 @@ namespace Neo4Net.GraphDb.Index
 			  // given
 			  IGraphDatabaseService graphdb = mock( typeof( IGraphDatabaseService ) );
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") Index<org.Neo4Net.graphdb.Node> index = mock(Index.class);
+//ORIGINAL LINE: @SuppressWarnings("unchecked") Index<Neo4Net.graphdb.Node> index = mock(Index.class);
 			  Index<Node> index = mock( typeof( Index ) );
 			  Transaction tx = mock( typeof( Transaction ) );
 			  when( graphdb.BeginTx() ).thenReturn(tx);
 			  when( index.GraphDatabase ).thenReturn( graphdb );
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") IndexHits<org.Neo4Net.graphdb.Node> indexHits = mock(IndexHits.class);
+//ORIGINAL LINE: @SuppressWarnings("unchecked") IndexHits<Neo4Net.graphdb.Node> indexHits = mock(IndexHits.class);
 			  IndexHits<Node> indexHits = mock( typeof( IndexHits ) );
 
 			  when( index.get( "key1", "value1" ) ).thenReturn( indexHits );
@@ -158,13 +158,13 @@ namespace Neo4Net.GraphDb.Index
 			  // given
 			  IGraphDatabaseService graphdb = mock( typeof( IGraphDatabaseService ) );
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") Index<org.Neo4Net.graphdb.Node> index = mock(Index.class);
+//ORIGINAL LINE: @SuppressWarnings("unchecked") Index<Neo4Net.graphdb.Node> index = mock(Index.class);
 			  Index<Node> index = mock( typeof( Index ) );
 			  Transaction tx = mock( typeof( Transaction ) );
 			  when( graphdb.BeginTx() ).thenReturn(tx);
 			  when( index.GraphDatabase ).thenReturn( graphdb );
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") IndexHits<org.Neo4Net.graphdb.Node> indexHits = mock(IndexHits.class);
+//ORIGINAL LINE: @SuppressWarnings("unchecked") IndexHits<Neo4Net.graphdb.Node> indexHits = mock(IndexHits.class);
 			  IndexHits<Node> indexHits = mock( typeof( IndexHits ) );
 
 			  when( index.get( "key1", "value1" ) ).thenReturn( indexHits );
@@ -213,11 +213,11 @@ namespace Neo4Net.GraphDb.Index
 		 {
 			  IGraphDatabaseService graphdb = mock( typeof( IGraphDatabaseService ) );
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") Index<org.Neo4Net.graphdb.Node> index = mock(Index.class);
+//ORIGINAL LINE: @SuppressWarnings("unchecked") Index<Neo4Net.graphdb.Node> index = mock(Index.class);
 			  Index<Node> index = mock( typeof( Index ) );
 			  when( index.GraphDatabase ).thenReturn( graphdb );
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") IndexHits<org.Neo4Net.graphdb.Node> getHits = mock(IndexHits.class);
+//ORIGINAL LINE: @SuppressWarnings("unchecked") IndexHits<Neo4Net.graphdb.Node> getHits = mock(IndexHits.class);
 			  IndexHits<Node> getHits = mock( typeof( IndexHits ) );
 			  when( index.get( "key1", "value1" ) ).thenReturn( getHits );
 			  Node indexedNode = mock( typeof( Node ) );

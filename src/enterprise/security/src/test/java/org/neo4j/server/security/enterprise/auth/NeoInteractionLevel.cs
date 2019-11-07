@@ -28,7 +28,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 	using Neo4Net.GraphDb;
 	using HostnamePort = Neo4Net.Helpers.HostnamePort;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
 	using InternalTransaction = Neo4Net.Kernel.impl.coreapi.InternalTransaction;
 	using GraphDatabaseFacade = Neo4Net.Kernel.impl.factory.GraphDatabaseFacade;
 
@@ -43,7 +43,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 FileSystemAbstraction FileSystem();
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.Neo4Net.kernel.impl.coreapi.InternalTransaction beginLocalTransactionAsUser(S subject, org.Neo4Net.kernel.api.KernelTransaction.Type txType) throws Throwable;
+//ORIGINAL LINE: Neo4Net.kernel.impl.coreapi.InternalTransaction beginLocalTransactionAsUser(S subject, Neo4Net.kernel.api.KernelTransaction.Type txType) throws Throwable;
 		 InternalTransaction BeginLocalTransactionAsUser( S subject, KernelTransaction.Type txType );
 
 		 /*

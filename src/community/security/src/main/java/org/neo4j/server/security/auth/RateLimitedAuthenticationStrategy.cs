@@ -27,9 +27,9 @@ namespace Neo4Net.Server.Security.Auth
 	using User = Neo4Net.Kernel.impl.security.User;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.auth_lock_time;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.auth_lock_time;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.auth_max_failed_attempts;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.auth_max_failed_attempts;
 
 	public class RateLimitedAuthenticationStrategy : AuthenticationStrategy
 	{

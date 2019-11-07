@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Neo4Net.GraphDb.Api", "Neo4
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Neo4Net.GraphDb.Api.Tests", "Neo4Net.GraphDb.Api.Tests\Neo4Net.GraphDb.Api.Tests.csproj", "{3358EFB3-2999-411D-A17D-FCE831FA63F0}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Neo4Net.GraphDb.Resources", "..\resources\Neo4Net.GraphDb.Resources\Neo4Net.GraphDb.Resources.csproj", "{150759AB-7300-4C84-A696-821824A8C12B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{3358EFB3-2999-411D-A17D-FCE831FA63F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3358EFB3-2999-411D-A17D-FCE831FA63F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3358EFB3-2999-411D-A17D-FCE831FA63F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{150759AB-7300-4C84-A696-821824A8C12B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{150759AB-7300-4C84-A696-821824A8C12B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{150759AB-7300-4C84-A696-821824A8C12B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{150759AB-7300-4C84-A696-821824A8C12B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

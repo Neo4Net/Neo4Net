@@ -34,7 +34,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 	using TemporalIndexProvider = Neo4Net.Kernel.Impl.Index.Schema.TemporalIndexProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.impl.index.storage.DirectoryFactory.directoryFactory;
+//	import static Neo4Net.kernel.api.impl.index.storage.DirectoryFactory.directoryFactory;
 
 	internal class IndexProviderFactoryUtil
 	{

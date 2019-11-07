@@ -58,9 +58,9 @@ namespace Neo4Net.cluster.com
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static System.currentTimeMillis;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.cluster.com.NetworkReceiver.CLUSTER_SCHEME;
+//	import static Neo4Net.cluster.com.NetworkReceiver.CLUSTER_SCHEME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.NamedThreadFactory.daemon;
+//	import static Neo4Net.helpers.NamedThreadFactory.daemon;
 
 	/// <summary>
 	/// TCP version of sending messages. This handles sending messages from state machines to other instances
@@ -201,11 +201,11 @@ namespace Neo4Net.cluster.com
 
 		 // MessageSender implementation
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public void process(final java.util.List<org.Neo4Net.cluster.com.message.Message<? extends org.Neo4Net.cluster.com.message.MessageType>> messages)
+//ORIGINAL LINE: public void process(final java.util.List<Neo4Net.cluster.com.message.Message<? extends Neo4Net.cluster.com.message.MessageType>> messages)
 		 public override void Process<T1>( IList<T1> messages ) where T1 : Neo4Net.cluster.com.message.MessageType
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: for (org.Neo4Net.cluster.com.message.Message<? extends org.Neo4Net.cluster.com.message.MessageType> message : messages)
+//ORIGINAL LINE: for (Neo4Net.cluster.com.message.Message<? extends Neo4Net.cluster.com.message.MessageType> message : messages)
 			  foreach ( Message<MessageType> message in messages )
 			  {
 					try
@@ -252,7 +252,7 @@ namespace Neo4Net.cluster.com
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private synchronized void send(final org.Neo4Net.cluster.com.message.Message message)
+//ORIGINAL LINE: private synchronized void send(final Neo4Net.cluster.com.message.Message message)
 		 private void Send( Message message )
 		 {
 			 lock ( this )
@@ -260,7 +260,7 @@ namespace Neo4Net.cluster.com
 				  _monitor.queuedMessage( message );
       
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.net.URI to = java.net.URI.create(message.getHeader(org.Neo4Net.cluster.com.message.Message.HEADER_TO));
+//ORIGINAL LINE: final java.net.URI to = java.net.URI.create(message.getHeader(Neo4Net.cluster.com.message.Message.HEADER_TO));
 				  URI to = URI.create( message.getHeader( Message.HEADER_TO ) );
       
 				  ExecutorService senderExecutor = _senderExecutors.computeIfAbsent( to, t => Executors.newSingleThreadExecutor( new NamedThreadFactory( "Cluster Sender " + t.toASCIIString(), _monitor ) ) );

@@ -116,7 +116,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 			  /// If we are loading a layout for an existing index, read the settings from the index header, and ignore config settings
 			  /// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: SpatialFileLayout getLayoutForExistingIndex(org.Neo4Net.io.pagecache.PageCache pageCache) throws java.io.IOException
+//ORIGINAL LINE: SpatialFileLayout getLayoutForExistingIndex(Neo4Net.io.pagecache.PageCache pageCache) throws java.io.IOException
 			  internal virtual SpatialFileLayout GetLayoutForExistingIndex( PageCache pageCache )
 			  {
 					SpaceFillingCurveSettings settings = SpaceFillingCurveSettingsFactory.fromGBPTree( IndexFile, pageCache, NativeIndexHeaderReader.readFailureMessage );

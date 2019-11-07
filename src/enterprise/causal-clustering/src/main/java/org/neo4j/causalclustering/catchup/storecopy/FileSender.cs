@@ -28,15 +28,15 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.catchup.storecopy.FileChunk.MAX_SIZE;
+//	import static Neo4Net.causalclustering.catchup.storecopy.FileChunk.MAX_SIZE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.catchup.storecopy.FileSender.State.FINISHED;
+//	import static Neo4Net.causalclustering.catchup.storecopy.FileSender.State.FINISHED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.catchup.storecopy.FileSender.State.FULL_PENDING;
+//	import static Neo4Net.causalclustering.catchup.storecopy.FileSender.State.FULL_PENDING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.catchup.storecopy.FileSender.State.LAST_PENDING;
+//	import static Neo4Net.causalclustering.catchup.storecopy.FileSender.State.LAST_PENDING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.catchup.storecopy.FileSender.State.PRE_INIT;
+//	import static Neo4Net.causalclustering.catchup.storecopy.FileSender.State.PRE_INIT;
 
 	internal class FileSender : ChunkedInput<FileChunk>
 	{

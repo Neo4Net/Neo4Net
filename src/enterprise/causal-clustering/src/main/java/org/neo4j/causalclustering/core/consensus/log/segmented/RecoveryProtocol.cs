@@ -167,7 +167,7 @@ namespace Neo4Net.causalclustering.core.consensus.log.segmented
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static SegmentHeader loadHeader(org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, java.io.File file) throws java.io.IOException, org.Neo4Net.causalclustering.messaging.EndOfStreamException
+//ORIGINAL LINE: private static SegmentHeader loadHeader(Neo4Net.io.fs.FileSystemAbstraction fileSystem, java.io.File file) throws java.io.IOException, Neo4Net.causalclustering.messaging.EndOfStreamException
 		 private static SegmentHeader LoadHeader( FileSystemAbstraction fileSystem, File file )
 		 {
 			  using ( StoreChannel channel = fileSystem.Open( file, OpenMode.READ ) )
@@ -177,7 +177,7 @@ namespace Neo4Net.causalclustering.core.consensus.log.segmented
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void writeHeader(org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, java.io.File file, SegmentHeader header) throws java.io.IOException
+//ORIGINAL LINE: private static void writeHeader(Neo4Net.io.fs.FileSystemAbstraction fileSystem, java.io.File file, SegmentHeader header) throws java.io.IOException
 		 private static void WriteHeader( FileSystemAbstraction fileSystem, File file, SegmentHeader header )
 		 {
 			  using ( StoreChannel channel = fileSystem.Open( file, OpenMode.READ_WRITE ) )

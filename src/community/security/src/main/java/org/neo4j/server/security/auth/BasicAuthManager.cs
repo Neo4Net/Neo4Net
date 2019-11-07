@@ -26,19 +26,19 @@ namespace Neo4Net.Server.Security.Auth
 	using AuthenticationResult = Neo4Net.Kernel.Api.Internal.security.AuthenticationResult;
 	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using InvalidArgumentsException = Neo4Net.Kernel.Api.Exceptions.InvalidArgumentsException;
-	using AuthManager = Neo4Net.Kernel.api.security.AuthManager;
-	using AuthToken = Neo4Net.Kernel.api.security.AuthToken;
-	using PasswordPolicy = Neo4Net.Kernel.api.security.PasswordPolicy;
-	using UserManager = Neo4Net.Kernel.api.security.UserManager;
-	using UserManagerSupplier = Neo4Net.Kernel.api.security.UserManagerSupplier;
-	using InvalidAuthTokenException = Neo4Net.Kernel.api.security.exception.InvalidAuthTokenException;
+	using AuthManager = Neo4Net.Kernel.Api.security.AuthManager;
+	using AuthToken = Neo4Net.Kernel.Api.security.AuthToken;
+	using PasswordPolicy = Neo4Net.Kernel.Api.security.PasswordPolicy;
+	using UserManager = Neo4Net.Kernel.Api.security.UserManager;
+	using UserManagerSupplier = Neo4Net.Kernel.Api.security.UserManagerSupplier;
+	using InvalidAuthTokenException = Neo4Net.Kernel.Api.security.exception.InvalidAuthTokenException;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using User = Neo4Net.Kernel.impl.security.User;
 	using ConcurrentModificationException = Neo4Net.Server.Security.Auth.exception.ConcurrentModificationException;
 	using UTF8 = Neo4Net.Strings.UTF8;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.security.AuthToken.invalidToken;
+//	import static Neo4Net.kernel.api.security.AuthToken.invalidToken;
 
 	/// <summary>
 	/// Manages server authentication and authorization.
@@ -86,10 +86,10 @@ namespace Neo4Net.Server.Security.Auth
 
 			  if ( UserRepository.numberOfUsers() == 0 )
 			  {
-					User Neo4Net = NewUser( Neo4Net.Kernel.api.security.UserManager_Fields.INITIAL_USER_NAME, UTF8.encode( Neo4Net.Kernel.api.security.UserManager_Fields.INITIAL_PASSWORD ), true );
+					User Neo4Net = NewUser( Neo4Net.Kernel.Api.security.UserManager_Fields.INITIAL_USER_NAME, UTF8.encode( Neo4Net.Kernel.Api.security.UserManager_Fields.INITIAL_PASSWORD ), true );
 					if ( _initialUserRepository.numberOfUsers() > 0 )
 					{
-						 User user = _initialUserRepository.getUserByName( Neo4Net.Kernel.api.security.UserManager_Fields.INITIAL_USER_NAME );
+						 User user = _initialUserRepository.getUserByName( Neo4Net.Kernel.Api.security.UserManager_Fields.INITIAL_USER_NAME );
 						 if ( user != null )
 						 {
 							  UserRepository.update( Neo4Net, user );
@@ -115,15 +115,15 @@ namespace Neo4Net.Server.Security.Auth
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.Kernel.Api.Internal.security.LoginContext login(java.util.Map<String,Object> authToken) throws org.Neo4Net.kernel.api.security.exception.InvalidAuthTokenException
+//ORIGINAL LINE: public Neo4Net.Kernel.Api.Internal.security.LoginContext login(java.util.Map<String,Object> authToken) throws Neo4Net.kernel.api.security.exception.InvalidAuthTokenException
 		 public override LoginContext Login( IDictionary<string, object> authToken )
 		 {
 			  try
 			  {
 					AssertValidScheme( authToken );
 
-					string username = AuthToken.safeCast( Neo4Net.Kernel.api.security.AuthToken_Fields.PRINCIPAL, authToken );
-					sbyte[] password = AuthToken.safeCastCredentials( Neo4Net.Kernel.api.security.AuthToken_Fields.CREDENTIALS, authToken );
+					string username = AuthToken.safeCast( Neo4Net.Kernel.Api.security.AuthToken_Fields.PRINCIPAL, authToken );
+					sbyte[] password = AuthToken.safeCastCredentials( Neo4Net.Kernel.Api.security.AuthToken_Fields.CREDENTIALS, authToken );
 
 					User user = UserRepository.getUserByName( username );
 					AuthenticationResult result = AuthenticationResult.FAILURE;
@@ -144,7 +144,7 @@ namespace Neo4Net.Server.Security.Auth
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.kernel.impl.security.User newUser(String username, byte[] initialPassword, boolean requirePasswordChange) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: public Neo4Net.kernel.impl.security.User newUser(String username, byte[] initialPassword, boolean requirePasswordChange) throws java.io.IOException, Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 		 public override User NewUser( string username, sbyte[] initialPassword, bool requirePasswordChange )
 		 {
 			  try
@@ -169,7 +169,7 @@ namespace Neo4Net.Server.Security.Auth
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean deleteUser(String username) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: public boolean deleteUser(String username) throws java.io.IOException, Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 		 public override bool DeleteUser( string username )
 		 {
 			  User user = GetUser( username );
@@ -177,7 +177,7 @@ namespace Neo4Net.Server.Security.Auth
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.kernel.impl.security.User getUser(String username) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: public Neo4Net.kernel.impl.security.User getUser(String username) throws Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 		 public override User GetUser( string username )
 		 {
 			  User user = UserRepository.getUserByName( username );
@@ -194,7 +194,7 @@ namespace Neo4Net.Server.Security.Auth
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void setUserPassword(String username, byte[] password, boolean requirePasswordChange) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: public void setUserPassword(String username, byte[] password, boolean requirePasswordChange) throws java.io.IOException, Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 		 public override void SetUserPassword( string username, sbyte[] password, bool requirePasswordChange )
 		 {
 			  try
@@ -248,15 +248,15 @@ namespace Neo4Net.Server.Security.Auth
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertValidScheme(java.util.Map<String,Object> token) throws org.Neo4Net.kernel.api.security.exception.InvalidAuthTokenException
+//ORIGINAL LINE: private void assertValidScheme(java.util.Map<String,Object> token) throws Neo4Net.kernel.api.security.exception.InvalidAuthTokenException
 		 private void AssertValidScheme( IDictionary<string, object> token )
 		 {
-			  string scheme = AuthToken.safeCast( Neo4Net.Kernel.api.security.AuthToken_Fields.SCHEME_KEY, token );
+			  string scheme = AuthToken.safeCast( Neo4Net.Kernel.Api.security.AuthToken_Fields.SCHEME_KEY, token );
 			  if ( scheme.Equals( "none" ) )
 			  {
 					throw invalidToken( ", scheme 'none' is only allowed when auth is disabled." );
 			  }
-			  if ( !scheme.Equals( Neo4Net.Kernel.api.security.AuthToken_Fields.BASIC_SCHEME ) )
+			  if ( !scheme.Equals( Neo4Net.Kernel.Api.security.AuthToken_Fields.BASIC_SCHEME ) )
 			  {
 					throw invalidToken( ", scheme '" + scheme + "' is not supported." );
 			  }

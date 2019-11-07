@@ -49,35 +49,17 @@ namespace Neo4Net.GraphDb
       /// <summary>
       /// The character offset referred to by this position; offset numbers start at 0. </summary>
       /// <returns> the offset of this position. </returns>
-      public int Offset
-      {
-         get
-         {
-            return _offset;
-         }
-      }
+      public int Offset => _offset;
 
       /// <summary>
       /// The line number referred to by the position; line numbers start at 1. </summary>
       /// <returns> the line number of this position. </returns>
-      public int Line
-      {
-         get
-         {
-            return _line;
-         }
-      }
+      public int Line => _line;
 
       /// <summary>
       /// The column number referred to by the position; column numbers start at 1. </summary>
       /// <returns> the column number of this position. </returns>
-      public int Column
-      {
-         get
-         {
-            return _column;
-         }
-      }
+      public int Column => _column;
 
       public override bool Equals(object o)
       {

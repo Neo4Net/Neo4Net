@@ -32,9 +32,9 @@ namespace Neo4Net.Kernel.impl.transaction.log.files
 	using Dependencies = Neo4Net.Kernel.impl.util.Dependencies;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.database_path;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.database_path;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.logical_log_rotation_threshold;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.logical_log_rotation_threshold;
 
 	/// <summary>
 	/// Transactional log files facade class builder.
@@ -261,7 +261,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.files
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private System.Func<org.Neo4Net.kernel.impl.transaction.log.LogVersionRepository> getLogVersionRepositorySupplier() throws java.io.IOException
+//ORIGINAL LINE: private System.Func<Neo4Net.kernel.impl.transaction.log.LogVersionRepository> getLogVersionRepositorySupplier() throws java.io.IOException
 		 private System.Func<LogVersionRepository> LogVersionRepositorySupplier
 		 {
 			 get

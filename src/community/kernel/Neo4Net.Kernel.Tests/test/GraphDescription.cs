@@ -36,11 +36,11 @@ namespace Neo4Net.Test
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Arrays.copyOfRange;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.Label.label;
+//	import static Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.GraphDescription.PropType.ERROR;
+//	import static Neo4Net.test.GraphDescription.PropType.ERROR;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.GraphDescription.PropType.STRING;
+//	import static Neo4Net.test.GraphDescription.PropType.STRING;
 
 	public class GraphDescription : GraphDefinition
 	{
@@ -276,7 +276,7 @@ namespace Neo4Net.Test
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static TestData.Producer<java.util.Map<String, org.Neo4Net.graphdb.Node>> createGraphFor(final GraphHolder holder, final boolean destroy)
+//ORIGINAL LINE: public static TestData.Producer<java.util.Map<String, Neo4Net.graphdb.Node>> createGraphFor(final GraphHolder holder, final boolean destroy)
 		 public static TestData.Producer<IDictionary<string, Node>> CreateGraphFor( GraphHolder holder, bool destroy )
 		 {
 			  return new ProducerAnonymousInnerClass( holder, destroy );

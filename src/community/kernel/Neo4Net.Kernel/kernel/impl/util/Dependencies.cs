@@ -32,7 +32,7 @@ namespace Neo4Net.Kernel.impl.util
 	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") public class Dependencies extends org.Neo4Net.graphdb.DependencyResolver_Adapter implements DependencySatisfier
+//ORIGINAL LINE: @SuppressWarnings("unchecked") public class Dependencies extends Neo4Net.graphdb.DependencyResolver_Adapter implements DependencySatisfier
 	public class Dependencies : Neo4Net.GraphDb.DependencyResolver_Adapter, DependencySatisfier
 	{
 		 private readonly DependencyResolver _parent;

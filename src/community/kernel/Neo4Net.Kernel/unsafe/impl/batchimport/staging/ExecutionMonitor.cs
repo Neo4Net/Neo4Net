@@ -34,7 +34,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.staging
 		 /// </summary>
 		 /// <param name="dependencyResolver"> <seealso cref="DependencyResolver"/> for getting dependencies from. </param>
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//		 default void initialize(org.Neo4Net.graphdb.DependencyResolver dependencyResolver)
+//		 default void initialize(Neo4Net.graphdb.DependencyResolver dependencyResolver)
 	//	 { // empty by default
 	//	 }
 

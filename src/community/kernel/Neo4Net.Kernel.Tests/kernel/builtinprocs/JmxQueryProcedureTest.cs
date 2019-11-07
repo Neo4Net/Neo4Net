@@ -26,8 +26,8 @@ namespace Neo4Net.Kernel.builtinprocs
 	using Neo4Net.Collections;
 	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
 	using ProcedureSignature = Neo4Net.Kernel.Api.Internal.procs.ProcedureSignature;
-	using ResourceTracker = Neo4Net.Kernel.api.ResourceTracker;
-	using StubResourceManager = Neo4Net.Kernel.api.StubResourceManager;
+	using ResourceTracker = Neo4Net.Kernel.Api.ResourceTracker;
+	using StubResourceManager = Neo4Net.Kernel.Api.StubResourceManager;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.MatcherAssert.assertThat;
@@ -40,11 +40,11 @@ namespace Neo4Net.Kernel.builtinprocs
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.asList;
+//	import static Neo4Net.helpers.collection.Iterators.asList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.asSet;
+//	import static Neo4Net.helpers.collection.Iterators.asSet;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.map;
+//	import static Neo4Net.helpers.collection.MapUtil.map;
 
 	public class JmxQueryProcedureTest
 	{
@@ -67,7 +67,7 @@ namespace Neo4Net.Kernel.builtinprocs
 			  RawIterator<object[], ProcedureException> result = procedure.Apply( null, new object[]{ "*:*" }, _resourceTracker );
 
 			  // then
-			  assertThat( asList( result ), contains( equalTo( new object[]{ "org.Neo4Net:chevyMakesTheTruck=bobMcCoshMakesTheDifference", "This is a description", map( _attributeName, map( "description", "This is the attribute desc.", "value", "Hello, world!" ) ) } ) ) );
+			  assertThat( asList( result ), contains( equalTo( new object[]{ "Neo4Net:chevyMakesTheTruck=bobMcCoshMakesTheDifference", "This is a description", map( _attributeName, map( "description", "This is the attribute desc.", "value", "Hello, world!" ) ) } ) ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -85,7 +85,7 @@ namespace Neo4Net.Kernel.builtinprocs
 			  RawIterator<object[], ProcedureException> result = procedure.Apply( null, new object[]{ "*:*" }, _resourceTracker );
 
 			  // then
-			  assertThat( asList( result ), contains( equalTo( new object[]{ "org.Neo4Net:chevyMakesTheTruck=bobMcCoshMakesTheDifference", "This is a description", map( _attributeName, map( "description", "This is the attribute desc.", "value", null ) ) } ) ) );
+			  assertThat( asList( result ), contains( equalTo( new object[]{ "Neo4Net:chevyMakesTheTruck=bobMcCoshMakesTheDifference", "This is a description", map( _attributeName, map( "description", "This is the attribute desc.", "value", null ) ) } ) ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -94,9 +94,9 @@ namespace Neo4Net.Kernel.builtinprocs
 		 public virtual void ShouldHandleCompositeAttributes()
 		 {
 			  // given
-			  ObjectName beanName = new ObjectName( "org.Neo4Net:chevyMakesTheTruck=bobMcCoshMakesTheDifference" );
+			  ObjectName beanName = new ObjectName( "Neo4Net:chevyMakesTheTruck=bobMcCoshMakesTheDifference" );
 			  when( _jmxServer.queryNames( new ObjectName( "*:*" ), null ) ).thenReturn( asSet( beanName ) );
-			  when( _jmxServer.getMBeanInfo( beanName ) ).thenReturn( new MBeanInfo( "org.Neo4Net.SomeMBean", "This is a description", new MBeanAttributeInfo[]{ new MBeanAttributeInfo( "name", "differenceMaker", "Who makes the difference?", true, false, false ) }, null, null, null ) );
+			  when( _jmxServer.getMBeanInfo( beanName ) ).thenReturn( new MBeanInfo( "Neo4Net.SomeMBean", "This is a description", new MBeanAttributeInfo[]{ new MBeanAttributeInfo( "name", "differenceMaker", "Who makes the difference?", true, false, false ) }, null, null, null ) );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 //ORIGINAL LINE: when(jmxServer.getAttribute(beanName, "name")).thenReturn(new javax.management.openmbean.CompositeDataSupport(new javax.management.openmbean.CompositeType("myComposite", "Composite description", new String[]{"key1", "key2"}, new String[]{"Can't be empty", "Also can't be empty"}, new javax.management.openmbean.OpenType<?>[]{javax.management.openmbean.SimpleType.STRING, javax.management.openmbean.SimpleType.INTEGER}), map("key1", "Hello", "key2", 123)));
 			  when( _jmxServer.getAttribute( beanName, "name" ) ).thenReturn( new CompositeDataSupport( new CompositeType( "myComposite", "Composite description", new string[]{ "key1", "key2" }, new string[]{ "Can't be empty", "Also can't be empty" }, new OpenType<object>[]{ SimpleType.STRING, SimpleType.INTEGER } ), map( "key1", "Hello", "key2", 123 ) ) );
@@ -107,7 +107,7 @@ namespace Neo4Net.Kernel.builtinprocs
 			  RawIterator<object[], ProcedureException> result = procedure.Apply( null, new object[]{ "*:*" }, _resourceTracker );
 
 			  // then
-			  assertThat( asList( result ), contains( equalTo( new object[]{ "org.Neo4Net:chevyMakesTheTruck=bobMcCoshMakesTheDifference", "This is a description", map( _attributeName, map( "description", "Who makes the difference?", "value", map( "description", "Composite description", "properties", map( "key1", "Hello", "key2", 123 ) ) ) ) } ) ) );
+			  assertThat( asList( result ), contains( equalTo( new object[]{ "Neo4Net:chevyMakesTheTruck=bobMcCoshMakesTheDifference", "This is a description", map( _attributeName, map( "description", "Who makes the difference?", "value", map( "description", "Composite description", "properties", map( "key1", "Hello", "key2", 123 ) ) ) ) } ) ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -136,11 +136,11 @@ namespace Neo4Net.Kernel.builtinprocs
 		 public virtual void Setup()
 		 {
 			  _jmxServer = mock( typeof( MBeanServer ) );
-			  _beanName = new ObjectName( "org.Neo4Net:chevyMakesTheTruck=bobMcCoshMakesTheDifference" );
+			  _beanName = new ObjectName( "Neo4Net:chevyMakesTheTruck=bobMcCoshMakesTheDifference" );
 			  _attributeName = "name";
 
 			  when( _jmxServer.queryNames( new ObjectName( "*:*" ), null ) ).thenReturn( asSet( _beanName ) );
-			  when( _jmxServer.getMBeanInfo( _beanName ) ).thenReturn( new MBeanInfo( "org.Neo4Net.SomeMBean", "This is a description", new MBeanAttributeInfo[]{ new MBeanAttributeInfo( _attributeName, "someType", "This is the attribute desc.", true, false, false ) }, null, null, null ) );
+			  when( _jmxServer.getMBeanInfo( _beanName ) ).thenReturn( new MBeanInfo( "Neo4Net.SomeMBean", "This is a description", new MBeanAttributeInfo[]{ new MBeanAttributeInfo( _attributeName, "someType", "This is the attribute desc.", true, false, false ) }, null, null, null ) );
 		 }
 	}
 

@@ -342,7 +342,7 @@ namespace Neo4Net.cluster.com.message
 			  internal Server( System.Threading.CountdownEvent latch, IDictionary<string, string> config )
 			  {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.configuration.Config conf = org.Neo4Net.kernel.configuration.Config.defaults(config);
+//ORIGINAL LINE: final Neo4Net.kernel.configuration.Config conf = Neo4Net.kernel.configuration.Config.defaults(config);
 					Config conf = Config.defaults( config );
 					NetworkReceiver = Life.add(new NetworkReceiver(mock(typeof(NetworkReceiver.Monitor)), new ConfigurationAnonymousInnerClass2(this, conf)
 				  , NullLogProvider.Instance));

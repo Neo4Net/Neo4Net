@@ -65,14 +65,14 @@ namespace Neo4Net.cluster.protocol.snapshot
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void baseNoSendTest(java.util.Map<org.Neo4Net.cluster.InstanceId,java.net.URI> extraMembers) throws Throwable
+//ORIGINAL LINE: private void baseNoSendTest(java.util.Map<Neo4Net.cluster.InstanceId,java.net.URI> extraMembers) throws Throwable
 		 private void BaseNoSendTest( IDictionary<InstanceId, URI> extraMembers )
 		 {
 			  URI me = URI.create( "cluster://me" );
 
 			  IDictionary<InstanceId, URI> members = new Dictionary<InstanceId, URI>();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.cluster.InstanceId myId = new org.Neo4Net.cluster.InstanceId(1);
+//ORIGINAL LINE: final Neo4Net.cluster.InstanceId myId = new Neo4Net.cluster.InstanceId(1);
 			  InstanceId myId = new InstanceId( 1 );
 			  members[myId] = me;
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET Dictionary equivalent to the Java 'putAll' method:

@@ -41,19 +41,19 @@ namespace Neo4Net.Server.rest.domain
 	using MapUtil = Neo4Net.Collections.Helpers.MapUtil;
 	using Kernel = Neo4Net.Kernel.Api.Internal.Kernel;
 	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
-	using AnonymousContext = Neo4Net.Kernel.api.security.AnonymousContext;
+	using AnonymousContext = Neo4Net.Kernel.Api.security.AnonymousContext;
 	using Database = Neo4Net.Server.database.Database;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.Label.label;
+//	import static Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.count;
+//	import static Neo4Net.helpers.collection.Iterables.count;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.single;
+//	import static Neo4Net.helpers.collection.Iterables.single;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.Transaction_Type.@implicit;
+//	import static Neo4Net.Kernel.Api.Internal.Transaction_Type.@implicit;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.security.LoginContext.AUTH_DISABLED;
+//	import static Neo4Net.Kernel.Api.Internal.security.LoginContext.AUTH_DISABLED;
 
 	public class GraphDbHelper
 	{
@@ -401,7 +401,7 @@ namespace Neo4Net.Server.rest.domain
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public Iterable<org.Neo4Net.GraphDb.Schema.ConstraintDefinition> getPropertyUniquenessConstraints(String labelName, final String propertyKey)
+//ORIGINAL LINE: public Iterable<Neo4Net.GraphDb.Schema.ConstraintDefinition> getPropertyUniquenessConstraints(String labelName, final String propertyKey)
 		 public virtual IEnumerable<ConstraintDefinition> GetPropertyUniquenessConstraints( string labelName, string propertyKey )
 		 {
 			  using ( Transaction tx = _database.Graph.BeginTransaction( @implicit, AnonymousContext.read() ) )

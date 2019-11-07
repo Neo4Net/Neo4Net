@@ -50,7 +50,7 @@ namespace Neo4Net.causalclustering.core.state.snapshot
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Internal.verification.VerificationModeFactory.times;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.state.snapshot.PersistentSnapshotDownloader.OPERATION_NAME;
+//	import static Neo4Net.causalclustering.core.state.snapshot.PersistentSnapshotDownloader.OPERATION_NAME;
 
 	public class PersistentSnapshotDownloaderTest
 	{
@@ -83,10 +83,10 @@ namespace Neo4Net.causalclustering.core.state.snapshot
 			  CoreStateDownloader coreStateDownloader = mock( typeof( CoreStateDownloader ) );
 			  when( coreStateDownloader.DownloadSnapshot( any() ) ).thenReturn(true);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.causalclustering.core.state.CommandApplicationProcess applicationProcess = mock(org.Neo4Net.causalclustering.core.state.CommandApplicationProcess.class);
+//ORIGINAL LINE: final Neo4Net.causalclustering.core.state.CommandApplicationProcess applicationProcess = mock(Neo4Net.causalclustering.core.state.CommandApplicationProcess.class);
 			  CommandApplicationProcess applicationProcess = mock( typeof( CommandApplicationProcess ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.logging.Log log = mock(org.Neo4Net.logging.Log.class);
+//ORIGINAL LINE: final Neo4Net.logging.Log log = mock(Neo4Net.logging.Log.class);
 			  Log log = mock( typeof( Log ) );
 			  PersistentSnapshotDownloader persistentSnapshotDownloader = new PersistentSnapshotDownloader( _catchupAddressProvider, applicationProcess, coreStateDownloader, log, new NoTimeout(), () => _dbHealth, new Monitors() );
 
@@ -109,11 +109,11 @@ namespace Neo4Net.causalclustering.core.state.snapshot
 			  CoreStateDownloader coreStateDownloader = mock( typeof( CoreStateDownloader ) );
 			  when( coreStateDownloader.DownloadSnapshot( any() ) ).thenReturn(false);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.causalclustering.core.state.CommandApplicationProcess applicationProcess = mock(org.Neo4Net.causalclustering.core.state.CommandApplicationProcess.class);
+//ORIGINAL LINE: final Neo4Net.causalclustering.core.state.CommandApplicationProcess applicationProcess = mock(Neo4Net.causalclustering.core.state.CommandApplicationProcess.class);
 			  CommandApplicationProcess applicationProcess = mock( typeof( CommandApplicationProcess ) );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.logging.Log log = mock(org.Neo4Net.logging.Log.class);
+//ORIGINAL LINE: final Neo4Net.logging.Log log = mock(Neo4Net.logging.Log.class);
 			  Log log = mock( typeof( Log ) );
 			  NoTimeout timeout = new NoTimeout();
 			  PersistentSnapshotDownloader persistentSnapshotDownloader = new PersistentSnapshotDownloader( _catchupAddressProvider, applicationProcess, coreStateDownloader, log, timeout, () => _dbHealth, new Monitors() );
@@ -141,11 +141,11 @@ namespace Neo4Net.causalclustering.core.state.snapshot
 			  when( coreStateDownloader.DownloadSnapshot( any() ) ).thenReturn(false);
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.causalclustering.core.state.CommandApplicationProcess applicationProcess = mock(org.Neo4Net.causalclustering.core.state.CommandApplicationProcess.class);
+//ORIGINAL LINE: final Neo4Net.causalclustering.core.state.CommandApplicationProcess applicationProcess = mock(Neo4Net.causalclustering.core.state.CommandApplicationProcess.class);
 			  CommandApplicationProcess applicationProcess = mock( typeof( CommandApplicationProcess ) );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.logging.Log log = mock(org.Neo4Net.logging.Log.class);
+//ORIGINAL LINE: final Neo4Net.logging.Log log = mock(Neo4Net.logging.Log.class);
 			  Log log = mock( typeof( Log ) );
 			  NoTimeout timeout = new NoTimeout();
 			  PersistentSnapshotDownloader persistentSnapshotDownloader = new PersistentSnapshotDownloader( null, applicationProcess, coreStateDownloader, log, timeout, () => _dbHealth, new Monitors() );
@@ -171,10 +171,10 @@ namespace Neo4Net.causalclustering.core.state.snapshot
 			  CoreStateDownloader coreStateDownloader = new EventuallySuccessfulDownloader( this, 3 );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.causalclustering.core.state.CommandApplicationProcess applicationProcess = mock(org.Neo4Net.causalclustering.core.state.CommandApplicationProcess.class);
+//ORIGINAL LINE: final Neo4Net.causalclustering.core.state.CommandApplicationProcess applicationProcess = mock(Neo4Net.causalclustering.core.state.CommandApplicationProcess.class);
 			  CommandApplicationProcess applicationProcess = mock( typeof( CommandApplicationProcess ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.logging.Log log = mock(org.Neo4Net.logging.Log.class);
+//ORIGINAL LINE: final Neo4Net.logging.Log log = mock(Neo4Net.logging.Log.class);
 			  Log log = mock( typeof( Log ) );
 			  NoTimeout timeout = new NoTimeout();
 			  PersistentSnapshotDownloader persistentSnapshotDownloader = new PersistentSnapshotDownloader( _catchupAddressProvider, applicationProcess, coreStateDownloader, log, timeout, () => _dbHealth, new Monitors() );
@@ -198,11 +198,11 @@ namespace Neo4Net.causalclustering.core.state.snapshot
 			  CoreStateDownloader coreStateDownloader = mock( typeof( CoreStateDownloader ) );
 			  when( coreStateDownloader.DownloadSnapshot( any() ) ).thenReturn(true);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.causalclustering.core.state.CommandApplicationProcess applicationProcess = mock(org.Neo4Net.causalclustering.core.state.CommandApplicationProcess.class);
+//ORIGINAL LINE: final Neo4Net.causalclustering.core.state.CommandApplicationProcess applicationProcess = mock(Neo4Net.causalclustering.core.state.CommandApplicationProcess.class);
 			  CommandApplicationProcess applicationProcess = mock( typeof( CommandApplicationProcess ) );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.logging.Log log = mock(org.Neo4Net.logging.Log.class);
+//ORIGINAL LINE: final Neo4Net.logging.Log log = mock(Neo4Net.logging.Log.class);
 			  Log log = mock( typeof( Log ) );
 			  PersistentSnapshotDownloader persistentSnapshotDownloader = new PersistentSnapshotDownloader( _catchupAddressProvider, applicationProcess, coreStateDownloader, log, new NoTimeout(), () => _dbHealth, new Monitors() );
 
@@ -224,12 +224,12 @@ namespace Neo4Net.causalclustering.core.state.snapshot
 			  // given
 			  CoreStateDownloader coreStateDownloader = mock( typeof( CoreStateDownloader ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.causalclustering.core.state.CommandApplicationProcess applicationProcess = mock(org.Neo4Net.causalclustering.core.state.CommandApplicationProcess.class);
+//ORIGINAL LINE: final Neo4Net.causalclustering.core.state.CommandApplicationProcess applicationProcess = mock(Neo4Net.causalclustering.core.state.CommandApplicationProcess.class);
 			  CommandApplicationProcess applicationProcess = mock( typeof( CommandApplicationProcess ) );
 			  when( coreStateDownloader.DownloadSnapshot( any() ) ).thenReturn(false);
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.logging.Log log = mock(org.Neo4Net.logging.Log.class);
+//ORIGINAL LINE: final Neo4Net.logging.Log log = mock(Neo4Net.logging.Log.class);
 			  Log log = mock( typeof( Log ) );
 			  NoTimeout timeout = new NoTimeout();
 			  PersistentSnapshotDownloader persistentSnapshotDownloader = new PersistentSnapshotDownloader( _catchupAddressProvider, applicationProcess, coreStateDownloader, log, timeout, () => _dbHealth, new Monitors() );

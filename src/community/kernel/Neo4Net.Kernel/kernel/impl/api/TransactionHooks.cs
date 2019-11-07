@@ -24,9 +24,9 @@ namespace Neo4Net.Kernel.Impl.Api
 {
 
 	using Neo4Net.Collections.Helpers;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
-	using Neo4Net.Kernel.api;
-	using TransactionHook_Outcome = Neo4Net.Kernel.api.TransactionHook_Outcome;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
+	using Neo4Net.Kernel.Api;
+	using TransactionHook_Outcome = Neo4Net.Kernel.Api.TransactionHook_Outcome;
 	using StorageReader = Neo4Net.Kernel.Api.StorageEngine.StorageReader;
 	using ReadableTransactionState = Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState;
 
@@ -61,7 +61,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") public void afterCommit(org.Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState state, org.Neo4Net.kernel.api.KernelTransaction tx, TransactionHooksState hooksState)
+//ORIGINAL LINE: @SuppressWarnings("unchecked") public void afterCommit(Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState state, Neo4Net.kernel.api.KernelTransaction tx, TransactionHooksState hooksState)
 		 public virtual void AfterCommit( ReadableTransactionState state, KernelTransaction tx, TransactionHooksState hooksState )
 		 {
 			  if ( hooksState == null )
@@ -77,7 +77,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") public void afterRollback(org.Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState state, org.Neo4Net.kernel.api.KernelTransaction tx, TransactionHooksState hooksState)
+//ORIGINAL LINE: @SuppressWarnings("unchecked") public void afterRollback(Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState state, Neo4Net.kernel.api.KernelTransaction tx, TransactionHooksState hooksState)
 		 public virtual void AfterRollback( ReadableTransactionState state, KernelTransaction tx, TransactionHooksState hooksState )
 		 {
 			  if ( hooksState == null )

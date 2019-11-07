@@ -44,7 +44,7 @@ namespace Neo4Net.Io.pagecache
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.MatcherAssert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.matchers.ByteArrayMatcher.byteArray;
+//	import static Neo4Net.test.matchers.ByteArrayMatcher.byteArray;
 
 	public abstract class PageCacheTestSupport<T> where T : PageCache
 	{

@@ -35,15 +35,15 @@ namespace Neo4Net.Bolt.v1.runtime
 	using Values = Neo4Net.Values.Storable.Values;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.runtime.RunMessageChecker.isBegin;
+//	import static Neo4Net.bolt.v1.runtime.RunMessageChecker.isBegin;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.runtime.RunMessageChecker.isCommit;
+//	import static Neo4Net.bolt.v1.runtime.RunMessageChecker.isCommit;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.runtime.RunMessageChecker.isRollback;
+//	import static Neo4Net.bolt.v1.runtime.RunMessageChecker.isRollback;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.util.Preconditions.checkState;
+//	import static Neo4Net.util.Preconditions.checkState;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.stringArray;
+//	import static Neo4Net.values.storable.Values.stringArray;
 
 	/// <summary>
 	/// The READY state indicates that the connection is ready to accept a
@@ -60,7 +60,7 @@ namespace Neo4Net.Bolt.v1.runtime
 		 private BoltStateMachineState _failedState;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.bolt.runtime.BoltStateMachineState process(org.Neo4Net.bolt.messaging.RequestMessage message, org.Neo4Net.bolt.runtime.StateMachineContext context) throws org.Neo4Net.bolt.runtime.BoltConnectionFatality
+//ORIGINAL LINE: public Neo4Net.bolt.runtime.BoltStateMachineState process(Neo4Net.bolt.messaging.RequestMessage message, Neo4Net.bolt.runtime.StateMachineContext context) throws Neo4Net.bolt.runtime.BoltConnectionFatality
 		 public override BoltStateMachineState Process( RequestMessage message, StateMachineContext context )
 		 {
 			  AssertInitialized();
@@ -109,7 +109,7 @@ namespace Neo4Net.Bolt.v1.runtime
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.bolt.runtime.BoltStateMachineState processRunMessage(org.Neo4Net.bolt.v1.messaging.request.RunMessage message, org.Neo4Net.bolt.runtime.StateMachineContext context) throws org.Neo4Net.bolt.runtime.BoltConnectionFatality
+//ORIGINAL LINE: private Neo4Net.bolt.runtime.BoltStateMachineState processRunMessage(Neo4Net.bolt.v1.messaging.request.RunMessage message, Neo4Net.bolt.runtime.StateMachineContext context) throws Neo4Net.bolt.runtime.BoltConnectionFatality
 		 private BoltStateMachineState ProcessRunMessage( RunMessage message, StateMachineContext context )
 		 {
 			  try
@@ -136,7 +136,7 @@ namespace Neo4Net.Bolt.v1.runtime
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static org.Neo4Net.bolt.runtime.StatementMetadata processRunMessage(org.Neo4Net.bolt.v1.messaging.request.RunMessage message, org.Neo4Net.bolt.runtime.StatementProcessor statementProcessor) throws Exception
+//ORIGINAL LINE: private static Neo4Net.bolt.runtime.StatementMetadata processRunMessage(Neo4Net.bolt.v1.messaging.request.RunMessage message, Neo4Net.bolt.runtime.StatementProcessor statementProcessor) throws Exception
 		 private static StatementMetadata ProcessRunMessage( RunMessage message, StatementProcessor statementProcessor )
 		 {
 			  if ( isBegin( message ) )
@@ -162,7 +162,7 @@ namespace Neo4Net.Bolt.v1.runtime
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.bolt.runtime.BoltStateMachineState processResetMessage(org.Neo4Net.bolt.runtime.StateMachineContext context) throws org.Neo4Net.bolt.runtime.BoltConnectionFatality
+//ORIGINAL LINE: private Neo4Net.bolt.runtime.BoltStateMachineState processResetMessage(Neo4Net.bolt.runtime.StateMachineContext context) throws Neo4Net.bolt.runtime.BoltConnectionFatality
 		 private BoltStateMachineState ProcessResetMessage( StateMachineContext context )
 		 {
 			  bool success = context.ResetMachine();

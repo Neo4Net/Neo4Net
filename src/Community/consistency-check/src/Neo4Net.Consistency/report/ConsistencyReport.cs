@@ -139,7 +139,7 @@ namespace Neo4Net.Consistency.report
 		  void UnsupportedSchemaRuleKind( Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule_Kind kind );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Warning @Documented("The schema rule contained in the DynamicRecord chain has a reference to a schema rule that is not online.") void schemaRuleNotOnline(org.Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule schemaRule);
+//ORIGINAL LINE: @Warning @Documented("The schema rule contained in the DynamicRecord chain has a reference to a schema rule that is not online.") void schemaRuleNotOnline(Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule schemaRule);
 		  [Documented("The schema rule contained in the DynamicRecord chain has a reference to a schema rule that is not online.")]
 		  void SchemaRuleNotOnline( SchemaRule schemaRule );
 	 }
@@ -327,7 +327,7 @@ namespace Neo4Net.Consistency.report
 		  void NameBlockNotInUse( DynamicRecord record );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Warning @Documented("The token name is empty. Empty token names are discouraged and also prevented in version 2.0.x and " + "above, but they can be accessed just like any other tokens. It's possible that this token have been " + "created in an earlier version where there were no checks for name being empty.") void emptyName(org.Neo4Net.kernel.impl.store.record.DynamicRecord name);
+//ORIGINAL LINE: @Warning @Documented("The token name is empty. Empty token names are discouraged and also prevented in version 2.0.x and " + "above, but they can be accessed just like any other tokens. It's possible that this token have been " + "created in an earlier version where there were no checks for name being empty.") void emptyName(Neo4Net.kernel.impl.store.record.DynamicRecord name);
 		  [Documented("The token name is empty. Empty token names are discouraged and also prevented in version 2.0.x and " + "above, but they can be accessed just like any other tokens. It's possible that this token have been " + "created in an earlier version where there were no checks for name being empty.")]
 		  void EmptyName( DynamicRecord name );
 
@@ -423,7 +423,7 @@ namespace Neo4Net.Consistency.report
 		  void EmptyBlock();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Warning @Documented("The next block is empty.") void emptyNextBlock(org.Neo4Net.kernel.impl.store.record.DynamicRecord next);
+//ORIGINAL LINE: @Warning @Documented("The next block is empty.") void emptyNextBlock(Neo4Net.kernel.impl.store.record.DynamicRecord next);
 		  [Documented("The next block is empty.")]
 		  void EmptyNextBlock( DynamicRecord next );
 

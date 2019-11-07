@@ -43,18 +43,18 @@ namespace Neo4Net.ha
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.driver.v1.Values.parameters;
+//	import static Neo4Net.driver.v1.Values.parameters;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.clusterOfSize;
+//	import static Neo4Net.kernel.impl.ha.ClusterManager.clusterOfSize;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.entireClusterSeesMemberAsNotAvailable;
+//	import static Neo4Net.kernel.impl.ha.ClusterManager.entireClusterSeesMemberAsNotAvailable;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.masterSeesMembers;
+//	import static Neo4Net.kernel.impl.ha.ClusterManager.masterSeesMembers;
 
 	public class BoltHAIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.ha.ClusterRule clusterRule = new org.Neo4Net.test.ha.ClusterRule().withBoltEnabled().withCluster(clusterOfSize(3));
+//ORIGINAL LINE: @Rule public final Neo4Net.test.ha.ClusterRule clusterRule = new Neo4Net.test.ha.ClusterRule().withBoltEnabled().withCluster(clusterOfSize(3));
 		 public readonly ClusterRule ClusterRule = new ClusterRule().withBoltEnabled().withCluster(clusterOfSize(3));
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -113,7 +113,7 @@ namespace Neo4Net.ha
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static <T> T inExpirableSession(org.Neo4Net.driver.v1.Driver driver, System.Func<org.Neo4Net.driver.v1.Driver,org.Neo4Net.driver.v1.Session> acquirer, System.Func<org.Neo4Net.driver.v1.Session,T> op) throws java.util.concurrent.TimeoutException
+//ORIGINAL LINE: private static <T> T inExpirableSession(Neo4Net.driver.v1.Driver driver, System.Func<Neo4Net.driver.v1.Driver,Neo4Net.driver.v1.Session> acquirer, System.Func<Neo4Net.driver.v1.Session,T> op) throws java.util.concurrent.TimeoutException
 		 private static T InExpirableSession<T>( Driver driver, System.Func<Driver, Session> acquirer, System.Func<Session, T> op )
 		 {
 			  long endTime = DateTimeHelper.CurrentUnixTimeMillis() + 15_000;

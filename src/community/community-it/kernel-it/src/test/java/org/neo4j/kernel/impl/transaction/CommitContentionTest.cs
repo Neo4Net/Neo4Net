@@ -41,7 +41,7 @@ namespace Neo4Net.Kernel.impl.transaction
 	public class CommitContentionTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory storeLocation = org.Neo4Net.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.TestDirectory storeLocation = Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory StoreLocation = TestDirectory.testDirectory();
 
 		 internal readonly Semaphore Semaphore1 = new Semaphore( 1 );

@@ -31,11 +31,11 @@ namespace Neo4Net.Kernel.Impl.Api
 	public interface IIndexReaderFactory
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader newReader(org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor descriptor) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException;
+//ORIGINAL LINE: Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader newReader(Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor descriptor) throws Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException;
 		 IndexReader NewReader( IndexDescriptor descriptor );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader newUnCachedReader(org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor descriptor) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException;
+//ORIGINAL LINE: Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader newUnCachedReader(Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor descriptor) throws Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException;
 		 IndexReader NewUnCachedReader( IndexDescriptor descriptor );
 
 		 void Close();
@@ -52,7 +52,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader newReader(org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor descriptor) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
+//ORIGINAL LINE: public Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader newReader(Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor descriptor) throws Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
 		  public override IndexReader NewReader( IndexDescriptor descriptor )
 		  {
 				if ( IndexReaders == null )
@@ -70,7 +70,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader newUnCachedReader(org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor descriptor) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
+//ORIGINAL LINE: public Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader newUnCachedReader(Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor descriptor) throws Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
 		  public override IndexReader NewUnCachedReader( IndexDescriptor descriptor )
 		  {
 				IndexProxy index = IndexingService.getIndexProxy( descriptor.Schema() );

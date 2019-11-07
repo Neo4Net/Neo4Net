@@ -42,7 +42,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static void check(org.Neo4Net.kernel.recovery.LogTailScanner tailScanner, org.Neo4Net.kernel.configuration.Config config) throws org.Neo4Net.kernel.impl.storemigration.UpgradeNotAllowedByConfigurationException
+//ORIGINAL LINE: public static void check(Neo4Net.kernel.recovery.LogTailScanner tailScanner, Neo4Net.kernel.configuration.Config config) throws Neo4Net.kernel.impl.storemigration.UpgradeNotAllowedByConfigurationException
 		 public static void Check( LogTailScanner tailScanner, Config config )
 		 {
 			  if ( !config.Get( GraphDatabaseSettings.allow_upgrade ) )

@@ -27,7 +27,7 @@ namespace Neo4Net.causalclustering.core.consensus
 	public interface LeaderLocator
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.Neo4Net.causalclustering.identity.MemberId getLeader() throws NoLeaderFoundException;
+//ORIGINAL LINE: Neo4Net.causalclustering.identity.MemberId getLeader() throws NoLeaderFoundException;
 		 MemberId Leader { get; }
 
 		 void RegisterListener( LeaderListener listener );

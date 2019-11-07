@@ -48,9 +48,9 @@ namespace Neo4Net.Server
 	using JettyLogBridge = Neo4Net.Server.logging.JettyLogBridge;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.commandline.Util.Neo4NetVersion;
+//	import static Neo4Net.commandline.Util.Neo4NetVersion;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.file.Files.createOrOpenAsOutputStream;
+//	import static Neo4Net.io.file.Files.createOrOpenAsOutputStream;
 
 	public abstract class ServerBootstrapper : Bootstrapper
 	{

@@ -41,11 +41,11 @@ namespace Neo4Net.Server.rest.security
 	public class AuthenticationIT : CommunityServerTestBase
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.TestData<org.Neo4Net.server.rest.RESTRequestGenerator> gen = org.Neo4Net.test.TestData.producedThrough(org.Neo4Net.server.rest.RESTRequestGenerator.PRODUCER);
+//ORIGINAL LINE: @Rule public Neo4Net.test.TestData<Neo4Net.server.rest.RESTRequestGenerator> gen = Neo4Net.test.TestData.producedThrough(Neo4Net.server.rest.RESTRequestGenerator.PRODUCER);
 		 public TestData<RESTRequestGenerator> Gen = TestData.producedThrough( RESTRequestGenerator.PRODUCER );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test @Documented("Missing authorization\n" + "\n" + "If an +Authorization+ header is not supplied, the server will reply with an error.") public void missing_authorization() throws org.Neo4Net.server.rest.domain.JsonParseException, java.io.IOException
+//ORIGINAL LINE: @Test @Documented("Missing authorization\n" + "\n" + "If an +Authorization+ header is not supplied, the server will reply with an error.") public void missing_authorization() throws Neo4Net.server.rest.domain.JsonParseException, java.io.IOException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Documented("Missing authorization\n" + "\n" + "If an +Authorization+ header is not supplied, the server will reply with an error.")]
 		 public virtual void MissingAuthorization()
@@ -64,7 +64,7 @@ namespace Neo4Net.Server.rest.security
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test @Documented("Authenticate to access the server\n" + "\n" + "Authenticate by sending a username and a password to Neo4Net using HTTP Basic Auth.\n" + "Requests should include an +Authorization+ header, with a value of +Basic <payload>+,\n" + "where \"payload\" is a base64 encoded string of \"username:password\".") public void successful_authentication() throws org.Neo4Net.server.rest.domain.JsonParseException, java.io.IOException
+//ORIGINAL LINE: @Test @Documented("Authenticate to access the server\n" + "\n" + "Authenticate by sending a username and a password to Neo4Net using HTTP Basic Auth.\n" + "Requests should include an +Authorization+ header, with a value of +Basic <payload>+,\n" + "where \"payload\" is a base64 encoded string of \"username:password\".") public void successful_authentication() throws Neo4Net.server.rest.domain.JsonParseException, java.io.IOException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Documented("Authenticate to access the server\n" + "\n" + "Authenticate by sending a username and a password to Neo4Net using HTTP Basic Auth.\n" + "Requests should include an +Authorization+ header, with a value of +Basic <payload>+,\n" + "where \"payload\" is a base64 encoded string of \"username:password\".")]
 		 public virtual void SuccessfulAuthentication()
@@ -83,7 +83,7 @@ namespace Neo4Net.Server.rest.security
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test @Documented("Incorrect authentication\n" + "\n" + "If an incorrect username or password is provided, the server replies with an error.") public void incorrect_authentication() throws org.Neo4Net.server.rest.domain.JsonParseException, java.io.IOException
+//ORIGINAL LINE: @Test @Documented("Incorrect authentication\n" + "\n" + "If an incorrect username or password is provided, the server replies with an error.") public void incorrect_authentication() throws Neo4Net.server.rest.domain.JsonParseException, java.io.IOException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Documented("Incorrect authentication\n" + "\n" + "If an incorrect username or password is provided, the server replies with an error.")]
 		 public virtual void IncorrectAuthentication()
@@ -102,7 +102,7 @@ namespace Neo4Net.Server.rest.security
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test @Documented("Required password changes\n" + "\n" + "In some cases, like the very first time Neo4Net is accessed, the user will be required to choose\n" + "a new password. The database will signal that a new password is required and deny access.\n" + "\n" + "See <<rest-api-security-user-status-and-password-changing>> for how to set a new password.") public void password_change_required() throws org.Neo4Net.server.rest.domain.JsonParseException, java.io.IOException
+//ORIGINAL LINE: @Test @Documented("Required password changes\n" + "\n" + "In some cases, like the very first time Neo4Net is accessed, the user will be required to choose\n" + "a new password. The database will signal that a new password is required and deny access.\n" + "\n" + "See <<rest-api-security-user-status-and-password-changing>> for how to set a new password.") public void password_change_required() throws Neo4Net.server.rest.domain.JsonParseException, java.io.IOException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Documented("Required password changes\n" + "\n" + "In some cases, like the very first time Neo4Net is accessed, the user will be required to choose\n" + "a new password. The database will signal that a new password is required and deny access.\n" + "\n" + "See <<rest-api-security-user-status-and-password-changing>> for how to set a new password.")]
 		 public virtual void PasswordChangeRequired()
@@ -228,14 +228,14 @@ namespace Neo4Net.Server.rest.security
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertAuthorizationRequired(String method, String path, int expectedAuthorizedStatus) throws org.Neo4Net.server.rest.domain.JsonParseException
+//ORIGINAL LINE: private void assertAuthorizationRequired(String method, String path, int expectedAuthorizedStatus) throws Neo4Net.server.rest.domain.JsonParseException
 		 private void AssertAuthorizationRequired( string method, string path, int expectedAuthorizedStatus )
 		 {
 			  AssertAuthorizationRequired( method, path, null, expectedAuthorizedStatus );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertAuthorizationRequired(String method, String path, Object payload, int expectedAuthorizedStatus) throws org.Neo4Net.server.rest.domain.JsonParseException
+//ORIGINAL LINE: private void assertAuthorizationRequired(String method, String path, Object payload, int expectedAuthorizedStatus) throws Neo4Net.server.rest.domain.JsonParseException
 		 private void AssertAuthorizationRequired( string method, string path, object payload, int expectedAuthorizedStatus )
 		 {
 			  // When no header

@@ -21,7 +21,7 @@ namespace Neo4Net.Io.layout
 {
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.fs.FileUtils.getCanonicalFile;
+//	import static Neo4Net.io.fs.FileUtils.getCanonicalFile;
 
 	/// <summary>
 	/// File layout representation of Neo4Net store that provides the ability to reference any store

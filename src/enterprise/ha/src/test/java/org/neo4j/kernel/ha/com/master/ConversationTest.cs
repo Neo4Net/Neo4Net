@@ -49,13 +49,13 @@ namespace Neo4Net.Kernel.ha.com.master
 	public class ConversationTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Mock private org.Neo4Net.kernel.impl.locking.Locks_Client client;
+//ORIGINAL LINE: @Mock private Neo4Net.kernel.impl.locking.Locks_Client client;
 		 private Neo4Net.Kernel.impl.locking.Locks_Client _client;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @InjectMocks private Conversation conversation;
 		 private Conversation _conversation;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.concurrent.ThreadingRule threadingRule = new org.Neo4Net.test.rule.concurrent.ThreadingRule();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.concurrent.ThreadingRule threadingRule = new Neo4Net.test.rule.concurrent.ThreadingRule();
 		 public ThreadingRule ThreadingRule = new ThreadingRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

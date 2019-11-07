@@ -24,7 +24,7 @@ using System.Collections.Generic;
 namespace Neo4Net.GraphDb
 {
    //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-   //	import static org.Neo4Net.graphdb.DependencyResolver_SelectionStrategy.FIRST;
+   //	import static Neo4Net.GraphDb.DependencyResolver_SelectionStrategy.FIRST;
 
    /// <summary>
    /// Find a dependency given a type.

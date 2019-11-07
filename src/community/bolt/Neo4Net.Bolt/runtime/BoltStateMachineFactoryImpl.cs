@@ -29,7 +29,7 @@ namespace Neo4Net.Bolt.runtime
 	using BoltProtocolV3 = Neo4Net.Bolt.v3.BoltProtocolV3;
 	using BoltStateMachineV3 = Neo4Net.Bolt.v3.BoltStateMachineV3;
 	using TransactionStateMachineV3SPI = Neo4Net.Bolt.v3.runtime.TransactionStateMachineV3SPI;
-	using DatabaseManager = Neo4Net.Dbms.database.DatabaseManager;
+	using IDatabaseManager = Neo4Net.Dbms.database.DatabaseManager;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using GraphDatabaseFacade = Neo4Net.Kernel.impl.factory.GraphDatabaseFacade;
@@ -38,7 +38,7 @@ namespace Neo4Net.Bolt.runtime
 
 	public class BoltStateMachineFactoryImpl : BoltStateMachineFactory
 	{
-		 private readonly DatabaseManager _databaseManager;
+		 private readonly IDatabaseManager _databaseManager;
 		 private readonly UsageData _usageData;
 		 private readonly LogService _logging;
 		 private readonly Authentication _authentication;
@@ -46,7 +46,7 @@ namespace Neo4Net.Bolt.runtime
 		 private readonly Clock _clock;
 		 private readonly string _activeDatabaseName;
 
-		 public BoltStateMachineFactoryImpl( DatabaseManager databaseManager, UsageData usageData, Authentication authentication, Clock clock, Config config, LogService logging )
+		 public BoltStateMachineFactoryImpl( IDatabaseManager databaseManager, UsageData usageData, Authentication authentication, Clock clock, Config config, LogService logging )
 		 {
 			  this._databaseManager = databaseManager;
 			  this._usageData = usageData;

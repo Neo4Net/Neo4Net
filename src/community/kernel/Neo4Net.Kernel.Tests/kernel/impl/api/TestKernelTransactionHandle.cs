@@ -23,10 +23,10 @@ namespace Neo4Net.Kernel.Impl.Api
 {
 
 	using AuthSubject = Neo4Net.Kernel.Api.Internal.security.AuthSubject;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
-	using KernelTransactionHandle = Neo4Net.Kernel.api.KernelTransactionHandle;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
+	using KernelTransactionHandle = Neo4Net.Kernel.Api.KernelTransactionHandle;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
-	using ExecutingQuery = Neo4Net.Kernel.api.query.ExecutingQuery;
+	using ExecutingQuery = Neo4Net.Kernel.Api.query.ExecutingQuery;
 	using ActiveLock = Neo4Net.Kernel.impl.locking.ActiveLock;
 
 	/// <summary>

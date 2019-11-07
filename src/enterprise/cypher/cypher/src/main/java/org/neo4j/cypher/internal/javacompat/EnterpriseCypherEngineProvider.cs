@@ -37,7 +37,7 @@ namespace Neo4Net.Cypher.Internal.javacompat
 	using LogService = Neo4Net.Logging.Internal.LogService;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Service.Implementation(QueryEngineProvider.class) public class EnterpriseCypherEngineProvider extends org.Neo4Net.kernel.impl.query.QueryEngineProvider
+//ORIGINAL LINE: @Service.Implementation(QueryEngineProvider.class) public class EnterpriseCypherEngineProvider extends Neo4Net.kernel.impl.query.QueryEngineProvider
 	public class EnterpriseCypherEngineProvider : QueryEngineProvider
 	{
 		 public EnterpriseCypherEngineProvider() : base("enterprise-cypher")

@@ -23,9 +23,9 @@ namespace Neo4Net.GraphDb
 {
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.FacadeMethod.consume;
+//	import static Neo4Net.graphdb.FacadeMethod.consume;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.Label.label;
+//	import static Neo4Net.graphdb.Label.label;
 
 	/// <summary>
 	/// Test convenience: all the methods on IGraphDatabaseService, callable using generic interface

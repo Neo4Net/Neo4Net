@@ -47,18 +47,18 @@ namespace Neo4Net.Io.pagecache.impl.muninn
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.core.Is.@is;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.TRUE;
+//	import static Neo4Net.kernel.configuration.Settings.TRUE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.assertion.Assert.assertEventually;
+//	import static Neo4Net.test.assertion.Assert.assertEventually;
 
 	public class VersionContextTrackingIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.causalclustering.ClusterRule clusterRule = new org.Neo4Net.test.causalclustering.ClusterRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.causalclustering.ClusterRule clusterRule = new Neo4Net.test.causalclustering.ClusterRule();
 		 public readonly ClusterRule ClusterRule = new ClusterRule();
 		 private const int NUMBER_OF_TRANSACTIONS = 3;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private org.Neo4Net.causalclustering.discovery.Cluster<?> cluster;
+//ORIGINAL LINE: private Neo4Net.causalclustering.discovery.Cluster<?> cluster;
 		 private Cluster<object> _cluster;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -136,7 +136,7 @@ namespace Neo4Net.Io.pagecache.impl.muninn
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static long getLatestPageVersion(org.Neo4Net.kernel.impl.factory.GraphDatabaseFacade databaseFacade) throws java.io.IOException
+//ORIGINAL LINE: private static long getLatestPageVersion(Neo4Net.kernel.impl.factory.GraphDatabaseFacade databaseFacade) throws java.io.IOException
 		 private static long GetLatestPageVersion( GraphDatabaseFacade databaseFacade )
 		 {
 			  DependencyResolver dependencyResolver = databaseFacade.DependencyResolver;
@@ -201,7 +201,7 @@ namespace Neo4Net.Io.pagecache.impl.muninn
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected void pinCursorToPage(long pageRef, long filePageId, org.Neo4Net.io.pagecache.PageSwapper swapper) throws org.Neo4Net.io.pagecache.impl.FileIsNotMappedException
+//ORIGINAL LINE: protected void pinCursorToPage(long pageRef, long filePageId, Neo4Net.io.pagecache.PageSwapper swapper) throws Neo4Net.io.pagecache.impl.FileIsNotMappedException
 			  protected internal override void PinCursorToPage( long pageRef, long filePageId, PageSwapper swapper )
 			  {
 					Delegate.pinCursorToPage( pageRef, filePageId, swapper );

@@ -30,7 +30,7 @@ namespace Neo4Net.Collections.Helpers
 	/// </summary>
 	/// @param <T> the type of items in this <seealso cref="System.Collections.IEnumerable"/>. </param>
 	/// <seealso cref= LimitingResourceIterator </seealso>
-	public class LimitingResourceIterable<T> : ResourceIterable<T>
+	public class LimitingResourceIterable<T> :IResourceIterable<T>
 	{
 		 private readonly IEnumerable<T> _source;
 		 private readonly int _limit;
@@ -41,13 +41,13 @@ namespace Neo4Net.Collections.Helpers
 		 /// </summary>
 		 /// <param name="source"> the source of items. </param>
 		 /// <param name="limit"> the limit, i.e. the max number of items to return. </param>
-		 public LimitingResourceIterable( ResourceIterable<T> source, int limit )
+		 public LimitingResourceIterable(IResourceIterable<T> source, int limit )
 		 {
 			  this._source = source;
 			  this._limit = limit;
 		 }
 
-		 public override ResourceIterator<T> Iterator()
+		 public override IResourceIterator<T> Iterator()
 		 {
 			  return new LimitingResourceIterator<T>( Iterators.AsResourceIterator( _source.GetEnumerator() ), _limit );
 		 }

@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.@unsafe.Impl.Batchimport
 {
-	using StatementConstants = Neo4Net.Kernel.api.StatementConstants;
+	using StatementConstants = Neo4Net.Kernel.Api.StatementConstants;
 	using CountsAccessor = Neo4Net.Kernel.Impl.Api.CountsAccessor;
 	using NodeLabelsField = Neo4Net.Kernel.impl.store.NodeLabelsField;
 	using NodeStore = Neo4Net.Kernel.impl.store.NodeStore;

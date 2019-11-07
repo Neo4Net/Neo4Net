@@ -51,9 +51,9 @@ namespace Neo4Net.Test.server
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
+//	import static Neo4Net.helpers.collection.MapUtil.stringMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.domain.JsonHelper.createJsonFrom;
+//	import static Neo4Net.server.rest.domain.JsonHelper.createJsonFrom;
 
 	/// <summary>
 	/// A tool for performing REST HTTP requests
@@ -302,14 +302,14 @@ namespace Neo4Net.Test.server
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public String stringFromContent(String key) throws org.Neo4Net.server.rest.domain.JsonParseException
+//ORIGINAL LINE: public String stringFromContent(String key) throws Neo4Net.server.rest.domain.JsonParseException
 			  public virtual string StringFromContent( string key )
 			  {
 					return Get( key ).asText();
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.codehaus.jackson.JsonNode get(String fieldName) throws org.Neo4Net.server.rest.domain.JsonParseException
+//ORIGINAL LINE: public org.codehaus.jackson.JsonNode get(String fieldName) throws Neo4Net.server.rest.domain.JsonParseException
 			  public virtual JsonNode Get( string fieldName )
 			  {
 					return JsonHelper.jsonNode( IEntity ).get( fieldName );

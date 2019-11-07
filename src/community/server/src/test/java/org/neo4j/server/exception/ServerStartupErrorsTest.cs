@@ -29,13 +29,13 @@ namespace Neo4Net.Server.exception
 	using AssertableLogProvider = Neo4Net.Logging.AssertableLogProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.lifecycle.LifecycleStatus.STARTED;
+//	import static Neo4Net.kernel.lifecycle.LifecycleStatus.STARTED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.lifecycle.LifecycleStatus.STARTING;
+//	import static Neo4Net.kernel.lifecycle.LifecycleStatus.STARTING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.logging.AssertableLogProvider.inLog;
+//	import static Neo4Net.logging.AssertableLogProvider.inLog;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.exception.ServerStartupErrors.translateToServerStartupError;
+//	import static Neo4Net.server.exception.ServerStartupErrors.translateToServerStartupError;
 
 	public class ServerStartupErrorsTest
 	{
@@ -45,7 +45,7 @@ namespace Neo4Net.Server.exception
 		 {
 			  // given
 			  AssertableLogProvider logging = new AssertableLogProvider();
-			  LifecycleException error = new LifecycleException( new object(), STARTING, STARTED, new Exception("Error starting org.Neo4Net.kernel.ha.factory.EnterpriseFacadeFactory", new LifecycleException(new object(), STARTING, STARTED, new LifecycleException(new object(), STARTING, STARTED, new UpgradeNotAllowedByConfigurationException()))) );
+			  LifecycleException error = new LifecycleException( new object(), STARTING, STARTED, new Exception("Error starting Neo4Net.kernel.ha.factory.EnterpriseFacadeFactory", new LifecycleException(new object(), STARTING, STARTED, new LifecycleException(new object(), STARTING, STARTED, new UpgradeNotAllowedByConfigurationException()))) );
 
 			  // when
 			  translateToServerStartupError( error ).describeTo( logging.GetLog( "console" ) );

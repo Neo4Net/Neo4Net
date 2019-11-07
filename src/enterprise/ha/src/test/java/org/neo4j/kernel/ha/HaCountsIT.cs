@@ -36,8 +36,8 @@ namespace Neo4Net.Kernel.ha
 	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
 	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
-	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
+	using SchemaDescriptorFactory = Neo4Net.Kernel.Api.schema.SchemaDescriptorFactory;
 	using ThreadToStatementContextBridge = Neo4Net.Kernel.impl.core.ThreadToStatementContextBridge;
 	using ManagedCluster = Neo4Net.Kernel.impl.ha.ClusterManager.ManagedCluster;
 	using Register_DoubleLongRegister = Neo4Net.Register.Register_DoubleLongRegister;
@@ -49,11 +49,11 @@ namespace Neo4Net.Kernel.ha
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.Transaction_Type.@explicit;
+//	import static Neo4Net.Kernel.Api.Internal.Transaction_Type.@explicit;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.security.LoginContext.AUTH_DISABLED;
+//	import static Neo4Net.Kernel.Api.Internal.security.LoginContext.AUTH_DISABLED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.register.Registers.newDoubleLongRegister;
+//	import static Neo4Net.register.Registers.newDoubleLongRegister;
 
 	public class HaCountsIT
 	{
@@ -62,7 +62,7 @@ namespace Neo4Net.Kernel.ha
 		 private const string PROPERTY_VALUE = "value";
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.ha.ClusterRule clusterRule = new org.Neo4Net.test.ha.ClusterRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.ha.ClusterRule clusterRule = new Neo4Net.test.ha.ClusterRule();
 		 public readonly ClusterRule ClusterRule = new ClusterRule();
 
 		 private ManagedCluster _cluster;
@@ -194,7 +194,7 @@ namespace Neo4Net.Kernel.ha
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor createAnIndex(HighlyAvailableGraphDatabase db, org.Neo4Net.graphdb.Label label, String propertyName) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: private static Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor createAnIndex(HighlyAvailableGraphDatabase db, Neo4Net.graphdb.Label label, String propertyName) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 private static IndexDescriptor CreateAnIndex( HighlyAvailableGraphDatabase db, Label label, string propertyName )
 		 {
 			  using ( Transaction tx = Db.beginTx() )
@@ -222,7 +222,7 @@ namespace Neo4Net.Kernel.ha
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void assertOnIndexCounts(int expectedIndexUpdates, int expectedIndexSize, int expectedUniqueValues, int expectedSampleSize, org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor indexDescriptor, HighlyAvailableGraphDatabase db) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException, org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
+//ORIGINAL LINE: private static void assertOnIndexCounts(int expectedIndexUpdates, int expectedIndexSize, int expectedUniqueValues, int expectedSampleSize, Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor indexDescriptor, HighlyAvailableGraphDatabase db) throws Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException, Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IndexNotFoundKernelException
 		 private static void AssertOnIndexCounts( int expectedIndexUpdates, int expectedIndexSize, int expectedUniqueValues, int expectedSampleSize, IndexDescriptor indexDescriptor, HighlyAvailableGraphDatabase db )
 		 {
 			  using ( Neo4Net.Kernel.Api.Internal.Transaction tx = Db.DependencyResolver.resolveDependency( typeof( Kernel ) ).BeginTransaction( @explicit, AUTH_DISABLED ) )

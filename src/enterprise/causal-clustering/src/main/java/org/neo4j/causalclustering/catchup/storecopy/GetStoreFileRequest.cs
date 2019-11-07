@@ -77,7 +77,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 internal class StoreFileRequestMarshall : SafeChannelMarshal<GetStoreFileRequest>
 		 {
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected GetStoreFileRequest unmarshal0(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException, org.Neo4Net.causalclustering.messaging.EndOfStreamException
+//ORIGINAL LINE: protected GetStoreFileRequest unmarshal0(Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException, Neo4Net.causalclustering.messaging.EndOfStreamException
 			  protected internal override GetStoreFileRequest Unmarshal0( ReadableChannel channel )
 			  {
 					StoreId storeId = StoreIdMarshal.INSTANCE.unmarshal( channel );
@@ -89,7 +89,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void marshal(GetStoreFileRequest getStoreFileRequest, org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public void marshal(GetStoreFileRequest getStoreFileRequest, Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
 			  public override void Marshal( GetStoreFileRequest getStoreFileRequest, WritableChannel channel )
 			  {
 					StoreIdMarshal.INSTANCE.marshal( getStoreFileRequest.ExpectedStoreId(), channel );

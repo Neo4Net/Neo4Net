@@ -42,7 +42,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Math.toIntExact;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.record.RecordLoad.NORMAL;
+//	import static Neo4Net.kernel.impl.store.record.RecordLoad.NORMAL;
 
 	public class Loaders
 	{
@@ -112,7 +112,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static org.Neo4Net.kernel.impl.transaction.state.RecordAccess_Loader<org.Neo4Net.kernel.impl.store.record.NodeRecord,Void> nodeLoader(final org.Neo4Net.kernel.impl.store.RecordStore<org.Neo4Net.kernel.impl.store.record.NodeRecord> store)
+//ORIGINAL LINE: public static Neo4Net.kernel.impl.transaction.state.RecordAccess_Loader<Neo4Net.kernel.impl.store.record.NodeRecord,Void> nodeLoader(final Neo4Net.kernel.impl.store.RecordStore<Neo4Net.kernel.impl.store.record.NodeRecord> store)
 		 public static RecordAccess_Loader<NodeRecord, Void> NodeLoader( RecordStore<NodeRecord> store )
 		 {
 			  return new RecordAccess_LoaderAnonymousInnerClass( store );
@@ -149,7 +149,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static org.Neo4Net.kernel.impl.transaction.state.RecordAccess_Loader<org.Neo4Net.kernel.impl.store.record.PropertyRecord,org.Neo4Net.kernel.impl.store.record.PrimitiveRecord> propertyLoader(final org.Neo4Net.kernel.impl.store.PropertyStore store)
+//ORIGINAL LINE: public static Neo4Net.kernel.impl.transaction.state.RecordAccess_Loader<Neo4Net.kernel.impl.store.record.PropertyRecord,Neo4Net.kernel.impl.store.record.PrimitiveRecord> propertyLoader(final Neo4Net.kernel.impl.store.PropertyStore store)
 		 public static RecordAccess_Loader<PropertyRecord, PrimitiveRecord> PropertyLoader( PropertyStore store )
 		 {
 			  return new RecordAccess_LoaderAnonymousInnerClass2( store );
@@ -201,7 +201,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static org.Neo4Net.kernel.impl.transaction.state.RecordAccess_Loader<org.Neo4Net.kernel.impl.store.record.RelationshipRecord,Void> relationshipLoader(final org.Neo4Net.kernel.impl.store.RecordStore<org.Neo4Net.kernel.impl.store.record.RelationshipRecord> store)
+//ORIGINAL LINE: public static Neo4Net.kernel.impl.transaction.state.RecordAccess_Loader<Neo4Net.kernel.impl.store.record.RelationshipRecord,Void> relationshipLoader(final Neo4Net.kernel.impl.store.RecordStore<Neo4Net.kernel.impl.store.record.RelationshipRecord> store)
 		 public static RecordAccess_Loader<RelationshipRecord, Void> RelationshipLoader( RecordStore<RelationshipRecord> store )
 		 {
 			  return new RecordAccess_LoaderAnonymousInnerClass3( store );
@@ -237,7 +237,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static org.Neo4Net.kernel.impl.transaction.state.RecordAccess_Loader<org.Neo4Net.kernel.impl.store.record.RelationshipGroupRecord,int> relationshipGroupLoader(final org.Neo4Net.kernel.impl.store.RecordStore<org.Neo4Net.kernel.impl.store.record.RelationshipGroupRecord> store)
+//ORIGINAL LINE: public static Neo4Net.kernel.impl.transaction.state.RecordAccess_Loader<Neo4Net.kernel.impl.store.record.RelationshipGroupRecord,int> relationshipGroupLoader(final Neo4Net.kernel.impl.store.RecordStore<Neo4Net.kernel.impl.store.record.RelationshipGroupRecord> store)
 		 public static RecordAccess_Loader<RelationshipGroupRecord, int> RelationshipGroupLoader( RecordStore<RelationshipGroupRecord> store )
 		 {
 			  return new RecordAccess_LoaderAnonymousInnerClass4( store );
@@ -275,7 +275,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static org.Neo4Net.kernel.impl.transaction.state.RecordAccess_Loader<org.Neo4Net.kernel.impl.store.record.SchemaRecord,org.Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule> schemaRuleLoader(final org.Neo4Net.kernel.impl.store.SchemaStore store)
+//ORIGINAL LINE: public static Neo4Net.kernel.impl.transaction.state.RecordAccess_Loader<Neo4Net.kernel.impl.store.record.SchemaRecord,Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule> schemaRuleLoader(final Neo4Net.kernel.impl.store.SchemaStore store)
 		 public static RecordAccess_Loader<SchemaRecord, SchemaRule> SchemaRuleLoader( SchemaStore store )
 		 {
 			  return new RecordAccess_LoaderAnonymousInnerClass5( store );
@@ -316,7 +316,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static org.Neo4Net.kernel.impl.transaction.state.RecordAccess_Loader<org.Neo4Net.kernel.impl.store.record.PropertyKeyTokenRecord,Void> propertyKeyTokenLoader(final org.Neo4Net.kernel.impl.store.RecordStore<org.Neo4Net.kernel.impl.store.record.PropertyKeyTokenRecord> store)
+//ORIGINAL LINE: public static Neo4Net.kernel.impl.transaction.state.RecordAccess_Loader<Neo4Net.kernel.impl.store.record.PropertyKeyTokenRecord,Void> propertyKeyTokenLoader(final Neo4Net.kernel.impl.store.RecordStore<Neo4Net.kernel.impl.store.record.PropertyKeyTokenRecord> store)
 		 public static RecordAccess_Loader<PropertyKeyTokenRecord, Void> PropertyKeyTokenLoader( RecordStore<PropertyKeyTokenRecord> store )
 		 {
 			  return new RecordAccess_LoaderAnonymousInnerClass6( store );
@@ -353,7 +353,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static org.Neo4Net.kernel.impl.transaction.state.RecordAccess_Loader<org.Neo4Net.kernel.impl.store.record.LabelTokenRecord,Void> labelTokenLoader(final org.Neo4Net.kernel.impl.store.RecordStore<org.Neo4Net.kernel.impl.store.record.LabelTokenRecord> store)
+//ORIGINAL LINE: public static Neo4Net.kernel.impl.transaction.state.RecordAccess_Loader<Neo4Net.kernel.impl.store.record.LabelTokenRecord,Void> labelTokenLoader(final Neo4Net.kernel.impl.store.RecordStore<Neo4Net.kernel.impl.store.record.LabelTokenRecord> store)
 		 public static RecordAccess_Loader<LabelTokenRecord, Void> LabelTokenLoader( RecordStore<LabelTokenRecord> store )
 		 {
 			  return new RecordAccess_LoaderAnonymousInnerClass7( store );
@@ -390,7 +390,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static org.Neo4Net.kernel.impl.transaction.state.RecordAccess_Loader<org.Neo4Net.kernel.impl.store.record.RelationshipTypeTokenRecord,Void> relationshipTypeTokenLoader(final org.Neo4Net.kernel.impl.store.RecordStore<org.Neo4Net.kernel.impl.store.record.RelationshipTypeTokenRecord> store)
+//ORIGINAL LINE: public static Neo4Net.kernel.impl.transaction.state.RecordAccess_Loader<Neo4Net.kernel.impl.store.record.RelationshipTypeTokenRecord,Void> relationshipTypeTokenLoader(final Neo4Net.kernel.impl.store.RecordStore<Neo4Net.kernel.impl.store.record.RelationshipTypeTokenRecord> store)
 		 public static RecordAccess_Loader<RelationshipTypeTokenRecord, Void> RelationshipTypeTokenLoader( RecordStore<RelationshipTypeTokenRecord> store )
 		 {
 			  return new RecordAccess_LoaderAnonymousInnerClass8( store );

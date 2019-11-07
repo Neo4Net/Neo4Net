@@ -23,13 +23,13 @@ using System.Collections.Generic;
 namespace Neo4Net.Kernel.impl.transaction.command
 {
 
-	using LabelScanWriter = Neo4Net.Kernel.api.labelscan.LabelScanWriter;
-	using NodeLabelUpdate = Neo4Net.Kernel.api.labelscan.NodeLabelUpdate;
+	using LabelScanWriter = Neo4Net.Kernel.Api.LabelScan.LabelScanWriter;
+	using NodeLabelUpdate = Neo4Net.Kernel.Api.LabelScan.NodeLabelUpdate;
 	using UnderlyingStorageException = Neo4Net.Kernel.impl.store.UnderlyingStorageException;
 	using Neo4Net.Utils.Concurrent;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.labelscan.NodeLabelUpdate.SORT_BY_NODE_ID;
+//	import static Neo4Net.kernel.api.labelscan.NodeLabelUpdate.SORT_BY_NODE_ID;
 
 	public class LabelUpdateWork : Work<System.Func<LabelScanWriter>, LabelUpdateWork>
 	{

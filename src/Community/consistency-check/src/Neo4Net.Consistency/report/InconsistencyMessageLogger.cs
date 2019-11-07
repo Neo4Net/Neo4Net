@@ -27,7 +27,7 @@ namespace Neo4Net.Consistency.report
 	using Log = Neo4Net.Logging.Log;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.Strings.TAB;
+//	import static Neo4Net.helpers.Strings.TAB;
 
 	public class InconsistencyMessageLogger : InconsistencyLogger
 	{

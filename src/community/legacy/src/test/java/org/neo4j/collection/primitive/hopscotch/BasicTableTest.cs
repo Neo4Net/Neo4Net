@@ -36,7 +36,7 @@ namespace Neo4Net.Collections.primitive.hopscotch
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assume.assumeTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.collection.primitive.Primitive.VALUE_MARKER;
+//	import static Neo4Net.collection.primitive.Primitive.VALUE_MARKER;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class BasicTableTest
@@ -284,7 +284,7 @@ namespace Neo4Net.Collections.primitive.hopscotch
 		 public virtual void shouldSetHopBits()
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: try (Table<?> table = factory.newTable(org.Neo4Net.collection.primitive.Primitive.DEFAULT_HEAP_CAPACITY))
+//ORIGINAL LINE: try (Table<?> table = factory.newTable(Neo4Net.collection.primitive.Primitive.DEFAULT_HEAP_CAPACITY))
 			  using ( Table<object> table = _factory.newTable( Primitive.DEFAULT_HEAP_CAPACITY ) )
 			  {
 					// GIVEN
@@ -306,7 +306,7 @@ namespace Neo4Net.Collections.primitive.hopscotch
 		 public virtual void shouldMoveHopBit()
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: try (Table<?> table = factory.newTable(org.Neo4Net.collection.primitive.Primitive.DEFAULT_HEAP_CAPACITY))
+//ORIGINAL LINE: try (Table<?> table = factory.newTable(Neo4Net.collection.primitive.Primitive.DEFAULT_HEAP_CAPACITY))
 			  using ( Table<object> table = _factory.newTable( Primitive.DEFAULT_HEAP_CAPACITY ) )
 			  {
 					// GIVEN

@@ -29,12 +29,12 @@ namespace Neo4Net.Kernel.impl.proc
 	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
 	using ProcedureSignature = Neo4Net.Kernel.Api.Internal.procs.ProcedureSignature;
-	using ResourceTracker = Neo4Net.Kernel.api.ResourceTracker;
-	using StubResourceManager = Neo4Net.Kernel.api.StubResourceManager;
-	using BasicContext = Neo4Net.Kernel.api.proc.BasicContext;
-	using CallableProcedure = Neo4Net.Kernel.api.proc.CallableProcedure;
-	using Context = Neo4Net.Kernel.api.proc.Context;
-	using Neo4Net.Kernel.api.proc;
+	using ResourceTracker = Neo4Net.Kernel.Api.ResourceTracker;
+	using StubResourceManager = Neo4Net.Kernel.Api.StubResourceManager;
+	using BasicContext = Neo4Net.Kernel.Api.Procs.BasicContext;
+	using CallableProcedure = Neo4Net.Kernel.Api.Procs.CallableProcedure;
+	using Context = Neo4Net.Kernel.Api.Procs.Context;
+	using Neo4Net.Kernel.Api.Procs;
 	using Mode = Neo4Net.Procedure.Mode;
 	using PerformsWrites = Neo4Net.Procedure.PerformsWrites;
 	using Procedure = Neo4Net.Procedure.Procedure;
@@ -48,17 +48,17 @@ namespace Neo4Net.Kernel.impl.proc
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.asList;
+//	import static Neo4Net.helpers.collection.Iterators.asList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes.NTAny;
+//	import static Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes.NTAny;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes.NTInteger;
+//	import static Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes.NTInteger;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes.NTString;
+//	import static Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes.NTString;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.procs.ProcedureSignature.procedureSignature;
+//	import static Neo4Net.Kernel.Api.Internal.procs.ProcedureSignature.procedureSignature;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.proc.Key.key;
+//	import static Neo4Net.kernel.api.proc.Key.key;
 
 	public class ProceduresTest
 	{
@@ -217,7 +217,7 @@ namespace Neo4Net.Kernel.impl.proc
 			  assertThat( asList( result ), contains( equalTo( new object[]{ "hello, world" } ) ) );
 		 }
 
-		 private class CallableProcedure_BasicProcedureAnonymousInnerClass : Neo4Net.Kernel.api.proc.CallableProcedure_BasicProcedure
+		 private class CallableProcedure_BasicProcedureAnonymousInnerClass : Neo4Net.Kernel.Api.Procs.CallableProcedure_BasicProcedure
 		 {
 			 private readonly ProceduresTest _outerInstance;
 
@@ -230,7 +230,7 @@ namespace Neo4Net.Kernel.impl.proc
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.collection.RawIterator<Object[], org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException> apply(org.Neo4Net.kernel.api.proc.Context ctx, Object[] input, org.Neo4Net.kernel.api.ResourceTracker resourceTracker) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
+//ORIGINAL LINE: public Neo4Net.collection.RawIterator<Object[], Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException> apply(Neo4Net.kernel.api.proc.Context ctx, Object[] input, Neo4Net.kernel.api.ResourceTracker resourceTracker) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 			 public override RawIterator<object[], ProcedureException> apply( Context ctx, object[] input, ResourceTracker resourceTracker )
 			 {
 				  return RawIterator.of<object[], ProcedureException>( new object[]{ ctx.Get( _someKey ) } );
@@ -280,7 +280,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 public class ProcedureWithReadConflictAnnotation
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @PerformsWrites @Procedure(mode = org.Neo4Net.procedure.Mode.READ) public void shouldCompile()
+//ORIGINAL LINE: @PerformsWrites @Procedure(mode = Neo4Net.procedure.Mode.READ) public void shouldCompile()
 			  [Procedure(mode : Neo4Net.Procedure.Mode.READ)]
 			  public virtual void ShouldCompile()
 			  {
@@ -290,7 +290,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 public class ProcedureWithWriteConflictAnnotation
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @PerformsWrites @Procedure(mode = org.Neo4Net.procedure.Mode.WRITE) public void shouldCompileToo()
+//ORIGINAL LINE: @PerformsWrites @Procedure(mode = Neo4Net.procedure.Mode.WRITE) public void shouldCompileToo()
 			  [Procedure(mode : Neo4Net.Procedure.Mode.WRITE)]
 			  public virtual void ShouldCompileToo()
 			  {
@@ -300,7 +300,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 public class ProcedureWithDBMSConflictAnnotation
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @PerformsWrites @Procedure(mode = org.Neo4Net.procedure.Mode.DBMS) public void shouldNotCompile()
+//ORIGINAL LINE: @PerformsWrites @Procedure(mode = Neo4Net.procedure.Mode.DBMS) public void shouldNotCompile()
 			  [Procedure(mode : Neo4Net.Procedure.Mode.DBMS)]
 			  public virtual void ShouldNotCompile()
 			  {
@@ -310,7 +310,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 public class ProcedureWithSchemaConflictAnnotation
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @PerformsWrites @Procedure(mode = org.Neo4Net.procedure.Mode.SCHEMA) public void shouldNotCompile()
+//ORIGINAL LINE: @PerformsWrites @Procedure(mode = Neo4Net.procedure.Mode.SCHEMA) public void shouldNotCompile()
 			  [Procedure(mode : Neo4Net.Procedure.Mode.SCHEMA)]
 			  public virtual void ShouldNotCompile()
 			  {
@@ -318,13 +318,13 @@ namespace Neo4Net.Kernel.impl.proc
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private org.Neo4Net.kernel.api.proc.CallableProcedure_BasicProcedure procedureWithSignature(final org.Neo4Net.Kernel.Api.Internal.procs.ProcedureSignature signature)
-		 private Neo4Net.Kernel.api.proc.CallableProcedure_BasicProcedure ProcedureWithSignature( ProcedureSignature signature )
+//ORIGINAL LINE: private Neo4Net.kernel.api.proc.CallableProcedure_BasicProcedure procedureWithSignature(final Neo4Net.Kernel.Api.Internal.procs.ProcedureSignature signature)
+		 private Neo4Net.Kernel.Api.Procs.CallableProcedure_BasicProcedure ProcedureWithSignature( ProcedureSignature signature )
 		 {
 			  return new CallableProcedure_BasicProcedureAnonymousInnerClass( this, signature );
 		 }
 
-		 private class CallableProcedure_BasicProcedureAnonymousInnerClass : Neo4Net.Kernel.api.proc.CallableProcedure_BasicProcedure
+		 private class CallableProcedure_BasicProcedureAnonymousInnerClass : Neo4Net.Kernel.Api.Procs.CallableProcedure_BasicProcedure
 		 {
 			 private readonly ProceduresTest _outerInstance;
 
@@ -334,7 +334,7 @@ namespace Neo4Net.Kernel.impl.proc
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.collection.RawIterator<Object[], org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException> apply(org.Neo4Net.kernel.api.proc.Context ctx, Object[] input, org.Neo4Net.kernel.api.ResourceTracker resourceTracker) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
+//ORIGINAL LINE: public Neo4Net.collection.RawIterator<Object[], Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException> apply(Neo4Net.kernel.api.proc.Context ctx, Object[] input, Neo4Net.kernel.api.ResourceTracker resourceTracker) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 			 public override RawIterator<object[], ProcedureException> apply( Context ctx, object[] input, ResourceTracker resourceTracker )
 			 {
 				  return null;
@@ -346,7 +346,7 @@ namespace Neo4Net.Kernel.impl.proc
 			  return new CallableProcedure_BasicProcedureAnonymousInnerClass2( this, signature );
 		 }
 
-		 private class CallableProcedure_BasicProcedureAnonymousInnerClass2 : Neo4Net.Kernel.api.proc.CallableProcedure_BasicProcedure
+		 private class CallableProcedure_BasicProcedureAnonymousInnerClass2 : Neo4Net.Kernel.Api.Procs.CallableProcedure_BasicProcedure
 		 {
 			 private readonly ProceduresTest _outerInstance;
 

@@ -39,11 +39,11 @@ namespace Neo4Net.com.storecopy
 	using StoreFileMetadata = Neo4Net.Kernel.Api.StorageEngine.StoreFileMetadata;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.com.RequestContext.anonymous;
+//	import static Neo4Net.com.RequestContext.anonymous;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.fs.FileUtils.getCanonicalFile;
+//	import static Neo4Net.io.fs.FileUtils.getCanonicalFile;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.fs.FileUtils.relativePath;
+//	import static Neo4Net.io.fs.FileUtils.relativePath;
 
 	/// <summary>
 	/// Is able to feed store files in a consistent way to a <seealso cref="Response"/> to be picked up by a
@@ -158,7 +158,7 @@ namespace Neo4Net.com.storecopy
 					StoreCopyCheckPointMutex mutex = _dataSource.StoreCopyCheckPointMutex;
 					try
 					{
-							using ( Resource @lock = mutex.StoreCopy( checkPointAction ), ResourceIterator<StoreFileMetadata> files = _dataSource.listStoreFiles( includeLogs ) )
+							using ( Resource @lock = mutex.StoreCopy( checkPointAction ), IResourceIterator<StoreFileMetadata> files = _dataSource.listStoreFiles( includeLogs ) )
 							{
 							 lastAppliedTransaction = _checkPointer.lastCheckPointedTransactionId();
 							 _monitor.startStreamingStoreFiles( storeCopyIdentifier );

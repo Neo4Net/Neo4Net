@@ -27,11 +27,11 @@ namespace Neo4Net.CodeGen.ByteCode
 
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.codegen.ByteCodeUtils.byteCodeName;
+//	import static Neo4Net.codegen.ByteCodeUtils.byteCodeName;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.codegen.ByteCodeUtils.desc;
+//	import static Neo4Net.codegen.ByteCodeUtils.desc;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.codegen.ByteCodeUtils.typeName;
+//	import static Neo4Net.codegen.ByteCodeUtils.typeName;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.objectweb.asm.Opcodes.AASTORE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:

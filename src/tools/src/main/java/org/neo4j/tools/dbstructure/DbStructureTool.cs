@@ -100,7 +100,7 @@ namespace Neo4Net.tools.dbstructure
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void traceDb(String generator, String generatedClazzPackage, String generatedClazzName, org.Neo4Net.graphdb.GraphDatabaseService graph, Appendable output) throws java.io.IOException
+//ORIGINAL LINE: private void traceDb(String generator, String generatedClazzPackage, String generatedClazzName, Neo4Net.graphdb.GraphDatabaseService graph, Appendable output) throws java.io.IOException
 		 private void TraceDb( string generator, string generatedClazzPackage, string generatedClazzName, IGraphDatabaseService graph, Appendable output )
 		 {
 			  InvocationTracer<DbStructureVisitor> tracer = new InvocationTracer<DbStructureVisitor>( generator, generatedClazzPackage, generatedClazzName, typeof( DbStructureVisitor ), DbStructureArgumentFormatter.INSTANCE, output );

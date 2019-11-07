@@ -65,9 +65,9 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.Label.label;
+//	import static Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.fs.FileUtils.relativePath;
+//	import static Neo4Net.io.fs.FileUtils.relativePath;
 
 	public class CatchupServerIT
 	{
@@ -103,10 +103,10 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 private PageCache _pageCache;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.fs.DefaultFileSystemRule fileSystemRule = new org.Neo4Net.test.rule.fs.DefaultFileSystemRule();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.fs.DefaultFileSystemRule fileSystemRule = new Neo4Net.test.rule.fs.DefaultFileSystemRule();
 		 public DefaultFileSystemRule FileSystemRule = new DefaultFileSystemRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory(fileSystemRule);
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.TestDirectory testDirectory = Neo4Net.test.rule.TestDirectory.testDirectory(fileSystemRule);
 		 public TestDirectory TestDirectory;
 		 private CatchUpClient _catchupClient;
 		 private DefaultFileSystemAbstraction _fsa;
@@ -314,7 +314,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void listOfDownloadedFilesMatchesServer(org.Neo4Net.kernel.NeoStoreDataSource neoStoreDataSource, java.io.File[] files) throws java.io.IOException
+//ORIGINAL LINE: private void listOfDownloadedFilesMatchesServer(Neo4Net.kernel.NeoStoreDataSource neoStoreDataSource, java.io.File[] files) throws java.io.IOException
 		 private void ListOfDownloadedFilesMatchesServer( NeoStoreDataSource neoStoreDataSource, File[] files )
 		 {
 			  IList<string> expectedStoreFiles = GetExpectedStoreFiles( neoStoreDataSource );
@@ -328,7 +328,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static java.util.List<java.io.File> listServerExpectedNonReplayableFiles(org.Neo4Net.kernel.NeoStoreDataSource neoStoreDataSource) throws java.io.IOException
+//ORIGINAL LINE: private static java.util.List<java.io.File> listServerExpectedNonReplayableFiles(Neo4Net.kernel.NeoStoreDataSource neoStoreDataSource) throws java.io.IOException
 		 private static IList<File> ListServerExpectedNonReplayableFiles( NeoStoreDataSource neoStoreDataSource )
 		 {
 			  using ( Stream<StoreFileMetadata> countStoreStream = neoStoreDataSource.NeoStoreFileListing.builder().excludeAll().includeNeoStoreFiles().build().stream(), Stream<StoreFileMetadata> explicitIndexStream = neoStoreDataSource.NeoStoreFileListing.builder().excludeAll().includeExplicitIndexStoreStoreFiles().build().stream() )
@@ -339,7 +339,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.util.List<String> getExpectedStoreFiles(org.Neo4Net.kernel.NeoStoreDataSource neoStoreDataSource) throws java.io.IOException
+//ORIGINAL LINE: private java.util.List<String> getExpectedStoreFiles(Neo4Net.kernel.NeoStoreDataSource neoStoreDataSource) throws java.io.IOException
 		 private IList<string> GetExpectedStoreFiles( NeoStoreDataSource neoStoreDataSource )
 		 {
 			  NeoStoreFileListing.StoreFileListingBuilder builder = neoStoreDataSource.NeoStoreFileListing.builder();

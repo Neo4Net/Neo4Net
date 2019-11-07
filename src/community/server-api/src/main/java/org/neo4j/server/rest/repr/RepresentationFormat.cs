@@ -95,7 +95,7 @@ namespace Neo4Net.Server.rest.repr
 		 protected internal abstract string Complete( MappingWriter serializer );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.server.plugins.ParameterList readParameterList(String input) throws BadInputException
+//ORIGINAL LINE: public Neo4Net.server.plugins.ParameterList readParameterList(String input) throws BadInputException
 		 public override ParameterList ReadParameterList( string input )
 		 {
 			  return new ParameterListAnonymousInnerClass( this, ReadMap( input ) );
@@ -160,14 +160,14 @@ namespace Neo4Net.Server.rest.repr
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected org.Neo4Net.graphdb.Node convertNode(org.Neo4Net.kernel.internal.GraphDatabaseAPI graphDb, Object value) throws BadInputException
+//ORIGINAL LINE: protected Neo4Net.graphdb.Node convertNode(Neo4Net.kernel.internal.GraphDatabaseAPI graphDb, Object value) throws BadInputException
 			 protected internal override Node convertNode( GraphDatabaseAPI graphDb, object value )
 			 {
 				  return _outerInstance.convertNode( graphDb, value );
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected org.Neo4Net.graphdb.Relationship convertRelationship(org.Neo4Net.kernel.internal.GraphDatabaseAPI graphDb, Object value) throws BadInputException
+//ORIGINAL LINE: protected Neo4Net.graphdb.Relationship convertRelationship(Neo4Net.kernel.internal.GraphDatabaseAPI graphDb, Object value) throws BadInputException
 			 protected internal override Relationship convertRelationship( GraphDatabaseAPI graphDb, object value )
 			 {
 				  return _outerInstance.convertRelationship( graphDb, value );
@@ -196,7 +196,7 @@ namespace Neo4Net.Server.rest.repr
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected org.Neo4Net.graphdb.Relationship convertRelationship(org.Neo4Net.kernel.internal.GraphDatabaseAPI graphDb, Object value) throws BadInputException
+//ORIGINAL LINE: protected Neo4Net.graphdb.Relationship convertRelationship(Neo4Net.kernel.internal.GraphDatabaseAPI graphDb, Object value) throws BadInputException
 		 protected internal virtual Relationship ConvertRelationship( GraphDatabaseAPI graphDb, object value )
 		 {
 			  if ( value is Relationship )
@@ -229,7 +229,7 @@ namespace Neo4Net.Server.rest.repr
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected org.Neo4Net.graphdb.Node convertNode(org.Neo4Net.kernel.internal.GraphDatabaseAPI graphDb, Object value) throws BadInputException
+//ORIGINAL LINE: protected Neo4Net.graphdb.Node convertNode(Neo4Net.kernel.internal.GraphDatabaseAPI graphDb, Object value) throws BadInputException
 		 protected internal virtual Node ConvertNode( GraphDatabaseAPI graphDb, object value )
 		 {
 			  if ( value is Node )
@@ -262,7 +262,7 @@ namespace Neo4Net.Server.rest.repr
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected org.Neo4Net.graphdb.Node getNode(org.Neo4Net.kernel.internal.GraphDatabaseAPI graphDb, String value) throws BadInputException, org.Neo4Net.server.rest.web.NodeNotFoundException
+//ORIGINAL LINE: protected Neo4Net.graphdb.Node getNode(Neo4Net.kernel.internal.GraphDatabaseAPI graphDb, String value) throws BadInputException, Neo4Net.server.rest.web.NodeNotFoundException
 		 protected internal virtual Node GetNode( GraphDatabaseAPI graphDb, string value )
 		 {
 			  try
@@ -276,7 +276,7 @@ namespace Neo4Net.Server.rest.repr
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected org.Neo4Net.graphdb.Node getNode(org.Neo4Net.kernel.internal.GraphDatabaseAPI graphDb, java.net.URI uri) throws BadInputException, org.Neo4Net.server.rest.web.NodeNotFoundException
+//ORIGINAL LINE: protected Neo4Net.graphdb.Node getNode(Neo4Net.kernel.internal.GraphDatabaseAPI graphDb, java.net.URI uri) throws BadInputException, Neo4Net.server.rest.web.NodeNotFoundException
 		 protected internal virtual Node GetNode( GraphDatabaseAPI graphDb, URI uri )
 		 {
 			  try
@@ -305,7 +305,7 @@ namespace Neo4Net.Server.rest.repr
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.graphdb.Relationship getRelationship(org.Neo4Net.kernel.internal.GraphDatabaseAPI graphDb, String value) throws BadInputException, org.Neo4Net.server.rest.web.RelationshipNotFoundException
+//ORIGINAL LINE: private Neo4Net.graphdb.Relationship getRelationship(Neo4Net.kernel.internal.GraphDatabaseAPI graphDb, String value) throws BadInputException, Neo4Net.server.rest.web.RelationshipNotFoundException
 		 private Relationship GetRelationship( GraphDatabaseAPI graphDb, string value )
 		 {
 			  try
@@ -319,7 +319,7 @@ namespace Neo4Net.Server.rest.repr
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected org.Neo4Net.graphdb.Relationship getRelationship(org.Neo4Net.kernel.internal.GraphDatabaseAPI graphDb, java.net.URI uri) throws BadInputException, org.Neo4Net.server.rest.web.RelationshipNotFoundException
+//ORIGINAL LINE: protected Neo4Net.graphdb.Relationship getRelationship(Neo4Net.kernel.internal.GraphDatabaseAPI graphDb, java.net.URI uri) throws BadInputException, Neo4Net.server.rest.web.RelationshipNotFoundException
 		 protected internal virtual Relationship GetRelationship( GraphDatabaseAPI graphDb, URI uri )
 		 {
 			  try

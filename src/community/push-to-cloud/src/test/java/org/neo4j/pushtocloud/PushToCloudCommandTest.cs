@@ -58,28 +58,28 @@ namespace Neo4Net.Pushtocloud
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.array;
+//	import static Neo4Net.helpers.collection.Iterators.array;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.pushtocloud.PushToCloudCommand.ARG_BOLT_URI;
+//	import static Neo4Net.pushtocloud.PushToCloudCommand.ARG_BOLT_URI;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.pushtocloud.PushToCloudCommand.ARG_DATABASE;
+//	import static Neo4Net.pushtocloud.PushToCloudCommand.ARG_DATABASE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.pushtocloud.PushToCloudCommand.ARG_CONFIRMED;
+//	import static Neo4Net.pushtocloud.PushToCloudCommand.ARG_CONFIRMED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.pushtocloud.PushToCloudCommand.ARG_DUMP;
+//	import static Neo4Net.pushtocloud.PushToCloudCommand.ARG_DUMP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.pushtocloud.PushToCloudCommand.ARG_DUMP_TO;
+//	import static Neo4Net.pushtocloud.PushToCloudCommand.ARG_DUMP_TO;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.pushtocloud.PushToCloudCommand.ARG_PASSWORD;
+//	import static Neo4Net.pushtocloud.PushToCloudCommand.ARG_PASSWORD;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.pushtocloud.PushToCloudCommand.ARG_USERNAME;
+//	import static Neo4Net.pushtocloud.PushToCloudCommand.ARG_USERNAME;
 
 	public class PushToCloudCommandTest
 	{
 		 private const string SOME_EXAMPLE_BOLT_URI = "bolt+routing://database_id.databases.Neo4Net.io";
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory directory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.TestDirectory directory = Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory Directory = TestDirectory.testDirectory();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Rule public final org.junit.contrib.java.lang.system.EnvironmentVariables environmentVariables = new org.junit.contrib.java.lang.system.EnvironmentVariables();
@@ -182,7 +182,7 @@ namespace Neo4Net.Pushtocloud
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldFailOnDatabaseNameAsSourceUsingExistingDumpTarget() throws java.io.IOException, org.Neo4Net.commandline.admin.IncorrectUsage, org.Neo4Net.commandline.admin.CommandFailed
+//ORIGINAL LINE: @Test public void shouldFailOnDatabaseNameAsSourceUsingExistingDumpTarget() throws java.io.IOException, Neo4Net.commandline.admin.IncorrectUsage, Neo4Net.commandline.admin.CommandFailed
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldFailOnDatabaseNameAsSourceUsingExistingDumpTarget()
 		 {
@@ -208,7 +208,7 @@ namespace Neo4Net.Pushtocloud
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldNotAcceptBothDumpAndDatabaseNameAsSource() throws java.io.IOException, org.Neo4Net.commandline.admin.CommandFailed
+//ORIGINAL LINE: @Test public void shouldNotAcceptBothDumpAndDatabaseNameAsSource() throws java.io.IOException, Neo4Net.commandline.admin.CommandFailed
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldNotAcceptBothDumpAndDatabaseNameAsSource()
 		 {
@@ -228,7 +228,7 @@ namespace Neo4Net.Pushtocloud
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldNotAcceptOnlyUsernameOrPasswordFromArgument() throws java.io.IOException, org.Neo4Net.commandline.admin.CommandFailed
+//ORIGINAL LINE: @Test public void shouldNotAcceptOnlyUsernameOrPasswordFromArgument() throws java.io.IOException, Neo4Net.commandline.admin.CommandFailed
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldNotAcceptOnlyUsernameOrPasswordFromArgument()
 		 {
@@ -262,7 +262,7 @@ namespace Neo4Net.Pushtocloud
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldNotAcceptOnlyUsernameOrPasswordFromEnvVar() throws java.io.IOException, org.Neo4Net.commandline.admin.CommandFailed
+//ORIGINAL LINE: @Test public void shouldNotAcceptOnlyUsernameOrPasswordFromEnvVar() throws java.io.IOException, Neo4Net.commandline.admin.CommandFailed
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldNotAcceptOnlyUsernameOrPasswordFromEnvVar()
 		 {
@@ -300,7 +300,7 @@ namespace Neo4Net.Pushtocloud
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldNotAcceptOnlyUsernameAndPasswordFromEnvAndCli() throws java.io.IOException, org.Neo4Net.commandline.admin.CommandFailed
+//ORIGINAL LINE: @Test public void shouldNotAcceptOnlyUsernameAndPasswordFromEnvAndCli() throws java.io.IOException, Neo4Net.commandline.admin.CommandFailed
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldNotAcceptOnlyUsernameAndPasswordFromEnvAndCli()
 		 {
@@ -327,7 +327,7 @@ namespace Neo4Net.Pushtocloud
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldChooseToDumpDefaultDatabaseIfNeitherDumpNorDatabaseIsGiven() throws java.io.IOException, org.Neo4Net.commandline.admin.CommandFailed, org.Neo4Net.commandline.admin.IncorrectUsage
+//ORIGINAL LINE: @Test public void shouldChooseToDumpDefaultDatabaseIfNeitherDumpNorDatabaseIsGiven() throws java.io.IOException, Neo4Net.commandline.admin.CommandFailed, Neo4Net.commandline.admin.IncorrectUsage
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldChooseToDumpDefaultDatabaseIfNeitherDumpNorDatabaseIsGiven()
 		 {
@@ -346,7 +346,7 @@ namespace Neo4Net.Pushtocloud
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldFailOnDumpPointingToMissingFile() throws java.io.IOException, org.Neo4Net.commandline.admin.IncorrectUsage, org.Neo4Net.commandline.admin.CommandFailed
+//ORIGINAL LINE: @Test public void shouldFailOnDumpPointingToMissingFile() throws java.io.IOException, Neo4Net.commandline.admin.IncorrectUsage, Neo4Net.commandline.admin.CommandFailed
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldFailOnDumpPointingToMissingFile()
 		 {
@@ -369,7 +369,7 @@ namespace Neo4Net.Pushtocloud
 		 // TODO: 2019-08-07 shouldFailOnDumpPointingToInvalidDumpFile
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldRecognizeBothEnvironmentAndDatabaseIdFromBoltURI() throws java.io.IOException, org.Neo4Net.commandline.admin.CommandFailed, org.Neo4Net.commandline.admin.IncorrectUsage
+//ORIGINAL LINE: @Test public void shouldRecognizeBothEnvironmentAndDatabaseIdFromBoltURI() throws java.io.IOException, Neo4Net.commandline.admin.CommandFailed, Neo4Net.commandline.admin.IncorrectUsage
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldRecognizeBothEnvironmentAndDatabaseIdFromBoltURI()
 		 {
@@ -385,7 +385,7 @@ namespace Neo4Net.Pushtocloud
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldRecognizeDatabaseIdFromBoltURI() throws java.io.IOException, org.Neo4Net.commandline.admin.CommandFailed, org.Neo4Net.commandline.admin.IncorrectUsage
+//ORIGINAL LINE: @Test public void shouldRecognizeDatabaseIdFromBoltURI() throws java.io.IOException, Neo4Net.commandline.admin.CommandFailed, Neo4Net.commandline.admin.IncorrectUsage
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldRecognizeDatabaseIdFromBoltURI()
 		 {
@@ -401,7 +401,7 @@ namespace Neo4Net.Pushtocloud
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldAuthenticateBeforeDumping() throws org.Neo4Net.commandline.admin.CommandFailed, java.io.IOException, org.Neo4Net.commandline.admin.IncorrectUsage
+//ORIGINAL LINE: @Test public void shouldAuthenticateBeforeDumping() throws Neo4Net.commandline.admin.CommandFailed, java.io.IOException, Neo4Net.commandline.admin.IncorrectUsage
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldAuthenticateBeforeDumping()
 		 {
@@ -421,7 +421,7 @@ namespace Neo4Net.Pushtocloud
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.pushtocloud.PushToCloudCommand.Copier mockedTargetCommunicator() throws org.Neo4Net.commandline.admin.CommandFailed
+//ORIGINAL LINE: private Neo4Net.pushtocloud.PushToCloudCommand.Copier mockedTargetCommunicator() throws Neo4Net.commandline.admin.CommandFailed
 		 private Copier MockedTargetCommunicator()
 		 {
 			  Copier copier = mock( typeof( Copier ) );
@@ -479,7 +479,7 @@ namespace Neo4Net.Pushtocloud
 			  internal DumpCreator DumpCreatorConflict = mock( typeof( DumpCreator ) );
 			  internal Copier TargetCommunicator;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private final java.util.Map<org.Neo4Net.graphdb.config.Setting<?>,String> settings = new java.util.HashMap<>();
+//ORIGINAL LINE: private final java.util.Map<Neo4Net.graphdb.config.Setting<?>,String> settings = new java.util.HashMap<>();
 			  internal readonly IDictionary<Setting<object>, string> Settings = new Dictionary<Setting<object>, string>();
 
 			  internal virtual Builder Config<T1>( Setting<T1> setting, string value )

@@ -87,17 +87,17 @@ namespace Neo4Net.causalclustering.discovery
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.discovery.HazelcastClusterTopology.CLIENT_CONNECTOR_ADDRESSES;
+//	import static Neo4Net.causalclustering.discovery.HazelcastClusterTopology.CLIENT_CONNECTOR_ADDRESSES;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.discovery.HazelcastClusterTopology.MEMBER_DB_NAME;
+//	import static Neo4Net.causalclustering.discovery.HazelcastClusterTopology.MEMBER_DB_NAME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.discovery.HazelcastClusterTopology.MEMBER_UUID;
+//	import static Neo4Net.causalclustering.discovery.HazelcastClusterTopology.MEMBER_UUID;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.discovery.HazelcastClusterTopology.RAFT_SERVER;
+//	import static Neo4Net.causalclustering.discovery.HazelcastClusterTopology.RAFT_SERVER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.discovery.HazelcastClusterTopology.TRANSACTION_SERVER;
+//	import static Neo4Net.causalclustering.discovery.HazelcastClusterTopology.TRANSACTION_SERVER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.asSet;
+//	import static Neo4Net.helpers.collection.Iterators.asSet;
 
 	public class HazelcastClientTest
 	{
@@ -148,7 +148,7 @@ namespace Neo4Net.causalclustering.discovery
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private HazelcastClient startedClientWithMembers(java.util.Set<com.hazelcast.core.Member> members, org.Neo4Net.kernel.configuration.Config config) throws Throwable
+//ORIGINAL LINE: private HazelcastClient startedClientWithMembers(java.util.Set<com.hazelcast.core.Member> members, Neo4Net.kernel.configuration.Config config) throws Throwable
 		 private HazelcastClient StartedClientWithMembers( ISet<Member> members, Config config )
 		 {
 			  OnDemandJobScheduler jobScheduler = new OnDemandJobScheduler();

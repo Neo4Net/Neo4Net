@@ -19,11 +19,11 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Kernel.api.security
+namespace Neo4Net.Kernel.Api.security
 {
 
 	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
-	using InvalidAuthTokenException = Neo4Net.Kernel.api.security.exception.InvalidAuthTokenException;
+	using InvalidAuthTokenException = Neo4Net.Kernel.Api.security.exception.InvalidAuthTokenException;
 	using Lifecycle = Neo4Net.Kernel.Lifecycle.Lifecycle;
 
 	/// <summary>
@@ -40,7 +40,7 @@ namespace Neo4Net.Kernel.api.security
 		 /// <returns> An AuthSubject representing the newly logged-in user </returns>
 		 /// <exception cref="InvalidAuthTokenException"> if the authentication token is malformed </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.Neo4Net.Kernel.Api.Internal.security.LoginContext login(java.util.Map<String,Object> authToken) throws org.Neo4Net.kernel.api.security.exception.InvalidAuthTokenException;
+//ORIGINAL LINE: Neo4Net.Kernel.Api.Internal.security.LoginContext login(java.util.Map<String,Object> authToken) throws Neo4Net.kernel.api.security.exception.InvalidAuthTokenException;
 		 LoginContext Login( IDictionary<string, object> authToken );
 
 		 /// <summary>

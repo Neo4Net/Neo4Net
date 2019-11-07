@@ -30,7 +30,7 @@ namespace Neo4Net.causalclustering.stresstests
 	using Log = Neo4Net.Logging.Log;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.stresstests.ConsistencyHelper.assertStoreConsistent;
+//	import static Neo4Net.causalclustering.stresstests.ConsistencyHelper.assertStoreConsistent;
 
 	public class StartStopMember : WorkOnMember
 	{
@@ -44,7 +44,7 @@ namespace Neo4Net.causalclustering.stresstests
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void doWorkOnMember(org.Neo4Net.causalclustering.discovery.ClusterMember member) throws Exception
+//ORIGINAL LINE: public void doWorkOnMember(Neo4Net.causalclustering.discovery.ClusterMember member) throws Exception
 		 public override void DoWorkOnMember( ClusterMember member )
 		 {
 			  File databaseDirectory = member.database().DatabaseLayout().databaseDirectory();

@@ -31,11 +31,11 @@ namespace Neo4Net.Values.Storable
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Integer.parseInt;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.util.FeatureToggles.flag;
+//	import static Neo4Net.util.FeatureToggles.flag;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.DateTimeValue.parseZoneName;
+//	import static Neo4Net.values.storable.DateTimeValue.parseZoneName;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.IntegralValue.safeCastIntegral;
+//	import static Neo4Net.values.storable.IntegralValue.safeCastIntegral;
 
 	public sealed class DateValue : TemporalValue<LocalDate, DateValue>
 	{

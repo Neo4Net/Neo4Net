@@ -49,9 +49,9 @@ namespace Neo4Net.Bolt.v1.messaging
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verify;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.logging.AssertableLogProvider.inLog;
+//	import static Neo4Net.logging.AssertableLogProvider.inLog;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.matchers.CommonMatchers.hasSuppressed;
+//	import static Neo4Net.test.matchers.CommonMatchers.hasSuppressed;
 
 	public class MessageProcessingHandlerTest
 	{
@@ -127,7 +127,7 @@ namespace Neo4Net.Bolt.v1.messaging
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void testLoggingOfOriginalErrorWhenOutputIsClosed(org.Neo4Net.bolt.runtime.Neo4NetError original) throws Exception
+//ORIGINAL LINE: private static void testLoggingOfOriginalErrorWhenOutputIsClosed(Neo4Net.bolt.runtime.Neo4NetError original) throws Exception
 		 private static void TestLoggingOfOriginalErrorWhenOutputIsClosed( Neo4NetError original )
 		 {
 			  PackOutputClosedException outputClosed = new PackOutputClosedException( "Output closed", "<client>" );
@@ -136,7 +136,7 @@ namespace Neo4Net.Bolt.v1.messaging
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void testLoggingOfWriteErrorAndOriginalErrorWhenUnknownFailure(org.Neo4Net.bolt.runtime.Neo4NetError original) throws Exception
+//ORIGINAL LINE: private static void testLoggingOfWriteErrorAndOriginalErrorWhenUnknownFailure(Neo4Net.bolt.runtime.Neo4NetError original) throws Exception
 		 private static void TestLoggingOfWriteErrorAndOriginalErrorWhenUnknownFailure( Neo4NetError original )
 		 {
 			  Exception outputError = new Exception( "Output failed" );
@@ -145,7 +145,7 @@ namespace Neo4Net.Bolt.v1.messaging
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static org.Neo4Net.logging.AssertableLogProvider emulateFailureWritingError(org.Neo4Net.bolt.runtime.Neo4NetError error, Throwable errorDuringWrite) throws Exception
+//ORIGINAL LINE: private static Neo4Net.logging.AssertableLogProvider emulateFailureWritingError(Neo4Net.bolt.runtime.Neo4NetError error, Throwable errorDuringWrite) throws Exception
 		 private static AssertableLogProvider EmulateFailureWritingError( Neo4NetError error, Exception errorDuringWrite )
 		 {
 			  AssertableLogProvider logProvider = new AssertableLogProvider();
@@ -160,7 +160,7 @@ namespace Neo4Net.Bolt.v1.messaging
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static org.Neo4Net.bolt.messaging.BoltResponseMessageWriter newResponseHandlerMock(boolean fatalError, Throwable error) throws Exception
+//ORIGINAL LINE: private static Neo4Net.bolt.messaging.BoltResponseMessageWriter newResponseHandlerMock(boolean fatalError, Throwable error) throws Exception
 		 private static BoltResponseMessageWriter NewResponseHandlerMock( bool fatalError, Exception error )
 		 {
 			  BoltResponseMessageWriter handler = NewResponseHandlerMock();
@@ -170,7 +170,7 @@ namespace Neo4Net.Bolt.v1.messaging
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private static org.Neo4Net.bolt.messaging.BoltResponseMessageWriter newResponseHandlerMock()
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private static Neo4Net.bolt.messaging.BoltResponseMessageWriter newResponseHandlerMock()
 		 private static BoltResponseMessageWriter NewResponseHandlerMock()
 		 {
 			  return mock( typeof( BoltResponseMessageWriter ) );

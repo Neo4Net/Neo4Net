@@ -40,7 +40,7 @@ namespace Neo4Net.GraphDb.Traversal
         /// <param name="expander"> an expander to decide which relationships to follow </param>
         /// <param name="metadata"> the context of the traversal </param>
         /// <returns> the next expansion source from this expansion source. </returns>
-        ITraversalBranch Next(IPathExpander expander, TraversalContext metadata);
+        ITraversalBranch Next(IPathExpander expander, ITraversalContext metadata);
 
         /// <summary>
         /// Returns the number of relationships this expansion source has expanded.
@@ -53,7 +53,7 @@ namespace Neo4Net.GraphDb.Traversal
 
         /// <summary>
         /// Explicitly tell this branch to be pruned so that consecutive calls to
-        /// <seealso cref="next(IPathExpander, TraversalContext)"/> is guaranteed to return
+        /// <seealso cref="next(IPathExpander, ITraversalContext)"/> is guaranteed to return
         /// {@code null}.
         /// </summary>
         void Prune();
@@ -65,7 +65,7 @@ namespace Neo4Net.GraphDb.Traversal
         /// <returns> whether or not this branch (the <seealso cref="IPath"/> representation of
         /// this branch at least) should be included in the result of this
         /// traversal, i.e. returned as one of the <seealso cref="IPath"/>s from f.ex.
-        /// <seealso cref="ITraversalDescription.traverse(org.Neo4Net.graphdb.Node...)"/> </returns>
+        /// <seealso cref="ITraversalDescription.traverse(Neo4Net.GraphDb.Node...)"/> </returns>
         bool Includes { get; }
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Neo4Net.GraphDb.Traversal
         /// <seealso cref="Evaluation"/> etc.
         /// </summary>
         /// <param name="expander"> <seealso cref="PathExpander"/> to use for getting relationships. </param>
-        /// <param name="metadata"> <seealso cref="TraversalContext"/> to update on progress. </param>
-        void Initialize(IPathExpander expander, TraversalContext metadata);
+        /// <param name="metadata"> <seealso cref="ITraversalContext"/> to update on progress. </param>
+        void Initialize(IPathExpander expander, ITraversalContext metadata);
 
         /// <summary>
         /// Returns the state associated with this branch.

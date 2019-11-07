@@ -48,7 +48,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.rotation
 		 /// Rotates the undelying log if it is required. Returns true if rotation happened, false otherwise </summary>
 		 /// <param name="logAppendEvent"> A trace event for the current log append operation. </param>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: boolean rotateLogIfNeeded(org.Neo4Net.kernel.impl.transaction.tracing.LogAppendEvent logAppendEvent) throws java.io.IOException;
+//ORIGINAL LINE: boolean rotateLogIfNeeded(Neo4Net.kernel.impl.transaction.tracing.LogAppendEvent logAppendEvent) throws java.io.IOException;
 		 bool RotateLogIfNeeded( LogAppendEvent logAppendEvent );
 
 		 /// <summary>

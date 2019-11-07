@@ -32,9 +32,9 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.cache.idmapping.@string
 	using CompareType = Neo4Net.@unsafe.Impl.Batchimport.Utils.CompareType;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.Numbers.safeCastLongToInt;
+//	import static Neo4Net.helpers.Numbers.safeCastLongToInt;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.cache.idmapping.@string.EncodingIdMapper.clearCollision;
+//	import static Neo4Net.@unsafe.impl.batchimport.cache.idmapping.@string.EncodingIdMapper.clearCollision;
 
 	/// <summary>
 	/// Sorts input data by dividing up into chunks and sort each chunk in parallel. Each chunk is sorted

@@ -26,7 +26,7 @@ namespace Neo4Net.GraphDb.Traversal
     //	import static Arrays.asList;
 
     //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-    //	import static org.Neo4Net.graphdb.traversal.Evaluation.INCLUDE_AND_CONTINUE;
+    	//using static Neo4Net.GraphDb.Traversal.Evaluation.InnerEnum. IncludeAndContinue;
 
     /// <summary>
     /// Common <seealso cref="IEvaluator"/>s useful during common traversals.
@@ -38,17 +38,17 @@ namespace Neo4Net.GraphDb.Traversal
         //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
         //ORIGINAL LINE: @SuppressWarnings("rawtypes") private static final PathEvaluator<?> ALL = new PathEvaluator_Adapter()
         //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-        private static readonly PathEvaluator<object> ALL = new PathEvaluator_AdapterAnonymousInnerClass();
+        private static readonly IPathEvaluator<object> ALL = new PathEvaluator_AdapterAnonymousInnerClass();
 
         private class PathEvaluator_AdapterAnonymousInnerClass : PathEvaluator_Adapter
         {
-            public override Evaluation evaluate(IPath path, IBranchState state)
+            public Evaluation Evaluate(IPath path, IBranchState state)
             {
-                return INCLUDE_AND_CONTINUE;
+                return IncludeAndContinue;
             }
         }
 
-        private static readonly PathEvaluator _allButStartPosition = FromDepth(1);
+        private static readonly IPathEvaluator _allButStartPosition = FromDepth(1);
 
         /// @param <STATE> the type of the state object. </param>
         /// <returns> an evaluator which includes everything it encounters and doesn't prune
@@ -90,7 +90,7 @@ namespace Neo4Net.GraphDb.Traversal
                 _depth = depth;
             }
 
-            public override Evaluation evaluate(IPath path, IBranchState state)
+            public override Evaluation Evaluate(IPath path, IBranchState state)
             {
                 int pathLength = path.Length;
                 return Evaluation.of(pathLength <= _depth, pathLength < _depth);
@@ -105,9 +105,8 @@ namespace Neo4Net.GraphDb.Traversal
         /// @param <STATE> the type of the state object. </param>
         /// <returns> Returns an <seealso cref="IEvaluator"/> which only includes positions from
         ///         {@code depth} and deeper and never prunes anything. </returns>
-        //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-        //ORIGINAL LINE: public static <STATE> PathEvaluator<STATE> fromDepth(final int depth)
-        public static PathEvaluator<STATE> FromDepth<STATE>(int depth)
+
+        public static IPathEvaluator<STATE> FromDepth<STATE>(int depth)
         {
             return new PathEvaluator_AdapterAnonymousInnerClass3(depth);
         }
@@ -121,7 +120,7 @@ namespace Neo4Net.GraphDb.Traversal
                 _depth = depth;
             }
 
-            public override Evaluation evaluate(IPath path, IBranchState state)
+            public override Evaluation Evaluate(IPath path, IBranchState state)
             {
                 return Evaluation.ofIncludes(path.Length >= _depth);
             }
@@ -151,7 +150,7 @@ namespace Neo4Net.GraphDb.Traversal
                 _depth = depth;
             }
 
-            public override Evaluation evaluate(IPath path, IBranchState state)
+            public override Evaluation Evaluate(IPath path, IBranchState state)
             {
                 return path.Length == _depth ? Evaluation.IncludeAndPrune : Evaluation.ExcludeAndContinue;
             }
@@ -186,7 +185,7 @@ namespace Neo4Net.GraphDb.Traversal
                 _maxDepth = maxDepth;
             }
 
-            public override Evaluation evaluate(IPath path, IBranchState state)
+            public override Evaluation Evaluate(IPath path, IBranchState state)
             {
                 int length = path.Length;
                 return Evaluation.of(length >= _minDepth && length <= _maxDepth, length < _maxDepth);
@@ -212,7 +211,7 @@ namespace Neo4Net.GraphDb.Traversal
         /// <returns> an <seealso cref="IEvaluator"/> which compares the type of the last relationship
         ///         in a <seealso cref="IPath"/> to a given set of relationship types. </returns>
         //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-        //ORIGINAL LINE: public static <STATE> PathEvaluator<STATE> lastRelationshipTypeIs(final Evaluation evaluationIfMatch, final Evaluation evaluationIfNoMatch, final org.Neo4Net.graphdb.RelationshipType type, org.Neo4Net.graphdb.RelationshipType... orAnyOfTheseTypes)
+        //ORIGINAL LINE: public static <STATE> PathEvaluator<STATE> lastRelationshipTypeIs(final Evaluation evaluationIfMatch, final Evaluation evaluationIfNoMatch, final Neo4Net.GraphDb.RelationshipType type, Neo4Net.GraphDb.RelationshipType... orAnyOfTheseTypes)
         public static PathEvaluator<STATE> LastRelationshipTypeIs<STATE>(Evaluation evaluationIfMatch, Evaluation evaluationIfNoMatch, IRelationshipType type, params IRelationshipType[] orAnyOfTheseTypes)
         {
             if (orAnyOfTheseTypes.Length == 0)
@@ -223,10 +222,10 @@ namespace Neo4Net.GraphDb.Traversal
             //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
             //ORIGINAL LINE: final java.util.Set<String> expectedTypes = new java.util.HashSet<>();
             ISet<string> expectedTypes = new HashSet<string>();
-            expectedTypes.Add(type.Name());
+            expectedTypes.Add(type.Name);
             foreach (IRelationshipType otherType in orAnyOfTheseTypes)
             {
-                expectedTypes.Add(otherType.Name());
+                expectedTypes.Add(otherType.Name);
             }
 
             return new PathEvaluator_AdapterAnonymousInnerClass7(evaluationIfMatch, evaluationIfNoMatch, expectedTypes);
@@ -245,7 +244,7 @@ namespace Neo4Net.GraphDb.Traversal
                 _type = type;
             }
 
-            public override Evaluation evaluate(IPath path, IBranchState state)
+            public override Evaluation Evaluate(IPath path, IBranchState state)
             {
                 IRelationship rel = path.LastRelationship;
                 return rel != null && rel.IsType(_type) ? _evaluationIfMatch : _evaluationIfNoMatch;
@@ -265,7 +264,7 @@ namespace Neo4Net.GraphDb.Traversal
                 _expectedTypes = expectedTypes;
             }
 
-            public override Evaluation evaluate(IPath path, IBranchState state)
+            public override Evaluation Evaluate(IPath path, IBranchState state)
             {
                 IRelationship lastRelationship = path.LastRelationship;
                 if (lastRelationship == null)
@@ -285,7 +284,7 @@ namespace Neo4Net.GraphDb.Traversal
         /// <returns> an <seealso cref="IEvaluator"/> which compares the type of the last relationship
         ///         in a <seealso cref="IPath"/> to a given set of relationship types. </returns>
         /// <seealso cref= #lastRelationshipTypeIs(Evaluation, Evaluation, RelationshipType, RelationshipType...)
-        ///      Uses <seealso cref="Evaluation.INCLUDE_AND_CONTINUE"/> for {@code evaluationIfMatch}
+        ///      Uses <seealso cref="Evaluation.IncludeAndContinue"/> for {@code evaluationIfMatch}
         ///      and <seealso cref="Evaluation.EXCLUDE_AND_CONTINUE"/> for {@code evaluationIfNoMatch}. </seealso>
         public static PathEvaluator<STATE> IncludeWhereLastRelationshipTypeIs<STATE>(IRelationshipType type, params IRelationshipType[] orAnyOfTheseTypes)
         {
@@ -301,7 +300,7 @@ namespace Neo4Net.GraphDb.Traversal
         ///         in a <seealso cref="IPath"/> to a given set of relationship types. </returns>
         /// <seealso cref= #lastRelationshipTypeIs(Evaluation, Evaluation, RelationshipType, RelationshipType...)
         ///      Uses <seealso cref="Evaluation.INCLUDE_AND_PRUNE"/> for {@code evaluationIfMatch}
-        ///      and <seealso cref="Evaluation.INCLUDE_AND_CONTINUE"/> for {@code evaluationIfNoMatch}. </seealso>
+        ///      and <seealso cref="Evaluation.IncludeAndContinue"/> for {@code evaluationIfNoMatch}. </seealso>
         public static PathEvaluator<STATE> PruneWhereLastRelationshipTypeIs<STATE>(IRelationshipType type, params IRelationshipType[] orAnyOfTheseTypes)
         {
             return LastRelationshipTypeIs(Evaluation.IncludeAndPrune, Evaluation.ExcludeAndContinue, type, orAnyOfTheseTypes);
@@ -321,19 +320,19 @@ namespace Neo4Net.GraphDb.Traversal
         ///         <seealso cref="IPath.endNode()"/> for a given path is any of {@code nodes},
         ///         else {@code evaluationIfNoMatch}. </returns>
         //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-        //ORIGINAL LINE: public static <STATE> PathEvaluator<STATE> endNodeIs(final Evaluation evaluationIfMatch, final Evaluation evaluationIfNoMatch, org.Neo4Net.graphdb.Node... possibleEndNodes)
+        //ORIGINAL LINE: public static <STATE> PathEvaluator<STATE> endNodeIs(final Evaluation evaluationIfMatch, final Evaluation evaluationIfNoMatch, Neo4Net.GraphDb.Node... possibleEndNodes)
         public static PathEvaluator<STATE> EndNodeIs<STATE>(Evaluation evaluationIfMatch, Evaluation evaluationIfNoMatch, params INode[] possibleEndNodes)
         {
             if (possibleEndNodes.Length == 1)
             {
                 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-                //ORIGINAL LINE: final org.Neo4Net.graphdb.Node target = possibleEndNodes[0];
+                //ORIGINAL LINE: final Neo4Net.GraphDb.Node target = possibleEndNodes[0];
                 INode target = possibleEndNodes[0];
                 return new PathEvaluator_AdapterAnonymousInnerClass8(evaluationIfMatch, evaluationIfNoMatch, target);
             }
 
             //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-            //ORIGINAL LINE: final java.util.Set<org.Neo4Net.graphdb.Node> endNodes = new java.util.HashSet<>(asList(possibleEndNodes));
+            //ORIGINAL LINE: final java.util.Set<Neo4Net.GraphDb.Node> endNodes = new java.util.HashSet<>(asList(possibleEndNodes));
             ISet<INode> endNodes = new HashSet<INode>(asList(possibleEndNodes));
             return new PathEvaluator_AdapterAnonymousInnerClass9(evaluationIfMatch, evaluationIfNoMatch, endNodes);
         }
@@ -351,7 +350,7 @@ namespace Neo4Net.GraphDb.Traversal
                 _target = target;
             }
 
-            public override Evaluation evaluate(IPath path, IBranchState state)
+            public Evaluation Evaluate(IPath path, IBranchState state)
             {
                 return _target.Equals(path.EndNode) ? _evaluationIfMatch : _evaluationIfNoMatch;
             }
@@ -370,7 +369,7 @@ namespace Neo4Net.GraphDb.Traversal
                 _endNodes = endNodes;
             }
 
-            public override Evaluation evaluate(IPath path, IBranchState state)
+            public override Evaluation Evaluate(IPath path, IBranchState state)
             {
                 return _endNodes.Contains(path.EndNode) ? _evaluationIfMatch : _evaluationIfNoMatch;
             }
@@ -380,7 +379,7 @@ namespace Neo4Net.GraphDb.Traversal
         /// Include paths with the specified end nodes.
         ///
         /// Uses Evaluators#endNodeIs(Evaluation, Evaluation, Node...) with
-        /// <seealso cref="Evaluation.INCLUDE_AND_CONTINUE"/> for {@code evaluationIfMatch} and
+        /// <seealso cref="Evaluation.IncludeAndContinue"/> for {@code evaluationIfMatch} and
         /// <seealso cref="Evaluation.EXCLUDE_AND_CONTINUE"/> for {@code evaluationIfNoMatch}.
         /// </summary>
         /// <param name="nodes">   end nodes for paths to be included in the result. </param>
@@ -403,11 +402,11 @@ namespace Neo4Net.GraphDb.Traversal
         /// <param name="nodes">   <seealso cref="INode"/>s that must exist in a <seealso cref="IPath"/> for it
         ///                to be included. </param>
         /// @param <STATE> the type of the state object. </param>
-        /// <returns> <seealso cref="Evaluation.INCLUDE_AND_CONTINUE"/> if all {@code nodes}
+        /// <returns> <seealso cref="Evaluation.IncludeAndContinue"/> if all {@code nodes}
         ///         exist in a given <seealso cref="IPath"/>, otherwise
         ///         <seealso cref="Evaluation.EXCLUDE_AND_CONTINUE"/>. </returns>
         //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-        //ORIGINAL LINE: public static <STATE> PathEvaluator<STATE> includeIfContainsAll(final org.Neo4Net.graphdb.Node... nodes)
+        //ORIGINAL LINE: public static <STATE> PathEvaluator<STATE> includeIfContainsAll(final Neo4Net.GraphDb.Node... nodes)
         public static PathEvaluator<STATE> IncludeIfContainsAll<STATE>(params INode[] nodes)
         {
             if (nodes.Length == 1)
@@ -416,7 +415,7 @@ namespace Neo4Net.GraphDb.Traversal
             }
 
             //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-            //ORIGINAL LINE: final java.util.Set<org.Neo4Net.graphdb.Node> fullSet = new java.util.HashSet<>(asList(nodes));
+            //ORIGINAL LINE: final java.util.Set<Neo4Net.GraphDb.Node> fullSet = new java.util.HashSet<>(asList(nodes));
             ISet<INode> fullSet = new HashSet<INode>(asList(nodes));
             return new PathEvaluator_AdapterAnonymousInnerClass11(fullSet);
         }
@@ -430,7 +429,7 @@ namespace Neo4Net.GraphDb.Traversal
                 _nodes = nodes;
             }
 
-            public override Evaluation evaluate(IPath path, IBranchState state)
+            public override Evaluation Evaluate(IPath path, IBranchState state)
             {
                 foreach (INode node in path.ReverseNodes)
                 {
@@ -452,7 +451,7 @@ namespace Neo4Net.GraphDb.Traversal
                 _fullSet = fullSet;
             }
 
-            public override Evaluation evaluate(IPath path, IBranchState state)
+            public override Evaluation Evaluate(IPath path, IBranchState state)
             {
                 ISet<INode> set = new HashSet<INode>(_fullSet);
                 foreach (INode node in path.ReverseNodes)
@@ -492,12 +491,12 @@ namespace Neo4Net.GraphDb.Traversal
             }
 
             //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-            //ORIGINAL LINE: @SuppressWarnings("unchecked") @Override public Evaluation evaluate(org.Neo4Net.graphdb.Path path, BranchState state)
-            public override Evaluation evaluate(IPath path, IBranchState state)
+            //ORIGINAL LINE: @SuppressWarnings("unchecked") @Override public Evaluation Evaluate(Neo4Net.GraphDb.Path path, BranchState state)
+            public override Evaluation Evaluate(IPath path, IBranchState state)
             {
                 foreach (PathEvaluator evaluator in _evaluators)
                 {
-                    if (evaluator.evaluate(path, state).includes())
+                    if (evaluator.Evaluate(path, state).includes())
                     {
                         return Evaluation.IncludeAndContinue;
                     }
@@ -531,7 +530,7 @@ namespace Neo4Net.GraphDb.Traversal
                 _evaluators = evaluators;
             }
 
-            public override Evaluation evaluate(IPath path, IBranchState state)
+            public override Evaluation Evaluate(IPath path, IBranchState state)
             {
                 foreach (IEvaluator evaluator in _evaluators)
                 {
@@ -553,19 +552,19 @@ namespace Neo4Net.GraphDb.Traversal
         /// <returns> <seealso cref="IEvaluator"/>s for paths with the specified depth and with an end node from the list of
         /// possibleEndNodes. </returns>
         //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-        //ORIGINAL LINE: public static <STATE> PathEvaluator<STATE> endNodeIsAtDepth(final int depth, org.Neo4Net.graphdb.Node... possibleEndNodes)
+        //ORIGINAL LINE: public static <STATE> PathEvaluator<STATE> endNodeIsAtDepth(final int depth, Neo4Net.GraphDb.Node... possibleEndNodes)
         public static PathEvaluator<STATE> EndNodeIsAtDepth<STATE>(int depth, params INode[] possibleEndNodes)
         {
             if (possibleEndNodes.Length == 1)
             {
                 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-                //ORIGINAL LINE: final org.Neo4Net.graphdb.Node target = possibleEndNodes[0];
+                //ORIGINAL LINE: final Neo4Net.GraphDb.Node target = possibleEndNodes[0];
                 INode target = possibleEndNodes[0];
                 return new PathEvaluator_AdapterAnonymousInnerClass14(depth, target);
             }
 
             //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-            //ORIGINAL LINE: final java.util.Set<org.Neo4Net.graphdb.Node> endNodes = new java.util.HashSet<>(asList(possibleEndNodes));
+            //ORIGINAL LINE: final java.util.Set<Neo4Net.GraphDb.Node> endNodes = new java.util.HashSet<>(asList(possibleEndNodes));
             ISet<INode> endNodes = new HashSet<INode>(asList(possibleEndNodes));
             return new PathEvaluator_AdapterAnonymousInnerClass15(depth, endNodes);
         }
@@ -581,7 +580,7 @@ namespace Neo4Net.GraphDb.Traversal
                 _target = target;
             }
 
-            public override Evaluation evaluate(IPath path, IBranchState state)
+            public override Evaluation Evaluate(IPath path, IBranchState state)
             {
                 if (path.Length == _depth)
                 {
@@ -602,7 +601,7 @@ namespace Neo4Net.GraphDb.Traversal
                 _endNodes = endNodes;
             }
 
-            public override Evaluation evaluate(IPath path, IBranchState state)
+            public override Evaluation Evaluate(IPath path, IBranchState state)
             {
                 if (path.Length == _depth)
                 {

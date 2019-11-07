@@ -30,7 +30,7 @@ namespace Neo4Net.Kernel.Api.Exceptions.schema
 	{
 		 private readonly ConstraintDescriptor _constraint;
 
-		 public DropConstraintFailureException( ConstraintDescriptor constraint, Exception cause ) : base( org.Neo4Net.kernel.api.exceptions.Status_Schema.ConstraintDropFailed, cause, "Unable to drop constraint %s: %s", constraint, cause.Message )
+		 public DropConstraintFailureException( ConstraintDescriptor constraint, Exception cause ) : base( Neo4Net.kernel.api.exceptions.Status_Schema.ConstraintDropFailed, cause, "Unable to drop constraint %s: %s", constraint, cause.Message )
 		 {
 			  this._constraint = constraint;
 		 }

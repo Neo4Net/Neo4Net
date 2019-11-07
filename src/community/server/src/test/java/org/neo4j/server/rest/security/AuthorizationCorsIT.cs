@@ -37,25 +37,25 @@ namespace Neo4Net.Server.rest.security
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.web.CorsFilter.ACCESS_CONTROL_ALLOW_HEADERS;
+//	import static Neo4Net.server.rest.web.CorsFilter.ACCESS_CONTROL_ALLOW_HEADERS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.web.CorsFilter.ACCESS_CONTROL_ALLOW_METHODS;
+//	import static Neo4Net.server.rest.web.CorsFilter.ACCESS_CONTROL_ALLOW_METHODS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.web.CorsFilter.ACCESS_CONTROL_ALLOW_ORIGIN;
+//	import static Neo4Net.server.rest.web.CorsFilter.ACCESS_CONTROL_ALLOW_ORIGIN;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.web.CorsFilter.ACCESS_CONTROL_REQUEST_HEADERS;
+//	import static Neo4Net.server.rest.web.CorsFilter.ACCESS_CONTROL_REQUEST_HEADERS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.web.CorsFilter.ACCESS_CONTROL_REQUEST_METHOD;
+//	import static Neo4Net.server.rest.web.CorsFilter.ACCESS_CONTROL_REQUEST_METHOD;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.web.HttpMethod.DELETE;
+//	import static Neo4Net.server.web.HttpMethod.DELETE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.web.HttpMethod.GET;
+//	import static Neo4Net.server.web.HttpMethod.GET;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.web.HttpMethod.PATCH;
+//	import static Neo4Net.server.web.HttpMethod.PATCH;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.web.HttpMethod.POST;
+//	import static Neo4Net.server.web.HttpMethod.POST;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.server.HTTP.RawPayload.quotedJson;
+//	import static Neo4Net.test.server.HTTP.RawPayload.quotedJson;
 
 	public class AuthorizationCorsIT : CommunityServerTestBase
 	{
@@ -161,14 +161,14 @@ namespace Neo4Net.Server.rest.security
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void testCorsAllowMethods(org.Neo4Net.server.web.HttpMethod method) throws Exception
+//ORIGINAL LINE: private void testCorsAllowMethods(Neo4Net.server.web.HttpMethod method) throws Exception
 		 private void TestCorsAllowMethods( HttpMethod method )
 		 {
 			  TestCorsAllowMethods( method, "*" );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void testCorsAllowMethods(org.Neo4Net.server.web.HttpMethod method, String origin) throws Exception
+//ORIGINAL LINE: private void testCorsAllowMethods(Neo4Net.server.web.HttpMethod method, String origin) throws Exception
 		 private void TestCorsAllowMethods( HttpMethod method, string origin )
 		 {
 			  HTTP.Builder requestBuilder = RequestWithHeaders( "authDisabled", "authDisabled" ).withHeaders( ACCESS_CONTROL_REQUEST_METHOD, method.ToString() );

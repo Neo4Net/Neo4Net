@@ -57,21 +57,21 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.impl.fulltext.FulltextProceduresTest.AWAIT_REFRESH;
+//	import static Neo4Net.kernel.api.impl.fulltext.FulltextProceduresTest.AWAIT_REFRESH;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.impl.fulltext.FulltextProceduresTest.NODE;
+//	import static Neo4Net.kernel.api.impl.fulltext.FulltextProceduresTest.NODE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.impl.fulltext.FulltextProceduresTest.NODE_CREATE;
+//	import static Neo4Net.kernel.api.impl.fulltext.FulltextProceduresTest.NODE_CREATE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.impl.fulltext.FulltextProceduresTest.QUERY_NODES;
+//	import static Neo4Net.kernel.api.impl.fulltext.FulltextProceduresTest.QUERY_NODES;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.impl.fulltext.FulltextProceduresTest.QUERY_RELS;
+//	import static Neo4Net.kernel.api.impl.fulltext.FulltextProceduresTest.QUERY_RELS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.impl.fulltext.FulltextProceduresTest.RELATIONSHIP;
+//	import static Neo4Net.kernel.api.impl.fulltext.FulltextProceduresTest.RELATIONSHIP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.impl.fulltext.FulltextProceduresTest.RELATIONSHIP_CREATE;
+//	import static Neo4Net.kernel.api.impl.fulltext.FulltextProceduresTest.RELATIONSHIP_CREATE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.impl.fulltext.FulltextProceduresTest.array;
+//	import static Neo4Net.kernel.api.impl.fulltext.FulltextProceduresTest.array;
 
 	public class FulltextIndexCausalClusterIT
 	{
@@ -88,11 +88,11 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 		 private static readonly string _eventuallyConsistentSetting = ", {" + FulltextIndexSettings.INDEX_CONFIG_EVENTUALLY_CONSISTENT + ": 'true'}";
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.causalclustering.ClusterRule clusterRule = new org.Neo4Net.test.causalclustering.ClusterRule().withNumberOfCoreMembers(3).withNumberOfReadReplicas(1);
+//ORIGINAL LINE: @Rule public Neo4Net.test.causalclustering.ClusterRule clusterRule = new Neo4Net.test.causalclustering.ClusterRule().withNumberOfCoreMembers(3).withNumberOfReadReplicas(1);
 		 public ClusterRule ClusterRule = new ClusterRule().withNumberOfCoreMembers(3).withNumberOfReadReplicas(1);
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private org.Neo4Net.causalclustering.discovery.Cluster<?> cluster;
+//ORIGINAL LINE: private Neo4Net.causalclustering.discovery.Cluster<?> cluster;
 		 private Cluster<object> _cluster;
 		 private long _nodeId1;
 		 private long _nodeId2;
@@ -264,7 +264,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void verifyIndexContents(org.Neo4Net.graphdb.GraphDatabaseService db, String index, String queryString, long[] IEntityIds, boolean queryNodes) throws Exception
+//ORIGINAL LINE: private void verifyIndexContents(Neo4Net.graphdb.GraphDatabaseService db, String index, String queryString, long[] IEntityIds, boolean queryNodes) throws Exception
 		 private void VerifyIndexContents( IGraphDatabaseService db, string index, string queryString, long[] IEntityIds, bool queryNodes )
 		 {
 			  IList<long> expected = Arrays.stream( IEntityIds ).boxed().collect(Collectors.toList());

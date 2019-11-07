@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.Api.Internal
    /// <summary>
    /// A transaction with the graph database.
    ///
-   /// Access to the graph is performed via sub-interfaces like <seealso cref="org.Neo4Net.Kernel.Api.Internal.Read"/>.
+   /// Access to the graph is performed via sub-interfaces like <seealso cref="Neo4Net.Kernel.Api.Internal.Read"/>.
    /// Changes made within a transaction are immediately visible to all operations within it, but are only
    /// visible to other transactions after the successful commit of the transaction.
    ///
@@ -111,7 +111,7 @@ namespace Neo4Net.Kernel.Api.Internal
 
       /// <returns> The schema index write operations of the graph, used for creating and dropping indexes and constraints. </returns>
       //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-      //ORIGINAL LINE: SchemaWrite schemaWrite() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.InvalidTransactionTypeKernelException;
+      //ORIGINAL LINE: SchemaWrite schemaWrite() throws Neo4Net.Kernel.Api.Internal.Exceptions.InvalidTransactionTypeKernelException;
       SchemaWrite SchemaWrite();
 
       /// <returns> The lock operations of the graph. </returns>
@@ -134,7 +134,7 @@ namespace Neo4Net.Kernel.Api.Internal
       /// <returns> id of the committed transaction or <seealso cref="ROLLBACK"/> if transaction was rolled back or
       /// <seealso cref="READ_ONLY"/> if transaction was read-only. </returns>
       //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-      //ORIGINAL LINE: long closeTransaction() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
+      //ORIGINAL LINE: long closeTransaction() throws Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
       long CloseTransaction();
 
       /// <summary>
@@ -143,7 +143,7 @@ namespace Neo4Net.Kernel.Api.Internal
       /// Otherwise its changes will be rolled back.
       /// </summary>
       //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-      //		 default void close() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
+      //		 default void close() throws Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
       //	 {
       //		  closeTransaction();
       //	 }

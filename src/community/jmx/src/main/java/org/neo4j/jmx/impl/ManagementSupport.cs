@@ -108,7 +108,7 @@ namespace Neo4Net.Jmx.impl
 			  }
 			  try
 			  {
-					return new ObjectName( "org.Neo4Net", properties );
+					return new ObjectName( "Neo4Net", properties );
 			  }
 			  catch ( MalformedObjectNameException )
 			  {

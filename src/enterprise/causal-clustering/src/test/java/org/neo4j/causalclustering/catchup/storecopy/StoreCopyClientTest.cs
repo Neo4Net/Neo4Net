@@ -92,7 +92,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 //ORIGINAL LINE: @Rule public final org.junit.rules.ExpectedException expectedException = org.junit.rules.ExpectedException.none();
 		 public readonly ExpectedException ExpectedException = ExpectedException.none();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.SuppressOutput suppressOutput = org.Neo4Net.test.rule.SuppressOutput.suppressAll();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.SuppressOutput suppressOutput = Neo4Net.test.rule.SuppressOutput.suppressAll();
 		 public readonly SuppressOutput SuppressOutput = SuppressOutput.suppressAll();
 
 		 private readonly CatchUpClient _catchUpClient = mock( typeof( CatchUpClient ) );
@@ -126,7 +126,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void clientRequestsAllFilesListedInListingResponse() throws StoreCopyFailedException, org.Neo4Net.causalclustering.catchup.CatchUpClientException
+//ORIGINAL LINE: @Test public void clientRequestsAllFilesListedInListingResponse() throws StoreCopyFailedException, Neo4Net.causalclustering.catchup.CatchUpClientException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ClientRequestsAllFilesListedInListingResponse()
 		 {
@@ -156,7 +156,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void storeIdCanBeRetrieved() throws StoreIdDownloadFailedException, org.Neo4Net.causalclustering.catchup.CatchUpClientException
+//ORIGINAL LINE: @Test public void storeIdCanBeRetrieved() throws StoreIdDownloadFailedException, Neo4Net.causalclustering.catchup.CatchUpClientException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void StoreIdCanBeRetrieved()
 		 {
@@ -177,7 +177,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldNotAwaitOnSuccess() throws org.Neo4Net.causalclustering.catchup.CatchUpClientException, StoreCopyFailedException
+//ORIGINAL LINE: @Test public void shouldNotAwaitOnSuccess() throws Neo4Net.causalclustering.catchup.CatchUpClientException, StoreCopyFailedException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldNotAwaitOnSuccess()
 		 {
@@ -209,7 +209,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldFailIfTerminationConditionFails() throws org.Neo4Net.causalclustering.catchup.CatchUpClientException
+//ORIGINAL LINE: @Test public void shouldFailIfTerminationConditionFails() throws Neo4Net.causalclustering.catchup.CatchUpClientException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldFailIfTerminationConditionFails()
 		 {
@@ -242,7 +242,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void errorOnListingStore() throws org.Neo4Net.causalclustering.catchup.CatchUpClientException, StoreCopyFailedException
+//ORIGINAL LINE: @Test public void errorOnListingStore() throws Neo4Net.causalclustering.catchup.CatchUpClientException, StoreCopyFailedException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ErrorOnListingStore()
 		 {
@@ -259,7 +259,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void storeIdMismatchOnListing() throws org.Neo4Net.causalclustering.catchup.CatchUpClientException, StoreCopyFailedException
+//ORIGINAL LINE: @Test public void storeIdMismatchOnListing() throws Neo4Net.causalclustering.catchup.CatchUpClientException, StoreCopyFailedException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void StoreIdMismatchOnListing()
 		 {
@@ -344,7 +344,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.util.List<org.Neo4Net.causalclustering.messaging.CatchUpRequest> getRequests() throws org.Neo4Net.causalclustering.catchup.CatchUpClientException
+//ORIGINAL LINE: private java.util.List<Neo4Net.causalclustering.messaging.CatchUpRequest> getRequests() throws Neo4Net.causalclustering.catchup.CatchUpClientException
 		 private IList<CatchUpRequest> Requests
 		 {
 			 get

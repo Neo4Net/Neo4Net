@@ -52,22 +52,22 @@ namespace Neo4Net.Harness
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.ServerTestUtils.getRelativePath;
+//	import static Neo4Net.server.ServerTestUtils.getRelativePath;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.ServerTestUtils.getSharedTestTemporaryFolder;
+//	import static Neo4Net.server.ServerTestUtils.getSharedTestTemporaryFolder;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.server.HTTP.RawPayload.quotedJson;
+//	import static Neo4Net.test.server.HTTP.RawPayload.quotedJson;
 
 	public class JUnitRuleTestIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.TestDirectory testDirectory = Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public TestDirectory TestDirectory = TestDirectory.testDirectory();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.SuppressOutput suppressOutput = org.Neo4Net.test.rule.SuppressOutput.suppressAll();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.SuppressOutput suppressOutput = Neo4Net.test.rule.SuppressOutput.suppressAll();
 		 public SuppressOutput SuppressOutput = SuppressOutput.suppressAll();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.harness.junit.Neo4NetRule Neo4Net = new org.Neo4Net.harness.junit.Neo4NetRule().withFixture("CREATE (u:User)").withConfig(org.Neo4Net.graphdb.factory.GraphDatabaseSettings.db_timezone.name(), org.Neo4Net.logging.LogTimeZone.SYSTEM.toString()).withConfig(org.Neo4Net.kernel.configuration.ssl.LegacySslPolicyConfig.certificates_directory.name(), getRelativePath(getSharedTestTemporaryFolder(), org.Neo4Net.kernel.configuration.ssl.LegacySslPolicyConfig.certificates_directory)).withFixture(graphDatabaseService ->
+//ORIGINAL LINE: @Rule public Neo4Net.harness.junit.Neo4NetRule Neo4Net = new Neo4Net.harness.junit.Neo4NetRule().withFixture("CREATE (u:User)").withConfig(Neo4Net.graphdb.factory.GraphDatabaseSettings.db_timezone.name(), Neo4Net.logging.LogTimeZone.SYSTEM.toString()).withConfig(Neo4Net.kernel.configuration.ssl.LegacySslPolicyConfig.certificates_directory.name(), getRelativePath(getSharedTestTemporaryFolder(), Neo4Net.kernel.configuration.ssl.LegacySslPolicyConfig.certificates_directory)).withFixture(graphDatabaseService ->
 		 public Neo4NetRule Neo4Net = new Neo4NetRule().withFixture("CREATE (u:User)").withConfig(GraphDatabaseSettings.db_timezone.name(), LogTimeZone.SYSTEM.ToString()).withConfig(LegacySslPolicyConfig.certificates_directory.name(), getRelativePath(SharedTestTemporaryFolder, LegacySslPolicyConfig.certificates_directory)).withFixture(graphDatabaseService =>
 		 {
 					 using ( Transaction tx = IGraphDatabaseService.beginTx() )
@@ -139,13 +139,13 @@ namespace Neo4Net.Harness
 			  // When a rule with an pre-populated graph db directory is used
 			  File newDir = TestDirectory.directory( "new" );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.harness.junit.Neo4NetRule ruleWithDirectory = new org.Neo4Net.harness.junit.Neo4NetRule(newDir).copyFrom(oldDir);
+//ORIGINAL LINE: final Neo4Net.harness.junit.Neo4NetRule ruleWithDirectory = new Neo4Net.harness.junit.Neo4NetRule(newDir).copyFrom(oldDir);
 			  Neo4NetRule ruleWithDirectory = ( new Neo4NetRule( newDir ) ).copyFrom( oldDir );
 			  Statement statement = ruleWithDirectory.apply(new StatementAnonymousInnerClass(this, ruleWithDirectory)
 			 , null);
 
 			  // Then
-			  statement.evaluate();
+			  statement.Evaluate();
 		 }
 
 		 private class StatementAnonymousInnerClass : Statement
@@ -160,7 +160,7 @@ namespace Neo4Net.Harness
 				 this._ruleWithDirectory = ruleWithDirectory;
 			 }
 
-			 public override void evaluate()
+			 public override void Evaluate()
 			 {
 				  // Then the database is not empty
 				  Result result = _ruleWithDirectory.GraphDatabaseService.execute( "MATCH (n) RETURN count(n) AS " + "count" );

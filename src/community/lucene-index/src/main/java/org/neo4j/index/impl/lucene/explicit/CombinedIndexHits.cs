@@ -23,7 +23,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 {
 
 	using PrimitiveLongCollections = Neo4Net.Collections.PrimitiveLongCollections;
-	using ExplicitIndexHits = Neo4Net.Kernel.api.ExplicitIndexHits;
+	using ExplicitIndexHits = Neo4Net.Kernel.Api.ExplicitIndexHits;
 
 	public class CombinedIndexHits : PrimitiveLongCollections.PrimitiveLongConcatingIterator, ExplicitIndexHits
 	{

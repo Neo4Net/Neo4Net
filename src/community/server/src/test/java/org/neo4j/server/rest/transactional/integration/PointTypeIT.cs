@@ -41,13 +41,13 @@ namespace Neo4Net.Server.rest.transactional.integration
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.Label.label;
+//	import static Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.CoordinateReferenceSystem.Cartesian;
+//	import static Neo4Net.values.storable.CoordinateReferenceSystem.Cartesian;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.CoordinateReferenceSystem.WGS84;
+//	import static Neo4Net.values.storable.CoordinateReferenceSystem.WGS84;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.pointValue;
+//	import static Neo4Net.values.storable.Values.pointValue;
 
 	public class PointTypeIT : AbstractRestFunctionalTestBase
 	{
@@ -243,7 +243,7 @@ namespace Neo4Net.Server.rest.transactional.integration
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void testPoint(String query, double[] expectedCoordinate, org.Neo4Net.values.storable.CoordinateReferenceSystem expectedCrs, String expectedType) throws Exception
+//ORIGINAL LINE: private static void testPoint(String query, double[] expectedCoordinate, Neo4Net.values.storable.CoordinateReferenceSystem expectedCrs, String expectedType) throws Exception
 		 private static void TestPoint( string query, double[] expectedCoordinate, CoordinateReferenceSystem expectedCrs, string expectedType )
 		 {
 			  HTTP.Response response = RunQuery( query );
@@ -260,7 +260,7 @@ namespace Neo4Net.Server.rest.transactional.integration
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void assertTypeEqual(String expectedType, org.Neo4Net.test.server.HTTP.Response response) throws org.Neo4Net.server.rest.domain.JsonParseException
+//ORIGINAL LINE: private static void assertTypeEqual(String expectedType, Neo4Net.test.server.HTTP.Response response) throws Neo4Net.server.rest.domain.JsonParseException
 		 private static void AssertTypeEqual( string expectedType, HTTP.Response response )
 		 {
 			  JsonNode data = response.Get( "results" ).get( 0 ).get( "data" );
@@ -270,7 +270,7 @@ namespace Neo4Net.Server.rest.transactional.integration
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static org.codehaus.jackson.JsonNode extractSingleElement(org.Neo4Net.test.server.HTTP.Response response) throws org.Neo4Net.server.rest.domain.JsonParseException
+//ORIGINAL LINE: private static org.codehaus.jackson.JsonNode extractSingleElement(Neo4Net.test.server.HTTP.Response response) throws Neo4Net.server.rest.domain.JsonParseException
 		 private static JsonNode ExtractSingleElement( HTTP.Response response )
 		 {
 			  JsonNode data = response.Get( "results" ).get( 0 ).get( "data" );

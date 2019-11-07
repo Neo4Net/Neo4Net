@@ -34,7 +34,7 @@ namespace Neo4Net.tools.console.input
 	using Neo4Net.Kernel.impl.util;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.ArrayUtil.join;
+//	import static Neo4Net.helpers.ArrayUtil.join;
 
 	public class ConsoleUtil
 	{
@@ -43,7 +43,7 @@ namespace Neo4Net.tools.console.input
 		 };
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static org.Neo4Net.kernel.impl.util.Listener<java.io.PrintStream> staticPrompt(final String prompt)
+//ORIGINAL LINE: public static Neo4Net.kernel.impl.util.Listener<java.io.PrintStream> staticPrompt(final String prompt)
 		 public static Listener<PrintStream> StaticPrompt( string prompt )
 		 {
 			  return @out => @out.print( prompt );

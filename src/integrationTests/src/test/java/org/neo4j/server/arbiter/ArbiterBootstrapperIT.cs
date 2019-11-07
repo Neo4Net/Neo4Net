@@ -62,22 +62,22 @@ namespace Neo4Net.Server.arbiter
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assume.assumeFalse;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.cluster.ClusterSettings.cluster_server;
+//	import static Neo4Net.cluster.ClusterSettings.cluster_server;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.cluster.ClusterSettings.initial_hosts;
+//	import static Neo4Net.cluster.ClusterSettings.initial_hosts;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.cluster.ClusterSettings.server_id;
+//	import static Neo4Net.cluster.ClusterSettings.server_id;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.store;
+//	import static Neo4Net.helpers.collection.MapUtil.store;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
+//	import static Neo4Net.helpers.collection.MapUtil.stringMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.StreamConsumer.IGNORE_FAILURES;
+//	import static Neo4Net.test.StreamConsumer.IGNORE_FAILURES;
 
 	public class ArbiterBootstrapperIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.SuppressOutput suppressOutput = org.Neo4Net.test.rule.SuppressOutput.suppressAll();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.SuppressOutput suppressOutput = Neo4Net.test.rule.SuppressOutput.suppressAll();
 		 public SuppressOutput SuppressOutput = SuppressOutput.suppressAll();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -118,7 +118,7 @@ namespace Neo4Net.Server.arbiter
 		 private static int? _shouldNotJoin;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.TestDirectory testDirectory = Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public TestDirectory TestDirectory = TestDirectory.testDirectory();
 
 		 private File _directory;
@@ -213,7 +213,7 @@ namespace Neo4Net.Server.arbiter
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private org.Neo4Net.cluster.protocol.cluster.ClusterListener_Adapter joinAwaitingListener(final java.util.concurrent.CountDownLatch latch, final java.util.concurrent.atomic.AtomicInteger port)
+//ORIGINAL LINE: private Neo4Net.cluster.protocol.cluster.ClusterListener_Adapter joinAwaitingListener(final java.util.concurrent.CountDownLatch latch, final java.util.concurrent.atomic.AtomicInteger port)
 		 private ClusterListener_Adapter JoinAwaitingListener( System.Threading.CountdownEvent latch, AtomicInteger port )
 		 {
 			  return new ClusterListener_AdapterAnonymousInnerClass2( this, latch, port );

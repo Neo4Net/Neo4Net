@@ -29,7 +29,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 	using OpenMode = Neo4Net.Io.fs.OpenMode;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.IOUtils.closeAll;
+//	import static Neo4Net.io.IOUtils.closeAll;
 
 	public class StreamToDisk : StoreFileStream
 	{
@@ -37,7 +37,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 private IList<IDisposable> _closeables;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static StreamToDisk fromFile(org.Neo4Net.io.fs.FileSystemAbstraction fsa, java.io.File file) throws java.io.IOException
+//ORIGINAL LINE: static StreamToDisk fromFile(Neo4Net.io.fs.FileSystemAbstraction fsa, java.io.File file) throws java.io.IOException
 		 internal static StreamToDisk FromFile( FileSystemAbstraction fsa, File file )
 		 {
 			  return new StreamToDisk( fsa.Open( file, OpenMode.READ_WRITE ) );

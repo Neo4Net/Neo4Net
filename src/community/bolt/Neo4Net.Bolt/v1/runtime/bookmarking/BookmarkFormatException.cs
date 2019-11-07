@@ -23,15 +23,15 @@ namespace Neo4Net.Bolt.v1.runtime.bookmarking
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.runtime.bookmarking.Bookmark.BOOKMARK_TX_PREFIX;
+//	import static Neo4Net.bolt.v1.runtime.bookmarking.Bookmark.BOOKMARK_TX_PREFIX;
 
 	internal class BookmarkFormatException : BoltIOException
 	{
-		 internal BookmarkFormatException( string bookmarkString, System.FormatException cause ) : base( org.Neo4Net.kernel.api.exceptions.Status_Transaction.InvalidBookmark, string.Format( "Supplied bookmark [{0}] does not conform to pattern {1}; unable to parse transaction id", bookmarkString, BOOKMARK_TX_PREFIX ), cause )
+		 internal BookmarkFormatException( string bookmarkString, System.FormatException cause ) : base( Neo4Net.kernel.api.exceptions.Status_Transaction.InvalidBookmark, string.Format( "Supplied bookmark [{0}] does not conform to pattern {1}; unable to parse transaction id", bookmarkString, BOOKMARK_TX_PREFIX ), cause )
 		 {
 		 }
 
-		 internal BookmarkFormatException( object bookmarkObject ) : base( org.Neo4Net.kernel.api.exceptions.Status_Transaction.InvalidBookmark, string.Format( "Supplied bookmark [{0}] does not conform to pattern {1}", bookmarkObject, BOOKMARK_TX_PREFIX ) )
+		 internal BookmarkFormatException( object bookmarkObject ) : base( Neo4Net.kernel.api.exceptions.Status_Transaction.InvalidBookmark, string.Format( "Supplied bookmark [{0}] does not conform to pattern {1}", bookmarkObject, BOOKMARK_TX_PREFIX ) )
 		 {
 		 }
 	}

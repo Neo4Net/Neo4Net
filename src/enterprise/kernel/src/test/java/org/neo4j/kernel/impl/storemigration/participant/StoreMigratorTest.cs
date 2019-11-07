@@ -59,9 +59,9 @@ namespace Neo4Net.Kernel.impl.storemigration.participant
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verifyNoMoreInteractions;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.pagecache_memory;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.pagecache_memory;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.pagecache.tracing.PageCacheTracer.NULL;
+//	import static Neo4Net.io.pagecache.tracing.PageCacheTracer.NULL;
 
 	public class StoreMigratorTest
 	{
@@ -82,7 +82,7 @@ namespace Neo4Net.Kernel.impl.storemigration.participant
 		}
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory directory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.TestDirectory directory = Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory _directory = TestDirectory.testDirectory();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -125,7 +125,7 @@ namespace Neo4Net.Kernel.impl.storemigration.participant
 			  ISet<string> actualVersions = new HashSet<string>();
 //JAVA TO C# CONVERTER TODO TASK: Method reference arbitrary object instance method syntax is not converted by Java to C# Converter:
 //JAVA TO C# CONVERTER TODO TASK: Most Java stream collectors are not converted by Java to C# Converter:
-			  ISet<string> expectedVersions = java.util.org.Neo4Net.kernel.impl.store.format.StoreVersion.values().Select(StoreVersion::versionString).collect(Collectors.toSet());
+			  ISet<string> expectedVersions = java.util.Neo4Net.kernel.impl.store.format.StoreVersion.values().Select(StoreVersion::versionString).collect(Collectors.toSet());
 
 			  assertTrue( CountsMigrator.CountStoreRebuildRequired( StoreVersion.STANDARD_V2_3.versionString() ) );
 			  actualVersions.Add( StoreVersion.STANDARD_V2_3.versionString() );

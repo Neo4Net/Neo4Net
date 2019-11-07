@@ -152,7 +152,7 @@ namespace Neo4Net.Kernel.impl.store.kvstore
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.helpers.collection.Pair<java.io.File, KeyValueStoreFile> initialState(DataInitializer<EntryUpdater<Key>> initializer) throws java.io.IOException
+//ORIGINAL LINE: private Neo4Net.helpers.collection.Pair<java.io.File, KeyValueStoreFile> initialState(DataInitializer<EntryUpdater<Key>> initializer) throws java.io.IOException
 			  internal virtual Pair<File, KeyValueStoreFile> InitialState( DataInitializer<EntryUpdater<Key>> initializer )
 			  {
 					long version = initializer.InitialVersion();

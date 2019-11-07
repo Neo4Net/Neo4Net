@@ -100,9 +100,9 @@ namespace Neo4Net.Kernel.impl.storemigration
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verify;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.storemigration.MigrationTestUtils.removeCheckPointFromTxLog;
+//	import static Neo4Net.kernel.impl.storemigration.MigrationTestUtils.removeCheckPointFromTxLog;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.storemigration.MigrationTestUtils.verifyFilesHaveSameContent;
+//	import static Neo4Net.kernel.impl.storemigration.MigrationTestUtils.verifyFilesHaveSameContent;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class StoreUpgraderTest
@@ -144,7 +144,7 @@ namespace Neo4Net.Kernel.impl.storemigration
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Parameterized.Parameters(name = "{0}") public static java.util.Collection<org.Neo4Net.kernel.impl.store.format.RecordFormats> versions()
+//ORIGINAL LINE: @Parameterized.Parameters(name = "{0}") public static java.util.Collection<Neo4Net.kernel.impl.store.format.RecordFormats> versions()
 		 public static ICollection<RecordFormats> Versions()
 		 {
 			  return Collections.singletonList( StandardV2_3.RECORD_FORMATS );
@@ -386,14 +386,14 @@ namespace Neo4Net.Kernel.impl.storemigration
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected void prepareSampleDatabase(String version, org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, org.Neo4Net.io.layout.DatabaseLayout databaseLayout, java.io.File databaseDirectory) throws java.io.IOException
+//ORIGINAL LINE: protected void prepareSampleDatabase(String version, Neo4Net.io.fs.FileSystemAbstraction fileSystem, Neo4Net.io.layout.DatabaseLayout databaseLayout, java.io.File databaseDirectory) throws java.io.IOException
 		 protected internal virtual void PrepareSampleDatabase( string version, FileSystemAbstraction fileSystem, DatabaseLayout databaseLayout, File databaseDirectory )
 		 {
 			  MigrationTestUtils.PrepareSampleLegacyDatabase( version, fileSystem, databaseLayout.DatabaseDirectory(), databaseDirectory );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private UpgradableDatabase getUpgradableDatabase(org.Neo4Net.io.pagecache.PageCache pageCache) throws java.io.IOException
+//ORIGINAL LINE: private UpgradableDatabase getUpgradableDatabase(Neo4Net.io.pagecache.PageCache pageCache) throws java.io.IOException
 		 private UpgradableDatabase GetUpgradableDatabase( PageCache pageCache )
 		 {
 			  VersionAwareLogEntryReader<ReadableClosablePositionAwareChannel> entryReader = new VersionAwareLogEntryReader<ReadableClosablePositionAwareChannel>();
@@ -422,7 +422,7 @@ namespace Neo4Net.Kernel.impl.storemigration
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void moveMigratedFiles(org.Neo4Net.io.layout.DatabaseLayout migrationLayout, org.Neo4Net.io.layout.DatabaseLayout directoryLayout, String versionToUpgradeFrom, String versionToMigrateTo) throws java.io.IOException
+//ORIGINAL LINE: public void moveMigratedFiles(Neo4Net.io.layout.DatabaseLayout migrationLayout, Neo4Net.io.layout.DatabaseLayout directoryLayout, String versionToUpgradeFrom, String versionToMigrateTo) throws java.io.IOException
 			 public override void moveMigratedFiles( DatabaseLayout migrationLayout, DatabaseLayout directoryLayout, string versionToUpgradeFrom, string versionToMigrateTo )
 			 {
 				  throw new IOException( _failureMessage );

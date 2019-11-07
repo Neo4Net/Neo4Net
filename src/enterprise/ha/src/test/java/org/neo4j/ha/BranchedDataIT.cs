@@ -64,23 +64,23 @@ namespace Neo4Net.ha
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
+//	import static Neo4Net.helpers.collection.MapUtil.stringMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.ha.cluster.modeswitch.HighAvailabilityModeSwitcher.MASTER;
+//	import static Neo4Net.kernel.ha.cluster.modeswitch.HighAvailabilityModeSwitcher.MASTER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.ha.cluster.modeswitch.HighAvailabilityModeSwitcher.SLAVE;
+//	import static Neo4Net.kernel.ha.cluster.modeswitch.HighAvailabilityModeSwitcher.SLAVE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.ha.cluster.modeswitch.HighAvailabilityModeSwitcher.UNKNOWN;
+//	import static Neo4Net.kernel.ha.cluster.modeswitch.HighAvailabilityModeSwitcher.UNKNOWN;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.allSeesAllAsAvailable;
+//	import static Neo4Net.kernel.impl.ha.ClusterManager.allSeesAllAsAvailable;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.clusterOfSize;
+//	import static Neo4Net.kernel.impl.ha.ClusterManager.clusterOfSize;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.memberThinksItIsRole;
+//	import static Neo4Net.kernel.impl.ha.ClusterManager.memberThinksItIsRole;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.rule.RetryACoupleOfTimesHandler.ANY_EXCEPTION;
+//	import static Neo4Net.test.rule.RetryACoupleOfTimesHandler.ANY_EXCEPTION;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.rule.RetryACoupleOfTimesHandler.retryACoupleOfTimesOn;
+//	import static Neo4Net.test.rule.RetryACoupleOfTimesHandler.retryACoupleOfTimesOn;
 
 	public class BranchedDataIT
 	{
@@ -249,12 +249,12 @@ namespace Neo4Net.ha
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static java.util.Collection<java.io.File> gatherLuceneFiles(org.Neo4Net.kernel.ha.HighlyAvailableGraphDatabase db, String indexName) throws java.io.IOException
+//ORIGINAL LINE: private static java.util.Collection<java.io.File> gatherLuceneFiles(Neo4Net.kernel.ha.HighlyAvailableGraphDatabase db, String indexName) throws java.io.IOException
 		 private static ICollection<File> GatherLuceneFiles( HighlyAvailableGraphDatabase db, string indexName )
 		 {
 			  ICollection<File> result = new List<File>();
 			  NeoStoreDataSource ds = Db.DependencyResolver.resolveDependency( typeof( NeoStoreDataSource ) );
-			  using ( ResourceIterator<StoreFileMetadata> files = ds.ListStoreFiles( false ) )
+			  using ( IResourceIterator<StoreFileMetadata> files = ds.ListStoreFiles( false ) )
 			  {
 					while ( Files.MoveNext() )
 					{
@@ -269,7 +269,7 @@ namespace Neo4Net.ha
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private static org.Neo4Net.kernel.impl.util.Listener<org.Neo4Net.graphdb.Node> andIndexInto(final String indexName)
+//ORIGINAL LINE: private static Neo4Net.kernel.impl.util.Listener<Neo4Net.graphdb.Node> andIndexInto(final String indexName)
 		 private static Listener<Node> AndIndexInto( string indexName )
 		 {
 			  return node =>
@@ -313,7 +313,7 @@ namespace Neo4Net.ha
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private static void createNode(org.Neo4Net.graphdb.GraphDatabaseService db, String name, org.Neo4Net.kernel.impl.util.Listener<org.Neo4Net.graphdb.Node>... additional)
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private static void createNode(Neo4Net.graphdb.GraphDatabaseService db, String name, Neo4Net.kernel.impl.util.Listener<Neo4Net.graphdb.Node>... additional)
 		 private static void CreateNode( IGraphDatabaseService db, string name, params Listener<Node>[] additional )
 		 {
 			  using ( Transaction tx = Db.beginTx() )
@@ -328,7 +328,7 @@ namespace Neo4Net.ha
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private static void createNodes(org.Neo4Net.graphdb.GraphDatabaseService db, String namePrefix, int count, org.Neo4Net.kernel.impl.util.Listener<org.Neo4Net.graphdb.Node>... additional)
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private static void createNodes(Neo4Net.graphdb.GraphDatabaseService db, String namePrefix, int count, Neo4Net.kernel.impl.util.Listener<Neo4Net.graphdb.Node>... additional)
 		 private static void CreateNodes( IGraphDatabaseService db, string namePrefix, int count, params Listener<Node>[] additional )
 		 {
 			  using ( Transaction tx = Db.beginTx() )

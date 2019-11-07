@@ -34,11 +34,11 @@ namespace Neo4Net.Kernel.Impl.Newapi
 	using ValueTuple = Neo4Net.Values.Storable.ValueTuple;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.StatementConstants.NO_SUCH_PROPERTY_KEY;
+//	import static Neo4Net.kernel.api.StatementConstants.NO_SUCH_PROPERTY_KEY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.StorageEngine.EntityType.NODE;
+//	import static Neo4Net.Kernel.Api.StorageEngine.EntityType.NODE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.NO_VALUE;
+//	import static Neo4Net.values.storable.Values.NO_VALUE;
 
 	/// <summary>
 	/// Utility class that performs necessary updates for the transaction state.

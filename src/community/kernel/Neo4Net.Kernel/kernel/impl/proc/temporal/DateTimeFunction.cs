@@ -28,8 +28,8 @@ namespace Neo4Net.Kernel.impl.proc.temporal
 	using QualifiedName = Neo4Net.Kernel.Api.Internal.procs.QualifiedName;
 	using UserFunctionSignature = Neo4Net.Kernel.Api.Internal.procs.UserFunctionSignature;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
-	using CallableUserFunction = Neo4Net.Kernel.api.proc.CallableUserFunction;
-	using Context = Neo4Net.Kernel.api.proc.Context;
+	using CallableUserFunction = Neo4Net.Kernel.Api.Procs.CallableUserFunction;
+	using Context = Neo4Net.Kernel.Api.Procs.Context;
 	using Description = Neo4Net.Procedure.Description;
 	using AnyValue = Neo4Net.Values.AnyValue;
 	using DateTimeValue = Neo4Net.Values.Storable.DateTimeValue;
@@ -39,9 +39,9 @@ namespace Neo4Net.Kernel.impl.proc.temporal
 	using MapValue = Neo4Net.Values.@virtual.MapValue;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.procs.FieldSignature.inputField;
+//	import static Neo4Net.Kernel.Api.Internal.procs.FieldSignature.inputField;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes.NTDateTime;
+//	import static Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes.NTDateTime;
 
 	[Description("Create a DateTime instant.")]
 	internal class DateTimeFunction : TemporalFunction<DateTimeValue>
@@ -76,7 +76,7 @@ namespace Neo4Net.Kernel.impl.proc.temporal
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void registerMore(org.Neo4Net.kernel.impl.proc.Procedures procedures) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
+//ORIGINAL LINE: void registerMore(Neo4Net.kernel.impl.proc.Procedures procedures) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 		 internal override void RegisterMore( Procedures procedures )
 		 {
 			  procedures.Register( new FromEpoch() );
@@ -101,7 +101,7 @@ namespace Neo4Net.Kernel.impl.proc.temporal
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.values.AnyValue apply(org.Neo4Net.kernel.api.proc.Context ctx, org.Neo4Net.values.AnyValue[] input) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
+//ORIGINAL LINE: public Neo4Net.values.AnyValue apply(Neo4Net.kernel.api.proc.Context ctx, Neo4Net.values.AnyValue[] input) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 			  public override AnyValue Apply( Context ctx, AnyValue[] input )
 			  {
 					if ( input != null && input.Length == 2 )
@@ -135,7 +135,7 @@ namespace Neo4Net.Kernel.impl.proc.temporal
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.values.AnyValue apply(org.Neo4Net.kernel.api.proc.Context ctx, org.Neo4Net.values.AnyValue[] input) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
+//ORIGINAL LINE: public Neo4Net.values.AnyValue apply(Neo4Net.kernel.api.proc.Context ctx, Neo4Net.values.AnyValue[] input) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 			  public override AnyValue Apply( Context ctx, AnyValue[] input )
 			  {
 					if ( input != null && input.Length == 1 )

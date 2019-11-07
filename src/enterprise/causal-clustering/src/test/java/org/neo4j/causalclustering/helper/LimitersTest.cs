@@ -38,7 +38,7 @@ namespace Neo4Net.causalclustering.helper
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.helper.Limiters.rateLimiter;
+//	import static Neo4Net.causalclustering.helper.Limiters.rateLimiter;
 
 	public class LimitersTest
 	{

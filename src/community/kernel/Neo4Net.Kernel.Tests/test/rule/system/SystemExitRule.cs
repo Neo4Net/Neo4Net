@@ -75,12 +75,12 @@ namespace Neo4Net.Test.rule.system
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void evaluate() throws Throwable
-			 public override void evaluate()
+//ORIGINAL LINE: public void Evaluate() throws Throwable
+			 public override void Evaluate()
 			 {
 				  try
 				  {
-						_externalRuleStatement.evaluate();
+						_externalRuleStatement.Evaluate();
 						if ( outerInstance.exitWasExpected() )
 						{
 							 fail( "System exit call was expected, but not invoked." );

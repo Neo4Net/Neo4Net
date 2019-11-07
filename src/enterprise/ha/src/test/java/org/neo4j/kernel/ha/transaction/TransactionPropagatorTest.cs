@@ -57,16 +57,16 @@ namespace Neo4Net.Kernel.ha.transaction
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.ha.HaSettings.TxPushStrategy.fixed_ascending;
+//	import static Neo4Net.kernel.ha.HaSettings.TxPushStrategy.fixed_ascending;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.ha.HaSettings.TxPushStrategy.fixed_descending;
+//	import static Neo4Net.kernel.ha.HaSettings.TxPushStrategy.fixed_descending;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.ha.HaSettings.tx_push_strategy;
+//	import static Neo4Net.kernel.ha.HaSettings.tx_push_strategy;
 
 	public class TransactionPropagatorTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.kernel.lifecycle.LifeRule life = new org.Neo4Net.kernel.lifecycle.LifeRule(true);
+//ORIGINAL LINE: @Rule public final Neo4Net.kernel.lifecycle.LifeRule life = new Neo4Net.kernel.lifecycle.LifeRule(true);
 		 public readonly LifeRule Life = new LifeRule( true );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -76,7 +76,7 @@ namespace Neo4Net.Kernel.ha.transaction
 			  // GIVEN
 			  int serverId = 1;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.cluster.InstanceId instanceId = new org.Neo4Net.cluster.InstanceId(serverId);
+//ORIGINAL LINE: final Neo4Net.cluster.InstanceId instanceId = new Neo4Net.cluster.InstanceId(serverId);
 			  InstanceId instanceId = new InstanceId( serverId );
 			  Configuration config = new ConfigurationAnonymousInnerClass( this, instanceId );
 			  Log logger = mock( typeof( Log ) );
@@ -163,7 +163,7 @@ namespace Neo4Net.Kernel.ha.transaction
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private org.Neo4Net.kernel.ha.com.master.Slave slave(final int id)
+//ORIGINAL LINE: private Neo4Net.kernel.ha.com.master.Slave slave(final int id)
 		 private Slave Slave( int id )
 		 {
 			  return new SlaveAnonymousInnerClass( this, id );

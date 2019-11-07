@@ -43,13 +43,13 @@ namespace Neo4Net.Consistency.checking.full
 	using RelationshipTypeTokenRecord = Neo4Net.Kernel.Impl.Store.Records.RelationshipTypeTokenRecord;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.consistency.checking.cache.DefaultCacheAccess.DEFAULT_QUEUE_SIZE;
+//	import static Neo4Net.consistency.checking.cache.DefaultCacheAccess.DEFAULT_QUEUE_SIZE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.consistency.checking.full.CloningRecordIterator.cloned;
+//	import static Neo4Net.consistency.checking.full.CloningRecordIterator.cloned;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.consistency.checking.full.RecordDistributor.distributeRecords;
+//	import static Neo4Net.consistency.checking.full.RecordDistributor.distributeRecords;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.Scanner.scan;
+//	import static Neo4Net.kernel.impl.store.Scanner.scan;
 
 	/// <summary>
 	/// Full check works by spawning StoreProcessorTasks that call StoreProcessor. StoreProcessor.applyFiltered()
@@ -183,14 +183,14 @@ namespace Neo4Net.Consistency.checking.full
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public <R extends org.Neo4Net.kernel.impl.store.record.AbstractBaseRecord> void applyFilteredParallel(final org.Neo4Net.kernel.impl.store.RecordStore<R> store, final org.Neo4Net.helpers.progress.ProgressListener progressListener, int numberOfThreads, long recordsPerCpu, final org.Neo4Net.consistency.checking.full.QueueDistribution_QueueDistributor<R> distributor)
+//ORIGINAL LINE: public <R extends Neo4Net.kernel.impl.store.record.AbstractBaseRecord> void applyFilteredParallel(final Neo4Net.kernel.impl.store.RecordStore<R> store, final Neo4Net.helpers.progress.ProgressListener progressListener, int numberOfThreads, long recordsPerCpu, final Neo4Net.consistency.checking.full.QueueDistribution_QueueDistributor<R> distributor)
 		 public virtual void ApplyFilteredParallel<R>( RecordStore<R> store, ProgressListener progressListener, int numberOfThreads, long recordsPerCpu, QueueDistribution_QueueDistributor<R> distributor ) where R : Neo4Net.Kernel.Impl.Store.Records.AbstractBaseRecord
 		 {
 			  CacheAccess.prepareForProcessingOfSingleStore( recordsPerCpu );
 			  RecordProcessor<R> processor = new RecordProcessor_AdapterAnonymousInnerClass( this, store );
 
-			  ResourceIterable<R> scan = scan( store, _stage.Forward );
-			  using ( ResourceIterator<R> records = scan.GetEnumerator() )
+			 IResourceIterable<R> scan = scan( store, _stage.Forward );
+			  using ( IResourceIterator<R> records = scan.GetEnumerator() )
 			  {
 					distributeRecords( numberOfThreads, this.GetType().Name, _qSize, cloned(records), progressListener, processor, distributor );
 			  }

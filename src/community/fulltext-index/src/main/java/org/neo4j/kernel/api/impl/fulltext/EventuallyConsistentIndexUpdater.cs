@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 	internal class EventuallyConsistentIndexUpdater : IndexUpdater
 	{
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private final org.Neo4Net.kernel.api.impl.index.DatabaseIndex<? extends org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader> index;
+//ORIGINAL LINE: private final Neo4Net.kernel.api.impl.index.DatabaseIndex<? extends Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader> index;
 		 private readonly DatabaseIndex<IndexReader> _index;
 		 private readonly IndexUpdater _indexUpdater;
 		 private readonly IndexUpdateSink _indexUpdateSink;

@@ -33,7 +33,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Neo4NetTestCase.assertContains;
+//	import static Neo4Net.index.Neo4NetTestCase.assertContains;
 
 	public class TestIndexNames
 	{

@@ -31,7 +31,7 @@ namespace Neo4Net.Collections.Helpers
 	public class LimitingResourceIterator<T> : PrefetchingResourceIterator<T>
 	{
 		 private int _returned;
-		 private readonly ResourceIterator<T> _source;
+		 private readonly IResourceIterator<T> _source;
 		 private readonly int _limit;
 
 		 /// <summary>
@@ -41,7 +41,7 @@ namespace Neo4Net.Collections.Helpers
 		 /// </summary>
 		 /// <param name="source"> the source of items. </param>
 		 /// <param name="limit"> the limit, i.e. the max number of items to return. </param>
-		 public LimitingResourceIterator( ResourceIterator<T> source, int limit )
+		 public LimitingResourceIterator( IResourceIterator<T> source, int limit )
 		 {
 			  this._source = source;
 			  this._limit = limit;

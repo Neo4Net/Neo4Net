@@ -35,7 +35,7 @@ namespace Neo4Net.Server.helpers
 	using RestfulGraphDatabase = Neo4Net.Server.rest.web.RestfulGraphDatabase;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.web.RestfulGraphDatabase.PATH_AUTO_INDEX;
+//	import static Neo4Net.server.rest.web.RestfulGraphDatabase.PATH_AUTO_INDEX;
 
 	public sealed class FunctionalTestHelper
 	{

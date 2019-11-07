@@ -24,15 +24,15 @@ using System.Threading;
 namespace Neo4Net.CodeGen
 {
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.codegen.ByteCodeVisitor_Fields.DO_NOTHING;
+//	import static Neo4Net.codegen.ByteCodeVisitor_Fields.DO_NOTHING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.codegen.CodeGenerationStrategy.codeGenerator;
+//	import static Neo4Net.codegen.CodeGenerationStrategy.codeGenerator;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.codegen.TypeReference.OBJECT;
+//	import static Neo4Net.codegen.TypeReference.OBJECT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.codegen.TypeReference.typeReference;
+//	import static Neo4Net.codegen.TypeReference.typeReference;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.codegen.TypeReference.typeReferences;
+//	import static Neo4Net.codegen.TypeReference.typeReferences;
 
 	public abstract class CodeGenerator
 	{

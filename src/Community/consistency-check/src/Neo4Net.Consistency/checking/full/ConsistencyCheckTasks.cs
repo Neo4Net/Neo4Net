@@ -39,7 +39,7 @@ namespace Neo4Net.Consistency.checking.full
 	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 	using ProgressMonitorFactory = Neo4Net.Helpers.progress.ProgressMonitorFactory;
 	using TokenNameLookup = Neo4Net.Kernel.Api.Internal.TokenNameLookup;
-	using LabelScanStore = Neo4Net.Kernel.api.labelscan.LabelScanStore;
+	using LabelScanStore = Neo4Net.Kernel.Api.LabelScan.LabelScanStore;
 	using NonTransactionalTokenNameLookup = Neo4Net.Kernel.Impl.Api.NonTransactionalTokenNameLookup;
 	using TokenHolders = Neo4Net.Kernel.impl.core.TokenHolders;
 	using NativeLabelScanStore = Neo4Net.Kernel.impl.index.labelscan.NativeLabelScanStore;
@@ -52,21 +52,21 @@ namespace Neo4Net.Consistency.checking.full
 	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.consistency.checking.full.MultiPassStore.ARRAYS;
+//	import static Neo4Net.consistency.checking.full.MultiPassStore.ARRAYS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.consistency.checking.full.MultiPassStore.LABELS;
+//	import static Neo4Net.consistency.checking.full.MultiPassStore.LABELS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.consistency.checking.full.MultiPassStore.NODES;
+//	import static Neo4Net.consistency.checking.full.MultiPassStore.NODES;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.consistency.checking.full.MultiPassStore.PROPERTIES;
+//	import static Neo4Net.consistency.checking.full.MultiPassStore.PROPERTIES;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.consistency.checking.full.MultiPassStore.RELATIONSHIPS;
+//	import static Neo4Net.consistency.checking.full.MultiPassStore.RELATIONSHIPS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.consistency.checking.full.MultiPassStore.RELATIONSHIP_GROUPS;
+//	import static Neo4Net.consistency.checking.full.MultiPassStore.RELATIONSHIP_GROUPS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.consistency.checking.full.MultiPassStore.STRINGS;
+//	import static Neo4Net.consistency.checking.full.MultiPassStore.STRINGS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.consistency.checking.full.QueueDistribution.ROUND_ROBIN;
+//	import static Neo4Net.consistency.checking.full.QueueDistribution.ROUND_ROBIN;
 
 	public class ConsistencyCheckTasks
 	{
@@ -152,7 +152,7 @@ namespace Neo4Net.Consistency.checking.full
 			  tasks.Add( Create( "SchemaStore", _nativeStores.SchemaStore, ROUND_ROBIN ) );
 			  // PASS 2: Rule integrity and obligation build up
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.consistency.checking.SchemaRecordCheck schemaCheck = new org.Neo4Net.consistency.checking.SchemaRecordCheck(new org.Neo4Net.kernel.impl.store.SchemaStorage(nativeStores.getSchemaStore()), indexes);
+//ORIGINAL LINE: final Neo4Net.consistency.checking.SchemaRecordCheck schemaCheck = new Neo4Net.consistency.checking.SchemaRecordCheck(new Neo4Net.kernel.impl.store.SchemaStorage(nativeStores.getSchemaStore()), indexes);
 			  SchemaRecordCheck schemaCheck = new SchemaRecordCheck( new SchemaStorage( _nativeStores.SchemaStore ), _indexes );
 			  tasks.Add( new SchemaStoreProcessorTask<>( "SchemaStoreProcessor-check_rules", _statistics, _numberOfThreads, _nativeStores.SchemaStore, _nativeStores, "check_rules", schemaCheck, _multiPartBuilder, _cacheAccess, _defaultProcessor, ROUND_ROBIN ) );
 			  // PASS 3: Obligation verification and semantic rule uniqueness
@@ -188,7 +188,7 @@ namespace Neo4Net.Consistency.checking.full
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: private <RECORD> RecordScanner<RECORD> recordScanner(String name, org.Neo4Net.helpers.collection.BoundedIterable<RECORD> store, RecordProcessor<RECORD> processor, Stage stage, QueueDistribution distribution, @SuppressWarnings("rawtypes") IterableStore... warmupStores)
+//ORIGINAL LINE: private <RECORD> RecordScanner<RECORD> recordScanner(String name, Neo4Net.helpers.collection.BoundedIterable<RECORD> store, RecordProcessor<RECORD> processor, Stage stage, QueueDistribution distribution, @SuppressWarnings("rawtypes") IterableStore... warmupStores)
 		 private RecordScanner<RECORD> RecordScanner<RECORD>( string name, BoundedIterable<RECORD> store, RecordProcessor<RECORD> processor, Stage stage, QueueDistribution distribution, params IterableStore[] warmupStores )
 		 {
 			  return stage.Parallel ? new ParallelRecordScanner<RECORD>( name, _statistics, _numberOfThreads, store, _multiPartBuilder, processor, _cacheAccess, distribution, warmupStores ) : new SequentialRecordScanner<RECORD>( name, _statistics, _numberOfThreads, store, _multiPartBuilder, processor, warmupStores );

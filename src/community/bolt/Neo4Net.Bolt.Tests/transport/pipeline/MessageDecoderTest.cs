@@ -89,17 +89,17 @@ namespace Neo4Net.Bolt.transport.pipeline
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.messaging.example.Edges.ALICE_KNOWS_BOB;
+//	import static Neo4Net.bolt.v1.messaging.example.Edges.ALICE_KNOWS_BOB;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.messaging.example.Nodes.ALICE;
+//	import static Neo4Net.bolt.v1.messaging.example.Nodes.ALICE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.messaging.example.Paths.ALL_PATHS;
+//	import static Neo4Net.bolt.v1.messaging.example.Paths.ALL_PATHS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.messaging.util.MessageMatchers.serialize;
+//	import static Neo4Net.bolt.v1.messaging.util.MessageMatchers.serialize;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.durationValue;
+//	import static Neo4Net.values.storable.Values.durationValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.@virtual.VirtualValues.EMPTY_MAP;
+//	import static Neo4Net.values.@virtual.VirtualValues.EMPTY_MAP;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class MessageDecoderTest
@@ -108,7 +108,7 @@ namespace Neo4Net.Bolt.transport.pipeline
 		 private EmbeddedChannel _channel;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Parameterized.Parameter(0) public org.Neo4Net.bolt.messaging.Neo4NetPack packerUnderTest;
+//ORIGINAL LINE: @Parameterized.Parameter(0) public Neo4Net.bolt.messaging.Neo4NetPack packerUnderTest;
 		 public Neo4NetPack PackerUnderTest;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -468,14 +468,14 @@ namespace Neo4Net.Bolt.transport.pipeline
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void testUnpackableStructParametersWithKnownType(org.Neo4Net.values.AnyValue parameterValue, String expectedMessage) throws Exception
+//ORIGINAL LINE: private void testUnpackableStructParametersWithKnownType(Neo4Net.values.AnyValue parameterValue, String expectedMessage) throws Exception
 		 private void TestUnpackableStructParametersWithKnownType( AnyValue parameterValue, string expectedMessage )
 		 {
 			  TestUnpackableStructParametersWithKnownType( PackerUnderTest, parameterValue, expectedMessage );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void testUnpackableStructParametersWithKnownType(org.Neo4Net.bolt.messaging.Neo4NetPack packerForSerialization, org.Neo4Net.values.AnyValue parameterValue, String expectedMessage) throws Exception
+//ORIGINAL LINE: private void testUnpackableStructParametersWithKnownType(Neo4Net.bolt.messaging.Neo4NetPack packerForSerialization, Neo4Net.values.AnyValue parameterValue, String expectedMessage) throws Exception
 		 private void TestUnpackableStructParametersWithKnownType( Neo4NetPack packerForSerialization, AnyValue parameterValue, string expectedMessage )
 		 {
 			  string statement = "RETURN $x";

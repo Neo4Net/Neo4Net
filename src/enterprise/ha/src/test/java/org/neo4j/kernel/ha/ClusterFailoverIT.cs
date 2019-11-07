@@ -45,10 +45,10 @@ namespace Neo4Net.Kernel.ha
 	public class ClusterFailoverIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.LoggerRule logger = new org.Neo4Net.test.rule.LoggerRule();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.LoggerRule logger = new Neo4Net.test.rule.LoggerRule();
 		 public LoggerRule Logger = new LoggerRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.TestDirectory dir = org.Neo4Net.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.TestDirectory dir = Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public TestDirectory Dir = TestDirectory.testDirectory();
 
 		 // parameters

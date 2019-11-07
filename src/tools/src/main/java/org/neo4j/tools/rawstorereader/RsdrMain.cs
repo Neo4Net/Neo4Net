@@ -50,13 +50,13 @@ namespace Neo4Net.tools.rawstorereader
 	using TransactionLogUtils = Neo4Net.tools.util.TransactionLogUtils;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.pagecache.ConfigurableStandalonePageCacheFactory.createPageCache;
+//	import static Neo4Net.kernel.impl.pagecache.ConfigurableStandalonePageCacheFactory.createPageCache;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
+//	import static Neo4Net.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.record.RecordLoad.CHECK;
+//	import static Neo4Net.kernel.impl.store.record.RecordLoad.CHECK;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.LogVersionBridge_Fields.NO_MORE_CHANNELS;
+//	import static Neo4Net.kernel.impl.transaction.log.LogVersionBridge_Fields.NO_MORE_CHANNELS;
 
 	/// <summary>
 	/// Tool to read raw data from various stores.
@@ -113,7 +113,7 @@ namespace Neo4Net.tools.rawstorereader
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void interact(org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, org.Neo4Net.kernel.impl.store.NeoStores neoStores, org.Neo4Net.io.layout.DatabaseLayout databaseLayout) throws java.io.IOException
+//ORIGINAL LINE: private static void interact(Neo4Net.io.fs.FileSystemAbstraction fileSystem, Neo4Net.kernel.impl.store.NeoStores neoStores, Neo4Net.io.layout.DatabaseLayout databaseLayout) throws java.io.IOException
 		 private static void Interact( FileSystemAbstraction fileSystem, NeoStores neoStores, DatabaseLayout databaseLayout )
 		 {
 			  PrintHelp();
@@ -132,7 +132,7 @@ namespace Neo4Net.tools.rawstorereader
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static boolean execute(org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, String cmd, org.Neo4Net.kernel.impl.store.NeoStores neoStores, org.Neo4Net.io.layout.DatabaseLayout databaseLayout) throws java.io.IOException
+//ORIGINAL LINE: private static boolean execute(Neo4Net.io.fs.FileSystemAbstraction fileSystem, String cmd, Neo4Net.kernel.impl.store.NeoStores neoStores, Neo4Net.io.layout.DatabaseLayout databaseLayout) throws java.io.IOException
 		 private static bool Execute( FileSystemAbstraction fileSystem, string cmd, NeoStores neoStores, DatabaseLayout databaseLayout )
 		 {
 			  if ( string.ReferenceEquals( cmd, null ) || cmd.Equals( "q" ) )
@@ -169,7 +169,7 @@ namespace Neo4Net.tools.rawstorereader
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void read(org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, String cmd, org.Neo4Net.kernel.impl.store.NeoStores neoStores, org.Neo4Net.io.layout.DatabaseLayout databaseLayout) throws java.io.IOException
+//ORIGINAL LINE: private static void read(Neo4Net.io.fs.FileSystemAbstraction fileSystem, String cmd, Neo4Net.kernel.impl.store.NeoStores neoStores, Neo4Net.io.layout.DatabaseLayout databaseLayout) throws java.io.IOException
 		 private static void Read( FileSystemAbstraction fileSystem, string cmd, NeoStores neoStores, DatabaseLayout databaseLayout )
 		 {
 			  Matcher matcher = _readCommandPattern.matcher( cmd );
@@ -207,7 +207,7 @@ namespace Neo4Net.tools.rawstorereader
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void readStore(org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, org.Neo4Net.kernel.impl.store.RecordStore store, long fromId, long toId, java.util.regex.Pattern pattern) throws java.io.IOException
+//ORIGINAL LINE: private static void readStore(Neo4Net.io.fs.FileSystemAbstraction fileSystem, Neo4Net.kernel.impl.store.RecordStore store, long fromId, long toId, java.util.regex.Pattern pattern) throws java.io.IOException
 		 private static void ReadStore( FileSystemAbstraction fileSystem, RecordStore store, long fromId, long toId, Pattern pattern )
 		 {
 			  toId = Math.Min( toId, store.HighId );
@@ -279,14 +279,14 @@ namespace Neo4Net.tools.rawstorereader
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static org.Neo4Net.cursor.IOCursor<org.Neo4Net.kernel.impl.transaction.log.entry.LogEntry> getLogCursor(org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, String fname, org.Neo4Net.io.layout.DatabaseLayout databaseLayout) throws java.io.IOException
+//ORIGINAL LINE: private static Neo4Net.cursor.IOCursor<Neo4Net.kernel.impl.transaction.log.entry.LogEntry> getLogCursor(Neo4Net.io.fs.FileSystemAbstraction fileSystem, String fname, Neo4Net.io.layout.DatabaseLayout databaseLayout) throws java.io.IOException
 		 private static IOCursor<LogEntry> GetLogCursor( FileSystemAbstraction fileSystem, string fname, DatabaseLayout databaseLayout )
 		 {
 			  return TransactionLogUtils.openLogEntryCursor( fileSystem, new File( databaseLayout.DatabaseDirectory(), fname ), NO_MORE_CHANNELS );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void readLog(org.Neo4Net.cursor.IOCursor<org.Neo4Net.kernel.impl.transaction.log.entry.LogEntry> cursor, final long fromLine, final long toLine, final java.util.regex.Pattern pattern) throws java.io.IOException
+//ORIGINAL LINE: private static void readLog(Neo4Net.cursor.IOCursor<Neo4Net.kernel.impl.transaction.log.entry.LogEntry> cursor, final long fromLine, final long toLine, final java.util.regex.Pattern pattern) throws java.io.IOException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 		 private static void ReadLog( IOCursor<LogEntry> cursor, long fromLine, long toLine, Pattern pattern )
 		 {

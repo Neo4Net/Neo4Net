@@ -32,18 +32,18 @@ namespace Neo4Net.Bolt.v1.runtime.integration
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.MatcherAssert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.transport.integration.Neo4NetWithSocket.DEFAULT_CONNECTOR_KEY;
+//	import static Neo4Net.bolt.v1.transport.integration.Neo4NetWithSocket.DEFAULT_CONNECTOR_KEY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.transport.integration.TransportTestUtil.eventuallyDisconnects;
+//	import static Neo4Net.bolt.v1.transport.integration.TransportTestUtil.eventuallyDisconnects;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.BoltConnector.EncryptionLevel.REQUIRED;
+//	import static Neo4Net.kernel.configuration.BoltConnector.EncryptionLevel.REQUIRED;
 
 	public class BoltConfigIT : AbstractBoltTransportsTest
 	{
 		 private const string ANOTHER_CONNECTOR_KEY = "1";
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.bolt.v1.transport.integration.Neo4NetWithSocket server = new org.Neo4Net.bolt.v1.transport.integration.Neo4NetWithSocket(getClass(), settings ->
+//ORIGINAL LINE: @Rule public Neo4Net.bolt.v1.transport.integration.Neo4NetWithSocket server = new Neo4Net.bolt.v1.transport.integration.Neo4NetWithSocket(getClass(), settings ->
 		 public Neo4NetWithSocket Server = new Neo4NetWithSocket(this.GetType(), settings =>
 		 {
 					 settings.put( ( new BoltConnector( DEFAULT_CONNECTOR_KEY ) ).type.name(), "BOLT" );
@@ -55,7 +55,7 @@ namespace Neo4Net.Bolt.v1.runtime.integration
 					 settings.put( ( new BoltConnector( ANOTHER_CONNECTOR_KEY ) ).encryption_level.name(), REQUIRED.name() );
 		 });
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.SuppressOutput suppressOutput = org.Neo4Net.test.rule.SuppressOutput.suppressAll();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.SuppressOutput suppressOutput = Neo4Net.test.rule.SuppressOutput.suppressAll();
 		 public SuppressOutput SuppressOutput = SuppressOutput.suppressAll();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -71,7 +71,7 @@ namespace Neo4Net.Bolt.v1.runtime.integration
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertConnectionRejected(org.Neo4Net.helpers.HostnamePort address, org.Neo4Net.bolt.v1.transport.socket.client.TransportConnection client) throws Exception
+//ORIGINAL LINE: private void assertConnectionRejected(Neo4Net.helpers.HostnamePort address, Neo4Net.bolt.v1.transport.socket.client.TransportConnection client) throws Exception
 		 private void AssertConnectionRejected( HostnamePort address, TransportConnection client )
 		 {
 			  client.Connect( address ).send( Util.defaultAcceptedVersions() );
@@ -80,7 +80,7 @@ namespace Neo4Net.Bolt.v1.runtime.integration
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertConnectionAccepted(org.Neo4Net.helpers.HostnamePort address, org.Neo4Net.bolt.v1.transport.socket.client.TransportConnection client) throws Exception
+//ORIGINAL LINE: private void assertConnectionAccepted(Neo4Net.helpers.HostnamePort address, Neo4Net.bolt.v1.transport.socket.client.TransportConnection client) throws Exception
 		 private void AssertConnectionAccepted( HostnamePort address, TransportConnection client )
 		 {
 			  client.Connect( address ).send( Util.defaultAcceptedVersions() ).send(Util.chunk(new InitMessage("TestClient/1.1", emptyMap())));

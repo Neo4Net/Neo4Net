@@ -62,7 +62,7 @@ namespace Neo4Net.Kernel.impl.util.collection
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.eclipse.collections.impl.tuple.primitive.PrimitiveTuples.pair;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.util.Preconditions.checkArgument;
+//	import static Neo4Net.util.Preconditions.checkArgument;
 
 	/// <summary>
 	/// Off heap implementation of long-long hash map.

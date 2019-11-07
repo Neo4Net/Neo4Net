@@ -200,7 +200,7 @@ namespace Neo4Net.cluster.protocol.heartbeat
 		 public virtual void ShouldCorrectlySetTheInstanceIdHeaderInTheGeneratedHeartbeat()
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.List<org.Neo4Net.cluster.com.message.Message> sentOut = new java.util.LinkedList<>();
+//ORIGINAL LINE: final java.util.List<Neo4Net.cluster.com.message.Message> sentOut = new java.util.LinkedList<>();
 			  IList<Message> sentOut = new LinkedList<Message>();
 
 			  // Given
@@ -253,7 +253,7 @@ namespace Neo4Net.cluster.protocol.heartbeat
 		 public virtual void ShouldRevertToInverseUriLookupIfNoInstanceIdHeader()
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.List<org.Neo4Net.cluster.com.message.Message> sentOut = new java.util.LinkedList<>();
+//ORIGINAL LINE: final java.util.List<Neo4Net.cluster.com.message.Message> sentOut = new java.util.LinkedList<>();
 			  IList<Message> sentOut = new LinkedList<Message>();
 			  string instance2UriString = "ha://2";
 

@@ -31,9 +31,9 @@ namespace Neo4Net.Kernel.impl.proc.temporal
 	using QualifiedName = Neo4Net.Kernel.Api.Internal.procs.QualifiedName;
 	using UserFunctionSignature = Neo4Net.Kernel.Api.Internal.procs.UserFunctionSignature;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
-	using CallableUserFunction = Neo4Net.Kernel.api.proc.CallableUserFunction;
-	using Context = Neo4Net.Kernel.api.proc.Context;
-	using Neo4Net.Kernel.api.proc;
+	using CallableUserFunction = Neo4Net.Kernel.Api.Procs.CallableUserFunction;
+	using Context = Neo4Net.Kernel.Api.Procs.Context;
+	using Neo4Net.Kernel.Api.Procs;
 	using Description = Neo4Net.Procedure.Description;
 	using AnyValue = Neo4Net.Values.AnyValue;
 	using Neo4Net.Values.Storable;
@@ -42,15 +42,15 @@ namespace Neo4Net.Kernel.impl.proc.temporal
 	using MapValue = Neo4Net.Values.@virtual.MapValue;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.single;
+//	import static Neo4Net.helpers.collection.Iterables.single;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.procs.DefaultParameterValue.nullValue;
+//	import static Neo4Net.Kernel.Api.Internal.procs.DefaultParameterValue.nullValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.procs.FieldSignature.inputField;
+//	import static Neo4Net.Kernel.Api.Internal.procs.FieldSignature.inputField;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.NO_VALUE;
+//	import static Neo4Net.values.storable.Values.NO_VALUE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.@virtual.VirtualValues.EMPTY_MAP;
+//	import static Neo4Net.values.@virtual.VirtualValues.EMPTY_MAP;
 
 	public abstract class TemporalFunction<T> : CallableUserFunction where T : Neo4Net.Values.AnyValue
 	{
@@ -59,7 +59,7 @@ namespace Neo4Net.Kernel.impl.proc.temporal
 		 private static readonly DefaultParameterValue _defaultParameterValue = new DefaultParameterValue( DEFAULT_TEMPORAL_ARGUMENT, Neo4NetTypes.NTAny );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static void registerTemporalFunctions(org.Neo4Net.kernel.impl.proc.Procedures procedures, org.Neo4Net.kernel.impl.proc.ProcedureConfig procedureConfig) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
+//ORIGINAL LINE: public static void registerTemporalFunctions(Neo4Net.kernel.impl.proc.Procedures procedures, Neo4Net.kernel.impl.proc.ProcedureConfig procedureConfig) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 		 public static void RegisterTemporalFunctions( Procedures procedures, ProcedureConfig procedureConfig )
 		 {
 			  System.Func<ZoneId> defaultZone = procedureConfig.getDefaultTemporalTimeZone;
@@ -71,7 +71,7 @@ namespace Neo4Net.Kernel.impl.proc.temporal
 			  DurationFunction.Register( procedures );
 		 }
 
-		 private static readonly Key<Clock> _defaultClock = Neo4Net.Kernel.api.proc.Context_Fields.StatementClock;
+		 private static readonly Key<Clock> _defaultClock = Neo4Net.Kernel.Api.Procs.Context_Fields.StatementClock;
 
 		 /// <param name="clock"> the clock to use </param>
 		 /// <param name="timezone"> an explicit timezone or {@code null}. In the latter case, the defaultZone is used </param>
@@ -103,7 +103,7 @@ namespace Neo4Net.Kernel.impl.proc.temporal
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void register(TemporalFunction<?> super, org.Neo4Net.kernel.impl.proc.Procedures procedures) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
+//ORIGINAL LINE: private static void register(TemporalFunction<?> super, Neo4Net.kernel.impl.proc.Procedures procedures) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 		 private static void Register<T1>( TemporalFunction<T1> @base, Procedures procedures )
 		 {
 			  procedures.Register( @base );
@@ -120,7 +120,7 @@ namespace Neo4Net.Kernel.impl.proc.temporal
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void registerMore(org.Neo4Net.kernel.impl.proc.Procedures procedures) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
+//ORIGINAL LINE: void registerMore(Neo4Net.kernel.impl.proc.Procedures procedures) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 		 internal virtual void RegisterMore( Procedures procedures )
 		 {
 			  // Empty by default
@@ -132,7 +132,7 @@ namespace Neo4Net.Kernel.impl.proc.temporal
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public final org.Neo4Net.values.AnyValue apply(org.Neo4Net.kernel.api.proc.Context ctx, org.Neo4Net.values.AnyValue[] input) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
+//ORIGINAL LINE: public final Neo4Net.values.AnyValue apply(Neo4Net.kernel.api.proc.Context ctx, Neo4Net.values.AnyValue[] input) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 		 public override AnyValue Apply( Context ctx, AnyValue[] input )
 		 {
 			  if ( input == null || ( input.Length > 0 && ( input[0] == NO_VALUE || input[0] == null ) ) )
@@ -202,7 +202,7 @@ namespace Neo4Net.Kernel.impl.proc.temporal
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public abstract org.Neo4Net.values.AnyValue apply(org.Neo4Net.kernel.api.proc.Context ctx, org.Neo4Net.values.AnyValue[] input) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
+//ORIGINAL LINE: public abstract Neo4Net.values.AnyValue apply(Neo4Net.kernel.api.proc.Context ctx, Neo4Net.values.AnyValue[] input) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
 			  public override abstract AnyValue Apply( Context ctx, AnyValue[] input );
 		 }
 
@@ -216,13 +216,13 @@ namespace Neo4Net.Kernel.impl.proc.temporal
 					switch ( clock )
 					{
 					case "transaction":
-						 this.Key = Neo4Net.Kernel.api.proc.Context_Fields.TransactionClock;
+						 this.Key = Neo4Net.Kernel.Api.Procs.Context_Fields.TransactionClock;
 						 break;
 					case "statement":
-						 this.Key = Neo4Net.Kernel.api.proc.Context_Fields.StatementClock;
+						 this.Key = Neo4Net.Kernel.Api.Procs.Context_Fields.StatementClock;
 						 break;
 					case "realtime":
-						 this.Key = Neo4Net.Kernel.api.proc.Context_Fields.SystemClock;
+						 this.Key = Neo4Net.Kernel.Api.Procs.Context_Fields.SystemClock;
 						 break;
 					default:
 						 throw new System.ArgumentException( "Unrecognized clock: " + clock );
@@ -230,7 +230,7 @@ namespace Neo4Net.Kernel.impl.proc.temporal
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.values.AnyValue apply(org.Neo4Net.kernel.api.proc.Context ctx, org.Neo4Net.values.AnyValue[] input) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
+//ORIGINAL LINE: public Neo4Net.values.AnyValue apply(Neo4Net.kernel.api.proc.Context ctx, Neo4Net.values.AnyValue[] input) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 			  public override AnyValue Apply( Context ctx, AnyValue[] input )
 			  {
 					if ( input == null || ( input.Length > 0 && ( input[0] == NO_VALUE || input[0] == null ) ) )
@@ -262,7 +262,7 @@ namespace Neo4Net.Kernel.impl.proc.temporal
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public T apply(org.Neo4Net.kernel.api.proc.Context ctx, org.Neo4Net.values.AnyValue[] args) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
+//ORIGINAL LINE: public T apply(Neo4Net.kernel.api.proc.Context ctx, Neo4Net.values.AnyValue[] args) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 			  public override T Apply( Context ctx, AnyValue[] args )
 			  {
 					if ( args != null && args.Length >= 2 && args.Length <= 3 )

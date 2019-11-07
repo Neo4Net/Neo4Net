@@ -47,7 +47,7 @@ namespace Neo4Net.Index.population
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertNotNull;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helper.StressTestingHelper.fromEnv;
+//	import static Neo4Net.helper.StressTestingHelper.fromEnv;
 
 	public class LucenePartitionedIndexStressTesting
 	{
@@ -178,7 +178,7 @@ namespace Neo4Net.Index.population
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private PopulationResult populateDb(org.Neo4Net.graphdb.GraphDatabaseService db) throws java.util.concurrent.ExecutionException, InterruptedException
+//ORIGINAL LINE: private PopulationResult populateDb(Neo4Net.graphdb.GraphDatabaseService db) throws java.util.concurrent.ExecutionException, InterruptedException
 		 private PopulationResult PopulateDb( IGraphDatabaseService db )
 		 {
 			  AtomicLong nodesCounter = new AtomicLong();

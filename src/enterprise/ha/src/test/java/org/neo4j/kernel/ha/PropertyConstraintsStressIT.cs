@@ -62,13 +62,13 @@ namespace Neo4Net.Kernel.ha
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.Label.label;
+//	import static Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.RelationshipType.withName;
+//	import static Neo4Net.graphdb.RelationshipType.withName;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.ArrayUtil.array;
+//	import static Neo4Net.helpers.ArrayUtil.array;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.loop;
+//	import static Neo4Net.helpers.collection.Iterators.loop;
 
 	/// <summary>
 	/// This test stress tests unique constraints in a setup where writes are being issued against a slave.
@@ -113,22 +113,22 @@ namespace Neo4Net.Kernel.ha
 		 public System.Func<int, object> ValueGenerator;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.SuppressOutput suppressOutput = org.Neo4Net.test.rule.SuppressOutput.suppressAll();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.SuppressOutput suppressOutput = Neo4Net.test.rule.SuppressOutput.suppressAll();
 		 public readonly SuppressOutput SuppressOutput = SuppressOutput.suppressAll();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ClassRule public static final org.Neo4Net.test.ha.ClusterRule clusterRule = new org.Neo4Net.test.ha.ClusterRule();
+//ORIGINAL LINE: @ClassRule public static final Neo4Net.test.ha.ClusterRule clusterRule = new Neo4Net.test.ha.ClusterRule();
 		 public static readonly ClusterRule ClusterRule = new ClusterRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.concurrent.OtherThreadRule<Object> slaveWork = new org.Neo4Net.test.rule.concurrent.OtherThreadRule<>();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.concurrent.OtherThreadRule<Object> slaveWork = new Neo4Net.test.rule.concurrent.OtherThreadRule<>();
 		 public OtherThreadRule<object> SlaveWork = new OtherThreadRule<object>();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.concurrent.OtherThreadRule<Object> masterWork = new org.Neo4Net.test.rule.concurrent.OtherThreadRule<>();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.concurrent.OtherThreadRule<Object> masterWork = new Neo4Net.test.rule.concurrent.OtherThreadRule<>();
 		 public OtherThreadRule<object> MasterWork = new OtherThreadRule<object>();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.RepeatRule repeater = new org.Neo4Net.test.rule.RepeatRule();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.RepeatRule repeater = new Neo4Net.test.rule.RepeatRule();
 		 public RepeatRule Repeater = new RepeatRule();
 
 		 protected internal ClusterManager.ManagedCluster Cluster;
@@ -444,7 +444,7 @@ namespace Neo4Net.Kernel.ha
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private org.Neo4Net.test.OtherThreadExecutor.WorkerCommand<Object,bool> createConstraint(final HighlyAvailableGraphDatabase master)
+//ORIGINAL LINE: private Neo4Net.test.OtherThreadExecutor.WorkerCommand<Object,bool> createConstraint(final HighlyAvailableGraphDatabase master)
 		 private WorkerCommand<object, bool> CreateConstraint( HighlyAvailableGraphDatabase master )
 		 {
 			  return ConstraintOps.createConstraint( master, _labelOrRelType, _property );
@@ -466,7 +466,7 @@ namespace Neo4Net.Kernel.ha
 		 /// not changed.
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private org.Neo4Net.test.OtherThreadExecutor.WorkerCommand<Object,int> performInserts(final HighlyAvailableGraphDatabase slave, final boolean constraintCompliant)
+//ORIGINAL LINE: private Neo4Net.test.OtherThreadExecutor.WorkerCommand<Object,int> performInserts(final HighlyAvailableGraphDatabase slave, final boolean constraintCompliant)
 		 private WorkerCommand<object, int> PerformInserts( HighlyAvailableGraphDatabase slave, bool constraintCompliant )
 		 {
 			  return state =>
@@ -564,7 +564,7 @@ namespace Neo4Net.Kernel.ha
 				  using ( Transaction tx = Db.beginTx() )
 				  {
 						ISet<object> values = new HashSet<object>();
-						using ( ResourceIterator<Node> nodes = Db.findNodes( label( type ) ) )
+						using ( IResourceIterator<Node> nodes = Db.findNodes( label( type ) ) )
 						{
 							 foreach ( Node node in loop( nodes ) )
 							 {
@@ -583,7 +583,7 @@ namespace Neo4Net.Kernel.ha
 			 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public org.Neo4Net.test.OtherThreadExecutor.WorkerCommand<Object,bool> createConstraint(final HighlyAvailableGraphDatabase db, final String type, final String property)
+//ORIGINAL LINE: public Neo4Net.test.OtherThreadExecutor.WorkerCommand<Object,bool> createConstraint(final HighlyAvailableGraphDatabase db, final String type, final String property)
 			 public WorkerCommand<object, bool> createConstraint( HighlyAvailableGraphDatabase db, string type, string property )
 			 {
 				  return state =>
@@ -703,7 +703,7 @@ namespace Neo4Net.Kernel.ha
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private static org.Neo4Net.test.OtherThreadExecutor.WorkerCommand<Object,bool> createPropertyExistenceConstraintCommand(final org.Neo4Net.graphdb.GraphDatabaseService db, final String query)
+//ORIGINAL LINE: private static Neo4Net.test.OtherThreadExecutor.WorkerCommand<Object,bool> createPropertyExistenceConstraintCommand(final Neo4Net.graphdb.GraphDatabaseService db, final String query)
 		 private static WorkerCommand<object, bool> CreatePropertyExistenceConstraintCommand( IGraphDatabaseService db, string query )
 		 {
 			  return state =>

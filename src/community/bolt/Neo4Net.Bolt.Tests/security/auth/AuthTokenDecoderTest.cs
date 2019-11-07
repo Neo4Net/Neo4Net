@@ -24,10 +24,10 @@ namespace Neo4Net.Bolt.security.auth
 	using Test = org.junit.jupiter.api.Test;
 
 
-	using AuthToken = Neo4Net.Kernel.api.security.AuthToken;
+	using AuthToken = Neo4Net.Kernel.Api.security.AuthToken;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.map;
+//	import static Neo4Net.helpers.collection.MapUtil.map;
 
 	public abstract class AuthTokenDecoderTest
 	{
@@ -40,7 +40,7 @@ namespace Neo4Net.Bolt.security.auth
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void ShouldDecodeAuthTokenWithStringCredentials()
 		 {
-			  TestShouldDecodeAuthToken( AuthTokenMapWith( Neo4Net.Kernel.api.security.AuthToken_Fields.CREDENTIALS, "password" ), true );
+			  TestShouldDecodeAuthToken( AuthTokenMapWith( Neo4Net.Kernel.Api.security.AuthToken_Fields.CREDENTIALS, "password" ), true );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -48,7 +48,7 @@ namespace Neo4Net.Bolt.security.auth
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void ShouldDecodeAuthTokenWithEmptyStringCredentials()
 		 {
-			  TestShouldDecodeAuthToken( AuthTokenMapWith( Neo4Net.Kernel.api.security.AuthToken_Fields.CREDENTIALS, "" ), true );
+			  TestShouldDecodeAuthToken( AuthTokenMapWith( Neo4Net.Kernel.Api.security.AuthToken_Fields.CREDENTIALS, "" ), true );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -56,7 +56,7 @@ namespace Neo4Net.Bolt.security.auth
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void ShouldDecodeAuthTokenWithNullCredentials()
 		 {
-			  TestShouldDecodeAuthToken( AuthTokenMapWith( Neo4Net.Kernel.api.security.AuthToken_Fields.CREDENTIALS, null ), true );
+			  TestShouldDecodeAuthToken( AuthTokenMapWith( Neo4Net.Kernel.Api.security.AuthToken_Fields.CREDENTIALS, null ), true );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -64,7 +64,7 @@ namespace Neo4Net.Bolt.security.auth
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void ShouldDecodeAuthTokenWithStringNewCredentials()
 		 {
-			  TestShouldDecodeAuthToken( AuthTokenMapWith( Neo4Net.Kernel.api.security.AuthToken_Fields.NEW_CREDENTIALS, "password" ), true );
+			  TestShouldDecodeAuthToken( AuthTokenMapWith( Neo4Net.Kernel.Api.security.AuthToken_Fields.NEW_CREDENTIALS, "password" ), true );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -72,7 +72,7 @@ namespace Neo4Net.Bolt.security.auth
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void ShouldDecodeAuthTokenWithEmptyStringNewCredentials()
 		 {
-			  TestShouldDecodeAuthToken( AuthTokenMapWith( Neo4Net.Kernel.api.security.AuthToken_Fields.NEW_CREDENTIALS, "" ), true );
+			  TestShouldDecodeAuthToken( AuthTokenMapWith( Neo4Net.Kernel.Api.security.AuthToken_Fields.NEW_CREDENTIALS, "" ), true );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -80,7 +80,7 @@ namespace Neo4Net.Bolt.security.auth
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void ShouldDecodeAuthTokenWithNullNewCredentials()
 		 {
-			  TestShouldDecodeAuthToken( AuthTokenMapWith( Neo4Net.Kernel.api.security.AuthToken_Fields.NEW_CREDENTIALS, null ), true );
+			  TestShouldDecodeAuthToken( AuthTokenMapWith( Neo4Net.Kernel.Api.security.AuthToken_Fields.NEW_CREDENTIALS, null ), true );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -90,7 +90,7 @@ namespace Neo4Net.Bolt.security.auth
 		 {
 			  foreach ( object value in _valuesWithInvalidTypes )
 			  {
-					TestShouldDecodeAuthToken( AuthTokenMapWith( Neo4Net.Kernel.api.security.AuthToken_Fields.NEW_CREDENTIALS, value ), false );
+					TestShouldDecodeAuthToken( AuthTokenMapWith( Neo4Net.Kernel.Api.security.AuthToken_Fields.NEW_CREDENTIALS, value ), false );
 			  }
 		 }
 
@@ -101,13 +101,13 @@ namespace Neo4Net.Bolt.security.auth
 		 {
 			  foreach ( object value in _valuesWithInvalidTypes )
 			  {
-					TestShouldDecodeAuthToken( AuthTokenMapWith( Neo4Net.Kernel.api.security.AuthToken_Fields.NEW_CREDENTIALS, value ), false );
+					TestShouldDecodeAuthToken( AuthTokenMapWith( Neo4Net.Kernel.Api.security.AuthToken_Fields.NEW_CREDENTIALS, value ), false );
 			  }
 		 }
 
 		 private static IDictionary<string, object> AuthTokenMapWith( string fieldName, object fieldValue )
 		 {
-			  return map( Neo4Net.Kernel.api.security.AuthToken_Fields.PRINCIPAL, "Neo4Net", fieldName, fieldValue );
+			  return map( Neo4Net.Kernel.Api.security.AuthToken_Fields.PRINCIPAL, "Neo4Net", fieldName, fieldValue );
 		 }
 
 		 private static object[] _valuesWithInvalidTypes = new object[]

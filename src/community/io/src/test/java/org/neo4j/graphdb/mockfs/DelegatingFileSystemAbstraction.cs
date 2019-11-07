@@ -37,14 +37,14 @@ namespace Neo4Net.GraphDb.mockfs
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.io.fs.watcher.FileWatcher fileWatcher() throws java.io.IOException
+//ORIGINAL LINE: public Neo4Net.io.fs.watcher.FileWatcher fileWatcher() throws java.io.IOException
 		 public override FileWatcher FileWatcher()
 		 {
 			  return @delegate.FileWatcher();
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.io.fs.StoreChannel open(java.io.File fileName, org.Neo4Net.io.fs.OpenMode openMode) throws java.io.IOException
+//ORIGINAL LINE: public Neo4Net.io.fs.StoreChannel open(java.io.File fileName, Neo4Net.io.fs.OpenMode openMode) throws java.io.IOException
 		 public override StoreChannel Open( File fileName, OpenMode openMode )
 		 {
 			  return @delegate.Open( fileName, openMode );
@@ -96,7 +96,7 @@ namespace Neo4Net.GraphDb.mockfs
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.util.stream.Stream<org.Neo4Net.io.fs.FileHandle> streamFilesRecursive(java.io.File directory) throws java.io.IOException
+//ORIGINAL LINE: public java.util.stream.Stream<Neo4Net.io.fs.FileHandle> streamFilesRecursive(java.io.File directory) throws java.io.IOException
 		 public override Stream<FileHandle> StreamFilesRecursive( File directory )
 		 {
 			  return StreamFilesRecursive.streamFilesRecursive( directory, this );
@@ -110,7 +110,7 @@ namespace Neo4Net.GraphDb.mockfs
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.io.fs.StoreChannel create(java.io.File fileName) throws java.io.IOException
+//ORIGINAL LINE: public Neo4Net.io.fs.StoreChannel create(java.io.File fileName) throws java.io.IOException
 		 public override StoreChannel Create( File fileName )
 		 {
 			  return @delegate.Create( fileName );

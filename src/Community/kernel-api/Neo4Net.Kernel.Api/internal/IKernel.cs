@@ -28,7 +28,7 @@ namespace Neo4Net.Kernel.Api.Internal
    public interface IKernel
    {
       //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-      //ORIGINAL LINE: <T extends Transaction> T BeginTransaction(Transaction_Type type, org.Neo4Net.Kernel.Api.Internal.security.LoginContext loginContext) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
+      //ORIGINAL LINE: <T extends Transaction> T BeginTransaction(Transaction_Type type, Neo4Net.Kernel.Api.Internal.security.LoginContext loginContext) throws Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
       T BeginTransaction<T>(Transaction_Type type, LoginContext loginContext); // T: ITransaction;
    }
 }

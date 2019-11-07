@@ -40,7 +40,7 @@ namespace Neo4Net.Kernel.impl.store.format.highlimit
 		 private const int PAGE_SIZE = 100;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.RandomRule random = new org.Neo4Net.test.rule.RandomRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.RandomRule random = new Neo4Net.test.rule.RandomRule();
 		 public readonly RandomRule Random = new RandomRule();
 		 private readonly StubPageCursor _cursor = new StubPageCursor( 0, PAGE_SIZE );
 

@@ -73,7 +73,7 @@ namespace Neo4Net.GraphDb
 		}
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ClassRule public static final org.Neo4Net.test.rule.DatabaseRule globalDb = new org.Neo4Net.test.rule.ImpermanentDatabaseRule().withSetting(org.Neo4Net.graphdb.factory.GraphDatabaseSettings.shutdown_transaction_end_timeout, "10s");
+//ORIGINAL LINE: @ClassRule public static final Neo4Net.test.rule.DatabaseRule globalDb = new Neo4Net.test.rule.ImpermanentDatabaseRule().withSetting(Neo4Net.graphdb.factory.GraphDatabaseSettings.shutdown_transaction_end_timeout, "10s");
 		 public static readonly DatabaseRule GlobalDb = new ImpermanentDatabaseRule().withSetting(GraphDatabaseSettings.shutdown_transaction_end_timeout, "10s");
 
 		 private readonly ExpectedException _exception = ExpectedException.none();
@@ -462,14 +462,14 @@ namespace Neo4Net.GraphDb
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private org.Neo4Net.test.OtherThreadExecutor.WorkerCommand<Void, Transaction> beginTx(final IGraphDatabaseService db)
+//ORIGINAL LINE: private Neo4Net.test.OtherThreadExecutor.WorkerCommand<Void, Transaction> beginTx(final IGraphDatabaseService db)
 		 private WorkerCommand<Void, Transaction> BeginTx( IGraphDatabaseService db )
 		 {
 			  return state => Db.beginTx();
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private org.Neo4Net.test.OtherThreadExecutor.WorkerCommand<Void, Object> setProperty(final IPropertyContainer IEntity, final String key, final String value)
+//ORIGINAL LINE: private Neo4Net.test.OtherThreadExecutor.WorkerCommand<Void, Object> setProperty(final IPropertyContainer IEntity, final String key, final String value)
 		 private WorkerCommand<Void, object> SetProperty( IPropertyContainer IEntity, string key, string value )
 		 {
 			  return state =>
@@ -480,7 +480,7 @@ namespace Neo4Net.GraphDb
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private org.Neo4Net.test.OtherThreadExecutor.WorkerCommand<Void, Void> close(final Transaction tx)
+//ORIGINAL LINE: private Neo4Net.test.OtherThreadExecutor.WorkerCommand<Void, Void> close(final Transaction tx)
 		 private WorkerCommand<Void, Void> Close( Transaction tx )
 		 {
 			  return state =>

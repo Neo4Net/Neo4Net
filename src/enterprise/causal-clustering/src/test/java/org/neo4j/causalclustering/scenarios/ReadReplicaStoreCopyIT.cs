@@ -53,14 +53,14 @@ namespace Neo4Net.causalclustering.scenarios
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.FALSE;
+//	import static Neo4Net.kernel.configuration.Settings.FALSE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.assertion.Assert.assertEventually;
+//	import static Neo4Net.test.assertion.Assert.assertEventually;
 
 	public class ReadReplicaStoreCopyIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.causalclustering.ClusterRule clusterRule = new org.Neo4Net.test.causalclustering.ClusterRule().withSharedCoreParam(org.Neo4Net.graphdb.factory.GraphDatabaseSettings.keep_logical_logs, FALSE).withNumberOfCoreMembers(3).withNumberOfReadReplicas(1);
+//ORIGINAL LINE: @Rule public final Neo4Net.test.causalclustering.ClusterRule clusterRule = new Neo4Net.test.causalclustering.ClusterRule().withSharedCoreParam(Neo4Net.graphdb.factory.GraphDatabaseSettings.keep_logical_logs, FALSE).withNumberOfCoreMembers(3).withNumberOfReadReplicas(1);
 		 public readonly ClusterRule ClusterRule = new ClusterRule().withSharedCoreParam(GraphDatabaseSettings.keep_logical_logs, FALSE).withNumberOfCoreMembers(3).withNumberOfReadReplicas(1);
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -69,7 +69,7 @@ namespace Neo4Net.causalclustering.scenarios
 		 public virtual void ShouldNotBePossibleToStartTransactionsWhenReadReplicaCopiesStore()
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.causalclustering.discovery.Cluster<?> cluster = clusterRule.startCluster();
+//ORIGINAL LINE: Neo4Net.causalclustering.discovery.Cluster<?> cluster = clusterRule.startCluster();
 			  Cluster<object> cluster = ClusterRule.startCluster();
 
 			  ReadReplica readReplica = cluster.FindAnyReadReplica();
@@ -103,7 +103,7 @@ namespace Neo4Net.causalclustering.scenarios
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void writeSomeDataAndForceLogRotations(org.Neo4Net.causalclustering.discovery.Cluster<?> cluster) throws Exception
+//ORIGINAL LINE: private static void writeSomeDataAndForceLogRotations(Neo4Net.causalclustering.discovery.Cluster<?> cluster) throws Exception
 		 private static void WriteSomeDataAndForceLogRotations<T1>( Cluster<T1> cluster )
 		 {
 			  for ( int i = 0; i < 20; i++ )

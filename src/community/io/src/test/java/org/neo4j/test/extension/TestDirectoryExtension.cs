@@ -32,7 +32,7 @@ namespace Neo4Net.Test.extension
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.rule.TestDirectory.testDirectory;
+//	import static Neo4Net.test.rule.TestDirectory.testDirectory;
 
 	public class TestDirectoryExtension : StatefullFieldExtension<TestDirectory>, BeforeEachCallback, AfterEachCallback, AfterAllCallback
 	{

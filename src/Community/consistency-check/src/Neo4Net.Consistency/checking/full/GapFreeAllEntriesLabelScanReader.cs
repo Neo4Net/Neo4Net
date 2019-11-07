@@ -23,8 +23,8 @@ namespace Neo4Net.Consistency.checking.full
 {
 
 	using Neo4Net.Collections.Helpers;
-	using AllEntriesLabelScanReader = Neo4Net.Kernel.api.labelscan.AllEntriesLabelScanReader;
-	using NodeLabelRange = Neo4Net.Kernel.api.labelscan.NodeLabelRange;
+	using AllEntriesLabelScanReader = Neo4Net.Kernel.Api.LabelScan.AllEntriesLabelScanReader;
+	using NodeLabelRange = Neo4Net.Kernel.Api.LabelScan.NodeLabelRange;
 
 	/// <summary>
 	/// Inserts empty <seealso cref="NodeLabelRange"/> for those ranges missing from the source iterator.

@@ -40,33 +40,33 @@ namespace Neo4Net.causalclustering.scenarios
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.CausalClusteringSettings.compression_implementations;
+//	import static Neo4Net.causalclustering.core.CausalClusteringSettings.compression_implementations;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.discovery.Cluster.dataMatchesEventually;
+//	import static Neo4Net.causalclustering.discovery.Cluster.dataMatchesEventually;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.helpers.DataCreator.countNodes;
+//	import static Neo4Net.causalclustering.helpers.DataCreator.countNodes;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.helpers.DataCreator.createLabelledNodesWithProperty;
+//	import static Neo4Net.causalclustering.helpers.DataCreator.createLabelledNodesWithProperty;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.Label.label;
+//	import static Neo4Net.graphdb.Label.label;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class ClusterCompressionIT
 	public class ClusterCompressionIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Parameterized.Parameter public org.Neo4Net.causalclustering.protocol.Protocol_ModifierProtocol modifierProtocol;
+//ORIGINAL LINE: @Parameterized.Parameter public Neo4Net.causalclustering.protocol.Protocol_ModifierProtocol modifierProtocol;
 		 public Neo4Net.causalclustering.protocol.Protocol_ModifierProtocol ModifierProtocol;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Parameterized.Parameters(name = "{0}") public static java.util.Collection<org.Neo4Net.causalclustering.protocol.Protocol_ModifierProtocol> params()
+//ORIGINAL LINE: @Parameterized.Parameters(name = "{0}") public static java.util.Collection<Neo4Net.causalclustering.protocol.Protocol_ModifierProtocol> params()
 		 public static ICollection<Neo4Net.causalclustering.protocol.Protocol_ModifierProtocol> Params()
 		 {
 			  return Arrays.asList( Protocol_ModifierProtocols.values() );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.causalclustering.ClusterRule clusterRule = new org.Neo4Net.test.causalclustering.ClusterRule().withNumberOfCoreMembers(3).withNumberOfReadReplicas(3).withTimeout(1000, SECONDS);
+//ORIGINAL LINE: @Rule public final Neo4Net.test.causalclustering.ClusterRule clusterRule = new Neo4Net.test.causalclustering.ClusterRule().withNumberOfCoreMembers(3).withNumberOfReadReplicas(3).withTimeout(1000, SECONDS);
 		 public readonly ClusterRule ClusterRule = new ClusterRule().withNumberOfCoreMembers(3).withNumberOfReadReplicas(3).withTimeout(1000, SECONDS);
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -78,7 +78,7 @@ namespace Neo4Net.causalclustering.scenarios
 			  ClusterRule.withSharedCoreParam( compression_implementations, ModifierProtocol.implementation() ).withSharedReadReplicaParam(compression_implementations, ModifierProtocol.implementation());
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.causalclustering.discovery.Cluster<?> cluster = clusterRule.startCluster();
+//ORIGINAL LINE: Neo4Net.causalclustering.discovery.Cluster<?> cluster = clusterRule.startCluster();
 			  Cluster<object> cluster = ClusterRule.startCluster();
 
 				// when

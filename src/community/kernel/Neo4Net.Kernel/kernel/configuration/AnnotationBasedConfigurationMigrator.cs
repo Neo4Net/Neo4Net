@@ -32,7 +32,7 @@ namespace Neo4Net.Kernel.configuration
 		 private List<ConfigurationMigrator> _migrators = new List<ConfigurationMigrator>();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: AnnotationBasedConfigurationMigrator(@Nonnull Iterable<org.Neo4Net.configuration.LoadableConfig> settingsClasses)
+//ORIGINAL LINE: AnnotationBasedConfigurationMigrator(@Nonnull Iterable<Neo4Net.configuration.LoadableConfig> settingsClasses)
 		 internal AnnotationBasedConfigurationMigrator( IEnumerable<LoadableConfig> settingsClasses )
 		 {
 			  foreach ( LoadableConfig loadableConfig in settingsClasses )

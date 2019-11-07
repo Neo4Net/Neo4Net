@@ -40,55 +40,55 @@ namespace Neo4Net.Ext.Udc.impl
 	using UsageDataKeys = Neo4Net.Udc.UsageDataKeys;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.ext.udc.UdcConstants.CLUSTER_HASH;
+//	import static Neo4Net.ext.udc.UdcConstants.CLUSTER_HASH;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.ext.udc.UdcConstants.DATABASE_MODE;
+//	import static Neo4Net.ext.udc.UdcConstants.DATABASE_MODE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.ext.udc.UdcConstants.DISTRIBUTION;
+//	import static Neo4Net.ext.udc.UdcConstants.DISTRIBUTION;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.ext.udc.UdcConstants.EDITION;
+//	import static Neo4Net.ext.udc.UdcConstants.EDITION;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.ext.udc.UdcConstants.FEATURES;
+//	import static Neo4Net.ext.udc.UdcConstants.FEATURES;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.ext.udc.UdcConstants.HEAP_SIZE;
+//	import static Neo4Net.ext.udc.UdcConstants.HEAP_SIZE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.ext.udc.UdcConstants.ID;
+//	import static Neo4Net.ext.udc.UdcConstants.ID;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.ext.udc.UdcConstants.LABEL_IDS_IN_USE;
+//	import static Neo4Net.ext.udc.UdcConstants.LABEL_IDS_IN_USE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.ext.udc.UdcConstants.MAC;
+//	import static Neo4Net.ext.udc.UdcConstants.MAC;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.ext.udc.UdcConstants.NODE_IDS_IN_USE;
+//	import static Neo4Net.ext.udc.UdcConstants.NODE_IDS_IN_USE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.ext.udc.UdcConstants.NUM_PROCESSORS;
+//	import static Neo4Net.ext.udc.UdcConstants.NUM_PROCESSORS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.ext.udc.UdcConstants.OS_PROPERTY_PREFIX;
+//	import static Neo4Net.ext.udc.UdcConstants.OS_PROPERTY_PREFIX;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.ext.udc.UdcConstants.PROPERTY_IDS_IN_USE;
+//	import static Neo4Net.ext.udc.UdcConstants.PROPERTY_IDS_IN_USE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.ext.udc.UdcConstants.REGISTRATION;
+//	import static Neo4Net.ext.udc.UdcConstants.REGISTRATION;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.ext.udc.UdcConstants.RELATIONSHIP_IDS_IN_USE;
+//	import static Neo4Net.ext.udc.UdcConstants.RELATIONSHIP_IDS_IN_USE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.ext.udc.UdcConstants.REVISION;
+//	import static Neo4Net.ext.udc.UdcConstants.REVISION;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.ext.udc.UdcConstants.SERVER_ID;
+//	import static Neo4Net.ext.udc.UdcConstants.SERVER_ID;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.ext.udc.UdcConstants.SOURCE;
+//	import static Neo4Net.ext.udc.UdcConstants.SOURCE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.ext.udc.UdcConstants.STORE_SIZE;
+//	import static Neo4Net.ext.udc.UdcConstants.STORE_SIZE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.ext.udc.UdcConstants.TAGS;
+//	import static Neo4Net.ext.udc.UdcConstants.TAGS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.ext.udc.UdcConstants.TOTAL_MEMORY;
+//	import static Neo4Net.ext.udc.UdcConstants.TOTAL_MEMORY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.ext.udc.UdcConstants.UDC_PROPERTY_PREFIX;
+//	import static Neo4Net.ext.udc.UdcConstants.UDC_PROPERTY_PREFIX;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.ext.udc.UdcConstants.UNKNOWN_DIST;
+//	import static Neo4Net.ext.udc.UdcConstants.UNKNOWN_DIST;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.ext.udc.UdcConstants.USER_AGENTS;
+//	import static Neo4Net.ext.udc.UdcConstants.USER_AGENTS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.ext.udc.UdcConstants.VERSION;
+//	import static Neo4Net.ext.udc.UdcConstants.VERSION;
 
 	public class DefaultUdcInformationCollector : UdcInformationCollector
 	{
@@ -239,7 +239,7 @@ namespace Neo4Net.Ext.Udc.impl
 		 {
 			  try
 			  {
-					Type settings = Type.GetType( "org.Neo4Net.cluster.ClusterSettings" );
+					Type settings = Type.GetType( "Neo4Net.cluster.ClusterSettings" );
 					Setting setting = ( Setting ) settings.GetField( "cluster_name" ).get( null );
 					object name = _config.get( setting );
 					return name != null ? Math.Abs( name.GetHashCode() % int.MaxValue ) : null;

@@ -15,7 +15,7 @@ namespace Neo4Net.Server.enterprise
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verifyNoMoreInteractions;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.commandline.Util.Neo4NetVersion;
+//	import static Neo4Net.commandline.Util.Neo4NetVersion;
 
 	public class EnterpriseEntryPointTest
 	{

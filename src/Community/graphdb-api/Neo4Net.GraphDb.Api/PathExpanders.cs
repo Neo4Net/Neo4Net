@@ -152,7 +152,7 @@ namespace Neo4Net.GraphDb
       }
 
       /// <summary>
-      /// A wrapper that uses <seealso cref="org.Neo4Net.graphdb.traversal.Paths.DefaultPathDescriptor"/> to print expanded paths.
+      /// A wrapper that uses <seealso cref="Neo4Net.GraphDb.traversal.Paths.DefaultPathDescriptor"/> to print expanded paths.
       /// All expanded paths will be printed using System.out. </summary>
       /// <param name="source">    <seealso cref="PathExpander"/> to wrap. </param>
       /// @param <STATE>   the type of the object that holds the state </param>
@@ -163,7 +163,7 @@ namespace Neo4Net.GraphDb
       }
 
       /// <summary>
-      /// A wrapper that uses <seealso cref="org.Neo4Net.graphdb.traversal.Paths.DefaultPathDescriptor"/>
+      /// A wrapper that uses <seealso cref="Neo4Net.GraphDb.traversal.Paths.DefaultPathDescriptor"/>
       /// to print expanded paths that fulfill <seealso cref="BiFunction"/> predicate.
       /// Will use System.out as <seealso cref="PrintStream"/>. </summary>
       /// <param name="source">    <seealso cref="PathExpander"/> to wrap. </param>
@@ -176,12 +176,12 @@ namespace Neo4Net.GraphDb
       }
 
       /// <summary>
-      /// A wrapper that uses <seealso cref="org.Neo4Net.graphdb.traversal.Paths.DefaultPathDescriptor"/> to print expanded paths
-      /// using given <seealso cref="org.Neo4Net.graphdb.traversal.Paths.PathDescriptor"/>.
+      /// A wrapper that uses <seealso cref="Neo4Net.GraphDb.traversal.Paths.DefaultPathDescriptor"/> to print expanded paths
+      /// using given <seealso cref="Neo4Net.GraphDb.traversal.Paths.PathDescriptor"/>.
       /// All expanded paths will be printed.
       /// Will use System.out as <seealso cref="PrintStream"/>. </summary>
       /// <param name="source">        <seealso cref="PathExpander"/> to wrap. </param>
-      /// <param name="descriptor">    <seealso cref="org.Neo4Net.graphdb.traversal.Paths.PathDescriptor"/> to use when printing paths. </param>
+      /// <param name="descriptor">    <seealso cref="Neo4Net.GraphDb.traversal.Paths.PathDescriptor"/> to use when printing paths. </param>
       /// @param <STATE>       the type of the object that holds the state </param>
       /// <returns>              A new <seealso cref="PathExpander"/>. </returns>
       public static IPathExpander<STATE> PrintingWrapper<STATE>(IPathExpander<STATE> source, Paths.IPathDescriptor descriptor)
@@ -190,12 +190,12 @@ namespace Neo4Net.GraphDb
       }
 
       /// <summary>
-      /// A wrapper that uses <seealso cref="org.Neo4Net.graphdb.traversal.Paths.DefaultPathDescriptor"/> to print expanded paths
-      /// that fulfill <seealso cref="BiFunction"/> predicate using given <seealso cref="org.Neo4Net.graphdb.traversal.Paths.PathDescriptor"/>.
+      /// A wrapper that uses <seealso cref="Neo4Net.GraphDb.traversal.Paths.DefaultPathDescriptor"/> to print expanded paths
+      /// that fulfill <seealso cref="BiFunction"/> predicate using given <seealso cref="Neo4Net.GraphDb.traversal.Paths.PathDescriptor"/>.
       /// Will use System.out as <seealso cref="PrintStream"/>. </summary>
       /// <param name="source">    <seealso cref="PathExpander"/> to wrap. </param>
       /// <param name="pred">      <seealso cref="BiFunction"/> used as predicate for printing expansion. </param>
-      /// <param name="descriptor"> <seealso cref="org.Neo4Net.graphdb.traversal.Paths.PathDescriptor"/> to use when printing paths. </param>
+      /// <param name="descriptor"> <seealso cref="Neo4Net.GraphDb.traversal.Paths.PathDescriptor"/> to use when printing paths. </param>
       /// @param <STATE>   the type of the object that holds the state </param>
       /// <returns>          A new <seealso cref="PathExpander"/>. </returns>
       public static IPathExpander<STATE> PrintingWrapper<STATE>(IPathExpander<STATE> source, System.Func<IPath, IBranchState, bool> pred, Paths.IPathDescriptor descriptor)
@@ -204,11 +204,11 @@ namespace Neo4Net.GraphDb
       }
 
       /// <summary>
-      /// A wrapper that uses <seealso cref="org.Neo4Net.graphdb.traversal.Paths.DefaultPathDescriptor"/> to print expanded paths
-      /// that fulfill <seealso cref="BiFunction"/> predicate using given <seealso cref="org.Neo4Net.graphdb.traversal.Paths.PathDescriptor"/>. </summary>
+      /// A wrapper that uses <seealso cref="Neo4Net.GraphDb.traversal.Paths.DefaultPathDescriptor"/> to print expanded paths
+      /// that fulfill <seealso cref="BiFunction"/> predicate using given <seealso cref="Neo4Net.GraphDb.traversal.Paths.PathDescriptor"/>. </summary>
       /// <param name="source">        <seealso cref="PathExpander"/> to wrap. </param>
       /// <param name="pred">          <seealso cref="BiFunction"/> used as predicate for printing expansion. </param>
-      /// <param name="descriptor">    <seealso cref="org.Neo4Net.graphdb.traversal.Paths.PathDescriptor"/> to use when printing paths. </param>
+      /// <param name="descriptor">    <seealso cref="Neo4Net.GraphDb.traversal.Paths.PathDescriptor"/> to use when printing paths. </param>
       /// <param name="out">           <seealso cref="PrintStream"/> to use for printing expanded paths </param>
       /// @param <STATE>       the type of the object that holds the state </param>
       /// <returns>              A new <seealso cref="PathExpander"/>. </returns>

@@ -40,13 +40,13 @@ namespace Neo4Net.Bolt.v1.packstream
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertThrows;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.packstream.PackType.BYTES;
+//	import static Neo4Net.bolt.v1.packstream.PackType.BYTES;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.packstream.PackType.LIST;
+//	import static Neo4Net.bolt.v1.packstream.PackType.LIST;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.packstream.PackType.MAP;
+//	import static Neo4Net.bolt.v1.packstream.PackType.MAP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.packstream.PackType.STRING;
+//	import static Neo4Net.bolt.v1.packstream.PackType.STRING;
 
 	internal class PackStreamTest
 	{

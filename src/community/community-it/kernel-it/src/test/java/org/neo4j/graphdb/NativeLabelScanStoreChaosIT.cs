@@ -27,7 +27,7 @@ namespace Neo4Net.GraphDb
 
 
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
-	using LabelScanStoreTest = Neo4Net.Kernel.api.impl.labelscan.LabelScanStoreTest;
+	using LabelScanStoreTest = Neo4Net.Kernel.Api.impl.labelscan.LabelScanStoreTest;
 	using DatabaseRule = Neo4Net.Test.rule.DatabaseRule;
 	using EmbeddedDatabaseRule = Neo4Net.Test.rule.EmbeddedDatabaseRule;
 	using RandomRule = Neo4Net.Test.rule.RandomRule;
@@ -35,7 +35,7 @@ namespace Neo4Net.GraphDb
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.asSet;
+//	import static Neo4Net.helpers.collection.Iterators.asSet;
 
 	/// <summary>
 	/// Tests functionality around missing or corrupted lucene label scan store index, and that

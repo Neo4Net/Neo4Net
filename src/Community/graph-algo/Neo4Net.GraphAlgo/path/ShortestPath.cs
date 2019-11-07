@@ -304,7 +304,7 @@ namespace Neo4Net.GraphAlgo.Path
 			  internal bool FinishCurrentLayerThenStop;
 			  internal readonly Node StartNode;
 			  internal int CurrentDepth;
-			  internal ResourceIterator<Relationship> NextRelationships;
+			  internal IResourceIterator<Relationship> NextRelationships;
 			  internal readonly ICollection<Node> NextNodes = new List<Node>();
 			  internal readonly IDictionary<Node, LevelData> VisitedNodes = new Dictionary<Node, LevelData>();
 			  internal readonly ICollection<long> SharedVisitedRels;
@@ -358,7 +358,7 @@ namespace Neo4Net.GraphAlgo.Path
 					  this.outerInstance = outerInstance;
 				  }
 
-				  protected internal override ResourceIterator<Relationship> createNestedIterator( Node node )
+				  protected internal override IResourceIterator<Relationship> createNestedIterator( Node node )
 				  {
 						_outerInstance.lastPath.EndNode = node;
 						return Iterators.asResourceIterator( _outerInstance.expander.expand( _outerInstance.lastPath, BranchState.NO_STATE ).GetEnumerator() );

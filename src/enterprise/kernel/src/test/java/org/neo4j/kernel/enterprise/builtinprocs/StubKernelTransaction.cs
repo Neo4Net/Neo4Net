@@ -42,8 +42,8 @@ namespace Neo4Net.Kernel.enterprise.builtinprocs
 	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
 	using AuthSubject = Neo4Net.Kernel.Api.Internal.security.AuthSubject;
 	using SecurityContext = Neo4Net.Kernel.Api.Internal.security.SecurityContext;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
-	using Statement = Neo4Net.Kernel.api.Statement;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
+	using Statement = Neo4Net.Kernel.Api.Statement;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using StubStatement = Neo4Net.Kernel.builtinprocs.StubStatement;
 	using ClockContext = Neo4Net.Kernel.Impl.Api.ClockContext;
@@ -227,7 +227,7 @@ namespace Neo4Net.Kernel.enterprise.builtinprocs
 			  return 0;
 		 }
 
-		 public override void RegisterCloseListener( Neo4Net.Kernel.api.KernelTransaction_CloseListener listener )
+		 public override void RegisterCloseListener( Neo4Net.Kernel.Api.KernelTransaction_CloseListener listener )
 		 {
 		 }
 
@@ -252,7 +252,7 @@ namespace Neo4Net.Kernel.enterprise.builtinprocs
 			 }
 		 }
 
-		 public override Neo4Net.Kernel.api.KernelTransaction_Revertable OverrideWith( SecurityContext context )
+		 public override Neo4Net.Kernel.Api.KernelTransaction_Revertable OverrideWith( SecurityContext context )
 		 {
 			  return null;
 		 }

@@ -18,12 +18,12 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 /// <summary>
-/// Contains <seealso cref="org.Neo4Net.index.lucene.QueryContext"/> and
-/// <seealso cref="org.Neo4Net.index.lucene.ValueContext"/> which is part of the
-/// public API for an <seealso cref="org.Neo4Net.GraphDb.Index.Index"/> backed by Lucene.
+/// Contains <seealso cref="Neo4Net.index.lucene.QueryContext"/> and
+/// <seealso cref="Neo4Net.index.lucene.ValueContext"/> which is part of the
+/// public API for an <seealso cref="Neo4Net.GraphDb.Index.Index"/> backed by Lucene.
 /// 
 /// Also contain a timeline implementation on top of an
-/// <seealso cref="org.Neo4Net.GraphDb.Index.Index"/> based on Lucene.
+/// <seealso cref="Neo4Net.GraphDb.Index.Index"/> based on Lucene.
 /// </summary>
 namespace Neo4Net.Index.lucene
 {

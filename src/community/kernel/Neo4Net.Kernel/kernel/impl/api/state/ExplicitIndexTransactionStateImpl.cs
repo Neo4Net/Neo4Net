@@ -26,8 +26,8 @@ namespace Neo4Net.Kernel.Impl.Api.state
 	using Relationship = Neo4Net.GraphDb.Relationship;
 	using IndexManager = Neo4Net.GraphDb.Index.IndexManager;
 	using ExplicitIndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
-	using ExplicitIndex = Neo4Net.Kernel.api.ExplicitIndex;
-	using ExplicitIndexTransactionState = Neo4Net.Kernel.api.txstate.ExplicitIndexTransactionState;
+	using ExplicitIndex = Neo4Net.Kernel.Api.ExplicitIndex;
+	using ExplicitIndexTransactionState = Neo4Net.Kernel.Api.txstate.ExplicitIndexTransactionState;
 	using IndexCommand = Neo4Net.Kernel.impl.index.IndexCommand;
 	using AddNodeCommand = Neo4Net.Kernel.impl.index.IndexCommand.AddNodeCommand;
 	using AddRelationshipCommand = Neo4Net.Kernel.impl.index.IndexCommand.AddRelationshipCommand;
@@ -44,7 +44,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 	using StorageCommand = Neo4Net.Kernel.Api.StorageEngine.StorageCommand;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.ExplicitIndexStore.assertConfigMatches;
+//	import static Neo4Net.kernel.impl.index.ExplicitIndexStore.assertConfigMatches;
 
 	/// <summary>
 	/// Provides access to <seealso cref="ExplicitIndex indexes"/>. Holds transaction state for all providers in a transaction.
@@ -69,7 +69,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.kernel.api.ExplicitIndex nodeChanges(String indexName) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: public Neo4Net.kernel.api.ExplicitIndex nodeChanges(String indexName) throws Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 public override ExplicitIndex NodeChanges( string indexName )
 		 {
 			  IDictionary<string, string> configuration = _indexConfigStore.get( typeof( Node ), indexName );
@@ -84,7 +84,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.kernel.api.ExplicitIndex relationshipChanges(String indexName) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: public Neo4Net.kernel.api.ExplicitIndex relationshipChanges(String indexName) throws Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 public override ExplicitIndex RelationshipChanges( string indexName )
 		 {
 			  IDictionary<string, string> configuration = _indexConfigStore.get( typeof( Relationship ), indexName );

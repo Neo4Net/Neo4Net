@@ -44,7 +44,7 @@ namespace Neo4Net.causalclustering.discovery
 		 /// </param>
 		 /// <returns> True if the cluster ID was successfully CAS:ed, otherwise false. </returns>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: boolean setClusterId(org.Neo4Net.causalclustering.identity.ClusterId clusterId, String dbName) throws InterruptedException;
+//ORIGINAL LINE: boolean setClusterId(Neo4Net.causalclustering.identity.ClusterId clusterId, String dbName) throws InterruptedException;
 		 bool SetClusterId( ClusterId clusterId, string dbName );
 
 		 /// <summary>

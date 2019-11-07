@@ -44,9 +44,9 @@ namespace Neo4Net.GraphAlgo.Path
 	using Iterators = Neo4Net.Collections.Helpers.Iterators;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.traversal.Evaluators.includeWhereEndNodeIs;
+//	import static Neo4Net.graphdb.traversal.Evaluators.includeWhereEndNodeIs;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.traversal.InitialBranchState.NO_STATE;
+//	import static Neo4Net.graphdb.traversal.InitialBranchState.NO_STATE;
 
 	/// <summary>
 	/// Implementation of A* algorithm, see <seealso cref="AStar"/>, but using the traversal
@@ -63,7 +63,7 @@ namespace Neo4Net.GraphAlgo.Path
 		 private bool _stopAfterLowestWeight;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") public <T> TraversalAStar(org.Neo4Net.graphdb.PathExpander<T> expander, org.Neo4Net.graphalgo.CostEvaluator<double> costEvaluator, org.Neo4Net.graphalgo.EstimateEvaluator<double> estimateEvaluator)
+//ORIGINAL LINE: @SuppressWarnings("unchecked") public <T> TraversalAStar(Neo4Net.graphdb.PathExpander<T> expander, Neo4Net.graphalgo.CostEvaluator<double> costEvaluator, Neo4Net.graphalgo.EstimateEvaluator<double> estimateEvaluator)
 		 public TraversalAStar<T>( PathExpander<T> expander, CostEvaluator<double> costEvaluator, EstimateEvaluator<double> estimateEvaluator ) : this( expander, NO_STATE, costEvaluator, estimateEvaluator, true )
 		 {
 		 }
@@ -73,7 +73,7 @@ namespace Neo4Net.GraphAlgo.Path
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") public <T> TraversalAStar(org.Neo4Net.graphdb.PathExpander<T> expander, org.Neo4Net.graphalgo.CostEvaluator<double> costEvaluator, org.Neo4Net.graphalgo.EstimateEvaluator<double> estimateEvaluator, boolean stopAfterLowestWeight)
+//ORIGINAL LINE: @SuppressWarnings("unchecked") public <T> TraversalAStar(Neo4Net.graphdb.PathExpander<T> expander, Neo4Net.graphalgo.CostEvaluator<double> costEvaluator, Neo4Net.graphalgo.EstimateEvaluator<double> estimateEvaluator, boolean stopAfterLowestWeight)
 		 public TraversalAStar<T>( PathExpander<T> expander, CostEvaluator<double> costEvaluator, EstimateEvaluator<double> estimateEvaluator, bool stopAfterLowestWeight ) : this( expander, NO_STATE, costEvaluator, estimateEvaluator, stopAfterLowestWeight )
 		 {
 		 }
@@ -88,7 +88,7 @@ namespace Neo4Net.GraphAlgo.Path
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public Iterable<org.Neo4Net.graphalgo.WeightedPath> findAllPaths(org.Neo4Net.graphdb.Node start, final org.Neo4Net.graphdb.Node end)
+//ORIGINAL LINE: public Iterable<Neo4Net.graphalgo.WeightedPath> findAllPaths(Neo4Net.graphdb.Node start, final Neo4Net.graphdb.Node end)
 		 public override IEnumerable<WeightedPath> FindAllPaths( Node start, Node end )
 		 {
 			  return Iterables.asIterable( FindSinglePath( start, end ) );
@@ -99,7 +99,7 @@ namespace Neo4Net.GraphAlgo.Path
 			  return Iterables.firstOrNull( FindPaths( start, end, false ) );
 		 }
 
-		 private ResourceIterable<WeightedPath> FindPaths( Node start, Node end, bool multiplePaths )
+		 privateIResourceIterable<WeightedPath> FindPaths( Node start, Node end, bool multiplePaths )
 		 {
 			  PathInterest interest;
 			  if ( multiplePaths )

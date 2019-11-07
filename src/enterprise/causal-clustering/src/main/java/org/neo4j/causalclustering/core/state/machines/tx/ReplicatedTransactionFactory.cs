@@ -159,7 +159,7 @@ namespace Neo4Net.causalclustering.core.state.machines.tx
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void write(org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: void write(Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
 			  internal virtual void Write( WritableChannel channel )
 			  {
 					NextJob.accept( channel );

@@ -31,7 +31,7 @@ namespace Neo4Net.Server.rest.repr
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertNotNull;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.discovery.DiscoverableURIs.Precedence.NORMAL;
+//	import static Neo4Net.server.rest.discovery.DiscoverableURIs.Precedence.NORMAL;
 
 	public class DiscoveryRepresentationTest
 	{

@@ -29,9 +29,9 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using Values = Neo4Net.Values.Storable.Values;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.GenericKey.setCursorException;
+//	import static Neo4Net.kernel.impl.index.schema.GenericKey.setCursorException;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.NumberType.numberKeySize;
+//	import static Neo4Net.kernel.impl.index.schema.NumberType.numberKeySize;
 
 	// Raw Number type is mostly for show as internally specific primitive int/long/short etc. arrays are created instead
 	internal class NumberArrayType : AbstractArrayType<Number>

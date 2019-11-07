@@ -30,7 +30,7 @@ namespace Neo4Net.Server.enterprise
 	public class NeoServerRestartTestEnterpriseIT : NeoServerRestartTestIT
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected org.Neo4Net.server.NeoServer getNeoServer(String customPageSwapperName) throws java.io.IOException
+//ORIGINAL LINE: protected Neo4Net.server.NeoServer getNeoServer(String customPageSwapperName) throws java.io.IOException
 		 protected internal override NeoServer GetNeoServer( string customPageSwapperName )
 		 {
 			  CommunityServerBuilder builder = EnterpriseServerBuilder.serverOnRandomPorts().withProperty(GraphDatabaseSettings.pagecache_swapper.name(), customPageSwapperName);

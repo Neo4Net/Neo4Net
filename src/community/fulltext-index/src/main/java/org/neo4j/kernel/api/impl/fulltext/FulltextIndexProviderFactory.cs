@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using DirectoryFactory = Neo4Net.Kernel.Api.Impl.Index.storage.DirectoryFactory;
 	using IndexDirectoryStructure = Neo4Net.Kernel.Api.Index.IndexDirectoryStructure;
-	using AuxiliaryTransactionStateManager = Neo4Net.Kernel.api.txstate.auxiliary.AuxiliaryTransactionStateManager;
+	using AuxiliaryTransactionStateManager = Neo4Net.Kernel.Api.txstate.auxiliary.AuxiliaryTransactionStateManager;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using ExtensionType = Neo4Net.Kernel.extension.ExtensionType;
 	using Neo4Net.Kernel.extension;
@@ -45,14 +45,14 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.impl.index.storage.DirectoryFactory.directoryFactory;
+//	import static Neo4Net.kernel.api.impl.index.storage.DirectoryFactory.directoryFactory;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.index.IndexDirectoryStructure.directoriesByProvider;
+//	import static Neo4Net.kernel.api.index.IndexDirectoryStructure.directoriesByProvider;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.index.IndexDirectoryStructure.directoriesBySubProvider;
+//	import static Neo4Net.kernel.api.index.IndexDirectoryStructure.directoriesBySubProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Service.Implementation(KernelExtensionFactory.class) public class FulltextIndexProviderFactory extends org.Neo4Net.kernel.extension.KernelExtensionFactory<FulltextIndexProviderFactory.Dependencies>
+//ORIGINAL LINE: @Service.Implementation(KernelExtensionFactory.class) public class FulltextIndexProviderFactory extends Neo4Net.kernel.extension.KernelExtensionFactory<FulltextIndexProviderFactory.Dependencies>
 	public class FulltextIndexProviderFactory : KernelExtensionFactory<FulltextIndexProviderFactory.Dependencies>
 	{
 		 private const string KEY = "fulltext";

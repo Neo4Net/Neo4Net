@@ -30,7 +30,7 @@ namespace Neo4Net.causalclustering.upstream.strategies
 	using Service = Neo4Net.Helpers.Service;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Service.Implementation(UpstreamDatabaseSelectionStrategy.class) public class LeaderOnlyStrategy extends org.Neo4Net.causalclustering.upstream.UpstreamDatabaseSelectionStrategy
+//ORIGINAL LINE: @Service.Implementation(UpstreamDatabaseSelectionStrategy.class) public class LeaderOnlyStrategy extends Neo4Net.causalclustering.upstream.UpstreamDatabaseSelectionStrategy
 	public class LeaderOnlyStrategy : UpstreamDatabaseSelectionStrategy
 	{
 		 public const string IDENTITY = "leader-only";
@@ -40,7 +40,7 @@ namespace Neo4Net.causalclustering.upstream.strategies
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.util.Optional<org.Neo4Net.causalclustering.identity.MemberId> upstreamDatabase() throws org.Neo4Net.causalclustering.upstream.UpstreamDatabaseSelectionException
+//ORIGINAL LINE: public java.util.Optional<Neo4Net.causalclustering.identity.MemberId> upstreamDatabase() throws Neo4Net.causalclustering.upstream.UpstreamDatabaseSelectionException
 		 public override Optional<MemberId> UpstreamDatabase()
 		 {
 			  IDictionary<MemberId, RoleInfo> memberRoles = TopologyService.allCoreRoles();

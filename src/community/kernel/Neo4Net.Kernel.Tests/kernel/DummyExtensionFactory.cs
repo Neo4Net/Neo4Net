@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Kernel
 {
-	using DatabaseManager = Neo4Net.Dbms.database.DatabaseManager;
+	using IDatabaseManager = Neo4Net.Dbms.database.DatabaseManager;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using Neo4Net.Kernel.extension;
 	using KernelContext = Neo4Net.Kernel.impl.spi.KernelContext;
@@ -34,7 +34,7 @@ namespace Neo4Net.Kernel
 
 			  KernelData Kernel { get; }
 
-			  DatabaseManager DatabaseManager { get; }
+			  IDatabaseManager IDatabaseManager { get; }
 		 }
 
 		 internal const string EXTENSION_ID = "dummy";

@@ -40,7 +40,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.cache
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected PageCacheIntArray getNumberArray(org.Neo4Net.io.pagecache.PagedFile file) throws java.io.IOException
+//ORIGINAL LINE: protected PageCacheIntArray getNumberArray(Neo4Net.io.pagecache.PagedFile file) throws java.io.IOException
 		 protected internal override PageCacheIntArray GetNumberArray( PagedFile file )
 		 {
 			  return new PageCacheIntArray( file, COUNT, 0, 0 );

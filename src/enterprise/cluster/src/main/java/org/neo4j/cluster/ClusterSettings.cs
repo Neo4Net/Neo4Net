@@ -33,35 +33,35 @@ namespace Neo4Net.cluster
 	using Settings = Neo4Net.Kernel.configuration.Settings;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.ANY;
+//	import static Neo4Net.kernel.configuration.Settings.ANY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.BOOLEAN;
+//	import static Neo4Net.kernel.configuration.Settings.BOOLEAN;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.DURATION;
+//	import static Neo4Net.kernel.configuration.Settings.DURATION;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.FALSE;
+//	import static Neo4Net.kernel.configuration.Settings.FALSE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.HOSTNAME_PORT;
+//	import static Neo4Net.kernel.configuration.Settings.HOSTNAME_PORT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.INTEGER;
+//	import static Neo4Net.kernel.configuration.Settings.INTEGER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.NO_DEFAULT;
+//	import static Neo4Net.kernel.configuration.Settings.NO_DEFAULT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.STRING;
+//	import static Neo4Net.kernel.configuration.Settings.STRING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.TRUE;
+//	import static Neo4Net.kernel.configuration.Settings.TRUE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.buildSetting;
+//	import static Neo4Net.kernel.configuration.Settings.buildSetting;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.illegalValueMessage;
+//	import static Neo4Net.kernel.configuration.Settings.illegalValueMessage;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.list;
+//	import static Neo4Net.kernel.configuration.Settings.list;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.matches;
+//	import static Neo4Net.kernel.configuration.Settings.matches;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.min;
+//	import static Neo4Net.kernel.configuration.Settings.min;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.setting;
+//	import static Neo4Net.kernel.configuration.Settings.setting;
 
 	/// <summary>
 	/// Settings for cluster members
@@ -95,7 +95,7 @@ namespace Neo4Net.cluster
 		 public static readonly Setting<InstanceId> ServerId = setting( "ha.server_id", INSTANCE_ID, NO_DEFAULT );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("The name of a cluster.") @Internal public static final org.Neo4Net.graphdb.config.Setting<String> cluster_name = buildSetting("unsupported.ha.cluster_name", STRING, "Neo4Net.ha").constraint(illegalValueMessage("must be a valid cluster name", matches(ANY))).build();
+//ORIGINAL LINE: @Description("The name of a cluster.") @Internal public static final Neo4Net.graphdb.config.Setting<String> cluster_name = buildSetting("unsupported.ha.cluster_name", STRING, "Neo4Net.ha").constraint(illegalValueMessage("must be a valid cluster name", matches(ANY))).build();
 		 [Description("The name of a cluster.")]
 		 public static readonly Setting<string> ClusterName = buildSetting( "unsupported.ha.cluster_name", STRING, "Neo4Net.ha" ).constraint( illegalValueMessage( "must be a valid cluster name", matches( ANY ) ) ).build();
 
@@ -161,14 +161,14 @@ namespace Neo4Net.cluster
 		 public static readonly Setting<Duration> ElectionTimeout = buildSetting( "ha.election_timeout", DURATION ).inherits( PaxosTimeout ).build();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Internal public static final org.Neo4Net.graphdb.config.Setting<String> instance_name = setting("unsupported.ha.instance_name", STRING, org.Neo4Net.kernel.configuration.Settings.NO_DEFAULT);
+//ORIGINAL LINE: @Internal public static final Neo4Net.graphdb.config.Setting<String> instance_name = setting("unsupported.ha.instance_name", STRING, Neo4Net.kernel.configuration.Settings.NO_DEFAULT);
 		 public static readonly Setting<string> InstanceName = setting( "unsupported.ha.instance_name", STRING, Settings.NO_DEFAULT );
 
 		 [Description("Maximum number of servers to involve when agreeing to membership changes. " + "In very large clusters, the probability of half the cluster failing is low, but protecting against " + "any arbitrary half failing is expensive. Therefore you may wish to set this parameter to a value less " + "than the cluster size.")]
 		 public static readonly Setting<int> MaxAcceptors = buildSetting( "ha.max_acceptors", INTEGER, "21" ).constraint( min( 1 ) ).build();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Internal public static final org.Neo4Net.graphdb.config.Setting<bool> strict_initial_hosts = setting("ha.strict_initial_hosts", BOOLEAN, FALSE);
+//ORIGINAL LINE: @Internal public static final Neo4Net.graphdb.config.Setting<bool> strict_initial_hosts = setting("ha.strict_initial_hosts", BOOLEAN, FALSE);
 		 public static readonly Setting<bool> StrictInitialHosts = setting( "ha.strict_initial_hosts", BOOLEAN, FALSE );
 	}
 

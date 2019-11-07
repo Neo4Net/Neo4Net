@@ -24,7 +24,7 @@ namespace Neo4Net.Bolt.runtime
 	public interface BoltResultHandle
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: BoltResult start() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
+//ORIGINAL LINE: BoltResult start() throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 		 BoltResult Start();
 
 		 void Close( bool success );

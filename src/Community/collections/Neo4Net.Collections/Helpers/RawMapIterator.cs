@@ -28,12 +28,12 @@ namespace Neo4Net.Collections.Helpers
 	{
 		 private readonly RawIterator<FROM, EX> _fromIterator;
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-//ORIGINAL LINE: private final org.Neo4Net.function.ThrowingFunction<? super FROM,? extends TO,EX> function;
+//ORIGINAL LINE: private final Neo4Net.function.ThrowingFunction<? super FROM,? extends TO,EX> function;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		 private readonly ThrowingFunction<object, ? extends TO, EX> _function;
 
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-//ORIGINAL LINE: RawMapIterator(org.Neo4Net.collection.RawIterator<FROM,EX> fromIterator, org.Neo4Net.function.ThrowingFunction<? super FROM,? extends TO,EX> function)
+//ORIGINAL LINE: RawMapIterator(Neo4Net.collection.RawIterator<FROM,EX> fromIterator, Neo4Net.function.ThrowingFunction<? super FROM,? extends TO,EX> function)
 		 internal RawMapIterator<T1>( RawIterator<FROM, EX> fromIterator, ThrowingFunction<T1> function ) where T1 : TO
 		 {
 			  this._fromIterator = fromIterator;

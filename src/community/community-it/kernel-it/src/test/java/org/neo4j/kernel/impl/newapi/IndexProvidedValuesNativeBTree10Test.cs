@@ -43,7 +43,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.Label.label;
+//	import static Neo4Net.graphdb.Label.label;
 
 	public class IndexProvidedValuesNativeBTree10Test : KernelAPIReadTestBase<ReadTestSupport>
 	{
@@ -52,7 +52,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 private static int _nNodes = 10000;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.RandomRule randomRule = new org.Neo4Net.test.rule.RandomRule();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.RandomRule randomRule = new Neo4Net.test.rule.RandomRule();
 		 public RandomRule RandomRule = new RandomRule();
 
 		 private IList<Value> _singlePropValues = new List<Value>();

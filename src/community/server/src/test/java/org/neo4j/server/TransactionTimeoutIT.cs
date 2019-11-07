@@ -37,11 +37,11 @@ namespace Neo4Net.Server
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.MatcherAssert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.map;
+//	import static Neo4Net.helpers.collection.MapUtil.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.exceptions.Status_Transaction.TransactionNotFound;
+//	import static Neo4Net.kernel.api.exceptions.Status_Transaction.TransactionNotFound;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.helpers.CommunityServerBuilder.serverOnRandomPorts;
+//	import static Neo4Net.server.helpers.CommunityServerBuilder.serverOnRandomPorts;
 
 	public class TransactionTimeoutIT : ExclusiveServerTestBase
 	{

@@ -52,7 +52,7 @@ namespace Neo4Net.Kernel.Api.Internal
       /// <returns> a procedure handle </returns>
       /// <exception cref="ProcedureException"> </exception>
       //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-      //ORIGINAL LINE: org.Neo4Net.Kernel.Api.Internal.Procs.ProcedureHandle procedureGet(org.Neo4Net.Kernel.Api.Internal.Procs.QualifiedName name) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
+      //ORIGINAL LINE: Neo4Net.Kernel.Api.Internal.Procs.ProcedureHandle procedureGet(Neo4Net.Kernel.Api.Internal.Procs.QualifiedName name) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
       ProcedureHandle ProcedureGet(QualifiedName name);
 
       /// <summary>
@@ -60,7 +60,7 @@ namespace Neo4Net.Kernel.Api.Internal
       /// <returns> all procedures </returns>
       /// <exception cref="ProcedureException"> </exception>
       //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-      //ORIGINAL LINE: java.util.Set<org.Neo4Net.Kernel.Api.Internal.Procs.ProcedureSignature> proceduresGetAll() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
+      //ORIGINAL LINE: java.util.Set<Neo4Net.Kernel.Api.Internal.Procs.ProcedureSignature> proceduresGetAll() throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
       ISet<ProcedureSignature> ProceduresGetAll();
 
       /// <summary>
@@ -71,7 +71,7 @@ namespace Neo4Net.Kernel.Api.Internal
       /// <returns> an iterator containing the procedure results. </returns>
       /// <exception cref="ProcedureException"> if there was an exception thrown during procedure execution. </exception>
       //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-      //ORIGINAL LINE: org.Neo4Net.collection.RawIterator<Object[], org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException> procedureCallRead(int id, Object[] arguments, org.Neo4Net.Kernel.Api.Internal.Procs.ProcedureCallContext context) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
+      //ORIGINAL LINE: Neo4Net.collection.RawIterator<Object[], Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException> procedureCallRead(int id, Object[] arguments, Neo4Net.Kernel.Api.Internal.Procs.ProcedureCallContext context) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
       RawIterator<object[], ProcedureException> ProcedureCallRead(int id, object[] arguments, ProcedureCallContext context);
 
       /// <summary>
@@ -83,7 +83,7 @@ namespace Neo4Net.Kernel.Api.Internal
       /// <returns> an iterator containing the procedure results. </returns>
       /// <exception cref="ProcedureException"> if there was an exception thrown during procedure execution. </exception>
       //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-      //ORIGINAL LINE: org.Neo4Net.collection.RawIterator<Object[], org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException> procedureCallReadOverride(int id, Object[] arguments, org.Neo4Net.Kernel.Api.Internal.Procs.ProcedureCallContext context) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
+      //ORIGINAL LINE: Neo4Net.collection.RawIterator<Object[], Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException> procedureCallReadOverride(int id, Object[] arguments, Neo4Net.Kernel.Api.Internal.Procs.ProcedureCallContext context) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
       RawIterator<object[], ProcedureException> ProcedureCallReadOverride(int id, object[] arguments, ProcedureCallContext context);
 
       /// <summary>
@@ -94,7 +94,7 @@ namespace Neo4Net.Kernel.Api.Internal
       /// <returns> an iterator containing the procedure results. </returns>
       /// <exception cref="ProcedureException"> if there was an exception thrown during procedure execution. </exception>
       //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-      //ORIGINAL LINE: org.Neo4Net.collection.RawIterator<Object[], org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException> procedureCallWrite(int id, Object[] arguments, org.Neo4Net.Kernel.Api.Internal.Procs.ProcedureCallContext context) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
+      //ORIGINAL LINE: Neo4Net.collection.RawIterator<Object[], Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException> procedureCallWrite(int id, Object[] arguments, Neo4Net.Kernel.Api.Internal.Procs.ProcedureCallContext context) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
       RawIterator<object[], ProcedureException> ProcedureCallWrite(int id, object[] arguments, ProcedureCallContext context);
 
       /// <summary>
@@ -106,7 +106,7 @@ namespace Neo4Net.Kernel.Api.Internal
       /// <returns> an iterator containing the procedure results. </returns>
       /// <exception cref="ProcedureException"> if there was an exception thrown during procedure execution. </exception>
       //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-      //ORIGINAL LINE: org.Neo4Net.collection.RawIterator<Object[], org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException> procedureCallWriteOverride(int id, Object[] arguments, org.Neo4Net.Kernel.Api.Internal.Procs.ProcedureCallContext context) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
+      //ORIGINAL LINE: Neo4Net.collection.RawIterator<Object[], Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException> procedureCallWriteOverride(int id, Object[] arguments, Neo4Net.Kernel.Api.Internal.Procs.ProcedureCallContext context) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
       RawIterator<object[], ProcedureException> ProcedureCallWriteOverride(int id, object[] arguments, ProcedureCallContext context);
 
       /// <summary>
@@ -117,7 +117,7 @@ namespace Neo4Net.Kernel.Api.Internal
       /// <returns> an iterator containing the procedure results. </returns>
       /// <exception cref="ProcedureException"> if there was an exception thrown during procedure execution. </exception>
       //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-      //ORIGINAL LINE: org.Neo4Net.collection.RawIterator<Object[], org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException> procedureCallSchema(int id, Object[] arguments, org.Neo4Net.Kernel.Api.Internal.Procs.ProcedureCallContext context) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
+      //ORIGINAL LINE: Neo4Net.collection.RawIterator<Object[], Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException> procedureCallSchema(int id, Object[] arguments, Neo4Net.Kernel.Api.Internal.Procs.ProcedureCallContext context) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
       RawIterator<object[], ProcedureException> ProcedureCallSchema(int id, object[] arguments, ProcedureCallContext context);
 
       /// <summary>
@@ -129,7 +129,7 @@ namespace Neo4Net.Kernel.Api.Internal
       /// <returns> an iterator containing the procedure results. </returns>
       /// <exception cref="ProcedureException"> if there was an exception thrown during procedure execution. </exception>
       //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-      //ORIGINAL LINE: org.Neo4Net.collection.RawIterator<Object[], org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException> procedureCallSchemaOverride(int id, Object[] arguments, org.Neo4Net.Kernel.Api.Internal.Procs.ProcedureCallContext context) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
+      //ORIGINAL LINE: Neo4Net.collection.RawIterator<Object[], Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException> procedureCallSchemaOverride(int id, Object[] arguments, Neo4Net.Kernel.Api.Internal.Procs.ProcedureCallContext context) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
       RawIterator<object[], ProcedureException> ProcedureCallSchemaOverride(int id, object[] arguments, ProcedureCallContext context);
 
       /// <summary>
@@ -140,7 +140,7 @@ namespace Neo4Net.Kernel.Api.Internal
       /// <returns> an iterator containing the procedure results. </returns>
       /// <exception cref="ProcedureException"> if there was an exception thrown during procedure execution. </exception>
       //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-      //ORIGINAL LINE: org.Neo4Net.collection.RawIterator<Object[], org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException> procedureCallRead(org.Neo4Net.Kernel.Api.Internal.Procs.QualifiedName name, Object[] arguments, org.Neo4Net.Kernel.Api.Internal.Procs.ProcedureCallContext context) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
+      //ORIGINAL LINE: Neo4Net.collection.RawIterator<Object[], Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException> procedureCallRead(Neo4Net.Kernel.Api.Internal.Procs.QualifiedName name, Object[] arguments, Neo4Net.Kernel.Api.Internal.Procs.ProcedureCallContext context) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
       RawIterator<object[], ProcedureException> ProcedureCallRead(QualifiedName name, object[] arguments, ProcedureCallContext context);
 
       /// <summary>
@@ -152,7 +152,7 @@ namespace Neo4Net.Kernel.Api.Internal
       /// <returns> an iterator containing the procedure results. </returns>
       /// <exception cref="ProcedureException"> if there was an exception thrown during procedure execution. </exception>
       //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-      //ORIGINAL LINE: org.Neo4Net.collection.RawIterator<Object[], org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException> procedureCallReadOverride(org.Neo4Net.Kernel.Api.Internal.Procs.QualifiedName name, Object[] arguments, org.Neo4Net.Kernel.Api.Internal.Procs.ProcedureCallContext context) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
+      //ORIGINAL LINE: Neo4Net.collection.RawIterator<Object[], Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException> procedureCallReadOverride(Neo4Net.Kernel.Api.Internal.Procs.QualifiedName name, Object[] arguments, Neo4Net.Kernel.Api.Internal.Procs.ProcedureCallContext context) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
       RawIterator<object[], ProcedureException> ProcedureCallReadOverride(QualifiedName name, object[] arguments, ProcedureCallContext context);
 
       /// <summary>
@@ -163,7 +163,7 @@ namespace Neo4Net.Kernel.Api.Internal
       /// <returns> an iterator containing the procedure results. </returns>
       /// <exception cref="ProcedureException"> if there was an exception thrown during procedure execution. </exception>
       //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-      //ORIGINAL LINE: org.Neo4Net.collection.RawIterator<Object[], org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException> procedureCallWrite(org.Neo4Net.Kernel.Api.Internal.Procs.QualifiedName name, Object[] arguments, org.Neo4Net.Kernel.Api.Internal.Procs.ProcedureCallContext context) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
+      //ORIGINAL LINE: Neo4Net.collection.RawIterator<Object[], Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException> procedureCallWrite(Neo4Net.Kernel.Api.Internal.Procs.QualifiedName name, Object[] arguments, Neo4Net.Kernel.Api.Internal.Procs.ProcedureCallContext context) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
       RawIterator<object[], ProcedureException> ProcedureCallWrite(QualifiedName name, object[] arguments, ProcedureCallContext context);
 
       /// <summary>
@@ -175,7 +175,7 @@ namespace Neo4Net.Kernel.Api.Internal
       /// <returns> an iterator containing the procedure results. </returns>
       /// <exception cref="ProcedureException"> if there was an exception thrown during procedure execution. </exception>
       //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-      //ORIGINAL LINE: org.Neo4Net.collection.RawIterator<Object[], org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException> procedureCallWriteOverride(org.Neo4Net.Kernel.Api.Internal.Procs.QualifiedName name, Object[] arguments, org.Neo4Net.Kernel.Api.Internal.Procs.ProcedureCallContext context) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
+      //ORIGINAL LINE: Neo4Net.collection.RawIterator<Object[], Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException> procedureCallWriteOverride(Neo4Net.Kernel.Api.Internal.Procs.QualifiedName name, Object[] arguments, Neo4Net.Kernel.Api.Internal.Procs.ProcedureCallContext context) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
       RawIterator<object[], ProcedureException> ProcedureCallWriteOverride(QualifiedName name, object[] arguments, ProcedureCallContext context);
 
       /// <summary>
@@ -186,7 +186,7 @@ namespace Neo4Net.Kernel.Api.Internal
       /// <returns> an iterator containing the procedure results. </returns>
       /// <exception cref="ProcedureException"> if there was an exception thrown during procedure execution. </exception>
       //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-      //ORIGINAL LINE: org.Neo4Net.collection.RawIterator<Object[], org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException> procedureCallSchema(org.Neo4Net.Kernel.Api.Internal.Procs.QualifiedName name, Object[] arguments, org.Neo4Net.Kernel.Api.Internal.Procs.ProcedureCallContext context) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
+      //ORIGINAL LINE: Neo4Net.collection.RawIterator<Object[], Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException> procedureCallSchema(Neo4Net.Kernel.Api.Internal.Procs.QualifiedName name, Object[] arguments, Neo4Net.Kernel.Api.Internal.Procs.ProcedureCallContext context) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
       RawIterator<object[], ProcedureException> ProcedureCallSchema(QualifiedName name, object[] arguments, ProcedureCallContext context);
 
       /// <summary>
@@ -198,7 +198,7 @@ namespace Neo4Net.Kernel.Api.Internal
       /// <returns> an iterator containing the procedure results. </returns>
       /// <exception cref="ProcedureException"> if there was an exception thrown during procedure execution. </exception>
       //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-      //ORIGINAL LINE: org.Neo4Net.collection.RawIterator<Object[], org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException> procedureCallSchemaOverride(org.Neo4Net.Kernel.Api.Internal.Procs.QualifiedName name, Object[] arguments, org.Neo4Net.Kernel.Api.Internal.Procs.ProcedureCallContext context) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
+      //ORIGINAL LINE: Neo4Net.collection.RawIterator<Object[], Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException> procedureCallSchemaOverride(Neo4Net.Kernel.Api.Internal.Procs.QualifiedName name, Object[] arguments, Neo4Net.Kernel.Api.Internal.Procs.ProcedureCallContext context) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
       RawIterator<object[], ProcedureException> ProcedureCallSchemaOverride(QualifiedName name, object[] arguments, ProcedureCallContext context);
 
       /// <summary>
@@ -207,7 +207,7 @@ namespace Neo4Net.Kernel.Api.Internal
       /// <param name="arguments"> the function arguments. </param>
       /// <exception cref="ProcedureException"> if there was an exception thrown during function execution. </exception>
       //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-      //ORIGINAL LINE: org.Neo4Net.values.AnyValue functionCall(int id, org.Neo4Net.values.AnyValue[] arguments) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
+      //ORIGINAL LINE: Neo4Net.values.AnyValue functionCall(int id, Neo4Net.values.AnyValue[] arguments) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
       AnyValue FunctionCall(int id, AnyValue[] arguments);
 
       /// <summary>
@@ -216,7 +216,7 @@ namespace Neo4Net.Kernel.Api.Internal
       /// <param name="arguments"> the function arguments. </param>
       /// <exception cref="ProcedureException"> if there was an exception thrown during function execution. </exception>
       //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-      //ORIGINAL LINE: org.Neo4Net.values.AnyValue functionCall(org.Neo4Net.Kernel.Api.Internal.Procs.QualifiedName name, org.Neo4Net.values.AnyValue[] arguments) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
+      //ORIGINAL LINE: Neo4Net.values.AnyValue functionCall(Neo4Net.Kernel.Api.Internal.Procs.QualifiedName name, Neo4Net.values.AnyValue[] arguments) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
       AnyValue FunctionCall(QualifiedName name, AnyValue[] arguments);
 
       /// <summary>
@@ -226,7 +226,7 @@ namespace Neo4Net.Kernel.Api.Internal
       /// <param name="arguments"> the function arguments. </param>
       /// <exception cref="ProcedureException"> if there was an exception thrown during function execution. </exception>
       //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-      //ORIGINAL LINE: org.Neo4Net.values.AnyValue functionCallOverride(int id, org.Neo4Net.values.AnyValue[] arguments) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
+      //ORIGINAL LINE: Neo4Net.values.AnyValue functionCallOverride(int id, Neo4Net.values.AnyValue[] arguments) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
       AnyValue FunctionCallOverride(int id, AnyValue[] arguments);
 
       /// <summary>
@@ -236,7 +236,7 @@ namespace Neo4Net.Kernel.Api.Internal
       /// <param name="arguments"> the function arguments. </param>
       /// <exception cref="ProcedureException"> if there was an exception thrown during function execution. </exception>
       //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-      //ORIGINAL LINE: org.Neo4Net.values.AnyValue functionCallOverride(org.Neo4Net.Kernel.Api.Internal.Procs.QualifiedName name, org.Neo4Net.values.AnyValue[] arguments) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
+      //ORIGINAL LINE: Neo4Net.values.AnyValue functionCallOverride(Neo4Net.Kernel.Api.Internal.Procs.QualifiedName name, Neo4Net.values.AnyValue[] arguments) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
       AnyValue FunctionCallOverride(QualifiedName name, AnyValue[] arguments);
 
       /// <summary>
@@ -245,7 +245,7 @@ namespace Neo4Net.Kernel.Api.Internal
       /// <returns> the aggregation function </returns>
       /// <exception cref="ProcedureException"> </exception>
       //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-      //ORIGINAL LINE: org.Neo4Net.Kernel.Api.Internal.Procs.UserAggregator aggregationFunction(int id) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
+      //ORIGINAL LINE: Neo4Net.Kernel.Api.Internal.Procs.UserAggregator aggregationFunction(int id) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
       IUserAggregator AggregationFunction(int id);
 
       /// <summary>
@@ -254,7 +254,7 @@ namespace Neo4Net.Kernel.Api.Internal
       /// <returns> the aggregation function </returns>
       /// <exception cref="ProcedureException"> </exception>
       //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-      //ORIGINAL LINE: org.Neo4Net.Kernel.Api.Internal.Procs.UserAggregator aggregationFunction(org.Neo4Net.Kernel.Api.Internal.Procs.QualifiedName name) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
+      //ORIGINAL LINE: Neo4Net.Kernel.Api.Internal.Procs.UserAggregator aggregationFunction(Neo4Net.Kernel.Api.Internal.Procs.QualifiedName name) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
       IUserAggregator AggregationFunction(QualifiedName name);
 
       /// <summary>
@@ -263,7 +263,7 @@ namespace Neo4Net.Kernel.Api.Internal
       /// <param name="id"> the id of the function. </param>
       /// <exception cref="ProcedureException"> if there was an exception thrown during function execution. </exception>
       //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-      //ORIGINAL LINE: org.Neo4Net.Kernel.Api.Internal.Procs.UserAggregator aggregationFunctionOverride(int id) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
+      //ORIGINAL LINE: Neo4Net.Kernel.Api.Internal.Procs.UserAggregator aggregationFunctionOverride(int id) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
       IUserAggregator AggregationFunctionOverride(int id);
 
       /// <summary>
@@ -272,7 +272,7 @@ namespace Neo4Net.Kernel.Api.Internal
       /// <param name="name"> the name of the function. </param>
       /// <exception cref="ProcedureException"> if there was an exception thrown during function execution. </exception>
       //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-      //ORIGINAL LINE: org.Neo4Net.Kernel.Api.Internal.Procs.UserAggregator aggregationFunctionOverride(org.Neo4Net.Kernel.Api.Internal.Procs.QualifiedName name) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
+      //ORIGINAL LINE: Neo4Net.Kernel.Api.Internal.Procs.UserAggregator aggregationFunctionOverride(Neo4Net.Kernel.Api.Internal.Procs.QualifiedName name) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
       IUserAggregator AggregationFunctionOverride(QualifiedName name);
 
       /// <summary>

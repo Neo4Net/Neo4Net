@@ -80,7 +80,7 @@ namespace Neo4Net.Kernel.impl.security
 //ORIGINAL LINE: final java.net.URL url = new java.net.URL("file:///bar/baz.csv");
 			  URL url = new URL( "file:///bar/baz.csv" );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.configuration.Config config = org.Neo4Net.kernel.configuration.Config.defaults(org.Neo4Net.graphdb.factory.GraphDatabaseSettings.allow_file_urls, "false");
+//ORIGINAL LINE: final Neo4Net.kernel.configuration.Config config = Neo4Net.kernel.configuration.Config.defaults(Neo4Net.graphdb.factory.GraphDatabaseSettings.allow_file_urls, "false");
 			  Config config = Config.defaults( GraphDatabaseSettings.allow_file_urls, "false" );
 			  try
 			  {
@@ -101,7 +101,7 @@ namespace Neo4Net.Kernel.impl.security
 			  assumeFalse( Paths.get( "/" ).relativize( Paths.get( "/../baz.csv" ) ).ToString().Equals("baz.csv") );
 			  File importDir = ( new File( "/tmp/Neo4Nettest" ) ).AbsoluteFile;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.configuration.Config config = org.Neo4Net.kernel.configuration.Config.defaults(org.Neo4Net.graphdb.factory.GraphDatabaseSettings.load_csv_file_url_root, importDir.toString());
+//ORIGINAL LINE: final Neo4Net.kernel.configuration.Config config = Neo4Net.kernel.configuration.Config.defaults(Neo4Net.graphdb.factory.GraphDatabaseSettings.load_csv_file_url_root, importDir.toString());
 			  Config config = Config.defaults( GraphDatabaseSettings.load_csv_file_url_root, importDir.ToString() );
 			  try
 			  {
@@ -123,7 +123,7 @@ namespace Neo4Net.Kernel.impl.security
 //ORIGINAL LINE: final java.net.URL url = new java.io.File("/bar/baz.csv").toURI().toURL();
 			  URL url = ( new File( "/bar/baz.csv" ) ).toURI().toURL();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.configuration.Config config = org.Neo4Net.kernel.configuration.Config.defaults(org.Neo4Net.graphdb.factory.GraphDatabaseSettings.load_csv_file_url_root, "/var/lib/Neo4Net/import");
+//ORIGINAL LINE: final Neo4Net.kernel.configuration.Config config = Neo4Net.kernel.configuration.Config.defaults(Neo4Net.graphdb.factory.GraphDatabaseSettings.load_csv_file_url_root, "/var/lib/Neo4Net/import");
 			  Config config = Config.defaults( GraphDatabaseSettings.load_csv_file_url_root, "/var/lib/Neo4Net/import" );
 			  URL accessURL = URLAccessRules.FileAccess().validate(config, url);
 			  URL expected = ( new File( "/var/lib/Neo4Net/import/bar/baz.csv" ) ).toURI().toURL();

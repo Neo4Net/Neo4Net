@@ -46,9 +46,9 @@ namespace Neo4Net.Kernel.impl.store
 	using IOLimiter = Neo4Net.Io.pagecache.IOLimiter;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
 	using EmptyVersionContextSupplier = Neo4Net.Io.pagecache.tracing.cursor.context.EmptyVersionContextSupplier;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
-	using PropertyKeyValue = Neo4Net.Kernel.api.properties.PropertyKeyValue;
-	using TransactionState = Neo4Net.Kernel.api.txstate.TransactionState;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
+	using PropertyKeyValue = Neo4Net.Kernel.Api.properties.PropertyKeyValue;
+	using TransactionState = Neo4Net.Kernel.Api.txstate.TransactionState;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using KernelStatement = Neo4Net.Kernel.Impl.Api.KernelStatement;
 	using KernelTransactionImplementation = Neo4Net.Kernel.Impl.Api.KernelTransactionImplementation;
@@ -110,19 +110,19 @@ namespace Neo4Net.Kernel.impl.store
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.counts_store_rotation_timeout;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.counts_store_rotation_timeout;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
+//	import static Neo4Net.helpers.collection.MapUtil.stringMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.security.LoginContext.AUTH_DISABLED;
+//	import static Neo4Net.Kernel.Api.Internal.security.LoginContext.AUTH_DISABLED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.RecordStore.getRecord;
+//	import static Neo4Net.kernel.impl.store.RecordStore.getRecord;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.format.standard.MetaDataRecordFormat.FIELD_NOT_PRESENT;
+//	import static Neo4Net.kernel.impl.store.format.standard.MetaDataRecordFormat.FIELD_NOT_PRESENT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.record.RecordLoad.NORMAL;
+//	import static Neo4Net.kernel.impl.store.record.RecordLoad.NORMAL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_COMMIT_TIMESTAMP;
+//	import static Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_COMMIT_TIMESTAMP;
 
 	public class NeoStoresTest
 	{
@@ -896,7 +896,7 @@ namespace Neo4Net.Kernel.impl.store
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void initializeStores(org.Neo4Net.io.layout.DatabaseLayout databaseLayout, java.util.Map<String,String> additionalConfig) throws java.io.IOException
+//ORIGINAL LINE: private void initializeStores(Neo4Net.io.layout.DatabaseLayout databaseLayout, java.util.Map<String,String> additionalConfig) throws java.io.IOException
 		 private void InitializeStores( DatabaseLayout databaseLayout, IDictionary<string, string> additionalConfig )
 		 {
 			  Dependencies dependencies = new Dependencies();
@@ -913,7 +913,7 @@ namespace Neo4Net.Kernel.impl.store
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void startTx() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
+//ORIGINAL LINE: private void startTx() throws Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 private void StartTx()
 		 {
 			  _tx = _ds.Kernel.BeginTransaction( KernelTransaction.Type.@implicit, AUTH_DISABLED );
@@ -921,7 +921,7 @@ namespace Neo4Net.Kernel.impl.store
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void commitTx() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
+//ORIGINAL LINE: private void commitTx() throws Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 private void CommitTx()
 		 {
 			  _tx.success();
@@ -957,7 +957,7 @@ namespace Neo4Net.Kernel.impl.store
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void validateNodeRel1(long node, org.Neo4Net.Kernel.Api.StorageEngine.StorageProperty prop1, org.Neo4Net.Kernel.Api.StorageEngine.StorageProperty prop2, org.Neo4Net.Kernel.Api.StorageEngine.StorageProperty prop3, long rel1, long rel2, int relType1, int relType2) throws java.io.IOException, org.Neo4Net.kernel.impl.core.TokenNotFoundException
+//ORIGINAL LINE: private void validateNodeRel1(long node, Neo4Net.Kernel.Api.StorageEngine.StorageProperty prop1, Neo4Net.Kernel.Api.StorageEngine.StorageProperty prop2, Neo4Net.Kernel.Api.StorageEngine.StorageProperty prop3, long rel1, long rel2, int relType1, int relType2) throws java.io.IOException, Neo4Net.kernel.impl.core.TokenNotFoundException
 		 private void ValidateNodeRel1( long node, StorageProperty prop1, StorageProperty prop2, StorageProperty prop3, long rel1, long rel2, int relType1, int relType2 )
 		 {
 			  assertTrue( NodeExists( node ) );
@@ -1056,7 +1056,7 @@ namespace Neo4Net.Kernel.impl.store
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void validateNodeRel2(long node, org.Neo4Net.Kernel.Api.StorageEngine.StorageProperty prop1, org.Neo4Net.Kernel.Api.StorageEngine.StorageProperty prop2, org.Neo4Net.Kernel.Api.StorageEngine.StorageProperty prop3, long rel1, long rel2, int relType1, int relType2) throws java.io.IOException, RuntimeException, org.Neo4Net.kernel.impl.core.TokenNotFoundException
+//ORIGINAL LINE: private void validateNodeRel2(long node, Neo4Net.Kernel.Api.StorageEngine.StorageProperty prop1, Neo4Net.Kernel.Api.StorageEngine.StorageProperty prop2, Neo4Net.Kernel.Api.StorageEngine.StorageProperty prop3, long rel1, long rel2, int relType1, int relType2) throws java.io.IOException, RuntimeException, Neo4Net.kernel.impl.core.TokenNotFoundException
 		 private void ValidateNodeRel2( long node, StorageProperty prop1, StorageProperty prop2, StorageProperty prop3, long rel1, long rel2, int relType1, int relType2 )
 		 {
 			  assertTrue( NodeExists( node ) );
@@ -1135,7 +1135,7 @@ namespace Neo4Net.Kernel.impl.store
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void validateRel1(long rel, org.Neo4Net.Kernel.Api.StorageEngine.StorageProperty prop1, org.Neo4Net.Kernel.Api.StorageEngine.StorageProperty prop2, org.Neo4Net.Kernel.Api.StorageEngine.StorageProperty prop3, long firstNode, long secondNode, int relType) throws java.io.IOException, org.Neo4Net.kernel.impl.core.TokenNotFoundException
+//ORIGINAL LINE: private void validateRel1(long rel, Neo4Net.Kernel.Api.StorageEngine.StorageProperty prop1, Neo4Net.Kernel.Api.StorageEngine.StorageProperty prop2, Neo4Net.Kernel.Api.StorageEngine.StorageProperty prop3, long firstNode, long secondNode, int relType) throws java.io.IOException, Neo4Net.kernel.impl.core.TokenNotFoundException
 		 private void ValidateRel1( long rel, StorageProperty prop1, StorageProperty prop2, StorageProperty prop3, long firstNode, long secondNode, int relType )
 		 {
 			  IDictionary<int, Pair<StorageProperty, long>> props = new Dictionary<int, Pair<StorageProperty, long>>();
@@ -1193,7 +1193,7 @@ namespace Neo4Net.Kernel.impl.store
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void validateRel2(long rel, org.Neo4Net.Kernel.Api.StorageEngine.StorageProperty prop1, org.Neo4Net.Kernel.Api.StorageEngine.StorageProperty prop2, org.Neo4Net.Kernel.Api.StorageEngine.StorageProperty prop3, long firstNode, long secondNode, int relType) throws java.io.IOException, org.Neo4Net.kernel.impl.core.TokenNotFoundException
+//ORIGINAL LINE: private void validateRel2(long rel, Neo4Net.Kernel.Api.StorageEngine.StorageProperty prop1, Neo4Net.Kernel.Api.StorageEngine.StorageProperty prop2, Neo4Net.Kernel.Api.StorageEngine.StorageProperty prop3, long firstNode, long secondNode, int relType) throws java.io.IOException, Neo4Net.kernel.impl.core.TokenNotFoundException
 		 private void ValidateRel2( long rel, StorageProperty prop1, StorageProperty prop2, StorageProperty prop3, long firstNode, long secondNode, int relType )
 		 {
 			  IDictionary<int, Pair<StorageProperty, long>> props = new Dictionary<int, Pair<StorageProperty, long>>();
@@ -1265,7 +1265,7 @@ namespace Neo4Net.Kernel.impl.store
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void deleteRel1(long rel, org.Neo4Net.Kernel.Api.StorageEngine.StorageProperty prop1, org.Neo4Net.Kernel.Api.StorageEngine.StorageProperty prop2, org.Neo4Net.Kernel.Api.StorageEngine.StorageProperty prop3, long firstNode, long secondNode, int relType) throws Exception
+//ORIGINAL LINE: private void deleteRel1(long rel, Neo4Net.Kernel.Api.StorageEngine.StorageProperty prop1, Neo4Net.Kernel.Api.StorageEngine.StorageProperty prop2, Neo4Net.Kernel.Api.StorageEngine.StorageProperty prop3, long firstNode, long secondNode, int relType) throws Exception
 		 private void DeleteRel1( long rel, StorageProperty prop1, StorageProperty prop2, StorageProperty prop3, long firstNode, long secondNode, int relType )
 		 {
 			  IDictionary<int, Pair<StorageProperty, long>> props = new Dictionary<int, Pair<StorageProperty, long>>();
@@ -1322,7 +1322,7 @@ namespace Neo4Net.Kernel.impl.store
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void deleteRel2(long rel, org.Neo4Net.Kernel.Api.StorageEngine.StorageProperty prop1, org.Neo4Net.Kernel.Api.StorageEngine.StorageProperty prop2, org.Neo4Net.Kernel.Api.StorageEngine.StorageProperty prop3, long firstNode, long secondNode, int relType) throws Exception
+//ORIGINAL LINE: private void deleteRel2(long rel, Neo4Net.Kernel.Api.StorageEngine.StorageProperty prop1, Neo4Net.Kernel.Api.StorageEngine.StorageProperty prop2, Neo4Net.Kernel.Api.StorageEngine.StorageProperty prop3, long firstNode, long secondNode, int relType) throws Exception
 		 private void DeleteRel2( long rel, StorageProperty prop1, StorageProperty prop2, StorageProperty prop3, long firstNode, long secondNode, int relType )
 		 {
 			  IDictionary<int, Pair<StorageProperty, long>> props = new Dictionary<int, Pair<StorageProperty, long>>();
@@ -1382,7 +1382,7 @@ namespace Neo4Net.Kernel.impl.store
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void deleteNode1(long node, org.Neo4Net.Kernel.Api.StorageEngine.StorageProperty prop1, org.Neo4Net.Kernel.Api.StorageEngine.StorageProperty prop2, org.Neo4Net.Kernel.Api.StorageEngine.StorageProperty prop3) throws java.io.IOException, org.Neo4Net.kernel.impl.core.TokenNotFoundException
+//ORIGINAL LINE: private void deleteNode1(long node, Neo4Net.Kernel.Api.StorageEngine.StorageProperty prop1, Neo4Net.Kernel.Api.StorageEngine.StorageProperty prop2, Neo4Net.Kernel.Api.StorageEngine.StorageProperty prop3) throws java.io.IOException, Neo4Net.kernel.impl.core.TokenNotFoundException
 		 private void DeleteNode1( long node, StorageProperty prop1, StorageProperty prop2, StorageProperty prop3 )
 		 {
 			  IDictionary<int, Pair<StorageProperty, long>> props = new Dictionary<int, Pair<StorageProperty, long>>();
@@ -1425,7 +1425,7 @@ namespace Neo4Net.Kernel.impl.store
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void deleteNode2(long node, org.Neo4Net.Kernel.Api.StorageEngine.StorageProperty prop1, org.Neo4Net.Kernel.Api.StorageEngine.StorageProperty prop2, org.Neo4Net.Kernel.Api.StorageEngine.StorageProperty prop3) throws java.io.IOException, org.Neo4Net.kernel.impl.core.TokenNotFoundException
+//ORIGINAL LINE: private void deleteNode2(long node, Neo4Net.Kernel.Api.StorageEngine.StorageProperty prop1, Neo4Net.Kernel.Api.StorageEngine.StorageProperty prop2, Neo4Net.Kernel.Api.StorageEngine.StorageProperty prop3) throws java.io.IOException, Neo4Net.kernel.impl.core.TokenNotFoundException
 		 private void DeleteNode2( long node, StorageProperty prop1, StorageProperty prop2, StorageProperty prop3 )
 		 {
 			  IDictionary<int, Pair<StorageProperty, long>> props = new Dictionary<int, Pair<StorageProperty, long>>();

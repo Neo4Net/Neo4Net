@@ -69,30 +69,30 @@ namespace Neo4Net.Ext.Udc.impl
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.ext.udc.UdcConstants.CLUSTER_HASH;
+//	import static Neo4Net.ext.udc.UdcConstants.CLUSTER_HASH;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.ext.udc.UdcConstants.DATABASE_MODE;
+//	import static Neo4Net.ext.udc.UdcConstants.DATABASE_MODE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.ext.udc.UdcConstants.EDITION;
+//	import static Neo4Net.ext.udc.UdcConstants.EDITION;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.ext.udc.UdcConstants.MAC;
+//	import static Neo4Net.ext.udc.UdcConstants.MAC;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.ext.udc.UdcConstants.REGISTRATION;
+//	import static Neo4Net.ext.udc.UdcConstants.REGISTRATION;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.ext.udc.UdcConstants.SOURCE;
+//	import static Neo4Net.ext.udc.UdcConstants.SOURCE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.ext.udc.UdcConstants.TAGS;
+//	import static Neo4Net.ext.udc.UdcConstants.TAGS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.ext.udc.UdcConstants.USER_AGENTS;
+//	import static Neo4Net.ext.udc.UdcConstants.USER_AGENTS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.ext.udc.UdcConstants.VERSION;
+//	import static Neo4Net.ext.udc.UdcConstants.VERSION;
 
 	/// <summary>
 	/// Unit testing for the UDC kernel extension.
 	/// <para>
 	/// The UdcExtensionImpl is loaded when a new
 	/// GraphDatabase is instantiated, as part of
-	/// <seealso cref="org.Neo4Net.helpers.Service.load"/>.
+	/// <seealso cref="Neo4Net.helpers.Service.load"/>.
 	/// </para>
 	/// </summary>
 	public class UdcExtensionImplIT : LocalServerTestBase
@@ -102,7 +102,7 @@ namespace Neo4Net.Ext.Udc.impl
 		 private static readonly Condition<int> _isGreaterThanZero = value => value > 0;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory path = org.Neo4Net.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.TestDirectory path = Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory Path = TestDirectory.testDirectory();
 
 		 private PingerHandler _handler;
@@ -577,7 +577,7 @@ namespace Neo4Net.Ext.Udc.impl
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void cleanup(org.Neo4Net.graphdb.GraphDatabaseService gdb) throws java.io.IOException
+//ORIGINAL LINE: private void cleanup(Neo4Net.graphdb.GraphDatabaseService gdb) throws java.io.IOException
 		 private void Cleanup( IGraphDatabaseService gdb )
 		 {
 			  if ( gdb != null )

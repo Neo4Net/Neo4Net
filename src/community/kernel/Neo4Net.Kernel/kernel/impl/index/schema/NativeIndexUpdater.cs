@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using Value = Neo4Net.Values.Storable.Value;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.NativeIndexKey.Inclusion.NEUTRAL;
+//	import static Neo4Net.kernel.impl.index.schema.NativeIndexKey.Inclusion.NEUTRAL;
 
 	internal class NativeIndexUpdater<KEY, VALUE> : IndexUpdater where KEY : NativeIndexKey<KEY> where VALUE : NativeIndexValue
 	{
@@ -57,7 +57,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void process(org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> update) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: public void process(Neo4Net.kernel.api.index.IndexEntryUpdate<?> update) throws Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 public override void Process<T1>( IndexEntryUpdate<T1> update )
 		 {
 			  AssertOpen();
@@ -79,7 +79,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static <KEY extends NativeIndexKey<KEY>, VALUE extends NativeIndexValue> void processUpdate(KEY treeKey, VALUE treeValue, org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> update, org.Neo4Net.index.internal.gbptree.Writer<KEY,VALUE> writer, ConflictDetectingValueMerger<KEY,VALUE,org.Neo4Net.values.storable.Value[]> conflictDetectingValueMerger) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: static <KEY extends NativeIndexKey<KEY>, VALUE extends NativeIndexValue> void processUpdate(KEY treeKey, VALUE treeValue, Neo4Net.kernel.api.index.IndexEntryUpdate<?> update, Neo4Net.index.internal.gbptree.Writer<KEY,VALUE> writer, ConflictDetectingValueMerger<KEY,VALUE,Neo4Net.values.storable.Value[]> conflictDetectingValueMerger) throws Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 internal static void ProcessUpdate<KEY, VALUE, T1>( KEY treeKey, VALUE treeValue, IndexEntryUpdate<T1> update, Writer<KEY, VALUE> writer, ConflictDetectingValueMerger<KEY, VALUE, Value[]> conflictDetectingValueMerger ) where KEY : NativeIndexKey<KEY> where VALUE : NativeIndexValue
 		 {
 			  switch ( update.UpdateMode() )
@@ -107,7 +107,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static <KEY extends NativeIndexKey<KEY>, VALUE extends NativeIndexValue> void processChange(KEY treeKey, VALUE treeValue, org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> update, org.Neo4Net.index.internal.gbptree.Writer<KEY,VALUE> writer, ConflictDetectingValueMerger<KEY,VALUE,org.Neo4Net.values.storable.Value[]> conflictDetectingValueMerger) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: private static <KEY extends NativeIndexKey<KEY>, VALUE extends NativeIndexValue> void processChange(KEY treeKey, VALUE treeValue, Neo4Net.kernel.api.index.IndexEntryUpdate<?> update, Neo4Net.index.internal.gbptree.Writer<KEY,VALUE> writer, ConflictDetectingValueMerger<KEY,VALUE,Neo4Net.values.storable.Value[]> conflictDetectingValueMerger) throws Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 private static void ProcessChange<KEY, VALUE, T1>( KEY treeKey, VALUE treeValue, IndexEntryUpdate<T1> update, Writer<KEY, VALUE> writer, ConflictDetectingValueMerger<KEY, VALUE, Value[]> conflictDetectingValueMerger ) where KEY : NativeIndexKey<KEY> where VALUE : NativeIndexValue
 		 {
 			  // Remove old entry
@@ -122,7 +122,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static <KEY extends NativeIndexKey<KEY>, VALUE extends NativeIndexValue> void processAdd(KEY treeKey, VALUE treeValue, org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> update, org.Neo4Net.index.internal.gbptree.Writer<KEY,VALUE> writer, ConflictDetectingValueMerger<KEY,VALUE,org.Neo4Net.values.storable.Value[]> conflictDetectingValueMerger) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: private static <KEY extends NativeIndexKey<KEY>, VALUE extends NativeIndexValue> void processAdd(KEY treeKey, VALUE treeValue, Neo4Net.kernel.api.index.IndexEntryUpdate<?> update, Neo4Net.index.internal.gbptree.Writer<KEY,VALUE> writer, ConflictDetectingValueMerger<KEY,VALUE,Neo4Net.values.storable.Value[]> conflictDetectingValueMerger) throws Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 private static void ProcessAdd<KEY, VALUE, T1>( KEY treeKey, VALUE treeValue, IndexEntryUpdate<T1> update, Writer<KEY, VALUE> writer, ConflictDetectingValueMerger<KEY, VALUE, Value[]> conflictDetectingValueMerger ) where KEY : NativeIndexKey<KEY> where VALUE : NativeIndexValue
 		 {
 			  InitializeKeyAndValueFromUpdate( treeKey, treeValue, update.EntityId, update.Values() );

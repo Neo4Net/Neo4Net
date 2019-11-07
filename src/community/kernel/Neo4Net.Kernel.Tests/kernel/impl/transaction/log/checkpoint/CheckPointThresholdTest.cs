@@ -30,7 +30,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.checkpoint
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.checkpoint.CheckPointThreshold_Fields.DEFAULT_CHECKING_FREQUENCY_MILLIS;
+//	import static Neo4Net.kernel.impl.transaction.log.checkpoint.CheckPointThreshold_Fields.DEFAULT_CHECKING_FREQUENCY_MILLIS;
 
 	public class CheckPointThresholdTest : CheckPointThresholdTestSupport
 	{

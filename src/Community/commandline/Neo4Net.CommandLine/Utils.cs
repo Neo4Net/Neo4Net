@@ -79,7 +79,7 @@ namespace Neo4Net.CommandLine
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static void checkLock(org.Neo4Net.io.layout.StoreLayout storeLayout) throws org.Neo4Net.commandline.admin.CommandFailed
+//ORIGINAL LINE: public static void checkLock(Neo4Net.io.layout.StoreLayout storeLayout) throws Neo4Net.commandline.admin.CommandFailed
 		 public static void CheckLock( StoreLayout storeLayout )
 		 {
 			  try
@@ -100,7 +100,7 @@ namespace Neo4Net.CommandLine
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static void wrapIOException(java.io.IOException e) throws org.Neo4Net.commandline.admin.CommandFailed
+//ORIGINAL LINE: public static void wrapIOException(java.io.IOException e) throws Neo4Net.commandline.admin.CommandFailed
 		 public static void WrapIOException( IOException e )
 		 {
 			  throw new CommandFailed( format( "unable to load database: %s: %s", e.GetType().Name, e.Message ), e );

@@ -34,9 +34,9 @@ namespace Neo4Net.causalclustering
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.BackupCoreIT.backupArguments;
+//	import static Neo4Net.causalclustering.BackupCoreIT.backupArguments;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.util.TestHelpers.runBackupToolFromOtherJvmToGetExitCode;
+//	import static Neo4Net.util.TestHelpers.runBackupToolFromOtherJvmToGetExitCode;
 
 	public class BackupUtil
 	{
@@ -46,7 +46,7 @@ namespace Neo4Net.causalclustering
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static java.io.File createBackupFromCore(org.Neo4Net.causalclustering.discovery.CoreClusterMember core, String backupName, java.io.File baseBackupDir) throws Exception
+//ORIGINAL LINE: public static java.io.File createBackupFromCore(Neo4Net.causalclustering.discovery.CoreClusterMember core, String backupName, java.io.File baseBackupDir) throws Exception
 		 public static File CreateBackupFromCore( CoreClusterMember core, string backupName, File baseBackupDir )
 		 {
 			  string[] args = backupArguments( BackupAddress( core ), baseBackupDir, backupName );
@@ -55,7 +55,7 @@ namespace Neo4Net.causalclustering
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static void restoreFromBackup(java.io.File backup, org.Neo4Net.io.fs.FileSystemAbstraction fsa, org.Neo4Net.causalclustering.discovery.ClusterMember clusterMember) throws java.io.IOException, org.Neo4Net.commandline.admin.CommandFailed
+//ORIGINAL LINE: public static void restoreFromBackup(java.io.File backup, Neo4Net.io.fs.FileSystemAbstraction fsa, Neo4Net.causalclustering.discovery.ClusterMember clusterMember) throws java.io.IOException, Neo4Net.commandline.admin.CommandFailed
 		 public static void RestoreFromBackup( File backup, FileSystemAbstraction fsa, ClusterMember clusterMember )
 		 {
 			  Config config = clusterMember.config();

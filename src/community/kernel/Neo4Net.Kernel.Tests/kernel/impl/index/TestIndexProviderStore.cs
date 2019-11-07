@@ -113,7 +113,7 @@ namespace Neo4Net.Kernel.impl.index
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(expected = org.Neo4Net.kernel.impl.store.NotCurrentStoreVersionException.class) public void shouldFailToGoBackToOlderVersion()
+//ORIGINAL LINE: @Test(expected = Neo4Net.kernel.impl.store.NotCurrentStoreVersionException.class) public void shouldFailToGoBackToOlderVersion()
 		 public virtual void ShouldFailToGoBackToOlderVersion()
 		 {
 			  string newerVersion = "3.5";
@@ -133,7 +133,7 @@ namespace Neo4Net.Kernel.impl.index
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(expected = org.Neo4Net.kernel.impl.store.NotCurrentStoreVersionException.class) public void shouldFailToGoBackToOlderVersionEvenIfAllowUpgrade()
+//ORIGINAL LINE: @Test(expected = Neo4Net.kernel.impl.store.NotCurrentStoreVersionException.class) public void shouldFailToGoBackToOlderVersionEvenIfAllowUpgrade()
 		 public virtual void ShouldFailToGoBackToOlderVersionEvenIfAllowUpgrade()
 		 {
 			  string newerVersion = "3.5";
@@ -181,7 +181,7 @@ namespace Neo4Net.Kernel.impl.index
 		 {
 			  // Given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.io.fs.StoreChannel[] channelUsedToCreateFile = {null};
+//ORIGINAL LINE: final Neo4Net.io.fs.StoreChannel[] channelUsedToCreateFile = {null};
 			  StoreChannel[] channelUsedToCreateFile = new StoreChannel[] { null };
 
 			  FileSystemAbstraction fs = spy( _fileSystem );

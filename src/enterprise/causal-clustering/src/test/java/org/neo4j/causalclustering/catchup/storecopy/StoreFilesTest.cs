@@ -102,7 +102,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void createFile(org.Neo4Net.io.fs.FileSystemAbstraction fs, java.io.File file) throws java.io.IOException
+//ORIGINAL LINE: private void createFile(Neo4Net.io.fs.FileSystemAbstraction fs, java.io.File file) throws java.io.IOException
 		 private void CreateFile( FileSystemAbstraction fs, File file )
 		 {
 			  fs.Mkdirs( file.ParentFile );

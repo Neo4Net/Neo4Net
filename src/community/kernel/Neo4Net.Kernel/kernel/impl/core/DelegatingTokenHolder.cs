@@ -35,7 +35,7 @@ namespace Neo4Net.Kernel.impl.core
 	using ReadOnlyDbException = Neo4Net.Kernel.Api.Exceptions.ReadOnlyDbException;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.function.Predicates.ALWAYS_TRUE_INT;
+//	import static Neo4Net.function.Predicates.ALWAYS_TRUE_INT;
 
 	/// <summary>
 	/// Keeps a registry of tokens using <seealso cref="TokenRegistry"/>.
@@ -58,7 +58,7 @@ namespace Neo4Net.Kernel.impl.core
 		 /// <returns> newly created token id </returns>
 		 /// <exception cref="KernelException"> </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected synchronized int createToken(String name) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: protected synchronized int createToken(String name) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 protected internal override int CreateToken( string name )
 		 {
 			 lock ( this )

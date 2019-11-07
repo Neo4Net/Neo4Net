@@ -35,7 +35,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 // long2Array (months)
 		 // long3Array (days)
 
-		 internal DurationArrayType( sbyte typeId ) : base( ValueGroup.DURATION_ARRAY, typeId, ( o1, o2, i ) -> DurationType.Compare( o1.long0Array[i], o1.long1Array[i], o1.long2Array[i], o1.long3Array[i], o2.long0Array[i], o2.long1Array[i], o2.long2Array[i], o2.long3Array[i] ), ( k, i ) -> DurationType.AsValue( k.long0Array[i], k.long1Array[i], k.long2Array[i], k.long3Array[i] ), ( c, k, i ) -> DurationType.put( c, k.long0Array[i], k.long1Array[i], k.long2Array[i], k.long3Array[i] ), DurationType.read, DurationValue[]::new, org.Neo4Net.values.storable.ValueWriter_ArrayType.Duration )
+		 internal DurationArrayType( sbyte typeId ) : base( ValueGroup.DURATION_ARRAY, typeId, ( o1, o2, i ) -> DurationType.Compare( o1.long0Array[i], o1.long1Array[i], o1.long2Array[i], o1.long3Array[i], o2.long0Array[i], o2.long1Array[i], o2.long2Array[i], o2.long3Array[i] ), ( k, i ) -> DurationType.AsValue( k.long0Array[i], k.long1Array[i], k.long2Array[i], k.long3Array[i] ), ( c, k, i ) -> DurationType.put( c, k.long0Array[i], k.long1Array[i], k.long2Array[i], k.long3Array[i] ), DurationType.read, DurationValue[]::new, Neo4Net.values.storable.ValueWriter_ArrayType.Duration )
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Method reference constructor syntax is not converted by Java to C# Converter:
 		 }

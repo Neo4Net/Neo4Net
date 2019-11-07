@@ -29,7 +29,7 @@ namespace Neo4Net.cluster.com.message
 	/// <summary>
 	/// Message for state machines which can be sent out to instances in the cluster as well.
 	/// <para>
-	/// These are typically produced and consumed by a <seealso cref="org.Neo4Net.cluster.statemachine.StateMachine"/>.
+	/// These are typically produced and consumed by a <seealso cref="Neo4Net.cluster.statemachine.StateMachine"/>.
 	/// </para>
 	/// </summary>
 	[Serializable]

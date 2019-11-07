@@ -62,7 +62,7 @@ namespace Neo4Net.Bolt.v1.runtime
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.bolt.security.auth.AuthenticationResult authenticate(java.util.Map<String,Object> authToken) throws org.Neo4Net.bolt.security.auth.AuthenticationException
+//ORIGINAL LINE: public Neo4Net.bolt.security.auth.AuthenticationResult authenticate(java.util.Map<String,Object> authToken) throws Neo4Net.bolt.security.auth.AuthenticationException
 		 public override AuthenticationResult Authenticate( IDictionary<string, object> authToken )
 		 {
 			  return _authentication.authenticate( authToken );

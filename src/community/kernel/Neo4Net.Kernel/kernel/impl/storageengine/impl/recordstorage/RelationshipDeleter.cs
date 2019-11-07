@@ -36,7 +36,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 	using ResourceLocker = Neo4Net.Kernel.Api.StorageEngine.@lock.ResourceLocker;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.storageengine.impl.recordstorage.RelationshipCreator.relCount;
+//	import static Neo4Net.kernel.impl.storageengine.impl.recordstorage.RelationshipCreator.relCount;
 
 	internal class RelationshipDeleter
 	{

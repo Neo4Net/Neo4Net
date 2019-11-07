@@ -62,7 +62,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static org.Neo4Net.kernel.impl.transaction.CommittedTransactionRepresentation[] exhaust(TransactionCursor cursor) throws java.io.IOException
+//ORIGINAL LINE: public static Neo4Net.kernel.impl.transaction.CommittedTransactionRepresentation[] exhaust(TransactionCursor cursor) throws java.io.IOException
 		 public static CommittedTransactionRepresentation[] Exhaust( TransactionCursor cursor )
 		 {
 			  IList<CommittedTransactionRepresentation> list = new List<CommittedTransactionRepresentation>();

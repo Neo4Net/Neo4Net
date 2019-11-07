@@ -22,7 +22,7 @@
 namespace Neo4Net.Kernel.Impl.Api
 {
 
-	using KernelTransactionHandle = Neo4Net.Kernel.api.KernelTransactionHandle;
+	using KernelTransactionHandle = Neo4Net.Kernel.Api.KernelTransactionHandle;
 
 	/// <summary>
 	/// An instance of this class can get a snapshot of all currently running transactions and be able to tell

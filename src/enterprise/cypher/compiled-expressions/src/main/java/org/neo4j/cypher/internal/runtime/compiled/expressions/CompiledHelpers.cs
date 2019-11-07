@@ -31,7 +31,7 @@ namespace Neo4Net.Cypher.Internal.runtime.compiled.expressions
 	using Value = Neo4Net.Values.Storable.Value;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.NO_VALUE;
+//	import static Neo4Net.values.storable.Values.NO_VALUE;
 
 	/// <summary>
 	/// Contains helper methods used from compiled expressions

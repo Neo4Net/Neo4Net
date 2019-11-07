@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.checkpoint
 	using SystemNanoClock = Neo4Net.Time.SystemNanoClock;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.checkpoint.CheckPointThreshold.or;
+//	import static Neo4Net.kernel.impl.transaction.log.checkpoint.CheckPointThreshold.or;
 
 	/// <summary>
 	/// The {@code periodic} check point threshold policy uses the <seealso cref="GraphDatabaseSettings.check_point_interval_time"/>

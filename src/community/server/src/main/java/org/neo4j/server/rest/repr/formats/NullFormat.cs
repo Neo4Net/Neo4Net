@@ -54,7 +54,7 @@ namespace Neo4Net.Server.rest.repr.formats
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.util.Map<String, Object> readMap(String input, String... requiredKeys) throws org.Neo4Net.server.rest.repr.BadInputException
+//ORIGINAL LINE: public java.util.Map<String, Object> readMap(String input, String... requiredKeys) throws Neo4Net.server.rest.repr.BadInputException
 		 public override IDictionary<string, object> ReadMap( string input, params string[] requiredKeys )
 		 {
 			  if ( Empty( input ) )
@@ -91,28 +91,28 @@ namespace Neo4Net.Server.rest.repr.formats
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: protected org.Neo4Net.server.rest.repr.ListWriter serializeList(final String type)
+//ORIGINAL LINE: protected Neo4Net.server.rest.repr.ListWriter serializeList(final String type)
 		 protected internal override ListWriter SerializeList( string type )
 		 {
 			  throw new MediaTypeNotSupportedException( Response.Status.NOT_ACCEPTABLE, _supported, _requested );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: protected org.Neo4Net.server.rest.repr.MappingWriter serializeMapping(final String type)
+//ORIGINAL LINE: protected Neo4Net.server.rest.repr.MappingWriter serializeMapping(final String type)
 		 protected internal override MappingWriter SerializeMapping( string type )
 		 {
 			  throw new MediaTypeNotSupportedException( Response.Status.NOT_ACCEPTABLE, _supported, _requested );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: protected String complete(final org.Neo4Net.server.rest.repr.ListWriter serializer)
+//ORIGINAL LINE: protected String complete(final Neo4Net.server.rest.repr.ListWriter serializer)
 		 protected internal override string Complete( ListWriter serializer )
 		 {
 			  throw new MediaTypeNotSupportedException( Response.Status.NOT_ACCEPTABLE, _supported, _requested );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: protected String complete(final org.Neo4Net.server.rest.repr.MappingWriter serializer)
+//ORIGINAL LINE: protected String complete(final Neo4Net.server.rest.repr.MappingWriter serializer)
 		 protected internal override string Complete( MappingWriter serializer )
 		 {
 			  throw new MediaTypeNotSupportedException( Response.Status.NOT_ACCEPTABLE, _supported, _requested );

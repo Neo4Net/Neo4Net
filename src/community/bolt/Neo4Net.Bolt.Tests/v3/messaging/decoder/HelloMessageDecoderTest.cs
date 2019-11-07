@@ -38,13 +38,13 @@ namespace Neo4Net.Bolt.v3.messaging.decoder
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.mock;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v3.messaging.BoltProtocolV3ComponentFactory.encode;
+//	import static Neo4Net.bolt.v3.messaging.BoltProtocolV3ComponentFactory.encode;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v3.messaging.BoltProtocolV3ComponentFactory.newNeo4NetPack;
+//	import static Neo4Net.bolt.v3.messaging.BoltProtocolV3ComponentFactory.newNeo4NetPack;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.map;
+//	import static Neo4Net.helpers.collection.MapUtil.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.AuthTokenUtil.assertAuthTokenMatches;
+//	import static Neo4Net.test.AuthTokenUtil.assertAuthTokenMatches;
 
 	internal class HelloMessageDecoderTest : AuthTokenDecoderTest
 	{
@@ -91,7 +91,7 @@ namespace Neo4Net.Bolt.v3.messaging.decoder
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static void assertOriginalMessageEqualsToDecoded(org.Neo4Net.bolt.messaging.RequestMessage originalMessage, org.Neo4Net.bolt.messaging.RequestMessageDecoder decoder) throws Exception
+//ORIGINAL LINE: static void assertOriginalMessageEqualsToDecoded(Neo4Net.bolt.messaging.RequestMessage originalMessage, Neo4Net.bolt.messaging.RequestMessageDecoder decoder) throws Exception
 		 internal static void AssertOriginalMessageEqualsToDecoded( RequestMessage originalMessage, RequestMessageDecoder decoder )
 		 {
 			  Neo4NetPack Neo4NetPack = newNeo4NetPack();

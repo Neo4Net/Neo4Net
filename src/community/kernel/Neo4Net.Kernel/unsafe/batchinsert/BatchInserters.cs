@@ -31,7 +31,7 @@ namespace Neo4Net.@unsafe.Batchinsert
 	using IndexConfigStoreProvider = Neo4Net.@unsafe.Batchinsert.Internal.IndexConfigStoreProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
+//	import static Neo4Net.helpers.collection.MapUtil.stringMap;
 
 	/// <summary>
 	/// Provides instances of <seealso cref="BatchInserter"/>.
@@ -54,7 +54,7 @@ namespace Neo4Net.@unsafe.Batchinsert
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static BatchInserter inserter(java.io.File databaseDirectory, org.Neo4Net.io.fs.FileSystemAbstraction fs) throws java.io.IOException
+//ORIGINAL LINE: public static BatchInserter inserter(java.io.File databaseDirectory, Neo4Net.io.fs.FileSystemAbstraction fs) throws java.io.IOException
 		 public static BatchInserter Inserter( File databaseDirectory, FileSystemAbstraction fs )
 		 {
 			  return Inserter( databaseDirectory, fs, stringMap(), LoadKernelExtension() );
@@ -70,14 +70,14 @@ namespace Neo4Net.@unsafe.Batchinsert
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static BatchInserter inserter(java.io.File databaseDirectory, org.Neo4Net.io.fs.FileSystemAbstraction fs, java.util.Map<String,String> config) throws java.io.IOException
+//ORIGINAL LINE: public static BatchInserter inserter(java.io.File databaseDirectory, Neo4Net.io.fs.FileSystemAbstraction fs, java.util.Map<String,String> config) throws java.io.IOException
 		 public static BatchInserter Inserter( File databaseDirectory, FileSystemAbstraction fs, IDictionary<string, string> config )
 		 {
 			  return Inserter( databaseDirectory, fs, config, LoadKernelExtension() );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static BatchInserter inserter(java.io.File databaseDirectory, java.util.Map<String, String> config, Iterable<org.Neo4Net.kernel.extension.KernelExtensionFactory<?>> kernelExtensions) throws java.io.IOException
+//ORIGINAL LINE: public static BatchInserter inserter(java.io.File databaseDirectory, java.util.Map<String, String> config, Iterable<Neo4Net.kernel.extension.KernelExtensionFactory<?>> kernelExtensions) throws java.io.IOException
 		 public static BatchInserter Inserter<T1>( File databaseDirectory, IDictionary<string, string> config, IEnumerable<T1> kernelExtensions )
 		 {
 			  DefaultFileSystemAbstraction fileSystem = CreateFileSystem();
@@ -86,7 +86,7 @@ namespace Neo4Net.@unsafe.Batchinsert
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static BatchInserter inserter(java.io.File databaseDirectory, org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, java.util.Map<String,String> config, Iterable<org.Neo4Net.kernel.extension.KernelExtensionFactory<?>> kernelExtensions) throws java.io.IOException
+//ORIGINAL LINE: public static BatchInserter inserter(java.io.File databaseDirectory, Neo4Net.io.fs.FileSystemAbstraction fileSystem, java.util.Map<String,String> config, Iterable<Neo4Net.kernel.extension.KernelExtensionFactory<?>> kernelExtensions) throws java.io.IOException
 		 public static BatchInserter Inserter<T1>( File databaseDirectory, FileSystemAbstraction fileSystem, IDictionary<string, string> config, IEnumerable<T1> kernelExtensions )
 		 {
 			  return new BatchInserterImpl( databaseDirectory, fileSystem, config, kernelExtensions );

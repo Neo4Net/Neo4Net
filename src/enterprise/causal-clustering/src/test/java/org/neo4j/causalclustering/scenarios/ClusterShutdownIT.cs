@@ -48,14 +48,14 @@ namespace Neo4Net.causalclustering.scenarios
 	public class ClusterShutdownIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.causalclustering.ClusterRule clusterRule = new org.Neo4Net.test.causalclustering.ClusterRule().withNumberOfCoreMembers(3).withNumberOfReadReplicas(0);
+//ORIGINAL LINE: @Rule public final Neo4Net.test.causalclustering.ClusterRule clusterRule = new Neo4Net.test.causalclustering.ClusterRule().withNumberOfCoreMembers(3).withNumberOfReadReplicas(0);
 		 public readonly ClusterRule ClusterRule = new ClusterRule().withNumberOfCoreMembers(3).withNumberOfReadReplicas(0);
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Parameterized.Parameter() public java.util.Collection<int> shutdownOrder;
 		 public ICollection<int> ShutdownOrder;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private org.Neo4Net.causalclustering.discovery.Cluster<?> cluster;
+//ORIGINAL LINE: private Neo4Net.causalclustering.discovery.Cluster<?> cluster;
 		 private Cluster<object> _cluster;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -93,7 +93,7 @@ namespace Neo4Net.causalclustering.scenarios
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void createANode(java.util.concurrent.atomic.AtomicReference<org.Neo4Net.graphdb.Node> node) throws Exception
+//ORIGINAL LINE: private void createANode(java.util.concurrent.atomic.AtomicReference<Neo4Net.graphdb.Node> node) throws Exception
 		 private void CreateANode( AtomicReference<Node> node )
 		 {
 			  _cluster.coreTx((coreGraphDatabase, transaction) =>
@@ -104,7 +104,7 @@ namespace Neo4Net.causalclustering.scenarios
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void shouldShutdownEvenThoughWaitingForLock0(org.Neo4Net.causalclustering.discovery.Cluster<?> cluster, int victimId, java.util.Collection<int> shutdownOrder) throws Exception
+//ORIGINAL LINE: private void shouldShutdownEvenThoughWaitingForLock0(Neo4Net.causalclustering.discovery.Cluster<?> cluster, int victimId, java.util.Collection<int> shutdownOrder) throws Exception
 		 private void ShouldShutdownEvenThoughWaitingForLock0<T1>( Cluster<T1> cluster, int victimId, ICollection<int> shutdownOrder )
 		 {
 			  const int longTime = 60_000;
@@ -126,7 +126,7 @@ namespace Neo4Net.causalclustering.scenarios
 //ORIGINAL LINE: final java.util.concurrent.CountDownLatch locksHolder = new java.util.concurrent.CountDownLatch(1);
 			  System.Threading.CountdownEvent locksHolder = new System.Threading.CountdownEvent( 1 );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.concurrent.atomic.AtomicReference<org.Neo4Net.graphdb.Node> node = new java.util.concurrent.atomic.AtomicReference<>();
+//ORIGINAL LINE: final java.util.concurrent.atomic.AtomicReference<Neo4Net.graphdb.Node> node = new java.util.concurrent.atomic.AtomicReference<>();
 			  AtomicReference<Node> node = new AtomicReference<Node>();
 
 			  CompletableFuture<Void> preShutdown = new CompletableFuture<Void>();
@@ -144,7 +144,7 @@ namespace Neo4Net.causalclustering.scenarios
 			  {
 					// when - blocking on lock acquiring
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.graphdb.GraphDatabaseService leader = cluster.getCoreMemberById(victimId).database();
+//ORIGINAL LINE: final Neo4Net.graphdb.GraphDatabaseService leader = cluster.getCoreMemberById(victimId).database();
 					GraphDatabaseService leader = cluster.GetCoreMemberById( victimId ).database();
 
 					for ( int i = 0; i < numberOfLockAcquirers; i++ )

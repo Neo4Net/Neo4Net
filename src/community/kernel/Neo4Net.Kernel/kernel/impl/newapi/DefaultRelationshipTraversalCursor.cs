@@ -31,17 +31,17 @@ namespace Neo4Net.Kernel.Impl.Newapi
 	using NodeState = Neo4Net.Kernel.Api.StorageEngine.TxState.NodeState;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.Read_Fields.ANY_RELATIONSHIP_TYPE;
+//	import static Neo4Net.Kernel.Api.Internal.Read_Fields.ANY_RELATIONSHIP_TYPE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.newapi.References.clearEncoding;
+//	import static Neo4Net.kernel.impl.newapi.References.clearEncoding;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.record.AbstractBaseRecord.NO_ID;
+//	import static Neo4Net.kernel.impl.store.record.AbstractBaseRecord.NO_ID;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.StorageEngine.RelationshipDirection.INCOMING;
+//	import static Neo4Net.Kernel.Api.StorageEngine.RelationshipDirection.INCOMING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.StorageEngine.RelationshipDirection.LOOP;
+//	import static Neo4Net.Kernel.Api.StorageEngine.RelationshipDirection.LOOP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.StorageEngine.RelationshipDirection.OUTGOING;
+//	import static Neo4Net.Kernel.Api.StorageEngine.RelationshipDirection.OUTGOING;
 
 	internal class DefaultRelationshipTraversalCursor : DefaultRelationshipCursor<StorageRelationshipTraversalCursor>, RelationshipTraversalCursor
 	{
@@ -49,19 +49,19 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 {
 			  // need filter, and need to read filter state from first store relationship
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           NOT_INITIALIZED(org.Neo4Net.Kernel.Api.StorageEngine.RelationshipDirection.ERROR) { boolean check(long source, long target, long origin) { throw new IllegalStateException("Cannot call check on uninitialized filter"); } },
+//           NOT_INITIALIZED(Neo4Net.Kernel.Api.StorageEngine.RelationshipDirection.ERROR) { boolean check(long source, long target, long origin) { throw new IllegalStateException("Cannot call check on uninitialized filter"); } },
 			  // allow only incoming relationships
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           INCOMING(org.Neo4Net.Kernel.Api.StorageEngine.RelationshipDirection.INCOMING) { boolean check(long source, long target, long origin) { return origin == target && source != target; } },
+//           INCOMING(Neo4Net.Kernel.Api.StorageEngine.RelationshipDirection.INCOMING) { boolean check(long source, long target, long origin) { return origin == target && source != target; } },
 			  // allow only outgoing relationships
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           OUTGOING(org.Neo4Net.Kernel.Api.StorageEngine.RelationshipDirection.OUTGOING) { boolean check(long source, long target, long origin) { return origin == source && source != target; } },
+//           OUTGOING(Neo4Net.Kernel.Api.StorageEngine.RelationshipDirection.OUTGOING) { boolean check(long source, long target, long origin) { return origin == source && source != target; } },
 			  // allow only loop relationships
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           LOOP(org.Neo4Net.Kernel.Api.StorageEngine.RelationshipDirection.LOOP) { boolean check(long source, long target, long origin) { return source == target; } },
+//           LOOP(Neo4Net.Kernel.Api.StorageEngine.RelationshipDirection.LOOP) { boolean check(long source, long target, long origin) { return source == target; } },
 			  // no filtering required
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           NONE(org.Neo4Net.Kernel.Api.StorageEngine.RelationshipDirection.ERROR) { boolean check(long source, long target, long origin) { return true; } };
+//           NONE(Neo4Net.Kernel.Api.StorageEngine.RelationshipDirection.ERROR) { boolean check(long source, long target, long origin) { return true; } };
 
 			  private static readonly IList<FilterState> valueList = new List<FilterState>();
 

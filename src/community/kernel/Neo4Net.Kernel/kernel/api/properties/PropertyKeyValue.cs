@@ -19,7 +19,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Kernel.api.properties
+namespace Neo4Net.Kernel.Api.properties
 {
 	using StorageProperty = Neo4Net.Kernel.Api.StorageEngine.StorageProperty;
 	using Value = Neo4Net.Values.Storable.Value;

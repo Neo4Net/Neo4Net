@@ -38,11 +38,11 @@ namespace Neo4Net.Kernel.impl.coreapi
 	using IEntityNotFoundException = Neo4Net.Kernel.Api.Internal.Exceptions.EntityNotFoundException;
 	using InvalidTransactionTypeKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.InvalidTransactionTypeKernelException;
 	using ExplicitIndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
-	using Statement = Neo4Net.Kernel.api.Statement;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
+	using Statement = Neo4Net.Kernel.Api.Statement;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.locking.ResourceTypes.explicitIndexResourceId;
+//	import static Neo4Net.kernel.impl.locking.ResourceTypes.explicitIndexResourceId;
 
 	public class ExplicitIndexProxy<T> : Index<T> where T : Neo4Net.GraphDb.PropertyContainer
 	{
@@ -64,7 +64,7 @@ namespace Neo4Net.Kernel.impl.coreapi
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.GraphDb.Index.IndexHits<org.Neo4Net.graphdb.Node> get(org.Neo4Net.kernel.api.KernelTransaction ktx, String name, String key, Object value, org.Neo4Net.graphdb.GraphDatabaseService IGraphDatabaseService) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: public Neo4Net.GraphDb.Index.IndexHits<Neo4Net.graphdb.Node> get(Neo4Net.kernel.api.KernelTransaction ktx, String name, String key, Object value, Neo4Net.graphdb.GraphDatabaseService IGraphDatabaseService) throws Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 			 public IndexHits<Node> get( KernelTransaction ktx, string name, string key, object value, IGraphDatabaseService IGraphDatabaseService )
 			 {
 				  NodeExplicitIndexCursor cursor = ktx.Cursors().allocateNodeExplicitIndexCursor();
@@ -73,7 +73,7 @@ namespace Neo4Net.Kernel.impl.coreapi
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.GraphDb.Index.IndexHits<org.Neo4Net.graphdb.Node> query(org.Neo4Net.kernel.api.KernelTransaction ktx, String name, String key, Object queryOrQueryObject, org.Neo4Net.graphdb.GraphDatabaseService IGraphDatabaseService) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: public Neo4Net.GraphDb.Index.IndexHits<Neo4Net.graphdb.Node> query(Neo4Net.kernel.api.KernelTransaction ktx, String name, String key, Object queryOrQueryObject, Neo4Net.graphdb.GraphDatabaseService IGraphDatabaseService) throws Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 			 public IndexHits<Node> query( KernelTransaction ktx, string name, string key, object queryOrQueryObject, IGraphDatabaseService IGraphDatabaseService )
 			 {
 				  NodeExplicitIndexCursor cursor = ktx.Cursors().allocateNodeExplicitIndexCursor();
@@ -82,7 +82,7 @@ namespace Neo4Net.Kernel.impl.coreapi
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.GraphDb.Index.IndexHits<org.Neo4Net.graphdb.Node> query(org.Neo4Net.kernel.api.KernelTransaction ktx, String name, Object queryOrQueryObject, org.Neo4Net.graphdb.GraphDatabaseService IGraphDatabaseService) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: public Neo4Net.GraphDb.Index.IndexHits<Neo4Net.graphdb.Node> query(Neo4Net.kernel.api.KernelTransaction ktx, String name, Object queryOrQueryObject, Neo4Net.graphdb.GraphDatabaseService IGraphDatabaseService) throws Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 			 public IndexHits<Node> query( KernelTransaction ktx, string name, object queryOrQueryObject, IGraphDatabaseService IGraphDatabaseService )
 			 {
 				  NodeExplicitIndexCursor cursor = ktx.Cursors().allocateNodeExplicitIndexCursor();
@@ -91,35 +91,35 @@ namespace Neo4Net.Kernel.impl.coreapi
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void add(org.Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite operations, String name, long id, String key, Object value) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: public void add(Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite operations, String name, long id, String key, Object value) throws Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 			 public void add( ExplicitIndexWrite operations, string name, long id, string key, object value )
 			 {
 				  operations.NodeAddToExplicitIndex( name, id, key, value );
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void remove(org.Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite operations, String name, long id, String key, Object value) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: public void remove(Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite operations, String name, long id, String key, Object value) throws Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 			 public void remove( ExplicitIndexWrite operations, string name, long id, string key, object value )
 			 {
 				  operations.NodeRemoveFromExplicitIndex( name, id, key, value );
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void remove(org.Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite operations, String name, long id, String key) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: public void remove(Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite operations, String name, long id, String key) throws Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 			 public void remove( ExplicitIndexWrite operations, string name, long id, string key )
 			 {
 				  operations.NodeRemoveFromExplicitIndex( name, id, key );
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void remove(org.Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite operations, String name, long id) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: public void remove(Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite operations, String name, long id) throws Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 			 public void remove( ExplicitIndexWrite operations, string name, long id )
 			 {
 				  operations.NodeRemoveFromExplicitIndex( name, id );
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void drop(org.Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite operations, String name) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: public void drop(Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite operations, String name) throws Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 			 public void drop( ExplicitIndexWrite operations, string name )
 			 {
 				  operations.NodeExplicitIndexDrop( name );
@@ -149,7 +149,7 @@ namespace Neo4Net.Kernel.impl.coreapi
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.GraphDb.Index.IndexHits<org.Neo4Net.graphdb.Relationship> get(org.Neo4Net.kernel.api.KernelTransaction ktx, String name, String key, Object value, org.Neo4Net.graphdb.GraphDatabaseService IGraphDatabaseService) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: public Neo4Net.GraphDb.Index.IndexHits<Neo4Net.graphdb.Relationship> get(Neo4Net.kernel.api.KernelTransaction ktx, String name, String key, Object value, Neo4Net.graphdb.GraphDatabaseService IGraphDatabaseService) throws Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 			 public IndexHits<Relationship> get( KernelTransaction ktx, string name, string key, object value, IGraphDatabaseService IGraphDatabaseService )
 			 {
 				  RelationshipExplicitIndexCursor cursor = ktx.Cursors().allocateRelationshipExplicitIndexCursor();
@@ -158,7 +158,7 @@ namespace Neo4Net.Kernel.impl.coreapi
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.GraphDb.Index.IndexHits<org.Neo4Net.graphdb.Relationship> query(org.Neo4Net.kernel.api.KernelTransaction ktx, String name, String key, Object queryOrQueryObject, org.Neo4Net.graphdb.GraphDatabaseService IGraphDatabaseService) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: public Neo4Net.GraphDb.Index.IndexHits<Neo4Net.graphdb.Relationship> query(Neo4Net.kernel.api.KernelTransaction ktx, String name, String key, Object queryOrQueryObject, Neo4Net.graphdb.GraphDatabaseService IGraphDatabaseService) throws Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 			 public IndexHits<Relationship> query( KernelTransaction ktx, string name, string key, object queryOrQueryObject, IGraphDatabaseService IGraphDatabaseService )
 			 {
 				  RelationshipExplicitIndexCursor cursor = ktx.Cursors().allocateRelationshipExplicitIndexCursor();
@@ -167,7 +167,7 @@ namespace Neo4Net.Kernel.impl.coreapi
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.GraphDb.Index.IndexHits<org.Neo4Net.graphdb.Relationship> query(org.Neo4Net.kernel.api.KernelTransaction ktx, String name, Object queryOrQueryObject, org.Neo4Net.graphdb.GraphDatabaseService IGraphDatabaseService) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: public Neo4Net.GraphDb.Index.IndexHits<Neo4Net.graphdb.Relationship> query(Neo4Net.kernel.api.KernelTransaction ktx, String name, Object queryOrQueryObject, Neo4Net.graphdb.GraphDatabaseService IGraphDatabaseService) throws Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 			 public IndexHits<Relationship> query( KernelTransaction ktx, string name, object queryOrQueryObject, IGraphDatabaseService IGraphDatabaseService )
 			 {
 				  RelationshipExplicitIndexCursor cursor = ktx.Cursors().allocateRelationshipExplicitIndexCursor();
@@ -176,35 +176,35 @@ namespace Neo4Net.Kernel.impl.coreapi
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void add(org.Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite operations, String name, long id, String key, Object value) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException, org.Neo4Net.Kernel.Api.Internal.Exceptions.EntityNotFoundException
+//ORIGINAL LINE: public void add(Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite operations, String name, long id, String key, Object value) throws Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException, Neo4Net.Kernel.Api.Internal.Exceptions.EntityNotFoundException
 			 public void add( ExplicitIndexWrite operations, string name, long id, string key, object value )
 			 {
 				  operations.RelationshipAddToExplicitIndex( name, id, key, value );
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void remove(org.Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite operations, String name, long id, String key, Object value) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: public void remove(Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite operations, String name, long id, String key, Object value) throws Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 			 public void remove( ExplicitIndexWrite operations, string name, long id, string key, object value )
 			 {
 				  operations.RelationshipRemoveFromExplicitIndex( name, id, key, value );
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void remove(org.Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite operations, String name, long id, String key) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: public void remove(Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite operations, String name, long id, String key) throws Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 			 public void remove( ExplicitIndexWrite operations, string name, long id, string key )
 			 {
 				  operations.RelationshipRemoveFromExplicitIndex( name, id, key );
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void remove(org.Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite operations, String name, long id) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: public void remove(Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite operations, String name, long id) throws Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 			 public void remove( ExplicitIndexWrite operations, string name, long id )
 			 {
 				  operations.RelationshipRemoveFromExplicitIndex( name, id );
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void drop(org.Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite operations, String name) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: public void drop(Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite operations, String name) throws Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 			 public void drop( ExplicitIndexWrite operations, string name )
 			 {
 				  operations.RelationshipExplicitIndexDrop( name );
@@ -223,35 +223,35 @@ namespace Neo4Net.Kernel.impl.coreapi
 			  T IEntity( long id, IGraphDatabaseService IGraphDatabaseService );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.Neo4Net.GraphDb.Index.IndexHits<T> get(org.Neo4Net.kernel.api.KernelTransaction operations, String name, String key, Object value, org.Neo4Net.graphdb.GraphDatabaseService gds) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
+//ORIGINAL LINE: Neo4Net.GraphDb.Index.IndexHits<T> get(Neo4Net.kernel.api.KernelTransaction operations, String name, String key, Object value, Neo4Net.graphdb.GraphDatabaseService gds) throws Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
 			  IndexHits<T> Get( KernelTransaction operations, string name, string key, object value, IGraphDatabaseService gds );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.Neo4Net.GraphDb.Index.IndexHits<T> query(org.Neo4Net.kernel.api.KernelTransaction operations, String name, String key, Object queryOrQueryObject, org.Neo4Net.graphdb.GraphDatabaseService gds) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
+//ORIGINAL LINE: Neo4Net.GraphDb.Index.IndexHits<T> query(Neo4Net.kernel.api.KernelTransaction operations, String name, String key, Object queryOrQueryObject, Neo4Net.graphdb.GraphDatabaseService gds) throws Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
 			  IndexHits<T> Query( KernelTransaction operations, string name, string key, object queryOrQueryObject, IGraphDatabaseService gds );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.Neo4Net.GraphDb.Index.IndexHits<T> query(org.Neo4Net.kernel.api.KernelTransaction transaction, String name, Object queryOrQueryObject, org.Neo4Net.graphdb.GraphDatabaseService gds) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
+//ORIGINAL LINE: Neo4Net.GraphDb.Index.IndexHits<T> query(Neo4Net.kernel.api.KernelTransaction transaction, String name, Object queryOrQueryObject, Neo4Net.graphdb.GraphDatabaseService gds) throws Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
 			  IndexHits<T> Query( KernelTransaction transaction, string name, object queryOrQueryObject, IGraphDatabaseService gds );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void add(org.Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite operations, String name, long id, String key, Object value) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException, org.Neo4Net.Kernel.Api.Internal.Exceptions.EntityNotFoundException;
+//ORIGINAL LINE: void add(Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite operations, String name, long id, String key, Object value) throws Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException, Neo4Net.Kernel.Api.Internal.Exceptions.EntityNotFoundException;
 			  void Add( ExplicitIndexWrite operations, string name, long id, string key, object value );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void remove(org.Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite operations, String name, long id, String key, Object value) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
+//ORIGINAL LINE: void remove(Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite operations, String name, long id, String key, Object value) throws Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
 			  void Remove( ExplicitIndexWrite operations, string name, long id, string key, object value );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void remove(org.Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite operations, String name, long id, String key) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
+//ORIGINAL LINE: void remove(Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite operations, String name, long id, String key) throws Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
 			  void Remove( ExplicitIndexWrite operations, string name, long id, string key );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void remove(org.Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite operations, String name, long id) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
+//ORIGINAL LINE: void remove(Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite operations, String name, long id) throws Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
 			  void Remove( ExplicitIndexWrite operations, string name, long id );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void drop(org.Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite operations, String name) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
+//ORIGINAL LINE: void drop(Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite operations, String name) throws Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
 			  void Drop( ExplicitIndexWrite operations, string name );
 
 			  long Id( IPropertyContainer IEntity );
@@ -304,7 +304,7 @@ namespace Neo4Net.Kernel.impl.coreapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.GraphDb.Index.IndexHits<T> internalGet(String key, Object value, org.Neo4Net.kernel.api.KernelTransaction ktx) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: private Neo4Net.GraphDb.Index.IndexHits<T> internalGet(String key, Object value, Neo4Net.kernel.api.KernelTransaction ktx) throws Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 private IndexHits<T> InternalGet( string key, object value, KernelTransaction ktx )
 		 {
 			  return Type.get( ktx, NameConflict, key, value, _gds );
@@ -443,7 +443,7 @@ namespace Neo4Net.Kernel.impl.coreapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void internalRemove(org.Neo4Net.kernel.api.KernelTransaction ktx, long id) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.InvalidTransactionTypeKernelException, org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: private void internalRemove(Neo4Net.kernel.api.KernelTransaction ktx, long id) throws Neo4Net.Kernel.Api.Internal.Exceptions.InvalidTransactionTypeKernelException, Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 private void InternalRemove( KernelTransaction ktx, long id )
 		 {
 			  Type.remove( ktx.IndexWrite(), NameConflict, id );
@@ -514,7 +514,7 @@ namespace Neo4Net.Kernel.impl.coreapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void internalAdd(T IEntity, String key, Object value, org.Neo4Net.kernel.api.KernelTransaction transaction) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.EntityNotFoundException, org.Neo4Net.Kernel.Api.Internal.Exceptions.InvalidTransactionTypeKernelException, org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: private void internalAdd(T IEntity, String key, Object value, Neo4Net.kernel.api.KernelTransaction transaction) throws Neo4Net.Kernel.Api.Internal.Exceptions.EntityNotFoundException, Neo4Net.Kernel.Api.Internal.Exceptions.InvalidTransactionTypeKernelException, Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 private void InternalAdd( T IEntity, string key, object value, KernelTransaction transaction )
 		 {
 			  Type.add( transaction.IndexWrite(), NameConflict, Type.id(entity), key, value );
@@ -543,7 +543,7 @@ namespace Neo4Net.Kernel.impl.coreapi
 					this.Score = score;
 			  }
 
-			  public override ResourceIterator<T> Iterator()
+			  public override IResourceIterator<T> Iterator()
 			  {
 					return this;
 			  }

@@ -51,13 +51,13 @@ namespace Neo4Net.tools.applytx
 	using ArgsCommand = Neo4Net.tools.console.input.ArgsCommand;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.progress.ProgressMonitorFactory.textual;
+//	import static Neo4Net.helpers.progress.ProgressMonitorFactory.textual;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
+//	import static Neo4Net.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.tracing.CommitEvent.NULL;
+//	import static Neo4Net.kernel.impl.transaction.tracing.CommitEvent.NULL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode.EXTERNAL;
+//	import static Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode.EXTERNAL;
 
 	public class ApplyTransactionsCommand : ArgsCommand
 	{
@@ -71,7 +71,7 @@ namespace Neo4Net.tools.applytx
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected void run(org.Neo4Net.helpers.Args args, java.io.PrintStream out) throws Exception
+//ORIGINAL LINE: protected void run(Neo4Net.helpers.Args args, java.io.PrintStream out) throws Exception
 		 protected internal override void Run( Args args, PrintStream @out )
 		 {
 			  DependencyResolver dependencyResolver = _to.get().DependencyResolver;
@@ -103,7 +103,7 @@ namespace Neo4Net.tools.applytx
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private long applyTransactions(java.io.File fromPath, org.Neo4Net.kernel.internal.GraphDatabaseAPI toDb, org.Neo4Net.kernel.configuration.Config toConfig, long fromTxExclusive, long toTxInclusive, java.io.PrintStream out) throws Exception
+//ORIGINAL LINE: private long applyTransactions(java.io.File fromPath, Neo4Net.kernel.internal.GraphDatabaseAPI toDb, Neo4Net.kernel.configuration.Config toConfig, long fromTxExclusive, long toTxInclusive, java.io.PrintStream out) throws Exception
 		 private long ApplyTransactions( File fromPath, GraphDatabaseAPI toDb, Config toConfig, long fromTxExclusive, long toTxInclusive, PrintStream @out )
 		 {
 			  DependencyResolver resolver = toDb.DependencyResolver;

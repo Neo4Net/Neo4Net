@@ -29,9 +29,9 @@ namespace Neo4Net.tools.dump.log
 	using LogEntry = Neo4Net.Kernel.impl.transaction.log.entry.LogEntry;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.entry.LogEntryByteCodes.CHECK_POINT;
+//	import static Neo4Net.kernel.impl.transaction.log.entry.LogEntryByteCodes.CHECK_POINT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.entry.LogEntryByteCodes.TX_COMMIT;
+//	import static Neo4Net.kernel.impl.transaction.log.entry.LogEntryByteCodes.TX_COMMIT;
 
 	/// <summary>
 	/// Groups <seealso cref="LogEntry"/> instances transaction by transaction

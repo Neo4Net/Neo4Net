@@ -69,9 +69,9 @@ namespace Neo4Net.causalclustering.core.state
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.record_id_batch_size;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.record_id_batch_size;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.asSet;
+//	import static Neo4Net.helpers.collection.Iterators.asSet;
 
 	public class CoreBootstrapperIT
 	{
@@ -199,7 +199,7 @@ namespace Neo4Net.causalclustering.core.state
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void bootstrapAndVerify(long nodeCount, org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, org.Neo4Net.io.layout.DatabaseLayout databaseLayout, org.Neo4Net.io.pagecache.PageCache pageCache, org.Neo4Net.kernel.configuration.Config config, CoreBootstrapper bootstrapper) throws Exception
+//ORIGINAL LINE: private static void bootstrapAndVerify(long nodeCount, Neo4Net.io.fs.FileSystemAbstraction fileSystem, Neo4Net.io.layout.DatabaseLayout databaseLayout, Neo4Net.io.pagecache.PageCache pageCache, Neo4Net.kernel.configuration.Config config, CoreBootstrapper bootstrapper) throws Exception
 		 private static void BootstrapAndVerify( long nodeCount, FileSystemAbstraction fileSystem, DatabaseLayout databaseLayout, PageCache pageCache, Config config, CoreBootstrapper bootstrapper )
 		 {
 			  // when

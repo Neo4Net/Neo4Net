@@ -53,9 +53,9 @@ namespace Neo4Net.causalclustering
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertFalse;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.BackupUtil.restoreFromBackup;
+//	import static Neo4Net.causalclustering.BackupUtil.restoreFromBackup;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.discovery.Cluster.dataMatchesEventually;
+//	import static Neo4Net.causalclustering.discovery.Cluster.dataMatchesEventually;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class NewMemberSeedingIT
@@ -78,11 +78,11 @@ namespace Neo4Net.causalclustering
 		}
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Parameterized.Parameter() public org.Neo4Net.causalclustering.backup_stores.BackupStore seedStore;
+//ORIGINAL LINE: @Parameterized.Parameter() public Neo4Net.causalclustering.backup_stores.BackupStore seedStore;
 		 public BackupStore SeedStore;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Parameterized.Parameter(1) public org.Neo4Net.causalclustering.cluster_load.ClusterLoad intermediateLoad;
+//ORIGINAL LINE: @Parameterized.Parameter(1) public Neo4Net.causalclustering.cluster_load.ClusterLoad intermediateLoad;
 		 public ClusterLoad IntermediateLoad;
 
 		 private SuppressOutput _suppressOutput = SuppressOutput.suppressAll();
@@ -94,7 +94,7 @@ namespace Neo4Net.causalclustering
 		 public RuleChain Rules;
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private org.Neo4Net.causalclustering.discovery.Cluster<?> cluster;
+//ORIGINAL LINE: private Neo4Net.causalclustering.discovery.Cluster<?> cluster;
 		 private Cluster<object> _cluster;
 		 private FileCopyDetector _fileCopyDetector;
 		 private File _baseBackupDir;

@@ -43,7 +43,7 @@ namespace Neo4Net.causalclustering.core.state.machines.tx
 	public class TransactionRepresentationReplicatedTransactionTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.causalclustering.helpers.Buffers buffers = new org.Neo4Net.causalclustering.helpers.Buffers();
+//ORIGINAL LINE: @Rule public final Neo4Net.causalclustering.helpers.Buffers buffers = new Neo4Net.causalclustering.helpers.Buffers();
 		 public readonly Buffers Buffers = new Buffers();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

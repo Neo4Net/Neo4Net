@@ -29,11 +29,11 @@ namespace Neo4Net.Kernel.impl.store.kvstore
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.kvstore.KeyValueDatabaseStoreTest.CataloguePage.findPage;
+//	import static Neo4Net.kernel.impl.store.kvstore.KeyValueDatabaseStoreTest.CataloguePage.findPage;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.kvstore.KeyValueDatabaseStoreTest.CataloguePage.page;
+//	import static Neo4Net.kernel.impl.store.kvstore.KeyValueDatabaseStoreTest.CataloguePage.page;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.kvstore.KeyValueStoreFile.maxPage;
+//	import static Neo4Net.kernel.impl.store.kvstore.KeyValueStoreFile.maxPage;
 
 	public class KeyValueDatabaseStoreTest
 	{
@@ -193,7 +193,7 @@ namespace Neo4Net.Kernel.impl.store.kvstore
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(expected = org.Neo4Net.kernel.impl.store.UnderlyingStorageException.class) public void shouldThrowOnOutOfBoundsPageAccess() throws Exception
+//ORIGINAL LINE: @Test(expected = Neo4Net.kernel.impl.store.UnderlyingStorageException.class) public void shouldThrowOnOutOfBoundsPageAccess() throws Exception
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldThrowOnOutOfBoundsPageAccess()
 		 {

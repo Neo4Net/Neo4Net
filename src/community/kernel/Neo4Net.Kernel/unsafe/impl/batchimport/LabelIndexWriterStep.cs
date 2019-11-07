@@ -19,8 +19,8 @@
  */
 namespace Neo4Net.@unsafe.Impl.Batchimport
 {
-	using LabelScanStore = Neo4Net.Kernel.api.labelscan.LabelScanStore;
-	using LabelScanWriter = Neo4Net.Kernel.api.labelscan.LabelScanWriter;
+	using LabelScanStore = Neo4Net.Kernel.Api.LabelScan.LabelScanStore;
+	using LabelScanWriter = Neo4Net.Kernel.Api.LabelScan.LabelScanWriter;
 	using NodeStore = Neo4Net.Kernel.impl.store.NodeStore;
 	using NodeRecord = Neo4Net.Kernel.Impl.Store.Records.NodeRecord;
 	using BatchSender = Neo4Net.@unsafe.Impl.Batchimport.staging.BatchSender;
@@ -28,11 +28,11 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 	using StageControl = Neo4Net.@unsafe.Impl.Batchimport.staging.StageControl;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.collection.PrimitiveLongCollections.EMPTY_LONG_ARRAY;
+//	import static Neo4Net.collection.PrimitiveLongCollections.EMPTY_LONG_ARRAY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.labelscan.NodeLabelUpdate.labelChanges;
+//	import static Neo4Net.kernel.api.labelscan.NodeLabelUpdate.labelChanges;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.NodeLabelsField.get;
+//	import static Neo4Net.kernel.impl.store.NodeLabelsField.get;
 
 	public class LabelIndexWriterStep : ProcessorStep<NodeRecord[]>
 	{
@@ -46,7 +46,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected void process(org.Neo4Net.kernel.impl.store.record.NodeRecord[] batch, org.Neo4Net.unsafe.impl.batchimport.staging.BatchSender sender) throws Throwable
+//ORIGINAL LINE: protected void process(Neo4Net.kernel.impl.store.record.NodeRecord[] batch, Neo4Net.unsafe.impl.batchimport.staging.BatchSender sender) throws Throwable
 		 protected internal override void Process( NodeRecord[] batch, BatchSender sender )
 		 {
 			  foreach ( NodeRecord node in batch )

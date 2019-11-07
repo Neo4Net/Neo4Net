@@ -70,7 +70,7 @@ namespace Neo4Net.Bolt.runtime
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.matchers.CommonMatchers.matchesExceptionMessage;
+//	import static Neo4Net.test.matchers.CommonMatchers.matchesExceptionMessage;
 
 	public class ExecutorBoltSchedulerTest
 	{

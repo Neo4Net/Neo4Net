@@ -29,10 +29,10 @@ namespace Neo4Net.causalclustering.upstream.strategies
 	using Service = Neo4Net.Helpers.Service;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.function.Predicates.not;
+//	import static Neo4Net.function.Predicates.not;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Service.Implementation(UpstreamDatabaseSelectionStrategy.class) public class TypicallyConnectToRandomReadReplicaStrategy extends org.Neo4Net.causalclustering.upstream.UpstreamDatabaseSelectionStrategy
+//ORIGINAL LINE: @Service.Implementation(UpstreamDatabaseSelectionStrategy.class) public class TypicallyConnectToRandomReadReplicaStrategy extends Neo4Net.causalclustering.upstream.UpstreamDatabaseSelectionStrategy
 	public class TypicallyConnectToRandomReadReplicaStrategy : UpstreamDatabaseSelectionStrategy
 	{
 		 public const string IDENTITY = "typically-connect-to-random-read-replica";

@@ -67,9 +67,9 @@ namespace Neo4Net.Consistency
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.pagecache.impl.muninn.StandalonePageCacheFactory.createPageCache;
+//	import static Neo4Net.io.pagecache.impl.muninn.StandalonePageCacheFactory.createPageCache;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
+//	import static Neo4Net.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
 
 	public class ConsistencyCheckWithCorruptGBPTreeIT
 	{
@@ -130,7 +130,7 @@ namespace Neo4Net.Consistency
 			  }, indexFiles);
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.configuration.Config config = config(org.Neo4Net.kernel.configuration.Settings.FALSE, org.Neo4Net.kernel.configuration.Settings.FALSE);
+//ORIGINAL LINE: final Neo4Net.kernel.configuration.Config config = config(Neo4Net.kernel.configuration.Settings.FALSE, Neo4Net.kernel.configuration.Settings.FALSE);
 			  Config config = config( Settings.FALSE, Settings.FALSE );
 			  ConsistencyCheckService.Result result = RunConsistencyCheck( config );
 
@@ -152,7 +152,7 @@ namespace Neo4Net.Consistency
 			  }, indexFiles);
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.configuration.Config config = config(org.Neo4Net.kernel.configuration.Settings.TRUE, org.Neo4Net.kernel.configuration.Settings.FALSE);
+//ORIGINAL LINE: final Neo4Net.kernel.configuration.Config config = config(Neo4Net.kernel.configuration.Settings.TRUE, Neo4Net.kernel.configuration.Settings.FALSE);
 			  Config config = config( Settings.TRUE, Settings.FALSE );
 			  ConsistencyCheckService.Result result = RunConsistencyCheck( config );
 
@@ -175,7 +175,7 @@ namespace Neo4Net.Consistency
 			  }, indexFiles);
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.configuration.Config config = config(org.Neo4Net.kernel.configuration.Settings.FALSE, org.Neo4Net.kernel.configuration.Settings.TRUE);
+//ORIGINAL LINE: final Neo4Net.kernel.configuration.Config config = config(Neo4Net.kernel.configuration.Settings.FALSE, Neo4Net.kernel.configuration.Settings.TRUE);
 			  Config config = config( Settings.FALSE, Settings.TRUE );
 			  ConsistencyCheckService.Result result = RunConsistencyCheck( config );
 
@@ -531,7 +531,7 @@ namespace Neo4Net.Consistency
 			  ConsistencyCheckService.Result result = RunConsistencyCheck();
 
 			  assertFalse( "Expected store to be considered inconsistent.", result.Successful );
-			  AssertResultContainsMessage( result, "Caught exception during consistency check: org.Neo4Net.index.internal.gbptree.TreeInconsistencyException: Some internal problem causing out of" + " bounds: pageId:" );
+			  AssertResultContainsMessage( result, "Caught exception during consistency check: Neo4Net.index.internal.gbptree.TreeInconsistencyException: Some internal problem causing out of" + " bounds: pageId:" );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -658,28 +658,28 @@ namespace Neo4Net.Consistency
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private ConsistencyCheckService.Result runConsistencyCheck() throws org.Neo4Net.consistency.checking.full.ConsistencyCheckIncompleteException
+//ORIGINAL LINE: private ConsistencyCheckService.Result runConsistencyCheck() throws Neo4Net.consistency.checking.full.ConsistencyCheckIncompleteException
 		 private ConsistencyCheckService.Result RunConsistencyCheck()
 		 {
 			  return RunConsistencyCheck( Config( Settings.TRUE, Settings.TRUE ) );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private ConsistencyCheckService.Result runConsistencyCheck(org.Neo4Net.kernel.configuration.Config config) throws org.Neo4Net.consistency.checking.full.ConsistencyCheckIncompleteException
+//ORIGINAL LINE: private ConsistencyCheckService.Result runConsistencyCheck(Neo4Net.kernel.configuration.Config config) throws Neo4Net.consistency.checking.full.ConsistencyCheckIncompleteException
 		 private ConsistencyCheckService.Result RunConsistencyCheck( Config config )
 		 {
 			  return RunConsistencyCheck( ProgressMonitorFactory.NONE, config );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private ConsistencyCheckService.Result runConsistencyCheck(org.Neo4Net.helpers.progress.ProgressMonitorFactory progressFactory) throws org.Neo4Net.consistency.checking.full.ConsistencyCheckIncompleteException
+//ORIGINAL LINE: private ConsistencyCheckService.Result runConsistencyCheck(Neo4Net.helpers.progress.ProgressMonitorFactory progressFactory) throws Neo4Net.consistency.checking.full.ConsistencyCheckIncompleteException
 		 private ConsistencyCheckService.Result RunConsistencyCheck( ProgressMonitorFactory progressFactory )
 		 {
 			  return RunConsistencyCheck( progressFactory, Config( Settings.TRUE, Settings.TRUE ) );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private ConsistencyCheckService.Result runConsistencyCheck(org.Neo4Net.helpers.progress.ProgressMonitorFactory progressFactory, org.Neo4Net.kernel.configuration.Config config) throws org.Neo4Net.consistency.checking.full.ConsistencyCheckIncompleteException
+//ORIGINAL LINE: private ConsistencyCheckService.Result runConsistencyCheck(Neo4Net.helpers.progress.ProgressMonitorFactory progressFactory, Neo4Net.kernel.configuration.Config config) throws Neo4Net.consistency.checking.full.ConsistencyCheckIncompleteException
 		 private ConsistencyCheckService.Result RunConsistencyCheck( ProgressMonitorFactory progressFactory, Config config )
 		 {
 			  ConsistencyCheckService consistencyCheckService = new ConsistencyCheckService();
@@ -750,11 +750,11 @@ namespace Neo4Net.Consistency
 						 {
 							  treeFiles.Add( file );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: try (org.Neo4Net.index.internal.gbptree.GBPTree<?,?> gbpTree = bootstrap.getTree())
+//ORIGINAL LINE: try (Neo4Net.index.internal.gbptree.GBPTree<?,?> gbpTree = bootstrap.getTree())
 							  using ( GBPTree<object, ?> gbpTree = bootstrap.Tree )
 							  {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.index.internal.gbptree.InspectingVisitor<?,?> visitor = gbpTree.visit(new org.Neo4Net.index.internal.gbptree.InspectingVisitor<>());
+//ORIGINAL LINE: Neo4Net.index.internal.gbptree.InspectingVisitor<?,?> visitor = gbpTree.visit(new Neo4Net.index.internal.gbptree.InspectingVisitor<>());
 									InspectingVisitor<object, ?> visitor = gbpTree.Visit( new InspectingVisitor<object, ?>() );
 									corruptionInject.Corrupt( gbpTree, visitor.Get() );
 							  }
@@ -801,7 +801,7 @@ namespace Neo4Net.Consistency
 		 private interface CorruptionInject
 		 {
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void corrupt(org.Neo4Net.index.internal.gbptree.GBPTree<?,?> tree, org.Neo4Net.index.internal.gbptree.GBPTreeInspection<?,?> inspection) throws java.io.IOException;
+//ORIGINAL LINE: void corrupt(Neo4Net.index.internal.gbptree.GBPTree<?,?> tree, Neo4Net.index.internal.gbptree.GBPTreeInspection<?,?> inspection) throws java.io.IOException;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 			  void corrupt<T1, T2>( GBPTree<T1> tree, GBPTreeInspection<T2> inspection );
 		 }

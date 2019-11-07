@@ -52,16 +52,16 @@ namespace Neo4Net.Bolt.runtime.integration
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.MatcherAssert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.messaging.util.MessageMatchers.msgFailure;
+//	import static Neo4Net.bolt.v1.messaging.util.MessageMatchers.msgFailure;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.messaging.util.MessageMatchers.msgSuccess;
+//	import static Neo4Net.bolt.v1.messaging.util.MessageMatchers.msgSuccess;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.transport.integration.Neo4NetWithSocket.DEFAULT_CONNECTOR_KEY;
+//	import static Neo4Net.bolt.v1.transport.integration.Neo4NetWithSocket.DEFAULT_CONNECTOR_KEY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.transport.integration.TransportTestUtil.eventuallyReceives;
+//	import static Neo4Net.bolt.v1.transport.integration.TransportTestUtil.eventuallyReceives;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @RunWith(Parameterized.class) public class BoltSchedulerBusyIT extends org.Neo4Net.bolt.AbstractBoltTransportsTest
+//ORIGINAL LINE: @RunWith(Parameterized.class) public class BoltSchedulerBusyIT extends Neo4Net.bolt.AbstractBoltTransportsTest
 	public class BoltSchedulerBusyIT : AbstractBoltTransportsTest
 	{
 		private bool InstanceFieldsInitialized = false;
@@ -195,7 +195,7 @@ namespace Neo4Net.Bolt.runtime.integration
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.bolt.v1.transport.socket.client.TransportConnection enterStreaming() throws Throwable
+//ORIGINAL LINE: private Neo4Net.bolt.v1.transport.socket.client.TransportConnection enterStreaming() throws Throwable
 		 private TransportConnection EnterStreaming()
 		 {
 			  TransportConnection connection = null;
@@ -237,7 +237,7 @@ namespace Neo4Net.Bolt.runtime.integration
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void enterStreaming(org.Neo4Net.bolt.v1.transport.socket.client.TransportConnection connection, int sleepSeconds) throws Exception
+//ORIGINAL LINE: private void enterStreaming(Neo4Net.bolt.v1.transport.socket.client.TransportConnection connection, int sleepSeconds) throws Exception
 		 private void EnterStreaming( TransportConnection connection, int sleepSeconds )
 		 {
 			  ConnectAndPerformBoltHandshake( connection );
@@ -252,7 +252,7 @@ namespace Neo4Net.Bolt.runtime.integration
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.bolt.v1.transport.socket.client.TransportConnection connectAndPerformBoltHandshake(org.Neo4Net.bolt.v1.transport.socket.client.TransportConnection connection) throws Exception
+//ORIGINAL LINE: private Neo4Net.bolt.v1.transport.socket.client.TransportConnection connectAndPerformBoltHandshake(Neo4Net.bolt.v1.transport.socket.client.TransportConnection connection) throws Exception
 		 private TransportConnection ConnectAndPerformBoltHandshake( TransportConnection connection )
 		 {
 			  connection.Connect( Address ).send( Util.acceptedVersions( 1, 0, 0, 0 ) );
@@ -261,7 +261,7 @@ namespace Neo4Net.Bolt.runtime.integration
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void exitStreaming(org.Neo4Net.bolt.v1.transport.socket.client.TransportConnection connection) throws Exception
+//ORIGINAL LINE: private void exitStreaming(Neo4Net.bolt.v1.transport.socket.client.TransportConnection connection) throws Exception
 		 private void ExitStreaming( TransportConnection connection )
 		 {
 			  connection.Send( Util.chunk( DiscardAllMessage.INSTANCE ) );

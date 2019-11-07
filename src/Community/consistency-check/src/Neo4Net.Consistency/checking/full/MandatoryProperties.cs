@@ -43,7 +43,7 @@ namespace Neo4Net.Consistency.checking.full
 	using RelationshipRecord = Neo4Net.Kernel.Impl.Store.Records.RelationshipRecord;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.Numbers.safeCastLongToInt;
+//	import static Neo4Net.helpers.Numbers.safeCastLongToInt;
 
 	public class MandatoryProperties
 	{
@@ -91,7 +91,7 @@ namespace Neo4Net.Consistency.checking.full
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public System.Func<org.Neo4Net.kernel.impl.store.record.NodeRecord,Check<org.Neo4Net.kernel.impl.store.record.NodeRecord,org.Neo4Net.consistency.report.ConsistencyReport_NodeConsistencyReport>> forNodes(final org.Neo4Net.consistency.report.ConsistencyReporter reporter)
+//ORIGINAL LINE: public System.Func<Neo4Net.kernel.impl.store.record.NodeRecord,Check<Neo4Net.kernel.impl.store.record.NodeRecord,Neo4Net.consistency.report.ConsistencyReport_NodeConsistencyReport>> forNodes(final Neo4Net.consistency.report.ConsistencyReporter reporter)
 		 public virtual System.Func<NodeRecord, Check<NodeRecord, Neo4Net.Consistency.report.ConsistencyReport_NodeConsistencyReport>> ForNodes( ConsistencyReporter reporter )
 		 {
 			  return node =>
@@ -118,7 +118,7 @@ namespace Neo4Net.Consistency.checking.full
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public System.Func<org.Neo4Net.kernel.impl.store.record.RelationshipRecord,Check<org.Neo4Net.kernel.impl.store.record.RelationshipRecord,org.Neo4Net.consistency.report.ConsistencyReport_RelationshipConsistencyReport>> forRelationships(final org.Neo4Net.consistency.report.ConsistencyReporter reporter)
+//ORIGINAL LINE: public System.Func<Neo4Net.kernel.impl.store.record.RelationshipRecord,Check<Neo4Net.kernel.impl.store.record.RelationshipRecord,Neo4Net.consistency.report.ConsistencyReport_RelationshipConsistencyReport>> forRelationships(final Neo4Net.consistency.report.ConsistencyReporter reporter)
 		 public virtual System.Func<RelationshipRecord, Check<RelationshipRecord, Neo4Net.Consistency.report.ConsistencyReport_RelationshipConsistencyReport>> ForRelationships( ConsistencyReporter reporter )
 		 {
 			  return relationship =>
@@ -165,7 +165,7 @@ namespace Neo4Net.Consistency.checking.full
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private static <RECORD extends org.Neo4Net.kernel.impl.store.record.PrimitiveRecord, REPORT extends org.Neo4Net.consistency.report.ConsistencyReport_PrimitiveConsistencyReport> Check<RECORD,REPORT> noCheck()
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private static <RECORD extends Neo4Net.kernel.impl.store.record.PrimitiveRecord, REPORT extends Neo4Net.consistency.report.ConsistencyReport_PrimitiveConsistencyReport> Check<RECORD,REPORT> noCheck()
 		 private static Check<RECORD, REPORT> NoCheck<RECORD, REPORT>() where RECORD : Neo4Net.Kernel.Impl.Store.Records.PrimitiveRecord where REPORT : Neo4Net.Consistency.report.ConsistencyReport_PrimitiveConsistencyReport
 		 {
 			  return NONE;

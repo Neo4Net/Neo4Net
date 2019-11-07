@@ -27,28 +27,28 @@ namespace Neo4Net.Server.security.enterprise.auth
 
 	using InvalidArgumentsException = Neo4Net.Kernel.Api.Exceptions.InvalidArgumentsException;
 	using User = Neo4Net.Kernel.impl.security.User;
-	using UserManager = Neo4Net.Kernel.api.security.UserManager;
+	using UserManager = Neo4Net.Kernel.Api.security.UserManager;
 
 	public interface EnterpriseUserManager : UserManager
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void suspendUser(String username) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException;
+//ORIGINAL LINE: void suspendUser(String username) throws java.io.IOException, Neo4Net.kernel.api.exceptions.InvalidArgumentsException;
 		 void SuspendUser( string username );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void activateUser(String username, boolean requirePasswordChange) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException;
+//ORIGINAL LINE: void activateUser(String username, boolean requirePasswordChange) throws java.io.IOException, Neo4Net.kernel.api.exceptions.InvalidArgumentsException;
 		 void ActivateUser( string username, bool requirePasswordChange );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void newRole(String roleName, String... usernames) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException;
+//ORIGINAL LINE: void newRole(String roleName, String... usernames) throws java.io.IOException, Neo4Net.kernel.api.exceptions.InvalidArgumentsException;
 		 void NewRole( string roleName, params string[] usernames );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: boolean deleteRole(String roleName) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException;
+//ORIGINAL LINE: boolean deleteRole(String roleName) throws java.io.IOException, Neo4Net.kernel.api.exceptions.InvalidArgumentsException;
 		 bool DeleteRole( string roleName );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void assertRoleExists(String roleName) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException;
+//ORIGINAL LINE: void assertRoleExists(String roleName) throws Neo4Net.kernel.api.exceptions.InvalidArgumentsException;
 		 void AssertRoleExists( string roleName );
 
 		 /// <summary>
@@ -59,7 +59,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 /// <exception cref="InvalidArgumentsException"> if the role does not exist </exception>
 		 /// <exception cref="IOException"> </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void addRoleToUser(String roleName, String username) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException;
+//ORIGINAL LINE: void addRoleToUser(String roleName, String username) throws java.io.IOException, Neo4Net.kernel.api.exceptions.InvalidArgumentsException;
 		 void AddRoleToUser( string roleName, string username );
 
 		 /// <summary>
@@ -70,19 +70,19 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 /// <exception cref="InvalidArgumentsException"> if the username or the role does not exist </exception>
 		 /// <exception cref="IOException"> </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void removeRoleFromUser(String roleName, String username) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException;
+//ORIGINAL LINE: void removeRoleFromUser(String roleName, String username) throws java.io.IOException, Neo4Net.kernel.api.exceptions.InvalidArgumentsException;
 		 void RemoveRoleFromUser( string roleName, string username );
 
 		 ISet<string> AllRoleNames { get; }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: java.util.Set<String> getRoleNamesForUser(String username) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException;
+//ORIGINAL LINE: java.util.Set<String> getRoleNamesForUser(String username) throws Neo4Net.kernel.api.exceptions.InvalidArgumentsException;
 		 ISet<string> GetRoleNamesForUser( string username );
 
 		 ISet<string> SilentlyGetRoleNamesForUser( string username );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: java.util.Set<String> getUsernamesForRole(String roleName) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException;
+//ORIGINAL LINE: java.util.Set<String> getUsernamesForRole(String roleName) throws Neo4Net.kernel.api.exceptions.InvalidArgumentsException;
 		 ISet<string> GetUsernamesForRole( string roleName );
 
 		 ISet<string> SilentlyGetUsernamesForRole( string roleName );

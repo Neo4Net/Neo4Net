@@ -41,7 +41,7 @@ namespace Neo4Net.Test
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verify;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.Race.throwing;
+//	import static Neo4Net.test.Race.throwing;
 
 	/// <summary>
 	/// Test of a test utility <seealso cref="Race"/>.

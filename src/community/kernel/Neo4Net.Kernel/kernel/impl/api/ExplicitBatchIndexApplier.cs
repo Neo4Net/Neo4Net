@@ -53,7 +53,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public TransactionApplier startTx(org.Neo4Net.Kernel.Api.StorageEngine.CommandsToApply transaction) throws java.io.IOException
+//ORIGINAL LINE: public TransactionApplier startTx(Neo4Net.Kernel.Api.StorageEngine.CommandsToApply transaction) throws java.io.IOException
 		 public override TransactionApplier StartTx( CommandsToApply transaction )
 		 {
 			  long activeTransactionId = transaction.TransactionId();

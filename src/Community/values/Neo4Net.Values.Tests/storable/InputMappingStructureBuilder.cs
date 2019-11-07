@@ -25,7 +25,7 @@ namespace Neo4Net.Values.Storable
 	public sealed class InputMappingStructureBuilder<Input, Internal, Result> : StructureBuilder<Input, Result>
 	{
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-//ORIGINAL LINE: public static <R> org.Neo4Net.values.StructureBuilder<Object,R> fromValues(org.Neo4Net.values.StructureBuilder<? super Value,R> builder)
+//ORIGINAL LINE: public static <R> Neo4Net.values.StructureBuilder<Object,R> fromValues(Neo4Net.values.StructureBuilder<? super Value,R> builder)
 		 public static StructureBuilder<object, R> FromValues<R, T1>( StructureBuilder<T1> builder )
 		 {
 			  return Mapping( Values.of, builder );

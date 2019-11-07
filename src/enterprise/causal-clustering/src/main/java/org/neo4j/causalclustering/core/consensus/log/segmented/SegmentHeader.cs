@@ -100,7 +100,7 @@ namespace Neo4Net.causalclustering.core.consensus.log.segmented
 		 internal class Marshal : SafeChannelMarshal<SegmentHeader>
 		 {
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void marshal(SegmentHeader header, org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public void marshal(SegmentHeader header, Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
 //JAVA TO C# CONVERTER NOTE: Members cannot have the same name as their enclosing type:
 			  public override void MarshalConflict( SegmentHeader header, WritableChannel channel )
 			  {
@@ -111,7 +111,7 @@ namespace Neo4Net.causalclustering.core.consensus.log.segmented
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public SegmentHeader unmarshal0(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public SegmentHeader unmarshal0(Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
 			  public override SegmentHeader Unmarshal0( ReadableChannel channel )
 			  {
 					long prevFileLastIndex = channel.Long;

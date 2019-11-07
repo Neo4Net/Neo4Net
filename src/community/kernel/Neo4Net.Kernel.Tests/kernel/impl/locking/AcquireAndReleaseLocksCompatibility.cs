@@ -31,7 +31,7 @@ namespace Neo4Net.Kernel.impl.locking
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.locking.ResourceTypes.NODE;
+//	import static Neo4Net.kernel.impl.locking.ResourceTypes.NODE;
 
 	/// <summary>
 	/// Tests simple acquiring and releasing of single locks.

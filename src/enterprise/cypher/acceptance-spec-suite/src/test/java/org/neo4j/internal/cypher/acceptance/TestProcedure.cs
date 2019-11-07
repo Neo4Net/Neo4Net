@@ -49,23 +49,23 @@ namespace Neo4Net.Internal.cypher.acceptance
 	using Procedure = Neo4Net.Procedure.Procedure;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.traversal.Evaluation.EXCLUDE_AND_CONTINUE;
+//	import static Neo4Net.graphdb.traversal.Evaluation.EXCLUDE_AND_CONTINUE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.traversal.Evaluation.EXCLUDE_AND_PRUNE;
+//	import static Neo4Net.graphdb.traversal.Evaluation.EXCLUDE_AND_PRUNE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.traversal.Evaluation.INCLUDE_AND_CONTINUE;
+//	import static Neo4Net.graphdb.traversal.Evaluation.IncludeAndContinue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.procedure.Mode.WRITE;
+//	import static Neo4Net.procedure.Mode.WRITE;
 
 	public class TestProcedure
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Context public org.Neo4Net.graphdb.GraphDatabaseService db;
+//ORIGINAL LINE: @Context public Neo4Net.graphdb.GraphDatabaseService db;
 		 public IGraphDatabaseService Db;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Procedure("org.Neo4Net.time") @Description("org.Neo4Net.time") public void time(@Name(value = "time") java.time.LocalTime statementTime)
-		 [Procedure("org.Neo4Net.time"), Description("org.Neo4Net.time")]
+//ORIGINAL LINE: @Procedure("Neo4Net.time") @Description("Neo4Net.time") public void time(@Name(value = "time") java.time.LocalTime statementTime)
+		 [Procedure("Neo4Net.time"), Description("Neo4Net.time")]
 		 public virtual void Time( LocalTime statementTime )
 		 {
 			  LocalTime realTime = LocalTime.now();
@@ -73,23 +73,23 @@ namespace Neo4Net.Internal.cypher.acceptance
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Procedure("org.Neo4Net.aNodeWithLabel") @Description("org.Neo4Net.aNodeWithLabel") public java.util.stream.Stream<NodeResult> aNodeWithLabel(@Name(value = "label", defaultValue = "Dog") String label)
-		 [Procedure("org.Neo4Net.aNodeWithLabel"), Description("org.Neo4Net.aNodeWithLabel")]
+//ORIGINAL LINE: @Procedure("Neo4Net.aNodeWithLabel") @Description("Neo4Net.aNodeWithLabel") public java.util.stream.Stream<NodeResult> aNodeWithLabel(@Name(value = "label", defaultValue = "Dog") String label)
+		 [Procedure("Neo4Net.aNodeWithLabel"), Description("Neo4Net.aNodeWithLabel")]
 		 public virtual Stream<NodeResult> ANodeWithLabel( string label )
 		 {
 			  Result result = Db.execute( "MATCH (n:" + label + ") RETURN n LIMIT 1" );
 			  return result.Select( row => new NodeResult( ( Node )row.get( "n" ) ) );
 		 }
 
-		 [Procedure("org.Neo4Net.stream123"), Description("org.Neo4Net.stream123")]
+		 [Procedure("Neo4Net.stream123"), Description("Neo4Net.stream123")]
 		 public virtual Stream<CountResult> Stream123()
 		 {
 			  return IntStream.of( 1, 2, 3 ).mapToObj( i => new CountResult( i, "count" + i ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Procedure("org.Neo4Net.recurseN") @Description("org.Neo4Net.recurseN") public java.util.stream.Stream<NodeResult> recurseN(@Name("n") System.Nullable<long> n)
-		 [Procedure("org.Neo4Net.recurseN"), Description("org.Neo4Net.recurseN")]
+//ORIGINAL LINE: @Procedure("Neo4Net.recurseN") @Description("Neo4Net.recurseN") public java.util.stream.Stream<NodeResult> recurseN(@Name("n") System.Nullable<long> n)
+		 [Procedure("Neo4Net.recurseN"), Description("Neo4Net.recurseN")]
 		 public virtual Stream<NodeResult> RecurseN( long? n )
 		 {
 			  Result result;
@@ -99,24 +99,24 @@ namespace Neo4Net.Internal.cypher.acceptance
 			  }
 			  else
 			  {
-					result = Db.execute( "UNWIND [1] AS i CALL org.Neo4Net.recurseN(" + ( n - 1 ) + ") YIELD node RETURN node" );
+					result = Db.execute( "UNWIND [1] AS i CALL Neo4Net.recurseN(" + ( n - 1 ) + ") YIELD node RETURN node" );
 			  }
 			  return result.Select( row => new NodeResult( ( Node )row.get( "node" ) ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Procedure("org.Neo4Net.findNodesWithLabel") @Description("org.Neo4Net.findNodesWithLabel") public java.util.stream.Stream<NodeResult> findNodesWithLabel(@Name("label") String label)
-		 [Procedure("org.Neo4Net.findNodesWithLabel"), Description("org.Neo4Net.findNodesWithLabel")]
+//ORIGINAL LINE: @Procedure("Neo4Net.findNodesWithLabel") @Description("Neo4Net.findNodesWithLabel") public java.util.stream.Stream<NodeResult> findNodesWithLabel(@Name("label") String label)
+		 [Procedure("Neo4Net.findNodesWithLabel"), Description("Neo4Net.findNodesWithLabel")]
 		 public virtual Stream<NodeResult> FindNodesWithLabel( string label )
 		 {
-			  ResourceIterator<Node> nodes = Db.findNodes( Label.label( label ) );
+			  IResourceIterator<Node> nodes = Db.findNodes( Label.label( label ) );
 //JAVA TO C# CONVERTER TODO TASK: Method reference constructor syntax is not converted by Java to C# Converter:
 			  return nodes.Select( NodeResult::new );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Procedure("org.Neo4Net.expandNode") @Description("org.Neo4Net.expandNode") public java.util.stream.Stream<NodeResult> expandNode(@Name("nodeId") System.Nullable<long> nodeId)
-		 [Procedure("org.Neo4Net.expandNode"), Description("org.Neo4Net.expandNode")]
+//ORIGINAL LINE: @Procedure("Neo4Net.expandNode") @Description("Neo4Net.expandNode") public java.util.stream.Stream<NodeResult> expandNode(@Name("nodeId") System.Nullable<long> nodeId)
+		 [Procedure("Neo4Net.expandNode"), Description("Neo4Net.expandNode")]
 		 public virtual Stream<NodeResult> ExpandNode( long? nodeId )
 		 {
 			  Node node = Db.getNodeById( nodeId );
@@ -131,8 +131,8 @@ namespace Neo4Net.Internal.cypher.acceptance
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Procedure(name = "org.Neo4Net.createNodeWithLoop", mode = WRITE) @Description("org.Neo4Net.createNodeWithLoop") public java.util.stream.Stream<NodeResult> createNodeWithLoop(@Name("nodeLabel") String label, @Name("relType") String relType)
-		 [Procedure(name : "org.Neo4Net.createNodeWithLoop", mode : WRITE), Description("org.Neo4Net.createNodeWithLoop")]
+//ORIGINAL LINE: @Procedure(name = "Neo4Net.createNodeWithLoop", mode = WRITE) @Description("Neo4Net.createNodeWithLoop") public java.util.stream.Stream<NodeResult> createNodeWithLoop(@Name("nodeLabel") String label, @Name("relType") String relType)
+		 [Procedure(name : "Neo4Net.createNodeWithLoop", mode : WRITE), Description("Neo4Net.createNodeWithLoop")]
 		 public virtual Stream<NodeResult> CreateNodeWithLoop( string label, string relType )
 		 {
 			  Node node = Db.createNode( Label.label( label ) );
@@ -141,8 +141,8 @@ namespace Neo4Net.Internal.cypher.acceptance
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Procedure(name = "org.Neo4Net.graphAlgosDijkstra") @Description("org.Neo4Net.graphAlgosDijkstra") public java.util.stream.Stream<NodeResult> graphAlgosDijkstra(@Name("startNode") org.Neo4Net.graphdb.Node start, @Name("endNode") org.Neo4Net.graphdb.Node end, @Name("relType") String relType, @Name("weightProperty") String weightProperty)
-		 [Procedure(name : "org.Neo4Net.graphAlgosDijkstra"), Description("org.Neo4Net.graphAlgosDijkstra")]
+//ORIGINAL LINE: @Procedure(name = "Neo4Net.graphAlgosDijkstra") @Description("Neo4Net.graphAlgosDijkstra") public java.util.stream.Stream<NodeResult> graphAlgosDijkstra(@Name("startNode") Neo4Net.graphdb.Node start, @Name("endNode") Neo4Net.graphdb.Node end, @Name("relType") String relType, @Name("weightProperty") String weightProperty)
+		 [Procedure(name : "Neo4Net.graphAlgosDijkstra"), Description("Neo4Net.graphAlgosDijkstra")]
 		 public virtual Stream<NodeResult> GraphAlgosDijkstra( Node start, Node end, string relType, string weightProperty )
 		 {
 			  PathFinder<WeightedPath> pathFinder = GraphAlgoFactory.dijkstra( PathExpanders.forTypeAndDirection( RelationshipType.withName( relType ), Direction.BOTH ), weightProperty );
@@ -153,8 +153,8 @@ namespace Neo4Net.Internal.cypher.acceptance
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Procedure(name = "org.Neo4Net.setProperty", mode = WRITE) public java.util.stream.Stream<NodeResult> setProperty(@Name("node") org.Neo4Net.graphdb.Node node, @Name("propertyKey") String propertyKeyName, @Name("value") String value)
-		 [Procedure(name : "org.Neo4Net.setProperty", mode : WRITE)]
+//ORIGINAL LINE: @Procedure(name = "Neo4Net.setProperty", mode = WRITE) public java.util.stream.Stream<NodeResult> setProperty(@Name("node") Neo4Net.graphdb.Node node, @Name("propertyKey") String propertyKeyName, @Name("value") String value)
+		 [Procedure(name : "Neo4Net.setProperty", mode : WRITE)]
 		 public virtual Stream<NodeResult> SetProperty( Node node, string propertyKeyName, string value )
 		 {
 			  if ( string.ReferenceEquals( value, null ) )
@@ -191,8 +191,8 @@ namespace Neo4Net.Internal.cypher.acceptance
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Procedure("org.Neo4Net.movieTraversal") @Description("org.Neo4Net.movieTraversal") public java.util.stream.Stream<PathResult> movieTraversal(@Name("start") org.Neo4Net.graphdb.Node start)
-		 [Procedure("org.Neo4Net.movieTraversal"), Description("org.Neo4Net.movieTraversal")]
+//ORIGINAL LINE: @Procedure("Neo4Net.movieTraversal") @Description("Neo4Net.movieTraversal") public java.util.stream.Stream<PathResult> movieTraversal(@Name("start") Neo4Net.graphdb.Node start)
+		 [Procedure("Neo4Net.movieTraversal"), Description("Neo4Net.movieTraversal")]
 		 public virtual Stream<PathResult> MovieTraversal( Node start )
 		 {
 			  TraversalDescription td = Db.traversalDescription().breadthFirst().relationships(RelationshipType.withName("ACTED_IN"), Direction.BOTH).relationships(RelationshipType.withName("PRODUCED"), Direction.BOTH).relationships(RelationshipType.withName("DIRECTED"), Direction.BOTH).evaluator(Evaluators.fromDepth(3)).evaluator(new LabelEvaluator("Western", 1, 3)).uniqueness(Uniqueness.NODE_GLOBAL);
@@ -264,7 +264,7 @@ namespace Neo4Net.Internal.cypher.acceptance
 			  internal virtual Evaluation CountIncludeAndContinue()
 			  {
 					ResultCount++;
-					return INCLUDE_AND_CONTINUE;
+					return IncludeAndContinue;
 			  }
 		 }
 	}

@@ -67,7 +67,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 
 		 private const int DENSE_NODE_THRESHOLD = 5;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.DatabaseRule dbRule = new org.Neo4Net.test.rule.ImpermanentDatabaseRule().withSetting(org.Neo4Net.graphdb.factory.GraphDatabaseSettings.dense_node_threshold, String.ValueOf(DENSE_NODE_THRESHOLD));
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.DatabaseRule dbRule = new Neo4Net.test.rule.ImpermanentDatabaseRule().withSetting(Neo4Net.graphdb.factory.GraphDatabaseSettings.dense_node_threshold, String.ValueOf(DENSE_NODE_THRESHOLD));
 		 public readonly DatabaseRule DbRule = new ImpermanentDatabaseRule().withSetting(GraphDatabaseSettings.dense_node_threshold, DENSE_NODE_THRESHOLD.ToString());
 		 private IdGeneratorFactory _idGeneratorFactory;
 
@@ -133,7 +133,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void acquireExclusive(org.Neo4Net.Kernel.Api.StorageEngine.lock.LockTracer tracer, org.Neo4Net.Kernel.Api.StorageEngine.lock.ResourceType resourceType, long... resourceIds) throws org.Neo4Net.Kernel.Api.StorageEngine.lock.AcquireLockTimeoutException
+//ORIGINAL LINE: public void acquireExclusive(Neo4Net.Kernel.Api.StorageEngine.lock.LockTracer tracer, Neo4Net.Kernel.Api.StorageEngine.lock.ResourceType resourceType, long... resourceIds) throws Neo4Net.Kernel.Api.StorageEngine.lock.AcquireLockTimeoutException
 			  public override void AcquireExclusive( LockTracer tracer, ResourceType resourceType, params long[] resourceIds )
 			  {
 					assertEquals( ResourceTypes.RELATIONSHIP, resourceType );

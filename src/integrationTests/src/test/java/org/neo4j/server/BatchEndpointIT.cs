@@ -35,19 +35,19 @@ namespace Neo4Net.Server
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.ServerTestUtils.getRelativePath;
+//	import static Neo4Net.server.ServerTestUtils.getRelativePath;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.ServerTestUtils.getSharedTestTemporaryFolder;
+//	import static Neo4Net.server.ServerTestUtils.getSharedTestTemporaryFolder;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.server.HTTP.RawPayload.quotedJson;
+//	import static Neo4Net.test.server.HTTP.RawPayload.quotedJson;
 	using static Neo4Net.Test.server.HTTP.Response;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.server.HTTP.withBaseUri;
+//	import static Neo4Net.test.server.HTTP.withBaseUri;
 
 	public class BatchEndpointIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.harness.junit.Neo4NetRule Neo4Net = new org.Neo4Net.harness.junit.Neo4NetRule().withConfig(org.Neo4Net.kernel.configuration.ssl.LegacySslPolicyConfig.certificates_directory, getRelativePath(getSharedTestTemporaryFolder(), org.Neo4Net.kernel.configuration.ssl.LegacySslPolicyConfig.certificates_directory)).withConfig(org.Neo4Net.graphdb.factory.GraphDatabaseSettings.logs_directory, getRelativePath(getSharedTestTemporaryFolder(), org.Neo4Net.graphdb.factory.GraphDatabaseSettings.logs_directory)).withConfig(org.Neo4Net.server.configuration.ServerSettings.http_logging_enabled, "true").withConfig(org.Neo4Net.graphdb.factory.GraphDatabaseSettings.auth_enabled, "false").withConfig(org.Neo4Net.kernel.impl.enterprise.configuration.OnlineBackupSettings.online_backup_enabled, org.Neo4Net.kernel.configuration.Settings.FALSE);
+//ORIGINAL LINE: @Rule public final Neo4Net.harness.junit.Neo4NetRule Neo4Net = new Neo4Net.harness.junit.Neo4NetRule().withConfig(Neo4Net.kernel.configuration.ssl.LegacySslPolicyConfig.certificates_directory, getRelativePath(getSharedTestTemporaryFolder(), Neo4Net.kernel.configuration.ssl.LegacySslPolicyConfig.certificates_directory)).withConfig(Neo4Net.graphdb.factory.GraphDatabaseSettings.logs_directory, getRelativePath(getSharedTestTemporaryFolder(), Neo4Net.graphdb.factory.GraphDatabaseSettings.logs_directory)).withConfig(Neo4Net.server.configuration.ServerSettings.http_logging_enabled, "true").withConfig(Neo4Net.graphdb.factory.GraphDatabaseSettings.auth_enabled, "false").withConfig(Neo4Net.kernel.impl.enterprise.configuration.OnlineBackupSettings.online_backup_enabled, Neo4Net.kernel.configuration.Settings.FALSE);
 		 public readonly Neo4NetRule Neo4Net = new Neo4NetRule().withConfig(LegacySslPolicyConfig.certificates_directory, getRelativePath(SharedTestTemporaryFolder, LegacySslPolicyConfig.certificates_directory)).withConfig(GraphDatabaseSettings.logs_directory, getRelativePath(SharedTestTemporaryFolder, GraphDatabaseSettings.logs_directory)).withConfig(ServerSettings.http_logging_enabled, "true").withConfig(GraphDatabaseSettings.auth_enabled, "false").withConfig(OnlineBackupSettings.online_backup_enabled, Settings.FALSE);
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

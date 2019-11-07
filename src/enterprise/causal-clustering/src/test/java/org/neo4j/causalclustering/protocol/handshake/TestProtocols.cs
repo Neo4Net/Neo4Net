@@ -30,13 +30,13 @@ namespace Neo4Net.causalclustering.protocol.handshake
 	public interface TestProtocols
 	{
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java static interface methods:
-//		 static <U, T> T latest(org.Neo4Net.causalclustering.protocol.Protocol_Category<T> category, T[] values)
+//		 static <U, T> T latest(Neo4Net.causalclustering.protocol.Protocol_Category<T> category, T[] values)
 	//	 {
 	//		  return Stream.of(values).filter(protocol -> protocol.category().equals(category.canonicalName())).max(Comparator.comparing(T::implementation)).get();
 	//	 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java static interface methods:
-//		 static <U, T> U[] allVersionsOf(org.Neo4Net.causalclustering.protocol.Protocol_Category<T> category, T[] values, System.Func<int, U[]> constructor)
+//		 static <U, T> U[] allVersionsOf(Neo4Net.causalclustering.protocol.Protocol_Category<T> category, T[] values, System.Func<int, U[]> constructor)
 	//	 {
 	//		  return Stream.of(values).filter(protocol -> protocol.category().equals(category.canonicalName())).map(Protocol::implementation).toArray(constructor);
 	//	 }

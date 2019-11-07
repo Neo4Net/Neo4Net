@@ -44,11 +44,11 @@ namespace Neo4Net.causalclustering.discovery
 	using Streams = Neo4Net.Stream.Streams;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.CausalClusteringSettings.refuse_to_be_leader;
+//	import static Neo4Net.causalclustering.core.CausalClusteringSettings.refuse_to_be_leader;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.SocketAddressParser.socketAddress;
+//	import static Neo4Net.helpers.SocketAddressParser.socketAddress;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.asSet;
+//	import static Neo4Net.helpers.collection.Iterables.asSet;
 
 	public sealed class HazelcastClusterTopology
 	{

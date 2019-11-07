@@ -42,11 +42,11 @@ namespace Neo4Net.Test.ha
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.read_only;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.read_only;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.count;
+//	import static Neo4Net.helpers.collection.Iterators.count;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.ha.HaSettings.tx_push_factor;
+//	import static Neo4Net.kernel.ha.HaSettings.tx_push_factor;
 
 	/// <summary>
 	/// This test ensures that read-only slaves cannot make any modifications.
@@ -54,7 +54,7 @@ namespace Neo4Net.Test.ha
 	public class ReadOnlySlaveIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final ClusterRule clusterRule = new ClusterRule().withSharedSetting(tx_push_factor, "2").withInstanceSetting(read_only, oneBasedServerId -> oneBasedServerId == 2 ? org.Neo4Net.kernel.configuration.Settings.TRUE : null);
+//ORIGINAL LINE: @Rule public final ClusterRule clusterRule = new ClusterRule().withSharedSetting(tx_push_factor, "2").withInstanceSetting(read_only, oneBasedServerId -> oneBasedServerId == 2 ? Neo4Net.kernel.configuration.Settings.TRUE : null);
 		 public readonly ClusterRule ClusterRule = new ClusterRule().withSharedSetting(tx_push_factor, "2").withInstanceSetting(read_only, oneBasedServerId => oneBasedServerId == 2 ? Settings.TRUE : null);
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

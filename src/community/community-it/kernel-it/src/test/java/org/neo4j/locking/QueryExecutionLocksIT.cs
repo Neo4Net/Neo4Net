@@ -55,13 +55,13 @@ namespace Neo4Net.Locking
 	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using SecurityContext = Neo4Net.Kernel.Api.Internal.security.SecurityContext;
 	using GraphDatabaseQueryService = Neo4Net.Kernel.GraphDatabaseQueryService;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
-	using ResourceTracker = Neo4Net.Kernel.api.ResourceTracker;
-	using Statement = Neo4Net.Kernel.api.Statement;
-	using DbmsOperations = Neo4Net.Kernel.api.dbms.DbmsOperations;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
+	using ResourceTracker = Neo4Net.Kernel.Api.ResourceTracker;
+	using Statement = Neo4Net.Kernel.Api.Statement;
+	using DbmsOperations = Neo4Net.Kernel.Api.dbms.DbmsOperations;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
-	using ExecutingQuery = Neo4Net.Kernel.api.query.ExecutingQuery;
-	using TxStateHolder = Neo4Net.Kernel.api.txstate.TxStateHolder;
+	using ExecutingQuery = Neo4Net.Kernel.Api.query.ExecutingQuery;
+	using TxStateHolder = Neo4Net.Kernel.Api.txstate.TxStateHolder;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using ClockContext = Neo4Net.Kernel.Impl.Api.ClockContext;
 	using ThreadToStatementContextBridge = Neo4Net.Kernel.impl.core.ThreadToStatementContextBridge;
@@ -95,13 +95,13 @@ namespace Neo4Net.Locking
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.@virtual.VirtualValues.EMPTY_MAP;
+//	import static Neo4Net.values.@virtual.VirtualValues.EMPTY_MAP;
 
 	public class QueryExecutionLocksIT
 	{
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.EmbeddedDatabaseRule databaseRule = new org.Neo4Net.test.rule.EmbeddedDatabaseRule();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.EmbeddedDatabaseRule databaseRule = new Neo4Net.test.rule.EmbeddedDatabaseRule();
 		 public EmbeddedDatabaseRule DatabaseRule = new EmbeddedDatabaseRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -195,7 +195,7 @@ namespace Neo4Net.Locking
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.util.List<LockOperationRecord> traceQueryLocks(String query, LockOperationListener... listeners) throws org.Neo4Net.kernel.impl.query.QueryExecutionKernelException
+//ORIGINAL LINE: private java.util.List<LockOperationRecord> traceQueryLocks(String query, LockOperationListener... listeners) throws Neo4Net.kernel.impl.query.QueryExecutionKernelException
 		 private IList<LockOperationRecord> TraceQueryLocks( string query, params LockOperationListener[] listeners )
 		 {
 			  GraphDatabaseQueryService graph = DatabaseRule.resolveDependency( typeof( GraphDatabaseQueryService ) );
@@ -339,7 +339,7 @@ namespace Neo4Net.Locking
 					return Delegate.kernelStatisticProvider();
 			  }
 
-			  public override Neo4Net.Kernel.api.KernelTransaction_Revertable RestrictCurrentTransaction( SecurityContext context )
+			  public override Neo4Net.Kernel.Api.KernelTransaction_Revertable RestrictCurrentTransaction( SecurityContext context )
 			  {
 					return Delegate.restrictCurrentTransaction( context );
 			  }
@@ -562,7 +562,7 @@ namespace Neo4Net.Locking
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.Kernel.Api.Internal.Write dataWrite() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.InvalidTransactionTypeKernelException
+//ORIGINAL LINE: public Neo4Net.Kernel.Api.Internal.Write dataWrite() throws Neo4Net.Kernel.Api.Internal.Exceptions.InvalidTransactionTypeKernelException
 			  public override Write DataWrite()
 			  {
 					return Internal.dataWrite();
@@ -574,7 +574,7 @@ namespace Neo4Net.Locking
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite indexWrite() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.InvalidTransactionTypeKernelException
+//ORIGINAL LINE: public Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite indexWrite() throws Neo4Net.Kernel.Api.Internal.Exceptions.InvalidTransactionTypeKernelException
 			  public override ExplicitIndexWrite IndexWrite()
 			  {
 					return Internal.indexWrite();
@@ -601,7 +601,7 @@ namespace Neo4Net.Locking
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.Kernel.Api.Internal.SchemaWrite schemaWrite() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.InvalidTransactionTypeKernelException
+//ORIGINAL LINE: public Neo4Net.Kernel.Api.Internal.SchemaWrite schemaWrite() throws Neo4Net.Kernel.Api.Internal.Exceptions.InvalidTransactionTypeKernelException
 			  public override SchemaWrite SchemaWrite()
 			  {
 					return Internal.schemaWrite();
@@ -633,7 +633,7 @@ namespace Neo4Net.Locking
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor indexUniqueCreate(org.Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor schema, String provider) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.SchemaKernelException
+//ORIGINAL LINE: public Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor indexUniqueCreate(Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor schema, String provider) throws Neo4Net.Kernel.Api.Internal.Exceptions.Schema.SchemaKernelException
 			  public override IndexDescriptor IndexUniqueCreate( SchemaDescriptor schema, string provider )
 			  {
 					string defaultProvider = Config.defaults().get(GraphDatabaseSettings.default_schema_provider);
@@ -641,14 +641,14 @@ namespace Neo4Net.Locking
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public long closeTransaction() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
+//ORIGINAL LINE: public long closeTransaction() throws Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 			  public override long CloseTransaction()
 			  {
 					return Internal.closeTransaction();
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void close() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
+//ORIGINAL LINE: public void close() throws Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 			  public override void Close()
 			  {
 					Internal.close();
@@ -718,7 +718,7 @@ namespace Neo4Net.Locking
 					return Internal.timeout();
 			  }
 
-			  public override void RegisterCloseListener( Neo4Net.Kernel.api.KernelTransaction_CloseListener listener )
+			  public override void RegisterCloseListener( Neo4Net.Kernel.Api.KernelTransaction_CloseListener listener )
 			  {
 					Internal.registerCloseListener( listener );
 			  }
@@ -744,7 +744,7 @@ namespace Neo4Net.Locking
 				  }
 			  }
 
-			  public override Neo4Net.Kernel.api.KernelTransaction_Revertable OverrideWith( SecurityContext context )
+			  public override Neo4Net.Kernel.Api.KernelTransaction_Revertable OverrideWith( SecurityContext context )
 			  {
 					return Internal.overrideWith( context );
 			  }

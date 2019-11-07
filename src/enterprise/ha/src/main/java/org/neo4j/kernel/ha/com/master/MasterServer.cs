@@ -35,11 +35,11 @@ namespace Neo4Net.Kernel.ha.com.master
 	using Clocks = Neo4Net.Time.Clocks;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.ha.com.slave.MasterClient_Fields.CURRENT;
+//	import static Neo4Net.kernel.ha.com.slave.MasterClient_Fields.CURRENT;
 
 	/// <summary>
 	/// Sits on the master side, receiving serialized requests from slaves (via
-	/// <seealso cref="org.Neo4Net.kernel.ha.com.slave.MasterClient"/>). Delegates actual work to <seealso cref="MasterImpl"/>.
+	/// <seealso cref="Neo4Net.kernel.ha.com.slave.MasterClient"/>). Delegates actual work to <seealso cref="MasterImpl"/>.
 	/// </summary>
 	public class MasterServer : Server<Master, Void>
 	{

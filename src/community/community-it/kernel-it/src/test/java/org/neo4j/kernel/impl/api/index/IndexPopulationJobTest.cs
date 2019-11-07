@@ -48,8 +48,8 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using IndexPopulator = Neo4Net.Kernel.Api.Index.IndexPopulator;
 	using IndexProvider = Neo4Net.Kernel.Api.Index.IndexProvider;
 	using IndexUpdater = Neo4Net.Kernel.Api.Index.IndexUpdater;
-	using NodeLabelUpdate = Neo4Net.Kernel.api.labelscan.NodeLabelUpdate;
-	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
+	using NodeLabelUpdate = Neo4Net.Kernel.Api.LabelScan.NodeLabelUpdate;
+	using SchemaDescriptorFactory = Neo4Net.Kernel.Api.schema.SchemaDescriptorFactory;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using IndexSamplingConfig = Neo4Net.Kernel.Impl.Api.index.sampling.IndexSamplingConfig;
 	using DefaultIndexProviderMap = Neo4Net.Kernel.impl.transaction.state.DefaultIndexProviderMap;
@@ -109,30 +109,30 @@ namespace Neo4Net.Kernel.Impl.Api.index
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.asSet;
+//	import static Neo4Net.helpers.collection.Iterators.asSet;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.genericMap;
+//	import static Neo4Net.helpers.collection.MapUtil.genericMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.map;
+//	import static Neo4Net.helpers.collection.MapUtil.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.Transaction_Type.@implicit;
+//	import static Neo4Net.Kernel.Api.Internal.Transaction_Type.@implicit;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.security.LoginContext.AUTH_DISABLED;
+//	import static Neo4Net.Kernel.Api.Internal.security.LoginContext.AUTH_DISABLED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.index.IndexEntryUpdate.add;
+//	import static Neo4Net.kernel.api.index.IndexEntryUpdate.add;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.api.index.IndexingService.NO_MONITOR;
+//	import static Neo4Net.kernel.impl.api.index.IndexingService.NO_MONITOR;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.api.index.TestIndexProviderDescriptor.PROVIDER_DESCRIPTOR;
+//	import static Neo4Net.kernel.impl.api.index.TestIndexProviderDescriptor.PROVIDER_DESCRIPTOR;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.ByteBufferFactory.heapBufferFactory;
+//	import static Neo4Net.kernel.impl.index.schema.ByteBufferFactory.heapBufferFactory;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.logging.AssertableLogProvider.inLog;
+//	import static Neo4Net.logging.AssertableLogProvider.inLog;
 
 	public class IndexPopulationJobTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.CleanupRule cleanup = new org.Neo4Net.test.rule.CleanupRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.CleanupRule cleanup = new Neo4Net.test.rule.CleanupRule();
 		 public readonly CleanupRule Cleanup = new CleanupRule();
 
 		 private GraphDatabaseAPI _db;
@@ -191,7 +191,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 
 			  // THEN
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> update = org.Neo4Net.kernel.api.index.IndexEntryUpdate.add(nodeId, descriptor, org.Neo4Net.values.storable.Values.of(value));
+//ORIGINAL LINE: Neo4Net.kernel.api.index.IndexEntryUpdate<?> update = Neo4Net.kernel.api.index.IndexEntryUpdate.add(nodeId, descriptor, Neo4Net.values.storable.Values.of(value));
 			  IndexEntryUpdate<object> update = IndexEntryUpdate.add( nodeId, descriptor, Values.of( value ) );
 
 			  verify( populator ).create();
@@ -219,7 +219,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 
 			  // THEN
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> update = org.Neo4Net.kernel.api.index.IndexEntryUpdate.add(relationship, descriptor, org.Neo4Net.values.storable.Values.of(age));
+//ORIGINAL LINE: Neo4Net.kernel.api.index.IndexEntryUpdate<?> update = Neo4Net.kernel.api.index.IndexEntryUpdate.add(relationship, descriptor, Neo4Net.values.storable.Values.of(age));
 			  IndexEntryUpdate<object> update = IndexEntryUpdate.add( relationship, descriptor, Values.of( _age ) );
 
 			  verify( populator ).create();
@@ -269,10 +269,10 @@ namespace Neo4Net.Kernel.Impl.Api.index
 
 			  // THEN
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> update1 = add(node1, descriptor, org.Neo4Net.values.storable.Values.of(value));
+//ORIGINAL LINE: Neo4Net.kernel.api.index.IndexEntryUpdate<?> update1 = add(node1, descriptor, Neo4Net.values.storable.Values.of(value));
 			  IndexEntryUpdate<object> update1 = add( node1, descriptor, Values.of( value ) );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> update2 = add(node4, descriptor, org.Neo4Net.values.storable.Values.of(value));
+//ORIGINAL LINE: Neo4Net.kernel.api.index.IndexEntryUpdate<?> update2 = add(node4, descriptor, Neo4Net.values.storable.Values.of(value));
 			  IndexEntryUpdate<object> update2 = add( node4, descriptor, Values.of( value ) );
 
 			  verify( populator ).create();
@@ -309,10 +309,10 @@ namespace Neo4Net.Kernel.Impl.Api.index
 
 			  // THEN
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> update1 = add(rel1, descriptor, org.Neo4Net.values.storable.Values.of(value));
+//ORIGINAL LINE: Neo4Net.kernel.api.index.IndexEntryUpdate<?> update1 = add(rel1, descriptor, Neo4Net.values.storable.Values.of(value));
 			  IndexEntryUpdate<object> update1 = add( rel1, descriptor, Values.of( value ) );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> update2 = add(rel4, descriptor, org.Neo4Net.values.storable.Values.of(value));
+//ORIGINAL LINE: Neo4Net.kernel.api.index.IndexEntryUpdate<?> update2 = add(rel4, descriptor, Neo4Net.values.storable.Values.of(value));
 			  IndexEntryUpdate<object> update2 = add( rel4, descriptor, Values.of( value ) );
 
 			  verify( populator ).create();
@@ -414,7 +414,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  when( storeView.VisitNodes( any( typeof( int[] ) ), any( typeof( System.Func<int, bool> ) ), ArgumentMatchers.any(), ArgumentMatchers.any<Visitor<NodeLabelUpdate, Exception>>(), anyBoolean() ) ).thenReturn(storeScan);
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final IndexPopulationJob job = newIndexPopulationJob(populator, index, storeView, org.Neo4Net.logging.NullLogProvider.getInstance(), org.Neo4Net.Kernel.Api.StorageEngine.EntityType.NODE, indexDescriptor(FIRST, name, false));
+//ORIGINAL LINE: final IndexPopulationJob job = newIndexPopulationJob(populator, index, storeView, Neo4Net.logging.NullLogProvider.getInstance(), Neo4Net.Kernel.Api.StorageEngine.EntityType.NODE, indexDescriptor(FIRST, name, false));
 			  IndexPopulationJob job = NewIndexPopulationJob( populator, index, storeView, NullLogProvider.Instance, EntityType.NODE, IndexDescriptor( _first, _name, false ) );
 
 			  OtherThreadExecutor<Void> populationJobRunner = Cleanup.add( new OtherThreadExecutor<Void>( "Population job test runner", null ) );
@@ -687,7 +687,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  public override void Add<T1>( ICollection<T1> updates ) where T1 : Neo4Net.Kernel.Api.Index.IndexEntryUpdate<T1>
 			  {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: for (org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> update : updates)
+//ORIGINAL LINE: for (Neo4Net.kernel.api.index.IndexEntryUpdate<?> update : updates)
 					foreach ( IndexEntryUpdate<object> update in updates )
 					{
 						 Add( update );
@@ -775,7 +775,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  public override void Add<T1>( ICollection<T1> updates ) where T1 : Neo4Net.Kernel.Api.Index.IndexEntryUpdate<T1>
 			  {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: for (org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> update : updates)
+//ORIGINAL LINE: for (Neo4Net.kernel.api.index.IndexEntryUpdate<?> update : updates)
 					foreach ( IndexEntryUpdate<object> update in updates )
 					{
 						 Add( update );
@@ -828,7 +828,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.kernel.api.index.IndexPopulator indexPopulator(boolean constraint) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException, org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IllegalTokenNameException, org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.TooManyLabelsException
+//ORIGINAL LINE: private Neo4Net.kernel.api.index.IndexPopulator indexPopulator(boolean constraint) throws Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException, Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IllegalTokenNameException, Neo4Net.Kernel.Api.Internal.Exceptions.Schema.TooManyLabelsException
 		 private IndexPopulator IndexPopulator( bool constraint )
 		 {
 			  IndexDescriptor descriptor = IndexDescriptor( _first, _name, constraint );
@@ -864,7 +864,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor indexDescriptor(org.Neo4Net.graphdb.Label label, String propertyKey, boolean constraint) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException, org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IllegalTokenNameException, org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.TooManyLabelsException
+//ORIGINAL LINE: private Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor indexDescriptor(Neo4Net.graphdb.Label label, String propertyKey, boolean constraint) throws Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException, Neo4Net.Kernel.Api.Internal.Exceptions.Schema.IllegalTokenNameException, Neo4Net.Kernel.Api.Internal.Exceptions.Schema.TooManyLabelsException
 		 private IndexDescriptor IndexDescriptor( Label label, string propertyKey, bool constraint )
 		 {
 			  using ( Transaction tx = _kernel.BeginTransaction( @implicit, AUTH_DISABLED ) )
@@ -909,7 +909,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private int getPropertyKeyForName(String name) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
+//ORIGINAL LINE: private int getPropertyKeyForName(String name) throws Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 private int GetPropertyKeyForName( string name )
 		 {
 			  using ( Transaction tx = _kernel.BeginTransaction( @implicit, AUTH_DISABLED ) )

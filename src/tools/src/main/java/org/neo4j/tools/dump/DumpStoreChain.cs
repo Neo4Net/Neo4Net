@@ -50,11 +50,11 @@ namespace Neo4Net.tools.dump
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.pagecache.impl.muninn.StandalonePageCacheFactory.createPageCache;
+//	import static Neo4Net.io.pagecache.impl.muninn.StandalonePageCacheFactory.createPageCache;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
+//	import static Neo4Net.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.record.RecordLoad.FORCE;
+//	import static Neo4Net.kernel.impl.store.record.RecordLoad.FORCE;
 
 	/// <summary>
 	/// Tool to dump content of <seealso cref="StoreType.NODE"/>, <seealso cref="StoreType.PROPERTY"/>, <seealso cref="StoreType.RELATIONSHIP"/> stores
@@ -120,7 +120,7 @@ namespace Neo4Net.tools.dump
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void dump(org.Neo4Net.io.layout.DatabaseLayout databaseLayout) throws java.io.IOException
+//ORIGINAL LINE: void dump(Neo4Net.io.layout.DatabaseLayout databaseLayout) throws java.io.IOException
 		 internal virtual void Dump( DatabaseLayout databaseLayout )
 		 {
 			  using ( DefaultFileSystemAbstraction fs = new DefaultFileSystemAbstraction(), PageCache pageCache = createPageCache(fs, createInitializedScheduler()) )

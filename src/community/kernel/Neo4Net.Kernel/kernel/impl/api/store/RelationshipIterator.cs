@@ -32,7 +32,7 @@ namespace Neo4Net.Kernel.Impl.Api.store
 		 /// Can be called to visit the data about the most recent id returned from <seealso cref="next()"/>.
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: <EXCEPTION extends Exception> boolean relationshipVisit(long relationshipId, org.Neo4Net.Kernel.Api.StorageEngine.RelationshipVisitor<EXCEPTION> visitor) throws EXCEPTION;
+//ORIGINAL LINE: <EXCEPTION extends Exception> boolean relationshipVisit(long relationshipId, Neo4Net.Kernel.Api.StorageEngine.RelationshipVisitor<EXCEPTION> visitor) throws EXCEPTION;
 		 bool relationshipVisit<EXCEPTION>( long relationshipId, RelationshipVisitor<EXCEPTION> visitor );
 	}
 

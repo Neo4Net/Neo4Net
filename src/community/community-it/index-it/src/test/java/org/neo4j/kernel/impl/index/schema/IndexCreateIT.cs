@@ -29,8 +29,8 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using RepeatedLabelInSchemaException = Neo4Net.Kernel.Api.Exceptions.schema.RepeatedLabelInSchemaException;
 	using RepeatedPropertyInSchemaException = Neo4Net.Kernel.Api.Exceptions.schema.RepeatedPropertyInSchemaException;
 	using RepeatedRelationshipTypeInSchemaException = Neo4Net.Kernel.Api.Exceptions.schema.RepeatedRelationshipTypeInSchemaException;
-	using MultiTokenSchemaDescriptor = Neo4Net.Kernel.api.schema.MultiTokenSchemaDescriptor;
-	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
+	using MultiTokenSchemaDescriptor = Neo4Net.Kernel.Api.schema.MultiTokenSchemaDescriptor;
+	using SchemaDescriptorFactory = Neo4Net.Kernel.Api.schema.SchemaDescriptorFactory;
 	using IndexProviderNotFoundException = Neo4Net.Kernel.Impl.Api.index.IndexProviderNotFoundException;
 	using KernelIntegrationTest = Neo4Net.Kernel.Impl.Api.integrationtest.KernelIntegrationTest;
 	using EntityType = Neo4Net.Kernel.Api.StorageEngine.EntityType;
@@ -40,7 +40,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel;
+//	import static Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel;
 
 	public class IndexCreateIT : KernelIntegrationTest
 	{
@@ -50,7 +50,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 private static readonly IndexCreator _uniqueConstraintCreator = SchemaWrite::uniquePropertyConstraintCreate;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldCreateIndexWithSpecificExistingProviderName() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: @Test public void shouldCreateIndexWithSpecificExistingProviderName() throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldCreateIndexWithSpecificExistingProviderName()
 		 {
@@ -58,7 +58,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldCreateUniquePropertyConstraintWithSpecificExistingProviderName() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: @Test public void shouldCreateUniquePropertyConstraintWithSpecificExistingProviderName() throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldCreateUniquePropertyConstraintWithSpecificExistingProviderName()
 		 {
@@ -66,7 +66,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldFailCreateIndexWithNonExistentProviderName() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: @Test public void shouldFailCreateIndexWithNonExistentProviderName() throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldFailCreateIndexWithNonExistentProviderName()
 		 {
@@ -74,7 +74,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldFailCreateUniquePropertyConstraintWithNonExistentProviderName() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: @Test public void shouldFailCreateUniquePropertyConstraintWithNonExistentProviderName() throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldFailCreateUniquePropertyConstraintWithNonExistentProviderName()
 		 {
@@ -82,7 +82,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldNotBePossibleToCreateIndexWithDuplicateLabel() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: @Test public void shouldNotBePossibleToCreateIndexWithDuplicateLabel() throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldNotBePossibleToCreateIndexWithDuplicateLabel()
 		 {
@@ -93,7 +93,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 			  try
 			  {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.api.schema.MultiTokenSchemaDescriptor descriptor = org.Neo4Net.kernel.api.schema.SchemaDescriptorFactory.multiToken(new int[]{0, 0}, org.Neo4Net.Kernel.Api.StorageEngine.EntityType.NODE, 1);
+//ORIGINAL LINE: final Neo4Net.kernel.api.schema.MultiTokenSchemaDescriptor descriptor = Neo4Net.kernel.api.schema.SchemaDescriptorFactory.multiToken(new int[]{0, 0}, Neo4Net.Kernel.Api.StorageEngine.EntityType.NODE, 1);
 					MultiTokenSchemaDescriptor descriptor = SchemaDescriptorFactory.multiToken( new int[]{ 0, 0 }, EntityType.NODE, 1 );
 					schemaWrite.IndexCreate( descriptor );
 					fail( "Should have failed" );
@@ -105,7 +105,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldNotBePossibleToCreateIndexWithDuplicateRelationshipTypes() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: @Test public void shouldNotBePossibleToCreateIndexWithDuplicateRelationshipTypes() throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldNotBePossibleToCreateIndexWithDuplicateRelationshipTypes()
 		 {
@@ -116,7 +116,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 			  try
 			  {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.api.schema.MultiTokenSchemaDescriptor descriptor = org.Neo4Net.kernel.api.schema.SchemaDescriptorFactory.multiToken(new int[]{0, 0}, org.Neo4Net.Kernel.Api.StorageEngine.EntityType.RELATIONSHIP, 1);
+//ORIGINAL LINE: final Neo4Net.kernel.api.schema.MultiTokenSchemaDescriptor descriptor = Neo4Net.kernel.api.schema.SchemaDescriptorFactory.multiToken(new int[]{0, 0}, Neo4Net.Kernel.Api.StorageEngine.EntityType.RELATIONSHIP, 1);
 					MultiTokenSchemaDescriptor descriptor = SchemaDescriptorFactory.multiToken( new int[]{ 0, 0 }, EntityType.RELATIONSHIP, 1 );
 					schemaWrite.IndexCreate( descriptor );
 					fail( "Should have failed" );
@@ -128,7 +128,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldNotBePossibleToCreateIndexWithDuplicateProperties() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: @Test public void shouldNotBePossibleToCreateIndexWithDuplicateProperties() throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldNotBePossibleToCreateIndexWithDuplicateProperties()
 		 {
@@ -149,7 +149,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldNotBePossibleToCreateConstraintWithDuplicateProperties() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: @Test public void shouldNotBePossibleToCreateConstraintWithDuplicateProperties() throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldNotBePossibleToCreateConstraintWithDuplicateProperties()
 		 {
@@ -170,7 +170,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void shouldFailWithNonExistentProviderName(IndexCreator creator) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: void shouldFailWithNonExistentProviderName(IndexCreator creator) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 internal virtual void ShouldFailWithNonExistentProviderName( IndexCreator creator )
 		 {
 			  // given
@@ -189,7 +189,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void shouldCreateWithSpecificExistingProviderName(IndexCreator creator) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: void shouldCreateWithSpecificExistingProviderName(IndexCreator creator) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 internal virtual void ShouldCreateWithSpecificExistingProviderName( IndexCreator creator )
 		 {
 			  int labelId = 0;
@@ -212,7 +212,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 internal interface IIndexCreator
 		 {
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void create(org.Neo4Net.Kernel.Api.Internal.SchemaWrite schemaWrite, org.Neo4Net.Kernel.Api.Internal.Schema.LabelSchemaDescriptor descriptor, String providerName) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.SchemaKernelException;
+//ORIGINAL LINE: void create(Neo4Net.Kernel.Api.Internal.SchemaWrite schemaWrite, Neo4Net.Kernel.Api.Internal.Schema.LabelSchemaDescriptor descriptor, String providerName) throws Neo4Net.Kernel.Api.Internal.Exceptions.Schema.SchemaKernelException;
 			  void Create( SchemaWrite schemaWrite, LabelSchemaDescriptor descriptor, string providerName );
 		 }
 	}

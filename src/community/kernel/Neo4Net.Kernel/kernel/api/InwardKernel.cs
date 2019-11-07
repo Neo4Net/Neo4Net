@@ -17,16 +17,16 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Kernel.api
+namespace Neo4Net.Kernel.Api
 {
 	using Kernel = Neo4Net.Kernel.Api.Internal.Kernel;
 	using Transaction = Neo4Net.Kernel.Api.Internal.Transaction;
 	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
 	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
 	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
-	using CallableProcedure = Neo4Net.Kernel.api.proc.CallableProcedure;
-	using CallableUserAggregationFunction = Neo4Net.Kernel.api.proc.CallableUserAggregationFunction;
-	using CallableUserFunction = Neo4Net.Kernel.api.proc.CallableUserFunction;
+	using CallableProcedure = Neo4Net.Kernel.Api.Procs.CallableProcedure;
+	using CallableUserAggregationFunction = Neo4Net.Kernel.Api.Procs.CallableUserAggregationFunction;
+	using CallableUserFunction = Neo4Net.Kernel.Api.Procs.CallableUserFunction;
 
 	/// <summary>
 	/// The main API through which access to the Neo4Net kernel is made, both read
@@ -47,7 +47,7 @@ namespace Neo4Net.Kernel.api
 		 /// <param name="loginContext"> transaction login context </param>
 		 /// <param name="timeout"> transaction timeout in milliseconds </param>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: KernelTransaction BeginTransaction(KernelTransaction.Type type, org.Neo4Net.Kernel.Api.Internal.security.LoginContext loginContext, long timeout) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
+//ORIGINAL LINE: KernelTransaction BeginTransaction(KernelTransaction.Type type, Neo4Net.Kernel.Api.Internal.security.LoginContext loginContext, long timeout) throws Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
 		 KernelTransaction BeginTransaction( KernelTransaction.Type type, LoginContext loginContext, long timeout );
 
 		 /// <summary>
@@ -62,7 +62,7 @@ namespace Neo4Net.Kernel.api
 		 /// </summary>
 		 /// <param name="procedure"> procedure to register </param>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void registerProcedure(org.Neo4Net.kernel.api.proc.CallableProcedure procedure) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
+//ORIGINAL LINE: void registerProcedure(Neo4Net.kernel.api.proc.CallableProcedure procedure) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
 		 void RegisterProcedure( CallableProcedure procedure );
 
 		 /// <summary>
@@ -71,7 +71,7 @@ namespace Neo4Net.Kernel.api
 		 /// </summary>
 		 /// <param name="function"> function to register </param>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void registerUserFunction(org.Neo4Net.kernel.api.proc.CallableUserFunction function) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
+//ORIGINAL LINE: void registerUserFunction(Neo4Net.kernel.api.proc.CallableUserFunction function) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
 		 void RegisterUserFunction( CallableUserFunction function );
 
 		 /// <summary>
@@ -80,7 +80,7 @@ namespace Neo4Net.Kernel.api
 		 /// </summary>
 		 /// <param name="function"> function to register </param>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void registerUserAggregationFunction(org.Neo4Net.kernel.api.proc.CallableUserAggregationFunction function) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
+//ORIGINAL LINE: void registerUserAggregationFunction(Neo4Net.kernel.api.proc.CallableUserAggregationFunction function) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
 		 void RegisterUserAggregationFunction( CallableUserAggregationFunction function );
 	}
 

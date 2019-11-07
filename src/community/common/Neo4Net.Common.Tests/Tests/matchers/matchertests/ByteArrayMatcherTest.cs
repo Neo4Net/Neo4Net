@@ -27,7 +27,7 @@ namespace Neo4Net.Test.matchers.matchertests
    //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
    //	import static org.hamcrest.Matchers.containsString;
    //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-   //	import static org.Neo4Net.test.matchers.ByteArrayMatcher.byteArray;
+   //	import static Neo4Net.test.matchers.ByteArrayMatcher.byteArray;
 
    internal class ByteArrayMatcherTest
    {

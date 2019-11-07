@@ -23,7 +23,7 @@ using System.Collections.Generic;
 namespace Neo4Net.GraphDb.factory.module.edition
 {
 
-	using DatabaseManager = Neo4Net.Dbms.database.DatabaseManager;
+	using IDatabaseManager = Neo4Net.Dbms.database.DatabaseManager;
 	using DefaultDatabaseManager = Neo4Net.Dmbs.Database.DefaultDatabaseManager;
 	using GraphDatabaseFacadeFactory = Neo4Net.GraphDb.facade.GraphDatabaseFacadeFactory;
 	using DatabaseEditionContext = Neo4Net.GraphDb.factory.module.edition.context.DatabaseEditionContext;
@@ -32,9 +32,9 @@ namespace Neo4Net.GraphDb.factory.module.edition
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using RestartableFileSystemWatcher = Neo4Net.Io.fs.watcher.RestartableFileSystemWatcher;
 	using IOLimiter = Neo4Net.Io.pagecache.IOLimiter;
-	using NetworkConnectionTracker = Neo4Net.Kernel.api.net.NetworkConnectionTracker;
-	using SecurityModule = Neo4Net.Kernel.api.security.SecurityModule;
-	using SecurityProvider = Neo4Net.Kernel.api.security.provider.SecurityProvider;
+	using NetworkConnectionTracker = Neo4Net.Kernel.Api.net.NetworkConnectionTracker;
+	using SecurityModule = Neo4Net.Kernel.Api.security.SecurityModule;
+	using SecurityProvider = Neo4Net.Kernel.Api.security.provider.SecurityProvider;
 	using AvailabilityGuard = Neo4Net.Kernel.availability.AvailabilityGuard;
 	using DatabaseAvailabilityGuard = Neo4Net.Kernel.availability.DatabaseAvailabilityGuard;
 	using Config = Neo4Net.Kernel.configuration.Config;
@@ -60,7 +60,7 @@ namespace Neo4Net.GraphDb.factory.module.edition
 	using UsageDataKeys = Neo4Net.Udc.UsageDataKeys;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.proc.temporal.TemporalFunction.registerTemporalFunctions;
+//	import static Neo4Net.kernel.impl.proc.temporal.TemporalFunction.registerTemporalFunctions;
 
 	/// <summary>
 	/// Edition module for <seealso cref="GraphDatabaseFacadeFactory"/>. Implementations of this class
@@ -120,7 +120,7 @@ namespace Neo4Net.GraphDb.factory.module.edition
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void registerProcedures(org.Neo4Net.kernel.impl.proc.Procedures procedures, org.Neo4Net.kernel.impl.proc.ProcedureConfig procedureConfig) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: public void registerProcedures(Neo4Net.kernel.impl.proc.Procedures procedures, Neo4Net.kernel.impl.proc.ProcedureConfig procedureConfig) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 public virtual void RegisterProcedures( Procedures procedures, ProcedureConfig procedureConfig )
 		 {
 			  procedures.RegisterProcedure( typeof( Neo4Net.Kernel.builtinprocs.BuiltInProcedures ) );
@@ -133,7 +133,7 @@ namespace Neo4Net.GraphDb.factory.module.edition
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected abstract void registerEditionSpecificProcedures(org.Neo4Net.kernel.impl.proc.Procedures procedures) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
+//ORIGINAL LINE: protected abstract void registerEditionSpecificProcedures(Neo4Net.kernel.impl.proc.Procedures procedures) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 		 protected internal abstract void RegisterEditionSpecificProcedures( Procedures procedures );
 
 		 protected internal virtual void PublishEditionInfo( UsageData sysInfo, DatabaseInfo databaseInfo, Config config )
@@ -143,7 +143,7 @@ namespace Neo4Net.GraphDb.factory.module.edition
 			  config.Augment( GraphDatabaseSettings.editionName, databaseInfo.Edition.ToString() );
 		 }
 
-		 public virtual DatabaseManager CreateDatabaseManager( GraphDatabaseFacade graphDatabaseFacade, PlatformModule platform, AbstractEditionModule edition, Procedures procedures, Logger msgLog )
+		 public virtual IDatabaseManager CreateDatabaseManager( GraphDatabaseFacade graphDatabaseFacade, PlatformModule platform, AbstractEditionModule edition, Procedures procedures, Logger msgLog )
 		 {
 			  return new DefaultDatabaseManager( platform, edition, procedures, msgLog, graphDatabaseFacade );
 		 }
@@ -214,7 +214,7 @@ namespace Neo4Net.GraphDb.factory.module.edition
 			  return ( DatabaseAvailabilityGuard ) GetGlobalAvailabilityGuard( clock, logService, config );
 		 }
 
-		 public virtual void CreateDatabases( DatabaseManager databaseManager, Config config )
+		 public virtual void CreateDatabases( IDatabaseManager databaseManager, Config config )
 		 {
 			  databaseManager.CreateDatabase( config.Get( GraphDatabaseSettings.active_database ) );
 		 }

@@ -30,7 +30,7 @@ namespace Neo4Net.causalclustering.core.consensus
 	public interface RaftMessageHandler
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.Neo4Net.causalclustering.core.consensus.outcome.Outcome handle(RaftMessages_RaftMessage message, org.Neo4Net.causalclustering.core.consensus.state.ReadableRaftState context, org.Neo4Net.logging.Log log) throws java.io.IOException;
+//ORIGINAL LINE: Neo4Net.causalclustering.core.consensus.outcome.Outcome handle(RaftMessages_RaftMessage message, Neo4Net.causalclustering.core.consensus.state.ReadableRaftState context, Neo4Net.logging.Log log) throws java.io.IOException;
 		 Outcome Handle( RaftMessages_RaftMessage message, ReadableRaftState context, Log log );
 	}
 

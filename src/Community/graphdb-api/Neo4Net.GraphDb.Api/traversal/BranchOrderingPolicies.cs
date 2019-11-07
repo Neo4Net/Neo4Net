@@ -28,7 +28,7 @@ namespace Neo4Net.GraphDb.Traversal
     public enum BranchOrderingPolicies
     {
         //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-        //ORIGINAL LINE: PREORDER_DEPTH_FIRST { @Override public BranchSelector create(TraversalBranch startSource, org.Neo4Net.graphdb.PathExpander expander) { return new PreorderDepthFirstSelector(startSource, expander); } },
+        //ORIGINAL LINE: PREORDER_DEPTH_FIRST { @Override public BranchSelector create(TraversalBranch startSource, Neo4Net.GraphDb.PathExpander expander) { return new PreorderDepthFirstSelector(startSource, expander); } },
         PREORDER_DEPTH_FIRST
 
 		 {
@@ -36,19 +36,19 @@ namespace Neo4Net.GraphDb.Traversal
 },
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: POSTORDER_DEPTH_FIRST { @Override public BranchSelector create(TraversalBranch startSource, org.Neo4Net.graphdb.PathExpander expander) { return new PostorderDepthFirstSelector(startSource, expander); } },
+//ORIGINAL LINE: POSTORDER_DEPTH_FIRST { @Override public BranchSelector create(TraversalBranch startSource, Neo4Net.GraphDb.PathExpander expander) { return new PostorderDepthFirstSelector(startSource, expander); } },
 		 POSTORDER_DEPTH_FIRST
 		 {
 			 public BranchSelector create(TraversalBranch startSource, PathExpander expander) { return new PostorderDepthFirstSelector(startSource, expander); }
 		 },
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: PREORDER_BREADTH_FIRST { @Override public BranchSelector create(TraversalBranch startSource, org.Neo4Net.graphdb.PathExpander expander) { return new PreorderBreadthFirstSelector(startSource, expander); } },
+//ORIGINAL LINE: PREORDER_BREADTH_FIRST { @Override public BranchSelector create(TraversalBranch startSource, Neo4Net.GraphDb.PathExpander expander) { return new PreorderBreadthFirstSelector(startSource, expander); } },
 		 PREORDER_BREADTH_FIRST
 		 {
 			 public BranchSelector create(TraversalBranch startSource, PathExpander expander) { return new PreorderBreadthFirstSelector(startSource, expander); }
 		 },
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: POSTORDER_BREADTH_FIRST { @Override public BranchSelector create(TraversalBranch startSource, org.Neo4Net.graphdb.PathExpander expander) { return new PostorderBreadthFirstSelector(startSource, expander); } }
+//ORIGINAL LINE: POSTORDER_BREADTH_FIRST { @Override public BranchSelector create(TraversalBranch startSource, Neo4Net.GraphDb.PathExpander expander) { return new PostorderBreadthFirstSelector(startSource, expander); } }
 		 POSTORDER_BREADTH_FIRST
 		 {
 			 public BranchSelector create(TraversalBranch startSource, PathExpander expander) { return new PostorderBreadthFirstSelector(startSource, expander); }

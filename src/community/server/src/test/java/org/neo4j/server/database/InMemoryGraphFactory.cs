@@ -29,7 +29,7 @@ namespace Neo4Net.Server.database
 	using ImpermanentGraphDatabase = Neo4Net.Test.ImpermanentGraphDatabase;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
+//	import static Neo4Net.helpers.collection.MapUtil.stringMap;
 
 	public class InMemoryGraphFactory : GraphFactory
 	{

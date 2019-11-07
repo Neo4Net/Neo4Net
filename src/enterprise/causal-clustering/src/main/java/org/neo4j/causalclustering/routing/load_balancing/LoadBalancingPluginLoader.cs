@@ -46,7 +46,7 @@ namespace Neo4Net.causalclustering.routing.load_balancing
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static void validate(org.Neo4Net.kernel.configuration.Config config, org.Neo4Net.logging.Log log) throws org.Neo4Net.graphdb.config.InvalidSettingException
+//ORIGINAL LINE: public static void validate(Neo4Net.kernel.configuration.Config config, Neo4Net.logging.Log log) throws Neo4Net.graphdb.config.InvalidSettingException
 		 public static void Validate( Config config, Log log )
 		 {
 			  LoadBalancingPlugin plugin = FindPlugin( config );
@@ -54,7 +54,7 @@ namespace Neo4Net.causalclustering.routing.load_balancing
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static LoadBalancingProcessor load(org.Neo4Net.causalclustering.discovery.TopologyService topologyService, org.Neo4Net.causalclustering.core.consensus.LeaderLocator leaderLocator, org.Neo4Net.logging.LogProvider logProvider, org.Neo4Net.kernel.configuration.Config config) throws Throwable
+//ORIGINAL LINE: public static LoadBalancingProcessor load(Neo4Net.causalclustering.discovery.TopologyService topologyService, Neo4Net.causalclustering.core.consensus.LeaderLocator leaderLocator, Neo4Net.logging.LogProvider logProvider, Neo4Net.kernel.configuration.Config config) throws Throwable
 		 public static LoadBalancingProcessor Load( TopologyService topologyService, LeaderLocator leaderLocator, LogProvider logProvider, Config config )
 		 {
 			  LoadBalancingPlugin plugin = FindPlugin( config );
@@ -69,7 +69,7 @@ namespace Neo4Net.causalclustering.routing.load_balancing
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static LoadBalancingPlugin findPlugin(org.Neo4Net.kernel.configuration.Config config) throws org.Neo4Net.graphdb.config.InvalidSettingException
+//ORIGINAL LINE: private static LoadBalancingPlugin findPlugin(Neo4Net.kernel.configuration.Config config) throws Neo4Net.graphdb.config.InvalidSettingException
 		 private static LoadBalancingPlugin FindPlugin( Config config )
 		 {
 			  ISet<string> availableOptions = new HashSet<string>();

@@ -22,7 +22,7 @@
 namespace Neo4Net.Dmbs.Database
 {
 
-	using DatabaseManager = Neo4Net.Dbms.database.DatabaseManager;
+	using IDatabaseManager = Neo4Net.Dbms.database.DatabaseManager;
 	using ClassicCoreSPI = Neo4Net.GraphDb.facade.spi.ClassicCoreSPI;
 	using DataSourceModule = Neo4Net.GraphDb.factory.module.DataSourceModule;
 	using PlatformModule = Neo4Net.GraphDb.factory.module.PlatformModule;
@@ -33,9 +33,9 @@ namespace Neo4Net.Dmbs.Database
 	using Logger = Neo4Net.Logging.Logger;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.util.Preconditions.checkState;
+//	import static Neo4Net.util.Preconditions.checkState;
 
-	public sealed class DefaultDatabaseManager : LifecycleAdapter, DatabaseManager
+	public sealed class DefaultDatabaseManager : LifecycleAdapter, IDatabaseManager
 	{
 		 private GraphDatabaseFacade _database;
 		 private readonly PlatformModule _platform;

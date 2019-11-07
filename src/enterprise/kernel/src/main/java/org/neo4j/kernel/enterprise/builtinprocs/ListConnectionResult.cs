@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel.enterprise.builtinprocs
 {
 
 	using SocketAddress = Neo4Net.Helpers.SocketAddress;
-	using TrackedNetworkConnection = Neo4Net.Kernel.api.net.TrackedNetworkConnection;
+	using TrackedNetworkConnection = Neo4Net.Kernel.Api.net.TrackedNetworkConnection;
 
 	public class ListConnectionResult
 	{

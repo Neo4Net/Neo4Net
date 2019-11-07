@@ -19,7 +19,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Kernel.api.labelscan
+namespace Neo4Net.Kernel.Api.LabelScan
 {
 
 	using Neo4Net.GraphDb;
@@ -56,7 +56,7 @@ namespace Neo4Net.Kernel.api.labelscan
 		 /// </summary>
 		 /// <exception cref="UnderlyingStorageException"> if there was a problem forcing the state to persistent storage. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void force(org.Neo4Net.io.pagecache.IOLimiter limiter) throws org.Neo4Net.kernel.impl.store.UnderlyingStorageException;
+//ORIGINAL LINE: void force(Neo4Net.io.pagecache.IOLimiter limiter) throws Neo4Net.kernel.impl.store.UnderlyingStorageException;
 		 void Force( IOLimiter limiter );
 
 		 /// <summary>
@@ -65,7 +65,7 @@ namespace Neo4Net.Kernel.api.labelscan
 		 /// <returns> the <seealso cref="AllEntriesLabelScanReader reader"/>. </returns>
 		 AllEntriesLabelScanReader AllNodeLabelRanges();
 
-		 ResourceIterator<File> SnapshotStoreFiles();
+		 IResourceIterator<File> SnapshotStoreFiles();
 
 		 /// <returns> {@code true} if there's no data at all in this label scan store, otherwise {@code false}. </returns>
 		 /// <exception cref="IOException"> on I/O error. </exception>

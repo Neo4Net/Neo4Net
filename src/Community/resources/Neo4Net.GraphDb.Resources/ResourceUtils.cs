@@ -19,33 +19,44 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.GraphDb
+namespace Neo4Net.GraphDb.Resources
 {
 
 	public class ResourceUtils
 	{
 		 /// <param name="resources"> <seealso cref="System.Collections.IEnumerable"/> over resources to close. </param>
-		 public static void CloseAll<T>( IEnumerable<T> resources ) where T : Resource
+		 public static void CloseAll<T>( IEnumerable<T> resources ) where T : IResource
 		 {
-			  CloseAll( StreamSupport.stream( resources.spliterator(), false ) );
-		 }
+
+         foreach (T resource in resources)
+         {
+            resource?.Dispose();
+         }
+
+         //$!!$ CloseAll( StreamSupport.stream( resources.spliterator(), false ) );
+      }
 
 		 /// <param name="resources"> Array of resources to close. </param>
-//JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SafeVarargs public static <T extends Resource> void closeAll(T... resources)
-		 public static void CloseAll<T>( params T[] resources ) where T : Resource
+
+		 public static void CloseAll<T>( params T[] resources ) where T : IResource
 		 {
-			  CloseAll( Arrays.stream( resources ) );
+         foreach (T resource in resources)
+         {
+            resource?.Dispose();
+         }
+			  //$!!$ CloseAll( Arrays.stream( resources ) );
 		 }
 
 		 /// <summary>
 		 /// Close all resources. Does NOT guarantee all being closed in case of unchecked exception.
 		 /// </summary>
 		 /// <param name="resources"> Stream of resources to close. </param>
-		 public static void CloseAll<T>( Stream<T> resources ) where T : Resource
-		 {
-			  resources.filter( Objects.nonNull ).forEach( Resource.close );
-		 }
+		//$!!$ tac 
+      ////public static void CloseAll<T>( Stream<T> resources ) where T : IResource
+		 ////{
+			////  resources.filter( Objects.nonNull ).forEach( Resource.close );
+   ////      foreach ()
+		 ////}
 	}
 
 }

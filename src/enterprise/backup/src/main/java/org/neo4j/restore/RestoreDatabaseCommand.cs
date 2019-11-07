@@ -33,11 +33,11 @@ namespace Neo4Net.restore
 	using Validators = Neo4Net.Kernel.impl.util.Validators;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.commandline.Util.checkLock;
+//	import static Neo4Net.commandline.Util.checkLock;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.commandline.Util.isSameOrChildFile;
+//	import static Neo4Net.commandline.Util.isSameOrChildFile;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.database_path;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.database_path;
 
 	public class RestoreDatabaseCommand
 	{
@@ -59,7 +59,7 @@ namespace Neo4Net.restore
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void execute() throws java.io.IOException, org.Neo4Net.commandline.admin.CommandFailed
+//ORIGINAL LINE: public void execute() throws java.io.IOException, Neo4Net.commandline.admin.CommandFailed
 		 public virtual void Execute()
 		 {
 			  if ( !_fs.fileExists( _fromDatabasePath ) )
@@ -94,7 +94,7 @@ namespace Neo4Net.restore
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void restoreDatabaseFiles(org.Neo4Net.kernel.impl.transaction.log.files.LogFiles backupLogFiles, java.io.File[] files) throws java.io.IOException
+//ORIGINAL LINE: private void restoreDatabaseFiles(Neo4Net.kernel.impl.transaction.log.files.LogFiles backupLogFiles, java.io.File[] files) throws java.io.IOException
 		 private void RestoreDatabaseFiles( LogFiles backupLogFiles, File[] files )
 		 {
 			  if ( files != null )

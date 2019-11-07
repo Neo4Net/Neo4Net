@@ -38,7 +38,7 @@ namespace Neo4Net.Kernel.extension
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verify;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.iterable;
+//	import static Neo4Net.helpers.collection.Iterables.iterable;
 
 	public class GlobalKernelExtensionsTest
 	{

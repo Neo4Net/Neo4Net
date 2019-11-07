@@ -23,7 +23,7 @@ using System.Collections.Generic;
 namespace Neo4Net.Kernel.Api.Internal.Exceptions.Schema
 {
 	using SchemaUtil = Neo4Net.Kernel.Api.Internal.Schema.SchemaUtil;
-	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor;
+	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.Schema.constraints.IConstraintDescriptor;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 
 	/// <summary>
@@ -67,7 +67,7 @@ namespace Neo4Net.Kernel.Api.Internal.Exceptions.Schema
 			  private readonly int ordinalValue;
 			  private static int nextOrdinal = 0;
 
-			  internal Private readonly;
+			  private readonly Neo4Net.Kernel.Api.Exceptions.Status _status;
 
 			  internal Phase( string name, InnerEnum innerEnum, Neo4Net.Kernel.Api.Exceptions.Status status )
 			  {

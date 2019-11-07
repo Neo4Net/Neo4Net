@@ -22,7 +22,7 @@
 namespace Neo4Net.Kernel.Impl.Newapi
 {
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.record.AbstractBaseRecord.NO_ID;
+//	import static Neo4Net.kernel.impl.store.record.AbstractBaseRecord.NO_ID;
 
 	public sealed class RelationshipReferenceEncoding
 	{

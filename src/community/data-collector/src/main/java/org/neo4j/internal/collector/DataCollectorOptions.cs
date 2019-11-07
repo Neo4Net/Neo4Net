@@ -45,11 +45,11 @@ namespace Neo4Net.Internal.Collector
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: abstract T parse(Object value) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException;
+//ORIGINAL LINE: abstract T parse(Object value) throws Neo4Net.kernel.api.exceptions.InvalidArgumentsException;
 			  internal abstract T Parse( object value );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: T parseOrDefault(java.util.Map<String,Object> valueMap) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: T parseOrDefault(java.util.Map<String,Object> valueMap) throws Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 			  internal virtual T ParseOrDefault( IDictionary<string, object> valueMap )
 			  {
 					if ( valueMap.ContainsKey( Name ) )
@@ -68,7 +68,7 @@ namespace Neo4Net.Internal.Collector
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: Integer parse(Object value) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: Integer parse(Object value) throws Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 			  internal override Integer Parse( object value )
 			  {
 					int x = AsInteger( value );
@@ -80,7 +80,7 @@ namespace Neo4Net.Internal.Collector
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private int asInteger(Object value) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: private int asInteger(Object value) throws Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 			  internal virtual int AsInteger( object value )
 			  {
 					if ( value is sbyte? || value is short? || value is int? || value is long? )

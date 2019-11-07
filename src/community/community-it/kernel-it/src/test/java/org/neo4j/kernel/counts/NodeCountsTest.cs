@@ -27,8 +27,8 @@ namespace Neo4Net.Kernel.counts
 	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
 	using Node = Neo4Net.GraphDb.Node;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
-	using StatementConstants = Neo4Net.Kernel.api.StatementConstants;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
+	using StatementConstants = Neo4Net.Kernel.Api.StatementConstants;
 	using ThreadToStatementContextBridge = Neo4Net.Kernel.impl.core.ThreadToStatementContextBridge;
 	using Barrier = Neo4Net.Test.Barrier;
 	using Neo4Net.Test;
@@ -42,10 +42,10 @@ namespace Neo4Net.Kernel.counts
 	public class NodeCountsTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.DatabaseRule db = new org.Neo4Net.test.rule.ImpermanentDatabaseRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.DatabaseRule db = new Neo4Net.test.rule.ImpermanentDatabaseRule();
 		 public readonly DatabaseRule Db = new ImpermanentDatabaseRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.concurrent.ThreadingRule threading = new org.Neo4Net.test.rule.concurrent.ThreadingRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.concurrent.ThreadingRule threading = new Neo4Net.test.rule.concurrent.ThreadingRule();
 		 public readonly ThreadingRule Threading = new ThreadingRule();
 
 		 private System.Func<KernelTransaction> _kernelTransactionSupplier;
@@ -175,7 +175,7 @@ namespace Neo4Net.Kernel.counts
 			  // given
 			  IGraphDatabaseService graphDb = Db.GraphDatabaseAPI;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.test.Barrier_Control barrier = new org.Neo4Net.test.Barrier_Control();
+//ORIGINAL LINE: final Neo4Net.test.Barrier_Control barrier = new Neo4Net.test.Barrier_Control();
 			  Neo4Net.Test.Barrier_Control barrier = new Neo4Net.Test.Barrier_Control();
 			  long before = NumberOfNodes();
 			  Future<long> done = Threading.execute(new NamedFunctionAnonymousInnerClass(this, graphDb, barrier)

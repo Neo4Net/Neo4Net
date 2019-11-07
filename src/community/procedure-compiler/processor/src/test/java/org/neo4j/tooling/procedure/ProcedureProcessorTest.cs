@@ -53,9 +53,9 @@ namespace Neo4Net.Tooling.procedure
 
 			  UnsuccessfulCompilationClause compilation = assert_().about(javaSource()).that(sproc).processedWith(Processor()).failsToCompile().withErrorCount(2);
 
-			  compilation.withErrorContaining( "@org.Neo4Net.procedure.Name usage error: missing on parameter <parameter>" ).@in( sproc ).onLine( 35 );
+			  compilation.withErrorContaining( "@Neo4Net.procedure.Name usage error: missing on parameter <parameter>" ).@in( sproc ).onLine( 35 );
 
-			  compilation.withErrorContaining( "@org.Neo4Net.procedure.Name usage error: missing on parameter <otherParam>" ).@in( sproc ).onLine( 35 );
+			  compilation.withErrorContaining( "@Neo4Net.procedure.Name usage error: missing on parameter <otherParam>" ).@in( sproc ).onLine( 35 );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -133,7 +133,7 @@ namespace Neo4Net.Tooling.procedure
 			  JavaFileObject firstDuplicate = JavaFileObjectUtils.INSTANCE.procedureSource( "invalid/duplicated/Sproc1.java" );
 			  JavaFileObject secondDuplicate = JavaFileObjectUtils.INSTANCE.procedureSource( "invalid/duplicated/Sproc2.java" );
 
-			  assert_().about(javaSources()).that(asList(firstDuplicate, secondDuplicate)).processedWith(Processor()).failsToCompile().withErrorCount(2).withErrorContaining("Procedure|function name <org.Neo4Net.tooling.procedure.procedures.invalid.duplicated.foobar> is " + "already defined 2 times. It should be defined only once!");
+			  assert_().about(javaSources()).that(asList(firstDuplicate, secondDuplicate)).processedWith(Processor()).failsToCompile().withErrorCount(2).withErrorContaining("Procedure|function name <Neo4Net.tooling.procedure.procedures.invalid.duplicated.foobar> is " + "already defined 2 times. It should be defined only once!");
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -142,7 +142,7 @@ namespace Neo4Net.Tooling.procedure
 		 {
 			  JavaFileObject procedure = JavaFileObjectUtils.INSTANCE.procedureSource( "invalid/missing_constructor/MissingConstructorProcedure.java" );
 
-			  assert_().about(javaSource()).that(procedure).processedWith(Processor()).failsToCompile().withErrorCount(1).withErrorContaining("Extension class org.Neo4Net.tooling.procedure.procedures.invalid.missing_constructor.MissingConstructorProcedure " + "should contain a public no-arg constructor, none found.").@in(procedure).onLine(24);
+			  assert_().about(javaSource()).that(procedure).processedWith(Processor()).failsToCompile().withErrorCount(1).withErrorContaining("Extension class Neo4Net.tooling.procedure.procedures.invalid.missing_constructor.MissingConstructorProcedure " + "should contain a public no-arg constructor, none found.").@in(procedure).onLine(24);
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

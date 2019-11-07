@@ -65,7 +65,7 @@ namespace Neo4Net.causalclustering.catchup
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean onFileContent(org.Neo4Net.causalclustering.catchup.storecopy.FileChunk fileChunk) throws java.io.IOException
+//ORIGINAL LINE: public boolean onFileContent(Neo4Net.causalclustering.catchup.storecopy.FileChunk fileChunk) throws java.io.IOException
 		 public override bool OnFileContent( FileChunk fileChunk )
 		 {
 			  if ( !_requestOutcomeSignal.Cancelled )

@@ -17,13 +17,15 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.GraphDb
+using System;
+
+namespace Neo4Net.GraphDb.Resources
 {
 	/// <summary>
 	/// Resource that should be closed when not needed anymore. Extends <seealso cref="IDisposable"/>
 	/// with <seealso cref="close()"/> not throwing any checked exception.
 	/// </summary>
-	public interface Resource : IDisposable
+	public interface IResource : IDisposable
 	{
 		 void Close();
 
@@ -32,12 +34,15 @@ namespace Neo4Net.GraphDb
 		 /// </summary>
 	}
 
-	public static class Resource_Fields
-	{
-		 public static readonly Resource Empty = () =>
-		 {
-		 };
+	
+   
+   //$!!$
+   ////public static class Resource_Fields
+	////{
+ ////     public static readonly IResource Empty = () => new object();
+	////	 {
+	////	 };
 
-	}
+	////}
 
 }

@@ -129,7 +129,7 @@ namespace Neo4Net.backup.impl
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.backup.impl.BackupProtocolServiceFactory.backupProtocolService;
+//	import static Neo4Net.backup.impl.BackupProtocolServiceFactory.backupProtocolService;
 
 	public class BackupProtocolServiceIT
 	{
@@ -228,7 +228,7 @@ namespace Neo4Net.backup.impl
 			  IGraphDatabaseService db = _dbRule.GraphDatabaseAPI;
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.logging.Log log = mock(org.Neo4Net.logging.Log.class);
+//ORIGINAL LINE: final Neo4Net.logging.Log log = mock(Neo4Net.logging.Log.class);
 			  Log log = mock( typeof( Log ) );
 			  LogProvider logProvider = new LogProviderAnonymousInnerClass( this, log );
 
@@ -286,7 +286,7 @@ namespace Neo4Net.backup.impl
 			  RotateAndCheckPoint( db );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.logging.Log log = mock(org.Neo4Net.logging.Log.class);
+//ORIGINAL LINE: final Neo4Net.logging.Log log = mock(Neo4Net.logging.Log.class);
 			  Log log = mock( typeof( Log ) );
 			  LogProvider logProvider = new LogProviderAnonymousInnerClass2( this, log );
 
@@ -593,7 +593,7 @@ namespace Neo4Net.backup.impl
 			  }
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.io.File oldLog = db.getDependencyResolver().resolveDependency(org.Neo4Net.kernel.impl.transaction.log.files.LogFiles.class).getHighestLogFile();
+//ORIGINAL LINE: final java.io.File oldLog = db.getDependencyResolver().resolveDependency(Neo4Net.kernel.impl.transaction.log.files.LogFiles.class).getHighestLogFile();
 			  File oldLog = Db.DependencyResolver.resolveDependency( typeof( LogFiles ) ).HighestLogFile;
 			  RotateAndCheckPoint( db );
 
@@ -791,7 +791,7 @@ namespace Neo4Net.backup.impl
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void rotateAndCheckPoint(org.Neo4Net.kernel.internal.GraphDatabaseAPI db) throws java.io.IOException
+//ORIGINAL LINE: private static void rotateAndCheckPoint(Neo4Net.kernel.internal.GraphDatabaseAPI db) throws java.io.IOException
 		 private static void RotateAndCheckPoint( GraphDatabaseAPI db )
 		 {
 			  Db.DependencyResolver.resolveDependency( typeof( LogRotation ) ).rotateLogFile();
@@ -833,12 +833,12 @@ namespace Neo4Net.backup.impl
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.kernel.internal.GraphDatabaseAPI deleteLogFilesAndRestart() throws java.io.IOException
+//ORIGINAL LINE: private Neo4Net.kernel.internal.GraphDatabaseAPI deleteLogFilesAndRestart() throws java.io.IOException
 		 private GraphDatabaseAPI DeleteLogFilesAndRestart()
 		 {
 			  IList<File> logFiles = new List<File>();
 			  NeoStoreDataSource dataSource = _dbRule.resolveDependency( typeof( NeoStoreDataSource ) );
-			  using ( ResourceIterator<StoreFileMetadata> files = dataSource.ListStoreFiles( true ) )
+			  using ( IResourceIterator<StoreFileMetadata> files = dataSource.ListStoreFiles( true ) )
 			  {
 //JAVA TO C# CONVERTER TODO TASK: Method reference arbitrary object instance method syntax is not converted by Java to C# Converter:
 					Files.Where( StoreFileMetadata::isLogFile ).Select( StoreFileMetadata::file ).ForEach( logFiles.add );
@@ -911,17 +911,17 @@ namespace Neo4Net.backup.impl
 			  Config withOnlineBackupDisabled = Config.defaults();
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.test.Barrier_Control barrier = new org.Neo4Net.test.Barrier_Control();
+//ORIGINAL LINE: final Neo4Net.test.Barrier_Control barrier = new Neo4Net.test.Barrier_Control();
 			  Neo4Net.Test.Barrier_Control barrier = new Neo4Net.Test.Barrier_Control();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.internal.GraphDatabaseAPI db = dbRule.getGraphDatabaseAPI();
+//ORIGINAL LINE: final Neo4Net.kernel.internal.GraphDatabaseAPI db = dbRule.getGraphDatabaseAPI();
 			  GraphDatabaseAPI db = _dbRule.GraphDatabaseAPI;
 			  CreateSchemaIndex( db );
 
 			  CreateAndIndexNode( db, 1 ); // create some data
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.graphdb.DependencyResolver resolver = db.getDependencyResolver();
+//ORIGINAL LINE: final Neo4Net.graphdb.DependencyResolver resolver = db.getDependencyResolver();
 			  DependencyResolver resolver = Db.DependencyResolver;
 			  long expectedLastTxId = resolver.ResolveDependency( typeof( TransactionIdStore ) ).LastClosedTransactionId;
 
@@ -977,7 +977,7 @@ namespace Neo4Net.backup.impl
 			  CreateAndIndexNode( _dbRule, 1 );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.logging.Log log = mock(org.Neo4Net.logging.Log.class);
+//ORIGINAL LINE: final Neo4Net.logging.Log log = mock(Neo4Net.logging.Log.class);
 			  Log log = mock( typeof( Log ) );
 			  LogProvider logProvider = new LogProviderAnonymousInnerClass3( this, log );
 			  Logger logger = mock( typeof( Logger ) );
@@ -1173,7 +1173,7 @@ namespace Neo4Net.backup.impl
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private long getLastTxChecksum(org.Neo4Net.io.pagecache.PageCache pageCache) throws java.io.IOException
+//ORIGINAL LINE: private long getLastTxChecksum(Neo4Net.io.pagecache.PageCache pageCache) throws java.io.IOException
 		 private long GetLastTxChecksum( PageCache pageCache )
 		 {
 			  Path neoStore = _backupDatabaseLayout.metadataStore().toPath();
@@ -1199,7 +1199,7 @@ namespace Neo4Net.backup.impl
 
 		 private static Node FindNodeByLabel( GraphDatabaseAPI graphDatabase, Label label )
 		 {
-			  using ( ResourceIterator<Node> nodes = graphDatabase.FindNodes( label ) )
+			  using ( IResourceIterator<Node> nodes = graphDatabase.FindNodes( label ) )
 			  {
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
 					return nodes.next();
@@ -1254,7 +1254,7 @@ namespace Neo4Net.backup.impl
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean runFull(org.Neo4Net.io.layout.DatabaseLayout databaseLayout, org.Neo4Net.kernel.configuration.Config tuningConfiguration, org.Neo4Net.helpers.progress.ProgressMonitorFactory progressFactory, org.Neo4Net.logging.LogProvider logProvider, org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, org.Neo4Net.io.pagecache.PageCache pageCache, boolean verbose, org.Neo4Net.consistency.checking.full.ConsistencyFlags consistencyFlags) throws ConsistencyCheckFailedException
+//ORIGINAL LINE: public boolean runFull(Neo4Net.io.layout.DatabaseLayout databaseLayout, Neo4Net.kernel.configuration.Config tuningConfiguration, Neo4Net.helpers.progress.ProgressMonitorFactory progressFactory, Neo4Net.logging.LogProvider logProvider, Neo4Net.io.fs.FileSystemAbstraction fileSystem, Neo4Net.io.pagecache.PageCache pageCache, boolean verbose, Neo4Net.consistency.checking.full.ConsistencyFlags consistencyFlags) throws ConsistencyCheckFailedException
 			  public override bool RunFull( DatabaseLayout databaseLayout, Config tuningConfiguration, ProgressMonitorFactory progressFactory, LogProvider logProvider, FileSystemAbstraction fileSystem, PageCache pageCache, bool verbose, ConsistencyFlags consistencyFlags )
 			  {
 					MarkAsChecked();

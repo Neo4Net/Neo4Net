@@ -22,7 +22,7 @@
  */
 namespace Neo4Net.causalclustering.core.state.machines.token
 {
-	using TransactionState = Neo4Net.Kernel.api.txstate.TransactionState;
+	using TransactionState = Neo4Net.Kernel.Api.txstate.TransactionState;
 
 	public interface ReplicatedTokenCreator
 	{

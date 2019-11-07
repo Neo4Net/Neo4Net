@@ -44,7 +44,7 @@ namespace Neo4Net.causalclustering.core
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.protocol.Protocol_ModifierProtocols.COMPRESSION_SNAPPY;
+//	import static Neo4Net.causalclustering.protocol.Protocol_ModifierProtocols.COMPRESSION_SNAPPY;
 
 	public class SupportedProtocolCreatorTest
 	{

@@ -182,22 +182,22 @@ namespace Neo4Net.Kernel.Api.Internal.Helpers
 
 			  void assertOutgoing( RelationshipSparseSelectionIterator<R> iterator, int targetNode, int type )
 			  {
-					AssertOutgoing( ( ResourceIterator<R> ) iterator, targetNode, type );
+					AssertOutgoing( ( IResourceIterator<R> ) iterator, targetNode, type );
 			  }
 
 			  void assertIncoming( RelationshipSparseSelectionIterator<R> iterator, int sourceNode, int type )
 			  {
-					AssertIncoming( ( ResourceIterator<R> ) iterator, sourceNode, type );
+					AssertIncoming( ( IResourceIterator<R> ) iterator, sourceNode, type );
 			  }
 
 			  void assertLoop( RelationshipSparseSelectionIterator<R> iterator, int type )
 			  {
-					AssertLoop( ( ResourceIterator<R> ) iterator, type );
+					AssertLoop( ( IResourceIterator<R> ) iterator, type );
 			  }
 
 			  void assertEmpty( RelationshipSparseSelectionIterator<R> iterator )
 			  {
-					AssertEmpty( ( ResourceIterator<R> ) iterator );
+					AssertEmpty( ( IResourceIterator<R> ) iterator );
 			  }
 		 }
 

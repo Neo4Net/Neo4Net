@@ -64,7 +64,7 @@ namespace Neo4Net.Bolt.v1.messaging
 		 private IDictionary<sbyte, ResponseMessageEncoder<ResponseMessage>> RegisterEncoders()
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Map<sbyte,org.Neo4Net.bolt.messaging.ResponseMessageEncoder<?>> encoders = new java.util.HashMap<>();
+//ORIGINAL LINE: java.util.Map<sbyte,Neo4Net.bolt.messaging.ResponseMessageEncoder<?>> encoders = new java.util.HashMap<>();
 			  IDictionary<sbyte, ResponseMessageEncoder<object>> encoders = new Dictionary<sbyte, ResponseMessageEncoder<object>>();
 			  encoders[SuccessMessage.SIGNATURE] = new SuccessMessageEncoder();
 			  encoders[RecordMessage.SIGNATURE] = new RecordMessageEncoder();
@@ -74,7 +74,7 @@ namespace Neo4Net.Bolt.v1.messaging
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void write(org.Neo4Net.bolt.messaging.ResponseMessage message) throws java.io.IOException
+//ORIGINAL LINE: public void write(Neo4Net.bolt.messaging.ResponseMessage message) throws java.io.IOException
 		 public override void Write( ResponseMessage message )
 		 {
 			  PackCompleteMessageOrFail( message );
@@ -92,7 +92,7 @@ namespace Neo4Net.Bolt.v1.messaging
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void packCompleteMessageOrFail(org.Neo4Net.bolt.messaging.ResponseMessage message) throws java.io.IOException
+//ORIGINAL LINE: private void packCompleteMessageOrFail(Neo4Net.bolt.messaging.ResponseMessage message) throws java.io.IOException
 		 private void PackCompleteMessageOrFail( ResponseMessage message )
 		 {
 			  bool packingFailed = true;

@@ -59,17 +59,17 @@ namespace Neo4Net.causalclustering.core.consensus
 	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.CausalClusteringSettings.catchup_batch_size;
+//	import static Neo4Net.causalclustering.core.CausalClusteringSettings.catchup_batch_size;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.CausalClusteringSettings.join_catch_up_timeout;
+//	import static Neo4Net.causalclustering.core.CausalClusteringSettings.join_catch_up_timeout;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.CausalClusteringSettings.log_shipping_max_lag;
+//	import static Neo4Net.causalclustering.core.CausalClusteringSettings.log_shipping_max_lag;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.CausalClusteringSettings.refuse_to_be_leader;
+//	import static Neo4Net.causalclustering.core.CausalClusteringSettings.refuse_to_be_leader;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.log.RaftLog_Fields.RAFT_LOG_DIRECTORY_NAME;
+//	import static Neo4Net.causalclustering.core.consensus.log.RaftLog_Fields.RAFT_LOG_DIRECTORY_NAME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.time.Clocks.systemClock;
+//	import static Neo4Net.time.Clocks.systemClock;
 
 	public class ConsensusModule
 	{
@@ -85,26 +85,26 @@ namespace Neo4Net.causalclustering.core.consensus
 		 private readonly LeaderAvailabilityTimers _leaderAvailabilityTimers;
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public ConsensusModule(org.Neo4Net.causalclustering.identity.MemberId myself, final org.Neo4Net.graphdb.factory.module.PlatformModule platformModule, org.Neo4Net.causalclustering.messaging.Outbound<org.Neo4Net.causalclustering.identity.MemberId,RaftMessages_RaftMessage> outbound, java.io.File clusterStateDirectory, org.Neo4Net.causalclustering.discovery.CoreTopologyService coreTopologyService)
+//ORIGINAL LINE: public ConsensusModule(Neo4Net.causalclustering.identity.MemberId myself, final Neo4Net.graphdb.factory.module.PlatformModule platformModule, Neo4Net.causalclustering.messaging.Outbound<Neo4Net.causalclustering.identity.MemberId,RaftMessages_RaftMessage> outbound, java.io.File clusterStateDirectory, Neo4Net.causalclustering.discovery.CoreTopologyService coreTopologyService)
 		 public ConsensusModule( MemberId myself, PlatformModule platformModule, Outbound<MemberId, RaftMessages_RaftMessage> outbound, File clusterStateDirectory, CoreTopologyService coreTopologyService )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.configuration.Config config = platformModule.config;
+//ORIGINAL LINE: final Neo4Net.kernel.configuration.Config config = platformModule.config;
 			  Config config = platformModule.Config;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.logging.internal.LogService logging = platformModule.logging;
+//ORIGINAL LINE: final Neo4Net.logging.internal.LogService logging = platformModule.logging;
 			  LogService logging = platformModule.Logging;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.io.fs.FileSystemAbstraction fileSystem = platformModule.fileSystem;
+//ORIGINAL LINE: final Neo4Net.io.fs.FileSystemAbstraction fileSystem = platformModule.fileSystem;
 			  FileSystemAbstraction fileSystem = platformModule.FileSystem;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.lifecycle.LifeSupport life = platformModule.life;
+//ORIGINAL LINE: final Neo4Net.kernel.lifecycle.LifeSupport life = platformModule.life;
 			  LifeSupport life = platformModule.Life;
 
 			  LogProvider logProvider = logging.InternalLogProvider;
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.causalclustering.core.state.storage.SafeChannelMarshal<org.Neo4Net.causalclustering.core.replication.ReplicatedContent> marshal = org.Neo4Net.causalclustering.messaging.marshalling.CoreReplicatedContentMarshal.marshaller();
+//ORIGINAL LINE: final Neo4Net.causalclustering.core.state.storage.SafeChannelMarshal<Neo4Net.causalclustering.core.replication.ReplicatedContent> marshal = Neo4Net.causalclustering.messaging.marshalling.CoreReplicatedContentMarshal.marshaller();
 			  SafeChannelMarshal<ReplicatedContent> marshal = CoreReplicatedContentMarshal.marshaller();
 
 			  RaftLog underlyingLog = CreateRaftLog( config, life, fileSystem, clusterStateDirectory, marshal, logProvider, platformModule.JobScheduler );

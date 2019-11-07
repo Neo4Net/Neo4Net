@@ -34,7 +34,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.staging
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static System.nanoTime;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.Internal.dragons.UnsafeUtil.getFieldOffset;
+//	import static Neo4Net.@unsafe.impl.Internal.dragons.UnsafeUtil.getFieldOffset;
 
 	/// <summary>
 	/// Executes batches by multiple threads. Each threads only processes its own part, e.g. based on node id,

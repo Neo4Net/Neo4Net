@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.impl.store.format.highlimit
 	using Service = Neo4Net.Helpers.Service;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Service.Implementation(RecordFormats_Factory.class) public class HighLimitWithSmallRecordsFactory extends org.Neo4Net.kernel.impl.store.format.RecordFormats_Factory
+//ORIGINAL LINE: @Service.Implementation(RecordFormats_Factory.class) public class HighLimitWithSmallRecordsFactory extends Neo4Net.kernel.impl.store.format.RecordFormats_Factory
 	public class HighLimitWithSmallRecordsFactory : Neo4Net.Kernel.impl.store.format.RecordFormats_Factory
 	{
 		 public HighLimitWithSmallRecordsFactory() : base(HighLimitWithSmallRecords.NAME, HighLimitWithSmallRecords.StoreVersion)

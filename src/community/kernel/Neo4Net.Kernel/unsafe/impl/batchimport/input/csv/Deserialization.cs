@@ -24,7 +24,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input.csv
 	/// It has mutable state and the usage pattern should be:
 	/// 
 	/// <ol>
-	/// <li>One or more calls to <seealso cref="handle(org.Neo4Net.unsafe.impl.batchimport.input.csv.Header.Entry, object)"/></li>
+	/// <li>One or more calls to <seealso cref="handle(Neo4Net.unsafe.impl.batchimport.input.csv.Header.Entry, object)"/></li>
 	/// <li><seealso cref="materialize()"/> to materialize the IEntity from the handled values</li>
 	/// <li><seealso cref="clear()"/> to prepare for the next IEntity</li>
 	/// </ol>
@@ -39,7 +39,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input.csv
 		 void Handle( Header.Entry entry, object value );
 
 		 /// <summary>
-		 /// Takes values received in <seealso cref="handle(org.Neo4Net.unsafe.impl.batchimport.input.csv.Header.Entry, object)"/>
+		 /// Takes values received in <seealso cref="handle(Neo4Net.unsafe.impl.batchimport.input.csv.Header.Entry, object)"/>
 		 /// and materializes an IEntity from them.
 		 /// </summary>
 		 IEntity Materialize();

@@ -36,11 +36,11 @@ namespace Neo4Net.Kernel.impl.locking
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.locking.ResourceTypes.NODE;
+//	import static Neo4Net.kernel.impl.locking.ResourceTypes.NODE;
 
 	/// <summary>
 	/// This is the test suite that tested the original (from 2007) lock manager.
-	/// It has been ported to test <seealso cref="org.Neo4Net.kernel.impl.locking.Locks"/>
+	/// It has been ported to test <seealso cref="Neo4Net.kernel.impl.locking.Locks"/>
 	/// to ensure implementors of that API don't fall in any of the traps this test suite sets for them.
 	/// </summary>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

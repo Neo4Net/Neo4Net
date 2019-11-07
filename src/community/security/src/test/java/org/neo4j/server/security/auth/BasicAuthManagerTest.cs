@@ -32,10 +32,10 @@ namespace Neo4Net.Server.Security.Auth
 	using AuthenticationResult = Neo4Net.Kernel.Api.Internal.security.AuthenticationResult;
 	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using InvalidArgumentsException = Neo4Net.Kernel.Api.Exceptions.InvalidArgumentsException;
-	using AuthManager = Neo4Net.Kernel.api.security.AuthManager;
-	using AuthToken = Neo4Net.Kernel.api.security.AuthToken;
-	using PasswordPolicy = Neo4Net.Kernel.api.security.PasswordPolicy;
-	using InvalidAuthTokenException = Neo4Net.Kernel.api.security.exception.InvalidAuthTokenException;
+	using AuthManager = Neo4Net.Kernel.Api.security.AuthManager;
+	using AuthToken = Neo4Net.Kernel.Api.security.AuthToken;
+	using PasswordPolicy = Neo4Net.Kernel.Api.security.PasswordPolicy;
+	using InvalidAuthTokenException = Neo4Net.Kernel.Api.security.exception.InvalidAuthTokenException;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using User = Neo4Net.Kernel.impl.security.User;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
@@ -61,19 +61,19 @@ namespace Neo4Net.Server.Security.Auth
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.map;
+//	import static Neo4Net.helpers.collection.MapUtil.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.security.AuthenticationResult.FAILURE;
+//	import static Neo4Net.Kernel.Api.Internal.security.AuthenticationResult.FAILURE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.security.AuthenticationResult.PASSWORD_CHANGE_REQUIRED;
+//	import static Neo4Net.Kernel.Api.Internal.security.AuthenticationResult.PASSWORD_CHANGE_REQUIRED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.security.AuthenticationResult.SUCCESS;
+//	import static Neo4Net.Kernel.Api.Internal.security.AuthenticationResult.SUCCESS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.security.AuthenticationResult.TOO_MANY_ATTEMPTS;
+//	import static Neo4Net.Kernel.Api.Internal.security.AuthenticationResult.TOO_MANY_ATTEMPTS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.security.auth.SecurityTestUtils.authToken;
+//	import static Neo4Net.server.security.auth.SecurityTestUtils.authToken;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.assertion.Assert.assertException;
+//	import static Neo4Net.test.assertion.Assert.assertException;
 
 	public class BasicAuthManagerTest : InitialUserTest
 	{
@@ -110,7 +110,7 @@ namespace Neo4Net.Server.Security.Auth
 			  User user1 = NewUser( "jake", "abc123", false );
 			  Users.create( user1 );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.security.User user = user1;
+//ORIGINAL LINE: final Neo4Net.kernel.impl.security.User user = user1;
 			  User user = user1;
 
 			  // When
@@ -130,7 +130,7 @@ namespace Neo4Net.Server.Security.Auth
 			  User user1 = NewUser( "jake", "abc123", true );
 			  Users.create( user1 );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.security.User user = user1;
+//ORIGINAL LINE: final Neo4Net.kernel.impl.security.User user = user1;
 			  User user = user1;
 
 			  // When
@@ -150,7 +150,7 @@ namespace Neo4Net.Server.Security.Auth
 			  User user1 = NewUser( "jake", "abc123", true );
 			  Users.create( user1 );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.security.User user = user1;
+//ORIGINAL LINE: final Neo4Net.kernel.impl.security.User user = user1;
 			  User user = user1;
 
 			  // When
@@ -272,7 +272,7 @@ namespace Neo4Net.Server.Security.Auth
 
 			  // Then
 			  assertThat( password, equalTo( ClearedPasswordWithSameLenghtAs( "abc123" ) ) );
-			  assertThat( authToken[Neo4Net.Kernel.api.security.AuthToken_Fields.CREDENTIALS], equalTo( ClearedPasswordWithSameLenghtAs( "abc123" ) ) );
+			  assertThat( authToken[Neo4Net.Kernel.Api.security.AuthToken_Fields.CREDENTIALS], equalTo( ClearedPasswordWithSameLenghtAs( "abc123" ) ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -284,7 +284,7 @@ namespace Neo4Net.Server.Security.Auth
 			  _manager.start();
 			  sbyte[] password = password( "abc123" );
 			  IDictionary<string, object> authToken = AuthToken.newBasicAuthToken( "jake", password );
-			  authToken[Neo4Net.Kernel.api.security.AuthToken_Fields.SCHEME_KEY] = null; // Null is not a valid scheme
+			  authToken[Neo4Net.Kernel.Api.security.AuthToken_Fields.SCHEME_KEY] = null; // Null is not a valid scheme
 
 			  // When
 			  try
@@ -297,7 +297,7 @@ namespace Neo4Net.Server.Security.Auth
 					// expected
 			  }
 			  assertThat( password, equalTo( ClearedPasswordWithSameLenghtAs( "abc123" ) ) );
-			  assertThat( authToken[Neo4Net.Kernel.api.security.AuthToken_Fields.CREDENTIALS], equalTo( ClearedPasswordWithSameLenghtAs( "abc123" ) ) );
+			  assertThat( authToken[Neo4Net.Kernel.Api.security.AuthToken_Fields.CREDENTIALS], equalTo( ClearedPasswordWithSameLenghtAs( "abc123" ) ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -414,19 +414,19 @@ namespace Neo4Net.Server.Security.Auth
 		 {
 			  _manager.start();
 
-			  assertException( () => _manager.login(map(Neo4Net.Kernel.api.security.AuthToken_Fields.SCHEME_KEY, "supercool", Neo4Net.Kernel.api.security.AuthToken_Fields.PRINCIPAL, "Neo4Net")), typeof(InvalidAuthTokenException), "Unsupported authentication token, scheme 'supercool' is not supported." );
+			  assertException( () => _manager.login(map(Neo4Net.Kernel.Api.security.AuthToken_Fields.SCHEME_KEY, "supercool", Neo4Net.Kernel.Api.security.AuthToken_Fields.PRINCIPAL, "Neo4Net")), typeof(InvalidAuthTokenException), "Unsupported authentication token, scheme 'supercool' is not supported." );
 
-			  assertException( () => _manager.login(map(Neo4Net.Kernel.api.security.AuthToken_Fields.SCHEME_KEY, "none")), typeof(InvalidAuthTokenException), "Unsupported authentication token, scheme 'none' is only allowed when auth is disabled" );
+			  assertException( () => _manager.login(map(Neo4Net.Kernel.Api.security.AuthToken_Fields.SCHEME_KEY, "none")), typeof(InvalidAuthTokenException), "Unsupported authentication token, scheme 'none' is only allowed when auth is disabled" );
 
 			  assertException( () => _manager.login(map("key", "value")), typeof(InvalidAuthTokenException), "Unsupported authentication token, missing key `scheme`" );
 
-			  assertException( () => _manager.login(map(Neo4Net.Kernel.api.security.AuthToken_Fields.SCHEME_KEY, "basic", Neo4Net.Kernel.api.security.AuthToken_Fields.PRINCIPAL, "Neo4Net")), typeof(InvalidAuthTokenException), "Unsupported authentication token, missing key `credentials`" );
+			  assertException( () => _manager.login(map(Neo4Net.Kernel.Api.security.AuthToken_Fields.SCHEME_KEY, "basic", Neo4Net.Kernel.Api.security.AuthToken_Fields.PRINCIPAL, "Neo4Net")), typeof(InvalidAuthTokenException), "Unsupported authentication token, missing key `credentials`" );
 
-			  assertException( () => _manager.login(map(Neo4Net.Kernel.api.security.AuthToken_Fields.SCHEME_KEY, "basic", Neo4Net.Kernel.api.security.AuthToken_Fields.CREDENTIALS, "very-secret")), typeof(InvalidAuthTokenException), "Unsupported authentication token, missing key `principal`" );
+			  assertException( () => _manager.login(map(Neo4Net.Kernel.Api.security.AuthToken_Fields.SCHEME_KEY, "basic", Neo4Net.Kernel.Api.security.AuthToken_Fields.CREDENTIALS, "very-secret")), typeof(InvalidAuthTokenException), "Unsupported authentication token, missing key `principal`" );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertLoginGivesResult(String username, String password, org.Neo4Net.Kernel.Api.Internal.security.AuthenticationResult expectedResult) throws org.Neo4Net.kernel.api.security.exception.InvalidAuthTokenException
+//ORIGINAL LINE: private void assertLoginGivesResult(String username, String password, Neo4Net.Kernel.Api.Internal.security.AuthenticationResult expectedResult) throws Neo4Net.kernel.api.security.exception.InvalidAuthTokenException
 		 private void AssertLoginGivesResult( string username, string password, AuthenticationResult expectedResult )
 		 {
 			  LoginContext securityContext = _manager.login( authToken( username, password ) );

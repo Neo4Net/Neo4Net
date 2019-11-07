@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 
 	using IndexReference = Neo4Net.Kernel.Api.Internal.IndexReference;
 	using IOUtils = Neo4Net.Io.IOUtils;
-	using AuxiliaryTransactionState = Neo4Net.Kernel.api.txstate.auxiliary.AuxiliaryTransactionState;
+	using AuxiliaryTransactionState = Neo4Net.Kernel.Api.txstate.auxiliary.AuxiliaryTransactionState;
 	using KernelTransactionImplementation = Neo4Net.Kernel.Impl.Api.KernelTransactionImplementation;
 	using Log = Neo4Net.Logging.Log;
 	using StorageCommand = Neo4Net.Kernel.Api.StorageEngine.StorageCommand;

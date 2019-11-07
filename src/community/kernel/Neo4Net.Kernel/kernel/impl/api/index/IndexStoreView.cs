@@ -26,7 +26,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using Neo4Net.Collections.Helpers;
 	using Neo4Net.Kernel.Api.Index;
 	using NodePropertyAccessor = Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor;
-	using NodeLabelUpdate = Neo4Net.Kernel.api.labelscan.NodeLabelUpdate;
+	using NodeLabelUpdate = Neo4Net.Kernel.Api.LabelScan.NodeLabelUpdate;
 	using Register_DoubleLongRegister = Neo4Net.Register.Register_DoubleLongRegister;
 	using EntityType = Neo4Net.Kernel.Api.StorageEngine.EntityType;
 	using PopulationProgress = Neo4Net.Kernel.Api.StorageEngine.schema.PopulationProgress;
@@ -119,14 +119,14 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		  }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") @Override public <FAILURE extends Exception> StoreScan<FAILURE> visitNodes(int[] labelIds, System.Func<int, boolean> propertyKeyIdFilter, org.Neo4Net.helpers.collection.Visitor<EntityUpdates,FAILURE> propertyUpdateVisitor, org.Neo4Net.helpers.collection.Visitor<org.Neo4Net.kernel.api.labelscan.NodeLabelUpdate,FAILURE> labelUpdateVisitor, boolean forceStoreScan)
+//ORIGINAL LINE: @SuppressWarnings("unchecked") @Override public <FAILURE extends Exception> StoreScan<FAILURE> visitNodes(int[] labelIds, System.Func<int, boolean> propertyKeyIdFilter, Neo4Net.helpers.collection.Visitor<EntityUpdates,FAILURE> propertyUpdateVisitor, Neo4Net.helpers.collection.Visitor<Neo4Net.kernel.api.labelscan.NodeLabelUpdate,FAILURE> labelUpdateVisitor, boolean forceStoreScan)
 		  public override StoreScan<FAILURE> VisitNodes<FAILURE>( int[] labelIds, System.Func<int, bool> propertyKeyIdFilter, Visitor<EntityUpdates, FAILURE> propertyUpdateVisitor, Visitor<NodeLabelUpdate, FAILURE> labelUpdateVisitor, bool forceStoreScan ) where FAILURE : Exception
 		  {
 				return EMPTY_SCAN;
 		  }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") @Override public <FAILURE extends Exception> StoreScan<FAILURE> visitRelationships(int[] relationshipTypeIds, System.Func<int, boolean> propertyKeyIdFilter, org.Neo4Net.helpers.collection.Visitor<EntityUpdates,FAILURE> propertyUpdateVisitor)
+//ORIGINAL LINE: @SuppressWarnings("unchecked") @Override public <FAILURE extends Exception> StoreScan<FAILURE> visitRelationships(int[] relationshipTypeIds, System.Func<int, boolean> propertyKeyIdFilter, Neo4Net.helpers.collection.Visitor<EntityUpdates,FAILURE> propertyUpdateVisitor)
 		  public override StoreScan<FAILURE> VisitRelationships<FAILURE>( int[] relationshipTypeIds, System.Func<int, bool> propertyKeyIdFilter, Visitor<EntityUpdates, FAILURE> propertyUpdateVisitor ) where FAILURE : Exception
 		  {
 				return EMPTY_SCAN;

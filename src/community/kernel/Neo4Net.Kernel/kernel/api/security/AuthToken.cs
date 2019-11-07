@@ -17,22 +17,22 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Kernel.api.security
+namespace Neo4Net.Kernel.Api.security
 {
 	using StringUtils = org.apache.commons.lang3.StringUtils;
 
 
-	using InvalidAuthTokenException = Neo4Net.Kernel.api.security.exception.InvalidAuthTokenException;
+	using InvalidAuthTokenException = Neo4Net.Kernel.Api.security.exception.InvalidAuthTokenException;
 	using UTF8 = Neo4Net.Strings.UTF8;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.map;
+//	import static Neo4Net.helpers.collection.MapUtil.map;
 
 	public interface AuthToken
 	{
 
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java static interface methods:
-//		 static String safeCast(String key, java.util.Map<String, Object> authToken) throws org.Neo4Net.kernel.api.security.exception.InvalidAuthTokenException
+//		 static String safeCast(String key, java.util.Map<String, Object> authToken) throws Neo4Net.kernel.api.security.exception.InvalidAuthTokenException
 	//	 {
 	//		  Object value = authToken.get(key);
 	//		  if (value == null)
@@ -47,7 +47,7 @@ namespace Neo4Net.Kernel.api.security
 	//	 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java static interface methods:
-//		 static byte[] safeCastCredentials(String key, java.util.Map<String, Object> authToken) throws org.Neo4Net.kernel.api.security.exception.InvalidAuthTokenException
+//		 static byte[] safeCastCredentials(String key, java.util.Map<String, Object> authToken) throws Neo4Net.kernel.api.security.exception.InvalidAuthTokenException
 	//	 {
 	//		  Object value = authToken.get(key);
 	//		  if (value == null)
@@ -62,9 +62,9 @@ namespace Neo4Net.Kernel.api.security
 	//	 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") static java.util.Map<String,Object> safeCastMap(String key, java.util.Map<String,Object> authToken) throws org.Neo4Net.kernel.api.security.exception.InvalidAuthTokenException
+//ORIGINAL LINE: @SuppressWarnings("unchecked") static java.util.Map<String,Object> safeCastMap(String key, java.util.Map<String,Object> authToken) throws Neo4Net.kernel.api.security.exception.InvalidAuthTokenException
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java static interface methods:
-//		 static java.util.Map<String, Object> safeCastMap(String key, java.util.Map<String, Object> authToken) throws org.Neo4Net.kernel.api.security.exception.InvalidAuthTokenException
+//		 static java.util.Map<String, Object> safeCastMap(String key, java.util.Map<String, Object> authToken) throws Neo4Net.kernel.api.security.exception.InvalidAuthTokenException
 	//	 {
 	//		  Object value = authToken.get(key);
 	//		  if (value == null)
@@ -104,7 +104,7 @@ namespace Neo4Net.Kernel.api.security
 	//	 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java static interface methods:
-//		 static org.Neo4Net.kernel.api.security.exception.InvalidAuthTokenException invalidToken(String explanation)
+//		 static Neo4Net.kernel.api.security.exception.InvalidAuthTokenException invalidToken(String explanation)
 	//	 {
 	//		  if (StringUtils.isNotEmpty(explanation) && !explanation.matches("^[,.:;].*"))
 	//		  {

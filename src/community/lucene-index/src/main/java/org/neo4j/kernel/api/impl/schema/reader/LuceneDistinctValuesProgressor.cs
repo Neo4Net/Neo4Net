@@ -33,7 +33,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.reader
 		 private readonly System.Func<BytesRef, Value> _valueMaterializer;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: LuceneDistinctValuesProgressor(org.apache.lucene.index.TermsEnum terms, org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor_NodeValueClient client, System.Func<org.apache.lucene.util.BytesRef,org.Neo4Net.values.storable.Value> valueMaterializer) throws java.io.IOException
+//ORIGINAL LINE: LuceneDistinctValuesProgressor(org.apache.lucene.index.TermsEnum terms, Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor_NodeValueClient client, System.Func<org.apache.lucene.util.BytesRef,Neo4Net.values.storable.Value> valueMaterializer) throws java.io.IOException
 		 internal LuceneDistinctValuesProgressor( TermsEnum terms, Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor_NodeValueClient client, System.Func<BytesRef, Value> valueMaterializer )
 		 {
 			  this._terms = terms;

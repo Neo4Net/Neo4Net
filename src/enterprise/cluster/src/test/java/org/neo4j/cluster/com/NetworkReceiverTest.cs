@@ -96,7 +96,7 @@ namespace Neo4Net.cluster.com
 			  when( ctx.Channel ).thenReturn( channel );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.cluster.com.message.Message message = org.Neo4Net.cluster.com.message.Message.to(() -> "test", new java.net.URI("cluster://anywhere"));
+//ORIGINAL LINE: final Neo4Net.cluster.com.message.Message message = Neo4Net.cluster.com.message.Message.to(() -> "test", new java.net.URI("cluster://anywhere"));
 			  Message message = Message.to( () => "test", new URI("cluster://anywhere") );
 
 			  MessageEvent messageEvent = mock( typeof( MessageEvent ) );

@@ -34,11 +34,11 @@ namespace Neo4Net.Server.integration
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.Matchers.equalTo;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.transaction_timeout;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.transaction_timeout;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.jmx.JmxUtils.getAttribute;
+//	import static Neo4Net.jmx.JmxUtils.getAttribute;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.jmx.JmxUtils.getObjectName;
+//	import static Neo4Net.jmx.JmxUtils.getObjectName;
 
 	public class ServerConfigIT : ExclusiveServerTestBase
 	{

@@ -51,13 +51,13 @@ namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.MatcherAssert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.messaging.util.MessageMatchers.msgFailure;
+//	import static Neo4Net.bolt.v1.messaging.util.MessageMatchers.msgFailure;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.messaging.util.MessageMatchers.msgSuccess;
+//	import static Neo4Net.bolt.v1.messaging.util.MessageMatchers.msgSuccess;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.transport.integration.TransportTestUtil.eventuallyReceives;
+//	import static Neo4Net.bolt.v1.transport.integration.TransportTestUtil.eventuallyReceives;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.map;
+//	import static Neo4Net.helpers.collection.MapUtil.map;
 
 	/*
 	 * Only run these tests when the appropriate ActiveDirectory server is in fact live.
@@ -92,7 +92,7 @@ namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 		}
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.bolt.v1.transport.integration.Neo4NetWithSocket server = new org.Neo4Net.bolt.v1.transport.integration.Neo4NetWithSocket(getClass(), getTestGraphDatabaseFactory(), asSettings(getSettingsFunction()));
+//ORIGINAL LINE: @Rule public Neo4Net.bolt.v1.transport.integration.Neo4NetWithSocket server = new Neo4Net.bolt.v1.transport.integration.Neo4NetWithSocket(getClass(), getTestGraphDatabaseFactory(), asSettings(getSettingsFunction()));
 		 public Neo4NetWithSocket Server;
 
 		 private void RestartNeo4NetServerWithOverriddenSettings<T1>( System.Action<T1> overrideSettingsFunction )
@@ -123,7 +123,7 @@ namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: protected System.Action<java.util.Map<org.Neo4Net.graphdb.config.Setting<?>,String>> getSettingsFunction()
+//ORIGINAL LINE: protected System.Action<java.util.Map<Neo4Net.graphdb.config.Setting<?>,String>> getSettingsFunction()
 		 protected internal virtual System.Action<IDictionary<Setting<object>, string>> SettingsFunction
 		 {
 			 get
@@ -144,7 +144,7 @@ namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private System.Action<java.util.Map<org.Neo4Net.graphdb.config.Setting<?>,String>> useSystemAccountSettings = settings ->
+//ORIGINAL LINE: private System.Action<java.util.Map<Neo4Net.graphdb.config.Setting<?>,String>> useSystemAccountSettings = settings ->
 		 private System.Action<IDictionary<Setting<object>, string>> _useSystemAccountSettings = settings =>
 		 {
 		  settings.put( SecuritySettings.ldap_authorization_use_system_account, "true" );

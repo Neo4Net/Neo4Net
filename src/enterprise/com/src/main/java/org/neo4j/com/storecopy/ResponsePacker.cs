@@ -36,7 +36,7 @@ namespace Neo4Net.com.storecopy
 	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_ID;
+//	import static Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_ID;
 
 	public class ResponsePacker
 	{
@@ -86,14 +86,14 @@ namespace Neo4Net.com.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: protected org.Neo4Net.helpers.collection.Visitor<org.Neo4Net.kernel.impl.transaction.CommittedTransactionRepresentation,Exception> filterVisitor(final org.Neo4Net.helpers.collection.Visitor<org.Neo4Net.kernel.impl.transaction.CommittedTransactionRepresentation,Exception> delegate, final long txToEndAt)
+//ORIGINAL LINE: protected Neo4Net.helpers.collection.Visitor<Neo4Net.kernel.impl.transaction.CommittedTransactionRepresentation,Exception> filterVisitor(final Neo4Net.helpers.collection.Visitor<Neo4Net.kernel.impl.transaction.CommittedTransactionRepresentation,Exception> delegate, final long txToEndAt)
 		 protected internal virtual Visitor<CommittedTransactionRepresentation, Exception> FilterVisitor( Visitor<CommittedTransactionRepresentation, Exception> @delegate, long txToEndAt )
 		 {
 			  return element => element.CommitEntry.TxId <= txToEndAt && @delegate.Visit( element );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected void extractTransactions(long startingAtTransactionId, org.Neo4Net.helpers.collection.Visitor<org.Neo4Net.kernel.impl.transaction.CommittedTransactionRepresentation,Exception> visitor) throws Exception
+//ORIGINAL LINE: protected void extractTransactions(long startingAtTransactionId, Neo4Net.helpers.collection.Visitor<Neo4Net.kernel.impl.transaction.CommittedTransactionRepresentation,Exception> visitor) throws Exception
 		 protected internal virtual void ExtractTransactions( long startingAtTransactionId, Visitor<CommittedTransactionRepresentation, Exception> visitor )
 		 {
 			  using ( IOCursor<CommittedTransactionRepresentation> cursor = TransactionStore.getTransactions( startingAtTransactionId ) )

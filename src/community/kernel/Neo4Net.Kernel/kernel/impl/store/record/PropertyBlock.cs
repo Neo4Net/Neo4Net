@@ -25,7 +25,7 @@ using System.Text;
 namespace Neo4Net.Kernel.Impl.Store.Records
 {
 
-	using PropertyKeyValue = Neo4Net.Kernel.api.properties.PropertyKeyValue;
+	using PropertyKeyValue = Neo4Net.Kernel.Api.properties.PropertyKeyValue;
 	using Value = Neo4Net.Values.Storable.Value;
 
 	public class PropertyBlock : ICloneable

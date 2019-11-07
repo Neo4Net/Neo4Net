@@ -26,14 +26,14 @@ namespace Neo4Net.Dbms
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.PATH;
+//	import static Neo4Net.kernel.configuration.Settings.PATH;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.derivedSetting;
+//	import static Neo4Net.kernel.configuration.Settings.derivedSetting;
 
 	public class DatabaseManagementSystemSettings : LoadableConfig
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Internal public static final org.Neo4Net.graphdb.config.Setting<java.io.File> auth_store_directory = derivedSetting("unsupported.dbms.directories.auth", org.Neo4Net.graphdb.factory.GraphDatabaseSettings.data_directory, data -> new java.io.File(data, "dbms"), PATH);
+//ORIGINAL LINE: @Internal public static final Neo4Net.graphdb.config.Setting<java.io.File> auth_store_directory = derivedSetting("unsupported.dbms.directories.auth", Neo4Net.graphdb.factory.GraphDatabaseSettings.data_directory, data -> new java.io.File(data, "dbms"), PATH);
 		 public static readonly Setting<File> AuthStoreDirectory = derivedSetting( "unsupported.dbms.directories.auth", GraphDatabaseSettings.data_directory, data => new File( data, "dbms" ), PATH );
 	}
 

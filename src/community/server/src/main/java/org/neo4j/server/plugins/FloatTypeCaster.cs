@@ -25,14 +25,14 @@ namespace Neo4Net.Server.plugins
 	internal class FloatTypeCaster : TypeCaster
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: Object get(org.Neo4Net.kernel.internal.GraphDatabaseAPI graphDb, ParameterList parameters, String name) throws org.Neo4Net.server.rest.repr.BadInputException
+//ORIGINAL LINE: Object get(Neo4Net.kernel.internal.GraphDatabaseAPI graphDb, ParameterList parameters, String name) throws Neo4Net.server.rest.repr.BadInputException
 		 internal override object Get( GraphDatabaseAPI graphDb, ParameterList parameters, string name )
 		 {
 			  return parameters.GetFloat( name );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: Object[] getList(org.Neo4Net.kernel.internal.GraphDatabaseAPI graphDb, ParameterList parameters, String name) throws org.Neo4Net.server.rest.repr.BadInputException
+//ORIGINAL LINE: Object[] getList(Neo4Net.kernel.internal.GraphDatabaseAPI graphDb, ParameterList parameters, String name) throws Neo4Net.server.rest.repr.BadInputException
 		 internal override object[] GetList( GraphDatabaseAPI graphDb, ParameterList parameters, string name )
 		 {
 			  return parameters.GetFloatList( name );

@@ -32,7 +32,7 @@ namespace Neo4Net.cluster
 	{
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: long messageDelay(org.Neo4Net.cluster.com.message.Message<? extends org.Neo4Net.cluster.com.message.MessageType> message, String serverIdTo);
+//ORIGINAL LINE: long messageDelay(Neo4Net.cluster.com.message.Message<? extends Neo4Net.cluster.com.message.MessageType> message, String serverIdTo);
 		 long messageDelay<T1>( Message<T1> message, string serverIdTo );
 	}
 

@@ -18,92 +18,79 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+using Xunit;
+
 namespace Neo4Net.GraphDb.Index
 {
-    //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-    //	import static org.junit.jupiter.api.Assertions.assertEquals;
-    //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-    //	import static org.junit.jupiter.api.Assertions.assertThrows;
-
-    internal class IndexPopulationProgressTest
-    {
-        //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-        //ORIGINAL LINE: @Test void testNone()
-        internal virtual void TestNone()
-        {
-            assertEquals(0, IndexPopulationProgress.None.CompletedPercentage, 0.01);
+   public class IndexPopulationProgressTest
+   {
+      [Fact]
+      public void TestNone()
+      {
+         Assert.Equal(0, IndexPopulationProgress.None.CompletedPercentage) // $!!$ tac, 0.01);
         }
 
-        //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-        //ORIGINAL LINE: @Test void testDone()
-        internal virtual void TestDone()
-        {
-            assertEquals(100, IndexPopulationProgress.Done.CompletedPercentage, 0.01);
+      [Fact]
+      public void TestDone()
+      {
+         Assert.Equal(100, IndexPopulationProgress.Done.CompletedPercentage); // $!!$ tac, 0.01);
+      }
+
+      [Fact]
+      public void TestNegativeCompleted()
+      {
+         Assert.Throws<System.ArgumentException>(() => new IndexPopulationProgress(-1, 1));
+      }
+
+      [Fact]
+      public void TestNegativeTotal()
+      {
+         Assert.Throws<System.ArgumentException>(() => new IndexPopulationProgress(0, -1));
+      }
+
+      [Fact]
+      public void TestAllZero()
+      {
+         IndexPopulationProgress progress = new IndexPopulationProgress(0, 0);
+         Assert.Equal(0, progress.CompletedCount);
+         Assert.Equal(0, progress.TotalCount);
+         Assert.Equal(0, progress.CompletedPercentage); //$!!$ tac , 0.01);
+      }
+
+      [Fact]
+      public void TestCompletedZero()
+      {
+         IndexPopulationProgress progress = new IndexPopulationProgress(0, 1);
+         Assert.Equal(1, progress.TotalCount);
+         Assert.Equal(0, progress.CompletedCount);
+         Assert.Equal(0, progress.CompletedPercentage) //$!!$ tac, 0.01);
         }
 
-        //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-        //ORIGINAL LINE: @Test void testNegativeCompleted()
-        internal virtual void TestNegativeCompleted()
-        {
-            assertThrows(typeof(System.ArgumentException), () => new IndexPopulationProgress(-1, 1));
-        }
+      [Fact]
+      public void TestCompletedGreaterThanTotal()
+      {
+         Assert.Throws<System.ArgumentException>(() => new IndexPopulationProgress(2, 1));
+      }
 
-        //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-        //ORIGINAL LINE: @Test void testNegativeTotal()
-        internal virtual void TestNegativeTotal()
-        {
-            assertThrows(typeof(System.ArgumentException), () => new IndexPopulationProgress(0, -1));
-        }
+      [Fact]
+      public void TestGetCompletedPercentage()
+      {
+         IndexPopulationProgress progress = new IndexPopulationProgress(1, 2);
+         Assert.Equal(50.0f, progress.CompletedPercentage); //$!!$ tac, 0.01f);
+      }
 
-        //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-        //ORIGINAL LINE: @Test void testAllZero()
-        internal virtual void TestAllZero()
-        {
-            IndexPopulationProgress progress = new IndexPopulationProgress(0, 0);
-            assertEquals(0, progress.CompletedCount);
-            assertEquals(0, progress.TotalCount);
-            assertEquals(0, progress.CompletedPercentage, 0.01);
-        }
+      [Fact]
+      public void TestGetCompleted()
+      {
+         IndexPopulationProgress progress = new IndexPopulationProgress(1, 2);
+         Assert.Equal(1L, progress.CompletedCount);
+      }
 
-        //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-        //ORIGINAL LINE: @Test void testCompletedZero()
-        internal virtual void TestCompletedZero()
-        {
-            IndexPopulationProgress progress = new IndexPopulationProgress(0, 1);
-            assertEquals(1, progress.TotalCount);
-            assertEquals(0, progress.CompletedCount);
-            assertEquals(0, progress.CompletedPercentage, 0.01);
-        }
-
-        //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-        //ORIGINAL LINE: @Test void testCompletedGreaterThanTotal()
-        internal virtual void TestCompletedGreaterThanTotal()
-        {
-            assertThrows(typeof(System.ArgumentException), () => new IndexPopulationProgress(2, 1));
-        }
-
-        //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-        //ORIGINAL LINE: @Test void testGetCompletedPercentage()
-        internal virtual void TestGetCompletedPercentage()
-        {
-            IndexPopulationProgress progress = new IndexPopulationProgress(1, 2);
-            assertEquals(50.0f, progress.CompletedPercentage, 0.01f);
-        }
-
-        //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-        //ORIGINAL LINE: @Test void testGetCompleted()
-        internal virtual void TestGetCompleted()
-        {
-            IndexPopulationProgress progress = new IndexPopulationProgress(1, 2);
-            assertEquals(1L, progress.CompletedCount);
-        }
-
-        //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-        //ORIGINAL LINE: @Test void testGetTotal()
-        internal virtual void TestGetTotal()
-        {
-            IndexPopulationProgress progress = new IndexPopulationProgress(1, 2);
-            assertEquals(2L, progress.TotalCount);
-        }
-    }
+      [Fact]
+      public void TestGetTotal()
+      {
+         IndexPopulationProgress progress = new IndexPopulationProgress(1, 2);
+         Assert.Equal(2L, progress.TotalCount);
+      }
+   }
 }

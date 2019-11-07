@@ -41,9 +41,9 @@ namespace Neo4Net.Server.rest.web
 	using MapValue = Neo4Net.Values.@virtual.MapValue;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.udc.UsageDataKeys.Features_Fields.http_cypher_endpoint;
+//	import static Neo4Net.udc.UsageDataKeys.Features_Fields.http_cypher_endpoint;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.udc.UsageDataKeys.features;
+//	import static Neo4Net.udc.UsageDataKeys.features;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Path("/cypher") public class CypherService
@@ -83,7 +83,7 @@ namespace Neo4Net.Server.rest.web
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @POST @SuppressWarnings({"unchecked", "ParameterCanBeLocal"}) public javax.ws.rs.core.Response cypher(String body, @Context HttpServletRequest request, @QueryParam(INCLUDE_STATS_PARAM) boolean includeStats, @QueryParam(INCLUDE_PLAN_PARAM) boolean includePlan, @QueryParam(PROFILE_PARAM) boolean profile) throws org.Neo4Net.server.rest.repr.BadInputException
+//ORIGINAL LINE: @POST @SuppressWarnings({"unchecked", "ParameterCanBeLocal"}) public javax.ws.rs.core.Response cypher(String body, @Context HttpServletRequest request, @QueryParam(INCLUDE_STATS_PARAM) boolean includeStats, @QueryParam(INCLUDE_PLAN_PARAM) boolean includePlan, @QueryParam(PROFILE_PARAM) boolean profile) throws Neo4Net.server.rest.repr.BadInputException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual Response Cypher( string body, HttpServletRequest request, bool includeStats, bool includePlan, bool profile )
 		 {

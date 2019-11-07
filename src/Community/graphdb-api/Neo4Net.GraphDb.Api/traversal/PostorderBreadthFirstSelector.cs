@@ -40,7 +40,7 @@ namespace Neo4Net.GraphDb.Traversal
             _expander = expander;
         }
 
-        public override ITraversalBranch Next(TraversalContext metadata)
+        public override ITraversalBranch Next(ITraversalContext metadata)
         {
             if (_sourceIterator == null)
             {
@@ -50,7 +50,7 @@ namespace Neo4Net.GraphDb.Traversal
             return _sourceIterator.hasNext() ? _sourceIterator.next() : null;
         }
 
-        private IEnumerator<ITraversalBranch> GatherSourceIterator(TraversalContext metadata)
+        private IEnumerator<ITraversalBranch> GatherSourceIterator(ITraversalContext metadata)
         {
             LinkedList<ITraversalBranch> queue = new LinkedList<ITraversalBranch>();
             queue.AddLast(_current.next(_expander, metadata));
@@ -66,7 +66,7 @@ namespace Neo4Net.GraphDb.Traversal
             return queue.GetEnumerator();
         }
 
-        private IList<ITraversalBranch> GatherOneLevel(IList<ITraversalBranch> queue, TraversalContext metadata)
+        private IList<ITraversalBranch> GatherOneLevel(IList<ITraversalBranch> queue, ITraversalContext metadata)
         {
             IList<ITraversalBranch> level = new LinkedList<ITraversalBranch>();
             int? depth = null;

@@ -46,7 +46,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verify;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.security.auth.BasicAuthManagerTest.password;
+//	import static Neo4Net.server.security.auth.BasicAuthManagerTest.password;
 
 	public class PersonalUserManagerTest
 	{
@@ -108,7 +108,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.kernel.impl.security.User newUser(String username, byte[] password, boolean changeRequired) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: public Neo4Net.kernel.impl.security.User newUser(String username, byte[] password, boolean changeRequired) throws java.io.IOException, Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 			  public override User NewUser( string username, sbyte[] password, bool changeRequired )
 			  {
 					if ( FailNextCall )
@@ -120,7 +120,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean deleteUser(String username) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: public boolean deleteUser(String username) throws java.io.IOException, Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 			  public override bool DeleteUser( string username )
 			  {
 					if ( FailNextCall )
@@ -132,7 +132,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.kernel.impl.security.User getUser(String username) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: public Neo4Net.kernel.impl.security.User getUser(String username) throws Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 			  public override User GetUser( string username )
 			  {
 					if ( FailNextCall )
@@ -149,7 +149,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void setUserPassword(String username, byte[] password, boolean requirePasswordChange) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: public void setUserPassword(String username, byte[] password, boolean requirePasswordChange) throws java.io.IOException, Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 			  public override void SetUserPassword( string username, sbyte[] password, bool requirePasswordChange )
 			  {
 					if ( FailNextCall )
@@ -169,7 +169,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void suspendUser(String username) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: public void suspendUser(String username) throws java.io.IOException, Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 			  public override void SuspendUser( string username )
 			  {
 					if ( FailNextCall )
@@ -181,7 +181,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void activateUser(String username, boolean requirePasswordChange) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: public void activateUser(String username, boolean requirePasswordChange) throws java.io.IOException, Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 			  public override void ActivateUser( string username, bool requirePasswordChange )
 			  {
 					if ( FailNextCall )
@@ -193,7 +193,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void newRole(String roleName, String... usernames) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: public void newRole(String roleName, String... usernames) throws java.io.IOException, Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 			  public override void NewRole( string roleName, params string[] usernames )
 			  {
 					if ( FailNextCall )
@@ -205,7 +205,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean deleteRole(String roleName) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: public boolean deleteRole(String roleName) throws java.io.IOException, Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 			  public override bool DeleteRole( string roleName )
 			  {
 					if ( FailNextCall )
@@ -217,7 +217,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void assertRoleExists(String roleName) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: public void assertRoleExists(String roleName) throws Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 			  public override void AssertRoleExists( string roleName )
 			  {
 					if ( FailNextCall )
@@ -229,7 +229,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void addRoleToUser(String roleName, String username) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: public void addRoleToUser(String roleName, String username) throws java.io.IOException, Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 			  public override void AddRoleToUser( string roleName, string username )
 			  {
 					if ( FailNextCall )
@@ -241,7 +241,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void removeRoleFromUser(String roleName, String username) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: public void removeRoleFromUser(String roleName, String username) throws java.io.IOException, Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 			  public override void RemoveRoleFromUser( string roleName, string username )
 			  {
 					if ( FailNextCall )
@@ -261,7 +261,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.util.Set<String> getRoleNamesForUser(String username) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: public java.util.Set<String> getRoleNamesForUser(String username) throws Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 			  public override ISet<string> GetRoleNamesForUser( string username )
 			  {
 					if ( FailNextCall )
@@ -278,7 +278,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.util.Set<String> getUsernamesForRole(String roleName) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: public java.util.Set<String> getUsernamesForRole(String roleName) throws Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 			  public override ISet<string> GetUsernamesForRole( string roleName )
 			  {
 					if ( FailNextCall )

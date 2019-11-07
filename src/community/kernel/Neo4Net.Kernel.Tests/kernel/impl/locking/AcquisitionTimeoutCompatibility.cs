@@ -41,7 +41,7 @@ namespace Neo4Net.Kernel.impl.locking
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.rule.concurrent.OtherThreadRule.isWaiting;
+//	import static Neo4Net.test.rule.concurrent.OtherThreadRule.isWaiting;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Ignore("Not a test. This is a compatibility suite, run from LockingCompatibilityTestSuite.") public class AcquisitionTimeoutCompatibility extends LockingCompatibilityTestSuite.Compatibility
@@ -63,7 +63,7 @@ namespace Neo4Net.Kernel.impl.locking
 		 private Locks_Client _client2;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.VerboseTimeout timeout = org.Neo4Net.test.rule.VerboseTimeout.builder().withTimeout(TEST_TIMEOUT_SECONDS, java.util.concurrent.TimeUnit.SECONDS).build();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.VerboseTimeout timeout = Neo4Net.test.rule.VerboseTimeout.builder().withTimeout(TEST_TIMEOUT_SECONDS, java.util.concurrent.TimeUnit.SECONDS).build();
 		 public VerboseTimeout Timeout;
 
 		 public AcquisitionTimeoutCompatibility( LockingCompatibilityTestSuite suite ) : base( suite )

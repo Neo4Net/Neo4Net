@@ -27,15 +27,15 @@ namespace Neo4Net.Test.server
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.rule.SuppressOutput.suppressAll;
+//	import static Neo4Net.test.rule.SuppressOutput.suppressAll;
 
 	public class ExclusiveServerTestBase
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.TestDirectory folder = org.Neo4Net.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.TestDirectory folder = Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public TestDirectory Folder = TestDirectory.testDirectory();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.SuppressOutput suppressOutput = suppressAll();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.SuppressOutput suppressOutput = suppressAll();
 		 public SuppressOutput SuppressOutput = suppressAll();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Rule public org.junit.rules.TestName name = new org.junit.rules.TestName();
@@ -46,7 +46,7 @@ namespace Neo4Net.Test.server
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public static void EnsureServerNotRunning()
 		 {
-			  System.setProperty( "org.Neo4Net.useInsecureCertificateGeneration", "true" );
+			  System.setProperty( "Neo4Net.useInsecureCertificateGeneration", "true" );
 			  suppressAll().call((Callable<Void>)() =>
 			  {
 				ServerHolder.EnsureNotRunning();

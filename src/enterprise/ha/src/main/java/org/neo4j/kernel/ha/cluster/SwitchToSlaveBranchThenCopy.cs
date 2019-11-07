@@ -51,7 +51,7 @@ namespace Neo4Net.Kernel.ha.cluster
 	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_ID;
+//	import static Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_ID;
 
 	public class SwitchToSlaveBranchThenCopy : SwitchToSlave
 	{
@@ -67,7 +67,7 @@ namespace Neo4Net.Kernel.ha.cluster
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void checkDataConsistency(org.Neo4Net.kernel.ha.com.slave.MasterClient masterClient, org.Neo4Net.kernel.impl.transaction.log.TransactionIdStore txIdStore, org.Neo4Net.Kernel.Api.StorageEngine.StoreId storeId, java.net.URI masterUri, java.net.URI me, org.Neo4Net.helpers.CancellationRequest cancellationRequest) throws Throwable
+//ORIGINAL LINE: void checkDataConsistency(Neo4Net.kernel.ha.com.slave.MasterClient masterClient, Neo4Net.kernel.impl.transaction.log.TransactionIdStore txIdStore, Neo4Net.Kernel.Api.StorageEngine.StoreId storeId, java.net.URI masterUri, java.net.URI me, Neo4Net.helpers.CancellationRequest cancellationRequest) throws Throwable
 		 internal override void CheckDataConsistency( MasterClient masterClient, TransactionIdStore txIdStore, StoreId storeId, URI masterUri, URI me, CancellationRequest cancellationRequest )
 		 {
 			  try
@@ -109,7 +109,7 @@ namespace Neo4Net.Kernel.ha.cluster
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void stopServicesAndHandleBranchedStore(org.Neo4Net.kernel.ha.BranchedDataPolicy branchPolicy) throws Throwable
+//ORIGINAL LINE: void stopServicesAndHandleBranchedStore(Neo4Net.kernel.ha.BranchedDataPolicy branchPolicy) throws Throwable
 		 internal virtual void StopServicesAndHandleBranchedStore( BranchedDataPolicy branchPolicy )
 		 {
 			  StopServices();

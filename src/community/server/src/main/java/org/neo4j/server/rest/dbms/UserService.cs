@@ -25,8 +25,8 @@ namespace Neo4Net.Server.rest.dbms
 	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using InvalidArgumentsException = Neo4Net.Kernel.Api.Exceptions.InvalidArgumentsException;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
-	using UserManager = Neo4Net.Kernel.api.security.UserManager;
-	using UserManagerSupplier = Neo4Net.Kernel.api.security.UserManagerSupplier;
+	using UserManager = Neo4Net.Kernel.Api.security.UserManager;
+	using UserManagerSupplier = Neo4Net.Kernel.Api.security.UserManagerSupplier;
 	using User = Neo4Net.Kernel.impl.security.User;
 	using AuthorizationRepresentation = Neo4Net.Server.rest.repr.AuthorizationRepresentation;
 	using BadInputException = Neo4Net.Server.rest.repr.BadInputException;
@@ -37,9 +37,9 @@ namespace Neo4Net.Server.rest.dbms
 	using UTF8 = Neo4Net.Strings.UTF8;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.dbms.AuthorizedRequestWrapper.getLoginContextFromUserPrincipal;
+//	import static Neo4Net.server.rest.dbms.AuthorizedRequestWrapper.getLoginContextFromUserPrincipal;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.web.CustomStatusType.UNPROCESSABLE;
+//	import static Neo4Net.server.rest.web.CustomStatusType.UNPROCESSABLE;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Path("/user") public class UserService

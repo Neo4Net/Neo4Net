@@ -42,9 +42,9 @@ namespace Neo4Net.causalclustering.stresstests
 	using Log = Neo4Net.Logging.Log;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.stresstests.TxHelp.isInterrupted;
+//	import static Neo4Net.causalclustering.stresstests.TxHelp.isInterrupted;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.stresstests.TxHelp.isTransient;
+//	import static Neo4Net.causalclustering.stresstests.TxHelp.isTransient;
 
 	/// <summary>
 	/// Resources for stress testing ID-reuse scenarios.
@@ -59,7 +59,7 @@ namespace Neo4Net.causalclustering.stresstests
 		 internal class UniqueFreeIds : Validation
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private final org.Neo4Net.causalclustering.discovery.Cluster<?> cluster;
+//ORIGINAL LINE: private final Neo4Net.causalclustering.discovery.Cluster<?> cluster;
 			  internal readonly Cluster<object> Cluster;
 			  internal readonly FileSystemAbstraction Fs;
 			  internal readonly Log Log;
@@ -129,7 +129,7 @@ namespace Neo4Net.causalclustering.stresstests
 		 internal class IdReuseSetup : Preparation
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private final org.Neo4Net.causalclustering.discovery.Cluster<?> cluster;
+//ORIGINAL LINE: private final Neo4Net.causalclustering.discovery.Cluster<?> cluster;
 			  internal readonly Cluster<object> Cluster;
 
 			  internal IdReuseSetup( Resources resources ) : base()
@@ -167,7 +167,7 @@ namespace Neo4Net.causalclustering.stresstests
 		 internal class InsertionWorkload : Workload
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private org.Neo4Net.causalclustering.discovery.Cluster<?> cluster;
+//ORIGINAL LINE: private Neo4Net.causalclustering.discovery.Cluster<?> cluster;
 			  internal Cluster<object> Cluster;
 
 			  internal InsertionWorkload( Control control, Resources resources ) : base( control )
@@ -205,7 +205,7 @@ namespace Neo4Net.causalclustering.stresstests
 			  internal readonly long ReelectIntervalSeconds;
 			  internal readonly Log Log;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private org.Neo4Net.causalclustering.discovery.Cluster<?> cluster;
+//ORIGINAL LINE: private Neo4Net.causalclustering.discovery.Cluster<?> cluster;
 			  internal Cluster<object> Cluster;
 
 			  internal ReelectionWorkload( Control control, Resources resources, Config config ) : base( control )
@@ -243,7 +243,7 @@ namespace Neo4Net.causalclustering.stresstests
 			  internal readonly SecureRandom Rnd = new SecureRandom();
 			  internal readonly int IdHighRange;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private org.Neo4Net.causalclustering.discovery.Cluster<?> cluster;
+//ORIGINAL LINE: private Neo4Net.causalclustering.discovery.Cluster<?> cluster;
 			  internal Cluster<object> Cluster;
 
 			  internal DeletionWorkload( Control control, Resources resources ) : base( control )

@@ -32,21 +32,21 @@ namespace Neo4Net.Dbms.archive
 	using VisibleForTesting = Neo4Net.Utils.VisibleForTesting;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.dbms.archive.Utils.checkWritableDirectory;
+//	import static Neo4Net.dbms.archive.Utils.checkWritableDirectory;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.dbms.archive.Utils.copy;
+//	import static Neo4Net.dbms.archive.Utils.copy;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.function.Predicates.not;
+//	import static Neo4Net.function.Predicates.not;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.fs.FileVisitors.justContinue;
+//	import static Neo4Net.io.fs.FileVisitors.justContinue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.fs.FileVisitors.onDirectory;
+//	import static Neo4Net.io.fs.FileVisitors.onDirectory;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.fs.FileVisitors.onFile;
+//	import static Neo4Net.io.fs.FileVisitors.onFile;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.fs.FileVisitors.onlyMatching;
+//	import static Neo4Net.io.fs.FileVisitors.onlyMatching;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.fs.FileVisitors.throwExceptions;
+//	import static Neo4Net.io.fs.FileVisitors.throwExceptions;
 
 	public class Dumper
 	{
@@ -154,7 +154,7 @@ namespace Neo4Net.Dbms.archive
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void withEntry(org.Neo4Net.function.ThrowingConsumer<org.apache.commons.compress.archivers.ArchiveOutputStream, java.io.IOException> operation, java.nio.file.Path root, java.nio.file.Path file) throws java.io.IOException
+//ORIGINAL LINE: private void withEntry(Neo4Net.function.ThrowingConsumer<org.apache.commons.compress.archivers.ArchiveOutputStream, java.io.IOException> operation, java.nio.file.Path root, java.nio.file.Path file) throws java.io.IOException
 		 private void WithEntry( ThrowingConsumer<ArchiveOutputStream, IOException> operation, Path root, Path file )
 		 {
 			  _operations.Add( new ArchiveOperation( operation, root, file ) );
@@ -179,7 +179,7 @@ namespace Neo4Net.Dbms.archive
 			  internal readonly Path File;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private ArchiveOperation(org.Neo4Net.function.ThrowingConsumer<org.apache.commons.compress.archivers.ArchiveOutputStream, java.io.IOException> operation, java.nio.file.Path root, java.nio.file.Path file) throws java.io.IOException
+//ORIGINAL LINE: private ArchiveOperation(Neo4Net.function.ThrowingConsumer<org.apache.commons.compress.archivers.ArchiveOutputStream, java.io.IOException> operation, java.nio.file.Path root, java.nio.file.Path file) throws java.io.IOException
 			  internal ArchiveOperation( ThrowingConsumer<ArchiveOutputStream, IOException> operation, Path root, Path file )
 			  {
 					this.Operation = operation;

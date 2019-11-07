@@ -29,9 +29,9 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor;
 	using DuplicateSchemaRuleException = Neo4Net.Kernel.Api.Exceptions.schema.DuplicateSchemaRuleException;
 	using SchemaRuleNotFoundException = Neo4Net.Kernel.Api.Exceptions.schema.SchemaRuleNotFoundException;
-	using IndexBackedConstraintDescriptor = Neo4Net.Kernel.api.schema.constraints.IndexBackedConstraintDescriptor;
-	using NodeKeyConstraintDescriptor = Neo4Net.Kernel.api.schema.constraints.NodeKeyConstraintDescriptor;
-	using UniquenessConstraintDescriptor = Neo4Net.Kernel.api.schema.constraints.UniquenessConstraintDescriptor;
+	using IndexBackedConstraintDescriptor = Neo4Net.Kernel.Api.schema.constraints.IndexBackedConstraintDescriptor;
+	using NodeKeyConstraintDescriptor = Neo4Net.Kernel.Api.schema.constraints.NodeKeyConstraintDescriptor;
+	using UniquenessConstraintDescriptor = Neo4Net.Kernel.Api.schema.constraints.UniquenessConstraintDescriptor;
 	using SchemaState = Neo4Net.Kernel.Impl.Api.SchemaState;
 	using ConstraintSemantics = Neo4Net.Kernel.impl.constraints.ConstraintSemantics;
 	using SchemaStorage = Neo4Net.Kernel.impl.store.SchemaStorage;
@@ -181,7 +181,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void visitAddedConstraint(org.Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor constraint) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.CreateConstraintFailureException
+//ORIGINAL LINE: public void visitAddedConstraint(Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor constraint) throws Neo4Net.Kernel.Api.Internal.Exceptions.Schema.CreateConstraintFailureException
 		 public override void VisitAddedConstraint( ConstraintDescriptor constraint )
 		 {
 			  _clearSchemaState = true;
@@ -214,7 +214,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void visitAddedNodeKeyConstraint(org.Neo4Net.kernel.api.schema.constraints.NodeKeyConstraintDescriptor uniqueConstraint, long constraintId) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.Schema.CreateConstraintFailureException
+//ORIGINAL LINE: private void visitAddedNodeKeyConstraint(Neo4Net.kernel.api.schema.constraints.NodeKeyConstraintDescriptor uniqueConstraint, long constraintId) throws Neo4Net.Kernel.Api.Internal.Exceptions.Schema.CreateConstraintFailureException
 		 private void VisitAddedNodeKeyConstraint( NodeKeyConstraintDescriptor uniqueConstraint, long constraintId )
 		 {
 			  StoreIndexDescriptor indexRule = _schemaStorage.indexGetForSchema( uniqueConstraint.OwnedIndexDescriptor() );

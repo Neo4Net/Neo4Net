@@ -52,7 +52,7 @@ namespace Neo4Net.Metatest
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.Label.label;
+//	import static Neo4Net.graphdb.Label.label;
 
 	public class TestGraphDescription : GraphHolder
 	{
@@ -74,7 +74,7 @@ namespace Neo4Net.Metatest
 
 		 private static IGraphDatabaseService _graphdb;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.TestData<java.util.Map<String,org.Neo4Net.graphdb.Node>> data = org.Neo4Net.test.TestData.producedThrough(org.Neo4Net.test.GraphDescription.createGraphFor(this, true));
+//ORIGINAL LINE: @Rule public Neo4Net.test.TestData<java.util.Map<String,Neo4Net.graphdb.Node>> data = Neo4Net.test.TestData.producedThrough(Neo4Net.test.GraphDescription.createGraphFor(this, true));
 		 public TestData<IDictionary<string, Node>> Data;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -175,7 +175,7 @@ namespace Neo4Net.Metatest
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test @Graph(nodes = { @NODE(name = "I", properties = { @PROP(key = "name", value = "me"), @PROP(key = "bool", value = "true", type = org.Neo4Net.test.GraphDescription.PropType.BOOLEAN) }), @NODE(name = "you", setNameProperty = true) }, relationships = { @REL(start = "I", end = "you", type = "knows", properties = { @PROP(key = "name", value = "relProp"), @PROP(key = "valid", value = "true", type = org.Neo4Net.test.GraphDescription.PropType.BOOLEAN) }) }, autoIndexRelationships = true) public void canCreateMoreInvolvedGraphWithPropertiesAndAutoIndex()
+//ORIGINAL LINE: @Test @Graph(nodes = { @NODE(name = "I", properties = { @PROP(key = "name", value = "me"), @PROP(key = "bool", value = "true", type = Neo4Net.test.GraphDescription.PropType.BOOLEAN) }), @NODE(name = "you", setNameProperty = true) }, relationships = { @REL(start = "I", end = "you", type = "knows", properties = { @PROP(key = "name", value = "relProp"), @PROP(key = "valid", value = "true", type = Neo4Net.test.GraphDescription.PropType.BOOLEAN) }) }, autoIndexRelationships = true) public void canCreateMoreInvolvedGraphWithPropertiesAndAutoIndex()
 		 [Graph(nodes : { @NODE(name : "I", properties : { @PROP(key : "name", value : "me"), @PROP(key : "bool", value : "true", type : Neo4Net.Test.GraphDescription.PropType.BOOLEAN) }), @NODE(name : "you", setNameProperty : true) }, relationships : { @REL(start : "I", end : "you", type : "knows", properties : { @PROP(key : "name", value : "relProp"), @PROP(key : "valid", value : "true", type : Neo4Net.Test.GraphDescription.PropType.BOOLEAN) }) }, autoIndexRelationships : true)]
 		 public virtual void CanCreateMoreInvolvedGraphWithPropertiesAndAutoIndex()
 		 {

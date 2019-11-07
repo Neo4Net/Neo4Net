@@ -66,23 +66,23 @@ namespace Neo4Net.Bolt.v1.messaging
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.mock;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.messaging.util.MessageMatchers.serialize;
+//	import static Neo4Net.bolt.v1.messaging.util.MessageMatchers.serialize;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.runtime.spi.Records.record;
+//	import static Neo4Net.bolt.v1.runtime.spi.Records.record;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.map;
+//	import static Neo4Net.helpers.collection.MapUtil.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.intValue;
+//	import static Neo4Net.values.storable.Values.intValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.stringArray;
+//	import static Neo4Net.values.storable.Values.stringArray;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.stringValue;
+//	import static Neo4Net.values.storable.Values.stringValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.@virtual.VirtualValues.map;
+//	import static Neo4Net.values.@virtual.VirtualValues.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.@virtual.VirtualValues.nodeValue;
+//	import static Neo4Net.values.@virtual.VirtualValues.nodeValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.@virtual.VirtualValues.relationshipValue;
+//	import static Neo4Net.values.@virtual.VirtualValues.relationshipValue;
 
 	public class BoltRequestMessageTest
 	{
@@ -142,7 +142,7 @@ namespace Neo4Net.Bolt.v1.messaging
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private String serialized(org.Neo4Net.values.AnyValue object) throws java.io.IOException
+//ORIGINAL LINE: private String serialized(Neo4Net.values.AnyValue object) throws java.io.IOException
 		 private string Serialized( AnyValue @object )
 		 {
 			  RecordMessage message = new RecordMessage( record( @object ) );
@@ -150,14 +150,14 @@ namespace Neo4Net.Bolt.v1.messaging
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertSerializes(org.Neo4Net.bolt.messaging.RequestMessage msg) throws Exception
+//ORIGINAL LINE: private void assertSerializes(Neo4Net.bolt.messaging.RequestMessage msg) throws Exception
 		 private void AssertSerializes( RequestMessage msg )
 		 {
 			  assertThat( SerializeAndDeserialize( msg ), equalTo( msg ) );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private <T extends org.Neo4Net.bolt.messaging.RequestMessage> T serializeAndDeserialize(T msg) throws Exception
+//ORIGINAL LINE: private <T extends Neo4Net.bolt.messaging.RequestMessage> T serializeAndDeserialize(T msg) throws Exception
 		 private T SerializeAndDeserialize<T>( T msg ) where T : Neo4Net.Bolt.messaging.RequestMessage
 		 {
 			  RecordingByteChannel channel = new RecordingByteChannel();
@@ -171,7 +171,7 @@ namespace Neo4Net.Bolt.v1.messaging
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private <T extends org.Neo4Net.bolt.messaging.RequestMessage> T unpack(RecordingByteChannel channel) throws Exception
+//ORIGINAL LINE: private <T extends Neo4Net.bolt.messaging.RequestMessage> T unpack(RecordingByteChannel channel) throws Exception
 		 private T Unpack<T>( RecordingByteChannel channel ) where T : Neo4Net.Bolt.messaging.RequestMessage
 		 {
 			  IList<RequestMessage> messages = new List<RequestMessage>();

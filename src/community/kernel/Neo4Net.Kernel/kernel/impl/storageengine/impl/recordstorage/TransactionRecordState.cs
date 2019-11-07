@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 {
 
 	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
 	using MetaDataStore = Neo4Net.Kernel.impl.store.MetaDataStore;
 	using NeoStores = Neo4Net.Kernel.impl.store.NeoStores;
 	using NodeStore = Neo4Net.Kernel.impl.store.NodeStore;
@@ -62,10 +62,10 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 	using Value = Neo4Net.Values.Storable.Value;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.NodeLabelsField.parseLabelsField;
+//	import static Neo4Net.kernel.impl.store.NodeLabelsField.parseLabelsField;
 
 	/// <summary>
-	/// Transaction containing <seealso cref="org.Neo4Net.kernel.impl.transaction.command.Command commands"/> reflecting the operations
+	/// Transaction containing <seealso cref="Neo4Net.kernel.impl.transaction.command.Command commands"/> reflecting the operations
 	/// performed in the transaction.
 	/// 
 	/// This class currently has a symbiotic relationship with <seealso cref="KernelTransaction"/>, with which it always has a 1-1
@@ -125,7 +125,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void extractCommands(java.util.Collection<org.Neo4Net.Kernel.Api.StorageEngine.StorageCommand> commands) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
+//ORIGINAL LINE: public void extractCommands(java.util.Collection<Neo4Net.Kernel.Api.StorageEngine.StorageCommand> commands) throws Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 public override void ExtractCommands( ICollection<StorageCommand> commands )
 		 {
 			  Debug.Assert( !_prepared, "Transaction has already been prepared" );
@@ -278,7 +278,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SafeVarargs private final void addFiltered(java.util.Collection<org.Neo4Net.Kernel.Api.StorageEngine.StorageCommand> target, org.Neo4Net.kernel.impl.transaction.command.Command.Mode mode, org.Neo4Net.kernel.impl.transaction.command.Command[]... commands)
+//ORIGINAL LINE: @SafeVarargs private final void addFiltered(java.util.Collection<Neo4Net.Kernel.Api.StorageEngine.StorageCommand> target, Neo4Net.kernel.impl.transaction.command.Command.Mode mode, Neo4Net.kernel.impl.transaction.command.Command[]... commands)
 		 private void AddFiltered( ICollection<StorageCommand> target, Command.Mode mode, params Command[][] commands )
 		 {
 			  foreach ( Command[] c in commands )

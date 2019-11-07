@@ -29,7 +29,7 @@ namespace Neo4Net.Values.Storable
     using System.Text.RegularExpressions;
 
     //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-    //	import static org.Neo4Net.values.storable.Values.NO_VALUE;
+    //	import static Neo4Net.values.storable.Values.NO_VALUE;
 
     public abstract class Value : AnyValue
 	{
@@ -185,7 +185,7 @@ namespace Neo4Net.Values.Storable
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public <E extends Exception> void WriteTo(org.Neo4Net.values.AnyValueWriter<E> writer) throws E
+//ORIGINAL LINE: public <E extends Exception> void WriteTo(Neo4Net.values.AnyValueWriter<E> writer) throws E
 		 public override void WriteTo<E>( AnyValueWriter<E> writer ) where E : Exception
 		 {
 			  WriteTo( ( ValueWriter<E> )writer );

@@ -35,11 +35,11 @@ namespace Neo4Net.Kernel.monitoring
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Thread.currentThread;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.util.Preconditions.checkState;
+//	import static Neo4Net.util.Preconditions.checkState;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.util.Preconditions.requireNonNegative;
+//	import static Neo4Net.util.Preconditions.requireNonNegative;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.util.Preconditions.requirePositive;
+//	import static Neo4Net.util.Preconditions.requirePositive;
 
 	public class VmPauseMonitor
 	{

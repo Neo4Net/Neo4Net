@@ -27,9 +27,9 @@ namespace Neo4Net.Kernel.impl.store.format.highlimit
 	using RelationshipRecord = Neo4Net.Kernel.Impl.Store.Records.RelationshipRecord;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.format.highlimit.Reference.toAbsolute;
+//	import static Neo4Net.kernel.impl.store.format.highlimit.Reference.toAbsolute;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.format.highlimit.Reference.toRelative;
+//	import static Neo4Net.kernel.impl.store.format.highlimit.Reference.toRelative;
 
 	/// <summary>
 	/// LEGEND:

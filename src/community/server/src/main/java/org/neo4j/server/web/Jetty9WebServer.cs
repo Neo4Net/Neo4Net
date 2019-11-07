@@ -42,7 +42,7 @@ namespace Neo4Net.Server.web
 
 	using ListenSocketAddress = Neo4Net.Helpers.ListenSocketAddress;
 	using PortBindException = Neo4Net.Helpers.PortBindException;
-	using NetworkConnectionTracker = Neo4Net.Kernel.api.net.NetworkConnectionTracker;
+	using NetworkConnectionTracker = Neo4Net.Kernel.Api.net.NetworkConnectionTracker;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using Log = Neo4Net.Logging.Log;
 	using LogProvider = Neo4Net.Logging.LogProvider;
@@ -63,7 +63,7 @@ namespace Neo4Net.Server.web
 
 		 private bool _wadlEnabled;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private java.util.Collection<org.Neo4Net.server.database.InjectableProvider<?>> defaultInjectables;
+//ORIGINAL LINE: private java.util.Collection<Neo4Net.server.database.InjectableProvider<?>> defaultInjectables;
 		 private ICollection<InjectableProvider<object>> _defaultInjectables;
 		 private System.Action<Server> _jettyCreatedCallback;
 		 private RequestLog _requestLog;

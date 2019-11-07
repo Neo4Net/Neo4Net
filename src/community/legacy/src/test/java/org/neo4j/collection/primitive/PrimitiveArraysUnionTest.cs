@@ -32,7 +32,7 @@ namespace Neo4Net.Collections.primitive
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertSame;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.collection.primitive.PrimitiveArrays.union;
+//	import static Neo4Net.collection.primitive.PrimitiveArrays.union;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class PrimitiveArraysUnionTest

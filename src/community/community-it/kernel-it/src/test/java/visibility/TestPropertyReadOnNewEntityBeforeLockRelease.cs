@@ -47,10 +47,10 @@ namespace Visibility
 		 private const int MAX_READER_DELAY_MS = 10;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ClassRule public static final org.Neo4Net.test.rule.DatabaseRule db = new org.Neo4Net.test.rule.ImpermanentDatabaseRule();
+//ORIGINAL LINE: @ClassRule public static final Neo4Net.test.rule.DatabaseRule db = new Neo4Net.test.rule.ImpermanentDatabaseRule();
 		 public static readonly DatabaseRule Db = new ImpermanentDatabaseRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.RepeatRule repeat = new org.Neo4Net.test.rule.RepeatRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.RepeatRule repeat = new Neo4Net.test.rule.RepeatRule();
 		 public readonly RepeatRule Repeat = new RepeatRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

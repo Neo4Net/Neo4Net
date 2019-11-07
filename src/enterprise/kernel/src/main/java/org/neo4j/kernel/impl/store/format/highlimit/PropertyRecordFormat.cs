@@ -30,15 +30,15 @@ namespace Neo4Net.Kernel.impl.store.format.highlimit
 	using RecordLoad = Neo4Net.Kernel.Impl.Store.Records.RecordLoad;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.format.highlimit.BaseHighLimitRecordFormat.HEADER_BIT_FIXED_REFERENCE;
+//	import static Neo4Net.kernel.impl.store.format.highlimit.BaseHighLimitRecordFormat.HEADER_BIT_FIXED_REFERENCE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.format.highlimit.BaseHighLimitRecordFormat.HEADER_BYTE;
+//	import static Neo4Net.kernel.impl.store.format.highlimit.BaseHighLimitRecordFormat.HEADER_BYTE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.format.highlimit.BaseHighLimitRecordFormat.NULL;
+//	import static Neo4Net.kernel.impl.store.format.highlimit.BaseHighLimitRecordFormat.NULL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.format.highlimit.Reference.toAbsolute;
+//	import static Neo4Net.kernel.impl.store.format.highlimit.Reference.toAbsolute;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.format.highlimit.Reference.toRelative;
+//	import static Neo4Net.kernel.impl.store.format.highlimit.Reference.toRelative;
 
 
 	/// <summary>

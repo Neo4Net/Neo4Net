@@ -43,7 +43,7 @@ namespace Neo4Net.causalclustering.routing.load_balancing.plugins
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.causalclustering.routing.load_balancing.LoadBalancingProcessor_Result run(java.util.Map<String,String> context) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
+//ORIGINAL LINE: public Neo4Net.causalclustering.routing.load_balancing.LoadBalancingProcessor_Result run(java.util.Map<String,String> context) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 		 public override Neo4Net.causalclustering.routing.load_balancing.LoadBalancingProcessor_Result Run( IDictionary<string, string> context )
 		 {
 			  Neo4Net.causalclustering.routing.load_balancing.LoadBalancingProcessor_Result result = @delegate.Run( context );

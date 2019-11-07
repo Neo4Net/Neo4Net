@@ -33,7 +33,7 @@ namespace Neo4Net.causalclustering.messaging
 	public interface LifecycleMessageHandler<M> : Inbound_MessageHandler<M> where M : Message
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void start(org.Neo4Net.causalclustering.identity.ClusterId clusterId) throws Throwable;
+//ORIGINAL LINE: void start(Neo4Net.causalclustering.identity.ClusterId clusterId) throws Throwable;
 		 void Start( ClusterId clusterId );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:

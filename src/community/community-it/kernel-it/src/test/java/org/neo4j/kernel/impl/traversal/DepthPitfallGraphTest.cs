@@ -36,9 +36,9 @@ namespace Neo4Net.Kernel.impl.traversal
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertNotNull;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.traversal.Evaluators.atDepth;
+//	import static Neo4Net.graphdb.traversal.Evaluators.atDepth;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.traversal.Evaluators.toDepth;
+//	import static Neo4Net.graphdb.traversal.Evaluators.toDepth;
 
 	public class DepthPitfallGraphTest : TraversalTestBase
 	{

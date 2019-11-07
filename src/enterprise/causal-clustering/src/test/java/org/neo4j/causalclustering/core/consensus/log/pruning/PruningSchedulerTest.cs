@@ -152,12 +152,12 @@ namespace Neo4Net.causalclustering.core.consensus.log.pruning
 //ORIGINAL LINE: final java.util.concurrent.atomic.AtomicReference<Throwable> ex = new java.util.concurrent.atomic.AtomicReference<>();
 			  AtomicReference<Exception> ex = new AtomicReference<Exception>();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.test.DoubleLatch checkPointerLatch = new org.Neo4Net.test.DoubleLatch(1);
+//ORIGINAL LINE: final Neo4Net.test.DoubleLatch checkPointerLatch = new Neo4Net.test.DoubleLatch(1);
 			  DoubleLatch checkPointerLatch = new DoubleLatch( 1 );
 			  RaftLogPruner logPruner = new RaftLogPrunerAnonymousInnerClass( this, Clock.systemUTC(), checkPointerLatch );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final PruningScheduler scheduler = new PruningScheduler(logPruner, jobScheduler, 20L, org.Neo4Net.logging.NullLogProvider.getInstance());
+//ORIGINAL LINE: final PruningScheduler scheduler = new PruningScheduler(logPruner, jobScheduler, 20L, Neo4Net.logging.NullLogProvider.getInstance());
 			  PruningScheduler scheduler = new PruningScheduler( logPruner, _jobScheduler, 20L, NullLogProvider.Instance );
 
 			  // when

@@ -38,7 +38,7 @@ namespace Neo4Net.Server.security.enterprise.auth.plugin.api
 	/// 
 	/// </para>
 	/// </summary>
-	/// <seealso cref= org.Neo4Net.server.security.enterprise.auth.plugin.spi.AuthorizationPlugin </seealso>
+	/// <seealso cref= Neo4Net.server.security.enterprise.auth.plugin.spi.AuthorizationPlugin </seealso>
 	public class AuthorizationExpiredException : Exception
 	{
 		 public AuthorizationExpiredException( string message ) : base( message )

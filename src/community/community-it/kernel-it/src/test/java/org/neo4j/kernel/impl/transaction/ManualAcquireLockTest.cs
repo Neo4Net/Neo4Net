@@ -226,7 +226,7 @@ namespace Neo4Net.Kernel.impl.transaction
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void setProperty(final org.Neo4Net.graphdb.Node node, final String key, final Object value) throws Exception
+//ORIGINAL LINE: void setProperty(final Neo4Net.graphdb.Node node, final String key, final Object value) throws Exception
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 			  internal virtual void SetProperty( Node node, string key, object value )
 			  {

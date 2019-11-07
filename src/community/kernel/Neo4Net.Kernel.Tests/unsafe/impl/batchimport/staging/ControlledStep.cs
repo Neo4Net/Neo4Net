@@ -49,7 +49,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.staging
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: public static ControlledStep<?> stepWithStats(String name, int maxProcessors, java.util.Map<org.Neo4Net.unsafe.impl.batchimport.stats.Key,long> statistics)
+//ORIGINAL LINE: public static ControlledStep<?> stepWithStats(String name, int maxProcessors, java.util.Map<Neo4Net.unsafe.impl.batchimport.stats.Key,long> statistics)
 		 public static ControlledStep<object> StepWithStats( string name, int maxProcessors, IDictionary<Key, long> statistics )
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:

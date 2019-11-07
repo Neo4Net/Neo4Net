@@ -53,7 +53,7 @@ namespace Neo4Net.Bolt.transport
 		 private static readonly bool _useEpoll = FeatureToggles.flag( typeof( NettyServer ), "useEpoll", true );
 		 // Not officially configurable, but leave it modifiable via system properties in case we find we need to
 		 // change it.
-		 private static readonly int _numSelectorThreads = Math.Max( 1, Integer.getInteger( "org.Neo4Net.selectorThreads", Runtime.Runtime.availableProcessors() * 2 ) );
+		 private static readonly int _numSelectorThreads = Math.Max( 1, Integer.getInteger( "Neo4Net.selectorThreads", Runtime.Runtime.availableProcessors() * 2 ) );
 
 		 private readonly IDictionary<BoltConnector, ProtocolInitializer> _bootstrappersMap;
 		 private readonly ThreadFactory _tf;

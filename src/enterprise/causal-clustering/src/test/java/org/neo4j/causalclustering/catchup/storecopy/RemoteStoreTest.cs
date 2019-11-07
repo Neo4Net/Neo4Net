@@ -56,7 +56,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.catchup.CatchupResult.SUCCESS_END_OF_STREAM;
+//	import static Neo4Net.causalclustering.catchup.CatchupResult.SUCCESS_END_OF_STREAM;
 
 	public class RemoteStoreTest
 	{
@@ -144,7 +144,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static org.Neo4Net.causalclustering.catchup.tx.TransactionLogCatchUpFactory factory(org.Neo4Net.causalclustering.catchup.tx.TransactionLogCatchUpWriter writer) throws java.io.IOException
+//ORIGINAL LINE: private static Neo4Net.causalclustering.catchup.tx.TransactionLogCatchUpFactory factory(Neo4Net.causalclustering.catchup.tx.TransactionLogCatchUpWriter writer) throws java.io.IOException
 		 private static TransactionLogCatchUpFactory Factory( TransactionLogCatchUpWriter writer )
 		 {
 			  TransactionLogCatchUpFactory factory = mock( typeof( TransactionLogCatchUpFactory ) );

@@ -35,11 +35,11 @@ namespace Neo4Net.Diagnostics
 	using BufferingLog = Neo4Net.Logging.BufferingLog;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.diagnostics.DiagnosticsReportSources.newDiagnosticsFile;
+//	import static Neo4Net.diagnostics.DiagnosticsReportSources.newDiagnosticsFile;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.diagnostics.DiagnosticsReportSources.newDiagnosticsRotatingFile;
+//	import static Neo4Net.diagnostics.DiagnosticsReportSources.newDiagnosticsRotatingFile;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.diagnostics.DiagnosticsReportSources.newDiagnosticsString;
+//	import static Neo4Net.diagnostics.DiagnosticsReportSources.newDiagnosticsString;
 
 	public class KernelDiagnosticsOfflineReportProvider : DiagnosticsOfflineReportProvider
 	{

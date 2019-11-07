@@ -78,15 +78,15 @@ namespace Neo4Net.restore
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verify;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
+//	import static Neo4Net.helpers.collection.MapUtil.stringMap;
 
 	public class RestoreDatabaseCommandIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory directory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.TestDirectory directory = Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory Directory = TestDirectory.testDirectory();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.fs.DefaultFileSystemRule fileSystemRule = new org.Neo4Net.test.rule.fs.DefaultFileSystemRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.fs.DefaultFileSystemRule fileSystemRule = new Neo4Net.test.rule.fs.DefaultFileSystemRule();
 		 public readonly DefaultFileSystemRule FileSystemRule = new DefaultFileSystemRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -235,7 +235,7 @@ namespace Neo4Net.restore
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void restoreExplicitIndexesFromBackup() throws java.io.IOException, org.Neo4Net.commandline.admin.CommandFailed
+//ORIGINAL LINE: @Test public void restoreExplicitIndexesFromBackup() throws java.io.IOException, Neo4Net.commandline.admin.CommandFailed
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void RestoreExplicitIndexesFromBackup()
 		 {
@@ -271,7 +271,7 @@ namespace Neo4Net.restore
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void restoreTransactionLogsInCustomDirectoryForTargetDatabaseWhenConfigured() throws java.io.IOException, org.Neo4Net.commandline.admin.CommandFailed
+//ORIGINAL LINE: @Test public void restoreTransactionLogsInCustomDirectoryForTargetDatabaseWhenConfigured() throws java.io.IOException, Neo4Net.commandline.admin.CommandFailed
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void RestoreTransactionLogsInCustomDirectoryForTargetDatabaseWhenConfigured()
 		 {
@@ -303,7 +303,7 @@ namespace Neo4Net.restore
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void doNotRemoveRelativeTransactionDirectoryAgain() throws java.io.IOException, org.Neo4Net.commandline.admin.CommandFailed
+//ORIGINAL LINE: @Test public void doNotRemoveRelativeTransactionDirectoryAgain() throws java.io.IOException, Neo4Net.commandline.admin.CommandFailed
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void DoNotRemoveRelativeTransactionDirectoryAgain()
 		 {

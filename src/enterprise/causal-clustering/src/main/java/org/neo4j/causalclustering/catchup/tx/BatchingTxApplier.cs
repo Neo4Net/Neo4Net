@@ -40,9 +40,9 @@ namespace Neo4Net.causalclustering.catchup.tx
 	using LogProvider = Neo4Net.Logging.LogProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.tracing.CommitEvent.NULL;
+//	import static Neo4Net.kernel.impl.transaction.tracing.CommitEvent.NULL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode.EXTERNAL;
+//	import static Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode.EXTERNAL;
 
 	/// <summary>
 	/// Accepts transactions and queues them up for being applied in batches.
@@ -107,7 +107,7 @@ namespace Neo4Net.causalclustering.catchup.tx
 		 /// </summary>
 		 /// <param name="tx"> The transaction to be queued for application. </param>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void queue(org.Neo4Net.kernel.impl.transaction.CommittedTransactionRepresentation tx) throws Exception
+//ORIGINAL LINE: public void queue(Neo4Net.kernel.impl.transaction.CommittedTransactionRepresentation tx) throws Exception
 		 public virtual void Queue( CommittedTransactionRepresentation tx )
 		 {
 			  long receivedTxId = tx.CommitEntry.TxId;

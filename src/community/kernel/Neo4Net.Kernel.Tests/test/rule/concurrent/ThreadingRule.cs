@@ -32,7 +32,7 @@ namespace Neo4Net.Test.rule.concurrent
 	using Neo4Net.Functions;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.function.ThrowingPredicate.throwingPredicate;
+//	import static Neo4Net.function.ThrowingPredicate.throwingPredicate;
 
 	public class ThreadingRule : ExternalResource
 	{
@@ -126,7 +126,7 @@ namespace Neo4Net.Test.rule.concurrent
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public <FROM, TO, EX extends Exception> java.util.concurrent.Future<TO> executeAndAwait(org.Neo4Net.function.ThrowingFunction<FROM,TO,EX> function, FROM parameter, System.Predicate<Thread> threadCondition, long timeout, java.util.concurrent.TimeUnit unit) throws java.util.concurrent.ExecutionException
+//ORIGINAL LINE: public <FROM, TO, EX extends Exception> java.util.concurrent.Future<TO> executeAndAwait(Neo4Net.function.ThrowingFunction<FROM,TO,EX> function, FROM parameter, System.Predicate<Thread> threadCondition, long timeout, java.util.concurrent.TimeUnit unit) throws java.util.concurrent.ExecutionException
 		 public virtual Future<TO> ExecuteAndAwait<FROM, TO, EX>( ThrowingFunction<FROM, TO, EX> function, FROM parameter, System.Predicate<Thread> threadCondition, long timeout, TimeUnit unit ) where EX : Exception
 		 {
 			  FailableConcurrentTransfer<Thread> transfer = new FailableConcurrentTransfer<Thread>();
@@ -143,7 +143,7 @@ namespace Neo4Net.Test.rule.concurrent
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private static <FROM, TO, EX extends Exception> java.util.concurrent.Callable<TO> task(final org.Neo4Net.function.ThrowingFunction<FROM,TO,EX> function, String name, final FROM parameter, final org.Neo4Net.function.FailableConsumer<Thread> threadConsumer)
+//ORIGINAL LINE: private static <FROM, TO, EX extends Exception> java.util.concurrent.Callable<TO> task(final Neo4Net.function.ThrowingFunction<FROM,TO,EX> function, String name, final FROM parameter, final Neo4Net.function.FailableConsumer<Thread> threadConsumer)
 		 private static Callable<TO> Task<FROM, TO, EX>( ThrowingFunction<FROM, TO, EX> function, string name, FROM parameter, FailableConsumer<Thread> threadConsumer ) where EX : Exception
 		 {
 			  return () =>

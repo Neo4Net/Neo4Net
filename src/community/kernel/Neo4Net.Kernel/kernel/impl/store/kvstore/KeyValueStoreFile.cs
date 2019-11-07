@@ -24,13 +24,13 @@ namespace Neo4Net.Kernel.impl.store.kvstore
 	using PagedFile = Neo4Net.Io.pagecache.PagedFile;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.pagecache.PagedFile_Fields.PF_SHARED_READ_LOCK;
+//	import static Neo4Net.io.pagecache.PagedFile_Fields.PF_SHARED_READ_LOCK;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.kvstore.AbstractKeyValueStore.MAX_LOOKUP_RETRY_COUNT;
+//	import static Neo4Net.kernel.impl.store.kvstore.AbstractKeyValueStore.MAX_LOOKUP_RETRY_COUNT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.kvstore.BigEndianByteArrayBuffer.compare;
+//	import static Neo4Net.kernel.impl.store.kvstore.BigEndianByteArrayBuffer.compare;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.kvstore.BigEndianByteArrayBuffer.newBuffer;
+//	import static Neo4Net.kernel.impl.store.kvstore.BigEndianByteArrayBuffer.newBuffer;
 
 	/// <summary>
 	/// Stores Key/Value pairs sorted by the key in unsigned big-endian order.
@@ -113,7 +113,7 @@ namespace Neo4Net.Kernel.impl.store.kvstore
 		 {
 			  int pageId = _headerEntries * ( _keySize + _valueSize ) / _file.pageSize();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.io.pagecache.PageCursor cursor = file.io(pageId, PF_SHARED_READ_LOCK);
+//ORIGINAL LINE: final Neo4Net.io.pagecache.PageCursor cursor = file.io(pageId, PF_SHARED_READ_LOCK);
 			  PageCursor cursor = _file.io( pageId, PF_SHARED_READ_LOCK );
 			  return new DataProviderAnonymousInnerClass( this, cursor );
 		 }
@@ -192,7 +192,7 @@ namespace Neo4Net.Kernel.impl.store.kvstore
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-//ORIGINAL LINE: static <Buffer extends BigEndianByteArrayBuffer> void scanAll(org.Neo4Net.io.pagecache.PagedFile file, int startOffset, EntryVisitor<? super Buffer> visitor, Buffer key, Buffer value) throws java.io.IOException
+//ORIGINAL LINE: static <Buffer extends BigEndianByteArrayBuffer> void scanAll(Neo4Net.io.pagecache.PagedFile file, int startOffset, EntryVisitor<? super Buffer> visitor, Buffer key, Buffer value) throws java.io.IOException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal static void ScanAll<Buffer, T1>( PagedFile file, int startOffset, EntryVisitor<T1> visitor, Buffer key, Buffer value ) where Buffer : BigEndianByteArrayBuffer
 		 {
@@ -211,7 +211,7 @@ namespace Neo4Net.Kernel.impl.store.kvstore
 		 /// <summary>
 		 /// Expects the first key/value-pair to be read into the buffers already, reads subsequent pairs (if requested). </summary>
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-//ORIGINAL LINE: private static <Buffer extends BigEndianByteArrayBuffer> void visitKeyValuePairs(int pageSize, org.Neo4Net.io.pagecache.PageCursor cursor, int offset, EntryVisitor<? super Buffer> visitor, boolean visitHeaders, Buffer key, Buffer value) throws java.io.IOException
+//ORIGINAL LINE: private static <Buffer extends BigEndianByteArrayBuffer> void visitKeyValuePairs(int pageSize, Neo4Net.io.pagecache.PageCursor cursor, int offset, EntryVisitor<? super Buffer> visitor, boolean visitHeaders, Buffer key, Buffer value) throws java.io.IOException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 private static void VisitKeyValuePairs<Buffer, T1>( int pageSize, PageCursor cursor, int offset, EntryVisitor<T1> visitor, bool visitHeaders, Buffer key, Buffer value ) where Buffer : BigEndianByteArrayBuffer
 		 {
@@ -237,7 +237,7 @@ namespace Neo4Net.Kernel.impl.store.kvstore
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static void readKeyValuePair(org.Neo4Net.io.pagecache.PageCursor cursor, int offset, WritableBuffer key, WritableBuffer value) throws java.io.IOException
+//ORIGINAL LINE: static void readKeyValuePair(Neo4Net.io.pagecache.PageCursor cursor, int offset, WritableBuffer key, WritableBuffer value) throws java.io.IOException
 		 internal static void ReadKeyValuePair( PageCursor cursor, int offset, WritableBuffer key, WritableBuffer value )
 		 {
 			  long retriesLeft = MAX_LOOKUP_RETRY_COUNT;
@@ -326,7 +326,7 @@ namespace Neo4Net.Kernel.impl.store.kvstore
 		 /// <returns> the offset (in bytes within the given page) of the first entry with a key that is greater than or equal
 		 /// to the given key. </returns>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private int findByteOffset(org.Neo4Net.io.pagecache.PageCursor cursor, BigEndianByteArrayBuffer searchKey, BigEndianByteArrayBuffer key, BigEndianByteArrayBuffer value) throws java.io.IOException
+//ORIGINAL LINE: private int findByteOffset(Neo4Net.io.pagecache.PageCursor cursor, BigEndianByteArrayBuffer searchKey, BigEndianByteArrayBuffer key, BigEndianByteArrayBuffer value) throws java.io.IOException
 		 private int FindByteOffset( PageCursor cursor, BigEndianByteArrayBuffer searchKey, BigEndianByteArrayBuffer key, BigEndianByteArrayBuffer value )
 		 {
 			  int entrySize = searchKey.Size() + value.Size();
@@ -357,7 +357,7 @@ namespace Neo4Net.Kernel.impl.store.kvstore
 		 /// <returns> the offset (in number of entries within the page) of the first entry with a key that is greater than or
 		 /// equal to the given key. </returns>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static int findEntryOffset(org.Neo4Net.io.pagecache.PageCursor cursor, BigEndianByteArrayBuffer searchKey, BigEndianByteArrayBuffer key, BigEndianByteArrayBuffer value, int min, int max) throws java.io.IOException
+//ORIGINAL LINE: static int findEntryOffset(Neo4Net.io.pagecache.PageCursor cursor, BigEndianByteArrayBuffer searchKey, BigEndianByteArrayBuffer key, BigEndianByteArrayBuffer value, int min, int max) throws java.io.IOException
 		 internal static int FindEntryOffset( PageCursor cursor, BigEndianByteArrayBuffer searchKey, BigEndianByteArrayBuffer key, BigEndianByteArrayBuffer value, int min, int max )
 		 {
 			  int entrySize = key.Size() + value.Size();

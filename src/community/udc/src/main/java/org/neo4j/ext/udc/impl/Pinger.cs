@@ -26,7 +26,7 @@ namespace Neo4Net.Ext.Udc.impl
 	using HostnamePort = Neo4Net.Helpers.HostnamePort;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.ext.udc.UdcConstants.PING;
+//	import static Neo4Net.ext.udc.UdcConstants.PING;
 
 	internal class Pinger
 	{

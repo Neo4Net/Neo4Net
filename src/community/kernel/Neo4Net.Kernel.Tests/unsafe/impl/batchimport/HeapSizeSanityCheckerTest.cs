@@ -36,11 +36,11 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 //	import static org.mockito.Mockito.when;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.ByteUnit.gibiBytes;
+//	import static Neo4Net.io.ByteUnit.gibiBytes;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.format.standard.Standard.LATEST_RECORD_FORMATS;
+//	import static Neo4Net.kernel.impl.store.format.standard.Standard.LATEST_RECORD_FORMATS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.input.Inputs.knownEstimates;
+//	import static Neo4Net.@unsafe.impl.batchimport.input.Inputs.knownEstimates;
 
 	public class HeapSizeSanityCheckerTest
 	{

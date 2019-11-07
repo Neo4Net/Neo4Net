@@ -32,10 +32,10 @@ namespace Neo4Net.Server.rest
 
 
 	/// <summary>
-	/// To be deprecated by <seealso cref="org.Neo4Net.server.rest.causalclustering.CausalClusteringService"/>.
+	/// To be deprecated by <seealso cref="Neo4Net.server.rest.causalclustering.CausalClusteringService"/>.
 	/// </summary>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Path(CoreDatabaseAvailabilityService.BASE_PATH) public class CoreDatabaseAvailabilityService implements org.Neo4Net.server.rest.management.AdvertisableService
+//ORIGINAL LINE: @Path(CoreDatabaseAvailabilityService.BASE_PATH) public class CoreDatabaseAvailabilityService implements Neo4Net.server.rest.management.AdvertisableService
 	public class CoreDatabaseAvailabilityService : AdvertisableService
 	{
 		 public const string BASE_PATH = "server/core";

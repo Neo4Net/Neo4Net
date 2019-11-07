@@ -36,7 +36,7 @@ namespace Neo4Net.causalclustering.protocol.handshake
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: public ClientHandshakeException(String message, @Nullable Protocol.ApplicationProtocol negotiatedApplicationProtocol, java.util.List<org.Neo4Net.helpers.collection.Pair<String,java.util.Optional<org.Neo4Net.causalclustering.protocol.Protocol_ModifierProtocol>>> negotiatedModifierProtocols)
+//ORIGINAL LINE: public ClientHandshakeException(String message, @Nullable Protocol.ApplicationProtocol negotiatedApplicationProtocol, java.util.List<Neo4Net.helpers.collection.Pair<String,java.util.Optional<Neo4Net.causalclustering.protocol.Protocol_ModifierProtocol>>> negotiatedModifierProtocols)
 		 public ClientHandshakeException( string message, Protocol.ApplicationProtocol negotiatedApplicationProtocol, IList<Pair<string, Optional<Neo4Net.causalclustering.protocol.Protocol_ModifierProtocol>>> negotiatedModifierProtocols ) : base( message + " Negotiated application protocol: " + negotiatedApplicationProtocol + " Negotiated modifier protocols: " + negotiatedModifierProtocols )
 		 {
 		 }

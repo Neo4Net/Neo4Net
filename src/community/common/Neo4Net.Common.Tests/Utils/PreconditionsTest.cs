@@ -25,7 +25,7 @@ namespace Neo4Net.Utils
    //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
    //	import static org.junit.jupiter.api.Assertions.assertThrows;
    //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-   //	import static org.Neo4Net.util.Preconditions.requirePositive;
+   //	import static Neo4Net.util.Preconditions.requirePositive;
 
    internal class PreconditionsTest
    {

@@ -105,7 +105,7 @@ namespace Neo4Net.Bolt.runtime
 		 private BoltStateMachine _stateMachine;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.concurrent.OtherThreadRule<bool> otherThread = new org.Neo4Net.test.rule.concurrent.OtherThreadRule<>();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.concurrent.OtherThreadRule<bool> otherThread = new Neo4Net.test.rule.concurrent.OtherThreadRule<>();
 		 public OtherThreadRule<bool> OtherThread = new OtherThreadRule<bool>();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

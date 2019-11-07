@@ -27,11 +27,11 @@ namespace Neo4Net.Cypher.Internal.codegen
 	using RelationshipSelectionCursor = Neo4Net.Kernel.Api.Internal.Helpers.RelationshipSelectionCursor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.Helpers.Nodes.countAll;
+//	import static Neo4Net.Kernel.Api.Internal.Helpers.Nodes.countAll;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.Helpers.Nodes.countIncoming;
+//	import static Neo4Net.Kernel.Api.Internal.Helpers.Nodes.countIncoming;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.Helpers.Nodes.countOutgoing;
+//	import static Neo4Net.Kernel.Api.Internal.Helpers.Nodes.countOutgoing;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @SuppressWarnings("unused") public abstract class CompiledExpandUtils
@@ -227,7 +227,7 @@ namespace Neo4Net.Cypher.Internal.codegen
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private static org.Neo4Net.Kernel.Api.Internal.Helpers.RelationshipSelectionCursor connectingRelationshipsIterator(final org.Neo4Net.Kernel.Api.Internal.Helpers.RelationshipSelectionCursor allRelationships, final long toNode)
+//ORIGINAL LINE: private static Neo4Net.Kernel.Api.Internal.Helpers.RelationshipSelectionCursor connectingRelationshipsIterator(final Neo4Net.Kernel.Api.Internal.Helpers.RelationshipSelectionCursor allRelationships, final long toNode)
 		 private static RelationshipSelectionCursor ConnectingRelationshipsIterator( RelationshipSelectionCursor allRelationships, long toNode )
 		 {
 			  return new RelationshipSelectionCursorAnonymousInnerClass( allRelationships, toNode );

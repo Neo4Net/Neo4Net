@@ -63,9 +63,9 @@ namespace Neo4Net.causalclustering.messaging
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.handlers.VoidPipelineWrapperFactory.VOID_WRAPPER;
+//	import static Neo4Net.causalclustering.handlers.VoidPipelineWrapperFactory.VOID_WRAPPER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.asSet;
+//	import static Neo4Net.helpers.collection.Iterators.asSet;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class SenderServiceIT
@@ -101,7 +101,7 @@ namespace Neo4Net.causalclustering.messaging
 		 public bool Blocking;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Parameterized.Parameter(1) public org.Neo4Net.causalclustering.protocol.Protocol_ApplicationProtocols clientProtocol;
+//ORIGINAL LINE: @Parameterized.Parameter(1) public Neo4Net.causalclustering.protocol.Protocol_ApplicationProtocols clientProtocol;
 		 public Protocol_ApplicationProtocols ClientProtocol;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -139,7 +139,7 @@ namespace Neo4Net.causalclustering.messaging
 
 			  Neo4Net.causalclustering.core.consensus.RaftMessages_NewEntry_Request newEntryMessage = new Neo4Net.causalclustering.core.consensus.RaftMessages_NewEntry_Request( memberId, new MemberIdSet( asSet( memberId ) ) );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.causalclustering.core.consensus.RaftMessages_ClusterIdAwareMessage<?> message = org.Neo4Net.causalclustering.core.consensus.RaftMessages_ClusterIdAwareMessage.of(clusterId, newEntryMessage);
+//ORIGINAL LINE: Neo4Net.causalclustering.core.consensus.RaftMessages_ClusterIdAwareMessage<?> message = Neo4Net.causalclustering.core.consensus.RaftMessages_ClusterIdAwareMessage.of(clusterId, newEntryMessage);
 			  Neo4Net.causalclustering.core.consensus.RaftMessages_ClusterIdAwareMessage<object> message = Neo4Net.causalclustering.core.consensus.RaftMessages_ClusterIdAwareMessage.of( clusterId, newEntryMessage );
 
 			  sender.Send( to, message, Blocking );

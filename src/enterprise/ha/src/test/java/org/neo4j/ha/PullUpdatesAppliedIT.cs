@@ -69,7 +69,7 @@ namespace Neo4Net.ha
 	public class PullUpdatesAppliedIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.TestDirectory testDirectory = Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory TestDirectory = TestDirectory.testDirectory();
 
 		 private SortedDictionary<int, Configuration> _configurations;
@@ -169,7 +169,7 @@ namespace Neo4Net.ha
 			  System.Threading.CountdownEvent latch1 = new System.Threading.CountdownEvent( 1 );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.ha.HighlyAvailableGraphDatabase masterDb = findDatabase(serverIdOfMaster);
+//ORIGINAL LINE: final Neo4Net.kernel.ha.HighlyAvailableGraphDatabase masterDb = findDatabase(serverIdOfMaster);
 			  HighlyAvailableGraphDatabase masterDb = FindDatabase( serverIdOfMaster );
 			  masterDb.DependencyResolver.resolveDependency( typeof( ClusterClient ) ).addClusterListener( new ClusterListener_AdapterAnonymousInnerClass( this, latch1, masterDb ) );
 

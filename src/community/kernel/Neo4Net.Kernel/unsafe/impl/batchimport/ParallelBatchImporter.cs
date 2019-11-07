@@ -32,7 +32,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 	using BatchingNeoStores = Neo4Net.@unsafe.Impl.Batchimport.store.BatchingNeoStores;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.ImportLogic.instantiateNeoStores;
+//	import static Neo4Net.@unsafe.impl.batchimport.ImportLogic.instantiateNeoStores;
 
 	/// <summary>
 	/// <seealso cref="BatchImporter"/> which tries to exercise as much of the available resources to gain performance.
@@ -75,7 +75,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void doImport(org.Neo4Net.unsafe.impl.batchimport.input.Input input) throws java.io.IOException
+//ORIGINAL LINE: public void doImport(Neo4Net.unsafe.impl.batchimport.input.Input input) throws java.io.IOException
 		 public override void DoImport( Input input )
 		 {
 			  using ( BatchingNeoStores store = instantiateNeoStores( _fileSystem, _directoryStructure.databaseDirectory(), _externalPageCache, _recordFormats, _config, _logService, _additionalInitialIds, _dbConfig, _jobScheduler ), ImportLogic logic = new ImportLogic(_directoryStructure.databaseDirectory(), _fileSystem, store, _config, _logService, _executionMonitor, _recordFormats, _monitor) )

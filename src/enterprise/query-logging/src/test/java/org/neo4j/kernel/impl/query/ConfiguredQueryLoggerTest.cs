@@ -31,8 +31,8 @@ namespace Neo4Net.Kernel.impl.query
 
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using PageCursorCounters = Neo4Net.Io.pagecache.tracing.cursor.PageCursorCounters;
-	using CompilerInfo = Neo4Net.Kernel.api.query.CompilerInfo;
-	using ExecutingQuery = Neo4Net.Kernel.api.query.ExecutingQuery;
+	using CompilerInfo = Neo4Net.Kernel.Api.query.CompilerInfo;
+	using ExecutingQuery = Neo4Net.Kernel.Api.query.ExecutingQuery;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using BoltConnectionInfo = Neo4Net.Kernel.impl.query.clientconnection.BoltConnectionInfo;
 	using ClientConnectionInfo = Neo4Net.Kernel.impl.query.clientconnection.ClientConnectionInfo;
@@ -53,9 +53,9 @@ namespace Neo4Net.Kernel.impl.query
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.core.Is.@is;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.map;
+//	import static Neo4Net.helpers.collection.MapUtil.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.logging.AssertableLogProvider.inLog;
+//	import static Neo4Net.logging.AssertableLogProvider.inLog;
 
 	public class ConfiguredQueryLoggerTest
 	{
@@ -73,10 +73,10 @@ namespace Neo4Net.Kernel.impl.query
 		 private const string QUERY_4 = "MATCH (n) WHERE n.age IN {ages} RETURN n";
 		 private readonly FakeClock _clock = Clocks.fakeClock();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.FakeCpuClock cpuClock = new org.Neo4Net.test.FakeCpuClock();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.FakeCpuClock cpuClock = new Neo4Net.test.FakeCpuClock();
 		 public readonly FakeCpuClock CpuClock = new FakeCpuClock();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.FakeHeapAllocation heapAllocation = new org.Neo4Net.test.FakeHeapAllocation();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.FakeHeapAllocation heapAllocation = new Neo4Net.test.FakeHeapAllocation();
 		 public readonly FakeHeapAllocation HeapAllocation = new FakeHeapAllocation();
 		 private long _pageHits;
 		 private long _pageFaults;
@@ -88,7 +88,7 @@ namespace Neo4Net.Kernel.impl.query
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.logging.AssertableLogProvider logProvider = new org.Neo4Net.logging.AssertableLogProvider();
+//ORIGINAL LINE: final Neo4Net.logging.AssertableLogProvider logProvider = new Neo4Net.logging.AssertableLogProvider();
 			  AssertableLogProvider logProvider = new AssertableLogProvider();
 			  ExecutingQuery query = query( _session_1, "TestUser", QUERY_1 );
 			  ConfiguredQueryLogger queryLogger = queryLogger( logProvider );
@@ -108,7 +108,7 @@ namespace Neo4Net.Kernel.impl.query
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.logging.AssertableLogProvider logProvider = new org.Neo4Net.logging.AssertableLogProvider();
+//ORIGINAL LINE: final Neo4Net.logging.AssertableLogProvider logProvider = new Neo4Net.logging.AssertableLogProvider();
 			  AssertableLogProvider logProvider = new AssertableLogProvider();
 			  ExecutingQuery query = query( _session_1, "TestUser", QUERY_1 );
 			  ConfiguredQueryLogger queryLogger = queryLogger( logProvider );
@@ -138,7 +138,7 @@ namespace Neo4Net.Kernel.impl.query
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.logging.AssertableLogProvider logProvider = new org.Neo4Net.logging.AssertableLogProvider();
+//ORIGINAL LINE: final Neo4Net.logging.AssertableLogProvider logProvider = new Neo4Net.logging.AssertableLogProvider();
 			  AssertableLogProvider logProvider = new AssertableLogProvider();
 			  ExecutingQuery query1 = Query( _session_1, "TestUser1", QUERY_1 );
 			  _clock.forward( 1, TimeUnit.MILLISECONDS );
@@ -170,7 +170,7 @@ namespace Neo4Net.Kernel.impl.query
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.logging.AssertableLogProvider logProvider = new org.Neo4Net.logging.AssertableLogProvider();
+//ORIGINAL LINE: final Neo4Net.logging.AssertableLogProvider logProvider = new Neo4Net.logging.AssertableLogProvider();
 			  AssertableLogProvider logProvider = new AssertableLogProvider();
 			  ExecutingQuery query = query( _session_1, "TestUser", QUERY_1 );
 
@@ -191,7 +191,7 @@ namespace Neo4Net.Kernel.impl.query
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.logging.AssertableLogProvider logProvider = new org.Neo4Net.logging.AssertableLogProvider();
+//ORIGINAL LINE: final Neo4Net.logging.AssertableLogProvider logProvider = new Neo4Net.logging.AssertableLogProvider();
 			  AssertableLogProvider logProvider = new AssertableLogProvider();
 			  IDictionary<string, object> @params = new Dictionary<string, object>();
 			  @params["ages"] = Arrays.asList( 41, 42, 43 );
@@ -213,7 +213,7 @@ namespace Neo4Net.Kernel.impl.query
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.logging.AssertableLogProvider logProvider = new org.Neo4Net.logging.AssertableLogProvider();
+//ORIGINAL LINE: final Neo4Net.logging.AssertableLogProvider logProvider = new Neo4Net.logging.AssertableLogProvider();
 			  AssertableLogProvider logProvider = new AssertableLogProvider();
 			  IDictionary<string, object> @params = new Dictionary<string, object>();
 			  @params["ages"] = Arrays.asList( 41, 42, 43 );
@@ -235,7 +235,7 @@ namespace Neo4Net.Kernel.impl.query
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.logging.AssertableLogProvider logProvider = new org.Neo4Net.logging.AssertableLogProvider();
+//ORIGINAL LINE: final Neo4Net.logging.AssertableLogProvider logProvider = new Neo4Net.logging.AssertableLogProvider();
 			  AssertableLogProvider logProvider = new AssertableLogProvider();
 			  ConfiguredQueryLogger queryLogger = queryLogger( logProvider );
 
@@ -258,7 +258,7 @@ namespace Neo4Net.Kernel.impl.query
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.logging.AssertableLogProvider logProvider = new org.Neo4Net.logging.AssertableLogProvider();
+//ORIGINAL LINE: final Neo4Net.logging.AssertableLogProvider logProvider = new Neo4Net.logging.AssertableLogProvider();
 			  AssertableLogProvider logProvider = new AssertableLogProvider();
 			  ConfiguredQueryLogger queryLogger = queryLogger( logProvider );
 
@@ -400,7 +400,7 @@ namespace Neo4Net.Kernel.impl.query
 		 private void RunAndCheck( string inputQuery, string outputQuery, IDictionary<string, object> @params, string paramsString )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.logging.AssertableLogProvider logProvider = new org.Neo4Net.logging.AssertableLogProvider();
+//ORIGINAL LINE: final Neo4Net.logging.AssertableLogProvider logProvider = new Neo4Net.logging.AssertableLogProvider();
 			  AssertableLogProvider logProvider = new AssertableLogProvider();
 			  ConfiguredQueryLogger queryLogger = queryLogger( logProvider, Config.defaults( GraphDatabaseSettings.log_queries_parameter_logging_enabled, "true" ) );
 
@@ -419,7 +419,7 @@ namespace Neo4Net.Kernel.impl.query
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.logging.AssertableLogProvider logProvider = new org.Neo4Net.logging.AssertableLogProvider();
+//ORIGINAL LINE: final Neo4Net.logging.AssertableLogProvider logProvider = new Neo4Net.logging.AssertableLogProvider();
 			  AssertableLogProvider logProvider = new AssertableLogProvider();
 			  ConfiguredQueryLogger queryLogger = queryLogger( logProvider, Config.defaults( GraphDatabaseSettings.log_queries_detailed_time_logging_enabled, "true" ) );
 			  ExecutingQuery query = query( _session_1, "TestUser", QUERY_1 );
@@ -439,7 +439,7 @@ namespace Neo4Net.Kernel.impl.query
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.logging.AssertableLogProvider logProvider = new org.Neo4Net.logging.AssertableLogProvider();
+//ORIGINAL LINE: final Neo4Net.logging.AssertableLogProvider logProvider = new Neo4Net.logging.AssertableLogProvider();
 			  AssertableLogProvider logProvider = new AssertableLogProvider();
 			  ConfiguredQueryLogger queryLogger = queryLogger( logProvider, Config.defaults( GraphDatabaseSettings.log_queries_allocation_logging_enabled, "true" ) );
 			  ExecutingQuery query = query( _session_1, "TestUser", QUERY_1 );
@@ -459,7 +459,7 @@ namespace Neo4Net.Kernel.impl.query
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.logging.AssertableLogProvider logProvider = new org.Neo4Net.logging.AssertableLogProvider();
+//ORIGINAL LINE: final Neo4Net.logging.AssertableLogProvider logProvider = new Neo4Net.logging.AssertableLogProvider();
 			  AssertableLogProvider logProvider = new AssertableLogProvider();
 			  ConfiguredQueryLogger queryLogger = queryLogger( logProvider, Config.defaults( GraphDatabaseSettings.log_queries_page_detail_logging_enabled, "true" ) );
 			  ExecutingQuery query = query( _session_1, "TestUser", QUERY_1 );

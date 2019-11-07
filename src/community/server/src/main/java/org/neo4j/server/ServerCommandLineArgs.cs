@@ -28,9 +28,9 @@ namespace Neo4Net.Server
 	using Converters = Neo4Net.Kernel.impl.util.Converters;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
+//	import static Neo4Net.helpers.collection.MapUtil.stringMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Pair.pair;
+//	import static Neo4Net.helpers.collection.Pair.pair;
 
 	/// <summary>
 	/// Parses command line arguments for the server bootstrappers. Format is as follows:

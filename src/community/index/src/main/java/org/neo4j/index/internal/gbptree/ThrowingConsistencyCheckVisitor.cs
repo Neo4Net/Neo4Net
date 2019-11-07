@@ -25,7 +25,7 @@ namespace Neo4Net.Index.Internal.gbptree
 	using Exceptions = Neo4Net.Helpers.Exceptions;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Internal.gbptree.TreeNode.NO_NODE_FLAG;
+//	import static Neo4Net.index.Internal.gbptree.TreeNode.NO_NODE_FLAG;
 
 	public class ThrowingConsistencyCheckVisitor<KEY> : GBPTreeConsistencyCheckVisitor<KEY>
 	{

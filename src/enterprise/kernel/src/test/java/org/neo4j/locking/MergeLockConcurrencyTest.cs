@@ -44,23 +44,23 @@ namespace Neo4Net.Locking
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.lock_manager;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.lock_manager;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.single;
+//	import static Neo4Net.helpers.collection.Iterators.single;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.ConfigBuilder.configure;
+//	import static Neo4Net.test.ConfigBuilder.configure;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.rule.concurrent.ThreadingRule.await;
+//	import static Neo4Net.test.rule.concurrent.ThreadingRule.await;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class MergeLockConcurrencyTest
 	public class MergeLockConcurrencyTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.DatabaseRule db = new org.Neo4Net.test.rule.ImpermanentDatabaseRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.DatabaseRule db = new Neo4Net.test.rule.ImpermanentDatabaseRule();
 		 public readonly DatabaseRule Db = new ImpermanentDatabaseRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.concurrent.ThreadingRule threads = new org.Neo4Net.test.rule.concurrent.ThreadingRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.concurrent.ThreadingRule threads = new Neo4Net.test.rule.concurrent.ThreadingRule();
 		 public readonly ThreadingRule Threads = new ThreadingRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -92,7 +92,7 @@ namespace Neo4Net.Locking
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void withConstraint(org.Neo4Net.function.ThrowingFunction<java.util.concurrent.CyclicBarrier,org.Neo4Net.graphdb.Node,Exception> action) throws Exception
+//ORIGINAL LINE: private void withConstraint(Neo4Net.function.ThrowingFunction<java.util.concurrent.CyclicBarrier,Neo4Net.graphdb.Node,Exception> action) throws Exception
 		 private void WithConstraint( ThrowingFunction<CyclicBarrier, Node, Exception> action )
 		 {
 			  // given

@@ -24,9 +24,9 @@ namespace Neo4Net.Tooling.procedure.visitors
 
 	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
 	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
 	using SecurityContext = Neo4Net.Kernel.Api.Internal.security.SecurityContext;
-	using UserManager = Neo4Net.Kernel.api.security.UserManager;
+	using UserManager = Neo4Net.Kernel.Api.security.UserManager;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
 	using Log = Neo4Net.Logging.Log;
 	using Context = Neo4Net.Procedure.Context;
@@ -37,14 +37,14 @@ namespace Neo4Net.Tooling.procedure.visitors
 	using ContextFieldWarning = Neo4Net.Tooling.procedure.messages.ContextFieldWarning;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.tooling.procedure.CompilerOptions.IGNORE_CONTEXT_WARNINGS_OPTION;
+//	import static Neo4Net.tooling.procedure.CompilerOptions.IGNORE_CONTEXT_WARNINGS_OPTION;
 
 	internal class ContextFieldVisitor : SimpleElementVisitor8<Stream<CompilationMessage>, Void>
 	{
 //JAVA TO C# CONVERTER WARNING: The .NET Type.FullName property will not always yield results identical to the Java Class.getName method:
 		 private static readonly ISet<string> _supportedTypes = new LinkedHashSet<string>( Arrays.asList( typeof( IGraphDatabaseService ).FullName, typeof( Log ).FullName, typeof( TerminationGuard ).FullName, typeof( SecurityContext ).FullName, typeof( ProcedureTransaction ).FullName ) );
 //JAVA TO C# CONVERTER WARNING: The .NET Type.FullName property will not always yield results identical to the Java Class.getName method:
-		 private static readonly ISet<string> _restrictedTypes = new LinkedHashSet<string>( Arrays.asList( typeof( GraphDatabaseAPI ).FullName, typeof( KernelTransaction ).FullName, typeof( DependencyResolver ).FullName, typeof( UserManager ).FullName, "org.Neo4Net.kernel.enterprise.api.security.EnterpriseAuthManager", "org.Neo4Net.server.security.enterprise.log.SecurityLog" ) );
+		 private static readonly ISet<string> _restrictedTypes = new LinkedHashSet<string>( Arrays.asList( typeof( GraphDatabaseAPI ).FullName, typeof( KernelTransaction ).FullName, typeof( DependencyResolver ).FullName, typeof( UserManager ).FullName, "Neo4Net.kernel.enterprise.api.security.EnterpriseAuthManager", "Neo4Net.server.security.enterprise.log.SecurityLog" ) );
 
 		 private readonly Elements _elements;
 		 private readonly Types _types;

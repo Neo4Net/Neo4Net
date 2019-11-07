@@ -69,9 +69,9 @@ namespace Neo4Net.Consistency
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verifyZeroInteractions;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.Label.label;
+//	import static Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.logical_logs_location;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.logical_logs_location;
 
 	public class ConsistencyCheckToolTest
 	{
@@ -238,7 +238,7 @@ namespace Neo4Net.Consistency
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(expected = org.Neo4Net.consistency.ConsistencyCheckTool.ToolFailureException.class) public void failWhenStoreWasNonCleanlyShutdown() throws Exception
+//ORIGINAL LINE: @Test(expected = Neo4Net.consistency.ConsistencyCheckTool.ToolFailureException.class) public void failWhenStoreWasNonCleanlyShutdown() throws Exception
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void FailWhenStoreWasNonCleanlyShutdown()
 		 {
@@ -248,7 +248,7 @@ namespace Neo4Net.Consistency
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(expected = org.Neo4Net.consistency.ConsistencyCheckTool.ToolFailureException.class) public void failOnNotCleanlyShutdownStoreWithLogsInCustomRelativeLocation() throws Exception
+//ORIGINAL LINE: @Test(expected = Neo4Net.consistency.ConsistencyCheckTool.ToolFailureException.class) public void failOnNotCleanlyShutdownStoreWithLogsInCustomRelativeLocation() throws Exception
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void FailOnNotCleanlyShutdownStoreWithLogsInCustomRelativeLocation()
 		 {
@@ -262,7 +262,7 @@ namespace Neo4Net.Consistency
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(expected = org.Neo4Net.consistency.ConsistencyCheckTool.ToolFailureException.class) public void failOnNotCleanlyShutdownStoreWithLogsInCustomAbsoluteLocation() throws Exception
+//ORIGINAL LINE: @Test(expected = Neo4Net.consistency.ConsistencyCheckTool.ToolFailureException.class) public void failOnNotCleanlyShutdownStoreWithLogsInCustomAbsoluteLocation() throws Exception
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void FailOnNotCleanlyShutdownStoreWithLogsInCustomAbsoluteLocation()
 		 {
@@ -277,7 +277,7 @@ namespace Neo4Net.Consistency
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void checkLogRecordTimeZone(ConsistencyCheckService service, String[] args, int hoursShift, String timeZoneSuffix) throws org.Neo4Net.consistency.ConsistencyCheckTool.ToolFailureException, java.io.IOException
+//ORIGINAL LINE: private static void checkLogRecordTimeZone(ConsistencyCheckService service, String[] args, int hoursShift, String timeZoneSuffix) throws Neo4Net.consistency.ConsistencyCheckTool.ToolFailureException, java.io.IOException
 		 private static void CheckLogRecordTimeZone( ConsistencyCheckService service, string[] args, int hoursShift, string timeZoneSuffix )
 		 {
 			  TimeZone.Default = TimeZone.getTimeZone( ZoneOffset.ofHours( hoursShift ) );
@@ -298,11 +298,11 @@ namespace Neo4Net.Consistency
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void createGraphDbAndKillIt(org.Neo4Net.kernel.configuration.Config config) throws Exception
+//ORIGINAL LINE: private void createGraphDbAndKillIt(Neo4Net.kernel.configuration.Config config) throws Exception
 		 private void CreateGraphDbAndKillIt( Config config )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.graphdb.GraphDatabaseService db = new org.Neo4Net.test.TestGraphDatabaseFactory().setFileSystem(fs.get()).newImpermanentDatabaseBuilder(testDirectory.databaseDir()).setConfig(config.getRaw()).newGraphDatabase();
+//ORIGINAL LINE: final Neo4Net.graphdb.GraphDatabaseService db = new Neo4Net.test.TestGraphDatabaseFactory().setFileSystem(fs.get()).newImpermanentDatabaseBuilder(testDirectory.databaseDir()).setConfig(config.getRaw()).newGraphDatabase();
 			  IGraphDatabaseService db = ( new TestGraphDatabaseFactory() ).setFileSystem(_fs.get()).newImpermanentDatabaseBuilder(_testDirectory.databaseDir()).setConfig(config.Raw).newGraphDatabase();
 
 			  using ( Transaction tx = Db.beginTx() )
@@ -316,21 +316,21 @@ namespace Neo4Net.Consistency
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void runConsistencyCheckToolWith(org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, String... args) throws org.Neo4Net.consistency.ConsistencyCheckTool.ToolFailureException
+//ORIGINAL LINE: private static void runConsistencyCheckToolWith(Neo4Net.io.fs.FileSystemAbstraction fileSystem, String... args) throws Neo4Net.consistency.ConsistencyCheckTool.ToolFailureException
 		 private static void RunConsistencyCheckToolWith( FileSystemAbstraction fileSystem, params string[] args )
 		 {
 			  ( new ConsistencyCheckTool( mock( typeof( ConsistencyCheckService ) ), fileSystem, mock( typeof( PrintStream ) ), mock( typeof( PrintStream ) ) ) ).run( args );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void runConsistencyCheckToolWith(ConsistencyCheckService consistencyCheckService, String... args) throws org.Neo4Net.consistency.ConsistencyCheckTool.ToolFailureException, java.io.IOException
+//ORIGINAL LINE: private static void runConsistencyCheckToolWith(ConsistencyCheckService consistencyCheckService, String... args) throws Neo4Net.consistency.ConsistencyCheckTool.ToolFailureException, java.io.IOException
 		 private static void RunConsistencyCheckToolWith( ConsistencyCheckService consistencyCheckService, params string[] args )
 		 {
 			  RunConsistencyCheckToolWith( consistencyCheckService, mock( typeof( PrintStream ) ), args );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void runConsistencyCheckToolWith(ConsistencyCheckService consistencyCheckService, java.io.PrintStream printStream, String... args) throws org.Neo4Net.consistency.ConsistencyCheckTool.ToolFailureException, java.io.IOException
+//ORIGINAL LINE: private static void runConsistencyCheckToolWith(ConsistencyCheckService consistencyCheckService, java.io.PrintStream printStream, String... args) throws Neo4Net.consistency.ConsistencyCheckTool.ToolFailureException, java.io.IOException
 		 private static void RunConsistencyCheckToolWith( ConsistencyCheckService consistencyCheckService, PrintStream printStream, params string[] args )
 		 {
 			  using ( FileSystemAbstraction fileSystemAbstraction = new DefaultFileSystemAbstraction() )

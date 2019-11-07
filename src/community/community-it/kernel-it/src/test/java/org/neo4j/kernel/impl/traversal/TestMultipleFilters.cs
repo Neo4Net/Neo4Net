@@ -36,7 +36,7 @@ namespace Neo4Net.Kernel.impl.traversal
 	using Iterables = Neo4Net.Collections.Helpers.Iterables;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.traversal.Evaluators.includeIfAcceptedByAny;
+//	import static Neo4Net.graphdb.traversal.Evaluators.includeIfAcceptedByAny;
 
 	public class TestMultipleFilters : TraversalTestBase
 	{
@@ -78,8 +78,8 @@ namespace Neo4Net.Kernel.impl.traversal
 
 			  public override bool Test( Path item )
 			  {
-					ResourceIterable<Relationship> relationships = ( ResourceIterable<Relationship> ) item.EndNode().getRelationships(Direction.OUTGOING);
-					using ( ResourceIterator<Relationship> iterator = relationships.GetEnumerator() )
+					ResourceIterable<Relationship> relationships = (IResourceIterable<Relationship> ) item.EndNode().getRelationships(Direction.OUTGOING);
+					using ( IResourceIterator<Relationship> iterator = relationships.GetEnumerator() )
 					{
 						 while ( iterator.MoveNext() )
 						 {
@@ -95,7 +95,7 @@ namespace Neo4Net.Kernel.impl.traversal
 
 			  public override Evaluation Evaluate( Path path )
 			  {
-					return Test( path ) ? Evaluation.INCLUDE_AND_CONTINUE : Evaluation.EXCLUDE_AND_CONTINUE;
+					return Test( path ) ? Evaluation.IncludeAndContinue : Evaluation.EXCLUDE_AND_CONTINUE;
 			  }
 		 }
 

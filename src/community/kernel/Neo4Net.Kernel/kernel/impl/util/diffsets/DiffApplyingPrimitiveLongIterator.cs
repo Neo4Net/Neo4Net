@@ -107,7 +107,7 @@ namespace Neo4Net.Kernel.impl.util.diffsets
 		 private readonly LongSet _addedElements;
 		 private readonly LongSet _removedElements;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Nullable private final org.Neo4Net.graphdb.Resource resource;
+//ORIGINAL LINE: @Nullable private final Neo4Net.graphdb.Resource resource;
 		 private readonly Resource _resource;
 		 private Phase _phase;
 

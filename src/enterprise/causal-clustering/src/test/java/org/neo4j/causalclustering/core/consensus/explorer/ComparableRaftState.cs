@@ -76,7 +76,7 @@ namespace Neo4Net.causalclustering.core.consensus.explorer
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: ComparableRaftState(org.Neo4Net.causalclustering.core.consensus.state.ReadableRaftState original) throws java.io.IOException
+//ORIGINAL LINE: ComparableRaftState(Neo4Net.causalclustering.core.consensus.state.ReadableRaftState original) throws java.io.IOException
 		 internal ComparableRaftState( ReadableRaftState original ) : this( original.Myself(), original.VotingMembers(), original.ReplicationMembers(), original.RefusesToBeLeader(), new ComparableRaftLog(original.EntryLog()), new ConsecutiveInFlightCache(), NullLogProvider.Instance )
 		 {
 		 }
@@ -175,7 +175,7 @@ namespace Neo4Net.causalclustering.core.consensus.explorer
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void update(org.Neo4Net.causalclustering.core.consensus.outcome.Outcome outcome) throws java.io.IOException
+//ORIGINAL LINE: public void update(Neo4Net.causalclustering.core.consensus.outcome.Outcome outcome) throws java.io.IOException
 		 public virtual void Update( Outcome outcome )
 		 {
 			  TermConflict = outcome.Term;

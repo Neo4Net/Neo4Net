@@ -60,7 +60,7 @@ namespace Neo4Net.Kernel.impl.traversal
 			  using ( Transaction tx2 = BeginTx() )
 			  {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.graphdb.RelationshipType type = org.Neo4Net.graphdb.RelationshipType.withName("TO");
+//ORIGINAL LINE: final Neo4Net.graphdb.RelationshipType type = Neo4Net.graphdb.RelationshipType.withName("TO");
 					RelationshipType type = RelationshipType.withName( "TO" );
 					IEnumerator<Node> nodes = GraphDb.traversalDescription().depthFirst().relationships(type, Direction.OUTGOING).evaluator(path =>
 					{

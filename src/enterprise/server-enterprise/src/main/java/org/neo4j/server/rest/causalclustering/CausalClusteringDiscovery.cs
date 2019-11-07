@@ -26,13 +26,13 @@ namespace Neo4Net.Server.rest.causalclustering
 	using MappingSerializer = Neo4Net.Server.rest.repr.MappingSerializer;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.causalclustering.CausalClusteringService.AVAILABLE;
+//	import static Neo4Net.server.rest.causalclustering.CausalClusteringService.AVAILABLE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.causalclustering.CausalClusteringService.READ_ONLY;
+//	import static Neo4Net.server.rest.causalclustering.CausalClusteringService.READ_ONLY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.causalclustering.CausalClusteringService.DESCRIPTION;
+//	import static Neo4Net.server.rest.causalclustering.CausalClusteringService.DESCRIPTION;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.causalclustering.CausalClusteringService.WRITABLE;
+//	import static Neo4Net.server.rest.causalclustering.CausalClusteringService.WRITABLE;
 
 	public class CausalClusteringDiscovery : MappingRepresentation
 	{

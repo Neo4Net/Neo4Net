@@ -46,21 +46,21 @@ namespace Neo4Net.Cypher.Internal.javacompat
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.graphdb.Result executeQuery(String query, org.Neo4Net.values.virtual.MapValue parameters, org.Neo4Net.kernel.impl.query.TransactionalContext context) throws org.Neo4Net.kernel.impl.query.QueryExecutionKernelException
+//ORIGINAL LINE: public Neo4Net.graphdb.Result executeQuery(String query, Neo4Net.values.virtual.MapValue parameters, Neo4Net.kernel.impl.query.TransactionalContext context) throws Neo4Net.kernel.impl.query.QueryExecutionKernelException
 		 public override Result ExecuteQuery( string query, MapValue parameters, TransactionalContext context )
 		 {
 			  return ExecuteWithRetries( query, parameters, context, base.executeQuery );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.graphdb.Result profileQuery(String query, org.Neo4Net.values.virtual.MapValue parameters, org.Neo4Net.kernel.impl.query.TransactionalContext context) throws org.Neo4Net.kernel.impl.query.QueryExecutionKernelException
+//ORIGINAL LINE: public Neo4Net.graphdb.Result profileQuery(String query, Neo4Net.values.virtual.MapValue parameters, Neo4Net.kernel.impl.query.TransactionalContext context) throws Neo4Net.kernel.impl.query.QueryExecutionKernelException
 		 public override Result ProfileQuery( string query, MapValue parameters, TransactionalContext context )
 		 {
 			  return ExecuteWithRetries( query, parameters, context, base.profileQuery );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected <T> org.Neo4Net.graphdb.Result executeWithRetries(String query, T parameters, org.Neo4Net.kernel.impl.query.TransactionalContext context, ParametrizedQueryExecutor<T> executor) throws org.Neo4Net.kernel.impl.query.QueryExecutionKernelException
+//ORIGINAL LINE: protected <T> Neo4Net.graphdb.Result executeWithRetries(String query, T parameters, Neo4Net.kernel.impl.query.TransactionalContext context, ParametrizedQueryExecutor<T> executor) throws Neo4Net.kernel.impl.query.QueryExecutionKernelException
 		 protected internal virtual Result ExecuteWithRetries<T>( string query, T parameters, TransactionalContext context, ParametrizedQueryExecutor<T> executor )
 		 {
 			  VersionContext versionContext = GetCursorContext( context );
@@ -88,7 +88,7 @@ namespace Neo4Net.Cypher.Internal.javacompat
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.graphdb.Result throwQueryExecutionException(String message, Object... parameters) throws org.Neo4Net.kernel.impl.query.QueryExecutionKernelException
+//ORIGINAL LINE: private Neo4Net.graphdb.Result throwQueryExecutionException(String message, Object... parameters) throws Neo4Net.kernel.impl.query.QueryExecutionKernelException
 		 private Result ThrowQueryExecutionException( string message, params object[] parameters )
 		 {
 			  throw new QueryExecutionKernelException( new UnstableSnapshotException( message, parameters ) );

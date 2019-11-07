@@ -70,27 +70,27 @@ namespace Neo4Net.tools.txlog
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verify;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.entry.LogHeader.LOG_HEADER_SIZE;
+//	import static Neo4Net.kernel.impl.transaction.log.entry.LogHeader.LOG_HEADER_SIZE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.tools.txlog.checktypes.CheckTypes.CHECK_TYPES;
+//	import static Neo4Net.tools.txlog.checktypes.CheckTypes.CHECK_TYPES;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.tools.txlog.checktypes.CheckTypes.NEO_STORE;
+//	import static Neo4Net.tools.txlog.checktypes.CheckTypes.NEO_STORE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.tools.txlog.checktypes.CheckTypes.NODE;
+//	import static Neo4Net.tools.txlog.checktypes.CheckTypes.NODE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.tools.txlog.checktypes.CheckTypes.PROPERTY;
+//	import static Neo4Net.tools.txlog.checktypes.CheckTypes.PROPERTY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.tools.txlog.checktypes.CheckTypes.RELATIONSHIP;
+//	import static Neo4Net.tools.txlog.checktypes.CheckTypes.RELATIONSHIP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.tools.txlog.checktypes.CheckTypes.RELATIONSHIP_GROUP;
+//	import static Neo4Net.tools.txlog.checktypes.CheckTypes.RELATIONSHIP_GROUP;
 
 	public class CheckTxLogsTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.SuppressOutput mute = org.Neo4Net.test.rule.SuppressOutput.suppressAll();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.SuppressOutput mute = Neo4Net.test.rule.SuppressOutput.suppressAll();
 		 public readonly SuppressOutput Mute = SuppressOutput.suppressAll();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.fs.EphemeralFileSystemRule fsRule = new org.Neo4Net.test.rule.fs.EphemeralFileSystemRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.fs.EphemeralFileSystemRule fsRule = new Neo4Net.test.rule.fs.EphemeralFileSystemRule();
 		 public readonly EphemeralFileSystemRule FsRule = new EphemeralFileSystemRule();
 		 private readonly File _storeDirectory = new File( "db" );
 
@@ -122,7 +122,7 @@ namespace Neo4Net.tools.txlog
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.kernel.impl.transaction.log.files.LogFiles getLogFiles() throws java.io.IOException
+//ORIGINAL LINE: private Neo4Net.kernel.impl.transaction.log.files.LogFiles getLogFiles() throws java.io.IOException
 		 private LogFiles LogFiles
 		 {
 			 get
@@ -759,7 +759,7 @@ namespace Neo4Net.tools.txlog
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void writeTxContent(java.io.File log, long txId, org.Neo4Net.kernel.impl.transaction.command.Command... commands) throws java.io.IOException
+//ORIGINAL LINE: private void writeTxContent(java.io.File log, long txId, Neo4Net.kernel.impl.transaction.command.Command... commands) throws java.io.IOException
 		 private void WriteTxContent( File log, long txId, params Command[] commands )
 		 {
 			  PhysicalTransactionRepresentation tx = new PhysicalTransactionRepresentation( Arrays.asList( commands ) );
@@ -776,7 +776,7 @@ namespace Neo4Net.tools.txlog
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void writeContent(java.io.File log, org.Neo4Net.function.ThrowingConsumer<org.Neo4Net.kernel.impl.transaction.log.TransactionLogWriter,java.io.IOException> consumer) throws java.io.IOException
+//ORIGINAL LINE: private void writeContent(java.io.File log, Neo4Net.function.ThrowingConsumer<Neo4Net.kernel.impl.transaction.log.TransactionLogWriter,java.io.IOException> consumer) throws java.io.IOException
 		 private void WriteContent( File log, ThrowingConsumer<TransactionLogWriter, IOException> consumer )
 		 {
 			  EnsureLogExists( log );

@@ -36,8 +36,8 @@ namespace Neo4Net.Kernel.impl.storemigration.participant
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using IOLimiter = Neo4Net.Io.pagecache.IOLimiter;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
-	using LabelScanWriter = Neo4Net.Kernel.api.labelscan.LabelScanWriter;
-	using NodeLabelUpdate = Neo4Net.Kernel.api.labelscan.NodeLabelUpdate;
+	using LabelScanWriter = Neo4Net.Kernel.Api.LabelScan.LabelScanWriter;
+	using NodeLabelUpdate = Neo4Net.Kernel.Api.LabelScan.NodeLabelUpdate;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using FullStoreChangeStream = Neo4Net.Kernel.Impl.Api.scan.FullStoreChangeStream;
 	using NativeLabelScanStore = Neo4Net.Kernel.impl.index.labelscan.NativeLabelScanStore;
@@ -69,7 +69,7 @@ namespace Neo4Net.Kernel.impl.storemigration.participant
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verify;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.MetaDataStore.versionStringToLong;
+//	import static Neo4Net.kernel.impl.store.MetaDataStore.versionStringToLong;
 
 	public class NativeLabelScanStoreMigratorTest
 	{
@@ -142,7 +142,7 @@ namespace Neo4Net.Kernel.impl.storemigration.participant
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(expected = org.Neo4Net.kernel.impl.store.InvalidIdGeneratorException.class) public void failMigrationWhenNodeIdFileIsBroken() throws Exception
+//ORIGINAL LINE: @Test(expected = Neo4Net.kernel.impl.store.InvalidIdGeneratorException.class) public void failMigrationWhenNodeIdFileIsBroken() throws Exception
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void FailMigrationWhenNodeIdFileIsBroken()
 		 {
@@ -243,7 +243,7 @@ namespace Neo4Net.Kernel.impl.storemigration.participant
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void initializeNativeLabelScanStoreWithContent(org.Neo4Net.io.layout.DatabaseLayout databaseLayout) throws java.io.IOException
+//ORIGINAL LINE: private void initializeNativeLabelScanStoreWithContent(Neo4Net.io.layout.DatabaseLayout databaseLayout) throws java.io.IOException
 		 private void InitializeNativeLabelScanStoreWithContent( DatabaseLayout databaseLayout )
 		 {
 			  using ( Lifespan lifespan = new Lifespan() )

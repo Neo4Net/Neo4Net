@@ -25,7 +25,7 @@ namespace Neo4Net.Server.web
 	using HttpConfiguration = org.eclipse.jetty.server.HttpConfiguration;
 	using HttpConnection = org.eclipse.jetty.server.HttpConnection;
 
-	using TrackedNetworkConnection = Neo4Net.Kernel.api.net.TrackedNetworkConnection;
+	using TrackedNetworkConnection = Neo4Net.Kernel.Api.net.TrackedNetworkConnection;
 
 	/// <summary>
 	/// Extension of the default Jetty <seealso cref="HttpConnection"/> which contains additional properties like id, connect time, user, etc.

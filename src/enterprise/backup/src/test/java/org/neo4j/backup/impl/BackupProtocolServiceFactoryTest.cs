@@ -34,9 +34,9 @@ namespace Neo4Net.backup.impl
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.mock;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.backup.impl.BackupProtocolServiceFactory.backupProtocolService;
+//	import static Neo4Net.backup.impl.BackupProtocolServiceFactory.backupProtocolService;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.NullOutputStream.NULL_OUTPUT_STREAM;
+//	import static Neo4Net.io.NullOutputStream.NULL_OUTPUT_STREAM;
 
 	internal class BackupProtocolServiceFactoryTest
 	{

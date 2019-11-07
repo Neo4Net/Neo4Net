@@ -37,7 +37,7 @@ namespace Neo4Net.Consistency.Store
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static void assertConsistentStore(org.Neo4Net.io.layout.DatabaseLayout databaseLayout) throws org.Neo4Net.consistency.checking.full.ConsistencyCheckIncompleteException
+//ORIGINAL LINE: public static void assertConsistentStore(Neo4Net.io.layout.DatabaseLayout databaseLayout) throws Neo4Net.consistency.checking.full.ConsistencyCheckIncompleteException
 		 public static void AssertConsistentStore( DatabaseLayout databaseLayout )
 		 {
 			  Config configuration = Config.defaults( GraphDatabaseSettings.pagecache_memory, "8m" );

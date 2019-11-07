@@ -50,7 +50,7 @@ namespace Neo4Net.Kernel.builtinprocs
 	public class ProcedureResourcesIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.DatabaseRule db = new org.Neo4Net.test.rule.EnterpriseDatabaseRule().withSetting(org.Neo4Net.kernel.impl.enterprise.configuration.OnlineBackupSettings.online_backup_enabled, org.Neo4Net.kernel.configuration.Settings.FALSE);
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.DatabaseRule db = new Neo4Net.test.rule.EnterpriseDatabaseRule().withSetting(Neo4Net.kernel.impl.enterprise.configuration.OnlineBackupSettings.online_backup_enabled, Neo4Net.kernel.configuration.Settings.FALSE);
 		 public DatabaseRule Db = new EnterpriseDatabaseRule().withSetting(OnlineBackupSettings.online_backup_enabled, Settings.FALSE);
 
 		 private readonly string _indexDefinition = ":Label(prop)";

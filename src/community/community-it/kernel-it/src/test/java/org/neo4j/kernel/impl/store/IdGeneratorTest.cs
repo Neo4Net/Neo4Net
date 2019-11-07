@@ -68,9 +68,9 @@ namespace Neo4Net.Kernel.impl.store
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.RelationshipType.withName;
+//	import static Neo4Net.graphdb.RelationshipType.withName;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.fs.FileUtils.deleteRecursively;
+//	import static Neo4Net.io.fs.FileUtils.deleteRecursively;
 
 	public class IdGeneratorTest
 	{
@@ -92,7 +92,7 @@ namespace Neo4Net.Kernel.impl.store
 		}
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ClassRule public static final org.Neo4Net.test.rule.PageCacheRule pageCacheRule = new org.Neo4Net.test.rule.PageCacheRule();
+//ORIGINAL LINE: @ClassRule public static final Neo4Net.test.rule.PageCacheRule pageCacheRule = new Neo4Net.test.rule.PageCacheRule();
 		 public static readonly PageCacheRule PageCacheRule = new PageCacheRule();
 		 private EphemeralFileSystemRule _fsRule = new EphemeralFileSystemRule();
 		 private TestDirectory _testDirectory;
@@ -581,7 +581,7 @@ namespace Neo4Net.Kernel.impl.store
 		 {
 			  RecordFormats formats = Standard.LATEST_RECORD_FORMATS;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.List<org.Neo4Net.kernel.impl.store.format.RecordFormat<? extends org.Neo4Net.kernel.impl.store.record.AbstractBaseRecord>> recordFormats = java.util.Arrays.asList(formats.node(), formats.dynamic(), formats.labelToken(), formats.property(), formats.propertyKeyToken(), formats.relationship(), formats.relationshipGroup(), formats.relationshipTypeToken());
+//ORIGINAL LINE: java.util.List<Neo4Net.kernel.impl.store.format.RecordFormat<? extends Neo4Net.kernel.impl.store.record.AbstractBaseRecord>> recordFormats = java.util.Arrays.asList(formats.node(), formats.dynamic(), formats.labelToken(), formats.property(), formats.propertyKeyToken(), formats.relationship(), formats.relationshipGroup(), formats.relationshipTypeToken());
 			  IList<RecordFormat<AbstractBaseRecord>> recordFormats = Arrays.asList( formats.Node(), formats.Dynamic(), formats.LabelToken(), formats.Property(), formats.PropertyKeyToken(), formats.Relationship(), formats.RelationshipGroup(), formats.RelationshipTypeToken() );
 
 			  foreach ( RecordFormat format in recordFormats )

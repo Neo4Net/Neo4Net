@@ -43,7 +43,7 @@ namespace Neo4Net.causalclustering.core.consensus.roles
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static void handleAppendEntriesRequest(org.Neo4Net.causalclustering.core.consensus.state.ReadableRaftState state, org.Neo4Net.causalclustering.core.consensus.outcome.Outcome outcome, org.Neo4Net.causalclustering.core.consensus.RaftMessages_AppendEntries_Request request, org.Neo4Net.logging.Log log) throws java.io.IOException
+//ORIGINAL LINE: static void handleAppendEntriesRequest(Neo4Net.causalclustering.core.consensus.state.ReadableRaftState state, Neo4Net.causalclustering.core.consensus.outcome.Outcome outcome, Neo4Net.causalclustering.core.consensus.RaftMessages_AppendEntries_Request request, Neo4Net.logging.Log log) throws java.io.IOException
 		 internal static void HandleAppendEntriesRequest( ReadableRaftState state, Outcome outcome, Neo4Net.causalclustering.core.consensus.RaftMessages_AppendEntries_Request request, Log log )
 		 {
 			  if ( request.LeaderTerm() < state.Term() )
@@ -115,7 +115,7 @@ namespace Neo4Net.causalclustering.core.consensus.roles
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static void appendNewEntry(org.Neo4Net.causalclustering.core.consensus.state.ReadableRaftState ctx, org.Neo4Net.causalclustering.core.consensus.outcome.Outcome outcome, org.Neo4Net.causalclustering.core.replication.ReplicatedContent content) throws java.io.IOException
+//ORIGINAL LINE: static void appendNewEntry(Neo4Net.causalclustering.core.consensus.state.ReadableRaftState ctx, Neo4Net.causalclustering.core.consensus.outcome.Outcome outcome, Neo4Net.causalclustering.core.replication.ReplicatedContent content) throws java.io.IOException
 		 internal static void AppendNewEntry( ReadableRaftState ctx, Outcome outcome, ReplicatedContent content )
 		 {
 			  long prevLogIndex = ctx.EntryLog().appendIndex();
@@ -128,7 +128,7 @@ namespace Neo4Net.causalclustering.core.consensus.roles
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static void appendNewEntries(org.Neo4Net.causalclustering.core.consensus.state.ReadableRaftState ctx, org.Neo4Net.causalclustering.core.consensus.outcome.Outcome outcome, java.util.Collection<org.Neo4Net.causalclustering.core.replication.ReplicatedContent> contents) throws java.io.IOException
+//ORIGINAL LINE: static void appendNewEntries(Neo4Net.causalclustering.core.consensus.state.ReadableRaftState ctx, Neo4Net.causalclustering.core.consensus.outcome.Outcome outcome, java.util.Collection<Neo4Net.causalclustering.core.replication.ReplicatedContent> contents) throws java.io.IOException
 		 internal static void AppendNewEntries( ReadableRaftState ctx, Outcome outcome, ICollection<ReplicatedContent> contents )
 		 {
 			  long prevLogIndex = ctx.EntryLog().appendIndex();

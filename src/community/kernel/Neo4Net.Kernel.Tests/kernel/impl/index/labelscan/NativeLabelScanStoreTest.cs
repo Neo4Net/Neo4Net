@@ -31,8 +31,8 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
-	using LabelScanStoreTest = Neo4Net.Kernel.api.impl.labelscan.LabelScanStoreTest;
-	using LabelScanStore = Neo4Net.Kernel.api.labelscan.LabelScanStore;
+	using LabelScanStoreTest = Neo4Net.Kernel.Api.impl.labelscan.LabelScanStoreTest;
+	using LabelScanStore = Neo4Net.Kernel.Api.LabelScan.LabelScanStore;
 	using FullStoreChangeStream = Neo4Net.Kernel.Impl.Api.scan.FullStoreChangeStream;
 	using LifeSupport = Neo4Net.Kernel.Lifecycle.LifeSupport;
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
@@ -53,15 +53,15 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.api.scan.FullStoreChangeStream_Fields.EMPTY;
+//	import static Neo4Net.kernel.impl.api.scan.FullStoreChangeStream_Fields.EMPTY;
 
 	public class NativeLabelScanStoreTest : LabelScanStoreTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.PageCacheRule pageCacheRule = new org.Neo4Net.test.rule.PageCacheRule();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.PageCacheRule pageCacheRule = new Neo4Net.test.rule.PageCacheRule();
 		 public PageCacheRule PageCacheRule = new PageCacheRule();
 
-		 protected internal override LabelScanStore CreateLabelScanStore( FileSystemAbstraction fileSystemAbstraction, DatabaseLayout databaseLayout, FullStoreChangeStream fullStoreChangeStream, bool usePersistentStore, bool readOnly, Neo4Net.Kernel.api.labelscan.LabelScanStore_Monitor monitor )
+		 protected internal override LabelScanStore CreateLabelScanStore( FileSystemAbstraction fileSystemAbstraction, DatabaseLayout databaseLayout, FullStoreChangeStream fullStoreChangeStream, bool usePersistentStore, bool readOnly, Neo4Net.Kernel.Api.LabelScan.LabelScanStore_Monitor monitor )
 		 {
 			  Monitors monitors = new Monitors();
 			  monitors.AddMonitorListener( monitor );
@@ -82,7 +82,7 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected void corruptIndex(org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, org.Neo4Net.io.layout.DatabaseLayout databaseLayout) throws java.io.IOException
+//ORIGINAL LINE: protected void corruptIndex(Neo4Net.io.fs.FileSystemAbstraction fileSystem, Neo4Net.io.layout.DatabaseLayout databaseLayout) throws java.io.IOException
 		 protected internal override void CorruptIndex( FileSystemAbstraction fileSystem, DatabaseLayout databaseLayout )
 		 {
 			  File lssFile = databaseLayout.LabelScanStore();
@@ -96,7 +96,7 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 		 {
 			  string expectedMessage = "Expected exception message";
 			  Monitors monitors = mock( typeof( Monitors ) );
-			  when( monitors.NewMonitor( typeof( Neo4Net.Kernel.api.labelscan.LabelScanStore_Monitor ) ) ).thenReturn( Neo4Net.Kernel.api.labelscan.LabelScanStore_Monitor_Fields.Empty );
+			  when( monitors.NewMonitor( typeof( Neo4Net.Kernel.Api.LabelScan.LabelScanStore_Monitor ) ) ).thenReturn( Neo4Net.Kernel.Api.LabelScan.LabelScanStore_Monitor_Fields.Empty );
 			  doThrow( new Exception( expectedMessage ) ).when( monitors ).addMonitorListener( any() );
 
 			  LabelScanStore scanStore = GetLabelScanStore( FileSystemRule.get(), TestDirectory.databaseLayout(), EMPTY, true, monitors );

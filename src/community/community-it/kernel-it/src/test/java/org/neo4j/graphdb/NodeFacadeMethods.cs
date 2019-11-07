@@ -23,15 +23,15 @@ namespace Neo4Net.GraphDb
 {
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.Direction.BOTH;
+//	import static Neo4Net.graphdb.Direction.BOTH;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.FacadeMethod.BAR;
+//	import static Neo4Net.graphdb.FacadeMethod.BAR;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.FacadeMethod.FOO;
+//	import static Neo4Net.graphdb.FacadeMethod.FOO;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.FacadeMethod.QUUX;
+//	import static Neo4Net.graphdb.FacadeMethod.QUUX;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.FacadeMethod.consume;
+//	import static Neo4Net.graphdb.FacadeMethod.consume;
 
 	public sealed class NodeFacadeMethods : Consumer<Node>
 	{

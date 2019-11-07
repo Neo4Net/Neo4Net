@@ -38,7 +38,7 @@ namespace Neo4Net.Kernel.impl.core
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.TRUE;
+//	import static Neo4Net.kernel.configuration.Settings.TRUE;
 
 	public class TestExceptionTypeOnInvalidIds
 	{
@@ -55,7 +55,7 @@ namespace Neo4Net.Kernel.impl.core
 		 private Transaction _tx;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ClassRule public static final org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @ClassRule public static final Neo4Net.test.rule.TestDirectory testDirectory = Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public static readonly TestDirectory TestDirectory = TestDirectory.testDirectory();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -95,7 +95,7 @@ namespace Neo4Net.Kernel.impl.core
 
 		 /* behaves as expected */
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(expected = org.Neo4Net.graphdb.NotFoundException.class) public void getNodeBySmallPositiveInteger()
+//ORIGINAL LINE: @Test(expected = Neo4Net.graphdb.NotFoundException.class) public void getNodeBySmallPositiveInteger()
 		 public virtual void getNodeBySmallPositiveInteger()
 		 {
 			  GetNodeById( SMALL_POSITIVE_INTEGER );
@@ -104,7 +104,7 @@ namespace Neo4Net.Kernel.impl.core
 
 		 /* throws IllegalArgumentException instead of NotFoundException */
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(expected = org.Neo4Net.graphdb.NotFoundException.class) public void getNodeBySmallNegativeInteger()
+//ORIGINAL LINE: @Test(expected = Neo4Net.graphdb.NotFoundException.class) public void getNodeBySmallNegativeInteger()
 		 public virtual void getNodeBySmallNegativeInteger()
 		 {
 			  GetNodeById( SMALL_NEGATIVE_INTEGER );
@@ -113,7 +113,7 @@ namespace Neo4Net.Kernel.impl.core
 
 		 /* behaves as expected */
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(expected = org.Neo4Net.graphdb.NotFoundException.class) public void getNodeByBigPositiveInteger()
+//ORIGINAL LINE: @Test(expected = Neo4Net.graphdb.NotFoundException.class) public void getNodeByBigPositiveInteger()
 		 public virtual void getNodeByBigPositiveInteger()
 		 {
 			  GetNodeById( _bigPositiveInteger );
@@ -122,7 +122,7 @@ namespace Neo4Net.Kernel.impl.core
 
 		 /* throws IllegalArgumentException instead of NotFoundException */
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(expected = org.Neo4Net.graphdb.NotFoundException.class) public void getNodeByBigNegativeInteger()
+//ORIGINAL LINE: @Test(expected = Neo4Net.graphdb.NotFoundException.class) public void getNodeByBigNegativeInteger()
 		 public virtual void getNodeByBigNegativeInteger()
 		 {
 			  GetNodeById( _bigNegativeInteger );
@@ -131,7 +131,7 @@ namespace Neo4Net.Kernel.impl.core
 
 		 /* throws IllegalArgumentException instead of NotFoundException */
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(expected = org.Neo4Net.graphdb.NotFoundException.class) public void getNodeBySmallPositiveLong()
+//ORIGINAL LINE: @Test(expected = Neo4Net.graphdb.NotFoundException.class) public void getNodeBySmallPositiveLong()
 		 public virtual void getNodeBySmallPositiveLong()
 		 {
 			  GetNodeById( _smallPositiveLong );
@@ -140,7 +140,7 @@ namespace Neo4Net.Kernel.impl.core
 
 		 /* behaves as expected */
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(expected = org.Neo4Net.graphdb.NotFoundException.class) public void getNodeBySmallNegativeLong()
+//ORIGINAL LINE: @Test(expected = Neo4Net.graphdb.NotFoundException.class) public void getNodeBySmallNegativeLong()
 		 public virtual void getNodeBySmallNegativeLong()
 		 {
 			  GetNodeById( _smallNegativeLong );
@@ -149,7 +149,7 @@ namespace Neo4Net.Kernel.impl.core
 
 		 /* throws IllegalArgumentException instead of NotFoundException */
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(expected = org.Neo4Net.graphdb.NotFoundException.class) public void getNodeByBigPositiveLong()
+//ORIGINAL LINE: @Test(expected = Neo4Net.graphdb.NotFoundException.class) public void getNodeByBigPositiveLong()
 		 public virtual void getNodeByBigPositiveLong()
 		 {
 			  GetNodeById( _bigPositiveLong );
@@ -158,7 +158,7 @@ namespace Neo4Net.Kernel.impl.core
 
 		 /* finds the node with id=0, since that what the id truncates to */
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(expected = org.Neo4Net.graphdb.NotFoundException.class) public void getNodeByBigNegativeLong()
+//ORIGINAL LINE: @Test(expected = Neo4Net.graphdb.NotFoundException.class) public void getNodeByBigNegativeLong()
 		 public virtual void getNodeByBigNegativeLong()
 		 {
 			  GetNodeById( _bigNegativeLong );
@@ -167,7 +167,7 @@ namespace Neo4Net.Kernel.impl.core
 
 		 /* behaves as expected */
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(expected = org.Neo4Net.graphdb.NotFoundException.class) public void getRelationshipBySmallPositiveInteger()
+//ORIGINAL LINE: @Test(expected = Neo4Net.graphdb.NotFoundException.class) public void getRelationshipBySmallPositiveInteger()
 		 public virtual void getRelationshipBySmallPositiveInteger()
 		 {
 			  GetRelationshipById( SMALL_POSITIVE_INTEGER );
@@ -176,7 +176,7 @@ namespace Neo4Net.Kernel.impl.core
 
 		 /* throws IllegalArgumentException instead of NotFoundException */
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(expected = org.Neo4Net.graphdb.NotFoundException.class) public void getRelationshipBySmallNegativeInteger()
+//ORIGINAL LINE: @Test(expected = Neo4Net.graphdb.NotFoundException.class) public void getRelationshipBySmallNegativeInteger()
 		 public virtual void getRelationshipBySmallNegativeInteger()
 		 {
 			  GetRelationshipById( SMALL_NEGATIVE_INTEGER );
@@ -185,7 +185,7 @@ namespace Neo4Net.Kernel.impl.core
 
 		 /* behaves as expected */
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(expected = org.Neo4Net.graphdb.NotFoundException.class) public void getRelationshipByBigPositiveInteger()
+//ORIGINAL LINE: @Test(expected = Neo4Net.graphdb.NotFoundException.class) public void getRelationshipByBigPositiveInteger()
 		 public virtual void getRelationshipByBigPositiveInteger()
 		 {
 			  GetRelationshipById( _bigPositiveInteger );
@@ -194,7 +194,7 @@ namespace Neo4Net.Kernel.impl.core
 
 		 /* throws IllegalArgumentException instead of NotFoundException */
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(expected = org.Neo4Net.graphdb.NotFoundException.class) public void getRelationshipByBigNegativeInteger()
+//ORIGINAL LINE: @Test(expected = Neo4Net.graphdb.NotFoundException.class) public void getRelationshipByBigNegativeInteger()
 		 public virtual void getRelationshipByBigNegativeInteger()
 		 {
 			  GetRelationshipById( _bigNegativeInteger );
@@ -203,7 +203,7 @@ namespace Neo4Net.Kernel.impl.core
 
 		 /* throws IllegalArgumentException instead of NotFoundException */
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(expected = org.Neo4Net.graphdb.NotFoundException.class) public void getRelationshipBySmallPositiveLong()
+//ORIGINAL LINE: @Test(expected = Neo4Net.graphdb.NotFoundException.class) public void getRelationshipBySmallPositiveLong()
 		 public virtual void getRelationshipBySmallPositiveLong()
 		 {
 			  GetRelationshipById( _smallPositiveLong );
@@ -212,7 +212,7 @@ namespace Neo4Net.Kernel.impl.core
 
 		 /* behaves as expected */
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(expected = org.Neo4Net.graphdb.NotFoundException.class) public void getRelationshipBySmallNegativeLong()
+//ORIGINAL LINE: @Test(expected = Neo4Net.graphdb.NotFoundException.class) public void getRelationshipBySmallNegativeLong()
 		 public virtual void getRelationshipBySmallNegativeLong()
 		 {
 			  GetRelationshipById( _smallNegativeLong );
@@ -221,7 +221,7 @@ namespace Neo4Net.Kernel.impl.core
 
 		 /* throws IllegalArgumentException instead of NotFoundException */
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(expected = org.Neo4Net.graphdb.NotFoundException.class) public void getRelationshipByBigPositiveLong()
+//ORIGINAL LINE: @Test(expected = Neo4Net.graphdb.NotFoundException.class) public void getRelationshipByBigPositiveLong()
 		 public virtual void getRelationshipByBigPositiveLong()
 		 {
 			  GetRelationshipById( _bigPositiveLong );
@@ -230,7 +230,7 @@ namespace Neo4Net.Kernel.impl.core
 
 		 /* behaves as expected */
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(expected = org.Neo4Net.graphdb.NotFoundException.class) public void getRelationshipByBigNegativeLong()
+//ORIGINAL LINE: @Test(expected = Neo4Net.graphdb.NotFoundException.class) public void getRelationshipByBigNegativeLong()
 		 public virtual void getRelationshipByBigNegativeLong()
 		 {
 			  GetRelationshipById( _bigNegativeLong );

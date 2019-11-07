@@ -35,7 +35,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input.csv
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using Neo4Net.Collections.Helpers;
 	using NamedToken = Neo4Net.Kernel.Api.Internal.NamedToken;
-	using StatementConstants = Neo4Net.Kernel.api.StatementConstants;
+	using StatementConstants = Neo4Net.Kernel.Api.StatementConstants;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using RecordStorageEngine = Neo4Net.Kernel.impl.storageengine.impl.recordstorage.RecordStorageEngine;
 	using NeoStores = Neo4Net.Kernel.impl.store.NeoStores;
@@ -63,33 +63,33 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input.csv
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.db_timezone;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.db_timezone;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.asSet;
+//	import static Neo4Net.helpers.collection.Iterators.asSet;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.util.AutoCreatingHashMap.nested;
+//	import static Neo4Net.kernel.impl.util.AutoCreatingHashMap.nested;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.util.AutoCreatingHashMap.values;
+//	import static Neo4Net.kernel.impl.util.AutoCreatingHashMap.values;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.register.Registers.newDoubleLongRegister;
+//	import static Neo4Net.register.Registers.newDoubleLongRegister;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.ImportLogic.NO_MONITOR;
+//	import static Neo4Net.@unsafe.impl.batchimport.ImportLogic.NO_MONITOR;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.input.Collectors.silentBadCollector;
+//	import static Neo4Net.@unsafe.impl.batchimport.input.Collectors.silentBadCollector;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.input.InputEntityDecorators.NO_DECORATOR;
+//	import static Neo4Net.@unsafe.impl.batchimport.input.InputEntityDecorators.NO_DECORATOR;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.input.csv.Configuration.COMMAS;
+//	import static Neo4Net.@unsafe.impl.batchimport.input.csv.Configuration.COMMAS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.input.csv.DataFactories.data;
+//	import static Neo4Net.@unsafe.impl.batchimport.input.csv.DataFactories.data;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.input.csv.DataFactories.datas;
+//	import static Neo4Net.@unsafe.impl.batchimport.input.csv.DataFactories.datas;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.input.csv.DataFactories.defaultFormatNodeFileHeader;
+//	import static Neo4Net.@unsafe.impl.batchimport.input.csv.DataFactories.defaultFormatNodeFileHeader;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.input.csv.DataFactories.defaultFormatRelationshipFileHeader;
+//	import static Neo4Net.@unsafe.impl.batchimport.input.csv.DataFactories.defaultFormatRelationshipFileHeader;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.@unsafe.impl.batchimport.staging.ExecutionMonitors.invisible;
+//	import static Neo4Net.@unsafe.impl.batchimport.staging.ExecutionMonitors.invisible;
 
 	public class CsvInputBatchImportIT
 	{
@@ -98,13 +98,13 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input.csv
 		 private const bool COMPUTE_DOUBLE_SIDED_RELATIONSHIP_COUNTS = false;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory directory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.TestDirectory directory = Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory Directory = TestDirectory.testDirectory();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.fs.DefaultFileSystemRule fileSystemRule = new org.Neo4Net.test.rule.fs.DefaultFileSystemRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.fs.DefaultFileSystemRule fileSystemRule = new Neo4Net.test.rule.fs.DefaultFileSystemRule();
 		 public readonly DefaultFileSystemRule FileSystemRule = new DefaultFileSystemRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.RandomRule random = new org.Neo4Net.test.rule.RandomRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.RandomRule random = new Neo4Net.test.rule.RandomRule();
 		 public readonly RandomRule Random = new RandomRule();
 
 		 private static readonly System.Func<ZoneId> _testDefaultTimeZone = () => ZoneId.of("Asia/Shanghai");
@@ -214,7 +214,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input.csv
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.io.File relationshipDataAsFile(java.util.List<org.Neo4Net.unsafe.impl.batchimport.input.InputEntity> relationshipData) throws java.io.IOException
+//ORIGINAL LINE: private java.io.File relationshipDataAsFile(java.util.List<Neo4Net.unsafe.impl.batchimport.input.InputEntity> relationshipData) throws java.io.IOException
 		 private File RelationshipDataAsFile( IList<InputEntity> relationshipData )
 		 {
 			  File file = Directory.file( "relationships.csv" );
@@ -233,7 +233,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input.csv
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.io.File nodeDataAsFile(java.util.List<org.Neo4Net.unsafe.impl.batchimport.input.InputEntity> nodeData) throws java.io.IOException
+//ORIGINAL LINE: private java.io.File nodeDataAsFile(java.util.List<Neo4Net.unsafe.impl.batchimport.input.InputEntity> nodeData) throws java.io.IOException
 		 private File NodeDataAsFile( IList<InputEntity> nodeData )
 		 {
 			  File file = Directory.file( "nodes.csv" );
@@ -433,7 +433,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input.csv
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private System.Func<String, int> translationTable(org.Neo4Net.kernel.impl.store.TokenStore<?> tokenStore, final int anyValue)
+//ORIGINAL LINE: private System.Func<String, int> translationTable(Neo4Net.kernel.impl.store.TokenStore<?> tokenStore, final int anyValue)
 		 private System.Func<string, int> TranslationTable<T1>( TokenStore<T1> tokenStore, int anyValue )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':

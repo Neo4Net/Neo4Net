@@ -27,23 +27,23 @@ namespace Neo4Net.CodeGen
 	using AnyValue = Neo4Net.Values.AnyValue;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.codegen.TypeReference.BOOLEAN;
+//	import static Neo4Net.codegen.TypeReference.BOOLEAN;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.codegen.TypeReference.DOUBLE;
+//	import static Neo4Net.codegen.TypeReference.DOUBLE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.codegen.TypeReference.INT;
+//	import static Neo4Net.codegen.TypeReference.INT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.codegen.TypeReference.LONG;
+//	import static Neo4Net.codegen.TypeReference.LONG;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.codegen.TypeReference.OBJECT;
+//	import static Neo4Net.codegen.TypeReference.OBJECT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.codegen.TypeReference.VALUE;
+//	import static Neo4Net.codegen.TypeReference.VALUE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.codegen.TypeReference.VOID;
+//	import static Neo4Net.codegen.TypeReference.VOID;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.codegen.TypeReference.arrayOf;
+//	import static Neo4Net.codegen.TypeReference.arrayOf;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.codegen.TypeReference.typeReference;
+//	import static Neo4Net.codegen.TypeReference.typeReference;
 
 	public abstract class Expression : ExpressionTemplate
 	{

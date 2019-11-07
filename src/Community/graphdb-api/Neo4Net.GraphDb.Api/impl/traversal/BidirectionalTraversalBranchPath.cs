@@ -204,7 +204,7 @@ namespace Neo4Net.GraphDb.Impl.Traversal
                 return false;
             }
 
-            IPath other = (IPath)obj;
+            IPath other = (IPath) obj;
             return Relationships.Equals(other.Relationships) && other.StartNode.Equals(_cachedStartNode);
         }
 

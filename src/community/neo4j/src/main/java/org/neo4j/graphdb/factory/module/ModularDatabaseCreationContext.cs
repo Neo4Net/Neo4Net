@@ -32,7 +32,7 @@ namespace Neo4Net.GraphDb.factory.module
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
 	using VersionContextSupplier = Neo4Net.Io.pagecache.tracing.cursor.context.VersionContextSupplier;
 	using DatabaseCreationContext = Neo4Net.Kernel.DatabaseCreationContext;
-	using AutoIndexing = Neo4Net.Kernel.api.explicitindex.AutoIndexing;
+	using AutoIndexing = Neo4Net.Kernel.Api.explicitindex.AutoIndexing;
 	using DatabaseAvailability = Neo4Net.Kernel.availability.DatabaseAvailability;
 	using DatabaseAvailabilityGuard = Neo4Net.Kernel.availability.DatabaseAvailabilityGuard;
 	using Config = Neo4Net.Kernel.configuration.Config;
@@ -113,7 +113,7 @@ namespace Neo4Net.GraphDb.factory.module
 		 private readonly VersionContextSupplier _versionContextSupplier;
 		 private readonly CollectionsFactorySupplier _collectionsFactorySupplier;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private final Iterable<org.Neo4Net.kernel.extension.KernelExtensionFactory<?>> kernelExtensionFactories;
+//ORIGINAL LINE: private final Iterable<Neo4Net.kernel.extension.KernelExtensionFactory<?>> kernelExtensionFactories;
 		 private readonly IEnumerable<KernelExtensionFactory<object>> _kernelExtensionFactories;
 		 private readonly System.Func<File, FileSystemWatcherService> _watcherServiceFactory;
 		 private readonly GraphDatabaseFacade _facade;
@@ -483,7 +483,7 @@ namespace Neo4Net.GraphDb.factory.module
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: public Iterable<org.Neo4Net.kernel.extension.KernelExtensionFactory<?>> getKernelExtensionFactories()
+//ORIGINAL LINE: public Iterable<Neo4Net.kernel.extension.KernelExtensionFactory<?>> getKernelExtensionFactories()
 		 public virtual IEnumerable<KernelExtensionFactory<object>> KernelExtensionFactories
 		 {
 			 get

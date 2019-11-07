@@ -25,7 +25,7 @@ namespace Neo4Net.GraphDb
 	using IndexDefinition = Neo4Net.GraphDb.Schema.IndexDefinition;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.FacadeMethod.consume;
+//	import static Neo4Net.graphdb.FacadeMethod.consume;
 
 	public sealed class IndexDefinitionFacadeMethods : Consumer<IndexDefinition>
 	{

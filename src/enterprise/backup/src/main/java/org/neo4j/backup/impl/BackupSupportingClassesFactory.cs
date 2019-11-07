@@ -50,7 +50,7 @@ namespace Neo4Net.backup.impl
 	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.backup.impl.BackupProtocolServiceFactory.backupProtocolService;
+//	import static Neo4Net.backup.impl.BackupProtocolServiceFactory.backupProtocolService;
 
 	/// <summary>
 	/// The dependencies for the backup strategies require a valid configuration for initialization.

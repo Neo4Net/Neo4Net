@@ -26,7 +26,7 @@ namespace Neo4Net.Server.rest.transactional
 
 	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using GraphDatabaseQueryService = Neo4Net.Kernel.GraphDatabaseQueryService;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
 	using InvalidConcurrentTransactionAccess = Neo4Net.Server.rest.transactional.error.InvalidConcurrentTransactionAccess;
 	using TransactionUriScheme = Neo4Net.Server.rest.web.TransactionUriScheme;
@@ -61,11 +61,11 @@ namespace Neo4Net.Server.rest.transactional
 			  TransactionFacade actions = new TransactionFacade( kernel, null, queryService, registry, NullLogProvider.Instance );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final TransactionHandle transactionHandle = actions.newTransactionHandle(new DisgustingUriScheme(), true, org.Neo4Net.Kernel.Api.Internal.security.LoginContext.AUTH_DISABLED, -1);
+//ORIGINAL LINE: final TransactionHandle transactionHandle = actions.newTransactionHandle(new DisgustingUriScheme(), true, Neo4Net.Kernel.Api.Internal.security.LoginContext.AUTH_DISABLED, -1);
 			  TransactionHandle transactionHandle = actions.NewTransactionHandle( new DisgustingUriScheme(), true, LoginContext.AUTH_DISABLED, -1 );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.test.DoubleLatch latch = new org.Neo4Net.test.DoubleLatch();
+//ORIGINAL LINE: final Neo4Net.test.DoubleLatch latch = new Neo4Net.test.DoubleLatch();
 			  DoubleLatch latch = new DoubleLatch();
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':

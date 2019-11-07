@@ -53,13 +53,13 @@ namespace Neo4Net.com
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.com.Protocol.DEFAULT_FRAME_LENGTH;
+//	import static Neo4Net.com.Protocol.DEFAULT_FRAME_LENGTH;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.com.Protocol.EMPTY_SERIALIZER;
+//	import static Neo4Net.com.Protocol.EMPTY_SERIALIZER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.com.Protocol.VOID_DESERIALIZER;
+//	import static Neo4Net.com.Protocol.VOID_DESERIALIZER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.logging.NullLogProvider.getInstance;
+//	import static Neo4Net.logging.NullLogProvider.getInstance;
 
 	public class ServerTest
 	{

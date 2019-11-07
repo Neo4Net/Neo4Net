@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using Neo4Net.Index.Internal.gbptree;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.IOUtils.closeAll;
+//	import static Neo4Net.io.IOUtils.closeAll;
 
 	/// <summary>
 	/// Take multiple <seealso cref="BlockEntryCursor"/> that each by themselves provide block entries in sorted order and lazily merge join, providing a view over all

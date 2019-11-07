@@ -31,25 +31,25 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 	using TokenWrite = Neo4Net.Kernel.Api.Internal.TokenWrite;
 	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor;
-	using RelationTypeSchemaDescriptor = Neo4Net.Kernel.api.schema.RelationTypeSchemaDescriptor;
-	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
-	using ConstraintDescriptorFactory = Neo4Net.Kernel.api.schema.constraints.ConstraintDescriptorFactory;
-	using RelExistenceConstraintDescriptor = Neo4Net.Kernel.api.schema.constraints.RelExistenceConstraintDescriptor;
+	using RelationTypeSchemaDescriptor = Neo4Net.Kernel.Api.schema.RelationTypeSchemaDescriptor;
+	using SchemaDescriptorFactory = Neo4Net.Kernel.Api.schema.SchemaDescriptorFactory;
+	using ConstraintDescriptorFactory = Neo4Net.Kernel.Api.schema.constraints.ConstraintDescriptorFactory;
+	using RelExistenceConstraintDescriptor = Neo4Net.Kernel.Api.schema.constraints.RelExistenceConstraintDescriptor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.RelationshipType.withName;
+//	import static Neo4Net.graphdb.RelationshipType.withName;
 
 	public class RelationshipPropertyExistenceConstraintCreationIT : AbstractConstraintCreationIT<ConstraintDescriptor, RelationTypeSchemaDescriptor>
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: int initializeLabelOrRelType(org.Neo4Net.Kernel.Api.Internal.TokenWrite tokenWrite, String name) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: int initializeLabelOrRelType(Neo4Net.Kernel.Api.Internal.TokenWrite tokenWrite, String name) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 internal override int InitializeLabelOrRelType( TokenWrite tokenWrite, string name )
 		 {
 			  return tokenWrite.RelationshipTypeGetOrCreateForName( name );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: ConstraintDescriptor createConstraint(org.Neo4Net.Kernel.Api.Internal.SchemaWrite writeOps, org.Neo4Net.kernel.api.schema.RelationTypeSchemaDescriptor descriptor) throws Exception
+//ORIGINAL LINE: ConstraintDescriptor createConstraint(Neo4Net.Kernel.Api.Internal.SchemaWrite writeOps, Neo4Net.kernel.api.schema.RelationTypeSchemaDescriptor descriptor) throws Exception
 		 internal override ConstraintDescriptor CreateConstraint( SchemaWrite writeOps, RelationTypeSchemaDescriptor descriptor )
 		 {
 			  return writeOps.RelationshipPropertyExistenceConstraintCreate( descriptor );
@@ -66,7 +66,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void dropConstraint(org.Neo4Net.Kernel.Api.Internal.SchemaWrite writeOps, org.Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor constraint) throws Exception
+//ORIGINAL LINE: void dropConstraint(Neo4Net.Kernel.Api.Internal.SchemaWrite writeOps, Neo4Net.Kernel.Api.Internal.Schema.constraints.ConstraintDescriptor constraint) throws Exception
 		 internal override void DropConstraint( SchemaWrite writeOps, ConstraintDescriptor constraint )
 		 {
 			  writeOps.ConstraintDrop( constraint );

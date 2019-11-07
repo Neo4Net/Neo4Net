@@ -17,7 +17,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Kernel.api.txstate.auxiliary
+namespace Neo4Net.Kernel.Api.txstate.auxiliary
 {
 	/// <summary>
 	/// The auxiliary transaction state manager keeps track of what auxiliary transaction state providers are available, and is responsible for creating

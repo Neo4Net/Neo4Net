@@ -161,7 +161,7 @@ namespace Neo4Net.Kernel.impl.storemigration
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Service.Implementation(RecordFormats.Factory.class) public static class Standard23Factory extends org.Neo4Net.kernel.impl.store.format.RecordFormats_Factory
+//ORIGINAL LINE: @Service.Implementation(RecordFormats.Factory.class) public static class Standard23Factory extends Neo4Net.kernel.impl.store.format.RecordFormats_Factory
 		 public class Standard23Factory : Neo4Net.Kernel.impl.store.format.RecordFormats_Factory
 		 {
 			  public Standard23Factory() : base(StandardV2_3.STORE_VERSION)
@@ -175,7 +175,7 @@ namespace Neo4Net.Kernel.impl.storemigration
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Service.Implementation(RecordFormats.Factory.class) public static class Standard30Factory extends org.Neo4Net.kernel.impl.store.format.RecordFormats_Factory
+//ORIGINAL LINE: @Service.Implementation(RecordFormats.Factory.class) public static class Standard30Factory extends Neo4Net.kernel.impl.store.format.RecordFormats_Factory
 		 public class Standard30Factory : Neo4Net.Kernel.impl.store.format.RecordFormats_Factory
 		 {
 			  public Standard30Factory() : base(StandardV3_0.STORE_VERSION)
@@ -189,7 +189,7 @@ namespace Neo4Net.Kernel.impl.storemigration
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Service.Implementation(RecordFormats.Factory.class) public static class Standard32Factory extends org.Neo4Net.kernel.impl.store.format.RecordFormats_Factory
+//ORIGINAL LINE: @Service.Implementation(RecordFormats.Factory.class) public static class Standard32Factory extends Neo4Net.kernel.impl.store.format.RecordFormats_Factory
 		 public class Standard32Factory : Neo4Net.Kernel.impl.store.format.RecordFormats_Factory
 		 {
 			  public Standard32Factory() : base(StandardV3_2.STORE_VERSION)
@@ -203,7 +203,7 @@ namespace Neo4Net.Kernel.impl.storemigration
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Service.Implementation(RecordFormats.Factory.class) public static class Standard34Factory extends org.Neo4Net.kernel.impl.store.format.RecordFormats_Factory
+//ORIGINAL LINE: @Service.Implementation(RecordFormats.Factory.class) public static class Standard34Factory extends Neo4Net.kernel.impl.store.format.RecordFormats_Factory
 		 public class Standard34Factory : Neo4Net.Kernel.impl.store.format.RecordFormats_Factory
 		 {
 			  public Standard34Factory() : base(StandardV3_4.STORE_VERSION)
@@ -300,7 +300,7 @@ namespace Neo4Net.Kernel.impl.storemigration
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected static org.Neo4Net.consistency.ConsistencyCheckService.Result runConsistencyChecker(org.Neo4Net.io.layout.DatabaseLayout databaseLayout, org.Neo4Net.io.fs.FileSystemAbstraction fs, org.Neo4Net.consistency.ConsistencyCheckService consistencyCheckService, String storeVersion) throws org.Neo4Net.consistency.checking.full.ConsistencyCheckIncompleteException
+//ORIGINAL LINE: protected static Neo4Net.consistency.ConsistencyCheckService.Result runConsistencyChecker(Neo4Net.io.layout.DatabaseLayout databaseLayout, Neo4Net.io.fs.FileSystemAbstraction fs, Neo4Net.consistency.ConsistencyCheckService consistencyCheckService, String storeVersion) throws Neo4Net.consistency.checking.full.ConsistencyCheckIncompleteException
 		 protected internal static ConsistencyCheckService.Result RunConsistencyChecker( DatabaseLayout databaseLayout, FileSystemAbstraction fs, ConsistencyCheckService consistencyCheckService, string storeVersion )
 		 {
 			  Config config = Config.defaults( GraphDatabaseSettings.record_format, storeVersion );

@@ -133,7 +133,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index
 			  return new LuceneAllEntriesIndexAccessorReader( LuceneIndex.allDocumentsReader(), IEntityIdReader );
 		 }
 
-		 public override ResourceIterator<File> SnapshotFiles()
+		 public override IResourceIterator<File> SnapshotFiles()
 		 {
 			  try
 			  {
@@ -146,7 +146,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public abstract void verifyDeferredConstraints(org.Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor propertyAccessor) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException;
+//ORIGINAL LINE: public abstract void verifyDeferredConstraints(Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor propertyAccessor) throws Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException;
 		 public override abstract void VerifyDeferredConstraints( NodePropertyAccessor propertyAccessor );
 
 		 public virtual bool Dirty

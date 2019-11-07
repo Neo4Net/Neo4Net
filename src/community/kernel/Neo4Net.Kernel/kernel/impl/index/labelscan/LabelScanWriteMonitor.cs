@@ -29,7 +29,7 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using OpenMode = Neo4Net.Io.fs.OpenMode;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
-	using LabelScanStore = Neo4Net.Kernel.api.labelscan.LabelScanStore;
+	using LabelScanStore = Neo4Net.Kernel.Api.LabelScan.LabelScanStore;
 	using FlushableChannel = Neo4Net.Kernel.impl.transaction.log.FlushableChannel;
 	using PhysicalFlushableChannel = Neo4Net.Kernel.impl.transaction.log.PhysicalFlushableChannel;
 	using Neo4Net.Kernel.impl.transaction.log;
@@ -40,7 +40,7 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static System.currentTimeMillis;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.ByteUnit.mebiBytes;
+//	import static Neo4Net.io.ByteUnit.mebiBytes;
 
 	/// <summary>
 	/// A <seealso cref="NativeLabelScanWriter.WriteMonitor"/> which writes all interactions to a .writelog file, which has configurable rotation and pruning.
@@ -104,7 +104,7 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.kernel.impl.transaction.log.PhysicalFlushableChannel instantiateChannel() throws java.io.IOException
+//ORIGINAL LINE: private Neo4Net.kernel.impl.transaction.log.PhysicalFlushableChannel instantiateChannel() throws java.io.IOException
 		 private PhysicalFlushableChannel InstantiateChannel()
 		 {
 			  return new PhysicalFlushableChannel( _fs.open( _file, OpenMode.READ_WRITE ) );
@@ -394,7 +394,7 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static void dump(org.Neo4Net.io.fs.FileSystemAbstraction fs, org.Neo4Net.io.layout.DatabaseLayout databaseLayout, Dumper dumper, TxFilter txFilter) throws java.io.IOException
+//ORIGINAL LINE: public static void dump(Neo4Net.io.fs.FileSystemAbstraction fs, Neo4Net.io.layout.DatabaseLayout databaseLayout, Dumper dumper, TxFilter txFilter) throws java.io.IOException
 		 public static void Dump( FileSystemAbstraction fs, DatabaseLayout databaseLayout, Dumper dumper, TxFilter txFilter )
 		 {
 			  File writeLogFile = WriteLogBaseFile( databaseLayout );
@@ -410,7 +410,7 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static long dumpFile(org.Neo4Net.io.fs.FileSystemAbstraction fs, java.io.File file, Dumper dumper, TxFilter txFilter, long session) throws java.io.IOException
+//ORIGINAL LINE: private static long dumpFile(Neo4Net.io.fs.FileSystemAbstraction fs, java.io.File file, Dumper dumper, TxFilter txFilter, long session) throws java.io.IOException
 		 private static long DumpFile( FileSystemAbstraction fs, File file, Dumper dumper, TxFilter txFilter, long session )
 		 {
 			  try
@@ -463,7 +463,7 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void dumpMerge(Dumper dumper, byte type, org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel, long range, int labelId, TxFilter txFilter, long session, long flush) throws java.io.IOException
+//ORIGINAL LINE: private static void dumpMerge(Dumper dumper, byte type, Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel, long range, int labelId, TxFilter txFilter, long session, long flush) throws java.io.IOException
 		 private static void DumpMerge( Dumper dumper, sbyte type, ReadableChannel channel, long range, int labelId, TxFilter txFilter, long session, long flush )
 		 {
 			  long existingBits = channel.Long;
@@ -475,7 +475,7 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void dumpPrepare(Dumper dumper, byte type, org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel, long range, int labelId, TxFilter txFilter, long session, long flush) throws java.io.IOException
+//ORIGINAL LINE: private static void dumpPrepare(Dumper dumper, byte type, Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel, long range, int labelId, TxFilter txFilter, long session, long flush) throws java.io.IOException
 		 private static void DumpPrepare( Dumper dumper, sbyte type, ReadableChannel channel, long range, int labelId, TxFilter txFilter, long session, long flush )
 		 {
 			  long txId = channel.Long;

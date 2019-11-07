@@ -35,17 +35,17 @@ namespace Neo4Net.metrics.output
 	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.metrics.MetricsSettings.csvEnabled;
+//	import static Neo4Net.metrics.MetricsSettings.csvEnabled;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.metrics.MetricsSettings.graphiteEnabled;
+//	import static Neo4Net.metrics.MetricsSettings.graphiteEnabled;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.metrics.MetricsSettings.graphiteInterval;
+//	import static Neo4Net.metrics.MetricsSettings.graphiteInterval;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.metrics.MetricsSettings.graphiteServer;
+//	import static Neo4Net.metrics.MetricsSettings.graphiteServer;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.metrics.MetricsSettings.prometheusEnabled;
+//	import static Neo4Net.metrics.MetricsSettings.prometheusEnabled;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.metrics.MetricsSettings.prometheusEndpoint;
+//	import static Neo4Net.metrics.MetricsSettings.prometheusEndpoint;
 
 	public class EventReporterBuilder
 	{

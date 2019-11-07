@@ -31,7 +31,7 @@ namespace Neo4Net.CodeGen.Source
 		 private class SourceCompiler_FactoryAnonymousInnerClass : SourceCompiler_Factory
 		 {
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: SourceCompiler sourceCompilerFor(Configuration configuration, org.Neo4Net.codegen.CodeGenerationStrategy<?> strategy) throws org.Neo4Net.codegen.CodeGenerationStrategyNotSupportedException
+//ORIGINAL LINE: SourceCompiler sourceCompilerFor(Configuration configuration, Neo4Net.codegen.CodeGenerationStrategy<?> strategy) throws Neo4Net.codegen.CodeGenerationStrategyNotSupportedException
 			 internal override SourceCompiler sourceCompilerFor<T1>( Configuration configuration, CodeGenerationStrategy<T1> strategy )
 			 {
 				  JavaCompiler jdkCompiler = ToolProvider.SystemJavaCompiler;
@@ -52,7 +52,7 @@ namespace Neo4Net.CodeGen.Source
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public Iterable<? extends org.Neo4Net.codegen.ByteCodes> compile(java.util.List<JavaSourceFile> sourceFiles, ClassLoader loader) throws org.Neo4Net.codegen.CompilationFailureException
+//ORIGINAL LINE: public Iterable<? extends Neo4Net.codegen.ByteCodes> compile(java.util.List<JavaSourceFile> sourceFiles, ClassLoader loader) throws Neo4Net.codegen.CompilationFailureException
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		 public override IEnumerable<ByteCodes> Compile( IList<JavaSourceFile> sourceFiles, ClassLoader loader )
 		 {

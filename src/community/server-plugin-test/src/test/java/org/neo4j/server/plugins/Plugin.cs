@@ -53,7 +53,7 @@ namespace Neo4Net.Server.plugins
 		 public static int[] IntArray;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Name(GET_CONNECTED_NODES) @PluginTarget(org.Neo4Net.graphdb.Node.class) public Iterable<org.Neo4Net.graphdb.Node> getAllConnectedNodes(@Source Node start)
+//ORIGINAL LINE: @Name(GET_CONNECTED_NODES) @PluginTarget(Neo4Net.graphdb.Node.class) public Iterable<Neo4Net.graphdb.Node> getAllConnectedNodes(@Source Node start)
 		 [Name(GET_CONNECTED_NODES), PluginTarget(Neo4Net.GraphDb.Node.class)]
 		 public virtual IEnumerable<Node> GetAllConnectedNodes( Node start )
 		 {
@@ -68,7 +68,7 @@ namespace Neo4Net.Server.plugins
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @PluginTarget(org.Neo4Net.graphdb.Node.class) public Iterable<org.Neo4Net.graphdb.Relationship> getRelationshipsBetween(@Source final org.Neo4Net.graphdb.Node start, @Parameter(name = "other") final org.Neo4Net.graphdb.Node end)
+//ORIGINAL LINE: @PluginTarget(Neo4Net.graphdb.Node.class) public Iterable<Neo4Net.graphdb.Relationship> getRelationshipsBetween(@Source final Neo4Net.graphdb.Node start, @Parameter(name = "other") final Neo4Net.graphdb.Node end)
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 		 [PluginTarget(Neo4Net.GraphDb.Node.class)]
 		 public virtual IEnumerable<Relationship> GetRelationshipsBetween( Node start, Node end )
@@ -77,7 +77,7 @@ namespace Neo4Net.Server.plugins
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @PluginTarget(org.Neo4Net.graphdb.Node.class) public Iterable<org.Neo4Net.graphdb.Relationship> createRelationships(@Source Node start, @Parameter(name = "type") org.Neo4Net.graphdb.RelationshipType type, @Parameter(name = "nodes") Iterable<org.Neo4Net.graphdb.Node> nodes)
+//ORIGINAL LINE: @PluginTarget(Neo4Net.graphdb.Node.class) public Iterable<Neo4Net.graphdb.Relationship> createRelationships(@Source Node start, @Parameter(name = "type") Neo4Net.graphdb.RelationshipType type, @Parameter(name = "nodes") Iterable<Neo4Net.graphdb.Node> nodes)
 		 [PluginTarget(Neo4Net.GraphDb.Node.class)]
 		 public virtual IEnumerable<Relationship> CreateRelationships( Node start, RelationshipType type, IEnumerable<Node> nodes )
 		 {
@@ -94,7 +94,7 @@ namespace Neo4Net.Server.plugins
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @PluginTarget(org.Neo4Net.graphdb.Node.class) public org.Neo4Net.graphdb.Node getThisNodeOrById(@Source Node start, @Parameter(name = "id", optional = true) System.Nullable<long> id)
+//ORIGINAL LINE: @PluginTarget(Neo4Net.graphdb.Node.class) public Neo4Net.graphdb.Node getThisNodeOrById(@Source Node start, @Parameter(name = "id", optional = true) System.Nullable<long> id)
 		 [PluginTarget(Neo4Net.GraphDb.Node.class)]
 		 public virtual Node GetThisNodeOrById( Node start, long? id )
 		 {
@@ -109,7 +109,7 @@ namespace Neo4Net.Server.plugins
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @PluginTarget(org.Neo4Net.graphdb.GraphDatabaseService.class) public org.Neo4Net.graphdb.Node methodWithIntParam(@Source IGraphDatabaseService db, @Parameter(name = "id", optional = false) int id)
+//ORIGINAL LINE: @PluginTarget(Neo4Net.graphdb.GraphDatabaseService.class) public Neo4Net.graphdb.Node methodWithIntParam(@Source IGraphDatabaseService db, @Parameter(name = "id", optional = false) int id)
 		 [PluginTarget(Neo4Net.GraphDb.GraphDatabaseService.class)]
 		 public virtual Node MethodWithIntParam( IGraphDatabaseService db, int id )
 		 {
@@ -117,7 +117,7 @@ namespace Neo4Net.Server.plugins
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @PluginTarget(org.Neo4Net.graphdb.Relationship.class) public Iterable<org.Neo4Net.graphdb.Node> methodOnRelationship(@Source Relationship rel)
+//ORIGINAL LINE: @PluginTarget(Neo4Net.graphdb.Relationship.class) public Iterable<Neo4Net.graphdb.Node> methodOnRelationship(@Source Relationship rel)
 		 [PluginTarget(Neo4Net.GraphDb.Relationship.class)]
 		 public virtual IEnumerable<Node> MethodOnRelationship( Relationship rel )
 		 {
@@ -125,7 +125,7 @@ namespace Neo4Net.Server.plugins
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @PluginTarget(org.Neo4Net.graphdb.GraphDatabaseService.class) public org.Neo4Net.graphdb.Node methodWithAllParams(@Source IGraphDatabaseService db, @Parameter(name = "id", optional = false) String a, @Parameter(name = "id2", optional = false) System.Nullable<sbyte> b, @Parameter(name = "id3", optional = false) System.Nullable<char> c, @Parameter(name = "id4", optional = false) System.Nullable<short> d, @Parameter(name = "id5", optional = false) System.Nullable<int> e, @Parameter(name = "id6", optional = false) System.Nullable<long> f, @Parameter(name = "id7", optional = false) System.Nullable<float> g, @Parameter(name = "id8", optional = false) System.Nullable<double> h, @Parameter(name = "id9", optional = false) System.Nullable<bool> i)
+//ORIGINAL LINE: @PluginTarget(Neo4Net.graphdb.GraphDatabaseService.class) public Neo4Net.graphdb.Node methodWithAllParams(@Source IGraphDatabaseService db, @Parameter(name = "id", optional = false) String a, @Parameter(name = "id2", optional = false) System.Nullable<sbyte> b, @Parameter(name = "id3", optional = false) System.Nullable<char> c, @Parameter(name = "id4", optional = false) System.Nullable<short> d, @Parameter(name = "id5", optional = false) System.Nullable<int> e, @Parameter(name = "id6", optional = false) System.Nullable<long> f, @Parameter(name = "id7", optional = false) System.Nullable<float> g, @Parameter(name = "id8", optional = false) System.Nullable<double> h, @Parameter(name = "id9", optional = false) System.Nullable<bool> i)
 		 [PluginTarget(Neo4Net.GraphDb.GraphDatabaseService.class)]
 		 public virtual Node MethodWithAllParams( IGraphDatabaseService db, string a, sbyte? b, char? c, short? d, int? e, long? f, float? g, double? h, bool? i )
 		 {
@@ -143,7 +143,7 @@ namespace Neo4Net.Server.plugins
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @PluginTarget(org.Neo4Net.graphdb.GraphDatabaseService.class) public org.Neo4Net.graphdb.Node methodWithSet(@Source IGraphDatabaseService db, @Parameter(name = "strings", optional = false) java.util.Set<String> params)
+//ORIGINAL LINE: @PluginTarget(Neo4Net.graphdb.GraphDatabaseService.class) public Neo4Net.graphdb.Node methodWithSet(@Source IGraphDatabaseService db, @Parameter(name = "strings", optional = false) java.util.Set<String> params)
 		 [PluginTarget(Neo4Net.GraphDb.GraphDatabaseService.class)]
 		 public virtual Node MethodWithSet( IGraphDatabaseService db, ISet<string> @params )
 		 {
@@ -152,7 +152,7 @@ namespace Neo4Net.Server.plugins
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @PluginTarget(org.Neo4Net.graphdb.GraphDatabaseService.class) public org.Neo4Net.graphdb.Node methodWithList(@Source IGraphDatabaseService db, @Parameter(name = "strings", optional = false) java.util.List<String> params)
+//ORIGINAL LINE: @PluginTarget(Neo4Net.graphdb.GraphDatabaseService.class) public Neo4Net.graphdb.Node methodWithList(@Source IGraphDatabaseService db, @Parameter(name = "strings", optional = false) java.util.List<String> params)
 		 [PluginTarget(Neo4Net.GraphDb.GraphDatabaseService.class)]
 		 public virtual Node MethodWithList( IGraphDatabaseService db, IList<string> @params )
 		 {
@@ -161,7 +161,7 @@ namespace Neo4Net.Server.plugins
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @PluginTarget(org.Neo4Net.graphdb.GraphDatabaseService.class) public org.Neo4Net.graphdb.Node methodWithArray(@Source IGraphDatabaseService db, @Parameter(name = "strings", optional = false) String[] params)
+//ORIGINAL LINE: @PluginTarget(Neo4Net.graphdb.GraphDatabaseService.class) public Neo4Net.graphdb.Node methodWithArray(@Source IGraphDatabaseService db, @Parameter(name = "strings", optional = false) String[] params)
 		 [PluginTarget(Neo4Net.GraphDb.GraphDatabaseService.class)]
 		 public virtual Node MethodWithArray( IGraphDatabaseService db, string[] @params )
 		 {
@@ -170,7 +170,7 @@ namespace Neo4Net.Server.plugins
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @PluginTarget(org.Neo4Net.graphdb.GraphDatabaseService.class) public org.Neo4Net.graphdb.Node methodWithIntArray(@Source IGraphDatabaseService db, @Parameter(name = "ints", optional = false) int[] params)
+//ORIGINAL LINE: @PluginTarget(Neo4Net.graphdb.GraphDatabaseService.class) public Neo4Net.graphdb.Node methodWithIntArray(@Source IGraphDatabaseService db, @Parameter(name = "ints", optional = false) int[] params)
 		 [PluginTarget(Neo4Net.GraphDb.GraphDatabaseService.class)]
 		 public virtual Node MethodWithIntArray( IGraphDatabaseService db, int[] @params )
 		 {
@@ -179,7 +179,7 @@ namespace Neo4Net.Server.plugins
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @PluginTarget(org.Neo4Net.graphdb.GraphDatabaseService.class) public org.Neo4Net.graphdb.Node methodWithOptionalArray(@Source IGraphDatabaseService db, @Parameter(name = "ints", optional = true) int[] params)
+//ORIGINAL LINE: @PluginTarget(Neo4Net.graphdb.GraphDatabaseService.class) public Neo4Net.graphdb.Node methodWithOptionalArray(@Source IGraphDatabaseService db, @Parameter(name = "ints", optional = true) int[] params)
 		 [PluginTarget(Neo4Net.GraphDb.GraphDatabaseService.class)]
 		 public virtual Node MethodWithOptionalArray( IGraphDatabaseService db, int[] @params )
 		 {
@@ -188,7 +188,7 @@ namespace Neo4Net.Server.plugins
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @PluginTarget(org.Neo4Net.graphdb.Node.class) public org.Neo4Net.graphdb.Path pathToReference(@Source Node me)
+//ORIGINAL LINE: @PluginTarget(Neo4Net.graphdb.Node.class) public Neo4Net.graphdb.Path pathToReference(@Source Node me)
 		 [PluginTarget(Neo4Net.GraphDb.Node.class)]
 		 public virtual Path PathToReference( Node me )
 		 {

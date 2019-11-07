@@ -97,7 +97,7 @@ namespace Neo4Net.Io.pagecache.tracing.recording
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public org.Neo4Net.io.pagecache.tracing.PinEvent beginPin(boolean writeLock, final long filePageId, final org.Neo4Net.io.pagecache.PageSwapper swapper)
+//ORIGINAL LINE: public Neo4Net.io.pagecache.tracing.PinEvent beginPin(boolean writeLock, final long filePageId, final Neo4Net.io.pagecache.PageSwapper swapper)
 		 public override PinEvent BeginPin( bool writeLock, long filePageId, PageSwapper swapper )
 		 {
 			  return new PinEventAnonymousInnerClass( this, filePageId, swapper );

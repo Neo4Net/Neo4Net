@@ -65,13 +65,13 @@ namespace Neo4Net.CommandLine.Admin
 
 		  /// <returns> The arguments this command accepts. </returns>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Nonnull public abstract org.Neo4Net.commandline.arguments.Arguments allArguments();
+//ORIGINAL LINE: @Nonnull public abstract Neo4Net.commandline.arguments.Arguments allArguments();
 		  public abstract Arguments AllArguments();
 
 		  /// 
 		  /// <returns> A list of possibly mutually-exclusive argument sets for this command. </returns>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Nonnull public java.util.List<org.Neo4Net.commandline.arguments.Arguments> possibleArguments()
+//ORIGINAL LINE: @Nonnull public java.util.List<Neo4Net.commandline.arguments.Arguments> possibleArguments()
 		  public virtual IList<Arguments> PossibleArguments()
 		  {
 				return Collections.singletonList( AllArguments() );

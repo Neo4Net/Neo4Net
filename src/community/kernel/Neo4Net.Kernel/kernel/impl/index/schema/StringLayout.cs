@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Math.min;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.StringIndexKey.ENTITY_ID_SIZE;
+//	import static Neo4Net.kernel.impl.index.schema.StringIndexKey.ENTITY_ID_SIZE;
 
 	/// <summary>
 	/// <seealso cref="Layout"/> for strings.

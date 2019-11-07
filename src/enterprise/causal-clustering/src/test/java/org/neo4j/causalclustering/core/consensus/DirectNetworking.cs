@@ -87,7 +87,7 @@ namespace Neo4Net.causalclustering.core.consensus
 			  }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public synchronized void send(org.Neo4Net.causalclustering.identity.MemberId to, final RaftMessages_RaftMessage message, boolean block)
+//ORIGINAL LINE: public synchronized void send(Neo4Net.causalclustering.identity.MemberId to, final RaftMessages_RaftMessage message, boolean block)
 			  public override void Send( MemberId to, RaftMessages_RaftMessage message, bool block )
 			  {
 				  lock ( this )

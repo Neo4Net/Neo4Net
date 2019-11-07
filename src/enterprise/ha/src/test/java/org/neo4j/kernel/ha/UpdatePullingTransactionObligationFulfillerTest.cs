@@ -85,7 +85,7 @@ namespace Neo4Net.Kernel.ha
 			  TransactionIdStore store1 = mock( typeof( TransactionIdStore ) );
 			  TransactionIdStore store2 = mock( typeof( TransactionIdStore ) );
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") System.Func<org.Neo4Net.kernel.impl.transaction.log.TransactionIdStore> supplier = mock(System.Func.class);
+//ORIGINAL LINE: @SuppressWarnings("unchecked") System.Func<Neo4Net.kernel.impl.transaction.log.TransactionIdStore> supplier = mock(System.Func.class);
 			  System.Func<TransactionIdStore> supplier = mock( typeof( System.Func ) );
 			  when( supplier() ).thenReturn(store1, store2);
 

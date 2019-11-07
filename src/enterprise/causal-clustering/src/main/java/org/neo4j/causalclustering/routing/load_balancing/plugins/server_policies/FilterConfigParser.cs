@@ -40,7 +40,7 @@ namespace Neo4Net.causalclustering.routing.load_balancing.plugins.server_policie
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static org.Neo4Net.causalclustering.routing.load_balancing.filters.Filter<ServerInfo> filterFor(String filterName, String[] args) throws InvalidFilterSpecification
+//ORIGINAL LINE: private static Neo4Net.causalclustering.routing.load_balancing.filters.Filter<ServerInfo> filterFor(String filterName, String[] args) throws InvalidFilterSpecification
 		 private static Filter<ServerInfo> FilterFor( string filterName, string[] args )
 		 {
 			  switch ( filterName )
@@ -91,7 +91,7 @@ namespace Neo4Net.causalclustering.routing.load_balancing.plugins.server_policie
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static org.Neo4Net.causalclustering.routing.load_balancing.filters.Filter<ServerInfo> parse(String filterConfig) throws InvalidFilterSpecification
+//ORIGINAL LINE: public static Neo4Net.causalclustering.routing.load_balancing.filters.Filter<ServerInfo> parse(String filterConfig) throws InvalidFilterSpecification
 		 public static Filter<ServerInfo> Parse( string filterConfig )
 		 {
 			  if ( filterConfig.Length == 0 )

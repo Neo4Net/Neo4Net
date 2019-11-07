@@ -23,8 +23,8 @@ namespace Neo4Net.Cypher.Internal.codegen
 
 	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
 	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
-	using Statement = Neo4Net.Kernel.api.Statement;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
+	using Statement = Neo4Net.Kernel.Api.Statement;
 	using EmbeddedProxySPI = Neo4Net.Kernel.impl.core.EmbeddedProxySPI;
 	using GraphPropertiesProxy = Neo4Net.Kernel.impl.core.GraphPropertiesProxy;
 	using NodeProxy = Neo4Net.Kernel.impl.core.NodeProxy;

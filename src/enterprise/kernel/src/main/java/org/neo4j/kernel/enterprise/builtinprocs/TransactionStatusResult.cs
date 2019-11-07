@@ -27,15 +27,15 @@ namespace Neo4Net.Kernel.enterprise.builtinprocs
 	using StringUtils = org.apache.commons.lang3.StringUtils;
 
 
-	using KernelTransactionHandle = Neo4Net.Kernel.api.KernelTransactionHandle;
+	using KernelTransactionHandle = Neo4Net.Kernel.Api.KernelTransactionHandle;
 	using InvalidArgumentsException = Neo4Net.Kernel.Api.Exceptions.InvalidArgumentsException;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
-	using QuerySnapshot = Neo4Net.Kernel.api.query.QuerySnapshot;
+	using QuerySnapshot = Neo4Net.Kernel.Api.query.QuerySnapshot;
 	using TransactionExecutionStatistic = Neo4Net.Kernel.Impl.Api.TransactionExecutionStatistic;
 	using ClientConnectionInfo = Neo4Net.Kernel.impl.query.clientconnection.ClientConnectionInfo;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.enterprise.builtinprocs.QueryId.ofInternalId;
+//	import static Neo4Net.kernel.enterprise.builtinprocs.QueryId.ofInternalId;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @SuppressWarnings("WeakerAccess") public class TransactionStatusResult
@@ -72,7 +72,7 @@ namespace Neo4Net.Kernel.enterprise.builtinprocs
 		 public readonly string ConnectionId;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public TransactionStatusResult(org.Neo4Net.kernel.api.KernelTransactionHandle transaction, TransactionDependenciesResolver transactionDependenciesResolver, java.util.Map<org.Neo4Net.kernel.api.KernelTransactionHandle,java.util.List<org.Neo4Net.kernel.api.query.QuerySnapshot>> handleSnapshotsMap, java.time.ZoneId zoneId) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: public TransactionStatusResult(Neo4Net.kernel.api.KernelTransactionHandle transaction, TransactionDependenciesResolver transactionDependenciesResolver, java.util.Map<Neo4Net.kernel.api.KernelTransactionHandle,java.util.List<Neo4Net.kernel.api.query.QuerySnapshot>> handleSnapshotsMap, java.time.ZoneId zoneId) throws Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 		 public TransactionStatusResult( KernelTransactionHandle transaction, TransactionDependenciesResolver transactionDependenciesResolver, IDictionary<KernelTransactionHandle, IList<QuerySnapshot>> handleSnapshotsMap, ZoneId zoneId )
 		 {
 			  this.TransactionId = transaction.UserTransactionName;

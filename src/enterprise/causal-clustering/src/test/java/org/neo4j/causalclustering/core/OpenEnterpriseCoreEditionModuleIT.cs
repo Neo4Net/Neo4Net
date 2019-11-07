@@ -49,8 +49,8 @@ namespace Neo4Net.causalclustering.core
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertTrue;
 
-	//import org.Neo4Net.kernel.impl.store.StoreFile;
-	//import org.Neo4Net.kernel.impl.storemigration.StoreFileType;
+	//import Neo4Net.kernel.impl.store.StoreFile;
+	//import Neo4Net.kernel.impl.storemigration.StoreFileType;
 	//import static org.junit.Assert.assertFalse;
 	//import static org.junit.Assert.assertThat;
 	//import static org.junit.Assert.assertTrue;
@@ -61,11 +61,11 @@ namespace Neo4Net.causalclustering.core
 	{
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.Neo4Net.test.rule.TestDirectory testDirectory;
+//ORIGINAL LINE: @Inject private Neo4Net.test.rule.TestDirectory testDirectory;
 		 private TestDirectory _testDirectory;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.causalclustering.ClusterRule clusterRule = new org.Neo4Net.test.causalclustering.ClusterRule();
+//ORIGINAL LINE: @Rule public Neo4Net.test.causalclustering.ClusterRule clusterRule = new Neo4Net.test.causalclustering.ClusterRule();
 		 public ClusterRule ClusterRule = new ClusterRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

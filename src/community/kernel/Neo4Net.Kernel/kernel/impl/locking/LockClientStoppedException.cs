@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.impl.locking
 	/// </summary>
 	public class LockClientStoppedException : TransactionTerminatedException
 	{
-		 public LockClientStoppedException( Locks_Client client ) : base( org.Neo4Net.kernel.api.exceptions.Status_Transaction.LockClientStopped, client.ToString() )
+		 public LockClientStoppedException( Locks_Client client ) : base( Neo4Net.kernel.api.exceptions.Status_Transaction.LockClientStopped, client.ToString() )
 		 {
 		 }
 	}

@@ -31,7 +31,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.pruning
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.pruning.LogPruneStrategyFactory.getThresholdByType;
+//	import static Neo4Net.kernel.impl.transaction.log.pruning.LogPruneStrategyFactory.getThresholdByType;
 
 	public class LogPruneStrategyFactoryTest
 	{

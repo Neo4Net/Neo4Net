@@ -73,7 +73,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.reverse
 		 private long _totalSize;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: ReversedSingleFileTransactionCursor(org.Neo4Net.kernel.impl.transaction.log.ReadAheadLogChannel channel, org.Neo4Net.kernel.impl.transaction.log.entry.LogEntryReader<org.Neo4Net.kernel.impl.transaction.log.ReadableClosablePositionAwareChannel> logEntryReader, boolean failOnCorruptedLogFiles, ReversedTransactionCursorMonitor monitor) throws java.io.IOException
+//ORIGINAL LINE: ReversedSingleFileTransactionCursor(Neo4Net.kernel.impl.transaction.log.ReadAheadLogChannel channel, Neo4Net.kernel.impl.transaction.log.entry.LogEntryReader<Neo4Net.kernel.impl.transaction.log.ReadableClosablePositionAwareChannel> logEntryReader, boolean failOnCorruptedLogFiles, ReversedTransactionCursorMonitor monitor) throws java.io.IOException
 		 internal ReversedSingleFileTransactionCursor( ReadAheadLogChannel channel, LogEntryReader<ReadableClosablePositionAwareChannel> logEntryReader, bool failOnCorruptedLogFiles, ReversedTransactionCursorMonitor monitor )
 		 {
 			  this._channel = channel;

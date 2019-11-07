@@ -33,8 +33,8 @@ namespace Neo4Net.Server
 	using DiagnosticsManager = Neo4Net.Internal.Diagnostics.DiagnosticsManager;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using GraphDatabaseQueryService = Neo4Net.Kernel.GraphDatabaseQueryService;
-	using AuthManager = Neo4Net.Kernel.api.security.AuthManager;
-	using UserManagerSupplier = Neo4Net.Kernel.api.security.UserManagerSupplier;
+	using AuthManager = Neo4Net.Kernel.Api.security.AuthManager;
+	using UserManagerSupplier = Neo4Net.Kernel.Api.security.UserManagerSupplier;
 	using AvailabilityGuard = Neo4Net.Kernel.availability.AvailabilityGuard;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using ConnectorPortRegister = Neo4Net.Kernel.configuration.ConnectorPortRegister;
@@ -83,23 +83,23 @@ namespace Neo4Net.Server
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Math.round;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.db_timezone;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.db_timezone;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.map;
+//	import static Neo4Net.helpers.collection.Iterables.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.configuration.ServerSettings.http_log_path;
+//	import static Neo4Net.server.configuration.ServerSettings.http_log_path;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.configuration.ServerSettings.http_logging_enabled;
+//	import static Neo4Net.server.configuration.ServerSettings.http_logging_enabled;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.configuration.ServerSettings.http_logging_rotation_keep_number;
+//	import static Neo4Net.server.configuration.ServerSettings.http_logging_rotation_keep_number;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.configuration.ServerSettings.http_logging_rotation_size;
+//	import static Neo4Net.server.configuration.ServerSettings.http_logging_rotation_size;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.database.InjectableProvider.providerForSingleton;
+//	import static Neo4Net.server.database.InjectableProvider.providerForSingleton;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.database.InjectableProvider.providerFromSupplier;
+//	import static Neo4Net.server.database.InjectableProvider.providerFromSupplier;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.exception.ServerStartupErrors.translateToServerStartupError;
+//	import static Neo4Net.server.exception.ServerStartupErrors.translateToServerStartupError;
 
 	public abstract class AbstractNeoServer : NeoServer
 	{
@@ -211,7 +211,7 @@ namespace Neo4Net.Server
 //ORIGINAL LINE: final long timeoutMillis = getTransactionTimeoutMillis();
 			  long timeoutMillis = TransactionTimeoutMillis;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.time.Clock clock = org.Neo4Net.time.Clocks.systemClock();
+//ORIGINAL LINE: final java.time.Clock clock = Neo4Net.time.Clocks.systemClock();
 			  Clock clock = Clocks.systemClock();
 
 			  _transactionRegistry = new TransactionHandleRegistry( clock, timeoutMillis, UserLogProvider );
@@ -238,7 +238,7 @@ namespace Neo4Net.Server
 			 get
 			 {
 	//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-	//ORIGINAL LINE: final long timeout = config.get(org.Neo4Net.server.configuration.ServerSettings.transaction_idle_timeout).toMillis();
+	//ORIGINAL LINE: final long timeout = config.get(Neo4Net.server.configuration.ServerSettings.transaction_idle_timeout).toMillis();
 				  long timeout = _config.get( ServerSettings.transaction_idle_timeout ).toMillis();
 				  return Math.Max( timeout, MINIMUM_TIMEOUT + ROUNDING_SECOND );
 			 }
@@ -438,11 +438,11 @@ namespace Neo4Net.Server
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: protected java.util.Collection<org.Neo4Net.server.database.InjectableProvider<?>> createDefaultInjectables()
+//ORIGINAL LINE: protected java.util.Collection<Neo4Net.server.database.InjectableProvider<?>> createDefaultInjectables()
 		 protected internal virtual ICollection<InjectableProvider<object>> CreateDefaultInjectables()
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Collection<org.Neo4Net.server.database.InjectableProvider<?>> singletons = new java.util.ArrayList<>();
+//ORIGINAL LINE: java.util.Collection<Neo4Net.server.database.InjectableProvider<?>> singletons = new java.util.ArrayList<>();
 			  ICollection<InjectableProvider<object>> singletons = new List<InjectableProvider<object>>();
 
 			  Database database = Database;
@@ -476,7 +476,7 @@ namespace Neo4Net.Server
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private <T extends org.Neo4Net.server.modules.ServerModule> T getModule(Class<T> clazz)
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private <T extends Neo4Net.server.modules.ServerModule> T getModule(Class<T> clazz)
 		 private T GetModule<T>( Type clazz ) where T : Neo4Net.Server.modules.ServerModule
 		 {
 				 clazz = typeof( T );

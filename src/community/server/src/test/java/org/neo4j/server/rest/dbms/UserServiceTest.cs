@@ -27,9 +27,9 @@ namespace Neo4Net.Server.rest.dbms
 	using AuthenticationResult = Neo4Net.Kernel.Api.Internal.security.AuthenticationResult;
 	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using InvalidArgumentsException = Neo4Net.Kernel.Api.Exceptions.InvalidArgumentsException;
-	using PasswordPolicy = Neo4Net.Kernel.api.security.PasswordPolicy;
-	using UserManager = Neo4Net.Kernel.api.security.UserManager;
-	using UserManagerSupplier = Neo4Net.Kernel.api.security.UserManagerSupplier;
+	using PasswordPolicy = Neo4Net.Kernel.Api.security.PasswordPolicy;
+	using UserManager = Neo4Net.Kernel.Api.security.UserManager;
+	using UserManagerSupplier = Neo4Net.Kernel.Api.security.UserManagerSupplier;
 	using LegacyCredential = Neo4Net.Server.Security.Auth.LegacyCredential;
 	using User = Neo4Net.Kernel.impl.security.User;
 	using OutputFormat = Neo4Net.Server.rest.repr.OutputFormat;
@@ -77,7 +77,7 @@ namespace Neo4Net.Server.rest.dbms
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Before public void setUp() throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException, java.io.IOException
+//ORIGINAL LINE: @Before public void setUp() throws Neo4Net.kernel.api.exceptions.InvalidArgumentsException, java.io.IOException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void SetUp()
 		 {

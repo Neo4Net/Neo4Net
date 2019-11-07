@@ -32,19 +32,19 @@ namespace Neo4Net.Kernel.impl.enterprise.configuration
 	using IdType = Neo4Net.Kernel.impl.store.id.IdType;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.STRING;
+//	import static Neo4Net.kernel.configuration.Settings.STRING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.list;
+//	import static Neo4Net.kernel.configuration.Settings.list;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.optionsIgnoreCase;
+//	import static Neo4Net.kernel.configuration.Settings.optionsIgnoreCase;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.optionsObeyCase;
+//	import static Neo4Net.kernel.configuration.Settings.optionsObeyCase;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.setting;
+//	import static Neo4Net.kernel.configuration.Settings.setting;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.id.IdType.NODE;
+//	import static Neo4Net.kernel.impl.store.id.IdType.NODE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.id.IdType.RELATIONSHIP;
+//	import static Neo4Net.kernel.impl.store.id.IdType.RELATIONSHIP;
 
 	/// <summary>
 	/// Enterprise edition specific settings
@@ -57,7 +57,7 @@ namespace Neo4Net.Kernel.impl.enterprise.configuration
 		 public static readonly Setting<IList<IdType>> IdTypesToReuse = setting( "dbms.ids.reuse.types.override", list( ",", optionsIgnoreCase( NODE, RELATIONSHIP ) ), string.join( ",", IdType.RELATIONSHIP.name(), IdType.NODE.name() ) );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Internal public static final org.Neo4Net.graphdb.config.Setting<String> security_module = setting("unsupported.dbms.security.module", STRING, ENTERPRISE_SECURITY_MODULE_ID);
+//ORIGINAL LINE: @Internal public static final Neo4Net.graphdb.config.Setting<String> security_module = setting("unsupported.dbms.security.module", STRING, ENTERPRISE_SECURITY_MODULE_ID);
 		 public static readonly Setting<string> SecurityModule = setting( "unsupported.dbms.security.module", STRING, ENTERPRISE_SECURITY_MODULE_ID );
 
 		 [Description("Configure the operating mode of the database -- 'SINGLE' for stand-alone operation, " + "'HA' for operating as a member in an HA cluster, 'ARBITER' for a cluster member with no database in an HA cluster, " + "'CORE' for operating as a core member of a Causal Cluster, " + "or 'READ_REPLICA' for operating as a read replica member of a Causal Cluster.")]

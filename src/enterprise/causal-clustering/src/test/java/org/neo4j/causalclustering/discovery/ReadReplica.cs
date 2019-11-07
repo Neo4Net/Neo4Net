@@ -41,14 +41,14 @@ namespace Neo4Net.causalclustering.discovery
 	using Level = Neo4Net.Logging.Level;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.AdvertisedSocketAddress.advertisedAddress;
+//	import static Neo4Net.helpers.AdvertisedSocketAddress.advertisedAddress;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.ListenSocketAddress.listenAddress;
+//	import static Neo4Net.helpers.ListenSocketAddress.listenAddress;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
+//	import static Neo4Net.helpers.collection.MapUtil.stringMap;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("WeakerAccess") public class ReadReplica implements ClusterMember<org.Neo4Net.causalclustering.readreplica.ReadReplicaGraphDatabase>
+//ORIGINAL LINE: @SuppressWarnings("WeakerAccess") public class ReadReplica implements ClusterMember<Neo4Net.causalclustering.readreplica.ReadReplicaGraphDatabase>
 	public class ReadReplica : ClusterMember<ReadReplicaGraphDatabase>
 	{
 		 protected internal readonly DiscoveryServiceFactory DiscoveryServiceFactory;

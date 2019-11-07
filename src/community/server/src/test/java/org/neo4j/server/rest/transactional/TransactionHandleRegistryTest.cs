@@ -47,7 +47,7 @@ namespace Neo4Net.Server.rest.transactional
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verifyNoMoreInteractions;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.logging.AssertableLogProvider.inLog;
+//	import static Neo4Net.logging.AssertableLogProvider.inLog;
 
 	public class TransactionHandleRegistryTest
 	{
@@ -217,7 +217,7 @@ namespace Neo4Net.Server.rest.transactional
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldProvideInterruptHandlerForActiveTransaction() throws org.Neo4Net.server.rest.transactional.error.TransactionLifecycleException
+//ORIGINAL LINE: @Test public void shouldProvideInterruptHandlerForActiveTransaction() throws Neo4Net.server.rest.transactional.error.TransactionLifecycleException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldProvideInterruptHandlerForActiveTransaction()
 		 {
@@ -241,7 +241,7 @@ namespace Neo4Net.Server.rest.transactional
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldProvideInterruptHandlerForSuspendedTransaction() throws org.Neo4Net.server.rest.transactional.error.TransactionLifecycleException
+//ORIGINAL LINE: @Test public void shouldProvideInterruptHandlerForSuspendedTransaction() throws Neo4Net.server.rest.transactional.error.TransactionLifecycleException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldProvideInterruptHandlerForSuspendedTransaction()
 		 {
@@ -266,7 +266,7 @@ namespace Neo4Net.Server.rest.transactional
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(expected = org.Neo4Net.server.rest.transactional.error.InvalidTransactionId.class) public void gettingInterruptHandlerForUnknownIdShouldThrowErrorInvalidTransactionId() throws org.Neo4Net.server.rest.transactional.error.TransactionLifecycleException
+//ORIGINAL LINE: @Test(expected = Neo4Net.server.rest.transactional.error.InvalidTransactionId.class) public void gettingInterruptHandlerForUnknownIdShouldThrowErrorInvalidTransactionId() throws Neo4Net.server.rest.transactional.error.TransactionLifecycleException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void GettingInterruptHandlerForUnknownIdShouldThrowErrorInvalidTransactionId()
 		 {

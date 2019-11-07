@@ -35,7 +35,7 @@ namespace Neo4Net.Bolt.runtime
 	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.util.concurrent.Futures.failedFuture;
+//	import static Neo4Net.util.concurrent.Futures.failedFuture;
 
 	public class ExecutorBoltScheduler : BoltScheduler, BoltConnectionLifetimeListener, BoltConnectionQueueMonitor
 	{

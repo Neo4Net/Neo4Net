@@ -43,9 +43,9 @@ namespace Neo4Net.Server.helpers
 	using DatabaseActions = Neo4Net.Server.rest.web.DatabaseActions;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
+//	import static Neo4Net.helpers.collection.MapUtil.stringMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.ServerTestUtils.asOneLine;
+//	import static Neo4Net.server.ServerTestUtils.asOneLine;
 
 	public class CommunityServerBuilder
 	{
@@ -90,7 +90,7 @@ namespace Neo4Net.Server.helpers
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.server.CommunityNeoServer build() throws java.io.IOException
+//ORIGINAL LINE: public Neo4Net.server.CommunityNeoServer build() throws java.io.IOException
 		 public virtual CommunityNeoServer Build()
 		 {
 			  if ( string.ReferenceEquals( _dataDir, null ) && _persistent )

@@ -30,7 +30,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 	using StorageRelationshipTraversalCursor = Neo4Net.Kernel.Api.StorageEngine.StorageRelationshipTraversalCursor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.newapi.References.clearEncoding;
+//	import static Neo4Net.kernel.impl.newapi.References.clearEncoding;
 
 	internal class RecordRelationshipTraversalCursor : RecordRelationshipCursor, StorageRelationshipTraversalCursor
 	{

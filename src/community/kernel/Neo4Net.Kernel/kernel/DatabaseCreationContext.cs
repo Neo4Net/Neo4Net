@@ -30,7 +30,7 @@ namespace Neo4Net.Kernel
 	using IOLimiter = Neo4Net.Io.pagecache.IOLimiter;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
 	using VersionContextSupplier = Neo4Net.Io.pagecache.tracing.cursor.context.VersionContextSupplier;
-	using AutoIndexing = Neo4Net.Kernel.api.explicitindex.AutoIndexing;
+	using AutoIndexing = Neo4Net.Kernel.Api.explicitindex.AutoIndexing;
 	using DatabaseAvailability = Neo4Net.Kernel.availability.DatabaseAvailability;
 	using DatabaseAvailabilityGuard = Neo4Net.Kernel.availability.DatabaseAvailabilityGuard;
 	using Config = Neo4Net.Kernel.configuration.Config;
@@ -147,7 +147,7 @@ namespace Neo4Net.Kernel
 		 CollectionsFactorySupplier CollectionsFactorySupplier { get; }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: Iterable<org.Neo4Net.kernel.extension.KernelExtensionFactory<?>> getKernelExtensionFactories();
+//ORIGINAL LINE: Iterable<Neo4Net.kernel.extension.KernelExtensionFactory<?>> getKernelExtensionFactories();
 		 IEnumerable<KernelExtensionFactory<object>> KernelExtensionFactories { get; }
 
 		 System.Func<File, FileSystemWatcherService> WatcherServiceFactory { get; }

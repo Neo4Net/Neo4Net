@@ -83,7 +83,7 @@ namespace Neo4Net.causalclustering.stresstests
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static void stressTest(Config config, org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, org.Neo4Net.io.pagecache.PageCache pageCache) throws Exception
+//ORIGINAL LINE: static void stressTest(Config config, Neo4Net.io.fs.FileSystemAbstraction fileSystem, Neo4Net.io.pagecache.PageCache pageCache) throws Exception
 		 internal static void StressTest( Config config, FileSystemAbstraction fileSystem, PageCache pageCache )
 		 {
 			  Resources resources = new Resources( fileSystem, pageCache, config );

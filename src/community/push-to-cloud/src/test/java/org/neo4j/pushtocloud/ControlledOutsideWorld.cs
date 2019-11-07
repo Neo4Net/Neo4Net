@@ -23,7 +23,7 @@ namespace Neo4Net.Pushtocloud
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.io.NullOutputStream.NULL_OUTPUT_STREAM;
+//	import static Neo4Net.io.NullOutputStream.NULL_OUTPUT_STREAM;
 
 	internal class ControlledOutsideWorld : NullOutsideWorld
 	{

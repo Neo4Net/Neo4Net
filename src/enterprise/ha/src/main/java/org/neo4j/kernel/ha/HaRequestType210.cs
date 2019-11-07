@@ -45,15 +45,15 @@ namespace Neo4Net.Kernel.ha
 	using ResourceType = Neo4Net.Kernel.Api.StorageEngine.@lock.ResourceType;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.com.Protocol.INTEGER_SERIALIZER;
+//	import static Neo4Net.com.Protocol.INTEGER_SERIALIZER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.com.Protocol.LONG_SERIALIZER;
+//	import static Neo4Net.com.Protocol.LONG_SERIALIZER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.com.Protocol.VOID_SERIALIZER;
+//	import static Neo4Net.com.Protocol.VOID_SERIALIZER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.com.Protocol.readBoolean;
+//	import static Neo4Net.com.Protocol.readBoolean;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.com.Protocol.readString;
+//	import static Neo4Net.com.Protocol.readString;
 
 	public class HaRequestType210 : AbstractHaRequestTypes
 	{

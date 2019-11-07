@@ -32,7 +32,7 @@ namespace Neo4Net.Values.@virtual
 	using Values = Neo4Net.Values.Storable.Values;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.NO_VALUE;
+//	import static Neo4Net.values.storable.Values.NO_VALUE;
 
 	public abstract class MapValue : VirtualValue
 	{
@@ -81,7 +81,7 @@ namespace Neo4Net.Values.@virtual
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public <E extends Exception> void foreach(org.Neo4Net.function.ThrowingBiConsumer<String,org.Neo4Net.values.AnyValue,E> f) throws E
+//ORIGINAL LINE: public <E extends Exception> void foreach(Neo4Net.function.ThrowingBiConsumer<String,Neo4Net.values.AnyValue,E> f) throws E
 			  public override void Foreach<E>( ThrowingBiConsumer<string, AnyValue, E> f ) where E : Exception
 			  {
 					foreach ( KeyValuePair<string, AnyValue> entry in Map.SetOfKeyValuePairs() )
@@ -134,7 +134,7 @@ namespace Neo4Net.Values.@virtual
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public <E extends Exception> void foreach(org.Neo4Net.function.ThrowingBiConsumer<String,org.Neo4Net.values.AnyValue,E> f) throws E
+//ORIGINAL LINE: public <E extends Exception> void foreach(Neo4Net.function.ThrowingBiConsumer<String,Neo4Net.values.AnyValue,E> f) throws E
 			  public override void Foreach<E>( ThrowingBiConsumer<string, AnyValue, E> f ) where E : Exception
 			  {
 					Map.@foreach((s, anyValue) =>
@@ -215,7 +215,7 @@ namespace Neo4Net.Values.@virtual
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public <E extends Exception> void foreach(org.Neo4Net.function.ThrowingBiConsumer<String,org.Neo4Net.values.AnyValue,E> f) throws E
+//ORIGINAL LINE: public <E extends Exception> void foreach(Neo4Net.function.ThrowingBiConsumer<String,Neo4Net.values.AnyValue,E> f) throws E
 			  public override void Foreach<E>( ThrowingBiConsumer<string, AnyValue, E> f ) where E : Exception
 			  {
 					Map.@foreach( ( s, anyValue ) => f.accept( s, MapFunction.apply( s, anyValue ) ) );
@@ -318,7 +318,7 @@ namespace Neo4Net.Values.@virtual
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public <E extends Exception> void foreach(org.Neo4Net.function.ThrowingBiConsumer<String,org.Neo4Net.values.AnyValue,E> f) throws E
+//ORIGINAL LINE: public <E extends Exception> void foreach(Neo4Net.function.ThrowingBiConsumer<String,Neo4Net.values.AnyValue,E> f) throws E
 			  public override void Foreach<E>( ThrowingBiConsumer<string, AnyValue, E> f ) where E : Exception
 			  {
 					Map.@foreach( f );
@@ -410,7 +410,7 @@ namespace Neo4Net.Values.@virtual
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public <E extends Exception> void foreach(org.Neo4Net.function.ThrowingBiConsumer<String,org.Neo4Net.values.AnyValue,E> f) throws E
+//ORIGINAL LINE: public <E extends Exception> void foreach(Neo4Net.function.ThrowingBiConsumer<String,Neo4Net.values.AnyValue,E> f) throws E
 			  public override void Foreach<E>( ThrowingBiConsumer<string, AnyValue, E> f ) where E : Exception
 			  {
 					HashSet<string> seen = new HashSet<string>();
@@ -479,7 +479,7 @@ namespace Neo4Net.Values.@virtual
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public <E extends Exception> void WriteTo(org.Neo4Net.values.AnyValueWriter<E> writer) throws E
+//ORIGINAL LINE: public <E extends Exception> void WriteTo(Neo4Net.values.AnyValueWriter<E> writer) throws E
 		 public override void WriteTo<E>( AnyValueWriter<E> writer ) where E : Exception
 		 {
 			  writer.BeginMap( Size() );
@@ -626,7 +626,7 @@ namespace Neo4Net.Values.@virtual
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public abstract <E extends Exception> void foreach(org.Neo4Net.function.ThrowingBiConsumer<String,org.Neo4Net.values.AnyValue,E> f) throws E;
+//ORIGINAL LINE: public abstract <E extends Exception> void foreach(Neo4Net.function.ThrowingBiConsumer<String,Neo4Net.values.AnyValue,E> f) throws E;
 		 public abstract void @foreach<E>( ThrowingBiConsumer<string, AnyValue, E> f ) where E : Exception;
 
 		 public abstract bool ContainsKey( string key );

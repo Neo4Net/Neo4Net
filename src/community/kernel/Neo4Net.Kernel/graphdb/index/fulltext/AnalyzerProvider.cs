@@ -46,7 +46,7 @@ namespace Neo4Net.GraphDb.Index.fulltext
 	/// </code></pre>
 	/// </para>
 	/// <para>
-	/// The {@code jar} that includes this implementation must also contain a {@code META-INF/services/org.Neo4Net.GraphDb.Index.fulltext.AnalyzerProvider} file,
+	/// The {@code jar} that includes this implementation must also contain a {@code META-INF/services/Neo4Net.GraphDb.Index.fulltext.AnalyzerProvider} file,
 	/// that contains the fully-qualified class names of all of the {@code AnalyzerProvider} implementations it contains.
 	/// </para>
 	/// </summary>

@@ -45,7 +45,7 @@ namespace Neo4Net.causalclustering.core.state
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void add(long index, org.Neo4Net.causalclustering.core.replication.DistributedOperation operation) throws Exception
+//ORIGINAL LINE: void add(long index, Neo4Net.causalclustering.core.replication.DistributedOperation operation) throws Exception
 		 internal virtual void Add( long index, DistributedOperation operation )
 		 {
 			  Debug.Assert( _batch.Count <= 0 || index == ( _lastIndex + 1 ) );

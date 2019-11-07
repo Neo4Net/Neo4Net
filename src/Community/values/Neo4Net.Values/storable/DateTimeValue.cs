@@ -31,21 +31,21 @@ namespace Neo4Net.Values.Storable
 	using MapValue = Neo4Net.Values.@virtual.MapValue;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.DateValue.DATE_PATTERN;
+//	import static Neo4Net.values.storable.DateValue.DATE_PATTERN;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.DateValue.parseDate;
+//	import static Neo4Net.values.storable.DateValue.parseDate;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.IntegralValue.safeCastIntegral;
+//	import static Neo4Net.values.storable.IntegralValue.safeCastIntegral;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.LocalDateTimeValue.optTime;
+//	import static Neo4Net.values.storable.LocalDateTimeValue.optTime;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.TimeValue.OFFSET;
+//	import static Neo4Net.values.storable.TimeValue.OFFSET;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.TimeValue.TIME_PATTERN;
+//	import static Neo4Net.values.storable.TimeValue.TIME_PATTERN;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.TimeValue.parseOffset;
+//	import static Neo4Net.values.storable.TimeValue.parseOffset;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.NO_VALUE;
+//	import static Neo4Net.values.storable.Values.NO_VALUE;
 
 	public sealed class DateTimeValue : TemporalValue<ZonedDateTime, DateTimeValue>
 	{

@@ -45,12 +45,12 @@ namespace Neo4Net.Server.security.enterprise.log
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.Matchers.equalTo;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
+//	import static Neo4Net.helpers.collection.MapUtil.stringMap;
 
 	public class SecurityLogTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.fs.EphemeralFileSystemRule fileSystemRule = new org.Neo4Net.test.rule.fs.EphemeralFileSystemRule();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.fs.EphemeralFileSystemRule fileSystemRule = new Neo4Net.test.rule.fs.EphemeralFileSystemRule();
 		 public EphemeralFileSystemRule FileSystemRule = new EphemeralFileSystemRule();
 
 		 private Config _config = Config.defaults( stringMap( SecuritySettings.store_security_log_rotation_threshold.name(), "5", SecuritySettings.store_security_log_rotation_delay.name(), "1ms" ) );
@@ -139,14 +139,14 @@ namespace Neo4Net.Server.security.enterprise.log
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private SecurityLog withLogLevel(org.Neo4Net.logging.Level debug) throws java.io.IOException
+//ORIGINAL LINE: private SecurityLog withLogLevel(Neo4Net.logging.Level debug) throws java.io.IOException
 		 private SecurityLog WithLogLevel( Level debug )
 		 {
 			  return new SecurityLog( Config.defaults( SecuritySettings.security_log_level, debug.name() ), FileSystemRule.get(), ThreadStart.run );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private String[] readLogFile(org.Neo4Net.io.fs.FileSystemAbstraction fs, java.io.File activeLogFile) throws java.io.IOException
+//ORIGINAL LINE: private String[] readLogFile(Neo4Net.io.fs.FileSystemAbstraction fs, java.io.File activeLogFile) throws java.io.IOException
 		 private string[] ReadLogFile( FileSystemAbstraction fs, File activeLogFile )
 		 {
 			  Scanner scan = new Scanner( fs.OpenAsInputStream( activeLogFile ) );

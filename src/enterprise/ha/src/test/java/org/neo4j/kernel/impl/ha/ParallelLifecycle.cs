@@ -143,7 +143,7 @@ namespace Neo4Net.Kernel.impl.ha
 		 private interface Action
 		 {
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void act(org.Neo4Net.kernel.lifecycle.Lifecycle lifecycle) throws Throwable;
+//ORIGINAL LINE: void act(Neo4Net.kernel.lifecycle.Lifecycle lifecycle) throws Throwable;
 			  void Act( Lifecycle lifecycle );
 		 }
 	}

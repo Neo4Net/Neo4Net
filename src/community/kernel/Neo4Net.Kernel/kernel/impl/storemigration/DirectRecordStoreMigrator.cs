@@ -40,7 +40,7 @@ namespace Neo4Net.Kernel.impl.storemigration
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.ArrayUtil.contains;
+//	import static Neo4Net.helpers.ArrayUtil.contains;
 
 	/// <summary>
 	/// Idea is to migrate a <seealso cref="NeoStores"/> store by store, record by record in a sequential fashion for

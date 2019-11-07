@@ -51,8 +51,8 @@ namespace Neo4Net.net
 	using EnterpriseNeo4NetRule = Neo4Net.Harness.junit.EnterpriseNeo4NetRule;
 	using Neo4NetRule = Neo4Net.Harness.junit.Neo4NetRule;
 	using HostnamePort = Neo4Net.Helpers.HostnamePort;
-	using NetworkConnectionTracker = Neo4Net.Kernel.api.net.NetworkConnectionTracker;
-	using TrackedNetworkConnection = Neo4Net.Kernel.api.net.TrackedNetworkConnection;
+	using NetworkConnectionTracker = Neo4Net.Kernel.Api.net.NetworkConnectionTracker;
+	using TrackedNetworkConnection = Neo4Net.Kernel.Api.net.TrackedNetworkConnection;
 	using Settings = Neo4Net.Kernel.configuration.Settings;
 	using KernelTransactions = Neo4Net.Kernel.Impl.Api.KernelTransactions;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
@@ -75,43 +75,43 @@ namespace Neo4Net.net
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertNotNull;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.messaging.util.MessageMatchers.msgRecord;
+//	import static Neo4Net.bolt.v1.messaging.util.MessageMatchers.msgRecord;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.messaging.util.MessageMatchers.msgSuccess;
+//	import static Neo4Net.bolt.v1.messaging.util.MessageMatchers.msgSuccess;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.runtime.spi.StreamMatchers.eqRecord;
+//	import static Neo4Net.bolt.v1.runtime.spi.StreamMatchers.eqRecord;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.auth_enabled;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.auth_enabled;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.single;
+//	import static Neo4Net.helpers.collection.Iterators.single;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.map;
+//	import static Neo4Net.helpers.collection.MapUtil.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.exceptions.Status_Transaction.Terminated;
+//	import static Neo4Net.kernel.api.exceptions.Status_Transaction.Terminated;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.enterprise.configuration.OnlineBackupSettings.online_backup_enabled;
+//	import static Neo4Net.kernel.impl.enterprise.configuration.OnlineBackupSettings.online_backup_enabled;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.net.ConnectionTrackingIT.TestConnector.BOLT;
+//	import static Neo4Net.net.ConnectionTrackingIT.TestConnector.BOLT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.net.ConnectionTrackingIT.TestConnector.HTTP;
+//	import static Neo4Net.net.ConnectionTrackingIT.TestConnector.HTTP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.net.ConnectionTrackingIT.TestConnector.HTTPS;
+//	import static Neo4Net.net.ConnectionTrackingIT.TestConnector.HTTPS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.configuration.ServerSettings.webserver_max_threads;
+//	import static Neo4Net.server.configuration.ServerSettings.webserver_max_threads;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.assertion.Assert.assertEventually;
+//	import static Neo4Net.test.assertion.Assert.assertEventually;
 	using static Neo4Net.Test.server.HTTP.RawPayload;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.server.HTTP.RawPayload.quotedJson;
+//	import static Neo4Net.test.server.HTTP.RawPayload.quotedJson;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.server.HTTP.RawPayload.rawPayload;
+//	import static Neo4Net.test.server.HTTP.RawPayload.rawPayload;
 	using static Neo4Net.Test.server.HTTP.Response;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.server.HTTP.withBasicAuth;
+//	import static Neo4Net.test.server.HTTP.withBasicAuth;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.stringOrNoValue;
+//	import static Neo4Net.values.storable.Values.stringOrNoValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.stringValue;
+//	import static Neo4Net.values.storable.Values.stringValue;
 
 	public class ConnectionTrackingIT
 	{
@@ -122,7 +122,7 @@ namespace Neo4Net.net
 		 private static readonly IList<string> _listConnectionsProcedureColumns = Arrays.asList( "connectionId", "connectTime", "connector", "username", "userAgent", "serverAddress", "clientAddress" );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ClassRule public static final org.Neo4Net.harness.junit.Neo4NetRule Neo4Net = new org.Neo4Net.harness.junit.EnterpriseNeo4NetRule().withConfig(auth_enabled, "true").withConfig("dbms.connector.https.enabled", "true").withConfig(webserver_max_threads, "50").withConfig(online_backup_enabled, org.Neo4Net.kernel.configuration.Settings.FALSE);
+//ORIGINAL LINE: @ClassRule public static final Neo4Net.harness.junit.Neo4NetRule Neo4Net = new Neo4Net.harness.junit.EnterpriseNeo4NetRule().withConfig(auth_enabled, "true").withConfig("dbms.connector.https.enabled", "true").withConfig(webserver_max_threads, "50").withConfig(online_backup_enabled, Neo4Net.kernel.configuration.Settings.FALSE);
 		 public static readonly Neo4NetRule Neo4Net = new EnterpriseNeo4NetRule().withConfig(auth_enabled, "true").withConfig("dbms.connector.https.enabled", "true").withConfig(webserver_max_threads, "50").withConfig(online_backup_enabled, Settings.FALSE);
 
 		 private static long _dummyNodeId;
@@ -378,7 +378,7 @@ namespace Neo4Net.net
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.bolt.v1.transport.socket.client.TransportConnection connectSocketTo(java.net.URI uri) throws java.io.IOException
+//ORIGINAL LINE: private Neo4Net.bolt.v1.transport.socket.client.TransportConnection connectSocketTo(java.net.URI uri) throws java.io.IOException
 		 private TransportConnection ConnectSocketTo( URI uri )
 		 {
 			  SocketConnection connection = new SocketConnection();
@@ -494,7 +494,7 @@ namespace Neo4Net.net
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void lockNodeAndExecute(long id, org.Neo4Net.function.ThrowingAction<Exception> action) throws Exception
+//ORIGINAL LINE: private static void lockNodeAndExecute(long id, Neo4Net.function.ThrowingAction<Exception> action) throws Exception
 		 private static void LockNodeAndExecute( long id, ThrowingAction<Exception> action )
 		 {
 			  IGraphDatabaseService db = Neo4Net.GraphDatabaseService;
@@ -553,7 +553,7 @@ namespace Neo4Net.net
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void killConnectionViaBolt(org.Neo4Net.kernel.api.net.TrackedNetworkConnection trackedConnection) throws Exception
+//ORIGINAL LINE: private void killConnectionViaBolt(Neo4Net.kernel.api.net.TrackedNetworkConnection trackedConnection) throws Exception
 		 private void KillConnectionViaBolt( TrackedNetworkConnection trackedConnection )
 		 {
 			  string id = trackedConnection.Id();
@@ -574,7 +574,7 @@ namespace Neo4Net.net
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void assertConnectionBreaks(org.Neo4Net.bolt.v1.transport.socket.client.TransportConnection connection) throws java.util.concurrent.TimeoutException
+//ORIGINAL LINE: private static void assertConnectionBreaks(Neo4Net.bolt.v1.transport.socket.client.TransportConnection connection) throws java.util.concurrent.TimeoutException
 		 private static void AssertConnectionBreaks( TransportConnection connection )
 		 {
 			  Predicates.await( () => ConnectionIsBroken(connection), 1, MINUTES );

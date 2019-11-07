@@ -29,7 +29,7 @@ namespace Neo4Net.Dbms.CommandLine
 	using Validators = Neo4Net.Kernel.impl.util.Validators;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.database_path;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.database_path;
 
 	internal class DatabaseImporter : Importer
 	{
@@ -37,7 +37,7 @@ namespace Neo4Net.Dbms.CommandLine
 		 private readonly Config _config;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: DatabaseImporter(org.Neo4Net.helpers.Args args, org.Neo4Net.kernel.configuration.Config config, org.Neo4Net.commandline.admin.OutsideWorld outsideWorld) throws org.Neo4Net.commandline.admin.IncorrectUsage
+//ORIGINAL LINE: DatabaseImporter(Neo4Net.helpers.Args args, Neo4Net.kernel.configuration.Config config, Neo4Net.commandline.admin.OutsideWorld outsideWorld) throws Neo4Net.commandline.admin.IncorrectUsage
 		 internal DatabaseImporter( Args args, Config config, OutsideWorld outsideWorld )
 		 {
 			  this._config = config;
@@ -61,7 +61,7 @@ namespace Neo4Net.Dbms.CommandLine
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void copyDatabase(java.io.File from, org.Neo4Net.kernel.configuration.Config config) throws java.io.IOException
+//ORIGINAL LINE: private void copyDatabase(java.io.File from, Neo4Net.kernel.configuration.Config config) throws java.io.IOException
 		 private void CopyDatabase( File from, Config config )
 		 {
 			  FileUtils.copyRecursively( from, config.Get( database_path ) );

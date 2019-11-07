@@ -23,7 +23,7 @@ namespace Neo4Net.GraphDb.factory.module
 	using AbstractEditionModule = Neo4Net.GraphDb.factory.module.edition.AbstractEditionModule;
 	using DatabaseEditionContext = Neo4Net.GraphDb.factory.module.edition.context.DatabaseEditionContext;
 	using NeoStoreDataSource = Neo4Net.Kernel.NeoStoreDataSource;
-	using InwardKernel = Neo4Net.Kernel.api.InwardKernel;
+	using InwardKernel = Neo4Net.Kernel.Api.InwardKernel;
 	using CoreAPIAvailabilityGuard = Neo4Net.Kernel.impl.coreapi.CoreAPIAvailabilityGuard;
 	using GraphDatabaseFacade = Neo4Net.Kernel.impl.factory.GraphDatabaseFacade;
 	using Procedures = Neo4Net.Kernel.impl.proc.Procedures;

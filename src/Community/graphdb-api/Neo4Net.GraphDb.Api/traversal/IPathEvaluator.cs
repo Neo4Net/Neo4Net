@@ -36,7 +36,7 @@ namespace Neo4Net.GraphDb.Traversal
 		 /// <summary>
 		 /// Evaluates a <seealso cref="IPath"/> and returns an <seealso cref="Evaluation"/> containing
 		 /// information about whether or not to include it in the traversal result,
-		 /// i.e return it from the <seealso cref="Traverser"/>. And also whether or not to
+		 /// i.e return it from the <seealso cref="ITraverser"/>. And also whether or not to
 		 /// continue traversing down that {@code path} or if it instead should be
 		 /// pruned so that the traverser won't continue down that branch represented
 		 /// by {@code path}.
@@ -44,7 +44,7 @@ namespace Neo4Net.GraphDb.Traversal
 		 /// <param name="path"> the <seealso cref="IPath"/> to evaluate. </param>
 		 /// <param name="state"> the state of this branch in the current traversal. </param>
 		 /// <returns> an <seealso cref="Evaluation"/> containing information about whether or not
-		 /// to return it from the <seealso cref="Traverser"/> and whether or not to continue
+		 /// to return it from the <seealso cref="ITraverser"/> and whether or not to continue
 		 /// down that path. </returns>
 		 Evaluation Evaluate( IPath path, IBranchState<STATE> state );
 
@@ -53,12 +53,11 @@ namespace Neo4Net.GraphDb.Traversal
 		 /// @param <STATE> the type of the state object </param>
 	}
 
-	 public abstract class PathEvaluator_Adapter<STATE> : PathEvaluator<STATE>
+	 public abstract class PathEvaluator_Adapter<STATE> : IPathEvaluator<STATE>
 	 {
 		 public abstract Evaluation Evaluate( IPath path, IBranchState<STATE> state );
-//JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Override @SuppressWarnings("unchecked") public Evaluation evaluate(org.Neo4Net.graphdb.Path path)
-		  public override Evaluation Evaluate( IPath path )
+
+		  public Evaluation Evaluate( IPath path )
 		  {
 				return Evaluate( path, IBranchState.NO_STATE );
 		  }

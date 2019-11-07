@@ -105,13 +105,13 @@ namespace Neo4Net.Kernel.ha.cluster
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.com.StoreIdTestFactory.newStoreIdForCurrentVersion;
+//	import static Neo4Net.com.StoreIdTestFactory.newStoreIdForCurrentVersion;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.ha.cluster.modeswitch.HighAvailabilityModeSwitcher.MASTER;
+//	import static Neo4Net.kernel.ha.cluster.modeswitch.HighAvailabilityModeSwitcher.MASTER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.ha.cluster.modeswitch.HighAvailabilityModeSwitcher.SLAVE;
+//	import static Neo4Net.kernel.ha.cluster.modeswitch.HighAvailabilityModeSwitcher.SLAVE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.ha.cluster.modeswitch.HighAvailabilityModeSwitcherTest.storeSupplierMock;
+//	import static Neo4Net.kernel.ha.cluster.modeswitch.HighAvailabilityModeSwitcherTest.storeSupplierMock;
 
 	public class HighAvailabilityMemberStateMachineTest
 	{
@@ -529,7 +529,7 @@ namespace Neo4Net.Kernel.ha.cluster
 			  stateMachine.Start();
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.ha.DelegateInvocationHandler<org.Neo4Net.kernel.ha.com.master.Master> handler = new org.Neo4Net.kernel.ha.DelegateInvocationHandler<>(org.Neo4Net.kernel.ha.com.master.Master.class);
+//ORIGINAL LINE: final Neo4Net.kernel.ha.DelegateInvocationHandler<Neo4Net.kernel.ha.com.master.Master> handler = new Neo4Net.kernel.ha.DelegateInvocationHandler<>(Neo4Net.kernel.ha.com.master.Master.class);
 			  DelegateInvocationHandler<Master> handler = new DelegateInvocationHandler<Master>( typeof( Master ) );
 
 			  MasterClientResolver masterClientResolver = mock( typeof( MasterClientResolver ) );
@@ -576,7 +576,7 @@ namespace Neo4Net.Kernel.ha.cluster
 			  stateMachine.AddHighAvailabilityMemberListener( haModeSwitcher );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.concurrent.atomic.AtomicReference<org.Neo4Net.kernel.ha.com.master.Master> ref = new java.util.concurrent.atomic.AtomicReference<>(null);
+//ORIGINAL LINE: final java.util.concurrent.atomic.AtomicReference<Neo4Net.kernel.ha.com.master.Master> ref = new java.util.concurrent.atomic.AtomicReference<>(null);
 			  AtomicReference<Master> @ref = new AtomicReference<Master>( null );
 
 			  //noinspection unchecked

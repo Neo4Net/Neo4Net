@@ -35,7 +35,7 @@ namespace Neo4Net.Server.rest
 	public class DegreeIT : AbstractRestFunctionalTestBase
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Documented("Get the degree of a node\n" + "\n" + "Return the total number of relationships associated with a node.") @Test @GraphDescription.Graph({"Root knows Mattias", "Root knows Johan"}) public void get_degree() throws org.Neo4Net.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @Documented("Get the degree of a node\n" + "\n" + "Return the total number of relationships associated with a node.") @Test @GraphDescription.Graph({"Root knows Mattias", "Root knows Johan"}) public void get_degree() throws Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Documented("Get the degree of a node\n" + "\n" + "Return the total number of relationships associated with a node.")]
 		 public virtual void GetDegree()
@@ -51,7 +51,7 @@ namespace Neo4Net.Server.rest
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Documented("Get the degree of a node by direction\n" + "\n" + "Return the number of relationships of a particular direction for a node.\n" + "Specify `all`, `in` or `out`.") @Test @GraphDescription.Graph({"Root knows Mattias", "Root knows Johan"}) public void get_degree_by_direction() throws org.Neo4Net.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @Documented("Get the degree of a node by direction\n" + "\n" + "Return the number of relationships of a particular direction for a node.\n" + "Specify `all`, `in` or `out`.") @Test @GraphDescription.Graph({"Root knows Mattias", "Root knows Johan"}) public void get_degree_by_direction() throws Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Documented("Get the degree of a node by direction\n" + "\n" + "Return the number of relationships of a particular direction for a node.\n" + "Specify `all`, `in` or `out`.")]
 		 public virtual void GetDegreeByDirection()
@@ -67,7 +67,7 @@ namespace Neo4Net.Server.rest
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Documented("Get the degree of a node by direction and types\n" + "\n" + "If you are only interested in the degree of a particular relationship type, or a set of " + "relationship types, you specify relationship types after the direction.\n" + "You can combine multiple relationship types by using the `&` character.") @Test @GraphDescription.Graph({"Root KNOWS Mattias", "Root KNOWS Johan", "Root LIKES Cookie"}) public void get_degree_by_direction_and_type() throws org.Neo4Net.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @Documented("Get the degree of a node by direction and types\n" + "\n" + "If you are only interested in the degree of a particular relationship type, or a set of " + "relationship types, you specify relationship types after the direction.\n" + "You can combine multiple relationship types by using the `&` character.") @Test @GraphDescription.Graph({"Root KNOWS Mattias", "Root KNOWS Johan", "Root LIKES Cookie"}) public void get_degree_by_direction_and_type() throws Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Documented("Get the degree of a node by direction and types\n" + "\n" + "If you are only interested in the degree of a particular relationship type, or a set of " + "relationship types, you specify relationship types after the direction.\n" + "You can combine multiple relationship types by using the `&` character.")]
 		 public virtual void GetDegreeByDirectionAndType()

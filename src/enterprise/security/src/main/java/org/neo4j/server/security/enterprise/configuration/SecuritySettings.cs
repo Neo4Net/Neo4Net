@@ -35,39 +35,39 @@ namespace Neo4Net.Server.security.enterprise.configuration
 	using Level = Neo4Net.Logging.Level;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.BOOLEAN;
+//	import static Neo4Net.kernel.configuration.Settings.BOOLEAN;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.BYTES;
+//	import static Neo4Net.kernel.configuration.Settings.BYTES;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.DURATION;
+//	import static Neo4Net.kernel.configuration.Settings.DURATION;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.FALSE;
+//	import static Neo4Net.kernel.configuration.Settings.FALSE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.INTEGER;
+//	import static Neo4Net.kernel.configuration.Settings.INTEGER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.NO_DEFAULT;
+//	import static Neo4Net.kernel.configuration.Settings.NO_DEFAULT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.PATH;
+//	import static Neo4Net.kernel.configuration.Settings.PATH;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.STRING;
+//	import static Neo4Net.kernel.configuration.Settings.STRING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.STRING_LIST;
+//	import static Neo4Net.kernel.configuration.Settings.STRING_LIST;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.buildSetting;
+//	import static Neo4Net.kernel.configuration.Settings.buildSetting;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.derivedSetting;
+//	import static Neo4Net.kernel.configuration.Settings.derivedSetting;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.min;
+//	import static Neo4Net.kernel.configuration.Settings.min;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.optionsObeyCase;
+//	import static Neo4Net.kernel.configuration.Settings.optionsObeyCase;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.range;
+//	import static Neo4Net.kernel.configuration.Settings.range;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.configuration.Settings.setting;
+//	import static Neo4Net.kernel.configuration.Settings.setting;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.proc.ProcedureConfig.PROC_ALLOWED_SETTING_DEFAULT_NAME;
+//	import static Neo4Net.kernel.impl.proc.ProcedureConfig.PROC_ALLOWED_SETTING_DEFAULT_NAME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.proc.ProcedureConfig.PROC_ALLOWED_SETTING_ROLES;
+//	import static Neo4Net.kernel.impl.proc.ProcedureConfig.PROC_ALLOWED_SETTING_ROLES;
 
 	/// <summary>
 	/// Settings for security module
@@ -88,37 +88,37 @@ namespace Neo4Net.Server.security.enterprise.configuration
 		 public static readonly Setting<string> AuthProvider = setting( "dbms.security.auth_provider", STRING, NATIVE_REALM_NAME );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("A list of security authentication and authorization providers containing the users and roles. " + "They will be queried in the given order when login is attempted.") @Internal public static final org.Neo4Net.graphdb.config.Setting<java.util.List<String>> auth_providers = derivedSetting("dbms.security.auth_providers", auth_provider, java.util.Arrays::asList, STRING_LIST);
+//ORIGINAL LINE: @Description("A list of security authentication and authorization providers containing the users and roles. " + "They will be queried in the given order when login is attempted.") @Internal public static final Neo4Net.graphdb.config.Setting<java.util.List<String>> auth_providers = derivedSetting("dbms.security.auth_providers", auth_provider, java.util.Arrays::asList, STRING_LIST);
 		 [Description("A list of security authentication and authorization providers containing the users and roles. " + "They will be queried in the given order when login is attempted.")]
 		 public static readonly Setting<IList<string>> AuthProviders = derivedSetting( "dbms.security.auth_providers", AuthProvider, Arrays.asList, STRING_LIST );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Enable authentication via native authentication provider.") @Internal public static final org.Neo4Net.graphdb.config.Setting<bool> native_authentication_enabled = derivedSetting("dbms.security.native.authentication_enabled", auth_providers, providers -> providers.contains(NATIVE_REALM_NAME) || providers.contains(SYSTEM_GRAPH_REALM_NAME), BOOLEAN);
+//ORIGINAL LINE: @Description("Enable authentication via native authentication provider.") @Internal public static final Neo4Net.graphdb.config.Setting<bool> native_authentication_enabled = derivedSetting("dbms.security.native.authentication_enabled", auth_providers, providers -> providers.contains(NATIVE_REALM_NAME) || providers.contains(SYSTEM_GRAPH_REALM_NAME), BOOLEAN);
 		 [Description("Enable authentication via native authentication provider.")]
 		 public static readonly Setting<bool> NativeAuthenticationEnabled = derivedSetting( "dbms.security.native.authentication_enabled", AuthProviders, providers => providers.contains( NATIVE_REALM_NAME ) || providers.contains( SYSTEM_GRAPH_REALM_NAME ), BOOLEAN );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Enable authorization via native authorization provider.") @Internal public static final org.Neo4Net.graphdb.config.Setting<bool> native_authorization_enabled = derivedSetting("dbms.security.native.authorization_enabled", auth_providers, providers -> providers.contains(NATIVE_REALM_NAME) || providers.contains(SYSTEM_GRAPH_REALM_NAME), BOOLEAN);
+//ORIGINAL LINE: @Description("Enable authorization via native authorization provider.") @Internal public static final Neo4Net.graphdb.config.Setting<bool> native_authorization_enabled = derivedSetting("dbms.security.native.authorization_enabled", auth_providers, providers -> providers.contains(NATIVE_REALM_NAME) || providers.contains(SYSTEM_GRAPH_REALM_NAME), BOOLEAN);
 		 [Description("Enable authorization via native authorization provider.")]
 		 public static readonly Setting<bool> NativeAuthorizationEnabled = derivedSetting( "dbms.security.native.authorization_enabled", AuthProviders, providers => providers.contains( NATIVE_REALM_NAME ) || providers.contains( SYSTEM_GRAPH_REALM_NAME ), BOOLEAN );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Enable authentication via settings configurable LDAP authentication provider.") @Internal public static final org.Neo4Net.graphdb.config.Setting<bool> ldap_authentication_enabled = derivedSetting("dbms.security.ldap.authentication_enabled", auth_providers, providers -> providers.contains(LDAP_REALM_NAME), BOOLEAN);
+//ORIGINAL LINE: @Description("Enable authentication via settings configurable LDAP authentication provider.") @Internal public static final Neo4Net.graphdb.config.Setting<bool> ldap_authentication_enabled = derivedSetting("dbms.security.ldap.authentication_enabled", auth_providers, providers -> providers.contains(LDAP_REALM_NAME), BOOLEAN);
 		 [Description("Enable authentication via settings configurable LDAP authentication provider.")]
 		 public static readonly Setting<bool> LdapAuthenticationEnabled = derivedSetting( "dbms.security.ldap.authentication_enabled", AuthProviders, providers => providers.contains( LDAP_REALM_NAME ), BOOLEAN );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Enable authorization via settings configurable LDAP authorization provider.") @Internal public static final org.Neo4Net.graphdb.config.Setting<bool> ldap_authorization_enabled = derivedSetting("dbms.security.ldap.authorization_enabled", auth_providers, providers -> providers.contains(LDAP_REALM_NAME), BOOLEAN);
+//ORIGINAL LINE: @Description("Enable authorization via settings configurable LDAP authorization provider.") @Internal public static final Neo4Net.graphdb.config.Setting<bool> ldap_authorization_enabled = derivedSetting("dbms.security.ldap.authorization_enabled", auth_providers, providers -> providers.contains(LDAP_REALM_NAME), BOOLEAN);
 		 [Description("Enable authorization via settings configurable LDAP authorization provider.")]
 		 public static readonly Setting<bool> LdapAuthorizationEnabled = derivedSetting( "dbms.security.ldap.authorization_enabled", AuthProviders, providers => providers.contains( LDAP_REALM_NAME ), BOOLEAN );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Enable authentication via plugin authentication providers.") @Internal public static final org.Neo4Net.graphdb.config.Setting<bool> plugin_authentication_enabled = derivedSetting("dbms.security.plugin.authentication_enabled", auth_providers, providers -> providers.stream().anyMatch(r -> r.startsWith(PLUGIN_REALM_NAME_PREFIX)), BOOLEAN);
+//ORIGINAL LINE: @Description("Enable authentication via plugin authentication providers.") @Internal public static final Neo4Net.graphdb.config.Setting<bool> plugin_authentication_enabled = derivedSetting("dbms.security.plugin.authentication_enabled", auth_providers, providers -> providers.stream().anyMatch(r -> r.startsWith(PLUGIN_REALM_NAME_PREFIX)), BOOLEAN);
 		 [Description("Enable authentication via plugin authentication providers.")]
 		 public static readonly Setting<bool> PluginAuthenticationEnabled = derivedSetting( "dbms.security.plugin.authentication_enabled", AuthProviders, providers => providers.stream().anyMatch(r => r.StartsWith(PLUGIN_REALM_NAME_PREFIX)), BOOLEAN );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Enable authorization via plugin authorization providers.") @Internal public static final org.Neo4Net.graphdb.config.Setting<bool> plugin_authorization_enabled = derivedSetting("dbms.security.plugin.authorization_enabled", auth_providers, providers -> providers.stream().anyMatch(r -> r.startsWith(PLUGIN_REALM_NAME_PREFIX)), BOOLEAN);
+//ORIGINAL LINE: @Description("Enable authorization via plugin authorization providers.") @Internal public static final Neo4Net.graphdb.config.Setting<bool> plugin_authorization_enabled = derivedSetting("dbms.security.plugin.authorization_enabled", auth_providers, providers -> providers.stream().anyMatch(r -> r.startsWith(PLUGIN_REALM_NAME_PREFIX)), BOOLEAN);
 		 [Description("Enable authorization via plugin authorization providers.")]
 		 public static readonly Setting<bool> PluginAuthorizationEnabled = derivedSetting( "dbms.security.plugin.authorization_enabled", AuthProviders, providers => providers.stream().anyMatch(r => r.StartsWith(PLUGIN_REALM_NAME_PREFIX)), BOOLEAN );
 
@@ -232,7 +232,7 @@ namespace Neo4Net.Server.security.enterprise.configuration
 		 //=========================================================================
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Internal @Description("Set to true if connection pooling should be used for authorization searches using the " + "system account.") public static final org.Neo4Net.graphdb.config.Setting<bool> ldap_authorization_connection_pooling = setting("unsupported.dbms.security.ldap.authorization.connection_pooling", BOOLEAN, "true");
+//ORIGINAL LINE: @Internal @Description("Set to true if connection pooling should be used for authorization searches using the " + "system account.") public static final Neo4Net.graphdb.config.Setting<bool> ldap_authorization_connection_pooling = setting("unsupported.dbms.security.ldap.authorization.connection_pooling", BOOLEAN, "true");
 		 [Description("Set to true if connection pooling should be used for authorization searches using the " + "system account.")]
 		 public static readonly Setting<bool> LdapAuthorizationConnectionPooling = setting( "unsupported.dbms.security.ldap.authorization.connection_pooling", BOOLEAN, "true" );
 

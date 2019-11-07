@@ -47,7 +47,7 @@ namespace Neo4Net.cluster.statemachine
 		 /// <param name="outgoing"> processor for new messages created by the handling of this message </param>
 		 /// <returns> the new state </returns>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: State<CONTEXT, MESSAGETYPE> handle(CONTEXT context, org.Neo4Net.cluster.com.message.Message<MESSAGETYPE> message, org.Neo4Net.cluster.com.message.MessageHolder outgoing) throws Throwable;
+//ORIGINAL LINE: State<CONTEXT, MESSAGETYPE> handle(CONTEXT context, Neo4Net.cluster.com.message.Message<MESSAGETYPE> message, Neo4Net.cluster.com.message.MessageHolder outgoing) throws Throwable;
 		 State<CONTEXT, MESSAGETYPE> Handle( CONTEXT context, Message<MESSAGETYPE> message, MessageHolder outgoing );
 	}
 

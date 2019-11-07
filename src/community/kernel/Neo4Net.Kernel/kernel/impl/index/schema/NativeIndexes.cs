@@ -31,13 +31,13 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using IndexDirectoryStructure = Neo4Net.Kernel.Api.Index.IndexDirectoryStructure;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Internal.gbptree.GBPTree.NO_HEADER_READER;
+//	import static Neo4Net.index.Internal.gbptree.GBPTree.NO_HEADER_READER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.NativeIndexPopulator.BYTE_FAILED;
+//	import static Neo4Net.kernel.impl.index.schema.NativeIndexPopulator.BYTE_FAILED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.NativeIndexPopulator.BYTE_ONLINE;
+//	import static Neo4Net.kernel.impl.index.schema.NativeIndexPopulator.BYTE_ONLINE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.NativeIndexPopulator.BYTE_POPULATING;
+//	import static Neo4Net.kernel.impl.index.schema.NativeIndexPopulator.BYTE_POPULATING;
 
 	public class NativeIndexes
 	{
@@ -46,7 +46,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static org.Neo4Net.Kernel.Api.Internal.InternalIndexState readState(org.Neo4Net.io.pagecache.PageCache pageCache, java.io.File indexFile) throws java.io.IOException
+//ORIGINAL LINE: public static Neo4Net.Kernel.Api.Internal.InternalIndexState readState(Neo4Net.io.pagecache.PageCache pageCache, java.io.File indexFile) throws java.io.IOException
 		 public static InternalIndexState ReadState( PageCache pageCache, File indexFile )
 		 {
 			  NativeIndexHeaderReader headerReader = new NativeIndexHeaderReader( NO_HEADER_READER );
@@ -65,7 +65,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static String readFailureMessage(org.Neo4Net.io.pagecache.PageCache pageCache, java.io.File indexFile) throws java.io.IOException
+//ORIGINAL LINE: static String readFailureMessage(Neo4Net.io.pagecache.PageCache pageCache, java.io.File indexFile) throws java.io.IOException
 		 internal static string ReadFailureMessage( PageCache pageCache, File indexFile )
 		 {
 			  NativeIndexHeaderReader headerReader = new NativeIndexHeaderReader( NO_HEADER_READER );
@@ -84,7 +84,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 /// <returns> whether or not an archive was created. </returns>
 		 /// <exception cref="IOException"> on I/O error. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static boolean deleteIndex(org.Neo4Net.io.fs.FileSystemAbstraction fs, org.Neo4Net.kernel.api.index.IndexDirectoryStructure directoryStructure, long indexId, boolean archiveIfExists) throws java.io.IOException
+//ORIGINAL LINE: public static boolean deleteIndex(Neo4Net.io.fs.FileSystemAbstraction fs, Neo4Net.kernel.api.index.IndexDirectoryStructure directoryStructure, long indexId, boolean archiveIfExists) throws java.io.IOException
 		 public static bool DeleteIndex( FileSystemAbstraction fs, IndexDirectoryStructure directoryStructure, long indexId, bool archiveIfExists )
 		 {
 			  File rootIndexDirectory = directoryStructure.DirectoryForIndex( indexId );

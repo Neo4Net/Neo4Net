@@ -38,8 +38,8 @@ namespace Neo4Net.Kernel.impl.transaction.command
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
 	using NativeLuceneFusionIndexProviderFactory20 = Neo4Net.Kernel.Api.Impl.Schema.NativeLuceneFusionIndexProviderFactory20;
 	using IndexProvider = Neo4Net.Kernel.Api.Index.IndexProvider;
-	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
-	using TransactionState = Neo4Net.Kernel.api.txstate.TransactionState;
+	using SchemaDescriptorFactory = Neo4Net.Kernel.Api.schema.SchemaDescriptorFactory;
+	using TransactionState = Neo4Net.Kernel.Api.txstate.TransactionState;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using TransactionQueue = Neo4Net.Kernel.Impl.Api.TransactionQueue;
 	using TransactionToApply = Neo4Net.Kernel.Impl.Api.TransactionToApply;
@@ -71,17 +71,17 @@ namespace Neo4Net.Kernel.impl.transaction.command
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertFalse;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.TimeUtil.parseTimeMillis;
+//	import static Neo4Net.helpers.TimeUtil.parseTimeMillis;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.impl.schema.NativeLuceneFusionIndexProviderFactory20.DESCRIPTOR;
+//	import static Neo4Net.kernel.api.impl.schema.NativeLuceneFusionIndexProviderFactory20.DESCRIPTOR;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.command.Commands.createIndexRule;
+//	import static Neo4Net.kernel.impl.transaction.command.Commands.createIndexRule;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.command.Commands.transactionRepresentation;
+//	import static Neo4Net.kernel.impl.transaction.command.Commands.transactionRepresentation;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.Commitment.NO_COMMITMENT;
+//	import static Neo4Net.kernel.impl.transaction.log.Commitment.NO_COMMITMENT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.StorageEngine.TxState.TxStateVisitor_Fields.NO_DECORATION;
+//	import static Neo4Net.Kernel.Api.StorageEngine.TxState.TxStateVisitor_Fields.NO_DECORATION;
 
 	public class IndexWorkSyncTransactionApplicationStressIT
 	{
@@ -151,7 +151,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void awaitOnline(org.Neo4Net.kernel.impl.api.index.IndexProxy index) throws InterruptedException
+//ORIGINAL LINE: private void awaitOnline(Neo4Net.kernel.impl.api.index.IndexProxy index) throws InterruptedException
 		 private void AwaitOnline( IndexProxy index )
 		 {
 			  while ( index.State == InternalIndexState.POPULATING )
@@ -229,7 +229,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.kernel.impl.api.TransactionToApply createNodeAndProperty(int progress) throws Exception
+//ORIGINAL LINE: private Neo4Net.kernel.impl.api.TransactionToApply createNodeAndProperty(int progress) throws Exception
 			  internal virtual TransactionToApply CreateNodeAndProperty( int progress )
 			  {
 					TransactionState txState = new TxState();
@@ -246,7 +246,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void verifyIndex(org.Neo4Net.kernel.impl.api.TransactionToApply tx) throws Exception
+//ORIGINAL LINE: private void verifyIndex(Neo4Net.kernel.impl.api.TransactionToApply tx) throws Exception
 			  internal virtual void VerifyIndex( TransactionToApply tx )
 			  {
 					using ( IndexReader reader = Index.newReader() )

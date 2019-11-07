@@ -23,7 +23,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.staging
 {
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.Exceptions.throwIfUnchecked;
+//	import static Neo4Net.helpers.Exceptions.throwIfUnchecked;
 
 	/// <summary>
 	/// A simple <seealso cref="StageControl"/> for tests with multiple steps and where an error or assertion failure

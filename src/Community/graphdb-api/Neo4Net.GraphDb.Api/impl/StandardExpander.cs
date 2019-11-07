@@ -34,11 +34,11 @@ namespace Neo4Net.GraphDb.impl
       {
       }
 
-      internal abstract class StandardExpansion<T> : ResourceIterable<T>
+      internal abstract class StandardExpansion<T> :IResourceIterable<T>
       {
          public abstract java.util.stream.Stream<T> Stream();
 
-         public abstract ResourceIterator<T> Iterator();
+         public abstract IResourceIterator<T> Iterator();
 
          internal readonly StandardExpander _expander;
          internal readonly IPath _path;
@@ -74,14 +74,14 @@ namespace Neo4Net.GraphDb.impl
          }
 
          //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-         //ORIGINAL LINE: public StandardExpansion<T> filterNodes(System.Predicate<? super org.Neo4Net.graphdb.Node> filter)
+         //ORIGINAL LINE: public StandardExpansion<T> filterNodes(System.Predicate<? super Neo4Net.GraphDb.Node> filter)
          public virtual StandardExpansion<T> FilterNodes<T1>(System.Predicate<T1> filter)
          {
             return CreateNew(_expander.addNodeFilter(filter));
          }
 
          //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-         //ORIGINAL LINE: public StandardExpansion<T> filterRelationships(System.Predicate<? super org.Neo4Net.graphdb.Relationship> filter)
+         //ORIGINAL LINE: public StandardExpansion<T> filterRelationships(System.Predicate<? super Neo4Net.GraphDb.Relationship> filter)
          public virtual StandardExpansion<T> FilterRelationships<T1>(System.Predicate<T1> filter)
          {
             return CreateNew(_expander.AddRelationshipFilter(filter));
@@ -153,7 +153,7 @@ namespace Neo4Net.GraphDb.impl
             return this;
          }
 
-         public override ResourceIterator<IRelationship> Iterator()
+         public override IResourceIterator<IRelationship> Iterator()
          {
             return _expander.doExpand(_path, _state);
          }
@@ -180,10 +180,10 @@ namespace Neo4Net.GraphDb.impl
             return this;
          }
 
-         public override ResourceIterator<INode> Iterator()
+         public override IResourceIterator<INode> Iterator()
          {
             //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-            //ORIGINAL LINE: final org.Neo4Net.graphdb.Node node = path.endNode();
+            //ORIGINAL LINE: final Neo4Net.GraphDb.Node node = path.endNode();
             INode node = _path.endNode();
 
             return new MappingResourceIteratorAnonymousInnerClass(this, _expander.doExpand(_path, _state), node);
@@ -195,7 +195,7 @@ namespace Neo4Net.GraphDb.impl
 
             private INode _node;
 
-            public MappingResourceIteratorAnonymousInnerClass(NodeExpansion outerInstance, ResourceIterator<IRelationship> doExpand, INode node) : base(doExpand)
+            public MappingResourceIteratorAnonymousInnerClass(NodeExpansion outerInstance, IResourceIterator<IRelationship> doExpand, INode node) : base(doExpand)
             {
                this.outerInstance = outerInstance;
                _node = node;
@@ -227,7 +227,7 @@ namespace Neo4Net.GraphDb.impl
             result.Append("*");
          }
 
-         internal override ResourceIterator<IRelationship> DoExpand(IPath path, IBranchState state)
+         internal override IResourceIterator<IRelationship> DoExpand(IPath path, IBranchState state)
          {
             return asResourceIterator(path.EndNode.getRelationships(Direction).GetEnumerator());
          }
@@ -240,7 +240,7 @@ namespace Neo4Net.GraphDb.impl
          public override StandardExpander Remove(IRelationshipType type)
          {
             IDictionary<string, Exclusion> exclude = new Dictionary<string, Exclusion>();
-            exclude[type.Name()] = Exclusion.All;
+            exclude[type.Name] = Exclusion.All;
             return new ExcludingExpander(Exclusion.include(Direction), exclude);
          }
 
@@ -258,13 +258,13 @@ namespace Neo4Net.GraphDb.impl
       private sealed class Exclusion
       {
          //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-         //           ALL(null, "!") { public boolean accept(org.Neo4Net.graphdb.Node start, org.Neo4Net.graphdb.Relationship rel) { return false; } },
+         //           ALL(null, "!") { public boolean accept(Neo4Net.GraphDb.Node start, Neo4Net.GraphDb.Relationship rel) { return false; } },
          //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-         //           INCOMING(org.Neo4Net.graphdb.Direction.OUTGOING) { Exclusion reversed() { return OUTGOING; } },
+         //           INCOMING(Neo4Net.GraphDb.Direction.OUTGOING) { Exclusion reversed() { return OUTGOING; } },
          //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-         //           OUTGOING(org.Neo4Net.graphdb.Direction.INCOMING) { Exclusion reversed() { return INCOMING; } },
+         //           OUTGOING(Neo4Net.GraphDb.Direction.INCOMING) { Exclusion reversed() { return INCOMING; } },
          //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-         //           NONE(org.Neo4Net.graphdb.Direction.BOTH, "") { boolean includes(org.Neo4Net.graphdb.Direction direction) { return true; } };
+         //           NONE(Neo4Net.GraphDb.Direction.BOTH, "") { boolean includes(Neo4Net.GraphDb.Direction direction) { return true; } };
 
          private static readonly IList<Exclusion> valueList = new List<Exclusion>();
 
@@ -401,12 +401,12 @@ namespace Neo4Net.GraphDb.impl
             }
          }
 
-         internal override ResourceIterator<IRelationship> DoExpand(IPath path, IBranchState state)
+         internal override IResourceIterator<IRelationship> DoExpand(IPath path, IBranchState state)
          {
             //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-            //ORIGINAL LINE: final org.Neo4Net.graphdb.Node node = path.endNode();
+            //ORIGINAL LINE: final Neo4Net.GraphDb.Node node = path.endNode();
             INode node = path.EndNode;
-            ResourceIterator<IRelationship> resourceIterator = asResourceIterator(node.Relationships.GetEnumerator());
+            IResourceIterator<IRelationship> resourceIterator = asResourceIterator(node.Relationships.GetEnumerator());
             return newResourceIterator(new FilteringIterator<>(resourceIterator, rel =>
             {
                Exclusion exclude = Exclusion[rel.Type.name()];
@@ -417,7 +417,7 @@ namespace Neo4Net.GraphDb.impl
 
          public override StandardExpander Add(IRelationshipType type, Direction direction)
          {
-            Exclusion excluded = Exclusion[type.Name()];
+            Exclusion excluded = Exclusion[type.Name];
             //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
             //ORIGINAL LINE: final java.util.Map<String, Exclusion> newExclusion;
             IDictionary<string, Exclusion> newExclusion;
@@ -437,13 +437,13 @@ namespace Neo4Net.GraphDb.impl
                   else
                   {
                      newExclusion = new Dictionary<string, Exclusion>(Exclusion);
-                     newExclusion.Remove(type.Name());
+                     newExclusion.Remove(type.Name);
                   }
                }
                else
                {
                   newExclusion = new Dictionary<string, Exclusion>(Exclusion);
-                  newExclusion[type.Name()] = excluded;
+                  newExclusion[type.Name] = excluded;
                }
             }
             return new ExcludingExpander(DefaultExclusion, newExclusion);
@@ -451,13 +451,13 @@ namespace Neo4Net.GraphDb.impl
 
          public override StandardExpander Remove(IRelationshipType type)
          {
-            Exclusion excluded = Exclusion[type.Name()];
+            Exclusion excluded = Exclusion[type.Name];
             if (excluded == Exclusion.All)
             {
                return this;
             }
             IDictionary<string, Exclusion> newExclusion = new Dictionary<string, Exclusion>(Exclusion);
-            newExclusion[type.Name()] = Exclusion.All;
+            newExclusion[type.Name] = Exclusion.All;
             return new ExcludingExpander(DefaultExclusion, newExclusion);
          }
 
@@ -526,10 +526,10 @@ namespace Neo4Net.GraphDb.impl
             result.Append(TypesMap.ToString());
          }
 
-         internal override ResourceIterator<IRelationship> DoExpand(IPath path, IBranchState state)
+         internal override IResourceIterator<IRelationship> DoExpand(IPath path, IBranchState state)
          {
             //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-            //ORIGINAL LINE: final org.Neo4Net.graphdb.Node node = path.endNode();
+            //ORIGINAL LINE: final Neo4Net.GraphDb.Node node = path.endNode();
             INode node = path.EndNode;
             if (Directions.Length == 1)
             {
@@ -554,7 +554,7 @@ namespace Neo4Net.GraphDb.impl
                _node = node;
             }
 
-            protected internal override ResourceIterator<IRelationship> createNestedIterator(DirectionAndTypes item)
+            protected internal override IResourceIterator<IRelationship> createNestedIterator(DirectionAndTypes item)
             {
                return asResourceIterator(_node.getRelationships(item.Direction, item.Types).GetEnumerator());
             }
@@ -579,7 +579,7 @@ namespace Neo4Net.GraphDb.impl
          public override StandardExpander Remove(IRelationshipType type)
          {
             IDictionary<Direction, ICollection<IRelationshipType>> tempMap = TemporaryTypeMapFrom(TypesMap);
-            foreach (Direction direction in Direction.values())
+            foreach (Direction direction in Direction.Values())
             {
                tempMap[direction].remove(type);
             }
@@ -625,10 +625,10 @@ namespace Neo4Net.GraphDb.impl
          }
 
          //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-         //ORIGINAL LINE: ResourceIterator<org.Neo4Net.graphdb.Relationship> doExpand(final org.Neo4Net.graphdb.Path path, org.Neo4Net.graphdb.traversal.BranchState state)
-         internal override ResourceIterator<IRelationship> DoExpand(IPath path, IBranchState state)
+         //ORIGINAL LINE: IResourceIterator<Neo4Net.GraphDb.Relationship> doExpand(final Neo4Net.GraphDb.Path path, Neo4Net.GraphDb.traversal.BranchState state)
+         internal override IResourceIterator<IRelationship> DoExpand(IPath path, IBranchState state)
          {
-            ResourceIterator<IRelationship> resourceIterator = Expander.doExpand(path, state);
+            IResourceIterator<IRelationship> resourceIterator = Expander.doExpand(path, state);
             return newResourceIterator(new FilteringIterator<>(resourceIterator, item =>
             {
                IPath extendedPath = ExtendedPath.Extend(path, item);
@@ -644,14 +644,14 @@ namespace Neo4Net.GraphDb.impl
          }
 
          //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-         //ORIGINAL LINE: public StandardExpander addNodeFilter(System.Predicate<? super org.Neo4Net.graphdb.Node> filter)
+         //ORIGINAL LINE: public StandardExpander addNodeFilter(System.Predicate<? super Neo4Net.GraphDb.Node> filter)
          public override StandardExpander AddNodeFilter<T1>(System.Predicate<T1> filter)
          {
             return new FilteringExpander(Expander, Append(Filters, new NodeFilter(filter)));
          }
 
          //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-         //ORIGINAL LINE: public StandardExpander addRelationshipFilter(System.Predicate<? super org.Neo4Net.graphdb.Relationship> filter)
+         //ORIGINAL LINE: public StandardExpander addRelationshipFilter(System.Predicate<? super Neo4Net.GraphDb.Relationship> filter)
          public override StandardExpander AddRelationshipFilter<T1>(System.Predicate<T1> filter)
          {
             return new FilteringExpander(Expander, Append(Filters, new RelationshipFilter(filter)));
@@ -693,7 +693,7 @@ namespace Neo4Net.GraphDb.impl
             result.Append(Expander);
          }
 
-         internal override ResourceIterator<IRelationship> DoExpand(IPath path, IBranchState state)
+         internal override IResourceIterator<IRelationship> DoExpand(IPath path, IBranchState state)
          {
             return asResourceIterator(Expander.expand(path, state).GetEnumerator());
          }
@@ -727,12 +727,12 @@ namespace Neo4Net.GraphDb.impl
       private sealed class NodeFilter : Filter
       {
          //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-         //ORIGINAL LINE: private final System.Predicate<? super org.Neo4Net.graphdb.Node> predicate;
+         //ORIGINAL LINE: private final System.Predicate<? super Neo4Net.GraphDb.Node> predicate;
          //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
          internal readonly System.Predicate<object> Predicate;
 
          //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-         //ORIGINAL LINE: NodeFilter(System.Predicate<? super org.Neo4Net.graphdb.Node> predicate)
+         //ORIGINAL LINE: NodeFilter(System.Predicate<? super Neo4Net.GraphDb.Node> predicate)
          internal NodeFilter<T1>(System.Predicate<T1> predicate )
 			  {
 					this.Predicate = predicate;
@@ -752,12 +752,12 @@ namespace Neo4Net.GraphDb.impl
    private sealed class RelationshipFilter : Filter
    {
       //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-      //ORIGINAL LINE: private final System.Predicate<? super org.Neo4Net.graphdb.Relationship> predicate;
+      //ORIGINAL LINE: private final System.Predicate<? super Neo4Net.GraphDb.Relationship> predicate;
       //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
       internal readonly System.Predicate<object> Predicate;
 
       //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-      //ORIGINAL LINE: RelationshipFilter(System.Predicate<? super org.Neo4Net.graphdb.Relationship> predicate)
+      //ORIGINAL LINE: RelationshipFilter(System.Predicate<? super Neo4Net.GraphDb.Relationship> predicate)
       internal RelationshipFilter<T1>(System.Predicate<T1> predicate )
 			  {
 					this.Predicate = predicate;
@@ -777,12 +777,12 @@ namespace Neo4Net.GraphDb.impl
 private sealed class PathFilter : Filter
 {
    //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-   //ORIGINAL LINE: private final System.Predicate<? super org.Neo4Net.graphdb.Path> predicate;
+   //ORIGINAL LINE: private final System.Predicate<? super Neo4Net.GraphDb.Path> predicate;
    //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
    internal readonly System.Predicate<object> Predicate;
 
    //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-   //ORIGINAL LINE: PathFilter(System.Predicate<? super org.Neo4Net.graphdb.Path> predicate)
+   //ORIGINAL LINE: PathFilter(System.Predicate<? super Neo4Net.GraphDb.Path> predicate)
    internal PathFilter<T1>(System.Predicate<T1> predicate )
 			  {
 					this.Predicate = predicate;
@@ -837,7 +837,7 @@ internal static bool MatchDirection(Direction dir, Node start, Relationship rel)
    }
 }
 
-internal abstract ResourceIterator<Relationship> DoExpand(Path path, BranchState state);
+internal abstract IResourceIterator<Relationship> DoExpand(Path path, BranchState state);
 
 public override sealed string ToString()
 {
@@ -863,14 +863,14 @@ public override abstract StandardExpander Reverse();
 public abstract StandardExpander Reversed();
 
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-//ORIGINAL LINE: public StandardExpander addNodeFilter(System.Predicate<? super org.Neo4Net.graphdb.Node> filter)
+//ORIGINAL LINE: public StandardExpander addNodeFilter(System.Predicate<? super Neo4Net.GraphDb.Node> filter)
 public virtual StandardExpander AddNodeFilter<T1>(System.Predicate<T1> filter)
 {
    return new FilteringExpander(this, new NodeFilter(filter));
 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-//ORIGINAL LINE: public StandardExpander addRelationshipFilter(System.Predicate<? super org.Neo4Net.graphdb.Relationship> filter)
+//ORIGINAL LINE: public StandardExpander addRelationshipFilter(System.Predicate<? super Neo4Net.GraphDb.Relationship> filter)
 public virtual StandardExpander AddRelationshipFilter<T1>(System.Predicate<T1> filter)
 {
    return new FilteringExpander(this, new RelationshipFilter(filter));

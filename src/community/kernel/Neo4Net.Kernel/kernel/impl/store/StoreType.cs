@@ -28,37 +28,37 @@ namespace Neo4Net.Kernel.impl.store
 	public abstract class StoreType
 	{
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//       NODE_LABEL(org.Neo4Net.io.layout.DatabaseFile.NODE_LABEL_STORE, true, false) { public CommonAbstractStore open(NeoStores neoStores) { return neoStores.createNodeLabelStore(); } },
+//       NODE_LABEL(Neo4Net.io.layout.DatabaseFile.NODE_LABEL_STORE, true, false) { public CommonAbstractStore open(NeoStores neoStores) { return neoStores.createNodeLabelStore(); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//       NODE(org.Neo4Net.io.layout.DatabaseFile.NODE_STORE, true, false) { public CommonAbstractStore open(NeoStores neoStores) { return neoStores.createNodeStore(); } },
+//       NODE(Neo4Net.io.layout.DatabaseFile.NODE_STORE, true, false) { public CommonAbstractStore open(NeoStores neoStores) { return neoStores.createNodeStore(); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//       PROPERTY_KEY_TOKEN_NAME(org.Neo4Net.io.layout.DatabaseFile.PROPERTY_KEY_TOKEN_NAMES_STORE, true, true) { public CommonAbstractStore open(NeoStores neoStores) { return neoStores.createPropertyKeyTokenNamesStore(); } },
+//       PROPERTY_KEY_TOKEN_NAME(Neo4Net.io.layout.DatabaseFile.PROPERTY_KEY_TOKEN_NAMES_STORE, true, true) { public CommonAbstractStore open(NeoStores neoStores) { return neoStores.createPropertyKeyTokenNamesStore(); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//       PROPERTY_KEY_TOKEN(org.Neo4Net.io.layout.DatabaseFile.PROPERTY_KEY_TOKEN_STORE, true, true) { public CommonAbstractStore open(NeoStores neoStores) { return neoStores.createPropertyKeyTokenStore(); } },
+//       PROPERTY_KEY_TOKEN(Neo4Net.io.layout.DatabaseFile.PROPERTY_KEY_TOKEN_STORE, true, true) { public CommonAbstractStore open(NeoStores neoStores) { return neoStores.createPropertyKeyTokenStore(); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//       PROPERTY_STRING(org.Neo4Net.io.layout.DatabaseFile.PROPERTY_STRING_STORE, true, false) { public CommonAbstractStore open(NeoStores neoStores) { return neoStores.createPropertyStringStore(); } },
+//       PROPERTY_STRING(Neo4Net.io.layout.DatabaseFile.PROPERTY_STRING_STORE, true, false) { public CommonAbstractStore open(NeoStores neoStores) { return neoStores.createPropertyStringStore(); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//       PROPERTY_ARRAY(org.Neo4Net.io.layout.DatabaseFile.PROPERTY_ARRAY_STORE, true, false) { public CommonAbstractStore open(NeoStores neoStores) { return neoStores.createPropertyArrayStore(); } },
+//       PROPERTY_ARRAY(Neo4Net.io.layout.DatabaseFile.PROPERTY_ARRAY_STORE, true, false) { public CommonAbstractStore open(NeoStores neoStores) { return neoStores.createPropertyArrayStore(); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//       PROPERTY(org.Neo4Net.io.layout.DatabaseFile.PROPERTY_STORE, true, false) { public CommonAbstractStore open(NeoStores neoStores) { return neoStores.createPropertyStore(); } },
+//       PROPERTY(Neo4Net.io.layout.DatabaseFile.PROPERTY_STORE, true, false) { public CommonAbstractStore open(NeoStores neoStores) { return neoStores.createPropertyStore(); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//       RELATIONSHIP(org.Neo4Net.io.layout.DatabaseFile.RELATIONSHIP_STORE, true, false) { public CommonAbstractStore open(NeoStores neoStores) { return neoStores.createRelationshipStore(); } },
+//       RELATIONSHIP(Neo4Net.io.layout.DatabaseFile.RELATIONSHIP_STORE, true, false) { public CommonAbstractStore open(NeoStores neoStores) { return neoStores.createRelationshipStore(); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//       RELATIONSHIP_TYPE_TOKEN_NAME(org.Neo4Net.io.layout.DatabaseFile.RELATIONSHIP_TYPE_TOKEN_NAMES_STORE, true, true) { public CommonAbstractStore open(NeoStores neoStores) { return neoStores.createRelationshipTypeTokenNamesStore(); } },
+//       RELATIONSHIP_TYPE_TOKEN_NAME(Neo4Net.io.layout.DatabaseFile.RELATIONSHIP_TYPE_TOKEN_NAMES_STORE, true, true) { public CommonAbstractStore open(NeoStores neoStores) { return neoStores.createRelationshipTypeTokenNamesStore(); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//       RELATIONSHIP_TYPE_TOKEN(org.Neo4Net.io.layout.DatabaseFile.RELATIONSHIP_TYPE_TOKEN_STORE, true, true) { public CommonAbstractStore open(NeoStores neoStores) { return neoStores.createRelationshipTypeTokenStore(); } },
+//       RELATIONSHIP_TYPE_TOKEN(Neo4Net.io.layout.DatabaseFile.RELATIONSHIP_TYPE_TOKEN_STORE, true, true) { public CommonAbstractStore open(NeoStores neoStores) { return neoStores.createRelationshipTypeTokenStore(); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//       LABEL_TOKEN_NAME(org.Neo4Net.io.layout.DatabaseFile.LABEL_TOKEN_NAMES_STORE, true, true) { public CommonAbstractStore open(NeoStores neoStores) { return neoStores.createLabelTokenNamesStore(); } },
+//       LABEL_TOKEN_NAME(Neo4Net.io.layout.DatabaseFile.LABEL_TOKEN_NAMES_STORE, true, true) { public CommonAbstractStore open(NeoStores neoStores) { return neoStores.createLabelTokenNamesStore(); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//       LABEL_TOKEN(org.Neo4Net.io.layout.DatabaseFile.LABEL_TOKEN_STORE, true, true) { public CommonAbstractStore open(NeoStores neoStores) { return neoStores.createLabelTokenStore(); } },
+//       LABEL_TOKEN(Neo4Net.io.layout.DatabaseFile.LABEL_TOKEN_STORE, true, true) { public CommonAbstractStore open(NeoStores neoStores) { return neoStores.createLabelTokenStore(); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//       SCHEMA(org.Neo4Net.io.layout.DatabaseFile.SCHEMA_STORE, true, true) { public CommonAbstractStore open(NeoStores neoStores) { return neoStores.createSchemaStore(); } },
+//       SCHEMA(Neo4Net.io.layout.DatabaseFile.SCHEMA_STORE, true, true) { public CommonAbstractStore open(NeoStores neoStores) { return neoStores.createSchemaStore(); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//       RELATIONSHIP_GROUP(org.Neo4Net.io.layout.DatabaseFile.RELATIONSHIP_GROUP_STORE, true, false) { public CommonAbstractStore open(NeoStores neoStores) { return neoStores.createRelationshipGroupStore(); } },
+//       RELATIONSHIP_GROUP(Neo4Net.io.layout.DatabaseFile.RELATIONSHIP_GROUP_STORE, true, false) { public CommonAbstractStore open(NeoStores neoStores) { return neoStores.createRelationshipGroupStore(); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//       COUNTS(org.Neo4Net.io.layout.DatabaseFile.COUNTS_STORES, false, false) { public org.Neo4Net.kernel.impl.store.counts.CountsTracker open(NeoStores neoStores) { return neoStores.createCountStore(); } void close(Object object) { try { ((org.Neo4Net.kernel.impl.store.counts.CountsTracker) object).shutdown(); } catch(java.io.IOException e) { throw new UnderlyingStorageException(e); } } },
+//       COUNTS(Neo4Net.io.layout.DatabaseFile.COUNTS_STORES, false, false) { public Neo4Net.kernel.impl.store.counts.CountsTracker open(NeoStores neoStores) { return neoStores.createCountStore(); } void close(Object object) { try { ((Neo4Net.kernel.impl.store.counts.CountsTracker) object).shutdown(); } catch(java.io.IOException e) { throw new UnderlyingStorageException(e); } } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//       META_DATA(org.Neo4Net.io.layout.DatabaseFile.METADATA_STORE, true, true) { public CommonAbstractStore open(NeoStores neoStores) { return neoStores.createMetadataStore(); } };
+//       META_DATA(Neo4Net.io.layout.DatabaseFile.METADATA_STORE, true, true) { public CommonAbstractStore open(NeoStores neoStores) { return neoStores.createMetadataStore(); } };
 
 		 private static readonly IList<StoreType> valueList = new List<StoreType>();
 

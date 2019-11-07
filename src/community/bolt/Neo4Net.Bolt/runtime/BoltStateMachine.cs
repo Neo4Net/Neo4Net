@@ -27,13 +27,13 @@ namespace Neo4Net.Bolt.runtime
 	public interface BoltStateMachine : IDisposable
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void process(org.Neo4Net.bolt.messaging.RequestMessage message, BoltResponseHandler handler) throws BoltConnectionFatality;
+//ORIGINAL LINE: void process(Neo4Net.bolt.messaging.RequestMessage message, BoltResponseHandler handler) throws BoltConnectionFatality;
 		 void Process( RequestMessage message, BoltResponseHandler handler );
 
 		 bool ShouldStickOnThread();
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void validateTransaction() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
+//ORIGINAL LINE: void validateTransaction() throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 		 void ValidateTransaction();
 
 		 bool HasOpenStatement();

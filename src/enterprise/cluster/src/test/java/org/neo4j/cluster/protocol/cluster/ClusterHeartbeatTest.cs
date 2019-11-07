@@ -59,7 +59,7 @@ namespace Neo4Net.cluster.protocol.cluster
 		 public virtual void ThreeNodesJoinAndThenCoordinatorDiesForReal()
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.Map<String, org.Neo4Net.cluster.InstanceId> roles = new java.util.HashMap<>();
+//ORIGINAL LINE: final java.util.Map<String, Neo4Net.cluster.InstanceId> roles = new java.util.HashMap<>();
 			  IDictionary<string, InstanceId> roles = new Dictionary<string, InstanceId>();
 
 			  TestCluster( 3, DefaultNetwork(), (new ClusterTestScriptDSL(this)).Rounds(1000).join(100, 1, 1).join(100, 2, 1).join(100, 3, 1).message(3000, "*** All nodes up and ok").getRoles(roles).down(800, 1).message(2000, "*** Should have seen failure by now").verifyCoordinatorRoleSwitched(roles).leave(0, 1).leave(300, 2).leave(300, 3) );

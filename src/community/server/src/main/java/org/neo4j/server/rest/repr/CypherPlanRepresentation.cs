@@ -26,10 +26,10 @@ namespace Neo4Net.Server.rest.repr
 	using Neo4Net.Collections.Helpers;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.repr.ObjectToRepresentationConverter.getMapRepresentation;
+//	import static Neo4Net.server.rest.repr.ObjectToRepresentationConverter.getMapRepresentation;
 
 	/// <summary>
-	/// This takes a function that resolves to a <seealso cref="org.Neo4Net.graphdb.ExecutionPlanDescription"/>, and it does so for two reasons:
+	/// This takes a function that resolves to a <seealso cref="Neo4Net.graphdb.ExecutionPlanDescription"/>, and it does so for two reasons:
 	///  - The plan description needs to be fetched *after* the result is streamed to the user
 	///  - This method is recursive, so it's not enough to just pass in the execution plan to the root call of it
 	///    subsequent inner calls could not re-use that execution plan (that would just lead to an infinite loop)
@@ -46,7 +46,7 @@ namespace Neo4Net.Server.rest.repr
 		 protected internal override void Serialize( MappingSerializer mappingSerializer )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.graphdb.ExecutionPlanDescription planDescription = getPlan();
+//ORIGINAL LINE: final Neo4Net.graphdb.ExecutionPlanDescription planDescription = getPlan();
 			  ExecutionPlanDescription planDescription = Plan;
 
 			  mappingSerializer.PutString( "name", planDescription.Name );
@@ -74,7 +74,7 @@ namespace Neo4Net.Server.rest.repr
 			 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: protected Representation underlyingObjectToObject(final org.Neo4Net.graphdb.ExecutionPlanDescription childPlan)
+//ORIGINAL LINE: protected Representation underlyingObjectToObject(final Neo4Net.graphdb.ExecutionPlanDescription childPlan)
 			 protected internal override Representation underlyingObjectToObject( ExecutionPlanDescription childPlan )
 			 {
 				  return NewFromPlan( childPlan );
@@ -82,7 +82,7 @@ namespace Neo4Net.Server.rest.repr
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static CypherPlanRepresentation newFromProvider(final System.Func<Object, org.Neo4Net.graphdb.ExecutionPlanDescription> planProvider)
+//ORIGINAL LINE: public static CypherPlanRepresentation newFromProvider(final System.Func<Object, Neo4Net.graphdb.ExecutionPlanDescription> planProvider)
 		 public static CypherPlanRepresentation NewFromProvider( System.Func<object, ExecutionPlanDescription> planProvider )
 		 {
 			  return new CypherPlanRepresentationAnonymousInnerClass( planProvider );
@@ -115,7 +115,7 @@ namespace Neo4Net.Server.rest.repr
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static CypherPlanRepresentation newFromPlan(final org.Neo4Net.graphdb.ExecutionPlanDescription plan)
+//ORIGINAL LINE: public static CypherPlanRepresentation newFromPlan(final Neo4Net.graphdb.ExecutionPlanDescription plan)
 		 public static CypherPlanRepresentation NewFromPlan( ExecutionPlanDescription plan )
 		 {
 			  return new CypherPlanRepresentationAnonymousInnerClass2( plan );

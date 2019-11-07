@@ -31,12 +31,12 @@ namespace Neo4Net.Server.rest.security
 	using SuppressOutput = Neo4Net.Test.rule.SuppressOutput;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.rule.SuppressOutput.suppressAll;
+//	import static Neo4Net.test.rule.SuppressOutput.suppressAll;
 
 	public class RESTAuthScenariosInteractionIT : AuthScenariosInteractionTestBase<RESTSubject>
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.SuppressOutput suppressOutput = suppressAll();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.SuppressOutput suppressOutput = suppressAll();
 		 public SuppressOutput SuppressOutput = suppressAll();
 
 		 public RESTAuthScenariosInteractionIT() : base()
@@ -47,7 +47,7 @@ namespace Neo4Net.Server.rest.security
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected org.Neo4Net.server.security.enterprise.auth.NeoInteractionLevel<RESTSubject> setUpNeoServer(java.util.Map<String,String> config) throws Throwable
+//ORIGINAL LINE: protected Neo4Net.server.security.enterprise.auth.NeoInteractionLevel<RESTSubject> setUpNeoServer(java.util.Map<String,String> config) throws Throwable
 		 protected internal override NeoInteractionLevel<RESTSubject> setUpNeoServer( IDictionary<string, string> config )
 		 {
 			  return new RESTInteraction( config );

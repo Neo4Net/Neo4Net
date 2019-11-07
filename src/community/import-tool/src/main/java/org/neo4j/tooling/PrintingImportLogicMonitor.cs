@@ -23,7 +23,7 @@ namespace Neo4Net.Tooling
 	using ImportLogic = Neo4Net.@unsafe.Impl.Batchimport.ImportLogic;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.Format.bytes;
+//	import static Neo4Net.helpers.Format.bytes;
 
 	internal class PrintingImportLogicMonitor : ImportLogic.Monitor
 	{

@@ -28,7 +28,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	/// <summary>
 	/// <seealso cref="IndexProxy"/> layer that enforces the dynamic contract of <seealso cref="IndexProxy"/> (cf. Test)
 	/// </summary>
-	/// <seealso cref= org.Neo4Net.kernel.impl.api.index.IndexProxy </seealso>
+	/// <seealso cref= Neo4Net.kernel.impl.api.index.IndexProxy </seealso>
 	public class ContractCheckingIndexProxy : DelegatingIndexProxy
 	{
 		 /// <summary>
@@ -109,7 +109,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void close() throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: public void close() throws Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 			 public override void close()
 			 {
 				  try
@@ -124,7 +124,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void force(org.Neo4Net.io.pagecache.IOLimiter ioLimiter) throws java.io.IOException
+//ORIGINAL LINE: public void force(Neo4Net.io.pagecache.IOLimiter ioLimiter) throws java.io.IOException
 		 public override void Force( IOLimiter ioLimiter )
 		 {
 			  OpenCall( "force" );

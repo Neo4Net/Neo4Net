@@ -30,7 +30,7 @@ namespace Neo4Net.causalclustering.upstream.strategies
 	using Service = Neo4Net.Helpers.Service;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Service.Implementation(UpstreamDatabaseSelectionStrategy.class) public class ConnectRandomlyWithinServerGroupStrategy extends org.Neo4Net.causalclustering.upstream.UpstreamDatabaseSelectionStrategy
+//ORIGINAL LINE: @Service.Implementation(UpstreamDatabaseSelectionStrategy.class) public class ConnectRandomlyWithinServerGroupStrategy extends Neo4Net.causalclustering.upstream.UpstreamDatabaseSelectionStrategy
 	public class ConnectRandomlyWithinServerGroupStrategy : UpstreamDatabaseSelectionStrategy
 	{
 		 public const string IDENTITY = "connect-randomly-within-server-group";

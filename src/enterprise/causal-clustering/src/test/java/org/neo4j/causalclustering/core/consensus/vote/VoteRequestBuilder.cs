@@ -25,7 +25,7 @@ namespace Neo4Net.causalclustering.core.consensus.vote
 
 	public class VoteRequestBuilder : AnyVoteRequestBuilder<Neo4Net.causalclustering.core.consensus.RaftMessages_Vote_Request>
 	{
-		 public VoteRequestBuilder() : base(org.Neo4Net.causalclustering.core.consensus.RaftMessages_Vote_Request::new)
+		 public VoteRequestBuilder() : base(Neo4Net.causalclustering.core.consensus.RaftMessages_Vote_Request::new)
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Method reference constructor syntax is not converted by Java to C# Converter:
 		 }

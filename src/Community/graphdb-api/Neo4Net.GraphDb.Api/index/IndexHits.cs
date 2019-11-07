@@ -60,7 +60,7 @@
 //////////////////	/// @param <T> the type of items in the Iterator. </param>
 //////////////////	/// @deprecated This API will be removed in the next major release. Please consider using schema indexes instead. 
 //////////////////	[Obsolete("This API will be removed in the next major release. Please consider using schema indexes instead.")]
-//////////////////	public interface IIndexHits<T> : ResourceIterator<T>, ResourceIterable<T>
+//////////////////	public interface IIndexHits<T> : IResourceIterator<T>,IResourceIterable<T>
 //////////////////	{
 //////////////////		 /// <summary>
 //////////////////		 /// Returns the size of this iterable, in most scenarios this value is accurate

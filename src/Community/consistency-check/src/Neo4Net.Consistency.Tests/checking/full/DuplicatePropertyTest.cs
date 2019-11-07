@@ -37,7 +37,7 @@ namespace Neo4Net.Consistency.checking.full
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verifyZeroInteractions;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.consistency.checking.RecordCheckTestBase.inUse;
+//	import static Neo4Net.consistency.checking.RecordCheckTestBase.inUse;
 
 	internal class DuplicatePropertyTest
 	{

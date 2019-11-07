@@ -23,7 +23,7 @@ namespace Neo4Net.Kernel.Api.Exceptions.schema
 
 	public class RepeatedPropertyInSchemaException : RepeatedSchemaComponentException
 	{
-		 public RepeatedPropertyInSchemaException( SchemaDescriptor schema, OperationContext context ) : base( org.Neo4Net.kernel.api.exceptions.Status_Schema.RepeatedPropertyInCompositeSchema, schema, context, SchemaComponent.Property )
+		 public RepeatedPropertyInSchemaException( SchemaDescriptor schema, OperationContext context ) : base( Neo4Net.kernel.api.exceptions.Status_Schema.RepeatedPropertyInCompositeSchema, schema, context, SchemaComponent.Property )
 		 {
 		 }
 	}

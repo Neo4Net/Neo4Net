@@ -33,9 +33,9 @@ namespace Neo4Net.Kernel.impl.traversal
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.traversal.Evaluators.excludeStartPosition;
+//	import static Neo4Net.graphdb.traversal.Evaluators.excludeStartPosition;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.traversal.Sorting.endNodeProperty;
+//	import static Neo4Net.graphdb.traversal.Sorting.endNodeProperty;
 
 	public class TestSorting : TraversalTestBase
 	{

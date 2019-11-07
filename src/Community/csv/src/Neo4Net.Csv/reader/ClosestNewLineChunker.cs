@@ -40,7 +40,7 @@ namespace Neo4Net.Csv.Reader
 		 /// <returns> the next <seealso cref="Chunk"/> of data, ending with a new-line or not for the last chunk. </returns>
 		 /// <exception cref="IOException"> on reading error. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public synchronized boolean nextChunk(org.Neo4Net.csv.reader.Source_Chunk chunk) throws java.io.IOException
+//ORIGINAL LINE: public synchronized boolean nextChunk(Neo4Net.csv.reader.Source_Chunk chunk) throws java.io.IOException
 		 public override bool NextChunk( Source_Chunk chunk )
 		 {
 			 lock ( this )

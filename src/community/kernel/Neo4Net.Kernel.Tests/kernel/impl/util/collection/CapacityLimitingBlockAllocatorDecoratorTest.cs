@@ -47,7 +47,7 @@ namespace Neo4Net.Kernel.impl.util.collection
 		 internal virtual void MaxMemoryLimit()
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.memory.IMemoryAllocationTracker tracker = mock(org.Neo4Net.memory.IMemoryAllocationTracker.class);
+//ORIGINAL LINE: final Neo4Net.memory.IMemoryAllocationTracker tracker = mock(Neo4Net.memory.IMemoryAllocationTracker.class);
 			  IMemoryAllocationTracker tracker = mock( typeof( IMemoryAllocationTracker ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final OffHeapBlockAllocator allocator = mock(OffHeapBlockAllocator.class);
@@ -62,12 +62,12 @@ namespace Neo4Net.Kernel.impl.util.collection
 			  CapacityLimitingBlockAllocatorDecorator decorator = new CapacityLimitingBlockAllocatorDecorator( allocator, 1024 );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.List<org.Neo4Net.kernel.impl.util.collection.OffHeapBlockAllocator_MemoryBlock> blocks = new java.util.ArrayList<>();
+//ORIGINAL LINE: final java.util.List<Neo4Net.kernel.impl.util.collection.OffHeapBlockAllocator_MemoryBlock> blocks = new java.util.ArrayList<>();
 			  IList<OffHeapBlockAllocator_MemoryBlock> blocks = new List<OffHeapBlockAllocator_MemoryBlock>();
 			  for ( int i = 0; i < 8; i++ )
 			  {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.util.collection.OffHeapBlockAllocator_MemoryBlock block = decorator.allocate(128, tracker);
+//ORIGINAL LINE: final Neo4Net.kernel.impl.util.collection.OffHeapBlockAllocator_MemoryBlock block = decorator.allocate(128, tracker);
 					OffHeapBlockAllocator_MemoryBlock block = decorator.Allocate( 128, tracker );
 					blocks.Add( block );
 			  }

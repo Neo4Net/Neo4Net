@@ -28,7 +28,7 @@ namespace Neo4Net.Server.plugins
 
 	/// @deprecated Server plugins are deprecated for removal in the next major release. Please use unmanaged extensions instead. 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Deprecated("Server plugins are deprecated for removal in the next major release. Please use unmanaged extensions instead.") @Provider public class PluginInvocatorProvider extends org.Neo4Net.server.database.InjectableProvider<PluginInvocator>
+//ORIGINAL LINE: @Deprecated("Server plugins are deprecated for removal in the next major release. Please use unmanaged extensions instead.") @Provider public class PluginInvocatorProvider extends Neo4Net.server.database.InjectableProvider<PluginInvocator>
 	[Obsolete("Server plugins are deprecated for removal in the next major release. Please use unmanaged extensions instead.")]
 	public class PluginInvocatorProvider : InjectableProvider<PluginInvocator>
 	{

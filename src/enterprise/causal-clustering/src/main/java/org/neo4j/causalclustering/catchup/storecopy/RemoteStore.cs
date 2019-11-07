@@ -41,11 +41,11 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 	using LogProvider = Neo4Net.Logging.LogProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.catchup.CatchupResult.E_TRANSACTION_PRUNED;
+//	import static Neo4Net.causalclustering.catchup.CatchupResult.E_TRANSACTION_PRUNED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.catchup.CatchupResult.SUCCESS_END_OF_STREAM;
+//	import static Neo4Net.causalclustering.catchup.CatchupResult.SUCCESS_END_OF_STREAM;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_ID;
+//	import static Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_ID;
 
 	/// <summary>
 	/// Entry point for remote store related RPC.
@@ -90,7 +90,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 /// get duplicate entries.
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.causalclustering.catchup.CatchupResult tryCatchingUp(org.Neo4Net.helpers.AdvertisedSocketAddress from, org.Neo4Net.causalclustering.identity.StoreId expectedStoreId, org.Neo4Net.io.layout.DatabaseLayout databaseLayout, boolean keepTxLogsInDir, boolean forceTransactionLogRotation) throws StoreCopyFailedException, java.io.IOException
+//ORIGINAL LINE: public Neo4Net.causalclustering.catchup.CatchupResult tryCatchingUp(Neo4Net.helpers.AdvertisedSocketAddress from, Neo4Net.causalclustering.identity.StoreId expectedStoreId, Neo4Net.io.layout.DatabaseLayout databaseLayout, boolean keepTxLogsInDir, boolean forceTransactionLogRotation) throws StoreCopyFailedException, java.io.IOException
 		 public virtual CatchupResult TryCatchingUp( AdvertisedSocketAddress from, StoreId expectedStoreId, DatabaseLayout databaseLayout, bool keepTxLogsInDir, bool forceTransactionLogRotation )
 		 {
 			  CommitState commitState = _commitStateHelper.getStoreState( databaseLayout );
@@ -120,7 +120,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void copy(org.Neo4Net.causalclustering.catchup.CatchupAddressProvider addressProvider, org.Neo4Net.causalclustering.identity.StoreId expectedStoreId, org.Neo4Net.io.layout.DatabaseLayout destinationLayout, boolean rotateTransactionsManually) throws StoreCopyFailedException
+//ORIGINAL LINE: public void copy(Neo4Net.causalclustering.catchup.CatchupAddressProvider addressProvider, Neo4Net.causalclustering.identity.StoreId expectedStoreId, Neo4Net.io.layout.DatabaseLayout destinationLayout, boolean rotateTransactionsManually) throws StoreCopyFailedException
 		 public virtual void Copy( CatchupAddressProvider addressProvider, StoreId expectedStoreId, DatabaseLayout destinationLayout, bool rotateTransactionsManually )
 		 {
 			  try
@@ -144,7 +144,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.causalclustering.catchup.CatchupResult pullTransactions(org.Neo4Net.helpers.AdvertisedSocketAddress from, org.Neo4Net.causalclustering.identity.StoreId expectedStoreId, org.Neo4Net.io.layout.DatabaseLayout databaseLayout, long fromTxId, boolean asPartOfStoreCopy, boolean keepTxLogsInStoreDir, boolean rotateTransactionsManually) throws java.io.IOException, StoreCopyFailedException
+//ORIGINAL LINE: private Neo4Net.causalclustering.catchup.CatchupResult pullTransactions(Neo4Net.helpers.AdvertisedSocketAddress from, Neo4Net.causalclustering.identity.StoreId expectedStoreId, Neo4Net.io.layout.DatabaseLayout databaseLayout, long fromTxId, boolean asPartOfStoreCopy, boolean keepTxLogsInStoreDir, boolean rotateTransactionsManually) throws java.io.IOException, StoreCopyFailedException
 		 private CatchupResult PullTransactions( AdvertisedSocketAddress from, StoreId expectedStoreId, DatabaseLayout databaseLayout, long fromTxId, bool asPartOfStoreCopy, bool keepTxLogsInStoreDir, bool rotateTransactionsManually )
 		 {
 			  StoreCopyClientMonitor storeCopyClientMonitor = _monitors.newMonitor( typeof( StoreCopyClientMonitor ) );
@@ -175,7 +175,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.causalclustering.identity.StoreId getStoreId(org.Neo4Net.helpers.AdvertisedSocketAddress from) throws StoreIdDownloadFailedException
+//ORIGINAL LINE: public Neo4Net.causalclustering.identity.StoreId getStoreId(Neo4Net.helpers.AdvertisedSocketAddress from) throws StoreIdDownloadFailedException
 		 public virtual StoreId GetStoreId( AdvertisedSocketAddress from )
 		 {
 			  return _storeCopyClient.fetchStoreId( from );

@@ -42,12 +42,12 @@ namespace Neo4Net.Index.Internal.gbptree
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Internal.gbptree.SimpleLongLayout.longLayout;
+//	import static Neo4Net.index.Internal.gbptree.SimpleLongLayout.longLayout;
 	using static Neo4Net.Index.Internal.gbptree.TreeNode.Overflow;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Internal.gbptree.TreeNode.setKeyCount;
+//	import static Neo4Net.index.Internal.gbptree.TreeNode.setKeyCount;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.rule.PageCacheRule.config;
+//	import static Neo4Net.test.rule.PageCacheRule.config;
 
 	public class CrashGenerationCleanerTest
 	{
@@ -211,7 +211,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void initializeFile(org.Neo4Net.io.pagecache.PagedFile pagedFile, Page... pages) throws java.io.IOException
+//ORIGINAL LINE: private void initializeFile(Neo4Net.io.pagecache.PagedFile pagedFile, Page... pages) throws java.io.IOException
 		 private void InitializeFile( PagedFile pagedFile, params Page[] pages )
 		 {
 			  using ( PageCursor cursor = pagedFile.Io( 0, Neo4Net.Io.pagecache.PagedFile_Fields.PfSharedWriteLock ) )
@@ -302,7 +302,7 @@ namespace Neo4Net.Index.Internal.gbptree
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void write(org.Neo4Net.io.pagecache.PagedFile pagedFile, org.Neo4Net.io.pagecache.PageCursor cursor, TreeNode<org.apache.commons.lang3.mutable.MutableLong,org.apache.commons.lang3.mutable.MutableLong> node, Layout<org.apache.commons.lang3.mutable.MutableLong,org.apache.commons.lang3.mutable.MutableLong> layout, TreeState checkpointedTreeState, TreeState unstableTreeState) throws java.io.IOException
+//ORIGINAL LINE: private void write(Neo4Net.io.pagecache.PagedFile pagedFile, Neo4Net.io.pagecache.PageCursor cursor, TreeNode<org.apache.commons.lang3.mutable.MutableLong,org.apache.commons.lang3.mutable.MutableLong> node, Layout<org.apache.commons.lang3.mutable.MutableLong,org.apache.commons.lang3.mutable.MutableLong> layout, TreeState checkpointedTreeState, TreeState unstableTreeState) throws java.io.IOException
 			  internal virtual void Write( PagedFile pagedFile, PageCursor cursor, TreeNode<MutableLong, MutableLong> node, Layout<MutableLong, MutableLong> layout, TreeState checkpointedTreeState, TreeState unstableTreeState )
 			  {
 					Type.write( cursor, node, layout, checkpointedTreeState );
@@ -316,9 +316,9 @@ namespace Neo4Net.Index.Internal.gbptree
 		 internal abstract class PageType
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           LEAF { void write(org.Neo4Net.io.pagecache.PageCursor cursor, TreeNode<org.apache.commons.lang3.mutable.MutableLong, org.apache.commons.lang3.mutable.MutableLong> treeNode, Layout<org.apache.commons.lang3.mutable.MutableLong, org.apache.commons.lang3.mutable.MutableLong> layout, TreeState treeState) { treeNode.initializeLeaf(cursor, treeState.stableGeneration(), treeState.unstableGeneration()); } },
+//           LEAF { void write(Neo4Net.io.pagecache.PageCursor cursor, TreeNode<org.apache.commons.lang3.mutable.MutableLong, org.apache.commons.lang3.mutable.MutableLong> treeNode, Layout<org.apache.commons.lang3.mutable.MutableLong, org.apache.commons.lang3.mutable.MutableLong> layout, TreeState treeState) { treeNode.initializeLeaf(cursor, treeState.stableGeneration(), treeState.unstableGeneration()); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           INTERNAL { void write(org.Neo4Net.io.pagecache.PageCursor cursor, TreeNode<org.apache.commons.lang3.mutable.MutableLong, org.apache.commons.lang3.mutable.MutableLong> treeNode, Layout<org.apache.commons.lang3.mutable.MutableLong, org.apache.commons.lang3.mutable.MutableLong> layout, TreeState treeState) { treeNode.initializeInternal(cursor, treeState.stableGeneration(), treeState.unstableGeneration()); long super = IdSpace.MIN_TREE_NODE_ID; int keyCount; for(keyCount = 0; treeNode.internalOverflow(cursor, keyCount, layout.newKey()) == Overflow.NO; keyCount++) { long child = super + keyCount; treeNode.setChildAt(cursor, child, keyCount, treeState.stableGeneration(), treeState.unstableGeneration()); } setKeyCount(cursor, keyCount); } };
+//           INTERNAL { void write(Neo4Net.io.pagecache.PageCursor cursor, TreeNode<org.apache.commons.lang3.mutable.MutableLong, org.apache.commons.lang3.mutable.MutableLong> treeNode, Layout<org.apache.commons.lang3.mutable.MutableLong, org.apache.commons.lang3.mutable.MutableLong> layout, TreeState treeState) { treeNode.initializeInternal(cursor, treeState.stableGeneration(), treeState.unstableGeneration()); long super = IdSpace.MIN_TREE_NODE_ID; int keyCount; for(keyCount = 0; treeNode.internalOverflow(cursor, keyCount, layout.newKey()) == Overflow.NO; keyCount++) { long child = super + keyCount; treeNode.setChildAt(cursor, child, keyCount, treeState.stableGeneration(), treeState.unstableGeneration()); } setKeyCount(cursor, keyCount); } };
 
 			  private static readonly IList<PageType> valueList = new List<PageType>();
 

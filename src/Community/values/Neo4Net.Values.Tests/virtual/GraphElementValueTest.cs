@@ -26,19 +26,19 @@ namespace Neo4Net.Values.@virtual
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertThrows;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.utils.AnyValueTestUtil.assertEqual;
+//	import static Neo4Net.values.utils.AnyValueTestUtil.assertEqual;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.utils.AnyValueTestUtil.assertNotEqual;
+//	import static Neo4Net.values.utils.AnyValueTestUtil.assertNotEqual;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.@virtual.VirtualValueTestUtil.node;
+//	import static Neo4Net.values.@virtual.VirtualValueTestUtil.node;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.@virtual.VirtualValueTestUtil.nodes;
+//	import static Neo4Net.values.@virtual.VirtualValueTestUtil.nodes;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.@virtual.VirtualValueTestUtil.path;
+//	import static Neo4Net.values.@virtual.VirtualValueTestUtil.path;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.@virtual.VirtualValueTestUtil.rel;
+//	import static Neo4Net.values.@virtual.VirtualValueTestUtil.rel;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.@virtual.VirtualValueTestUtil.relationships;
+//	import static Neo4Net.values.@virtual.VirtualValueTestUtil.relationships;
 
 	internal class GraphElementValueTest
 	{

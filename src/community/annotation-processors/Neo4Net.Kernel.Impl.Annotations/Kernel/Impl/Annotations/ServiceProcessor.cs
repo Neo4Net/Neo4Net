@@ -23,7 +23,7 @@ namespace Neo4Net.Kernel.Impl.Annotations
 {
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SupportedSourceVersion(SourceVersion.RELEASE_8) @SupportedAnnotationTypes("org.Neo4Net.helpers.Service.Implementation") public class ServiceProcessor extends AnnotationProcessor
+//ORIGINAL LINE: @SupportedSourceVersion(SourceVersion.RELEASE_8) @SupportedAnnotationTypes("Neo4Net.helpers.Service.Implementation") public class ServiceProcessor extends AnnotationProcessor
 	public class ServiceProcessor : AnnotationProcessor
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

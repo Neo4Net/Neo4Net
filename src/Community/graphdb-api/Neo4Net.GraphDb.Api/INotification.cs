@@ -49,10 +49,10 @@ namespace Neo4Net.GraphDb
 		 /// <summary>
 		 /// The position in the query where this notification points to.
 		 /// Not all notifications have a unique position to point to and should in
-		 /// that case return <seealso cref="org.Neo4Net.graphdb.InputPosition.empty"/>
+		 /// that case return <seealso cref="Neo4Net.GraphDb.InputPosition.empty"/>
 		 /// </summary>
 		 /// <returns> the position in the query where the issue was found, or
-		 /// <seealso cref="org.Neo4Net.graphdb.InputPosition.empty"/> if no position is associated with this notification. </returns>
+		 /// <seealso cref="Neo4Net.GraphDb.InputPosition.empty"/> if no position is associated with this notification. </returns>
 		 InputPosition Position { get; }
 	}
 

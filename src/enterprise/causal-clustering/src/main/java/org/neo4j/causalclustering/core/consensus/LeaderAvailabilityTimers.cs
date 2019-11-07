@@ -35,11 +35,11 @@ namespace Neo4Net.causalclustering.core.consensus
 	using Group = Neo4Net.Scheduler.Group;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.schedule.TimeoutFactory.fixedTimeout;
+//	import static Neo4Net.causalclustering.core.consensus.schedule.TimeoutFactory.fixedTimeout;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.schedule.TimeoutFactory.uniformRandomTimeout;
+//	import static Neo4Net.causalclustering.core.consensus.schedule.TimeoutFactory.uniformRandomTimeout;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.schedule.Timer.CancelMode.ASYNC;
+//	import static Neo4Net.causalclustering.core.consensus.schedule.Timer.CancelMode.ASYNC;
 
 	internal class LeaderAvailabilityTimers
 	{

@@ -33,7 +33,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using Neo4Net.Kernel.Api.Index;
 	using IndexPopulator = Neo4Net.Kernel.Api.Index.IndexPopulator;
 	using IndexUpdater = Neo4Net.Kernel.Api.Index.IndexUpdater;
-	using TestIndexDescriptorFactory = Neo4Net.Kernel.api.schema.index.TestIndexDescriptorFactory;
+	using TestIndexDescriptorFactory = Neo4Net.Kernel.Api.schema.index.TestIndexDescriptorFactory;
 	using LockService = Neo4Net.Kernel.impl.locking.LockService;
 	using NeoStores = Neo4Net.Kernel.impl.store.NeoStores;
 	using NodeStore = Neo4Net.Kernel.impl.store.NodeStore;
@@ -69,17 +69,17 @@ namespace Neo4Net.Kernel.Impl.Api.index
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.index.IndexQueryHelper.add;
+//	import static Neo4Net.kernel.api.index.IndexQueryHelper.add;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.api.index.BatchingMultipleIndexPopulator.AWAIT_TIMEOUT_MINUTES_NAME;
+//	import static Neo4Net.kernel.impl.api.index.BatchingMultipleIndexPopulator.AWAIT_TIMEOUT_MINUTES_NAME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.api.index.BatchingMultipleIndexPopulator.BATCH_SIZE_NAME;
+//	import static Neo4Net.kernel.impl.api.index.BatchingMultipleIndexPopulator.BATCH_SIZE_NAME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.api.index.BatchingMultipleIndexPopulator.TASK_QUEUE_SIZE_NAME;
+//	import static Neo4Net.kernel.impl.api.index.BatchingMultipleIndexPopulator.TASK_QUEUE_SIZE_NAME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.api.index.IndexPopulationFailure.failure;
+//	import static Neo4Net.kernel.impl.api.index.IndexPopulationFailure.failure;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.api.index.MultipleIndexPopulator.QUEUE_THRESHOLD_NAME;
+//	import static Neo4Net.kernel.impl.api.index.MultipleIndexPopulator.QUEUE_THRESHOLD_NAME;
 
 	public class BatchingMultipleIndexPopulatorTest
 	{
@@ -113,10 +113,10 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  when( populator.NewPopulatingUpdater( any() ) ).thenReturn(updater);
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> update1 = add(1, index1.schema(), "foo");
+//ORIGINAL LINE: Neo4Net.kernel.api.index.IndexEntryUpdate<?> update1 = add(1, index1.schema(), "foo");
 			  IndexEntryUpdate<object> update1 = add( 1, _index1.schema(), "foo" );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> update2 = add(2, index1.schema(), "bar");
+//ORIGINAL LINE: Neo4Net.kernel.api.index.IndexEntryUpdate<?> update2 = add(2, index1.schema(), "bar");
 			  IndexEntryUpdate<object> update2 = add( 2, _index1.schema(), "bar" );
 			  batchingPopulator.QueueUpdate( update1 );
 			  batchingPopulator.QueueUpdate( update2 );
@@ -151,13 +151,13 @@ namespace Neo4Net.Kernel.Impl.Api.index
 
 			  batchingPopulator.IndexAllEntities();
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> update1 = add(1, index1.schema(), "foo");
+//ORIGINAL LINE: Neo4Net.kernel.api.index.IndexEntryUpdate<?> update1 = add(1, index1.schema(), "foo");
 			  IndexEntryUpdate<object> update1 = add( 1, _index1.schema(), "foo" );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> update2 = add(2, index42.schema(), "bar");
+//ORIGINAL LINE: Neo4Net.kernel.api.index.IndexEntryUpdate<?> update2 = add(2, index42.schema(), "bar");
 			  IndexEntryUpdate<object> update2 = add( 2, _index42.schema(), "bar" );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> update3 = add(3, index1.schema(), "baz");
+//ORIGINAL LINE: Neo4Net.kernel.api.index.IndexEntryUpdate<?> update3 = add(3, index1.schema(), "baz");
 			  IndexEntryUpdate<object> update3 = add( 3, _index1.schema(), "baz" );
 			  batchingPopulator.QueueUpdate( update1 );
 			  batchingPopulator.QueueUpdate( update2 );
@@ -450,7 +450,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void run() throws org.Neo4Net.kernel.api.exceptions.index.IndexPopulationFailedKernelException
+//ORIGINAL LINE: public void run() throws Neo4Net.kernel.api.exceptions.index.IndexPopulationFailedKernelException
 			  public override void Run()
 			  {
 					foreach ( IEntityUpdates update in Updates )

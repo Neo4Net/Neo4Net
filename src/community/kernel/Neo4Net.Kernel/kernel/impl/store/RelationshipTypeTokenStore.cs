@@ -45,7 +45,7 @@ namespace Neo4Net.Kernel.impl.store
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public <FAILURE extends Exception> void accept(Processor<FAILURE> processor, org.Neo4Net.kernel.impl.store.record.RelationshipTypeTokenRecord record) throws FAILURE
+//ORIGINAL LINE: public <FAILURE extends Exception> void accept(Processor<FAILURE> processor, Neo4Net.kernel.impl.store.record.RelationshipTypeTokenRecord record) throws FAILURE
 		 public override void Accept<FAILURE>( Processor<FAILURE> processor, RelationshipTypeTokenRecord record ) where FAILURE : Exception
 		 {
 			  processor.processRelationshipTypeToken( this, record );

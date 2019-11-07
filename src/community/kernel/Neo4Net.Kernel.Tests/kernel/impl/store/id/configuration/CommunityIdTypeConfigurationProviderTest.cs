@@ -41,7 +41,7 @@ namespace Neo4Net.Kernel.impl.store.id.configuration
 		 private IdType _reusableType;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Parameterized.Parameters public static java.util.List<org.Neo4Net.kernel.impl.store.id.IdType> data()
+//ORIGINAL LINE: @Parameterized.Parameters public static java.util.List<Neo4Net.kernel.impl.store.id.IdType> data()
 		 public static IList<IdType> Data()
 		 {
 			  return Arrays.asList( IdType.PROPERTY, IdType.STRING_BLOCK, IdType.ARRAY_BLOCK, IdType.NODE_LABELS );

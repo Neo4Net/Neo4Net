@@ -66,7 +66,7 @@ namespace Neo4Net.CommandLine.Args
 		 /// Returns true if this argument was given explicitly on the command line
 		 /// </summary>
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//		 default boolean has(org.Neo4Net.helpers.Args parsedArgs)
+//		 default boolean has(Neo4Net.helpers.Args parsedArgs)
 	//	 {
 	//		  return parsedArgs.has(name());
 	//	 }

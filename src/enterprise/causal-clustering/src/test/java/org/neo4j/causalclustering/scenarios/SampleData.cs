@@ -30,7 +30,7 @@ namespace Neo4Net.causalclustering.scenarios
 	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.Label.label;
+//	import static Neo4Net.graphdb.Label.label;
 
 	public class SampleData
 	{
@@ -42,7 +42,7 @@ namespace Neo4Net.causalclustering.scenarios
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static void createSomeData(int items, org.Neo4Net.causalclustering.discovery.Cluster<?> cluster) throws Exception
+//ORIGINAL LINE: public static void createSomeData(int items, Neo4Net.causalclustering.discovery.Cluster<?> cluster) throws Exception
 		 public static void CreateSomeData<T1>( int items, Cluster<T1> cluster )
 		 {
 			  for ( int i = 0; i < items; i++ )

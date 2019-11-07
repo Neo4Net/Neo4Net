@@ -19,9 +19,9 @@
  */
 namespace Neo4Net.Kernel.builtinprocs
 {
-	using QueryRegistryOperations = Neo4Net.Kernel.api.QueryRegistryOperations;
-	using Statement = Neo4Net.Kernel.api.Statement;
-	using StubResourceManager = Neo4Net.Kernel.api.StubResourceManager;
+	using QueryRegistryOperations = Neo4Net.Kernel.Api.QueryRegistryOperations;
+	using Statement = Neo4Net.Kernel.Api.Statement;
+	using StubResourceManager = Neo4Net.Kernel.Api.StubResourceManager;
 
 	public class StubStatement : StubResourceManager, Statement
 	{

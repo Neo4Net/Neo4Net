@@ -29,11 +29,11 @@ namespace Neo4Net.Values.Storable
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.MatcherAssert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.NumberValues.hash;
+//	import static Neo4Net.values.storable.NumberValues.hash;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.utils.AnyValueTestUtil.assertIncomparable;
+//	import static Neo4Net.values.utils.AnyValueTestUtil.assertIncomparable;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.@virtual.VirtualValueTestUtil.toAnyValue;
+//	import static Neo4Net.values.@virtual.VirtualValueTestUtil.toAnyValue;
 
 	internal class NumberValuesTest
 	{

@@ -31,7 +31,7 @@ namespace Neo4Net.Kernel
 	internal abstract class DataSourceDiagnostics : DiagnosticsExtractor<NeoStoreDataSource>
 	{
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//       TRANSACTION_RANGE("Transaction log:") { void dump(NeoStoreDataSource source, org.Neo4Net.logging.Logger log) { org.Neo4Net.kernel.impl.transaction.log.files.LogFiles logFiles = source.getDependencyResolver().resolveDependency(org.Neo4Net.kernel.impl.transaction.log.files.LogFiles.class); try { for(long logVersion = logFiles.getLowestLogVersion(); logFiles.versionExists(logVersion); logVersion++) { if(logFiles.hasAnyEntries(logVersion)) { org.Neo4Net.kernel.impl.transaction.log.entry.LogHeader header = logFiles.extractHeader(logVersion); long firstTransactionIdInThisLog = header.lastCommittedTxId + 1; log.log("Oldest transaction " + firstTransactionIdInThisLog + " found in log with version " + logVersion); return; } } log.log("No transactions found in any log"); } catch(java.io.IOException e) { log.log("Error trying to figure out oldest transaction in log"); } } };
+//       TRANSACTION_RANGE("Transaction log:") { void dump(NeoStoreDataSource source, Neo4Net.logging.Logger log) { Neo4Net.kernel.impl.transaction.log.files.LogFiles logFiles = source.getDependencyResolver().resolveDependency(Neo4Net.kernel.impl.transaction.log.files.LogFiles.class); try { for(long logVersion = logFiles.getLowestLogVersion(); logFiles.versionExists(logVersion); logVersion++) { if(logFiles.hasAnyEntries(logVersion)) { Neo4Net.kernel.impl.transaction.log.entry.LogHeader header = logFiles.extractHeader(logVersion); long firstTransactionIdInThisLog = header.lastCommittedTxId + 1; log.log("Oldest transaction " + firstTransactionIdInThisLog + " found in log with version " + logVersion); return; } } log.log("No transactions found in any log"); } catch(java.io.IOException e) { log.log("Error trying to figure out oldest transaction in log"); } } };
 
 		 private static readonly IList<DataSourceDiagnostics> valueList = new List<DataSourceDiagnostics>();
 
@@ -69,7 +69,7 @@ namespace Neo4Net.Kernel
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public void dumpDiagnostics(final NeoStoreDataSource source, org.Neo4Net.internal.diagnostics.DiagnosticsPhase phase, org.Neo4Net.logging.Logger logger)
+//ORIGINAL LINE: public void dumpDiagnostics(final NeoStoreDataSource source, Neo4Net.internal.diagnostics.DiagnosticsPhase phase, Neo4Net.logging.Logger logger)
 		 public void DumpDiagnostics( NeoStoreDataSource source, Neo4Net.Internal.Diagnostics.DiagnosticsPhase phase, Neo4Net.Logging.Logger logger )
 		 {
 			  if ( Applicable( phase ) )

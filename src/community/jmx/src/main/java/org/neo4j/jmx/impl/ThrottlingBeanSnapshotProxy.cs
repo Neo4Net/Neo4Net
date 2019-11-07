@@ -27,9 +27,9 @@ namespace Neo4Net.Jmx.impl
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Arrays.stream;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.util.Preconditions.checkArgument;
+//	import static Neo4Net.util.Preconditions.checkArgument;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.util.Preconditions.requirePositive;
+//	import static Neo4Net.util.Preconditions.requirePositive;
 
 	/// <summary>
 	/// The purpose of this proxy is to take a snapshot of all MBean attributes and return those cached values to prevent excessive resource consumption

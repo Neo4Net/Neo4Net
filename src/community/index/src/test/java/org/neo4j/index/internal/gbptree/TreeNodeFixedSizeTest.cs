@@ -24,7 +24,7 @@ namespace Neo4Net.Index.Internal.gbptree
 	using PageCursor = Neo4Net.Io.pagecache.PageCursor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.index.Internal.gbptree.SimpleLongLayout.longLayout;
+//	import static Neo4Net.index.Internal.gbptree.SimpleLongLayout.longLayout;
 
 	public class TreeNodeFixedSizeTest : TreeNodeTestBase<MutableLong, MutableLong>
 	{

@@ -32,8 +32,8 @@ namespace Neo4Net.Kernel.enterprise.builtinprocs
 	using Coordinate = Neo4Net.GraphDb.Spatial.Coordinate;
 	using Point = Neo4Net.GraphDb.Spatial.Point;
 	using InvalidArgumentsException = Neo4Net.Kernel.Api.Exceptions.InvalidArgumentsException;
-	using ExecutingQuery = Neo4Net.Kernel.api.query.ExecutingQuery;
-	using QuerySnapshot = Neo4Net.Kernel.api.query.QuerySnapshot;
+	using ExecutingQuery = Neo4Net.Kernel.Api.query.ExecutingQuery;
+	using QuerySnapshot = Neo4Net.Kernel.Api.query.QuerySnapshot;
 	using EmbeddedProxySPI = Neo4Net.Kernel.impl.core.EmbeddedProxySPI;
 	using ClientConnectionInfo = Neo4Net.Kernel.impl.query.clientconnection.ClientConnectionInfo;
 	using Neo4Net.Kernel.impl.util;
@@ -41,11 +41,11 @@ namespace Neo4Net.Kernel.enterprise.builtinprocs
 	using MapValue = Neo4Net.Values.@virtual.MapValue;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.enterprise.builtinprocs.ProceduresTimeFormatHelper.formatInterval;
+//	import static Neo4Net.kernel.enterprise.builtinprocs.ProceduresTimeFormatHelper.formatInterval;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.enterprise.builtinprocs.ProceduresTimeFormatHelper.formatTime;
+//	import static Neo4Net.kernel.enterprise.builtinprocs.ProceduresTimeFormatHelper.formatTime;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.enterprise.builtinprocs.QueryId.ofInternalId;
+//	import static Neo4Net.kernel.enterprise.builtinprocs.QueryId.ofInternalId;
 
 	public class QueryStatusResult
 	{
@@ -112,13 +112,13 @@ namespace Neo4Net.Kernel.enterprise.builtinprocs
 		 public readonly string ConnectionId;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: QueryStatusResult(org.Neo4Net.kernel.api.query.ExecutingQuery query, org.Neo4Net.kernel.impl.core.EmbeddedProxySPI manager, java.time.ZoneId zoneId) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: QueryStatusResult(Neo4Net.kernel.api.query.ExecutingQuery query, Neo4Net.kernel.impl.core.EmbeddedProxySPI manager, java.time.ZoneId zoneId) throws Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 		 internal QueryStatusResult( ExecutingQuery query, EmbeddedProxySPI manager, ZoneId zoneId ) : this( query.Snapshot(), manager, zoneId )
 		 {
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private QueryStatusResult(org.Neo4Net.kernel.api.query.QuerySnapshot query, org.Neo4Net.kernel.impl.core.EmbeddedProxySPI manager, java.time.ZoneId zoneId) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: private QueryStatusResult(Neo4Net.kernel.api.query.QuerySnapshot query, Neo4Net.kernel.impl.core.EmbeddedProxySPI manager, java.time.ZoneId zoneId) throws Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 		 private QueryStatusResult( QuerySnapshot query, EmbeddedProxySPI manager, ZoneId zoneId )
 		 {
 			  this.QueryId = ofInternalId( query.InternalQueryId() ).ToString();

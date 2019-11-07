@@ -38,19 +38,19 @@ namespace Neo4Net.causalclustering.protocol
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Arrays.asList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.protocol.Protocol_ModifierProtocols.COMPRESSION_LZ4;
+//	import static Neo4Net.causalclustering.protocol.Protocol_ModifierProtocols.COMPRESSION_LZ4;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.protocol.Protocol_ModifierProtocols.COMPRESSION_LZ4_HIGH_COMPRESSION;
+//	import static Neo4Net.causalclustering.protocol.Protocol_ModifierProtocols.COMPRESSION_LZ4_HIGH_COMPRESSION;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.protocol.Protocol_ModifierProtocols.COMPRESSION_LZ4_HIGH_COMPRESSION_VALIDATING;
+//	import static Neo4Net.causalclustering.protocol.Protocol_ModifierProtocols.COMPRESSION_LZ4_HIGH_COMPRESSION_VALIDATING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.protocol.Protocol_ModifierProtocols.COMPRESSION_LZ4_VALIDATING;
+//	import static Neo4Net.causalclustering.protocol.Protocol_ModifierProtocols.COMPRESSION_LZ4_VALIDATING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.protocol.Protocol_ModifierProtocols.COMPRESSION_SNAPPY;
+//	import static Neo4Net.causalclustering.protocol.Protocol_ModifierProtocols.COMPRESSION_SNAPPY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.protocol.Protocol_ModifierProtocols.COMPRESSION_SNAPPY_VALIDATING;
+//	import static Neo4Net.causalclustering.protocol.Protocol_ModifierProtocols.COMPRESSION_SNAPPY_VALIDATING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.protocol.Protocol_ModifierProtocols.COMPRESSION_GZIP;
+//	import static Neo4Net.causalclustering.protocol.Protocol_ModifierProtocols.COMPRESSION_GZIP;
 
 	public interface ModifierProtocolInstaller<O> where O : Neo4Net.causalclustering.protocol.ProtocolInstaller_Orientation
 	{

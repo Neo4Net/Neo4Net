@@ -29,7 +29,7 @@ namespace Neo4Net.Kernel.impl.util
 	public sealed class MultiResource : Resource
 	{
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private final java.util.Collection<? extends org.Neo4Net.graphdb.Resource> resources;
+//ORIGINAL LINE: private final java.util.Collection<? extends Neo4Net.graphdb.Resource> resources;
 		 private readonly ICollection<Resource> _resources;
 
 		 public MultiResource<T1>( ICollection<T1> resources ) where T1 : Neo4Net.GraphDb.Resource

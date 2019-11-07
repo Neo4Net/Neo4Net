@@ -37,12 +37,12 @@ namespace Neo4Net.causalclustering.stresstests
 	using LogProvider = Neo4Net.Logging.LogProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helper.StressTestingHelper.ensureExistsAndEmpty;
+//	import static Neo4Net.helper.StressTestingHelper.ensureExistsAndEmpty;
 
 	internal class Resources
 	{
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private final org.Neo4Net.causalclustering.discovery.Cluster<?> cluster;
+//ORIGINAL LINE: private final Neo4Net.causalclustering.discovery.Cluster<?> cluster;
 		 private readonly Cluster<object> _cluster;
 		 private readonly File _clusterDir;
 		 private readonly File _backupDir;
@@ -51,13 +51,13 @@ namespace Neo4Net.causalclustering.stresstests
 		 private readonly LogProvider _logProvider;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: Resources(org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, org.Neo4Net.io.pagecache.PageCache pageCache, Config config) throws java.io.IOException
+//ORIGINAL LINE: Resources(Neo4Net.io.fs.FileSystemAbstraction fileSystem, Neo4Net.io.pagecache.PageCache pageCache, Config config) throws java.io.IOException
 		 internal Resources( FileSystemAbstraction fileSystem, PageCache pageCache, Config config ) : this( fileSystem, pageCache, FormattedLogProvider.toOutputStream( System.out ), config )
 		 {
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private Resources(org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, org.Neo4Net.io.pagecache.PageCache pageCache, org.Neo4Net.logging.LogProvider logProvider, Config config) throws java.io.IOException
+//ORIGINAL LINE: private Resources(Neo4Net.io.fs.FileSystemAbstraction fileSystem, Neo4Net.io.pagecache.PageCache pageCache, Neo4Net.logging.LogProvider logProvider, Config config) throws java.io.IOException
 		 private Resources( FileSystemAbstraction fileSystem, PageCache pageCache, LogProvider logProvider, Config config )
 		 {
 			  this._fileSystem = fileSystem;
@@ -82,7 +82,7 @@ namespace Neo4Net.causalclustering.stresstests
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: public org.Neo4Net.causalclustering.discovery.Cluster<?> cluster()
+//ORIGINAL LINE: public Neo4Net.causalclustering.discovery.Cluster<?> cluster()
 		 public virtual Cluster<object> Cluster()
 		 {
 			  return _cluster;

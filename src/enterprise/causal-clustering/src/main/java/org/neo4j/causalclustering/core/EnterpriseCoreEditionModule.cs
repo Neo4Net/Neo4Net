@@ -98,7 +98,7 @@ namespace Neo4Net.causalclustering.core
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
-	using NetworkConnectionTracker = Neo4Net.Kernel.api.net.NetworkConnectionTracker;
+	using NetworkConnectionTracker = Neo4Net.Kernel.Api.net.NetworkConnectionTracker;
 	using AvailabilityGuard = Neo4Net.Kernel.availability.AvailabilityGuard;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using SslPolicyLoader = Neo4Net.Kernel.configuration.ssl.SslPolicyLoader;
@@ -133,7 +133,7 @@ namespace Neo4Net.causalclustering.core
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Arrays.asList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.CausalClusteringSettings.raft_messages_log_path;
+//	import static Neo4Net.causalclustering.core.CausalClusteringSettings.raft_messages_log_path;
 
 	/// <summary>
 	/// This implementation of <seealso cref="AbstractEditionModule"/> creates the implementations of services
@@ -173,7 +173,7 @@ namespace Neo4Net.causalclustering.core
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void registerEditionSpecificProcedures(org.Neo4Net.kernel.impl.proc.Procedures procedures) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: public void registerEditionSpecificProcedures(Neo4Net.kernel.impl.proc.Procedures procedures) throws Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 public override void RegisterEditionSpecificProcedures( Procedures procedures )
 		 {
 			  procedures.RegisterProcedure( typeof( EnterpriseBuiltInDbmsProcedures ), true );
@@ -199,33 +199,33 @@ namespace Neo4Net.causalclustering.core
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public EnterpriseCoreEditionModule(final org.Neo4Net.graphdb.factory.module.PlatformModule platformModule, final org.Neo4Net.causalclustering.discovery.DiscoveryServiceFactory discoveryServiceFactory)
+//ORIGINAL LINE: public EnterpriseCoreEditionModule(final Neo4Net.graphdb.factory.module.PlatformModule platformModule, final Neo4Net.causalclustering.discovery.DiscoveryServiceFactory discoveryServiceFactory)
 		 public EnterpriseCoreEditionModule( PlatformModule platformModule, DiscoveryServiceFactory discoveryServiceFactory )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.util.Dependencies dependencies = platformModule.dependencies;
+//ORIGINAL LINE: final Neo4Net.kernel.impl.util.Dependencies dependencies = platformModule.dependencies;
 			  Dependencies dependencies = platformModule.Dependencies;
 			  Config = platformModule.Config;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.logging.internal.LogService logging = platformModule.logging;
+//ORIGINAL LINE: final Neo4Net.logging.internal.LogService logging = platformModule.logging;
 			  LogService logging = platformModule.Logging;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.io.fs.FileSystemAbstraction fileSystem = platformModule.fileSystem;
+//ORIGINAL LINE: final Neo4Net.io.fs.FileSystemAbstraction fileSystem = platformModule.fileSystem;
 			  FileSystemAbstraction fileSystem = platformModule.FileSystem;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.io.layout.DatabaseLayout databaseLayout = platformModule.storeLayout.databaseLayout(config.get(org.Neo4Net.graphdb.factory.GraphDatabaseSettings.active_database));
+//ORIGINAL LINE: final Neo4Net.io.layout.DatabaseLayout databaseLayout = platformModule.storeLayout.databaseLayout(config.get(Neo4Net.graphdb.factory.GraphDatabaseSettings.active_database));
 			  DatabaseLayout databaseLayout = platformModule.StoreLayout.databaseLayout( Config.get( GraphDatabaseSettings.active_database ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.lifecycle.LifeSupport life = platformModule.life;
+//ORIGINAL LINE: final Neo4Net.kernel.lifecycle.LifeSupport life = platformModule.life;
 			  LifeSupport life = platformModule.Life;
 
 			  CoreMonitor.register( logging.InternalLogProvider, logging.UserLogProvider, platformModule.Monitors );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.io.File dataDir = config.get(org.Neo4Net.graphdb.factory.GraphDatabaseSettings.data_directory);
+//ORIGINAL LINE: final java.io.File dataDir = config.get(Neo4Net.graphdb.factory.GraphDatabaseSettings.data_directory);
 			  File dataDir = Config.get( GraphDatabaseSettings.data_directory );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.causalclustering.core.state.ClusterStateDirectory clusterStateDirectory = new org.Neo4Net.causalclustering.core.state.ClusterStateDirectory(dataDir, databaseLayout.databaseDirectory(), false);
+//ORIGINAL LINE: final Neo4Net.causalclustering.core.state.ClusterStateDirectory clusterStateDirectory = new Neo4Net.causalclustering.core.state.ClusterStateDirectory(dataDir, databaseLayout.databaseDirectory(), false);
 			  ClusterStateDirectory clusterStateDirectory = new ClusterStateDirectory( dataDir, databaseLayout.DatabaseDirectory(), false );
 			  try
 			  {
@@ -242,7 +242,7 @@ namespace Neo4Net.causalclustering.core
 
 			  LogProvider = logging.InternalLogProvider;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final System.Func<org.Neo4Net.kernel.internal.DatabaseHealth> databaseHealthSupplier = () -> platformModule.dataSourceManager.getDataSource().getDependencyResolver().resolveDependency(org.Neo4Net.kernel.internal.DatabaseHealth.class);
+//ORIGINAL LINE: final System.Func<Neo4Net.kernel.internal.DatabaseHealth> databaseHealthSupplier = () -> platformModule.dataSourceManager.getDataSource().getDependencyResolver().resolveDependency(Neo4Net.kernel.internal.DatabaseHealth.class);
 			  System.Func<DatabaseHealth> databaseHealthSupplier = () => platformModule.DataSourceManager.DataSource.DependencyResolver.resolveDependency(typeof(DatabaseHealth));
 
 			  WatcherServiceFactoryConflict = directory => CreateFileSystemWatcherService( fileSystem, directory, logging, platformModule.JobScheduler, Config, FileWatcherFileNameFilter() );
@@ -281,13 +281,13 @@ namespace Neo4Net.causalclustering.core
 			  Duration handshakeTimeout = Config.get( CausalClusteringSettings.HandshakeTimeout );
 			  HandshakeClientInitializer channelInitializer = new HandshakeClientInitializer( applicationProtocolRepository, modifierProtocolRepository, protocolInstallerRepository, clientPipelineBuilderFactory, handshakeTimeout, LogProvider, platformModule.Logging.UserLogProvider );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.causalclustering.messaging.SenderService raftSender = new org.Neo4Net.causalclustering.messaging.SenderService(channelInitializer, logProvider);
+//ORIGINAL LINE: final Neo4Net.causalclustering.messaging.SenderService raftSender = new Neo4Net.causalclustering.messaging.SenderService(channelInitializer, logProvider);
 			  SenderService raftSender = new SenderService( channelInitializer, LogProvider );
 			  life.Add( raftSender );
 			  this._clientInstalledProtocols = raftSender.installedProtocols;
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.causalclustering.logging.MessageLogger<org.Neo4Net.causalclustering.identity.MemberId> messageLogger = createMessageLogger(config, life, identityModule.myself());
+//ORIGINAL LINE: final Neo4Net.causalclustering.logging.MessageLogger<Neo4Net.causalclustering.identity.MemberId> messageLogger = createMessageLogger(config, life, identityModule.myself());
 			  MessageLogger<MemberId> messageLogger = CreateMessageLogger( Config, life, identityModule.Myself() );
 
 			  RaftOutbound raftOutbound = new RaftOutbound( _topologyService, raftSender, clusteringModule.ClusterIdentity(), LogProvider, logThresholdMillis );
@@ -372,7 +372,7 @@ namespace Neo4Net.causalclustering.core
 		 private static MessageLogger<MemberId> CreateMessageLogger( Config config, LifeSupport life, MemberId myself )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.causalclustering.logging.MessageLogger<org.Neo4Net.causalclustering.identity.MemberId> messageLogger;
+//ORIGINAL LINE: final Neo4Net.causalclustering.logging.MessageLogger<Neo4Net.causalclustering.identity.MemberId> messageLogger;
 			  MessageLogger<MemberId> messageLogger;
 			  if ( config.Get( CausalClusteringSettings.RaftMessagesLogEnable ) )
 			  {

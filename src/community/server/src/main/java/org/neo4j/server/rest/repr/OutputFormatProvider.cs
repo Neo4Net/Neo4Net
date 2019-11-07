@@ -26,7 +26,7 @@ namespace Neo4Net.Server.rest.repr
 	using Neo4Net.Server.database;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Provider public final class OutputFormatProvider extends org.Neo4Net.server.database.InjectableProvider<OutputFormat>
+//ORIGINAL LINE: @Provider public final class OutputFormatProvider extends Neo4Net.server.database.InjectableProvider<OutputFormat>
 	public sealed class OutputFormatProvider : InjectableProvider<OutputFormat>
 	{
 		 private readonly RepresentationFormatRepository _repository;

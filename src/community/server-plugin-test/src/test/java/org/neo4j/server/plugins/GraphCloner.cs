@@ -41,7 +41,7 @@ namespace Neo4Net.Server.plugins
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @PluginTarget(org.Neo4Net.graphdb.Node.class) public org.Neo4Net.graphdb.Node clonedSubgraph(@Source Node startNode, @Parameter(name = "depth", optional = false) System.Nullable<int> depth)
+//ORIGINAL LINE: @PluginTarget(Neo4Net.graphdb.Node.class) public Neo4Net.graphdb.Node clonedSubgraph(@Source Node startNode, @Parameter(name = "depth", optional = false) System.Nullable<int> depth)
 		 [PluginTarget(Neo4Net.GraphDb.Node.class)]
 		 public virtual Node ClonedSubgraph( Node startNode, int? depth )
 		 {
@@ -90,7 +90,7 @@ namespace Neo4Net.Server.plugins
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private org.Neo4Net.graphdb.traversal.Traverser traverseToDepth(org.Neo4Net.graphdb.GraphDatabaseService graphDb, final org.Neo4Net.graphdb.Node startNode, final int depth)
+//ORIGINAL LINE: private Neo4Net.graphdb.traversal.Traverser traverseToDepth(Neo4Net.graphdb.GraphDatabaseService graphDb, final Neo4Net.graphdb.Node startNode, final int depth)
 		 private Traverser TraverseToDepth( IGraphDatabaseService graphDb, Node startNode, int depth )
 		 {
 
@@ -98,7 +98,7 @@ namespace Neo4Net.Server.plugins
 			  {
 						  if ( path.length() < depth )
 						  {
-								return Evaluation.INCLUDE_AND_CONTINUE;
+								return Evaluation.IncludeAndContinue;
 						  }
 						  else
 						  {

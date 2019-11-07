@@ -22,29 +22,29 @@ namespace Neo4Net.Bolt.v1.messaging.example
 	using PathValue = Neo4Net.Values.@virtual.PathValue;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.messaging.example.Edges.ALICE_KNOWS_BOB;
+//	import static Neo4Net.bolt.v1.messaging.example.Edges.ALICE_KNOWS_BOB;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.messaging.example.Edges.ALICE_LIKES_CAROL;
+//	import static Neo4Net.bolt.v1.messaging.example.Edges.ALICE_LIKES_CAROL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.messaging.example.Edges.CAROL_DISLIKES_BOB;
+//	import static Neo4Net.bolt.v1.messaging.example.Edges.CAROL_DISLIKES_BOB;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.messaging.example.Edges.CAROL_MARRIED_TO_DAVE;
+//	import static Neo4Net.bolt.v1.messaging.example.Edges.CAROL_MARRIED_TO_DAVE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.messaging.example.Edges.DAVE_WORKS_FOR_DAVE;
+//	import static Neo4Net.bolt.v1.messaging.example.Edges.DAVE_WORKS_FOR_DAVE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.messaging.example.Nodes.ALICE;
+//	import static Neo4Net.bolt.v1.messaging.example.Nodes.ALICE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.messaging.example.Nodes.BOB;
+//	import static Neo4Net.bolt.v1.messaging.example.Nodes.BOB;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.messaging.example.Nodes.CAROL;
+//	import static Neo4Net.bolt.v1.messaging.example.Nodes.CAROL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.messaging.example.Nodes.DAVE;
+//	import static Neo4Net.bolt.v1.messaging.example.Nodes.DAVE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.messaging.example.Support.edges;
+//	import static Neo4Net.bolt.v1.messaging.example.Support.edges;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.bolt.v1.messaging.example.Support.nodes;
+//	import static Neo4Net.bolt.v1.messaging.example.Support.nodes;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.@virtual.VirtualValues.path;
+//	import static Neo4Net.values.@virtual.VirtualValues.path;
 
 	/*
 	 * This class contains a number of paths used for testing, all based on

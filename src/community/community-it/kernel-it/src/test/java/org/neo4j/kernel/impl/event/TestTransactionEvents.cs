@@ -63,26 +63,26 @@ namespace Neo4Net.Kernel.Impl.@event
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.Label.label;
+//	import static Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.RelationshipType.withName;
+//	import static Neo4Net.graphdb.RelationshipType.withName;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.GraphDb.Index.IndexManager_Fields.PROVIDER;
+//	import static Neo4Net.GraphDb.Index.IndexManager_Fields.PROVIDER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.count;
+//	import static Neo4Net.helpers.collection.Iterables.count;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
+//	import static Neo4Net.helpers.collection.MapUtil.stringMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.DummyIndexExtensionFactory.IDENTIFIER;
+//	import static Neo4Net.kernel.impl.index.DummyIndexExtensionFactory.IDENTIFIER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.hasProperty;
+//	import static Neo4Net.test.mockito.matcher.Neo4NetMatchers.hasProperty;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.inTx;
+//	import static Neo4Net.test.mockito.matcher.Neo4NetMatchers.inTx;
 
 	public class TestTransactionEvents
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.DatabaseRule dbRule = new org.Neo4Net.test.rule.ImpermanentDatabaseRule();
+//ORIGINAL LINE: @Rule public final Neo4Net.test.rule.DatabaseRule dbRule = new Neo4Net.test.rule.ImpermanentDatabaseRule();
 		 public readonly DatabaseRule DbRule = new ImpermanentDatabaseRule();
 		 private static readonly TimeUnit _awaitIndexUnit = TimeUnit.SECONDS;
 		 private const int AWAIT_INDEX_DURATION = 60;
@@ -497,7 +497,7 @@ namespace Neo4Net.Kernel.Impl.@event
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public T beforeCommit(org.Neo4Net.graphdb.event.TransactionData data) throws Exception
+//ORIGINAL LINE: public T beforeCommit(Neo4Net.graphdb.event.TransactionData data) throws Exception
 			  public override T BeforeCommit( TransactionData data )
 			  {
 					try
@@ -532,7 +532,7 @@ namespace Neo4Net.Kernel.Impl.@event
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public Object beforeCommit(org.Neo4Net.graphdb.event.TransactionData data) throws Exception
+//ORIGINAL LINE: public Object beforeCommit(Neo4Net.graphdb.event.TransactionData data) throws Exception
 			  public override object BeforeCommit( TransactionData data )
 			  {
 					if ( BeforeCommitException != null )
@@ -649,7 +649,7 @@ namespace Neo4Net.Kernel.Impl.@event
 			  const object value1 = "the old value";
 			  const object value2 = "the new value";
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.graphdb.Node node;
+//ORIGINAL LINE: final Neo4Net.graphdb.Node node;
 			  Node node;
 			  using ( Transaction tx = Db.beginTx() )
 			  {
@@ -760,7 +760,7 @@ namespace Neo4Net.Kernel.Impl.@event
 			  // Given we have a schema index...
 			  IGraphDatabaseService db = DbRule.GraphDatabaseAPI;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.graphdb.Label label = label("Label");
+//ORIGINAL LINE: final Neo4Net.graphdb.Label label = label("Label");
 			  Label label = label( "Label" );
 			  using ( Transaction tx = Db.beginTx() )
 			  {
@@ -903,7 +903,7 @@ namespace Neo4Net.Kernel.Impl.@event
 		 {
 			  // GIVEN
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.graphdb.GraphDatabaseService db = dbRule.getGraphDatabaseAPI();
+//ORIGINAL LINE: final Neo4Net.graphdb.GraphDatabaseService db = dbRule.getGraphDatabaseAPI();
 			  IGraphDatabaseService db = DbRule.GraphDatabaseAPI;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final java.util.concurrent.atomic.AtomicInteger accessCount = new java.util.concurrent.atomic.AtomicInteger();
@@ -1167,7 +1167,7 @@ namespace Neo4Net.Kernel.Impl.@event
 		 {
 			  // GIVEN
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.graphdb.Node node = createNode("one", "Two", "three", "Four");
+//ORIGINAL LINE: final Neo4Net.graphdb.Node node = createNode("one", "Two", "three", "Four");
 			  Node node = CreateNode( "one", "Two", "three", "Four" );
 			  DbRule.GraphDatabaseAPI.registerTransactionEventHandler( new TransactionEventHandler_AdapterAnonymousInnerClass7( this, node ) );
 

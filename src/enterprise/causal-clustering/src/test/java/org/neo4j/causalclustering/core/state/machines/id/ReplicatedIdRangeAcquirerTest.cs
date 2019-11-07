@@ -60,10 +60,10 @@ namespace Neo4Net.causalclustering.core.state.machines.id
 		}
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.TestDirectory testDirectory = Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public TestDirectory TestDirectory = TestDirectory.testDirectory();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.fs.FileSystemRule defaultFileSystemRule = new org.Neo4Net.test.rule.fs.DefaultFileSystemRule();
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.fs.FileSystemRule defaultFileSystemRule = new Neo4Net.test.rule.fs.DefaultFileSystemRule();
 		 public FileSystemRule DefaultFileSystemRule = new DefaultFileSystemRule();
 
 		 private readonly MemberId _memberA = new MemberId( System.Guid.randomUUID() );

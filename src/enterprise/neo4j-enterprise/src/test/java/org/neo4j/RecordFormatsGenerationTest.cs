@@ -72,7 +72,7 @@ namespace Neo4Net
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Method reference arbitrary object instance method syntax is not converted by Java to C# Converter:
 //JAVA TO C# CONVERTER TODO TASK: Most Java stream collectors are not converted by Java to C# Converter:
-			  return java.util.org.Neo4Net.kernel.impl.store.format.StoreVersion.values().Select(StoreVersion::versionString).Select(RecordFormatSelector.selectForVersion).collect(groupingBy(RecordFormats::getFormatFamily, mapping(RecordFormats::generation, toList())));
+			  return java.util.Neo4Net.kernel.impl.store.format.StoreVersion.values().Select(StoreVersion::versionString).Select(RecordFormatSelector.selectForVersion).collect(groupingBy(RecordFormats::getFormatFamily, mapping(RecordFormats::generation, toList())));
 		 }
 
 		 private static IList<int> Distinct( IList<int> integers )

@@ -30,7 +30,7 @@ namespace Neo4Net.Kernel.impl.security
 	internal class FileURLAccessRule : URLAccessRule
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.net.URL validate(org.Neo4Net.graphdb.config.Configuration config, java.net.URL url) throws org.Neo4Net.graphdb.security.URLAccessValidationError
+//ORIGINAL LINE: public java.net.URL validate(Neo4Net.graphdb.config.Configuration config, java.net.URL url) throws Neo4Net.graphdb.security.URLAccessValidationError
 		 public override URL Validate( Configuration config, URL url )
 		 {
 			  if ( !( url.Authority == null || url.Authority.Equals( "" ) ) )
@@ -49,7 +49,7 @@ namespace Neo4Net.Kernel.impl.security
 			  }
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.io.File root = config.get(org.Neo4Net.graphdb.factory.GraphDatabaseSettings.load_csv_file_url_root);
+//ORIGINAL LINE: final java.io.File root = config.get(Neo4Net.graphdb.factory.GraphDatabaseSettings.load_csv_file_url_root);
 			  File root = config.Get( GraphDatabaseSettings.load_csv_file_url_root );
 			  if ( root == null )
 			  {

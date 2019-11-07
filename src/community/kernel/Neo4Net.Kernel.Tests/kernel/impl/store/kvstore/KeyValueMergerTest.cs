@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.impl.store.kvstore
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.kvstore.KeyValueMergerTest.Pair.pair;
+//	import static Neo4Net.kernel.impl.store.kvstore.KeyValueMergerTest.Pair.pair;
 
 	public class KeyValueMergerTest
 	{

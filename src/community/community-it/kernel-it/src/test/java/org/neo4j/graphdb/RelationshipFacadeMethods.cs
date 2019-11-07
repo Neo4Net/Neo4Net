@@ -23,9 +23,9 @@ namespace Neo4Net.GraphDb
 {
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.FacadeMethod.consume;
+//	import static Neo4Net.graphdb.FacadeMethod.consume;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.RelationshipType.withName;
+//	import static Neo4Net.graphdb.RelationshipType.withName;
 
 	public sealed class RelationshipFacadeMethods : Consumer<Relationship>
 	{

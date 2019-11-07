@@ -83,7 +83,7 @@ namespace Neo4Net.GraphDb
    /// can be queried.
    /// </para>
    /// </summary>
-   public interface IResult : IResourceIterator<IDictionary<string, object>>
+   public interface IResult :  IResourceIterator<IDictionary<string, object>>
    {
       /// <summary>
       /// Indicates what kind of query execution produced this result.
@@ -102,7 +102,7 @@ namespace Neo4Net.GraphDb
       /// single column results.
       /// <para>
       /// <strong>To ensure that any resources, including transactions bound to it, are properly closed, the iterator must
-      /// either be fully exhausted, or the <seealso cref="org.Neo4Net.graphdb.ResourceIterator.close() close()"/> method must be
+      /// either be fully exhausted, or the <seealso cref="Neo4Net.GraphDb.ResourceIterator.close() close()"/> method must be
       /// called.</strong>
       /// </para>
       /// <para>
@@ -125,8 +125,8 @@ namespace Neo4Net.GraphDb
       /// @param <T> desired type cast for the result objects </param>
       /// <returns> an iterator of the result objects, possibly empty </returns>
       /// <exception cref="ClassCastException"> when the result object can not be cast to the requested type </exception>
-      /// <exception cref="org.Neo4Net.graphdb.NotFoundException"> when the column name does not appear in the original query </exception>
-      ResourceIterator<T> columnAs<T>(string name);
+      /// <exception cref="Neo4Net.GraphDb.NotFoundException"> when the column name does not appear in the original query </exception>
+      IResourceIterator<T> columnAs<T>(string name);
 
       /// <summary>
       /// Denotes there being more rows available in this result. These rows must either be consumed, by invoking

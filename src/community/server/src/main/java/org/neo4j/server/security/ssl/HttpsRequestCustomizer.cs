@@ -32,7 +32,7 @@ namespace Neo4Net.Server.security.ssl
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.eclipse.jetty.http.HttpHeader.STRICT_TRANSPORT_SECURITY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.configuration.ServerSettings.http_strict_transport_security;
+//	import static Neo4Net.server.configuration.ServerSettings.http_strict_transport_security;
 
 	public class HttpsRequestCustomizer : HttpConfiguration.Customizer
 	{

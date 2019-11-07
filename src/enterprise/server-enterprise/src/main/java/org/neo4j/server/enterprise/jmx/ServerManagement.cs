@@ -42,7 +42,7 @@ namespace Neo4Net.Server.enterprise.jmx
 			 lock ( this )
 			 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.logging.Log log = server.getDatabase().getGraph().getDependencyResolver().resolveDependency(org.Neo4Net.logging.internal.LogService.class).getUserLog(getClass());
+//ORIGINAL LINE: final Neo4Net.logging.Log log = server.getDatabase().getGraph().getDependencyResolver().resolveDependency(Neo4Net.logging.internal.LogService.class).getUserLog(getClass());
 				  Log log = _server.Database.Graph.DependencyResolver.resolveDependency( typeof( LogService ) ).getUserLog( this.GetType() );
       
 				  Thread thread = new Thread("Restart server thread"() =>

@@ -56,21 +56,21 @@ namespace Neo4Net.Kernel.ha
 	using ResourceType = Neo4Net.Kernel.Api.StorageEngine.@lock.ResourceType;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.com.Protocol.EMPTY_SERIALIZER;
+//	import static Neo4Net.com.Protocol.EMPTY_SERIALIZER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.com.Protocol.VOID_DESERIALIZER;
+//	import static Neo4Net.com.Protocol.VOID_DESERIALIZER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.com.Protocol.readString;
+//	import static Neo4Net.com.Protocol.readString;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.com.Protocol.writeString;
+//	import static Neo4Net.com.Protocol.writeString;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.com.ProtocolVersion.INTERNAL_PROTOCOL_VERSION;
+//	import static Neo4Net.com.ProtocolVersion.INTERNAL_PROTOCOL_VERSION;
 
 	/// <summary>
-	/// The <seealso cref="org.Neo4Net.kernel.ha.com.master.Master"/> a slave should use to communicate with its master. It
+	/// The <seealso cref="Neo4Net.kernel.ha.com.master.Master"/> a slave should use to communicate with its master. It
 	/// serializes requests and sends them to the master, more specifically
-	/// <seealso cref="org.Neo4Net.kernel.ha.com.master.MasterServer"/> (which delegates to
-	/// <seealso cref="org.Neo4Net.kernel.ha.com.master.MasterImpl"/>
+	/// <seealso cref="Neo4Net.kernel.ha.com.master.MasterServer"/> (which delegates to
+	/// <seealso cref="Neo4Net.kernel.ha.com.master.MasterImpl"/>
 	/// on the master side.
 	/// </summary>
 	public class MasterClient214 : Client<Master>, MasterClient
@@ -161,7 +161,7 @@ namespace Neo4Net.Kernel.ha
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public org.Neo4Net.com.Response<org.Neo4Net.kernel.ha.id.IdAllocation> allocateIds(org.Neo4Net.com.RequestContext context, final org.Neo4Net.kernel.impl.store.id.IdType idType)
+//ORIGINAL LINE: public Neo4Net.com.Response<Neo4Net.kernel.ha.id.IdAllocation> allocateIds(Neo4Net.com.RequestContext context, final Neo4Net.kernel.impl.store.id.IdType idType)
 		 public override Response<IdAllocation> AllocateIds( RequestContext context, IdType idType )
 		 {
 			  Serializer serializer = buffer => buffer.writeByte( ( int )idType );
@@ -170,7 +170,7 @@ namespace Neo4Net.Kernel.ha
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public org.Neo4Net.com.Response<int> createRelationshipType(org.Neo4Net.com.RequestContext context, final String name)
+//ORIGINAL LINE: public Neo4Net.com.Response<int> createRelationshipType(Neo4Net.com.RequestContext context, final String name)
 		 public override Response<int> CreateRelationshipType( RequestContext context, string name )
 		 {
 			  Serializer serializer = buffer => writeString( buffer, name );
@@ -179,7 +179,7 @@ namespace Neo4Net.Kernel.ha
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public org.Neo4Net.com.Response<int> createPropertyKey(org.Neo4Net.com.RequestContext context, final String name)
+//ORIGINAL LINE: public Neo4Net.com.Response<int> createPropertyKey(Neo4Net.com.RequestContext context, final String name)
 		 public override Response<int> CreatePropertyKey( RequestContext context, string name )
 		 {
 			  Serializer serializer = buffer => writeString( buffer, name );
@@ -188,7 +188,7 @@ namespace Neo4Net.Kernel.ha
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public org.Neo4Net.com.Response<int> createLabel(org.Neo4Net.com.RequestContext context, final String name)
+//ORIGINAL LINE: public Neo4Net.com.Response<int> createLabel(Neo4Net.com.RequestContext context, final String name)
 		 public override Response<int> CreateLabel( RequestContext context, string name )
 		 {
 			  Serializer serializer = buffer => writeString( buffer, name );
@@ -219,7 +219,7 @@ namespace Neo4Net.Kernel.ha
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public org.Neo4Net.com.Response<Void> endLockSession(org.Neo4Net.com.RequestContext context, final boolean success)
+//ORIGINAL LINE: public Neo4Net.com.Response<Void> endLockSession(Neo4Net.com.RequestContext context, final boolean success)
 		 public override Response<Void> EndLockSession( RequestContext context, bool success )
 		 {
 			  Serializer serializer = buffer => buffer.writeByte( success ? 1 : 0 );
@@ -237,7 +237,7 @@ namespace Neo4Net.Kernel.ha
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public org.Neo4Net.com.Response<org.Neo4Net.kernel.ha.com.master.HandshakeResult> handshake(final long txId, org.Neo4Net.Kernel.Api.StorageEngine.StoreId storeId)
+//ORIGINAL LINE: public Neo4Net.com.Response<Neo4Net.kernel.ha.com.master.HandshakeResult> handshake(final long txId, Neo4Net.Kernel.Api.StorageEngine.StoreId storeId)
 		 public override Response<HandshakeResult> Handshake( long txId, StoreId storeId )
 		 {
 			  Serializer serializer = buffer => buffer.writeLong( txId );
@@ -246,7 +246,7 @@ namespace Neo4Net.Kernel.ha
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public org.Neo4Net.com.Response<Void> copyStore(org.Neo4Net.com.RequestContext context, final org.Neo4Net.com.storecopy.StoreWriter writer)
+//ORIGINAL LINE: public Neo4Net.com.Response<Void> copyStore(Neo4Net.com.RequestContext context, final Neo4Net.com.storecopy.StoreWriter writer)
 		 public override Response<Void> CopyStore( RequestContext context, StoreWriter writer )
 		 {
 			  context = StripFromTransactions( context );

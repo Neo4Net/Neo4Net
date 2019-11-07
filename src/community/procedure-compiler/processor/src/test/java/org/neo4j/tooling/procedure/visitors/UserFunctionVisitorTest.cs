@@ -55,7 +55,7 @@ namespace Neo4Net.Tooling.procedure.visitors
 
 			  _elementTestUtils = new ElementTestUtils( CompilationRule );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.tooling.procedure.compilerutils.TypeMirrorUtils typeMirrorUtils = new org.Neo4Net.tooling.procedure.compilerutils.TypeMirrorUtils(types, elements);
+//ORIGINAL LINE: final Neo4Net.tooling.procedure.compilerutils.TypeMirrorUtils typeMirrorUtils = new Neo4Net.tooling.procedure.compilerutils.TypeMirrorUtils(types, elements);
 			  TypeMirrorUtils typeMirrorUtils = new TypeMirrorUtils( types, elements );
 			  _visitor = new UserFunctionVisitor( new FunctionVisitor<UserFunction>( typeof( UserFunction ), types, elements, typeMirrorUtils, function => CustomNameExtractor.getName( function.name, function.value ), false ) );
 		 }
@@ -104,7 +104,7 @@ namespace Neo4Net.Tooling.procedure.visitors
 			  Stream<CompilationMessage> errors = _visitor.visit( function );
 
 //JAVA TO C# CONVERTER TODO TASK: Method reference arbitrary object instance method syntax is not converted by Java to C# Converter:
-			  assertThat( errors ).hasSize( 1 ).extracting( CompilationMessage::getCategory, CompilationMessage::getElement, CompilationMessage::getContents ).contains( tuple( Diagnostic.Kind.ERROR, function, "Unsupported return type <void> of function defined in " + "<org.Neo4Net.tooling.procedure.visitors.examples.UserFunctionsExamples#wrongReturnType>." ) );
+			  assertThat( errors ).hasSize( 1 ).extracting( CompilationMessage::getCategory, CompilationMessage::getElement, CompilationMessage::getContents ).contains( tuple( Diagnostic.Kind.ERROR, function, "Unsupported return type <void> of function defined in " + "<Neo4Net.tooling.procedure.visitors.examples.UserFunctionsExamples#wrongReturnType>." ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -127,7 +127,7 @@ namespace Neo4Net.Tooling.procedure.visitors
 
 			  Stream<CompilationMessage> errors = _visitor.visit( function );
 
-			  string errorMessage = JRE.JAVA_11.CurrentVersion ? "@org.Neo4Net.procedure.Name usage error: missing on parameter <oops>" : "@org.Neo4Net.procedure.Name usage error: missing on parameter <arg1>";
+			  string errorMessage = JRE.JAVA_11.CurrentVersion ? "@Neo4Net.procedure.Name usage error: missing on parameter <oops>" : "@Neo4Net.procedure.Name usage error: missing on parameter <arg1>";
 //JAVA TO C# CONVERTER TODO TASK: Method reference arbitrary object instance method syntax is not converted by Java to C# Converter:
 			  assertThat( errors ).hasSize( 1 ).extracting( CompilationMessage::getCategory, CompilationMessage::getContents ).contains( tuple( Diagnostic.Kind.ERROR, errorMessage ) );
 		 }

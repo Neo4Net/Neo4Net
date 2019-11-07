@@ -30,7 +30,7 @@ namespace Neo4Net.Kernel.builtinprocs
 	using Transaction = Neo4Net.Kernel.Api.Internal.Transaction;
 	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
 	using ProcedureCallContext = Neo4Net.Kernel.Api.Internal.procs.ProcedureCallContext;
-	using AnonymousContext = Neo4Net.Kernel.api.security.AnonymousContext;
+	using AnonymousContext = Neo4Net.Kernel.Api.security.AnonymousContext;
 	using KernelIntegrationTest = Neo4Net.Kernel.Impl.Api.integrationtest.KernelIntegrationTest;
 	using Value = Neo4Net.Values.Storable.Value;
 	using Values = Neo4Net.Values.Storable.Values;
@@ -44,9 +44,9 @@ namespace Neo4Net.Kernel.builtinprocs
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.core.IsEqual.equalTo;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterators.asList;
+//	import static Neo4Net.helpers.collection.Iterators.asList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Kernel.Api.Internal.procs.ProcedureSignature.procedureName;
+//	import static Neo4Net.Kernel.Api.Internal.procs.ProcedureSignature.procedureName;
 
 	public class BuiltInSchemaProceduresIT : KernelIntegrationTest
 	{
@@ -570,7 +570,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private long createNode(java.util.List<String> labels, java.util.List<String> propKeys, java.util.List<org.Neo4Net.values.storable.Value> propValues) throws Throwable
+//ORIGINAL LINE: private long createNode(java.util.List<String> labels, java.util.List<String> propKeys, java.util.List<Neo4Net.values.storable.Value> propValues) throws Throwable
 		 private long CreateNode( IList<string> labels, IList<string> propKeys, IList<Value> propValues )
 		 {
 			  Debug.Assert( labels != null );
@@ -597,7 +597,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void createRelationship(long startNode, String type, long endNode, java.util.List<String> propKeys, java.util.List<org.Neo4Net.values.storable.Value> propValues) throws Throwable
+//ORIGINAL LINE: private void createRelationship(long startNode, String type, long endNode, java.util.List<String> propKeys, java.util.List<Neo4Net.values.storable.Value> propValues) throws Throwable
 		 private void CreateRelationship( long startNode, string type, long endNode, IList<string> propKeys, IList<Value> propValues )
 		 {
 			  Debug.Assert( !string.ReferenceEquals( type, null ) && !type.Equals( "" ) );
@@ -622,7 +622,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		   This method can be used to print to result stream to System.out -> Useful for debugging
 		  */
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unused") private void printStream(org.Neo4Net.collection.RawIterator<Object[],org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException> stream) throws Throwable
+//ORIGINAL LINE: @SuppressWarnings("unused") private void printStream(Neo4Net.collection.RawIterator<Object[],Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException> stream) throws Throwable
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 private void PrintStream( RawIterator<object[], ProcedureException> stream )
 		 {

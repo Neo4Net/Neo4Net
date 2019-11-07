@@ -42,7 +42,7 @@ namespace Neo4Net.Csv.Reader
 		 /// otherwise {@code false} denoting the end of the stream. </returns>
 		 /// <exception cref="IOException"> on I/O error. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: boolean nextChunk(org.Neo4Net.csv.reader.Source_Chunk chunk) throws java.io.IOException;
+//ORIGINAL LINE: boolean nextChunk(Neo4Net.csv.reader.Source_Chunk chunk) throws java.io.IOException;
 		 bool NextChunk( Source_Chunk chunk );
 
 		 /// <returns> byte position of how much data has been returned from <seealso cref="nextChunk(Chunk)"/>. </returns>

@@ -46,7 +46,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.index.schema.ByteBufferFactory.HEAP_ALLOCATOR;
+//	import static Neo4Net.kernel.impl.index.schema.ByteBufferFactory.HEAP_ALLOCATOR;
 
 	internal class ByteBufferFactoryTest
 	{

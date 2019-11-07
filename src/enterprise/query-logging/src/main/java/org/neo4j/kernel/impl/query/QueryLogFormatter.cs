@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.impl.query
 {
 
 	using Strings = Neo4Net.Helpers.Strings;
-	using QuerySnapshot = Neo4Net.Kernel.api.query.QuerySnapshot;
+	using QuerySnapshot = Neo4Net.Kernel.Api.query.QuerySnapshot;
 	using AnyValue = Neo4Net.Values.AnyValue;
 	using PrettyPrinter = Neo4Net.Values.utils.PrettyPrinter;
 	using MapValue = Neo4Net.Values.@virtual.MapValue;

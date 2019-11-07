@@ -36,7 +36,7 @@ namespace Neo4Net.Kernel.Impl.@event
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.AbstractNeo4NetTestCase.deleteFileOrDirectory;
+//	import static Neo4Net.kernel.impl.AbstractNeo4NetTestCase.deleteFileOrDirectory;
 
 	public class TestKernelEvents
 	{

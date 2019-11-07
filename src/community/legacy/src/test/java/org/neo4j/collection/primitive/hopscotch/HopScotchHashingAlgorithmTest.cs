@@ -33,9 +33,9 @@ namespace Neo4Net.Collections.primitive.hopscotch
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.collection.primitive.Primitive.VALUE_MARKER;
+//	import static Neo4Net.collection.primitive.Primitive.VALUE_MARKER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.collection.primitive.hopscotch.HopScotchHashingAlgorithm.DEFAULT_H;
+//	import static Neo4Net.collection.primitive.hopscotch.HopScotchHashingAlgorithm.DEFAULT_H;
 
 	internal class HopScotchHashingAlgorithmTest
 	{

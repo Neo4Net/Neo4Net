@@ -43,11 +43,11 @@ namespace Neo4Net.metrics.output
 	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.metrics.MetricsSettings.csvEnabled;
+//	import static Neo4Net.metrics.MetricsSettings.csvEnabled;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.metrics.MetricsSettings.csvInterval;
+//	import static Neo4Net.metrics.MetricsSettings.csvInterval;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.metrics.MetricsSettings.csvPath;
+//	import static Neo4Net.metrics.MetricsSettings.csvPath;
 
 	public class CsvOutput : Lifecycle, EventReporter
 	{

@@ -107,7 +107,7 @@ namespace Neo4Net.backup.impl
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public OnlineBackupContext createContext(String... args) throws org.Neo4Net.commandline.admin.IncorrectUsage, org.Neo4Net.commandline.admin.CommandFailed
+//ORIGINAL LINE: public OnlineBackupContext createContext(String... args) throws Neo4Net.commandline.admin.IncorrectUsage, Neo4Net.commandline.admin.CommandFailed
 		 public virtual OnlineBackupContext CreateContext( params string[] args )
 		 {
 			  try
@@ -164,7 +164,7 @@ namespace Neo4Net.backup.impl
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.nio.file.Path getBackupDirectory(org.Neo4Net.commandline.arguments.Arguments arguments) throws org.Neo4Net.commandline.admin.CommandFailed
+//ORIGINAL LINE: private java.nio.file.Path getBackupDirectory(Neo4Net.commandline.arguments.Arguments arguments) throws Neo4Net.commandline.admin.CommandFailed
 		 private Path GetBackupDirectory( Arguments arguments )
 		 {
 			  Path path = arguments.GetMandatoryPath( ARG_NAME_BACKUP_DIRECTORY );

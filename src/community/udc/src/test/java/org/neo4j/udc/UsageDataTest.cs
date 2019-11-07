@@ -30,7 +30,7 @@ namespace Neo4Net.Udc
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.mock;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.udc.UsageDataKey.key;
+//	import static Neo4Net.udc.UsageDataKey.key;
 
 	internal class UsageDataTest
 	{

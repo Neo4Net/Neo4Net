@@ -47,7 +47,7 @@ namespace Neo4Net.Ext.Udc.impl
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.ext.udc.UdcConstants.ID;
+//	import static Neo4Net.ext.udc.UdcConstants.ID;
 
 	/// <summary>
 	/// Unit tests for the UDC statistics pinger.
@@ -122,7 +122,7 @@ namespace Neo4Net.Ext.Udc.impl
 		 public virtual void ShouldPingServer()
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.helpers.HostnamePort hostURL = new org.Neo4Net.helpers.HostnamePort(hostname, server.getLocalPort());
+//ORIGINAL LINE: final Neo4Net.helpers.HostnamePort hostURL = new Neo4Net.helpers.HostnamePort(hostname, server.getLocalPort());
 			  HostnamePort hostURL = new HostnamePort( _hostname, server.LocalPort );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final java.util.Map<String,String> udcFields = new java.util.HashMap<>();
@@ -145,7 +145,7 @@ namespace Neo4Net.Ext.Udc.impl
 		 {
 			  const int expectedPingCount = 16;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.helpers.HostnamePort hostURL = new org.Neo4Net.helpers.HostnamePort(hostname, server.getLocalPort());
+//ORIGINAL LINE: final Neo4Net.helpers.HostnamePort hostURL = new Neo4Net.helpers.HostnamePort(hostname, server.getLocalPort());
 			  HostnamePort hostURL = new HostnamePort( _hostname, server.LocalPort );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final java.util.Map<String,String> udcFields = new java.util.HashMap<>();
@@ -170,7 +170,7 @@ namespace Neo4Net.Ext.Udc.impl
 		 {
 			  int[] expectedSequence = new int[] { 1, 2, 3, 4 };
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.helpers.HostnamePort hostURL = new org.Neo4Net.helpers.HostnamePort(hostname, server.getLocalPort());
+//ORIGINAL LINE: final Neo4Net.helpers.HostnamePort hostURL = new Neo4Net.helpers.HostnamePort(hostname, server.getLocalPort());
 			  HostnamePort hostURL = new HostnamePort( _hostname, server.LocalPort );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final java.util.Map<String,String> udcFields = new java.util.HashMap<>();

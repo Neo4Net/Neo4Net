@@ -32,15 +32,15 @@ namespace Neo4Net.Tooling.procedure.procedures.context.restricted_types
 	public class EnterpriseProcedure
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Context public org.Neo4Net.graphdb.GraphDatabaseService IGraphDatabaseService;
+//ORIGINAL LINE: @Context public Neo4Net.graphdb.GraphDatabaseService IGraphDatabaseService;
 		 public IGraphDatabaseService IGraphDatabaseService;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Context public org.Neo4Net.kernel.enterprise.api.security.EnterpriseAuthManager enterpriseAuthManager;
+//ORIGINAL LINE: @Context public Neo4Net.kernel.enterprise.api.security.EnterpriseAuthManager enterpriseAuthManager;
 		 public EnterpriseAuthManager EnterpriseAuthManager;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Context public org.Neo4Net.server.security.enterprise.log.SecurityLog securityLog;
+//ORIGINAL LINE: @Context public Neo4Net.server.security.enterprise.log.SecurityLog securityLog;
 		 public SecurityLog SecurityLog;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

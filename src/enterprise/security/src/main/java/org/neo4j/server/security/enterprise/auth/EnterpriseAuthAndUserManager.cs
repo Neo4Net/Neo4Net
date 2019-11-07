@@ -24,7 +24,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 {
 	using AuthSubject = Neo4Net.Kernel.Api.Internal.security.AuthSubject;
 	using EnterpriseAuthManager = Neo4Net.Kernel.enterprise.api.security.EnterpriseAuthManager;
-	using UserManagerSupplier = Neo4Net.Kernel.api.security.UserManagerSupplier;
+	using UserManagerSupplier = Neo4Net.Kernel.Api.security.UserManagerSupplier;
 
 	public interface EnterpriseAuthAndUserManager : EnterpriseAuthManager, UserManagerSupplier
 	{

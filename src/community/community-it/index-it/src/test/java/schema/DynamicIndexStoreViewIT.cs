@@ -43,7 +43,7 @@ namespace Schema
 	using RandomValues = Neo4Net.Values.Storable.RandomValues;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.DoubleLatch.awaitLatch;
+//	import static Neo4Net.test.DoubleLatch.awaitLatch;
 
 	public class DynamicIndexStoreViewIT
 	{

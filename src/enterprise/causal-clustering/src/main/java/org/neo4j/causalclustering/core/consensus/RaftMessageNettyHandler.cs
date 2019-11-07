@@ -33,11 +33,11 @@ namespace Neo4Net.causalclustering.core.consensus
 	using LogProvider = Neo4Net.Logging.LogProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ChannelHandler.Sharable public class RaftMessageNettyHandler extends io.netty.channel.SimpleChannelInboundHandler<RaftMessages_ReceivedInstantClusterIdAwareMessage<?>> implements org.Neo4Net.causalclustering.messaging.Inbound<RaftMessages_ReceivedInstantClusterIdAwareMessage<?>>
+//ORIGINAL LINE: @ChannelHandler.Sharable public class RaftMessageNettyHandler extends io.netty.channel.SimpleChannelInboundHandler<RaftMessages_ReceivedInstantClusterIdAwareMessage<?>> implements Neo4Net.causalclustering.messaging.Inbound<RaftMessages_ReceivedInstantClusterIdAwareMessage<?>>
 	public class RaftMessageNettyHandler : SimpleChannelInboundHandler<RaftMessages_ReceivedInstantClusterIdAwareMessage<JavaToDotNetGenericWildcard>>, Inbound<RaftMessages_ReceivedInstantClusterIdAwareMessage<JavaToDotNetGenericWildcard>>
 	{
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private org.Neo4Net.causalclustering.messaging.Inbound_MessageHandler<RaftMessages_ReceivedInstantClusterIdAwareMessage<?>> actual;
+//ORIGINAL LINE: private Neo4Net.causalclustering.messaging.Inbound_MessageHandler<RaftMessages_ReceivedInstantClusterIdAwareMessage<?>> actual;
 		 private Neo4Net.causalclustering.messaging.Inbound_MessageHandler<RaftMessages_ReceivedInstantClusterIdAwareMessage<object>> _actual;
 		 private Log _log;
 

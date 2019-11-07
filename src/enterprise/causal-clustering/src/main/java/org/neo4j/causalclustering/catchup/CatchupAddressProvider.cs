@@ -38,18 +38,18 @@ namespace Neo4Net.causalclustering.catchup
 		 /// leader address. </returns>
 		 /// <exception cref="CatchupAddressResolutionException"> if the provider was unable to find an address to this location. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.Neo4Net.helpers.AdvertisedSocketAddress primary() throws CatchupAddressResolutionException;
+//ORIGINAL LINE: Neo4Net.helpers.AdvertisedSocketAddress primary() throws CatchupAddressResolutionException;
 		 AdvertisedSocketAddress Primary();
 
 		 /// <returns> The address to a secondary location that are not required to be up to date. If there are multiple secondary locations it is recommended to
 		 /// do some simple load balancing for returned addresses. This is to avoid re-sending failed requests to the same instance immediately. </returns>
 		 /// <exception cref="CatchupAddressResolutionException"> if the provider was unable to find an address to this location. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.Neo4Net.helpers.AdvertisedSocketAddress secondary() throws CatchupAddressResolutionException;
+//ORIGINAL LINE: Neo4Net.helpers.AdvertisedSocketAddress secondary() throws CatchupAddressResolutionException;
 		 AdvertisedSocketAddress Secondary();
 
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java static interface methods:
-//		 static CatchupAddressProvider fromSingleAddress(org.Neo4Net.helpers.AdvertisedSocketAddress advertisedSocketAddress)
+//		 static CatchupAddressProvider fromSingleAddress(Neo4Net.helpers.AdvertisedSocketAddress advertisedSocketAddress)
 	//	 {
 	//		  return new SingleAddressProvider(advertisedSocketAddress);
 	//	 }
@@ -93,7 +93,7 @@ namespace Neo4Net.causalclustering.catchup
 		  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.helpers.AdvertisedSocketAddress primary() throws CatchupAddressResolutionException
+//ORIGINAL LINE: public Neo4Net.helpers.AdvertisedSocketAddress primary() throws CatchupAddressResolutionException
 		  public override AdvertisedSocketAddress Primary()
 		  {
 				try
@@ -108,7 +108,7 @@ namespace Neo4Net.causalclustering.catchup
 		  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.helpers.AdvertisedSocketAddress secondary() throws CatchupAddressResolutionException
+//ORIGINAL LINE: public Neo4Net.helpers.AdvertisedSocketAddress secondary() throws CatchupAddressResolutionException
 		  public override AdvertisedSocketAddress Secondary()
 		  {
 				return SecondaryUpstreamStrategyAddressSupplier.get();

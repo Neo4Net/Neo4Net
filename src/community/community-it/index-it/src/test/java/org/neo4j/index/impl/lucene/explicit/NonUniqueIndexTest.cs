@@ -36,7 +36,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 	using IndexQuery = Neo4Net.Kernel.Api.Internal.IndexQuery;
 	using IndexReference = Neo4Net.Kernel.Api.Internal.IndexReference;
 	using NodeValueIndexCursor = Neo4Net.Kernel.Api.Internal.NodeValueIndexCursor;
-	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
+	using KernelTransaction = Neo4Net.Kernel.Api.KernelTransaction;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using ThreadToStatementContextBridge = Neo4Net.Kernel.impl.core.ThreadToStatementContextBridge;
 	using DatabaseInfo = Neo4Net.Kernel.impl.factory.DatabaseInfo;
@@ -57,7 +57,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.Label.label;
+//	import static Neo4Net.graphdb.Label.label;
 
 	public class NonUniqueIndexTest
 	{
@@ -66,7 +66,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 private const string VALUE = "value";
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.PageCacheAndDependenciesRule resources = new org.Neo4Net.test.rule.PageCacheAndDependenciesRule().with(new org.Neo4Net.test.rule.fs.DefaultFileSystemRule());
+//ORIGINAL LINE: @Rule public Neo4Net.test.rule.PageCacheAndDependenciesRule resources = new Neo4Net.test.rule.PageCacheAndDependenciesRule().with(new Neo4Net.test.rule.fs.DefaultFileSystemRule());
 		 public PageCacheAndDependenciesRule Resources = new PageCacheAndDependenciesRule().with(new DefaultFileSystemRule());
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

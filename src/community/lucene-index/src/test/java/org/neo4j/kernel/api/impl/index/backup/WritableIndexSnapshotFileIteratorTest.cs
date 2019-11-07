@@ -43,8 +43,8 @@ namespace Neo4Net.Kernel.Api.Impl.Index.backup
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected org.Neo4Net.graphdb.ResourceIterator<java.io.File> makeSnapshot() throws java.io.IOException
-		 protected internal override ResourceIterator<File> MakeSnapshot()
+//ORIGINAL LINE: protected Neo4Net.graphdb.ResourceIterator<java.io.File> makeSnapshot() throws java.io.IOException
+		 protected internal override IResourceIterator<File> MakeSnapshot()
 		 {
 			  _indexWriter = new IndexWriter( Dir, IndexWriterConfigs.standard() );
 			  return LuceneIndexSnapshots.ForIndex( IndexDir, _indexWriter );

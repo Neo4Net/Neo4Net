@@ -23,7 +23,7 @@
 namespace Neo4Net.cluster.com.message
 {
 	/// <summary>
-	/// This represents a source of messages, such as <seealso cref="org.Neo4Net.cluster.com.NetworkReceiver"/>.
+	/// This represents a source of messages, such as <seealso cref="Neo4Net.cluster.com.NetworkReceiver"/>.
 	/// Attach message processors to be notified when a message arrives.
 	/// </summary>
 	public interface MessageSource

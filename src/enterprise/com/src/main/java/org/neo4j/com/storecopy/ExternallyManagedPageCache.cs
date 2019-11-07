@@ -65,21 +65,21 @@ namespace Neo4Net.com.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.io.pagecache.PagedFile map(java.io.File file, int pageSize, java.nio.file.OpenOption... openOptions) throws java.io.IOException
+//ORIGINAL LINE: public Neo4Net.io.pagecache.PagedFile map(java.io.File file, int pageSize, java.nio.file.OpenOption... openOptions) throws java.io.IOException
 		 public override PagedFile Map( File file, int pageSize, params OpenOption[] openOptions )
 		 {
 			  return @delegate.Map( file, pageSize, openOptions );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.util.Optional<org.Neo4Net.io.pagecache.PagedFile> getExistingMapping(java.io.File file) throws java.io.IOException
+//ORIGINAL LINE: public java.util.Optional<Neo4Net.io.pagecache.PagedFile> getExistingMapping(java.io.File file) throws java.io.IOException
 		 public override Optional<PagedFile> GetExistingMapping( File file )
 		 {
 			  return @delegate.GetExistingMapping( file );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.util.List<org.Neo4Net.io.pagecache.PagedFile> listExistingMappings() throws java.io.IOException
+//ORIGINAL LINE: public java.util.List<Neo4Net.io.pagecache.PagedFile> listExistingMappings() throws java.io.IOException
 		 public override IList<PagedFile> ListExistingMappings()
 		 {
 			  return @delegate.ListExistingMappings();
@@ -93,7 +93,7 @@ namespace Neo4Net.com.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void flushAndForce(org.Neo4Net.io.pagecache.IOLimiter limiter) throws java.io.IOException
+//ORIGINAL LINE: public void flushAndForce(Neo4Net.io.pagecache.IOLimiter limiter) throws java.io.IOException
 		 public override void FlushAndForce( IOLimiter limiter )
 		 {
 			  @delegate.FlushAndForce( limiter );
@@ -118,7 +118,7 @@ namespace Neo4Net.com.storecopy
 		 /// Create a GraphDatabaseFactory that will build EmbeddedGraphDatabase instances that all use the given page cache.
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static GraphDatabaseFactoryWithPageCacheFactory graphDatabaseFactoryWithPageCache(final org.Neo4Net.io.pagecache.PageCache delegatePageCache)
+//ORIGINAL LINE: public static GraphDatabaseFactoryWithPageCacheFactory graphDatabaseFactoryWithPageCache(final Neo4Net.io.pagecache.PageCache delegatePageCache)
 		 public static GraphDatabaseFactoryWithPageCacheFactory GraphDatabaseFactoryWithPageCache( PageCache delegatePageCache )
 		 {
 			  return new GraphDatabaseFactoryWithPageCacheFactory( delegatePageCache );

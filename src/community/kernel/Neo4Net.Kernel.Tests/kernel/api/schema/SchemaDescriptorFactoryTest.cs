@@ -17,7 +17,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Kernel.api.schema
+namespace Neo4Net.Kernel.Api.schema
 {
 	using Test = org.junit.Test;
 
@@ -26,7 +26,7 @@ namespace Neo4Net.Kernel.api.schema
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.Matchers.equalTo;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.schema.SchemaTestUtil.assertArray;
+//	import static Neo4Net.kernel.api.schema.SchemaTestUtil.assertArray;
 
 	public class SchemaDescriptorFactoryTest
 	{

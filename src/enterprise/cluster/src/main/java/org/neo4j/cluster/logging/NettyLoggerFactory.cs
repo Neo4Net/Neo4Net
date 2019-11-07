@@ -47,7 +47,7 @@ namespace Neo4Net.cluster.logging
 		 public override InternalLogger NewInstance( string name )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.logging.Log log = logProvider.getLog(name);
+//ORIGINAL LINE: final Neo4Net.logging.Log log = logProvider.getLog(name);
 			  Log log = _logProvider.getLog( name );
 			  return new AbstractInternalLoggerAnonymousInnerClass( this, log );
 		 }

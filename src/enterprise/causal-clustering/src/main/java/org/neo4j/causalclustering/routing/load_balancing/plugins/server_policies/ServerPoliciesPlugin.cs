@@ -41,11 +41,11 @@ namespace Neo4Net.causalclustering.routing.load_balancing.plugins.server_policie
 	using LogProvider = Neo4Net.Logging.LogProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.routing.Util.asList;
+//	import static Neo4Net.causalclustering.routing.Util.asList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.routing.Util.extractBoltAddress;
+//	import static Neo4Net.causalclustering.routing.Util.extractBoltAddress;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.routing.load_balancing.plugins.server_policies.FilteringPolicyLoader.load;
+//	import static Neo4Net.causalclustering.routing.load_balancing.plugins.server_policies.FilteringPolicyLoader.load;
 
 	/// <summary>
 	/// The server policies plugin defines policies on the server-side which
@@ -54,7 +54,7 @@ namespace Neo4Net.causalclustering.routing.load_balancing.plugins.server_policie
 	/// An example would be to define different policies for different regions.
 	/// </summary>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Service.Implementation(LoadBalancingPlugin.class) public class ServerPoliciesPlugin implements org.Neo4Net.causalclustering.routing.load_balancing.LoadBalancingPlugin
+//ORIGINAL LINE: @Service.Implementation(LoadBalancingPlugin.class) public class ServerPoliciesPlugin implements Neo4Net.causalclustering.routing.load_balancing.LoadBalancingPlugin
 	public class ServerPoliciesPlugin : LoadBalancingPlugin
 	{
 		 public const string PLUGIN_NAME = "server_policies";
@@ -66,7 +66,7 @@ namespace Neo4Net.causalclustering.routing.load_balancing.plugins.server_policie
 		 private Policies _policies;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void validate(org.Neo4Net.kernel.configuration.Config config, org.Neo4Net.logging.Log log) throws org.Neo4Net.graphdb.config.InvalidSettingException
+//ORIGINAL LINE: public void validate(Neo4Net.kernel.configuration.Config config, Neo4Net.logging.Log log) throws Neo4Net.graphdb.config.InvalidSettingException
 		 public override void Validate( Config config, Log log )
 		 {
 			  try
@@ -80,7 +80,7 @@ namespace Neo4Net.causalclustering.routing.load_balancing.plugins.server_policie
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void init(org.Neo4Net.causalclustering.discovery.TopologyService topologyService, org.Neo4Net.causalclustering.core.consensus.LeaderLocator leaderLocator, org.Neo4Net.logging.LogProvider logProvider, org.Neo4Net.kernel.configuration.Config config) throws InvalidFilterSpecification
+//ORIGINAL LINE: public void init(Neo4Net.causalclustering.discovery.TopologyService topologyService, Neo4Net.causalclustering.core.consensus.LeaderLocator leaderLocator, Neo4Net.logging.LogProvider logProvider, Neo4Net.kernel.configuration.Config config) throws InvalidFilterSpecification
 		 public override void Init( TopologyService topologyService, LeaderLocator leaderLocator, LogProvider logProvider, Config config )
 		 {
 			  this._topologyService = topologyService;
@@ -96,7 +96,7 @@ namespace Neo4Net.causalclustering.routing.load_balancing.plugins.server_policie
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.causalclustering.routing.load_balancing.LoadBalancingProcessor_Result run(java.util.Map<String,String> context) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
+//ORIGINAL LINE: public Neo4Net.causalclustering.routing.load_balancing.LoadBalancingProcessor_Result run(java.util.Map<String,String> context) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 		 public override Neo4Net.causalclustering.routing.load_balancing.LoadBalancingProcessor_Result Run( IDictionary<string, string> context )
 		 {
 			  Policy policy = _policies.selectFor( context );

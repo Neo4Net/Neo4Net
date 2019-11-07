@@ -25,7 +25,7 @@ namespace Neo4Net.Server.plugins
 	internal abstract class DataExtractor
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: abstract Object extract(org.Neo4Net.kernel.internal.GraphDatabaseAPI graphDb, Object source, ParameterList parameters) throws org.Neo4Net.server.rest.repr.BadInputException;
+//ORIGINAL LINE: abstract Object extract(Neo4Net.kernel.internal.GraphDatabaseAPI graphDb, Object source, ParameterList parameters) throws Neo4Net.server.rest.repr.BadInputException;
 		 internal abstract object Extract( GraphDatabaseAPI graphDb, object source, ParameterList parameters );
 
 		 internal virtual void Describe( ParameterDescriptionConsumer consumer )

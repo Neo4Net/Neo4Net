@@ -37,7 +37,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 	using IndexOrder = Neo4Net.Kernel.Api.Internal.IndexOrder;
 	using IndexQuery = Neo4Net.Kernel.Api.Internal.IndexQuery;
 	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.Schema.SchemaDescriptor;
-	using TestIndexDescriptorFactory = Neo4Net.Kernel.api.schema.index.TestIndexDescriptorFactory;
+	using TestIndexDescriptorFactory = Neo4Net.Kernel.Api.schema.index.TestIndexDescriptorFactory;
 	using AddedAndRemoved = Neo4Net.Kernel.Impl.Newapi.TxStateIndexChanges.AddedAndRemoved;
 	using AddedWithValuesAndRemoved = Neo4Net.Kernel.Impl.Newapi.TxStateIndexChanges.AddedWithValuesAndRemoved;
 	using ValueUtils = Neo4Net.Kernel.impl.util.ValueUtils;
@@ -68,27 +68,27 @@ namespace Neo4Net.Kernel.Impl.Newapi
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.doReturn;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.newapi.TxStateIndexChanges.indexUpdatesForRangeSeek;
+//	import static Neo4Net.kernel.impl.newapi.TxStateIndexChanges.indexUpdatesForRangeSeek;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.newapi.TxStateIndexChanges.indexUpdatesForRangeSeekByPrefix;
+//	import static Neo4Net.kernel.impl.newapi.TxStateIndexChanges.indexUpdatesForRangeSeekByPrefix;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.newapi.TxStateIndexChanges.indexUpdatesForScan;
+//	import static Neo4Net.kernel.impl.newapi.TxStateIndexChanges.indexUpdatesForScan;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.newapi.TxStateIndexChanges.indexUpdatesForSeek;
+//	import static Neo4Net.kernel.impl.newapi.TxStateIndexChanges.indexUpdatesForSeek;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.newapi.TxStateIndexChanges.indexUpdatesForSuffixOrContains;
+//	import static Neo4Net.kernel.impl.newapi.TxStateIndexChanges.indexUpdatesForSuffixOrContains;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.newapi.TxStateIndexChanges.indexUpdatesWithValuesForRangeSeek;
+//	import static Neo4Net.kernel.impl.newapi.TxStateIndexChanges.indexUpdatesWithValuesForRangeSeek;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.newapi.TxStateIndexChanges.indexUpdatesWithValuesForRangeSeekByPrefix;
+//	import static Neo4Net.kernel.impl.newapi.TxStateIndexChanges.indexUpdatesWithValuesForRangeSeekByPrefix;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.newapi.TxStateIndexChanges.indexUpdatesWithValuesForScan;
+//	import static Neo4Net.kernel.impl.newapi.TxStateIndexChanges.indexUpdatesWithValuesForScan;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.newapi.TxStateIndexChanges.indexUpdatesWithValuesForSuffixOrContains;
+//	import static Neo4Net.kernel.impl.newapi.TxStateIndexChanges.indexUpdatesWithValuesForSuffixOrContains;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.NO_VALUE;
+//	import static Neo4Net.values.storable.Values.NO_VALUE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.values.storable.Values.stringValue;
+//	import static Neo4Net.values.storable.Values.stringValue;
 
 	internal class TxStateIndexChangesTest
 	{
@@ -99,7 +99,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 internal virtual void ShouldComputeIndexUpdatesForScanOnAnEmptyTxState()
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState state = org.mockito.Mockito.mock(org.Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState.class);
+//ORIGINAL LINE: final Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState state = org.mockito.Mockito.mock(Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState.class);
 			  ReadableTransactionState state = Mockito.mock( typeof( ReadableTransactionState ) );
 
 			  // WHEN
@@ -117,7 +117,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 {
 			  // GIVEN
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState state = new TxStateBuilder().withAdded(42L, "foo").withAdded(43L, "bar").build();
+//ORIGINAL LINE: final Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState state = new TxStateBuilder().withAdded(42L, "foo").withAdded(43L, "bar").build();
 			  ReadableTransactionState state = ( new TxStateBuilder() ).WithAdded(42L, "foo").withAdded(43L, "bar").build();
 
 			  // WHEN
@@ -148,7 +148,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 {
 			  // GIVEN
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState state = new TxStateBuilder().withAdded(40L, "Aaron").withAdded(41L, "Agatha").withAdded(42L, "Andreas").withAdded(43L, "Barbarella").withAdded(44L, "Andrea").withAdded(45L, "Aristotle").withAdded(46L, "Barbara").withAdded(47L, "Cinderella").build();
+//ORIGINAL LINE: final Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState state = new TxStateBuilder().withAdded(40L, "Aaron").withAdded(41L, "Agatha").withAdded(42L, "Andreas").withAdded(43L, "Barbarella").withAdded(44L, "Andrea").withAdded(45L, "Aristotle").withAdded(46L, "Barbara").withAdded(47L, "Cinderella").build();
 			  ReadableTransactionState state = ( new TxStateBuilder() ).WithAdded(40L, "Aaron").withAdded(41L, "Agatha").withAdded(42L, "Andreas").withAdded(43L, "Barbarella").withAdded(44L, "Andrea").withAdded(45L, "Aristotle").withAdded(46L, "Barbara").withAdded(47L, "Cinderella").build();
 
 			  // WHEN
@@ -167,7 +167,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 {
 			  // GIVEN
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState state = new TxStateBuilder().withAdded(42L, "foo").withAdded(43L, "bar").build();
+//ORIGINAL LINE: final Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState state = new TxStateBuilder().withAdded(42L, "foo").withAdded(43L, "bar").build();
 			  ReadableTransactionState state = ( new TxStateBuilder() ).WithAdded(42L, "foo").withAdded(43L, "bar").build();
 
 			  // WHEN
@@ -182,7 +182,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 internal virtual ICollection<DynamicTest> RangeTests()
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState state = new TxStateBuilder().withAdded(42L, 510).withAdded(43L, 520).withAdded(44L, 550).withAdded(45L, 500).withAdded(46L, 530).withAdded(47L, 560).withAdded(48L, 540).build();
+//ORIGINAL LINE: final Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState state = new TxStateBuilder().withAdded(42L, 510).withAdded(43L, 520).withAdded(44L, 550).withAdded(45L, 500).withAdded(46L, 530).withAdded(47L, 560).withAdded(48L, 540).build();
 			  ReadableTransactionState state = ( new TxStateBuilder() ).WithAdded(42L, 510).withAdded(43L, 520).withAdded(44L, 550).withAdded(45L, 500).withAdded(46L, 530).withAdded(47L, 560).withAdded(48L, 540).build();
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -243,7 +243,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 			  {
 					// GIVEN
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState state = new TxStateBuilder().withAdded(42L, "foo").withAdded(43L, "bar").build();
+//ORIGINAL LINE: final Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState state = new TxStateBuilder().withAdded(42L, "foo").withAdded(43L, "bar").build();
 					ReadableTransactionState state = ( new TxStateBuilder() ).WithAdded(42L, "foo").withAdded(43L, "bar").build();
 
 					// WHEN
@@ -415,7 +415,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 			  {
 					// GIVEN
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState state = new TxStateBuilder().withAdded(42L, "barry").withAdded(44L, 101L).withAdded(43L, "bar").build();
+//ORIGINAL LINE: final Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState state = new TxStateBuilder().withAdded(42L, "barry").withAdded(44L, 101L).withAdded(43L, "bar").build();
 					ReadableTransactionState state = ( new TxStateBuilder() ).WithAdded(42L, "barry").withAdded(44L, 101L).withAdded(43L, "bar").build();
 
 					// WHEN
@@ -446,7 +446,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 			  {
 					// GIVEN
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState state = org.mockito.Mockito.mock(org.Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState.class);
+//ORIGINAL LINE: final Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState state = org.mockito.Mockito.mock(Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState.class);
 					ReadableTransactionState state = Mockito.mock( typeof( ReadableTransactionState ) );
 
 					// WHEN
@@ -611,10 +611,10 @@ namespace Neo4Net.Kernel.Impl.Newapi
 			  internal virtual TxStateBuilder WithAdded( long id, params object[] value )
 			  {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.values.storable.ValueTuple valueTuple = org.Neo4Net.values.storable.ValueTuple.of((Object[]) value);
+//ORIGINAL LINE: final Neo4Net.values.storable.ValueTuple valueTuple = Neo4Net.values.storable.ValueTuple.of((Object[]) value);
 					ValueTuple valueTuple = ValueTuple.of( ( object[] ) value );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.util.diffsets.MutableLongDiffSetsImpl changes = updates.computeIfAbsent(valueTuple, ignore -> new org.Neo4Net.kernel.impl.util.diffsets.MutableLongDiffSetsImpl(org.Neo4Net.kernel.impl.util.collection.OnHeapCollectionsFactory.INSTANCE));
+//ORIGINAL LINE: final Neo4Net.kernel.impl.util.diffsets.MutableLongDiffSetsImpl changes = updates.computeIfAbsent(valueTuple, ignore -> new Neo4Net.kernel.impl.util.diffsets.MutableLongDiffSetsImpl(Neo4Net.kernel.impl.util.collection.OnHeapCollectionsFactory.INSTANCE));
 					MutableLongDiffSetsImpl changes = Updates.computeIfAbsent( valueTuple, ignore => new MutableLongDiffSetsImpl( OnHeapCollectionsFactory.INSTANCE ) );
 					changes.Add( id );
 					return this;
@@ -623,10 +623,10 @@ namespace Neo4Net.Kernel.Impl.Newapi
 			  internal virtual TxStateBuilder WithRemoved( long id, params object[] value )
 			  {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.values.storable.ValueTuple valueTuple = org.Neo4Net.values.storable.ValueTuple.of((Object[]) value);
+//ORIGINAL LINE: final Neo4Net.values.storable.ValueTuple valueTuple = Neo4Net.values.storable.ValueTuple.of((Object[]) value);
 					ValueTuple valueTuple = ValueTuple.of( ( object[] ) value );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.util.diffsets.MutableLongDiffSetsImpl changes = updates.computeIfAbsent(valueTuple, ignore -> new org.Neo4Net.kernel.impl.util.diffsets.MutableLongDiffSetsImpl(org.Neo4Net.kernel.impl.util.collection.OnHeapCollectionsFactory.INSTANCE));
+//ORIGINAL LINE: final Neo4Net.kernel.impl.util.diffsets.MutableLongDiffSetsImpl changes = updates.computeIfAbsent(valueTuple, ignore -> new Neo4Net.kernel.impl.util.diffsets.MutableLongDiffSetsImpl(Neo4Net.kernel.impl.util.collection.OnHeapCollectionsFactory.INSTANCE));
 					MutableLongDiffSetsImpl changes = Updates.computeIfAbsent( valueTuple, ignore => new MutableLongDiffSetsImpl( OnHeapCollectionsFactory.INSTANCE ) );
 					changes.Remove( id );
 					return this;
@@ -635,11 +635,11 @@ namespace Neo4Net.Kernel.Impl.Newapi
 			  internal virtual ReadableTransactionState Build()
 			  {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState mock = org.mockito.Mockito.mock(org.Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState.class);
+//ORIGINAL LINE: final Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState mock = org.mockito.Mockito.mock(Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState.class);
 					ReadableTransactionState mock = Mockito.mock( typeof( ReadableTransactionState ) );
 					doReturn( new UnmodifiableMap<>( Updates ) ).when( mock ).getIndexUpdates( any( typeof( SchemaDescriptor ) ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.TreeMap<org.Neo4Net.values.storable.ValueTuple, org.Neo4Net.kernel.impl.util.diffsets.MutableLongDiffSetsImpl> sortedMap = new java.util.TreeMap<>(org.Neo4Net.values.storable.ValueTuple.COMPARATOR);
+//ORIGINAL LINE: final java.util.TreeMap<Neo4Net.values.storable.ValueTuple, Neo4Net.kernel.impl.util.diffsets.MutableLongDiffSetsImpl> sortedMap = new java.util.TreeMap<>(Neo4Net.values.storable.ValueTuple.COMPARATOR);
 					SortedDictionary<ValueTuple, MutableLongDiffSetsImpl> sortedMap = new SortedDictionary<ValueTuple, MutableLongDiffSetsImpl>( ValueTuple.COMPARATOR );
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET Dictionary equivalent to the Java 'putAll' method:
 					sortedMap.putAll( Updates );

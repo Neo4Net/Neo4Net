@@ -26,7 +26,7 @@ namespace Neo4Net.CodeGen.ByteCode
 	internal interface ByteCodeChecker
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void check(ClassLoader classpathLoader, java.util.Collection<org.Neo4Net.codegen.ByteCodes> byteCodes) throws org.Neo4Net.codegen.CompilationFailureException;
+//ORIGINAL LINE: void check(ClassLoader classpathLoader, java.util.Collection<Neo4Net.codegen.ByteCodes> byteCodes) throws Neo4Net.codegen.CompilationFailureException;
 		 void Check( ClassLoader classpathLoader, ICollection<ByteCodes> byteCodes );
 	}
 

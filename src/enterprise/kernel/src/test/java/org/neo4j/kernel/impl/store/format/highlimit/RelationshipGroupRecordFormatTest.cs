@@ -40,7 +40,7 @@ namespace Neo4Net.Kernel.impl.store.format.highlimit
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.format.highlimit.BaseHighLimitRecordFormat.NULL;
+//	import static Neo4Net.kernel.impl.store.format.highlimit.BaseHighLimitRecordFormat.NULL;
 
 	public class RelationshipGroupRecordFormatTest
 	{
@@ -133,7 +133,7 @@ namespace Neo4Net.Kernel.impl.store.format.highlimit
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void verifyRecordsWithPoisonedReference(org.Neo4Net.kernel.impl.store.record.RelationshipGroupRecord source, org.Neo4Net.kernel.impl.store.record.RelationshipGroupRecord target, long poisonedReference) throws java.io.IOException
+//ORIGINAL LINE: private void verifyRecordsWithPoisonedReference(Neo4Net.kernel.impl.store.record.RelationshipGroupRecord source, Neo4Net.kernel.impl.store.record.RelationshipGroupRecord target, long poisonedReference) throws java.io.IOException
 		 private void VerifyRecordsWithPoisonedReference( RelationshipGroupRecord source, RelationshipGroupRecord target, long poisonedReference )
 		 {
 			  bool nullPoisoned = poisonedReference == BaseHighLimitRecordFormat.Null;
@@ -185,14 +185,14 @@ namespace Neo4Net.Kernel.impl.store.format.highlimit
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void writeReadRecord(org.Neo4Net.kernel.impl.store.record.RelationshipGroupRecord source, org.Neo4Net.kernel.impl.store.record.RelationshipGroupRecord target) throws java.io.IOException
+//ORIGINAL LINE: private void writeReadRecord(Neo4Net.kernel.impl.store.record.RelationshipGroupRecord source, Neo4Net.kernel.impl.store.record.RelationshipGroupRecord target) throws java.io.IOException
 		 private void WriteReadRecord( RelationshipGroupRecord source, RelationshipGroupRecord target )
 		 {
 			  WriteReadRecord( source, target, RelationshipGroupRecordFormat.RECORD_SIZE );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void writeReadRecord(org.Neo4Net.kernel.impl.store.record.RelationshipGroupRecord source, org.Neo4Net.kernel.impl.store.record.RelationshipGroupRecord target, int recordSize) throws java.io.IOException
+//ORIGINAL LINE: private void writeReadRecord(Neo4Net.kernel.impl.store.record.RelationshipGroupRecord source, Neo4Net.kernel.impl.store.record.RelationshipGroupRecord target, int recordSize) throws java.io.IOException
 		 private void WriteReadRecord( RelationshipGroupRecord source, RelationshipGroupRecord target, int recordSize )
 		 {
 			  _recordFormat.prepare( source, recordSize, _idSequence );

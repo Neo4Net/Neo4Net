@@ -31,7 +31,7 @@ namespace Neo4Net.causalclustering.core.replication
 		 private MemberId _currentLeader;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: synchronized org.Neo4Net.causalclustering.identity.MemberId awaitLeader() throws InterruptedException
+//ORIGINAL LINE: synchronized Neo4Net.causalclustering.identity.MemberId awaitLeader() throws InterruptedException
 		 internal virtual MemberId AwaitLeader()
 		 {
 			 lock ( this )

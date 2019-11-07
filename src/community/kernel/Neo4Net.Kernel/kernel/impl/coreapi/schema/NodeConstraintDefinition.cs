@@ -25,9 +25,9 @@ namespace Neo4Net.Kernel.impl.coreapi.schema
 	using IndexDefinition = Neo4Net.GraphDb.Schema.IndexDefinition;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.single;
+//	import static Neo4Net.helpers.collection.Iterables.single;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.coreapi.schema.IndexDefinitionImpl.labelNameList;
+//	import static Neo4Net.kernel.impl.coreapi.schema.IndexDefinitionImpl.labelNameList;
 
 	internal abstract class NodeConstraintDefinition : MultiPropertyConstraintDefinition
 	{

@@ -29,7 +29,7 @@ namespace Neo4Net.causalclustering.identity
 	using RaftTestGroup = Neo4Net.causalclustering.core.consensus.membership.RaftTestGroup;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.identity.RaftTestMember.member;
+//	import static Neo4Net.causalclustering.identity.RaftTestMember.member;
 
 	public class RaftTestMemberSetBuilder : Neo4Net.causalclustering.core.consensus.membership.RaftGroup_Builder
 	{

@@ -35,7 +35,7 @@ namespace Neo4Net.Test.rule
 	using VersionContextSupplier = Neo4Net.Io.pagecache.tracing.cursor.context.VersionContextSupplier;
 	using DatabaseCreationContext = Neo4Net.Kernel.DatabaseCreationContext;
 	using NeoStoreDataSource = Neo4Net.Kernel.NeoStoreDataSource;
-	using AutoIndexing = Neo4Net.Kernel.api.explicitindex.AutoIndexing;
+	using AutoIndexing = Neo4Net.Kernel.Api.explicitindex.AutoIndexing;
 	using IndexProvider = Neo4Net.Kernel.Api.Index.IndexProvider;
 	using DatabaseAvailability = Neo4Net.Kernel.availability.DatabaseAvailability;
 	using DatabaseAvailabilityGuard = Neo4Net.Kernel.availability.DatabaseAvailabilityGuard;
@@ -100,17 +100,17 @@ namespace Neo4Net.Test.rule
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.DEFAULT_DATABASE_NAME;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.DEFAULT_DATABASE_NAME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.default_schema_provider;
+//	import static Neo4Net.graphdb.factory.GraphDatabaseSettings.default_schema_provider;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.index.IndexProvider.EMPTY;
+//	import static Neo4Net.kernel.api.index.IndexProvider.EMPTY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.util.collection.CollectionsFactorySupplier_Fields.ON_HEAP;
+//	import static Neo4Net.kernel.impl.util.collection.CollectionsFactorySupplier_Fields.ON_HEAP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.util.watcher.FileSystemWatcherService.EMPTY_WATCHER;
+//	import static Neo4Net.kernel.impl.util.watcher.FileSystemWatcherService.EMPTY_WATCHER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.test.MockedNeoStores.mockedTokenHolders;
+//	import static Neo4Net.test.MockedNeoStores.mockedTokenHolders;
 
 	public class NeoStoreDataSourceRule : ExternalResource
 	{
@@ -258,7 +258,7 @@ namespace Neo4Net.Test.rule
 			  internal readonly CollectionsFactorySupplier CollectionsFactorySupplierConflict;
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private final Iterable<org.Neo4Net.kernel.extension.KernelExtensionFactory<?>> kernelExtensionFactories;
+//ORIGINAL LINE: private final Iterable<Neo4Net.kernel.extension.KernelExtensionFactory<?>> kernelExtensionFactories;
 			  internal readonly IEnumerable<KernelExtensionFactory<object>> KernelExtensionFactoriesConflict;
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
 			  internal readonly System.Func<File, FileSystemWatcherService> WatcherServiceFactoryConflict;
@@ -639,7 +639,7 @@ namespace Neo4Net.Test.rule
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: public Iterable<org.Neo4Net.kernel.extension.KernelExtensionFactory<?>> getKernelExtensionFactories()
+//ORIGINAL LINE: public Iterable<Neo4Net.kernel.extension.KernelExtensionFactory<?>> getKernelExtensionFactories()
 			  public virtual IEnumerable<KernelExtensionFactory<object>> KernelExtensionFactories
 			  {
 				  get

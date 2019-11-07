@@ -44,21 +44,21 @@ namespace Neo4Net.causalclustering.core.state
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.ReplicationModule.SESSION_TRACKER_NAME;
+//	import static Neo4Net.causalclustering.ReplicationModule.SESSION_TRACKER_NAME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.server.CoreServerModule.LAST_FLUSHED_NAME;
+//	import static Neo4Net.causalclustering.core.server.CoreServerModule.LAST_FLUSHED_NAME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.IdentityModule.CORE_MEMBER_ID_NAME;
+//	import static Neo4Net.causalclustering.core.IdentityModule.CORE_MEMBER_ID_NAME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.ConsensusModule.RAFT_MEMBERSHIP_NAME;
+//	import static Neo4Net.causalclustering.core.consensus.ConsensusModule.RAFT_MEMBERSHIP_NAME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.ConsensusModule.RAFT_TERM_NAME;
+//	import static Neo4Net.causalclustering.core.consensus.ConsensusModule.RAFT_TERM_NAME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.ConsensusModule.RAFT_VOTE_NAME;
+//	import static Neo4Net.causalclustering.core.consensus.ConsensusModule.RAFT_VOTE_NAME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.state.machines.CoreStateMachinesModule.ID_ALLOCATION_NAME;
+//	import static Neo4Net.causalclustering.core.state.machines.CoreStateMachinesModule.ID_ALLOCATION_NAME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.state.machines.CoreStateMachinesModule.LOCK_TOKEN_NAME;
+//	import static Neo4Net.causalclustering.core.state.machines.CoreStateMachinesModule.LOCK_TOKEN_NAME;
 
 	public class DumpClusterState
 	{
@@ -88,7 +88,7 @@ namespace Neo4Net.causalclustering.core.state
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: DumpClusterState(org.Neo4Net.io.fs.FileSystemAbstraction fs, java.io.File dataDirectory, java.io.PrintStream out) throws ClusterStateException
+//ORIGINAL LINE: DumpClusterState(Neo4Net.io.fs.FileSystemAbstraction fs, java.io.File dataDirectory, java.io.PrintStream out) throws ClusterStateException
 		 internal DumpClusterState( FileSystemAbstraction fs, File dataDirectory, PrintStream @out )
 		 {
 			  this._fs = fs;
@@ -122,7 +122,7 @@ namespace Neo4Net.causalclustering.core.state
 		 {
 			  int rotationSize = Config.defaults().get(CausalClusteringSettings.replicated_lock_token_state_size);
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.causalclustering.core.state.storage.DurableStateStorage<?> storage = new org.Neo4Net.causalclustering.core.state.storage.DurableStateStorage<>(fs, clusterStateDirectory, name, marshal, rotationSize, org.Neo4Net.logging.NullLogProvider.getInstance());
+//ORIGINAL LINE: Neo4Net.causalclustering.core.state.storage.DurableStateStorage<?> storage = new Neo4Net.causalclustering.core.state.storage.DurableStateStorage<>(fs, clusterStateDirectory, name, marshal, rotationSize, Neo4Net.logging.NullLogProvider.getInstance());
 			  DurableStateStorage<object> storage = new DurableStateStorage<object>( _fs, _clusterStateDirectory, name, marshal, rotationSize, NullLogProvider.Instance );
 
 			  if ( storage.Exists() )

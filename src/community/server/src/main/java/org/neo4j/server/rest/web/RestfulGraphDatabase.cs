@@ -43,25 +43,25 @@ namespace Neo4Net.Server.rest.web
 	using RelationshipDirection = Neo4Net.Server.rest.web.DatabaseActions.RelationshipDirection;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.Iterables.map;
+//	import static Neo4Net.helpers.collection.Iterables.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.helpers.collection.MapUtil.toMap;
+//	import static Neo4Net.helpers.collection.MapUtil.toMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.web.Surface_Fields.PATH_LABELS;
+//	import static Neo4Net.server.rest.web.Surface_Fields.PATH_LABELS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.web.Surface_Fields.PATH_NODES;
+//	import static Neo4Net.server.rest.web.Surface_Fields.PATH_NODES;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.web.Surface_Fields.PATH_NODE_INDEX;
+//	import static Neo4Net.server.rest.web.Surface_Fields.PATH_NODE_INDEX;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.web.Surface_Fields.PATH_RELATIONSHIPS;
+//	import static Neo4Net.server.rest.web.Surface_Fields.PATH_RELATIONSHIPS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.web.Surface_Fields.PATH_RELATIONSHIP_INDEX;
+//	import static Neo4Net.server.rest.web.Surface_Fields.PATH_RELATIONSHIP_INDEX;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.web.Surface_Fields.PATH_SCHEMA_CONSTRAINT;
+//	import static Neo4Net.server.rest.web.Surface_Fields.PATH_SCHEMA_CONSTRAINT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.web.Surface_Fields.PATH_SCHEMA_INDEX;
+//	import static Neo4Net.server.rest.web.Surface_Fields.PATH_SCHEMA_INDEX;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.server.rest.web.Surface_Fields.PATH_SCHEMA_RELATIONSHIP_CONSTRAINT;
+//	import static Neo4Net.server.rest.web.Surface_Fields.PATH_SCHEMA_RELATIONSHIP_CONSTRAINT;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Path("/") public class RestfulGraphDatabase
@@ -180,7 +180,7 @@ namespace Neo4Net.Server.rest.web
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private System.Nullable<long> extractNodeIdOrNull(String uri) throws org.Neo4Net.server.rest.repr.BadInputException
+//ORIGINAL LINE: private System.Nullable<long> extractNodeIdOrNull(String uri) throws Neo4Net.server.rest.repr.BadInputException
 		 private long? ExtractNodeIdOrNull( string uri )
 		 {
 			  if ( string.ReferenceEquals( uri, null ) )
@@ -191,7 +191,7 @@ namespace Neo4Net.Server.rest.web
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private long extractNodeId(String uri) throws org.Neo4Net.server.rest.repr.BadInputException
+//ORIGINAL LINE: private long extractNodeId(String uri) throws Neo4Net.server.rest.repr.BadInputException
 		 private long ExtractNodeId( string uri )
 		 {
 			  try
@@ -205,7 +205,7 @@ namespace Neo4Net.Server.rest.web
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private System.Nullable<long> extractRelationshipIdOrNull(String uri) throws org.Neo4Net.server.rest.repr.BadInputException
+//ORIGINAL LINE: private System.Nullable<long> extractRelationshipIdOrNull(String uri) throws Neo4Net.server.rest.repr.BadInputException
 		 private long? ExtractRelationshipIdOrNull( string uri )
 		 {
 			  if ( string.ReferenceEquals( uri, null ) )
@@ -216,7 +216,7 @@ namespace Neo4Net.Server.rest.web
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private long extractRelationshipId(String uri) throws org.Neo4Net.server.rest.repr.BadInputException
+//ORIGINAL LINE: private long extractRelationshipId(String uri) throws Neo4Net.server.rest.repr.BadInputException
 		 private long ExtractRelationshipId( string uri )
 		 {
 			  return ExtractNodeId( uri );
@@ -620,7 +620,7 @@ namespace Neo4Net.Server.rest.web
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @GET @Path(PATH_NODE_RELATIONSHIPS_W_DIR) public javax.ws.rs.core.Response getNodeRelationships(@PathParam("nodeId") long nodeId, @PathParam("direction") org.Neo4Net.server.rest.web.DatabaseActions.RelationshipDirection direction)
+//ORIGINAL LINE: @GET @Path(PATH_NODE_RELATIONSHIPS_W_DIR) public javax.ws.rs.core.Response getNodeRelationships(@PathParam("nodeId") long nodeId, @PathParam("direction") Neo4Net.server.rest.web.DatabaseActions.RelationshipDirection direction)
 		 public virtual Response GetNodeRelationships( long nodeId, RelationshipDirection direction )
 		 {
 			  try
@@ -634,7 +634,7 @@ namespace Neo4Net.Server.rest.web
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @GET @Path(PATH_NODE_RELATIONSHIPS_W_DIR_N_TYPES) public javax.ws.rs.core.Response getNodeRelationships(@PathParam("nodeId") long nodeId, @PathParam("direction") org.Neo4Net.server.rest.web.DatabaseActions.RelationshipDirection direction, @PathParam("types") AmpersandSeparatedCollection types)
+//ORIGINAL LINE: @GET @Path(PATH_NODE_RELATIONSHIPS_W_DIR_N_TYPES) public javax.ws.rs.core.Response getNodeRelationships(@PathParam("nodeId") long nodeId, @PathParam("direction") Neo4Net.server.rest.web.DatabaseActions.RelationshipDirection direction, @PathParam("types") AmpersandSeparatedCollection types)
 		 public virtual Response GetNodeRelationships( long nodeId, RelationshipDirection direction, AmpersandSeparatedCollection types )
 		 {
 			  try
@@ -650,7 +650,7 @@ namespace Neo4Net.Server.rest.web
 		 // Degrees
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @GET @Path(PATH_NODE_DEGREE_W_DIR) public javax.ws.rs.core.Response getNodeDegree(@PathParam("nodeId") long nodeId, @PathParam("direction") org.Neo4Net.server.rest.web.DatabaseActions.RelationshipDirection direction)
+//ORIGINAL LINE: @GET @Path(PATH_NODE_DEGREE_W_DIR) public javax.ws.rs.core.Response getNodeDegree(@PathParam("nodeId") long nodeId, @PathParam("direction") Neo4Net.server.rest.web.DatabaseActions.RelationshipDirection direction)
 		 public virtual Response GetNodeDegree( long nodeId, RelationshipDirection direction )
 		 {
 			  try
@@ -664,7 +664,7 @@ namespace Neo4Net.Server.rest.web
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @GET @Path(PATH_NODE_DEGREE_W_DIR_N_TYPES) public javax.ws.rs.core.Response getNodeDegree(@PathParam("nodeId") long nodeId, @PathParam("direction") org.Neo4Net.server.rest.web.DatabaseActions.RelationshipDirection direction, @PathParam("types") AmpersandSeparatedCollection types)
+//ORIGINAL LINE: @GET @Path(PATH_NODE_DEGREE_W_DIR_N_TYPES) public javax.ws.rs.core.Response getNodeDegree(@PathParam("nodeId") long nodeId, @PathParam("direction") Neo4Net.server.rest.web.DatabaseActions.RelationshipDirection direction, @PathParam("types") AmpersandSeparatedCollection types)
 		 public virtual Response GetNodeDegree( long nodeId, RelationshipDirection direction, AmpersandSeparatedCollection types )
 		 {
 			  try
@@ -1101,7 +1101,7 @@ namespace Neo4Net.Server.rest.web
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private String getStringOrNull(java.util.Map<String, Object> map, String key) throws org.Neo4Net.server.rest.repr.BadInputException
+//ORIGINAL LINE: private String getStringOrNull(java.util.Map<String, Object> map, String key) throws Neo4Net.server.rest.repr.BadInputException
 		 private string GetStringOrNull( IDictionary<string, object> map, string key )
 		 {
 			  object @object = map[key];
@@ -1117,7 +1117,7 @@ namespace Neo4Net.Server.rest.web
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private static java.util.Map<String, Object> getMapOrNull(java.util.Map<String, Object> data, String key) throws org.Neo4Net.server.rest.repr.BadInputException
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private static java.util.Map<String, Object> getMapOrNull(java.util.Map<String, Object> data, String key) throws Neo4Net.server.rest.repr.BadInputException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 private static IDictionary<string, object> GetMapOrNull( IDictionary<string, object> data, string key )
 		 {

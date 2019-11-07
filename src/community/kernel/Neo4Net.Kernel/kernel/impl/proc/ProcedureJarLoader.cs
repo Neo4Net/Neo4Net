@@ -27,9 +27,9 @@ namespace Neo4Net.Kernel.impl.proc
 	using Neo4Net.Collections;
 	using Neo4Net.Collections;
 	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
-	using CallableProcedure = Neo4Net.Kernel.api.proc.CallableProcedure;
-	using CallableUserAggregationFunction = Neo4Net.Kernel.api.proc.CallableUserAggregationFunction;
-	using CallableUserFunction = Neo4Net.Kernel.api.proc.CallableUserFunction;
+	using CallableProcedure = Neo4Net.Kernel.Api.Procs.CallableProcedure;
+	using CallableUserAggregationFunction = Neo4Net.Kernel.Api.Procs.CallableUserAggregationFunction;
+	using CallableUserFunction = Neo4Net.Kernel.Api.Procs.CallableUserFunction;
 	using Log = Neo4Net.Logging.Log;
 
 	/// <summary>
@@ -48,7 +48,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public Callables loadProceduresFromDir(java.io.File root) throws java.io.IOException, org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: public Callables loadProceduresFromDir(java.io.File root) throws java.io.IOException, Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 public virtual Callables LoadProceduresFromDir( File root )
 		 {
 			  if ( root == null || !root.exists() )
@@ -100,7 +100,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private Callables loadProcedures(java.net.URL jar, ClassLoader loader, Callables target) throws java.io.IOException, org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
+//ORIGINAL LINE: private Callables loadProcedures(java.net.URL jar, ClassLoader loader, Callables target) throws java.io.IOException, Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 private Callables LoadProcedures( URL jar, ClassLoader loader, Callables target )
 		 {
 			  RawIterator<Type, IOException> classes = ListClassesIn( jar, loader );
@@ -127,7 +127,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.collection.RawIterator<Class,java.io.IOException> listClassesIn(java.net.URL jar, ClassLoader loader) throws java.io.IOException
+//ORIGINAL LINE: private Neo4Net.collection.RawIterator<Class,java.io.IOException> listClassesIn(java.net.URL jar, ClassLoader loader) throws java.io.IOException
 		 private RawIterator<Type, IOException> ListClassesIn( URL jar, ClassLoader loader )
 		 {
 			  ZipInputStream zip = new ZipInputStream( jar.openStream() );

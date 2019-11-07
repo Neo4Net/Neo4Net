@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 
 
 	using MapUtil = Neo4Net.Collections.Helpers.MapUtil;
-	using TestIndexDescriptorFactory = Neo4Net.Kernel.api.schema.index.TestIndexDescriptorFactory;
+	using TestIndexDescriptorFactory = Neo4Net.Kernel.Api.schema.index.TestIndexDescriptorFactory;
 	using IndexCommand = Neo4Net.Kernel.impl.index.IndexCommand;
 	using AddNodeCommand = Neo4Net.Kernel.impl.index.IndexCommand.AddNodeCommand;
 	using AddRelationshipCommand = Neo4Net.Kernel.impl.index.IndexCommand.AddRelationshipCommand;
@@ -64,7 +64,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertNull;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.impl.store.record.DynamicRecord.dynamicRecord;
+//	import static Neo4Net.kernel.impl.store.record.DynamicRecord.dynamicRecord;
 
 	/// <summary>
 	/// At any point, a power outage may stop us from writing to the log, which means that, at any point, all our commands
@@ -185,7 +185,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertHandlesLogTruncation(org.Neo4Net.kernel.impl.transaction.command.Command cmd) throws java.io.IOException
+//ORIGINAL LINE: private void assertHandlesLogTruncation(Neo4Net.kernel.impl.transaction.command.Command cmd) throws java.io.IOException
 		 private void AssertHandlesLogTruncation( Command cmd )
 		 {
 			  _inMemoryChannel.reset();

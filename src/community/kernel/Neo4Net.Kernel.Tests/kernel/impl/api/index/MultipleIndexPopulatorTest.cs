@@ -37,8 +37,8 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using Neo4Net.Kernel.Api.Index;
 	using IndexPopulator = Neo4Net.Kernel.Api.Index.IndexPopulator;
 	using IndexUpdater = Neo4Net.Kernel.Api.Index.IndexUpdater;
-	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
-	using TestIndexDescriptorFactory = Neo4Net.Kernel.api.schema.index.TestIndexDescriptorFactory;
+	using SchemaDescriptorFactory = Neo4Net.Kernel.Api.schema.SchemaDescriptorFactory;
+	using TestIndexDescriptorFactory = Neo4Net.Kernel.Api.schema.index.TestIndexDescriptorFactory;
 	using IndexPopulation = Neo4Net.Kernel.Impl.Api.index.MultipleIndexPopulator.IndexPopulation;
 	using LogProvider = Neo4Net.Logging.LogProvider;
 	using NodePropertyAccessor = Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor;
@@ -80,7 +80,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.index.IndexQueryHelper.add;
+//	import static Neo4Net.kernel.api.index.IndexQueryHelper.add;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(MockitoJUnitRunner.class) public class MultipleIndexPopulatorTest
@@ -91,17 +91,17 @@ namespace Neo4Net.Kernel.Impl.Api.index
 //ORIGINAL LINE: @Mock(answer = org.mockito.Answers.RETURNS_MOCKS) private IndexStoreView indexStoreView;
 		 private IndexStoreView _indexStoreView;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Mock(answer = org.mockito.Answers.RETURNS_MOCKS) private org.Neo4Net.logging.LogProvider logProvider;
+//ORIGINAL LINE: @Mock(answer = org.mockito.Answers.RETURNS_MOCKS) private Neo4Net.logging.LogProvider logProvider;
 		 private LogProvider _logProvider;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Mock private org.Neo4Net.kernel.impl.api.SchemaState schemaState;
+//ORIGINAL LINE: @Mock private Neo4Net.kernel.impl.api.SchemaState schemaState;
 		 private SchemaState _schemaState;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @InjectMocks private MultipleIndexPopulator multipleIndexPopulator;
 		 private MultipleIndexPopulator _multipleIndexPopulator;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void canceledPopulationNotAbleToCreateNewIndex() throws org.Neo4Net.kernel.api.exceptions.index.FlipFailedKernelException
+//ORIGINAL LINE: @Test public void canceledPopulationNotAbleToCreateNewIndex() throws Neo4Net.kernel.api.exceptions.index.FlipFailedKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void CanceledPopulationNotAbleToCreateNewIndex()
 		 {
@@ -116,7 +116,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void canceledPopulationNotAbleToFlip() throws org.Neo4Net.kernel.api.exceptions.index.FlipFailedKernelException
+//ORIGINAL LINE: @Test public void canceledPopulationNotAbleToFlip() throws Neo4Net.kernel.api.exceptions.index.FlipFailedKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void CanceledPopulationNotAbleToFlip()
 		 {
@@ -131,7 +131,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void flippedPopulationAreNotCanceable() throws org.Neo4Net.kernel.api.exceptions.index.FlipFailedKernelException
+//ORIGINAL LINE: @Test public void flippedPopulationAreNotCanceable() throws Neo4Net.kernel.api.exceptions.index.FlipFailedKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void FlippedPopulationAreNotCanceable()
 		 {
@@ -146,7 +146,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void cancelAndDropShouldCallDropOnPopulator() throws org.Neo4Net.kernel.api.exceptions.index.FlipFailedKernelException
+//ORIGINAL LINE: @Test public void cancelAndDropShouldCallDropOnPopulator() throws Neo4Net.kernel.api.exceptions.index.FlipFailedKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void CancelAndDropShouldCallDropOnPopulator()
 		 {
@@ -160,7 +160,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void testMultiplePopulatorsCreation() throws org.Neo4Net.kernel.api.exceptions.index.FlipFailedKernelException
+//ORIGINAL LINE: @Test public void testMultiplePopulatorsCreation() throws Neo4Net.kernel.api.exceptions.index.FlipFailedKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void TestMultiplePopulatorsCreation()
 		 {
@@ -176,7 +176,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void testMultiplePopulatorCreationFailure() throws org.Neo4Net.kernel.api.exceptions.index.FlipFailedKernelException
+//ORIGINAL LINE: @Test public void testMultiplePopulatorCreationFailure() throws Neo4Net.kernel.api.exceptions.index.FlipFailedKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void TestMultiplePopulatorCreationFailure()
 		 {
@@ -200,7 +200,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void testHasPopulators() throws org.Neo4Net.kernel.api.exceptions.index.FlipFailedKernelException
+//ORIGINAL LINE: @Test public void testHasPopulators() throws Neo4Net.kernel.api.exceptions.index.FlipFailedKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void TestHasPopulators()
 		 {
@@ -212,7 +212,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void cancelingSinglePopulatorDoNotCancelAnyOther() throws org.Neo4Net.kernel.api.exceptions.index.FlipFailedKernelException
+//ORIGINAL LINE: @Test public void cancelingSinglePopulatorDoNotCancelAnyOther() throws Neo4Net.kernel.api.exceptions.index.FlipFailedKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void CancelingSinglePopulatorDoNotCancelAnyOther()
 		 {
@@ -236,7 +236,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void canceledPopulatorDoNotFlipWhenPopulationCompleted() throws org.Neo4Net.kernel.api.exceptions.index.FlipFailedKernelException
+//ORIGINAL LINE: @Test public void canceledPopulatorDoNotFlipWhenPopulationCompleted() throws Neo4Net.kernel.api.exceptions.index.FlipFailedKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void CanceledPopulatorDoNotFlipWhenPopulationCompleted()
 		 {
@@ -260,7 +260,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void testIndexAllNodes() throws org.Neo4Net.kernel.api.exceptions.index.FlipFailedKernelException
+//ORIGINAL LINE: @Test public void testIndexAllNodes() throws Neo4Net.kernel.api.exceptions.index.FlipFailedKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void TestIndexAllNodes()
 		 {
@@ -277,7 +277,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void testFailPopulator() throws org.Neo4Net.kernel.api.exceptions.index.FlipFailedKernelException
+//ORIGINAL LINE: @Test public void testFailPopulator() throws Neo4Net.kernel.api.exceptions.index.FlipFailedKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void TestFailPopulator()
 		 {
@@ -294,7 +294,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void testFailByPopulation() throws org.Neo4Net.kernel.api.exceptions.index.FlipFailedKernelException
+//ORIGINAL LINE: @Test public void testFailByPopulation() throws Neo4Net.kernel.api.exceptions.index.FlipFailedKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void TestFailByPopulation()
 		 {
@@ -311,7 +311,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void testFailByPopulationRemovesPopulator() throws org.Neo4Net.kernel.api.exceptions.index.FlipFailedKernelException
+//ORIGINAL LINE: @Test public void testFailByPopulationRemovesPopulator() throws Neo4Net.kernel.api.exceptions.index.FlipFailedKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void TestFailByPopulationRemovesPopulator()
 		 {
@@ -330,7 +330,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void testFailByNonExistingPopulation() throws org.Neo4Net.kernel.api.exceptions.index.FlipFailedKernelException
+//ORIGINAL LINE: @Test public void testFailByNonExistingPopulation() throws Neo4Net.kernel.api.exceptions.index.FlipFailedKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void TestFailByNonExistingPopulation()
 		 {
@@ -345,7 +345,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void testFlipAfterPopulation() throws org.Neo4Net.kernel.api.exceptions.index.FlipFailedKernelException
+//ORIGINAL LINE: @Test public void testFlipAfterPopulation() throws Neo4Net.kernel.api.exceptions.index.FlipFailedKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void TestFlipAfterPopulation()
 		 {
@@ -362,7 +362,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void populationsRemovedDuringFlip() throws org.Neo4Net.kernel.api.exceptions.index.FlipFailedKernelException
+//ORIGINAL LINE: @Test public void populationsRemovedDuringFlip() throws Neo4Net.kernel.api.exceptions.index.FlipFailedKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void PopulationsRemovedDuringFlip()
 		 {
@@ -380,7 +380,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void testCancelPopulation() throws org.Neo4Net.kernel.api.exceptions.index.FlipFailedKernelException
+//ORIGINAL LINE: @Test public void testCancelPopulation() throws Neo4Net.kernel.api.exceptions.index.FlipFailedKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void TestCancelPopulation()
 		 {
@@ -426,7 +426,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void testMultiplePopulatorUpdater() throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException, org.Neo4Net.kernel.api.exceptions.index.FlipFailedKernelException
+//ORIGINAL LINE: @Test public void testMultiplePopulatorUpdater() throws Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException, Neo4Net.kernel.api.exceptions.index.FlipFailedKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void TestMultiplePopulatorUpdater()
 		 {
@@ -441,7 +441,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 
 			  IndexUpdater multipleIndexUpdater = _multipleIndexPopulator.newPopulatingUpdater( mock( typeof( NodePropertyAccessor ) ) );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> propertyUpdate = createIndexEntryUpdate(index1);
+//ORIGINAL LINE: Neo4Net.kernel.api.index.IndexEntryUpdate<?> propertyUpdate = createIndexEntryUpdate(index1);
 			  IndexEntryUpdate<object> propertyUpdate = CreateIndexEntryUpdate( _index1 );
 			  multipleIndexUpdater.Process( propertyUpdate );
 
@@ -450,7 +450,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void testNonApplicableUpdaterDoNotUpdatePopulator() throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException, org.Neo4Net.kernel.api.exceptions.index.FlipFailedKernelException
+//ORIGINAL LINE: @Test public void testNonApplicableUpdaterDoNotUpdatePopulator() throws Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException, Neo4Net.kernel.api.exceptions.index.FlipFailedKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void TestNonApplicableUpdaterDoNotUpdatePopulator()
 		 {
@@ -462,7 +462,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  IndexUpdater multipleIndexUpdater = _multipleIndexPopulator.newPopulatingUpdater( mock( typeof( NodePropertyAccessor ) ) );
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> propertyUpdate = createIndexEntryUpdate(index1);
+//ORIGINAL LINE: Neo4Net.kernel.api.index.IndexEntryUpdate<?> propertyUpdate = createIndexEntryUpdate(index1);
 			  IndexEntryUpdate<object> propertyUpdate = CreateIndexEntryUpdate( _index1 );
 			  multipleIndexUpdater.Process( propertyUpdate );
 
@@ -470,12 +470,12 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void testPropertyUpdateFailure() throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException, org.Neo4Net.kernel.api.exceptions.index.FlipFailedKernelException
+//ORIGINAL LINE: @Test public void testPropertyUpdateFailure() throws Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException, Neo4Net.kernel.api.exceptions.index.FlipFailedKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void TestPropertyUpdateFailure()
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> propertyUpdate = createIndexEntryUpdate(index1);
+//ORIGINAL LINE: Neo4Net.kernel.api.index.IndexEntryUpdate<?> propertyUpdate = createIndexEntryUpdate(index1);
 			  IndexEntryUpdate<object> propertyUpdate = CreateIndexEntryUpdate( _index1 );
 			  IndexUpdater indexUpdater1 = mock( typeof( IndexUpdater ) );
 			  IndexPopulator indexPopulator1 = CreateIndexPopulator( indexUpdater1 );
@@ -493,16 +493,16 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void testMultiplePropertyUpdateFailures() throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException, org.Neo4Net.kernel.api.exceptions.index.FlipFailedKernelException
+//ORIGINAL LINE: @Test public void testMultiplePropertyUpdateFailures() throws Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException, Neo4Net.kernel.api.exceptions.index.FlipFailedKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void TestMultiplePropertyUpdateFailures()
 		 {
 			  NodePropertyAccessor nodePropertyAccessor = mock( typeof( NodePropertyAccessor ) );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> update1 = add(1, index1, "foo");
+//ORIGINAL LINE: Neo4Net.kernel.api.index.IndexEntryUpdate<?> update1 = add(1, index1, "foo");
 			  IndexEntryUpdate<object> update1 = add( 1, _index1, "foo" );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> update2 = add(2, index1, "bar");
+//ORIGINAL LINE: Neo4Net.kernel.api.index.IndexEntryUpdate<?> update2 = add(2, index1, "bar");
 			  IndexEntryUpdate<object> update2 = add( 2, _index1, "bar" );
 			  IndexUpdater updater = mock( typeof( IndexUpdater ) );
 			  IndexPopulator populator = CreateIndexPopulator( updater );
@@ -523,7 +523,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldVerifyConstraintsBeforeFlippingIfToldTo() throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: @Test public void shouldVerifyConstraintsBeforeFlippingIfToldTo() throws Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldVerifyConstraintsBeforeFlippingIfToldTo()
 		 {
@@ -546,7 +546,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> createIndexEntryUpdate(org.Neo4Net.Kernel.Api.Internal.Schema.LabelSchemaDescriptor schemaDescriptor)
+//ORIGINAL LINE: private Neo4Net.kernel.api.index.IndexEntryUpdate<?> createIndexEntryUpdate(Neo4Net.Kernel.Api.Internal.Schema.LabelSchemaDescriptor schemaDescriptor)
 		 private IndexEntryUpdate<object> CreateIndexEntryUpdate( LabelSchemaDescriptor schemaDescriptor )
 		 {
 			  return add( 1, schemaDescriptor, "theValue" );
@@ -604,7 +604,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.kernel.impl.api.index.MultipleIndexPopulator.IndexPopulation addPopulator(org.Neo4Net.kernel.api.index.IndexPopulator indexPopulator, int id) throws org.Neo4Net.kernel.api.exceptions.index.FlipFailedKernelException
+//ORIGINAL LINE: private Neo4Net.kernel.impl.api.index.MultipleIndexPopulator.IndexPopulation addPopulator(Neo4Net.kernel.api.index.IndexPopulator indexPopulator, int id) throws Neo4Net.kernel.api.exceptions.index.FlipFailedKernelException
 		 private IndexPopulation AddPopulator( IndexPopulator indexPopulator, int id )
 		 {
 			  FlippableIndexProxy indexProxy = mock( typeof( FlippableIndexProxy ) );

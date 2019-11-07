@@ -41,11 +41,11 @@ namespace Neo4Net.causalclustering.core.consensus
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.ReplicatedInteger.ValueOf;
+//	import static Neo4Net.causalclustering.core.consensus.ReplicatedInteger.ValueOf;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.log.RaftLogHelper.readLogEntry;
+//	import static Neo4Net.causalclustering.core.consensus.log.RaftLogHelper.readLogEntry;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.identity.RaftTestMember.member;
+//	import static Neo4Net.causalclustering.identity.RaftTestMember.member;
 
 	public class CatchUpTest
 	{
@@ -58,10 +58,10 @@ namespace Neo4Net.causalclustering.core.consensus
 
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.causalclustering.identity.MemberId leader = member(0);
+//ORIGINAL LINE: final Neo4Net.causalclustering.identity.MemberId leader = member(0);
 			  MemberId leader = member( 0 );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.causalclustering.identity.MemberId[] allMembers = {leader, member(1), member(2)};
+//ORIGINAL LINE: final Neo4Net.causalclustering.identity.MemberId[] allMembers = {leader, member(1), member(2)};
 			  MemberId[] allMembers = new MemberId[] { leader, member( 1 ), member( 2 ) };
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -69,7 +69,7 @@ namespace Neo4Net.causalclustering.core.consensus
 			  RaftTestFixture fixture = new RaftTestFixture( net, 3, allMembers );
 			  fixture.Bootstrap( allMembers );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.causalclustering.identity.MemberId leaderMember = fixture.members().withId(leader).member();
+//ORIGINAL LINE: final Neo4Net.causalclustering.identity.MemberId leaderMember = fixture.members().withId(leader).member();
 			  MemberId leaderMember = fixture.Members().withId(leader).member();
 
 			  // when
@@ -94,17 +94,17 @@ namespace Neo4Net.causalclustering.core.consensus
 
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.causalclustering.identity.MemberId leaderId = member(0);
+//ORIGINAL LINE: final Neo4Net.causalclustering.identity.MemberId leaderId = member(0);
 			  MemberId leaderId = member( 0 );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.causalclustering.identity.MemberId sleepyId = member(2);
+//ORIGINAL LINE: final Neo4Net.causalclustering.identity.MemberId sleepyId = member(2);
 			  MemberId sleepyId = member( 2 );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.causalclustering.identity.MemberId[] awakeMembers = {leaderId, member(1)};
+//ORIGINAL LINE: final Neo4Net.causalclustering.identity.MemberId[] awakeMembers = {leaderId, member(1)};
 			  MemberId[] awakeMembers = new MemberId[] { leaderId, member( 1 ) };
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.causalclustering.identity.MemberId[] allMembers = {leaderId, member(1), sleepyId};
+//ORIGINAL LINE: final Neo4Net.causalclustering.identity.MemberId[] allMembers = {leaderId, member(1), sleepyId};
 			  MemberId[] allMembers = new MemberId[] { leaderId, member( 1 ), sleepyId };
 
 			  RaftTestFixture fixture = new RaftTestFixture( net, 3, allMembers );
@@ -115,7 +115,7 @@ namespace Neo4Net.causalclustering.core.consensus
 			  net.ProcessMessages();
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.causalclustering.identity.MemberId leader = fixture.members().withId(leaderId).member();
+//ORIGINAL LINE: final Neo4Net.causalclustering.identity.MemberId leader = fixture.members().withId(leaderId).member();
 			  MemberId leader = fixture.Members().withId(leaderId).member();
 
 			  net.Disconnect( sleepyId );
@@ -145,7 +145,7 @@ namespace Neo4Net.causalclustering.core.consensus
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.util.List<int> integerValues(org.Neo4Net.causalclustering.core.consensus.log.ReadableRaftLog log) throws java.io.IOException
+//ORIGINAL LINE: private java.util.List<int> integerValues(Neo4Net.causalclustering.core.consensus.log.ReadableRaftLog log) throws java.io.IOException
 		 private IList<int> IntegerValues( ReadableRaftLog log )
 		 {
 			  IList<int> actual = new List<int>();

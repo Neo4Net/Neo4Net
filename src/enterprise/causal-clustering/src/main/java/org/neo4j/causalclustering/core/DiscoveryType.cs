@@ -37,22 +37,22 @@ namespace Neo4Net.causalclustering.core
 	using LogService = Neo4Net.Logging.Internal.LogService;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.CausalClusteringSettings.initial_discovery_members;
+//	import static Neo4Net.causalclustering.core.CausalClusteringSettings.initial_discovery_members;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.CausalClusteringSettings.kubernetes_label_selector;
+//	import static Neo4Net.causalclustering.core.CausalClusteringSettings.kubernetes_label_selector;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.CausalClusteringSettings.kubernetes_service_port_name;
+//	import static Neo4Net.causalclustering.core.CausalClusteringSettings.kubernetes_service_port_name;
 
 	public sealed class DiscoveryType
 	{
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//       DNS((logService, conf) -> org.Neo4Net.causalclustering.discovery.DnsHostnameResolver.resolver(logService, new org.Neo4Net.causalclustering.discovery.DomainNameResolverImpl(), conf), initial_discovery_members),
+//       DNS((logService, conf) -> Neo4Net.causalclustering.discovery.DnsHostnameResolver.resolver(logService, new Neo4Net.causalclustering.discovery.DomainNameResolverImpl(), conf), initial_discovery_members),
 
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//       LIST((logService, conf) -> org.Neo4Net.causalclustering.discovery.NoOpHostnameResolver.resolver(conf), initial_discovery_members),
+//       LIST((logService, conf) -> Neo4Net.causalclustering.discovery.NoOpHostnameResolver.resolver(conf), initial_discovery_members),
 
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//       SRV((logService, conf) -> org.Neo4Net.causalclustering.discovery.SrvHostnameResolver.resolver(logService, new org.Neo4Net.causalclustering.discovery.SrvRecordResolverImpl(), conf), initial_discovery_members),
+//       SRV((logService, conf) -> Neo4Net.causalclustering.discovery.SrvHostnameResolver.resolver(logService, new Neo4Net.causalclustering.discovery.SrvRecordResolverImpl(), conf), initial_discovery_members),
 
 		 public static readonly DiscoveryType K8s = new DiscoveryType( "K8s", InnerEnum.K8s, Neo4Net.causalclustering.discovery.KubernetesResolver.resolver, kubernetes_label_selector, kubernetes_service_port_name );
 

@@ -49,7 +49,7 @@ namespace Neo4Net.Kernel.impl.traversal
 		 internal readonly PathExpander Expander;
 		 internal readonly InitialBranchState InitialState;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: final System.Func<? extends org.Neo4Net.graphdb.Resource> statementSupplier;
+//ORIGINAL LINE: final System.Func<? extends Neo4Net.graphdb.Resource> statementSupplier;
 		 internal readonly System.Func<Resource> StatementSupplier;
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
 		 internal readonly UniquenessFactory UniquenessConflict;
@@ -58,7 +58,7 @@ namespace Neo4Net.Kernel.impl.traversal
 		 internal readonly PathEvaluator EvaluatorConflict;
 		 internal readonly BranchOrderingPolicy BranchOrdering;
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-//ORIGINAL LINE: final java.util.Comparator<? super org.Neo4Net.graphdb.Path> sorting;
+//ORIGINAL LINE: final java.util.Comparator<? super Neo4Net.graphdb.Path> sorting;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		 internal readonly IComparer<object> Sorting;
 		 internal readonly ICollection<Node> EndNodes;
@@ -77,7 +77,7 @@ namespace Neo4Net.Kernel.impl.traversal
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-//ORIGINAL LINE: private MonoDirectionalTraversalDescription(org.Neo4Net.graphdb.PathExpander expander, org.Neo4Net.graphdb.traversal.UniquenessFactory uniqueness, Object uniquenessParameter, org.Neo4Net.graphdb.traversal.PathEvaluator evaluator, org.Neo4Net.graphdb.traversal.InitialBranchState initialState, org.Neo4Net.graphdb.traversal.BranchOrderingPolicy branchOrdering, java.util.Comparator<? super org.Neo4Net.graphdb.Path> sorting, java.util.Collection<org.Neo4Net.graphdb.Node> endNodes, System.Func<? extends org.Neo4Net.graphdb.Resource> statementSupplier)
+//ORIGINAL LINE: private MonoDirectionalTraversalDescription(Neo4Net.graphdb.PathExpander expander, Neo4Net.graphdb.traversal.UniquenessFactory uniqueness, Object uniquenessParameter, Neo4Net.graphdb.traversal.PathEvaluator evaluator, Neo4Net.graphdb.traversal.InitialBranchState initialState, Neo4Net.graphdb.traversal.BranchOrderingPolicy branchOrdering, java.util.Comparator<? super Neo4Net.graphdb.Path> sorting, java.util.Collection<Neo4Net.graphdb.Node> endNodes, System.Func<? extends Neo4Net.graphdb.Resource> statementSupplier)
 		 private MonoDirectionalTraversalDescription<T1, T2>( PathExpander expander, UniquenessFactory uniqueness, object uniquenessParameter, PathEvaluator evaluator, InitialBranchState initialState, BranchOrderingPolicy branchOrdering, IComparer<T1> sorting, ICollection<Node> endNodes, System.Func<T2> statementSupplier ) where T2 : Neo4Net.GraphDb.Resource
 		 {
 			  this.Expander = expander;
@@ -102,7 +102,7 @@ namespace Neo4Net.Kernel.impl.traversal
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public org.Neo4Net.graphdb.traversal.Traverser traverse(final Iterable<org.Neo4Net.graphdb.Node> iterableStartNodes)
+//ORIGINAL LINE: public Neo4Net.graphdb.traversal.Traverser traverse(final Iterable<Neo4Net.graphdb.Node> iterableStartNodes)
 		 public override Traverser Traverse( IEnumerable<Node> iterableStartNodes )
 		 {
 			  return new DefaultTraverser(() =>
@@ -114,7 +114,7 @@ namespace Neo4Net.Kernel.impl.traversal
 		 }
 
 		 /* (non-Javadoc)
-		  * @see org.Neo4Net.graphdb.traversal.TraversalDescription#uniqueness(org.Neo4Net.graphdb.traversal.Uniqueness)
+		  * @see Neo4Net.graphdb.traversal.TraversalDescription#uniqueness(Neo4Net.graphdb.traversal.Uniqueness)
 		  */
 		 public override TraversalDescription Uniqueness( UniquenessFactory uniqueness )
 		 {
@@ -122,7 +122,7 @@ namespace Neo4Net.Kernel.impl.traversal
 		 }
 
 		 /* (non-Javadoc)
-		  * @see org.Neo4Net.graphdb.traversal.TraversalDescription#uniqueness(org.Neo4Net.graphdb.traversal.Uniqueness, java.lang.Object)
+		  * @see Neo4Net.graphdb.traversal.TraversalDescription#uniqueness(Neo4Net.graphdb.traversal.Uniqueness, java.lang.Object)
 		  */
 		 public override TraversalDescription Uniqueness( UniquenessFactory uniqueness, object parameter )
 		 {
@@ -172,7 +172,7 @@ namespace Neo4Net.Kernel.impl.traversal
 		 }
 
 		 /* (non-Javadoc)
-		  * @see org.Neo4Net.graphdb.traversal.TraversalDescription#order(org.Neo4Net.graphdb.traversal.Order)
+		  * @see Neo4Net.graphdb.traversal.TraversalDescription#order(Neo4Net.graphdb.traversal.Order)
 		  */
 		 public override TraversalDescription Order( BranchOrderingPolicy order )
 		 {
@@ -194,7 +194,7 @@ namespace Neo4Net.Kernel.impl.traversal
 		 }
 
 		 /* (non-Javadoc)
-		  * @see org.Neo4Net.graphdb.traversal.TraversalDescription#relationships(org.Neo4Net.graphdb.RelationshipType)
+		  * @see Neo4Net.graphdb.traversal.TraversalDescription#relationships(Neo4Net.graphdb.RelationshipType)
 		  */
 		 public override TraversalDescription Relationships( RelationshipType type )
 		 {
@@ -202,7 +202,7 @@ namespace Neo4Net.Kernel.impl.traversal
 		 }
 
 		 /* (non-Javadoc)
-		  * @see org.Neo4Net.graphdb.traversal.TraversalDescription#relationships(org.Neo4Net.graphdb.RelationshipType, org.Neo4Net.graphdb.Direction)
+		  * @see Neo4Net.graphdb.traversal.TraversalDescription#relationships(Neo4Net.graphdb.RelationshipType, Neo4Net.graphdb.Direction)
 		  */
 		 public override TraversalDescription Relationships( RelationshipType type, Direction direction )
 		 {
@@ -228,7 +228,7 @@ namespace Neo4Net.Kernel.impl.traversal
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-//ORIGINAL LINE: public org.Neo4Net.graphdb.traversal.TraversalDescription sort(java.util.Comparator<? super org.Neo4Net.graphdb.Path> sorting)
+//ORIGINAL LINE: public Neo4Net.graphdb.traversal.TraversalDescription sort(java.util.Comparator<? super Neo4Net.graphdb.Path> sorting)
 		 public override TraversalDescription Sort<T1>( IComparer<T1> sorting )
 		 {
 			  return new MonoDirectionalTraversalDescription( Expander, UniquenessConflict, UniquenessParameter, EvaluatorConflict, InitialState, BranchOrdering, sorting, EndNodes, StatementSupplier );

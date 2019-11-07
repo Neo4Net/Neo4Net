@@ -23,16 +23,16 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 {
 
 	using Neo4Net.Collections.Helpers;
-	using NodeLabelUpdate = Neo4Net.Kernel.api.labelscan.NodeLabelUpdate;
+	using NodeLabelUpdate = Neo4Net.Kernel.Api.LabelScan.NodeLabelUpdate;
 	using IEntityUpdates = Neo4Net.Kernel.Impl.Api.index.EntityUpdates;
 	using LockService = Neo4Net.Kernel.impl.locking.LockService;
 	using StorageNodeCursor = Neo4Net.Kernel.Api.StorageEngine.StorageNodeCursor;
 	using StorageReader = Neo4Net.Kernel.Api.StorageEngine.StorageReader;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.collection.PrimitiveLongCollections.EMPTY_LONG_ARRAY;
+//	import static Neo4Net.collection.PrimitiveLongCollections.EMPTY_LONG_ARRAY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.kernel.api.labelscan.NodeLabelUpdate.labelChanges;
+//	import static Neo4Net.kernel.api.labelscan.NodeLabelUpdate.labelChanges;
 
 	public class StoreViewNodeStoreScan<FAILURE> : PropertyAwareEntityStoreScan<StorageNodeCursor, FAILURE> where FAILURE : Exception
 	{
@@ -40,7 +40,7 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 		 private readonly Visitor<EntityUpdates, FAILURE> _propertyUpdatesVisitor;
 		 protected internal readonly int[] LabelIds;
 
-		 public StoreViewNodeStoreScan( StorageReader storageReader, LockService locks, Visitor<NodeLabelUpdate, FAILURE> labelUpdateVisitor, Visitor<EntityUpdates, FAILURE> propertyUpdatesVisitor, int[] labelIds, System.Func<int, bool> propertyKeyIdFilter ) : base( storageReader, storageReader.NodesGetCount(), propertyKeyIdFilter, id -> locks.AcquireNodeLock(id, org.Neo4Net.kernel.impl.locking.LockService_LockType.ReadLock) )
+		 public StoreViewNodeStoreScan( StorageReader storageReader, LockService locks, Visitor<NodeLabelUpdate, FAILURE> labelUpdateVisitor, Visitor<EntityUpdates, FAILURE> propertyUpdatesVisitor, int[] labelIds, System.Func<int, bool> propertyKeyIdFilter ) : base( storageReader, storageReader.NodesGetCount(), propertyKeyIdFilter, id -> locks.AcquireNodeLock(id, Neo4Net.kernel.impl.locking.LockService_LockType.ReadLock) )
 		 {
 			  this._labelUpdateVisitor = labelUpdateVisitor;
 			  this._propertyUpdatesVisitor = propertyUpdatesVisitor;
@@ -53,7 +53,7 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean process(org.Neo4Net.Kernel.Api.StorageEngine.StorageNodeCursor cursor) throws FAILURE
+//ORIGINAL LINE: public boolean process(Neo4Net.Kernel.Api.StorageEngine.StorageNodeCursor cursor) throws FAILURE
 		 public override bool Process( StorageNodeCursor cursor )
 		 {
 			  long[] labels = cursor.Labels();

@@ -104,7 +104,7 @@ namespace Neo4Net.causalclustering.messaging.marshalling
 			  // When
 			  MemberId sender = new MemberId( System.Guid.randomUUID() );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.causalclustering.core.consensus.RaftMessages_ClusterIdAwareMessage<?> message = org.Neo4Net.causalclustering.core.consensus.RaftMessages_ReceivedInstantClusterIdAwareMessage.of(now, clusterId, new org.Neo4Net.causalclustering.core.consensus.RaftMessages_Heartbeat(sender, 1, 2, 3));
+//ORIGINAL LINE: Neo4Net.causalclustering.core.consensus.RaftMessages_ClusterIdAwareMessage<?> message = Neo4Net.causalclustering.core.consensus.RaftMessages_ReceivedInstantClusterIdAwareMessage.of(now, clusterId, new Neo4Net.causalclustering.core.consensus.RaftMessages_Heartbeat(sender, 1, 2, 3));
 			  Neo4Net.causalclustering.core.consensus.RaftMessages_ClusterIdAwareMessage<object> message = Neo4Net.causalclustering.core.consensus.RaftMessages_ReceivedInstantClusterIdAwareMessage.of( now, _clusterId, new Neo4Net.causalclustering.core.consensus.RaftMessages_Heartbeat( sender, 1, 2, 3 ) );
 			  ChannelHandlerContext ctx = SetupContext();
 			  ByteBuf buffer = null;
@@ -150,7 +150,7 @@ namespace Neo4Net.causalclustering.messaging.marshalling
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void serializeReadBackAndVerifyMessage(org.Neo4Net.causalclustering.core.consensus.RaftMessages_RaftMessage message) throws Exception
+//ORIGINAL LINE: private void serializeReadBackAndVerifyMessage(Neo4Net.causalclustering.core.consensus.RaftMessages_RaftMessage message) throws Exception
 		 private void SerializeReadBackAndVerifyMessage( Neo4Net.causalclustering.core.consensus.RaftMessages_RaftMessage message )
 		 {
 			  // Given
@@ -164,7 +164,7 @@ namespace Neo4Net.causalclustering.messaging.marshalling
 
 			  // When
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.causalclustering.core.consensus.RaftMessages_ClusterIdAwareMessage<?> decoratedMessage = org.Neo4Net.causalclustering.core.consensus.RaftMessages_ReceivedInstantClusterIdAwareMessage.of(now, clusterId, message);
+//ORIGINAL LINE: Neo4Net.causalclustering.core.consensus.RaftMessages_ClusterIdAwareMessage<?> decoratedMessage = Neo4Net.causalclustering.core.consensus.RaftMessages_ReceivedInstantClusterIdAwareMessage.of(now, clusterId, message);
 			  Neo4Net.causalclustering.core.consensus.RaftMessages_ClusterIdAwareMessage<object> decoratedMessage = Neo4Net.causalclustering.core.consensus.RaftMessages_ReceivedInstantClusterIdAwareMessage.of( now, _clusterId, message );
 			  ChannelHandlerContext ctx = SetupContext();
 			  ByteBuf buffer = null;
@@ -206,7 +206,7 @@ namespace Neo4Net.causalclustering.messaging.marshalling
 		 private class SafeChannelMarshalAnonymousInnerClass : SafeChannelMarshal<ReplicatedContent>
 		 {
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void marshal(org.Neo4Net.causalclustering.core.replication.ReplicatedContent content, org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public void marshal(Neo4Net.causalclustering.core.replication.ReplicatedContent content, Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
 			 public override void marshal( ReplicatedContent content, WritableChannel channel )
 			 {
 				  if ( content is ReplicatedInteger )
@@ -221,12 +221,12 @@ namespace Neo4Net.causalclustering.messaging.marshalling
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.causalclustering.core.replication.ReplicatedContent unmarshal0(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public Neo4Net.causalclustering.core.replication.ReplicatedContent unmarshal0(Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
 			 public override ReplicatedContent unmarshal0( ReadableChannel channel )
 			 {
 				  sbyte type = channel.Get();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.causalclustering.core.replication.ReplicatedContent content;
+//ORIGINAL LINE: final Neo4Net.causalclustering.core.replication.ReplicatedContent content;
 				  ReplicatedContent content;
 				  switch ( type )
 				  {

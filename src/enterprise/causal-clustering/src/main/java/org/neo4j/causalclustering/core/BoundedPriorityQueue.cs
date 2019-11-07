@@ -26,11 +26,11 @@ namespace Neo4Net.causalclustering.core
 {
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.BoundedPriorityQueue.Result.E_COUNT_EXCEEDED;
+//	import static Neo4Net.causalclustering.core.BoundedPriorityQueue.Result.E_COUNT_EXCEEDED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.BoundedPriorityQueue.Result.E_SIZE_EXCEEDED;
+//	import static Neo4Net.causalclustering.core.BoundedPriorityQueue.Result.E_SIZE_EXCEEDED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.BoundedPriorityQueue.Result.OK;
+//	import static Neo4Net.causalclustering.core.BoundedPriorityQueue.Result.OK;
 
 	/// <summary>
 	/// A bounded queue which is bounded both by the count of elements and by the total

@@ -22,7 +22,7 @@ namespace Neo4Net.Kernel.impl.store.id
 	using IdValidator = Neo4Net.Kernel.impl.store.id.validation.IdValidator;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.collection.PrimitiveLongCollections.EMPTY_LONG_ARRAY;
+//	import static Neo4Net.collection.PrimitiveLongCollections.EMPTY_LONG_ARRAY;
 
 	/// <summary>
 	/// <seealso cref="IdSequence"/> w/o any synchronization, purely a long incrementing.

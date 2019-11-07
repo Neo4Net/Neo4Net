@@ -53,17 +53,17 @@ namespace Neo4Net.cluster.protocol.cluster
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.cluster.com.message.Message.DISCOVERED;
+//	import static Neo4Net.cluster.com.message.Message.DISCOVERED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.cluster.com.message.Message.Internal;
+//	import static Neo4Net.cluster.com.message.Message.Internal;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.cluster.com.message.Message.to;
+//	import static Neo4Net.cluster.com.message.Message.to;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.cluster.protocol.cluster.ClusterMessage.configurationRequest;
+//	import static Neo4Net.cluster.protocol.cluster.ClusterMessage.configurationRequest;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.cluster.protocol.cluster.ClusterMessage.configurationTimeout;
+//	import static Neo4Net.cluster.protocol.cluster.ClusterMessage.configurationTimeout;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.cluster.protocol.cluster.ClusterMessage.joinDenied;
+//	import static Neo4Net.cluster.protocol.cluster.ClusterMessage.joinDenied;
 
 	public class ClusterStateTest
 	{
@@ -129,7 +129,7 @@ namespace Neo4Net.cluster.protocol.cluster
 
 			  // THEN assert that the failure contains the received configuration
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.cluster.com.message.Message<? extends org.Neo4Net.cluster.com.message.MessageType> response = outgoing.single();
+//ORIGINAL LINE: Neo4Net.cluster.com.message.Message<? extends Neo4Net.cluster.com.message.MessageType> response = outgoing.single();
 			  Message<MessageType> response = outgoing.Single();
 			  ClusterEntryDeniedException deniedException = response.Payload;
 			  assertEquals( existingMembers, deniedException.ConfigurationResponseState.Members );
@@ -156,7 +156,7 @@ namespace Neo4Net.cluster.protocol.cluster
 
 			  // THEN assert that the failure contains the received configuration
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.cluster.com.message.Message<? extends org.Neo4Net.cluster.com.message.MessageType> response = outgoing.single();
+//ORIGINAL LINE: Neo4Net.cluster.com.message.Message<? extends Neo4Net.cluster.com.message.MessageType> response = outgoing.single();
 			  Message<MessageType> response = outgoing.Single();
 			  assertEquals( ClusterMessage.ConfigurationResponse, response.MessageType );
 		 }

@@ -86,7 +86,7 @@ namespace Neo4Net.com.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean visit(org.Neo4Net.kernel.impl.transaction.CommittedTransactionRepresentation transaction) throws Exception
+//ORIGINAL LINE: public boolean visit(Neo4Net.kernel.impl.transaction.CommittedTransactionRepresentation transaction) throws Exception
 		 public override bool Visit( CommittedTransactionRepresentation transaction )
 		 {
 			  _queue.queue( new TransactionToApplyAnonymousInnerClass( this, transaction.TransactionRepresentation, _versionContextSupplier.VersionContext ) );

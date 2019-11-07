@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.impl.proc
 	internal interface NamingRestrictions
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void verify(org.Neo4Net.Kernel.Api.Internal.procs.QualifiedName name) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
+//ORIGINAL LINE: void verify(Neo4Net.Kernel.Api.Internal.procs.QualifiedName name) throws Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
 		 void Verify( QualifiedName name );
 	}
 

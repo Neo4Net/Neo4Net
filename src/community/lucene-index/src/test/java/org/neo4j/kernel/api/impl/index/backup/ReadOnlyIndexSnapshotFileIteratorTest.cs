@@ -49,7 +49,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index.backup
 	public class ReadOnlyIndexSnapshotFileIteratorTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.Neo4Net.test.rule.TestDirectory testDir;
+//ORIGINAL LINE: @Inject private Neo4Net.test.rule.TestDirectory testDir;
 		 private TestDirectory _testDir;
 
 		 internal File IndexDir;
@@ -82,7 +82,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index.backup
 			  ISet<string> files = ListDir( Dir );
 			  assertFalse( Files.Count == 0 );
 
-			  using ( ResourceIterator<File> snapshot = MakeSnapshot() )
+			  using ( IResourceIterator<File> snapshot = MakeSnapshot() )
 			  {
 //JAVA TO C# CONVERTER TODO TASK: Most Java stream collectors are not converted by Java to C# Converter:
 					ISet<string> snapshotFiles = snapshot.Select( File.getName ).collect( toSet() );
@@ -95,7 +95,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index.backup
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void ShouldReturnEmptyIteratorWhenNoCommitsHaveBeenMade()
 		 {
-			  using ( ResourceIterator<File> snapshot = MakeSnapshot() )
+			  using ( IResourceIterator<File> snapshot = MakeSnapshot() )
 			  {
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
 					assertFalse( snapshot.hasNext() );
@@ -113,8 +113,8 @@ namespace Neo4Net.Kernel.Api.Impl.Index.backup
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected org.Neo4Net.graphdb.ResourceIterator<java.io.File> makeSnapshot() throws java.io.IOException
-		 protected internal virtual ResourceIterator<File> MakeSnapshot()
+//ORIGINAL LINE: protected Neo4Net.graphdb.ResourceIterator<java.io.File> makeSnapshot() throws java.io.IOException
+		 protected internal virtual IResourceIterator<File> MakeSnapshot()
 		 {
 			  return LuceneIndexSnapshots.ForIndex( IndexDir, Dir );
 		 }
